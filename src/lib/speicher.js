@@ -4,20 +4,52 @@
 // Faelligkeiten und Statistik werden daraus berechnet. Zwei Geraete
 // zusammenfuehren heisst darum: Ereignisse vereinigen, Duplikate
 // anhand der ID verwerfen. Konflikte gibt es nicht.
+//
+// Jedes Nutzerprofil (siehe profile.js) bekommt eine eigene, komplett
+// getrennte Datenbank "lernprogramm_<profilId>". So bleiben mehrere
+// Personen auf demselben Geraet sauber getrennt, und ein Profil laesst
+// sich einzeln exportieren, importieren oder loeschen, ohne die
+// anderen zu beruehren.
 
-const DB_NAME = 'lernprogramm'
+const ALTE_DB_NAME = 'lernprogramm' // vor der Einfuehrung von Profilen
 const DB_VERSION = 3
 const STORE = 'ereignisse'
 const SKIZZEN = 'skizzen'
 const MARKEN = 'marken'
 const PRUEFUNGEN = 'pruefungen'
 
+let aktuellesProfil = null
 let dbPromise = null
+
+// Muss aufgerufen werden, bevor irgendeine andere Funktion dieser
+// Datei benutzt wird - legt fest, welches Profil (und damit welche
+// Datenbank) gerade aktiv ist. Ein Wechsel schliesst die alte
+// Verbindung und oeffnet die naechste erst bei Bedarf neu.
+export async function datenbankFuerProfilSetzen(profilId) {
+  if (profilId === aktuellesProfil) return
+  await datenbankSchliessen()
+  aktuellesProfil = profilId
+}
+
+export async function datenbankSchliessen() {
+  if (!dbPromise) return
+  try {
+    const db = await dbPromise
+    db.close()
+  } catch {
+    /* Verbindung war ohnehin nicht brauchbar */
+  }
+  dbPromise = null
+}
 
 function oeffnen() {
   if (dbPromise) return dbPromise
+  if (!aktuellesProfil) {
+    return Promise.reject(new Error('Kein Profil aktiv - datenbankFuerProfilSetzen() zuerst aufrufen.'))
+  }
+  const name = `lernprogramm_${aktuellesProfil}`
   dbPromise = new Promise((resolve, reject) => {
-    const anfrage = indexedDB.open(DB_NAME, DB_VERSION)
+    const anfrage = indexedDB.open(name, DB_VERSION)
     anfrage.onupgradeneeded = () => {
       const db = anfrage.result
       if (!db.objectStoreNames.contains(STORE)) {
@@ -131,7 +163,7 @@ export async function alleEreignisse() {
   })
 }
 
-export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs }) {
+export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, hilfe, quelle }) {
   const ereignis = {
     id: crypto.randomUUID(),
     ts: Date.now(),
@@ -140,6 +172,8 @@ export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs })
     paketId,
     bewertung,
     dauerMs,
+    hilfe,
+    quelle,
   }
   const store = await transaktion('readwrite')
   await new Promise((resolve, reject) => {
@@ -170,6 +204,82 @@ export async function skizzeLoeschen(id) {
   })
 }
 
+// Loescht die Datenbank eines Profils vollstaendig - fuer "Profil
+// loeschen". Eine noch offene Verbindung wuerde das Loeschen blockieren,
+// darum vorher grundsaetzlich schliessen.
+export async function datenbankLoeschen(profilId) {
+  await datenbankSchliessen()
+  await new Promise((resolve) => {
+    const anfrage = indexedDB.deleteDatabase(`lernprogramm_${profilId}`)
+    anfrage.onsuccess = () => resolve()
+    anfrage.onerror = () => resolve()
+    anfrage.onblocked = () => resolve()
+  })
+}
+
+// --- Uebernahme des Altbestands (vor Profilen) ----------------------
+//
+// Wer die App schon vor den Nutzerprofilen benutzt hat, hatte eine
+// einzige Datenbank ohne Profilbezug. Diese Funktionen lesen sie ohne
+// Seiteneffekt aus (kein neues, leeres "lernprogramm" wird angelegt,
+// falls es sie nie gab) und spielen ihren Inhalt einmalig ins gerade
+// aktive Profil ein. Die alte Datenbank bleibt danach unangetastet
+// liegen - es wird nichts geloescht, nur nicht mehr benutzt.
+
+function alleAusFremderDb(dbName, storeName) {
+  return new Promise((resolve) => {
+    const anfrage = indexedDB.open(dbName)
+    anfrage.onupgradeneeded = () => {
+      // Ohne Version angegeben legt open() eine fehlende Datenbank neu
+      // an - das wollen wir hier nur zum Pruefen nicht.
+      anfrage.transaction.abort()
+    }
+    anfrage.onsuccess = () => {
+      const db = anfrage.result
+      if (!db.objectStoreNames.contains(storeName)) {
+        db.close()
+        resolve([])
+        return
+      }
+      const anfrage2 = db.transaction(storeName, 'readonly').objectStore(storeName).getAll()
+      anfrage2.onsuccess = () => {
+        db.close()
+        resolve(anfrage2.result)
+      }
+      anfrage2.onerror = () => {
+        db.close()
+        resolve([])
+      }
+    }
+    anfrage.onerror = () => resolve([])
+    anfrage.onblocked = () => resolve([])
+  })
+}
+
+export async function altbestandPruefen(dbName = ALTE_DB_NAME) {
+  const ereignisse = await alleAusFremderDb(dbName, STORE)
+  return ereignisse.length > 0
+}
+
+// Muss erst NACH datenbankFuerProfilSetzen() fuer das Zielprofil
+// aufgerufen werden - vereinigen() schreibt in die gerade aktive
+// Datenbank.
+export async function altbestandUebernehmen(dbName = ALTE_DB_NAME) {
+  const [ereignisse, skizzen, marken, pruefungen] = await Promise.all([
+    alleAusFremderDb(dbName, STORE),
+    alleAusFremderDb(dbName, SKIZZEN),
+    alleAusFremderDb(dbName, MARKEN),
+    alleAusFremderDb(dbName, PRUEFUNGEN),
+  ])
+  const [nEreignisse, nSkizzen, nMarken, nPruefungen] = await Promise.all([
+    vereinigen(STORE, ereignisse, 'id'),
+    vereinigen(SKIZZEN, skizzen, 'id'),
+    vereinigen(MARKEN, marken, 'itemId'),
+    vereinigen(PRUEFUNGEN, pruefungen, 'id'),
+  ])
+  return { ereignisse: nEreignisse, skizzen: nSkizzen, marken: nMarken, pruefungen: nPruefungen }
+}
+
 // Bittet den Browser, die Daten dauerhaft zu behalten. Ohne das
 // duerfen Browser IndexedDB bei Speicherdruck verwerfen.
 export async function speicherSichern() {
@@ -192,8 +302,12 @@ export async function allesLoeschen() {
 }
 
 // Export und Import bilden vorerst die Synchronisation zwischen
-// Geraeten ab. Der Import vereinigt, er ersetzt nicht.
-export async function exportieren({ mitSkizzen = true } = {}) {
+// Geraeten ab - auch zwischen verschiedenen Betriebssystemen (z. B.
+// iPhone und Android), weil es nur eine Textdatei ist. Der Import
+// vereinigt, er ersetzt nicht. Profil-Id und -Name reisen mit, damit
+// eine Importstelle spaeter automatisch das passende Profil anbieten
+// kann statt nur "irgendein" Ereignisprotokoll zu bekommen.
+export async function exportieren({ mitSkizzen = true, profilId, profilName } = {}) {
   const [ereignisse, skizzen, marken, pruefungen] = await Promise.all([
     alleEreignisse(),
     alleSkizzen(),
@@ -204,6 +318,7 @@ export async function exportieren({ mitSkizzen = true } = {}) {
     {
       version: 3,
       exportiertAm: Date.now(),
+      profil: profilId ? { id: profilId, name: profilName } : undefined,
       ereignisse,
       skizzen: mitSkizzen ? skizzen : [],
       marken,

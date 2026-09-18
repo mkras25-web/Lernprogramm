@@ -5,7 +5,6 @@ import {
   alleEreignisse,
   alleMarken,
   alleSkizzen,
-  ereignisLoeschen,
   ereignisSpeichern,
   exportieren,
   importieren,
@@ -13,7 +12,6 @@ import {
   markeSetzen,
   pruefungSpeichern,
   skizzeLoeschen,
-  skizzeSpeichern,
   speicherSichern,
 } from './lib/speicher.js'
 import { BEWERTUNG, pensumBauen, statistik, zustaendeBerechnen } from './lib/planer.js'
@@ -26,7 +24,6 @@ import {
   RAENGE,
   moduleAuswerten,
   serieBerechnen,
-  xpFuerEreignis,
   xpFuerPruefung,
   xpFuerMeilensteine,
   xpGesamt,
@@ -35,7 +32,9 @@ import {
 import { itemsAnreichern, lernbareItems } from './lib/sichtung.js'
 import { monatspruefungFaellig, pruefungsplan } from './lib/pruefung.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
+import { profilListe } from './lib/profile.js'
 import { serienquote } from './lib/stufen.js'
+import { useLernsitzung } from './hooks/useLernsitzung.js'
 import Heute from './screens/Heute.jsx'
 import Themen from './screens/Themen.jsx'
 import Sammlung from './screens/Sammlung.jsx'
@@ -47,8 +46,7 @@ import Pruefung from './screens/Pruefung.jsx'
 import Glossar from './screens/Glossar.jsx'
 import Lernen from './screens/Lernen.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
-
-const SITZUNG_SCHLUESSEL = 'offeneSitzung'
+import Tastenhilfe from './components/Tastenhilfe.jsx'
 
 const NAVIGATION = [
   { id: 'heute', titel: 'Heute', symbol: '◴' },
@@ -73,16 +71,11 @@ function themenFortschritt0(items, zustaende) {
   return [...karte.values()].filter(Boolean)
 }
 
-function mischen(liste) {
-  const kopie = [...liste]
-  for (let i = kopie.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[kopie[i], kopie[j]] = [kopie[j], kopie[i]]
-  }
-  return kopie
-}
-
-export default function App() {
+export default function App({ profilId, onProfilWechseln }) {
+  const profilName = useMemo(
+    () => profilListe().find((p) => p.id === profilId)?.name ?? '',
+    [profilId]
+  )
   const [rohItems, setRohItems] = useState([])
   const [themen, setThemen] = useState([])
   const [paketModule, setPaketModule] = useState([])
@@ -96,18 +89,19 @@ export default function App() {
   const [marken, setMarken] = useState(new Map())
   const [fehler, setFehler] = useState(null)
   const [laedt, setLaedt] = useState(true)
+  const [meldung, setMeldung] = useState(null)
+  // Bewusst nur ueber einen Knopf in den Einstellungen erreichbar, nicht
+  // ueber eine globale "?"-Taste: Lernen und Sichtung haben eigene,
+  // aktive Tastaturkuerzel (1-4, R/S/U/X, ...) - ein global offenes
+  // Overlay wuerde deren Tasten unbemerkt durchlassen und im
+  // Hintergrund z. B. eine Bewertung ausloesen.
+  const [tastenhilfeOffen, setTastenhilfeOffen] = useState(false)
 
-  const [opt, setOpt] = useState(einstellungenLaden)
+  const [opt, setOpt] = useState(() => einstellungenLaden(profilId))
   const [ansicht, setAnsicht] = useState('heute')
   const [erklaerthema, setErklaerthema] = useState(null)
-  const [sitzung, setSitzung] = useState(null)
-  const [position, setPosition] = useState(0)
-  const [letzteXp, setLetzteXp] = useState(0)
-  const [letzteAktion, setLetzteAktion] = useState(null)
-  const [offeneSitzung, setOffeneSitzung] = useState(null)
   const [aufstieg, setAufstieg] = useState(null)
   const stufeVorher = useRef(null)
-  const startZeit = useRef(Date.now())
 
   useEffect(() => {
     speicherSichern()
@@ -142,18 +136,16 @@ export default function App() {
   }, [opt.aktivesPaket])
 
   useEffect(() => {
-    try {
-      const roh = localStorage.getItem(SITZUNG_SCHLUESSEL)
-      if (roh) setOffeneSitzung(JSON.parse(roh))
-    } catch {
-      /* ignorieren */
-    }
-  }, [])
-
-  useEffect(() => {
     anwenden(opt)
-    speichern(opt)
-  }, [opt])
+    speichern(profilId, opt)
+  }, [opt, profilId])
+
+  // Rueckmeldung zu Import/Export blendet sich von selbst wieder aus.
+  useEffect(() => {
+    if (!meldung) return
+    const timer = setTimeout(() => setMeldung(null), 6000)
+    return () => clearTimeout(timer)
+  }, [meldung])
 
 
   // Bearbeitete Fassungen ueberlagern das Paket.
@@ -283,167 +275,33 @@ export default function App() {
     [erlaubteItems, zustaende]
   )
 
-  function sitzungSichern(neueSitzung, pos) {
-    if (!neueSitzung) {
-      localStorage.removeItem(SITZUNG_SCHLUESSEL)
-      setOffeneSitzung(null)
-      return
-    }
-    const daten = {
-      art: neueSitzung.art,
-      ids: neueSitzung.pensum.map((i) => i.id),
-      position: pos,
-      ts: Date.now(),
-    }
-    localStorage.setItem(SITZUNG_SCHLUESSEL, JSON.stringify(daten))
-    setOffeneSitzung(daten)
-  }
-
-  function sitzungStarten(art = 'ueben', bereich = {}) {
-    let grundmenge = erlaubteItems
-    if (bereich.modulId) grundmenge = grundmenge.filter((i) => i.modulId === bereich.modulId)
-    if (bereich.themaId) grundmenge = grundmenge.filter((i) => i.themaId === bereich.themaId)
-
-    let pensum
-    if (art === 'baustellen') pensum = baustellenStapel.filter((i) => grundmenge.includes(i))
-    else if (art === 'skizzen') pensum = skizzenStapel.filter((i) => grundmenge.includes(i))
-    else if (art === 'neu') pensum = neueItems.filter((i) => grundmenge.includes(i))
-    else if (art === 'training') pensum = skizzenStapel.filter((i) => grundmenge.includes(i))
-    else if (art === 'fehlerstapel') {
-      const menge = new Set(bereich.ids ?? [])
-      pensum = mischen(erlaubteItems.filter((i) => menge.has(i.id)))
-    }
-    else if (art === 'marathon') {
-      // Endlos: Der Stapel wird beim Aufbrauchen nachgefuellt, Fehler
-      // kommen ohnehin ans Ende. Beendet wird von Hand.
-      pensum = mischen(grundmenge)
-    }
-    else if (art === 'schnell') {
-      // Zwei Minuten, so viele wie moeglich - bewusst kurze Itemtypen.
-      pensum = mischen(
-        grundmenge.filter((i) => ['karte', 'mehrfachauswahl', 'numerisch'].includes(i.typ))
-      ).slice(0, 25)
-    }
-    else if (art === 'blaettern') pensum = grundmenge
-    else {
-      pensum = pensumBauen(grundmenge, zustaende, {
-        neuProTag: opt.neuProTag,
-        maxProTag: opt.maxProTag,
-      }).pensum
-    }
-
-    if (opt.reihenfolge === 'gemischt' && art !== 'blaettern') pensum = mischen(pensum)
-    if (pensum.length === 0) return
-
-    const neueSitzung = { art, pensum }
-    setSitzung(neueSitzung)
-    setPosition(0)
-    setLetzteXp(0)
-    setLetzteAktion(null)
-    setErklaerthema(null)
-    startZeit.current = Date.now()
-    sitzungSichern(neueSitzung, 0)
-    setAnsicht('lernen')
-  }
-
-  function sitzungFortsetzen() {
-    if (!offeneSitzung) return
-    const nachId = new Map(erlaubteItems.map((i) => [i.id, i]))
-    const pensum = offeneSitzung.ids.map((id) => nachId.get(id)).filter(Boolean)
-    if (pensum.length === 0) {
-      sitzungSichern(null)
-      return
-    }
-    setSitzung({ art: offeneSitzung.art, pensum })
-    setPosition(Math.min(offeneSitzung.position, pensum.length - 1))
-    setLetzteXp(0)
-    setLetzteAktion(null)
-    startZeit.current = Date.now()
-    setAnsicht('lernen')
-  }
-
-  function weiter(zusatz = 0, sitzungJetzt = sitzung) {
-    // Zwei schnelle Tastendruecke auf dem letzten Item konnten diese
-    // Funktion ein zweites Mal aufrufen, nachdem die Sitzung schon
-    // beendet war - dann war sitzungJetzt null und der Zugriff auf
-    // .art brach die ganze Oberflaeche ab.
-    if (!sitzungJetzt?.pensum?.length) {
-      setAnsicht('heute')
-      setSitzung(null)
-      setPosition(0)
-      return
-    }
-
-    const naechste = position + 1
-
-    // Marathon endet nicht von selbst - der Stapel wird nachgefuellt.
-    if (sitzungJetzt.art === 'marathon' && naechste >= sitzungJetzt.pensum.length) {
-      const nachschub = mischen(erlaubteItems)
-      const erweitert = { ...sitzungJetzt, pensum: [...sitzungJetzt.pensum, ...nachschub] }
-      setSitzung(erweitert)
-      setPosition(naechste)
-      sitzungSichern(erweitert, naechste)
-      startZeit.current = Date.now()
-      return
-    }
-
-    if (naechste >= sitzungJetzt.pensum.length + zusatz) {
-      setAnsicht('heute')
-      setSitzung(null)
-      setPosition(0)
-      sitzungSichern(null)
-      return
-    }
-    setPosition(naechste)
-    sitzungSichern(sitzungJetzt, naechste)
-    startZeit.current = Date.now()
-  }
-
-  async function bewerten(bewertung, skizzenbild, hilfeGenutzt = false) {
-    const item = sitzung?.pensum?.[position]
-    if (!item) return
-
-    if (skizzenbild && opt.skizzenSichern) {
-      const eintrag = await skizzeSpeichern(item.id, skizzenbild)
-      setSkizzen((alte) => [...alte, eintrag])
-    }
-
-    if (sitzung.art === 'blaettern') {
-      weiter()
-      return
-    }
-
-    const ereignis = await ereignisSpeichern({
-      itemId: item.id,
-      paketId: item.paketId,
-      bewertung,
-      dauerMs: Date.now() - startZeit.current,
-      hilfe: hilfeGenutzt || undefined,
-    })
-    setEreignisse((alte) => [...alte, ereignis])
-    setLetzteXp(xpFuerEreignis(ereignis, item))
-    setLetzteAktion({ ereignisId: ereignis.id, position })
-
-    let zusatz = 0
-    let sitzungJetzt = sitzung
-    if (bewertung === BEWERTUNG.NOCHMAL) {
-      sitzungJetzt = { ...sitzung, pensum: [...sitzung.pensum, item] }
-      setSitzung(sitzungJetzt)
-      zusatz = 1
-    }
-    weiter(zusatz, sitzungJetzt)
-  }
-
-  // Rueckgaengig: Ereignis loeschen und eine Position zurueck.
-  async function rueckgaengig() {
-    if (!letzteAktion || !sitzung) return
-    await ereignisLoeschen(letzteAktion.ereignisId)
-    setEreignisse((alte) => alte.filter((e) => e.id !== letzteAktion.ereignisId))
-    setPosition(letzteAktion.position)
-    setLetzteXp(0)
-    setLetzteAktion(null)
-    startZeit.current = Date.now()
-  }
+  const {
+    sitzung,
+    position,
+    letzteXp,
+    letzteAktion,
+    offeneSitzung,
+    sitzungStarten,
+    sitzungFortsetzen,
+    weiter,
+    bewerten,
+    rueckgaengig,
+    zurueckblaettern,
+    verlassen,
+    verwerfen,
+  } = useLernsitzung({
+    profilId,
+    erlaubteItems,
+    zustaende,
+    opt,
+    baustellenStapel,
+    skizzenStapel,
+    neueItems,
+    setEreignisse,
+    setSkizzen,
+    setAnsicht,
+    setErklaerthema,
+  })
 
   async function markeAendern(itemId, aenderung) {
     const vorher = marken.get(itemId) ?? {}
@@ -490,7 +348,7 @@ export default function App() {
   }, [ereignisse.length, opt.letzteSicherung])
 
   async function exportKlick(mitSkizzen = true) {
-    const text = await exportieren({ mitSkizzen })
+    const text = await exportieren({ mitSkizzen, profilId, profilName })
     const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }))
     const a = document.createElement('a')
     a.href = url
@@ -513,12 +371,14 @@ export default function App() {
       setSkizzen(s)
       setMarken(new Map(m.map((x) => [x.itemId, x])))
       setPruefungen(p)
-      alert(
-        `Übernommen: ${bericht.ereignisse} Ereignisse, ${bericht.skizzen} Skizzen, ` +
-          `${bericht.marken} Marken, ${bericht.pruefungen} Prüfungen.`
-      )
+      setMeldung({
+        art: 'erfolg',
+        text:
+          `Übernommen: ${bericht.ereignisse} Ereignisse, ${bericht.skizzen} Skizzen, ` +
+          `${bericht.marken} Marken, ${bericht.pruefungen} Prüfungen.`,
+      })
     } catch (e) {
-      alert(`Import nicht möglich: ${e.message}`)
+      setMeldung({ art: 'fehler', text: `Import nicht möglich: ${e.message}` })
     }
   }
 
@@ -528,12 +388,19 @@ export default function App() {
     setSkizzen([])
     setMarken(new Map())
     setPruefungen([])
-    sitzungSichern(null)
+    verwerfen()
     setAnsicht('heute')
   }
 
   if (laedt) {
-    return <div className="huelle einspaltig"><p className="nebentext">Paket wird geladen …</p></div>
+    return (
+      <div className="huelle einspaltig">
+        <div className="ladeAnzeige" role="status" aria-live="polite">
+          <span className="spinner" aria-hidden="true" />
+          <p className="nebentext">Paket wird geladen …</p>
+        </div>
+      </div>
+    )
   }
 
   if (fehler) {
@@ -570,22 +437,9 @@ export default function App() {
           onMarke={markeAendern}
           onBewerten={bewerten}
           onUeberspringen={() => weiter()}
-          onZurueckblaettern={() => {
-            // Blaettert nur zurueck - gespeicherte Bewertungen bleiben.
-            // Wer erneut bewertet, erzeugt ein zweites Ereignis; das ist
-            // gewollt, weil auch die zweite Antwort eine Antwort ist.
-            if (position === 0) return
-            const neu = position - 1
-            setPosition(neu)
-            setLetzteXp(0)
-            sitzungSichern(sitzung, neu)
-            startZeit.current = Date.now()
-          }}
+          onZurueckblaettern={zurueckblaettern}
           onRueckgaengig={rueckgaengig}
-          onZurueck={() => {
-            setAnsicht('heute')
-            setSitzung(null)
-          }}
+          onZurueck={verlassen}
         />
       </div>
     )
@@ -619,6 +473,17 @@ export default function App() {
         ))}
       </nav>
 
+      {meldung && (
+        <div
+          className={meldung.art === 'fehler' ? 'meldung fehler' : 'meldung'}
+          role="status"
+          aria-live="polite"
+        >
+          <p>{meldung.text}</p>
+          <button onClick={() => setMeldung(null)} aria-label="Meldung schließen">✕</button>
+        </div>
+      )}
+
       {ansicht === 'heute' && (
         <Heute
           level={level}
@@ -632,7 +497,7 @@ export default function App() {
           neue={neueItems.length}
           offeneSitzung={offeneSitzung}
           onFortsetzen={sitzungFortsetzen}
-          onVerwerfen={() => sitzungSichern(null)}
+          onVerwerfen={verwerfen}
           onStart={(art) => sitzungStarten(art, {})}
           onThemen={() => setAnsicht('themen')}
           aufstieg={aufstieg}
@@ -729,8 +594,13 @@ export default function App() {
           onExport={exportKlick}
           onImport={importKlick}
           onLoeschen={loeschen}
+          profilName={profilName}
+          onProfilWechseln={onProfilWechseln}
+          onTastenhilfe={() => setTastenhilfeOffen(true)}
         />
       )}
+
+      <Tastenhilfe offen={tastenhilfeOffen} onSchliessen={() => setTastenhilfeOffen(false)} />
     </div>
   )
 }

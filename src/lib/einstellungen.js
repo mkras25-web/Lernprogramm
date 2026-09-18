@@ -1,7 +1,17 @@
 // Einstellungen. Getrennt vom Ereignisprotokoll: Sie beschreiben Geraet
 // und Geschmack, nicht den Lernfortschritt.
+//
+// Jedes Nutzerprofil (siehe profile.js) hat eigene Einstellungen, u. a.
+// weil unterschiedliche Profile auch unterschiedliche Inhaltspakete
+// lernen koennen sollen (aktivesPaket).
 
-const SCHLUESSEL = 'einstellungen'
+// ALTER_SCHLUESSEL war der einzige, profillose Speicherort vor der
+// Einfuehrung von Nutzerprofilen - fuer die einmalige Uebernahme.
+export const ALTER_SCHLUESSEL = 'einstellungen'
+
+function schluesselFuer(profilId) {
+  return `einstellungen_${profilId}`
+}
 
 // Die Tupfer sind nur die Vorschau im Auswahlfenster. Die tatsaechlichen
 // Rollen der Farben stehen als CSS-Block in styles.css, weil dort auch
@@ -47,17 +57,31 @@ export const STANDARD = {
   aufstiegFeiern: true,
 }
 
-export function laden() {
+function systemDunkel() {
   try {
-    const roh = localStorage.getItem(SCHLUESSEL)
-    return roh ? { ...STANDARD, ...JSON.parse(roh) } : { ...STANDARD }
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
+  } catch {
+    return false
+  }
+}
+
+export function laden(profilId) {
+  try {
+    const roh = localStorage.getItem(schluesselFuer(profilId))
+    const gespeichert = roh ? JSON.parse(roh) : {}
+    // Nur beim allerersten Start (noch keine eigene Wahl gespeichert)
+    // nach Systemvoreinstellung starten - eine einmal getroffene Wahl
+    // wird nie von der Systemeinstellung ueberschrieben.
+    const standard = { ...STANDARD }
+    if (gespeichert.palette === undefined && systemDunkel()) standard.palette = 'dunkel'
+    return { ...standard, ...gespeichert }
   } catch {
     return { ...STANDARD }
   }
 }
 
-export function speichern(einstellungen) {
-  localStorage.setItem(SCHLUESSEL, JSON.stringify(einstellungen))
+export function speichern(profilId, einstellungen) {
+  localStorage.setItem(schluesselFuer(profilId), JSON.stringify(einstellungen))
 }
 
 export function anwenden(e) {

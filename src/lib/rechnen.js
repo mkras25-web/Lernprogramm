@@ -84,7 +84,7 @@ export function rechnen(formel, werte = {}) {
       return fn(...argumente)
     }
 
-    if (teil in werte) return werte[teil]
+    if (Object.prototype.hasOwnProperty.call(werte, teil)) return werte[teil]
     throw new Error(`Unbekannte Größe: ${teil}`)
   }
 

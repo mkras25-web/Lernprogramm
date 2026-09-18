@@ -3,7 +3,7 @@ import { PALETTEN, SCHRIFTGROESSEN, STANDARD } from '../lib/einstellungen.js'
 
 export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung,
-  onExport, onImport, onLoeschen,
+  onExport, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe,
 }) {
   const [loeschfrage, setLoeschfrage] = useState(false)
   const [palettenfenster, setPalettenfenster] = useState(false)
@@ -23,6 +23,25 @@ export default function Einstellungen({
   return (
     <div className="schirm">
       <h1 className="ueberschrift">Einstellungen</h1>
+
+      <section className="block">
+        <h2 className="abschnitt">Profil</h2>
+        <div className="feldgruppe">
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Angemeldet als {profilName}</p>
+              <p className="zeileHinweis">
+                Jedes Profil hat einen eigenen, vollständig getrennten Fortschritt - auch über
+                mehrere Inhaltspakete hinweg. Zum Umziehen auf ein anderes Gerät: unten
+                sichern, dort einlesen.
+              </p>
+            </div>
+            <button className="knopf schmal" onClick={onProfilWechseln}>
+              Profil wechseln
+            </button>
+          </div>
+        </div>
+      </section>
 
       <section className="block">
         <h2 className="abschnitt">Inhaltspaket</h2>
@@ -337,6 +356,23 @@ export default function Einstellungen({
             </div>
             <button className="knopf schmal gefahr" onClick={() => setLoeschfrage(true)}>
               Löschen
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="block">
+        <h2 className="abschnitt">Hilfe</h2>
+        <div className="feldgruppe">
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Tastenkürzel</p>
+              <p className="zeileHinweis">
+                Übersicht aller Tastenkürzel beim Lernen und beim Sichten.
+              </p>
+            </div>
+            <button className="knopf schmal" onClick={onTastenhilfe}>
+              Anzeigen
             </button>
           </div>
         </div>

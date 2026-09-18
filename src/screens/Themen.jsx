@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import Ring from '../components/Ring.jsx'
+import { passt } from '../lib/suche.js'
 
 // Drei Ebenen: alles, ein Modul, ein einzelnes Thema. Darueber liegen
 // Fachbereiche - sie beschreiben das Fach. Wann etwas dran ist, steht
@@ -16,8 +17,29 @@ export default function Themen({
   const liste = Object.entries(bereiche ?? {})
   const [bereich, setBereich] = useState(liste[0]?.[0] ?? null)
   const [offenesModul, setOffenesModul] = useState(null)
+  const [suche, setSuche] = useState('')
+  const sucheAktiv = suche.trim().length > 0
 
-  const sichtbar = module.filter((m) => m.bereich === bereich)
+  // Nach modulId gruppiert, damit die Suche nicht bei jedem Tastendruck
+  // die ganze Themenliste neu durchfiltert.
+  const themenNachModul = useMemo(() => {
+    const karte = new Map()
+    for (const t of themen) {
+      if (!karte.has(t.modulId)) karte.set(t.modulId, [])
+      karte.get(t.modulId).push(t)
+    }
+    return karte
+  }, [themen])
+
+  // Eine aktive Suche durchsucht ueber alle Fachbereiche hinweg - man
+  // weiss beim Suchen selten noch, in welchem Bereich ein Thema steckt.
+  const sichtbar = useMemo(() => {
+    if (!sucheAktiv) return module.filter((m) => m.bereich === bereich)
+    return module.filter((m) => {
+      if (passt(suche, m.titel)) return true
+      return (themenNachModul.get(m.id) ?? []).some((t) => passt(suche, t.titel))
+    })
+  }, [module, bereich, sucheAktiv, suche, themenNachModul])
 
   return (
     <div className="schirm">
@@ -28,7 +50,14 @@ export default function Themen({
         </button>
       </div>
 
-      <div className="reiter">
+      <input
+        className="suchfeld"
+        value={suche}
+        onChange={(e) => setSuche(e.target.value)}
+        placeholder="Thema suchen … (verzeiht Tippfehler)"
+      />
+
+      <div className="reiter" aria-hidden={sucheAktiv} style={sucheAktiv ? { opacity: 0.4 } : undefined}>
         {liste.map(([id, titel]) => {
           const eigene = module.filter((m) => m.bereich === id)
           const gesamt = eigene.reduce((s, m) => s + m.gesamt, 0)
@@ -36,6 +65,7 @@ export default function Themen({
             <button
               key={id}
               className={id === bereich ? 'reiterKnopf aktiv' : 'reiterKnopf'}
+              disabled={sucheAktiv}
               onClick={() => {
                 setBereich(id)
                 setOffenesModul(null)
@@ -48,9 +78,14 @@ export default function Themen({
         })}
       </div>
 
+      {sucheAktiv && sichtbar.length === 0 && (
+        <p className="nebentext">Kein Thema passt zu „{suche}".</p>
+      )}
+
       {sichtbar.map((m) => {
-        const offen = offenesModul === m.id
-        const eigene = themen.filter((t) => t.modulId === m.id)
+        const offen = sucheAktiv ? true : offenesModul === m.id
+        const eigeneAlle = themenNachModul.get(m.id) ?? []
+        const eigene = sucheAktiv ? eigeneAlle.filter((t) => passt(suche, t.titel)) : eigeneAlle
         const leer = m.gesamt === 0
         return (
           <section key={m.id} className="block">
@@ -68,9 +103,13 @@ export default function Themen({
                       (m.faellig > 0 ? ` · ${m.faellig} fällig` : '')}
                 </p>
               </div>
-              <button className="artKnopf" onClick={() => setOffenesModul(offen ? null : m.id)}>
-                {offen ? 'Zuklappen' : 'Themen zeigen'}
-              </button>
+              {sucheAktiv ? (
+                <span />
+              ) : (
+                <button className="artKnopf" onClick={() => setOffenesModul(offen ? null : m.id)}>
+                  {offen ? 'Zuklappen' : 'Themen zeigen'}
+                </button>
+              )}
               {leer ? (
                 <span />
               ) : (

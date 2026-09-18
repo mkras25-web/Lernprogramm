@@ -39,7 +39,14 @@ export default function Skizzen({ skizzen, items, onLoeschen }) {
           <div className="skizzenband" style={{ marginTop: '0.75rem' }}>
             {g.eintraege.map((s) => (
               <figure key={s.id} className="skizzenEintrag">
-                <img src={s.bild} alt="" onClick={() => setGross(s)} />
+                <button
+                  type="button"
+                  className="lupenKnopf"
+                  onClick={() => setGross(s)}
+                  title="Vergrößern"
+                >
+                  <img src={s.bild} alt="" />
+                </button>
                 <figcaption>
                   {new Date(s.ts).toLocaleDateString('de-DE')}
                   <button className="textknopf" onClick={() => onLoeschen(s.id)}>löschen</button>
