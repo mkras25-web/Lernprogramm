@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="dA" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#adc178"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+    </pattern>
+    <pattern id="mA" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect width="22" height="22" fill="#a98467"/>
+      <line x1="0" y1="11" x2="22" y2="11" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+      <line x1="11" y1="0" x2="11" y2="11" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+      <line x1="0" y1="11" x2="0" y2="22" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+  <rect width="520" height="420" fill="#f0ead2"/>
+  <rect x="150" y="40" width="100" height="340" fill="url(#mA)" stroke="#414833" stroke-width="1.5"/>
+  <rect x="250" y="40" width="50" height="340" fill="url(#dA)" stroke="#414833" stroke-width="1.5"/>
+  <rect x="40" y="190" width="210" height="40" fill="#a98467" stroke="#414833" stroke-width="1.5"/>
+  <g font-size="15" fill="#414833">
+    <text x="60" y="120">innen</text>
+    <text x="380" y="120">außen</text>
+    <text x="330" y="204" font-size="14" fill="#6c584c">Dämmebene</text>
+    <text x="330" y="222" font-size="14" fill="#6c584c">läuft durch</text>
+    <line x1="326" y1="200" x2="302" y2="186" stroke="#6c584c" stroke-width="1.2"/>
+    <text x="46" y="280" font-size="13" fill="#6c584c">Geschossdecke</text>
+  </g>
+</svg>

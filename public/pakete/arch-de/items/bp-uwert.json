@@ -1,0 +1,1086 @@
+{
+  "thema": "bp-uwert",
+  "titel": "Wärmeschutz: U-Wert und Wärmedurchlasswiderstand",
+  "erklaerung": {
+    "absaetze": [
+      "Wärme fließt von innen nach außen, und auf diesem Weg liegen Widerstände hintereinander: erst der Übergang von der Raumluft auf die Bauteiloberfläche, dann die Leitung durch jede einzelne Schicht, zuletzt der Übergang an die Außenluft. Wie bei hintereinandergeschalteten Widerständen addieren sich diese Anteile. Der gesamte Widerstand heißt Wärmedurchgangswiderstand RT, sein Kehrwert ist der U-Wert.",
+      "Der Widerstand einer einzelnen Schicht ist R = d / λ. Die Wärmeleitfähigkeit λ ist eine Stoffeigenschaft, die Dicke d kommt von der Konstruktion – erst beide zusammen ergeben eine Dämmwirkung. Ein Ziegel mit λ = 0,50 W/(m·K) bringt bei 36,5 cm gerade R = 0,73 m²·K/W, dieselbe Wirkung erreichen rund 3 cm Dämmstoff. Bei mehreren Schichten werden die Einzelwiderstände addiert.",
+      "Die beiden Übergangswiderstände sind gewissermaßen unsichtbare Schichten aus ruhender Luft direkt vor den Oberflächen. Innen sind sie dicker, weil die Luft dort nur durch natürliche Konvektion bewegt wird; außen bläst der Wind sie dünn. Deshalb Rsi = 0,13 und Rse = 0,04 m²·K/W für Wände. Bei Decken hängt Rsi von der Richtung des Wärmestroms ab: 0,10 nach oben, 0,17 nach unten. Damit gilt RT = Rsi + ΣR + Rse und U = 1 / RT.",
+      "Beim λ ist zu unterscheiden, welcher Wert gemeint ist. Der Nennwert stammt aus der Messung am Produkt. Gerechnet wird mit dem Bemessungswert, der Feuchte, Einbau und Alterung einschließt und deshalb höher liegt; in Deutschland ist er in DIN 4108-4 tabelliert. Der Grund für den Zuschlag ist anschaulich: Dämmwirkung beruht auf ruhender Luft in den Poren, und Wasser leitet Wärme rund zwanzigmal besser als Luft.",
+      "In der Praxis stören mehrere Dinge den einfachen Rechenweg: ruhende und belüftete Luftschichten werden unterschiedlich angesetzt, bei Bauteilen mit Abdichtung zählen nur die raumseitigen Schichten, inhomogene Bauteile wie Sparrendächer brauchen ein Verfahren mit oberem und unterem Grenzwert, und Luftspalte, Befestigungen oder Umkehrdächer verlangen Korrekturen. Und schließlich sagt der U-Wert nur etwas über den ungestörten Bereich – was an Anschlüssen und Durchdringungen passiert, ist Sache der Wärmebrücken."
+    ],
+    "merksatz": "Widerstände addieren, dann einmal umdrehen: U = 1 / (Rsi + Σ d/λ + Rse).",
+    "bild": "bilder/uwert-schichtaufbau.svg",
+    "bildunterschrift": "Zweischalige Außenwand mit Kerndämmung: Aus den Einzelwiderständen und den beiden Übergangswiderständen ergibt sich RT = 4,702 m²·K/W und damit U = 0,213 W/(m²·K).",
+    "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 66–72 und 97–107; Lübbe, Klausurtraining Bauphysik, S. 13–26; Pech/Pöhn, Bauphysik, S. 16–20"
+  },
+  "items": [
+    {
+      "id": "bp-uw-001",
+      "typ": "karte",
+      "frage": "Was gibt die Wärmeleitfähigkeit λ eines Baustoffs an, und in welcher Einheit wird sie angegeben?",
+      "antwort": "λ beschreibt, wie gut ein Stoff Wärme leitet: den Wärmestrom durch eine 1 m dicke Schicht von 1 m² Fläche bei 1 K Temperaturunterschied. Einheit W/(m·K). λ ist eine reine Stoffeigenschaft und sagt für sich allein noch nichts über die Dämmwirkung eines Bauteils aus – dazu gehört immer auch die Schichtdicke.",
+      "vertiefung": "Die Wärmeleitzahl hängt vor allem vom Anteil eingeschlossener ruhender Luft ab. Stehende Luft hat mit rund 0,024 W/(m·K) die kleinste Wärmeleitzahl überhaupt – deshalb dämmen poröse, leichte Stoffe gut. Wird die Luft in den Poren durch Wasser ersetzt (λ ≈ 0,55), steigt die Wärmeleitfähigkeit stark an.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "begriffe"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 97; Pech/Pöhn, Bauphysik, S. 17",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-uw-002",
+      "typ": "karte",
+      "frage": "Was ist der Wärmedurchlasswiderstand R, und wie wird er berechnet?",
+      "antwort": "R ist der Widerstand einer Bauteilschicht gegen das Durchdringen von Wärme: R = d / λ, Einheit m²·K/W. Je dicker die Schicht und je kleiner λ, desto größer R und desto besser die Dämmwirkung. Bei mehreren Schichten addieren sich die Einzelwiderstände.",
+      "vertiefung": "R bezieht sich nur auf die Bauteilschichten selbst, ohne die Luftgrenzschichten an den Oberflächen. Wer R mit dem Wärmedurchgangswiderstand RT verwechselt, rechnet die Übergangswiderstände doppelt oder gar nicht.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "begriffe"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 66–67 und 97; Lübbe, Klausurtraining Bauphysik, S. 13",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-uw-003",
+      "typ": "zuordnung",
+      "frage": "Ordne die Formelzeichen ihrer Bedeutung und Einheit zu.",
+      "antwort": "λ Wärmeleitfähigkeit W/(m·K) · R Wärmedurchlasswiderstand m²·K/W · RT Wärmedurchgangswiderstand m²·K/W · U Wärmedurchgangskoeffizient W/(m²·K) · q Wärmestromdichte W/m²",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "begriffe"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 94–98",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "λ",
+          "Wärmeleitfähigkeit in W/(m·K)"
+        ],
+        [
+          "R",
+          "Wärmedurchlasswiderstand in m²·K/W"
+        ],
+        [
+          "RT",
+          "Wärmedurchgangswiderstand in m²·K/W"
+        ],
+        [
+          "U",
+          "Wärmedurchgangskoeffizient in W/(m²·K)"
+        ],
+        [
+          "q",
+          "Wärmestromdichte in W/m²"
+        ]
+      ]
+    },
+    {
+      "id": "bp-uw-004",
+      "typ": "numerisch",
+      "frage": "Welchen Rechenwert hat der innere Wärmeübergangswiderstand Rsi an einer Wandfläche?",
+      "antwort": "Rsi = 0,13 m²·K/W",
+      "vertiefung": "Der Wert gilt für Wandflächen, Innenfenster und Außenfenster bei natürlicher Luftbewegung im Raum. Für Decken hängt er von der Richtung des Wärmestroms ab.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 69 (Tafel 1.30 nach DIN 4108-4); Lübbe, Klausurtraining Bauphysik, S. 15",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 0.13,
+      "einheit": "m²·K/W",
+      "toleranz": 0.005
+    },
+    {
+      "id": "bp-uw-005",
+      "typ": "numerisch",
+      "frage": "Welchen Rechenwert hat der äußere Wärmeübergangswiderstand Rse?",
+      "antwort": "Rse = 0,04 m²·K/W",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 69 (Tafel 1.30 nach DIN 4108-4); Lübbe, Klausurtraining Bauphysik, S. 15",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 0.04,
+      "einheit": "m²·K/W",
+      "toleranz": 0.005
+    },
+    {
+      "id": "bp-uw-006",
+      "typ": "zuordnung",
+      "frage": "Ordne den Bauteilflächen den zugehörigen Wärmeübergangswiderstand zu.",
+      "antwort": "Wandfläche innen 0,13 · Decke mit Wärmestrom nach oben 0,10 · Decke mit Wärmestrom nach unten 0,17 · Außenfläche 0,04 m²·K/W",
+      "vertiefung": "Beim Wärmestrom nach oben unterstützt der Auftrieb die Konvektion, die Luftschicht dämmt weniger, der Widerstand ist kleiner. Beim Wärmestrom nach unten bleibt die kühle Luft unten liegen, der Widerstand steigt.",
+      "tags": [
+        "waermeschutz",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 69 (Tafel 1.30 nach DIN 4108-4)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Wandfläche im Innenraum",
+          "Rsi = 0,13 m²·K/W"
+        ],
+        [
+          "Decke, Wärmestrom nach oben",
+          "Rsi = 0,10 m²·K/W"
+        ],
+        [
+          "Decke, Wärmestrom nach unten",
+          "Rsi = 0,17 m²·K/W"
+        ],
+        [
+          "Außenfläche der Gebäudehülle",
+          "Rse = 0,04 m²·K/W"
+        ]
+      ]
+    },
+    {
+      "id": "bp-uw-007",
+      "typ": "karte",
+      "frage": "Warum ist der äußere Wärmeübergangswiderstand kleiner als der innere?",
+      "antwort": "Weil die Luft außen durch Wind bewegt wird. Innen entsteht die Luftbewegung nur durch natürliche Konvektion, sodass sich eine dickere, ruhigere Grenzschicht vor der Oberfläche hält. Die erzwungene Konvektion außen trägt die Wärme schneller ab, der Übergangswiderstand fällt entsprechend geringer aus.",
+      "vertiefung": "Aus demselben Grund steigt der Übergangswiderstand in Rauminnenecken an: dort bilden sich stärkere ruhende Luftpolster. Das ist mit ein Grund, warum Ecken als Erstes auskühlen und dort Schimmel auftritt.",
+      "tags": [
+        "waermeschutz",
+        "randbedingungen",
+        "verstaendnis"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 15",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-uw-008",
+      "typ": "karte",
+      "frage": "Worin unterscheiden sich Wärmedurchlasswiderstand R und Wärmedurchgangswiderstand RT?",
+      "antwort": "R erfasst nur die Bauteilschichten (Summe aller d/λ). RT erfasst den gesamten Weg von der Raumluft bis zur Außenluft und enthält zusätzlich die beiden Übergangswiderstände: RT = Rsi + ΣR + Rse. Der U-Wert wird immer aus RT gebildet, nicht aus R.",
+      "vertiefung": "Anforderungen werden mal an das eine, mal an das andere gestellt: der Mindestwärmeschutz nach DIN 4108-2 ist über R formuliert, die energetischen Anforderungen über den U-Wert.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "begriffe"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 97–98; Lübbe, Klausurtraining Bauphysik, S. 15",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-uw-009",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen über den Wärmedurchgangskoeffizienten U treffen zu?",
+      "antwort": "Zutreffend: U ist der Kehrwert von RT, ein kleinerer U-Wert bedeutet weniger Wärmedurchgang, und früher hieß dieselbe Größe k-Wert. Nicht zutreffend ist, dass U ohne die Übergangswiderstände gebildet wird.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 70 und 98; Pech/Pöhn, Bauphysik, S. 17",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "U ist der Kehrwert des Wärmedurchgangswiderstands RT",
+        "Je kleiner U, desto geringer der Wärmedurchgang durch das Bauteil",
+        "U wurde früher als k-Wert bezeichnet",
+        "U wird allein aus den Bauteilschichten ohne Rsi und Rse gebildet"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "bp-uw-010",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte einer U-Wert-Berechnung in die richtige Reihenfolge.",
+      "antwort": "Bemessungswerte λ bestimmen, je Schicht R = d/λ, Summe bilden, Übergangswiderstände ergänzen, U = 1/RT, Korrekturen prüfen und runden.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "ablauf"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 97–98",
+      "stand": "2026-09",
+      "geprueft": true,
+      "schritte": [
+        "Für jede Schicht den Bemessungswert der Wärmeleitfähigkeit λ bestimmen",
+        "Für jede Schicht R = d/λ berechnen",
+        "Die Einzelwiderstände zur Summe ΣR addieren",
+        "Rsi und Rse nach Lage und Wärmestromrichtung ergänzen: RT = Rsi + ΣR + Rse",
+        "U = 1/RT bilden",
+        "Korrekturen ΔU prüfen und das Ergebnis auf zwei Dezimalstellen runden"
+      ]
+    },
+    {
+      "id": "bp-uw-011",
+      "typ": "karte",
+      "frage": "Was ist der Unterschied zwischen dem Nennwert und dem Bemessungswert der Wärmeleitfähigkeit?",
+      "antwort": "Der Nennwert (deklarierter Wert) stammt aus der Messung am Produkt und wird heute als statistischer 90/90-Wert ermittelt. Der Bemessungswert ist der Wert, mit dem gerechnet wird: Er berücksichtigt zusätzlich die Bedingungen im eingebauten Zustand, vor allem Feuchte, Einbausituation und Alterung, und liegt deshalb in der Regel über dem Nennwert. Tabellierte Bemessungswerte für den Nachweis in Deutschland enthält DIN 4108-4.",
+      "vertiefung": "Verwechslung ist ein Klassiker: Wer mit dem Prospektwert des Herstellers rechnet, bekommt einen zu günstigen U-Wert. Der Zusammenhang ist physikalisch klar – feuchte Dämmung leitet besser Wärme, weil die ruhende Luft in den Poren durch Wasser ersetzt wird.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "pruefungsrelevant"
+      ],
+      "quelle": "Pech/Pöhn, Bauphysik, S. 18; Lohmeyer/Post, Praktische Bauphysik, S. 66 (Tafel 1.29) und S. 97",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-uw-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Auf einer Dämmplatte steht „035“. Welche Aussagen dazu treffen zu?",
+      "antwort": "Die Zahl ist die Wärmeleitfähigkeit ohne Einheit, hier λ = 0,035 W/(m·K). Je kleiner die Zahl, desto besser die Dämmwirkung bei gleicher Dicke. Der Wärmedurchlasswiderstand der Platte ergibt sich daraus erst zusammen mit der Dicke.",
+      "vertiefung": "Die Dämmstoffe sind in Wärmeleitfähigkeitsgruppen von 020 bis 060 eingeteilt, damit im Nachweis nicht mit beliebig vielen kaum unterschiedlichen Einzelwerten gearbeitet werden muss.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "baupraxis"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 20",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Die Zahl nennt die Wärmeleitfähigkeit des Dämmstoffs ohne Einheit",
+        "Sie bedeutet λ = 0,035 W/(m·K)",
+        "Je kleiner die Zahl, desto besser die Dämmwirkung bei gleicher Dicke",
+        "Die Zahl gibt den Wärmedurchlasswiderstand der Platte an"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "bp-uw-013",
+      "typ": "rechnen",
+      "frage": "Eine einschichtige Wand ist {d} dick. Der Bemessungswert der Wärmeleitfähigkeit beträgt λ = {lam}. Berechne den Wärmedurchlasswiderstand R.",
+      "antwort": "R = d / λ",
+      "tags": [
+        "waermeschutz",
+        "rechnen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 66–67 (Beispiele) und Tafel 1.29",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "d",
+          "titel": "Wanddicke",
+          "einheit": "m",
+          "von": 0.115,
+          "bis": 0.49,
+          "schritt": 0.005,
+          "stellen": 3
+        },
+        {
+          "name": "lam",
+          "titel": "Wärmeleitfähigkeit",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.21,
+            0.25,
+            0.5,
+            0.62,
+            0.79
+          ]
+        }
+      ],
+      "formel": "d/lam",
+      "einheit": "m²·K/W",
+      "toleranz": 0.02,
+      "stellen": 2,
+      "loesungsweg": "Schichtdicke durch Wärmeleitfähigkeit teilen: R = d / λ"
+    },
+    {
+      "id": "bp-uw-014",
+      "typ": "rechnen",
+      "frage": "Dieselbe einschichtige Außenwand: d = {d}, λ = {lam}. Berechne den U-Wert mit Rsi = 0,13 und Rse = 0,04 m²·K/W.",
+      "antwort": "U = 1 / (Rsi + d/λ + Rse)",
+      "tags": [
+        "waermeschutz",
+        "rechnen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 70–71 (Beispiele); Tafel 1.30",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "d",
+          "titel": "Wanddicke",
+          "einheit": "m",
+          "von": 0.175,
+          "bis": 0.49,
+          "schritt": 0.005,
+          "stellen": 3
+        },
+        {
+          "name": "lam",
+          "titel": "Wärmeleitfähigkeit",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.21,
+            0.25,
+            0.5,
+            0.79
+          ]
+        }
+      ],
+      "formel": "1/(0.13+d/lam+0.04)",
+      "einheit": "W/(m²·K)",
+      "toleranz": 0.03,
+      "stellen": 2,
+      "loesungsweg": "R = d/λ; RT = 0,13 + R + 0,04; U = 1/RT"
+    },
+    {
+      "id": "bp-uw-015",
+      "typ": "rechnen",
+      "frage": "Außenwand von innen nach außen: 15 mm Kalkgipsputz (λ = 0,70), {dmw} Mauerwerk (λ = {lammw}), {ddam} Wärmedämmung (λ = {lamdam}), 20 mm Kalkzementputz (λ = 1,0). Berechne den U-Wert.",
+      "antwort": "U = 1 / (0,13 + 0,015/0,70 + dmw/λmw + ddäm/λdäm + 0,02/1,0 + 0,04)",
+      "vertiefung": "Die dünnen Putzschichten tragen kaum etwas bei – der Wärmeschutz steckt fast vollständig in der Dämmschicht. Das lohnt sich nachzurechnen: 15 mm Putz bringen rund 0,02 m²·K/W, 140 mm Dämmung rund 3,5 m²·K/W.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "mehrschichtig"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 106 (Beispiel 1) und Tafel 1.29",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "dmw",
+          "titel": "Mauerwerksdicke",
+          "einheit": "m",
+          "auswahl": [
+            0.175,
+            0.24,
+            0.3,
+            0.365
+          ]
+        },
+        {
+          "name": "lammw",
+          "titel": "λ Mauerwerk",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.21,
+            0.25,
+            0.5
+          ]
+        },
+        {
+          "name": "ddam",
+          "titel": "Dämmdicke",
+          "einheit": "m",
+          "von": 0.08,
+          "bis": 0.24,
+          "schritt": 0.01,
+          "stellen": 2
+        },
+        {
+          "name": "lamdam",
+          "titel": "λ Dämmung",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.035,
+            0.04
+          ]
+        }
+      ],
+      "formel": "1/(0.13+0.015/0.70+dmw/lammw+ddam/lamdam+0.02/1.0+0.04)",
+      "einheit": "W/(m²·K)",
+      "toleranz": 0.01,
+      "stellen": 3,
+      "loesungsweg": "je Schicht R = d/λ, dann ΣR addieren; RT = 0,13 + ΣR + 0,04; U = 1/RT"
+    },
+    {
+      "id": "bp-uw-016",
+      "typ": "rechnen",
+      "frage": "Für eine Außenwand ist U = {U} angegeben. Wie groß ist der Wärmedurchlasswiderstand R der Bauteilschichten (ohne Übergangswiderstände)?",
+      "antwort": "R = 1/U − Rsi − Rse = 1/U − 0,17",
+      "vertiefung": "Der Schritt wird im Bestand gebraucht: Aus einem angegebenen U-Wert lässt sich zurückrechnen, wie viel Widerstand die Konstruktion selbst mitbringt – und damit, wie viel Dämmung noch fehlt.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "umstellen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 97–98",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "U",
+          "titel": "vorhandener U-Wert",
+          "einheit": "W/(m²·K)",
+          "auswahl": [
+            0.18,
+            0.2,
+            0.24,
+            0.28,
+            0.35,
+            0.45,
+            0.8,
+            1.2
+          ]
+        }
+      ],
+      "formel": "1/U-0.17",
+      "einheit": "m²·K/W",
+      "toleranz": 0.05,
+      "stellen": 2,
+      "loesungsweg": "RT = 1/U; R = RT − 0,13 − 0,04"
+    },
+    {
+      "id": "bp-uw-017",
+      "typ": "rechnen",
+      "frage": "Eine Bestandswand hat einen Wärmedurchlasswiderstand von R = {Rvorh}. Sie soll außen gedämmt werden, sodass U = {Uziel} erreicht wird. Der Dämmstoff hat λ = {lam}. Welche Dämmdicke ist rechnerisch nötig?",
+      "antwort": "d = λ · (1/U − 0,17 − R_vorh)",
+      "vertiefung": "Das Ergebnis ist ein rechnerischer Mindestwert. In der Ausführung wird auf lieferbare Plattendicken aufgerundet, und Wärmebrücken sowie Befestigungen sind noch nicht berücksichtigt.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "sanierung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 97–98 (Rechenweg); Tafel 1.29",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "Rvorh",
+          "titel": "vorhandener Wärmedurchlasswiderstand",
+          "einheit": "m²·K/W",
+          "auswahl": [
+            0.35,
+            0.46,
+            0.73,
+            1.1,
+            1.86
+          ]
+        },
+        {
+          "name": "Uziel",
+          "titel": "Ziel-U-Wert",
+          "einheit": "W/(m²·K)",
+          "auswahl": [
+            0.2,
+            0.24,
+            0.28
+          ]
+        },
+        {
+          "name": "lam",
+          "titel": "λ Dämmstoff",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.032,
+            0.035,
+            0.04
+          ]
+        }
+      ],
+      "formel": "lam*(1/Uziel-0.17-Rvorh)",
+      "einheit": "m",
+      "toleranz": 0.006,
+      "stellen": 3,
+      "loesungsweg": "erforderliches RT = 1/U_Ziel; davon 0,17 und den vorhandenen R abziehen; d = λ · erforderlicher R der Dämmschicht"
+    },
+    {
+      "id": "bp-uw-018",
+      "typ": "rechnen",
+      "frage": "Eine Wand hat U = {U}. Der Temperaturunterschied zwischen innen und außen beträgt {dth}. Wie groß ist die Wärmestromdichte q?",
+      "antwort": "q = U · Δθ",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "waermestrom"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 71–72; Lübbe, Klausurtraining Bauphysik, S. 16–17",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "U",
+          "titel": "U-Wert",
+          "einheit": "W/(m²·K)",
+          "auswahl": [
+            0.18,
+            0.24,
+            0.35,
+            0.49,
+            1.11,
+            1.59
+          ]
+        },
+        {
+          "name": "dth",
+          "titel": "Temperaturunterschied",
+          "einheit": "K",
+          "von": 10,
+          "bis": 40,
+          "schritt": 1,
+          "stellen": 0
+        }
+      ],
+      "formel": "U*dth",
+      "einheit": "W/m²",
+      "toleranz": 0.3,
+      "stellen": 1,
+      "loesungsweg": "q = U · Δθ"
+    },
+    {
+      "id": "bp-uw-019",
+      "typ": "rechnen",
+      "frage": "Flachdach von innen nach außen: {dbet} Stahlbeton (λ = 2,0), {ddam} Wärmedämmung (λ = {lamdam}). Der Wärmestrom geht nach oben, also Rsi = 0,10 und Rse = 0,04 m²·K/W. Berechne den U-Wert.",
+      "antwort": "U = 1 / (0,10 + dbet/2,0 + ddäm/λdäm + 0,04)",
+      "vertiefung": "Der Fallstrick sitzt vorn: Bei Decken und Dächern ist Rsi nicht 0,13. Wer stumpf mit dem Wandwert rechnet, bekommt bei gut gedämmten Bauteilen zwar nur eine kleine Abweichung, im Nachweis ist es trotzdem falsch.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "dach"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 69 (Tafel 1.30) und S. 66 (Tafel 1.29)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "dbet",
+          "titel": "Dicke Stahlbetondecke",
+          "einheit": "m",
+          "auswahl": [
+            0.16,
+            0.18,
+            0.2,
+            0.25
+          ]
+        },
+        {
+          "name": "ddam",
+          "titel": "Dämmdicke",
+          "einheit": "m",
+          "von": 0.1,
+          "bis": 0.3,
+          "schritt": 0.01,
+          "stellen": 2
+        },
+        {
+          "name": "lamdam",
+          "titel": "λ Dämmung",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.035,
+            0.04
+          ]
+        }
+      ],
+      "formel": "1/(0.10+dbet/2.0+ddam/lamdam+0.04)",
+      "einheit": "W/(m²·K)",
+      "toleranz": 0.01,
+      "stellen": 3,
+      "loesungsweg": "je Schicht R = d/λ; RT = 0,10 + ΣR + 0,04; U = 1/RT — beim Wärmestrom nach oben ist Rsi = 0,10"
+    },
+    {
+      "id": "bp-uw-020",
+      "typ": "rechnen",
+      "frage": "Eine Außenwand besteht aus {dmw} Mauerwerk (λ = {lammw}) und {ddam} Dämmung (λ = 0,035), innen 15 mm Putz (λ = 0,70). Berechne den vorhandenen U-Wert und vergleiche ihn anschließend mit dem Höchstwert {Uzul}, der für die Maßnahme vorgegeben ist. Gefragt ist der vorhandene U-Wert.",
+      "antwort": "U = 1 / (0,13 + 0,015/0,70 + dmw/λmw + ddäm/0,035 + 0,04); der Vergleich mit dem vorgegebenen Höchstwert entscheidet, ob die Ausführung ausreicht.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "nachweis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 97–98 (Rechenweg); Höchstwert als Planungsvorgabe",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Der Vergleichswert ist ein Anforderungsniveau. Die vorliegenden Quellen stehen auf dem Stand der EnEV; maßgebend sind heute die Anforderungen des GEG. Der Rechenweg selbst bleibt gültig, die Zahl ist vor Verwendung zu prüfen.",
+      "variablen": [
+        {
+          "name": "dmw",
+          "titel": "Mauerwerksdicke",
+          "einheit": "m",
+          "auswahl": [
+            0.175,
+            0.24,
+            0.365
+          ]
+        },
+        {
+          "name": "lammw",
+          "titel": "λ Mauerwerk",
+          "einheit": "W/(m·K)",
+          "auswahl": [
+            0.21,
+            0.5,
+            0.79
+          ]
+        },
+        {
+          "name": "ddam",
+          "titel": "Dämmdicke",
+          "einheit": "m",
+          "von": 0.06,
+          "bis": 0.2,
+          "schritt": 0.01,
+          "stellen": 2
+        },
+        {
+          "name": "Uzul",
+          "titel": "vorgegebener Höchstwert",
+          "einheit": "W/(m²·K)",
+          "auswahl": [
+            0.2,
+            0.24,
+            0.28
+          ]
+        }
+      ],
+      "formel": "1/(0.13+0.015/0.70+dmw/lammw+ddam/0.035+0.04)",
+      "einheit": "W/(m²·K)",
+      "toleranz": 0.01,
+      "stellen": 3,
+      "loesungsweg": "je Schicht R = d/λ, dann ΣR addieren; RT = 0,13 + ΣR + 0,04; U = 1/RT; danach den vorhandenen U-Wert mit dem Höchstwert vergleichen"
+    },
+    {
+      "id": "bp-uw-021",
+      "typ": "numerisch",
+      "frage": "Welchen Wärmedurchlasswiderstand hat eine ruhende Luftschicht von 25 mm Dicke bei horizontalem Wärmestrom?",
+      "antwort": "R = 0,18 m²·K/W",
+      "vertiefung": "Bei ruhenden Luftschichten lässt sich R nicht aus d/λ berechnen, weil neben der Leitung auch Konvektion und Strahlung wirken. Deshalb wird der Wert tabelliert. Ab etwa 30 bis 50 mm bringt mehr Dicke nichts mehr, weil die Konvektion im Spalt zunimmt.",
+      "tags": [
+        "waermeschutz",
+        "luftschicht",
+        "kennwerte"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 19; Pech/Pöhn, Bauphysik, S. 20 (Tabelle 010|2-01)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 0.18,
+      "einheit": "m²·K/W",
+      "toleranz": 0.005
+    },
+    {
+      "id": "bp-uw-022",
+      "typ": "mehrfachauswahl",
+      "frage": "Wie werden Luftschichten in der U-Wert-Berechnung behandelt? Welche Aussagen treffen zu?",
+      "antwort": "Ruhend heißt von der Umgebung abgeschlossen. Schwach belüftet: halber Tabellenwert. Stark belüftet: Luftschicht und alle Schichten nach außen entfallen, außen wird mit Rse = Rsi gerechnet. Eine belüftete Luftschicht dämmt nicht besser als eine ruhende, sondern schlechter.",
+      "vertiefung": "Der Sprung ist groß: Bei einer stark belüfteten Fassade zählt die Außenschale wärmeschutztechnisch gar nicht mehr mit. Für eine vorgehängte hinterlüftete Fassade heißt das, dass die Bekleidung im Nachweis verschwindet.",
+      "tags": [
+        "waermeschutz",
+        "luftschicht",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 102–103; Lübbe, Klausurtraining Bauphysik, S. 19",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Eine ruhende Luftschicht ist von der Umgebung abgeschlossen",
+        "Bei einer schwach belüfteten Luftschicht wird die Hälfte des Tabellenwerts angesetzt",
+        "Bei einer stark belüfteten Luftschicht werden die Luftschicht und alle Schichten nach außen vernachlässigt; außen wird mit Rse = Rsi gerechnet",
+        "Eine belüftete Luftschicht dämmt besser als eine ruhende"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "bp-uw-023",
+      "typ": "karte",
+      "frage": "Welche Schichten dürfen bei Bauteilen mit einer Abdichtung angerechnet werden, etwa bei Decken gegen Erdreich?",
+      "antwort": "Nur die Schichten raumseitig der Abdichtung. Erdreich, Dränschichten oder Schutzschichten außerhalb der Abdichtung bleiben außer Ansatz. Ausnahmen sind geregelt: Umkehrdächer mit XPS-Dämmung unter Kies oder Plattenbelag und Perimeterdämmungen, die nicht ständig im Grundwasser liegen.",
+      "vertiefung": "Ein typischer Fehler in älteren Nachweisen: Das Erdreich wurde als dämmende Schicht mitgerechnet und der U-Wert dadurch schöngerechnet. Das ist nicht zulässig.",
+      "tags": [
+        "waermeschutz",
+        "randbedingungen",
+        "typischer-fehler"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 100 und 105; Lübbe, Klausurtraining Bauphysik, S. 25–26",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-uw-024",
+      "typ": "zuordnung",
+      "frage": "Umkehrdach: Ordne dem Anteil des Wärmedurchlasswiderstands raumseitig der Abdichtung den Zuschlag ΔU zu.",
+      "antwort": "unter 10 % → 0,05 W/(m²·K) · 10 bis 50 % → 0,03 W/(m²·K) · über 50 % → kein Zuschlag",
+      "vertiefung": "Der Zuschlag bildet ab, dass beim Umkehrdach Regenwasser unter die Dämmplatten gelangt und Wärme abführt. Je weniger Dämmung unterhalb der Abdichtung liegt, desto stärker wirkt sich das aus.",
+      "tags": [
+        "waermeschutz",
+        "dach",
+        "korrektur"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 105 (Tafel 2.3.4 nach DIN 4108-2)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Anteil unter 10 %",
+          "ΔU = 0,05 W/(m²·K)"
+        ],
+        [
+          "Anteil 10 bis 50 %",
+          "ΔU = 0,03 W/(m²·K)"
+        ],
+        [
+          "Anteil über 50 %",
+          "kein Zuschlag"
+        ]
+      ]
+    },
+    {
+      "id": "bp-uw-025",
+      "typ": "mehrfachauswahl",
+      "frage": "Der berechnete U-Wert ist gegebenenfalls zu korrigieren. Welche Aussagen treffen zu?",
+      "antwort": "Korrigiert wird für Luftspalte in der Dämmschicht (ΔUg), für mechanische Befestigungselemente (ΔUf) und für Umkehrdächer (ΔUr). Liegt die Gesamtkorrektur unter 3 % des U-Werts, darf sie entfallen. Gerundet wird das Endergebnis auf zwei Dezimalstellen, nicht auf drei.",
+      "vertiefung": "Im Beispiel der zweischaligen Wand mit Kerndämmung geben fünf Drahtanker je m² bereits ΔUf = 0,007 W/(m²·K) – mehr als die zulässigen 3 % von 0,213 W/(m²·K). Die Korrektur war also durchzuführen. Bei sehr gut gedämmten Bauteilen fallen Befestigungen relativ stärker ins Gewicht, weil die 3-%-Schwelle mitsinkt.",
+      "tags": [
+        "waermeschutz",
+        "korrektur",
+        "nachweis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 98 (nach DIN EN ISO 6946)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "ΔUg berücksichtigt Luftspalte in der Dämmschicht",
+        "ΔUf berücksichtigt mechanische Befestigungselemente",
+        "ΔUr ist der Zuschlag für Umkehrdächer",
+        "Eine Korrektur darf entfallen, wenn sie zusammen unter 3 % des U-Werts bleibt",
+        "Das Endergebnis wird auf drei Dezimalstellen gerundet"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "bp-uw-026",
+      "typ": "freitext",
+      "frage": "Erkläre, wie der U-Wert eines Bauteils mit inhomogenen Schichten ermittelt wird, etwa bei einer Sparrendecke.",
+      "antwort": "Das Bauteil wird zweifach zerlegt: in Bereiche nebeneinander (Gefach und Sparren) und in Schichten übereinander. Für den oberen Grenzwert RT' wird für jeden Bereich der Wärmedurchgangswiderstand gerechnet und die Kehrwerte werden flächenanteilig gemittelt. Für den unteren Grenzwert RT'' wird zuerst je Schicht eine flächenanteilig gemittelte Wärmeleitfähigkeit gebildet und daraus der Widerstand. Der maßgebende Wärmedurchgangswiderstand ist das arithmetische Mittel beider Grenzwerte, der U-Wert sein Kehrwert.",
+      "vertiefung": "Das Verfahren ist eine Näherung: Der obere Grenzwert entspricht dem alten flächengewichteten Mittel und unterstellt reinen Parallelfluss, der untere unterstellt vollständigen Temperaturausgleich in jeder Schicht. Die Wahrheit liegt dazwischen, deshalb der Mittelwert. Exakt wird es nur über eine zweidimensionale Wärmebrückenberechnung.",
+      "tags": [
+        "waermeschutz",
+        "inhomogen",
+        "nachweis"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 22–23; Lohmeyer/Post, Praktische Bauphysik, S. 104 (nach DIN EN ISO 6946)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "pruefpunkte": [
+        "Zerlegung in Bereiche nebeneinander und Schichten übereinander",
+        "Oberer Grenzwert: flächenanteilige Mittelung der Bereiche",
+        "Unterer Grenzwert: flächenanteilig gemittelte Wärmeleitfähigkeit je Schicht",
+        "RT ist das arithmetische Mittel beider Grenzwerte",
+        "U = 1/RT"
+      ]
+    },
+    {
+      "id": "bp-uw-027",
+      "typ": "zuordnung",
+      "frage": "Ordne den Bauteilen den Mindestwert des Wärmedurchlasswiderstands nach DIN 4108-2 zu.",
+      "antwort": "Außenwand 1,20 · Wand zu fremdgenutzten Räumen 0,07 · Wohnungstrenndecke 0,35 · Decke nach unten gegen Außenluft 1,75 m²·K/W",
+      "vertiefung": "Auffällig ist der große Wert für Decken, die nach unten gegen Außenluft grenzen, etwa über Durchfahrten: Er liegt über dem der Außenwand, und zwar wegen der Fußkälte, nicht wegen der Energiebilanz.",
+      "tags": [
+        "waermeschutz",
+        "normen",
+        "anforderungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 101 (Tafel 2.3.2 nach DIN 4108-2, Tab. 3)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Außenwand",
+          "R ≥ 1,20 m²·K/W"
+        ],
+        [
+          "Wand zu fremdgenutzten Räumen, Wohnungstrennwand",
+          "R ≥ 0,07 m²·K/W"
+        ],
+        [
+          "Wohnungstrenndecke",
+          "R ≥ 0,35 m²·K/W"
+        ],
+        [
+          "Decke, die einen Aufenthaltsraum nach unten gegen Außenluft abgrenzt",
+          "R ≥ 1,75 m²·K/W"
+        ]
+      ]
+    },
+    {
+      "id": "bp-uw-028",
+      "typ": "karte",
+      "frage": "Worin unterscheidet sich der Mindestwärmeschutz nach DIN 4108-2 von den energetischen Anforderungen an ein Gebäude?",
+      "antwort": "Der Mindestwärmeschutz ist ein bauphysikalischer Grundschutz: Er soll an jeder Stelle des Bauteils ein hygienisches Raumklima sichern und Tauwasser sowie Schimmel verhindern. Er ist über Mindestwerte des Wärmedurchlasswiderstands R formuliert. Die energetischen Anforderungen zielen dagegen auf den Energiebedarf des ganzen Gebäudes und arbeiten mit U-Werten und Bilanzverfahren. Beide Nachweise stehen nebeneinander; das Einhalten des Mindestwärmeschutzes genügt energetisch nicht.",
+      "tags": [
+        "waermeschutz",
+        "normen",
+        "abgrenzung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 99–101",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Die energetische Seite ist im Gebäudeenergiegesetz geregelt. Die vorliegenden Quellen argumentieren noch mit der EnEV; die konkreten Anforderungswerte und Verfahren sind vor Verwendung am GEG zu prüfen. Die Abgrenzung als solche gilt unverändert."
+    },
+    {
+      "id": "bp-uw-029",
+      "typ": "numerisch",
+      "frage": "Wie groß ist der Wärmeverlust durch eine 12 m² große Wand mit U = 0,55 W/(m²·K) bei einem Temperaturunterschied von 20 K?",
+      "antwort": "Φ = U · A · Δθ = 0,55 · 12 · 20 = 132 W",
+      "vertiefung": "Die Grundgleichung des Transmissionswärmeverlusts. Für das ganze Gebäude werden die Produkte U · A aller Bauteile aufsummiert und mit Korrekturfaktoren für die Lage der Bauteile gewichtet.",
+      "tags": [
+        "waermeschutz",
+        "rechnen",
+        "waermestrom"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 17",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 132,
+      "einheit": "W",
+      "toleranz": 1
+    },
+    {
+      "id": "bp-uw-030",
+      "typ": "vergleich",
+      "frage": "Beide Wände haben dieselbe Dämmstoffdicke und im ungestörten Bereich denselben U-Wert. Welche Ausführung hält den Wärmeschutz im gesamten Bauteil besser durch?",
+      "antwort": "Die Außendämmung. Ihre Dämmebene läuft über die einbindende Geschossdecke hinweg durch, sodass kein Bauteil die Dämmschicht durchstößt. Bei der Innendämmung endet die Dämmung an der Decke: Die Decke bildet eine Wärmebrücke, der zusätzliche Wärmeverlust wird über den längenbezogenen Verlustkoeffizienten erfasst, und die Innenoberfläche im Anschlussbereich kühlt stärker ab.",
+      "vertiefung": "Der U-Wert im Gefach sagt also nicht alles: Zwei Wände mit gleichem U-Wert können sich im tatsächlichen Verlust deutlich unterscheiden. Innendämmung ist deshalb nicht falsch – bei erhaltenswerten Fassaden oft die einzige Möglichkeit –, verlangt aber die Betrachtung der Anschlüsse und des Feuchteverhaltens.",
+      "tags": [
+        "waermeschutz",
+        "waermebruecke",
+        "konstruktion"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 21 (Wärmebrücken); Lohmeyer/Post, Praktische Bauphysik, S. 99",
+      "stand": "2026-09",
+      "geprueft": true,
+      "seiten": [
+        {
+          "titel": "Außendämmung",
+          "bild": "bilder/uwert-vergleich-aussen.svg",
+          "beschreibung": "Die Dämmschicht liegt außen und läuft über die Geschossdecke hinweg durch."
+        },
+        {
+          "titel": "Innendämmung",
+          "bild": "bilder/uwert-vergleich-innen.svg",
+          "beschreibung": "Die Dämmschicht liegt innen und endet an der einbindenden Geschossdecke."
+        }
+      ],
+      "richtig": 0
+    },
+    {
+      "id": "bp-uw-031",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die Schichten dieser zweischaligen Außenwand mit Kerndämmung sowie die beiden Zonen der Wärmeübergangswiderstände.",
+      "antwort": "Von innen nach außen: Kalkgipsputz, Hochlochziegel, Wärmedämmung, ruhende Luftschicht, Klinker-Außenschale; dazu Rsi innen und Rse außen.",
+      "vertiefung": "Die Schichtenfolge ergibt RT = 4,702 m²·K/W und damit U = 0,213 W/(m²·K). Beachte, dass die Drahtanker zwischen den Schalen eine Korrektur ΔUf auslösen.",
+      "tags": [
+        "waermeschutz",
+        "konstruktion",
+        "zeichnung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 106–107 (Beispiel 1, Bild 2.3.1)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/uwert-schichtaufbau-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 11,
+          "y": 49,
+          "name": "Rsi = 0,13 m²·K/W (innerer Wärmeübergangswiderstand)"
+        },
+        {
+          "nr": 2,
+          "x": 17,
+          "y": 49,
+          "name": "Kalkgipsputz, 15 mm"
+        },
+        {
+          "nr": 3,
+          "x": 32,
+          "y": 49,
+          "name": "Hochlochziegel, 175 mm"
+        },
+        {
+          "nr": 4,
+          "x": 55,
+          "y": 49,
+          "name": "Wärmedämmung (Kerndämmung), 140 mm"
+        },
+        {
+          "nr": 5,
+          "x": 66,
+          "y": 49,
+          "name": "ruhende Luftschicht, 10 mm"
+        },
+        {
+          "nr": 6,
+          "x": 76,
+          "y": 49,
+          "name": "Klinker-Außenschale, 115 mm"
+        },
+        {
+          "nr": 7,
+          "x": 90,
+          "y": 49,
+          "name": "Rse = 0,04 m²·K/W (äußerer Wärmeübergangswiderstand)"
+        }
+      ]
+    },
+    {
+      "id": "bp-uw-032",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die Schichten dieser Dachkonstruktion mit Dicke und Wärmeleitfähigkeit.",
+      "antwort": "Dachplatte 2 cm (λ = 0,15), ruhende Luftschicht 7 cm, Sparren 14 cm (λ = 0,20), Wärmedämmung 7 cm (λ = 0,035), Deckenverkleidung 2 cm (λ = 0,21).",
+      "vertiefung": "Die Maße 80 und 720 mm sind die Breiten der beiden Bereiche: Sparren und Gefach. Genau diese Aufteilung braucht das Verfahren mit oberem und unterem Grenzwert. Für dieses Bauteil ergibt sich RT = 2,062 m²·K/W und U ≈ 0,49 W/(m²·K).",
+      "tags": [
+        "waermeschutz",
+        "inhomogen",
+        "zeichnung"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 23–25 (Frage 29)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/dach-inhomogen-blank.png",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 50,
+          "y": 9,
+          "name": "Dachplatte, 2 cm, λ = 0,15 W/(m·K)"
+        },
+        {
+          "nr": 2,
+          "x": 45,
+          "y": 25,
+          "name": "ruhende Luftschicht, 7 cm"
+        },
+        {
+          "nr": 3,
+          "x": 13,
+          "y": 33,
+          "name": "Sparren, 14 cm, λ = 0,20 W/(m·K)"
+        },
+        {
+          "nr": 4,
+          "x": 45,
+          "y": 51,
+          "name": "Wärmedämmung, 7 cm, λ = 0,035 W/(m·K)"
+        },
+        {
+          "nr": 5,
+          "x": 50,
+          "y": 68,
+          "name": "Deckenverkleidung, 2 cm, λ = 0,21 W/(m·K)"
+        }
+      ]
+    },
+    {
+      "id": "bp-uw-033",
+      "typ": "bildbeschriftung",
+      "frage": "Eine auskragende Platte durchstößt die Dämmebene. Benenne die markierten Stellen.",
+      "antwort": "Ungestörter Bauteilbereich, auskragende Platte als Wärmebrücke, Isotherme, abgekühlte Innenoberfläche im Anschlussbereich.",
+      "vertiefung": "Im ungestörten Bereich gilt der U-Wert in W/(m²·K). Der Zusatzverlust der Wärmebrücke wird längenbezogen erfasst, in W/(m·K), und getrennt in die Bilanz gegeben. Mehr dazu im eigenen Thema zu Wärmebrücken.",
+      "tags": [
+        "waermeschutz",
+        "waermebruecke",
+        "zeichnung"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 21; Lohmeyer/Post, Praktische Bauphysik, S. 99–100",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/uwert-waermebruecke-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 26,
+          "y": 27,
+          "name": "ungestörter Bauteilbereich – hier gilt der U-Wert"
+        },
+        {
+          "nr": 2,
+          "x": 46,
+          "y": 48,
+          "name": "auskragende Platte: Wärmebrücke, die die Dämmebene durchstößt"
+        },
+        {
+          "nr": 3,
+          "x": 28,
+          "y": 77,
+          "name": "Isotherme – Linie gleicher Temperatur"
+        },
+        {
+          "nr": 4,
+          "x": 20,
+          "y": 52,
+          "name": "abgekühlte Innenoberfläche im Anschlussbereich"
+        }
+      ]
+    },
+    {
+      "id": "bp-uw-034",
+      "typ": "skizze",
+      "frage": "Skizziere den Temperaturverlauf durch eine ungedämmte und eine außen gedämmte Außenwand, jeweils von der Innenluft bis zur Außenluft. Trage ein, wo die Taupunkttemperatur der Raumluft liegt.",
+      "antwort": "Kennzeichen: An beiden Oberflächen springt die Temperatur, innen deutlich stärker als außen. Innerhalb einer Schicht verläuft die Linie geradlinig, und ihr Gefälle verhält sich wie der Wärmedurchlasswiderstand der Schicht. Bei der gedämmten Wand bleibt die Innenoberfläche nahe der Raumtemperatur, und der kalte Bereich verlagert sich in die Dämmschicht.",
+      "vertiefung": "Daraus folgt das Argument für die Außendämmung: Das Mauerwerk bleibt warm, liegt im Jahresverlauf über der Taupunkttemperatur und wirkt als Speichermasse. Bei Innendämmung wandert die kalte Zone hinter die Dämmung – das ist der Punkt, an dem das Feuchteschutz-Thema ansetzt.",
+      "tags": [
+        "waermeschutz",
+        "verstaendnis",
+        "skizze"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 68–70; eigene Berechnung mit den Werten der Tafeln 1.29 und 1.30",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/uwert-temperaturverlauf.svg",
+      "pruefpunkte": [
+        "Temperatursprung an beiden Oberflächen, innen größer als außen",
+        "Innerhalb jeder Schicht verläuft die Temperatur geradlinig",
+        "Das Gefälle je Schicht entspricht deren Wärmedurchlasswiderstand, in der Dämmung am steilsten",
+        "Bei der gedämmten Wand liegt die Innenoberfläche nur wenige Kelvin unter der Raumtemperatur",
+        "Bei der gedämmten Wand liegt der Bereich unter der Taupunkttemperatur in der Dämmschicht, nicht im Mauerwerk"
+      ]
+    },
+    {
+      "id": "bp-uw-035",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis, wie die Wärmeleitfähigkeit von Baustoffen mit ihrer Rohdichte zusammenhängt. Trage die Gruppen Schaumkunststoffe, Faserdämmstoffe, Holz, Leichtbeton, Mauerwerk und Normalbeton ein.",
+      "antwort": "Beide Achsen logarithmisch. Mit steigender Rohdichte steigt die Wärmeleitfähigkeit. Dämmstoffe liegen bei λ = 0,02 bis 0,06 W/(m·K) und unter etwa 200 kg/m³, Holz und Holzwerkstoffe schließen sich an, Mauerwerk und Normalbeton liegen bei 0,5 bis über 2 W/(m·K) und über 1000 kg/m³.",
+      "vertiefung": "Der Grund ist der Anteil eingeschlossener ruhender Luft. Stehende Luft hat mit rund 0,024 W/(m·K) die kleinste Wärmeleitzahl; je poröser und leichter ein Stoff, desto mehr Luft steckt darin. Innerhalb einer Gruppe streuen die Werte erheblich, ein Rechenwert lässt sich aus der Rohdichte also nicht ablesen. Die Quelle ist ein österreichisches Lehrbuch – der physikalische Zusammenhang gilt unabhängig davon, die Zahlenwerte für Nachweise kommen in Deutschland aus DIN 4108-4.",
+      "tags": [
+        "waermeschutz",
+        "kennwerte",
+        "skizze"
+      ],
+      "quelle": "Pech/Pöhn, Bauphysik, S. 18 (Abbildung 010|2-02)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/lambda-rohdichte.png",
+      "pruefpunkte": [
+        "Beide Achsen logarithmisch geteilt, Rohdichte von etwa 10 bis 4000 kg/m³",
+        "λ steigt mit der Rohdichte",
+        "Schaumkunststoffe und Faserdämmstoffe unten links, λ zwischen 0,02 und 0,06 W/(m·K)",
+        "Holz und Holzwerkstoffe im mittleren Bereich",
+        "Mauerwerk, Leichtbeton und Normalbeton oben rechts, λ von 0,5 bis über 2 W/(m·K)",
+        "Die Gruppen überlappen sich, die Streuung innerhalb einer Gruppe ist groß"
+      ]
+    }
+  ]
+}

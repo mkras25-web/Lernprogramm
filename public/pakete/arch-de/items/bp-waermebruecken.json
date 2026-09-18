@@ -1,0 +1,687 @@
+{
+  "thema": "bp-waermebruecken",
+  "titel": "Wärmebrücken: ψ- und χ-Werte",
+  "erklaerung": {
+    "absaetze": [
+      "Der U-Wert beschreibt die ungestörte Fläche eines Bauteils. Entscheidend für die wärmeschutztechnische Qualität ist aber auch, wie die Anschlüsse zwischen den Bauteilen ausgebildet sind. An Ecken, Auflagern und Durchdringungen fließt mehr Wärme als in der Fläche – das sind Wärmebrücken. Je besser der übrige Wärmeschutz wird, desto stärker fallen sie ins Gewicht.",
+      "Vier Gründe machen sie zum Thema: Der Anteil am Wärmeverlust kann erheblich sein. Die Behaglichkeit verlangt gleichmäßige Oberflächentemperaturen, und Wärmebrücken sind genau die Stellen mit den tiefsten Werten. Dort, wo die Oberflächentemperatur die Tautemperatur unterschreitet, fällt Tauwasser aus. Und Schimmel folgt dem Tauwasser – er kann bereits bei rund 80 % relativer Luftfeuchte an der Oberfläche wachsen.",
+      "Man unterscheidet formbedingte, stoffbedingte und konstruktive Wärmebrücken. Formbedingt ist die Gebäude-Außenecke: Die wärmeabgebende Außenfläche ist größer als die wärmeaufnehmende Innenfläche, der Wärmestrom weitet sich auf, die Innenecke kühlt ab. Stoffbedingt ist der Wechsel des Baustoffs, etwa eine Stahlbetonstütze im Mauerwerk. Konstruktiv ist alles, was die Dämmebene durchstößt. Der auskragende Balkon vereint alle drei und wirkt wie eine Kühlrippe.",
+      "Zwei Kennwerte beschreiben das. ψ erfasst den zusätzlichen Wärmestrom je Meter Anschlusslänge in W/(m·K) und dient dem Gleichwertigkeitsnachweis von Details. Der Temperaturfaktor fRsi = (θsi − θe) / (θi − θe) ist dimensionslos und beurteilt die kälteste Stelle der Innenoberfläche. Gefordert sind fRsi ≥ 0,70, was unter den festgelegten Randbedingungen θsi ≥ 12,6 °C entspricht. Achtung bei den Randbedingungen: Hier gilt Rsi = 0,25 m²·K/W, nicht die 0,13 aus der U-Wert-Berechnung.",
+      "In der Praxis läuft der Nachweis über den Vergleich: Das Beiblatt 2 zur DIN 4108 enthält 95 Musterlösungen von Anschlussdetails mit Referenzwerten für ψ. Wer gleichwertig baut, muss nichts rechnen. Weicht das Detail ab, wird die Oberflächentemperatur zweidimensional berechnet und der Temperaturfaktor geprüft. Unabhängig davon gilt: Auskragende Bauteile aus gut leitendem Material dürfen ohne zusätzliche Wärmedämm-Maßnahmen gar nicht erst ausgeführt werden."
+    ],
+    "merksatz": "Der U-Wert gilt für die Fläche, ψ für die Kante – und fRsi entscheidet, ob die Ecke trocken bleibt.",
+    "bild": "bilder/wb-arten.svg",
+    "bildunterschrift": "Die drei Ursachen: die Geometrie der Ecke, der Wechsel des Baustoffs und ein Bauteil, das die Dämmebene durchstößt.",
+    "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 125–147; Lübbe, Klausurtraining Bauphysik, S. 21–22"
+  },
+  "items": [
+    {
+      "id": "bp-wb-001",
+      "typ": "karte",
+      "frage": "Was ist eine Wärmebrücke?",
+      "antwort": "Eine örtlich begrenzte Stelle im Bauteil, an der die Wärmestromdichte höher ist als in den angrenzenden Bereichen. Dort tritt ein erhöhter Wärmeverlust auf, und die raumseitige Oberflächentemperatur ist niedriger als in der ungestörten Fläche.",
+      "vertiefung": "Wärmebrücken werden umso bedeutsamer, je besser der übrige Wärmeschutz ist. Bei einer ungedämmten Wand geht der Zusatzverlust an der Ecke im großen Grundverlust unter; bei einem gut gedämmten Bauteil macht dieselbe Ecke einen spürbaren Anteil der Bilanz aus.",
+      "tags": [
+        "waermebruecke",
+        "begriffe"
+      ],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 21; Lohmeyer/Post, Praktische Bauphysik, S. 125",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-002",
+      "typ": "mehrfachauswahl",
+      "frage": "Aus welchen Gründen sind Wärmebrücken zu beachten?",
+      "antwort": "Wegen des Energieverbrauchs, der Behaglichkeit, der Tauwasserbildung und des Schimmelpilzwachstums. Die Tragfähigkeit ist davon nicht betroffen – statische Fragen der Anschlüsse werden getrennt behandelt.",
+      "vertiefung": "Schimmel ist die Folge von Tauwasser, kann aber schon bei rund 80 % relativer Luftfeuchte an der Oberfläche auftreten, wenn Feuchte durch Kapillarkondensation aufgenommen wird. Der kritische Wert liegt also unter der Taupunkttemperatur-Schwelle.",
+      "tags": [
+        "waermebruecke",
+        "grundlagen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 126",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Der Anteil am Wärmeverlust eines Gebäudes kann erheblich sein",
+        "Die Behaglichkeit verlangt möglichst gleichmäßige innere Oberflächentemperaturen",
+        "Tauwasser fällt dort an, wo die Oberflächentemperatur die Tautemperatur unterschreitet",
+        "Schimmelpilzwachstum ist die Folge von Tauwasserbildung",
+        "Die Tragfähigkeit des Bauteils nimmt an Wärmebrücken ab"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "bp-wb-003",
+      "typ": "karte",
+      "frage": "Welche drei Arten von Wärmebrücken werden unterschieden?",
+      "antwort": "Formbedingte (geometrische) Wärmebrücken entstehen aus der Geometrie, etwa an Gebäude-Außenecken. Stoffbedingte entstehen durch einen Wechsel des Baustoffs, etwa eine Stahlbetonstütze im Mauerwerk. Konstruktive entstehen durch die Ausbildung des Anschlusses, etwa wenn ein Bauteil die Dämmebene durchstößt. In der Praxis treten sie meist gemeinsam auf.",
+      "vertiefung": "Der auskragende Balkon ist das Standardbeispiel für die Mischform: Die Platte durchstößt die Dämmung (konstruktiv), besteht aus gut leitendem Stahlbeton (stoffbedingt) und vergrößert zugleich die wärmeabgebende Fläche (formbedingt).",
+      "tags": [
+        "waermebruecke",
+        "begriffe",
+        "systematik"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 126–128 und 129",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-004",
+      "typ": "karte",
+      "frage": "Warum ist die Oberflächentemperatur in einer Gebäude-Außenecke niedriger als an der geraden Wand?",
+      "antwort": "Weil sich der Wärmestrom aufweitet: Die wärmeabgebende Außenfläche der Ecke ist größer als die wärmeaufnehmende Innenfläche. Der Innenseite wird also mehr Wärme entzogen, als sie aus dem Raum nachliefern kann. Hinzu kommt an der Außenecke eine stärkere Abkühlung durch Windwirbel.",
+      "vertiefung": "Deshalb zeigen sich Feuchteschäden zuerst in Raumecken, hinter Schränken und an Anschlüssen – nicht mitten auf der Wand. Möbel vor der Außenwand verschärfen das, weil sie die Luftzirkulation an der Oberfläche unterbinden und den Übergangswiderstand erhöhen.",
+      "tags": [
+        "waermebruecke",
+        "geometrie",
+        "verstaendnis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 126",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-005",
+      "typ": "karte",
+      "frage": "Was ist ein „Zwickelpilz“ und wo entsteht er?",
+      "antwort": "Die Schimmelbildung im oberen Zwickel, also dort, wo zwei Außenwände und die Decke zusammentreffen. An dieser Stelle weitet sich der Wärmestrom in drei Richtungen auf, die Innenoberfläche kühlt besonders stark ab, und die Voraussetzungen für Tauwasser und Schimmel sind schnell erreicht.",
+      "vertiefung": "Der dreidimensionale Fall ist ungünstiger als die zweidimensionale Kante: Die Fläche, über die Wärme abfließt, wächst schneller als die Fläche, über die sie nachströmt.",
+      "tags": [
+        "waermebruecke",
+        "schaden",
+        "baupraxis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 127",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-006",
+      "typ": "karte",
+      "frage": "Was beschreibt der längenbezogene Wärmedurchgangskoeffizient ψ, und wofür wird er verwendet?",
+      "antwort": "ψ erfasst den zusätzlichen Wärmestrom einer linienförmigen Wärmebrücke, bezogen auf einen Meter Länge, in W/(m·K) – anders als der U-Wert, der auf einen Quadratmeter Fläche bezogen ist. Die im Beiblatt 2 zur DIN 4108 angegebenen ψ-Werte sind Referenzwerte und dienen dem Gleichwertigkeitsnachweis von Anschlussdetails untereinander. Sie gelten für festgelegte Randbedingungen und können im Einzelfall anders ausfallen.",
+      "vertiefung": "Aus der Einheit folgt die Anwendung: Der Zusatzverlust ergibt sich aus ψ mal Länge der Anschlusskante, nicht mal Fläche. Ein Referenzwert ist außerdem kein gemessener Wert des konkreten Details – er sagt nur, welche Größenordnung eine gleichwertige Lösung einhalten muss.",
+      "tags": [
+        "waermebruecke",
+        "kennwerte",
+        "nachweis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 135",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-007",
+      "typ": "zuordnung",
+      "frage": "Ordne die Kennwerte ihrer Bedeutung und Einheit zu.",
+      "antwort": "U flächenbezogen W/(m²·K) · ψ längenbezogen W/(m·K) · fRsi dimensionslos · θsi raumseitige Oberflächentemperatur in °C",
+      "tags": [
+        "waermebruecke",
+        "kennwerte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130 und 135",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "U",
+          "Wärmedurchgangskoeffizient, flächenbezogen, in W/(m²·K)"
+        ],
+        [
+          "ψ",
+          "längenbezogener Wärmedurchgangskoeffizient, in W/(m·K)"
+        ],
+        [
+          "fRsi",
+          "Temperaturfaktor, dimensionslos"
+        ],
+        [
+          "θsi",
+          "raumseitige Oberflächentemperatur, in °C"
+        ]
+      ]
+    },
+    {
+      "id": "bp-wb-008",
+      "typ": "karte",
+      "frage": "Wie ist der Temperaturfaktor fRsi definiert, und was sagt er aus?",
+      "antwort": "fRsi = (θsi − θe) / (θi − θe). Er setzt den Temperaturgewinn an der raumseitigen Oberfläche ins Verhältnis zum gesamten Temperaturunterschied zwischen innen und außen. Der Wert ist dimensionslos und unabhängig von den konkreten Temperaturen, deshalb lässt sich mit ihm die Oberflächentemperatur für beliebige Umgebungsbedingungen berechnen. Je näher fRsi bei 1 liegt, desto wärmer bleibt die Oberfläche.",
+      "vertiefung": "Der Nachweis zielt nicht auf Energie, sondern auf Schimmelfreiheit. Deshalb wird nicht der Wärmestrom bewertet, sondern die kälteste Stelle der Innenoberfläche.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "kennwerte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 129–130 (nach EN ISO 10211-1)",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-009",
+      "typ": "numerisch",
+      "frage": "Welchen Mindestwert muss der Temperaturfaktor fRsi an der ungünstigsten Stelle der Bauteil-Innenoberfläche erreichen?",
+      "antwort": "fRsi ≥ 0,70",
+      "vertiefung": "Fenster sind von dieser Regelung ausgenommen; für sie gilt DIN EN ISO 13788.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "grenzwert"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130 und 135",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 0.7,
+      "einheit": "",
+      "toleranz": 0.005
+    },
+    {
+      "id": "bp-wb-010",
+      "typ": "numerisch",
+      "frage": "Welcher raumseitigen Oberflächentemperatur entspricht der Grenzwert fRsi = 0,70 unter den festgelegten Randbedingungen?",
+      "antwort": "θsi = 12,6 °C",
+      "vertiefung": "Der Wert folgt direkt aus der Definition: Bei 20 °C innen und −5 °C außen sind 0,70 · 25 K = 17,5 K über der Außentemperatur, also −5 + 17,5 = 12,5 bis 12,6 °C.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "grenzwert"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130 und 135",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 12.6,
+      "einheit": "°C",
+      "toleranz": 0.1
+    },
+    {
+      "id": "bp-wb-011",
+      "typ": "rechnen",
+      "frage": "An der kältesten Stelle der Innenoberfläche wurde θsi = {tsi} ermittelt. Die Außenlufttemperatur beträgt {te}, die Raumlufttemperatur {ti}. Berechne den Temperaturfaktor fRsi.",
+      "antwort": "fRsi = (θsi − θe) / (θi − θe)",
+      "vertiefung": "Anschließend wird gegen 0,70 verglichen. Liegt der Wert darunter, ist das Detail nachzubessern; ein Wert ab 0,80 gilt als erstrebenswert, weil er auch längere Kälteperioden und höhere Raumluftfeuchte verträgt.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "rechnen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130 und 132 (Beispiel 1)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "tsi",
+          "titel": "Oberflächentemperatur",
+          "einheit": "°C",
+          "von": 9,
+          "bis": 19,
+          "schritt": 0.5,
+          "stellen": 1
+        },
+        {
+          "name": "te",
+          "titel": "Außenlufttemperatur",
+          "einheit": "°C",
+          "auswahl": [
+            -5,
+            -10,
+            -15
+          ]
+        },
+        {
+          "name": "ti",
+          "titel": "Raumlufttemperatur",
+          "einheit": "°C",
+          "auswahl": [
+            20,
+            22
+          ]
+        }
+      ],
+      "formel": "(tsi-te)/(ti-te)",
+      "einheit": "",
+      "toleranz": 0.02,
+      "stellen": 2,
+      "loesungsweg": "Temperaturgewinn an der Oberfläche durch den gesamten Temperaturunterschied teilen: fRsi = (θsi − θe) / (θi − θe)"
+    },
+    {
+      "id": "bp-wb-012",
+      "typ": "rechnen",
+      "frage": "Für ein Anschlussdetail ist fRsi = {f} nachgewiesen. Welche raumseitige Oberflächentemperatur stellt sich bei einer Außenlufttemperatur von {te} und einer Raumlufttemperatur von {ti} ein?",
+      "antwort": "θsi = θe + fRsi · (θi − θe)",
+      "vertiefung": "Das ist der eigentliche Nutzen des dimensionslosen Faktors: Einmal berechnet, liefert er die Oberflächentemperatur für jede beliebige Wetterlage – auch für Winterperioden, die kälter sind als die −5 °C der Nachweis-Randbedingungen.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "rechnen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130",
+      "stand": "2026-09",
+      "geprueft": true,
+      "variablen": [
+        {
+          "name": "f",
+          "titel": "Temperaturfaktor",
+          "einheit": "",
+          "auswahl": [
+            0.68,
+            0.7,
+            0.75,
+            0.8,
+            0.94
+          ]
+        },
+        {
+          "name": "te",
+          "titel": "Außenlufttemperatur",
+          "einheit": "°C",
+          "auswahl": [
+            -5,
+            -10,
+            -15
+          ]
+        },
+        {
+          "name": "ti",
+          "titel": "Raumlufttemperatur",
+          "einheit": "°C",
+          "auswahl": [
+            20,
+            22
+          ]
+        }
+      ],
+      "formel": "te+f*(ti-te)",
+      "einheit": "°C",
+      "toleranz": 0.2,
+      "stellen": 1,
+      "loesungsweg": "θsi = θe + fRsi · (θi − θe)"
+    },
+    {
+      "id": "bp-wb-013",
+      "typ": "karte",
+      "frage": "Welche Randbedingungen liegen dem Nachweis des Temperaturfaktors zugrunde?",
+      "antwort": "Innenlufttemperatur 20 °C, relative Luftfeuchte innen 50 %, als kritisch angesetzte Luftfeuchte an der Bauteiloberfläche 80 %, Außenlufttemperatur −5 °C, Rsi = 0,25 m²·K/W für beheizte und 0,17 m²·K/W für unbeheizte Räume, Rse = 0,04 m²·K/W. Diese Randbedingungen sind nicht dieselben wie bei der Berechnung von Wärmedurchlasswiderstand und U-Wert.",
+      "vertiefung": "Der Unterschied beim inneren Übergangswiderstand ist beabsichtigt und liegt auf der sicheren Seite: 0,25 statt 0,13 m²·K/W bildet ab, dass die Luft vor der Oberfläche in einer Ecke, hinter einem Möbelstück oder unter einem Vorhang schlechter zirkuliert. Ein größerer Übergangswiderstand bedeutet eine kältere Oberfläche.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "randbedingungen",
+        "typischer-fehler"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-014",
+      "typ": "numerisch",
+      "frage": "Welcher innere Wärmeübergangswiderstand wird beim Wärmebrückennachweis für beheizte Räume angesetzt?",
+      "antwort": "Rsi = 0,25 m²·K/W",
+      "vertiefung": "Zum Vergleich: Für die Berechnung des U-Werts gilt Rsi = 0,13 m²·K/W. Wer beim Wärmebrückennachweis mit 0,13 rechnet, erhält eine zu warme Oberfläche und damit einen zu günstigen Temperaturfaktor.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 0.25,
+      "einheit": "m²·K/W",
+      "toleranz": 0.005
+    },
+    {
+      "id": "bp-wb-015",
+      "typ": "zuordnung",
+      "frage": "Welche Temperatur wird für angrenzende Gebäudeteile beim Wärmebrückennachweis angesetzt?",
+      "antwort": "Keller +10 °C · Erdreich +10 °C · unbeheizte Pufferzone +10 °C · unbeheizter Dachraum −5 °C",
+      "vertiefung": "Der unbeheizte Dachraum wird wie Außenluft behandelt, weil er über die Dachhaut stark belüftet ist. Keller und Erdreich dagegen sind durch die Umgebung temperiert.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 131 (Tafel 2.3.11 nach DIN 4108-2)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Keller",
+          "+10 °C"
+        ],
+        [
+          "Erdreich",
+          "+10 °C"
+        ],
+        [
+          "unbeheizte Pufferzone",
+          "+10 °C"
+        ],
+        [
+          "unbeheizter Dachraum",
+          "−5 °C"
+        ]
+      ]
+    },
+    {
+      "id": "bp-wb-016",
+      "typ": "fehlersuche",
+      "frage": "Dieser Anschluss einer Balkonplatte ist so gebaut, wie er nicht gebaut werden darf. Markiere die Stelle, an der der Fehler steckt.",
+      "antwort": "Die Stahlbetonkragplatte läuft ohne jede thermische Trennung von innen nach außen durch die Wandebene. Damit verbindet ein gut leitendes, dichtes Bauteil den beheizten Raum direkt mit der Außenluft.",
+      "vertiefung": "Das Buch vergleicht die durchlaufende Kragplatte mit einer Kühlrippe: Was am Motor beabsichtigt ist, ist im Wohnungsbau ein Baufehler. Die Folge sind hohe Wärmeverluste, ein stark auskühlendes Bauteil und Schimmelbildung im Innenbereich am Übergang von Decke und Wand.",
+      "tags": [
+        "waermebruecke",
+        "konstruktion",
+        "fehlersuche"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 127–128 (Bild 2.3.10)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/wb-kragplatte-ohne.png",
+      "bereiche": [
+        {
+          "nr": 1,
+          "x": 24,
+          "y": 56,
+          "name": "auskragende Balkonplatte im Außenbereich"
+        },
+        {
+          "nr": 2,
+          "x": 57,
+          "y": 57,
+          "name": "Durchdringung der Wandebene ohne thermische Trennung"
+        },
+        {
+          "nr": 3,
+          "x": 84,
+          "y": 55,
+          "name": "Geschossdecke im beheizten Innenbereich"
+        },
+        {
+          "nr": 4,
+          "x": 57,
+          "y": 22,
+          "name": "Fenstertürelement über dem Deckenanschluss"
+        }
+      ],
+      "fehlerNr": 2,
+      "folge": "Die Platte wirkt als Kühlrippe: Wärme fließt ungehindert durch das dichte Gefüge des Stahlbetons nach außen ab. Der Wärmeverlust steigt, das Bauteil kühlt im Winter stark aus, und im Innenraum ist im Bereich Decke und Wand Schimmelpilzbildung vorprogrammiert. Der Temperaturfaktor an dieser Stelle erreicht den geforderten Wert von 0,70 nicht."
+    },
+    {
+      "id": "bp-wb-017",
+      "typ": "skizze",
+      "frage": "Skizziere, wie derselbe Balkonanschluss nach heutigem Stand der Technik ausgeführt wird.",
+      "antwort": "Die durchgehende Stahlbetonplatte wird im Bereich der Außenwanddämmung durch eine Dämmschicht unterbrochen. Handelsüblich ist ein vorgefertigter gedämmter Bewehrungskorb, der die Lasten weiterhin abträgt.",
+      "vertiefung": "Zwei Dinge bleiben dabei zu beachten: Die Lastabtragung muss in der statischen Berechnung erfasst werden, und für die notwendigen durchgehenden Bewehrungsstähle ist bei der wärmeschutztechnischen Berechnung ein Korrekturwert auf die Wärmeleitfähigkeit des Dämmmaterials nach DIN EN ISO 6946 zu berücksichtigen.",
+      "tags": [
+        "waermebruecke",
+        "konstruktion",
+        "skizze"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 128–129 (Bild 2.3.11)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/wb-kragplatte-mit.png",
+      "pruefpunkte": [
+        "Die Dämmebene der Außenwand läuft durch",
+        "Die Stahlbetonplatte ist genau in dieser Ebene unterbrochen",
+        "Die Verbindung übernimmt ein gedämmtes Bauteil, das Lasten weiterleitet",
+        "Der Wärmestrom von innen nach außen ist gegenüber der durchlaufenden Platte deutlich reduziert",
+        "Die Innenoberfläche am Deckenanschluss bleibt dadurch wärmer"
+      ]
+    },
+    {
+      "id": "bp-wb-018",
+      "typ": "skizze",
+      "frage": "Skizziere den Isothermenverlauf im Bauteil, wenn eine Kragplatte ohne thermische Trennung durchläuft. Markiere die kälteste raumseitige Stelle.",
+      "antwort": "Die Isothermen werden im Bereich der Platte nach innen gezogen: Kalte Temperaturen wandern aus der Wand in den Innenbereich. Die kälteste raumseitige Stelle liegt in der unteren Ecke am Übergang von Decke und Innenwand.",
+      "vertiefung": "Isothermen sind Linien gleicher Temperatur im Bauteil. An ihrem Verlauf lässt sich ablesen, wo ein Bauteil auskühlt und wo es seine Temperatur hält. Im Beispiel zeigt die Isotherme für 12,5 °C, über welch kurze Strecke diese Temperatur von der Außenkante des Hintermauerwerks bis an dessen Innenseite wandert.",
+      "tags": [
+        "waermebruecke",
+        "isothermen",
+        "skizze"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 132–133 (Bild 2.3.13)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/wb-isothermen-ohne.png",
+      "pruefpunkte": [
+        "Im ungestörten Wandbereich verlaufen die Isothermen parallel zu den Oberflächen",
+        "Im Bereich der durchlaufenden Platte werden sie nach innen gezogen",
+        "Die Platte selbst ist außen kalt und innen warm, ohne nennenswerten Temperatursprung",
+        "Die kälteste raumseitige Stelle liegt in der Ecke zwischen Decke und Innenwand",
+        "Der Abstand der Isothermen ist dort am engsten, wo der Wärmestrom am größten ist"
+      ]
+    },
+    {
+      "id": "bp-wb-019",
+      "typ": "karte",
+      "frage": "Wie verändert sich der Temperaturfaktor beim Balkonanschluss durch eine thermische Trennung?",
+      "antwort": "Ohne thermische Trennung wurde eine raumseitige Oberflächentemperatur von 12,5 °C ermittelt, daraus fRsi = 0,68 – der Grenzwert von 0,70 wird knapp unterschritten. Mit thermischer Trennung steigt die Oberflächentemperatur auf 18,5 °C und damit fRsi auf 0,94. Die Konstruktion ist dann in Bezug auf Tauwasser und Schimmel ungefährdet.",
+      "vertiefung": "Das Buch warnt ausdrücklich vor Grenzfällen: Auch bei nur knapper Unterschreitung ist früher oder später mit Schimmel zu rechnen, weil eine höhere Raumluftfeuchte oder eine längere Kälteperiode unter −5 °C den Nachweis kippen lässt. Als Zielwert wird fRsi ≥ 0,80 empfohlen.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "beispiel"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 132–134 (Beispiele 1 und 2)",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-020",
+      "typ": "karte",
+      "frage": "Welche Regel gilt für auskragende Bauteile, die in den ungedämmten Bereich oder ins Freie ragen?",
+      "antwort": "Sie dürfen ohne zusätzliche Wärmedämm-Maßnahmen nicht ausgeführt werden. Das betrifft Balkonplatten, Attiken, freistehende Stützen sowie Wände mit einer Wärmeleitfähigkeit über 0,5 W/(m·K).",
+      "vertiefung": "Die Grenze bei λ = 0,5 W/(m·K) trennt die dämmenden von den gut leitenden Baustoffen: Stahlbeton und schweres Mauerwerk liegen darüber, Porenbeton und Leichtbeton darunter. Auskragende Bauteile aus gut leitendem Material sind der klassische Fall der konstruktiven Wärmebrücke.",
+      "tags": [
+        "waermebruecke",
+        "konstruktion",
+        "regel"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 127",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-021",
+      "typ": "karte",
+      "frage": "Was ist bei einer thermischen Trennung zusätzlich zur Wärmedämmung zu berücksichtigen?",
+      "antwort": "Zweierlei. Erstens die Statik: Die Lastabtragung durch das Trennelement muss in der statischen Berechnung erfasst werden. Zweitens die durchgehenden Bewehrungsstähle: Für sie ist bei der wärmeschutztechnischen Berechnung ein Korrekturwert auf die Wärmeleitfähigkeit des Dämmmaterials nach DIN EN ISO 6946 zu berücksichtigen.",
+      "vertiefung": "Es ist dieselbe Korrektur, die bei Drahtankern in zweischaligem Mauerwerk greift: ΔUf für mechanische Befestigungselemente, die eine Dämmschicht durchdringen. Ein Trennelement ist nie ganz dicht – die Bewehrung muss hindurch.",
+      "tags": [
+        "waermebruecke",
+        "konstruktion",
+        "nachweis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 129",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-022",
+      "typ": "mehrfachauswahl",
+      "frage": "In welchen Fällen ist kein gesonderter Nachweis der Wärmebrücke erforderlich?",
+      "antwort": "Kein Nachweis ist nötig bei Ecken aus gleichartigem Aufbau, deren Einzelbauteile die Mindestwerte nach DIN 4108-2 erfüllen, bei Details, die den Musterlösungen des Beiblatts 2 entsprechen, bei üblichen Verbindungsmitteln wie Nägeln, Schrauben und Drahtankern sowie bei Mörtelfugen von Mauerwerk nach DIN 1053-1. Eine ungedämmt durchlaufende Kragplatte ist dagegen gerade der Fall, der nachzuweisen wäre – und der so ohnehin nicht ausgeführt werden darf.",
+      "vertiefung": "Der Gedanke dahinter: Der Nachweis soll die Regelfälle nicht aufblähen. Wer nach anerkannten Musterlösungen baut, hat den Nachweis über die Gleichwertigkeit bereits geführt.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "normen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 129 und 134",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Ecken von Außenbauteilen mit gleichartigem Aufbau, deren Einzelkomponenten die Mindestwerte einhalten",
+        "Anschlussdetails, die den Musterlösungen des Beiblatts 2 zur DIN 4108 entsprechen",
+        "Übliche Verbindungsmittel wie Nägel, Schrauben und Drahtanker",
+        "Mörtelfugen von Mauerwerk nach DIN 1053-1",
+        "Eine Stahlbetonkragplatte, die ungedämmt durch die Wand läuft"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "bp-wb-023",
+      "typ": "karte",
+      "frage": "Was enthält das Beiblatt 2 zur DIN 4108, und wie wird damit gearbeitet?",
+      "antwort": "Es enthält 95 Musterlösungen von Anschlussdetails des Hochbaus als Prinzipskizzen, jeweils mit einem Referenzwert für ψ. Wer ein Detail baut, das einer Musterlösung entspricht oder nachweislich gleichwertig ist, muss keinen weiteren Nachweis führen. Weicht die Konstruktion ab, ist an der ungünstigsten Stelle fRsi ≥ 0,70 nachzuweisen.",
+      "vertiefung": "Die Prinzipskizzen zeigen den Wärmeschutz, nicht die ganze Konstruktion: Statik, Abdichtung und Schallschutz sind nach den jeweils dafür geltenden Regelwerken auszuführen. Der Gleichwertigkeitsnachweis entfällt außerdem, wenn die angrenzenden Bauteile kleinere U-Werte haben als in der Musterlösung zugrunde gelegt.",
+      "tags": [
+        "waermebruecke",
+        "normen",
+        "nachweis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 135",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-024",
+      "typ": "zuordnung",
+      "frage": "Ordne den Anschlussdetails die Größenordnung des Referenzwerts für ψ zu.",
+      "antwort": "Fensterlaibung bei außengedämmtem Mauerwerk ≤ 0,08 · Geschossdecke bei außengedämmtem Mauerwerk ≤ 0,20 · Rollladenkasten bei monolithischem Mauerwerk ≤ 0,23 · Kellerwand aus Stahlbeton, außengedämmt mit innengedämmtem Streifenfundament ≤ 0,43 W/(m·K)",
+      "vertiefung": "Die Rangfolge ist das Lernziel: Eine gut gedämmte Fensterlaibung liegt bei Hundertsteln, ein Deckenanschluss bei Zehnteln, der Übergang zum Fundament ist der teuerste Anschluss am Gebäude. Bei Flächengründungen erscheinen sogar negative Referenzwerte – dort wird der Anschluss günstiger als die pauschale Bilanz der angrenzenden Bauteile.",
+      "tags": [
+        "waermebruecke",
+        "kennwerte",
+        "details"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 136–147 (Tafeln 2.3.12 bis 2.3.20 nach Beiblatt 2 zu DIN 4108)",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Die Referenzwerte stammen aus der Fassung des Beiblatts 2, auf die sich die Quelle bezieht. Das Beiblatt wurde seither überarbeitet; Werte und Kategorien sind vor Verwendung in einem Nachweis an der aktuellen Fassung zu prüfen. Die Rangfolge der Größenordnungen bleibt aussagekräftig.",
+      "paare": [
+        [
+          "Fensterlaibung, außengedämmtes Mauerwerk",
+          "ψ ≤ 0,08 W/(m·K)"
+        ],
+        [
+          "Geschossdecke, außengedämmtes Mauerwerk",
+          "ψ ≤ 0,20 W/(m·K)"
+        ],
+        [
+          "Rollladenkasten, monolithisches Mauerwerk",
+          "ψ ≤ 0,23 W/(m·K)"
+        ],
+        [
+          "Kellerwand aus Stahlbeton mit innengedämmtem Streifenfundament",
+          "ψ ≤ 0,43 W/(m·K)"
+        ]
+      ]
+    },
+    {
+      "id": "bp-wb-025",
+      "typ": "karte",
+      "frage": "Welche zwei Stellen am Fenster gelten hinsichtlich Wärmebrücken als besonders empfindlich?",
+      "antwort": "Der Fenstersturz in Verbindung mit einem Rollladenkasten und die Heizkörpernische. Am Rollladenkasten entsteht häufig der sogenannte „Rollladenpilz“; sein Innenbereich ist deshalb allseitig zu dämmen, und der freie Panzerauslassschlitz soll 10 mm nicht überschreiten. Bei Heizkörpernischen wirken zwei Ursachen zusammen: die geometrisch bedingte Form der Nische und die Konsolen aus Stahl, die die Dämmung durchstoßen.",
+      "vertiefung": "Beide Stellen liegen dort, wo sowieso wenig Platz ist – über dem Fenster und unter der Brüstung. Genau deshalb wird an der Dämmung gespart. Heizkörpernischen werden heute kaum noch gebaut, im Bestand sind sie aber regelmäßig die kälteste Stelle des Raums, ausgerechnet direkt hinter dem Heizkörper.",
+      "tags": [
+        "waermebruecke",
+        "baupraxis",
+        "details"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 146–147",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-wb-026",
+      "typ": "bildbeschriftung",
+      "frage": "Grundriss einer Gebäude-Außenecke mit Isothermen. Benenne die markierten Stellen.",
+      "antwort": "Innenecke mit der niedrigsten Oberflächentemperatur, Isotherme, Gebäude-Außenecke mit der vergrößerten wärmeabgebenden Fläche und der ungestörte Wandbereich, für den der U-Wert gilt.",
+      "vertiefung": "Der Vergleich der beiden Flächen erklärt den Effekt vollständig: außen groß, innen klein. Deshalb ist die geometrische Wärmebrücke unabhängig vom Baustoff und lässt sich durch Dämmung mildern, aber nicht beseitigen.",
+      "tags": [
+        "waermebruecke",
+        "geometrie",
+        "zeichnung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 126–127 (Bild 2.3.8)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/wb-ecke-isothermen-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 20,
+          "y": 66,
+          "name": "Innenecke: niedrigste raumseitige Oberflächentemperatur"
+        },
+        {
+          "nr": 2,
+          "x": 15,
+          "y": 38,
+          "name": "Isotherme – Linie gleicher Temperatur"
+        },
+        {
+          "nr": 3,
+          "x": 10,
+          "y": 79,
+          "name": "Gebäude-Außenecke: vergrößerte wärmeabgebende Fläche"
+        },
+        {
+          "nr": 4,
+          "x": 57,
+          "y": 72,
+          "name": "ungestörter Wandbereich – hier gilt der U-Wert"
+        }
+      ]
+    },
+    {
+      "id": "bp-wb-027",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte in die richtige Reihenfolge, mit denen ein Anschlussdetail auf Wärmebrücken geprüft wird.",
+      "antwort": "Detail mit den Musterlösungen vergleichen, bei Gleichwertigkeit ist der Nachweis erbracht, sonst zweidimensional rechnen, ungünstigste Oberflächentemperatur ablesen, fRsi bilden, gegen 0,70 prüfen.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "ablauf"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 129–135",
+      "stand": "2026-09",
+      "geprueft": true,
+      "schritte": [
+        "Das geplante Detail mit den Musterlösungen aus Beiblatt 2 zur DIN 4108 vergleichen",
+        "Stimmt es überein oder ist es gleichwertig, ist der Nachweis damit erbracht",
+        "Weicht es ab: das Detail mit einem zweidimensionalen Wärmebrückenprogramm berechnen",
+        "Die niedrigste raumseitige Oberflächentemperatur an der ungünstigsten Stelle ablesen",
+        "Daraus den Temperaturfaktor fRsi bilden",
+        "fRsi gegen den Mindestwert 0,70 prüfen und das Detail bei Bedarf ändern"
+      ]
+    },
+    {
+      "id": "bp-wb-028",
+      "typ": "skizze",
+      "frage": "Skizziere, wie der Temperaturfaktor fRsi definiert ist, und trage die beiden Grenzwerte ein, die man im Kopf haben sollte.",
+      "antwort": "Ein Bauteilschnitt mit Raumluft innen, Außenluft außen und der raumseitigen Oberflächentemperatur dazwischen; dazu die Gleichung fRsi = (θsi − θe) / (θi − θe) sowie die Marken 0,70 als Mindestwert und 0,80 als erstrebenswerter Wert.",
+      "vertiefung": "Wer die Skala einmal gezeichnet hat, sieht auch den Abstand: Zwischen dem abgelehnten Beispiel mit 0,68 und dem Grenzwert 0,70 liegen nur zwei Hundertstel, also ein Zehntel Kelvin Oberflächentemperatur. Solche Grenzfälle sind praktisch bereits Schadensfälle.",
+      "tags": [
+        "waermebruecke",
+        "nachweis",
+        "skizze"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 130 und 133",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/wb-frsi.svg",
+      "pruefpunkte": [
+        "Schnitt mit Außenluft, Bauteil und Raumluft",
+        "θe außen, θi innen, θsi an der raumseitigen Oberfläche eingetragen",
+        "Gleichung fRsi = (θsi − θe) / (θi − θe)",
+        "Mindestwert 0,70 markiert, entspricht θsi = 12,6 °C",
+        "0,80 als erstrebenswerter Wert markiert",
+        "Der Faktor ist dimensionslos und liegt zwischen 0 und 1"
+      ]
+    }
+  ]
+}

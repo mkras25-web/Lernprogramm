@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="510" fill="#f0ead2"/>
+
+  <g stroke="#414833" stroke-width="1.3" fill="#414833" font-size="13">
+    <line x1="120" y1="80" x2="120" y2="380"/>
+    <line x1="120" y1="380" x2="820" y2="380"/>
+    <text x="112" y="76" text-anchor="end">Druck</text>
+  </g>
+
+  <path d="M120,120 C200,165 240,300 330,315 C490,333 650,339 800,346" fill="none" stroke="#414833" stroke-width="3"/>
+  <line x1="120" y1="180" x2="800" y2="352" stroke="#6c584c" stroke-width="2" stroke-dasharray="7 5"/>
+  <path d="M120,180 L300,306 L800,352" fill="none" stroke="#9a6b1f" stroke-width="2.6"/>
+  <circle cx="300" cy="306" r="6.5" fill="#f0ead2" stroke="#9a6b1f" stroke-width="2.5"/>
+
+  <g font-size="14" fill="#414833">
+    <text x="152" y="108">Sättigungsdampfdruck p&#8347;</text>
+    <text x="152" y="166" fill="#6c584c">Dampfdruck p, unkorrigiert</text>
+    <text x="330" y="360" fill="#9a6b1f">Tauwasserebene: hier berührt der</text>
+    <text x="330" y="378" fill="#9a6b1f">korrigierte Dampfdruck die Sättigungslinie</text>
+    <line x1="326" y1="352" x2="304" y2="315" stroke="#9a6b1f" stroke-width="1.2"/>
+    <text x="500" y="250" fill="#9a6b1f" font-size="13">unkorrigiert läge p über p&#8347; —</text>
+    <text x="500" y="268" fill="#9a6b1f" font-size="13">in diesem Bereich fällt Tauwasser aus</text>
+  </g>
+
+  <text x="470" y="404" text-anchor="middle" font-size="13" fill="#414833">
+    Bauteil, aufgetragen über den s&#8346;-Wert der Schichten
+  </text>
+  <g font-size="15" font-weight="600" fill="#414833">
+    <text x="120" y="440">innen 20 °C · 50 %</text>
+    <text x="820" y="440" text-anchor="end">außen −10 °C · 80 %</text>
+  </g>
+  <g font-size="13" fill="#6c584c">
+    <text x="120" y="474">Der Dampfdruck kann den Sättigungsdruck nicht überschreiten. Wo die Gerade darüber liefe,</text>
+    <text x="120" y="494">knickt sie ab und berührt ihn nur — die Differenz bleibt als Tauwasser im Bauteil.</text>
+  </g>
+</svg>

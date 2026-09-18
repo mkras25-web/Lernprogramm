@@ -1,0 +1,89 @@
+{
+  "titel": "Skizzen: Sockel und Außenwand",
+  "items": [
+    {
+      "id": "bk-skz-001",
+      "typ": "skizze",
+      "frage": "Zeichne den Sockelanschluss einer zweischaligen Außenwand mit Kerndämmung im Schnitt. Maßstab egal, aber die Schichten müssen richtig liegen.",
+      "referenz": "bilder/sockel-zweischalig.svg",
+      "pruefpunkte": [
+        "Außenschale, Kerndämmung und tragende Innenschale in dieser Reihenfolge von außen nach innen (1–3)",
+        "Vertikale Abdichtung auf der Außenseite der Innenschale, nicht hinter der Verblendschale (4)",
+        "Entwässerungsöffnung am Fußpunkt der Außenschale (5)",
+        "Perimeterdämmung außerhalb der Abdichtung, unterhalb der Geländeoberkante (6)",
+        "Sockelabdichtung bis etwa 20 cm über Geländeoberkante hochgeführt (7)",
+        "Querschnittsabdichtung unter der ersten Steinlage, an die vertikale Abdichtung angeschlossen (8)",
+        "Hohlkehle am Übergang Wand zu Bodenplatte (9)"
+      ],
+      "antwort": "Entscheidend ist die Lage der Dichtebene: Sie liegt auf der Außenseite der tragenden Innenschale und läuft ohne Unterbrechung von der Bodenplatte bis über die Geländeoberkante.",
+      "vertiefung": "Die Außenschale ist Wetterschale, nicht Dichtebene – sie darf durchfeuchten. Wasser, das sie durchdringt, sickert im Schalenzwischenraum ab und verlässt die Wand durch die Öffnungen am Fußpunkt. Wer die Abdichtung hinter die Verblendschale legt, sperrt dieses Wasser ein.",
+      "tags": [
+        "sockel",
+        "zweischalig",
+        "abdichtung",
+        "skizze"
+      ],
+      "quelle": "Schematische Zeichnung nach DETAIL Atlas Mauerwerk, S. 126–133",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Quelle argumentiert über DIN 18195; Abdichtungsdetails gegen DIN 18533 abgleichen."
+    },
+    {
+      "id": "bk-skz-002",
+      "typ": "skizze",
+      "frage": "Skizziere ohne Vorlage den Schichtenaufbau einer Außenwand mit WDVS von innen nach außen und beschrifte jede Schicht mit ihrer Funktion.",
+      "pruefpunkte": [
+        "Innenputz als luftdichte Ebene benannt",
+        "Tragende Wand",
+        "Klebemörtel oder mechanische Befestigung",
+        "Dämmung außenliegend, also auf der Kaltseite",
+        "Armierungsschicht mit Gewebe",
+        "Oberputz als Witterungsschutz",
+        "Jede Schicht mit Funktion beschriftet, nicht nur mit Material"
+      ],
+      "antwort": "Von innen nach außen: Innenputz, tragende Wand, Kleber, Dämmung, Armierungsschicht mit Gewebe, Oberputz. Die Funktionsfolge lautet dichten – tragen – dämmen – schützen.",
+      "vertiefung": "Die Dämmung liegt außen, weil dadurch die tragende Wand im warmen Bereich bleibt und der Taupunkt in die Dämmung nach außen wandert. Genau diese Reihenfolge ist der Grund, warum Innendämmung bauphysikalisch der Sonderfall bleibt.",
+      "tags": [
+        "aussenwand",
+        "wdvs",
+        "schichtenlogik",
+        "skizze"
+      ],
+      "quelle": "DETAIL Atlas Baustoff, S. 135",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-skz-003",
+      "typ": "skizze",
+      "frage": "Zeichne schematisch, wo bei einer Innendämmung der Taupunkt liegt, und markiere die Stelle mit Tauwassergefahr.",
+      "pruefpunkte": [
+        "Schichtenfolge von innen: Dampfbremse, Dämmung, tragende Wand",
+        "Temperaturverlauf als Linie durch den Querschnitt eingetragen",
+        "Taupunkt liegt an der Grenze zwischen Dämmung und tragender Wand",
+        "Gefahrenstelle dort markiert, nicht in der Dämmung selbst",
+        "Notiert, dass die tragende Wand kalt bleibt"
+      ],
+      "antwort": "Bei Innendämmung liegt die tragende Wand vollständig im kalten Bereich. Der Taupunkt wandert an die Grenzfläche zwischen Dämmung und Wand – genau dort fällt Tauwasser an, wenn Raumluft durch Undichtigkeiten dorthin gelangt.",
+      "vertiefung": "Deshalb sind zwei Dinge zwingend: eine sorgfältig verarbeitete Dampfbremse auf der Raumseite und ein Dampfdiffusionsnachweis. Wärmebrücken an Wand- und Deckenanschlüssen bleiben trotzdem unvermeidbar.",
+      "tags": [
+        "innendaemmung",
+        "bauphysik",
+        "taupunkt",
+        "skizze"
+      ],
+      "quelle": "DETAIL Atlas Baustoff, S. 135",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ],
+  "thema": "skizzen-sockel",
+  "erklaerung": {
+    "absaetze": [
+      "Zeichnen aus dem Gedächtnis ist die wirksamste Form der Wiederholung, weil du die Antwort selbst hervorbringst statt sie wiederzuerkennen. Ob auf Papier oder im Zeichenfeld, spielt keine Rolle.",
+      "Bewerte dich nicht nach Gefühl. Jede Aufgabe hat Prüfpunkte – hake ab, was deine Zeichnung wirklich enthält, und urteile erst danach. Getroffene Prüfpunkte sind ein Maß, ein Eindruck ist keines.",
+      "Wenig zu treffen ist am Anfang normal und kein Grund, milder zu urteilen. Die gespeicherten Versuche zeigen dir nach ein paar Monaten deutlicher als jede Zahl, was sich verändert hat."
+    ],
+    "merksatz": "Erst zeichnen, dann vergleichen, dann urteilen – nie in anderer Reihenfolge."
+  }
+}

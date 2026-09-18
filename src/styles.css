@@ -1,0 +1,2115 @@
+/* Farbtoken. Alle Flaechen und Akzente haengen an diesen Werten -
+   eine Aenderung hier faerbt die ganze App um. */
+:root {
+  --spaltenbreite: 104rem;
+  --papier: #f0ead2;
+  --flaeche: #f7f3e4;
+  --flaeche-tief: #dde5b6;
+  --akzent: #adc178;
+  --fortschritt: var(--akzent);
+  --lehm: #a98467;
+  --rinde: #6c584c;
+  --tusche: #414833;
+  --linie: #d9d2b4;
+  --warnung: #9a6b1f;
+
+  --serife: Iowan Old Style, Palatino Linotype, Palatino, Georgia, serif;
+  --groteske: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+  --rund: 4px;
+  --schatten: 0 1px 2px rgba(65, 72, 51, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--tusche);
+  font-family: var(--groteske);
+  -webkit-text-size-adjust: 100%;
+}
+
+.huelle {
+  max-width: 42rem;
+  margin: 0 auto;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.schirm {
+  flex: 1;
+  padding: 1.5rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Typografie */
+.ueberschrift {
+  margin: 0;
+  font-family: var(--serife);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.abschnitt {
+  margin: 0 0 0.75rem;
+  font-family: var(--groteske);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rinde);
+}
+
+.nebentext {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--rinde);
+}
+
+.block { display: flex; flex-direction: column; }
+
+/* Ring */
+.ring { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
+.ringWert { fill: var(--tusche); font-family: var(--serife); }
+.ringUnten { margin: 0; font-size: 0.75rem; color: var(--rinde); }
+
+/* Startbildschirm */
+.stufe { display: flex; align-items: center; gap: 1.25rem; }
+.stufeText { display: flex; flex-direction: column; gap: 0.25rem; }
+
+.kennzahlen {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.kennzahl {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+.kennzahlWert {
+  margin: 0;
+  font-family: var(--serife);
+  font-size: 1.375rem;
+  line-height: 1.1;
+}
+
+.kennzahlEinheit { font-size: 0.8125rem; color: var(--rinde); }
+
+.kennzahlName {
+  margin: 0.25rem 0 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  color: var(--rinde);
+}
+
+.aufruf {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--flaeche-tief);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+}
+
+.aufruf.ruhig { background: var(--flaeche); border-color: var(--linie); }
+.aufruf > div { flex: 1; min-width: 12rem; }
+.aufrufZahl { margin: 0; font-family: var(--serife); font-size: 1.125rem; }
+
+.kartenband {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+}
+
+.bandKarte {
+  flex: 0 0 6.5rem;
+  background: var(--flaeche);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--rinde);
+}
+
+.bandKarte img { width: 100%; height: 5rem; object-fit: contain; }
+
+/* Themen */
+.reiter { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.reiterKnopf {
+  font: inherit;
+  font-size: 0.8125rem;
+  padding: 0.4rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  color: var(--rinde);
+  cursor: pointer;
+}
+
+.reiterKnopf.aktiv {
+  background: var(--tusche);
+  border-color: var(--tusche);
+  color: var(--papier);
+}
+
+.kacheln {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.kachel {
+  position: relative;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: inherit;
+  cursor: pointer;
+  box-shadow: var(--schatten);
+}
+
+.kachel:hover { border-color: var(--lehm); }
+.kachel.gesperrt { opacity: 0.45; cursor: default; box-shadow: none; }
+.kachelTitel { font-family: var(--serife); font-size: 1rem; }
+.kachelZeile { font-size: 0.75rem; color: var(--rinde); }
+
+.marke {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.6875rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  background: var(--fortschritt);
+  color: var(--tusche);
+}
+
+/* Sammlung */
+.kartengitter {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.karte {
+  width: 100%;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 0.75rem;
+  background: var(--flaeche);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+  color: inherit;
+  cursor: pointer;
+  box-shadow: var(--schatten);
+}
+
+.karte.verschlossen {
+  border-style: dashed;
+  border-color: var(--linie);
+  background: transparent;
+  cursor: default;
+  box-shadow: none;
+}
+
+.kartenBild {
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  border: 1px solid var(--linie);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.karte.verschlossen .kartenBild { background: var(--flaeche); }
+.kartenBild img { width: 100%; height: 100%; object-fit: contain; }
+.fortschrittZahl { font-family: var(--serife); font-size: 1.25rem; color: var(--rinde); }
+.kartenTitel { font-family: var(--serife); font-size: 0.9375rem; }
+.kartenRang { font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--rinde); }
+
+.schleier {
+  position: fixed;
+  inset: 0;
+  background: rgba(65, 72, 51, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  z-index: 20;
+}
+
+.grosseKarte {
+  width: 100%;
+  max-width: 22rem;
+  max-height: 90dvh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--papier);
+  border: 2px solid var(--lehm);
+  border-radius: var(--rund);
+}
+
+.kartenHerkunft { margin: 0; font-size: 0.75rem; color: var(--rinde); }
+.grossesBild { width: 100%; background: #fff; border: 1px solid var(--linie); border-radius: 2px; }
+
+.kartenWerte { display: flex; gap: 1.5rem; margin: 0; }
+.kartenWerte dt { font-size: 0.6875rem; color: var(--rinde); }
+.kartenWerte dd { margin: 0; font-family: var(--serife); font-size: 1rem; }
+
+/* Fortschritt */
+.kalender {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  grid-auto-flow: column;
+  gap: 3px;
+}
+
+.feld { aspect-ratio: 1; border-radius: 2px; background: var(--linie); }
+.feld.stufe1 { background: #e3e9c6; }
+.feld.stufe2 { background: var(--fortschritt); }
+.feld.stufe3 { background: #8aa557; }
+.feld.stufe4 { background: var(--tusche); }
+
+.saeulen { display: flex; align-items: flex-end; gap: 0.5rem; height: 6rem; }
+.saeule { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.saeuleFuellung { background: var(--fortschritt); border-radius: 2px 2px 0 0; min-height: 2px; }
+.saeuleName { font-size: 0.6875rem; color: var(--rinde); text-align: center; padding-top: 0.25rem; }
+
+.verteilung { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.verteilung li { display: grid; grid-template-columns: 9rem 1fr 3rem; align-items: center; gap: 0.75rem; }
+.verteilungName {
+  font-size: 0.8125rem;
+  color: var(--rinde);
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.verteilungBalken { height: 0.5rem; background: var(--linie); border-radius: 999px; overflow: hidden; }
+.verteilungBalken span { display: block; height: 100%; background: var(--fortschritt); }
+.verteilungZahl { font-size: 0.8125rem; text-align: right; }
+
+.baustellen { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.625rem; }
+.baustellen li { display: flex; flex-direction: column; gap: 0.125rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--linie); }
+.baustelleFrage { font-family: var(--serife); font-size: 0.9375rem; line-height: 1.4; }
+.baustelleZahl { font-size: 0.75rem; color: var(--warnung); }
+
+/* Lernen */
+.lernschirm { gap: 1.25rem; }
+.lernkopf { display: flex; align-items: center; gap: 1rem; }
+.schnitt { flex: 1; display: flex; gap: 2px; height: 0.5rem; }
+.schicht { flex: 1; border: 1px solid var(--linie); border-radius: 1px; }
+.schicht.voll { background: var(--fortschritt); border-color: var(--fortschritt); }
+
+.xpFlug {
+  font-size: 0.8125rem;
+  color: var(--rinde);
+  animation: auf 900ms ease forwards;
+}
+
+@keyframes auf {
+  from { opacity: 0; transform: translateY(6px); }
+  60% { opacity: 1; transform: translateY(0); }
+  to { opacity: 0.55; }
+}
+
+.karteninhalt { display: flex; flex-direction: column; gap: 1rem; }
+
+.herkunft {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--rinde);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ungeprueft {
+  color: var(--warnung);
+  border: 1px solid var(--warnung);
+  border-radius: 2px;
+  padding: 0 0.35rem;
+}
+
+.frage {
+  margin: 0;
+  font-family: var(--serife);
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.antwort {
+  border-top: 1px solid var(--linie);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.antworttext { margin: 0; font-family: var(--serife); font-size: 1.0625rem; line-height: 1.6; }
+.vertiefung { margin: 0; font-family: var(--serife); font-size: 0.9375rem; line-height: 1.6; color: var(--rinde); }
+.quelle, .pruefhinweis { margin: 0; font-size: 0.75rem; color: var(--rinde); }
+.pruefhinweis { color: var(--warnung); }
+
+.optionen, .paare { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.option {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: inherit;
+  cursor: pointer;
+}
+
+.option.aktiv { border-color: var(--rinde); }
+.option.richtig { border-color: var(--fortschritt); background: var(--flaeche-tief); }
+.option.falsch { border-color: var(--warnung); }
+.option:disabled { cursor: default; }
+
+.zahlzeile { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+
+.zahl {
+  font: inherit;
+  font-size: 1.125rem;
+  width: 7rem;
+  padding: 0.5rem 0.625rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: inherit;
+}
+
+.einheit { font-size: 0.9375rem; color: var(--rinde); }
+.urteil { font-size: 0.8125rem; }
+.urteil.richtig { color: var(--tusche); }
+.urteil.falsch { color: var(--warnung); }
+
+.paare li { display: flex; justify-content: space-between; gap: 1rem; font-size: 0.9375rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--linie); }
+.paarRechts { color: var(--rinde); text-align: right; }
+
+.steuerung { margin-top: auto; padding-bottom: 0.5rem; }
+.bewertung { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+
+.knopf {
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.75rem 0.75rem;
+  background: var(--flaeche);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+  color: inherit;
+  cursor: pointer;
+}
+
+.knopf:hover { background: var(--flaeche-tief); }
+.knopf.schmal { flex: 0 0 auto; width: auto; padding: 0.5rem 1.25rem; white-space: nowrap; }
+
+.knopf.haupt {
+  width: 100%;
+  background: var(--tusche);
+  border-color: var(--tusche);
+  color: var(--papier);
+}
+
+.knopf.haupt:hover { background: var(--rinde); border-color: var(--rinde); }
+.knopf.haupt.schmal { width: auto; }
+
+.textknopf {
+  font: inherit;
+  font-size: 0.8125rem;
+  color: var(--rinde);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.knopf:focus-visible, .option:focus-visible, .textknopf:focus-visible,
+.zahl:focus-visible, .kachel:focus-visible, .karte:focus-visible, .navKnopf:focus-visible {
+  outline: 2px solid var(--rinde);
+  outline-offset: 2px;
+}
+
+/* Navigation */
+.navigation {
+  position: sticky;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--papier);
+  border-top: 1px solid var(--linie);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.navKnopf {
+  font: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  padding: 0.875rem 0.25rem;
+  background: none;
+  border: none;
+  border-top: 2px solid transparent;
+  color: var(--rinde);
+  cursor: pointer;
+}
+
+.navKnopf.aktiv { color: var(--tusche); border-top-color: var(--fortschritt); }
+
+@media (max-width: 26rem) {
+  .bewertung { grid-template-columns: repeat(2, 1fr); }
+  .kennzahlen { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+
+/* ------------------------------------------------------------------
+   Farbpaletten. Jede Palette setzt dieselben Token neu, alles
+   Sichtbare folgt. Auswahl ueber data-palette am <html>-Element.
+   ------------------------------------------------------------------ */
+html[data-palette="lehm"] {
+  --papier: #f0ead2; --flaeche: #f7f3e4; --flaeche-tief: #dde5b6;
+  --akzent: #adc178; --lehm: #a98467; --rinde: #6c584c;
+  --tusche: #414833; --linie: #d9d2b4; --warnung: #9a6b1f;
+}
+
+html[data-palette="kalk"] {
+  --papier: #f4f1ea; --flaeche: #fbf9f4; --flaeche-tief: #e6e2d6;
+  --akzent: #7d8471; --lehm: #9a9382; --rinde: #5f5b50;
+  --tusche: #2f3128; --linie: #ddd8cb; --warnung: #9a6b1f;
+}
+
+html[data-palette="terracotta"] {
+  --papier: #f6ede4; --flaeche: #fcf6ef; --flaeche-tief: #ecd9c6;
+  --akzent: #c1734a; --lehm: #b08968; --rinde: #7a5c48;
+  --tusche: #43312a; --linie: #e2d3c2; --warnung: #9a3b1f;
+}
+
+html[data-palette="marine"] {
+  --papier: #f1faee; --flaeche: #f8fdf6; --flaeche-tief: #cbe8e6;
+  --akzent: #457b9d; --lehm: #8fc3c6; --rinde: #3d6b87;
+  --tusche: #1d3557; --linie: #cfe3e0; --warnung: #e63946;
+}
+
+/* Signal: #8d99ae traegt als Text nur 2,5:1, deshalb ein dunklerer
+   Verwandter fuer Nebentext. Das Grau bleibt fuer Rahmen und Marken. */
+html[data-palette="signal"] {
+  --papier: #edf2f4; --flaeche: #f7fafb; --flaeche-tief: #dbe3e7;
+  --akzent: #ef233c; --lehm: #8d99ae; --rinde: #545c70;
+  --tusche: #2b2d42; --linie: #ccd5db; --warnung: #d90429;
+}
+
+/* Ocker: #ffe6a7 als volle Flaeche blendet, daher abgemildert als
+   Hintergrund und im Originalton als zweite Flaeche. */
+html[data-palette="ocker"] {
+  --papier: #fdf2d8; --flaeche: #fff8e7; --flaeche-tief: #ffe6a7;
+  --akzent: #99582a; --lehm: #bb9457; --rinde: #6f1d1b;
+  --tusche: #432818; --linie: #e8d6a8; --warnung: #6f1d1b;
+}
+
+/* Spektrum ist reine Buntheit ohne Neutraltoene - Grund und Schrift
+   sind ergaenzt, die sieben Farben bleiben fuer Akzente und Marken. */
+html[data-palette="spektrum"] {
+  --papier: #fbf7f0; --flaeche: #fffdf8; --flaeche-tief: #fdeccb;
+  --akzent: #43aa8b; --lehm: #f8961e; --rinde: #577590;
+  --tusche: #2f3e46; --linie: #ece4d6; --warnung: #f94144;
+}
+
+html[data-palette="kupfer"] {
+  --papier: #edddd4; --flaeche: #f6eee7; --flaeche-tief: #dcc9bd;
+  --akzent: #197278; --lehm: #c44536; --rinde: #772e25;
+  --tusche: #283d3b; --linie: #d9c6ba; --warnung: #c44536;
+}
+
+html[data-palette="seekarte"] {
+  --papier: #d9dcd6; --flaeche: #e9ebe6; --flaeche-tief: #b9d6e2;
+  --akzent: #3a7ca5; --lehm: #81c3d7; --rinde: #2f6690;
+  --tusche: #16425b; --linie: #c4c8bf; --warnung: #a4462d;
+}
+
+/* Lagune: #06d6a0 und #ffc43d sind reine Fuellfarben, fuer Text zu
+   hell. Nebentext und Schrift kommen aus abgedunkelten Verwandten. */
+html[data-palette="lagune"] {
+  --papier: #f8ffe5; --flaeche: #fdfff4; --flaeche-tief: #d3f5e8;
+  --akzent: #06d6a0; --lehm: #1b9aaa; --rinde: #0f6e78;
+  --tusche: #123b42; --linie: #e0ead0; --warnung: #ef476f;
+}
+
+html[data-palette="dunkel"] {
+  --papier: #1d211a; --flaeche: #272c23; --flaeche-tief: #333a2c;
+  --akzent: #adc178; --lehm: #8a7360; --rinde: #a9b09c;
+  --tusche: #edeade; --linie: #3c4336; --warnung: #d9a441;
+  --schatten: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+html[data-palette="dunkel"] .kartenBild,
+html[data-palette="dunkel"] .grossesBild,
+html[data-palette="dunkel"] .referenz,
+html[data-palette="dunkel"] .blatt {
+  background: #f4f2e8;
+}
+
+/* ------------------------------------------------------------------
+   Desktop. Ab 60rem seitliche Navigation und zweispaltiges Raster.
+   Die Huelle bleibt ein Raster - der Lernbildschirm bekommt eine
+   eigene Klasse, sonst laege sein Inhalt in der Navigationsspalte.
+   ------------------------------------------------------------------ */
+@media (min-width: 60rem) {
+  .huelle {
+    max-width: var(--spaltenbreite);
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 1fr);
+    gap: 2.5rem;
+    padding: 0 2rem;
+  }
+
+  .huelle.einspaltig {
+    display: block;
+    max-width: var(--spaltenbreite);
+  }
+
+  .schirm { padding: 2.5rem 0 3rem; gap: 2.25rem; }
+
+  .navigation {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 2.5rem 0 0;
+    border-top: none;
+    border-right: 1px solid var(--linie);
+  }
+
+  .navKnopf {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    text-align: left;
+    font-size: 0.9375rem;
+    padding: 0.625rem 1rem 0.625rem 0.75rem;
+    border-top: none;
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--rund) var(--rund) 0;
+  }
+
+  .navKnopf.aktiv {
+    border-top-color: transparent;
+    border-left-color: var(--fortschritt);
+    background: var(--flaeche);
+  }
+
+  /* Startbildschirm: Kopfbereich dreispaltig, Rest ueber volle Breite */
+  .heuteRaster {
+    display: grid;
+    grid-template-columns: minmax(18rem, 1fr) minmax(22rem, 1.4fr);
+    gap: 2rem 3rem;
+    align-items: start;
+  }
+
+  .heuteBreit { grid-column: 1 / -1; }
+
+  .kacheln { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+  .kartengitter { grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); }
+
+  .fortschrittRaster {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    align-items: start;
+  }
+
+  .fortschrittRaster .kennzahlen { grid-column: 1 / -1; }
+
+  /* Lernbildschirm: Frage links, Arbeitsflaeche rechts.
+     Zweispaltig nur bei Aufgaben, die eine Arbeitsflaeche brauchen -
+     sonst eine mittige Spalte in angenehmer Lesebreite. */
+  .lernschirm {
+    max-width: 100%;
+    padding: 2rem 0 2.5rem;
+  }
+
+  .lernRaster {
+    display: grid;
+    grid-template-columns: minmax(22rem, 1fr) minmax(24rem, 1.15fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .lernRaster.einspurig {
+    grid-template-columns: minmax(0, 58rem);
+    justify-content: center;
+  }
+
+  .frage { font-size: 1.75rem; }
+  .blatt { max-height: 34rem; }
+  /* Der Steuerungsblock hatte eine Maximalbreite, aber keine
+     Zentrierung - dadurch klebte er am linken Rand, waehrend die Frage
+     im zweispaltigen Raster sass. */
+  .lernschirm .steuerung { max-width: 44rem; margin-left: auto; margin-right: auto; }
+  .bewertung { max-width: 44rem; }
+}
+
+@media (min-width: 100rem) {
+  .frage { font-size: 1.875rem; }
+}
+
+/* ------------------------------------------------------------------
+   Einstellungen
+   ------------------------------------------------------------------ */
+.feldgruppe {
+  display: flex; flex-direction: column; gap: 1rem;
+  padding: 1.25rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+
+.zeile { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.zeileText { display: flex; flex-direction: column; gap: 0.125rem; max-width: 34rem; }
+.zeileTitel { margin: 0; font-size: 0.9375rem; }
+.zeileHinweis { margin: 0; font-size: 0.8125rem; color: var(--rinde); line-height: 1.5; }
+
+.wahl { display: flex; gap: 0.375rem; flex-wrap: wrap; }
+
+.wahlKnopf {
+  font: inherit; font-size: 0.8125rem;
+  padding: 0.375rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  color: var(--rinde);
+  cursor: pointer;
+}
+
+.wahlKnopf.aktiv { background: var(--tusche); border-color: var(--tusche); color: var(--papier); }
+
+.palettenwahl { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.palette {
+  display: flex; flex-direction: column; gap: 0.375rem; align-items: center;
+  padding: 0.5rem;
+  background: transparent;
+  border: 2px solid var(--linie);
+  border-radius: var(--rund);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--rinde);
+}
+
+.palette.aktiv { border-color: var(--tusche); color: var(--tusche); }
+.palettenstreifen { display: flex; }
+.palettenstreifen span { width: 1.25rem; height: 1.25rem; }
+.palettenstreifen span:first-child { border-radius: 2px 0 0 2px; }
+.palettenstreifen span:last-child { border-radius: 0 2px 2px 0; }
+
+.schieber { width: 11rem; accent-color: var(--fortschritt); }
+.knopf.gefahr { border-color: var(--warnung); color: var(--warnung); }
+.knopf.gefahr:hover { background: var(--warnung); color: var(--papier); }
+.grosseKarte.gefahr { border-color: var(--warnung); }
+
+/* Betriebsarten */
+.arten { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.artKnopf {
+  font: inherit; font-size: 0.8125rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: var(--rinde);
+  cursor: pointer;
+}
+
+.artKnopf:hover:not(:disabled) { border-color: var(--lehm); color: var(--tusche); }
+.artKnopf:disabled { opacity: 0.4; cursor: default; }
+
+/* ------------------------------------------------------------------
+   Themen mit Unterthemen
+   ------------------------------------------------------------------ */
+.themenKopf { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+
+.themenliste { list-style: none; margin: 0.75rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+
+.themenzeile {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto auto;
+  align-items: center;
+  gap: 0.875rem;
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.themenzeile:hover { border-color: var(--lehm); }
+.themaTitel { font-family: var(--serife); font-size: 1rem; }
+.themaZeile2 { font-size: 0.75rem; color: var(--rinde); }
+
+/* ------------------------------------------------------------------
+   Erklaerstueck
+   ------------------------------------------------------------------ */
+.erklaerung { display: grid; gap: 1.5rem; }
+.erklaerungText { display: flex; flex-direction: column; gap: 1rem; max-width: 42rem; }
+.erklaerungAbsatz { margin: 0; font-family: var(--serife); font-size: 1.0625rem; line-height: 1.65; }
+.merksatz {
+  margin: 0;
+  padding: 0.875rem 1rem;
+  background: var(--flaeche-tief);
+  border-left: 3px solid var(--fortschritt);
+  border-radius: 0 var(--rund) var(--rund) 0;
+  font-family: var(--serife);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 60rem) {
+  .erklaerung { grid-template-columns: 1.2fr 1fr; align-items: start; }
+}
+
+/* ------------------------------------------------------------------
+   Nachschlagen
+   ------------------------------------------------------------------ */
+.suchfeld {
+  width: 100%;
+  font: inherit;
+  font-size: 1.0625rem;
+  padding: 0.75rem 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+  color: inherit;
+}
+
+.treffer { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+
+.trefferKarte {
+  padding: 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.trefferFrage { margin: 0; font-family: var(--serife); font-size: 1.0625rem; line-height: 1.45; }
+.trefferAntwort { margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--rinde); }
+mark { background: var(--flaeche-tief); color: inherit; }
+
+html[data-palette="dunkel"] mark { background: #4a5a35; }
+
+/* ------------------------------------------------------------------
+   Marken am Item
+   ------------------------------------------------------------------ */
+.marken { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+
+.markenKnopf {
+  font: inherit; font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  color: var(--rinde);
+  cursor: pointer;
+}
+
+.markenKnopf.aktiv { border-color: var(--lehm); color: var(--tusche); background: var(--flaeche); }
+
+.notizfeld {
+  width: 100%;
+  min-height: 4.5rem;
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: inherit;
+  resize: vertical;
+}
+
+.skizzenband { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.skizzenband img {
+  width: 4.5rem; height: 6rem; object-fit: contain;
+  background: #fff; border: 1px solid var(--linie); border-radius: 2px;
+}
+
+@media (max-width: 26rem) {
+  .bewertung { grid-template-columns: repeat(2, 1fr); }
+  .kennzahlen { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+html[data-animationen="aus"] * { animation: none !important; transition: none !important; }
+
+@media print {
+  .navigation, .steuerung, .arten, .werkzeuge { display: none; }
+  .huelle { display: block; max-width: none; }
+  .kartengitter { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ------------------------------------------------------------------
+   Farbenblindmodus. Farbe ist dann nie der einzige Traeger einer
+   Aussage: richtig und falsch bekommen zusaetzlich ein Zeichen,
+   Randstaerken werden unterschiedlich.
+   ------------------------------------------------------------------ */
+html[data-farbenblind="an"] {
+  --akzent: #3a7ca5;
+  --warnung: #b35c00;
+}
+
+html[data-farbenblind="an"] .option.richtig::before { content: "✓ "; font-weight: 700; }
+html[data-farbenblind="an"] .option.falsch::before { content: "✗ "; font-weight: 700; }
+html[data-farbenblind="an"] .option.richtig { border-width: 2px; }
+html[data-farbenblind="an"] .option.falsch { border-style: dashed; }
+html[data-farbenblind="an"] .urteil.richtig::before { content: "✓ "; }
+html[data-farbenblind="an"] .urteil.falsch::before { content: "✗ "; }
+html[data-farbenblind="an"] .ungeprueft::before { content: "△ "; }
+html[data-farbenblind="an"] .marke::before { content: "● "; }
+html[data-farbenblind="an"] .karte.rang-meisterschaft::after { content: "★"; position: absolute; }
+html[data-farbenblind="an"] .feld.stufe1 { outline: 1px solid var(--linie); }
+html[data-farbenblind="an"] .feld.stufe3 { outline: 1px solid var(--tusche); }
+html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
+
+/* ------------------------------------------------------------------
+   Schriftgroesse als Stufen statt Schieberegler
+   ------------------------------------------------------------------ */
+.groessenwahl { display: flex; align-items: center; gap: 0.5rem; }
+
+.groessenKnopf {
+  font: inherit;
+  min-width: 2.25rem;
+  padding: 0.375rem 0.625rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: var(--rinde);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.groessenKnopf:disabled { opacity: 0.35; cursor: default; }
+.groessenKnopf.klein { font-size: 0.75rem; }
+.groessenKnopf.gross { font-size: 1.125rem; }
+
+.groessenStand {
+  min-width: 6rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--tusche);
+}
+
+.schriftprobe {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 0.875rem;
+  background: var(--flaeche-tief);
+  border-radius: var(--rund);
+  font-family: var(--serife);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------
+   Palettenfenster
+   ------------------------------------------------------------------ */
+.paletteZeile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  color: inherit;
+}
+
+.paletteZeile.aktiv { border-color: var(--tusche); border-width: 2px; }
+.paletteZeile:hover { border-color: var(--lehm); }
+
+.palettenfenster {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  max-width: 30rem;
+}
+
+@media (min-width: 40rem) {
+  .palettenfenster { grid-template-columns: 1fr 1fr; max-width: 42rem; }
+}
+
+.palettenstreifen { display: flex; flex: 0 0 auto; }
+.palettenstreifen span { width: 1.5rem; height: 1.5rem; }
+.palettenstreifen span:first-child { border-radius: 3px 0 0 3px; }
+.palettenstreifen span:last-child { border-radius: 0 3px 3px 0; }
+.paletteName { flex: 1; text-align: left; }
+.paletteHaken { color: var(--tusche); }
+
+.themenzeile.geplant { opacity: 0.5; cursor: default; background: transparent; border-style: dashed; }
+.themenzeile.geplant:hover { border-color: var(--linie); }
+
+/* ------------------------------------------------------------------
+   Sichtung, Tastenkuerzel, Lupe
+   ------------------------------------------------------------------ */
+.taste {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  opacity: 0.6;
+}
+
+.knopf.vorschlag { border-width: 2px; border-color: var(--tusche); font-weight: 600; }
+
+.urteilZeile { margin: 0 0 0.625rem; font-size: 0.8125rem; }
+.urteilZeile.richtig { color: var(--rinde); }
+.urteilZeile.falsch { color: var(--warnung); }
+
+.pensumZahl { font-size: 0.8125rem; color: var(--rinde); white-space: nowrap; }
+
+.neuMarke {
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: var(--fortschritt);
+  color: var(--tusche);
+  font-size: 0.6875rem;
+}
+
+.bearbeitetMarke {
+  padding: 0 0.35rem;
+  border: 1px solid var(--lehm);
+  border-radius: 2px;
+  font-size: 0.6875rem;
+  color: var(--rinde);
+}
+
+.markenTrenner {
+  width: 1px;
+  height: 1rem;
+  background: var(--linie);
+  margin: 0 0.25rem;
+}
+
+.kategorieMarke {
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  border: 1px solid var(--linie);
+}
+
+.kategorieMarke.k-relevant { border-color: var(--fortschritt); color: var(--rinde); }
+.kategorieMarke.k-spaeter { border-color: var(--lehm); color: var(--rinde); }
+.kategorieMarke.k-ueberarbeiten { border-color: var(--warnung); color: var(--warnung); }
+.kategorieMarke.k-streichen { border-color: var(--warnung); color: var(--warnung); opacity: 0.7; }
+
+.sichtungKopf { display: flex; align-items: flex-start; gap: 0.625rem; }
+.sichtungKopf input { margin-top: 0.3rem; accent-color: var(--fortschritt); }
+
+.erklaerkasten {
+  padding: 0.875rem 1rem;
+  background: var(--flaeche);
+  border-left: 3px solid var(--fortschritt);
+  border-radius: 0 var(--rund) var(--rund) 0;
+}
+
+.paarWahl {
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 0.35rem 0.5rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: inherit;
+  max-width: 60%;
+}
+
+.paare li.paarRichtig { border-bottom-color: var(--fortschritt); }
+.paare li.paarFalsch { border-bottom-color: var(--warnung); }
+
+.lupenKnopf {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: zoom-in;
+}
+
+.lupenZeichen {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.875rem;
+  background: var(--papier);
+  border: 1px solid var(--linie);
+  border-radius: 3px;
+  color: var(--rinde);
+}
+
+.lupenBuehne {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 95vw;
+  max-height: 92dvh;
+}
+
+.lupenBuehne img {
+  max-width: 92vw;
+  max-height: 78dvh;
+  background: #fff;
+  border-radius: var(--rund);
+}
+
+.skizzenEintrag { margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.skizzenEintrag img { cursor: zoom-in; }
+.skizzenEintrag figcaption {
+  display: flex; gap: 0.5rem; align-items: center;
+  font-size: 0.6875rem; color: var(--rinde);
+}
+
+/* Normenglossar */
+.normen { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.normkasten {
+  padding: 1rem 1.125rem;
+  background: var(--flaeche);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.normTitel { margin: 0; font-family: var(--serife); font-size: 1.0625rem; font-weight: 400; }
+.normKurz { margin: 0; font-size: 0.875rem; color: var(--rinde); }
+.normAbsatz { margin: 0; font-family: var(--serife); font-size: 0.9375rem; line-height: 1.65; }
+
+/* Verlauf je Item */
+.verlauf { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.verlauf li {
+  display: grid;
+  grid-template-columns: 6rem 6rem 1fr;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--linie);
+}
+.verlaufRichtig { color: var(--rinde); }
+.verlaufFalsch { color: var(--warnung); }
+
+/* Meilensteine */
+.karte.meilenstein { cursor: default; }
+.meilensteinZeichen { font-size: 2rem; color: var(--lehm); }
+.karte.verschlossen .meilensteinZeichen { color: var(--linie); }
+
+/* Pruefung */
+.eigeneAntwort {
+  margin: 0;
+  padding: 0.625rem 0.75rem;
+  background: var(--flaeche-tief);
+  border-radius: var(--rund);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.besser { color: var(--rinde); }
+.schlechter { color: var(--warnung); }
+
+/* Rang und Aufstieg */
+.rangName {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--rinde);
+}
+
+.aufstieg {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--flaeche-tief);
+  border: 1px solid var(--fortschritt);
+  border-left-width: 4px;
+  border-radius: var(--rund);
+  animation: auftauchen 500ms ease;
+}
+
+.aufstieg > div { flex: 1; }
+.aufstiegZeichen { font-size: 1.5rem; color: var(--fortschritt); }
+
+@keyframes auftauchen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reihenfolge */
+.reihenfolge { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.375rem; }
+.reihenfolge li {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr auto;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.625rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font-size: 0.9375rem;
+}
+.reihenfolge li.richtig { border-color: var(--fortschritt); }
+.reihenfolge li.falsch { border-color: var(--warnung); }
+.reihenNr { font-family: var(--serife); color: var(--rinde); text-align: center; }
+.reihenPfeile { display: flex; gap: 0.25rem; }
+.reihenPfeile .artKnopf { padding: 0.125rem 0.5rem; }
+
+/* Bildpunkte */
+.bildflaeche { position: relative; display: inline-block; width: 100%; }
+.bildflaeche img {
+  width: 100%;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+
+.bildpunkt {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--tusche);
+  background: var(--papier);
+  color: var(--tusche);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.bildpunkt:hover { border-color: var(--lehm); }
+.bildpunkt.gewaehlt { background: var(--tusche); color: var(--papier); }
+.bildpunkt.loesung { border-color: var(--fortschritt); border-width: 3px; }
+.bildpunkt.daneben { border-color: var(--warnung); background: var(--warnung); color: var(--papier); }
+.bildpunkt:disabled { cursor: default; }
+
+.beschriftung { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Glossar */
+.glossarKopf {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------
+   Ausrichtung der Steuerungsleiste
+   ------------------------------------------------------------------ */
+.steuerung .arten { justify-content: center; align-items: center; }
+
+/* "haupt" setzt volle Breite - in einer Knopfreihe waere das falsch. */
+.arten .knopf.haupt { width: auto; min-width: 14rem; }
+
+.urteilZeile { text-align: center; }
+
+/* Erklaerstueck und Pruefung nutzen dieselbe Leiste */
+.schirm > .steuerung { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.schirm > .steuerung > .knopf.haupt { width: auto; min-width: 16rem; }
+
+/* Kennzahlen mit Textwert (etwa Notenstufen) brauchen kleinere Schrift */
+.kennzahlWert { overflow-wrap: anywhere; }
+
+/* ------------------------------------------------------------------
+   Fachbereiche und Phasen
+   ------------------------------------------------------------------ */
+.reiter { gap: 0.375rem; }
+
+.reiterZahl {
+  margin-left: 0.4rem;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  background: var(--flaeche-tief);
+  color: var(--rinde);
+  font-size: 0.6875rem;
+}
+
+.reiterKnopf.aktiv .reiterZahl { background: var(--papier); color: var(--tusche); }
+
+.phaseMarke {
+  margin-left: 0.625rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  font-family: var(--groteske);
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
+  color: var(--rinde);
+  vertical-align: middle;
+}
+
+.phaseMarke.phase-frueh { border-color: var(--fortschritt); }
+.phaseMarke.phase-mittel { border-color: var(--lehm); }
+.phaseMarke.phase-spaet { border-color: var(--linie); }
+
+/* Karten-Raenge ohne Umlaut im Klassennamen */
+.karte.rang-ausfuehrung { border-width: 2px; }
+.karte.rang-meisterschaft { border-width: 2px; border-color: var(--tusche); }
+
+/* ------------------------------------------------------------------
+   Vergleich, Rechenaufgabe, Freitext
+   ------------------------------------------------------------------ */
+.vergleich { display: grid; gap: 0.75rem; }
+
+@media (min-width: 45rem) {
+  .vergleich { grid-template-columns: 1fr 1fr; }
+}
+
+.vergleichSeite {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.vergleichSeite:hover:not(:disabled) { border-color: var(--lehm); }
+.vergleichSeite.aktiv { border-color: var(--rinde); border-width: 2px; }
+.vergleichSeite.richtig { border-color: var(--fortschritt); border-width: 2px; }
+.vergleichSeite.falsch { border-color: var(--warnung); border-width: 2px; }
+.vergleichSeite img { width: 100%; background: #fff; border-radius: 2px; }
+.vergleichTitel { font-family: var(--serife); font-size: 1.0625rem; }
+.vergleichText { font-size: 0.875rem; line-height: 1.5; color: var(--rinde); }
+
+.gegebene { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.375rem; }
+.gegebene li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0.625rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font-size: 0.9375rem;
+}
+
+/* ------------------------------------------------------------------
+   Druckansicht der Sammlung
+   ------------------------------------------------------------------ */
+@media print {
+  .navigation, .steuerung, .arten, .werkzeuge, .themenKopf button, .reiter { display: none !important; }
+  .huelle { display: block; max-width: none; padding: 0; }
+  .schirm { padding: 0; gap: 1rem; }
+  .kartengitter { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+  .karte, .kennzahl, .trefferKarte { break-inside: avoid; box-shadow: none; }
+  .karte.verschlossen { display: none; }
+  .schleier { display: none; }
+  body { background: #fff; }
+}
+
+/* ------------------------------------------------------------------
+   Betriebsarten als Kacheln
+   ------------------------------------------------------------------ */
+.artKacheln {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  gap: 0.75rem;
+}
+
+.artKachel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--schatten);
+  transition: border-color 150ms ease, transform 150ms ease;
+}
+
+.artKachel:hover:not(:disabled) { border-color: var(--lehm); transform: translateY(-1px); }
+.artKachel.aus { opacity: 0.4; cursor: default; box-shadow: none; }
+.artZeichen { font-size: 1.75rem; line-height: 1; color: var(--fortschritt); }
+.artTitel { font-family: var(--serife); font-size: 1.0625rem; }
+.artText { font-size: 0.8125rem; color: var(--rinde); }
+
+/* ------------------------------------------------------------------
+   Fortschritt: Kopf, Bestwerte, Kacheln
+   ------------------------------------------------------------------ */
+.fortschrittKopf {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.25rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+
+.fortschrittKopf > div { flex: 1; min-width: 12rem; }
+.fortschrittGesamt { display: flex; align-items: center; gap: 1rem; }
+.fortschrittGesamt .nebentext { max-width: 12rem; }
+
+.bestwerte {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 0.625rem;
+}
+
+.bestwert {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 0.5rem;
+  padding: 0.75rem 0.875rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+
+.bestwertZeichen { grid-row: 1 / 3; color: var(--lehm); font-size: 1.125rem; }
+.bestwertZahl { font-family: var(--serife); font-size: 1.375rem; line-height: 1.1; }
+.bestwertName {
+  font-size: 0.6875rem;
+  color: var(--rinde);
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+.bestwertZusatz { grid-column: 2; font-size: 0.625rem; color: var(--lehm); }
+
+.fortschrittKacheln {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 0.5rem;
+}
+
+.fortschrittKachel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  min-width: 0;
+}
+
+.fortschrittKachel > div { min-width: 0; flex: 1; }
+
+/* Vollstaendiger Text statt Auslassung: Umbruch ist erlaubt, die
+   gleiche Kachelhoehe kommt aus grid-auto-rows. Lange deutsche
+   Komposita duerfen trennen, statt die Kachel zu sprengen. */
+.kachelZeile {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--rinde);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.kachelZeile.stark {
+  font-family: var(--serife);
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  color: var(--tusche);
+}
+
+/* ------------------------------------------------------------------
+   Einheitliches Lernlayout
+   ------------------------------------------------------------------
+   Zwei Grundsaetze aus dem Bildschirmlayout: eine feste Lesebreite
+   von etwa 60 bis 75 Zeichen je Zeile, und Bedienelemente an einem
+   Ort, der sich nicht bewegt. Deshalb steht die Steuerungsleiste
+   immer unten, unabhaengig davon, wie lang die Antwort ausfaellt.
+   ------------------------------------------------------------------ */
+.lernschirm {
+  min-height: calc(100dvh - 2rem);
+  justify-content: flex-start;
+}
+
+.lernschirm .steuerung { margin-top: auto; padding-top: 1.5rem; }
+
+.karteninhalt { max-width: 58rem; }
+.antwort { max-width: 58rem; }
+.lernRaster:not(.einspurig) .karteninhalt,
+.lernRaster:not(.einspurig) .antwort { max-width: none; }
+
+/* Die Antwort erscheint ohne Sprung: der Block hat von Anfang an
+   dieselbe Ausrichtung wie die Frage. */
+.antwort { animation: aufblenden 200ms ease; }
+
+@keyframes aufblenden {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.feldhinweis {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--rinde);
+  opacity: 0.8;
+}
+
+.zahlzeile .feldhinweis { flex-basis: 100%; }
+
+/* ------------------------------------------------------------------
+   Kacheln gleich hoch - auch bei unterschiedlich langem Text
+   ------------------------------------------------------------------ */
+.artKacheln { grid-auto-rows: 1fr; }
+.artKacheln li { display: flex; }
+
+.artKachel {
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.artKachel .artText { margin-top: auto; }
+
+.kacheln { grid-auto-rows: 1fr; }
+.kacheln li { display: flex; }
+.kachel { height: 100%; }
+
+.kartengitter { grid-auto-rows: 1fr; }
+.kartengitter li { display: flex; }
+.kartengitter .karte { height: 100%; }
+
+.bestwerte { grid-auto-rows: 1fr; }
+.fortschrittKacheln { grid-auto-rows: 1fr; }
+
+/* ------------------------------------------------------------------
+   Pruefung: gleiche Ruhe wie im Lernbildschirm
+   ------------------------------------------------------------------ */
+.schirm.lernschirm .karteninhalt { width: 100%; }
+
+@media (min-width: 60rem) {
+  .schirm > .kennzahlen { max-width: none; }
+}
+
+/* ------------------------------------------------------------------
+   Bildaufgaben: Zeichnung und Zuordnung nebeneinander
+   ------------------------------------------------------------------ */
+.bildListe { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.zuordnungsliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.zuordnungsliste li {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--linie);
+}
+
+.zuordnungsliste li.richtig { border-bottom-color: var(--fortschritt); }
+.zuordnungsliste li.falsch { border-bottom-color: var(--warnung); }
+
+.zuordnungNr {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--tusche);
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.zuordnungText { font-size: 0.9375rem; line-height: 1.4; }
+.zuordnungDaneben { color: var(--warnung); font-size: 0.8125rem; }
+.zuordnungsliste .paarWahl { max-width: 100%; width: 100%; }
+
+/* Punkte im Bild */
+.bildpunktHuelle { position: absolute; transform: translate(-50%, -50%); }
+.bildpunkt { position: static; transform: none; }
+.bildpunkt.belegt { background: var(--flaeche-tief); border-color: var(--rinde); }
+
+.punktName {
+  position: absolute;
+  left: 50%;
+  top: 1.6rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 0.05rem 0.35rem;
+  background: var(--papier);
+  border: 1px solid var(--linie);
+  border-radius: 2px;
+  font-size: 0.6875rem;
+  color: var(--tusche);
+}
+
+.punktwahl {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 16rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.625rem;
+  background: var(--papier);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+  box-shadow: 0 4px 12px rgba(65, 72, 51, 0.18);
+}
+
+.punktwahlKopf { margin: 0 0 0.25rem; font-size: 0.75rem; color: var(--rinde); }
+
+.punktwahlEintrag {
+  font: inherit;
+  font-size: 0.8125rem;
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  color: inherit;
+  cursor: pointer;
+}
+
+.punktwahlEintrag:hover { border-color: var(--lehm); }
+.punktwahlEintrag.aktiv { background: var(--tusche); color: var(--papier); border-color: var(--tusche); }
+.punktwahlHinweis { display: block; font-size: 0.625rem; color: var(--lehm); }
+
+.fehlertext {
+  margin: 0;
+  padding: 0.875rem 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--warnung);
+  border-radius: var(--rund);
+  font-size: 0.8125rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+/* ------------------------------------------------------------------
+   Pruefungen
+   ------------------------------------------------------------------ */
+.bereitschaft {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+
+.bereitschaftZahl {
+  margin: 0;
+  font-family: var(--serife);
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.punkteMarke {
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--lehm);
+  border-radius: 999px;
+  font-size: 0.625rem;
+  color: var(--rinde);
+}
+
+.artFuss {
+  margin-top: 0.375rem;
+  padding-top: 0.375rem;
+  border-top: 1px solid var(--linie);
+  font-size: 0.6875rem;
+  color: var(--lehm);
+}
+
+.pruefKacheln {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 0.625rem;
+}
+
+.pruefKacheln li { display: flex; }
+
+.pruefKachel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 1rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pruefKachel:hover:not(:disabled) { border-color: var(--lehm); }
+.pruefKachel.aus { opacity: 0.45; cursor: default; }
+.pruefTitel { font-family: var(--serife); font-size: 0.9375rem; line-height: 1.3; }
+.pruefZeile { font-size: 0.75rem; color: var(--rinde); margin-top: auto; }
+
+.pruefErgebnis {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--rinde);
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--fortschritt);
+  border-radius: 999px;
+}
+
+.pruefErgebnis.schwach { border-color: var(--warnung); color: var(--warnung); }
+
+.planZeichen { display: grid; place-items: center; font-size: 1.125rem; color: var(--lehm); }
+
+.ergebnisblatt {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: var(--rund);
+  border: 1px solid var(--linie);
+  background: var(--flaeche);
+}
+
+.ergebnisblatt.bestanden { border-color: var(--fortschritt); border-left-width: 4px; }
+.ergebnisblatt.durchgefallen { border-color: var(--warnung); border-left-width: 4px; }
+.ergebnisZahl { display: flex; align-items: baseline; }
+.ergebnisProzent { font-family: var(--serife); font-size: 3.25rem; line-height: 1; }
+.ergebnisEinheit { font-size: 1.25rem; color: var(--rinde); margin-left: 0.25rem; }
+.warnton { color: var(--warnung); }
+
+.verlaufskurve {
+  width: 100%;
+  height: 6rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  padding: 0.5rem;
+}
+
+.schicht.aktiv { background: var(--lehm); border-color: var(--lehm); }
+
+/* ------------------------------------------------------------------
+   Sammlung
+   ------------------------------------------------------------------ */
+.naechste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.625rem;
+}
+
+.naechste li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+
+.naechste li > div { min-width: 0; }
+
+.karte.meilenstein.frei { border-color: var(--lehm); }
+.karte.meilenstein .kartenBild { aspect-ratio: 4 / 3; background: var(--flaeche); border: none; }
+.karte.meilenstein.frei .kartenBild { background: var(--flaeche-tief); }
+.meilensteinZeichen { font-size: 2.25rem; color: var(--lehm); }
+
+/* ------------------------------------------------------------------
+   Nachschlagen und Sichten
+   ------------------------------------------------------------------ */
+.trefferOeffnen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+  padding: 0.5rem 0.25rem;
+  background: none;
+  border: none;
+  border-radius: var(--rund);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.trefferOeffnen:hover { background: var(--flaeche-tief); }
+.trefferOeffnen .zeileHinweis { align-self: flex-end; opacity: 0.7; }
+
+.itemansicht {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 58rem;
+}
+
+.itemansicht .antwort { border-top: 1px solid var(--linie); padding-top: 1.25rem; }
+
+.itemFuss {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--linie);
+}
+
+.loesungswert {
+  margin: 0;
+  font-family: var(--serife);
+  font-size: 1.375rem;
+  color: var(--tusche);
+}
+
+.pruefZeichen { color: var(--lehm); }
+.itemansicht .option { cursor: default; display: block; }
+.itemansicht .option.richtig { border-color: var(--fortschritt); background: var(--flaeche-tief); }
+
+/* ------------------------------------------------------------------
+   Levelicon: Bauabschnitte
+
+   Der Gebäudeschnitt wächst mit der Stufe. Untergrund und Rahmen
+   wechseln je Bauabschnitt, das Bauwerk je fünfzig Stufen. Die
+   Farben kommen aus der Palette, damit das Icon mitzieht - die vier
+   Sonderpapiere sind bewusst fest, weil sie eigene Zeichenblätter
+   darstellen und nicht zur Umgebung passen sollen.
+   ------------------------------------------------------------------ */
+
+.bauabschnitt {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  --bau-grund: var(--flaeche);
+}
+.bauabschnitt svg { display: block; border-radius: 4px; }
+.bauGrund { fill: var(--bau-grund); }
+.bauStufe {
+  fill: var(--rinde);
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+.bauWerkmarke {
+  fill: var(--rinde);
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.85;
+  letter-spacing: 0.04em;
+  font-family: var(--serife);
+}
+
+.bauName {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--rinde);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.bauPunkte { display: inline-flex; gap: 3px; }
+.bauPunkt {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid var(--linie);
+}
+.bauPunkt.voll { background: var(--akzent); border-color: var(--akzent); }
+
+.bauWerk {
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--rinde);
+}
+
+.bauBalken {
+  height: 5px;
+  max-width: 18rem;
+  margin: 0.4rem 0;
+  border-radius: 3px;
+  background: var(--linie);
+  overflow: hidden;
+}
+.bauBalken span {
+  display: block;
+  height: 100%;
+  background: var(--fortschritt);
+  transition: width 600ms ease;
+}
+
+.lernkopfBau { display: inline-flex; align-items: center; }
+
+/* Untergründe. Papier bis Sepia ziehen mit der Palette mit; Blaupause,
+   Nachtblau, Pergament und Kupfer sind eigene Blätter mit eigener
+   Farbwelt - dort werden alle Zeichenfarben umdefiniert. */
+.grund-papier    { --bau-grund: var(--flaeche); }
+.grund-pause     { --bau-grund: color-mix(in srgb, var(--flaeche) 82%, var(--akzent)); }
+.grund-karton    { --bau-grund: color-mix(in srgb, var(--flaeche) 70%, var(--lehm)); }
+.grund-leinen    { --bau-grund: color-mix(in srgb, var(--flaeche) 55%, var(--lehm)); }
+.grund-sepia {
+  --bau-grund: color-mix(in srgb, var(--flaeche) 45%, var(--lehm));
+  --tusche: color-mix(in srgb, var(--tusche) 70%, var(--lehm));
+}
+.grund-blaupause {
+  --bau-grund: #24364a; --tusche: #e8eef5; --rinde: #b9cfe4;
+  --lehm: #8fa8c2; --akzent: #cfe0ef; --papier: #24364a;
+}
+.grund-nachtblau {
+  --bau-grund: #1b2430; --tusche: #dce6ef; --rinde: #9fb6cc;
+  --lehm: #7f97ae; --akzent: #c2a36b; --papier: #1b2430;
+}
+.grund-pergament {
+  --bau-grund: #efe3c8; --tusche: #3d3326; --rinde: #6f5c41;
+  --lehm: #b39668; --akzent: #9aa86b; --papier: #efe3c8;
+}
+.grund-kupfer {
+  --bau-grund: #d7e0d2; --tusche: #2f3a33; --rinde: #4f7161;
+  --lehm: #8aa596; --akzent: #3f8f77; --papier: #d7e0d2;
+}
+
+/* Das zuletzt hinzugekommene Bauteil blendet sich ein. */
+@keyframes bauTeilEin {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: none; }
+}
+.bauTeil.neu { animation: bauTeilEin 700ms ease both; }
+html[data-animationen="aus"] .bauTeil.neu { animation: none; }
+
+/* In der Kachelansicht steht das Icon neben dem Text, nicht darüber. */
+.fortschrittKachel .bauabschnitt { flex: 0 0 auto; }
+
+/* ------------------------------------------------------------------
+   Meilensteinwand: Stempel statt Sterne
+
+   Erreichte Meilensteine sind Stempel im Plankopfformat, leicht
+   verdreht wie von Hand aufgebracht. Offene liegen als blasse
+   Bleistiftvorzeichnung daneben - man sieht, was kommt, ohne dass
+   es drängt.
+   ------------------------------------------------------------------ */
+
+.stempelwand {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+}
+
+.stempel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 0.75rem 0.85rem;
+  min-height: 9.5rem;
+  border-radius: 3px;
+  background: var(--flaeche);
+  text-align: center;
+}
+.stempelRand {
+  position: absolute;
+  inset: 5px;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.stempel.frei .stempelRand::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed currentColor;
+  border-radius: 1px;
+  opacity: 0.5;
+}
+.stempelZeichen { font-size: 1.75rem; line-height: 1; }
+.stempelTitel {
+  font-family: var(--serife);
+  font-size: 0.9375rem;
+  line-height: 1.25;
+}
+.stempelFuss {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-top: auto;
+}
+
+/* Erreicht: farbig, leicht schief, wie aufgedrückt. */
+.stempel.frei {
+  color: var(--rinde);
+  transform: rotate(-1.5deg);
+}
+.stempel.frei:nth-child(even) { transform: rotate(1.25deg); }
+.stempel.frei .stempelTitel { color: var(--tusche); }
+
+/* Offen: Vorzeichnung. Kein Grau, sondern dünne Linie und wenig Deckkraft. */
+.stempel.offen {
+  color: var(--linie);
+  background: transparent;
+  border: 1px dashed var(--linie);
+}
+.stempel.offen .stempelRand { display: none; }
+.stempel.offen .stempelZeichen,
+.stempel.offen .stempelTitel { opacity: 0.55; color: var(--rinde); }
+.stempel.offen .stempelFuss { color: var(--rinde); opacity: 0.7; }
+
+.stempelBalken {
+  width: 100%;
+  height: 3px;
+  margin-top: 0.4rem;
+  border-radius: 2px;
+  background: var(--linie);
+  overflow: hidden;
+}
+.stempelBalken span { display: block; height: 100%; background: var(--fortschritt); }
+
+/* Je Gruppe eine eigene Stempelfarbe, damit die Wand nicht eintönig wird. */
+.stempel.frei.g-ausdauer     { color: var(--lehm); }
+.stempel.frei.g-menge        { color: var(--rinde); }
+.stempel.frei.g-zeichnen     { color: var(--akzent); }
+.stempel.frei.g-pruefung     { color: var(--fortschritt); }
+.stempel.frei.g-beherrschung { color: var(--tusche); }
+.stempel.frei.g-ordnung      { color: var(--warnung); }
+
+html[data-animationen="aus"] .stempel.frei,
+html[data-animationen="aus"] .stempel.frei:nth-child(even) { transform: none; }
+
+/* ------------------------------------------------------------------
+   Sichten am Stück: Sprungknopf und Tastenmarken
+   ------------------------------------------------------------------ */
+
+.artKnopf.haupt {
+  border-color: var(--rinde);
+  font-weight: 600;
+}
+.artKnopf.haupt:disabled { opacity: 0.45; font-weight: 400; }
+
+.tastenMarke {
+  margin-left: 0.4rem;
+  padding: 0 0.3rem;
+  border: 1px solid var(--linie);
+  border-radius: 3px;
+  font-size: 0.6875rem;
+  opacity: 0.7;
+}
+.tastenHinweis { margin: 0 0 0.5rem; }

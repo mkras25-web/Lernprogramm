@@ -1,0 +1,188 @@
+{
+  "titel": "Normen und Regelwerke",
+  "hinweis": "Erläuterungen zur Einordnung. Maßgeblich ist immer der jeweils gültige Normtext in seiner aktuellen Fassung.",
+  "eintraege": {
+    "DIN 4108": {
+      "titel": "Wärmeschutz und Energie-Einsparung in Gebäuden",
+      "kurz": "Die Grundnorm des baulichen Wärme- und Feuchteschutzes, in mehrere Teile gegliedert.",
+      "absaetze": [
+        "DIN 4108 ist keine einzelne Norm, sondern eine Reihe. Teil 2 regelt die Mindestanforderungen an den Wärmeschutz und enthält auch die Empfehlungen zum sommerlichen Wärmeschutz. Teil 3 behandelt den klimabedingten Feuchteschutz und beschreibt unter anderem das Glaserverfahren zur Tauwasserberechnung. Teil 4 liefert die Wärme- und feuchteschutztechnischen Bemessungswerte, also die Zahlen, mit denen tatsächlich gerechnet wird. Die Vornorm DIN V 4108-10 regelt die Anwendungsgebiete werkmäßig hergestellter Dämmstoffe.",
+        "Wichtig für das Verständnis ist die Rollenteilung: DIN 4108 stellt die bauphysikalischen Mindestanforderungen und stellt die Rechenverfahren bereit. Wie hoch die energetischen Anforderungen an ein konkretes Gebäude sind, steht dagegen im Gebäudeenergiegesetz. Die Norm beschreibt also das Wie, das Gesetz das Wie viel.",
+        "Die Mindestanforderungen aus Teil 2 sind kein Komfortziel, sondern ein Schadensschutz: Sie sollen Tauwasser und Schimmel an Innenoberflächen verhindern. Wer nur sie erfüllt, baut noch lange nicht energieeffizient – er baut schadensfrei."
+      ]
+    },
+    "DIN V 4108-10": {
+      "titel": "Anwendungsbezogene Anforderungen an Wärmedämmstoffe",
+      "kurz": "Legt die Kurzzeichen fest, mit denen Dämmstoffe ihrem Einsatzort und ihren Eigenschaften zugeordnet werden.",
+      "absaetze": [
+        "Die Vornorm ordnet jedem Einsatzbereich ein Kurzzeichen zu. Der erste Buchstabe benennt das Bauteil: D für Decke und Dach, W für Wand, P für Perimeter. Die folgenden Buchstaben beschreiben die Lage – etwa WAB für Außendämmung der Wand hinter Bekleidung, WAP für Außendämmung unter Putz, WZ für Kerndämmung zweischaliger Wände, PW für Wände gegen Erdreich außerhalb der Abdichtung und PB für die Dämmung unter der Bodenplatte.",
+        "An das Anwendungsgebiet wird die Produkteigenschaft angehängt. Die Druckbelastbarkeit reicht von dk ohne Anforderung über dg, dm, dh und ds bis dx für hoch belastete Industrieböden. Die Wasseraufnahme kennt drei Stufen: wk ohne Anforderung, wf für flüssiges Wasser und wd für flüssiges Wasser oder Diffusion. Dazu kommen Zugfestigkeit, schalltechnische Eigenschaften und Verformungsverhalten.",
+        "Ein vollständiges Kurzzeichen wie PW-dh-wd liest sich damit als Anforderungsprofil: Perimeterdämmung der Wand, hohe Druckbelastbarkeit, beständig gegen flüssiges Wasser und Diffusion. Das ist der eigentliche Nutzen der Systematik – sie macht aus einer Einbausituation eine prüfbare Bestellangabe.",
+        "Zu beachten: Die Kurzzeichen sind national geregelt. Die Produkteigenschaften der Dämmstoffe selbst stehen in den harmonisierten europäischen Produktnormen DIN EN 13162 bis 13171."
+      ]
+    },
+    "DIN EN ISO 6946": {
+      "titel": "Bauteile: Wärmedurchlasswiderstand und Wärmedurchgangskoeffizient – Berechnungsverfahren",
+      "kurz": "Das Rechenverfahren hinter dem U-Wert, einschließlich Luftschichten, unbeheizter Räume, inhomogener Bauteile und der Korrekturen.",
+      "absaetze": [
+        "Die Norm beschreibt, wie aus den Schichten eines Bauteils ein U-Wert wird: Für jede Schicht wird R = d/λ gebildet, die Einzelwiderstände werden addiert und um die Wärmeübergangswiderstände ergänzt, also RT = Rsi + ΣR + Rse und U = 1/RT. Das Endergebnis ist auf zwei Dezimalstellen zu runden, und die zugrunde gelegten Eingangsdaten – Schichtdicken, Bemessungswerte, Korrekturstufen – sind anzugeben. Die Rollenteilung ist dieselbe wie bei DIN 4108: Diese Norm liefert das Verfahren, die Bemessungswerte stehen in DIN 4108-4, wie niedrig der U-Wert sein muss, entscheidet das Gebäudeenergiegesetz.",
+        "Luftschichten behandelt die Norm in drei Stufen, und der Unterschied ist groß. Eine ruhende, also von der Umgebung abgeschlossene Luftschicht bekommt einen tabellierten Wert nach Dicke und Richtung des Wärmestroms; bei 25 mm und horizontalem Wärmestrom sind das etwa 0,18 m²·K/W. Bei einer schwach belüfteten Luftschicht wird die Hälfte davon angesetzt, für die Schichten zwischen Luftschicht und Außenluft höchstens 0,15 m²·K/W. Bei einer stark belüfteten Luftschicht fallen die Luftschicht und alles, was außerhalb von ihr liegt, ganz aus der Rechnung, und außen wird mit dem inneren Übergangswiderstand gerechnet. Für eine vorgehängte hinterlüftete Fassade heißt das: Die Bekleidung zählt wärmeschutztechnisch nicht mit.",
+        "Für unbeheizte Räume erlaubt die Norm einen vereinfachten Ansatz – ein Dachraum wird als homogene Schicht mit einem Widerstand Ru betrachtet, der von der Dacheindeckung abhängt. Bei Bauteilen mit inhomogenen Schichten, etwa einer Sparrendecke, wird ein oberer Grenzwert aus der flächenanteiligen Mittelung der nebeneinanderliegenden Bereiche und ein unterer Grenzwert aus flächenanteilig gemittelten Wärmeleitfähigkeiten je Schicht gebildet; maßgebend ist das arithmetische Mittel beider Werte. Das ist eine Näherung zwischen zwei Extremannahmen; exakt wird es nur über eine zweidimensionale Wärmebrückenberechnung.",
+        "Anhang D regelt die Korrekturen des berechneten Werts: ΔUg für Luftspalte in der Dämmschicht, ΔUf für mechanische Befestigungselemente und ΔUr für Umkehrdächer. Bleibt die Summe unter 3 % des U-Werts, darf die Korrektur entfallen. Diese Schwelle sinkt mit dem U-Wert mit, weshalb sie bei gut gedämmten Bauteilen schnell überschritten wird: Fünf Drahtanker je Quadratmeter in einer zweischaligen Wand reichen dafür bereits aus."
+      ]
+    },
+    "DIN 18533": {
+      "titel": "Abdichtung von erdberührten Bauteilen",
+      "kurz": "Seit 2017 die maßgebliche Norm für Bauwerksabdichtung gegen Erdreich; löste DIN 18195 in diesem Bereich ab.",
+      "absaetze": [
+        "Bis 2017 regelte DIN 18195 die Bauwerksabdichtung insgesamt. Mit der Neuordnung wurde sie aufgeteilt: DIN 18531 für Dächer, DIN 18532 für befahrene Verkehrsflächen aus Beton, DIN 18533 für erdberührte Bauteile, DIN 18534 für Innenräume und DIN 18535 für Behälter und Becken. DIN 18195 selbst enthält seither im Wesentlichen die Begriffe.",
+        "Die wichtigste inhaltliche Änderung betrifft die Systematik. Früher wurde nach Lastfällen unterschieden – Bodenfeuchtigkeit, nicht drückendes Wasser, drückendes Wasser. Heute gilt eine Matrix aus Wassereinwirkungsklassen und Rissklassen: W1-E bis W4-E beschreiben die Wassereinwirkung, RE0 bis RE2 die zu erwartende Rissbildung im Untergrund, dazu kommen Raumnutzungsklassen. Aus der Kombination folgt die zulässige Abdichtungsbauart.",
+        "Für die Praxis heißt das: Ältere Fachliteratur argumentiert über Lastfälle und ist inhaltlich oft noch brauchbar, in der Terminologie aber überholt. Konstruktive Grundsätze wie die Hohlkehle am Übergang Wand zu Bodenplatte, die Überlappung der Abdichtungsbahnen und der Schutz der Abdichtung vor mechanischer Beschädigung sind dagegen weitgehend unverändert übernommen worden.",
+        "Das erklärt, warum in diesem Paket Items aus älteren Quellen als ungeprüft gekennzeichnet sind: Die konstruktive Aussage stimmt meist, die Normbezeichnung nicht."
+      ]
+    },
+    "DIN 18195": {
+      "titel": "Abdichtung von Bauwerken – Begriffe",
+      "kurz": "Historisch die Gesamtnorm der Bauwerksabdichtung, seit 2017 auf die Begriffsbestimmungen reduziert.",
+      "absaetze": [
+        "Die alte DIN 18195 gliederte sich in Teile: Teil 4 Abdichtung gegen Bodenfeuchte, Teil 5 gegen nicht drückendes Wasser, Teil 6 gegen drückendes Wasser, Teil 7 gegen von innen drückendes Wasser. Diese Einteilung nach Lastfällen prägt bis heute die Sprache auf der Baustelle.",
+        "Mit der Neuordnung 2017 wanderten die Ausführungsregeln in die Normenreihe DIN 18531 bis 18535. Wer heute plant, arbeitet für erdberührte Bauteile mit DIN 18533. Wer Bestandsunterlagen liest, trifft weiterhin auf DIN 18195 – dann ist Vorsicht geboten, weil die Begriffe sich überschneiden, die Anforderungen aber nicht deckungsgleich sind."
+      ]
+    },
+    "DIN 4109": {
+      "titel": "Schallschutz im Hochbau",
+      "kurz": "Regelt die Mindestanforderungen an den Schallschutz zwischen Räumen und gegen Außenlärm.",
+      "absaetze": [
+        "Die Norm unterscheidet Luftschall, Trittschall und Außenlärm. Für den Luftschall zwischen Räumen gilt das bewertete Schalldämm-Maß, für Decken zusätzlich der bewertete Norm-Trittschallpegel. Die Anforderungen hängen von der Nutzung ab: Wohnungstrennwände, Treppenhauswände und Decken haben unterschiedliche Werte.",
+        "Ein häufiges Missverständnis: Die Anforderungen der DIN 4109 sind Mindestanforderungen zum Schutz gegen unzumutbare Belästigung, kein Komfortstandard. Wer erhöhten Schallschutz will, muss ihn vertraglich vereinbaren – sonst schuldet der Planer nur das Minimum.",
+        "Konstruktiv folgt daraus das Prinzip der Trennung: zweischalige Haustrennwände mit durchgehender Trennfuge vom Fundament bis übers Dach, schwimmende Estriche, elastische Entkopplung. Schallbrücken entstehen fast immer an Stellen, wo eine solche Trennung unbeabsichtigt überbrückt wird."
+      ]
+    },
+    "DIN 276": {
+      "titel": "Kosten im Bauwesen",
+      "kurz": "Gliedert Baukosten in Kostengruppen und macht Projekte dadurch vergleichbar.",
+      "absaetze": [
+        "Die Norm ordnet alle Kosten in Kostengruppen von 100 bis 800: 100 Grundstück, 200 Vorbereitende Maßnahmen, 300 Bauwerk – Baukonstruktionen, 400 Bauwerk – Technische Anlagen, 500 Außenanlagen und Freiflächen, 600 Ausstattung und Kunstwerke, 700 Baunebenkosten, 800 Finanzierung. Jede Gruppe ist in drei Ebenen weiter untergliedert.",
+        "Für Architekten ist die Gliederung doppelt wichtig. Sie strukturiert erstens die Kostenermittlung über die Leistungsphasen hinweg: Kostenschätzung, Kostenberechnung, Kostenvoranschlag, Kostenanschlag und Kostenfeststellung bauen aufeinander auf und werden nach demselben Schema geführt. Zweitens knüpft die HOAI daran an – die anrechenbaren Kosten leiten sich aus den Kostengruppen ab.",
+        "Der Zusammenhang mit DIN 277 ist eng: Kostenkennwerte werden fast immer auf Flächen oder Rauminhalte bezogen, etwa Euro je Quadratmeter Brutto-Grundfläche. Ohne einheitliche Flächenermittlung wären Kostenkennwerte wertlos."
+      ]
+    },
+    "DIN 277": {
+      "titel": "Grundflächen und Rauminhalte im Hochbau",
+      "kurz": "Definiert, wie Flächen und Volumen eines Gebäudes einheitlich ermittelt werden.",
+      "absaetze": [
+        "Ausgangsgröße ist die Brutto-Grundfläche, die Summe aller Grundflächen aller Grundrissebenen einschließlich der Konstruktion. Sie teilt sich in Konstruktions-Grundfläche und Netto-Raumfläche. Die Netto-Raumfläche wiederum gliedert sich in Nutzungsfläche, Technikfläche und Verkehrsfläche.",
+        "Diese Kaskade ist der Grund, warum Flächenangaben ohne Bezugsgröße wertlos sind. Eine Wohnung mit 100 Quadratmetern kann je nach gemeinter Fläche erheblich unterschiedlich groß sein – die Wohnflächenverordnung rechnet wieder anders als DIN 277, etwa bei Balkonen und Dachschrägen.",
+        "Im gewerblichen Bereich setzt die Richtlinie MF-G der gif auf DIN 277 auf und trennt Mietflächen von nicht vermietbaren Flächen. Auch dort ist die Brutto-Grundfläche der Ausgangspunkt."
+      ]
+    },
+    "DIN 18065": {
+      "titel": "Gebäudetreppen",
+      "kurz": "Definiert Begriffe und Mindestmaße für Treppen in Gebäuden.",
+      "absaetze": [
+        "Die Norm regelt Laufbreiten, Steigungs- und Auftrittsmaße, Podestlängen, Durchgangshöhen und Geländerhöhen. Sie unterscheidet dabei nach Treppenart – notwendige Treppen, zusätzliche Treppen, Treppen innerhalb von Wohnungen – und nach Gebäudenutzung.",
+        "Ein zentrales Werkzeug ist die Schrittmaßregel: Zweimal die Steigung plus einmal der Auftritt sollen etwa dem mittleren Schrittmaß entsprechen. Sie erklärt, warum eine Treppe mit korrekten Einzelmaßen sich trotzdem schlecht begehen lässt, wenn das Verhältnis nicht stimmt.",
+        "Zu beachten: Die Norm liefert die Maße, die bauordnungsrechtliche Pflicht kommt aus der Landesbauordnung. Ob eine Treppe notwendige Treppe ist und welche Laufbreite sie haben muss, entscheidet also das Landesrecht unter Rückgriff auf die Norm."
+      ]
+    },
+    "DIN 18040": {
+      "titel": "Barrierefreies Bauen – Planungsgrundlagen",
+      "kurz": "Dreiteilige Normenreihe für barrierefreie öffentlich zugängliche Gebäude, Wohnungen und öffentlichen Verkehrsraum.",
+      "absaetze": [
+        "Teil 1 behandelt öffentlich zugängliche Gebäude, Teil 2 Wohnungen, Teil 3 den öffentlichen Verkehrs- und Freiraum. Die Norm arbeitet mit Bewegungsflächen, Durchgangsbreiten, Bedienhöhen und Anforderungen an Orientierung.",
+        "Ein Leitgedanke ist das Zwei-Sinne-Prinzip: Informationen sollen mindestens über zwei der drei Sinne Sehen, Hören und Tasten wahrnehmbar sein. Eine Aufzugsankündigung nur als Anzeige genügt nicht, sie braucht zusätzlich eine akustische Ausgabe.",
+        "In Teil 2 wird zwischen barrierefrei und uneingeschränkt mit dem Rollstuhl nutzbar unterschieden – erkennbar an der Kennzeichnung R. Die höheren Bewegungsflächen gelten nur für die R-Anforderungen. Diese Unterscheidung wird in der Praxis oft übersehen und führt zu unnötig großen oder unzulässig kleinen Grundrissen."
+      ]
+    },
+    "DIN 18202": {
+      "titel": "Toleranzen im Hochbau – Bauwerke",
+      "kurz": "Legt Grenzwerte für Maß-, Winkel- und Ebenheitsabweichungen fest.",
+      "absaetze": [
+        "Die Norm beschreibt, welche Abweichungen als hinzunehmen gelten – getrennt nach Maßtoleranzen, Winkeltoleranzen und Ebenheitstoleranzen, jeweils gestaffelt nach Bezugslänge. Für Ebenheiten unterscheidet sie zwischen üblichen und erhöhten Anforderungen.",
+        "Praktische Bedeutung hat sie vor allem an Schnittstellen zwischen Gewerken. Ein Rohbau, der die Toleranzen einhält, kann für einen fugenlosen Ausbau immer noch zu ungenau sein – deshalb müssen erhöhte Anforderungen ausdrücklich vereinbart werden, sonst schuldet der Ausführende nur die Regeltoleranz.",
+        "Der häufigste Streitfall ist die Ebenheit von Böden und Wänden vor großformatigen Belägen. Wer großformatige Platten plant, muss die erhöhten Ebenheitsanforderungen vertraglich sichern."
+      ]
+    },
+    "DIN 1356": {
+      "titel": "Bauzeichnungen",
+      "kurz": "Regelt Darstellung, Linienarten, Maßstäbe und Beschriftung von Bauzeichnungen.",
+      "absaetze": [
+        "Die Norm legt fest, wie Bauteile in Grundriss, Schnitt und Ansicht dargestellt werden – Schnittflächen, Linienbreiten, Schraffuren, Symbole für Türen und Fenster, Höhenangaben und die Regeln der Bemaßung.",
+        "Ihr eigentlicher Zweck ist Eindeutigkeit über Beteiligte hinweg. Eine Werkplanung wird von Menschen gelesen, die den Entwurf nicht kennen; die Norm sorgt dafür, dass eine geschnittene Wand überall dasselbe bedeutet.",
+        "Die Maßstabswahl folgt der Planungstiefe: 1:200 und 1:100 für Vorentwurf und Entwurf, 1:50 für die Genehmigungs- und Ausführungsplanung, 1:20 bis 1:1 für Details. Mit dem Maßstab wächst nicht nur die Darstellungsgenauigkeit, sondern auch die Verbindlichkeit der gezeigten Angaben."
+      ]
+    },
+    "DIN 1053": {
+      "titel": "Mauerwerk",
+      "kurz": "Historische deutsche Bemessungsnorm für Mauerwerk, heute weitgehend durch Eurocode 6 ersetzt.",
+      "absaetze": [
+        "DIN 1053-1 enthielt das vereinfachte und das genauere Berechnungsverfahren, Mindestwanddicken, Regeln für Kellerwände unter Erddruck und die Anforderungen an Ausfachungen und nichttragende Wände. Sie prägt bis heute die Fachliteratur.",
+        "Inzwischen gilt für die Bemessung Eurocode 6, also DIN EN 1996 mit dem zugehörigen Nationalen Anhang. Die konstruktiven Grundsätze – Verbandsregeln, Lastabtragung über Gewölbewirkung, Aussteifung durch Querwände – sind sachlich weitgehend gleich geblieben, die Nachweisformate haben sich geändert.",
+        "Für das Lernen bedeutet das: Konstruktionsregeln aus älteren Quellen bleiben verständlich und meist gültig, konkrete Bemessungswerte und Formelzeichen sollten gegen den Eurocode geprüft werden."
+      ]
+    },
+    "DIN 4102": {
+      "titel": "Brandverhalten von Baustoffen und Bauteilen",
+      "kurz": "Nationale Klassifizierung des Brandverhaltens, ergänzt und teils abgelöst durch DIN EN 13501.",
+      "absaetze": [
+        "Nach DIN 4102 werden Baustoffe in Klassen eingeteilt: A für nicht brennbar mit den Unterklassen A1 und A2, B für brennbar mit B1 schwerentflammbar, B2 normalentflammbar und B3 leichtentflammbar. Bauteile werden nach Feuerwiderstandsdauer klassifiziert, etwa F30, F60 oder F90.",
+        "Die europäische DIN EN 13501 arbeitet mit den Klassen A1, A2, B bis F und ergänzt Zusatzkriterien für Rauchentwicklung mit s1 bis s3 und brennendes Abtropfen mit d0 bis d2. Für Bauteile gelten Kurzzeichen wie REI 90 – R für Tragfähigkeit, E für Raumabschluss, I für Wärmedämmung.",
+        "Beide Systeme begegnen einem in der Praxis nebeneinander, weil Bestandsunterlagen und ältere Zulassungen die nationalen Klassen verwenden. Die Bauordnungen sprechen dagegen von Anforderungen wie feuerhemmend, hochfeuerhemmend und feuerbeständig – erst eine Umsetzungstabelle verbindet diese Begriffe mit den Klassen."
+      ]
+    },
+    "GEG": {
+      "titel": "Gebäudeenergiegesetz",
+      "kurz": "Fasst seit 2020 Energieeinsparverordnung, Energieeinsparungsgesetz und Erneuerbare-Energien-Wärmegesetz zusammen.",
+      "absaetze": [
+        "Das GEG regelt die energetischen Anforderungen an Neubauten und an Änderungen im Bestand, die Ausstellung von Energieausweisen und die Pflicht zur Nutzung erneuerbarer Energien für die Wärmeversorgung. Es ist Gesetz, nicht Norm – seine Anforderungen sind unmittelbar verbindlich.",
+        "Methodisch arbeitet es mit einem Referenzgebäudeverfahren: Der zulässige Jahres-Primärenergiebedarf ergibt sich aus einem gedachten Gebäude gleicher Geometrie mit festgelegter Ausstattung. Ergänzend gilt eine Anforderung an den Wärmeschutz der Hülle über den mittleren Wärmedurchgangskoeffizienten.",
+        "Für die Konstruktion folgen daraus zwei getrennte Nachweisebenen. Der bauliche Wärmeschutz nach DIN 4108 sichert die Schadensfreiheit der Bauteile, das GEG begrenzt den Energiebedarf des Gebäudes insgesamt. Ein Bauteil kann die Mindestanforderung der Norm erfüllen und das Gebäude trotzdem am GEG scheitern lassen."
+      ]
+    },
+    "HOAI": {
+      "titel": "Honorarordnung für Architekten und Ingenieure",
+      "kurz": "Regelt Leistungsbilder und Honorarermittlung für Planungsleistungen.",
+      "absaetze": [
+        "Die HOAI gliedert die Planung in neun Leistungsphasen: Grundlagenermittlung, Vorplanung, Entwurfsplanung, Genehmigungsplanung, Ausführungsplanung, Vorbereitung der Vergabe, Mitwirkung bei der Vergabe, Objektüberwachung und Objektbetreuung. Zu jeder Phase gehören Grundleistungen und ein prozentualer Anteil am Honorar.",
+        "Die Honorarermittlung beruht auf drei Größen: den anrechenbaren Kosten nach DIN 276, dem Honorarzonenzuschnitt für die Schwierigkeit der Aufgabe und der Honorartafel. Besondere Leistungen stehen außerhalb dieser Systematik und sind gesondert zu vereinbaren.",
+        "Entscheidend für die Praxis ist die Änderung von 2021: Nach dem Urteil des Europäischen Gerichtshofs sind die Mindest- und Höchstsätze nicht mehr verbindlich. Die Honorartafeln gelten seither als Orientierung, das Honorar ist frei zu vereinbaren. Die Leistungsbilder blieben unverändert und werden weiterhin als Beschreibung des geschuldeten Umfangs verwendet."
+      ]
+    },
+    "VOB": {
+      "titel": "Vergabe- und Vertragsordnung für Bauleistungen",
+      "kurz": "Dreiteiliges Regelwerk für Vergabe, Vertragsabwicklung und technische Ausführung von Bauleistungen.",
+      "absaetze": [
+        "Teil A regelt die Vergabe öffentlicher Bauaufträge, Teil B die Allgemeinen Vertragsbedingungen und Teil C die Allgemeinen Technischen Vertragsbedingungen mit den einzelnen Gewerkenormen ATV.",
+        "Die VOB/B ist kein Gesetz, sondern wird durch Vereinbarung Vertragsbestandteil. Sie weicht in wichtigen Punkten vom BGB-Werkvertragsrecht ab: kürzere Gewährleistungsfristen, eigene Regelungen zu Abnahme, Behinderung und Kündigung, sowie das Anordnungsrecht des Auftraggebers mit anschließender Preisanpassung.",
+        "Die VOB/C wird oft unterschätzt. Dort steht, welche Leistungen zu einer Position gehören und welche gesondert zu vergüten sind – die häufigste Ursache für Nachtragsstreit liegt in diesen Abgrenzungen."
+      ]
+    },
+    "BauGB": {
+      "titel": "Baugesetzbuch",
+      "kurz": "Bundesrecht für Bauleitplanung und die Zulässigkeit von Vorhaben.",
+      "absaetze": [
+        "Das BauGB regelt die zweistufige Bauleitplanung: Der Flächennutzungsplan stellt die beabsichtigte Bodennutzung für das gesamte Gemeindegebiet dar, der Bebauungsplan setzt daraus verbindliche Festsetzungen für einzelne Bereiche fest.",
+        "Für die Zulässigkeit einzelner Vorhaben sind drei Paragraphen maßgeblich. § 30 gilt im Geltungsbereich eines qualifizierten Bebauungsplans, § 34 im unbeplanten Innenbereich mit dem Maßstab des Einfügens in die nähere Umgebung, § 35 im Außenbereich, wo grundsätzlich nur privilegierte Vorhaben zulässig sind.",
+        "Das BauGB regelt das Ob und das Wie viel der Bebauung. Die Anforderungen an das einzelne Gebäude – Abstandsflächen, Brandschutz, Rettungswege – stehen dagegen in der Landesbauordnung. Diese Trennung zwischen Bundesbauplanungsrecht und Landesbauordnungsrecht ist der Schlüssel zum Verständnis des öffentlichen Baurechts."
+      ]
+    },
+    "BauNVO": {
+      "titel": "Baunutzungsverordnung",
+      "kurz": "Konkretisiert Art und Maß der baulichen Nutzung für Bebauungspläne.",
+      "absaetze": [
+        "Die BauNVO definiert die Baugebietstypen von Kleinsiedlungsgebiet über reines und allgemeines Wohngebiet, Mischgebiet und urbanes Gebiet bis zu Gewerbe- und Industriegebiet. Für jedes Gebiet legt sie fest, welche Nutzungen allgemein zulässig und welche ausnahmsweise zulassungsfähig sind.",
+        "Das Maß der baulichen Nutzung bestimmt sie über Grundflächenzahl, Geschossflächenzahl, Baumassenzahl, Zahl der Vollgeschosse und Gebäudehöhe. Die Grundflächenzahl gibt an, welcher Anteil des Grundstücks überbaut werden darf, die Geschossflächenzahl das Verhältnis der Geschossflächen zur Grundstücksfläche.",
+        "Ergänzend regelt sie Bauweise und überbaubare Grundstücksfläche – offene oder geschlossene Bauweise, Baulinien, Baugrenzen und Bebauungstiefen. Erst diese Festsetzungen zusammen ergeben die zulässige Kubatur auf einem Grundstück."
+      ]
+    },
+    "MBO": {
+      "titel": "Musterbauordnung",
+      "kurz": "Vorlage der Länder für ihre Landesbauordnungen; selbst nicht unmittelbar geltendes Recht.",
+      "absaetze": [
+        "Die MBO ist eine Empfehlung der Bauministerkonferenz. Rechtsverbindlich sind allein die Landesbauordnungen, die sich unterschiedlich stark an ihr orientieren. Wer in mehreren Bundesländern plant, muss diese Abweichungen kennen – besonders bei Abstandsflächen und Verfahrensarten.",
+        "Zentral ist das System der Gebäudeklassen 1 bis 5, gestaffelt nach Höhe des höchsten Aufenthaltsraums über Gelände, Zahl und Größe der Nutzungseinheiten. Daran hängen die Anforderungen an Bauteile, Rettungswege und Baustoffe.",
+        "Ebenfalls aus der MBO stammt die Systematik der Rettungswege: Für Nutzungseinheiten mit Aufenthaltsräumen sind in der Regel zwei voneinander unabhängige Rettungswege erforderlich, wobei der zweite über Rettungsgeräte der Feuerwehr führen kann, sofern die Anleiterbarkeit gegeben ist."
+      ]
+    }
+  }
+}

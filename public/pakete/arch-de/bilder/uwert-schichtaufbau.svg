@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 590" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="daemm" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#adc178"/>
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#6c584c" stroke-width="1.2" opacity="0.45"/>
+    </pattern>
+    <pattern id="ziegel" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="26" height="26" fill="#a98467"/>
+      <line x1="0" y1="13" x2="26" y2="13" stroke="#6c584c" stroke-width="1" opacity="0.5"/>
+      <line x1="13" y1="0" x2="13" y2="13" stroke="#6c584c" stroke-width="1" opacity="0.5"/>
+      <line x1="0" y1="13" x2="0" y2="26" stroke="#6c584c" stroke-width="1" opacity="0.5"/>
+    </pattern>
+    <marker id="pfeil" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#414833"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="590" fill="#f0ead2"/>
+
+  <!-- Luftzonen -->
+  <rect x="40" y="80" width="90" height="250" fill="#ffffff" opacity="0.35"/>
+  <rect x="676" y="80" width="84" height="250" fill="#ffffff" opacity="0.35"/>
+  <text x="85" y="66" text-anchor="middle" font-size="15" fill="#414833">innen 20 °C</text>
+  <text x="718" y="66" text-anchor="middle" font-size="15" fill="#414833">außen</text>
+
+  <!-- Schichten -->
+  <rect x="130" y="80" width="18" height="250" fill="#dde5b6" stroke="#414833" stroke-width="1.5"/>
+  <rect x="148" y="80" width="210" height="250" fill="url(#ziegel)" stroke="#414833" stroke-width="1.5"/>
+  <rect x="358" y="80" width="168" height="250" fill="url(#daemm)" stroke="#414833" stroke-width="1.5"/>
+  <rect x="526" y="80" width="12" height="250" fill="#ffffff" stroke="#414833" stroke-width="1.5"/>
+  <rect x="538" y="80" width="138" height="250" fill="#6c584c" stroke="#414833" stroke-width="1.5"/>
+  <line x1="538" y1="80" x2="538" y2="330" stroke="#414833" stroke-width="1.5"/>
+
+  <!-- Drahtanker -->
+  <line x1="352" y1="150" x2="560" y2="150" stroke="#414833" stroke-width="2"/>
+  <line x1="352" y1="270" x2="560" y2="270" stroke="#414833" stroke-width="2"/>
+
+  <!-- Nummernkreise -->
+  <g font-size="15" font-weight="600">
+    <circle cx="139" cy="205" r="14" fill="#f0ead2" stroke="#414833" stroke-width="1.5"/>
+    <text x="139" y="210" text-anchor="middle" fill="#414833">1</text>
+    <circle cx="253" cy="205" r="14" fill="#f0ead2" stroke="#414833" stroke-width="1.5"/>
+    <text x="253" y="210" text-anchor="middle" fill="#414833">2</text>
+    <circle cx="442" cy="205" r="14" fill="#f0ead2" stroke="#414833" stroke-width="1.5"/>
+    <text x="442" y="210" text-anchor="middle" fill="#414833">3</text>
+    <circle cx="532" cy="110" r="14" fill="#f0ead2" stroke="#414833" stroke-width="1.5"/>
+    <text x="532" y="115" text-anchor="middle" fill="#414833">4</text>
+    <circle cx="607" cy="205" r="14" fill="#f0ead2" stroke="#414833" stroke-width="1.5"/>
+    <text x="607" y="210" text-anchor="middle" fill="#414833">5</text>
+  </g>
+
+  <!-- Übergangswiderstände -->
+  <g font-size="14" fill="#414833">
+    <line x1="85" y1="230" x2="126" y2="230" stroke="#414833" stroke-width="1.5" marker-end="url(#pfeil)"/>
+    <text x="85" y="222" text-anchor="middle">R&#8347;&#7522;</text>
+    <text x="85" y="252" text-anchor="middle">0,130</text>
+    <line x1="718" y1="230" x2="680" y2="230" stroke="#414833" stroke-width="1.5" marker-end="url(#pfeil)"/>
+    <text x="718" y="222" text-anchor="middle">R&#8347;&#8337;</text>
+    <text x="718" y="252" text-anchor="middle">0,040</text>
+  </g>
+
+  <!-- Maßkette -->
+  <g stroke="#414833" stroke-width="1" fill="#414833" font-size="13">
+    <line x1="130" y1="345" x2="130" y2="372"/>
+    <line x1="148" y1="345" x2="148" y2="372"/>
+    <line x1="358" y1="345" x2="358" y2="372"/>
+    <line x1="526" y1="345" x2="526" y2="372"/>
+    <line x1="538" y1="345" x2="538" y2="372"/>
+    <line x1="676" y1="345" x2="676" y2="372"/>
+    <line x1="130" y1="362" x2="676" y2="362"/>
+    <text x="139" y="392" text-anchor="middle">15</text>
+    <text x="253" y="392" text-anchor="middle">175</text>
+    <text x="442" y="392" text-anchor="middle">140</text>
+    <text x="532" y="392" text-anchor="middle">10</text>
+    <text x="607" y="392" text-anchor="middle">115</text>
+    <text x="700" y="392" text-anchor="start">[mm]</text>
+  </g>
+
+  <!-- Legende -->
+  <g font-size="15" fill="#414833">
+    <text x="40" y="432" font-weight="600">1</text>
+    <text x="66" y="432">Kalkgipsputz 15 mm, &#955; = 0,70 W/(m·K)</text>
+    <text x="520" y="432">R = 0,021</text>
+    <text x="40" y="458" font-weight="600">2</text>
+    <text x="66" y="458">Hochlochziegel 175 mm, &#955; = 0,24 W/(m·K)</text>
+    <text x="520" y="458">R = 0,729</text>
+    <text x="40" y="484" font-weight="600">3</text>
+    <text x="66" y="484">Wärmedämmung 140 mm, &#955; = 0,040 W/(m·K)</text>
+    <text x="520" y="484">R = 3,500</text>
+    <text x="40" y="510" font-weight="600">4</text>
+    <text x="66" y="510">ruhende Luftschicht 10 mm</text>
+    <text x="520" y="510">R = 0,150</text>
+    <text x="40" y="536" font-weight="600">5</text>
+    <text x="66" y="536">Klinker-Außenschale 115 mm, &#955; = 0,87 W/(m·K)</text>
+    <text x="520" y="536">R = 0,132</text>
+    <line x1="40" y1="548" x2="760" y2="548" stroke="#adc178" stroke-width="1.5"/>
+    <text x="40" y="566" font-weight="600">R&#8348; = 4,702 m²·K/W &#8594; U = 1/R&#8348; = 0,213 W/(m²·K)</text>
+  </g>
+</svg>

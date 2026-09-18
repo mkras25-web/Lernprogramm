@@ -1,0 +1,850 @@
+{
+  "id": "arch-de",
+  "titel": "Architektur (Deutschland)",
+  "sprache": "de",
+  "version": "0.10.0",
+  "module": [
+    {
+      "id": "baukonstruktion",
+      "titel": "Baukonstruktion",
+      "themen": [
+        {
+          "id": "bk-schichten",
+          "titel": "Schichtenlogik: tragen, dämmen, dichten, schützen"
+        },
+        {
+          "id": "bk-gruendung",
+          "titel": "Gründung und Baugrund, Bodenplatte"
+        },
+        {
+          "id": "sockel-erdberuehrt",
+          "titel": "Sockel und erdberührte Bauteile",
+          "datei": "items/bk-sockel.json",
+          "bild": "bilder/sockel-zweischalig.svg"
+        },
+        {
+          "id": "bk-aw-monolithisch",
+          "titel": "Außenwand monolithisch"
+        },
+        {
+          "id": "bk-aw-zweischalig",
+          "titel": "Außenwand zweischalig mit Kerndämmung"
+        },
+        {
+          "id": "bk-wdvs",
+          "titel": "Wärmedämmverbundsystem und Putzfassade"
+        },
+        {
+          "id": "bk-vhf",
+          "titel": "Vorgehängte hinterlüftete Fassade"
+        },
+        {
+          "id": "bk-innendaemmung",
+          "titel": "Innendämmung und Bestandsfassade"
+        },
+        {
+          "id": "bk-fenster",
+          "titel": "Fenster: Aufbau, Einbaulage, Anschluss"
+        },
+        {
+          "id": "bk-oeffnungen",
+          "titel": "Türen, Tore, Öffnungen im Mauerwerk"
+        },
+        {
+          "id": "bk-stuerze",
+          "titel": "Stürze, Auflager, Lastabtragung über Öffnungen"
+        },
+        {
+          "id": "bk-flachdach",
+          "titel": "Flachdach: Warmdach und Umkehrdach"
+        },
+        {
+          "id": "bk-gruendach",
+          "titel": "Flachdach: Gründach, Terrasse, Entwässerung"
+        },
+        {
+          "id": "bk-steildach",
+          "titel": "Geneigtes Dach: Tragwerk und Deckung"
+        },
+        {
+          "id": "bk-dachanschluesse",
+          "titel": "Dachdurchdringungen, Gauben, Anschlüsse"
+        },
+        {
+          "id": "bk-decken",
+          "titel": "Decken: Massiv, Holzbalken, Verbund"
+        },
+        {
+          "id": "bk-treppen",
+          "titel": "Treppen und Rampen"
+        },
+        {
+          "id": "bk-balkone",
+          "titel": "Balkone, Loggien, Auskragungen"
+        },
+        {
+          "id": "bk-innenwaende",
+          "titel": "Innenwände, Trockenbau, Haustrennwände"
+        },
+        {
+          "id": "bk-estrich",
+          "titel": "Estriche und Bodenaufbauten"
+        },
+        {
+          "id": "bk-fugen",
+          "titel": "Fugen, Toleranzen, Bewegung"
+        },
+        {
+          "id": "bk-bestand",
+          "titel": "Bauen im Bestand: Anschluss an Altbausubstanz"
+        },
+        {
+          "id": "skizzen-sockel",
+          "titel": "Skizzen: Sockel und Außenwand",
+          "datei": "items/bk-skizzen.json",
+          "bild": "bilder/sockel-zweischalig.svg"
+        }
+      ],
+      "bereich": "konstruktion",
+      "phase": "frueh"
+    },
+    {
+      "id": "baustoffe",
+      "titel": "Baustoffkunde",
+      "themen": [
+        {
+          "id": "bs-beton",
+          "titel": "Beton: Zusammensetzung, Festigkeit, Expositionsklassen"
+        },
+        {
+          "id": "bs-stahlbeton",
+          "titel": "Stahlbeton: Bewehrung, Betondeckung, Rissbildung"
+        },
+        {
+          "id": "bs-mauerwerk",
+          "titel": "Mauerwerk: Steinarten, Mörtel, Verbände"
+        },
+        {
+          "id": "bs-holz",
+          "titel": "Holz: Arten, Sortierung, Feuchte, Schutz"
+        },
+        {
+          "id": "bs-holzwerkstoffe",
+          "titel": "Holzwerkstoffe und Massivholzbau"
+        },
+        {
+          "id": "bs-stahl",
+          "titel": "Stahl und Metalle"
+        },
+        {
+          "id": "bs-glas",
+          "titel": "Glas: Arten, Verbund, Sicherheit"
+        },
+        {
+          "id": "bs-daemmstoffe",
+          "titel": "Dämmstoffe: Rohstoffe, Kennwerte, Anwendung"
+        },
+        {
+          "id": "bs-moertel",
+          "titel": "Mörtel, Putze, Estriche"
+        },
+        {
+          "id": "bs-abdichtung",
+          "titel": "Abdichtungsstoffe und -systeme"
+        },
+        {
+          "id": "bs-oberflaechen",
+          "titel": "Oberflächen, Beschichtungen, Anstriche"
+        },
+        {
+          "id": "bs-dauerhaftigkeit",
+          "titel": "Dauerhaftigkeit, Alterung, typische Schäden"
+        }
+      ],
+      "bereich": "konstruktion",
+      "phase": "frueh"
+    },
+    {
+      "id": "bauphysik",
+      "titel": "Bauphysik",
+      "themen": [
+        {
+          "id": "bp-uwert",
+          "titel": "Wärmeschutz: U-Wert und Wärmedurchlasswiderstand",
+          "datei": "items/bp-uwert.json",
+          "bild": "bilder/uwert-schichtaufbau.svg"
+        },
+        {
+          "id": "bp-waermebruecken",
+          "titel": "Wärmebrücken: ψ- und χ-Werte",
+          "datei": "items/bp-waermebruecken.json",
+          "bild": "bilder/wb-arten.svg"
+        },
+        {
+          "id": "bp-feuchte",
+          "titel": "Feuchteschutz: Diffusion, Taupunkt, Glaserverfahren",
+          "datei": "items/bp-feuchte.json",
+          "bild": "bilder/fe-dampfdruck.svg"
+        },
+        {
+          "id": "bp-luftdicht",
+          "titel": "Luftdichtheit, Winddichtheit, Blower Door"
+        },
+        {
+          "id": "bp-schlagregen",
+          "titel": "Schlagregenschutz und Fassadenbeanspruchung"
+        },
+        {
+          "id": "bp-sommer",
+          "titel": "Sommerlicher Wärmeschutz"
+        },
+        {
+          "id": "bp-luftschall",
+          "titel": "Luftschallschutz"
+        },
+        {
+          "id": "bp-trittschall",
+          "titel": "Trittschall und Körperschall"
+        },
+        {
+          "id": "bp-raumakustik",
+          "titel": "Raumakustik: Nachhallzeit, Absorption"
+        },
+        {
+          "id": "bp-tageslicht",
+          "titel": "Tageslicht: Faktoren und Nachweise"
+        },
+        {
+          "id": "bp-geg",
+          "titel": "Energiebilanz und GEG-Nachweis"
+        }
+      ],
+      "bereich": "bauphysik",
+      "phase": "frueh"
+    },
+    {
+      "id": "nachhaltigkeit",
+      "titel": "Nachhaltigkeit und Energie",
+      "themen": [
+        {
+          "id": "nh-geg",
+          "titel": "GEG: Anforderungen und Nachweise"
+        },
+        {
+          "id": "nh-lebenszyklus",
+          "titel": "Lebenszyklus und graue Energie"
+        },
+        {
+          "id": "nh-oekobilanz",
+          "titel": "Ökobilanz: Kennwerte und Verfahren"
+        },
+        {
+          "id": "nh-zertifizierung",
+          "titel": "Zertifizierung: DGNB, QNG, KfW"
+        },
+        {
+          "id": "nh-kreislauf",
+          "titel": "Kreislaufwirtschaft und Rückbaubarkeit"
+        },
+        {
+          "id": "nh-erneuerbare",
+          "titel": "Erneuerbare Energien am Gebäude"
+        },
+        {
+          "id": "nh-klimaanpassung",
+          "titel": "Klimaanpassung und sommerlicher Komfort"
+        }
+      ],
+      "bereich": "bauphysik",
+      "phase": "mittel"
+    },
+    {
+      "id": "tragwerk",
+      "titel": "Tragwerkslehre",
+      "themen": [
+        {
+          "id": "tw-lasten",
+          "titel": "Lasten und Lastannahmen"
+        },
+        {
+          "id": "tw-systeme",
+          "titel": "Statische Systeme und Auflagerarten"
+        },
+        {
+          "id": "tw-schnittgroessen",
+          "titel": "Schnittgrößen: Normalkraft, Querkraft, Moment"
+        },
+        {
+          "id": "tw-momente",
+          "titel": "Momentenverläufe lesen und abschätzen"
+        },
+        {
+          "id": "tw-biegung",
+          "titel": "Querschnittswerte, Biegung, Durchbiegung"
+        },
+        {
+          "id": "tw-knicken",
+          "titel": "Knicken und Stabilität"
+        },
+        {
+          "id": "tw-aussteifung",
+          "titel": "Aussteifung von Gebäuden"
+        },
+        {
+          "id": "tw-gruendung",
+          "titel": "Gründungsarten und Baugrund"
+        },
+        {
+          "id": "tw-tragsysteme",
+          "titel": "Tragsysteme: Skelett, Schotten, Rahmen"
+        },
+        {
+          "id": "tw-weitgespannt",
+          "titel": "Weitgespannte Tragwerke"
+        },
+        {
+          "id": "tw-vorbemessung",
+          "titel": "Vorbemessung: Faustformeln und Größenordnungen"
+        }
+      ],
+      "bereich": "tragwerk",
+      "phase": "frueh"
+    },
+    {
+      "id": "barrierefrei",
+      "titel": "Barrierefreiheit",
+      "themen": [
+        {
+          "id": "bf-systematik",
+          "titel": "DIN 18040: Systematik und Geltung"
+        },
+        {
+          "id": "bf-bewegungsflaechen",
+          "titel": "Bewegungsflächen und Maße"
+        },
+        {
+          "id": "bf-erschliessung",
+          "titel": "Erschließung: Rampen, Aufzüge, Treppen"
+        },
+        {
+          "id": "bf-tueren",
+          "titel": "Türen und Bedienelemente"
+        },
+        {
+          "id": "bf-sanitaer",
+          "titel": "Sanitärräume"
+        },
+        {
+          "id": "bf-orientierung",
+          "titel": "Orientierung und Zwei-Sinne-Prinzip"
+        }
+      ],
+      "bereich": "schutz",
+      "phase": "mittel"
+    },
+    {
+      "id": "brandschutz",
+      "titel": "Brandschutz",
+      "themen": [
+        {
+          "id": "br-schutzziele",
+          "titel": "Schutzziele und Rechtsrahmen"
+        },
+        {
+          "id": "br-gebaeudeklassen",
+          "titel": "Gebäudeklassen und Bauteilanforderungen"
+        },
+        {
+          "id": "br-klassen",
+          "titel": "Baustoff- und Bauteilklassen"
+        },
+        {
+          "id": "br-rettungswege",
+          "titel": "Rettungswege und Flucht"
+        },
+        {
+          "id": "br-abschnitte",
+          "titel": "Brandabschnitte, Wände, Decken"
+        },
+        {
+          "id": "br-durchdringungen",
+          "titel": "Öffnungen und Durchdringungen"
+        },
+        {
+          "id": "br-fassade",
+          "titel": "Fassaden im Brandfall"
+        },
+        {
+          "id": "br-anlagentechnik",
+          "titel": "Anlagentechnischer Brandschutz"
+        },
+        {
+          "id": "br-konzept",
+          "titel": "Brandschutzkonzept und Sonderbauten"
+        }
+      ],
+      "bereich": "schutz",
+      "phase": "frueh"
+    },
+    {
+      "id": "tga",
+      "titel": "Technische Gebäudeausrüstung",
+      "themen": [
+        {
+          "id": "tga-waerme",
+          "titel": "Wärmeerzeugung und Heizsysteme"
+        },
+        {
+          "id": "tga-uebergabe",
+          "titel": "Wärmeübergabe: Flächenheizung, Heizkörper"
+        },
+        {
+          "id": "tga-lueftung",
+          "titel": "Lüftung: natürlich, mechanisch, Wärmerückgewinnung"
+        },
+        {
+          "id": "tga-kuehlung",
+          "titel": "Kühlung und Klimatisierung"
+        },
+        {
+          "id": "tga-sanitaer",
+          "titel": "Sanitär: Ver- und Entsorgung"
+        },
+        {
+          "id": "tga-entwaesserung",
+          "titel": "Entwässerung von Dächern und Grundstücken"
+        },
+        {
+          "id": "tga-elektro",
+          "titel": "Elektro, Beleuchtung, Blitzschutz"
+        },
+        {
+          "id": "tga-aufzuege",
+          "titel": "Aufzüge und Förderanlagen"
+        },
+        {
+          "id": "tga-schaechte",
+          "titel": "Schächte, Trassen, Integration ins Tragwerk"
+        }
+      ],
+      "bereich": "technik",
+      "phase": "mittel"
+    },
+    {
+      "id": "hoai",
+      "titel": "HOAI, Vertrag und Berufsrecht",
+      "themen": [
+        {
+          "id": "ho-lph",
+          "titel": "Leistungsphasen 1 bis 9 im Überblick"
+        },
+        {
+          "id": "ho-grundleistungen",
+          "titel": "Grundleistungen je Leistungsphase"
+        },
+        {
+          "id": "ho-honorar",
+          "titel": "Honorarermittlung: anrechenbare Kosten, Zonen, Tafeln"
+        },
+        {
+          "id": "ho-besondere",
+          "titel": "Besondere Leistungen und Nachträge"
+        },
+        {
+          "id": "ho-vertrag",
+          "titel": "Architektenvertrag und BGB-Werkvertrag"
+        },
+        {
+          "id": "ho-vob-a",
+          "titel": "VOB/A: Vergabe"
+        },
+        {
+          "id": "ho-vob-b",
+          "titel": "VOB/B: Bauvertrag und Abwicklung"
+        },
+        {
+          "id": "ho-vob-c",
+          "titel": "VOB/C und Abrechnungsregeln"
+        },
+        {
+          "id": "ho-haftung",
+          "titel": "Haftung, Gewährleistung, Verjährung"
+        },
+        {
+          "id": "ho-urheberrecht",
+          "titel": "Urheberrecht des Architekten"
+        },
+        {
+          "id": "ho-berufsrecht",
+          "titel": "Kammer, Berufspflichten, Versicherung"
+        }
+      ],
+      "bereich": "recht",
+      "phase": "mittel"
+    },
+    {
+      "id": "baurecht",
+      "titel": "Öffentliches Baurecht",
+      "themen": [
+        {
+          "id": "rb-bauleitplanung",
+          "titel": "Bauleitplanung: FNP und Bebauungsplan"
+        },
+        {
+          "id": "rb-baunvo",
+          "titel": "BauNVO: Baugebiete und Nutzungsarten"
+        },
+        {
+          "id": "rb-mass",
+          "titel": "Maß der baulichen Nutzung: GRZ, GFZ, BMZ"
+        },
+        {
+          "id": "rb-bauweise",
+          "titel": "Bauweise und überbaubare Grundstücksfläche"
+        },
+        {
+          "id": "rb-34-35",
+          "titel": "Zulässigkeit nach § 34 und § 35 BauGB"
+        },
+        {
+          "id": "rb-lbo",
+          "titel": "Landesbauordnung: Aufbau und Systematik"
+        },
+        {
+          "id": "rb-abstandsflaechen",
+          "titel": "Abstandsflächen"
+        },
+        {
+          "id": "rb-verfahren",
+          "titel": "Genehmigungsverfahren und Freistellung"
+        },
+        {
+          "id": "rb-bauvorlagen",
+          "titel": "Bauvorlagen und Beteiligte"
+        },
+        {
+          "id": "rb-denkmal",
+          "titel": "Denkmalschutz"
+        },
+        {
+          "id": "rb-nachbarrecht",
+          "titel": "Nachbarrecht und Rechtsschutz"
+        }
+      ],
+      "bereich": "recht",
+      "phase": "mittel"
+    },
+    {
+      "id": "bauleitung",
+      "titel": "Bauleitung und Baustelle",
+      "themen": [
+        {
+          "id": "bl-lph8",
+          "titel": "Objektüberwachung: Aufgaben der Lph 8"
+        },
+        {
+          "id": "bl-btb",
+          "titel": "Bautagebuch und Dokumentation"
+        },
+        {
+          "id": "bl-qualitaet",
+          "titel": "Qualitätskontrolle auf der Baustelle"
+        },
+        {
+          "id": "bl-abnahme",
+          "titel": "Abnahme und Mängelmanagement"
+        },
+        {
+          "id": "bl-arbeitsschutz",
+          "titel": "Arbeitsschutz, Baustellenverordnung, SiGeKo"
+        },
+        {
+          "id": "bl-beteiligte",
+          "titel": "Beteiligte und Zuständigkeiten"
+        },
+        {
+          "id": "bl-stoerungen",
+          "titel": "Bauablaufstörungen und Behinderung"
+        }
+      ],
+      "bereich": "kosten",
+      "phase": "mittel"
+    },
+    {
+      "id": "kosten",
+      "titel": "Kosten, Termine, Ausschreibung",
+      "themen": [
+        {
+          "id": "ko-din276",
+          "titel": "DIN 276: Kostengliederung"
+        },
+        {
+          "id": "ko-ermittlung",
+          "titel": "Kostenschätzung bis Kostenfeststellung"
+        },
+        {
+          "id": "ko-din277",
+          "titel": "DIN 277: Flächen und Rauminhalte"
+        },
+        {
+          "id": "ko-kennwerte",
+          "titel": "Kostenkennwerte und BKI"
+        },
+        {
+          "id": "ko-lv",
+          "titel": "Leistungsbeschreibung und Leistungsverzeichnis"
+        },
+        {
+          "id": "ko-vergabe",
+          "titel": "Vergabe und Angebotswertung"
+        },
+        {
+          "id": "ko-termine",
+          "titel": "Terminplanung und Bauablauf"
+        },
+        {
+          "id": "ko-nachtrag",
+          "titel": "Nachtragsmanagement"
+        }
+      ],
+      "bereich": "kosten",
+      "phase": "mittel"
+    },
+    {
+      "id": "entwurf",
+      "titel": "Entwurfslehre",
+      "themen": [
+        {
+          "id": "en-prozess",
+          "titel": "Entwurfsprozess und Methoden"
+        },
+        {
+          "id": "en-raumprogramm",
+          "titel": "Raumprogramm und Funktionsschema",
+          "datei": "items/en-raumprogramm.json",
+          "bild": "bilder/funktionsschema-buero.svg"
+        },
+        {
+          "id": "en-masse",
+          "titel": "Maße und Ergonomie"
+        },
+        {
+          "id": "en-proportion",
+          "titel": "Proportion, Maßstab, Ordnungsprinzipien",
+          "datei": "items/en-proportion.json",
+          "bild": "bilder/proportionen.svg"
+        },
+        {
+          "id": "en-erschliessung",
+          "titel": "Erschließungstypen und Grundrisslogik",
+          "datei": "items/en-erschliessung.json",
+          "bild": "bilder/erschliessungstypen.svg"
+        },
+        {
+          "id": "en-atmosphaere",
+          "titel": "Licht, Material, Atmosphäre"
+        },
+        {
+          "id": "en-typ-wohnen",
+          "titel": "Typologie Wohnen"
+        },
+        {
+          "id": "en-typ-buero",
+          "titel": "Typologie Büro und Arbeit"
+        },
+        {
+          "id": "en-typ-bildung",
+          "titel": "Typologie Bildung"
+        },
+        {
+          "id": "en-typ-kultur",
+          "titel": "Typologie Kultur und Versammlung"
+        },
+        {
+          "id": "en-typ-gewerbe",
+          "titel": "Typologie Gewerbe und Industrie"
+        },
+        {
+          "id": "en-typ-gesundheit",
+          "titel": "Typologie Gesundheit und Pflege"
+        }
+      ],
+      "bereich": "entwurf",
+      "phase": "frueh"
+    },
+    {
+      "id": "staedtebau",
+      "titel": "Städtebau und Freiraum",
+      "themen": [
+        {
+          "id": "sb-strukturen",
+          "titel": "Stadtstrukturen und Stadttypologien"
+        },
+        {
+          "id": "sb-dichte",
+          "titel": "Dichte, Körnung, Nutzungsmischung"
+        },
+        {
+          "id": "sb-oeffentlicher-raum",
+          "titel": "Öffentlicher Raum und Platzfolgen"
+        },
+        {
+          "id": "sb-mobilitaet",
+          "titel": "Mobilität und Erschließungssysteme"
+        },
+        {
+          "id": "sb-freiraum",
+          "titel": "Freiraum, Vegetation, Mikroklima"
+        },
+        {
+          "id": "sb-analyse",
+          "titel": "Stadtanalyse und Bestandsaufnahme"
+        },
+        {
+          "id": "sb-kennwerte",
+          "titel": "Städtebauliche Kennwerte und Instrumente"
+        }
+      ],
+      "bereich": "stadt",
+      "phase": "spaet"
+    },
+    {
+      "id": "geschichte",
+      "titel": "Architekturgeschichte und Theorie",
+      "themen": [
+        {
+          "id": "ag-antike",
+          "titel": "Antike"
+        },
+        {
+          "id": "ag-mittelalter",
+          "titel": "Romanik und Gotik"
+        },
+        {
+          "id": "ag-renaissance",
+          "titel": "Renaissance und Barock"
+        },
+        {
+          "id": "ag-19jh",
+          "titel": "Klassizismus und 19. Jahrhundert"
+        },
+        {
+          "id": "ag-bauhaus",
+          "titel": "Frühe Moderne bis Bauhaus"
+        },
+        {
+          "id": "ag-ciam",
+          "titel": "Internationale Moderne und CIAM"
+        },
+        {
+          "id": "ag-nachkrieg",
+          "titel": "Nachkriegsmoderne und Brutalismus"
+        },
+        {
+          "id": "ag-postmoderne",
+          "titel": "Postmoderne"
+        },
+        {
+          "id": "ag-gegenwart",
+          "titel": "Gegenwart: Positionen seit 1990"
+        },
+        {
+          "id": "ag-theorie",
+          "titel": "Theoriepositionen und Manifeste"
+        }
+      ],
+      "bereich": "geschichte",
+      "phase": "spaet"
+    },
+    {
+      "id": "buero",
+      "titel": "Büropraxis",
+      "themen": [
+        {
+          "id": "bu-akquise",
+          "titel": "Akquise und Wettbewerbe"
+        },
+        {
+          "id": "bu-organisation",
+          "titel": "Projektorganisation und Teamstruktur"
+        },
+        {
+          "id": "bu-kommunikation",
+          "titel": "Kommunikation mit Bauherren und Behörden"
+        },
+        {
+          "id": "bu-qualitaet",
+          "titel": "Qualitätssicherung im Büro"
+        },
+        {
+          "id": "bu-wirtschaft",
+          "titel": "Bürowirtschaft und Kalkulation"
+        }
+      ],
+      "bereich": "darstellung",
+      "phase": "spaet"
+    },
+    {
+      "id": "darstellung",
+      "titel": "Darstellung und Werkzeuge",
+      "themen": [
+        {
+          "id": "da-zeichnen",
+          "titel": "Technisches Zeichnen"
+        },
+        {
+          "id": "da-massstaebe",
+          "titel": "Maßstäbe und Detailtiefe"
+        },
+        {
+          "id": "da-zeichnungsarten",
+          "titel": "Zeichnungsarten und Planinhalte"
+        },
+        {
+          "id": "da-bemassung",
+          "titel": "Bemaßung und Beschriftung"
+        },
+        {
+          "id": "da-cad",
+          "titel": "CAD-Grundlagen und Zeichnungsaufbau"
+        },
+        {
+          "id": "da-bim",
+          "titel": "BIM: Methodik, IFC, LOD"
+        },
+        {
+          "id": "da-visualisierung",
+          "titel": "Visualisierung und Bildaufbau"
+        },
+        {
+          "id": "da-modellbau",
+          "titel": "Modellbau"
+        },
+        {
+          "id": "da-praesentation",
+          "titel": "Präsentation und Darstellungsstrategie"
+        }
+      ],
+      "bereich": "darstellung",
+      "phase": "spaet"
+    }
+  ],
+  "bereiche": {
+    "konstruktion": "Konstruktion und Material",
+    "bauphysik": "Bauphysik und Energie",
+    "tragwerk": "Tragwerk",
+    "schutz": "Schutz und Nutzbarkeit",
+    "technik": "Gebäudetechnik",
+    "recht": "Recht und Vertrag",
+    "kosten": "Kosten und Ausführung",
+    "entwurf": "Entwurf und Typologie",
+    "stadt": "Städtebau und Freiraum",
+    "geschichte": "Geschichte und Theorie",
+    "darstellung": "Darstellung und Büropraxis"
+  },
+  "phasen": {
+    "frueh": "Früh beginnen",
+    "mittel": "Nach den Grundlagen",
+    "spaet": "Später vertiefen"
+  }
+}

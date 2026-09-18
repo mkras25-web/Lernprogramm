@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="dmmb" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#adc178"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+    </pattern>
+    <pattern id="mwb" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#a98467"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+      <line x1="12" y1="0" x2="12" y2="12" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+      <line x1="0" y1="12" x2="0" y2="24" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="960" height="440" fill="#f0ead2"/>
+
+  <rect x="110" y="112" width="50" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="326" y="112" width="94" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="160" y="112" width="166" height="276" fill="url(#mwb)" stroke="#414833" stroke-width="1.5"/>
+
+  <rect x="500" y="112" width="50" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="780" y="112" width="90" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="550" y="112" width="166" height="276" fill="url(#mwb)" stroke="#414833" stroke-width="1.5"/>
+  <rect x="716" y="112" width="64" height="276" fill="url(#dmmb)" stroke="#414833" stroke-width="1.5"/>
+
+  <g stroke="#414833" stroke-width="1.2" fill="#414833" font-size="13">
+    <line x1="95" y1="112" x2="95" y2="388"/>
+    <line x1="89" y1="120" x2="95" y2="120"/><text x="83" y="125" text-anchor="end">+20 °C</text>
+    <line x1="89" y1="207" x2="95" y2="207"/><text x="83" y="212" text-anchor="end">+10 °C</text>
+    <line x1="89" y1="293" x2="95" y2="293"/><text x="83" y="298" text-anchor="end">0 °C</text>
+    <line x1="89" y1="380" x2="95" y2="380"/><text x="83" y="385" text-anchor="end">−10 °C</text>
+  </g>
+
+  <line x1="110" y1="213" x2="872" y2="213" stroke="#a98467" stroke-width="1.8" stroke-dasharray="7 5"/>
+
+  <path d="M110,120 L150,120 L160,157 L326,369 L336,380 L420,380" fill="none" stroke="#414833" stroke-width="3"/>
+  <path d="M500,120 L540,120 L550,128 L716,171 L780,378 L790,380 L870,380" fill="none" stroke="#414833" stroke-width="3"/>
+
+  <g font-size="13" fill="#414833">
+    <text x="135" y="408" text-anchor="middle">innen</text>
+    <text x="373" y="408" text-anchor="middle">außen</text>
+    <text x="525" y="408" text-anchor="middle">innen</text>
+    <text x="825" y="408" text-anchor="middle">außen</text>
+  </g>
+</svg>

@@ -1,0 +1,742 @@
+{
+  "thema": "bp-feuchte",
+  "titel": "Feuchteschutz: Diffusion, Taupunkt, Glaserverfahren",
+  "erklaerung": {
+    "absaetze": [
+      "Alles beginnt mit einer einzigen Eigenschaft der Luft: Wie viel Wasserdampf sie tragen kann, hängt allein von ihrer Temperatur ab, und zwar überproportional. Bei 20 °C sind es 17,3 g je Kubikmeter, bei 0 °C nur noch 4,8 g. Die relative Luftfeuchte sagt, wie weit dieser Vorrat ausgeschöpft ist. Kühlt dieselbe Luft ab, steigt die relative Feuchte, ohne dass ein Tropfen hinzugekommen wäre — bei 100 % ist Schluss, und der Überschuss fällt als Tauwasser aus.",
+      "Die Temperatur, bei der das geschieht, ist der Taupunkt. Er folgt aus Lufttemperatur und relativer Feuchte: Bei 20 °C und 50 % liegt er bei 9,3 °C, bei 80 % schon bei 16,4 °C. Jede Bauteiloberfläche, die kälter ist, sammelt Wasser. Deshalb zeigen sich Schäden zuerst an Fenstern, in Raumecken und an Wärmebrücken. Schimmel braucht dafür nicht einmal sichtbares Tauwasser — rund 80 % relative Feuchte an der Oberfläche und ein nährstoffhaltiges Material genügen.",
+      "Im Bauteilinneren läuft derselbe Vorgang ab, nur unsichtbar. Wasserdampf folgt dem Dampfdruckgefälle, im Winter also von innen nach außen. Wie stark eine Schicht ihn bremst, beschreibt die Diffusionswiderstandszahl µ im Vergleich zu Luft; multipliziert mit der Dicke ergibt sich der sd-Wert, die diffusionsäquivalente Luftschichtdicke. Erst er macht Schichten vergleichbar — und zeigt, dass eine 0,2 mm dünne Folie mit 20 m den Dampf stärker bremst als eine halbe Wand.",
+      "Damit lässt sich die wichtigste Regel formulieren: In Diffusionsrichtung nehmen die sd-Werte ab und die R-Werte zu. Innen dichter und kälter, außen offener und wärmer gedämmt. Wer sie einhält, baut in der Regel unproblematisch. Wer sie umkehrt — Dämmung innen, dichte Schale außen —, schiebt die kalte Zone in die Konstruktion und staut den Dampf genau dort.",
+      "Für den Nachweis gilt zweierlei. Im Regelfall braucht es gar keinen: Wer den Mindestwärmeschutz einhält und eine der in DIN 4108-3 aufgelisteten Konstruktionen wählt, ist fertig. Sonst wird gerechnet, meist grafisch nach Glaser: Temperaturverlauf, daraus der Sättigungsdampfdruck, darüber der Dampfdruck — und wo er den Sättigungsdruck überschreiten würde, knickt er ab, und die Differenz bleibt als Tauwasser. Das Verfahren ist einfach und bewährt, vernachlässigt aber Speicherung, Luftströmung und Kapillarleitung. Wo das nicht trägt, hilft nur eine hygrothermische Simulation."
+    ],
+    "merksatz": "Nach außen diffusionsoffener, nach außen besser gedämmt — sd fällt, R steigt.",
+    "bild": "bilder/fe-dampfdruck.svg",
+    "bildunterschrift": "Der Dampfdruck kann den Sättigungsdruck nicht überschreiten. Wo die Gerade darüber liefe, knickt sie ab und berührt ihn nur — an dieser Tauwasserebene fällt Wasser im Bauteil aus.",
+    "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 275–308; DETAIL Atlas Flachdach, S. 67–71"
+  },
+  "items": [
+    {
+      "id": "bp-fe-001",
+      "typ": "karte",
+      "frage": "Wovon hängt es ab, wie viel Wasserdampf die Luft aufnehmen kann?",
+      "antwort": "Allein von der Temperatur. Wärmere Luft kann mehr Wasserdampf aufnehmen als kältere. Die Obergrenze ist der Sättigungsgehalt: Bei 20 °C sind es 17,3 g je m³, bei 0 °C nur noch 4,8 g, bei −10 °C 2,1 g. Die Aufnahmefähigkeit steigt also nicht gleichmäßig, sondern immer steiler.",
+      "vertiefung": "Aus dieser Kurve folgt fast der ganze Feuchteschutz. Warme Raumluft trägt viel Wasser; trifft sie auf eine kalte Fläche, sinkt die Aufnahmefähigkeit dort schlagartig, und der Überschuss fällt aus. Deshalb hängt Tauwasser nicht an der Feuchtemenge allein, sondern immer am Temperaturgefälle.",
+      "tags": [
+        "feuchteschutz",
+        "grundlagen",
+        "luftfeuchte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 278 (Tafel 3.2)",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-002",
+      "typ": "karte",
+      "frage": "Was bedeutet die relative Luftfeuchte φ?",
+      "antwort": "Sie setzt die tatsächlich enthaltene Wassermenge ins Verhältnis zu der Menge, die die Luft bei dieser Temperatur höchstens aufnehmen könnte, angegeben in Prozent. 100 % heißt gesättigt. „Relativ“ heißt hier „bezogen auf“ — der Wert sagt für sich allein nichts darüber, wie viel Wasser wirklich in der Luft ist.",
+      "vertiefung": "Zwei Räume mit 60 % relativer Feuchte können völlig unterschiedlich viel Wasser enthalten: bei 20 °C rund 10 g/m³, bei 5 °C nur etwa 4 g/m³. Wer Feuchte beurteilen will, braucht immer beides — Temperatur und relative Feuchte.",
+      "tags": [
+        "feuchteschutz",
+        "grundlagen",
+        "luftfeuchte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 279",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-003",
+      "typ": "karte",
+      "frage": "Was geschieht mit der relativen Luftfeuchte, wenn Luft erwärmt oder abgekühlt wird, ohne dass Wasserdampf zu- oder abgeführt wird?",
+      "antwort": "Erwärmen senkt die relative Feuchte, Abkühlen hebt sie. Die absolute Wassermenge bleibt gleich, aber die Aufnahmefähigkeit ändert sich — und damit das Verhältnis. Kühlt die Luft weiter ab, erreicht sie 100 %; darunter kann sie das Wasser nicht mehr als Dampf halten, es kondensiert.",
+      "vertiefung": "Das erklärt die trockene Heizungsluft im Winter: Außenluft mit −5 °C und 80 % relativer Feuchte enthält wenig Wasser. Auf 20 °C erwärmt, bleibt dieselbe Menge — die relative Feuchte fällt auf etwa 20 %. Gelüftet wird im Winter also nicht feuchter, sondern trockener.",
+      "tags": [
+        "feuchteschutz",
+        "grundlagen",
+        "verstaendnis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 280",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-004",
+      "typ": "karte",
+      "frage": "Was ist die Taupunkttemperatur?",
+      "antwort": "Die Temperatur, bei der die Luft ihre 100 % erreicht und Tauwasser ausfällt. Sie ergibt sich aus Lufttemperatur und relativer Luftfeuchte. Je höher die relative Feuchte, desto näher liegt der Taupunkt an der Lufttemperatur — und desto leichter genügt schon eine mäßig kalte Oberfläche für Tauwasser.",
+      "vertiefung": "In normal genutzten Wohnräumen wird selten mehr als 70 % erreicht; dann liegt der Taupunkt rund 6 K unter der Lufttemperatur. Diese Spanne ist der Sicherheitsabstand, den jede Innenoberfläche einhalten muss.",
+      "tags": [
+        "feuchteschutz",
+        "taupunkt",
+        "begriffe"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 281–282",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-005",
+      "typ": "numerisch",
+      "frage": "Wie viel Wasserdampf kann 1 m³ Luft bei 20 °C höchstens aufnehmen?",
+      "antwort": "17,3 g je m³",
+      "vertiefung": "Ein Wert, den man im Kopf haben sollte, weil sich alles andere daran messen lässt: Bei 0 °C sind es nur noch 4,8 g, bei 30 °C schon 30,3 g.",
+      "tags": [
+        "feuchteschutz",
+        "kennwerte",
+        "luftfeuchte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 278 (Tafel 3.2)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 17.3,
+      "einheit": "g/m³",
+      "toleranz": 0.2
+    },
+    {
+      "id": "bp-fe-006",
+      "typ": "zuordnung",
+      "frage": "Ordne der Lufttemperatur den maximalen Wasserdampfgehalt zu.",
+      "antwort": "−10 °C → 2,1 g/m³ · 0 °C → 4,8 g/m³ · 10 °C → 9,4 g/m³ · 20 °C → 17,3 g/m³ · 30 °C → 30,3 g/m³",
+      "vertiefung": "Auffällig ist die Krümmung: Von 0 auf 10 °C verdoppelt sich die Aufnahmefähigkeit knapp, von 20 auf 30 °C kommen fast 13 g dazu. Genau deshalb sind warme Feuchträume so heikel.",
+      "tags": [
+        "feuchteschutz",
+        "kennwerte",
+        "luftfeuchte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 278 (Tafel 3.2)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "−10 °C",
+          "2,1 g/m³"
+        ],
+        [
+          "0 °C",
+          "4,8 g/m³"
+        ],
+        [
+          "10 °C",
+          "9,4 g/m³"
+        ],
+        [
+          "20 °C",
+          "17,3 g/m³"
+        ],
+        [
+          "30 °C",
+          "30,3 g/m³"
+        ]
+      ]
+    },
+    {
+      "id": "bp-fe-007",
+      "typ": "numerisch",
+      "frage": "Bei welcher Temperatur fällt Tauwasser aus, wenn die Raumluft 20 °C warm ist und eine relative Feuchte von 50 % hat?",
+      "antwort": "Bei 9,3 °C",
+      "vertiefung": "Dieselbe Zahl steht hinter dem Wärmebrückennachweis: Die geforderte Mindestoberflächentemperatur von 12,6 °C liegt bewusst über diesen 9,3 °C, weil Schimmel schon vor dem Tauwasser wächst.",
+      "tags": [
+        "feuchteschutz",
+        "taupunkt",
+        "kennwerte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 282 (Tafel 3.3 nach DIN 4108)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 9.3,
+      "einheit": "°C",
+      "toleranz": 0.2
+    },
+    {
+      "id": "bp-fe-008",
+      "typ": "zuordnung",
+      "frage": "Raumluft von 20 °C: Ordne der relativen Luftfeuchte die zugehörige Taupunkttemperatur zu.",
+      "antwort": "30 % → 1,9 °C · 50 % → 9,3 °C · 70 % → 14,4 °C · 90 % → 18,3 °C",
+      "vertiefung": "Bei 90 % genügen 1,7 K Unterkühlung für Tauwasser — praktisch jede Außenwandecke. Bei 30 % müsste die Oberfläche auf 2 °C fallen. Der Nutzer entscheidet über die relative Feuchte also mit darüber, wie fehlerverzeihend die Konstruktion ist.",
+      "tags": [
+        "feuchteschutz",
+        "taupunkt",
+        "kennwerte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 282 (Tafel 3.3 nach DIN 4108)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "30 % relative Feuchte",
+          "Taupunkt 1,9 °C"
+        ],
+        [
+          "50 % relative Feuchte",
+          "Taupunkt 9,3 °C"
+        ],
+        [
+          "70 % relative Feuchte",
+          "Taupunkt 14,4 °C"
+        ],
+        [
+          "90 % relative Feuchte",
+          "Taupunkt 18,3 °C"
+        ]
+      ]
+    },
+    {
+      "id": "bp-fe-009",
+      "typ": "karte",
+      "frage": "Warum beschlägt ein kaltes Glas von außen, obwohl keine Flüssigkeit hindurchwandert?",
+      "antwort": "Weil die Raumluft an der kalten Glasoberfläche unter ihren Taupunkt abgekühlt wird und dort Wasserdampf kondensiert. Das Wasser kommt aus der Luft, nicht aus dem Glas. Derselbe Vorgang läuft an kalten Bauteiloberflächen ab, im Winter zuerst an Fenstern und an Wärmebrücken.",
+      "vertiefung": "Das Buch nennt es den Bierglaseffekt. Für die Beurteilung eines Schadens ist die Unterscheidung wesentlich: Tauwasser an der Oberfläche kommt aus der Raumluft, aufsteigende Feuchte aus dem Erdreich, Schlagregen von außen. Drei Ursachen, drei völlig verschiedene Abhilfen.",
+      "tags": [
+        "feuchteschutz",
+        "verstaendnis",
+        "taupunkt"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 280",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-010",
+      "typ": "skizze",
+      "frage": "Skizziere, wie die Taupunkttemperatur von der relativen Luftfeuchte abhängt, für Raumluft von 15, 20 und 25 °C.",
+      "antwort": "Drei steigende Kurven über der relativen Luftfeuchte. Je höher die Lufttemperatur, desto höher liegt die Kurve. Alle laufen bei 100 % relativer Feuchte gegen die jeweilige Lufttemperatur — dort sind Taupunkt und Lufttemperatur gleich.",
+      "vertiefung": "Der Abstand zwischen Kurve und Lufttemperatur ist der Spielraum, den die Konstruktion hat. Er schrumpft nach rechts zusammen — bei hoher Raumluftfeuchte hilft nur noch eine sehr warme Oberfläche.",
+      "tags": [
+        "feuchteschutz",
+        "taupunkt",
+        "skizze"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 282 (Bild 3.2 nach W. Schüle)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/fe-taupunkt-diagramm.png",
+      "pruefpunkte": [
+        "Waagerechte Achse: relative Luftfeuchte von etwa 40 bis 100 %",
+        "Senkrechte Achse: Taupunkttemperatur",
+        "Je eine Kurve für 15, 20 und 25 °C Lufttemperatur",
+        "Alle Kurven steigen mit der relativen Feuchte",
+        "Bei 100 % erreicht jede Kurve ihre eigene Lufttemperatur"
+      ]
+    },
+    {
+      "id": "bp-fe-011",
+      "typ": "karte",
+      "frage": "Welche zwei Bedingungen müssen zusammenkommen, damit an einer Bauteiloberfläche Schimmel entsteht?",
+      "antwort": "Genügend Feuchte und ein Material, das Nährstoffe bietet — etwa Holz, Tapete oder auch nur Staubablagerungen. Für die Feuchte reicht bereits eine relative Luftfeuchte von rund 80 % an der Oberfläche aus, es muss also gar kein Tauwasser sichtbar werden.",
+      "vertiefung": "Die 80 %-Schwelle ist der Grund, warum der Nachweis über den Temperaturfaktor mit einer kritischen Oberflächenfeuchte von 80 % rechnet und nicht mit 100 %. Wer erst beim sichtbaren Tauwasser eingreift, ist zu spät dran.",
+      "tags": [
+        "feuchteschutz",
+        "schimmel",
+        "verstaendnis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 281 und 307",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Auf welchen Wegen wird Wasser in Bauteilen transportiert?",
+      "antwort": "Durch Diffusion, kapillare Wasserwanderung, Luftströmung, laminare Strömung, Osmose und Verdunstung. Wärmeleitung transportiert Wärme, kein Wasser.",
+      "vertiefung": "Für die Baupraxis sind zwei davon entscheidend: die Diffusion, weil sie durch jedes Bauteil hindurch stattfindet, und die kapillare Wanderung, weil sie flüssiges Wasser auch gegen die Schwerkraft weiterleitet.",
+      "tags": [
+        "feuchteschutz",
+        "transport",
+        "systematik"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 288",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Diffusion",
+        "kapillare Wasserwanderung",
+        "Luftströmung",
+        "elektrokinetische Einflüsse (Osmose)",
+        "Wärmeleitung"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "bp-fe-013",
+      "typ": "karte",
+      "frage": "Wohin bewegt sich Wasserdampf, und was treibt ihn an?",
+      "antwort": "Er folgt stets dem Dampfdruckgefälle, also von der Seite mit mehr Wasserdampf zu der mit weniger — auch gegen die Schwerkraft und quer durch Baustoffe hindurch. Im Winter ist der Dampfdruck innen höher, die Diffusionsrichtung verläuft daher von innen nach außen.",
+      "vertiefung": "Die Richtung folgt dem absoluten Wasserdampfgehalt, nicht der relativen Feuchte. Deshalb hilft es nichts, dass die Außenluft im Winter oft 80 % hat — absolut ist sie viel trockener als die Raumluft mit 50 % bei 20 °C.",
+      "tags": [
+        "feuchteschutz",
+        "diffusion",
+        "verstaendnis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 289–290",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-014",
+      "typ": "karte",
+      "frage": "Warum kehrt sich die Diffusionsrichtung bei erdberührten Bauteilen um?",
+      "antwort": "Weil im Erdreich Sättigungsdruck herrscht. Außen ist der Dampfdruck dort also höher als innen, und die Diffusion läuft von außen nach innen. Eine Dampfbremse auf der Raumseite, wie sie beim Dach richtig ist, wäre hier genau verkehrt.",
+      "vertiefung": "Aus demselben Grund funktioniert die Regel „Dampfbremse immer innen“ nicht als Faustregel, sondern nur als Merksatz für den Regelfall: Die Bremse gehört auf die Seite, von der die Feuchte kommt.",
+      "tags": [
+        "feuchteschutz",
+        "diffusion",
+        "typischer-fehler"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 290",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-015",
+      "typ": "bildbeschriftung",
+      "frage": "Drei Arten der Diffusion von Wassermolekülen. Benenne sie.",
+      "antwort": "a) Wasserdampfdiffusion im Zickzack durch die Poren, b) Lösungsdiffusion durch eine Flüssigkeit oder einen organischen Stoff, c) Oberflächendiffusion in einem Flüssigkeitsfilm auf den Oberflächen.",
+      "vertiefung": "Der bedeutungsvollste Vorgang ist die Wasserdampfdiffusion. Oberflächendiffusion spielt erst bei sehr porösen Stoffen mit hohem Wassergehalt eine Rolle, Lösungsdiffusion vor allem in Holz, Kunststoffen und Bitumen.",
+      "tags": [
+        "feuchteschutz",
+        "diffusion",
+        "zeichnung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 289 (Bild 3.4)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/fe-diffusionsarten.png",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 50,
+          "y": 14,
+          "name": "Wasserdampfdiffusion im Zickzack durch die Poren des Baustoffs"
+        },
+        {
+          "nr": 2,
+          "x": 50,
+          "y": 47,
+          "name": "Lösungsdiffusion durch eine Flüssigkeit oder einen organischen Stoff"
+        },
+        {
+          "nr": 3,
+          "x": 50,
+          "y": 82,
+          "name": "Oberflächendiffusion im Flüssigkeitsfilm auf den Oberflächen"
+        }
+      ]
+    },
+    {
+      "id": "bp-fe-016",
+      "typ": "karte",
+      "frage": "Was gibt die Wasserdampf-Diffusionswiderstandszahl µ an?",
+      "antwort": "Um wie viel größer der Widerstand eines Stoffes gegen Wasserdampfdiffusion ist als der einer gleich dicken Luftschicht. µ ist damit eine reine Verhältniszahl ohne Einheit; Luft hat den Wert 1. Normalbeton liegt bei etwa 70 bis 150, ist also 70- bis 150-mal dichter als Luft.",
+      "vertiefung": "Die Werte in DIN 4108-4 sind ausdrücklich Richtwerte mit großer Streuung. Bei der Berechnung ist deshalb jeweils der Wert einzusetzen, der sich für die Konstruktion ungünstiger auswirkt — je nach Lage der Schicht kann das der obere oder der untere sein.",
+      "tags": [
+        "feuchteschutz",
+        "kennwerte",
+        "diffusion"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 295–296",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-017",
+      "typ": "karte",
+      "frage": "Was ist der sd-Wert, und wie entsteht er?",
+      "antwort": "Die diffusionsäquivalente Luftschichtdicke: sd = µ · d, in Metern. Sie sagt, wie dick eine Luftschicht sein müsste, um denselben Diffusionswiderstand zu haben wie die betrachtete Schicht. Erst der sd-Wert macht Schichten vergleichbar, weil er Materialeigenschaft und Dicke zusammenfasst.",
+      "vertiefung": "Die Spannweite ist gewaltig: 1,5 cm Gipsputz ergeben 0,15 m, eine 0,2 mm dünne Kunststofffolie dagegen 20 m. Eine Folie, die man kaum in der Hand spürt, bremst den Dampf also über hundertmal stärker als die ganze Putzschicht.",
+      "tags": [
+        "feuchteschutz",
+        "kennwerte",
+        "diffusion"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 296",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-018",
+      "typ": "zuordnung",
+      "frage": "Ordne den Bauteilschichten ihre diffusionsäquivalente Luftschichtdicke zu.",
+      "antwort": "Gipsputz 1,5 cm → 0,15 m · Fichtenholz 2,5 cm → 1,0 m · Porenbeton 30 cm → 1,5 bis 3 m · Kunststofffolie 0,2 mm → 20 m",
+      "vertiefung": "Bemerkenswert ist das Paar Porenbeton und Keramikplatte: 30 cm Mauerwerk und 15 mm Fliesen setzen der Diffusion denselben Widerstand entgegen. Dicke sagt über den Diffusionswiderstand fast nichts aus.",
+      "tags": [
+        "feuchteschutz",
+        "kennwerte",
+        "diffusion"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 296–297",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Gipsputz, 1,5 cm",
+          "s_d ≈ 0,15 m"
+        ],
+        [
+          "Fichtenholz, 2,5 cm",
+          "s_d ≈ 1,0 m"
+        ],
+        [
+          "Porenbeton-Mauerwerk, 30 cm",
+          "s_d ≈ 1,5 bis 3 m"
+        ],
+        [
+          "Kunststofffolie, 0,2 mm",
+          "s_d ≈ 20 m"
+        ]
+      ]
+    },
+    {
+      "id": "bp-fe-019",
+      "typ": "karte",
+      "frage": "Worin unterscheiden sich Dampfbremse und Dampfsperre?",
+      "antwort": "Im sd-Wert. Eine Dampfbremse hat einen sd-Wert ab etwa 10 m und verlangsamt den Diffusionsstrom; eine Dampfsperre liegt bei etwa 1000 m und unterbindet ihn praktisch. Beide verlagern das Problem: Auf der geschützten Seite sinkt der Dampfdruck, auf der anderen steigt er.",
+      "vertiefung": "Deshalb gehört eine Sperre möglichst nahe an die Oberfläche, die dem kritischen Klima ausgesetzt ist — beim beheizten Raum also nach innen. Eine Pufferschicht darauf kann anfallendes Tauwasser aufnehmen und später wieder an die Raumluft abgeben. Zusätzlich übernehmen Bremse und Sperre meist die Luftdichtung.",
+      "tags": [
+        "feuchteschutz",
+        "konstruktion",
+        "begriffe"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 306",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-020",
+      "typ": "karte",
+      "frage": "Welche Größen des Wärmeschutzes entsprechen welchen des Feuchteschutzes?",
+      "antwort": "Der Wärmedurchlasswiderstand R entspricht dem Wasserdampf-Diffusionsdurchlasswiderstand 1/Δ, die Wärmestromdichte q der Diffusionsstromdichte i. In beiden Fällen treibt ein Gefälle den Strom: dort die Temperaturdifferenz, hier die Dampfdruckdifferenz. Ein Unterschied: Bei der Diffusion sind die Übergangswiderstände an den Oberflächen vernachlässigbar klein.",
+      "vertiefung": "Die Analogie trägt weit, aber nicht unbegrenzt. Wärme ist in Stunden durch ein Bauteil hindurch, Feuchte braucht Wochen bis Jahre. Deshalb funktionieren stationäre Rechenverfahren beim Wärmeschutz gut und beim Feuchteschutz nur eingeschränkt.",
+      "tags": [
+        "feuchteschutz",
+        "verstaendnis",
+        "analogie"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 297–298 (Bild 3.8, Tafel 3.7)",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-021",
+      "typ": "bildbeschriftung",
+      "frage": "Flüssigkeitsspiegel in einer Kapillare. Was zeigen die beiden Fälle?",
+      "antwort": "a) Die Flüssigkeit benetzt die Porenwand, steigt über den äußeren Spiegel und bildet einen nach oben gewölbten Rand. b) Sie benetzt nicht, bleibt zurück und wölbt sich nach unten.",
+      "vertiefung": "Entscheidend sind die Grenzflächenspannungen zwischen Flüssigkeit, Porenwand und Luft. Wasser benetzt die meisten Baustoffe — deshalb steigt es in feinen Poren auf, und zwar umso höher, je enger die Pore ist.",
+      "tags": [
+        "feuchteschutz",
+        "kapillaritaet",
+        "zeichnung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 291 (Bild 3.5)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder-lokal/fe-kapillare.png",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 26,
+          "y": 45,
+          "name": "benetzend: Spiegel steht höher, Rand nach oben gewölbt"
+        },
+        {
+          "nr": 2,
+          "x": 73,
+          "y": 45,
+          "name": "nicht benetzend: Spiegel bleibt zurück, Rand nach unten gewölbt"
+        }
+      ]
+    },
+    {
+      "id": "bp-fe-022",
+      "typ": "mehrfachauswahl",
+      "frage": "Wo spielt die kapillare Wasserwanderung im Bauwesen eine Rolle?",
+      "antwort": "Bei aufsteigender Feuchte im Mauerwerk ohne waagerechte Abdichtung, bei nach innen wandernder Feuchte durch mangelhafte Abdichtung im Erdreich oder bei Schlagregen, beim Weiterleiten von Tauwasser im Bauteil und bei der Speicherfähigkeit von Innenflächen für kurzfristig anfallende Feuchte.",
+      "vertiefung": "Der letzte Punkt wird oft übersehen: Kapillarität ist nicht nur Schadensursache. Saugfähige Innenoberflächen puffern die Feuchtespitzen beim Duschen oder Kochen und geben sie später wieder ab — eine dampfdichte Beschichtung nimmt dem Raum diese Fähigkeit.",
+      "tags": [
+        "feuchteschutz",
+        "kapillaritaet",
+        "baupraxis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 291",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Aufsteigende Feuchte im Mauerwerk bei fehlender waagerechter Abdichtung",
+        "Nach innen wandernde Feuchte bei Außenwänden im Schlagregen",
+        "Weiterleiten von Tauwasser, das im Bauteil ausgefallen ist",
+        "Feuchtespeicherung von Innenwand- und Deckenflächen",
+        "Transport von Wasserdampf entlang des Dampfdruckgefälles"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "bp-fe-023",
+      "typ": "karte",
+      "frage": "Wie lautet die Grundregel für die Schichtenfolge eines Außenbauteils?",
+      "antwort": "In Richtung der Diffusion, also im Regelfall von innen nach außen: Die sd-Werte nehmen ab, die R-Werte nehmen zu. Innen dicht und wenig dämmend, außen diffusionsoffen und gut gedämmt. Konstruktionen, die dieser Regel folgen, verhalten sich im Allgemeinen unproblematisch.",
+      "vertiefung": "Die Regel steckt zwei Gedanken in einen Satz. Die fallenden sd-Werte sorgen dafür, dass der Dampf leichter hinaus- als hineinkommt; die steigenden R-Werte schieben die kalte Zone nach außen, wo der Dampf bereits verdünnt ist. Wer nur eine Hälfte einhält, hat die Regel nicht eingehalten.",
+      "tags": [
+        "feuchteschutz",
+        "konstruktion",
+        "regel"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 304–305",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-024",
+      "typ": "vergleich",
+      "frage": "Beide Wände haben denselben U-Wert. Welche Schichtenfolge ist diffusionstechnisch unproblematisch?",
+      "antwort": "Die linke. Dort nehmen die sd-Werte von innen nach außen ab und die R-Werte zu: Der Dampf kommt außen leichter heraus, als er innen hineinkommt, und die kalte Zone liegt in der diffusionsoffenen Dämmung. Rechts ist es umgekehrt — die Dämmung innen macht das Mauerwerk kalt, und die dichte Außenschale staut den Dampf genau dort.",
+      "vertiefung": "Das ist die eigentliche Schwierigkeit der Innendämmung: Sie verschiebt den Taupunkt in die alte Außenwand hinein. Möglich ist sie trotzdem, etwa bei erhaltenswerten Fassaden — dann aber mit rechnerischem Nachweis, kapillaraktiven Dämmstoffen oder einer feuchteadaptiven Bremse statt nach Faustregel.",
+      "tags": [
+        "feuchteschutz",
+        "konstruktion",
+        "verstaendnis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 304–305",
+      "stand": "2026-09",
+      "geprueft": true,
+      "seiten": [
+        {
+          "titel": "Dämmung außen, dichte Schicht innen",
+          "bild": "bilder/fe-schichten-richtig.svg",
+          "beschreibung": "Innen Putz und Mauerwerk, außen die Dämmung und ein diffusionsoffener Putz."
+        },
+        {
+          "titel": "Dämmung innen, dichte Schale außen",
+          "bild": "bilder/fe-schichten-falsch.svg",
+          "beschreibung": "Innen die Dämmung, dahinter das Mauerwerk, außen eine dichte Schale."
+        }
+      ],
+      "richtig": 0
+    },
+    {
+      "id": "bp-fe-025",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Maßnahmen nennt DIN 4108 gegen schädliche Auswirkungen der Tauwasserbildung im Bauteilinneren?",
+      "antwort": "Absenken der Raumluftfeuchte, Ändern der Schichtenfolge, Hinterlüften einzelner Schichten, Wahl geeigneter Baustoffe, Einbau von Dampfbremsen oder -sperren, Entspannungsschichten, Vermeiden von Wärmebrücken und richtiges Nutzerverhalten. Das Erhöhen der Raumtemperatur steht nicht darunter.",
+      "vertiefung": "Die Reihenfolge im Buch ist keine Rangfolge, aber eine der Maßnahmen wird ausdrücklich als die wichtigste bezeichnet: das Vermeiden von Wärmebrücken. Die Dampfbremse steht erst weiter hinten — sie repariert, was die Schichtenfolge nicht löst.",
+      "tags": [
+        "feuchteschutz",
+        "konstruktion",
+        "normen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 301 und 304–308",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Absenken der relativen Luftfeuchte im Raum",
+        "Verändern der Schichtenfolge",
+        "Hinterlüften einzelner Bauteilschichten",
+        "Einbau von Dampfbremsen oder Dampfsperren",
+        "Vermeiden von Wärmebrücken",
+        "Dauerhaftes Anheben der Raumtemperatur um 5 K"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "bp-fe-026",
+      "typ": "karte",
+      "frage": "Wann ist überhaupt kein rechnerischer Tauwassernachweis nötig?",
+      "antwort": "Bei Tauwasser an der Oberfläche: wenn der Mindestwärmeschutz eingehalten ist und der Raum normal genutzt wird, also in Wohn- und Büroräumen einschließlich Küche und Bad. Bei Tauwasser im Bauteilinneren: wenn die Konstruktion in den Zusammenstellungen von DIN 4108-3 aufgeführt ist. Entscheidend bleibt in beiden Fällen, dass Wärmebrücken vermieden werden.",
+      "vertiefung": "Praktisch heißt das: Wer eine der aufgelisteten Wand- oder Dachkonstruktionen wählt, spart den Nachweis. Das ist in den meisten Fällen möglich und der eigentliche Grund, warum im Alltag so selten gerechnet wird.",
+      "tags": [
+        "feuchteschutz",
+        "nachweis",
+        "normen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 300–303",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-027",
+      "typ": "mehrfachauswahl",
+      "frage": "Wann gilt Tauwasser im Bauteilinneren als unschädlich?",
+      "antwort": "Wenn das im Winter angefallene Wasser im Sommer wieder abgegeben werden kann, die Baustoffe nicht geschädigt werden, die Tauwassermenge 1,0 kg/m² nicht übersteigt, an Berührungsflächen nicht wasseraufnahmefähiger Schichten höchstens 0,5 kg/m² auftreten und der Feuchtegehalt von Holz um höchstens 5, von Holzwerkstoffen um höchstens 3 Masseprozent steigt.",
+      "vertiefung": "Der strengere Wert von 0,5 kg/m² an nicht saugenden Berührungsflächen hat einen anschaulichen Grund: Dort kann das Wasser weder aufgenommen noch verteilt werden, es läuft ab oder tropft. Typischer Fall ist die Grenze zwischen Faserdämmstoff und Dampfsperre.",
+      "tags": [
+        "feuchteschutz",
+        "nachweis",
+        "grenzwerte"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 300–301 (nach DIN 4108-3)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Das Winterwasser muss im Sommer wieder abgegeben werden können",
+        "Die Baustoffe dürfen nicht geschädigt werden, etwa durch Korrosion oder Pilzbefall",
+        "Höchstens 1,0 kg/m² Tauwasser je Tauperiode",
+        "Höchstens 0,5 kg/m² an Berührungsflächen nicht wasseraufnahmefähiger Schichten",
+        "Bei Holz höchstens 5, bei Holzwerkstoffen höchstens 3 Masseprozent Feuchtezunahme",
+        "Die Tauwassermenge darf beliebig groß sein, solange gelüftet wird"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "bp-fe-028",
+      "typ": "karte",
+      "frage": "Welche Randbedingungen gelten für den Nachweis gegen Tauwasser auf Bauteiloberflächen in Sonderfällen?",
+      "antwort": "Außentemperatur −15 °C und ein raumseitiger Wärmeübergangswiderstand von Rsi = 0,17 m²·K/W. Sonderfälle sind Räume mit dauerhaft hoher Luftfeuchte, etwa Großküchen, Hallenbäder und Wäschereien; auch Kellerräume können kritisch werden.",
+      "vertiefung": "Wieder ein anderer Rsi-Wert als beim U-Wert mit 0,13 und beim Wärmebrückennachweis mit 0,25. Die drei Zahlen gehören zu drei verschiedenen Fragen, und das Verwechseln ist ein beliebter Prüfungsfehler.",
+      "tags": [
+        "feuchteschutz",
+        "nachweis",
+        "randbedingungen"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 300",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-029",
+      "typ": "bildbeschriftung",
+      "frage": "Dampfdruckverlauf in einem Bauteil. Benenne die eingezeichneten Linien und die markierte Stelle.",
+      "antwort": "Die obere Linie ist der Sättigungsdampfdruck, die gestrichelte der unkorrigierte Dampfdruckverlauf, die durchgezogene der korrigierte. Der markierte Punkt ist die Tauwasserebene.",
+      "vertiefung": "Der Knick ist der ganze Trick des Verfahrens: Der Dampfdruck kann den Sättigungsdruck physikalisch nicht überschreiten. Die Differenz zwischen ein- und austretendem Diffusionsstrom bleibt als Tauwasser im Bauteil.",
+      "tags": [
+        "feuchteschutz",
+        "diffusion",
+        "zeichnung"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 297–298; DETAIL Atlas Flachdach, S. 69",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/fe-dampfdruck-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 22,
+          "y": 30,
+          "name": "Sättigungsdampfdruck: die Grenze, die nicht überschritten werden kann"
+        },
+        {
+          "nr": 2,
+          "x": 62,
+          "y": 62,
+          "name": "unkorrigierter Dampfdruckverlauf, rechnerisch zu hoch"
+        },
+        {
+          "nr": 3,
+          "x": 62,
+          "y": 76,
+          "name": "korrigierter Dampfdruckverlauf mit Knick"
+        },
+        {
+          "nr": 4,
+          "x": 33,
+          "y": 70,
+          "name": "Tauwasserebene: Berührungspunkt beider Linien"
+        }
+      ]
+    },
+    {
+      "id": "bp-fe-030",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte des Glaser-Verfahrens in die richtige Reihenfolge.",
+      "antwort": "Schichtenfolge festlegen, Kennwerte je Schicht angeben, Temperaturverlauf ermitteln, daraus den Sättigungsdampfdruck, den Dampfdruck über dem sd-Wert auftragen, bei Überschreitung korrigieren, Tau- gegen Verdunstungsmenge halten.",
+      "vertiefung": "Das Verfahren ist seit 1981 genormt und bewusst so angelegt, dass es sich grafisch lösen lässt. Gerechnet wird mit zwei Blöcken: einer 60-tägigen Tauperiode im Winter und einer 90-tägigen Verdunstungsperiode im Sommer.",
+      "tags": [
+        "feuchteschutz",
+        "nachweis",
+        "ablauf"
+      ],
+      "quelle": "DETAIL Atlas Flachdach, S. 69–70",
+      "stand": "2026-09",
+      "geprueft": true,
+      "schritte": [
+        "Den Bauteilaufbau von innen nach außen festlegen",
+        "Für jede Schicht Wärmeleitfähigkeit, µ-Wert und Dicke angeben",
+        "Den Temperaturverlauf über dem Querschnitt ermitteln",
+        "Daraus den Verlauf des Sättigungsdampfdrucks bestimmen",
+        "Den Dampfdruck als Gerade über dem s_d-Wert auftragen",
+        "Wo die Gerade den Sättigungsdruck überschreitet, auf Berührung korrigieren",
+        "Tauwassermenge gegen die Verdunstungsmenge der Sommerperiode halten"
+      ]
+    },
+    {
+      "id": "bp-fe-031",
+      "typ": "karte",
+      "frage": "Welche Grenzen hat das Glaser-Verfahren?",
+      "antwort": "Es rechnet stationär mit zwei festen Blöcken und vernachlässigt dabei die Feuchtespeicherung, den Transport durch Luftströmung und die Kapillarleitung. Für begrünte Dächer und für die Austrocknung von Baufeuchte ist es laut Norm nicht anwendbar. Wo es nicht trägt, kommt eine hygrothermische Simulation nach DIN EN 15026 zum Einsatz.",
+      "vertiefung": "Der Sonderfall Flachdach zeigt das Problem: Für Dächer dürfen wegen der Sonneneinstrahlung 20 °C Oberflächentemperatur angesetzt werden. Bei einer hellen, stark reflektierenden Dachfläche ist dieser Bonus nicht gerechtfertigt — dort sollte mit den Randbedingungen für Außenwände gerechnet werden.",
+      "tags": [
+        "feuchteschutz",
+        "nachweis",
+        "grenzen"
+      ],
+      "quelle": "DETAIL Atlas Flachdach, S. 69–70",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-032",
+      "typ": "karte",
+      "frage": "Worin unterscheidet sich Dampfkonvektion von Dampfdiffusion, und warum ist sie gefährlicher?",
+      "antwort": "Bei der Konvektion strömt feuchte Raumluft durch Undichtheiten in das Bauteil, statt als Dampf hindurchzuwandern. Sie trägt dabei weit größere Feuchtemengen mit sich als die Diffusion. Ein Bauteil kann die Anforderungen an den Diffusionsschutz erfüllen und trotzdem durchfeuchten, wenn die Luftdichtheit fehlt.",
+      "vertiefung": "Deshalb werden Konvektions- und Diffusionsschutz sinnvollerweise in einer warmseitigen Schicht vereint. Weil sich Leckagen nie ganz vermeiden lassen, hat sich für Leichtbaudächer die Trocknungsreserve als Konstruktionsprinzip durchgesetzt: so dicht wie nötig, so diffusionsoffen wie möglich.",
+      "tags": [
+        "feuchteschutz",
+        "luftdichtheit",
+        "verstaendnis"
+      ],
+      "quelle": "DETAIL Atlas Flachdach, S. 67–68",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-033",
+      "typ": "karte",
+      "frage": "Was bringen Entspannungsschichten und Dachentlüfter für den Feuchteschutz?",
+      "antwort": "Wenig. Beide können eine Tauwasserbildung nicht verhindern und eine durchfeuchtete Dämmschicht nicht wirksam trocknen — für eine Austrocknung durch Diffusion fehlt der Druckunterschied. Ihr eigentlicher Nutzen liegt woanders: Entspannungsschichten lassen verdampfendes Wasser entweichen, wenn heiße Abdichtungen auf feuchte Bauteile aufgebracht werden.",
+      "vertiefung": "Ein verbreiteter Irrtum auf der Baustelle: Wenn das Dach nass ist, setzt man Entlüfter. Das Buch ist da eindeutig — sie entfeuchten die Dämmung nicht. Die Feuchte muss über die Konstruktion selbst wieder heraus.",
+      "tags": [
+        "feuchteschutz",
+        "konstruktion",
+        "typischer-fehler"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 306",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-fe-034",
+      "typ": "karte",
+      "frage": "Warum ist dauerhaft gekipptes Lüften im Winter schädlich?",
+      "antwort": "Weil der Luftwechsel gering bleibt, die Laibungen und angrenzenden Bauteile aber stark auskühlen. Auf diesen kalten Flächen fällt dann Tauwasser aus. Besser ist mehrmals täglich eine Stoßlüftung mit weit geöffneten Fenstern über fünf bis zehn Minuten.",
+      "vertiefung": "Bauliche Mängel und falsches Nutzerverhalten wirken zusammen. Das ist auch juristisch der Streitpunkt: Eine Konstruktion muss bei üblicher Nutzung mit angemessener Heizung und Lüftung schadensfrei bleiben — was „üblich“ ist, entscheidet dann im Zweifel ein Gutachter.",
+      "tags": [
+        "feuchteschutz",
+        "nutzung",
+        "baupraxis"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 307–308 (nach dem Schimmelpilz-Leitfaden des Umweltbundesamtes)",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}

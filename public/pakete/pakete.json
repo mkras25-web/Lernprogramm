@@ -1,0 +1,11 @@
+{
+  "titel": "Verfügbare Inhaltspakete",
+  "pakete": [
+    {
+      "id": "arch-de",
+      "titel": "Architektur (Deutschland)",
+      "beschreibung": "Architekturstudium und Berufspraxis: Konstruktion, Bauphysik, Recht, Entwurf.",
+      "sprache": "de"
+    }
+  ]
+}

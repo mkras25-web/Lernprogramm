@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="dmm" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#adc178"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+    </pattern>
+    <pattern id="mw" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#a98467"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+      <line x1="12" y1="0" x2="12" y2="12" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+      <line x1="0" y1="12" x2="0" y2="24" stroke="#6c584c" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="960" height="540" fill="#f0ead2"/>
+
+  <text x="110" y="74" font-size="17" font-weight="600" fill="#414833">ungedämmt</text>
+  <text x="110" y="96" font-size="14" fill="#6c584c">365 mm Mauerwerk · U ≈ 1,11 W/(m²·K)</text>
+  <rect x="110" y="112" width="50" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="326" y="112" width="94" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="160" y="112" width="166" height="276" fill="url(#mw)" stroke="#414833" stroke-width="1.5"/>
+
+  <text x="500" y="74" font-size="17" font-weight="600" fill="#414833">außen gedämmt</text>
+  <text x="500" y="96" font-size="14" fill="#6c584c">+ 140 mm Dämmung · U ≈ 0,23 W/(m²·K)</text>
+  <rect x="500" y="112" width="50" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="780" y="112" width="90" height="276" fill="#ffffff" opacity="0.45"/>
+  <rect x="550" y="112" width="166" height="276" fill="url(#mw)" stroke="#414833" stroke-width="1.5"/>
+  <rect x="716" y="112" width="64" height="276" fill="url(#dmm)" stroke="#414833" stroke-width="1.5"/>
+
+  <g stroke="#414833" stroke-width="1.2" fill="#414833" font-size="13">
+    <line x1="95" y1="112" x2="95" y2="388"/>
+    <line x1="89" y1="120" x2="95" y2="120"/><text x="83" y="125" text-anchor="end">+20 °C</text>
+    <line x1="89" y1="207" x2="95" y2="207"/><text x="83" y="212" text-anchor="end">+10 °C</text>
+    <line x1="89" y1="293" x2="95" y2="293"/><text x="83" y="298" text-anchor="end">0 °C</text>
+    <line x1="89" y1="380" x2="95" y2="380"/><text x="83" y="385" text-anchor="end">−10 °C</text>
+  </g>
+
+  <line x1="110" y1="213" x2="872" y2="213" stroke="#a98467" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <text x="880" y="209" font-size="13" fill="#a98467">Taupunkt</text>
+  <text x="880" y="226" font-size="13" fill="#a98467">Raumluft</text>
+
+  <path d="M110,120 L150,120 L160,157 L326,369 L336,380 L420,380" fill="none" stroke="#414833" stroke-width="3"/>
+  <path d="M500,120 L540,120 L550,128 L716,171 L780,378 L790,380 L870,380" fill="none" stroke="#414833" stroke-width="3"/>
+
+  <circle cx="160" cy="157" r="4.5" fill="#414833"/>
+  <rect x="168" y="136" width="106" height="21" fill="#f0ead2" opacity="0.88"/>
+  <text x="172" y="152" font-size="13" fill="#414833">&#952;&#8347;&#7522; ≈ 16 °C</text>
+  <circle cx="550" cy="128" r="4.5" fill="#414833"/>
+  <rect x="558" y="136" width="106" height="21" fill="#f0ead2" opacity="0.88"/>
+  <text x="562" y="152" font-size="13" fill="#414833">&#952;&#8347;&#7522; ≈ 19 °C</text>
+
+  <circle cx="204" cy="213" r="5.5" fill="#f0ead2" stroke="#a98467" stroke-width="2.5"/>
+  <circle cx="729" cy="213" r="5.5" fill="#f0ead2" stroke="#a98467" stroke-width="2.5"/>
+
+  <g font-size="13" fill="#414833">
+    <text x="135" y="408" text-anchor="middle">innen</text>
+    <text x="373" y="408" text-anchor="middle">außen</text>
+    <text x="525" y="408" text-anchor="middle">innen</text>
+    <text x="825" y="408" text-anchor="middle">außen</text>
+  </g>
+  <g font-size="13" fill="#a98467">
+    <text x="110" y="436">Taupunkt liegt im Mauerwerk</text>
+    <text x="500" y="436">Taupunkt liegt in der Dämmschicht</text>
+  </g>
+
+  <g font-size="13" fill="#6c584c">
+    <text x="95" y="480">Randbedingungen: 20 °C innen, −10 °C außen, R&#8347;&#7522; = 0,13 und R&#8347;&#8337; = 0,04 m²·K/W;</text>
+    <text x="95" y="502">&#955; = 0,50 W/(m·K) für das Mauerwerk, &#955; = 0,040 W/(m·K) für die Dämmung.</text>
+    <text x="95" y="524">Der Temperaturabfall je Schicht verhält sich wie deren Wärmedurchlasswiderstand.</text>
+  </g>
+</svg>

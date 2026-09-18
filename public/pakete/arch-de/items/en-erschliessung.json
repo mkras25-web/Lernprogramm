@@ -1,0 +1,410 @@
+{
+  "thema": "en-erschliessung",
+  "titel": "Erschließungstypen und Grundrisslogik",
+  "erklaerung": {
+    "absaetze": [
+      "Die Erschließung entscheidet über mehr als den Weg zur Wohnungstür. Sie legt fest, wie viele Fassadenseiten jeder Wohnung bleiben, ob quergelüftet werden kann, wie viel Fläche unvermietbar bleibt und wie das Haus im Brandfall funktioniert. Wer den Erschließungstyp wählt, hat die Hälfte des Entwurfs entschieden.",
+      "Der Spännertyp beschreibt, wie viele Wohnungen an einem Treppenhaus je Geschoss hängen. Je mehr es sind, desto wirtschaftlicher wird der Kern und desto schlechter wird die Orientierung der einzelnen Wohnung. Beim Einspänner liegen bis zu vier Fassadenseiten an einer Wohnung, beim Vierspänner oft nur noch eine.",
+      "Zwischen Wirtschaftlichkeit und Wohnqualität liegt deshalb ein direkter Zielkonflikt, und der Zweispänner ist der übliche Kompromiss: zwei Wohnungen je Kern, beide noch mindestens zweiseitig orientiert, oft durchgesteckt von Fassade zu Fassade.",
+      "Der Laubengang verschiebt die Erschließung nach außen. Ein Kern bedient viele Wohnungen, das ist sehr wirtschaftlich, aber die Gangseite verliert ihre Privatheit – dorthin gehören Nebenräume, nicht der Wohnraum. Der Mittelflur schließlich erschließt beidseitig, erzwingt damit einseitig orientierte Einheiten ohne Querlüftung und ist deshalb im Wohnungsbau die Ausnahme, im Hotel- und Heimbau die Regel.",
+      "Ein zweiter Zusammenhang läuft über die Himmelsrichtung: Treppenhaus und Nebenräume vertragen Norden, Wohnräume brauchen Süden und Westen. Die Erschließung ist damit auch das Werkzeug, mit dem der Entwurf die schlechte Seite des Grundstücks aufbraucht."
+    ],
+    "merksatz": "Jede zusätzliche Wohnung am Kern spart Fläche und kostet Orientierung.",
+    "bildunterschrift": "Erschließungstypen im Vergleich, schematische Grundrisse",
+    "quelle": "Allgemeine Entwurfslehre; abzugleichen mit Raumpilot Grundlagen und Neufert"
+  },
+  "items": [
+    {
+      "id": "en-ersch-001",
+      "typ": "karte",
+      "frage": "Was beschreibt der Spännertyp, und welche Entwurfsgröße hängt unmittelbar daran?",
+      "antwort": "Die Zahl der Wohnungen, die je Geschoss an einem Treppenhaus liegen. Daran hängt unmittelbar, wie viele Fassadenseiten jeder Wohnung bleiben – und damit Belichtung, Orientierung und Querlüftung.",
+      "vertiefung": "Der Zusammenhang ist zwingend: Ein Kern in der Mitte teilt den Grundriss. Je mehr Wohnungen sich die Fassade teilen, desto weniger Außenwand entfällt auf jede einzelne.",
+      "tags": [
+        "erschliessung",
+        "typologie",
+        "grundriss"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-002",
+      "typ": "zuordnung",
+      "frage": "Ordne die Erschließungstypen ihrem kennzeichnenden Merkmal zu.",
+      "paare": [
+        [
+          "Einspänner",
+          "Eine Wohnung je Geschoss, bis zu vier Fassadenseiten"
+        ],
+        [
+          "Zweispänner",
+          "Zwei Wohnungen je Kern, meist durchgesteckt"
+        ],
+        [
+          "Vierspänner",
+          "Vier Wohnungen je Kern, teils nur einseitig orientiert"
+        ],
+        [
+          "Laubengang",
+          "Erschließung außen liegend, ein Kern für viele Wohnungen"
+        ],
+        [
+          "Mittelflur",
+          "Beidseitig erschlossener Innenflur, keine Querlüftung"
+        ]
+      ],
+      "antwort": "Die Reihenfolge folgt der Zahl der Wohnungen je Kern: mit jeder zusätzlichen sinkt die Orientierung der einzelnen Wohnung.",
+      "tags": [
+        "erschliessung",
+        "typologie"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-003",
+      "typ": "karte",
+      "frage": "Warum gilt der Zweispänner im Geschosswohnungsbau als Standardlösung?",
+      "antwort": "Er trifft den Kompromiss: Der Kern wird von zwei Wohnungen getragen, was wirtschaftlich vertretbar ist, und beide Wohnungen bleiben mindestens zweiseitig orientiert und lassen sich durchstecken.",
+      "vertiefung": "Der Einspänner liefert die beste Wohnqualität bei schlechtester Wirtschaftlichkeit, der Vierspänner umgekehrt. Der Zweispänner ist der Punkt, an dem beides noch zusammengeht.",
+      "tags": [
+        "erschliessung",
+        "zweispaenner",
+        "wirtschaftlichkeit"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-004",
+      "typ": "karte",
+      "frage": "Welches Problem entsteht beim Vierspänner zwangsläufig, und warum lässt es sich nicht wegplanen?",
+      "antwort": "Mindestens eine Wohnung je Geschoss ist einseitig orientiert und liegt zur ungünstigen Himmelsrichtung. Da vier Wohnungen sich vier Gebäudeseiten teilen, bleibt rechnerisch für jede nur eine – auch die Nordseite muss belegt werden.",
+      "vertiefung": "Abmildern lässt sich das über Eckwohnungen, über unterschiedliche Wohnungsgrößen oder indem die schlechteste Lage bewusst der kleinsten Einheit zugewiesen wird. Beseitigen lässt es sich nicht.",
+      "tags": [
+        "erschliessung",
+        "vierspaenner",
+        "orientierung"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-005",
+      "typ": "karte",
+      "frage": "Was ist eine durchgesteckte Wohnung, und welche drei Vorteile bringt sie?",
+      "antwort": "Eine Wohnung, die von einer Fassade zur gegenüberliegenden reicht. Sie erhält Licht aus zwei Richtungen, ermöglicht Querlüftung und erlaubt es, Wohn- und Schlafbereiche nach unterschiedlichen Himmelsrichtungen zu sortieren.",
+      "vertiefung": "Die Querlüftung ist der unterschätzte Punkt: Sie ist das wirksamste Mittel für sommerliche Nachtauskühlung und damit ein bauphysikalisches Argument, das im Entwurf entschieden wird, nicht in der Haustechnik.",
+      "tags": [
+        "erschliessung",
+        "querlueftung",
+        "orientierung"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-006",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zum Laubengangtyp treffen zu?",
+      "optionen": [
+        "Ein Kern kann viele Wohnungen je Geschoss erschließen",
+        "Zur Gangseite gehören Nebenräume, nicht der Wohnraum",
+        "Die Wohnungen sind grundsätzlich durchgesteckt",
+        "Der Typ gilt als besonders flächenwirtschaftlich",
+        "Die Privatheit zur Gangseite ist eingeschränkt",
+        "Der Laubengang ersetzt immer den zweiten Rettungsweg"
+      ],
+      "richtig": [
+        0,
+        1,
+        3,
+        4
+      ],
+      "antwort": "Zutreffend sind die hohe Zahl an Wohnungen je Kern, die Zuordnung der Nebenräume zur Gangseite, die Wirtschaftlichkeit und die eingeschränkte Privatheit.",
+      "vertiefung": "Durchgesteckt sind Laubengangwohnungen gerade nicht – der Gang nimmt eine Seite ein. Und ob der Laubengang als Rettungsweg dient, entscheidet die Landesbauordnung im Einzelfall, das ist keine Eigenschaft des Typs.",
+      "tags": [
+        "erschliessung",
+        "laubengang"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-007",
+      "typ": "karte",
+      "frage": "Warum ist der Mittelflur im Wohnungsbau selten, im Hotel- und Heimbau aber die Regel?",
+      "antwort": "Er erzwingt einseitig orientierte Einheiten ohne Querlüftung. Für dauerhaftes Wohnen ist das zu wenig, für Zimmer mit kurzer Aufenthaltsdauer und zentraler Lüftungstechnik dagegen unproblematisch – und die Flächenwirtschaftlichkeit ist unschlagbar.",
+      "vertiefung": "Im Bürobau heißt derselbe Typ Zweibund. Der Dreibund schiebt zwischen die beiden Raumschichten eine innenliegende Zone für Nebenräume und Technik.",
+      "tags": [
+        "erschliessung",
+        "mittelflur",
+        "typologie"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-008",
+      "typ": "karte",
+      "frage": "Was unterscheidet Zweibund und Dreibund im Bürobau?",
+      "antwort": "Beim Zweibund liegen zwei Raumschichten beidseits eines Flurs. Beim Dreibund kommt zwischen Flur und einer Raumschicht eine innenliegende Zone hinzu, die Nebenräume, Technik und Besprechung aufnimmt.",
+      "vertiefung": "Der Dreibund erlaubt größere Gebäudetiefen, ohne dass innen unbelichtete Arbeitsplätze entstehen – die tiefliegende Zone bekommt Nutzungen, die kein Tageslicht brauchen.",
+      "tags": [
+        "erschliessung",
+        "buero",
+        "gebaeudetiefe"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-009",
+      "typ": "karte",
+      "frage": "Warum werden Treppe, Aufzug und Installationsschächte zu einem Kern gebündelt?",
+      "antwort": "Vier Gründe fallen zusammen: kurze Leitungswege, wirtschaftliche Herstellung, die aussteifende Wirkung des massiven Kerns im Tragwerk und die Bündelung lärmender Bauteile fern der Aufenthaltsräume.",
+      "vertiefung": "Die Aussteifung ist der Punkt, den Entwerfende am ehesten übersehen: Bei Skelettbauten übernimmt der Kern die Horizontallasten. Wer ihn im Entwurf verschiebt, verschiebt das statische System mit.",
+      "tags": [
+        "erschliessung",
+        "kern",
+        "tragwerk"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-010",
+      "typ": "karte",
+      "frage": "Nach welcher Logik werden Räume den Himmelsrichtungen zugeordnet, und welche Rolle spielt dabei die Erschließung?",
+      "antwort": "Wohn- und Aufenthaltsräume nach Süden und Westen, Schlafen eher nach Osten, Nebenräume und Erschließung nach Norden. Das Treppenhaus ist das Werkzeug, mit dem die ungünstige Nordlage aufgebraucht wird, ohne Wohnqualität zu verlieren.",
+      "vertiefung": "Bei Laubengangtypen gilt dasselbe: Der Gang gehört auf die Nordseite, die Wohnräume öffnen sich nach Süden.",
+      "tags": [
+        "erschliessung",
+        "orientierung",
+        "entwurfslogik"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-011",
+      "typ": "karte",
+      "frage": "Wie verändert eine Maisonette-Wohnung die Erschließungsbilanz?",
+      "antwort": "Der Erschließungsgang bedient nur jedes zweite Geschoss, innerhalb der Wohnung übernimmt eine eigene Treppe. Der Anteil gemeinschaftlicher Erschließungsfläche sinkt deutlich.",
+      "vertiefung": "Erkauft wird das mit Fläche innerhalb der Wohnung und mit der Einschränkung, dass Maisonetten nicht barrierefrei erschlossen sind. Bei Laubengangtypen ist die Kombination besonders wirksam, weil dann nur jedes zweite Geschoss einen Gang braucht.",
+      "tags": [
+        "erschliessung",
+        "maisonette",
+        "wirtschaftlichkeit"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Entwurfsentscheidungen erhöhen den Anteil der Erschließungsfläche an der Gesamtfläche?",
+      "optionen": [
+        "Wechsel vom Vierspänner zum Einspänner",
+        "Geringe Gebäudetiefe bei gleicher Wohnungsgröße",
+        "Maisonette-Wohnungen statt Geschosswohnungen",
+        "Viele kleine Wohnungen statt weniger großer",
+        "Laubengang statt innenliegendem Treppenhaus"
+      ],
+      "richtig": [
+        0,
+        1,
+        3
+      ],
+      "antwort": "Einspänner, geringe Gebäudetiefe und viele kleine Wohnungen treiben den Erschließungsanteil nach oben.",
+      "vertiefung": "Maisonetten und Laubengang wirken in die andere Richtung. Die Wohnungsgröße ist der oft übersehene Hebel: Jede Wohnung braucht einen Zugang, unabhängig davon, wie groß sie ist.",
+      "tags": [
+        "erschliessung",
+        "flaechenwirtschaft"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-013",
+      "typ": "karte",
+      "frage": "Welcher Zusammenhang besteht zwischen Erschließungstyp und Brandschutz?",
+      "antwort": "Der Erschließungsweg ist zugleich der erste Rettungsweg. Notwendige Treppenräume, ihre Anzahl und die Frage, ob ein zweiter baulicher Rettungsweg nötig ist oder die Feuerwehr ihn stellt, folgen aus dem gewählten Typ.",
+      "vertiefung": "Die konkreten Anforderungen stehen in der Landesbauordnung und unterscheiden sich je Bundesland. Der Entwurf legt aber fest, welcher Fall überhaupt eintritt – etwa ob eine Wohnung an nur einem Treppenraum hängt.",
+      "tags": [
+        "erschliessung",
+        "brandschutz",
+        "rettungswege"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Rettungsweganforderungen sind Ländersache. Gegen die einschlägige LBO abgleichen."
+    },
+    {
+      "id": "en-ersch-014",
+      "typ": "karte",
+      "frage": "Wodurch unterscheiden sich Punkthaus und Zeilenbau in der Erschließungslogik?",
+      "antwort": "Das Punkthaus erschließt über einen zentralen Kern nach allen Seiten und stapelt viele Geschosse auf kleiner Grundfläche. Der Zeilenbau reiht mehrere Kerne aneinander, jeder bedient seinen Abschnitt.",
+      "vertiefung": "Daraus folgt die Orientierung: Im Punkthaus liegen Wohnungen in allen Himmelsrichtungen, in der Zeile hat jede Wohnung dieselbe Ausrichtung wie ihre Nachbarn. Die Zeile wird deshalb meist nach Ost-West orientiert, damit beide Längsseiten Sonne bekommen.",
+      "tags": [
+        "erschliessung",
+        "typologie",
+        "staedtebau"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-015",
+      "typ": "numerisch",
+      "frage": "In welcher Größenordnung liegt der Anteil der gemeinschaftlichen Erschließungsfläche an der Gesamtfläche im Geschosswohnungsbau?",
+      "wert": 12,
+      "einheit": "%",
+      "toleranz": 5,
+      "antwort": "Etwa zehn bis fünfzehn Prozent, je nach Typ und Wohnungsgröße.",
+      "vertiefung": "Die Zahl ist ein Orientierungswert, kein Nachweis. Für belastbare Angaben gehört sie über DIN 277 ermittelt und mit Kostenkennwerten hinterlegt.",
+      "tags": [
+        "erschliessung",
+        "flaechenwirtschaft",
+        "kennwerte"
+      ],
+      "quelle": "Erfahrungswert",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Gegen DIN 277 und BKI-Kennwerte prüfen, bevor der Wert in Tests erscheint."
+    },
+    {
+      "id": "en-ersch-016",
+      "typ": "skizze",
+      "frage": "Zeichne den Grundriss eines Zweispänners schematisch: Kern, zwei Wohnungen, Himmelsrichtung. Kennzeichne, welche Räume wohin orientiert sind.",
+      "referenz": "bilder/erschliessungstypen.svg",
+      "pruefpunkte": [
+        "Kern mittig, mit Treppe und Aufzug angedeutet",
+        "Zwei Wohnungen, symmetrisch zum Kern",
+        "Beide Wohnungen reichen von Fassade zu Fassade (durchgesteckt)",
+        "Nordpfeil oder Himmelsrichtung eingetragen",
+        "Wohnräume nach Süd oder West, Nebenräume nach Norden",
+        "Wohnungseingänge vom Kern aus erreichbar dargestellt"
+      ],
+      "antwort": "Der Kern liegt zwischen den beiden Wohnungen, beide reichen durch die gesamte Gebäudetiefe. Nebenräume sammeln sich am Kern und zur Nordseite, Wohnräume liegen an der besten Fassade.",
+      "vertiefung": "Wenn die Zeichnung nicht durchgesteckt ist, hast du im Ergebnis einen Vierspänner ohne dessen Wirtschaftlichkeit gezeichnet – dann prüfe die Gebäudetiefe.",
+      "tags": [
+        "erschliessung",
+        "zweispaenner",
+        "skizze"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-017",
+      "typ": "skizze",
+      "frage": "Skizziere einen Laubengangtyp im Schnitt und im Grundriss. Zeige, wo Wohnräume und wo Nebenräume liegen und wo der Kern sitzt.",
+      "referenz": "bilder/erschliessungstypen.svg",
+      "pruefpunkte": [
+        "Laubengang außen liegend, an einer Längsseite",
+        "Kern am Ende oder seitlich des Gangs, nicht in der Mitte",
+        "Nebenräume und Eingänge zur Gangseite",
+        "Wohnräume zur gangabgewandten Seite",
+        "Gangseite als Nordseite gekennzeichnet",
+        "Im Schnitt erkennbar, dass der Gang auf jedem Geschoss liegt"
+      ],
+      "antwort": "Der Gang läuft außen an der Nordseite entlang, der Kern liegt seitlich. Zum Gang orientieren sich Eingang, Bad und Küche, die Wohnräume öffnen sich zur ruhigen Gegenseite.",
+      "vertiefung": "Die Privatheit lässt sich verbessern, indem der Gang von der Fassade abrückt, Vorzonen entstehen oder die Fensterhöhe zur Gangseite angehoben wird.",
+      "tags": [
+        "erschliessung",
+        "laubengang",
+        "skizze"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-018",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die fünf dargestellten Erschließungstypen.",
+      "referenz": "bilder/erschliessungstypen-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 15,
+          "y": 21,
+          "name": "Einspänner"
+        },
+        {
+          "nr": 2,
+          "x": 46,
+          "y": 21,
+          "name": "Zweispänner"
+        },
+        {
+          "nr": 3,
+          "x": 81,
+          "y": 21,
+          "name": "Vierspänner"
+        },
+        {
+          "nr": 4,
+          "x": 25,
+          "y": 72,
+          "name": "Laubengangtyp"
+        },
+        {
+          "nr": 5,
+          "x": 78,
+          "y": 69,
+          "name": "Mittelflur (Zweibund)"
+        }
+      ],
+      "antwort": "Einspänner, Zweispänner, Vierspänner, Laubengang und Mittelflur – geordnet nach wachsender Zahl der Wohnungen je Kern.",
+      "vertiefung": "Am Grundriss erkennbar ist der Typ an zwei Dingen: der Lage des schraffierten Kerns und der Zahl der Teilungen. Liegt der Kern außen am Gebäude, ist es ein Laubengang; liegt der Flur zwischen zwei Raumschichten, ein Mittelflur.",
+      "tags": [
+        "erschliessung",
+        "typologie",
+        "bildbeschriftung"
+      ],
+      "quelle": "Eigene Darstellung",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-ersch-019",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Erschließungstypen in die Reihenfolge wachsender Wohnungszahl je Treppenhaus.",
+      "schritte": [
+        "Einspänner – eine Wohnung je Geschoss",
+        "Zweispänner – zwei Wohnungen je Geschoss",
+        "Dreispänner – drei Wohnungen je Geschoss",
+        "Vierspänner – vier Wohnungen je Geschoss",
+        "Laubengang – viele Wohnungen an einem Kern"
+      ],
+      "antwort": "Mit jeder zusätzlichen Wohnung am Kern sinkt die Zahl der Fassadenseiten, die auf die einzelne Wohnung entfallen.",
+      "vertiefung": "Der Laubengang bricht die Reihe insofern, als er die Erschließung nach außen verlegt und damit die Beschränkung des Kerns umgeht – zum Preis der Privatheit auf der Gangseite.",
+      "tags": [
+        "erschliessung",
+        "typologie",
+        "reihenfolge"
+      ],
+      "quelle": "Allgemeine Entwurfslehre",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}

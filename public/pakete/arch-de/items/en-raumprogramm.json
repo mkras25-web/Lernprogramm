@@ -1,0 +1,716 @@
+{
+  "thema": "en-raumprogramm",
+  "titel": "Raumprogramm und Funktionsschema",
+  "erklaerung": {
+    "absaetze": [
+      "Ein Raumprogramm listet nicht Räume auf, sondern beschreibt Anforderungen. Raumpilot Wohnen weist darauf hin, dass der Begriff genau deshalb vorbelastet ist: Wer „Schlafzimmer\" schreibt, hat die Raumkonfiguration schon entschieden, bevor der Entwurf begonnen hat. Sinnvoller ist es, im Entwurfsprozess von Funktionsbereichen statt von Räumen zu sprechen.",
+      "Funktionen stehen dabei nie unvermittelt nebeneinander, sondern bilden Konfigurationen. Im Wohnungsbau lassen sie sich in kommunikative, individuelle und dienende Bereiche gliedern. Die Erschließung fällt aus dieser Ordnung heraus – sie ist das Rückgrat, das die übrigen Funktionen verknüpft, und wird gesondert betrachtet.",
+      "Das Funktionsschema übersetzt diese Beziehungen ins Grafische: Punkte für Funktionsbereiche, Pfeile für notwendige Wege, Flächen für übergeordnete Zonen. Es ist kein Grundriss und darf keiner sein – seine Stärke liegt darin, Beziehungen zu klären, bevor Geometrie ins Spiel kommt.",
+      "Die Flächenseite arbeitet mit Verhältnissen statt mit absoluten Zahlen. Im Bürobau setzt Raumpilot die Bürofläche auf 1 und leitet die übrigen Bereiche daraus ab. Im Schulbau geben die Schulbauförderrichtlinien ein Verhältnis von Programmfläche zu Restfläche von 60 zu 40 als wirtschaftlich an. Solche Verhältnisse überleben Programmänderungen, absolute Quadratmeterzahlen nicht.",
+      "Am Ende steht die Frage, was überhaupt vermietbar ist. Die Richtlinie MF-G der gif baut auf der Brutto-Grundfläche nach DIN 277 auf und trennt, was keine Mietfläche sein kann – technische Funktionsflächen, Verkehrsflächen, Konstruktionsgrundflächen – von dem, was exklusiv oder gemeinschaftlich genutzt wird."
+    ],
+    "merksatz": "Erst Funktionsbereiche und ihre Beziehungen, dann Flächenverhältnisse, zuletzt Quadratmeter.",
+    "bild": "bilder/funktionsschema-buero.svg",
+    "bildunterschrift": "Funktionsschema eines Bürogebäudes, schematisch nach Raumpilot Grundlagen",
+    "quelle": "Raumpilot Grundlagen S. 357–360 und 471; Raumpilot Wohnen S. 149"
+  },
+  "items": [
+    {
+      "id": "en-rp-001",
+      "typ": "karte",
+      "frage": "Warum empfiehlt Raumpilot, im Entwurfsprozess von Funktionsbereichen statt von Räumen zu sprechen?",
+      "antwort": "Weil Raumbezeichnungen wie Schlafzimmer oder Küche über die Entwicklungsgeschichte des Wohnungsbaus feste Konventionen zu Größe, Möblierung und Orientierung mittragen. Wer sie benutzt, übernimmt diese Vorentscheidungen unbemerkt.",
+      "vertiefung": "Der Begriff Raumprogramm selbst verknüpft bereits Funktion mit spezialisiertem Raum. Von Funktionsbereichen zu sprechen hält offen, ob eine Funktion einen eigenen Raum braucht, sich mit anderen teilt oder ganz anders gelöst wird.",
+      "tags": [
+        "raumprogramm",
+        "entwurfsmethode",
+        "begriffe"
+      ],
+      "quelle": "Raumpilot Wohnen, S. 149",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-002",
+      "typ": "mehrfachauswahl",
+      "frage": "In welche Gruppen gliedert Raumpilot Wohnen die Wohnfunktionen?",
+      "optionen": [
+        "Kommunikative Funktionsbereiche",
+        "Individuelle Funktionsbereiche",
+        "Dienende Funktionsbereiche",
+        "Repräsentative Funktionsbereiche",
+        "Gewerbliche Funktionsbereiche"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ],
+      "antwort": "Kommunikativ, individuell und dienend.",
+      "vertiefung": "Zwei Bereiche fallen aus der Systematik: die Erschließung, die als Rückgrat alle Funktionen verknüpft, und der private Außenraum, der eine Teilmenge der Funktionen im Freien abbildet. Beide werden gesondert betrachtet.",
+      "tags": [
+        "raumprogramm",
+        "wohnen",
+        "funktionsbereiche"
+      ],
+      "quelle": "Raumpilot Wohnen, S. 149",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-003",
+      "typ": "karte",
+      "frage": "Welche Sonderstellung hat die Erschließung innerhalb der Wohnfunktionen?",
+      "antwort": "Sie ist keine Funktion neben anderen, sondern das Rückgrat, das die einzelnen Funktionen miteinander verknüpft. Deshalb wird sie gesondert betrachtet.",
+      "vertiefung": "Praktisch bedeutet das: Die Erschließung wird nicht zuletzt geplant, wenn die Räume stehen, sondern zuerst – sie legt fest, welche Beziehungen zwischen den Funktionen überhaupt möglich sind.",
+      "tags": [
+        "raumprogramm",
+        "erschliessung",
+        "wohnen"
+      ],
+      "quelle": "Raumpilot Wohnen, S. 149",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-004",
+      "typ": "karte",
+      "frage": "Was zeigt ein Funktionsschema, und wodurch unterscheidet es sich von einem Grundriss?",
+      "antwort": "Es zeigt Funktionsbereiche als Punkte, notwendige Wegebeziehungen als Pfeile und übergeordnete Nutzungszonen als Flächen. Es enthält bewusst keine Geometrie – keine Maße, keine Lage, keine Form.",
+      "vertiefung": "Genau diese Enthaltsamkeit ist der Zweck. Solange das Schema keine Geometrie zeigt, lassen sich Beziehungen umsortieren, ohne dass eine Grundrissidee dagegensteht.",
+      "tags": [
+        "funktionsschema",
+        "entwurfsmethode"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 355 und 469",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-005",
+      "typ": "zuordnung",
+      "frage": "Ordne den Nutzungsbereichen eines Bürogebäudes ihr Flächenverhältnis zu, bezogen auf die Bürofläche als 1.",
+      "paare": [
+        [
+          "Bürofläche",
+          "1 m²"
+        ],
+        [
+          "Bürozusatzfläche",
+          "0,3 bis 0,5 m²"
+        ],
+        [
+          "Erschließung",
+          "0,1 bis 0,15 m²"
+        ],
+        [
+          "Sanitärräume",
+          "0,02 bis 0,05 m²"
+        ]
+      ],
+      "antwort": "Die Bürofläche ist die Bezugsgröße; alle übrigen Bereiche werden als Anteil davon angesetzt.",
+      "vertiefung": "Mit Verhältnissen statt absoluten Zahlen zu arbeiten hat einen praktischen Grund: Ändert sich die Mitarbeiterzahl, skaliert das ganze Programm mit, ohne dass jede Zeile neu geschätzt werden muss.",
+      "tags": [
+        "raumprogramm",
+        "buero",
+        "flaechen"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 357",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-006",
+      "typ": "zuordnung",
+      "frage": "Ordne den Nutzungsbereichen im Bürobau ihre Anforderung an die Verknüpfung zu.",
+      "paare": [
+        [
+          "Ankommen",
+          "An die Erschließung gebunden"
+        ],
+        [
+          "Bürofläche",
+          "Möglichst zentral"
+        ],
+        [
+          "Bürozusatzfläche",
+          "Leichte Erreichbarkeit"
+        ],
+        [
+          "Sanitärräume",
+          "Kurze Wege"
+        ]
+      ],
+      "antwort": "Jeder Bereich trägt neben seiner Fläche eine Lageanforderung – erst beides zusammen ergibt ein brauchbares Programm.",
+      "vertiefung": "Sanitärräume liegen häufig an den Schnittpunkten horizontaler und vertikaler Erschließung. Dort sind die Wege von allen Arbeitsplätzen aus kurz, und die Installationen lassen sich bündeln.",
+      "tags": [
+        "raumprogramm",
+        "buero",
+        "funktionsschema"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 357 und 359",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-007",
+      "typ": "numerisch",
+      "frage": "Welchen Flächenbedarf pro Person setzt Raumpilot für den Arbeitsplatz eines Sachbearbeiters an?",
+      "wert": 10,
+      "einheit": "m²",
+      "toleranz": 0,
+      "antwort": "10 m² pro Person.",
+      "vertiefung": "Die Staffelung reicht von 10 m² für Sachbearbeiter und Bereichsleiter über 15 m² für Abteilungsleiter bis 25 m² für die Geschäftsführung. Der Sprung nach oben bildet weniger Arbeitsbedarf ab als Repräsentation und Besprechungsfähigkeit im eigenen Raum.",
+      "tags": [
+        "raumprogramm",
+        "buero",
+        "kennwerte"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 357",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-008",
+      "typ": "numerisch",
+      "frage": "Welchen Flächenbedarf pro Person setzt Raumpilot für den Arbeitsplatz der Geschäftsführung an?",
+      "wert": 25,
+      "einheit": "m²",
+      "toleranz": 0,
+      "antwort": "25 m² pro Person – das Zweieinhalbfache eines Sachbearbeiterplatzes.",
+      "tags": [
+        "raumprogramm",
+        "buero",
+        "kennwerte"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 357",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-009",
+      "typ": "karte",
+      "frage": "Warum werden Kantine und Cafeteria im Bürobau nicht allein als Versorgungsflächen geplant?",
+      "antwort": "Sie sind zugleich Orte der Begegnung und Erholung. Kreative Gedanken entstehen häufig spontan im persönlichen Gespräch, deshalb brauchen diese Räume Aufenthaltsqualität und Aufforderungscharakter.",
+      "vertiefung": "Dieselbe Logik gilt für die Erschließungsräume: Sie ermöglichen den zufälligen Informationsaustausch und beeinflussen damit die Aufenthaltsqualität des ganzen Gebäudes. Beide zählen zu den informellen Kommunikationsräumen.",
+      "tags": [
+        "raumprogramm",
+        "buero",
+        "kommunikation"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 358 und 359",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-010",
+      "typ": "karte",
+      "frage": "Welche Doppelrolle hat der Eingangsbereich eines Bürogebäudes?",
+      "antwort": "Funktional ist er der zentrale Verteiler zu allen weiteren Gebäudeteilen. Zugleich ist er Repräsentationsbereich – der Eindruck, den ein Besucher vom Unternehmen gewinnt, wird stark vom Eingang geprägt.",
+      "vertiefung": "Daraus folgen zusätzliche Anforderungen: Wartebereich für Besucher und ein Leitsystem zur Orientierung im Gebäude. Trotz dieser Bedeutung wird der Empfangsbereich flächenmäßig meist knapp gehalten.",
+      "tags": [
+        "raumprogramm",
+        "buero",
+        "eingang"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 359 und 363",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-011",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Entfernung zwischen Haltestelle und Büro gilt ein Standort nach Raumpilot als gut mit dem ÖPNV erschlossen?",
+      "wert": 500,
+      "einheit": "m",
+      "toleranz": 0,
+      "antwort": "Nicht mehr als 500 m.",
+      "vertiefung": "Dazu kommen direkte Zufahrtstraßen und ein gut ausgebautes Fußgänger- und Radwegenetz. Die Angabe ist eine Empfehlung, keine Vorschrift.",
+      "tags": [
+        "raumprogramm",
+        "erschliessung",
+        "standort"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 363",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-012",
+      "typ": "karte",
+      "frage": "Worauf baut die Mietflächenberechnung MF-G auf, und wer hat sie herausgegeben?",
+      "antwort": "Sie baut auf der Brutto-Grundfläche nach DIN 277 auf und wurde 2004 von der gif, der Gesellschaft für immobilienwirtschaftliche Forschung, für gewerblichen Raum herausgegeben.",
+      "tags": [
+        "flaechen",
+        "mf-g",
+        "din277"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 360",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-013",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Flächen zählen nach MF-G zu MF-0, sind also keine Mietfläche?",
+      "optionen": [
+        "Technische Funktionsflächen",
+        "Verkehrsflächen",
+        "Konstruktionsgrundflächen",
+        "Gemeinschaftlich genutzte Büroflächen",
+        "Exklusiv genutzte Büroflächen"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ],
+      "antwort": "Technische Funktionsflächen, Verkehrsflächen und Konstruktionsgrundflächen.",
+      "vertiefung": "Was übrig bleibt, teilt sich in MF-G1 für exklusive und MF-G2 für gemeinschaftliche Nutzung. Verkehrs- und Technikflächen können ausnahmsweise doch zur Mietfläche zählen, wenn sie auf individuelle Mieteranforderung zurückgehen.",
+      "tags": [
+        "flaechen",
+        "mf-g"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 360",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-014",
+      "typ": "karte",
+      "frage": "Wie ermittelt sich die Mietfläche MF-G aus der Brutto-Grundfläche?",
+      "antwort": "BGF abzüglich MF-0, zuzüglich der Verkehrsflächen und technischen Funktionsflächen, die auf individuelle Mieteranforderung zurückgehen.",
+      "vertiefung": "Der Zusatz ist der Punkt, an dem Verhandlung ins Spiel kommt: Ein Treppenhaus ohne Treppenlauf kann so zur Mietfläche werden, wenn der Mieter es für sich beansprucht.",
+      "tags": [
+        "flaechen",
+        "mf-g"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 360",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-015",
+      "typ": "numerisch",
+      "frage": "Welcher Anteil Restfläche gilt nach den Schulbauförderrichtlinien im Verhältnis zur Programmfläche als wirtschaftlich?",
+      "wert": 40,
+      "einheit": "%",
+      "toleranz": 0,
+      "antwort": "40 Prozent Restfläche zu 60 Prozent Programmfläche.",
+      "vertiefung": "Zu den 40 Prozent zählen Verkehrsflächen wie Treppenhäuser, Flure und Aufzüge, Funktionsflächen wie Haustechnikräume sowie Nebennutzflächen wie Sanitär-, Putz-, Abstell- und Geräteräume.",
+      "tags": [
+        "raumprogramm",
+        "schule",
+        "wirtschaftlichkeit"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 471 (SchBauFR)",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Landesrecht Baden-Württemberg, Stand 2006. Die Quelle merkt selbst an, dass die Vorgaben inzwischen in Detailpunkten kritisch hinterfragt werden."
+    },
+    {
+      "id": "en-rp-016",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Flächen zählen nach den Schulbauförderrichtlinien zu den 40 Prozent Restfläche?",
+      "optionen": [
+        "Treppenhäuser, Flure, Aufzüge",
+        "Räume für Haustechnik",
+        "Sanitär-, Putz-, Abstell- und Geräteräume",
+        "Allgemeine Unterrichtsräume",
+        "Naturwissenschaftliche Fachräume"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ],
+      "antwort": "Verkehrsflächen, Funktionsflächen und Nebennutzflächen.",
+      "vertiefung": "Unterrichts- und Fachräume gehören zur Programmfläche, also zu den 60 Prozent. Die Trennlinie verläuft zwischen dem, wofür gebaut wird, und dem, was den Betrieb erst ermöglicht.",
+      "tags": [
+        "raumprogramm",
+        "schule",
+        "flaechen"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 471",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Landesrecht Baden-Württemberg, Stand 2006."
+    },
+    {
+      "id": "en-rp-017",
+      "typ": "numerisch",
+      "frage": "Welches Verhältnis von umbautem Raum in m³ zu Programmfläche in m² gilt im Schulbau als wirtschaftlich?",
+      "wert": 7,
+      "einheit": ": 1",
+      "toleranz": 0,
+      "antwort": "7 zu 1.",
+      "vertiefung": "Der Kennwert prüft indirekt die Geschosshöhe und die Kompaktheit: Wer hoch und großzügig baut, überschreitet ihn, ohne dass die Programmfläche wächst.",
+      "tags": [
+        "raumprogramm",
+        "schule",
+        "kennwerte"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 471 (SchBauFR)",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Landesrecht Baden-Württemberg, Stand 2006."
+    },
+    {
+      "id": "en-rp-018",
+      "typ": "karte",
+      "frage": "Nach welchen zwei Merkmalen sind die Modellraumprogramme der Schulbauförderrichtlinien differenziert?",
+      "antwort": "Nach Schultyp – Grundschule, Hauptschule, Realschule, Gymnasium, Förderschule und weitere – und nach der Anzahl der Züge.",
+      "vertiefung": "Die Zügigkeit ist der eigentliche Maßstab: Sie bestimmt, wie viele Klassen parallel geführt werden, und skaliert damit fast alle Flächen des Programms.",
+      "tags": [
+        "raumprogramm",
+        "schule"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 471",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-019",
+      "typ": "karte",
+      "frage": "Welcher Bereich hat im Raumprogramm eines vierzügigen Gymnasiums den größten Anteil, und wie groß ist er ungefähr?",
+      "antwort": "Nebenräume und Erschließung mit rund 40 Prozent – deutlich mehr als der allgemeine Unterricht mit etwa 27 Prozent.",
+      "vertiefung": "Diese Reihenfolge überrascht beim ersten Lesen und ist der beste Grund, Erschließung früh zu entwerfen: Sie ist der größte einzelne Flächenposten des Gebäudes.",
+      "tags": [
+        "raumprogramm",
+        "schule",
+        "flaechen"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 471",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Beispiel Baden-Württemberg, Stand 2006."
+    },
+    {
+      "id": "en-rp-020",
+      "typ": "karte",
+      "frage": "Wie hängen Standardraumgröße und Klassengröße im Schulbau zusammen?",
+      "antwort": "Bei einer Standardgröße von 90 m² können in einem Fachraum in der Regel 32 Schüler unterrichtet werden.",
+      "vertiefung": "Rückwärts gerechnet sind das knapp drei Quadratmeter pro Person. Solche Umrechnungen sind das Werkzeug, mit dem sich ein Programm auf abweichende Nutzerzahlen übertragen lässt.",
+      "tags": [
+        "raumprogramm",
+        "schule",
+        "kennwerte"
+      ],
+      "quelle": "Raumpilot Grundlagen, S. 473",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Beispiel Baden-Württemberg, Stand 2006."
+    },
+    {
+      "id": "en-rp-021",
+      "typ": "karte",
+      "frage": "Wovon hängt nach Raumpilot die Größe des privaten Rückzugsbereichs in einer Wohnung ab?",
+      "antwort": "Vom Alter der Bewohner und vom Grad ihrer persönlichen Bindung untereinander. Der Anspruch steigt mit dem Alter, und je geringer die Bindung, desto größer fällt der Rückzugsbereich aus.",
+      "vertiefung": "Daraus folgt eine Warnung für den Entwurf: Wer sich zu genau an einem konkreten Nutzer orientiert, fixiert eine Momentaufnahme von dessen Lebenssituation im Grundriss. Eine Wohnung überlebt diese Situation meist.",
+      "tags": [
+        "raumprogramm",
+        "wohnen",
+        "individualbereich"
+      ],
+      "quelle": "Raumpilot Wohnen, S. 150",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-022",
+      "typ": "karte",
+      "frage": "Welches räumliche Merkmal ist nach Raumpilot wesentlich für die Privatheit innerhalb einer Wohnung?",
+      "antwort": "Die Zuordnung der Individualräume zu den Sanitärräumen.",
+      "vertiefung": "In der Zweigeschosswohnung in Baden entkoppeln zwei vorgeschaltete Sanitärbereiche die Individualräume vom Eingangs- und Erschließungsbereich – dadurch entsteht ungestörter Rückzug, ohne zusätzliche Wohnfläche.",
+      "tags": [
+        "raumprogramm",
+        "wohnen",
+        "privatheit"
+      ],
+      "quelle": "Raumpilot Wohnen, S. 143 und 150",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-023",
+      "typ": "karte",
+      "frage": "Welche zwei Grundmuster der vertikalen Zonierung mehrgeschossiger Wohnungen unterscheidet Raumpilot, und wo liegt jeweils die Schwäche?",
+      "antwort": "Entweder werden alle kommunikativen Funktionen auf einem Geschoss gebündelt und die Individualräume auf einem anderen, oder es werden vertikale Raumverbindungen zugelassen, die zusätzlich eine horizontale Zonierung je Geschoss erfordern. Bei der geschossweisen Trennung geht die Erlebbarkeit des mehrgeschossigen Wohnens häufig verloren.",
+      "vertiefung": "Hinzu kommt die Lage der Erschließung: Wird über den kommunikativen Bereich erschlossen, ist eine private Dachterrasse nicht aus diesem Bereich erreichbar. Im umgekehrten Fall führt der Weg zur kommunikativen Ebene durch das Individualraumgeschoss – dann entscheidet die Treppenlage darüber, ob dauerhaft gestört wird.",
+      "tags": [
+        "raumprogramm",
+        "wohnen",
+        "zonierung"
+      ],
+      "quelle": "Raumpilot Wohnen, S. 143",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-024",
+      "typ": "skizze",
+      "frage": "Zeichne ein Funktionsschema für ein kleines Bürogebäude: Ankommen, Empfang, Foyer, Arbeitsplätze, Meeting, Sanitär, Cafeteria, Lager. Trage die notwendigen Wegebeziehungen als Pfeile ein.",
+      "referenz": "bilder/funktionsschema-buero.svg",
+      "pruefpunkte": [
+        "Alle acht Funktionsbereiche als Punkte oder Kreise, nicht als Räume",
+        "Keine Maße, keine Geometrie, kein Grundriss",
+        "Ankommen an die Erschließung gebunden",
+        "Foyer als Verteiler mit den meisten Verbindungen",
+        "Arbeitsplätze zentral im Schema",
+        "Sanitär mit kurzen Wegen zu den Arbeitsplätzen",
+        "Lager am Rand, ohne Anspruch auf Belichtung",
+        "Übergeordnete Nutzungszonen als Flächen hinterlegt"
+      ],
+      "antwort": "Das Schema ordnet die Bereiche nach Beziehungsdichte, nicht nach Lage. Foyer und Arbeitsplätze liegen im Zentrum, Lager und Bürotechnik am Rand.",
+      "vertiefung": "Ein gutes Funktionsschema erkennt man daran, dass es sich noch umsortieren lässt, ohne falsch zu werden. Sobald darin Räume mit Proportionen auftauchen, ist es ein schlechter Grundriss geworden.",
+      "tags": [
+        "funktionsschema",
+        "buero",
+        "skizze"
+      ],
+      "quelle": "Nach Raumpilot Grundlagen, S. 355 und 357",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-025",
+      "typ": "karte",
+      "frage": "Worin unterscheiden sich Bauprogramm und Raumprogramm?",
+      "antwort": "Das Bauprogramm macht rudimentäre Aussagen zum Objekt als Ganzem – Nutzung, Geschosszahl, Unterkellerung, Gliederung des Bauobjekts, Anbindung an Versorgungs- und Verkehrsnetz. Das Raumprogramm definiert die Anforderungen feiner, bis auf die Ebene einzelner Räume und Nutzungsbereiche, und ergänzt Angaben zu deren Lage und Verknüpfung.",
+      "vertiefung": "Beide sind Instrumente einer funktionalen Leistungsbeschreibung. Ohne vorliegenden Entwurf lässt sich in der Regel nur eines von beiden erstellen – ein Raumbuch setzt einen Entwurf voraus.",
+      "tags": [
+        "raumprogramm",
+        "bauprogramm",
+        "leistungsbeschreibung"
+      ],
+      "quelle": "Basics Ausschreibung, S. 50–52",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-026",
+      "typ": "mehrfachauswahl",
+      "frage": "Nach welchen Kriterien werden die Flächen in einem Raumprogramm sinnvoll gegliedert?",
+      "optionen": [
+        "Nutzung",
+        "Anzahl",
+        "Größe",
+        "Lage und Orientierung",
+        "Baukosten",
+        "Gewerk"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "antwort": "Nutzung, Anzahl, Größe sowie Lage und Orientierung.",
+      "vertiefung": "Die vierte Spalte wird oft vergessen und ist die entwurfsrelevanteste: Erst mit Lage und Orientierung wird aus einer Flächenliste eine Planungsvorgabe. Kosten und Gewerke gehören in andere Instrumente.",
+      "tags": [
+        "raumprogramm",
+        "systematik"
+      ],
+      "quelle": "Basics Ausschreibung, S. 52",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-027",
+      "typ": "karte",
+      "frage": "Was leistet ein Funktionsschema, und was bildet es bewusst nicht ab?",
+      "antwort": "Es stellt die räumliche Beziehung der Bereiche zueinander dar und veranschaulicht zwingende Abhängigkeiten sowie die Ablaufprozesse, die sich aus der Nutzung ergeben. Die benötigten Flächen bildet es nicht ab.",
+      "vertiefung": "Genau deshalb steht es vor dem Entwurf: Solange keine Flächen und keine Geometrie im Spiel sind, lassen sich Zuordnungen frei umsortieren.",
+      "tags": [
+        "funktionsschema",
+        "entwurfsmethode"
+      ],
+      "quelle": "Basics Ausschreibung, S. 52",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-028",
+      "typ": "karte",
+      "frage": "Wie entsteht ein grafisches Raumprogramm, und warum ist es bereits ein Stück Entwurf?",
+      "antwort": "Es fasst tabellarisches Raumprogramm und Funktionsschema zusammen: Die Bereiche erscheinen flächengetreu und zugleich in ihrer Zuordnung zueinander. Damit enthält es bereits formale Aussagen und somit Grundelemente des architektonischen Entwurfs.",
+      "vertiefung": "Mit Symbolen lassen sich weitere Anforderungen eintragen, etwa Tageslicht oder Kunstlicht. Der Übergang vom Programm zum Entwurf ist an dieser Stelle fließend – das ist Stärke und Risiko zugleich.",
+      "tags": [
+        "raumprogramm",
+        "funktionsschema",
+        "entwurfsmethode"
+      ],
+      "quelle": "Basics Ausschreibung, S. 52 und 54",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-029",
+      "typ": "zuordnung",
+      "frage": "Ordne die drei Raumbucharten ihrem Inhalt zu.",
+      "paare": [
+        [
+          "Anforderungsraumbuch",
+          "Technische, funktionale, gestalterische, ökonomische und ökologische Anforderungen je Raum"
+        ],
+        [
+          "Konstruktionsraumbuch",
+          "Detaillierte Beschreibung der Konstruktion, nicht der Ausstattung"
+        ],
+        [
+          "Ausstattungsraumbuch",
+          "Vollständige Beschreibung der Ausstattungselemente nach Menge und Qualität"
+        ]
+      ],
+      "antwort": "Die drei Arten setzen unterschiedliche Planungsstände voraus und erfüllen unterschiedliche Zwecke.",
+      "vertiefung": "Raumbücher enden nicht mit der Ausschreibung: Sie unterstützen die Bauleitung, dokumentieren den Bestand für die Gewährleistung und sind bei späteren Umbauten eine wertvolle Bestandsaufnahme.",
+      "tags": [
+        "raumbuch",
+        "leistungsbeschreibung"
+      ],
+      "quelle": "Basics Ausschreibung, S. 55–57",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-030",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Angaben sollte jedes Raumbuch enthalten?",
+      "optionen": [
+        "Raumnummer nach einer definierten Gliederungssystematik",
+        "Bezeichnung des Raumes",
+        "Angaben zur Flächenart",
+        "Anforderungs- bzw. Ausstattungsmerkmale",
+        "Herstellerpreis je Element",
+        "Name des ausführenden Unternehmens"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "antwort": "Raumnummer, Raumbezeichnung, Flächenart und die Anforderungs- bzw. Ausstattungsmerkmale.",
+      "vertiefung": "Die Raumnummer folgt der Bauwerksgliederung: Gebäudeteil, Geschoss, Raum. Erst diese durchlaufende Systematik macht die Angaben eindeutig weiterverwendbar.",
+      "tags": [
+        "raumbuch",
+        "systematik"
+      ],
+      "quelle": "Basics Ausschreibung, S. 55 und 58",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-031",
+      "typ": "karte",
+      "frage": "Warum eignet sich eine Baubeschreibung nur bedingt als Grundlage einer funktionalen Leistungsbeschreibung?",
+      "antwort": "Sie ist konstruktions- oder gewerkebezogen aufgebaut statt räumlich organisiert. Je mehr gewerkebezogene Angaben sie enthält, desto stärker schränkt sie den gewünschten Ideenwettbewerb ein.",
+      "vertiefung": "Das Beispiel aus der Quelle trifft den Punkt: Eine Stahlbetonhalle mit 2000 m² Grundfläche ist als funktionale Angabe brauchbar – die Festlegung auf Stahlbeton verhindert aber, dass jemand eine Stahlkonstruktion anbietet.",
+      "tags": [
+        "leistungsbeschreibung",
+        "ausschreibung"
+      ],
+      "quelle": "Basics Ausschreibung, S. 54",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-032",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Raumtiefe lässt sich ein Büro bei sturzfreier Fensterausbildung noch natürlich belichten?",
+      "wert": 5.5,
+      "einheit": "m",
+      "toleranz": 0.5,
+      "antwort": "Etwa 5,5 m.",
+      "vertiefung": "Dieser eine Wert erzeugt die ganze Gebäudetiefe: Er begrenzt die Raumschicht, und aus zwei Raumschichten plus Flur entsteht der Baukörper.",
+      "tags": [
+        "gebaeudetiefe",
+        "belichtung",
+        "buero"
+      ],
+      "quelle": "Basics Entwurfsidee, S. 43",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-033",
+      "typ": "numerisch",
+      "frage": "Welche Gebäudetiefe ergibt sich für ein zweibündiges Bürogebäude mit Mittelkorridor aus Bürotiefe, Korridorbreite und Wandstärken?",
+      "wert": 14,
+      "einheit": "m",
+      "toleranz": 0.5,
+      "antwort": "Rund 14 m.",
+      "vertiefung": "Die Rechnung: zweimal 5,5 m Bürotiefe, 1,80 m Mittelkorridor, zweimal 0,40 m Außenwand und zweimal 0,15 m Flurtrennwand. Werden die Büros als Kombibürozonen angeordnet, sind bis zu 16 m möglich.",
+      "tags": [
+        "gebaeudetiefe",
+        "buero",
+        "kubatur"
+      ],
+      "quelle": "Basics Entwurfsidee, S. 43",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-034",
+      "typ": "karte",
+      "frage": "Wie kommt man von der inneren Erschließung zur Gebäudeform?",
+      "antwort": "Über die Belichtung: Die maximale natürlich belichtbare Raumtiefe begrenzt die Raumschicht, die Erschließungssystematik legt fest, wie viele Schichten nebeneinanderliegen. Daraus ergibt sich die Gebäudetiefe und damit eine belastbare Grundlage für den Baukörper.",
+      "vertiefung": "Dasselbe Volumen lässt sich anschließend sehr unterschiedlich formen – als kompakter Turm, als Riegel oder als flaches Hofgebäude. Die Tiefe bleibt dabei die Konstante, die aus der Nutzung folgt.",
+      "tags": [
+        "gebaeudetiefe",
+        "entwurfsmethode",
+        "kubatur"
+      ],
+      "quelle": "Basics Entwurfsidee, S. 41 und 43",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-035",
+      "typ": "numerisch",
+      "frage": "Mit welchem prozentualen Zuschlag sind die Nebenverkehrsflächen im Beispiel-Raumprogramm eines Beratungscenters angesetzt?",
+      "wert": 15,
+      "einheit": "%",
+      "toleranz": 0,
+      "antwort": "15 Prozent.",
+      "vertiefung": "Im Beispiel ergeben 729 m² Programmfläche plus 109 m² Nebenverkehrsfläche eine Gesamtfläche von 838 m². Der Zuschlag ist ein Schätzinstrument in einer frühen Phase, kein Nachweis.",
+      "tags": [
+        "raumprogramm",
+        "flaechen",
+        "kennwerte"
+      ],
+      "quelle": "Basics Entwurfsidee, S. 41",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-036",
+      "typ": "karte",
+      "frage": "Warum dürfen Raumprogramm und Bauaufgabe nicht gleichgesetzt werden?",
+      "antwort": "Die Bauaufgabe geht über die reine Funktion hinaus. Ein Gemeindezentrum braucht nicht nur einen Saal mit Nebenräumen, sondern soll ein Ort der Begegnung sein – das lässt sich nicht in Quadratmetern ausdrücken.",
+      "vertiefung": "Neben dem Funktionieren der Abläufe stehen weichere Faktoren: Zugänglichkeit, Offenheit und Einsehbarkeit, Belichtung, Atmosphäre. Widersprüche zwischen Bauaufgabe und Raumprogramm sind normal – ihnen begegnet man, indem man das Programm anpasst, nicht indem man es abarbeitet.",
+      "tags": [
+        "raumprogramm",
+        "bauaufgabe",
+        "entwurfshaltung"
+      ],
+      "quelle": "Basics Entwurfsidee, S. 43 und 45",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "en-rp-037",
+      "typ": "karte",
+      "frage": "Welche Aufgabe hat der Planer, wenn ein Bauherr nur die primäre Funktion benennen kann?",
+      "antwort": "Er ermittelt die Hauptnutzungsflächen und die notwendigen Nebenflächen – Foyer, Sanitäranlagen, Verkehrswege – und hinterlegt sie mit Flächenangaben, damit ein Gesamtüberblick über die Planungsaufgabe entsteht.",
+      "vertiefung": "Typischer Fall: Ein Arbeitgeber will Fläche für 500 Mitarbeiter. Erst muss die Büroform geklärt werden, daraus folgt die Fläche pro Person, darauf kommen Nebenfunktionen und Verkehrswege.",
+      "tags": [
+        "raumprogramm",
+        "grundlagenermittlung"
+      ],
+      "quelle": "Basics Entwurfsidee, S. 41f.",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}
