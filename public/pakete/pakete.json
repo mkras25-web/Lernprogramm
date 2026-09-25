@@ -6,6 +6,12 @@
       "titel": "Architektur (Deutschland)",
       "beschreibung": "Architekturstudium und Berufspraxis: Konstruktion, Bauphysik, Recht, Entwurf.",
       "sprache": "de"
+    },
+    {
+      "id": "pharma-de",
+      "titel": "Pharmazie",
+      "beschreibung": "Arzneimitteltherapie für die Offizin: Interaktionen, Risikoabschätzung, Beratung.",
+      "sprache": "de"
     }
   ]
 }

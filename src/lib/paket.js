@@ -89,6 +89,9 @@ export async function paketLaden(paketId) {
         items.push({
           ...item,
           referenz: item.referenz ? `${wurzel}/${item.referenz}` : undefined,
+          // Erklaerende Abbildung zur Antwort (mit bildunterschrift) -
+          // wird nach dem Aufdecken bzw. in der Itemansicht gezeigt.
+          bild: item.bild ? `${wurzel}/${item.bild}` : undefined,
           // Die Bilder einer Gegenuebestellung liegen im Paketordner wie
           // jede Referenz - ohne diese Zeilen bliebe der Pfad relativ zur
           // aufgerufenen Seite und das Bild liefe ins Leere.

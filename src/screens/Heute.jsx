@@ -4,7 +4,7 @@ import { naechsterRang, rangFuer } from '../lib/fortschritt.js'
 import { bauwerkFuer } from '../lib/stufen.js'
 
 export default function Heute({
-  level, serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue,
+  level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
   pruefungHinweis, onPruefung,
@@ -13,18 +13,18 @@ export default function Heute({
   const erledigt = werte.antwortenHeute
   const anteilHeute = offen === 0 ? 1 : Math.min(1, erledigt / (erledigt + offen))
   const freieKarten = karten.filter((k) => k.frei).length
-  const rang = rangFuer(level.stufe)
-  const naechster = naechsterRang(level.stufe)
-  const bau = bauwerkFuer(level.stufe)
+  const rang = rangFuer(level.stufe, gestaltung)
+  const naechster = naechsterRang(level.stufe, gestaltung)
+  const bau = bauwerkFuer(level.stufe, gestaltung)
 
   return (
     <div className="schirm">
       <div className="heuteRaster">
         <section className="stufe">
-          <Bauabschnitt stufe={level.stufe} groesse={128} />
+          <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={128} />
           <div className="stufeText">
             <p className="rangName">
-              {rang.name}
+              {rang.name}{' '}
               <span className="bauWerk">{bau.werk.name}</span>
             </p>
             <h1 className="ueberschrift">Stufe {level.stufe}</h1>
@@ -88,7 +88,7 @@ export default function Heute({
         {pruefungHinweis && (
           <section className="heuteBreit">
             <div className="aufruf">
-              <span className="artZeichen" style={{ fontSize: '1.5rem' }}>✓</span>
+              <span className="artZeichen" style={{ fontSize: '1.5rem' }}>✓︎</span>
               <div>
                 <p className="aufrufZahl">{pruefungHinweis.text}</p>
                 <p className="nebentext">
@@ -120,7 +120,7 @@ export default function Heute({
         {aufstieg && (
           <section className="heuteBreit">
             <div className="aufstieg">
-              <Bauabschnitt stufe={level.stufe} groesse={64} titel={false} />
+              <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={64} titel={false} />
               <div>
                 <p className="aufrufZahl">
                   Stufe {level.stufe} erreicht · {bau.abschnitt.name}
@@ -156,47 +156,47 @@ export default function Heute({
           <h2 className="abschnitt">Betriebsarten</h2>
           <ul className="artKacheln">
             <ArtKachel
-              zeichen="∞"
+              zeichen="∞︎"
               titel="Marathon"
               text="Endlos, Fehler kommen wieder"
               onKlick={() => onStart('marathon')}
             />
             <ArtKachel
-              zeichen="⚡"
+              zeichen="↯︎"
               titel="Schnellrunde"
               text="25 kurze Fragen am Stück"
               onKlick={() => onStart('schnell')}
             />
             <ArtKachel
-              zeichen="✕"
+              zeichen="✕︎"
               titel="Baustellen"
               text={baustellen > 0 ? `${baustellen} Wackelkandidaten` : 'keine offen'}
               aus={baustellen === 0}
               onKlick={() => onStart('baustellen')}
             />
             <ArtKachel
-              zeichen="✎"
+              zeichen="✎︎"
               titel="Nur Skizzen"
               text={skizzen > 0 ? `${skizzen} Zeichenaufgaben` : 'keine vorhanden'}
               aus={skizzen === 0}
               onKlick={() => onStart('skizzen')}
             />
             <ArtKachel
-              zeichen="◎"
+              zeichen="◎︎"
               titel="Training"
               text="Mit Referenzhilfe, halbe XP"
               aus={skizzen === 0}
               onKlick={() => onStart('training')}
             />
             <ArtKachel
-              zeichen="✦"
+              zeichen="✦︎"
               titel="Neues lernen"
               text={neue > 0 ? `${neue} noch nie gesehen` : 'alles angefangen'}
               aus={neue === 0}
               onKlick={() => onStart('neu')}
             />
             <ArtKachel
-              zeichen="▤"
+              zeichen="▤︎"
               titel="Durchblättern"
               text="Nachschlagen ohne Wertung"
               onKlick={() => onStart('blaettern')}

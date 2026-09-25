@@ -1,0 +1,45 @@
+LERNPROGRAMM - OFFLINE-PAKET (ohne Installation)
+================================================
+
+Das ist die fertige App als Ordner. Es muss nichts installiert werden
+(kein Node, kein Python unter Windows).
+
+STARTEN
+  Windows:        Starten.bat doppelklicken.
+                  (Falls Windows warnt: "Weitere Informationen" ->
+                  "Trotzdem ausfuehren". Die Datei startet nur einen kleinen
+                  Server auf diesem Rechner, nichts aus dem Internet.)
+  macOS / Linux:  starten.command bzw. starten.sh ausfuehren
+                  (Terminal: sh starten.sh). Braucht python3 oder ruby,
+                  was auf diesen Systemen meist schon vorhanden ist.
+
+  Der Browser oeffnet http://localhost:8765/ . Zum Beenden das schwarze
+  Fenster schliessen.
+
+  Zeigt der Browser "Seite nicht gefunden": das ZIP wurde vermutlich nur
+  geoeffnet statt entpackt (Rechtsklick - Alle extrahieren), oder die App fehlt
+  im Ordner. Das schwarze Fenster nennt dann den Grund.
+
+  Wichtig: NICHT einfach index.html per Doppelklick oeffnen - das zeigt nur
+  eine leere Seite (Browser erlauben so keine Programmdateien).
+
+WICHTIG ZUM FORTSCHRITT
+  Jede Adresse hat ihren eigenen Speicher. Dieses Offline-Paket (localhost:8765)
+  ist deshalb ein eigenes "Geraet": Fortschritt aus der Internet-Version
+  (github.io) oder von einem anderen Rechner kommt ueber den Dropbox-Abgleich
+  (Einstellungen -> Dropbox-Abgleich) oder ueber Sichern/Einlesen.
+  Fuer den Dropbox-Abgleich muss diese Adresse in der Dropbox-Konsole
+  zusaetzlich als "Redirect URI" stehen:   http://localhost:8765/
+
+EINFACHER: KEINE DATEI NOETIG
+  Wer Internet hat, oeffnet einfach die Internet-Adresse der App und kann sie
+  im Browser "installieren" (Chrome/Edge: Symbol in der Adressleiste,
+  iPhone: Teilen -> Zum Home-Bildschirm). Danach laeuft sie auch ohne Netz.
+
+AKTUALISIEREN
+  Neue Version = neues Offline-Paket herunterladen und den Ordner ersetzen.
+  Der Fortschritt bleibt erhalten, weil er im Browser liegt, nicht im Ordner.
+
+BUCHAUSSCHNITTE
+  Geschuetzte Bilder sind nicht enthalten. Einlesen: Einstellungen ->
+  Daten -> "Bilder einlesen" (ZIP aus bilder_packen.py).

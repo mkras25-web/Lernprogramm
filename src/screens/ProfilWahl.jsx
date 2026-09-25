@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { datenbankFuerProfilSetzen, exportieren } from '../lib/speicher.js'
+import DropboxBereich from '../components/DropboxBereich.jsx'
+import { meldungAbholen } from '../lib/dropbox.js'
 
 const AVATAR_FARBEN = ['#adc178', '#a98467', '#457b9d', '#c1734a', '#7d8471', '#1b9aaa']
 
@@ -25,13 +27,20 @@ function dateiname(name) {
 // ProfilGate - dieser Screen ist bewusst zustandslos dafuer, damit sie
 // nach einem Wechsel nie veraltet.
 export default function ProfilWahl({
-  profile, hinweis, onWahl, onErstellen, onUmbenennen, onLoeschen, onImportieren,
+  profile, hinweis, onWahl, onErstellen, onUmbenennen, onFarbeAendern, onLoeschen, onImportieren, onAusDropboxLaden,
 }) {
   const [neuerName, setNeuerName] = useState('')
   const [bearbeiten, setBearbeiten] = useState(null)
+  const [farbWahl, setFarbWahl] = useState(null)
   const [loeschKandidat, setLoeschKandidat] = useState(null)
   const [bestaetigung, setBestaetigung] = useState('')
   const [meldung, setMeldung] = useState(null)
+
+  // Rueckmeldung der Dropbox-Anmeldung (siehe main.jsx).
+  useEffect(() => {
+    const m = meldungAbholen()
+    if (m) setMeldung(m)
+  }, [])
 
   // Zuletzt benutztes Profil zuerst - bei mehreren Personen sonst
   // jedes Mal erneut die richtige Zeile aus einer langen Liste suchen.
@@ -78,13 +87,27 @@ export default function ProfilWahl({
     URL.revokeObjectURL(url)
   }
 
-  async function importieren(datei) {
+  async function ausDropboxLaden(eintrag) {
     try {
-      const { profil, bericht } = await onImportieren(datei)
+      const { profil, bericht, neuAngelegt } = await onAusDropboxLaden(eintrag)
       setMeldung({
         art: 'erfolg',
         text:
-          `Profil „${profil.name}" angelegt: ${bericht.ereignisse} Ereignisse, ` +
+          `Profil „${profil.name}" ${neuAngelegt ? 'aus Dropbox geladen' : 'abgeglichen'}: ` +
+          `${bericht.ereignisse} Antworten übernommen.`,
+      })
+    } catch (e) {
+      setMeldung({ art: 'fehler', text: `Laden aus Dropbox nicht möglich: ${e.message}` })
+    }
+  }
+
+  async function importieren(datei) {
+    try {
+      const { profil, bericht, neuAngelegt } = await onImportieren(datei)
+      setMeldung({
+        art: 'erfolg',
+        text:
+          `Profil „${profil.name}" ${neuAngelegt ? 'angelegt' : 'aktualisiert (gab es schon)'}: ${bericht.ereignisse} Ereignisse, ` +
           `${bericht.skizzen} Skizzen, ${bericht.marken} Marken, ${bericht.pruefungen} Prüfungen übernommen.`,
       })
     } catch (e) {
@@ -111,7 +134,7 @@ export default function ProfilWahl({
                 ) : (
                   <div className="profilZeile">
                     <button className="profilKnopf" onClick={() => onWahl(p.id)}>
-                      <span className="profilAvatar" style={{ background: avatarFarbe(p.id) }} aria-hidden="true">
+                      <span className="profilAvatar" style={{ background: p.farbe ?? avatarFarbe(p.id) }} aria-hidden="true">
                         {initialen(p.name)}
                       </span>
                       <span className="profilTexte">
@@ -126,12 +149,43 @@ export default function ProfilWahl({
                     <button className="artKnopf" onClick={() => setBearbeiten(p.id)}>
                       Umbenennen
                     </button>
+                    <button
+                      className="artKnopf"
+                      onClick={() => setFarbWahl(farbWahl === p.id ? null : p.id)}
+                    >
+                      Farbe
+                    </button>
                     <button className="artKnopf" onClick={() => sichern(p)}>
                       Sichern
                     </button>
                     <button className="artKnopf" onClick={() => setLoeschKandidat(p)}>
                       Löschen
                     </button>
+                    {farbWahl === p.id && (
+                      <div className="avatarFarbWahl">
+                        {AVATAR_FARBEN.map((f) => (
+                          <button
+                            key={f}
+                            className={(p.farbe ?? avatarFarbe(p.id)) === f ? 'avatarSchwatch aktiv' : 'avatarSchwatch'}
+                            style={{ background: f }}
+                            aria-label={`Avatarfarbe ${f}`}
+                            onClick={() => {
+                              onFarbeAendern(p.id, f)
+                              setFarbWahl(null)
+                            }}
+                          />
+                        ))}
+                        <button
+                          className="artKnopf schmal"
+                          onClick={() => {
+                            onFarbeAendern(p.id, null)
+                            setFarbWahl(null)
+                          }}
+                        >
+                          Automatisch
+                        </button>
+                      </div>
+                    )}
                   </div>
                 )}
               </li>
@@ -164,6 +218,10 @@ export default function ProfilWahl({
             }}
           />
         </label>
+
+        <div className="feldgruppe" style={{ marginTop: '1.5rem' }}>
+          <DropboxBereich profilWahl onMeldung={setMeldung} onProfilLaden={ausDropboxLaden} />
+        </div>
       </div>
 
       {meldung && (
@@ -173,7 +231,7 @@ export default function ProfilWahl({
           aria-live="polite"
         >
           <p>{meldung.text}</p>
-          <button onClick={() => setMeldung(null)} aria-label="Meldung schließen">✕</button>
+          <button onClick={() => setMeldung(null)} aria-label="Meldung schließen">✕︎</button>
         </div>
       )}
 

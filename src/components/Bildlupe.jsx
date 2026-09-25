@@ -1,16 +1,19 @@
 import { useState } from 'react'
+import LokalBild, { BildPlatzhalter } from './LokalBild.jsx'
 
 // Zeichnungen sind auf kleinen Schirmen unlesbar. Ein Klick oeffnet
 // sie bildschirmfuellend.
 export default function Bildlupe({ src, alt = '', className = 'referenz' }) {
   const [offen, setOffen] = useState(false)
+  const [fehlt, setFehlt] = useState(false)
   if (!src) return null
+  if (fehlt) return <BildPlatzhalter src={src} />
 
   return (
     <>
       <button className="lupenKnopf" onClick={() => setOffen(true)} title="Vergrößern">
-        <img className={className} src={src} alt={alt} />
-        <span className="lupenZeichen" aria-hidden="true">⤢</span>
+        <LokalBild className={className} src={src} alt={alt} platzhalter={false} onFehler={() => setFehlt(true)} />
+        <span className="lupenZeichen" aria-hidden="true">⤢︎</span>
       </button>
 
       {offen && (

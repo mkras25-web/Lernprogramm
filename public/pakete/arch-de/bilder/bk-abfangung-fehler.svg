@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" width="820" height="540">
+  <defs>
+    <pattern id="afMauer" width="34" height="17" patternUnits="userSpaceOnUse">
+      <rect width="34" height="17" fill="#a98467"/>
+      <path d="M0 0 H34 M0 8.5 H34 M0 17 H34" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M17 0 V8.5 M0 8.5 V17 M34 8.5 V17" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="afDaemm" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#adc178"/>
+      <path d="M-3 11 L11 -3 M0 14 L14 0 M3 17 L17 3" stroke="#8fa85f" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="afBeton" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#dde5b6"/>
+      <circle cx="4" cy="5" r="1.6" fill="#a9b183"/>
+      <circle cx="12" cy="11" r="1.3" fill="#a9b183"/>
+    </pattern>
+    <pattern id="afBand" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#f7f3e4"/>
+      <path d="M0 10 L10 0" stroke="#9a6b1f" stroke-width="1.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="820" height="540" fill="#f0ead2"/>
+
+  <rect x="180" y="40" width="157" height="460" fill="url(#afMauer)" stroke="#414833" stroke-width="2"/>
+
+  <!-- Kerndaemmung, durch das Auflager unterbrochen -->
+  <rect x="337" y="40"  width="126" height="208" fill="url(#afDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="337" y="318" width="126" height="182" fill="url(#afDaemm)" stroke="#414833" stroke-width="2"/>
+
+  <!-- durchlaufendes Auflager aus Stahlbeton -->
+  <rect x="60" y="248" width="506" height="70" fill="url(#afBeton)" stroke="#414833" stroke-width="2"/>
+
+  <rect x="463" y="40"  width="103" height="208" fill="url(#afMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="463" y="348" width="103" height="152" fill="url(#afMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="463" y="318" width="103" height="30"  fill="url(#afBand)" stroke="#414833" stroke-width="2"/>
+
+  <path d="M514 96 V228" stroke="#6c584c" stroke-width="2" stroke-dasharray="8 5"/>
+  <path d="M514 240 l-6 -14 h12 z" fill="#6c584c"/>
+
+  <text x="96" y="110" font-family="Georgia, serif" font-size="19" fill="#6c584c">innen</text>
+  <text x="640" y="110" font-family="Georgia, serif" font-size="19" fill="#6c584c">außen</text>
+</svg>

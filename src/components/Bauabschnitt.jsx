@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import { bauwerkFuer } from '../lib/stufen.js'
 
 // Das Levelicon. Ein Gebaeudeschnitt, der mit jeder Stufe ein Bauteil
@@ -184,11 +185,94 @@ function Rahmen({ art }) {
   }
 }
 
-export default function Bauabschnitt({ stufe = 1, groesse = 96, titel = true, marke = true }) {
-  const b = bauwerkFuer(stufe)
+// ============================================== Pharmazie: Kolbenansatz
+//
+// Bewusst nicht als 50-teilige Zeichenteile-Liste wie bei der
+// Architektur, sondern aus imWerk (1-50) direkt berechnet - Fuellstand
+// und Farbe des Ansatzes sind Zahlen, keine 50 Handzeichnungen. Deutlich
+// weniger Aufwand, passt aber inhaltlich gut: ein Ansatz im Kolben
+// veraendert sich stetig, ein Gebaeude in diskreten Bauteilen.
+const PHARMA_FARBEN = [
+  '#d7ecec', '#bfe3d1', '#eadd8a', '#e7bd5a', '#dd9b4a',
+  '#c97a3d', '#a85a34', '#7c3f34', '#5a2f4a', '#3a2350',
+]
+
+function PharmaZeichnung({ imWerk, abschnittIndex, glasClipId }) {
+  const T = 'var(--tusche)'
+  const R = 'var(--rinde)'
+  const L = 'var(--lehm)'
+
+  // Ab Stufe 1 steht der leere Kolben schon vollstaendig da (keine
+  // rein leere Flaeche wie anfangs bei der Baugrube) - erst der Inhalt
+  // baut sich ab Stufe 2 auf.
+  const gefuellt = imWerk >= 2
+  const anteil = Math.min(1, Math.max(0, (imWerk - 2) / 48))
+  const fluessigkeitY = 88 - anteil * 58
+  const farbe = PHARMA_FARBEN[abschnittIndex] ?? PHARMA_FARBEN[0]
+
+  return (
+    <>
+      <defs>
+        <clipPath id={glasClipId}>
+          <path d="M45,18 L45,44 L22,90 L78,90 L55,44 L55,18 Z" />
+        </clipPath>
+      </defs>
+
+      <line className="bauTeil" x1="8" y1="92" x2="92" y2="92" stroke={T} strokeWidth="1.4" />
+
+      <g className="bauTeil">
+        <path d="M42,18 H45 M55,18 H58" stroke={T} strokeWidth="1.2" fill="none" />
+        <path d="M45,18 V44 L22,90 M55,18 V44 L78,90" stroke={T} strokeWidth="1.3" fill="none" />
+        <path d="M22,90 H78" stroke={T} strokeWidth="1.3" fill="none" />
+      </g>
+
+      {gefuellt && (
+        <rect
+          className="pharmaFluessigkeit bauTeil"
+          x="20" y={fluessigkeitY} width="60" height={92 - fluessigkeitY}
+          clipPath={`url(#${glasClipId})`}
+          fill={farbe}
+        />
+      )}
+
+      {abschnittIndex >= 2 && gefuellt && (
+        <g className="pharmaBlasen bauTeil" fill={R} opacity="0.55">
+          <circle className="pharmaBlase" cx="42" cy={fluessigkeitY - 3} r="1.3" />
+          <circle className="pharmaBlase pharmaBlase-b" cx="52" cy={fluessigkeitY - 6} r="1" />
+          <circle className="pharmaBlase pharmaBlase-c" cx="60" cy={fluessigkeitY - 2} r="1.1" />
+        </g>
+      )}
+
+      {abschnittIndex >= 4 && (
+        <g className="bauTeil" stroke={R} strokeWidth="1" strokeLinecap="round">
+          <line x1="60" y1="18" x2="49" y2="72" />
+          <circle cx="60" cy="18" r="2" fill={R} stroke="none" />
+        </g>
+      )}
+
+      {abschnittIndex >= 7 && (
+        <path className="bauTeil" d="M43,13 L57,13 L55,18 H45 Z" fill={L} stroke={T} strokeWidth="0.6" />
+      )}
+
+      {abschnittIndex >= 7 && (
+        <g className="bauTeil">
+          <rect x="30" y="68" width="40" height="14" fill="var(--papier)" stroke={T} strokeWidth="0.6" />
+          <path d="M35,73 H65 M35,77 H58" stroke={T} strokeWidth="0.5" fill="none" />
+        </g>
+      )}
+    </>
+  )
+}
+
+export default function Bauabschnitt({ stufe = 1, gestaltung = 'arch', groesse = 96, titel = true, marke = true }) {
+  const b = bauwerkFuer(stufe, gestaltung)
+  const glasClipId = useId()
+  const istPharma = gestaltung === 'pharma'
+
   const teile = TEILE_JE_WERK[b.werkNr] ?? WOHNHAUS
-  const sichtbar = teile.filter((t) => t.ab <= b.imWerk && (t.bis === undefined || b.imWerk <= t.bis))
+  const sichtbar = istPharma ? [] : teile.filter((t) => t.ab <= b.imWerk && (t.bis === undefined || b.imWerk <= t.bis))
   const letzte = sichtbar.length ? sichtbar[sichtbar.length - 1].ab : 0
+  const abschnittIndex = b.abschnitt.nr - 1
 
   return (
     <div className={`bauabschnitt grund-${b.grund} rahmen-${b.rahmen}`}>
@@ -202,9 +286,13 @@ export default function Bauabschnitt({ stufe = 1, groesse = 96, titel = true, ma
         <rect className="bauGrund" x="0" y="0" width="100" height="100" rx="3" />
         <Rahmen art={b.rahmen} />
         <g className="bauTeile">
-          {sichtbar.map((t) => (
-            <g key={t.ab} className={t.ab === letzte ? 'bauTeil neu' : 'bauTeil'}>{t.el}</g>
-          ))}
+          {istPharma ? (
+            <PharmaZeichnung imWerk={b.imWerk} abschnittIndex={abschnittIndex} glasClipId={glasClipId} />
+          ) : (
+            sichtbar.map((t) => (
+              <g key={t.ab} className={t.ab === letzte ? 'bauTeil neu' : 'bauTeil'}>{t.el}</g>
+            ))
+          )}
         </g>
         {marke && b.werkNr > 1 && (
           <text className="bauWerkmarke" x="8" y="15">{b.werk.marke}</text>

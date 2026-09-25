@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" width="820" height="520">
+  <defs>
+    <pattern id="feMauer" width="34" height="17" patternUnits="userSpaceOnUse">
+      <rect width="34" height="17" fill="#a98467"/>
+      <path d="M0 0 H34 M0 8.5 H34 M0 17 H34" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M17 0 V8.5 M0 8.5 V17 M34 8.5 V17" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="feDaemm" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#adc178"/>
+      <path d="M-3 11 L11 -3 M0 14 L14 0 M3 17 L17 3" stroke="#8fa85f" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="feBeton" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#dde5b6"/>
+      <circle cx="4" cy="5" r="1.6" fill="#a9b183"/>
+      <circle cx="12" cy="11" r="1.3" fill="#a9b183"/>
+    </pattern>
+    <pattern id="feErde" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#e4dcc0"/>
+      <path d="M0 12 L12 0" stroke="#c3b894" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+
+  <rect width="820" height="520" fill="#f0ead2"/>
+
+  <rect x="586" y="460" width="234" height="60" fill="url(#feErde)"/>
+  <path d="M586 460 H820" stroke="#414833" stroke-width="2.4"/>
+
+  <rect x="60"  y="400" width="297" height="56" fill="url(#feBeton)" stroke="#414833" stroke-width="2"/>
+  <rect x="357" y="400" width="243" height="60" fill="url(#feBeton)" stroke="#414833" stroke-width="2"/>
+
+  <rect x="200" y="46" width="157" height="344" fill="url(#feMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="357" y="46" width="126" height="340" fill="url(#feDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="483" y="46" width="103" height="346" fill="url(#feMauer)" stroke="#414833" stroke-width="2"/>
+
+  <!-- offene Stossfuge -->
+  <rect x="483" y="352" width="103" height="13" fill="#f0ead2" stroke="#414833" stroke-width="2"/>
+
+  <!-- Abdichtung -->
+  <path d="M357 252 V386 L200 398" fill="none" stroke="#9a6b1f" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- Drahtanker mit Tropfscheibe -->
+  <path d="M320 200 H520" stroke="#414833" stroke-width="3.2"/>
+  <path d="M320 195 v10 M520 195 v10" stroke="#414833" stroke-width="3.2"/>
+  <ellipse cx="452" cy="200" rx="6.5" ry="14" fill="#f7f3e4" stroke="#414833" stroke-width="2.2"/>
+
+  <!-- Weg des eingedrungenen Wassers -->
+  <path d="M424 290 V376 L250 390" fill="none" stroke="#9a6b1f" stroke-width="2" stroke-dasharray="7 5"/>
+  <path d="M244 390 l15 -5 v10 z" fill="#9a6b1f"/>
+
+  <text x="96" y="110" font-family="Georgia, serif" font-size="19" fill="#6c584c">innen</text>
+  <text x="700" y="110" font-family="Georgia, serif" font-size="19" fill="#6c584c">außen</text>
+</svg>

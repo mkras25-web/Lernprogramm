@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 420" width="480" height="420">
+  <defs>
+    <pattern id="vlMauer" width="30" height="15" patternUnits="userSpaceOnUse">
+      <rect width="30" height="15" fill="#a98467"/>
+      <path d="M0 0 H30 M0 7.5 H30 M0 15 H30" stroke="#8c6a53" stroke-width="1.1"/>
+      <path d="M15 0 V7.5 M0 7.5 V15 M30 7.5 V15" stroke="#8c6a53" stroke-width="1.1"/>
+    </pattern>
+    <pattern id="vlDaemm" width="13" height="13" patternUnits="userSpaceOnUse">
+      <rect width="13" height="13" fill="#adc178"/>
+      <path d="M-3 10 L10 -3 M0 13 L13 0 M3 16 L16 3" stroke="#8fa85f" stroke-width="1.3"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="420" fill="#f0ead2"/>
+
+  <text x="240" y="32" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#414833">mit Luftschicht und Wärmedämmung</text>
+  <text x="60"  y="60" font-family="Georgia, serif" font-size="14" fill="#6c584c">innen</text>
+  <text x="455" y="60" text-anchor="end" font-family="Georgia, serif" font-size="14" fill="#6c584c">außen</text>
+
+  <rect x="60"  y="70" width="157" height="220" fill="url(#vlMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="217" y="70" width="99"  height="220" fill="url(#vlDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="316" y="70" width="36"  height="220" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+  <rect x="352" y="70" width="103" height="220" fill="url(#vlMauer)" stroke="#414833" stroke-width="2"/>
+
+  <path d="M180 140 H400" stroke="#414833" stroke-width="3"/>
+  <path d="M180 135 v10 M400 135 v10" stroke="#414833" stroke-width="3"/>
+  <ellipse cx="334" cy="140" rx="6" ry="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+
+  <rect x="352" y="250" width="103" height="12" fill="#f0ead2" stroke="#414833" stroke-width="2"/>
+  <rect x="352" y="96"  width="103" height="12" fill="#f0ead2" stroke="#414833" stroke-width="2"/>
+  <path d="M334 246 V186 M334 172 V122" stroke="#6c584c" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <path d="M334 112 l-5 12 h10 z" fill="#6c584c"/>
+
+  <g stroke="#6c584c" stroke-width="1.3" fill="none">
+    <path d="M316 312 H352"/>
+    <path d="M316 304 v16 M352 304 v16"/>
+  </g>
+  <text x="334" y="338" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#6c584c">≥ 40 mm</text>
+
+  <text x="240" y="366" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#414833">hinterlüfteter Spalt vor der Verblendschale</text>
+  <text x="240" y="392" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#414833">Be- und Entlüftung 7500 mm² je 20 m²</text>
+</svg>

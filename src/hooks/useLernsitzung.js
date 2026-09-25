@@ -43,7 +43,10 @@ export function useLernsitzung({
   const [sitzung, setSitzung] = useState(null)
   const [position, setPosition] = useState(0)
   const [letzteXp, setLetzteXp] = useState(0)
-  const [letzteAktion, setLetzteAktion] = useState(null)
+  // Stapel der bisherigen Bewertungen dieser Sitzung, neueste zuletzt -
+  // erlaubt mehrstufiges Rueckgaengig statt nur einen Schritt zurueck.
+  // Auf 50 begrenzt, damit eine lange Marathon-Sitzung nicht unbegrenzt waechst.
+  const [verlauf, setVerlauf] = useState([])
   const [offeneSitzung, setOffeneSitzung] = useState(null)
   const startZeit = useRef(Date.now())
   const sitzungSchluessel = sitzungSchluesselFuer(profilId)
@@ -116,7 +119,7 @@ export function useLernsitzung({
     setSitzung(neueSitzung)
     setPosition(0)
     setLetzteXp(0)
-    setLetzteAktion(null)
+    setVerlauf([])
     setErklaerthema(null)
     startZeit.current = Date.now()
     sitzungSichern(neueSitzung, 0)
@@ -134,7 +137,7 @@ export function useLernsitzung({
     setSitzung({ art: offeneSitzung.art, pensum })
     setPosition(Math.min(offeneSitzung.position, pensum.length - 1))
     setLetzteXp(0)
-    setLetzteAktion(null)
+    setVerlauf([])
     startZeit.current = Date.now()
     setAnsicht('lernen')
   }
@@ -199,7 +202,10 @@ export function useLernsitzung({
     })
     setEreignisse((alte) => [...alte, ereignis])
     setLetzteXp(xpFuerEreignis(ereignis, item))
-    setLetzteAktion({ ereignisId: ereignis.id, position })
+    // pensumVorher merkt sich den Stapel vor dieser Bewertung - bei
+    // "Nochmal" haengt bewerten() das Item erneut ans Ende an, das muss
+    // ein spaeteres Rueckgaengig mit zurueckdrehen.
+    setVerlauf((alt) => [...alt.slice(-49), { ereignisId: ereignis.id, position, pensumVorher: sitzung.pensum }])
 
     let zusatz = 0
     let sitzungJetzt = sitzung
@@ -211,14 +217,23 @@ export function useLernsitzung({
     weiter(zusatz, sitzungJetzt)
   }
 
-  // Rueckgaengig: Ereignis loeschen und eine Position zurueck.
+  // Rueckgaengig: letzte Bewertung vom Stapel nehmen, ihr Ereignis
+  // loeschen, Position und Pensum auf den Stand davor zuruecksetzen.
+  // Wiederholtes Aufrufen geht Schritt fuer Schritt weiter zurueck, bis
+  // der Stapel dieser Sitzung leer ist.
   async function rueckgaengig() {
-    if (!letzteAktion || !sitzung) return
-    await ereignisLoeschen(letzteAktion.ereignisId)
-    setEreignisse((alte) => alte.filter((e) => e.id !== letzteAktion.ereignisId))
-    setPosition(letzteAktion.position)
+    if (verlauf.length === 0 || !sitzung) return
+    const eintrag = verlauf[verlauf.length - 1]
+    await ereignisLoeschen(eintrag.ereignisId)
+    setEreignisse((alte) => alte.filter((e) => e.id !== eintrag.ereignisId))
+    const pensumWiederhergestellt = eintrag.pensumVorher
+    setSitzung((alt) => (alt.pensum.length !== pensumWiederhergestellt.length
+      ? { ...alt, pensum: pensumWiederhergestellt }
+      : alt))
+    setPosition(eintrag.position)
     setLetzteXp(0)
-    setLetzteAktion(null)
+    setVerlauf((alt) => alt.slice(0, -1))
+    sitzungSichern({ ...sitzung, pensum: pensumWiederhergestellt }, eintrag.position)
     startZeit.current = Date.now()
   }
 
@@ -245,7 +260,7 @@ export function useLernsitzung({
     sitzung,
     position,
     letzteXp,
-    letzteAktion,
+    letzteAktion: verlauf[verlauf.length - 1] ?? null,
     offeneSitzung,
     sitzungStarten,
     sitzungFortsetzen,

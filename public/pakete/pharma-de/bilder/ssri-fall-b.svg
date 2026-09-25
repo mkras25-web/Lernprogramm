@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 360" width="460" height="360">
+  <rect width="460" height="360" fill="#eef2f3"/>
+  <rect x="20" y="20" width="420" height="320" rx="12" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="20" y="20" width="420" height="46" rx="12" fill="#2f7d8a"/>
+  <rect x="20" y="52" width="420" height="14" fill="#2f7d8a"/>
+  <text x="40" y="50" font-size="16" font-weight="600" fill="#f8fafb" font-family="Segoe UI, Helvetica, Arial, sans-serif">Fall B</text>
+  <rect x="40" y="82" width="18" height="30" rx="5" fill="#f3e0c8" stroke="#d9a679" stroke-width="2"/>
+  <line x1="40" y1="97" x2="58" y2="97" stroke="#d9a679" stroke-width="2"/>
+  <text x="72" y="98" font-size="15" font-weight="600" fill="#1f3439" font-family="Segoe UI, Helvetica, Arial, sans-serif">Sertralin</text>
+  <text x="72" y="118" font-size="13" fill="#587681" font-family="Segoe UI, Helvetica, Arial, sans-serif">50 mg · 1-0-0, seit 8 Monaten</text>
+  <rect x="40" y="156" width="18" height="30" rx="5" fill="#f3e0c8" stroke="#d9a679" stroke-width="2"/>
+  <line x1="40" y1="171" x2="58" y2="171" stroke="#d9a679" stroke-width="2"/>
+  <text x="72" y="172" font-size="15" font-weight="600" fill="#1f3439" font-family="Segoe UI, Helvetica, Arial, sans-serif">Morphin retard</text>
+  <text x="72" y="192" font-size="13" fill="#587681" font-family="Segoe UI, Helvetica, Arial, sans-serif">10 mg · 1-0-1, seit 3 Tagen neu</text>
+  <line x1="40" y1="264" x2="420" y2="264" stroke="#d7e0e2" stroke-width="2"/>
+  <text x="40" y="292" font-size="13" fill="#587681" font-family="Segoe UI, Helvetica, Arial, sans-serif">Frau, 68 Jahre, Rückenschmerzen nach Sturz.</text>
+  <text x="40" y="312" font-size="13" fill="#587681" font-family="Segoe UI, Helvetica, Arial, sans-serif">Keine weitere Dauermedikation.</text>
+</svg>

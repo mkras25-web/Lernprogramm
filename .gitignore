@@ -1,0 +1,10 @@
+# Gilt im Online-Repository (dessen Wurzel ist der Ordner "app").
+node_modules/
+dist/
+.vite/
+test-results/
+playwright-report/
+blob-report/
+
+# Urheberrechtlich geschuetzte Buchausschnitte - niemals online.
+public/pakete/*/bilder-lokal/

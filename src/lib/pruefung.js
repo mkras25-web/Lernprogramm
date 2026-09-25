@@ -8,33 +8,36 @@ import { anteilRichtig, note, punkteFuer, selbstBewertbar } from './punkte.js'
 // Ab dieser Zahl gepruefter Items gilt ein Thema als pruefungsreif.
 export const REIFE_SCHWELLE = 8
 
+// ︎ hinter jedem Zeichen erzwingt die einfache Text-/Linien-
+// Darstellung statt einer moeglichen farbigen Emoji-Variante (siehe
+// App.jsx NAVIGATION fuer den konkreten Fall, der das ausgeloest hat).
 export const PRUEFUNGSARTEN = {
   monat: {
-    id: 'monat', titel: 'Monatsprüfung', anzahl: 30, zeichen: '◆',
+    id: 'monat', titel: 'Monatsprüfung', anzahl: 30, zeichen: '◆︎',
     text: 'Querschnitt über alles Gelernte',
   },
   woche: {
-    id: 'woche', titel: 'Wochenprüfung', anzahl: 12, zeichen: '◇',
+    id: 'woche', titel: 'Wochenprüfung', anzahl: 12, zeichen: '◇︎',
     text: 'Kurzer Durchgang für zwischendurch',
   },
   frei: {
-    id: 'frei', titel: 'Freie Prüfung', anzahl: 20, zeichen: '○',
+    id: 'frei', titel: 'Freie Prüfung', anzahl: 20, zeichen: '○︎',
     text: 'Selbst gewählter Umfang',
   },
   thema: {
-    id: 'thema', titel: 'Themenprüfung', anzahl: 12, zeichen: '▣',
+    id: 'thema', titel: 'Themenprüfung', anzahl: 12, zeichen: '▣︎',
     text: 'Ein Thema in der Tiefe',
   },
   bereich: {
-    id: 'bereich', titel: 'Bereichsprüfung', anzahl: 20, zeichen: '▦',
+    id: 'bereich', titel: 'Bereichsprüfung', anzahl: 20, zeichen: '▦︎',
     text: 'Alle Module eines Fachbereichs',
   },
   diagnose: {
-    id: 'diagnose', titel: 'Diagnoseprüfung', anzahl: 10, zeichen: '◉',
+    id: 'diagnose', titel: 'Diagnoseprüfung', anzahl: 10, zeichen: '◉︎',
     text: 'Vor dem Lernen: was sitzt schon?',
   },
   nach: {
-    id: 'nach', titel: 'Nachprüfung', anzahl: 15, zeichen: '↻',
+    id: 'nach', titel: 'Nachprüfung', anzahl: 15, zeichen: '↻︎',
     text: 'Nur die zuletzt falschen Fragen',
   },
 }

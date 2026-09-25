@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <marker id="pfeil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f3439"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="#eef2f3"/>
+
+  <!-- ============ Feld 1: Beladung ============ -->
+  <rect x="24" y="58" width="236" height="330" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+
+  <circle cx="142" cy="212" r="66" fill="#cfe0e3" stroke="#587681" stroke-width="2"/>
+
+  <!-- SERT -->
+  <rect x="67" y="189" width="18" height="46" rx="4" fill="#2f7d8a"/>
+  <line x1="76" y1="194" x2="76" y2="230" stroke="#f8fafb" stroke-width="2"/>
+
+  <!-- Serotonin im Plasma -->
+  <circle cx="38" cy="186" r="5" fill="#d9a679"/>
+  <circle cx="52" cy="168" r="5" fill="#d9a679"/>
+  <circle cx="34" cy="238" r="5" fill="#d9a679"/>
+  <circle cx="50" cy="256" r="5" fill="#d9a679"/>
+  <path d="M34 212 H60" stroke="#1f3439" stroke-width="2" marker-end="url(#pfeil)"/>
+
+  <!-- gefuellte Speichergranula -->
+  <g>
+    <circle cx="132" cy="176" r="19" fill="#f3e0c8" stroke="#d9a679" stroke-width="2"/>
+    <circle cx="125" cy="171" r="3.5" fill="#d9a679"/>
+    <circle cx="138" cy="173" r="3.5" fill="#d9a679"/>
+    <circle cx="132" cy="183" r="3.5" fill="#d9a679"/>
+    <circle cx="178" cy="214" r="19" fill="#f3e0c8" stroke="#d9a679" stroke-width="2"/>
+    <circle cx="171" cy="209" r="3.5" fill="#d9a679"/>
+    <circle cx="184" cy="211" r="3.5" fill="#d9a679"/>
+    <circle cx="178" cy="221" r="3.5" fill="#d9a679"/>
+    <circle cx="128" cy="248" r="19" fill="#f3e0c8" stroke="#d9a679" stroke-width="2"/>
+    <circle cx="121" cy="243" r="3.5" fill="#d9a679"/>
+    <circle cx="134" cy="245" r="3.5" fill="#d9a679"/>
+    <circle cx="128" cy="255" r="3.5" fill="#d9a679"/>
+  </g>
+
+  <!-- ============ Feld 2: Blockade ============ -->
+  <rect x="282" y="58" width="236" height="330" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+
+  <circle cx="400" cy="212" r="66" fill="#cfe0e3" stroke="#587681" stroke-width="2"/>
+
+  <!-- blockierter SERT -->
+  <rect x="325" y="189" width="18" height="46" rx="4" fill="#cfe0e3" stroke="#587681" stroke-width="2"/>
+  <line x1="318" y1="184" x2="350" y2="240" stroke="#b03a2e" stroke-width="4"/>
+  <line x1="350" y1="184" x2="318" y2="240" stroke="#b03a2e" stroke-width="4"/>
+
+  <!-- SSRI -->
+  <polygon points="315,150 307.5,163 292.5,163 285,150 292.5,137 307.5,137" fill="#587681"/>
+  <path d="M303 166 L322 186" stroke="#1f3439" stroke-width="2" marker-end="url(#pfeil)"/>
+
+  <!-- Serotonin bleibt aussen -->
+  <circle cx="296" cy="238" r="5" fill="#d9a679"/>
+  <circle cx="308" cy="256" r="5" fill="#d9a679"/>
+
+  <!-- entleerte Granula -->
+  <g>
+    <circle cx="390" cy="176" r="19" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="390" cy="176" r="3.5" fill="#d9a679"/>
+    <circle cx="436" cy="214" r="19" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="436" cy="214" r="3.5" fill="#d9a679"/>
+    <circle cx="386" cy="248" r="19" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="386" cy="248" r="3.5" fill="#d9a679"/>
+  </g>
+
+  <!-- ============ Feld 3: Verletzung ============ -->
+  <rect x="540" y="58" width="236" height="330" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+
+  <!-- Gefaess -->
+  <rect x="556" y="176" width="204" height="84" fill="#f3e0c8"/>
+  <line x1="556" y1="176" x2="760" y2="176" stroke="#587681" stroke-width="3"/>
+  <line x1="556" y1="260" x2="636" y2="260" stroke="#587681" stroke-width="3"/>
+  <line x1="690" y1="260" x2="760" y2="260" stroke="#587681" stroke-width="3"/>
+
+  <!-- locker haftende Thrombozyten -->
+  <ellipse cx="612" cy="246" rx="17" ry="10" fill="#cfe0e3" stroke="#587681" stroke-width="2" stroke-dasharray="4 3"/>
+  <ellipse cx="655" cy="250" rx="17" ry="10" fill="#cfe0e3" stroke="#587681" stroke-width="2" stroke-dasharray="4 3"/>
+  <ellipse cx="698" cy="244" rx="17" ry="10" fill="#cfe0e3" stroke="#587681" stroke-width="2" stroke-dasharray="4 3"/>
+  <circle cx="634" cy="230" r="3.5" fill="#d9a679"/>
+  <circle cx="676" cy="226" r="3.5" fill="#d9a679"/>
+
+  <!-- Austritt -->
+  <path d="M663 266 V280" stroke="#b03a2e" stroke-width="3" marker-end="url(#pfeil)"/>
+  <path transform="translate(663 286) scale(0.55) translate(-663 -306)" d="M663 306 c 14 18 20 26 20 34 a 20 20 0 0 1 -40 0 c 0 -8 6 -16 20 -34 z" fill="#b03a2e"/>
+
+  <!-- ============ Beschriftung ============ -->
+  <g id="beschriftung" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#1f3439">
+    <text x="142" y="88" font-size="16" font-weight="600" text-anchor="middle">Beladung</text>
+    <text x="400" y="88" font-size="16" font-weight="600" text-anchor="middle">SSRI blockiert SERT</text>
+    <text x="658" y="88" font-size="16" font-weight="600" text-anchor="middle">Gefäßverletzung</text>
+
+    <text x="40" y="126" font-size="13" fill="#587681">Serotonin im Plasma</text>
+    <path d="M60 132 L46 178" stroke="#587681" stroke-width="1.5"/>
+
+    <text x="142" y="306" font-size="13" text-anchor="middle">Speichergranula: rund 99 %</text>
+    <text x="142" y="324" font-size="13" text-anchor="middle">des Blutserotonins</text>
+    <text x="142" y="352" font-size="13" text-anchor="middle" fill="#2f7d8a" font-weight="600">SERT füllt den Speicher</text>
+
+    <text x="300" y="126" font-size="13" text-anchor="middle" font-weight="600">SSRI</text>
+
+    <text x="400" y="306" font-size="13" text-anchor="middle">Speicher leert sich über die</text>
+    <text x="400" y="324" font-size="13" text-anchor="middle">Lebensdauer der Thrombozyten</text>
+    <text x="400" y="352" font-size="13" text-anchor="middle" fill="#2f7d8a" font-weight="600">7 bis 10 Tage</text>
+
+    <text x="658" y="332" font-size="13" text-anchor="middle">wenig Serotonin freigesetzt:</text>
+    <text x="658" y="348" font-size="13" text-anchor="middle">schwächere Aggregation,</text>
+    <text x="658" y="364" font-size="13" text-anchor="middle">keine Vasokonstriktion</text>
+    <text x="658" y="382" font-size="13" text-anchor="middle" fill="#b03a2e" font-weight="600">verlängerte Blutung</text>
+
+    <text x="24" y="430" font-size="13" fill="#587681">Thrombozyten bilden selbst kein Serotonin. Sie nehmen es über den Serotonin-Transporter (SERT) aus dem Plasma auf –</text>
+    <text x="24" y="450" font-size="13" fill="#587681">denselben Transporter, den ein SSRI hemmt. Ohne Nachschub bleibt der Speicher leer, bis neue Thrombozyten gebildet sind.</text>
+  </g>
+</svg>

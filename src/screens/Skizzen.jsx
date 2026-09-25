@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react'
 // Zeigt die Entwicklung ueber die Zeit und erlaubt das Aufraeumen.
 export default function Skizzen({ skizzen, items, onLoeschen }) {
   const [gross, setGross] = useState(null)
+  const [loeschKandidat, setLoeschKandidat] = useState(null)
 
   const gruppen = useMemo(() => {
     const nachItem = new Map(items.map((i) => [i.id, i]))
@@ -49,7 +50,7 @@ export default function Skizzen({ skizzen, items, onLoeschen }) {
                 </button>
                 <figcaption>
                   {new Date(s.ts).toLocaleDateString('de-DE')}
-                  <button className="textknopf" onClick={() => onLoeschen(s.id)}>löschen</button>
+                  <button className="textknopf" onClick={() => setLoeschKandidat(s)}>löschen</button>
                 </figcaption>
               </figure>
             ))}
@@ -64,6 +65,32 @@ export default function Skizzen({ skizzen, items, onLoeschen }) {
             <p className="nebentext">{new Date(gross.ts).toLocaleString('de-DE')}</p>
             <button className="knopf schmal" onClick={() => setGross(null)}>Schließen</button>
           </div>
+        </div>
+      )}
+
+      {loeschKandidat && (
+        <div className="schleier" onClick={() => setLoeschKandidat(null)}>
+          <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
+            <h2 className="ueberschrift">Bist du sicher?</h2>
+            <p className="nebentext">
+              Die Zeichnung vom {new Date(loeschKandidat.ts).toLocaleDateString('de-DE')} wird
+              endgültig gelöscht.
+            </p>
+            <div className="wahl">
+              <button className="knopf schmal" onClick={() => setLoeschKandidat(null)}>
+                Abbrechen
+              </button>
+              <button
+                className="knopf schmal gefahr"
+                onClick={() => {
+                  onLoeschen(loeschKandidat.id)
+                  setLoeschKandidat(null)
+                }}
+              >
+                Löschen
+              </button>
+            </div>
+          </article>
         </div>
       )}
     </div>

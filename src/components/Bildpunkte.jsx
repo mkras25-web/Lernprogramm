@@ -1,8 +1,15 @@
 import { useState } from 'react'
+import LokalBild from './LokalBild.jsx'
 
 // Zeichnung mit nummerierten Punkten. Die Zuordnung geschieht direkt
 // am Punkt: anklicken, auswaehlen, fertig. Die Liste darunter zeigt
 // dasselbe in Textform - beides arbeitet auf demselben Zustand.
+//
+// `reihenfolge` bestimmt nur die Anzeigereihenfolge der Namen im
+// Auswahlfenster (z. B. gemischt, damit eine feste Liste nicht
+// auswendig gelernt wird) - die Indizes selbst bleiben die aus `namen`,
+// darauf verlassen sich Korrektur und Auswertung hier und in Lernen.jsx.
+// Ohne Angabe wird die natuerliche Reihenfolge von `namen` verwendet.
 export default function Bildpunkte({
   referenz,
   punkte,
@@ -12,8 +19,14 @@ export default function Bildpunkte({
   gewaehlt,
   onWahl,
   loesung,
+  reihenfolge,
 }) {
   const [offen, setOffen] = useState(null)
+  // Fehlt das Bild (Buchausschnitt nicht auf diesem Geraet), stuenden die
+  // Punkte sonst ohne Zeichnung ueber dem Platzhalter.
+  const [bildFehlt, setBildFehlt] = useState(false)
+
+  const anzeigefolge = reihenfolge ?? namen?.map((_, i) => i) ?? []
 
   const beschriftet = (nr) => {
     if (!zuordnung) return null
@@ -32,9 +45,9 @@ export default function Bildpunkte({
 
   return (
     <div className="bildflaeche">
-      <img src={referenz} alt="" />
+      <LokalBild src={referenz} alt="" onFehler={() => setBildFehlt(true)} />
 
-      {punkte.map((p) => {
+      {!bildFehlt && punkte.map((p) => {
         const zugewiesen = beschriftet(p.nr)
         const istGewaehlt = gewaehlt === p.nr || offen === p.nr
         const richtig = aufgedeckt && zuordnung && zuordnung[p.nr] === punkte.indexOf(p)
@@ -48,8 +61,10 @@ export default function Bildpunkte({
           loesung != null && gewaehlt === p.nr && !istLoesung ? 'daneben' : '',
         ].join(' ')
 
+        const huelleKlasse = offen === p.nr ? 'bildpunktHuelle offen' : 'bildpunktHuelle'
+
         return (
-          <div key={p.nr} className="bildpunktHuelle" style={{ left: `${p.x}%`, top: `${p.y}%` }}>
+          <div key={p.nr} className={huelleKlasse} style={{ left: `${p.x}%`, top: `${p.y}%` }}>
             <button
               className={klasse}
               title={aufgedeckt ? p.name : `Punkt ${p.nr}`}
@@ -63,7 +78,8 @@ export default function Bildpunkte({
             {offen === p.nr && !aufgedeckt && zuordnung && (
               <div className="punktwahl">
                 <p className="punktwahlKopf">Punkt {p.nr} benennen</p>
-                {namen.map((name, i) => {
+                {anzeigefolge.map((i) => {
+                  const name = namen[i]
                   const schonVergeben = Object.entries(zuordnung).some(
                     ([nr, wert]) => wert === i && Number(nr) !== p.nr
                   )

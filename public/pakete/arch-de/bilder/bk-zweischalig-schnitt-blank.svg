@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="820" height="460">
+  <defs>
+    <pattern id="zsMauerB" width="36" height="18" patternUnits="userSpaceOnUse">
+      <rect width="36" height="18" fill="#a98467"/>
+      <path d="M0 0 H36 M0 9 H36 M0 18 H36" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M18 0 V9 M0 9 V18 M36 9 V18" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="zsDaemmB" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#adc178"/>
+      <path d="M-3 11 L11 -3 M0 14 L14 0 M3 17 L17 3" stroke="#8fa85f" stroke-width="1.4"/>
+    </pattern>
+  </defs>
+
+  <rect width="820" height="460" fill="#f0ead2"/>
+
+  <rect x="140" y="132" width="18"  height="176" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+  <rect x="158" y="132" width="210" height="176" fill="url(#zsMauerB)" stroke="#414833" stroke-width="2"/>
+  <rect x="368" y="132" width="168" height="176" fill="url(#zsDaemmB)" stroke="#414833" stroke-width="2"/>
+  <rect x="536" y="132" width="138" height="176" fill="url(#zsMauerB)" stroke="#414833" stroke-width="2"/>
+
+  <path d="M300 176 H612" stroke="#414833" stroke-width="3.4" fill="none"/>
+  <path d="M300 170 v12 M612 170 v12" stroke="#414833" stroke-width="3.4"/>
+  <ellipse cx="505" cy="176" rx="7" ry="15" fill="#f7f3e4" stroke="#414833" stroke-width="2.2"/>
+  <rect x="390" y="158" width="10" height="36" rx="2" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+
+  <rect x="536" y="258" width="138" height="14" fill="#f0ead2" stroke="#414833" stroke-width="2"/>
+
+  <text x="62" y="226" font-family="Georgia, serif" font-size="19" fill="#6c584c">innen</text>
+  <text x="742" y="226" font-family="Georgia, serif" font-size="19" fill="#6c584c">außen</text>
+  <path d="M116 220 H140" stroke="#6c584c" stroke-width="1.6"/>
+  <path d="M674 220 H732" stroke="#6c584c" stroke-width="1.6"/>
+</svg>

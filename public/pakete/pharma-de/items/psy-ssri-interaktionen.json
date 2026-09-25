@@ -1,0 +1,829 @@
+{
+  "thema": "psy-ssri-interaktionen",
+  "titel": "SSRI: Blutungsrisiko und Serotonin-Syndrom",
+  "erklaerung": {
+    "absaetze": [
+      "Zwei Interaktionsrisiken der SSRI landen regelmäßig im Beratungsgespräch, und beide gehen auf dieselbe Ursache zurück: die Hemmung des Serotonin-Transporters SERT. Im Gehirn ist sie erwünscht, an zwei anderen Orten wird sie zum Problem. Am Thrombozyten führt sie zum Blutungsrisiko, an der serotonergen Synapse in der Summe mit anderen Substanzen zum Serotonin-Syndrom. Wer den Mechanismus einmal sauber getrennt hat, braucht für die Beratung keine Interaktionsliste mehr, sondern nur noch zwei Fragen.",
+      "Der Thrombozyt stellt kein Serotonin her. Er nimmt es über denselben SERT aus dem Plasma auf, den ein SSRI hemmt, und speichert es in dichten Granula – rund 99 % des Blutserotonins liegen dort. Bei einer Gefäßverletzung wird es freigesetzt, verstärkt die Aggregation und wirkt vasokonstriktorisch. Unter einem SSRI bleibt der Speicher leer: Paroxetin senkt den Thrombozytengehalt um etwa 80 %. Dazu kommt eine direkte Schädigung der Magen-Darm-Schleimhaut. Wichtig für die Beratung ist die Kinetik: Der Thrombozyt kann nicht nachladen, also folgt der Effekt dem Austausch des Thrombozytenpools und braucht ebenso wie seine Rückbildung sieben bis zehn Tage.",
+      "Die Zahlen sind deutlich, verlangen aber genaues Lesen. Für obere GI-Blutungen gilt gegenüber Nichtanwendern rund das Vierfache unter einem SSRI allein, etwa das Fünffache mit ASS und etwa das Zwölffache mit einem NSAR. In der Kohorte nach Myokardinfarkt liegt das Blutungsrisiko von ASS plus SSRI bei HR 1,42 und von ASS plus Clopidogrel plus SSRI bei HR 2,35. Andere Kombinationen derselben Auswertung sind zahlenmäßig erhöht, ihr Konfidenzintervall schließt die 1 aber ein – dort ist der Unterschied nicht gesichert. Gut belegt ist außerdem, dass ein PPI den Effekt praktisch aufhebt.",
+      "Das Serotonin-Syndrom entsteht nicht durch eine einzelne Substanz, sondern durch Addition. Jeder Angriffspunkt am serotonergen System kann beitragen: Vorstufenzufuhr, gesteigerte Freisetzung, gehemmter Abbau, gehemmte Wiederaufnahme, direkte Rezeptoraktivierung. Am schwersten wiegen Kombinationen mit einem MAO-Hemmer, und zwar auch mit solchen, die man nicht als MAO-Hemmer im Kopf hat: Linezolid und Methylenblau. Die Diagnose ist rein klinisch; gebräuchlich sind die Hunter-Kriterien, in denen der Klonus die Leitfigur ist. Umgekehrt sind einige bekannte Warnungen in der Evidenz schwach, etwa die zu Triptanen und Ondansetron.",
+      "Für die Offizin reichen drei Fragen. Erstens: Seit wann werden die Substanzen zusammen eingenommen – das trennt den kritischen Anfangszeitraum vom eingespielten Dauerzustand. Zweitens: Wirkt die zweite Substanz über denselben Mechanismus, und liegt zusätzlich eine pharmakokinetische Interaktion vor, die zur Akkumulation führt? Drittens: Sind Zeichen schon vorhanden – Blutungszeichen auf der einen, starkes Schwitzen, Tremor und Unruhe auf der anderen Seite? Sind Zeichen da, gehört der Fall zum Arzt. Sind keine da, wird der Patient informiert, worauf er achten soll, und bei Bedarf über Alternativen beraten."
+    ],
+    "merksatz": "Ein Mechanismus, zwei Orte: leerer Thrombozytenspeicher heißt Blutung, addierte Serotoninwirkung heißt Syndrom.",
+    "bild": "bilder/ssri-synapse.svg",
+    "bildunterschrift": "Die serotonerge Synapse mit sechs Angriffspunkten. Die Punkte 1 bis 5 erhöhen die serotonerge Aktivität und addieren sich – genau darin liegt das Risiko des Serotonin-Syndroms. SSRI wirken an Punkt 4, demselben Transporter, den auch der Thrombozyt zum Befüllen seiner Speicher braucht.",
+    "quelle": "Hahn, Psychische Erkrankungen, Fortbildung LAK Nordrhein / Universitätsklinikum Frankfurt 2026; ergänzt um Labos et al., CMAJ 2011;183:1835–43 und Dunkley et al., QJM 2003;96:635–42"
+  },
+  "items": [
+    {
+      "id": "psy-ssri-001",
+      "typ": "karte",
+      "frage": "Über welchen Mechanismus erhöhen SSRI das Blutungsrisiko?",
+      "antwort": "Thrombozyten synthetisieren kein Serotonin. Sie nehmen es über den Serotonin-Transporter SERT aus dem Plasma auf und speichern es in dichten Granula. Ein SSRI hemmt genau diesen Transporter, der Speicher entleert sich. Bei einer Gefäßverletzung fehlt damit das Serotonin, das die Thrombozytenaggregation verstärkt und eine Vasokonstriktion auslöst. Hinzu kommt eine direkte Schädigung der gastrointestinalen Mukosa.",
+      "vertiefung": "Die Gerinnungskaskade selbst bleibt unberührt – Quick, INR und aPTT sind unauffällig. Das Problem liegt allein in der primären Hämostase. Deshalb zeigt kein Laborwert der Routinegerinnung dieses Risiko an, und deshalb addiert es sich so ungünstig zu ASS und Clopidogrel, die an derselben Stelle angreifen.",
+      "bild": "bilder/ssri-thrombozyt.svg",
+      "bildunterschrift": "Drei Schritte vom gehemmten Transporter zur verlängerten Blutung: Beladung über den SERT, Blockade durch den SSRI, fehlende Serotoninfreisetzung bei der Gefäßverletzung.",
+      "tags": [
+        "blutung",
+        "mechanismus",
+        "verstaendnis"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Verminderte Thrombozytenaggregation“",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-002",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die drei Schritte, die aus der SERT-Hemmung ein Blutungsrisiko machen, und die markierten Strukturen.",
+      "antwort": "Links die Beladung: Serotonin aus dem Plasma, SERT, gefüllte Speichergranula. In der Mitte die Blockade: SSRI, blockierter SERT, entleerte Granula. Rechts die Folge: locker haftende Thrombozyten und verlängerte Blutung.",
+      "vertiefung": "Der mittlere Schritt ist der, den man in der Beratung erklären muss: Nicht der Thrombozyt wird zerstört, ihm fehlt nur der Inhalt. Deshalb normalisiert sich alles erst, wenn der Pool ausgetauscht ist.",
+      "tags": [
+        "blutung",
+        "mechanismus",
+        "zeichnung"
+      ],
+      "quelle": "eigene Darstellung nach Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/ssri-thrombozyt-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 6.5,
+          "y": 34.6,
+          "name": "Serotonin im Plasma"
+        },
+        {
+          "nr": 2,
+          "x": 9.5,
+          "y": 46.5,
+          "name": "SERT – Serotonin-Transporter in der Thrombozytenmembran"
+        },
+        {
+          "nr": 3,
+          "x": 16.5,
+          "y": 36.8,
+          "name": "gefülltes Speichergranulum (dense granule)"
+        },
+        {
+          "nr": 4,
+          "x": 37.5,
+          "y": 29.7,
+          "name": "SSRI-Molekül"
+        },
+        {
+          "nr": 5,
+          "x": 41.8,
+          "y": 46.5,
+          "name": "blockierter SERT – keine Aufnahme mehr möglich"
+        },
+        {
+          "nr": 6,
+          "x": 48.8,
+          "y": 36.8,
+          "name": "entleertes Speichergranulum"
+        },
+        {
+          "nr": 7,
+          "x": 81.9,
+          "y": 56.8,
+          "name": "locker haftende Thrombozyten – abgeschwächte Aggregation"
+        },
+        {
+          "nr": 8,
+          "x": 82.9,
+          "y": 78.4,
+          "name": "verlängerte Blutung aus dem verletzten Gefäß"
+        }
+      ]
+    },
+    {
+      "id": "psy-ssri-003",
+      "typ": "numerisch",
+      "frage": "Welcher Anteil des Serotonins im Blut befindet sich in den Thrombozyten?",
+      "antwort": "Rund 99 %.",
+      "vertiefung": "Diese Konzentration ist der Grund, warum eine Transporterhemmung überhaupt hämostatisch relevant wird: Der Thrombozyt ist der mit Abstand größte Serotoninspeicher des Blutes, und er hat keine eigene Syntheseleistung, mit der er den Verlust ausgleichen könnte.",
+      "tags": [
+        "blutung",
+        "mechanismus",
+        "kennwerte"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 99,
+      "einheit": "%",
+      "toleranz": 1
+    },
+    {
+      "id": "psy-ssri-004",
+      "typ": "karte",
+      "frage": "Warum wirkt ein SSRI nicht sofort auf die Blutungsneigung, und warum verschwindet der Effekt nach dem Absetzen nicht sofort?",
+      "antwort": "Weil der Thrombozyt kernlos ist und kein Serotonin nachbilden kann. Der entleerte Speicher bleibt für die gesamte Lebensdauer der Zelle leer, und ein normaler Speicher entsteht erst mit neu gebildeten Thrombozyten. Auf- und Abbau des Effekts folgen deshalb dem Austausch des Thrombozytenpools und brauchen jeweils sieben bis zehn Tage. Nach sieben Tagen ist das Blutungsrisiko bereits verdoppelt.",
+      "vertiefung": "Praktische Konsequenz: Bei einer geplanten Operation oder Zahnextraktion reicht ein Absetzen am Vortag nicht. Umgekehrt ist ein SSRI, der seit Jahren eingenommen wird, in dieser Hinsicht kein neues Ereignis – das Risiko ist eingestellt. Neu hinzukommend ist immer die zweite Substanz.",
+      "tags": [
+        "blutung",
+        "kinetik",
+        "beratung"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026 (Verdopplung nach 7 Tagen nach Wang Y et al. 2013)",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-005",
+      "typ": "skizze",
+      "frage": "Skizziere den zeitlichen Verlauf des Blutungsrisikos: vom Therapiebeginn mit einem SSRI über den Dauerzustand bis einige Wochen nach dem Absetzen.",
+      "antwort": "Ein Anstieg über die erste Woche bis auf etwa das Doppelte, danach ein Plateau, und nach dem Absetzen ein Abfall über sieben bis zehn Tage zurück auf das Ausgangsniveau. Beide Flanken sind gleich lang, weil beide von der Lebensdauer der Thrombozyten bestimmt werden.",
+      "vertiefung": "Die Symmetrie ist der eigentliche Merkposten. Wer sie einmal gezeichnet hat, beantwortet zwei Beratungsfragen ohne Nachschlagen: wann ein neu angesetzter SSRI relevant wird und wie lange vor einem Eingriff pausiert werden müsste.",
+      "tags": [
+        "blutung",
+        "kinetik",
+        "skizze"
+      ],
+      "quelle": "eigene Darstellung; Verdopplung nach 7 Tagen nach Wang Y et al. 2013, zitiert bei Hahn, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/ssri-zeitverlauf.svg",
+      "pruefpunkte": [
+        "Anstieg über die ersten Tage, nicht sofort mit der ersten Dosis",
+        "Nach etwa 7 Tagen ist das relative Risiko verdoppelt",
+        "Danach Plateau, solange der SSRI eingenommen wird",
+        "Nach dem Absetzen Abfall über 7 bis 10 Tage, nicht abrupt",
+        "Beide Flanken haben dieselbe Dauer, weil beide der Lebensdauer der Thrombozyten folgen"
+      ]
+    },
+    {
+      "id": "psy-ssri-006",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zum Blutungsrisiko unter SSRI treffen zu?",
+      "antwort": "Zutreffend sind die Entleerung des Thrombozytenspeichers, die direkte Schleimhautschädigung, die unauffällige Routinegerinnung und die Abhängigkeit von der Stärke der SERT-Hemmung. Nicht zutreffend ist eine Hemmung der Cyclooxygenase – diesen Mechanismus haben ASS und NSAR, nicht die SSRI.",
+      "vertiefung": "Dass zwei Substanzen über verschiedene Wege dieselbe Funktion treffen, macht die Kombination gerade gefährlich: ASS hemmt die Thromboxansynthese, der SSRI nimmt dem Thrombozyten das Serotonin, und das NSAR schädigt zusätzlich die Mukosa. Drei Angriffspunkte auf dieselbe Endstrecke.",
+      "tags": [
+        "blutung",
+        "mechanismus",
+        "typischer-fehler"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Der Serotoninspeicher der Thrombozyten wird entleert, weil der SERT gehemmt ist",
+        "SSRI schädigen zusätzlich direkt die gastrointestinale Mukosa",
+        "Quick, INR und aPTT bleiben unauffällig",
+        "Das Risiko hängt davon ab, wie stark die Substanz den SERT hemmt",
+        "SSRI hemmen die Cyclooxygenase und damit die Thromboxansynthese"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "psy-ssri-007",
+      "typ": "zuordnung",
+      "frage": "Ordne den Kombinationen das ungefähre Risiko für eine obere gastrointestinale Blutung zu.",
+      "antwort": "SSRI allein etwa 4-fach · SSRI mit ASS etwa 5-fach · SSRI mit NSAR etwa 12-fach · SSRI mit gleichzeitigem PPI kein erhöhtes Risiko.",
+      "vertiefung": "Die Reihenfolge ist wichtiger als die genauen Zahlen: Das NSAR ist der stärkste Verstärker, deutlich vor ASS. Genau deshalb ist die scheinbar harmlose Selbstmedikation mit Ibuprofen bei einer SSRI-Patientin die kritischste Situation an der Sichtwahl.",
+      "tags": [
+        "blutung",
+        "kennwerte",
+        "selbstmedikation"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „GI-Blutungen“; PPI-Aussage nach Jiang HY et al. 2015",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "SSRI allein",
+          "etwa 4-fach erhöht"
+        ],
+        [
+          "SSRI mit ASS",
+          "etwa 5-fach erhöht"
+        ],
+        [
+          "SSRI mit NSAR",
+          "etwa 12-fach erhöht"
+        ],
+        [
+          "SSRI mit NSAR und PPI",
+          "kein erhöhtes Risiko nachweisbar"
+        ]
+      ]
+    },
+    {
+      "id": "psy-ssri-008",
+      "typ": "numerisch",
+      "frage": "In der Kohorte nach Myokardinfarkt: Wie hoch ist die Hazard Ratio für eine Blutung unter ASS plus Clopidogrel plus SSRI, bezogen auf ASS allein?",
+      "antwort": "HR 2,35 (95-%-KI 1,61–3,42).",
+      "vertiefung": "Zum Vergleich liegt ASS plus Clopidogrel ohne SSRI bei 1,49 und ASS plus SSRI bei 1,42. Der SSRI verdoppelt das Risiko der dualen Plättchenhemmung also nicht, er hebt es aber deutlich an – und direkt gegen ASS plus Clopidogrel gerechnet bleibt eine gesicherte Erhöhung um den Faktor 1,57 übrig.",
+      "tags": [
+        "blutung",
+        "evidenz",
+        "kennwerte"
+      ],
+      "quelle": "Labos C et al., CMAJ 2011;183(16):1835–43 (27.058 Patienten nach Myokardinfarkt, Québec)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 2.35,
+      "einheit": "HR",
+      "toleranz": 0.02
+    },
+    {
+      "id": "psy-ssri-009",
+      "typ": "mehrfachauswahl",
+      "frage": "Aus derselben Auswertung, Referenz ist jeweils ASS allein: Bei welchen Kombinationen ist die Risikoerhöhung statistisch gesichert?",
+      "antwort": "Gesichert sind ASS plus Clopidogrel (1,49; 1,28–1,75), ASS plus SSRI (1,42; 1,08–1,87) und ASS plus Clopidogrel plus SSRI (2,35; 1,61–3,42). Nicht gesichert sind Clopidogrel allein (1,15; 0,87–1,51) und Clopidogrel plus SSRI (1,76; 0,83–3,73) – beide Konfidenzintervalle schließen die 1 ein.",
+      "vertiefung": "Clopidogrel plus SSRI sieht mit 1,76 nach dem höchsten Einzelwert nach der Dreifachkombination aus, ist aber der unsicherste Schätzwert des ganzen Modells: Das Intervall reicht von 0,83 bis 3,73, weil in dieser Gruppe nur wenige Patienten waren. Ein hoher Punktschätzer mit breitem Intervall ist ein Hinweis auf eine kleine Fallzahl, kein Beleg für ein besonders hohes Risiko.",
+      "bild": "bilder/ssri-blutungsrisiko.svg",
+      "bildunterschrift": "Blutungsrisiko nach Myokardinfarkt, Referenz ist ASS allein. Rot markiert sind die Kombinationen, deren Konfidenzintervall die 1 nicht einschließt (Labos et al., CMAJ 2011).",
+      "tags": [
+        "blutung",
+        "evidenz",
+        "verstaendnis"
+      ],
+      "quelle": "Labos C et al., CMAJ 2011;183(16):1835–43",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "ASS + Clopidogrel: HR 1,49 (1,28–1,75)",
+        "ASS + SSRI: HR 1,42 (1,08–1,87)",
+        "ASS + Clopidogrel + SSRI: HR 2,35 (1,61–3,42)",
+        "Clopidogrel allein: HR 1,15 (0,87–1,51)",
+        "Clopidogrel + SSRI: HR 1,76 (0,83–3,73)"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "psy-ssri-010",
+      "typ": "karte",
+      "frage": "Welchen Stellenwert hat ein PPI bei Patienten, die einen SSRI zusammen mit ASS oder einem NSAR einnehmen?",
+      "antwort": "Einen hohen. In einer Fall-Kontroll-Untersuchung lag die Odds Ratio für eine obere GI-Blutung bei gleichzeitiger PPI-Einnahme bei 0,96, das Risiko war also praktisch auf Ausgangsniveau zurückgeführt. Eine Metaanalyse mit über einer Million Patienten bestätigte das erhöhte Blutungsrisiko unter SSRI, insbesondere mit NSAR oder Thrombozytenaggregationshemmern – und fand kein erhöhtes Risiko bei gleichzeitiger PPI-Einnahme.",
+      "vertiefung": "Der PPI schützt die Mukosa, nicht den Thrombozyten. Er verhindert also die gastrointestinale Blutung, nicht die verlängerte Blutungszeit an anderer Stelle. Für Hämatome, Nasenbluten oder eine Blutung nach einem Eingriff hilft er nicht.",
+      "tags": [
+        "blutung",
+        "beratung",
+        "selbstmedikation"
+      ],
+      "quelle": "Dall M et al. 2009 (OR 0,96) und Jiang HY et al. 2015, zitiert bei Hahn, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-011",
+      "typ": "zuordnung",
+      "frage": "HAS-BLED-Score: Ordne den Buchstaben den jeweiligen Risikofaktor zu.",
+      "antwort": "H Hypertonie · A abnormale Nieren- oder Leberfunktion · S Schlaganfall in der Anamnese · B Blutung in der Anamnese · L labile INR-Einstellung · E Alter ab 65 Jahren · D Medikamente oder Alkohol.",
+      "vertiefung": "A und D zählen je Kriterium einen Punkt, können also je zwei Punkte beitragen – daraus ergibt sich der Maximalwert von neun. Das D steht dabei für Arzneimittel, die die Blutungsneigung erhöhen, und genau dort wird der SSRI eingetragen.",
+      "tags": [
+        "blutung",
+        "risikoabschaetzung",
+        "scores"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Has bled Score“ (modifiziert nach Camm et al. 2010)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "H",
+          "Hypertonie"
+        ],
+        [
+          "A",
+          "abnormale Nieren- oder Leberfunktion, je 1 Punkt"
+        ],
+        [
+          "S",
+          "Schlaganfall in der Anamnese"
+        ],
+        [
+          "B",
+          "Blutung in der Anamnese"
+        ],
+        [
+          "L",
+          "labile INR-Einstellung"
+        ],
+        [
+          "E",
+          "Alter ab 65 Jahren (elderly)"
+        ],
+        [
+          "D",
+          "Medikamente oder Alkohol (drugs), je 1 Punkt"
+        ]
+      ]
+    },
+    {
+      "id": "psy-ssri-012",
+      "typ": "numerisch",
+      "frage": "Wie viele Punkte umfasst der HAS-BLED-Score maximal?",
+      "antwort": "9 Punkte.",
+      "vertiefung": "Sieben Buchstaben, aber neun mögliche Punkte: A und D werden je Kriterium gezählt, also Nieren- und Leberfunktion getrennt sowie Arzneimittel und Alkohol getrennt.",
+      "tags": [
+        "blutung",
+        "risikoabschaetzung",
+        "scores"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Has bled Score“",
+      "stand": "2026-09",
+      "geprueft": true,
+      "wert": 9,
+      "einheit": "Punkte",
+      "toleranz": 0
+    },
+    {
+      "id": "psy-ssri-013",
+      "typ": "karte",
+      "frage": "Ab welchem HAS-BLED-Wert gilt das Blutungsrisiko als erhöht – und was muss man bei der Anwendung auf einen SSRI-Fall bedenken?",
+      "antwort": "0 bis 2 Punkte gelten als geringes, über 2 Punkte als erhöhtes Blutungsrisiko. Zu bedenken ist die Herkunft des Scores: Er wurde für Patienten unter oraler Antikoagulation bei Vorhofflimmern entwickelt und validiert. Auf eine Kombination aus SSRI und Thrombozytenaggregationshemmer übertragen, liefert er eine strukturierte Einschätzung der allgemeinen Blutungsdisposition, aber keine validierte Risikozahl für genau diese Konstellation.",
+      "vertiefung": "Das macht ihn nicht wertlos, sondern legt seinen Gebrauch fest: als Gesprächsraster, das die richtigen Fragen stellt – Alter, Vorblutung, Nieren- und Leberfunktion, weitere blutungsfördernde Arzneimittel, Alkohol. Ein hoher Wert ist ein Argument gegenüber dem Arzt, kein Grenzwert, ab dem etwas abzusetzen wäre.",
+      "tags": [
+        "blutung",
+        "risikoabschaetzung",
+        "einordnung"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026; Einordnung der Validierung: HAS-BLED nach Pisters et al. 2010 für orale Antikoagulation bei Vorhofflimmern",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-014",
+      "typ": "reihenfolge",
+      "frage": "Ein Patient löst ein Rezept über Clopidogrel ein und nimmt bereits Sertralin. Bringe das Vorgehen in der Apotheke in eine sinnvolle Reihenfolge.",
+      "antwort": "Zeitraum der gleichzeitigen Einnahme erfragen, weitere blutungsfördernde Arzneimittel und Risikofaktoren erfassen, Blutungszeichen aktiv erfragen, den Patienten auf zu beachtende Zeichen hinweisen, bei vorhandenen Zeichen den Arzt informieren und über Alternativen beraten.",
+      "vertiefung": "Die Reihenfolge ist kein Ritual: Der Zeitraum entscheidet, ob man es mit einer neuen oder einer eingespielten Situation zu tun hat, und erst die erfassten Risikofaktoren machen aus dem Gespräch ein Argument, das beim Arzt trägt.",
+      "tags": [
+        "blutung",
+        "beratung",
+        "ablauf"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Vorgehen in der Apotheke“",
+      "stand": "2026-09",
+      "geprueft": true,
+      "schritte": [
+        "Erfragen, seit wann die Substanzen gleichzeitig eingenommen werden",
+        "Weitere blutungsfördernde Arzneimittel und Risikofaktoren erfassen, etwa über das HAS-BLED-Raster",
+        "Gezielt nach Blutungszeichen fragen: Zahnfleischbluten, Nasenbluten, Hämatome, schwarzer Stuhl",
+        "Den Patienten darauf hinweisen, auf welche Zeichen er künftig achten soll",
+        "Bei vorhandenen Blutungszeichen den Arzt informieren und Alternativen ansprechen"
+      ]
+    },
+    {
+      "id": "psy-ssri-015",
+      "typ": "mehrfachauswahl",
+      "frage": "Eine Patientin unter Citalopram bittet um ein Schmerzmittel gegen Rückenschmerzen. Welches Vorgehen ist sachgerecht?",
+      "antwort": "Sachgerecht ist, zuerst zu klären, ob überhaupt eine antiphlogistische Wirkung nötig ist. Wird keine gebraucht, ist Paracetamol oder Metamizol die bessere Wahl. Wird eine gebraucht, kommen zunächst topische Zubereitungen in Frage, und bei systemischem Bedarf ein NSAR zusammen mit einem PPI. Nicht sachgerecht ist die kommentarlose Abgabe eines oralen NSAR.",
+      "vertiefung": "Der Fehler in der Praxis ist selten die falsche Substanz, sondern die übersprungene Frage. „Wogegen genau?“ entscheidet zwischen zwei völlig verschiedenen Empfehlungen – und ohne diese Frage landet man beim zwölffach erhöhten Blutungsrisiko.",
+      "tags": [
+        "blutung",
+        "selbstmedikation",
+        "beratung"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folien „GI-Blutungen“ und „Vorgehen in der Apotheke“",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Zuerst klären, ob eine antiphlogistische Wirkung tatsächlich erforderlich ist",
+        "Ist keine antiphlogistische Wirkung nötig: Paracetamol oder Metamizol empfehlen",
+        "Ist eine antiphlogistische Wirkung nötig: zunächst topische Anwendung prüfen",
+        "Ist ein orales NSAR nötig: begleitend einen PPI empfehlen",
+        "Ibuprofen ohne weitere Nachfrage abgeben, da rezeptfrei und gut verträglich"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "psy-ssri-016",
+      "typ": "karte",
+      "frage": "Warum ist „dann eben Paracetamol“ nicht immer die richtige Antwort bei einer SSRI-Patientin mit Schmerzen?",
+      "antwort": "Weil Paracetamol praktisch nicht antiphlogistisch wirkt. Bei einem entzündlichen Geschehen ist es kein Ersatz für ein NSAR, sondern eine Unterversorgung. Die Empfehlung muss deshalb der Indikation folgen: ohne Entzündungskomponente Paracetamol oder Metamizol, mit Entzündungskomponente zunächst topisch, bei echtem systemischem Bedarf ein NSAR mit PPI-Schutz.",
+      "vertiefung": "Eine unbehandelte Schmerzsituation ist kein sicherer Zustand, sondern führt erfahrungsgemäß zur unkontrollierten Selbstmedikation außerhalb der Apotheke. Der PPI ist deshalb oft die bessere Beratung als das Ausweichen auf ein unwirksames Analgetikum.",
+      "tags": [
+        "blutung",
+        "selbstmedikation",
+        "verstaendnis"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Vorgehen in der Apotheke“",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-017",
+      "typ": "zuordnung",
+      "frage": "Ordne die Antidepressiva danach zu, ob sie den Serotonin-Transporter relevant hemmen oder nicht.",
+      "antwort": "Relevante SERT-Hemmung und damit relevantes Blutungsrisiko: Paroxetin, Sertralin, Fluoxetin, Venlafaxin, Duloxetin, Clomipramin. Praktisch keine SERT-Hemmung: Mirtazapin, Bupropion, Agomelatin, Tianeptin.",
+      "vertiefung": "Für die Beratung reicht diese Zweiteilung. Feinere Abstufungen der mittleren Gruppe werden in der Literatur unterschiedlich vorgenommen und sind für die Entscheidung, ob überhaupt ein Alternativvorschlag sinnvoll ist, ohne Belang. Tianeptin ist der Sonderfall: Es verstärkt die Serotoninaufnahme eher, statt sie zu hemmen.",
+      "tags": [
+        "blutung",
+        "wirkstoffe",
+        "alternativen"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026 (Alternativenliste); Zuordnung nach den pharmakologischen Wirkprofilen der Substanzen",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Paroxetin",
+          "starke SERT-Hemmung – relevantes Blutungsrisiko"
+        ],
+        [
+          "Sertralin",
+          "starke SERT-Hemmung – relevantes Blutungsrisiko"
+        ],
+        [
+          "Venlafaxin",
+          "relevante SERT-Hemmung – Blutungsrisiko vorhanden"
+        ],
+        [
+          "Mirtazapin",
+          "keine relevante SERT-Hemmung"
+        ],
+        [
+          "Bupropion",
+          "keine relevante SERT-Hemmung"
+        ],
+        [
+          "Agomelatin",
+          "keine relevante SERT-Hemmung"
+        ]
+      ]
+    },
+    {
+      "id": "psy-ssri-018",
+      "typ": "karte",
+      "frage": "Welche Antidepressiva kommen als Alternative in Frage, wenn das Blutungsrisiko im Vordergrund steht – und was ist dabei zu beachten?",
+      "antwort": "Genannt werden Agomelatin, Tianeptin, Mirtazapin und Bupropion. Alle vier hemmen den Serotonin-Transporter nicht relevant und entleeren den Thrombozytenspeicher daher nicht. Zu beachten ist, dass jede dieser Substanzen ihre eigenen Auflagen mitbringt: Agomelatin erfordert Leberwertkontrollen, Bupropion senkt die Krampfschwelle und hemmt CYP2D6, Mirtazapin sediert und führt zu Gewichtszunahme, und für Tianeptin ist ein Missbrauchs- und Abhängigkeitspotenzial beschrieben.",
+      "vertiefung": "Die Umstellung ist außerdem keine Entscheidung der Apotheke und selten eine schnelle: Ein Wechsel des Antidepressivums bedeutet erneute Eindosierung und ein Rückfallrisiko. Der Vorschlag gehört als Option zum Arzt, nicht als Empfehlung an den Patienten. Tianeptin ist in Deutschland seit November 2012 zugelassen und damit auch hier verordnungsfähig.",
+      "tags": [
+        "blutung",
+        "alternativen",
+        "beratung"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Vorgehen in der Apotheke“; Zulassungsstatus Tianeptin: Markteinführung Tianeurax in Deutschland November 2012",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-019",
+      "typ": "karte",
+      "frage": "Wie wird ein Serotonin-Syndrom diagnostiziert?",
+      "antwort": "Ausschließlich klinisch, es gibt keinen Laborwert. Gebräuchlich sind die Hunter-Kriterien: Einnahme einer serotonergen Substanz plus mindestens eines der folgenden Merkmale – spontaner Klonus; induzierbarer Klonus mit Agitation oder starkem Schwitzen; okulärer Klonus mit Agitation oder starkem Schwitzen; Tremor mit Hyperreflexie; oder Muskelhypertonie mit Temperatur über 38 °C und okulärem beziehungsweise induzierbarem Klonus.",
+      "vertiefung": "Der Klonus ist die Leitfigur dieser Kriterien und an den unteren Extremitäten am deutlichsten. Die Kriterien haben eine Sensitivität von etwa 84 % und eine Spezifität von etwa 97 %. Nicht erfüllte Kriterien schließen ein Serotonin-Syndrom aber nicht aus: Milde Verläufe mit nur wenigen Symptomen werden damit häufig übersehen.",
+      "tags": [
+        "serotonin-syndrom",
+        "diagnostik",
+        "begriffe"
+      ],
+      "quelle": "Dunkley EJC et al., Hunter Serotonin Toxicity Criteria, QJM 2003;96:635–42",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-020",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Symptome gehören zum Bild eines Serotonin-Syndroms?",
+      "antwort": "Alle genannten außer dem Parkinsonoid: Vegetativ Schwitzen, Durchfall, Übelkeit, Pupillenerweiterung; neuromuskulär gesteigerte Reflexe, Tremor, Myoklonie; zentralnervös Akathisie, Bewusstseinsstörungen bis zum Delir. Ein Parkinsonoid mit Rigor und Bradykinese spricht eher für ein malignes neuroleptisches Syndrom.",
+      "vertiefung": "Die drei Symptomgruppen sind der schnellste Merkweg: vegetativ, neuromuskulär, zentralnervös. Das unterscheidende Merkmal gegenüber dem malignen neuroleptischen Syndrom ist die Richtung der Muskelsymptomatik – beim Serotonin-Syndrom Übererregbarkeit mit Klonus und gesteigerten Reflexen, beim malignen neuroleptischen Syndrom Rigor und Hyporeflexie bei deutlich langsamerem Beginn.",
+      "tags": [
+        "serotonin-syndrom",
+        "symptome",
+        "abgrenzung"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Serotonin Syndrom: Symptome“",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Starkes Schwitzen, Durchfall, Übelkeit",
+        "Gesteigerte Reflexe, Tremor, Myoklonie",
+        "Akathisie und motorische Unruhe",
+        "Bewusstseinsstörungen bis zum Delir",
+        "Rigor und Bradykinese im Sinne eines Parkinsonoids"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "psy-ssri-021",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die markierten Strukturen der serotonergen Synapse.",
+      "antwort": "Mitochondrium mit MAO-A, Speichervesikel, Exozytose durch Verschmelzung eines Vesikels mit der präsynaptischen Membran, SERT, synaptischer Spalt, postsynaptischer 5-HT-Rezeptor und blockierter Rezeptor.",
+      "vertiefung": "Jede dieser Strukturen ist ein Angriffspunkt: MAO-A für MAO-Hemmer einschließlich Linezolid und Methylenblau, das Vesikel für Amphetamine und MDMA, der SERT für SSRI, SNRI, Trizyklika, Tramadol und Johanniskraut, der Rezeptor für Triptane und Buspiron.",
+      "tags": [
+        "serotonin-syndrom",
+        "mechanismus",
+        "zeichnung"
+      ],
+      "quelle": "eigene Darstellung",
+      "stand": "2026-09",
+      "geprueft": true,
+      "referenz": "bilder/ssri-synapse-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 22.3,
+          "y": 19.3,
+          "name": "Mitochondrium mit MAO-A – Abbau des Serotonins"
+        },
+        {
+          "nr": 2,
+          "x": 36.6,
+          "y": 31.0,
+          "name": "Speichervesikel mit Serotonin"
+        },
+        {
+          "nr": 3,
+          "x": 57.0,
+          "y": 41.7,
+          "name": "Exozytose: Vesikel verschmilzt mit der präsynaptischen Membran"
+        },
+        {
+          "nr": 4,
+          "x": 24.1,
+          "y": 44.0,
+          "name": "SERT – Wiederaufnahme in die Präsynapse"
+        },
+        {
+          "nr": 5,
+          "x": 47.7,
+          "y": 48.6,
+          "name": "synaptischer Spalt mit freiem Serotonin"
+        },
+        {
+          "nr": 6,
+          "x": 60.2,
+          "y": 58.6,
+          "name": "postsynaptischer 5-HT-Rezeptor"
+        },
+        {
+          "nr": 7,
+          "x": 75.0,
+          "y": 58.6,
+          "name": "blockierter Rezeptor – Signal bleibt aus"
+        }
+      ]
+    },
+    {
+      "id": "psy-ssri-022",
+      "typ": "zuordnung",
+      "frage": "Ordne den Substanzen zu, worüber sie die serotonerge Aktivität erhöhen.",
+      "antwort": "Tranylcypromin und Linezolid hemmen den Abbau über die MAO. SSRI und Venlafaxin hemmen die Wiederaufnahme über den SERT. MDMA steigert die Freisetzung. Triptane und Buspiron aktivieren den Rezeptor direkt. L-Tryptophan liefert die Vorstufe.",
+      "vertiefung": "Zwei Substanzen mit unterschiedlichem Angriffspunkt sind gefährlicher als zwei mit demselben, weil sich die Wege multiplizieren statt nur zu addieren. Deshalb ist die Kombination aus MAO-Hemmer und SSRI die mit Abstand kritischste: Der Nachschub wird erhöht und der Abbau gleichzeitig blockiert.",
+      "tags": [
+        "serotonin-syndrom",
+        "mechanismus",
+        "wirkstoffe"
+      ],
+      "quelle": "eigene Zusammenstellung nach den Wirkmechanismen; Risikostratifizierung nach Hahn, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Tranylcypromin",
+          "hemmt den Abbau (MAO)"
+        ],
+        [
+          "Linezolid",
+          "hemmt den Abbau (MAO)"
+        ],
+        [
+          "Sertralin",
+          "hemmt die Wiederaufnahme (SERT)"
+        ],
+        [
+          "Venlafaxin",
+          "hemmt die Wiederaufnahme (SERT)"
+        ],
+        [
+          "MDMA",
+          "steigert die Freisetzung"
+        ],
+        [
+          "Triptane",
+          "aktivieren den Rezeptor direkt"
+        ],
+        [
+          "L-Tryptophan",
+          "liefert die Vorstufe"
+        ]
+      ]
+    },
+    {
+      "id": "psy-ssri-023",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Substanzen wirken als „versteckte MAO-Hemmer“ und sind mit serotonergen Antidepressiva besonders kritisch?",
+      "antwort": "Linezolid und Methylenblau. Beides sind potente MAO-Hemmer, die nicht als Psychopharmaka geführt werden und deshalb in der Medikationsanalyse leicht übersehen werden. Selegilin verliert seine MAO-B-Selektivität bei höherer Dosierung, insbesondere transdermal. Moclobemid ist ein bekannter MAO-A-Hemmer, also nicht versteckt, aber ebenso kritisch.",
+      "vertiefung": "Beide Substanzen tauchen typischerweise perioperativ oder in der Infektiologie auf – Methylenblau als Farbstoff in der Chirurgie, Linezolid bei resistenten grampositiven Infektionen. Genau deshalb sind es die Fälle, die in der Klinik auffallen und in der Interaktionsprüfung durchrutschen.",
+      "tags": [
+        "serotonin-syndrom",
+        "wirkstoffe",
+        "typischer-fehler"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "Linezolid",
+        "Methylenblau (Methylthioniniumchlorid)",
+        "Selegilin in höherer oder transdermaler Dosierung",
+        "Moclobemid",
+        "Metamizol"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "psy-ssri-024",
+      "typ": "zuordnung",
+      "frage": "Ordne die Opioide danach zu, wie hoch ihr Risiko für ein Serotonin-Syndrom in Kombination mit einem serotonergen Antidepressivum ist.",
+      "antwort": "Hohes Risiko: Tramadol, Pethidin, Dextromethorphan. Mittleres Risiko: Fentanyl, Tapentadol, Methadon. Geringes Risiko: Morphin, Codein, Oxycodon, Hydromorphon, Buprenorphin.",
+      "vertiefung": "Die Trennlinie verläuft nicht entlang der Opioidpotenz, sondern entlang der zusätzlichen monoaminergen Wirkung. Die Substanzen der Hochrisikogruppe hemmen selbst die Serotonin-Wiederaufnahme. Für die komorbide Schmerztherapie unter einem SSRI heißt das: Die klassischen reinen µ-Agonisten sind hier die unproblematischeren.",
+      "tags": [
+        "serotonin-syndrom",
+        "wirkstoffe",
+        "schmerztherapie"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folien zur Risikostratifizierung",
+      "stand": "2026-09",
+      "geprueft": true,
+      "paare": [
+        [
+          "Tramadol",
+          "hohes Risiko"
+        ],
+        [
+          "Pethidin",
+          "hohes Risiko"
+        ],
+        [
+          "Dextromethorphan",
+          "hohes Risiko"
+        ],
+        [
+          "Fentanyl",
+          "mittleres Risiko"
+        ],
+        [
+          "Tapentadol",
+          "mittleres Risiko"
+        ],
+        [
+          "Morphin",
+          "geringes Risiko"
+        ],
+        [
+          "Oxycodon",
+          "geringes Risiko"
+        ]
+      ]
+    },
+    {
+      "id": "psy-ssri-025",
+      "typ": "vergleich",
+      "frage": "Beide Patientinnen erhalten seit drei Tagen zusätzlich ein Opioid. Bei welcher Kombination ist das Risiko für ein Serotonin-Syndrom höher?",
+      "antwort": "Fall A. Tramadol hemmt neben seiner Opioidwirkung selbst die Wiederaufnahme von Serotonin und Noradrenalin und addiert sich damit direkt zur Wirkung des Sertralins. Morphin ist ein reiner µ-Agonist ohne relevante serotonerge Eigenwirkung und gilt in dieser Kombination als risikoarm.",
+      "vertiefung": "Die Konstellation ist häufiger als sie sein müsste, weil Tramadol als „schwaches“ Opioid gilt und niedrigschwellig verordnet wird. Für Patienten unter einem serotonergen Antidepressivum ist gerade das schwächere Opioid hier das problematischere – ein Punkt, der sich gut gegenüber dem Arzt vertreten lässt.",
+      "tags": [
+        "serotonin-syndrom",
+        "schmerztherapie",
+        "fallbeispiel"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folien zur Risikostratifizierung",
+      "stand": "2026-09",
+      "geprueft": true,
+      "seiten": [
+        {
+          "titel": "Fall A",
+          "bild": "bilder/ssri-fall-a.svg",
+          "beschreibung": "Sertralin 50 mg seit acht Monaten, seit drei Tagen zusätzlich Tramadol retard 100 mg."
+        },
+        {
+          "titel": "Fall B",
+          "bild": "bilder/ssri-fall-b.svg",
+          "beschreibung": "Sertralin 50 mg seit acht Monaten, seit drei Tagen zusätzlich Morphin retard 10 mg."
+        }
+      ],
+      "richtig": 0
+    },
+    {
+      "id": "psy-ssri-026",
+      "typ": "karte",
+      "frage": "Warum ist Tramadol zusammen mit einem SSRI gleich in zweifacher Hinsicht ungünstig?",
+      "antwort": "Erstens pharmakodynamisch: Die Muttersubstanz hemmt selbst die Wiederaufnahme von Serotonin und Noradrenalin und addiert sich zum SSRI. Zweitens pharmakokinetisch: Die analgetische Wirkung stammt überwiegend vom Metaboliten O-Desmethyltramadol, der über CYP2D6 entsteht. Starke CYP2D6-Hemmer wie Paroxetin, Fluoxetin und Bupropion verschieben das Verhältnis – weniger Analgesie durch fehlenden Metaboliten, gleichzeitig höhere Spiegel der serotonerg wirksamen Muttersubstanz.",
+      "vertiefung": "Das Ergebnis ist die ungünstigste denkbare Kombination: schlechtere Schmerzwirkung bei höherem Risiko. Typischerweise führt das zur Dosissteigerung, die das Missverhältnis weiter verschärft. Wer nur auf die serotonerge Seite schaut, übersieht die Hälfte des Problems.",
+      "tags": [
+        "serotonin-syndrom",
+        "pharmakokinetik",
+        "schmerztherapie"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026 (Folienhinweis auf CYP2D6-Hemmer und Tramadol-Akkumulation)",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "psy-ssri-027",
+      "typ": "mehrfachauswahl",
+      "frage": "Für welche Kombinationen ist das Risiko eines Serotonin-Syndroms nach heutiger Datenlage geringer als es die verbreiteten Warnungen nahelegen?",
+      "antwort": "SSRI mit Triptanen und SSRI mit Ondansetron. Für beide existieren Warnungen, das tatsächliche Risiko erscheint jedoch gering und die mechanistische Plausibilität wird bezweifelt: Triptane haben eine geringe 5-HT1A-Affinität, und der 5-HT3-Rezeptor ist an der Pathophysiologie nicht beteiligt. Kritisch bleiben dagegen MAO-Hemmer und Tramadol.",
+      "vertiefung": "Solche überschätzten Warnungen kosten Beratungszeit und führen dazu, dass wirksame Migränetherapie oder Antiemese unnötig vorenthalten wird. Sie zu kennen ist genauso Teil der Interaktionskompetenz wie die kritischen Kombinationen – nur dass hier die Aufgabe im Entwarnen mit Begründung besteht.",
+      "tags": [
+        "serotonin-syndrom",
+        "evidenz",
+        "einordnung"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie zur Risikostratifizierung (dort als „Low, controversial“ eingeordnet)",
+      "stand": "2026-09",
+      "geprueft": true,
+      "optionen": [
+        "SSRI mit einem Triptan",
+        "SSRI mit Ondansetron",
+        "SSRI mit einem MAO-Hemmer",
+        "SSRI mit Tramadol"
+      ],
+      "richtig": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "psy-ssri-028",
+      "typ": "reihenfolge",
+      "frage": "Ein Patient nimmt seit vier Tagen zu seinem Escitalopram zusätzlich ein zweites serotonerg wirksames Arzneimittel ein. Bringe das Vorgehen in der Apotheke in eine sinnvolle Reihenfolge.",
+      "antwort": "Zuerst klären, über welchen Mechanismus die zweite Substanz wirkt, dann auf pharmakokinetische Interaktionen prüfen, den Zeitraum der gleichzeitigen Einnahme erfragen, nach Anzeichen fragen und je nach Befund den Arzt informieren oder den Patienten aufklären.",
+      "vertiefung": "Die ersten beiden Schritte gehören zusammen und werden oft übersprungen. Erst der Mechanismus sagt, ob sich die Wirkungen addieren oder multiplizieren, und erst die kinetische Prüfung zeigt, ob eine Akkumulation droht – beides entscheidet, wie dringlich der Fall ist.",
+      "tags": [
+        "serotonin-syndrom",
+        "beratung",
+        "ablauf"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie „Vorgehen in der Apotheke“",
+      "stand": "2026-09",
+      "geprueft": true,
+      "schritte": [
+        "Mechanismus der zweiten Substanz bestimmen: gleiche oder unterschiedliche Art der Serotoninerhöhung",
+        "Auf pharmakokinetische Interaktionen prüfen, insbesondere auf Akkumulationsrisiko über CYP",
+        "Erfragen, seit wann beide Substanzen gleichzeitig eingenommen werden",
+        "Nach Anzeichen fragen: starkes Schwitzen, Tremor, Unruhe",
+        "Bei vorhandenen Anzeichen den Arzt informieren",
+        "Ohne Anzeichen den Patienten über die Symptome informieren, auf die er achten soll"
+      ]
+    },
+    {
+      "id": "psy-ssri-029",
+      "typ": "freitext",
+      "frage": "Erkläre am Beispiel der SSRI den Unterschied zwischen einer pharmakodynamischen und einer pharmakokinetischen Interaktion – und warum die Unterscheidung für die Beratung praktisch relevant ist.",
+      "antwort": "Pharmakodynamisch bedeutet, dass zwei Substanzen an derselben Endstrecke wirken, ohne sich in Aufnahme, Verteilung oder Abbau zu beeinflussen: SSRI und ASS treffen beide die Thrombozytenfunktion, SSRI und Tramadol erhöhen beide die serotonerge Aktivität. Die Spiegel bleiben unverändert, die Wirkung addiert sich. Pharmakokinetisch bedeutet, dass eine Substanz die Konzentration der anderen verändert, meist über CYP-Enzyme: Fluoxetin und Paroxetin hemmen CYP2D6 und erhöhen damit die Spiegel von CYP2D6-Substraten. Praktisch relevant ist die Unterscheidung, weil sie verschiedene Maßnahmen nach sich zieht – bei pharmakodynamischen Interaktionen hilft nur Meiden, Überwachen oder ein Schutz der Endstrecke wie der PPI; bei pharmakokinetischen Interaktionen kommt eine Dosisanpassung oder der Wechsel auf eine Substanz ohne die betreffende Enzymhemmung in Betracht. Gefährlich wird es, wenn beides zusammentrifft, etwa bei Paroxetin und Tramadol.",
+      "vertiefung": "Die Zeitachse unterscheidet sich ebenfalls: Pharmakodynamische Effekte treten mit der Wirkung ein, pharmakokinetische erst mit dem Erreichen des neuen Fließgleichgewichts, also über Tage. Wer bei einem neu angesetzten Arzneimittel nach einer Woche nachfragt, erfasst beide.",
+      "tags": [
+        "interaktionen",
+        "systematik",
+        "verstaendnis"
+      ],
+      "quelle": "eigene Zusammenstellung nach Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+      "stand": "2026-09",
+      "geprueft": true,
+      "pruefpunkte": [
+        "Pharmakodynamisch: gleiche Endstrecke, Spiegel unverändert",
+        "Beispiel für pharmakodynamisch genannt, etwa SSRI mit ASS oder SSRI mit Tramadol",
+        "Pharmakokinetisch: eine Substanz verändert die Konzentration der anderen, meist über CYP",
+        "Beispiel für pharmakokinetisch genannt, etwa CYP2D6-Hemmung durch Fluoxetin oder Paroxetin",
+        "Unterschiedliche Konsequenz: Meiden oder Schutz der Endstrecke gegenüber Dosisanpassung oder Substanzwechsel",
+        "Hinweis, dass beides zusammen auftreten kann"
+      ]
+    },
+    {
+      "id": "psy-ssri-030",
+      "typ": "karte",
+      "frage": "Welche Abstände sind beim Wechsel zwischen einem serotonergen Antidepressivum und einem MAO-Hemmer einzuhalten?",
+      "antwort": "In der Regel mindestens zwei Wochen. Für Fluoxetin gelten wegen der langen Halbwertszeit seines aktiven Metaboliten Norfluoxetin etwa fünf Wochen. Die Kombination selbst ist kontraindiziert und gilt als die Konstellation mit den schwersten und tödlichen Verläufen.",
+      "vertiefung": "Die lange Frist bei Fluoxetin ist der Klassiker im Medikationsgespräch, weil der Patient das Präparat längst abgesetzt hat und es weder auf dem Plan noch im Kopf ist. Dieselbe Überlegung gilt für Linezolid: Auch dort ist der Abstand einzuhalten, obwohl es niemand als Psychopharmakon führt.",
+      "tags": [
+        "serotonin-syndrom",
+        "wirkstoffe",
+        "kontraindikation"
+      ],
+      "quelle": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026, Folie zur Risikostratifizierung („strict washouts ≥2 wk, fluoxetine 5 wk“)",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}

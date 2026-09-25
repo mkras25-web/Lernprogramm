@@ -9,12 +9,12 @@
 // versehene localStorage-Schluessel fuer Einstellungen und die
 // angefangene Sitzung.
 //
-// Fuer spaeteres geraeteuebergreifendes Arbeiten (z. B. iPhone und
-// Android) bekommt jedes Profil eine stabile Id, die mit exportiert
-// wird (siehe speicher.js exportieren()) - eine kuenftige Cloud-
-// Synchronisation koennte darauf aufsetzen, ohne dieses Datenmodell
-// nochmal aendern zu muessen. Bis dahin ist Export/Import je Profil
-// der Weg, Fortschritt auf ein zweites Geraet zu bringen.
+// Fuer das geraeteuebergreifende Arbeiten (z. B. PC und iPhone) hat
+// jedes Profil eine stabile Id, die mit exportiert wird (siehe
+// speicher.js exportieren()). Wird eine Sicherung auf einem zweiten
+// Geraet als Profil angelegt, uebernimmt es diese Id - so erkennen sich
+// beide Geraete als dasselbe Profil (Import: siehe ProfilGate, Abgleich
+// ueber Dropbox: siehe abgleich.js).
 
 import {
   datenbankFuerProfilSetzen,
@@ -22,6 +22,7 @@ import {
   altbestandPruefen,
   altbestandUebernehmen,
 } from './speicher.js'
+import { erzeugeId } from './id.js'
 import { ALTER_SCHLUESSEL as ALTE_EINSTELLUNGEN_SCHLUESSEL } from './einstellungen.js'
 import { ALTER_SITZUNG_SCHLUESSEL } from '../hooks/useLernsitzung.js'
 
@@ -50,9 +51,12 @@ export function aktivesProfilSetzen(id) {
   localStorage.setItem(AKTIV_SCHLUESSEL, id)
 }
 
-export function profilErstellen(name) {
+// id nur angeben, wenn ein Profil auf einem zweiten Geraet als dasselbe
+// Profil weiterlaufen soll (Import einer Sicherung, Abgleich ueber
+// Dropbox): die Profil-Id ist die geraeteuebergreifende Identitaet.
+export function profilErstellen(name, id = erzeugeId()) {
   const profil = {
-    id: crypto.randomUUID(),
+    id,
     name: name.trim() || 'Ohne Namen',
     erstelltAm: Date.now(),
     letzterZugriff: Date.now(),
@@ -71,6 +75,18 @@ export function profilUmbenennen(id, name) {
   schreiben(liste)
 }
 
+// farbe = null/undefined heisst: automatisch aus der Profil-Id ableiten
+// (siehe avatarFarbe() in ProfilWahl.jsx) - so bleibt "zuruecksetzen"
+// einfach ein Loeschen des Felds statt eines Sonderfalls.
+export function profilFarbeSetzen(id, farbe) {
+  const liste = profilListe()
+  const eintrag = liste.find((p) => p.id === id)
+  if (!eintrag) return
+  if (farbe) eintrag.farbe = farbe
+  else delete eintrag.farbe
+  schreiben(liste)
+}
+
 export function profilZuletztAktiv(id) {
   const liste = profilListe()
   const eintrag = liste.find((p) => p.id === id)
@@ -86,6 +102,7 @@ export async function profilLoeschen(id) {
   schreiben(liste)
   localStorage.removeItem(`einstellungen_${id}`)
   localStorage.removeItem(`offeneSitzung_${id}`)
+  localStorage.removeItem(`geloescht_${id}`)
   if (aktivesProfilId() === id) localStorage.removeItem(AKTIV_SCHLUESSEL)
   await datenbankLoeschen(id)
 }

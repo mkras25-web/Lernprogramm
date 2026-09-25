@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import './skizze.css'
+import LokalBild from './LokalBild.jsx'
 
 // Zeichenfeld als Alternative zum Papier. Die Striche werden als
 // Punktfolgen gehalten, nicht als Pixel - dadurch bleibt Rueckgaengig
@@ -125,7 +126,7 @@ export default function Skizzenfeld({ referenz, aufgedeckt, bildRef }) {
           onPointerLeave={beenden}
         />
         {ueberlagert && referenz && (
-          <img className="ueberlagerung" src={referenz} alt="" aria-hidden="true" />
+          <LokalBild className="ueberlagerung" src={referenz} alt="" aria-hidden="true" platzhalter={false} />
         )}
         {leer && !aufgedeckt && (
           <p className="blattHinweis">Hier zeichnen – oder auf Papier, wie du willst.</p>

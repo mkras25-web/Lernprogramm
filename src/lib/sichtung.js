@@ -2,14 +2,16 @@
 // Lernfortschritt. Gespeichert wird sie in der Marke des Items, damit
 // sie zusammen mit Lesezeichen und Notizen exportiert wird.
 
+// ︎ erzwingt die einfache Text-/Linien-Darstellung dieser Symbole
+// (siehe App.jsx NAVIGATION fuer den Hintergrund).
 export const KATEGORIEN = [
-  { id: 'relevant', name: 'Relevant', symbol: '●', lernbar: true },
-  { id: 'spaeter', name: 'Später', symbol: '◔', lernbar: false },
-  { id: 'ueberarbeiten', name: 'Überarbeiten', symbol: '✎', lernbar: false },
-  { id: 'streichen', name: 'Streichen', symbol: '✕', lernbar: false },
+  { id: 'relevant', name: 'Relevant', symbol: '●︎', lernbar: true },
+  { id: 'spaeter', name: 'Später', symbol: '◔︎', lernbar: false },
+  { id: 'ueberarbeiten', name: 'Überarbeiten', symbol: '✎︎', lernbar: false },
+  { id: 'streichen', name: 'Streichen', symbol: '✕︎', lernbar: false },
 ]
 
-export const UNGESICHTET = { id: 'ungesichtet', name: 'Ungesichtet', symbol: '○', lernbar: true }
+export const UNGESICHTET = { id: 'ungesichtet', name: 'Ungesichtet', symbol: '○︎', lernbar: true }
 
 export function kategorieAus(marke) {
   return KATEGORIEN.find((k) => k.id === marke?.kategorie) ?? UNGESICHTET

@@ -1,13 +1,16 @@
 // Bauwerke, Bauabschnitte und Levelkurve.
 //
-// Der Fortschritt wird als Bauablauf erzaehlt. Ein Bauwerk umfasst
-// fuenfzig Stufen: zehn Abschnitte zu je fuenf. Ist es fertig, beginnt
-// das naechste, groessere Bauwerk wieder bei der Baugrube - erkennbar
-// an Silhouette, Untergrund, Rahmen und der Werkmarke in der Ecke.
+// Der Fortschritt wird als Bauablauf erzaehlt (Architektur) bzw. als
+// Ansatz im Kolben (Pharmazie) - welche Erzaehlung, entscheidet die
+// "Gestaltung" des aktiven Pakets (siehe STILE weiter unten). Ein
+// Bauwerk/Werk umfasst fuenfzig Stufen: zehn Abschnitte zu je fuenf.
+// Ist es fertig, beginnt das naechste, groessere Werk wieder von vorn -
+// erkennbar an Silhouette, Untergrund, Rahmen und der Werkmarke in der
+// Ecke.
 //
-// Weitere Bauwerke lassen sich anhaengen, ohne die Logik anzufassen:
-// eine Zeile in WERKE, eine Teileliste in Bauabschnitt.jsx. Geplant
-// sind Museum, Hochhaus und Turm - das traegt bis weit ueber Stufe 200.
+// Weitere Werke lassen sich anhaengen, ohne die Logik anzufassen: eine
+// Zeile in WERKE_ARCH, eine Teileliste in Bauabschnitt.jsx. Geplant sind
+// Museum, Hochhaus und Turm - das traegt bis weit ueber Stufe 200.
 
 export const STUFEN_JE_ABSCHNITT = 5
 export const ABSCHNITTE_JE_WERK = 10
@@ -48,7 +51,15 @@ export function levelAus(xp) {
 }
 
 // ---------------------------------------------------------- Abschnitte
-export const ABSCHNITTE = [
+//
+// Die Erzaehlung (Abschnitts- und Bauwerknamen, Saetze) haengt an der
+// "Gestaltung" des aktiven Inhaltspakets (paket.json-Feld "gestaltung",
+// z. B. "arch" oder "pharma") - nicht an fest verdrahtetem Text. Neue
+// Pakete mit eigener Fachrichtung bekommen so ihre eigene Zeichnung und
+// Sprache, ohne dass hier oder in Bauabschnitt.jsx Architektur-Vokabular
+// haengen bleibt. Fehlt/unbekannt die Gestaltung, gilt "arch" (bisheriges
+// Verhalten, siehe auch STILE weiter unten).
+export const ABSCHNITTE_ARCH = [
   { nr: 1,  name: 'Baugrube',      satz: 'Das Gelände ist abgesteckt, der Aushub beginnt.' },
   { nr: 2,  name: 'Gründung',      satz: 'Sauberkeitsschicht, Fundamente, Bodenplatte.' },
   { nr: 3,  name: 'Rohbau',        satz: 'Die Wände des Erdgeschosses wachsen.' },
@@ -63,8 +74,11 @@ export const ABSCHNITTE = [
 
 // Je Bauwerk eine eigene Reihe aus Rahmen, Untergrund und Akzent. So
 // unterscheidet sich Stufe 51 auf den ersten Blick von Stufe 1, obwohl
-// beide "Baugrube" heissen.
-export const WERKE = [
+// beide "Baugrube" heissen. Rahmen- und Grund-Namen sind bewusst
+// allgemeine Zeichentechnik-Konventionen (Skizze, Blaupause, Siegel...),
+// keine Architektur-Fachbegriffe - andere Gestaltungen koennen dieselbe
+// Reihe mitbenutzen, siehe WERKE_PHARMA.
+export const WERKE_ARCH = [
   {
     nr: 1,
     name: 'Wohnhaus',
@@ -101,11 +115,47 @@ export const WERKE = [
   },
 ]
 
+// Pharmazie: ein Ansatz im Kolben statt eines Gebaeudes - bewusst nur
+// ein "Werk" (siehe Bauabschnitt.jsx, dort als berechnete Fuellung
+// statt als 50 einzelne Zeichenteile umgesetzt, also deutlich einfacher
+// als die Architektur-Bauwerke). Reihe bewusst von WERKE_ARCH[0]
+// uebernommen statt verdoppelt - Rahmen/Grund sind fachneutral.
+export const ABSCHNITTE_PHARMA = [
+  { nr: 1,  name: 'Ansatz',       satz: 'Der erste Tropfen fällt ins Glas.' },
+  { nr: 2,  name: 'Lösung',       satz: 'Der Ansatz beginnt sich zu klären.' },
+  { nr: 3,  name: 'Erwärmung',    satz: 'Erste Bläschen steigen auf.' },
+  { nr: 4,  name: 'Reaktion',     satz: 'Die Färbung setzt ein.' },
+  { nr: 5,  name: 'Sieden',       satz: 'Es blubbert gleichmäßig.' },
+  { nr: 6,  name: 'Abkühlung',    satz: 'Der Kolben beruhigt sich.' },
+  { nr: 7,  name: 'Filtration',   satz: 'Die Lösung wird klar.' },
+  { nr: 8,  name: 'Abfüllung',    satz: 'Etikett und Verschluss kommen dazu.' },
+  { nr: 9,  name: 'Prüfung',      satz: 'Kontrolle vor der Freigabe.' },
+  { nr: 10, name: 'Charge fertig', satz: 'Bereit für die nächste Charge.' },
+]
+
+export const WERKE_PHARMA = [
+  { nr: 1, name: 'Apotheke', marke: 'I', reihe: WERKE_ARCH[0].reihe },
+]
+
+// Registrierung je Gestaltung. Neue Fachrichtung: eine ABSCHNITTE_*- und
+// WERKE_*-Liste hier eintragen, dazu eine Teilezeichnung in
+// Bauabschnitt.jsx - der Rest (Levelkurve, Fortschrittsrechnung) bleibt
+// unveraendert, weil er nur mit Zahlen rechnet.
+const STILE = {
+  arch: { abschnitte: ABSCHNITTE_ARCH, werke: WERKE_ARCH },
+  pharma: { abschnitte: ABSCHNITTE_PHARMA, werke: WERKE_PHARMA },
+}
+
+function stilFuer(gestaltung) {
+  return STILE[gestaltung] ?? STILE.arch
+}
+
 // Alles, was die Zeichnung braucht, aus einer Stufe abgeleitet.
-export function bauwerkFuer(stufe) {
+export function bauwerkFuer(stufe, gestaltung = 'arch') {
+  const { abschnitte, werke } = stilFuer(gestaltung)
   const s = Math.max(1, Math.round(stufe))
-  const werkIndex = Math.min(Math.floor((s - 1) / STUFEN_JE_WERK), WERKE.length - 1)
-  const werk = WERKE[werkIndex]
+  const werkIndex = Math.min(Math.floor((s - 1) / STUFEN_JE_WERK), werke.length - 1)
+  const werk = werke[werkIndex]
   // Ueber das letzte gebaute Bauwerk hinaus laeuft die Zaehlung weiter,
   // die Zeichnung bleibt beim letzten Stand stehen.
   const imWerk = Math.min(s - werkIndex * STUFEN_JE_WERK, STUFEN_JE_WERK)
@@ -120,20 +170,21 @@ export function bauwerkFuer(stufe) {
     werk,
     werkNr: werkIndex + 1,
     imWerk,
-    abschnitt: ABSCHNITTE[abschnittIndex],
+    abschnitt: abschnitte[abschnittIndex],
     imAbschnitt,
     ...werk.reihe[abschnittIndex],
   }
 }
 
-export function abschnittFuer(stufe) {
-  return bauwerkFuer(stufe).abschnitt
+export function abschnittFuer(stufe, gestaltung = 'arch') {
+  return bauwerkFuer(stufe, gestaltung).abschnitt
 }
 
-export function naechsterAbschnitt(stufe) {
-  const b = bauwerkFuer(stufe)
+export function naechsterAbschnitt(stufe, gestaltung = 'arch') {
+  const { abschnitte } = stilFuer(gestaltung)
+  const b = bauwerkFuer(stufe, gestaltung)
   const rest = STUFEN_JE_ABSCHNITT - b.imAbschnitt
-  return { abschnitt: ABSCHNITTE[(b.abschnitt.nr % ABSCHNITTE_JE_WERK)], inStufen: rest + 1 }
+  return { abschnitt: abschnitte[(b.abschnitt.nr % ABSCHNITTE_JE_WERK)], inStufen: rest + 1 }
 }
 
 // ------------------------------------------------------- Themen und Module
@@ -147,10 +198,10 @@ export function stufeAusAnteil(anteil) {
   return Math.max(1, Math.round(a * STUFEN_JE_WERK))
 }
 
-export function reifegradFuer(anteil) {
+export function reifegradFuer(anteil, gestaltung = 'arch') {
   const stufe = stufeAusAnteil(anteil)
   if (stufe === 0) return { stufe: 0, name: 'unberührt', satz: 'Noch nichts angefangen.' }
-  const b = bauwerkFuer(stufe)
+  const b = bauwerkFuer(stufe, gestaltung)
   return { stufe, name: b.abschnitt.name, satz: b.abschnitt.satz }
 }
 

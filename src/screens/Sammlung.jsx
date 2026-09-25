@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {
   MEILENSTEIN_GRUPPEN,
+  MEILENSTEIN_STUFEN,
   MEILENSTEIN_SYMBOLE,
   xpFuerMeilenstein,
 } from '../lib/fortschritt.js'
@@ -8,6 +9,20 @@ import Ring from '../components/Ring.jsx'
 
 const RANGKLASSEN = { Entwurf: 'entwurf', 'Ausführung': 'ausfuehrung', Meisterschaft: 'meisterschaft' }
 const rangKlasse = (rang) => RANGKLASSEN[rang] ?? 'entwurf'
+
+// Sieben Materialstufen statt nur erreicht/nicht erreicht - siehe
+// MEILENSTEIN_STUFEN in fortschritt.js fuer die Ziel-Vervielfachung.
+function stempelTooltip(m) {
+  if (m.maxStufe) {
+    return `${m.titel} · Diamant, höchste Stufe erreicht · ${xpFuerMeilenstein(m)} XP gesamt`
+  }
+  if (m.frei) {
+    const aktuell = MEILENSTEIN_STUFEN[m.stufe - 1].name
+    const naechste = MEILENSTEIN_STUFEN[m.stufe].name
+    return `${m.titel} · ${aktuell} erreicht · ${m.stand} von ${m.ziel} für ${naechste}`
+  }
+  return `${m.titel} · ${m.stand} von ${m.ziel} für Bronze`
+}
 
 // Detailkarten sind kein Zufallsfund, sondern Beleg fuer Beherrschung.
 // Deshalb zeigt auch die verschlossene Karte, wie weit es noch ist.
@@ -73,6 +88,13 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
 
       <section className="block">
         <h2 className="abschnitt">Detailkarten</h2>
+        <p className="zeileHinweis">
+          Entsteht automatisch für jedes Thema, sobald mindestens 80 % seiner Items
+          „sicher" oder besser sitzen (siehe Beherrschungsgrade im Fortschritt) - kein
+          Zufallsfund, sondern Beleg für gelerntes Wissen. Ab 95 % wird die Karte zu
+          „Ausführung", sobald 80 % der Items sogar „gemeistert" sind zu „Meisterschaft".
+          Die verschlossene Karte zeigt schon den aktuellen Anteil.
+        </p>
         <ul className="kartengitter">
           {karten.map((k) => (
             <li key={k.id}>
@@ -127,20 +149,31 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
           {gefiltert.map((m) => (
             <li key={m.id}>
               <div
-                className={`stempel g-${m.gruppe} ${m.frei ? 'frei' : 'offen'}`}
-                title={m.frei ? `${m.titel} · ${xpFuerMeilenstein(m)} XP` : `${m.stand} von ${m.ziel}`}
+                className={`stempel g-${m.gruppe} ${m.frei ? `frei stufe-${m.stufe}` : 'offen'}`}
+                title={stempelTooltip(m)}
               >
                 <span className="stempelRand" aria-hidden="true" />
                 <span className="stempelZeichen" aria-hidden="true">
-                  {MEILENSTEIN_SYMBOLE[m.gruppe] ?? '★'}
+                  {MEILENSTEIN_SYMBOLE[m.gruppe] ?? '★︎'}
                 </span>
                 <span className="stempelTitel">{m.titel}</span>
-                <span className="stempelFuss">
-                  {m.frei
-                    ? `${MEILENSTEIN_GRUPPEN[m.gruppe]} · ${xpFuerMeilenstein(m)} XP`
-                    : `${m.stand} von ${m.ziel}`}
+                {m.frei && (
+                  <span className="stempelMaterial">{MEILENSTEIN_STUFEN[m.stufe - 1].name}</span>
+                )}
+                <span className="stempelStufen" aria-hidden="true">
+                  {MEILENSTEIN_STUFEN.map((s) => (
+                    <span
+                      key={s.stufe}
+                      className={s.stufe <= m.stufe ? 'stufePip erreicht' : 'stufePip'}
+                    />
+                  ))}
                 </span>
-                {!m.frei && (
+                <span className="stempelFuss">
+                  {m.maxStufe
+                    ? `${MEILENSTEIN_GRUPPEN[m.gruppe]} · ${xpFuerMeilenstein(m)} XP`
+                    : `${m.stand} von ${m.ziel} für ${MEILENSTEIN_STUFEN[m.stufe].name}`}
+                </span>
+                {!m.maxStufe && (
                   <span className="stempelBalken" aria-hidden="true">
                     <span style={{ width: `${Math.round(m.anteil * 100)}%` }} />
                   </span>

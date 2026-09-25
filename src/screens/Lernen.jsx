@@ -4,6 +4,7 @@ import Bildlupe from '../components/Bildlupe.jsx'
 import Normen from '../components/Normen.jsx'
 import Bildpunkte from '../components/Bildpunkte.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
+import LokalBild from '../components/LokalBild.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { BEWERTUNG } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
@@ -25,6 +26,7 @@ function mischen(laenge, seed) {
 export default function Lernen({
   item,
   level,
+  gestaltung = 'arch',
   art,
   position,
   gesamt,
@@ -181,6 +183,11 @@ export default function Lernen({
   const BILDAUFGABEN = ['bildbeschriftung', 'fehlersuche']
   const istBildaufgabe = BILDAUFGABEN.includes(item.typ)
   const namen = istBildaufgabe && item.punkte ? item.punkte.map((p) => p.name) : []
+  // Gemischt wie die anderen Auswahllisten (mehrfachauswahl, zuordnung) -
+  // sonst liesse sich die feste Reihenfolge auswendig lernen. Einmal hier
+  // berechnet, damit Bildpunkte (im Bild) und BildListe (Liste daneben)
+  // dieselbe Reihenfolge zeigen.
+  const namenReihenfolge = item.typ === 'bildbeschriftung' ? mischen(namen.length, seed + 11) : []
   const kategorie = kategorieAus(marke)
 
   return (
@@ -194,7 +201,7 @@ export default function Lernen({
         </div>
         {level && (
           <span className="lernkopfBau" title={`Stufe ${level.stufe}`}>
-            <Bauabschnitt stufe={level.stufe} groesse={30} titel={false} marke={false} />
+            <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={30} titel={false} marke={false} />
           </span>
         )}
         <span className="pensumZahl">
@@ -246,6 +253,7 @@ export default function Lernen({
               setWert={setEingabe}
               gesperrt={aufgedeckt}
               namen={namen}
+              reihenfolge={namenReihenfolge}
             />
           )}
 
@@ -255,6 +263,16 @@ export default function Lernen({
               <p className="antworttext">{item.antwort}</p>
               {item.vertiefung && vertiefungZeigen && (
                 <p className="vertiefung">{item.vertiefung}</p>
+              )}
+              {item.bild && (
+                <figure style={{ margin: 0 }}>
+                  <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />
+                  {item.bildunterschrift && (
+                    <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
+                      {item.bildunterschrift}
+                    </figcaption>
+                  )}
+                </figure>
               )}
               <p className="quelle">{item.quelle}</p>
               {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
@@ -315,6 +333,7 @@ export default function Lernen({
             gesperrt={aufgedeckt}
             bildRef={bildRef}
             seed={seed}
+            namenReihenfolge={namenReihenfolge}
           />
 
           {aufgedeckt && item.typ === 'skizze' && item.referenz && (
@@ -411,7 +430,7 @@ export default function Lernen({
 
 // Zuordnungsliste zur Bildaufgabe. Zeigt denselben Zustand wie die
 // Punkte im Bild - anklickbar ist beides.
-function BildListe({ item, wert, setWert, gesperrt, namen }) {
+function BildListe({ item, wert, setWert, gesperrt, namen, reihenfolge }) {
   if (item.typ === 'fehlersuche') {
     return (
       <div className="bildListe">
@@ -458,8 +477,8 @@ function BildListe({ item, wert, setWert, gesperrt, namen }) {
                   onChange={(e) => setWert({ ...zuordnung, [p.nr]: Number(e.target.value) })}
                 >
                   <option value="">bitte benennen …</option>
-                  {namen.map((name, j) => (
-                    <option key={j} value={j}>{name}</option>
+                  {reihenfolge.map((j) => (
+                    <option key={j} value={j}>{namen[j]}</option>
                   ))}
                 </select>
               )}
@@ -495,7 +514,7 @@ function Pruefliste({ punkte }) {
   )
 }
 
-function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed }) {
+function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihenfolge }) {
   // Bildaufgaben: die Zeichnung gehoert in die Arbeitsflaeche. Ohne diese
   // beiden Zweige fiel Eingabefeld bis hierher durch bis zum return null -
   // die Fehlersuche zeigte gar nichts, die Bildbeschriftung nur die Liste.
@@ -509,6 +528,7 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed }) {
         namen={item.punkte.map((p) => p.name)}
         aufgedeckt={gesperrt}
         onWahl={(nr, index) => setWert({ ...zuordnung, [nr]: index })}
+        reihenfolge={namenReihenfolge}
       />
     )
   }
@@ -623,7 +643,7 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed }) {
           return (
             <button key={i} className={klasse} disabled={gesperrt} onClick={() => setWert(i)}>
               <span className="vergleichTitel">{seite.titel}</span>
-              {seite.bild && <img src={seite.bild} alt="" />}
+              {seite.bild && <LokalBild src={seite.bild} alt="" />}
               <span className="vergleichText">{seite.beschreibung}</span>
             </button>
           )

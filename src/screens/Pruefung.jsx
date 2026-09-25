@@ -12,6 +12,7 @@ import {
 } from '../lib/pruefung.js'
 import { punkteFuer } from '../lib/punkte.js'
 import Bildpunkte from '../components/Bildpunkte.jsx'
+import LokalBild from '../components/LokalBild.jsx'
 
 export default function Pruefung({
   items, themen, zustaende, module, bereiche, pruefungen, onSpeichern, onFehlerLernen,
@@ -405,8 +406,8 @@ export default function Pruefung({
             {plan.map((e) => (
               <li key={e.thema.id}>
                 <div className="themenzeile">
-                  <span className="planZeichen">▣</span>
-                  <div>
+                  <span className="planZeichen">▣︎</span>
+                  <div className="themaInfo">
                     <p className="themaTitel">{e.thema.titel}</p>
                     <p className="themaZeile2">
                       {e.verfuegbar} geprüfte Items ·{' '}
@@ -415,16 +416,17 @@ export default function Pruefung({
                         : 'noch nie geprüft'}
                     </p>
                   </div>
-                  <span />
-                  <button
-                    className="knopf schmal"
-                    onClick={() => starten('thema', {
-                      bereich: { themaId: e.thema.id },
-                      titel: `Themenprüfung ${e.thema.titel}`,
-                    })}
-                  >
-                    Prüfen
-                  </button>
+                  <div className="themenzeileAktionen">
+                    <button
+                      className="knopf schmal"
+                      onClick={() => starten('thema', {
+                        bereich: { themaId: e.thema.id },
+                        titel: `Themenprüfung ${e.thema.titel}`,
+                      })}
+                    >
+                      Prüfen
+                    </button>
+                  </div>
                 </div>
               </li>
             ))}
@@ -618,7 +620,7 @@ function PruefEingabe({ item, wert, setWert }) {
           <button key={i} className={wert === i ? 'vergleichSeite aktiv' : 'vergleichSeite'}
                   onClick={() => setWert(i)}>
             <span className="vergleichTitel">{seite.titel}</span>
-            {seite.bild && <img src={seite.bild} alt="" />}
+            {seite.bild && <LokalBild src={seite.bild} alt="" />}
             <span className="vergleichText">{seite.beschreibung}</span>
           </button>
         ))}

@@ -91,7 +91,7 @@ export default function Themen({
           <section key={m.id} className="block">
             <div className={leer ? 'themenzeile geplant' : 'themenzeile'} style={{ cursor: 'default' }}>
               <Ring anteil={m.anteil} groesse={40} staerke={4} />
-              <div>
+              <div className="themaInfo">
                 <p className="themaTitel">
                   {m.titel}
                   <span className={`phaseMarke phase-${m.phase}`}>{phasen?.[m.phase]}</span>
@@ -103,20 +103,18 @@ export default function Themen({
                       (m.faellig > 0 ? ` · ${m.faellig} fällig` : '')}
                 </p>
               </div>
-              {sucheAktiv ? (
-                <span />
-              ) : (
-                <button className="artKnopf" onClick={() => setOffenesModul(offen ? null : m.id)}>
-                  {offen ? 'Zuklappen' : 'Themen zeigen'}
-                </button>
-              )}
-              {leer ? (
-                <span />
-              ) : (
-                <button className="knopf schmal" onClick={() => onStart('ueben', { modulId: m.id })}>
-                  Modul lernen
-                </button>
-              )}
+              <div className="themenzeileAktionen">
+                {!sucheAktiv && (
+                  <button className="artKnopf" onClick={() => setOffenesModul(offen ? null : m.id)}>
+                    {offen ? 'Zuklappen' : 'Themen zeigen'}
+                  </button>
+                )}
+                {!leer && (
+                  <button className="knopf schmal" onClick={() => onStart('ueben', { modulId: m.id })}>
+                    Modul lernen
+                  </button>
+                )}
+              </div>
             </div>
 
             {offen && (
@@ -130,12 +128,11 @@ export default function Themen({
                       <li key={t.id}>
                         <div className="themenzeile geplant">
                           <Ring anteil={0} groesse={34} staerke={4} />
-                          <div>
+                          <div className="themaInfo">
                             <p className="themaTitel">{t.titel}</p>
                             <p className="themaZeile2">noch ohne Inhalte</p>
                           </div>
-                          <span />
-                          <span />
+                          <div className="themenzeileAktionen" />
                         </div>
                       </li>
                     )
@@ -144,26 +141,26 @@ export default function Themen({
                     <li key={t.id}>
                       <div className="themenzeile">
                         <Ring anteil={f.anteil} groesse={34} staerke={4} />
-                        <div>
+                        <div className="themaInfo">
                           <p className="themaTitel">{t.titel}</p>
                           <p className="themaZeile2">
                             {f.sicher} von {f.gesamt} sicher
                             {f.faellig > 0 ? ` · ${f.faellig} fällig` : ''}
                           </p>
                         </div>
-                        {t.erklaerung ? (
-                          <button className="artKnopf" onClick={() => onErklaerung(t.id)}>
-                            Erklärung
+                        <div className="themenzeileAktionen">
+                          {t.erklaerung && (
+                            <button className="artKnopf" onClick={() => onErklaerung(t.id)}>
+                              Erklärung
+                            </button>
+                          )}
+                          <button
+                            className="knopf schmal"
+                            onClick={() => onStart('ueben', { themaId: t.id })}
+                          >
+                            Lernen
                           </button>
-                        ) : (
-                          <span />
-                        )}
-                        <button
-                          className="knopf schmal"
-                          onClick={() => onStart('ueben', { themaId: t.id })}
-                        >
-                          Lernen
-                        </button>
+                        </div>
                       </div>
                     </li>
                   )

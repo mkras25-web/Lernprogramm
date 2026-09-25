@@ -1,13 +1,44 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import { readdirSync, rmSync, existsSync } from 'node:fs'
+import { join } from 'node:path'
 
-// base: './' erzeugt relative Pfade im Build. Damit laeuft die App
-// sowohl lokal per Dateioeffnung als auch unter einem Unterpfad wie
-// https://<name>.github.io/lernprogramm/ ohne weitere Anpassung.
+// Urheberrechtlich geschuetzte Buchausschnitte (public/pakete/*/bilder-lokal)
+// duerfen nie in einen Build wandern, den man veroeffentlicht - auch nicht,
+// wenn jemand lokal baut und den dist-Ordner hochlaedt. Sie liegen im
+// Entwicklungsordner nur fuer den PC-Betrieb; aufs Handy kommen sie ueber
+// den ZIP-Import in den Einstellungen.
+function ohneLokaleBilder() {
+  return {
+    name: 'ohne-lokale-bilder',
+    apply: 'build',
+    // Vor dem PWA-Plugin (das danach die Precache-Liste erzeugt).
+    enforce: 'post',
+    closeBundle: {
+      order: 'pre',
+      handler() {
+        const pakete = join('dist', 'pakete')
+        if (!existsSync(pakete)) return
+        for (const p of readdirSync(pakete, { withFileTypes: true })) {
+          if (p.isDirectory()) {
+            rmSync(join(pakete, p.name, 'bilder-lokal'), { recursive: true, force: true })
+          }
+        }
+      },
+    },
+  }
+}
+
+// base: './' erzeugt relative Pfade im Build. Damit laeuft die App unter
+// einem Unterpfad wie https://<name>.github.io/lernprogramm/ ohne weitere
+// Anpassung. NICHT per Doppelklick auf dist/index.html (file://): Browser
+// blockieren dort Module und fetch, die Seite bleibt leer. Ohne Node laeuft
+// sie ueber das Offline-Paket (app/offline/, siehe ANLEITUNG.md 1.5).
 export default defineConfig({
   plugins: [
     react(),
+    ohneLokaleBilder(),
     // Macht die App auf dem Handy installierbar (Icon auf dem
     // Home-Bildschirm, eigenes Fenster ohne Browserleiste) und
     // cached die App-Huelle fuers Offline-Starten. Inhaltspakete
@@ -36,6 +67,15 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
         runtimeCaching: [
+          {
+            // Ueber die Einstellungen eingelesene Buchausschnitte (siehe
+            // lib/lokaleBilder.js). Stehen NUR im Geraete-Cache, nie im
+            // Netz - deshalb erst hier nachsehen und nie die Pakete-Regel
+            // darunter (die wuerde einen 404 vom Server vorziehen).
+            urlPattern: ({ url }) => url.pathname.includes('/bilder-lokal/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'lokale-bilder' },
+          },
           {
             // Lerninhalte (Items, Bilder, Normen) je Paket - werden
             // sofort aus dem Cache bedient, im Hintergrund aber

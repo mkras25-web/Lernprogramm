@@ -1,0 +1,31 @@
+{
+  "id": "pharma-de",
+  "titel": "Pharmazie",
+  "sprache": "de",
+  "version": "0.1.0",
+  "gestaltung": "pharma",
+  "module": [
+    {
+      "id": "psychopharmaka",
+      "titel": "Psychopharmaka",
+      "themen": [
+        {
+          "id": "psy-ssri-interaktionen",
+          "titel": "SSRI: Blutungsrisiko und Serotonin-Syndrom",
+          "datei": "items/psy-ssri-interaktionen.json",
+          "bild": "bilder/ssri-synapse.svg"
+        }
+      ],
+      "bereich": "arzneimitteltherapie",
+      "phase": "frueh"
+    }
+  ],
+  "bereiche": {
+    "arzneimitteltherapie": "Arzneimitteltherapie und Interaktionen"
+  },
+  "phasen": {
+    "frueh": "Früh beginnen",
+    "mittel": "Nach den Grundlagen",
+    "spaet": "Später vertiefen"
+  }
+}

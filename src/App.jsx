@@ -21,18 +21,22 @@ import {
   kartenAuswerten,
   levelAus,
   meilensteineAuswerten,
-  RAENGE,
+  MEILENSTEIN_STUFEN,
+  raengeFuer,
   moduleAuswerten,
   serieBerechnen,
   xpFuerPruefung,
   xpFuerMeilensteine,
   xpGesamt,
   rekorde,
+  csvAusEreignissen,
 } from './lib/fortschritt.js'
 import { itemsAnreichern, lernbareItems } from './lib/sichtung.js'
 import { monatspruefungFaellig, pruefungsplan } from './lib/pruefung.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
+import { abgleichen, abgleichStand } from './lib/abgleich.js'
+import { dropboxMoeglich, istVerbunden, meldungAbholen } from './lib/dropbox.js'
 import { serienquote } from './lib/stufen.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
 import Heute from './screens/Heute.jsx'
@@ -48,16 +52,19 @@ import Lernen from './screens/Lernen.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 
+// ︎ (Text-Darstellungs-Selektor) hinter jedem Symbol - ohne das
+// rendert Safari z. B. das Zahnrad farbig als Emoji, obwohl alle
+// anderen Symbole hier einfache einfarbige Linienzeichen bleiben.
 const NAVIGATION = [
-  { id: 'heute', titel: 'Heute', symbol: '◴' },
-  { id: 'themen', titel: 'Themen', symbol: '▤' },
-  { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕' },
-  { id: 'glossar', titel: 'Normen', symbol: '§' },
-  { id: 'pruefung', titel: 'Prüfungen', symbol: '✓' },
-  { id: 'sammlung', titel: 'Sammlung', symbol: '◈' },
-  { id: 'skizzen', titel: 'Skizzen', symbol: '✎' },
-  { id: 'fortschritt', titel: 'Fortschritt', symbol: '◑' },
-  { id: 'einstellungen', titel: 'Einstellungen', symbol: '⚙' },
+  { id: 'heute', titel: 'Heute', symbol: '◴︎' },
+  { id: 'themen', titel: 'Themen', symbol: '▤︎' },
+  { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕︎' },
+  { id: 'glossar', titel: 'Normen', symbol: '§︎' },
+  { id: 'pruefung', titel: 'Prüfungen', symbol: '✓︎' },
+  { id: 'sammlung', titel: 'Sammlung', symbol: '◈︎' },
+  { id: 'skizzen', titel: 'Skizzen', symbol: '✎︎' },
+  { id: 'fortschritt', titel: 'Fortschritt', symbol: '◑︎' },
+  { id: 'einstellungen', titel: 'Einstellungen', symbol: '⛭︎' },
 ]
 
 // Themen, in denen jedes Item gemeistert ist.
@@ -82,6 +89,10 @@ export default function App({ profilId, onProfilWechseln }) {
   const [glossar, setGlossar] = useState({})
   const [bereiche, setBereiche] = useState({})
   const [phasen, setPhasen] = useState({})
+  // Welche Erzaehlung/Zeichnung das Levelsystem traegt (Architektur,
+  // kuenftig auch Pharmazie) - kommt aus paket.json ("gestaltung"),
+  // nicht aus einer Fallunterscheidung nach Paket-Id. Siehe stufen.js.
+  const [gestaltung, setGestaltung] = useState('arch')
   const [paketliste, setPaketliste] = useState([])
   const [pruefungen, setPruefungen] = useState([])
   const [ereignisse, setEreignisse] = useState([])
@@ -90,6 +101,7 @@ export default function App({ profilId, onProfilWechseln }) {
   const [fehler, setFehler] = useState(null)
   const [laedt, setLaedt] = useState(true)
   const [meldung, setMeldung] = useState(null)
+  const [importFrage, setImportFrage] = useState(null)
   // Bewusst nur ueber einen Knopf in den Einstellungen erreichbar, nicht
   // ueber eine globale "?"-Taste: Lernen und Sichtung haben eigene,
   // aktive Tastaturkuerzel (1-4, R/S/U/X, ...) - ein global offenes
@@ -99,9 +111,28 @@ export default function App({ profilId, onProfilWechseln }) {
 
   const [opt, setOpt] = useState(() => einstellungenLaden(profilId))
   const [ansicht, setAnsicht] = useState('heute')
+  // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): dort
+  // ist .navigation standardmaessig ausgeblendet und oeffnet sich erst
+  // durch navMenuKnopf als Kachel-Uebersicht. Ab 60rem ignoriert die
+  // Desktop-Seitenleiste diesen Zustand vollstaendig.
+  const [navOffen, setNavOffen] = useState(false)
+
+  // Faellt die Kachel-Uebersicht offen bleiben, waehrend das Fenster
+  // (oder eine Bildschirmdrehung) über die Desktop-Breite waechst, soll
+  // sie nicht als Overlay haengen bleiben, bis wieder verkleinert wird.
+  useEffect(() => {
+    const abfrage = window.matchMedia('(min-width: 60rem)')
+    const schliessenFallsDesktop = () => {
+      if (abfrage.matches) setNavOffen(false)
+    }
+    abfrage.addEventListener('change', schliessenFallsDesktop)
+    return () => abfrage.removeEventListener('change', schliessenFallsDesktop)
+  }, [])
+
   const [erklaerthema, setErklaerthema] = useState(null)
   const [aufstieg, setAufstieg] = useState(null)
   const stufeVorher = useRef(null)
+  const meilensteineVorher = useRef(null)
 
   useEffect(() => {
     speicherSichern()
@@ -126,6 +157,7 @@ export default function App({ profilId, onProfilWechseln }) {
         setGlossar(paketDaten.normen ?? {})
         setBereiche(paketDaten.bereiche ?? {})
         setPhasen(paketDaten.phasen ?? {})
+        setGestaltung(paketDaten.paket?.gestaltung ?? 'arch')
         setEreignisse(gespeicherte)
         setSkizzen(gespeicherteSkizzen)
         setMarken(new Map(gespeicherteMarken.map((m) => [m.itemId, m])))
@@ -215,9 +247,9 @@ export default function App({ profilId, onProfilWechseln }) {
       gesichtet: [...marken.values()].filter((m) => m.kategorie).length,
       notizen: [...marken.values()].filter((m) => m.notiz).length,
       sicherungen: opt.letzteSicherung ? 1 : 0,
-    })
+    }, gestaltung)
   }, [skizzen, aktiveEreignisse, serie, levelRoh, pruefungen, marken, aktiveItems, zustaende,
-      karten, module, opt.letzteSicherung])
+      karten, module, opt.letzteSicherung, gestaltung])
 
   const xpMeilensteine = useMemo(() => xpFuerMeilensteine(meilensteine), [meilensteine])
   const level = useMemo(() => levelAus(xpBasis + xpMeilensteine), [xpBasis, xpMeilensteine])
@@ -232,10 +264,34 @@ export default function App({ profilId, onProfilWechseln }) {
       return
     }
     if (level.stufe > stufeVorher.current && opt.aufstiegFeiern !== false) {
-      setAufstieg({ stufe: level.stufe, rangNeu: RAENGE.some((r) => r.ab === level.stufe) })
+      setAufstieg({ stufe: level.stufe, rangNeu: raengeFuer(gestaltung).some((r) => r.ab === level.stufe) })
     }
     stufeVorher.current = level.stufe
-  }, [level.stufe, laedt, opt.aufstiegFeiern])
+  }, [level.stufe, laedt, opt.aufstiegFeiern, gestaltung])
+
+  // Dieselbe Beim-ersten-Durchlauf-nur-merken-Logik wie beim Stufenaufstieg
+  // oben, hier fuer eine neu erreichte Materialstufe (Bronze, Silber, ...)
+  // eines Meilensteins. Nutzt denselben Feiern-Schalter und die
+  // bestehende Meldung-Infrastruktur (sonst fuer Import/Export), statt
+  // eine eigene Anzeige zu bauen.
+  useEffect(() => {
+    if (laedt) return
+    const aktuell = new Map(meilensteine.map((m) => [m.id, m.stufe]))
+    if (meilensteineVorher.current === null) {
+      meilensteineVorher.current = aktuell
+      return
+    }
+    if (opt.aufstiegFeiern !== false) {
+      const aufgestiegen = meilensteine.filter((m) => m.stufe > (meilensteineVorher.current.get(m.id) ?? 0))
+      if (aufgestiegen.length === 1) {
+        const m = aufgestiegen[0]
+        setMeldung({ art: 'erfolg', text: `Meilenstein „${m.titel}" – ${MEILENSTEIN_STUFEN[m.stufe - 1].name} erreicht!` })
+      } else if (aufgestiegen.length > 1) {
+        setMeldung({ art: 'erfolg', text: `${aufgestiegen.length} Meilensteine weiterentwickelt, u. a. „${aufgestiegen[0].titel}"` })
+      }
+    }
+    meilensteineVorher.current = aktuell
+  }, [meilensteine, laedt, opt.aufstiegFeiern])
 
   const themenFortschritt = useMemo(() => {
     const karte = new Map()
@@ -347,30 +403,92 @@ export default function App({ profilId, onProfilWechseln }) {
     return Date.now() - opt.letzteSicherung > 30 * 24 * 60 * 60 * 1000
   }, [ereignisse.length, opt.letzteSicherung])
 
+  // Der Dateiname traegt das Profil und das Datum: mehrere Geraete legen
+  // ihre Sicherungen in denselben Dropbox-Ordner, und beim Einlesen soll
+  // man sofort sehen, was wozu gehoert.
   async function exportKlick(mitSkizzen = true) {
     const text = await exportieren({ mitSkizzen, profilId, profilName })
-    const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }))
+    const profilTeil = profilName
+      .normalize('NFKD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^\w-]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .toLowerCase()
+    const dateiname = [
+      'lernprotokoll',
+      profilTeil,
+      mitSkizzen ? '' : 'ohne-skizzen',
+      new Date().toISOString().slice(0, 10),
+    ]
+      .filter(Boolean)
+      .join('-') + '.json'
+
+    // Am Handy landet die Datei ueber den Teilen-Dialog direkt in Dropbox
+    // (oder Dateien, Mail ...) statt still im Download-Ordner zu
+    // verschwinden. Am PC bleibt es beim normalen Herunterladen.
+    const datei = new File([text], dateiname, { type: 'application/json' })
+    const handy = window.matchMedia?.('(pointer: coarse)').matches
+    if (handy && navigator.canShare?.({ files: [datei] })) {
+      try {
+        await navigator.share({ files: [datei], title: dateiname })
+        setOpt((alt) => ({ ...alt, letzteSicherung: Date.now() }))
+        return
+      } catch (e) {
+        if (e.name === 'AbortError') return
+      }
+    }
+
+    const url = URL.createObjectURL(datei)
     const a = document.createElement('a')
     a.href = url
-    a.download = `lernprotokoll${mitSkizzen ? '' : '-ohne-skizzen'}-${new Date()
-      .toISOString()
-      .slice(0, 10)}.json`
+    a.download = dateiname
     a.click()
     URL.revokeObjectURL(url)
     setOpt((alt) => ({ ...alt, letzteSicherung: Date.now() }))
   }
 
-  async function importKlick(datei) {
-    if (!datei) return
+  function csvExportKlick() {
+    const text = csvAusEreignissen(ereignisse, items)
+    const url = URL.createObjectURL(new Blob([text], { type: 'text/csv;charset=utf-8' }))
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `lernprotokoll-${new Date().toISOString().slice(0, 10)}.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  // Eine Sicherung gehoert zu einem bestimmten Profil (Profil-Id steckt in
+  // der Datei). Stammt sie von einem anderen als dem aktiven, wird
+  // nachgefragt statt still zu vermischen - zwei Personen oder zwei
+  // Profile derselben Person wuerden sonst ineinander laufen.
+  async function importKlick(auswahl) {
+    const dateien = Array.isArray(auswahl) ? auswahl : auswahl ? [auswahl] : []
+    if (dateien.length === 0) return
+    const texte = await Promise.all(dateien.map((d) => d.text()))
+    const fremde = texte
+      .map((t) => {
+        try {
+          return JSON.parse(t).profil
+        } catch {
+          return null
+        }
+      })
+      .filter((p) => p?.id && p.id !== profilId)
+    if (fremde.length > 0) {
+      setImportFrage({ texte, namen: [...new Set(fremde.map((p) => p.name || 'unbekannt'))] })
+      return
+    }
+    await importTexte(texte)
+  }
+
+  async function importTexte(texte) {
     try {
-      const bericht = await importieren(await datei.text())
-      const [e, s, m, p] = await Promise.all([
-        alleEreignisse(), alleSkizzen(), alleMarken(), allePruefungen(),
-      ])
-      setEreignisse(e)
-      setSkizzen(s)
-      setMarken(new Map(m.map((x) => [x.itemId, x])))
-      setPruefungen(p)
+      const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0 }
+      for (const text of texte) {
+        const teil = await importieren(text)
+        for (const k of Object.keys(bericht)) bericht[k] += teil[k]
+      }
+      await zustandNeuLesen()
       setMeldung({
         art: 'erfolg',
         text:
@@ -381,6 +499,81 @@ export default function App({ profilId, onProfilWechseln }) {
       setMeldung({ art: 'fehler', text: `Import nicht möglich: ${e.message}` })
     }
   }
+
+  // Liest nach einem Import oder Abgleich alles aus der Datenbank neu ein.
+  async function zustandNeuLesen() {
+    const [e, s, m, p] = await Promise.all([
+      alleEreignisse(), alleSkizzen(), alleMarken(), allePruefungen(),
+    ])
+    setEreignisse(e)
+    setSkizzen(s)
+    setMarken(new Map(m.map((x) => [x.itemId, x])))
+    setPruefungen(p)
+  }
+
+  // --- Abgleich ueber Dropbox (siehe lib/abgleich.js) -------------------
+  // still = im Hintergrund (Start, nach dem Lernen, App wird verlassen):
+  // nur bei uebernommenen Staenden eine Meldung, Fehler nur im Stand.
+  const [abgleichZustand, setAbgleichZustand] = useState(() => ({ laeuft: false, ...abgleichStand(profilId) }))
+  const abgleichRef = useRef(null)
+  abgleichRef.current = async function jetztAbgleichen(still = true) {
+    if (!dropboxMoeglich() || !istVerbunden()) return
+    setAbgleichZustand((z) => ({ ...z, laeuft: true }))
+    try {
+      const b = await abgleichen({ profilId, profilName, mitSkizzen: opt.dropboxSkizzen === true })
+      const neu = b.ereignisse + b.skizzen + b.marken + b.pruefungen + b.geloescht
+      if (neu > 0) await zustandNeuLesen()
+      if (!still) {
+        setMeldung({
+          art: 'erfolg',
+          text: neu > 0 ? `Abgeglichen: ${b.ereignisse} neue Antworten von anderen Geräten übernommen.` : 'Abgeglichen – nichts Neues.',
+        })
+      } else if (neu > 0) {
+        setMeldung({ art: 'erfolg', text: `Fortschritt von einem anderen Gerät übernommen (${b.ereignisse} Antworten).` })
+      }
+    } catch (e) {
+      if (!still) setMeldung({ art: 'fehler', text: `Abgleich nicht möglich: ${e.message}` })
+    } finally {
+      setAbgleichZustand({ laeuft: false, ...abgleichStand(profilId) })
+    }
+  }
+  const automatischAbgleichen = () => {
+    if (opt.dropboxAuto !== false) abgleichRef.current?.(true)
+  }
+
+  // Nach einer Lernsitzung (Wechsel weg vom Lernbildschirm).
+  const vorherigeAnsicht = useRef(null)
+  useEffect(() => {
+    if (vorherigeAnsicht.current === 'lernen' && ansicht !== 'lernen') automatischAbgleichen()
+    vorherigeAnsicht.current = ansicht
+  }, [ansicht])
+
+  // Rueckmeldung der Dropbox-Anmeldung (ausgefuehrt in main.jsx, vor dem Start).
+  useEffect(() => {
+    const m = meldungAbholen()
+    if (m) setMeldung(m)
+  }, [])
+
+  // Beim Start des Profils, sobald die Inhalte geladen sind.
+  useEffect(() => {
+    if (!laedt) automatischAbgleichen()
+  }, [laedt])
+
+  // Beim Verlassen der App (Push) bzw. Zurueckkehren nach laengerer Pause (Pull).
+  useEffect(() => {
+    let zuletzt = Date.now()
+    function sichtbarkeit() {
+      if (document.visibilityState === 'hidden') {
+        zuletzt = Date.now()
+        automatischAbgleichen()
+      } else if (Date.now() - zuletzt > 120_000) {
+        zuletzt = Date.now()
+        automatischAbgleichen()
+      }
+    }
+    document.addEventListener('visibilitychange', sichtbarkeit)
+    return () => document.removeEventListener('visibilitychange', sichtbarkeit)
+  }, [])
 
   async function loeschen() {
     await allesLoeschen()
@@ -395,9 +588,29 @@ export default function App({ profilId, onProfilWechseln }) {
   if (laedt) {
     return (
       <div className="huelle einspaltig">
-        <div className="ladeAnzeige" role="status" aria-live="polite">
-          <span className="spinner" aria-hidden="true" />
-          <p className="nebentext">Paket wird geladen …</p>
+        <div className="schirm" role="status" aria-label="Paket wird geladen">
+          <div className="heuteRaster" aria-hidden="true">
+            <section className="stufe">
+              <span className="skeleton" style={{ width: '8rem', height: '8rem', borderRadius: '4px', flexShrink: 0 }} />
+              <div className="stufeText">
+                <span className="skeleton" style={{ width: '7rem', height: '0.75rem' }} />
+                <span className="skeleton" style={{ width: '9rem', height: '1.5rem', marginTop: '0.4rem' }} />
+                <span className="skeleton" style={{ width: '95%', height: '0.9375rem', marginTop: '0.6rem' }} />
+                <span className="skeleton" style={{ width: '60%', height: '0.9375rem', marginTop: '0.4rem' }} />
+              </div>
+            </section>
+            <section className="kennzahlen">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <span key={n} className="skeleton" style={{ height: '4.25rem' }} />
+              ))}
+            </section>
+            <section className="heuteBreit">
+              <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
+            </section>
+            <section className="heuteBreit">
+              <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
+            </section>
+          </div>
         </div>
       </div>
     )
@@ -419,6 +632,7 @@ export default function App({ profilId, onProfilWechseln }) {
         <Lernen
           item={item}
           level={level}
+          gestaltung={gestaltung}
           art={sitzung.art}
           position={position}
           gesamt={sitzung.pensum.length}
@@ -460,12 +674,23 @@ export default function App({ profilId, onProfilWechseln }) {
 
   return (
     <div className="huelle">
-      <nav className="navigation">
+      <nav
+        className={navOffen ? 'navigation offen' : 'navigation'}
+        onClick={(e) => {
+          // Klick auf den Hintergrund der geoeffneten Kachel-Uebersicht
+          // (nicht auf einen der Knoepfe selbst) schliesst sie wieder -
+          // wie bei den anderen Schleier-Dialogen im Programm.
+          if (e.target === e.currentTarget) setNavOffen(false)
+        }}
+      >
         {NAVIGATION.map((n) => (
           <button
             key={n.id}
             className={ansicht === n.id ? 'navKnopf aktiv' : 'navKnopf'}
-            onClick={() => setAnsicht(n.id)}
+            onClick={() => {
+              setAnsicht(n.id)
+              setNavOffen(false)
+            }}
           >
             <span aria-hidden="true">{n.symbol}</span>
             {n.titel}
@@ -473,20 +698,61 @@ export default function App({ profilId, onProfilWechseln }) {
         ))}
       </nav>
 
+      <button
+        className="navMenuKnopf"
+        onClick={() => setNavOffen((o) => !o)}
+        aria-label={navOffen ? 'Menü schließen' : 'Menü öffnen'}
+        aria-expanded={navOffen}
+      >
+        <span aria-hidden="true">{navOffen ? '✕︎' : '☰︎'}</span>
+      </button>
+
+      {importFrage && (
+        <div className="schleier" onClick={() => setImportFrage(null)}>
+          <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
+            <h2 className="ueberschrift">Andere Person?</h2>
+            <p className="nebentext">
+              Diese Sicherung gehört zum Profil „{importFrage.namen.join('", „')}", du lernst
+              gerade als „{profilName}". Einlesen würde beide Fortschritte vermischen.
+            </p>
+            <p className="nebentext">
+              Für das andere Profil: zurück zur Profilauswahl und dort „Profil aus Sicherung
+              importieren" wählen.
+            </p>
+            <div className="wahl">
+              <button className="knopf schmal" onClick={() => setImportFrage(null)}>
+                Abbrechen
+              </button>
+              <button
+                className="knopf schmal gefahr"
+                onClick={() => {
+                  const texte = importFrage.texte
+                  setImportFrage(null)
+                  importTexte(texte)
+                }}
+              >
+                Trotzdem hier einlesen
+              </button>
+            </div>
+          </article>
+        </div>
+      )}
+
       {meldung && (
         <div
-          className={meldung.art === 'fehler' ? 'meldung fehler' : 'meldung'}
+          className={`meldung${meldung.art === 'fehler' ? ' fehler' : ''}${meldung.art === 'erfolg' ? ' erfolg' : ''}`}
           role="status"
           aria-live="polite"
         >
           <p>{meldung.text}</p>
-          <button onClick={() => setMeldung(null)} aria-label="Meldung schließen">✕</button>
+          <button onClick={() => setMeldung(null)} aria-label="Meldung schließen">✕︎</button>
         </div>
       )}
 
       {ansicht === 'heute' && (
         <Heute
           level={level}
+          gestaltung={gestaltung}
           serie={serie}
           quote={quote}
           tagesplan={tagesplan}
@@ -580,11 +846,13 @@ export default function App({ profilId, onProfilWechseln }) {
           zustaende={zustaende}
           werte={werte}
           level={level}
+          gestaltung={gestaltung}
           module={module}
         />
       )}
       {ansicht === 'einstellungen' && (
         <Einstellungen
+          abgleich={{ ...abgleichZustand, onJetzt: () => abgleichRef.current?.(false) }}
           werte={opt}
           setzen={setOpt}
           anzahlEreignisse={ereignisse.length}
@@ -592,7 +860,9 @@ export default function App({ profilId, onProfilWechseln }) {
           paketliste={paketliste}
           letzteSicherung={opt.letzteSicherung}
           onExport={exportKlick}
+          onExportCsv={csvExportKlick}
           onImport={importKlick}
+          onMeldung={setMeldung}
           onLoeschen={loeschen}
           profilName={profilName}
           onProfilWechseln={onProfilWechseln}

@@ -31,7 +31,7 @@ const TYPNAMEN = {
   rechnen: 'Rechenaufgabe',
 }
 
-export default function Fortschritt({ ereignisse, items, zustaende, werte, level, module }) {
+export default function Fortschritt({ ereignisse, items, zustaende, werte, level, gestaltung = 'arch', module }) {
   const felder = tagesverlauf(ereignisse, 140)
   const vorschau = faelligkeitsvorschau(zustaende, 7)
   const maxVorschau = Math.max(1, ...vorschau)
@@ -43,9 +43,9 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
   const zeiten = tageszeiten(ereignisse)
   const maxZeit = Math.max(1, ...zeiten.map((z) => z.anzahl))
   const aussicht = prognose(items, zustaende, ereignisse)
-  const rang = rangFuer(level.stufe)
-  const naechster = naechsterRang(level.stufe)
-  const bau = bauwerkFuer(level.stufe)
+  const rang = rangFuer(level.stufe, gestaltung)
+  const naechster = naechsterRang(level.stufe, gestaltung)
+  const bau = bauwerkFuer(level.stufe, gestaltung)
 
   const verteilung = GRADE.map((grad) => ({
     grad,
@@ -58,10 +58,10 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
 
       {/* Kopfzeile: Rang, Stufe, Gesamtfortschritt */}
       <section className="fortschrittKopf">
-        <Bauabschnitt stufe={level.stufe} groesse={92} />
+        <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={92} />
         <div>
           <p className="rangName">
-            {rang.name}
+            {rang.name}{' '}
             <span className="bauWerk">{bau.werk.name}</span>
           </p>
           <h2 className="ueberschrift">Stufe {level.stufe}</h2>
@@ -169,7 +169,7 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
           </div>
         </section>
 
-        <section className="block">
+        <section className="block faelligBlock">
           <h2 className="abschnitt">Fällig in den nächsten Tagen</h2>
           <div className="saeulen">
             {vorschau.map((anzahl, i) => (
@@ -221,11 +221,11 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
           <ul className="fortschrittKacheln">
             {(module ?? []).filter((m) => m.gesamt > 0).map((m) => (
               <li key={m.id} className="fortschrittKachel">
-                <Bauabschnitt stufe={stufeAusAnteil(m.anteil)} groesse={44} titel={false} />
+                <Bauabschnitt stufe={stufeAusAnteil(m.anteil)} gestaltung={gestaltung} groesse={44} titel={false} />
                 <div>
                   <p className="kachelZeile stark">{m.titel}</p>
                   <p className="kachelZeile">
-                    {reifegradFuer(m.anteil).name} · {m.sicher} von {m.gesamt} sicher
+                    {reifegradFuer(m.anteil, gestaltung).name} · {m.sicher} von {m.gesamt} sicher
                   </p>
                 </div>
               </li>
@@ -238,11 +238,11 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
           <ul className="fortschrittKacheln">
             {themen.map((t) => (
               <li key={t.id} className="fortschrittKachel">
-                <Bauabschnitt stufe={stufeAusAnteil(t.anteil)} groesse={44} titel={false} />
+                <Bauabschnitt stufe={stufeAusAnteil(t.anteil)} gestaltung={gestaltung} groesse={44} titel={false} />
                 <div>
                   <p className="kachelZeile stark">{t.titel}</p>
                   <p className="kachelZeile">
-                    {reifegradFuer(t.anteil).name} · {t.sicher} von {t.gesamt} sicher
+                    {reifegradFuer(t.anteil, gestaltung).name} · {t.sicher} von {t.gesamt} sicher
                     {t.trefferquote !== null ? ` · ${t.trefferquote} % Treffer` : ''}
                   </p>
                 </div>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="820" height="460">
+  <defs>
+    <pattern id="zsMauer" width="36" height="18" patternUnits="userSpaceOnUse">
+      <rect width="36" height="18" fill="#a98467"/>
+      <path d="M0 0 H36 M0 9 H36 M0 18 H36" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M18 0 V9 M0 9 V18 M36 9 V18" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="zsDaemm" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#adc178"/>
+      <path d="M-3 11 L11 -3 M0 14 L14 0 M3 17 L17 3" stroke="#8fa85f" stroke-width="1.4"/>
+    </pattern>
+  </defs>
+
+  <rect width="820" height="460" fill="#f0ead2"/>
+
+  <!-- Horizontalschnitt: innen links, aussen rechts -->
+  <rect x="140" y="132" width="18"  height="176" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+  <rect x="158" y="132" width="210" height="176" fill="url(#zsMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="368" y="132" width="168" height="176" fill="url(#zsDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="536" y="132" width="138" height="176" fill="url(#zsMauer)" stroke="#414833" stroke-width="2"/>
+
+  <!-- Drahtanker waagerecht, mit Tropfscheibe und Krallenplatte -->
+  <path d="M300 176 H612" stroke="#414833" stroke-width="3.4" fill="none"/>
+  <path d="M300 170 v12 M612 170 v12" stroke="#414833" stroke-width="3.4"/>
+  <ellipse cx="505" cy="176" rx="7" ry="15" fill="#f7f3e4" stroke="#414833" stroke-width="2.2"/>
+  <rect x="390" y="158" width="10" height="36" rx="2" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+
+  <!-- offene Stossfuge in der Verblendschale -->
+  <rect x="536" y="258" width="138" height="14" fill="#f0ead2" stroke="#414833" stroke-width="2"/>
+  <path d="M708 265 H678" stroke="#9a6b1f" stroke-width="2.6"/>
+  <path d="M674 265 l14 -5 v10 z" fill="#9a6b1f"/>
+
+  <!-- innen / aussen -->
+  <text x="62" y="226" font-family="Georgia, serif" font-size="19" fill="#6c584c">innen</text>
+  <text x="742" y="226" font-family="Georgia, serif" font-size="19" fill="#6c584c">außen</text>
+  <path d="M116 220 H140" stroke="#6c584c" stroke-width="1.6"/>
+  <path d="M674 220 H732" stroke="#6c584c" stroke-width="1.6"/>
+
+  <!-- Beschriftung oben -->
+  <g stroke="#414833" stroke-width="1.4" fill="none">
+    <path d="M149 132 V86 H126"/>
+    <path d="M263 132 V54 H238"/>
+    <path d="M430 132 V54 H464"/>
+    <path d="M620 132 V86 H646"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="17" fill="#414833">
+    <text x="120" y="91" text-anchor="end">1 Innenputz</text>
+    <text x="232" y="59" text-anchor="end">2 tragende Innenschale</text>
+    <text x="470" y="59">3 Kerndämmung</text>
+    <text x="652" y="91">4 Verblendschale</text>
+  </g>
+
+  <!-- Schalenabstand -->
+  <g stroke="#6c584c" stroke-width="1.4" fill="none">
+    <path d="M368 336 H536"/>
+    <path d="M368 328 v16 M536 328 v16"/>
+  </g>
+  <rect x="408" y="324" width="88" height="24" fill="#f0ead2"/>
+  <text x="452" y="342" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6c584c">≤ 150 mm</text>
+
+  <!-- Beschriftung unten -->
+  <g stroke="#414833" stroke-width="1.4" fill="none">
+    <path d="M556 176 V368 H580"/>
+    <path d="M505 191 V400 H529"/>
+    <path d="M395 194 V432 H419"/>
+    <path d="M600 272 V332 H654"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="17" fill="#414833">
+    <text x="586" y="373">5 Drahtanker</text>
+    <text x="535" y="405">6 Tropfscheibe</text>
+    <text x="425" y="437">7 Krallenplatte</text>
+    <text x="660" y="337">8 offene Stoßfuge</text>
+  </g>
+</svg>

@@ -2,7 +2,8 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.10.0",
+  "version": "0.11.0",
+  "gestaltung": "arch",
   "module": [
     {
       "id": "baukonstruktion",
@@ -28,7 +29,9 @@
         },
         {
           "id": "bk-aw-zweischalig",
-          "titel": "Außenwand zweischalig mit Kerndämmung"
+          "titel": "Außenwand zweischalig mit Kerndämmung",
+          "datei": "items/bk-aw-zweischalig.json",
+          "bild": "bilder/bk-zweischalig-schnitt.svg"
         },
         {
           "id": "bk-wdvs",

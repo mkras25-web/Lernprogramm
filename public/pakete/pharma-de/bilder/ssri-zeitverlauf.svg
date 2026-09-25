@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 450" width="840" height="450">
+  <rect width="840" height="450" fill="#eef2f3"/>
+  <rect x="60" y="80" width="760" height="290" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <line x1="70" y1="340.0" x2="810" y2="340.0" stroke="#d7e0e2" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <text x="58" y="344.0" font-size="12" fill="#587681" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif">1</text>
+  <line x1="70" y1="244.2" x2="810" y2="244.2" stroke="#d7e0e2" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <text x="58" y="248.2" font-size="12" fill="#587681" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif">1,5</text>
+  <line x1="70" y1="148.3" x2="810" y2="148.3" stroke="#d7e0e2" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <text x="58" y="152.3" font-size="12" fill="#587681" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif">2</text>
+  <line x1="460.6" y1="92" x2="460.6" y2="362" stroke="#2f7d8a" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <line x1="90.0" y1="92" x2="90.0" y2="362" stroke="#2f7d8a" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <line x1="234.1" y1="148.3" x2="234.1" y2="340.0" stroke="#b03a2e" stroke-width="1.6" stroke-dasharray="3 4"/>
+  <circle cx="234.1" cy="148.3" r="6.5" fill="#b03a2e"/>
+  <line x1="70" y1="340.0" x2="810" y2="340.0" stroke="#1f3439" stroke-width="2"/>
+  <line x1="90.0" y1="340" x2="90.0" y2="347" stroke="#1f3439" stroke-width="1.6"/>
+  <text x="90.0" y="366" font-size="12" fill="#587681" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif">0</text>
+  <line x1="234.1" y1="340" x2="234.1" y2="347" stroke="#1f3439" stroke-width="1.6"/>
+  <text x="234.1" y="366" font-size="12" fill="#587681" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif">7</text>
+  <line x1="378.2" y1="340" x2="378.2" y2="347" stroke="#1f3439" stroke-width="1.6"/>
+  <text x="378.2" y="366" font-size="12" fill="#587681" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif">14</text>
+  <line x1="522.4" y1="340" x2="522.4" y2="347" stroke="#1f3439" stroke-width="1.6"/>
+  <text x="522.4" y="366" font-size="12" fill="#587681" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif">21</text>
+  <line x1="666.5" y1="340" x2="666.5" y2="347" stroke="#1f3439" stroke-width="1.6"/>
+  <text x="666.5" y="366" font-size="12" fill="#587681" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif">28</text>
+  <path d="M90.0,340.0 L110.6,303.3 L131.2,273.9 L151.8,246.7 L172.4,220.9 L192.9,196.0 L213.5,171.9 L234.1,148.3 L254.7,148.3 L275.3,148.3 L295.9,148.3 L316.5,148.3 L337.1,148.3 L357.6,148.3 L378.2,148.3 L398.8,148.3 L419.4,148.3 L440.0,148.3 L460.6,148.3 L481.2,167.6 L501.8,187.1 L522.4,206.9 L542.9,227.1 L563.5,247.6 L584.1,268.7 L604.7,290.5 L625.3,313.5 L645.9,340.0 L666.5,340.0 L687.1,340.0 L707.6,340.0 L728.2,340.0 L748.8,340.0 L769.4,340.0 L790.0,340.0" fill="none" stroke="#b03a2e" stroke-width="3.5" stroke-linejoin="round"/>
+  <g id="beschriftung" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#1f3439">
+    <text x="24" y="36" font-size="17" font-weight="600">Blutungsrisiko im Zeitverlauf</text>
+    <text x="24" y="58" font-size="13" fill="#587681">relatives Risiko gegenüber dem Zustand ohne SSRI</text>
+    <text x="98.0" y="86" font-size="13" font-weight="600" fill="#2f7d8a">Therapiebeginn</text>
+    <text x="468.6" y="86" font-size="13" font-weight="600" fill="#2f7d8a">Absetzen</text>
+    <text x="246.1" y="136.3" font-size="13" font-weight="600" fill="#b03a2e">Tag 7: Risiko verdoppelt</text>
+    <text x="666.5" y="202.0" font-size="13" fill="#587681" text-anchor="middle">Rückbildung über 7 bis 10 Tage</text>
+    <text x="666.5" y="220.0" font-size="13" fill="#587681" text-anchor="middle">= Lebensdauer der Thrombozyten</text>
+    <text x="440" y="390" font-size="12.5" fill="#587681" text-anchor="middle">Tage</text>
+    <text x="58" y="102.3" font-size="12.5" fill="#587681" text-anchor="end">relatives</text>
+    <text x="58" y="118.3" font-size="12.5" fill="#587681" text-anchor="end">Risiko</text>
+    <text x="24" y="430" font-size="13" fill="#587681">Die Wirkung setzt nicht sofort ein und hört nicht sofort auf: Beides folgt dem Austausch des Thrombozytenpools.</text>
+  </g>
+</svg>

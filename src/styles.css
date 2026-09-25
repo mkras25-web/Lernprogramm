@@ -30,6 +30,21 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Ohne das interpretieren Touch-Browser (v. a. iOS Safari) einen Tipp
+   auf einen Knopf leicht als Text-markieren oder als Long-Press-Menue
+   statt als Klick - der Tastendruck kommt dann nie an. Alle klickbaren
+   Elemente im Programm sind echte <button>, deshalb reicht die Regel
+   hier zentral. touch-action: manipulation entfernt zusaetzlich die
+   ca. 300ms Verzoegerung, mit der Browser sonst auf einen Doppeltipp
+   zum Zoomen warten. */
+button {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  transition: transform 100ms ease;
+}
+
 .huelle {
   max-width: 42rem;
   margin: 0 auto;
@@ -40,7 +55,11 @@ html, body {
 
 .schirm {
   flex: 1;
-  padding: 1.5rem 1.25rem 1rem;
+  /* Unten Platz fuer navMenuKnopf reservieren (3.25rem Durchmesser +
+     Abstand vom Rand + Sicherheitsabstand), sonst verdeckt der
+     schwebende Knopf am Ende der Seite Inhalte/Knoepfe. Ab 60rem
+     ersetzt die Desktop-Regel weiter unten diesen Wert vollstaendig. */
+  padding: 1.5rem 1.25rem calc(5.5rem + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
@@ -94,6 +113,29 @@ html, body {
 }
 @keyframes drehen { to { transform: rotate(360deg); } }
 
+/* Ladeskelett: platzhaltet die Heute-Seite in ihrer eigenen Form
+   (heuteRaster/stufe/kennzahlen wiederverwendet), damit sich beim
+   fertigen Laden nichts mehr in der Groesse verschiebt. Schimmer per
+   Gradient-Verschiebung; bei Animationen aus bzw. reduced-motion (siehe
+   die beiden Regeln weiter unten in der Datei) ein ruhiger Flaechenton
+   statt eines mitten im Verlauf eingefrorenen Farbsprungs. */
+.skeleton {
+  display: block;
+  width: 100%;
+  border-radius: var(--rund);
+  background: linear-gradient(90deg, var(--linie) 25%, var(--flaeche-tief) 37%, var(--linie) 63%);
+  background-size: 400% 100%;
+  animation: skeletonSchimmer 1.4s ease infinite;
+}
+@keyframes skeletonSchimmer {
+  from { background-position: 100% 50%; }
+  to { background-position: 0 50%; }
+}
+html[data-animationen="aus"] .skeleton { background: var(--linie); }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { background: var(--linie); }
+}
+
 /* Profilauswahl */
 .profilSchirm { max-width: 28rem; margin: 0 auto; }
 
@@ -117,7 +159,6 @@ html, body {
   text-align: left;
   cursor: pointer;
 }
-.profilKnopf:hover { border-color: var(--lehm); }
 
 .profilAvatar {
   display: flex;
@@ -141,6 +182,17 @@ html, body {
 
 .profilImport { display: block; text-align: center; margin-top: 0.625rem; }
 
+.avatarFarbWahl { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; width: 100%; margin-top: 0.125rem; }
+.avatarSchwatch {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.avatarSchwatch.aktiv { border-color: var(--tusche); }
+
 /* Ring */
 .ring { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; }
 .ringWert { fill: var(--tusche); font-family: var(--serife); }
@@ -148,13 +200,40 @@ html, body {
 
 /* Startbildschirm */
 .stufe { display: flex; align-items: center; gap: 1.25rem; }
-.stufeText { display: flex; flex-direction: column; gap: 0.25rem; }
+/* flex:1; min-width:0 - ohne das verhinderte der Flex-Standard
+   (min-width:auto) das Schrumpfen unter die natuerliche Breite des
+   Texts, und lief auf sehr schmalen Handys (320px) neben dem 128px
+   grossen Bauabschnitt-Icon seitlich ueber. */
+.stufeText { display: flex; flex-direction: column; gap: 0.25rem; flex: 1; min-width: 0; }
 
+/* .heuteRaster hatte nie eine eigene Mobil-Regel - die Abschnitte
+   (Stufe, Kennzahlen, die "aufruf"-Kaesten) klebten dadurch ohne jeden
+   Abstand aneinander. Ab 60rem ersetzt die Desktop-Regel weiter unten
+   das komplett durch ein zweispaltiges Grid. */
+.heuteRaster { display: flex; flex-direction: column; gap: 1.75rem; }
+
+/* Gleiches Problem, gleicher Grund: .fortschrittRaster hatte ebenfalls
+   nie eine Mobil-Regel. */
+.fortschrittRaster { display: flex; flex-direction: column; gap: 1.75rem; }
+
+/* Gleiches Problem, gleicher Grund: .lernRaster (Frage + Arbeitsflaeche
+   bei Bildaufgaben) hatte ebenfalls nie eine Mobil-Regel - beides klebte
+   ohne Abstand aneinander. */
+.lernRaster { display: flex; flex-direction: column; gap: 1.75rem; }
+
+/* Zwei Spalten statt vier: bei fuenf Kennzahl-Kacheln liess repeat(4,
+   1fr) die letzte allein und linksbuendig in einer sonst leeren Zeile
+   stehen. Mit zwei Spalten passt es (2+2+1), und die Regel danach
+   laesst eine uebrig bleibende letzte Kachel die volle Breite nehmen,
+   statt mit leerem Rest daneben zu stehen. Ab 60rem (Media Query
+   weiter unten) gilt wieder genau das alte vierspaltige Raster. */
 .kennzahlen {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 }
+
+.kennzahlen > :last-child:nth-child(odd) { grid-column: 1 / -1; }
 
 .kennzahl {
   background: var(--flaeche);
@@ -182,8 +261,9 @@ html, body {
 
 .aufruf {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem 1rem;
   padding: 1rem;
   background: var(--flaeche-tief);
   border: 1px solid var(--lehm);
@@ -191,7 +271,19 @@ html, body {
 }
 
 .aufruf.ruhig { background: var(--flaeche); border-color: var(--linie); }
-.aufruf > div { flex: 1; min-width: 12rem; }
+/* Kein fester min-width auf Schmalbreiten - erzwang zusammen mit Icon
+   und Knopf mehr Platz, als ein Handybildschirm hat, und liess Text
+   und Knopf ueber den Rand hinauslaufen. Ab 60rem (Media Query weiter
+   unten) gilt wieder genau der alte Wert.
+   Der Knopf bekommt flex-basis:100% - er rutscht dadurch IMMER in eine
+   eigene, volle Zeile, statt je nach Textlaenge mal in derselben Zeile
+   (rechtsbuendig) und mal umgebrochen (linksbuendig) zu landen. */
+.aufruf > :first-child { flex-shrink: 0; }
+.aufruf > div { flex: 1 1 12rem; min-width: 0; }
+/* button.knopf statt nur button - .knopf.schmal (2 Klassen) haette
+   sonst Vorrang vor button (1 Klasse + 1 Element) und den Knopf trotz
+   dieser Regel bei seiner natuerlichen Groesse belassen. */
+.aufruf > button.knopf { flex: 1 1 100%; }
 .aufrufZahl { margin: 0; font-family: var(--serife); font-size: 1.125rem; }
 
 .kartenband {
@@ -263,7 +355,6 @@ html, body {
   box-shadow: var(--schatten);
 }
 
-.kachel:hover { border-color: var(--lehm); }
 .kachel.gesperrt { opacity: 0.45; cursor: default; box-shadow: none; }
 .kachelTitel { font-family: var(--serife); font-size: 1rem; }
 .kachelZeile { font-size: 0.75rem; color: var(--rinde); }
@@ -325,7 +416,7 @@ html, body {
 .karte.verschlossen .kartenBild { background: var(--flaeche); }
 .kartenBild img { width: 100%; height: 100%; object-fit: contain; }
 .fortschrittZahl { font-family: var(--serife); font-size: 1.25rem; color: var(--rinde); }
-.kartenTitel { font-family: var(--serife); font-size: 0.9375rem; }
+.kartenTitel { font-family: var(--serife); font-size: 0.9375rem; overflow-wrap: break-word; }
 .kartenRang { font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--rinde); }
 
 .schleier {
@@ -475,6 +566,35 @@ html, body {
 .option.falsch { border-color: var(--warnung); }
 .option:disabled { cursor: default; }
 
+/* Rueckmeldung richtig/falsch, an jeder Stelle im Programm, an der ein
+   Item gesperrt wird und dabei die Klasse "richtig"/"falsch" (bzw.
+   "paarRichtig"/"paarFalsch") neu bekommt. Reine CSS-Animation ueber
+   den Klassenwechsel selbst ausgeloest - kein Extra-JS noetig, und
+   automatisch aus bei data-animationen="aus" bzw. reduced-motion (siehe
+   die beiden !important-Regeln dafuer weiter unten in der Datei). */
+.option.richtig, .vergleichSeite.richtig, .reihenfolge li.richtig,
+.zuordnungsliste li.richtig, .paare li.paarRichtig, .itemansicht .option.richtig {
+  animation: richtigAufblitz 500ms ease-out;
+}
+
+.option.falsch, .vergleichSeite.falsch, .reihenfolge li.falsch,
+.zuordnungsliste li.falsch, .paare li.paarFalsch {
+  animation: falschWackeln 400ms ease-in-out;
+}
+
+@keyframes richtigAufblitz {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 color-mix(in srgb, var(--fortschritt) 55%, transparent); }
+  35% { transform: scale(1.02); box-shadow: 0 0 0 5px color-mix(in srgb, var(--fortschritt) 30%, transparent); }
+  100% { transform: scale(1); box-shadow: 0 0 0 8px transparent; }
+}
+
+@keyframes falschWackeln {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-3px); }
+  40%, 60% { transform: translateX(3px); }
+}
+
 .zahlzeile { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
 
 .zahl {
@@ -510,7 +630,6 @@ html, body {
   cursor: pointer;
 }
 
-.knopf:hover { background: var(--flaeche-tief); }
 .knopf.schmal { flex: 0 0 auto; width: auto; padding: 0.5rem 1.25rem; white-space: nowrap; }
 
 .knopf.haupt {
@@ -520,7 +639,6 @@ html, body {
   color: var(--papier);
 }
 
-.knopf.haupt:hover { background: var(--rinde); border-color: var(--rinde); }
 .knopf.haupt.schmal { width: auto; }
 
 .textknopf {
@@ -535,40 +653,140 @@ html, body {
   text-underline-offset: 3px;
 }
 
-.knopf:focus-visible, .option:focus-visible, .textknopf:focus-visible,
-.zahl:focus-visible, .kachel:focus-visible, .karte:focus-visible, .navKnopf:focus-visible {
+/* Alle klickbaren Elemente im Programm sind echte <button>, Eingaben
+   echte <input>/<select> (siehe Kommentar oben bei der button-Regel) -
+   ein einziger, allgemeiner Selektor deckt deshalb wirklich jedes
+   interaktive Element ab, auch neu hinzukommende, ohne Pflege einer
+   Liste von Klassennamen. */
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 2px solid var(--rinde);
   outline-offset: 2px;
 }
 
-/* Navigation */
-.navigation {
-  position: sticky;
-  bottom: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: var(--papier);
-  border-top: 1px solid var(--linie);
-  padding-bottom: env(safe-area-inset-bottom);
+/* Tastendruck-Feedback: dezentes Zusammenziehen beim Antippen/Klicken,
+   fuer "alle Buttons" statt nur ausgewaehlte. transition steht an der
+   button-Basisregel oben, damit auch bestehende hover-transform-Effekte
+   (z. B. .artKachel) sauber mit uebergehen statt hart zu springen. */
+button:not(:disabled):active { transform: scale(0.96); }
+
+/* Hover-Effekte gebuendelt an einer Stelle, nicht verstreut ueber die
+   Datei - genau die Struktur, die beim .navKnopf- und beim
+   .themenzeile-Bug (siehe die Kommentare dort) zweimal zum Problem
+   wurde: eine spaeter im Text stehende Regel gewinnt bei gleicher
+   Spezifitaet unabhaengig von der Media Query. Ausserdem in
+   @media (hover: hover) eingeschlossen, damit Touch-Antippen keinen
+   "haengenden" Hover-Zustand hinterlaesst (der erst durch Antippen von
+   irgendwo anders wieder verschwindet) - auf echten Zeigegeraeten
+   (Maus/Trackpad) unveraendert wie zuvor. */
+@media (hover: hover) {
+  .profilKnopf:hover { border-color: var(--lehm); }
+  .avatarSchwatch:hover { border-color: var(--linie); }
+  .kachel:hover { border-color: var(--lehm); }
+  .knopf:hover { background: var(--flaeche-tief); }
+  .knopf.haupt:hover { background: var(--rinde); border-color: var(--rinde); }
+  .knopf.gefahr:hover { background: var(--warnung); color: var(--papier); }
+  .artKnopf:hover:not(:disabled) { border-color: var(--lehm); color: var(--tusche); }
+  .themenzeile:hover { border-color: var(--lehm); }
+  .paletteZeile:hover { border-color: var(--lehm); }
+  .themenzeile.geplant:hover { border-color: var(--linie); }
+  .bildpunkt:hover { border-color: var(--lehm); }
+  .vergleichSeite:hover:not(:disabled) { border-color: var(--lehm); }
+  .artKachel:hover:not(:disabled) { border-color: var(--lehm); transform: translateY(-1px); }
+  .punktwahlEintrag:hover { border-color: var(--lehm); }
+  .pruefKachel:hover:not(:disabled) { border-color: var(--lehm); }
+  .trefferOeffnen:hover { background: var(--flaeche-tief); }
+
+  /* Bisher ohne jeden Hover-Zustand - beim Durchgehen aufgefallen. */
+  .navKnopf:hover { color: var(--tusche); }
+  .reiterKnopf:not(.aktiv):hover { border-color: var(--lehm); color: var(--tusche); }
+  .textknopf:hover { color: var(--tusche); }
+  .option:hover:not(:disabled) { border-color: var(--lehm); }
+  .wahlKnopf:not(.aktiv):hover { border-color: var(--lehm); color: var(--tusche); }
 }
+
+/* Navigation. Mobil (Basisregeln hier, mobile-first wie der Rest der
+   Datei) standardmaessig ausgeblendet und nur als Kachel-Uebersicht
+   sichtbar, solange navMenuKnopf sie offen haelt - bei neun Eintraegen
+   war eine dauerhaft sichtbare Leiste (vorher: repeat(4, 1fr)) immer
+   unsymmetrisch (4+4+1). Ab 60rem (siehe Media Query weiter unten)
+   wird daraus wieder die immer sichtbare Seitenleiste, und die
+   Kachel-Regeln hier greifen dort gar nicht mehr. */
+.navigation { display: none; }
 
 .navKnopf {
   font: inherit;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
-  padding: 0.875rem 0.25rem;
   background: none;
   border: none;
-  border-top: 2px solid transparent;
   color: var(--rinde);
   cursor: pointer;
 }
 
-.navKnopf.aktiv { color: var(--tusche); border-top-color: var(--fortschritt); }
+.navKnopf.aktiv { color: var(--tusche); }
+
+/* Alle .offen-Regeln (Kachel-Uebersicht) hart in eine Max-Width-Media-
+   Query eingeschlossen, nicht nur ueber die JS-Bereinigung (React
+   useEffect mit matchMedia) verlassen: falls die "offen"-Klasse aus
+   irgendeinem Grund (z. B. Fenster waehrend geoeffnetem Menu ueber
+   60rem verbreitert, bevor der Reset feuert) haengen bleibt, greifen
+   diese hoch-spezifischen Selektoren (bis zu 4 Klassen) sonst trotzdem
+   auf der Desktop-Seitenleiste, weil sie mehr Gewicht haben als deren
+   einfache Regeln. So ist es strukturell unmoeglich, nicht nur bereinigt. */
+@media (max-width: 59.99rem) {
+  .navigation.offen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    align-content: center;
+    justify-items: stretch;
+    background: rgba(65, 72, 51, 0.5);
+    padding: 1.5rem;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+
+  .navigation.offen .navKnopf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    background: var(--papier);
+    border: 1px solid var(--linie);
+    border-radius: var(--rund);
+    box-shadow: var(--schatten);
+  }
+
+  .navigation.offen .navKnopf span { font-size: 1.375rem; }
+  .navigation.offen .navKnopf.aktiv { border-color: var(--fortschritt); border-width: 2px; }
+
+  .navMenuKnopf {
+    position: fixed;
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    z-index: 31;
+    width: 3.25rem;
+    height: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.375rem;
+    border-radius: 50%;
+    border: 1px solid var(--linie);
+    background: var(--papier);
+    color: var(--tusche);
+    box-shadow: var(--schatten);
+    cursor: pointer;
+  }
+}
 
 @media (max-width: 26rem) {
   .bewertung { grid-template-columns: repeat(2, 1fr); }
-  .kennzahlen { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -583,13 +801,17 @@ html, body {
 html[data-palette="lehm"] {
   --papier: #f0ead2; --flaeche: #f7f3e4; --flaeche-tief: #dde5b6;
   --akzent: #adc178; --lehm: #a98467; --rinde: #6c584c;
-  --tusche: #414833; --linie: #d9d2b4; --warnung: #9a6b1f;
+  --tusche: #414833; --linie: #d9d2b4;
+  /* War #9a6b1f (3.87:1 auf papier, unter WCAG-4.5:1) - siehe
+     contrast-check-Auswertung 2026-09-22, minimal abgedunkelt. */
+  --warnung: #8b601c;
 }
 
 html[data-palette="kalk"] {
   --papier: #f4f1ea; --flaeche: #fbf9f4; --flaeche-tief: #e6e2d6;
   --akzent: #7d8471; --lehm: #9a9382; --rinde: #5f5b50;
-  --tusche: #2f3128; --linie: #ddd8cb; --warnung: #9a6b1f;
+  --tusche: #2f3128; --linie: #ddd8cb;
+  --warnung: #91651d; /* war #9a6b1f, 4.14:1 -> 4.56:1 */
 }
 
 html[data-palette="terracotta"] {
@@ -601,7 +823,8 @@ html[data-palette="terracotta"] {
 html[data-palette="marine"] {
   --papier: #f1faee; --flaeche: #f8fdf6; --flaeche-tief: #cbe8e6;
   --akzent: #457b9d; --lehm: #8fc3c6; --rinde: #3d6b87;
-  --tusche: #1d3557; --linie: #cfe3e0; --warnung: #e63946;
+  --tusche: #1d3557; --linie: #cfe3e0;
+  --warnung: #d23440; /* war #e63946, 3.90:1 -> 4.56:1 */
 }
 
 /* Signal: #8d99ae traegt als Text nur 2,5:1, deshalb ein dunklerer
@@ -625,19 +848,22 @@ html[data-palette="ocker"] {
 html[data-palette="spektrum"] {
   --papier: #fbf7f0; --flaeche: #fffdf8; --flaeche-tief: #fdeccb;
   --akzent: #43aa8b; --lehm: #f8961e; --rinde: #577590;
-  --tusche: #2f3e46; --linie: #ece4d6; --warnung: #f94144;
+  --tusche: #2f3e46; --linie: #ece4d6;
+  --warnung: #d03639; /* war #f94144, 3.35:1 -> 4.61:1 */
 }
 
 html[data-palette="kupfer"] {
   --papier: #edddd4; --flaeche: #f6eee7; --flaeche-tief: #dcc9bd;
   --akzent: #197278; --lehm: #c44536; --rinde: #772e25;
-  --tusche: #283d3b; --linie: #d9c6ba; --warnung: #c44536;
+  --tusche: #283d3b; --linie: #d9c6ba;
+  --warnung: #ae3d30; /* war #c44536 (= lehm!), 3.74:1 -> 4.53:1 */
 }
 
 html[data-palette="seekarte"] {
   --papier: #d9dcd6; --flaeche: #e9ebe6; --flaeche-tief: #b9d6e2;
   --akzent: #3a7ca5; --lehm: #81c3d7; --rinde: #2f6690;
-  --tusche: #16425b; --linie: #c4c8bf; --warnung: #a4462d;
+  --tusche: #16425b; --linie: #c4c8bf;
+  --warnung: #9f442c; /* war #a4462d, 4.34:1 -> 4.54:1 */
 }
 
 /* Lagune: #06d6a0 und #ffc43d sind reine Fuellfarben, fuer Text zu
@@ -645,7 +871,8 @@ html[data-palette="seekarte"] {
 html[data-palette="lagune"] {
   --papier: #f8ffe5; --flaeche: #fdfff4; --flaeche-tief: #d3f5e8;
   --akzent: #06d6a0; --lehm: #1b9aaa; --rinde: #0f6e78;
-  --tusche: #123b42; --linie: #e0ead0; --warnung: #ef476f;
+  --tusche: #123b42; --linie: #e0ead0;
+  --warnung: #cd3d5f; /* war #ef476f, 3.52:1 -> 4.61:1 */
 }
 
 html[data-palette="dunkel"] {
@@ -663,13 +890,76 @@ html[data-palette="dunkel"] .blatt {
 }
 
 /* ------------------------------------------------------------------
+   Fuenf neue Paletten (2026-09-22), je eine andere Farbharmonie:
+   Amethyst monochrom (Violett) mit komplementaerem Gold-Akzent, Fjord
+   split-komplementaer (kuehles Blaugrau + Koralle), Waldgruen analog
+   (Gruen-Gelbgruen-Braun), Koralle komplementaer (Koralle + Petrol),
+   Graphit als zweite, kuehlere Dunkelvariante (Graphit + Cyan) neben
+   der bestehenden warmen "Dunkel". Gegen contrast-check.mjs geprueft:
+   tusche/rinde/warnung erreichen ueberall mindestens 4.5:1 auf
+   papier/flaeche, akzent mindestens 3:1 (UI-Komponente) - linie bleibt
+   bewusst so kontrastarm wie in allen bisherigen Paletten (reine
+   Kartentrennlinie, kein alleiniger Bedeutungstraeger).
+   ------------------------------------------------------------------ */
+html[data-palette="amethyst"] {
+  --papier: #f3eef6; --flaeche: #faf7fb; --flaeche-tief: #e6dcee;
+  --akzent: #ad8232; --lehm: #9b7ba3; --rinde: #6e4a74;
+  --tusche: #3a2145; --linie: #ddd2e0; --warnung: #a23b3b;
+}
+
+html[data-palette="fjord"] {
+  --papier: #eef2f3; --flaeche: #f7fafb; --flaeche-tief: #dbe6e8;
+  --akzent: #c96b56; --lehm: #8aa3aa; --rinde: #51707a;
+  --tusche: #22333a; --linie: #cdd8da; --warnung: #a13d33;
+}
+
+html[data-palette="waldgruen"] {
+  --papier: #f2f1e4; --flaeche: #f9f8ee; --flaeche-tief: #dbe4c4;
+  --akzent: #a8752f; --lehm: #8a9a5b; --rinde: #3f5c33;
+  --tusche: #22331d; --linie: #d7ddc4; --warnung: #933a26;
+}
+
+html[data-palette="koralle"] {
+  --papier: #fdf1e7; --flaeche: #fff8f2; --flaeche-tief: #fbdccb;
+  --akzent: #1f7d78; --lehm: #c98a6e; --rinde: #8a4a3a;
+  --tusche: #4a2420; --linie: #ecd8c9; --warnung: #a3352a;
+}
+
+html[data-palette="graphit"] {
+  --papier: #1a1d21; --flaeche: #22262b; --flaeche-tief: #2c343c;
+  --akzent: #3ec9e0; --lehm: #5b6b76; --rinde: #9fb0bb;
+  --tusche: #e7ebee; --linie: #343c43; --warnung: #e0a83e;
+  --schatten: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* Wie bei "Dunkel": Referenzbilder/Aushaenge sind eigene helle
+   Zeichenblaetter, die nicht auf dunklem Grund verschwinden sollen. */
+html[data-palette="graphit"] .kartenBild,
+html[data-palette="graphit"] .grossesBild,
+html[data-palette="graphit"] .referenz,
+html[data-palette="graphit"] .blatt {
+  background: #f4f2e8;
+}
+
+/* flaeche-tief liegt im Dunkeln nah an papier/flaeche - als Suchtreffer-
+   Markierung braucht es einen eigenen, deutlicheren Ton (wie bei
+   "Dunkel" mit #4a5a35 fuer dessen Gruenakzent). */
+html[data-palette="graphit"] mark { background: #1f4750; }
+
+/* ------------------------------------------------------------------
    Desktop. Ab 60rem seitliche Navigation und zweispaltiges Raster.
    Die Huelle bleibt ein Raster - der Lernbildschirm bekommt eine
    eigene Klasse, sonst laege sein Inhalt in der Navigationsspalte.
    ------------------------------------------------------------------ */
 @media (min-width: 60rem) {
+  /* margin:0 statt der geerbten margin:0 auto (Basisregel oben) - sonst
+     zentriert sich der Inhalt und laesst links (und rechts) auf jedem
+     breiten Fenster/jeder Schriftgroesse eine leere Luecke, egal wie
+     --spaltenbreite gerade gesetzt ist. Navigation soll immer am
+     linken Rand anliegen. */
   .huelle {
     max-width: var(--spaltenbreite);
+    margin: 0;
     display: grid;
     grid-template-columns: 12rem minmax(0, 1fr);
     gap: 2.5rem;
@@ -695,6 +985,8 @@ html[data-palette="dunkel"] .blatt {
     border-top: none;
     border-right: 1px solid var(--linie);
   }
+
+  .navMenuKnopf { display: none; }
 
   .navKnopf {
     display: flex;
@@ -724,8 +1016,21 @@ html[data-palette="dunkel"] .blatt {
 
   .heuteBreit { grid-column: 1 / -1; }
 
-  .kacheln { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
-  .kartengitter { grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); }
+  .kennzahlen { grid-template-columns: repeat(4, 1fr); }
+  .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
+
+  .aufruf { flex-wrap: nowrap; }
+  .aufruf > div { min-width: 12rem; }
+  .aufruf > button.knopf { flex: none; }
+
+  /* .themenzeile-Desktop-Regel steht NICHT hier, sondern weiter unten
+     bei der Basisregel (nach Zeile 1010) - siehe Kommentar dort: an
+     dieser Stelle wuerde sie von der spaeter im Text stehenden
+     Mobil-Regel wieder ueberschrieben (gleiche Spezifitaet, spaetere
+     Position gewinnt), unabhaengig von der Media Query. */
+
+  .kacheln { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .kartengitter { grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); }
 
   .fortschrittRaster {
     display: grid;
@@ -733,6 +1038,14 @@ html[data-palette="dunkel"] .blatt {
     gap: 2rem 3rem;
     align-items: start;
   }
+
+  /* "Faellig in den naechsten Tagen" steht in derselben Grid-Zeile wie
+     "Letzte zwanzig Wochen" (20-Wochen-Kalender, deutlich hoeher). Die
+     Zeile richtet sich an dessen Hoehe aus, der kurze Balken-Chart blieb
+     dadurch oben haengen mit viel Leerraum darunter. align-self:stretch
+     + zentrierter Inhalt verteilt den Freiraum ausgeglichen. */
+  .faelligBlock { align-self: stretch; justify-content: center; }
+
 
   .fortschrittRaster .kennzahlen { grid-column: 1 / -1; }
 
@@ -781,7 +1094,7 @@ html[data-palette="dunkel"] .blatt {
 }
 
 .zeile { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
-.zeileText { display: flex; flex-direction: column; gap: 0.125rem; max-width: 34rem; }
+.zeileText { display: flex; flex-direction: column; gap: 0.125rem; max-width: 34rem; flex: 1 1 auto; min-width: 0; }
 .zeileTitel { margin: 0; font-size: 0.9375rem; }
 .zeileHinweis { margin: 0; font-size: 0.8125rem; color: var(--rinde); line-height: 1.5; }
 
@@ -821,7 +1134,6 @@ html[data-palette="dunkel"] .blatt {
 
 .schieber { width: 11rem; accent-color: var(--fortschritt); }
 .knopf.gefahr { border-color: var(--warnung); color: var(--warnung); }
-.knopf.gefahr:hover { background: var(--warnung); color: var(--papier); }
 .grosseKarte.gefahr { border-color: var(--warnung); }
 
 /* Betriebsarten */
@@ -837,7 +1149,6 @@ html[data-palette="dunkel"] .blatt {
   cursor: pointer;
 }
 
-.artKnopf:hover:not(:disabled) { border-color: var(--lehm); color: var(--tusche); }
 .artKnopf:disabled { opacity: 0.4; cursor: default; }
 
 /* ------------------------------------------------------------------
@@ -847,11 +1158,18 @@ html[data-palette="dunkel"] .blatt {
 
 .themenliste { list-style: none; margin: 0.75rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
 
+/* Icon und Titel (.themaInfo) bleiben zusammen in einer Zeile, die
+   beiden moeglichen Aktions-Knoepfe stehen als Paar in
+   .themenzeileAktionen - ob noch in derselben Zeile oder (bei
+   schmalem Platz) in einer eigenen Zeile darunter, immer rechtsbuendig
+   und als Paar zusammen, nicht frei im Wrap "schwimmend" (das wirkte
+   vorher durcheinander). Ab 60rem (Media Query weiter unten) wieder
+   das alte Grid. */
 .themenzeile {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr auto auto;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.875rem;
+  gap: 0.625rem 0.875rem;
   width: 100%;
   padding: 0.75rem 0.875rem;
   background: var(--flaeche);
@@ -863,8 +1181,30 @@ html[data-palette="dunkel"] .blatt {
   cursor: pointer;
 }
 
-.themenzeile:hover { border-color: var(--lehm); }
-.themaTitel { font-family: var(--serife); font-size: 1rem; }
+.themenzeile > :first-child { flex-shrink: 0; }
+.themaInfo { flex: 1 1 9rem; min-width: 0; }
+.themenzeileAktionen { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.875rem; margin-left: auto; }
+
+/* Muss NACH der Basisregel oben stehen, sonst gewinnt bei gleicher
+   Spezifitaet die spaeter im Text stehende Regel - unabhaengig davon,
+   in welcher Media Query sie steht. War zwischenzeitlich fälschlich
+   weiter oben im Desktop-Block platziert, wo die Mobil-Regel sie
+   wieder ueberschrieben hat (Ring/Titel wirkten dadurch "mittig" statt
+   in festen Spalten ausgerichtet). */
+@media (min-width: 60rem) {
+  .themenzeile {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto;
+    gap: 0.875rem;
+  }
+  .themaInfo { min-width: auto; }
+  .themenzeileAktionen { margin-left: 0; }
+}
+
+/* overflow-wrap: sehr lange, unteilbare deutsche Komposita (z. B.
+   "Wärmedurchlasswiderstand") liefen sonst auf Schmalbreiten ein paar
+   Pixel ueber den Rand hinaus, statt umzubrechen. */
+.themaTitel { font-family: var(--serife); font-size: 1rem; overflow-wrap: break-word; }
 .themaZeile2 { font-size: 0.75rem; color: var(--rinde); }
 
 /* ------------------------------------------------------------------
@@ -914,7 +1254,7 @@ html[data-palette="dunkel"] .blatt {
   gap: 0.5rem;
 }
 
-.trefferFrage { margin: 0; font-family: var(--serife); font-size: 1.0625rem; line-height: 1.45; }
+.trefferFrage { margin: 0; font-family: var(--serife); font-size: 1.0625rem; line-height: 1.45; overflow-wrap: break-word; }
 .trefferAntwort { margin: 0; font-size: 0.9375rem; line-height: 1.6; color: var(--rinde); }
 mark { background: var(--flaeche-tief); color: inherit; }
 
@@ -1030,6 +1370,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
    ------------------------------------------------------------------ */
 .paletteZeile {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 0.75rem;
@@ -1043,7 +1384,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 }
 
 .paletteZeile.aktiv { border-color: var(--tusche); border-width: 2px; }
-.paletteZeile:hover { border-color: var(--lehm); }
 
 .palettenfenster {
   display: grid;
@@ -1064,7 +1404,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .paletteHaken { color: var(--tusche); }
 
 .themenzeile.geplant { opacity: 0.5; cursor: default; background: transparent; border-style: dashed; }
-.themenzeile.geplant:hover { border-color: var(--linie); }
 
 /* ------------------------------------------------------------------
    Sichtung, Tastenkuerzel, Lupe
@@ -1205,7 +1544,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   gap: 0.75rem;
 }
 
-.normTitel { margin: 0; font-family: var(--serife); font-size: 1.0625rem; font-weight: 400; }
+.normTitel { margin: 0; font-family: var(--serife); font-size: 1.0625rem; font-weight: 400; min-width: 0; overflow-wrap: break-word; }
 .normKurz { margin: 0; font-size: 0.875rem; color: var(--rinde); }
 .normAbsatz { margin: 0; font-family: var(--serife); font-size: 0.9375rem; line-height: 1.65; }
 
@@ -1258,15 +1597,31 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   border: 1px solid var(--fortschritt);
   border-left-width: 4px;
   border-radius: var(--rund);
-  animation: auftauchen 500ms ease;
+  animation: aufstiegAuftauchen 550ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .aufstieg > div { flex: 1; }
 .aufstiegZeichen { font-size: 1.5rem; color: var(--fortschritt); }
 
+/* Das Levelicon bekommt beim Aufstieg selbst einen kurzen Leuchtring -
+   dieselbe Zeichnung, die auf der Heute-Seite sonst nur statisch steht. */
+.aufstieg .bauabschnitt { border-radius: var(--rund); animation: aufstiegGlanz 1200ms ease-out; }
+
 @keyframes auftauchen {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aufstiegAuftauchen {
+  0% { opacity: 0; transform: translateY(-10px) scale(0.96); }
+  60% { opacity: 1; transform: translateY(2px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes aufstiegGlanz {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--fortschritt) 60%, transparent); }
+  70% { box-shadow: 0 0 0 12px color-mix(in srgb, var(--fortschritt) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 /* Rueckmeldung zu Import/Export - ersetzt alert() */
@@ -1289,6 +1644,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   animation: auftauchen 300ms ease;
 }
 .meldung.fehler { border-color: var(--warnung); }
+/* Fuer positive Ereignisse (z. B. eine neu erreichte Meilenstein-Stufe)
+   dieselbe Rueckmeldung wie Import/Export, nur mit dem etwas
+   festlicheren Aufstiegs-Einschwingen statt der neutralen Variante. */
+.meldung.erfolg { border-color: var(--fortschritt); background: var(--flaeche-tief); animation: aufstiegAuftauchen 500ms cubic-bezier(0.34, 1.56, 0.64, 1); }
 .meldung p { margin: 0; font-size: 0.875rem; line-height: 1.4; }
 .meldung button {
   background: none;
@@ -1343,7 +1702,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   cursor: pointer;
 }
 
-.bildpunkt:hover { border-color: var(--lehm); }
 .bildpunkt.gewaehlt { background: var(--tusche); color: var(--papier); }
 .bildpunkt.loesung { border-color: var(--fortschritt); border-width: 3px; }
 .bildpunkt.daneben { border-color: var(--warnung); background: var(--warnung); color: var(--papier); }
@@ -1410,6 +1768,11 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   letter-spacing: 0.04em;
   color: var(--rinde);
   vertical-align: middle;
+  /* Soll als Ganzes in eine neue Zeile umbrechen, nicht mitten im Wort -
+     sonst bricht overflow-wrap: break-word (.themaTitel) auf engen
+     Breiten mitten in "Früh" o.ae. */
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .phaseMarke.phase-frueh { border-color: var(--fortschritt); }
@@ -1443,7 +1806,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   cursor: pointer;
 }
 
-.vergleichSeite:hover:not(:disabled) { border-color: var(--lehm); }
 .vergleichSeite.aktiv { border-color: var(--rinde); border-width: 2px; }
 .vergleichSeite.richtig { border-color: var(--fortschritt); border-width: 2px; }
 .vergleichSeite.falsch { border-color: var(--warnung); border-width: 2px; }
@@ -1485,7 +1847,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: 0.75rem;
 }
 
@@ -1506,7 +1868,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   transition: border-color 150ms ease, transform 150ms ease;
 }
 
-.artKachel:hover:not(:disabled) { border-color: var(--lehm); transform: translateY(-1px); }
 .artKachel.aus { opacity: 0.4; cursor: default; box-shadow: none; }
 .artZeichen { font-size: 1.75rem; line-height: 1; color: var(--fortschritt); }
 .artTitel { font-family: var(--serife); font-size: 1.0625rem; }
@@ -1535,7 +1896,11 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  /* auto-fit statt auto-fill: bei wenigen Eintraegen in einem breiten
+     Bereich liess auto-fill zusaetzliche, unbesetzte Spalten stehen -
+     das sah wie eine leere Box rechts daneben aus, statt dass sich die
+     vorhandenen Karten strecken. */
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 0.625rem;
 }
 
@@ -1566,7 +1931,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  /* min(19rem, 100%) statt nur 19rem - auf sehr schmalen Handys
+     (320px) war die feste Mindestbreite groesser als der verfuegbare
+     Platz und lief seitlich ueber. */
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
   gap: 0.5rem;
 }
 
@@ -1658,7 +2026,11 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .kachel { height: 100%; }
 
 .kartengitter { grid-auto-rows: 1fr; }
-.kartengitter li { display: flex; }
+/* min-width:0 - ohne das wachsen Grid-Zellen mit besonders langem,
+   nicht umgebrochenem Titel (min-width:auto ist der Grid-Standard)
+   ueber ihre 1fr-Spaltenbreite hinaus, nur diese eine Spalte lief dann
+   ueber den Rand hinaus. */
+.kartengitter li { display: flex; min-width: 0; }
 .kartengitter .karte { height: 100%; }
 
 .bestwerte { grid-auto-rows: 1fr; }
@@ -1714,7 +2086,13 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .zuordnungsliste .paarWahl { max-width: 100%; width: 100%; }
 
 /* Punkte im Bild */
+/* transform erzeugt einen eigenen Stapelkontext je Huelle - ohne
+   z-index auf .offen wuerde bei nah beieinanderliegenden Punkten
+   immer der spaeter im Array stehende Punkt (unabhaengig davon, ob
+   gerade dessen Auswahlfenster offen ist) obenauf gezeichnet und
+   dessen Kreis das Auswahlfenster des Nachbarn verdecken. */
 .bildpunktHuelle { position: absolute; transform: translate(-50%, -50%); }
+.bildpunktHuelle.offen { z-index: 2; }
 .bildpunkt { position: static; transform: none; }
 .bildpunkt.belegt { background: var(--flaeche-tief); border-color: var(--rinde); }
 
@@ -1765,7 +2143,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   cursor: pointer;
 }
 
-.punktwahlEintrag:hover { border-color: var(--lehm); }
 .punktwahlEintrag.aktiv { background: var(--tusche); color: var(--papier); border-color: var(--tusche); }
 .punktwahlHinweis { display: block; font-size: 0.625rem; color: var(--lehm); }
 
@@ -1821,7 +2198,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-auto-rows: 1fr;
   gap: 0.625rem;
 }
@@ -1844,7 +2221,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   cursor: pointer;
 }
 
-.pruefKachel:hover:not(:disabled) { border-color: var(--lehm); }
 .pruefKachel.aus { opacity: 0.45; cursor: default; }
 .pruefTitel { font-family: var(--serife); font-size: 0.9375rem; line-height: 1.3; }
 .pruefZeile { font-size: 0.75rem; color: var(--rinde); margin-top: auto; }
@@ -1900,7 +2276,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: 0.625rem;
 }
 
@@ -1939,7 +2315,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   cursor: pointer;
 }
 
-.trefferOeffnen:hover { background: var(--flaeche-tief); }
 .trefferOeffnen .zeileHinweis { align-self: flex-end; opacity: 0.7; }
 
 .itemansicht {
@@ -2083,6 +2458,22 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .bauTeil.neu { animation: bauTeilEin 700ms ease both; }
 html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 
+/* Pharmazie-Gestaltung: derselbe Levelicon-Rahmen wie oben, aber der
+   Ansatz im Kolben wird aus der Stufe berechnet statt aus 50
+   Zeichenteilen (siehe Bauabschnitt.jsx). Fuellhoehe transitioniert
+   sanft mit, Blasen steigen in einer Dauerschleife - beides wie ueberall
+   sonst automatisch aus bei data-animationen="aus"/reduced-motion. */
+.pharmaFluessigkeit { transition: y 600ms ease, height 600ms ease, fill 600ms ease; }
+
+@keyframes pharmaBlaseAuf {
+  0% { transform: translateY(0); opacity: 0; }
+  15% { opacity: 0.6; }
+  100% { transform: translateY(-9px); opacity: 0; }
+}
+.pharmaBlase { animation: pharmaBlaseAuf 2200ms ease-in infinite; transform-box: fill-box; transform-origin: center; }
+.pharmaBlase-b { animation-delay: 500ms; }
+.pharmaBlase-c { animation-delay: 1100ms; }
+
 /* In der Kachelansicht steht das Icon neben dem Text, nicht darüber. */
 .fortschrittKachel .bauabschnitt { flex: 0 0 auto; }
 
@@ -2101,7 +2492,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   padding: 0;
   display: grid;
   gap: 0.75rem;
-  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
 }
 
 .stempel {
@@ -2111,7 +2502,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   align-items: center;
   gap: 0.3rem;
   padding: 1rem 0.75rem 0.85rem;
-  min-height: 9.5rem;
+  min-height: 10.5rem;
   border-radius: 3px;
   background: var(--flaeche);
   text-align: center;
@@ -2132,25 +2523,72 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   border-radius: 1px;
   opacity: 0.5;
 }
-.stempelZeichen { font-size: 1.75rem; line-height: 1; }
+.stempelZeichen { font-size: 1.75rem; line-height: 1; transition: font-size 200ms ease; }
 .stempelTitel {
   font-family: var(--serife);
   font-size: 0.9375rem;
   line-height: 1.25;
 }
+.stempelMaterial {
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.stempelStufen { display: flex; gap: 0.2rem; margin-top: 0.1rem; }
+.stufePip {
+  width: 0.3125rem;
+  height: 0.3125rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.25;
+}
+.stufePip.erreicht { opacity: 0.9; }
 .stempelFuss {
   font-size: 0.75rem;
   opacity: 0.8;
   margin-top: auto;
 }
 
-/* Erreicht: farbig, leicht schief, wie aufgedrückt. */
+/* Sieben Materialstufen (siehe MEILENSTEIN_STUFEN in fortschritt.js) -
+   feste, palettenunabhaengige Materialfarben statt der frueheren
+   Gruppenfarbe: jede erreichte Stufe soll sichtbar edler aussehen,
+   unabhaengig davon, welche der 11 Farbpaletten gerade gewaehlt ist.
+   Der fruehere "wie aufgedrueckt"-Dreh-Effekt ist auf Wunsch entfernt. */
+.stempel.stufe-1 { --stufe-a: #dba36c; --stufe-b: #a06a37; --stufe-rand: #7a4a26; --stufe-text: #3a2410; }
+.stempel.stufe-2 { --stufe-a: #eceef1; --stufe-b: #b7bcc4; --stufe-rand: #888d96; --stufe-text: #2c2d33; }
+.stempel.stufe-3 { --stufe-a: #ffe28f; --stufe-b: #d4af37; --stufe-rand: #9c7a1e; --stufe-text: #3c2e08; }
+.stempel.stufe-4 { --stufe-a: #f3f7f8; --stufe-b: #c9d3d6; --stufe-rand: #7c8f96; --stufe-text: #223034; }
+.stempel.stufe-5 { --stufe-a: #6ea3e0; --stufe-b: #1c4d8f; --stufe-rand: #123a70; --stufe-text: #eef4ff; }
+.stempel.stufe-6 { --stufe-a: #e0637a; --stufe-b: #8c1c33; --stufe-rand: #5c0f1f; --stufe-text: #fff0f2; }
+.stempel.stufe-7 { --stufe-a: #eafcff; --stufe-b: #a6e8ef; --stufe-rand: #4fb8c4; --stufe-text: #123840; }
+
 .stempel.frei {
-  color: var(--rinde);
-  transform: rotate(-1.5deg);
+  background: linear-gradient(135deg, var(--stufe-a), var(--stufe-b));
+  border: 1px solid var(--stufe-rand);
+  color: var(--stufe-text);
 }
-.stempel.frei:nth-child(even) { transform: rotate(1.25deg); }
-.stempel.frei .stempelTitel { color: var(--tusche); }
+.stempel.frei .stempelTitel,
+.stempel.frei .stempelMaterial { color: var(--stufe-text); }
+
+/* Rahmen wird mit der Stufe kraeftiger, ab Saphir zusaetzlich ein
+   Schimmer - die Karte soll mit jeder Stufe sichtbar wertvoller wirken. */
+.stempel.stufe-3, .stempel.stufe-4 { border-width: 2px; }
+.stempel.stufe-5, .stempel.stufe-6 { border-width: 3px; box-shadow: 0 0 10px color-mix(in srgb, var(--stufe-rand) 45%, transparent); }
+.stempel.stufe-7 {
+  border-width: 3px;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--stufe-rand) 60%, transparent),
+              inset 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Icon waechst und beginnt ab Saphir zu leuchten - die zweite,
+   vom Material unabhaengige Weiterentwicklung pro Stufe. */
+.stempel.stufe-2 .stempelZeichen { font-size: 1.8125rem; }
+.stempel.stufe-3 .stempelZeichen { font-size: 1.9375rem; }
+.stempel.stufe-4 .stempelZeichen { font-size: 2.0625rem; }
+.stempel.stufe-5 .stempelZeichen { font-size: 2.1875rem; text-shadow: 0 0 6px rgba(255, 255, 255, 0.55); }
+.stempel.stufe-6 .stempelZeichen { font-size: 2.1875rem; text-shadow: 0 0 6px rgba(255, 255, 255, 0.55); }
+.stempel.stufe-7 .stempelZeichen { font-size: 2.375rem; text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); }
 
 /* Offen: Vorzeichnung. Kein Grau, sondern dünne Linie und wenig Deckkraft. */
 .stempel.offen {
@@ -2162,6 +2600,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 .stempel.offen .stempelZeichen,
 .stempel.offen .stempelTitel { opacity: 0.55; color: var(--rinde); }
 .stempel.offen .stempelFuss { color: var(--rinde); opacity: 0.7; }
+.stempel.offen .stufePip { color: var(--linie); }
 
 .stempelBalken {
   width: 100%;
@@ -2172,17 +2611,8 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   overflow: hidden;
 }
 .stempelBalken span { display: block; height: 100%; background: var(--fortschritt); }
-
-/* Je Gruppe eine eigene Stempelfarbe, damit die Wand nicht eintönig wird. */
-.stempel.frei.g-ausdauer     { color: var(--lehm); }
-.stempel.frei.g-menge        { color: var(--rinde); }
-.stempel.frei.g-zeichnen     { color: var(--akzent); }
-.stempel.frei.g-pruefung     { color: var(--fortschritt); }
-.stempel.frei.g-beherrschung { color: var(--tusche); }
-.stempel.frei.g-ordnung      { color: var(--warnung); }
-
-html[data-animationen="aus"] .stempel.frei,
-html[data-animationen="aus"] .stempel.frei:nth-child(even) { transform: none; }
+.stempel.frei .stempelBalken { background: color-mix(in srgb, var(--stufe-text) 25%, transparent); }
+.stempel.frei .stempelBalken span { background: var(--stufe-text); }
 
 /* ------------------------------------------------------------------
    Sichten am Stück: Sprungknopf und Tastenmarken
@@ -2212,3 +2642,27 @@ html[data-animationen="aus"] .stempel.frei:nth-child(even) { transform: none; }
 .tastenhilfeZeile dt { margin: 0; }
 .tastenhilfeZeile dd { margin: 0; font-size: 0.875rem; color: var(--rinde); }
 .tastenhilfeZeile .taste { margin-left: 0; }
+
+/* ------------------------------------------------------------------
+   Fehlendes Bild (Buchausschnitt nicht auf diesem Geraet) - siehe
+   components/LokalBild.jsx. Bewusst ruhig: gestrichelter Rahmen wie bei
+   den noch verschlossenen Detailkarten.
+   ------------------------------------------------------------------ */
+.bildFehlt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 7rem;
+  padding: 1rem;
+  border: 1px dashed var(--linie);
+  border-radius: var(--rund);
+  background: transparent;
+  color: var(--rinde);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.bildFehlt strong { font-weight: 600; }
+.bildflaeche > .bildFehlt { min-height: 12rem; }

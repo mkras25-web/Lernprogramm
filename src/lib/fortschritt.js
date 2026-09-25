@@ -39,7 +39,11 @@ const TAG = 24 * 60 * 60 * 1000
 
 // Stufen tragen Raenge. Das ist die sichtbare Belohnung des Aufstiegs -
 // kein Spielzeug, sondern die Laufbahn, die du ohnehin durchlaeufst.
-export const RAENGE = [
+// Welche Laufbahn (Architektur oder Pharmazie), entscheidet die
+// "Gestaltung" des aktiven Pakets - siehe RAENGE_NACH_GESTALTUNG und den
+// gleichnamigen Mechanismus in stufen.js. Dieselben ab-Schwellen fuer
+// beide Laufbahnen, damit sich der Aufstiegstakt nicht unterscheidet.
+export const RAENGE_ARCH = [
   { ab: 1, name: 'Grundlagen' },
   { ab: 4, name: 'Vorpraktikum' },
   { ab: 8, name: 'Zeichner' },
@@ -52,14 +56,38 @@ export const RAENGE = [
   { ab: 80, name: 'Baumeister' },
 ]
 
-export function rangFuer(stufe) {
-  let treffer = RAENGE[0]
-  for (const r of RAENGE) if (stufe >= r.ab) treffer = r
+export const RAENGE_PHARMA = [
+  { ab: 1, name: 'Grundlagen' },
+  { ab: 4, name: 'PTA-Praktikum' },
+  { ab: 8, name: 'Rezeptar' },
+  { ab: 13, name: 'Approbation' },
+  { ab: 19, name: 'Stationsapotheker' },
+  { ab: 26, name: 'Fachapotheker' },
+  { ab: 34, name: 'Betriebsleiter' },
+  { ab: 45, name: 'Apothekenleiter' },
+  { ab: 60, name: 'Gutachter' },
+  { ab: 80, name: 'Standesvertreter' },
+]
+
+const RAENGE_NACH_GESTALTUNG = { arch: RAENGE_ARCH, pharma: RAENGE_PHARMA }
+
+// Rueckwaertskompatibel als Vorgabe, falls irgendwo (noch) ohne
+// Gestaltung aufgerufen wird.
+export const RAENGE = RAENGE_ARCH
+
+export function raengeFuer(gestaltung = 'arch') {
+  return RAENGE_NACH_GESTALTUNG[gestaltung] ?? RAENGE_ARCH
+}
+
+export function rangFuer(stufe, gestaltung = 'arch') {
+  const raenge = raengeFuer(gestaltung)
+  let treffer = raenge[0]
+  for (const r of raenge) if (stufe >= r.ab) treffer = r
   return treffer
 }
 
-export function naechsterRang(stufe) {
-  return RAENGE.find((r) => r.ab > stufe) ?? null
+export function naechsterRang(stufe, gestaltung = 'arch') {
+  return raengeFuer(gestaltung).find((r) => r.ab > stufe) ?? null
 }
 
 export const GRADE = ['neu', 'angelernt', 'sicher', 'gefestigt', 'gemeistert']
@@ -197,6 +225,46 @@ export function serieBerechnen(ereignisse) {
   return { tage: serie, kulanzOffen: KONFIG.kulanztage - verbrauchtImMonat }
 }
 
+// -------------------------------------------------------------- CSV-Export
+//
+// Ergaenzt den JSON-Rohexport (speicher.js exportieren()) um eine
+// Tabellenform fuer eigene Auswertung in Excel/Calc. Semikolon als
+// Trenner und ein BOM am Anfang, weil Excel unter Windows sonst weder
+// die Spalten noch Umlaute richtig erkennt.
+const BEWERTUNGSNAMEN = { 1: 'Nochmal', 2: 'Schwer', 3: 'Gut', 4: 'Leicht' }
+
+function csvFeld(wert) {
+  const text = wert === undefined || wert === null ? '' : String(wert)
+  return /[;"\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text
+}
+
+export function csvAusEreignissen(ereignisse, items) {
+  const nachId = new Map(items.map((i) => [i.id, i]))
+  const kopf = [
+    'Datum', 'Uhrzeit', 'Modul', 'Thema', 'ItemId', 'Frage',
+    'Bewertung', 'DauerSekunden', 'Hilfe',
+  ]
+  const zeilen = [...ereignisse]
+    .sort((a, b) => a.ts - b.ts)
+    .map((e) => {
+      const item = nachId.get(e.itemId)
+      const datum = new Date(e.ts)
+      return [
+        datum.toLocaleDateString('de-DE'),
+        datum.toLocaleTimeString('de-DE'),
+        item?.modulTitel ?? '',
+        item?.themaTitel ?? '',
+        e.itemId,
+        item?.frage ?? '',
+        BEWERTUNGSNAMEN[e.bewertung] ?? e.bewertung,
+        e.dauerMs ? Math.round(e.dauerMs / 1000) : '',
+        e.hilfe ? 'ja' : '',
+      ]
+    })
+  const text = [kopf, ...zeilen].map((zeile) => zeile.map(csvFeld).join(';')).join('\r\n')
+  return `﻿${text}`
+}
+
 // Fortschritt je Thema, fuer Themenliste und Statistik.
 export function themenAuswerten(items, zustaende) {
   const karte = new Map()
@@ -283,8 +351,36 @@ export function baustellen(items, zustaende, anzahl = 10) {
 // aber gedeckelt.
 export const MEILENSTEIN_XP_GRUND = 50
 
+// Sieben Stufen je Meilenstein statt nur erreicht/nicht erreicht -
+// jede Stufe braucht ein Vielfaches des urspruenglichen Ziels, damit
+// es bis zur hoechsten Stufe bewusst sehr lange dauert. Farben/Namen
+// sind feste Materialfarben, unabhaengig von der gewaehlten Palette
+// (siehe .stempel.stufe-* in styles.css).
+export const MEILENSTEIN_STUFEN = [
+  { stufe: 1, name: 'Bronze', multiplikator: 1 },
+  { stufe: 2, name: 'Silber', multiplikator: 2 },
+  { stufe: 3, name: 'Gold', multiplikator: 5 },
+  { stufe: 4, name: 'Platin', multiplikator: 10 },
+  { stufe: 5, name: 'Saphir', multiplikator: 25 },
+  { stufe: 6, name: 'Rubin', multiplikator: 50 },
+  { stufe: 7, name: 'Diamant', multiplikator: 100 },
+]
+
+function zieleFuer(m) {
+  return MEILENSTEIN_STUFEN.map((s) => Math.max(1, Math.round(m.ziel * s.multiplikator)))
+}
+
+// Jede erreichte Stufe zaehlt einzeln (nicht nur die hoechste) - der
+// Sprung von Bronze zu Silber soll sich in XP genauso lohnen wie jeder
+// andere. m braucht stufe/ziele aus meilensteineAuswerten().
 export function xpFuerMeilenstein(m) {
-  return MEILENSTEIN_XP_GRUND + Math.min(250, Math.round((m?.ziel ?? 1) * 0.5))
+  if (!m?.stufe) return 0
+  const ziele = m.ziele ?? zieleFuer(m)
+  let summe = 0
+  for (let i = 0; i < m.stufe; i++) {
+    summe += MEILENSTEIN_XP_GRUND + Math.min(250, Math.round(ziele[i] * 0.5))
+  }
+  return summe
 }
 
 export function xpFuerMeilensteine(liste) {
@@ -293,13 +389,16 @@ export function xpFuerMeilensteine(liste) {
     .reduce((summe, m) => summe + xpFuerMeilenstein(m), 0)
 }
 
+// ︎ (Text-Darstellungs-Selektor) hinter jedem Zeichen - ohne das
+// rendert z. B. Safari manche dieser Symbole (Zahnrad, Stern) farbig
+// als Emoji statt als einfaches Linienzeichen wie die anderen.
 export const MEILENSTEIN_SYMBOLE = {
-  ausdauer: '◷',
-  menge: '▦',
-  zeichnen: '✎',
-  pruefung: '✓',
-  beherrschung: '★',
-  ordnung: '⊞',
+  ausdauer: '◷︎',
+  menge: '▦︎',
+  zeichnen: '✎︎',
+  pruefung: '✓︎',
+  beherrschung: '★︎',
+  ordnung: '⊞︎',
 }
 
 export const MEILENSTEIN_GRUPPEN = {
@@ -332,6 +431,11 @@ export const MEILENSTEINE = [
   { id: 'ms-stufe-50', gruppe: 'menge', titel: 'Erstes Bauwerk fertig', feld: 'stufe', ziel: 50 },
   { id: 'ms-stufe-75', gruppe: 'menge', titel: 'Stadthaus im Rohbau', feld: 'stufe', ziel: 75 },
   { id: 'ms-stufe-100', gruppe: 'menge', titel: 'Zweites Bauwerk fertig', feld: 'stufe', ziel: 100 },
+  // ^ Diese drei Titel erzaehlen konkret vom Architektur-Bauwerk - fuer
+  // andere Gestaltungen (Pharmazie) ueberschrieben, siehe
+  // MEILENSTEIN_TITEL_GESTALTUNG unten. Absichtlich nicht generisch
+  // umformuliert: die Architektur-Formulierung bleibt fuer bestehende
+  // Nutzer unveraendert (Vorgabe = "arch").
   { id: 'ms-xp-5000', gruppe: 'menge', titel: 'Fünftausend XP', feld: 'xp', ziel: 5000 },
   { id: 'ms-module-3', gruppe: 'menge', titel: 'Drei Module begonnen', feld: 'moduleBegonnen', ziel: 3 },
 
@@ -364,15 +468,47 @@ export const MEILENSTEINE = [
   { id: 'ms-gesichert', gruppe: 'ordnung', titel: 'Fortschritt gesichert', feld: 'sicherungen', ziel: 1 },
 ]
 
-export function meilensteineAuswerten(daten) {
+// Nur die Meilensteine, die woertlich vom Architektur-Bauwerk erzaehlen,
+// brauchen eine eigene Formulierung je Gestaltung - alle anderen Titel
+// ("Hundert Antworten", "Zehn Zeichnungen", ...) sind fachneutral und
+// bleiben unveraendert.
+const MEILENSTEIN_TITEL_GESTALTUNG = {
+  'ms-stufe-50': { pharma: 'Erste Charge fertig' },
+  'ms-stufe-75': { pharma: 'Zweite Charge in Arbeit' },
+  'ms-stufe-100': { pharma: 'Zweite Charge fertig' },
+}
+
+export function meilensteineAuswerten(daten, gestaltung = 'arch') {
   return MEILENSTEINE.map((m) => {
     const stand = daten[m.feld] ?? 0
+    const ziele = zieleFuer(m)
+    let stufe = 0
+    for (const z of ziele) {
+      if (stand < z) break
+      stufe += 1
+    }
+    const maxStufe = stufe >= MEILENSTEIN_STUFEN.length
+    const naechstesZiel = maxStufe ? null : ziele[stufe]
+    const vorherigesZiel = stufe > 0 ? ziele[stufe - 1] : 0
+    const anteil = maxStufe
+      ? 1
+      : Math.max(0, Math.min(1, (stand - vorherigesZiel) / (naechstesZiel - vorherigesZiel)))
+
     return {
       ...m,
+      titel: MEILENSTEIN_TITEL_GESTALTUNG[m.id]?.[gestaltung] ?? m.titel,
       stand,
-      anteil: Math.max(0, Math.min(1, stand / m.ziel)),
-      frei: stand >= m.ziel,
-      beschreibung: `${m.ziel} erreichen`,
+      ziele,
+      stufe,
+      maxStufe,
+      // ziel bleibt fuer Abwaertskompatibilitaet das jeweils naechste
+      // (noch nicht erreichte) Ziel - Diamant-Ziel, sobald maximal.
+      ziel: naechstesZiel ?? ziele[ziele.length - 1],
+      anteil,
+      frei: stufe > 0,
+      beschreibung: maxStufe
+        ? 'Höchste Stufe (Diamant) erreicht'
+        : `${naechstesZiel} für ${MEILENSTEIN_STUFEN[stufe].name}`,
     }
   })
 }

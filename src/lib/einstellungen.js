@@ -28,6 +28,11 @@ export const PALETTEN = [
   { id: 'seekarte', name: 'Seekarte', dunkel: false, tupfer: ['#d9dcd6', '#81c3d7', '#3a7ca5', '#2f6690', '#16425b'] },
   { id: 'lagune', name: 'Lagune', dunkel: false, tupfer: ['#f8ffe5', '#06d6a0', '#1b9aaa', '#ffc43d', '#ef476f'] },
   { id: 'dunkel', name: 'Dunkel', dunkel: true, tupfer: ['#1d211a', '#333a2c', '#adc178', '#8a7360', '#edeade'] },
+  { id: 'amethyst', name: 'Amethyst', dunkel: false, tupfer: ['#f3eef6', '#e6dcee', '#ad8232', '#9b7ba3', '#6e4a74'] },
+  { id: 'fjord', name: 'Fjord', dunkel: false, tupfer: ['#eef2f3', '#dbe6e8', '#c96b56', '#8aa3aa', '#51707a'] },
+  { id: 'waldgruen', name: 'Waldgrün', dunkel: false, tupfer: ['#f2f1e4', '#dbe4c4', '#a8752f', '#8a9a5b', '#3f5c33'] },
+  { id: 'koralle', name: 'Koralle', dunkel: false, tupfer: ['#fdf1e7', '#fbdccb', '#1f7d78', '#c98a6e', '#8a4a3a'] },
+  { id: 'graphit', name: 'Graphit', dunkel: true, tupfer: ['#1a1d21', '#2c343c', '#3ec9e0', '#5b6b76', '#9fb0bb'] },
 ]
 
 export const SCHRIFTGROESSEN = [
@@ -55,6 +60,8 @@ export const STANDARD = {
   skizzenSichern: true,
   sichtungWeiter: false,
   aufstiegFeiern: true,
+  dropboxAuto: true,
+  dropboxSkizzen: false,
 }
 
 function systemDunkel() {

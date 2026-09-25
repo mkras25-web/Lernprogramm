@@ -1,0 +1,73 @@
+# Veroeffentlicht die App bei jedem Push auf main als Website (GitHub Pages),
+# damit sie auch unterwegs vom Handy erreichbar ist - ohne dass der PC laeuft
+# oder man im selben WLAN sein muss.
+#
+# Dieses Repository enthaelt NUR den Ordner "app" des lokalen Projekts
+# (Wurzel hier = app/ dort). Hochgeladen wird es mit
+# Online-veroeffentlichen.bat im lokalen Projekt (git subtree) - nie mit
+# einem normalen "git push" des ganzen Projekts.
+#
+# Einmalig im Repository einzustellen (Settings -> Pages):
+#   Build and deployment -> Source: "GitHub Actions"
+#
+# Gebaut wird nur, was im Git liegt. Urheberrechtlich geschuetzte Buchausschnitte
+# (bilder-lokal) sind per .gitignore ausgeschlossen und werden zusaetzlich in
+# vite.config.js aus dem Build entfernt - sie erreichen den Server nie.
+name: App veroeffentlichen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      # Die fertige App als Ordner samt Start-Skripten (Windows braucht
+      # nichts installiert), erreichbar unter <Adresse>/lernprogramm-offline.zip
+      - name: Offline-Paket bauen
+        run: |
+          mkdir paket
+          cp -r dist/. paket/
+          cp offline/* paket/
+          (cd paket && zip -qr ../dist/lernprogramm-offline.zip .)
+      - name: Sicherheitspruefung - keine geschuetzten Bilder im Build
+        run: |
+          if find dist paket -type d -name bilder-lokal | grep -q .; then
+            echo "bilder-lokal im Build gefunden - Abbruch"; exit 1
+          fi
+          if unzip -l dist/lernprogramm-offline.zip | grep -q bilder-lokal; then
+            echo "bilder-lokal im Offline-Paket gefunden - Abbruch"; exit 1
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  veroeffentlichen:
+    needs: bauen
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

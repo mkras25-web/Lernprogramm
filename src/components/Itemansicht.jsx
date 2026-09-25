@@ -1,4 +1,5 @@
 import Bildlupe from './Bildlupe.jsx'
+import LokalBild from './LokalBild.jsx'
 import Bildpunkte from './Bildpunkte.jsx'
 import Normen from './Normen.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
@@ -42,6 +43,16 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
 
         <p className="antworttext">{item.antwort}</p>
         {item.vertiefung && <p className="vertiefung">{item.vertiefung}</p>}
+        {item.bild && (
+          <figure style={{ margin: 0 }}>
+            <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />
+            {item.bildunterschrift && (
+              <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
+                {item.bildunterschrift}
+              </figcaption>
+            )}
+          </figure>
+        )}
         <p className="quelle">{item.quelle}</p>
         {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
         <Normen item={item} glossar={glossar} />
@@ -155,7 +166,7 @@ function Aufgabenteil({ item }) {
                 {i === item.richtig ? '✓ ' : ''}
                 {seite.titel}
               </span>
-              {seite.bild && <img src={seite.bild} alt="" />}
+              {seite.bild && <LokalBild src={seite.bild} alt="" />}
               <span className="vergleichText">{seite.beschreibung}</span>
             </div>
           ))}

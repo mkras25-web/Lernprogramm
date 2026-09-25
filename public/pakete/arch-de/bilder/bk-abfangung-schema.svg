@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 700" width="820" height="700">
+  <defs>
+    <pattern id="abMauer" width="34" height="17" patternUnits="userSpaceOnUse">
+      <rect width="34" height="17" fill="#a98467"/>
+      <path d="M0 0 H34 M0 8.5 H34 M0 17 H34" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M17 0 V8.5 M0 8.5 V17 M34 8.5 V17" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="abDaemm" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#adc178"/>
+      <path d="M-3 11 L11 -3 M0 14 L14 0 M3 17 L17 3" stroke="#8fa85f" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="abBeton" width="16" height="16" patternUnits="userSpaceOnUse">
+      <rect width="16" height="16" fill="#dde5b6"/>
+      <circle cx="4" cy="5" r="1.6" fill="#a9b183"/>
+      <circle cx="12" cy="11" r="1.3" fill="#a9b183"/>
+    </pattern>
+    <pattern id="abBand" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#f7f3e4"/>
+      <path d="M0 10 L10 0" stroke="#9a6b1f" stroke-width="1.6"/>
+    </pattern>
+  </defs>
+
+  <rect width="820" height="700" fill="#f0ead2"/>
+
+  <!-- tragende Innenschale und Kerndaemmung -->
+  <rect x="180" y="40"  width="157" height="480" fill="url(#abMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="337" y="40"  width="126" height="480" fill="url(#abDaemm)" stroke="#414833" stroke-width="2"/>
+
+  <!-- Geschossdecke, endet buendig mit der Innenschale -->
+  <rect x="60" y="248" width="277" height="70" fill="url(#abBeton)" stroke="#414833" stroke-width="2"/>
+
+  <!-- Verblendschale oben und unten -->
+  <rect x="463" y="40"  width="103" height="266" fill="url(#abMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="463" y="350" width="103" height="170" fill="url(#abMauer)" stroke="#414833" stroke-width="2"/>
+
+  <!-- Setzfuge mit vorkomprimiertem Dichtungsband -->
+  <rect x="463" y="320" width="103" height="30" fill="url(#abBand)" stroke="#414833" stroke-width="2"/>
+
+  <!-- Ankerschiene im Deckenrand -->
+  <rect x="325" y="256" width="14" height="56" rx="2" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+
+  <!-- Tragkonsole: senkrechter Schenkel, Auflagerschenkel, Strebe -->
+  <path d="M337 256 h16 v50 h190 v14 H337 z" fill="#f7f3e4" stroke="#414833" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M353 264 L543 302" stroke="#414833" stroke-width="2.6" fill="none"/>
+
+  <!-- Lastpfeil -->
+  <path d="M514 96 V286" stroke="#6c584c" stroke-width="2" stroke-dasharray="8 5"/>
+  <path d="M514 296 l-6 -14 h12 z" fill="#6c584c"/>
+
+  <text x="96" y="110" font-family="Georgia, serif" font-size="19" fill="#6c584c">innen</text>
+  <text x="640" y="110" font-family="Georgia, serif" font-size="19" fill="#6c584c">außen</text>
+
+  <!-- Nummern -->
+  <g font-family="Georgia, serif" font-size="16" font-weight="bold" text-anchor="middle">
+    <g fill="#414833"><circle cx="618" cy="150" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="618" y="156">1</text></g>
+    <g fill="#414833"><circle cx="618" cy="256" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="618" y="262">2</text></g>
+    <g fill="#414833"><circle cx="248" cy="212" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="248" y="218">3</text></g>
+    <g fill="#414833"><circle cx="140" cy="354" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="140" y="360">4</text></g>
+    <g fill="#414833"><circle cx="640" cy="335" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="640" y="341">5</text></g>
+    <g fill="#414833"><circle cx="618" cy="446" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="618" y="452">6</text></g>
+    <g fill="#414833"><circle cx="400" cy="446" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="400" y="452">7</text></g>
+    <g fill="#414833"><circle cx="258" cy="446" r="14" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="258" y="452">8</text></g>
+  </g>
+  <g stroke="#414833" stroke-width="1.3" fill="none">
+    <path d="M604 150 H566"/>
+    <path d="M604 256 L520 292"/>
+    <path d="M248 226 V248"/>
+    <path d="M154 354 L200 318"/>
+    <path d="M626 335 H566"/>
+    <path d="M604 446 H566"/>
+    <path d="M400 460 V490"/>
+    <path d="M258 460 V490"/>
+  </g>
+
+  <!-- Legende -->
+  <path d="M60 546 H760" stroke="#d9d2b4" stroke-width="2"/>
+  <g font-family="Georgia, serif" font-size="17" fill="#414833">
+    <text x="60" y="578">1  Verblendschale oberhalb der Abfangung</text>
+    <text x="60" y="606">2  Tragkonsole mit Auflagerschenkel</text>
+    <text x="60" y="634">3  Ankerschiene im Deckenrand</text>
+    <text x="60" y="662">4  Geschossdecke</text>
+    <text x="470" y="578">5  Setzfuge mit Dichtungsband</text>
+    <text x="470" y="606">6  Verblendschale unterhalb</text>
+    <text x="470" y="634">7  Kerndämmung</text>
+    <text x="470" y="662">8  tragende Innenschale</text>
+  </g>
+</svg>

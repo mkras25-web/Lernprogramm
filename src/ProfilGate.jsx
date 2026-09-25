@@ -8,10 +8,12 @@ import {
   profilZuletztAktiv,
   profilErstellen,
   profilUmbenennen,
+  profilFarbeSetzen,
   profilLoeschen,
   altbestandAlsProfilUebernehmen,
 } from './lib/profile.js'
 import { datenbankFuerProfilSetzen, importieren } from './lib/speicher.js'
+import { abgleichen } from './lib/abgleich.js'
 
 // Vorgeschaltet vor App: klaert, welches Nutzerprofil gerade lernt,
 // bevor irgendeine Datenbank geoeffnet wird. App selbst weiss nichts
@@ -85,17 +87,46 @@ export default function ProfilGate() {
     setProfile((alle) => alle.map((p) => (p.id === id ? { ...p, name } : p)))
   }
 
+  function profilFarbeAendernUndMerken(id, farbe) {
+    profilFarbeSetzen(id, farbe)
+    setProfile((alle) => alle.map((p) => (p.id === id ? { ...p, farbe: farbe || undefined } : p)))
+  }
+
   async function profilEntfernen(id) {
     await profilLoeschen(id)
     setProfile((alle) => alle.filter((p) => p.id !== id))
   }
 
-  // Legt aus einer Sicherungsdatei ein NEUES Profil an, statt in ein
-  // bestehendes hineinzumergen - so entsteht nie versehentlich ein
-  // Datendurcheinander, wenn die Datei vom falschen Profil stammt.
-  // Schlaegt die Uebernahme fehl, bleibt kein leeres Profil zurueck.
+  // Legt aus einer Sicherungsdatei ein Profil an - mit der Profil-Id aus
+  // der Datei, damit dieses Geraet danach dasselbe Profil ist wie das, von
+  // dem die Sicherung stammt (sonst wuerden zwei Geraete nie als dasselbe
+  // Profil erkannt). Existiert diese Id hier schon, wird in genau dieses
+  // Profil eingelesen - Ereignisse werden vereinigt, nichts doppelt.
+  // Schlaegt die Uebernahme eines NEUEN Profils fehl, bleibt kein leeres
+  // Profil zurueck.
   async function profilAusSicherungImportieren(datei) {
     const text = await datei.text()
+    return profilAusTextImportieren(text)
+  }
+
+  // Ein Profil aus Dropbox als dasselbe Profil (gleiche Id) auf diesem Geraet
+  // anlegen und den gesamten Stand holen. Existiert es hier schon, wird nur
+  // abgeglichen.
+  async function profilAusDropboxLaden({ id, name }) {
+    const vorhanden = profilListe().find((p) => p.id === id)
+    const profil = vorhanden ?? profilErstellen(name, id)
+    try {
+      await datenbankFuerProfilSetzen(profil.id)
+      const bericht = await abgleichen({ profilId: profil.id, profilName: profil.name })
+      if (!vorhanden) setProfile((alle) => [...alle, profil])
+      return { profil, bericht, neuAngelegt: !vorhanden }
+    } catch (e) {
+      if (!vorhanden) await profilLoeschen(profil.id)
+      throw e
+    }
+  }
+
+  async function profilAusTextImportieren(text) {
     let daten
     try {
       daten = JSON.parse(text)
@@ -107,14 +138,16 @@ export default function ProfilGate() {
     }
 
     const name = daten.profil?.name?.trim() || 'Importiertes Profil'
-    const profil = profilErstellen(name)
+    const idAusDatei = typeof daten.profil?.id === 'string' && daten.profil.id ? daten.profil.id : undefined
+    const vorhanden = idAusDatei ? profilListe().find((p) => p.id === idAusDatei) : null
+    const profil = vorhanden ?? profilErstellen(name, idAusDatei)
     try {
       await datenbankFuerProfilSetzen(profil.id)
       const bericht = await importieren(text)
-      setProfile((alle) => [...alle, profil])
-      return { profil, bericht }
+      if (!vorhanden) setProfile((alle) => [...alle, profil])
+      return { profil, bericht, neuAngelegt: !vorhanden }
     } catch (e) {
-      await profilLoeschen(profil.id)
+      if (!vorhanden) await profilLoeschen(profil.id)
       throw e
     }
   }
@@ -137,8 +170,10 @@ export default function ProfilGate() {
         onWahl={profilWaehlen}
         onErstellen={profilAnlegen}
         onUmbenennen={profilUmbenennenUndMerken}
+        onFarbeAendern={profilFarbeAendernUndMerken}
         onLoeschen={profilEntfernen}
         onImportieren={profilAusSicherungImportieren}
+        onAusDropboxLaden={profilAusDropboxLaden}
       />
     )
   }

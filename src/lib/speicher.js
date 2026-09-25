@@ -3,13 +3,19 @@
 // Grundregel: Es wird nie ein Zustand gespeichert, nur Ereignisse.
 // Faelligkeiten und Statistik werden daraus berechnet. Zwei Geraete
 // zusammenfuehren heisst darum: Ereignisse vereinigen, Duplikate
-// anhand der ID verwerfen. Konflikte gibt es nicht.
+// anhand der ID verwerfen. Konflikte gibt es nicht - mit einer
+// Ausnahme: Geloeschtes. Wer auf einem Geraet loescht (Rueckgaengig,
+// Skizze loeschen, alles loeschen), hinterlaesst einen Loeschvermerk
+// (siehe unten), der beim Abgleich mitreist. Sonst wuerde ein Geraet mit
+// dem alten Stand das Geloeschte beim naechsten Vereinigen zurueckbringen.
 //
 // Jedes Nutzerprofil (siehe profile.js) bekommt eine eigene, komplett
 // getrennte Datenbank "lernprogramm_<profilId>". So bleiben mehrere
 // Personen auf demselben Geraet sauber getrennt, und ein Profil laesst
 // sich einzeln exportieren, importieren oder loeschen, ohne die
 // anderen zu beruehren.
+
+import { erzeugeId } from './id.js'
 
 const ALTE_DB_NAME = 'lernprogramm' // vor der Einfuehrung von Profilen
 const DB_VERSION = 3
@@ -100,7 +106,7 @@ export function alleSkizzen() {
 
 export async function skizzeSpeichern(itemId, bild) {
   const store = await transaktion('readwrite', SKIZZEN)
-  const eintrag = { id: crypto.randomUUID(), itemId, ts: Date.now(), bild }
+  const eintrag = { id: erzeugeId(), itemId, ts: Date.now(), bild }
   await new Promise((resolve, reject) => {
     const anfrage = store.add(eintrag)
     anfrage.onsuccess = resolve
@@ -117,7 +123,7 @@ export function allePruefungen() {
 
 export async function pruefungSpeichern(pruefung) {
   const store = await transaktion('readwrite', PRUEFUNGEN)
-  const eintrag = { id: crypto.randomUUID(), ts: Date.now(), ...pruefung }
+  const eintrag = { id: erzeugeId(), ts: Date.now(), ...pruefung }
   await new Promise((resolve, reject) => {
     const anfrage = store.add(eintrag)
     anfrage.onsuccess = resolve
@@ -148,7 +154,7 @@ export async function markeSetzen(marke) {
 export function geraeteKennung() {
   let id = localStorage.getItem('geraet')
   if (!id) {
-    id = crypto.randomUUID().slice(0, 8)
+    id = erzeugeId().slice(0, 8)
     localStorage.setItem('geraet', id)
   }
   return id
@@ -165,7 +171,7 @@ export async function alleEreignisse() {
 
 export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, hilfe, quelle }) {
   const ereignis = {
-    id: crypto.randomUUID(),
+    id: erzeugeId(),
     ts: Date.now(),
     geraet: geraeteKennung(),
     itemId,
@@ -192,6 +198,7 @@ export async function ereignisLoeschen(id) {
     anfrage.onsuccess = resolve
     anfrage.onerror = () => reject(anfrage.error)
   })
+  vermerken('ereignisse', [id])
 }
 
 // Loescht eine gespeicherte Skizze.
@@ -202,6 +209,45 @@ export async function skizzeLoeschen(id) {
     anfrage.onsuccess = resolve
     anfrage.onerror = () => reject(anfrage.error)
   })
+  vermerken('skizzen', [id])
+}
+
+// --- Loeschvermerke -----------------------------------------------
+//
+// Je Profil in localStorage: { ereignisse: {id: ts}, skizzen: {...},
+// pruefungen: {...}, marken: {itemId: ts} }. Ids werden nie
+// wiederverwendet, ein Vermerk ist deshalb endgueltig; nur Marken
+// (Schluessel itemId) koennen spaeter neu gesetzt werden - dort zaehlt
+// der Zeitstempel.
+
+const VERMERK_ARTEN = ['ereignisse', 'skizzen', 'pruefungen', 'marken']
+
+function vermerkSchluessel() {
+  return `geloescht_${aktuellesProfil}`
+}
+
+export function loeschvermerke() {
+  const leer = Object.fromEntries(VERMERK_ARTEN.map((a) => [a, {}]))
+  try {
+    const roh = JSON.parse(localStorage.getItem(vermerkSchluessel()) ?? 'null')
+    for (const art of VERMERK_ARTEN) {
+      if (roh?.[art] && typeof roh[art] === 'object') leer[art] = { ...roh[art] }
+    }
+  } catch {
+    /* kaputter Eintrag zaehlt wie keiner */
+  }
+  return leer
+}
+
+function vermerkeSchreiben(vermerke) {
+  localStorage.setItem(vermerkSchluessel(), JSON.stringify(vermerke))
+}
+
+function vermerken(art, schluessel, ts = Date.now()) {
+  if (schluessel.length === 0) return
+  const vermerke = loeschvermerke()
+  for (const k of schluessel) vermerke[art][k] = Math.max(vermerke[art][k] ?? 0, ts)
+  vermerkeSchreiben(vermerke)
 }
 
 // Loescht die Datenbank eines Profils vollstaendig - fuer "Profil
@@ -291,6 +337,12 @@ export async function speicherSichern() {
 // Loescht das gesamte Ereignisprotokoll. Unwiderruflich - der Aufrufer
 // muss vorher zurueckfragen.
 export async function allesLoeschen() {
+  // Erst vermerken, was verschwindet - sonst holt der naechste Abgleich
+  // alles vom anderen Geraet zurueck und "Loeschen" bliebe wirkungslos.
+  vermerken('ereignisse', (await alleAus(STORE)).map((e) => e.id))
+  vermerken('skizzen', (await alleAus(SKIZZEN)).map((e) => e.id))
+  vermerken('pruefungen', (await alleAus(PRUEFUNGEN)).map((e) => e.id))
+  vermerken('marken', (await alleAus(MARKEN)).map((e) => e.itemId))
   for (const name of [STORE, SKIZZEN, MARKEN, PRUEFUNGEN]) {
     const store = await transaktion('readwrite', name)
     await new Promise((resolve, reject) => {
@@ -323,16 +375,19 @@ export async function exportieren({ mitSkizzen = true, profilId, profilName } = 
       skizzen: mitSkizzen ? skizzen : [],
       marken,
       pruefungen,
+      geloescht: loeschvermerke(),
     },
     null,
     2
   )
 }
 
-async function vereinigen(name, eintraege, schluessel) {
+async function vereinigen(name, eintraege, schluessel, geloescht = {}) {
   if (!Array.isArray(eintraege) || eintraege.length === 0) return 0
   const vorhandene = new Set((await alleAus(name)).map((e) => e[schluessel]))
-  const neue = eintraege.filter((e) => e && e[schluessel] && !vorhandene.has(e[schluessel]))
+  const neue = eintraege.filter(
+    (e) => e && e[schluessel] && !vorhandene.has(e[schluessel]) && !(e[schluessel] in geloescht)
+  )
 
   const store = await transaktion('readwrite', name)
   await Promise.all(
@@ -348,18 +403,63 @@ async function vereinigen(name, eintraege, schluessel) {
   return neue.length
 }
 
+// Fremde Loeschvermerke uebernehmen und anwenden: vermerkte Zeilen hier
+// entfernen, die Vermerke selbst behalten (damit sie weiterreisen).
+async function vermerkeAnwenden(fremd) {
+  const lokal = loeschvermerke()
+  for (const art of VERMERK_ARTEN) {
+    const quelle = fremd?.[art]
+    if (!quelle || typeof quelle !== 'object') continue
+    for (const [k, ts] of Object.entries(quelle)) {
+      if (typeof ts === 'number' && (lokal[art][k] ?? 0) < ts) lokal[art][k] = ts
+    }
+  }
+  vermerkeSchreiben(lokal)
+
+  let entfernt = 0
+  const streichen = async (name, vermerkte, istMarke) => {
+    if (Object.keys(vermerkte).length === 0) return
+    const vorhanden = await alleAus(name)
+    const zuLoeschen = vorhanden.filter((z) => {
+      const k = istMarke ? z.itemId : z.id
+      return k in vermerkte && (!istMarke || (z.ts ?? 0) <= vermerkte[k])
+    })
+    if (zuLoeschen.length === 0) return
+    const store = await transaktion('readwrite', name)
+    await Promise.all(
+      zuLoeschen.map(
+        (z) =>
+          new Promise((resolve) => {
+            const anfrage = store.delete(istMarke ? z.itemId : z.id)
+            anfrage.onsuccess = resolve
+            anfrage.onerror = resolve
+          })
+      )
+    )
+    entfernt += zuLoeschen.length
+  }
+  await streichen(STORE, lokal.ereignisse, false)
+  await streichen(SKIZZEN, lokal.skizzen, false)
+  await streichen(PRUEFUNGEN, lokal.pruefungen, false)
+  await streichen(MARKEN, lokal.marken, true)
+  return { vermerke: lokal, entfernt }
+}
+
 // Importiert Ereignisse, Skizzen und Marken. Vereinigt, ersetzt nicht.
 // Marken werden bewusst ueberschrieben, weil dort der neuere Stand
-// gelten soll - ein Ereignis dagegen ist unveraenderlich.
+// gelten soll - ein Ereignis dagegen ist unveraenderlich. Was auf einem
+// der Geraete geloescht wurde (Loeschvermerk), kommt nicht zurueck.
 export async function importieren(text) {
   const daten = JSON.parse(text)
   if (!Array.isArray(daten.ereignisse)) {
     throw new Error('Die Datei enthält kein Ereignisprotokoll.')
   }
 
-  const anzahlEreignisse = await vereinigen(STORE, daten.ereignisse, 'id')
-  const anzahlSkizzen = await vereinigen(SKIZZEN, daten.skizzen ?? [], 'id')
-  const anzahlPruefungen = await vereinigen(PRUEFUNGEN, daten.pruefungen ?? [], 'id')
+  const { vermerke, entfernt } = await vermerkeAnwenden(daten.geloescht)
+
+  const anzahlEreignisse = await vereinigen(STORE, daten.ereignisse, 'id', vermerke.ereignisse)
+  const anzahlSkizzen = await vereinigen(SKIZZEN, daten.skizzen ?? [], 'id', vermerke.skizzen)
+  const anzahlPruefungen = await vereinigen(PRUEFUNGEN, daten.pruefungen ?? [], 'id', vermerke.pruefungen)
 
   // Marken werden nur uebernommen, wenn sie neuer sind als das, was
   // lokal liegt. Sonst zerstoert eine alte Sicherung neuere Arbeit.
@@ -367,6 +467,7 @@ export async function importieren(text) {
   let anzahlMarken = 0
   for (const marke of daten.marken ?? []) {
     if (!marke?.itemId) continue
+    if ((vermerke.marken[marke.itemId] ?? -1) >= (marke.ts ?? 0)) continue
     const vorhanden = lokal.get(marke.itemId)
     if (vorhanden && (vorhanden.ts ?? 0) >= (marke.ts ?? 0)) continue
     await markeSetzen(marke)
@@ -378,5 +479,6 @@ export async function importieren(text) {
     skizzen: anzahlSkizzen,
     marken: anzahlMarken,
     pruefungen: anzahlPruefungen,
+    geloescht: entfernt,
   }
 }

@@ -259,7 +259,7 @@ export default function Sichtung({
               className={m.einspruch ? 'markenKnopf aktiv' : 'markenKnopf'}
               onClick={() => onMarke(item.id, { einspruch: !m.einspruch })}
             >
-              ⚑ Stimmt so nicht
+              ⚑︎ Stimmt so nicht
             </button>
             <button className="markenKnopf" onClick={() => bearbeitenStarten(item)}>
               ✎ Bearbeiten
@@ -430,7 +430,7 @@ export default function Sichtung({
                     <span className={`kategorieMarke k-${k.id}`}>{k.symbol} {k.name}</span>
                   )}
                   {m.lesezeichen && <span className="kategorieMarke">Lesezeichen</span>}
-                  {m.einspruch && <span className="kategorieMarke k-ueberarbeiten">⚑</span>}
+                  {m.einspruch && <span className="kategorieMarke k-ueberarbeiten">⚑︎</span>}
                 </p>
               </div>
 

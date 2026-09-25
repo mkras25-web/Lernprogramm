@@ -1,0 +1,1256 @@
+{
+  "thema": "bk-aw-zweischalig",
+  "titel": "Außenwand zweischalig mit Kerndämmung",
+  "erklaerung": {
+    "absaetze": [
+      "Die zweischalige Außenwand trennt die Aufgaben, die eine einschalige Wand gleichzeitig erfüllen muss. Innen steht die tragende Schale: Sie nimmt Vertikal- und Horizontallasten auf, bildet den Raumabschluss und übernimmt zusammen mit der Dämmung den Wärme- und Windschutz. Außen steht eine mindestens 9 cm dicke Schale, die als Wetterschirm gegen Schlagregen wirkt und die Dämmung vor Witterung und mechanischer Beschädigung schützt. Sie trägt nichts außer sich selbst. Diese Trennung macht die Konstruktion aufwendig, aber gerade bei starker Schlagregenbeanspruchung sehr dauerhaft.",
+      "DIN 1053-1 unterscheidet vier Bauarten: mit Putzschicht, mit Kerndämmung, mit Luftschicht sowie mit Luftschicht und Wärmedämmung. Bei der Kerndämmung wird der Zwischenraum voll mit Dämmstoff gefüllt, es bleibt keine Luftschicht. Bei der Variante mit Luftschicht und Wärmedämmung bleibt zwischen Dämmung und Außenschale ein hinterlüfteter Spalt. Weil die Anforderungen an die Wärmedämmung gestiegen sind, ist der Spalt auf der Baustelle kaum noch mangelfrei herzustellen; Frick/Knöll raten deshalb, kein zweischaliges Mauerwerk mit Luftschicht mehr auszuschreiben und stattdessen Kerndämmung zu wählen. Die Kerndämmung ist damit heute der Regelfall.",
+      "Die Maße hängen aneinander. Der lichte Abstand der Schalen darf höchstens 15 cm betragen; er ergibt sich aus der Tragfähigkeit der Drahtanker auf Druck. Bei Kerndämmung ist die Außenschale mindestens 11,5 cm dick und aus frostbeständigen, ausblühungsfreien Vormauersteinen als Vollsteine zu mauern. Verbunden werden die Schalen durch Drahtanker aus nichtrostendem Stahl: mindestens 5 Stück je Quadratmeter, vertikal höchstens 50 cm, horizontal höchstens 75 cm auseinander, an freien Mauerrändern zusätzlich 3 Anker je Meter Randlänge. Jeder Anker liegt waagerecht und trägt eine Tropfscheibe, damit er kein Wasser von der Außen- zur Innenschale leitet.",
+      "Die zweite Konstruktionslogik ist die Wasserführung. Durch die Außenschale eindringendes Wasser wird nicht verhindert, sondern geführt: Es sickert an der Rückseite der Verblendschale nach unten, läuft auf der Abdichtung am Fußpunkt nach außen ab und verlässt die Wand durch offene Stoßfugen. Die Abdichtung liegt deshalb im Zwischenraum mit Gefälle nach außen, reicht bis zur Vorderkante der Außenschale und wird an der Innenschale mindestens 150 mm hochgeführt. Bei Kerndämmung sind am Wandfuß Öffnungen von mindestens 5000 mm² je 20 m² Wandfläche nötig, bei der Ausführung mit Luftschicht 7500 mm² je 20 m², dann oben und unten. Am Sockel müssen die Öffnungen mindestens 10 cm über dem Geländeanschnitt liegen.",
+      "Die Fallstricke liegen fast alle in der Ausführung. Mörtelbrücken und klaffende Dämmplattenstöße führen Wasser zur Innenschale; deshalb werden die Platten dicht gestoßen, im Verband und mit Stufenfalz oder versetzten Lagen verlegt. Beim Wärmeschutz gilt: Weder die Luftschicht noch die Vormauerschale zählen automatisch mit — ihre Anrechenbarkeit hängt davon ab, wie die Luftschicht nach DIN EN ISO 6946 eingestuft wird. Und die Drahtanker sind Wärmebrücken: Der Korrekturwert ΔUf kann den U-Wert um zwei bis drei Prozent verschlechtern und muss berücksichtigt werden, sobald er 3 % des U-Werts überschreitet."
+    ],
+    "merksatz": "Die Vormauerschale schützt und trägt sich selbst — dämmen und tragen tut sie nicht.",
+    "bild": "bilder/bk-zweischalig-schnitt.svg",
+    "bildunterschrift": "Horizontalschnitt durch eine zweischalige Außenwand mit Kerndämmung: tragende Innenschale, voll gefüllter Zwischenraum, Verblendschale, verbunden durch Drahtanker mit Tropfscheibe.",
+    "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 134–139; Mauerwerk Atlas, Abschn. 2.4 Außenwände"
+  },
+  "items": [
+    {
+      "id": "bk-zs-001",
+      "typ": "karte",
+      "frage": "Aus welchen beiden Schalen besteht eine zweischalige Außenwand, und welche Aufgabe hat jede von beiden?",
+      "antwort": "Innen die tragende Wand: Sie nimmt die Vertikal- und Horizontallasten auf und bildet den Raumabschluss. Außen eine mindestens 9 cm dicke Schale als Wetterschirm gegen Schlagregen; sie trägt keine Lasten außer ihrem Eigengewicht und schützt Dämmung und Tragschale vor Witterung und mechanischer Beschädigung.",
+      "vertiefung": "Der entscheidende Gedanke ist die Funktionstrennung: Was die einschalige Wand gleichzeitig leisten muss, wird hier auf zwei Bauteile verteilt. Daraus folgt unmittelbar, dass die vertikalen Lasten allein von der Innenschale aufgenommen werden — das ist der Nachteil gegenüber dem einschaligen Verblendmauerwerk, bei dem beide Schichten im Verband hochgemauert werden und gemeinsam tragen.",
+      "tags": [
+        "zweischalig",
+        "funktionstrennung",
+        "außenwand"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 134",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-002",
+      "typ": "karte",
+      "frage": "Warum sind Lochsteine für die Außenschale einer zweischaligen Wand weniger geeignet als Vollsteine?",
+      "antwort": "Wegen der möglichen stärkeren Durchfeuchtung — vor allem, wenn bei der Verfugung von Sichtmauerwerk Ausführungsfehler auftreten. Für die Außenschale sind ausblühungsfreie, frostfeste Vormauersteine als Vollsteine zu verwenden.",
+      "vertiefung": "Die Kammern des Lochsteins können sich mit Wasser füllen, das dort nicht abtrocknet. In Verbindung mit Frost führt das zu Absprengungen. Derselbe Gedanke steht hinter der Forderung nach Frostbeständigkeit: Die Außenschale ist das einzige Bauteil der Wand, das durchgehend Schlagregen und Frost ausgesetzt ist.",
+      "tags": [
+        "vormauerstein",
+        "frostbeständigkeit",
+        "durchfeuchtung"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 135",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-003",
+      "typ": "karte",
+      "frage": "Welche Aufgabe hat die Tropfscheibe auf dem Drahtanker, und warum muss der Anker waagerecht liegen?",
+      "antwort": "Beides zusammen verhindert, dass der Anker Feuchte von der Außen- zur Innenschale leitet. Wasser, das auf den Anker gelangt, wird an der Kunststoffscheibe abgeleitet und tropft ab, bevor es die Dämmung oder die Tragschale erreicht.",
+      "vertiefung": "Der Anker ist die einzige durchgehende Verbindung zwischen nasser und trockener Seite — konstruktiv also die gefährlichste Stelle der ganzen Wand. Dasselbe Bauteil ist zugleich eine Wärmebrücke: Nach DIN EN ISO 6946 wird das über den Korrekturwert ΔUf erfasst. Siehe auch das Thema Wärmebrücken.",
+      "tags": [
+        "drahtanker",
+        "tropfscheibe",
+        "feuchteschutz"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-004",
+      "typ": "karte",
+      "frage": "Warum sind alukaschierte Dämmplatten für die Kerndämmung von Außenwänden nicht zugelassen, obwohl sie sehr gute Dämmwerte erreichen?",
+      "antwort": "Die Aluminiumkaschierung würde die Diffusionsfähigkeit der Wand verhindern. Dadurch besteht die Gefahr der Tauwasserbildung innerhalb der Wandkonstruktion.",
+      "vertiefung": "Ein gutes Beispiel dafür, dass der beste Wärmeschutz nicht automatisch die beste Konstruktion ist: Die Wand muss Feuchte von innen nach außen abgeben können. Derselbe Gedanke steckt hinter der Forderung nach diffusionsoffenen Außenputzen — siehe das Thema Feuchteschutz.",
+      "tags": [
+        "kerndämmung",
+        "diffusion",
+        "tauwasser"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 137",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-005",
+      "typ": "karte",
+      "frage": "Bei plattenförmiger Kerndämmung lässt sich die Außenschale praktisch nicht ohne einen fingerbreiten Spalt anmauern. Warum ist das kein Mangel, sondern sogar von Vorteil?",
+      "antwort": "Weil eventuell eingedrungenes Wasser in diesem Spalt unbehindert nach unten absickern und über die Entwässerungsöffnungen am Wandfuß nach außen abgeführt werden kann.",
+      "vertiefung": "Hier zeigt sich der Unterschied zwischen Luftschicht und Fingerspalt: Die Luftschicht ist eine geplante, bemessene Schicht mit Mindestdicke und Lüftungsöffnungen; der Fingerspalt ist ein handwerklich unvermeidlicher Rest, der nur entwässert, nicht belüftet. Bei der Ausführung mit Putzschicht darf er laut DIN sogar 4 cm betragen.",
+      "tags": [
+        "kerndämmung",
+        "fingerspalt",
+        "entwässerung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände; Frick/Knöll, Baukonstruktionslehre 1, S. 138",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-006",
+      "typ": "karte",
+      "frage": "Warum sind auskragende Stahlbeton-Deckenränder als Auflager für die Außenschale ungeeignet?",
+      "antwort": "Wegen der unvermeidlichen Wärmebrückenprobleme. Für Zwischenabfangungen werden stattdessen Konsolanker verwendet, die am besten mit Ankerschienen an den Deckenrändern befestigt werden.",
+      "vertiefung": "Eine auskragende Decke durchstößt die gesamte Dämmebene und bildet eine durchlaufende geometrische und stoffliche Wärmebrücke über die ganze Gebäudebreite — genau der Fall, den ψ-Werte erfassen. Die Konsole ist demgegenüber eine punktuelle Wärmebrücke (χ-Wert). Siehe das Thema Wärmebrücken.",
+      "tags": [
+        "abfangung",
+        "konsolanker",
+        "wärmebrücke"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 139",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-007",
+      "typ": "karte",
+      "frage": "Warum ist das Hydrophobieren der Außenschale kritisch zu sehen?",
+      "antwort": "Die Hydrophobierung nutzt sich durch Verwitterung ungleichmäßig ab. Noch wirksame Stellen weisen Wasser weiter ab, abgenutzte Flächen nehmen mehr Wasser auf — das führt zwangsläufig zu Schäden, vor allem zu Frostschäden. Sie muss regelmäßig erneuert werden und lässt sich schadhaft nur sehr schwer nachbessern.",
+      "vertiefung": "Das Tückische ist nicht der Verschleiß an sich, sondern seine Ungleichmäßigkeit: Die Wand wird stellenweise dicht und stellenweise saugend, und genau an diesen Übergängen sammelt sich Wasser. Die dauerhafte Lösung liegt im Mörtel: wasserabweisend und nicht ausblutend, etwa mit Trasszugabe.",
+      "tags": [
+        "hydrophobierung",
+        "frostschaden",
+        "verblendschale"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 136",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-008",
+      "typ": "karte",
+      "frage": "Sichtmauerwerk und Mauerwerk nach DIN 1053-1 sind für sich genommen nicht luftdicht. Was folgt daraus für die zweischalige Wand?",
+      "antwort": "Die Wand muss auf einer Seite eine Putzschicht nach DIN 18550-2 erhalten oder es sind sonstige luftdichte Maßnahmen zu treffen. Putze nach DIN 18550-2 gelten als Luftdichtheitsschicht.",
+      "vertiefung": "Bei der zweischaligen Wand übernimmt der Innenputz auf der Tragschale diese Aufgabe — die Verblendschale kann sie schon deshalb nicht leisten, weil sie offene Stoßfugen hat. Fehlt der Innenputz, strömt feuchte Raumluft in die Konstruktion; Konvektion transportiert um ein Vielfaches mehr Feuchte als Diffusion durch die Fläche.",
+      "tags": [
+        "luftdichtheit",
+        "innenputz",
+        "konvektion"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.6 Klimabedingter Feuchteschutz",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-009",
+      "typ": "karte",
+      "frage": "Was ist eine Mörtelbrücke, und warum darf die Luftschicht nicht durch sie unterbrochen sein?",
+      "antwort": "Eine Mörtelbrücke ist herausgequollener oder herabgefallener Mörtel, der den Zwischenraum zwischen den Schalen überbrückt. Sie unterbricht die Zirkulation der Luftschicht und leitet Wasser kapillar von der Außen- zur Innenschale.",
+      "vertiefung": "Mörtelbrücken sind der häufigste Ausführungsmangel dieser Konstruktion und nach dem Aufmauern nicht mehr kontrollierbar. Genau deshalb ist die Luftschicht in der Praxis so schwer mangelfrei herzustellen — und genau deshalb wird stattdessen Kerndämmung empfohlen, bei der eine Mörtelbrücke keinen Mangel darstellt.",
+      "tags": [
+        "mörtelbrücke",
+        "luftschicht",
+        "ausführungsmangel"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 138",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-010",
+      "typ": "karte",
+      "frage": "Warum sollen bei der Ausführung mit Luftschicht und Wärmedämmung Dämmplatten statt Dämmmatten verwendet werden?",
+      "antwort": "Dämmmatten neigen zu nachträglichem Aufquellen beziehungsweise Ausweiten und vermindern damit die Dicke des Luftspalts. Platten sind formstabil, werden dicht gestoßen verlegt und zum Beispiel mit Klemmplatten auf den Drahtankern oder mit Tellerdübeln befestigt.",
+      "vertiefung": "Der Luftspalt ist hier nur 4 cm breit — quillt die Matte um einen Zentimeter auf, ist ein Viertel davon weg. Bei der Kerndämmung spielt das keine Rolle, weil dort ohnehin voll gefüllt wird; dort sind Matten, Granulate und Ortschäume zugelassen.",
+      "tags": [
+        "dämmplatten",
+        "luftschicht",
+        "ausführung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-011",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Anforderungen gelten für Dämmstoffe, die als Kerndämmung eingebaut werden?",
+      "optionen": [
+        "Sie müssen dauerhaft wasserabweisend (hydrophobierend) sein.",
+        "Sie müssen gegen vorübergehende Durchfeuchtung unempfindlich sein und rasch wieder austrocknen.",
+        "Sie müssen für diesen Verwendungszweck genormt oder bauaufsichtlich zugelassen sein.",
+        "Sie müssen eine dampfsperrende Kaschierung tragen.",
+        "Sie dürfen ausschließlich als Platten eingebaut werden.",
+        "Sie müssen nach dem Einbau nachquellen, um Hohlräume zu schließen."
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ],
+      "antwort": "Richtig sind: dauerhaft wasserabweisend, unempfindlich gegen vorübergehende Durchfeuchtung mit rascher Austrocknung, sowie genormt oder bauaufsichtlich zugelassen. Zugelassen sind neben Platten auch Matten, Granulate, Schüttungen und Ortschäume — etwa Polystyrol- und Polyurethan-Hartschaum, Mineralwolle oder Blähperlite-Schüttungen. Eine dampfsperrende Kaschierung ist gerade nicht erlaubt, und nachquellende Platten dürfen nicht verwendet werden.",
+      "vertiefung": "Die drei richtigen Anforderungen hängen zusammen: Weil die Kerndämmung unmittelbar hinter einer wasserdurchlässigen Verblendschale liegt, wird sie zwangsläufig gelegentlich nass. Sie muss das aushalten, ohne ihre Dämmwirkung zu verlieren, und sie muss wieder trocken werden. Deshalb brauchen wasserunempfindliche und wasserabweisende Kerndämmstoffe hinsichtlich der Wärmeleitfähigkeit auch nicht anders behandelt zu werden als in anderen Anwendungen.",
+      "tags": [
+        "kerndämmung",
+        "dämmstoff",
+        "anforderungen"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 137; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-012",
+      "typ": "mehrfachauswahl",
+      "frage": "An welchen Stellen einer Verblendschale sind horizontale Dehnungsfugen erforderlich?",
+      "optionen": [
+        "unter Attiken und Dachüberständen",
+        "unter Balkonplatten und Trägern",
+        "unter Fenster- und Sohlbänken",
+        "unter Abfangungen der Außenschale",
+        "in jeder Lagerfuge des Verbandes",
+        "unmittelbar über dem Geländeanschnitt"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "antwort": "Horizontale Dehnungsfugen sind unter Attiken und Dachüberständen, unter Balkonplatten und Trägern, unter Balken und Pfetten, unter Fenster- und Sohlbänken sowie unter Abfangungen der Außenschale erforderlich. Weder in jeder Lagerfuge noch am Geländeanschnitt.",
+      "vertiefung": "Das Muster dahinter: Überall dort, wo ein anderes Bauteil auf der Verblendschale aufliegt oder sie unterbricht, kann sie sich nicht mehr frei ausdehnen. Verblendschalen erwärmen sich stärker als das Hintermauerwerk und ändern deshalb ihre Länge mehr — die Fuge nimmt diese Differenz auf. Ihre Breite beträgt üblicherweise 15 bis 25 mm, rechnerisch das Fünf- bis Siebenfache der aufzunehmenden Längenänderung.",
+      "tags": [
+        "dehnungsfuge",
+        "verblendschale",
+        "formänderung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. Fugenteilung",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-013",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zur Verlegung von plattenförmiger Kerndämmung sind richtig?",
+      "optionen": [
+        "Die Platten sind dicht gestoßen und im Verband zu verlegen.",
+        "Die Stöße sind als Stufenfalz, Nut und Feder oder versetzte Lagen auszubilden.",
+        "Ausbruchstellen beim Durchstoßen der Drahtanker sind mit Dichtungsmasse zu verschließen.",
+        "Zwischen Untergrund und Dämmschicht dürfen keine Hohlräume entstehen.",
+        "Ein umlaufender Randstreifen von 2 cm ist freizulassen.",
+        "Die Platten werden lose eingestellt und allein durch die Außenschale gehalten."
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "antwort": "Richtig sind die ersten vier Aussagen. Ein freigelassener Randstreifen wäre ein direkter Wasserweg zur Innenschale, und die Platten werden nicht lose eingestellt, sondern befestigt — etwa durch auf die Drahtanker aufgeschobene Kunststoff- oder Klemmscheiben oder durch Tellerdübel, damit eine gleichmäßig dicke Dämmschicht entsteht.",
+      "vertiefung": "Alle vier richtigen Punkte verfolgen dasselbe Ziel: kein durchgehender Weg für Wasser und keine durchgehende Fuge in der Dämmebene. Lohmeyer empfiehlt aus demselben Grund eine zweilagige Dämmschicht mit versetzten Stößen und Fugendicken von höchstens 5 mm. Bei lose eingebrachten Dämmstoffen liegt das Risiko anders: dort sind Sackungen und Hohlstellen kritisch, weshalb es erprobte Einblasvorrichtungen und erfahrenes Personal braucht.",
+      "tags": [
+        "kerndämmung",
+        "plattenstoß",
+        "ausführung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände; Lohmeyer/Post, Praktische Bauphysik, S. 107",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-014",
+      "typ": "mehrfachauswahl",
+      "frage": "Wie wird die Luftschicht einer zweischaligen Wand nach DIN EN ISO 6946 eingestuft, und was folgt daraus für den U-Wert?",
+      "optionen": [
+        "Entwässerungsöffnungen in Form offener vertikaler Fugen in der Außenschale gelten nicht als Lüftungsöffnungen.",
+        "Eine stark belüftete Luftschicht liegt vor, wenn die Öffnungen 1500 mm² je Meter Länge überschreiten.",
+        "Bei einer stark belüfteten Luftschicht werden die Luftschicht und alle Schichten nach außen hin vernachlässigt.",
+        "Bei einer schwach belüfteten Luftschicht wird die Hälfte des Werts der ruhenden Luftschicht angesetzt, höchstens jedoch 0,15 m²·K/W.",
+        "Die Verblendschale darf grundsätzlich immer mit ihrem vollen Wärmedurchlasswiderstand angesetzt werden.",
+        "Die Einstufung richtet sich allein nach der Dicke der Luftschicht."
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "antwort": "Die ersten vier Aussagen sind richtig. Die Einstufung richtet sich nach der Fläche der Be- und Entlüftungsöffnungen, nicht nach der Dicke, und die Verblendschale darf nicht pauschal angesetzt werden: Wird die Luftschicht als stark belüftet eingestuft, fallen Luftschicht und Vormauerschale aus der Berechnung heraus.",
+      "vertiefung": "Hier widersprechen sich die Quellen. Lohmeyer und der Mauerwerk Atlas werten offene Stoßfugen ausdrücklich nicht als Lüftungsöffnungen, sodass die Luftschicht bei kleinen Öffnungen ruhend bleibt und angerechnet werden darf. Frick/Knöll schreiben dagegen, Luftschichten in zweischaligem Mauerwerk gälten als stark belüftet, sodass weder Luftschicht noch Vormauerschale einbezogen werden dürfen. Im Zweifel ist die Öffnungsfläche zu prüfen und die Einstufung zu begründen. Siehe auch das Thema U-Wert.",
+      "tags": [
+        "u-wert",
+        "luftschicht",
+        "din-en-iso-6946"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 102–103; Frick/Knöll, Baukonstruktionslehre 1, S. 688",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Die Quellen beziehen sich auf DIN EN ISO 6946:1996. Gegen die aktuelle Fassung (DIN EN ISO 6946:2018) abgleichen: Gelten die Grenzwerte 500 und 1500 mm² je Meter unverändert, und wird die offene Stoßfuge dort weiterhin nicht als Lüftungsöffnung gewertet? Der Widerspruch zwischen Frick/Knöll und Lohmeyer ist dabei mit aufzulösen."
+    },
+    {
+      "id": "bk-zs-015",
+      "typ": "numerisch",
+      "frage": "Wie dick muss die Luftschicht bei einer zweischaligen Außenwand mit Luftschicht (ohne zusätzliche Wärmedämmung) mindestens sein?",
+      "wert": 6,
+      "toleranz": 0,
+      "einheit": "cm",
+      "antwort": "Mindestens 6 cm; höchstens darf sie 11,5 cm dick sein. Sie darf nicht durch Mörtelbrücken unterbrochen werden.",
+      "vertiefung": "Die Begründung für das Mindestmaß ist strömungstechnisch: Bei zu geringem Schalenabstand ist keine wirkungsvolle Zirkulation der Luftschicht mehr zu erwarten. Nicht verwechseln mit den 4 cm, die bei der Ausführung mit Luftschicht und Wärmedämmung zwischen Dämmung und Außenschale bleiben müssen — dort übernimmt die Dämmung den Wärmeschutz, und der Spalt dient nur noch der Hinterlüftung.",
+      "tags": [
+        "luftschicht",
+        "mindestdicke",
+        "zirkulation"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 138; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Wert stammt aus DIN 1053-1, die durch DIN EN 1996 (Eurocode 6) mit nationalem Anhang abgelöst wurde. Prüfen, ob die Mindestdicke von 60 mm und die Ausnahme auf 40 mm bei abgestrichenem Fugenmörtel dort unverändert gelten."
+    },
+    {
+      "id": "bk-zs-016",
+      "typ": "numerisch",
+      "frage": "Bei einer zweischaligen Außenwand mit Luftschicht und Wärmedämmung: Wie viel Luftschicht muss zwischen Wärmedämmung und Außenschale an allen Stellen mindestens verbleiben?",
+      "wert": 4,
+      "toleranz": 0,
+      "einheit": "cm",
+      "antwort": "Mindestens 4 cm. Bei Ausnutzung des zulässigen Höchstabstands der Schalen von 15 cm bleiben somit 11 cm, die mit Dämmstoff ausgefüllt werden können.",
+      "vertiefung": "Genau dieses Maß ist der Grund, warum die Konstruktion heute kaum noch empfohlen wird: Die geforderten 4 cm sind auf der Baustelle schwer einzuhalten — durch Mörtelbrücken, Unebenheiten der beiden Schalen und aufquellende Dämmmatten. Frick/Knöll raten deshalb, zur Vermeidung von Regressansprüchen stattdessen Kerndämmung auszuschreiben.",
+      "tags": [
+        "luftschicht",
+        "wärmedämmung",
+        "hinterlüftung"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 138; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Wert stammt aus DIN 1053-1. Gegen DIN EN 1996-2 mit nationalem Anhang prüfen, ob der Mindestluftspalt von 40 mm bei der Ausführung mit Luftschicht und Wärmedämmung unverändert gilt."
+    },
+    {
+      "id": "bk-zs-017",
+      "typ": "zuordnung",
+      "frage": "Ordne den Bauteilen und Randbedingungen der zweischaligen Wand das jeweils maßgebende Maß zu.",
+      "paare": [
+        [
+          "größter zulässiger lichter Abstand der beiden Schalen",
+          "150 mm"
+        ],
+        [
+          "Mindestdicke der Außenschale bei Kerndämmung",
+          "115 mm"
+        ],
+        [
+          "Mindestdicke der Außenschale allgemein (Wetterschirm)",
+          "90 mm"
+        ],
+        [
+          "größter zulässiger vertikaler Abstand der Drahtanker",
+          "500 mm"
+        ],
+        [
+          "größter zulässiger horizontaler Abstand der Drahtanker",
+          "750 mm"
+        ],
+        [
+          "zusätzliche Anker je Meter freier Mauerrandlänge",
+          "3 Stück"
+        ]
+      ],
+      "antwort": "Lichter Schalenabstand höchstens 150 mm; Außenschale bei Kerndämmung mindestens 115 mm, allgemein mindestens 90 mm; Drahtanker vertikal höchstens 500 mm, horizontal höchstens 750 mm; an freien Mauerrändern zusätzlich 3 Anker je Meter Randlänge.",
+      "vertiefung": "Die 150 mm sind kein gestalterischer, sondern ein statischer Grenzwert: Er ergibt sich aus der Tragfähigkeit der Drahtanker bei Druckbeanspruchung. Freie Mauerränder sind Gebäudeecken, Öffnungen, Ränder entlang von Fugen und obere Abschlüsse — dort fehlt der Verband nach einer Seite, deshalb die Zulage von 3 Ankern je Meter.",
+      "tags": [
+        "schalenabstand",
+        "drahtanker",
+        "kennzahlen"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 134–137; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Sämtliche Werte stammen aus DIN 1053-1, die durch DIN EN 1996 (Eurocode 6) mit nationalem Anhang abgelöst wurde. Prüfen, ob Schalenabstand, Mindestdicken und Ankerabstände dort unverändert übernommen wurden — insbesondere, ob der nationale Anhang größere Schalenabstände mit Nachweis zulässt."
+    },
+    {
+      "id": "bk-zs-018",
+      "typ": "zuordnung",
+      "frage": "Ordne die Öffnungen und Abdichtungen am Wandfuß ihrem jeweiligen Maß zu.",
+      "paare": [
+        [
+          "Entwässerungsöffnungen bei Kerndämmung je 20 m² Wandfläche",
+          "mindestens 5000 mm²"
+        ],
+        [
+          "Be- und Entlüftungsöffnungen bei Luftschicht je 20 m² Wandfläche",
+          "etwa 7500 mm²"
+        ],
+        [
+          "Lage der Öffnungen über dem Geländeanschnitt",
+          "mindestens 100 mm"
+        ],
+        [
+          "Hochführen der Abdichtung an der Innenschale",
+          "mindestens 150 mm"
+        ]
+      ],
+      "antwort": "Kerndämmung: mindestens 5000 mm² Entwässerungsöffnungen je 20 m² Wandfläche, nur am Fußpunkt. Luftschicht: etwa 7500 mm² je 20 m² Fassadenfläche, oben und unten. Öffnungen mindestens 100 mm über dem Geländeanschnitt. Abdichtung an der Innenschale mindestens 150 mm hochgeführt und befestigt.",
+      "vertiefung": "Der Unterschied zwischen 5000 und 7500 mm² erklärt sich aus der Aufgabe: Bei Kerndämmung müssen die Öffnungen nur entwässern, bei Luftschicht zusätzlich belüften. Deshalb liegen sie dort auch oben und unten, bei Kerndämmung nur unten. Praktische Größenordnung: Bei einem eingeschossigen Gebäude mit Verblendschale im Dünnformat bedeutet das, dass etwa jede zweite Stoßfuge am Fuß offen bleibt. Die 100 mm über Gelände schützen vor Spritzwasser und davor, dass die Öffnung im Erdreich verschwindet.",
+      "tags": [
+        "entwässerung",
+        "stoßfuge",
+        "abdichtung"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 137–138; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Werte aus DIN 1053-1 und DIN 18195-4. Gegen DIN EN 1996-2 mit nationalem Anhang und gegen DIN 18533 (Ersatz für DIN 18195) abgleichen, ob Öffnungsquerschnitte und Abdichtungshöhen unverändert gelten."
+    },
+    {
+      "id": "bk-zs-019",
+      "typ": "zuordnung",
+      "frage": "Ordne die Randbedingung der geforderten Mindestanzahl und dem Durchmesser der Drahtanker je m² Wandfläche zu.",
+      "paare": [
+        [
+          "Regelfall, keine der übrigen Bedingungen maßgebend",
+          "5 Stück, Durchmesser 3 mm"
+        ],
+        [
+          "Wandbereich höher als 12 m über Gelände",
+          "5 Stück, Durchmesser 4 mm"
+        ],
+        [
+          "Schalenabstand über 70 bis 120 mm",
+          "5 Stück, Durchmesser 4 mm"
+        ],
+        [
+          "Schalenabstand über 120 bis 150 mm",
+          "7 Stück mit 4 mm oder 5 Stück mit 5 mm"
+        ],
+        [
+          "zweischalige Außenwand mit Putzschicht",
+          "Ankerdicke 3 mm genügt grundsätzlich"
+        ]
+      ],
+      "antwort": "Im Regelfall 5 Anker je m² mit 3 mm Durchmesser. Über 12 m Höhe oder bei Schalenabstand über 70 bis 120 mm: 5 Stück mit 4 mm. Bei Schalenabstand über 120 bis 150 mm: 7 Stück mit 4 mm oder 5 Stück mit 5 mm. Bei der Ausführung mit Putzschicht genügt grundsätzlich eine Ankerdicke von 3 mm.",
+      "vertiefung": "Zwei Größen treiben die Tabelle: Höhe über Gelände (Windlast) und Schalenabstand (Knicklänge des Ankers auf Druck). Beide Punkte erklären, warum der Schalenabstand bei 150 mm endet. Der Fassaden Atlas nennt für die Praxis eine zusätzliche Abstufung nach Lage in der Fassade: fünf Ankerstäbe je Meter in der Fläche, neun an Ecken und Öffnungen.",
+      "tags": [
+        "drahtanker",
+        "ankerzahl",
+        "tabelle"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Tab. 6.53, S. 135; Mauerwerk Atlas, Tab. 2.4.8",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Tabellenwerte aus DIN 1053-1, Tabelle 11. Gegen DIN EN 1996-2 mit nationalem Anhang abgleichen, ob Mindestanzahl und Durchmesser in dieser Staffelung fortgeschrieben wurden."
+    },
+    {
+      "id": "bk-zs-020",
+      "typ": "zuordnung",
+      "frage": "Ordne die vier Bauarten des zweischaligen Außenmauerwerks nach DIN 1053-1 ihrem jeweiligen Kennzeichen zu.",
+      "paare": [
+        [
+          "mit Kerndämmung",
+          "Zwischenraum voll mit Dämmstoff gefüllt, keine Luftschicht"
+        ],
+        [
+          "mit Luftschicht",
+          "durchgehender Hohlraum ohne Dämmstoff, Wärmeschutz durch die Innenschale"
+        ],
+        [
+          "mit Luftschicht und Wärmedämmung",
+          "Dämmung auf der Tragschale, davor ein hinterlüfteter Spalt"
+        ],
+        [
+          "mit Putzschicht",
+          "zusammenhängender Putz auf der Außenseite der Innenschale, davor nur ein Fingerspalt"
+        ]
+      ],
+      "antwort": "Kerndämmung: Hohlraum voll gefüllt, keine Luftschicht. Luftschicht: durchgehender Hohlraum ohne Dämmstoff, der Wärmeschutz wird überwiegend vom Hintermauerwerk erbracht. Luftschicht und Wärmedämmung: Dämmung auf der Tragschale, davor ein hinterlüfteter Spalt. Putzschicht: zusammenhängender Putz auf der Außenseite der Innenschale, davor eine möglichst dicht vollfugig gemauerte Außenschale mit nur einem Fingerspalt.",
+      "vertiefung": "Die Reihenfolge ist auch eine Entwicklungsgeschichte. Die Bauart mit reiner Luftschicht ist heute nur noch mit sehr gut dämmenden Innenschalen wie Porenbeton wirtschaftlich und findet sich vor allem als traditionelle Form in Nordwesteuropa. Die Bauart mit Putzschicht ist dem einschaligen Verblendmauerwerk am nächsten: Die Putzschicht lässt sich kontrollieren, bevor die Verblendschale hochgemauert wird — und wenn statt der Verblendschale eine geputzte Vormauerschale entsteht, sind nicht einmal frostbeständige Steine nötig.",
+      "tags": [
+        "bauarten",
+        "systematik",
+        "din-1053"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 135–138; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-021",
+      "typ": "zuordnung",
+      "frage": "Ordne der Schlagregen-Beanspruchungsgruppe nach DIN 4108-3 die zugehörige Jahresniederschlagsmenge und eine beispielhaft geeignete Wandbauart zu.",
+      "paare": [
+        [
+          "Beanspruchungsgruppe I, geringe Beanspruchung",
+          "unter 600 mm Jahresniederschlag, einschaliges Sichtmauerwerk 31 cm mit Innenputz"
+        ],
+        [
+          "Beanspruchungsgruppe II, mittlere Beanspruchung",
+          "600 bis 800 mm Jahresniederschlag, einschaliges Sichtmauerwerk 37,5 cm mit Innenputz"
+        ],
+        [
+          "Beanspruchungsgruppe III, starke Beanspruchung",
+          "über 800 mm Jahresniederschlag, zweischaliges Verblendmauerwerk mit Luftschicht und Wärmedämmung oder mit Kerndämmung"
+        ]
+      ],
+      "antwort": "Gruppe I: unter 600 mm, einschaliges Sichtmauerwerk 31 cm. Gruppe II: 600 bis 800 mm, einschaliges Sichtmauerwerk 37,5 cm. Gruppe III: über 800 mm, zweischaliges Verblendmauerwerk mit Luftschicht und Wärmedämmung oder mit Kerndämmung.",
+      "vertiefung": "Das ist die eigentliche Daseinsberechtigung der zweischaligen Wand: Sie ist in der Tabelle der DIN 4108-3 die genannte Bauart für die höchste Beanspruchungsgruppe. Die Niederschlagsmenge ist dabei nur der Einstieg — hinzu kommen windreiche Lagen auch mit geringerem Niederschlag (Küste, Mittelgebirge, Alpenvorland) sowie Hochhäuser und Gebäude in exponierter Lage, die jeweils eine Gruppe höher eingestuft werden.",
+      "tags": [
+        "schlagregen",
+        "beanspruchungsgruppe",
+        "din-4108"
+      ],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 331–333; Mauerwerk Atlas, Tab. 2.6.70",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Zuordnungstabelle aus einer älteren Fassung von DIN 4108-3. Gegen DIN 4108-3:2018 prüfen, ob die genannten Wanddicken für einschaliges Sichtmauerwerk und die Zuordnung der zweischaligen Wand zur Gruppe III unverändert gelten."
+    },
+    {
+      "id": "bk-zs-022",
+      "typ": "zuordnung",
+      "frage": "Ordne der Steinart der Verblendschale den Richtwert für den Abstand senkrechter Dehnungsfugen zu.",
+      "paare": [
+        [
+          "Leichtbetonsteine",
+          "höchstens 6,0 m"
+        ],
+        [
+          "Kalksandsteine",
+          "höchstens 8,0 m"
+        ],
+        [
+          "Mauerziegel",
+          "10 bis 16 m"
+        ],
+        [
+          "Fassadenfläche ohne Fuge um die Gebäudeecke geführt",
+          "kein Schenkel länger als 5,0 m"
+        ]
+      ],
+      "antwort": "Leichtbetonsteine höchstens 6,0 m, Kalksandsteine höchstens 8,0 m, Mauerziegel 10 bis 16 m. Wird eine Fassadenfläche ohne Fuge um die Gebäudeecke geführt, soll kein Schenkel länger als 5,0 m sein.",
+      "vertiefung": "Die unterschiedlichen Werte sind keine Qualitätsunterschiede, sondern ergeben sich aus den verschiedenen Verformungseigenschaften der Verblendmaterialien. Achtung bei den Zahlen: Frick/Knöll nennen für Ziegel 10 m und für Kalksandstein 8 m, der Fassaden Atlas gibt nach Klima gestaffelte Werte an (15 m kontinental, 25 m Seeklima) und verweist auf Eurocode 6 mit höchstens 12 m. Beim Entwurf zählt der Nachweis, nicht der Merkwert.",
+      "tags": [
+        "dehnungsfuge",
+        "fugenteilung",
+        "steinart"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. Fugenteilung; Fassaden Atlas, Kap. Tonstein, Tab. B 2.17",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Die drei vorliegenden Quellen nennen abweichende Richtwerte. Gegen DIN EN 1996-2 mit nationalem Anhang und die aktuelle Fachregel des Mauerwerksbaus abgleichen und auf einen Wertesatz festlegen."
+    },
+    {
+      "id": "bk-zs-023",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schichten einer zweischaligen Außenwand mit Kerndämmung in die richtige Reihenfolge von innen nach außen.",
+      "schritte": [
+        "Innenputz als Luftdichtheitsschicht",
+        "tragende Innenschale",
+        "Kerndämmung, dauerhaft wasserabweisend",
+        "Verblendschale aus frostbeständigen Vormauersteinen"
+      ],
+      "antwort": "Von innen nach außen: Innenputz, tragende Innenschale, Kerndämmung, Verblendschale.",
+      "vertiefung": "Die Reihenfolge ist zugleich die Reihenfolge der Aufgaben: luftdicht, tragend, dämmend, wetterschützend. Bei der Ausführung mit Luftschicht und Wärmedämmung schiebt sich zwischen Dämmung und Verblendschale noch der hinterlüftete Spalt; bei der Ausführung mit Putzschicht liegt statt der Dämmung ein zusammenhängender Putz auf der Außenseite der Innenschale.",
+      "tags": [
+        "schichtaufbau",
+        "kerndämmung",
+        "reihenfolge"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.55, S. 137",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-024",
+      "typ": "vergleich",
+      "frage": "Bei welcher der beiden Ausführungen kann der zirkulierende Luftstrom nicht nur die Außenschale austrocknen, sondern auch das Dämmmaterial trocken halten und Kondensfeuchte abführen?",
+      "seiten": [
+        {
+          "titel": "Kerndämmung",
+          "bild": "bilder/bk-vergleich-kerndaemmung.svg",
+          "beschreibung": "Der Zwischenraum ist vollständig mit dauerhaft wasserabweisendem Dämmstoff gefüllt; es bleibt keine Luftschicht. Die Außenschale ist mindestens 115 mm dick und frostbeständig, der lichte Schalenabstand beträgt höchstens 150 mm. Am Wandfuß sorgen Öffnungen von mindestens 5000 mm² je 20 m² Wandfläche für die Entwässerung."
+        },
+        {
+          "titel": "Luftschicht und Wärmedämmung",
+          "bild": "bilder/bk-vergleich-luftschicht.svg",
+          "beschreibung": "Auf die Außenseite der tragenden Wand wird eine Wärmedämmung aufgebracht; zwischen ihr und der Außenschale verbleibt ein hinterlüfteter Spalt von mindestens 40 mm. Be- und Entlüftungsöffnungen von etwa 7500 mm² je 20 m² Wandfläche liegen oben und unten, auch an Zwischenauflagerungen."
+        }
+      ],
+      "richtig": 1,
+      "antwort": "Bei der Ausführung mit Luftschicht und Wärmedämmung. Werden dampfdurchlässige Dämmstoffe eingesetzt, kann der zirkulierende Luftstrom die äußere Schale austrocknen, das Dämmmaterial trocken halten und Kondensfeuchte abführen. Bei der Kerndämmung fehlt diese Luftschicht; dort muss der Dämmstoff selbst dauerhaft wasserabweisend sein und eingedrungenes Wasser über die Entwässerungsöffnungen nach unten abgeführt werden.",
+      "vertiefung": "Der bauphysikalische Vorteil der Luftschicht steht gegen ihren praktischen Nachteil: Die geforderten 40 mm sind auf der Baustelle kaum einzuhalten, und Mörtelbrücken machen aus dem Vorteil einen Mangel. Deshalb hat sich die Kerndämmung durchgesetzt — sie erkauft die geringere Trocknungsreserve durch eine Ausführung, die weniger schiefgehen kann. Eine Zwischenlösung gibt es: Kerndämmplatten mit zusätzlichen Lüftungsschlitzen erreichen eine begrenzte Hinterlüftung.",
+      "tags": [
+        "kerndämmung",
+        "luftschicht",
+        "austrocknung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände; Frick/Knöll, Baukonstruktionslehre 1, S. 137–138",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-025",
+      "typ": "freitext",
+      "frage": "Erkläre, warum bei der zweischaligen Wand der Schlagregenschutz auf die äußere Schale beschränkt bleibt und was daraus für die innere Schale folgt.",
+      "pruefpunkte": [
+        "Die Verblendschale nimmt den Schlagregen auf und hält ihn von der Konstruktion fern.",
+        "Wind- und Wärmeschutz werden von der inneren Wandschale übernommen.",
+        "Die Verblendschale ist nicht wasserdicht — eingedrungenes Wasser wird geführt, nicht verhindert.",
+        "Wasser sickert an der Rückseite nach unten und wird am Fußpunkt nach außen abgeleitet.",
+        "Die Innenschale muss deshalb gegen die Feuchtigkeit geschützt werden, die durch die Verblendschale eindringt.",
+        "Bei Kerndämmung darf das Dämmmaterial die Schlagregensicherheit nicht beeinträchtigen und keine Feuchtigkeit zur Innenschale leiten."
+      ],
+      "antwort": "Bei zweischaligem Verblendmauerwerk bleibt der Regenschutz auf die äußere Schale beschränkt; Wind- und Wärmeschutz übernimmt die innere Wandschale. Die Verblendschale ist dabei nicht wasserdicht: Sie bremst den Schlagregen, lässt aber Wasser durch, das an ihrer Rückseite nach unten sickert und am Wandfuß über die Abdichtung nach außen geführt wird. Die Innenschale und die Geschossdecken sind an den Fußpunkten gegen diese Feuchtigkeit zu schützen. Wird der Hohlraum voll gedämmt, darf das Kerndämmmaterial die Schlagregensicherheit nicht beeinträchtigen und keine Feuchtigkeit zur Innenschale leiten — deshalb müssen lose Dämmstoffe und Mineralfaserplatten hydrophobe Eigenschaften haben.",
+      "vertiefung": "Das ist der begriffliche Kern der ganzen Konstruktion: Ein Wetterschirm ist keine Abdichtung. Er nimmt dem Regen die Energie, den Rest übernimmt die Wasserführung. Wer das einmal verstanden hat, kann die Einzelanforderungen ableiten statt sie auswendig zu lernen — Tropfscheibe, Gefälle der Abdichtung nach außen, offene Stoßfugen, Stufenfalz an den Dämmplattenstößen ergeben sich alle daraus.",
+      "tags": [
+        "schlagregen",
+        "wasserführung",
+        "funktionstrennung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.6 Klimabedingter Feuchteschutz; Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-026",
+      "typ": "freitext",
+      "frage": "Beschreibe den Weg, den durch die Verblendschale eingedrungenes Wasser bis nach draußen nimmt, und nenne die konstruktiven Bauteile, die diesen Weg sichern.",
+      "pruefpunkte": [
+        "Das Wasser sickert an der Rückseite der Verblendschale beziehungsweise im Fingerspalt nach unten.",
+        "Die Drahtanker liegen waagerecht und tragen Tropfscheiben, damit sie kein Wasser zur Innenschale leiten.",
+        "Am Fußpunkt liegt eine Abdichtung, im Bereich des Zwischenraums mit Gefälle nach außen.",
+        "Im Bereich der Außenschale wird die Abdichtung horizontal und bis zur Vorderkante der Außenschale verlegt.",
+        "An der Innenschale wird sie über eine Unterfütterung mindestens 150 mm hoch geführt und befestigt.",
+        "Offene Stoßfugen in der Außenschale führen das Wasser nach draußen, mindestens 5000 mm² je 20 m² bei Kerndämmung.",
+        "Die Öffnungen liegen mindestens 100 mm über dem Geländeanschnitt.",
+        "Die erste Ankerlage ist so tief wie möglich anzuordnen, damit die Außenschale nicht abrutscht."
+      ],
+      "antwort": "Wasser, das die Verblendschale durchdringt, läuft an deren Rückseite nach unten. Die waagerecht liegenden Drahtanker mit Tropfscheibe verhindern, dass es dabei zur Innenschale gelangt. Am Wandfuß trifft es auf die Abdichtung, die im Zwischenraum mit Gefälle nach außen und im Bereich der Außenschale horizontal bis zu deren Vorderkante verlegt ist; an der Innenschale wird sie über eine Unterfütterung mindestens 150 mm hoch geführt und befestigt. Über offene Stoßfugen in der Außenschale verlässt das Wasser die Konstruktion — bei Kerndämmung mindestens 5000 mm² je 20 m² Wandfläche, mindestens 100 mm über dem Geländeanschnitt. Die erste Ankerlage liegt so tief wie möglich, damit die Außenschale nicht abrutschen kann.",
+      "vertiefung": "Bei geschütteten Kerndämmstoffen kommt ein Bauteil hinzu: Vor den Öffnungen am Fuß der Außenschale sind Rieselsperren oder nichtrostende Lochgitter anzubringen, sonst rieselt der Dämmstoff heraus und die Entwässerungsöffnungen setzen sich zu. Fehlt eines der Glieder dieser Kette, sammelt sich Wasser genau dort — deshalb ist am Fußpunkt auch auf eine exakte Anordnung der Abdichtung zu achten.",
+      "tags": [
+        "fußpunkt",
+        "abdichtung",
+        "entwässerung"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände, Abb. 2.4.9; Frick/Knöll, Baukonstruktionslehre 1, Bild 6.55, S. 137",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-027",
+      "typ": "freitext",
+      "frage": "Frick/Knöll empfehlen, kein zweischaliges Mauerwerk mit Luftschicht mehr auszuschreiben. Begründe diese Empfehlung und nenne die vorgeschlagene Alternative.",
+      "pruefpunkte": [
+        "Die Anforderungen an die Wärmedämmung sind gestiegen, deshalb muss der Zwischenraum größtenteils mit Dämmung gefüllt werden.",
+        "Der nach DIN geforderte Luftzwischenraum von mindestens 4 cm ist auf der Baustelle kaum einzuhalten.",
+        "Ursachen sind Mörtelbrücken, Unebenheiten der Schalen und unsorgfältige Ausführung.",
+        "Bei hoch gedämmten Bauteilen ist eine mangelfreie Ausführung kaum mehr möglich.",
+        "Die Ausschreibung mit Luftschicht führt deshalb fast immer zu einer mangelhaften Ausführung und zu Regressansprüchen.",
+        "Vorgeschlagen wird stattdessen Mauerwerk mit Kerndämmung, die gleichzeitig wasserabweisend ist, ohne Luftschicht.",
+        "Bei dieser Ausführung stellen Mörtelbrücken keinen Mangel dar; der Fingerspalt darf 4 cm dick sein."
+      ],
+      "antwort": "Weil die Anforderungen an die Wärmedämmung gestiegen sind, muss der Zwischenraum zwischen den Schalen größtenteils mit Dämmung gefüllt werden. Der von der DIN geforderte Luftzwischenraum von mindestens 4 cm ist daneben auf der Baustelle kaum einzuhalten — Mörtelbrücken und Unebenheiten der beiden Schalen kommen hinzu. Wird Luftschicht ausgeschrieben, ist die tatsächliche Ausführung deshalb fast immer mangelhaft, weil die Forderung der DIN kaum zu erfüllen ist. Um Regressansprüchen vorzubeugen, sollte stattdessen Mauerwerk mit Kerndämmung ausgeschrieben werden, die zugleich wasserabweisend ist und ohne Luftschicht auskommt. Bei dieser Ausführungsart stellen Mörtelbrücken keinen Mangel dar, und der Fingerspalt darf 4 cm dick sein.",
+      "vertiefung": "Ein Lehrstück darüber, dass die Leistungsbeschreibung selbst ein konstruktives Werkzeug ist: Dieselbe gebaute Wand ist einmal mangelhaft und einmal einwandfrei — je nachdem, was ausgeschrieben wurde. Wer eine Anforderung aufnimmt, die auf der Baustelle nicht einzuhalten ist, erzeugt den Mangel erst durch die Ausschreibung.",
+      "tags": [
+        "ausschreibung",
+        "luftschicht",
+        "mangel"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 138",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-028",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die Bauteile im Horizontalschnitt durch die zweischalige Außenwand mit Kerndämmung.",
+      "referenz": "bilder/bk-zweischalig-schnitt-blank.svg",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 18.2,
+          "y": 47.8,
+          "name": "Innenputz als Luftdichtheitsschicht"
+        },
+        {
+          "nr": 2,
+          "x": 30.5,
+          "y": 52.2,
+          "name": "tragende Innenschale"
+        },
+        {
+          "nr": 3,
+          "x": 52.4,
+          "y": 54.3,
+          "name": "Kerndämmung, dauerhaft wasserabweisend"
+        },
+        {
+          "nr": 4,
+          "x": 75.6,
+          "y": 46.7,
+          "name": "Verblendschale aus frostbeständigen Vormauersteinen"
+        },
+        {
+          "nr": 5,
+          "x": 67.8,
+          "y": 38.3,
+          "name": "Drahtanker aus nichtrostendem Stahl"
+        },
+        {
+          "nr": 6,
+          "x": 61.6,
+          "y": 38.3,
+          "name": "Tropfscheibe"
+        },
+        {
+          "nr": 7,
+          "x": 48.2,
+          "y": 38.3,
+          "name": "Krallenplatte zur Befestigung der Dämmplatte"
+        },
+        {
+          "nr": 8,
+          "x": 73.2,
+          "y": 57.6,
+          "name": "offene Stoßfuge als Entwässerungsöffnung"
+        }
+      ],
+      "antwort": "1 Innenputz als Luftdichtheitsschicht, 2 tragende Innenschale, 3 Kerndämmung, 4 Verblendschale, 5 Drahtanker aus nichtrostendem Stahl, 6 Tropfscheibe, 7 Krallenplatte, 8 offene Stoßfuge.",
+      "vertiefung": "Die drei Bauteile auf dem Anker — Anker, Tropfscheibe, Krallenplatte — erfüllen drei verschiedene Aufgaben am selben Stück Draht: verbinden, Wasser abtropfen lassen, Dämmplatte halten. Wer sie auseinanderhalten kann, versteht auch die Ausführungsfehler, die dort passieren.",
+      "tags": [
+        "schichtaufbau",
+        "drahtanker",
+        "horizontalschnitt"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.55, S. 137",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-029",
+      "typ": "fehlersuche",
+      "frage": "Der Fußpunkt einer zweischaligen Außenwand mit Kerndämmung ist fehlerhaft ausgeführt. Markiere den Bereich, in dem der Fehler liegt.",
+      "referenz": "bilder/bk-zweischalig-fusspunkt-fehler.svg",
+      "bereiche": [
+        {
+          "nr": 1,
+          "x": 65.1,
+          "y": 26.9,
+          "name": "Verblendschale"
+        },
+        {
+          "nr": 2,
+          "x": 55.1,
+          "y": 38.5,
+          "name": "Drahtanker mit Tropfscheibe"
+        },
+        {
+          "nr": 3,
+          "x": 65.1,
+          "y": 68.8,
+          "name": "offene Stoßfuge am Fuß der Verblendschale"
+        },
+        {
+          "nr": 4,
+          "x": 53.7,
+          "y": 75.0,
+          "name": "Abdichtung am Fußpunkt"
+        },
+        {
+          "nr": 5,
+          "x": 32.4,
+          "y": 26.9,
+          "name": "tragende Innenschale"
+        }
+      ],
+      "fehlerNr": 4,
+      "folge": "Die Abdichtung hat Gefälle nach innen und endet unter der Kerndämmung, statt mit Gefälle nach außen bis zur Vorderkante der Außenschale zu reichen. Das eingedrungene Wasser wird dadurch nach innen auf die tragende Innenschale geleitet, anstatt über die offene Stoßfuge nach außen abzulaufen. Die Innenschale und die Geschossdecke durchfeuchten, die Entwässerungsöffnung bleibt wirkungslos.",
+      "antwort": "Der Fehler liegt in Bereich 4, der Abdichtung am Fußpunkt: Sie fällt nach innen ab und reicht nicht bis zur Vorderkante der Außenschale. Richtig wäre ein Gefälle nach außen im Bereich des Zwischenraums, eine horizontale Verlegung im Bereich der Außenschale bis zu deren Vorderkante und ein Hochführen an der Innenschale von mindestens 150 mm.",
+      "vertiefung": "Dieser Fehler ist nach dem Aufmauern nicht mehr sichtbar und zeigt sich erst als aufsteigende Feuchte an der Innenwand — oft Jahre später. Deshalb gehört die Fußpunktabdichtung zu den Punkten, die in der Bauleitung vor dem Hochmauern der Verblendschale zu kontrollieren sind.",
+      "tags": [
+        "fußpunkt",
+        "abdichtung",
+        "ausführungsfehler"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände, Abb. 2.4.9; Frick/Knöll, Baukonstruktionslehre 1, S. 137",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-030",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis einen Horizontalschnitt durch eine zweischalige Außenwand mit Kerndämmung. Zeichne alle Schichten von innen nach außen, den Drahtanker mit seinen Zubehörteilen und eine Entwässerungsöffnung.",
+      "referenz": "bilder/bk-zweischalig-schnitt.svg",
+      "pruefpunkte": [
+        "Innen und außen sind eindeutig gekennzeichnet.",
+        "Vier Schichten von innen nach außen: Innenputz, tragende Innenschale, Kerndämmung, Verblendschale.",
+        "Die Kerndämmung füllt den Zwischenraum vollständig aus, es ist keine Luftschicht gezeichnet.",
+        "Der lichte Schalenabstand ist mit höchstens 150 mm bemaßt.",
+        "Die Verblendschale ist erkennbar dicker als 90 mm gezeichnet (bei Kerndämmung mindestens 115 mm).",
+        "Ein Drahtanker verbindet beide Schalen und liegt waagerecht.",
+        "Auf dem Anker sitzt eine Tropfscheibe.",
+        "Eine Krallen- oder Klemmplatte hält die Dämmplatte am Anker.",
+        "Eine offene Stoßfuge in der Verblendschale ist dargestellt."
+      ],
+      "antwort": "Siehe Referenzzeichnung: Innenputz, tragende Innenschale, voll ausgefüllte Kerndämmung und Verblendschale, verbunden durch einen waagerecht liegenden Drahtanker mit Tropfscheibe und Krallenplatte; in der Verblendschale eine offene Stoßfuge, Schalenabstand höchstens 150 mm.",
+      "vertiefung": "Beim Zeichnen lohnt die Frage, was man weglassen könnte, ohne dass die Wand aufhört zu funktionieren. Die Tropfscheibe ist so ein Bauteil: winzig, in der Kostenrechnung unsichtbar, aber ohne sie leitet jeder Anker Wasser in die Dämmung.",
+      "tags": [
+        "horizontalschnitt",
+        "kerndämmung",
+        "skizze"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.55, S. 137; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-031",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis den Fußpunkt einer zweischaligen Außenwand mit Kerndämmung im Vertikalschnitt. Achte besonders auf die Führung der Abdichtung und die Entwässerung.",
+      "referenz": "bilder/bk-zweischalig-fusspunkt.svg",
+      "pruefpunkte": [
+        "Innen und außen sind eindeutig gekennzeichnet.",
+        "Tragende Innenschale, Kerndämmung und Verblendschale sind als drei Schichten erkennbar.",
+        "Die Verblendschale steht auf einem Sockelvorsprung beziehungsweise Randstein auf.",
+        "Die Abdichtung im Zwischenraum hat Gefälle nach außen.",
+        "Die Abdichtung reicht bis zur Vorderkante der Außenschale.",
+        "An der Innenschale ist die Abdichtung mindestens 150 mm hochgeführt.",
+        "Eine offene Stoßfuge am Fuß der Verblendschale ist dargestellt.",
+        "Die Öffnung liegt mindestens 100 mm über dem Geländeanschnitt.",
+        "Der Weg des eingedrungenen Wassers nach außen ist nachvollziehbar."
+      ],
+      "antwort": "Siehe Referenzzeichnung: Die Abdichtung ist an der Innenschale mindestens 150 mm hochgeführt, fällt im Zwischenraum nach außen und reicht bis zur Vorderkante der Außenschale; darüber liegt mindestens 100 mm über Geländeanschnitt die offene Stoßfuge, über die das Wasser die Wand verlässt.",
+      "vertiefung": "Wer diesen Schnitt einmal richtig gezeichnet hat, hat die ganze Konstruktionslogik in der Hand: Jedes der fünf Bauteile am Fußpunkt gehört zu einer einzigen Kette, die Wasser nach außen führt. Bricht ein Glied, endet das Wasser auf der Innenschale — genau der Fall aus der Fehlersuche zu diesem Thema.",
+      "tags": [
+        "fußpunkt",
+        "abdichtung",
+        "vertikalschnitt"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.4 Außenwände, Abb. 2.4.9; Frick/Knöll, Baukonstruktionslehre 1, Bild 6.55, S. 137",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-032",
+      "typ": "karte",
+      "frage": "Worin unterscheiden sich Setzfuge und Dehnfuge an einer abgefangenen Verblendschale?",
+      "antwort": "Die Setzfuge liegt waagerecht unmittelbar unter der Abfangung: Sie hält die abgefangene Schale von der darunterliegenden frei, damit diese nicht belastet wird und beide sich unabhängig setzen können. Die Dehnfuge verläuft senkrecht, typischerweise an der Gebäudeecke, und nimmt die Längenänderung der Schale aus Temperatur auf.",
+      "vertiefung": "Die Merkhilfe steckt in der Richtung: Die waagerechte Fuge trennt oben von unten, sie gehört zur Lastabtragung. Die senkrechte Fuge trennt links von rechts, sie gehört zur Formänderung. Verblendschalen erwärmen sich stärker als das Hintermauerwerk und dehnen sich deshalb mehr — beide Fugen lösen jeweils eine Hälfte dieses Problems.",
+      "tags": [
+        "setzfuge",
+        "dehnfuge",
+        "abfangung"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.59, S. 139; Mauerwerk Atlas, Abschn. Fugenteilung",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-033",
+      "typ": "karte",
+      "frage": "Warum müssen die Ankerstäbe, die von der Verblendschale in die Hintermauerung reichen, flexibel sein?",
+      "antwort": "Damit sie die unterschiedlichen Bewegungen von Außen- und Innenschale aufnehmen können. Sie sollen die Windlasten übertragen, aber die beiden Schalen nicht gegeneinander festhalten.",
+      "vertiefung": "Hier arbeiten zwei Anforderungen gegeneinander: steif genug für Windsog und Winddruck, nachgiebig genug für die Temperaturdehnung der Außenschale. Genau deshalb ist der Draht dünn und lang statt kurz und dick — und deshalb greift bei größerem Schalenabstand die Staffelung der Ankerdurchmesser.",
+      "tags": [
+        "luftschichtanker",
+        "windlast",
+        "bewegung"
+      ],
+      "quelle": "Fassaden Atlas, Kap. Tonstein, S. 89",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-034",
+      "typ": "karte",
+      "frage": "Wie werden Öffnungen für Fenster und Türen in der Außenschale einer zweischaligen Wand ausgeführt?",
+      "antwort": "Entweder wie Abfangungen — mit Konsolankern in Verbindung mit Fertigteilstürzen bei kleineren Öffnungen, mit Profilstahlauflagen und eingemörtelten Konsolen bei größeren — oder als bewehrtes Mauerwerk beziehungsweise wie Stürze. In Sichtmauerwerk kommen außerdem Stürze mit Schalungssteinen, scheitrechte Bögen, Rundbögen und Stahlbetonfertigteile in Frage.",
+      "vertiefung": "Die Öffnung ist konstruktiv nichts anderes als eine Abfangung: Auch hier muss ein Stück Verblendschale getragen werden, das keinen Untergrund mehr unter sich hat. Deshalb gelten dieselben Regeln, einschließlich der Dehnungsfugen — bei abgefangenen Stürzen über großen Öffnungen werden sie in der Verlängerung der Laibungen nach oben und unten angeordnet.",
+      "tags": [
+        "öffnung",
+        "sturz",
+        "konsolanker"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 139; Mauerwerk Atlas, Abschn. 2.4 Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-035",
+      "typ": "karte",
+      "frage": "Unter welcher Bedingung dürfen Giebeldreiecke aus Verblendmauerwerk ohne zusätzliche Abfangung ausgeführt werden?",
+      "antwort": "Bis zu 4 m Höhe bei Gebäuden mit bis zu 2 Vollgeschossen.",
+      "vertiefung": "Die Ausnahme hat zwei Gründe: Das Giebeldreieck läuft nach oben spitz zu, trägt also immer weniger Gewicht, und bei zwei Vollgeschossen bleibt die Gesamthöhe unter den Grenzen, ab denen ohnehin abgefangen werden müsste. Giebelwände selbst gelten bei Sparren- und Kehlbalkendächern als nichttragende Außenwände, weil sie keine Last aus dem Dach erhalten.",
+      "tags": [
+        "giebel",
+        "abfangung",
+        "ausnahme"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 135",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Regel aus DIN 1053-1. Gegen DIN EN 1996-2 mit nationalem Anhang prüfen, ob die Ausnahme für Giebeldreiecke bis 4 m Höhe bei bis zu 2 Vollgeschossen dort fortgeschrieben wurde."
+    },
+    {
+      "id": "bk-zs-036",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zur Lastabtragung einer Verblendschale sind richtig?",
+      "optionen": [
+        "Gebäudeteile mit statischer Funktion wie Stützen, Decken und tragende Wände eignen sich zur Lastabtragung.",
+        "In der Praxis werden die Lasten aus Eigengewicht meist geschossweise in die Decken eingeleitet.",
+        "Bei Fassadenöffnungen leiten statisch wirksame Verankerungen die Eigenlasten über den Sturz in die tragenden Bauteile.",
+        "Neben dem Eigengewicht sind Lasten aus Windsog und Winddruck abzutragen.",
+        "Die Kerndämmung übernimmt einen Teil der Vertikallasten.",
+        "Die Verblendschale steift das Gebäude mit aus und darf rechnerisch angesetzt werden."
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "antwort": "Die ersten vier Aussagen sind richtig. Die Kerndämmung trägt nichts, und die Verblendschale darf rechnerisch weder zur Gebäudeaussteifung noch zur Knickaussteifung tragender Wände herangezogen werden — sie ist eine nichttragende Außenwand.",
+      "vertiefung": "Wegen des hohen Eigengewichts von Verblendmauern hat die Lastabtragung bei dieser Konstruktion vorrangige Bedeutung. Der Satz, dass die Außenschale nichts trägt, gilt eben nur nach innen: Ihr eigenes Gewicht muss sehr wohl irgendwohin — geschossweise in die Decken. Genau daraus ergeben sich Abfangungen, Konsolen und die Setzfugen darunter.",
+      "tags": [
+        "lastabtragung",
+        "verblendschale",
+        "windlast"
+      ],
+      "quelle": "Fassaden Atlas, Kap. Tonstein, S. 89; Mauerwerk Atlas, Abschn. Nichttragende Außenwände",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-037",
+      "typ": "numerisch",
+      "frage": "In welchen Höhenabständen sollen Außenschalen aus 11,5 cm dickem Mauerwerk abgefangen werden?",
+      "wert": 12,
+      "toleranz": 0,
+      "einheit": "m",
+      "antwort": "In Höhenabständen von 12 m. An ihrer Unterseite liegt die Außenschale in der Regel auf ihrer ganzen Länge auf Sockelvorsprüngen auf; für die Zwischenabfangungen sind Konsolanker üblich, am besten mit Ankerschienen an den Deckenrändern befestigt.",
+      "vertiefung": "Nicht verwechseln mit der dünneren Schale: Außenschalen unter 11,5 cm müssen etwa alle 6 m abgefangen werden und dürfen überhaupt nur bis 20 m über Gelände geführt werden. Die Dicke der Schale entscheidet also gleich über drei Dinge — Abfangungsabstand, zulässige Gesamthöhe und den Abstand der horizontalen Dehnungsfugen.",
+      "tags": [
+        "abfangung",
+        "höhenabstand",
+        "außenschale"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 136",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Wert aus DIN 1053-1. Gegen DIN EN 1996-2 mit nationalem Anhang prüfen, ob der Abfangungsabstand von 12 m für 11,5 cm dicke Außenschalen unverändert gilt."
+    },
+    {
+      "id": "bk-zs-038",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Höhe über Gelände dürfen Außenschalen von weniger als 11,5 cm Dicke geführt werden?",
+      "wert": 20,
+      "toleranz": 0,
+      "einheit": "m",
+      "antwort": "Bis 20 m über Gelände. Sie müssen dabei in Höhenabständen von etwa 6 m abgefangen werden.",
+      "vertiefung": "Die Grenze hat denselben Grund wie die Ankertabelle, in der ab 12 m über Gelände der dickere Draht gefordert wird: Mit der Höhe steigen Windsog und Winddruck. Eine dünne Schale hat wenig Eigengewicht, das dagegenhält, und wenig Querschnitt, der die Ankerkräfte verteilt.",
+      "tags": [
+        "außenschale",
+        "gebäudehöhe",
+        "windlast"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 135",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Wert aus DIN 1053-1. Gegen DIN EN 1996-2 mit nationalem Anhang prüfen, ob die Höhenbegrenzung von 20 m für Außenschalen unter 11,5 cm Dicke fortgeschrieben wurde."
+    },
+    {
+      "id": "bk-zs-039",
+      "typ": "zuordnung",
+      "frage": "Ordne der Dicke der Vorsatzschale zu, ab welcher Höhe horizontale Dehnungsfugen unter den Abfangungen erforderlich werden — und welche weiteren Stellen unabhängig davon eine horizontale Fuge brauchen.",
+      "paare": [
+        [
+          "Vorsatzschale dünner als 11,5 cm",
+          "horizontale Dehnungsfuge ab mehr als 6,0 m Höhe"
+        ],
+        [
+          "Vorsatzschale 11,5 cm oder dicker",
+          "horizontale Dehnungsfuge ab mehr als 12,0 m Höhe"
+        ],
+        [
+          "unter Attiken und Dachüberständen",
+          "unabhängig von der Höhe erforderlich"
+        ],
+        [
+          "unter Fenster- und Sohlbänken",
+          "unabhängig von der Höhe erforderlich"
+        ]
+      ],
+      "antwort": "Horizontale Dehnungsfugen sind unter Abfangungen von Außenschalen erforderlich, wenn die Höhe mehr als 6,0 m beträgt und die Vorsatzschale dünner als 11,5 cm ist, beziehungsweise wenn die Höhe mehr als 12,0 m beträgt und die Vorsatzschale 11,5 cm oder dicker ist. Unabhängig von der Höhe sind sie unter Attiken, Dachüberständen, Balkonplatten, Trägern, Balken, Pfetten sowie Fenster- und Sohlbänken erforderlich.",
+      "vertiefung": "Die beiden Höhen sind dieselben, die auch über den Abfangungsabstand entscheiden — kein Zufall: Die horizontale Fuge sitzt genau unter der Abfangung und ist die Setzfuge, die die darüberliegende Schale von der darunterliegenden freihält. Wer den einen Wert kennt, kennt beide.",
+      "tags": [
+        "dehnungsfuge",
+        "abfangung",
+        "vorsatzschale"
+      ],
+      "quelle": "Mauerwerk Atlas, Abschn. Fugenteilung",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Werte aus einer auf DIN 1053-1 gestützten Fassung. Gegen DIN EN 1996-2 mit nationalem Anhang und die aktuelle Fachregel des Mauerwerksbaus abgleichen."
+    },
+    {
+      "id": "bk-zs-040",
+      "typ": "zuordnung",
+      "frage": "Ordne der Lage in der Fassade beziehungsweise der Gebäudehöhe den zugehörigen Praxiswert zu.",
+      "paare": [
+        [
+          "Ankerstäbe je Meter in der Fassadenfläche",
+          "etwa fünf"
+        ],
+        [
+          "Ankerstäbe je Meter an Ecken und Öffnungen",
+          "etwa neun"
+        ],
+        [
+          "Breite einer Dehnungsfuge in der Verblendschale",
+          "10 bis 20 mm, dauerelastisch versiegelt"
+        ],
+        [
+          "Gebäude bis 12 m Höhe",
+          "auf horizontale Bewegungsfugen kann verzichtet werden"
+        ],
+        [
+          "Gebäude über 12 m Höhe",
+          "mindestens alle 9 m eine horizontale Bewegungsfuge"
+        ]
+      ],
+      "antwort": "Fünf Ankerstäbe je Meter in der Fläche, etwa neun an Ecken und Öffnungen. Dehnungsfugen 10 bis 20 mm breit, dauerelastisch versiegelt. Bis 12 m Gebäudehöhe kann auf horizontale Bewegungsfugen verzichtet werden, darüber ist mindestens alle 9 m eine vorzusehen.",
+      "vertiefung": "Die Verdichtung an Ecken und Öffnungen kennst du schon aus der Regel, an freien Mauerrändern 3 Anker je Meter Randlänge zuzulegen — hier steht dieselbe Überlegung als gerundeter Praxiswert. In der Praxis werden Bewegungsfugen ohnehin meist pro Geschoss oder alle zwei Geschosse direkt unter der Schicht der statischen Verankerung angeordnet.",
+      "tags": [
+        "ankerstäbe",
+        "bewegungsfuge",
+        "praxiswerte"
+      ],
+      "quelle": "Fassaden Atlas, Kap. Tonstein, S. 89–90",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-041",
+      "typ": "freitext",
+      "frage": "Erkläre, warum die Außenschale einer zweischaligen Wand überhaupt abgefangen werden muss, und beschreibe, welchen Weg ihre Eigenlast bis ins Tragwerk nimmt.",
+      "pruefpunkte": [
+        "Die Außenschale trägt keine Gebäudelasten, ihr eigenes Gewicht muss aber abgetragen werden.",
+        "Verblendmauern haben ein relativ hohes Eigengewicht, deshalb hat die Lastabtragung vorrangige Bedeutung.",
+        "Eine durchgehend aufstehende Schale würde sich über die volle Gebäudehöhe aufsummieren und die unteren Lagen überlasten.",
+        "An ihrer Unterseite liegt die Außenschale in der Regel auf ihrer ganzen Länge auf Sockelvorsprüngen auf.",
+        "Für Zwischenabfangungen sind Konsolanker üblich, am besten mit Ankerschienen an den Deckenrändern befestigt.",
+        "Die Lasten werden so geschossweise in die Decken eingeleitet.",
+        "Unter jeder Abfangung liegt eine Setzfuge, damit die darunterliegende Schale nicht belastet wird.",
+        "Auskragende Stahlbeton-Deckenränder sind wegen der Wärmebrückenprobleme als Auflager ungeeignet."
+      ],
+      "antwort": "Die Außenschale trägt zwar keine Gebäudelasten, hat aber selbst ein erhebliches Eigengewicht. Stünde sie über die volle Gebäudehöhe durchgehend auf, summierte sich dieses Gewicht in den unteren Lagen auf. Deshalb liegt sie unten in der Regel auf ihrer ganzen Länge auf Sockelvorsprüngen auf und wird darüber in Höhenabständen abgefangen — üblicherweise mit Konsolankern, die mit Ankerschienen an den Deckenrändern befestigt sind. So gehen die Lasten geschossweise in die Decken und von dort ins Tragwerk. Unter jeder Abfangung liegt eine Setzfuge, damit die abgefangene Schale die darunterliegende nicht belastet. Auskragende Stahlbeton-Deckenränder sind als Auflager ungeeignet, weil sie unvermeidliche Wärmebrücken erzeugen.",
+      "vertiefung": "Der scheinbare Widerspruch — die Schale trägt nichts und muss trotzdem abgefangen werden — löst sich über die Richtung: Nichttragend heißt, sie nimmt keine fremden Lasten auf. Ihr eigenes Gewicht bleibt trotzdem übrig und muss quer durch die Dämmebene ins Tragwerk. Genau an dieser Stelle prallen Statik und Wärmeschutz aufeinander, und genau deshalb ist die Konsole ein so sorgfältig durchgebildetes Bauteil.",
+      "tags": [
+        "abfangung",
+        "lastabtragung",
+        "konsole"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 136 und 139; Fassaden Atlas, Kap. Tonstein, S. 89",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-042",
+      "typ": "vergleich",
+      "frage": "Zwei Vertikalschnitte durch Abfangungen von Verblendmauerwerk. Bei welcher der beiden Ausführungen hängt die abfangende Steinschicht an Konsolankern, statt auf einem Stahlprofil aufzuliegen?",
+      "seiten": [
+        {
+          "titel": "Abfangung mit aufgehängter Rollschicht",
+          "bild": "bilder-lokal/bk-abfangung-rollschicht.png",
+          "beschreibung": "Vertikalschnitt: Die abfangende Grenadier- beziehungsweise Rollschicht der Verblendschale ist mit Konsolankern an der tragenden Innenschale aufgehängt. Unter ihr liegt die Setzfuge, gekennzeichnet mit x."
+        },
+        {
+          "titel": "Abfangung mit eingemörtelten Konsolen und L-Profil",
+          "bild": "bilder-lokal/bk-abfangung-lprofil.png",
+          "beschreibung": "Vertikalschnitt: Die Verblendschale liegt auf einem L-Profil auf, das von in die Tragschale eingemörtelten Konsolen getragen wird. Die Setzfuge unter dem Profil ist mit x gekennzeichnet."
+        }
+      ],
+      "richtig": 0,
+      "antwort": "Bei der linken Ausführung. Dort ist die abfangende Grenadier- beziehungsweise Rollschicht mit Konsolankern aufgehängt; rechts liegt die Schale auf einem L-Profil auf, das von eingemörtelten Konsolen getragen wird. Letztere Ausführung kommt vor allem für größere Öffnungen und Spannweiten in Frage.",
+      "vertiefung": "Beide Varianten lösen dieselbe Aufgabe mit entgegengesetzten Mitteln: einmal hängend, einmal aufliegend. Gemeinsam ist ihnen die Setzfuge darunter — sie ist an beiden Schnitten mit x bezeichnet und das eigentliche Erkennungsmerkmal einer Abfangung. Eine dritte Variante sind Konsolanker vom Typ Halfeneisen an Ankerschienen, die am Deckenrand einbetoniert sind.",
+      "tags": [
+        "abfangung",
+        "konsolanker",
+        "l-profil"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.59b und 6.59c, S. 139",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-043",
+      "typ": "bildbeschriftung",
+      "frage": "Isometrie einer abgefangenen Verblendschale an der Gebäudeecke. Benenne die bezeichneten Bauteile und Fugen.",
+      "referenz": "bilder-lokal/bk-abfangung-ecke.png",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 24.8,
+          "y": 66.3,
+          "name": "Verblendschale"
+        },
+        {
+          "nr": 2,
+          "x": 53.6,
+          "y": 12.0,
+          "name": "Geschossdecke"
+        },
+        {
+          "nr": 3,
+          "x": 35.0,
+          "y": 29.2,
+          "name": "Konsolanker"
+        },
+        {
+          "nr": 4,
+          "x": 36.4,
+          "y": 80.4,
+          "name": "Setzfuge"
+        },
+        {
+          "nr": 5,
+          "x": 58.4,
+          "y": 62.2,
+          "name": "Dehnfuge an der Gebäudeecke"
+        }
+      ],
+      "antwort": "1 Verblendschale, 2 Geschossdecke, 3 Konsolanker, 4 Setzfuge (waagerecht, unter der Abfangung), 5 Dehnfuge an der Gebäudeecke (senkrecht).",
+      "vertiefung": "An der Ecke treffen beide Fugenarten zusammen, und die Zeichnung zeigt warum: Die waagerechte Setzfuge läuft unter der abgefangenen Schicht durch, die senkrechte Dehnfuge steht genau in der Ecke — dort, wo zwei unterschiedlich besonnte Fassadenflächen aufeinandertreffen und sich verschieden stark ausdehnen.",
+      "tags": [
+        "abfangung",
+        "gebäudeecke",
+        "fugen"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.59a, S. 139",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-044",
+      "typ": "bildbeschriftung",
+      "frage": "Vertikalschnitt durch eine Abfangung mit Tragkonsole. Achtung: Hier liegt außen links und innen rechts. Benenne die bezeichneten Bauteile.",
+      "referenz": "bilder-lokal/bk-abfangung-konsole.png",
+      "punkte": [
+        {
+          "nr": 1,
+          "x": 26.0,
+          "y": 29.9,
+          "name": "Verblendschale"
+        },
+        {
+          "nr": 2,
+          "x": 41.7,
+          "y": 71.9,
+          "name": "Wärmedämmung"
+        },
+        {
+          "nr": 3,
+          "x": 67.6,
+          "y": 83.8,
+          "name": "tragende Innenschale"
+        },
+        {
+          "nr": 4,
+          "x": 36.2,
+          "y": 59.9,
+          "name": "Tragkonsole"
+        },
+        {
+          "nr": 5,
+          "x": 46.5,
+          "y": 44.2,
+          "name": "Verankerung der Konsole in der Tragschale"
+        },
+        {
+          "nr": 6,
+          "x": 27.2,
+          "y": 67.7,
+          "name": "Setzfuge unter der Konsole"
+        }
+      ],
+      "antwort": "1 Verblendschale, 2 Wärmedämmung, 3 tragende Innenschale, 4 Tragkonsole, 5 Verankerung der Konsole in der Tragschale, 6 Setzfuge unter der Konsole.",
+      "vertiefung": "Gut zu sehen ist, dass die Konsole die Dämmebene vollständig durchstößt — sie ist damit die planmäßige Wärmebrücke dieser Konstruktion. Das ist der Grund, warum sie als schlankes, punktuell gesetztes Bauteil ausgeführt wird und nicht als durchlaufendes Auflager. Siehe das Thema Wärmebrücken, χ-Wert.",
+      "tags": [
+        "tragkonsole",
+        "abfangung",
+        "vertikalschnitt"
+      ],
+      "quelle": "Fassaden Atlas, Kap. Tonstein, Abb. B 2.9, S. 89",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-045",
+      "typ": "fehlersuche",
+      "frage": "Die Abfangung der Verblendschale ist fehlerhaft geplant. Markiere den Bereich, in dem der Fehler liegt.",
+      "referenz": "bilder/bk-abfangung-fehler.svg",
+      "bereiche": [
+        {
+          "nr": 1,
+          "x": 62.7,
+          "y": 25.9,
+          "name": "Verblendschale oberhalb der Abfangung"
+        },
+        {
+          "nr": 2,
+          "x": 54.9,
+          "y": 52.6,
+          "name": "Auflager der Außenschale"
+        },
+        {
+          "nr": 3,
+          "x": 48.8,
+          "y": 79.6,
+          "name": "Kerndämmung unterhalb"
+        },
+        {
+          "nr": 4,
+          "x": 31.5,
+          "y": 25.9,
+          "name": "tragende Innenschale"
+        },
+        {
+          "nr": 5,
+          "x": 62.7,
+          "y": 61.9,
+          "name": "Setzfuge unter dem Auflager"
+        }
+      ],
+      "fehlerNr": 2,
+      "folge": "Die Außenschale ist auf einen auskragenden Stahlbeton-Deckenrand gesetzt. Dieser durchstößt die Dämmebene auf der gesamten Gebäudebreite und bildet eine durchlaufende Wärmebrücke. Die Folge sind erhöhte Wärmeverluste, ein deutlich abgesenkter Temperaturfaktor an der Innenoberfläche und damit Tauwasser- und Schimmelgefahr entlang des gesamten Deckenanschlusses. Richtig wären punktuell gesetzte Konsolanker, die mit Ankerschienen am Deckenrand befestigt sind.",
+      "antwort": "Der Fehler liegt in Bereich 2, dem Auflager der Außenschale: Ein auskragender Stahlbeton-Deckenrand ist wegen der unvermeidlichen Wärmebrückenprobleme als Auflager ungeeignet. Statt einer durchlaufenden Betonkonsole gehören dorthin einzelne Konsolanker, am besten mit Ankerschienen an den Deckenrändern befestigt.",
+      "vertiefung": "Der Unterschied ist nicht nur graduell, sondern grundsätzlich: Eine punktuelle Konsole erzeugt eine punktbezogene Wärmebrücke, die über den χ-Wert erfasst wird, eine durchlaufende Betonnase eine linienbezogene über den ψ-Wert — und die läuft über die gesamte Gebäudebreite. Dieselbe Konstruktion in zwei Ausführungen liegt beim Wärmeverlust um Größenordnungen auseinander.",
+      "tags": [
+        "abfangung",
+        "wärmebrücke",
+        "ausführungsfehler"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 139",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-zs-046",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis den Vertikalschnitt durch eine Abfangung der Verblendschale mit Konsole. Zeichne alle Schichten, die Konsole samt Befestigung und die Fuge darunter.",
+      "referenz": "bilder/bk-abfangung-schema.svg",
+      "pruefpunkte": [
+        "Innen und außen sind eindeutig gekennzeichnet.",
+        "Tragende Innenschale, Kerndämmung und Verblendschale sind als drei Schichten erkennbar.",
+        "Die Geschossdecke endet bündig mit der Innenschale und kragt nicht in die Dämmebene aus.",
+        "Eine Konsole reicht von der Tragschale durch die Dämmebene bis unter die Verblendschale.",
+        "Die Konsole ist mit einer Ankerschiene am Deckenrand befestigt.",
+        "Die Verblendschale oberhalb steht auf dem Auflagerschenkel der Konsole.",
+        "Unter der Konsole liegt eine Setzfuge, die zur darunterliegenden Schale frei bleibt.",
+        "Die Setzfuge ist mit einem Dichtungsband geschlossen.",
+        "Der Weg der Eigenlast von der Verblendschale über die Konsole in die Decke ist nachvollziehbar."
+      ],
+      "antwort": "Siehe Referenzzeichnung: Die Konsole ist mit einer Ankerschiene am bündig endenden Deckenrand befestigt, durchstößt die Kerndämmung und trägt mit ihrem Auflagerschenkel die Verblendschale oberhalb; darunter bleibt die Setzfuge frei und wird mit einem Dichtungsband geschlossen.",
+      "vertiefung": "Beim Zeichnen lohnt der Blick auf das, was nicht da ist: Die Decke hört an der Innenschale auf. Verlängert man sie auch nur um zehn Zentimeter nach außen, wird aus der punktuellen Wärmebrücke eine durchlaufende — das ist genau der Fehler aus der Fehlersuche zu diesem Thema.",
+      "tags": [
+        "abfangung",
+        "konsole",
+        "vertikalschnitt"
+      ],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 136 und 139; Fassaden Atlas, Kap. Tonstein, Abb. B 2.9, S. 89",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}

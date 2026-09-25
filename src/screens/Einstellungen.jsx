@@ -1,13 +1,75 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { PALETTEN, SCHRIFTGROESSEN, STANDARD } from '../lib/einstellungen.js'
+import DropboxBereich from '../components/DropboxBereich.jsx'
+import {
+  lokaleBilderImportieren,
+  lokaleBilderLoeschen,
+  lokaleBilderMoeglich,
+  lokaleBilderZaehlen,
+} from '../lib/lokaleBilder.js'
+
+// navigator.storage.estimate() ist nur eine grobe Schaetzung des
+// Browsers (rundet, zaehlt teils Overhead mit) - reicht aber, um zu
+// zeigen, ob der Speicher trotz mehrerer Profile mit eigener IndexedDB
+// noch unauffaellig ist.
+function alsMB(bytes) {
+  return (bytes / (1024 * 1024)).toFixed(1)
+}
+
+function useSpeicherSchaetzung() {
+  const [schaetzung, setSchaetzung] = useState(null)
+  useEffect(() => {
+    if (!navigator.storage?.estimate) return
+    let abgebrochen = false
+    navigator.storage.estimate().then((s) => {
+      if (!abgebrochen) setSchaetzung(s)
+    })
+    return () => {
+      abgebrochen = true
+    }
+  }, [])
+  return schaetzung
+}
 
 export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung,
-  onExport, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe,
+  onExport, onExportCsv, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
 }) {
   const [loeschfrage, setLoeschfrage] = useState(false)
   const [palettenfenster, setPalettenfenster] = useState(false)
   const [bestaetigung, setBestaetigung] = useState('')
+  const speicher = useSpeicherSchaetzung()
+
+  // Buchausschnitte fuers Handy (siehe lib/lokaleBilder.js).
+  const bilderMoeglich = lokaleBilderMoeglich()
+  const [lokaleBilder, setLokaleBilder] = useState(null)
+  useEffect(() => {
+    if (bilderMoeglich) lokaleBilderZaehlen().then(setLokaleBilder).catch(() => setLokaleBilder({}))
+  }, [bilderMoeglich])
+  const anzahlLokal = Object.values(lokaleBilder ?? {}).reduce((s, n) => s + n, 0)
+
+  async function bilderEinlesen(datei) {
+    if (!datei) return
+    try {
+      const bericht = await lokaleBilderImportieren(datei)
+      setLokaleBilder(await lokaleBilderZaehlen())
+      const ohneDienst = !navigator.serviceWorker?.controller
+      onMeldung?.({
+        art: 'erfolg',
+        text:
+          `${bericht.anzahl} Bilder eingelesen.` +
+          (ohneDienst ? ' Bitte die Seite einmal neu laden, damit sie erscheinen.' : ''),
+      })
+    } catch (e) {
+      onMeldung?.({ art: 'fehler', text: `Bilder einlesen nicht möglich: ${e.message}` })
+    }
+  }
+
+  async function bilderEntfernen() {
+    await lokaleBilderLoeschen()
+    setLokaleBilder({})
+    onMeldung?.({ art: 'erfolg', text: 'Eingelesene Bilder von diesem Gerät entfernt.' })
+  }
 
   const aktivePalette = PALETTEN.find((p) => p.id === werte.palette) ?? PALETTEN[0]
   const stufeIndex = Math.max(
@@ -328,13 +390,83 @@ export default function Einstellungen({
                 Einlesen
                 <input
                   type="file"
-                  accept="application/json"
+                  accept=".json,application/json"
+                  multiple
                   hidden
-                  onChange={(e) => onImport(e.target.files?.[0])}
+                  onChange={(e) => {
+                    onImport(Array.from(e.target.files ?? []))
+                    e.target.value = ''
+                  }}
                 />
               </label>
             </div>
           </div>
+
+          <DropboxBereich
+            onMeldung={onMeldung}
+            abgleich={abgleich}
+            einstellung={{ auto: werte.dropboxAuto !== false, skizzen: werte.dropboxSkizzen === true }}
+            onEinstellung={aendern}
+          />
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Buchausschnitte einlesen</p>
+              <p className="zeileHinweis">
+                Geschützte Bilder liegen nicht im Internet. Am Handy hier die Bilder-ZIP einlesen
+                (vom PC mit <code>bilder_packen.py</code> erzeugt, über Dropbox geteilt). Sie
+                bleiben auf diesem Gerät.
+                {!bilderMoeglich
+                  ? ' Auf diesem Gerät gerade nicht möglich (braucht eine https-Adresse).'
+                  : anzahlLokal > 0
+                    ? ` Eingelesen: ${Object.entries(lokaleBilder).map(([p, n]) => `${p} ${n}`).join(', ')}.`
+                    : ' Noch keine eingelesen.'}
+              </p>
+            </div>
+            {bilderMoeglich && (
+              <div className="wahl">
+                <label className="knopf schmal">
+                  Bilder einlesen
+                  <input
+                    type="file"
+                    accept=".zip,application/zip"
+                    hidden
+                    onChange={(e) => {
+                      bilderEinlesen(e.target.files?.[0])
+                      e.target.value = ''
+                    }}
+                  />
+                </label>
+                {anzahlLokal > 0 && (
+                  <button className="knopf schmal" onClick={bilderEntfernen}>Entfernen</button>
+                )}
+              </div>
+            )}
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Als Tabelle exportieren</p>
+              <p className="zeileHinweis">
+                Jede Antwort als eigene Zeile (Datum, Thema, Bewertung, Dauer) - für eigene
+                Auswertung in Excel oder Calc. Für Wiederherstellung/Sicherung stattdessen oben
+                „Sichern" benutzen.
+              </p>
+            </div>
+            <button className="knopf schmal" onClick={onExportCsv}>Als CSV</button>
+          </div>
+
+          {speicher && (
+            <div className="zeile">
+              <div className="zeileText">
+                <p className="zeileTitel">Belegter Speicher</p>
+                <p className="zeileHinweis">
+                  {alsMB(speicher.usage)} MB von {alsMB(speicher.quota)} MB, die der Browser
+                  diesem Profil zugesteht. Wächst mit Skizzen und Ereignissen.
+                </p>
+              </div>
+            </div>
+          )}
 
           <div className="zeile">
             <div className="zeileText">
@@ -399,7 +531,7 @@ export default function Einstellungen({
                     ))}
                   </span>
                   <span className="paletteName">{pa.name}</span>
-                  {pa.id === werte.palette && <span className="paletteHaken">✓</span>}
+                  {pa.id === werte.palette && <span className="paletteHaken">✓︎</span>}
                 </button>
               ))}
             </div>
