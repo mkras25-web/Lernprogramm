@@ -1,3 +1,5 @@
+import LokalBild from './LokalBild.jsx'
+
 export default function Erklaerstueck({ thema, onLernen, onZurueck }) {
   const e = thema.erklaerung
 
@@ -24,7 +26,7 @@ export default function Erklaerstueck({ thema, onLernen, onZurueck }) {
 
         {(e?.bild || thema.bild) && (
           <figure style={{ margin: 0 }}>
-            <img className="referenz" src={e?.bild ?? thema.bild} alt="" />
+            <LokalBild className="referenz" src={e?.bild ?? thema.bild} alt="" />
             {e?.bildunterschrift && (
               <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
                 {e.bildunterschrift}

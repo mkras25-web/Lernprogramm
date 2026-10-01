@@ -1,0 +1,558 @@
+{
+  "thema": "bp-schlagregen",
+  "titel": "Schlagregenschutz und Fassadenbeanspruchung",
+  "erklaerung": {
+    "absaetze": [
+      "Schlagregen entsteht, weil der Wind die fallenden Regentropfen aus ihrer Bahn ablenkt und gegen die Fassade treibt. Wie stark eine Wand belastet wird, hängt deshalb nicht am Niederschlag allein, sondern an vier Größen zugleich: Windrichtung, Windgeschwindigkeit, Niederschlagsintensität und der Art, wie der Wind das Gebäude umströmt. An den Gebäudekanten laufen die Stromlinien eng zusammen, dort treten die Spitzenwerte auf. Weil in Deutschland Südwest vorherrscht, stehen Nord- und Ostfassaden vergleichsweise selten unter Staudruck.",
+      "In die Wand gelangt das Wasser auf zwei grundverschiedenen Wegen. Der erste ist das kapillare Saugen der Oberfläche; wie stark ein Baustoff saugt, beschreibt der Wasseraufnahmekoeffizient w über die Beziehung W gleich w mal Wurzel aus t — die aufgenommene Wassermenge wächst also mit der Wurzel der Beregnungsdauer, nicht linear. Danach werden Baustoffe in vier Saugfähigkeitsgruppen eingeteilt, von stark saugend bis wasserdicht. Der zweite Weg ist der Staudruck: Wo Risse, Spalten oder fehlerhafte Abdichtungen sitzen, drückt der Wind das Wasser hinein. Der erste Weg lässt sich über die Oberfläche bremsen, der zweite nur über die Konstruktion.",
+      "Für die Planung fasst DIN 4108-3 die Belastung in drei Beanspruchungsgruppen: gering unter 600 mm Jahresniederschlag, mittel zwischen 600 und 800 mm, stark darüber. Die Regenkarte ist dabei nur der Einstieg, nicht das Ergebnis — die Gruppe ist im Einzelfall festzulegen. Windgeschützte Lagen können trotz hoher Niederschläge in einer niedrigeren Gruppe liegen, windreiche Gebiete wie Küsten, Mittelgebirge und Alpenvorland trotz geringerer Mengen in Gruppe III. Hochhäuser und Gebäude in exponierter Lage rücken jeweils eine Gruppe nach oben.",
+      "Schlagregendicht wird eine Wand auf vier Arten, und sie sind stets am gesamten Wandquerschnitt zu beurteilen. Erstens über einen Baustoff, der von Natur aus wenig oder langsam saugt oder bei großer Dicke genügend speichern kann. Zweitens über eine hinterlüftete Schale davor, die den Regen abhält und dafür nicht einmal völlig undurchlässig sein muss. Drittens über eine undurchlässige Schicht im Inneren des Querschnitts. Viertens über eine Oberflächenbehandlung, die das kapillare Saugen unterbindet. Dazu kommt, was keine Schicht kostet: weit herabgezogene Dächer, große Dachüberstände, zurückspringende Geschosse und wasserableitende Gesimse.",
+      "Zwei Fallstricke sind so verbreitet, dass sie eigene Aufmerksamkeit verdienen. Der erste: Wasserdichte und wasserabweisende Anstriche sind meistens auch dampfdicht und wirken dann als Dampfsperre auf der falschen Seite — die Feuchte staut sich unmittelbar darunter, der Anstrich bildet Blasen und blättert ab. Zu wählen ist deshalb die geringstmögliche Dampfdichtigkeit. Der zweite: Bei einer oberflächenbehandelten Wand ist ein Riss gefährlicher als bei einer saugenden, weil das ablaufende Wasser konzentriert auf ihn einwirkt, statt sich über die Fläche zu verteilen."
+    ],
+    "merksatz": "Kapillar saugt die Fläche, durch Risse drückt der Wind.",
+    "bild": "bilder-lokal/bp-regenkarte.png",
+    "bildunterschrift": "Regenkarte zur Schlagregenbeanspruchung: Sie liefert die Jahresniederschlagsmenge als Einstieg in die Zuordnung, ersetzt aber nicht die Festlegung im Einzelfall.",
+    "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 330–339; Richter/Jenisch, Lehrbuch der Bauphysik, S. 382–385 und 473–477"
+  },
+  "items": [
+    {
+      "id": "bp-sr-001",
+      "typ": "karte",
+      "frage": "Wodurch entsteht Schlagregen an einer Fassade, und wovon hängt seine Intensität ab?",
+      "antwort": "Schlagregen entsteht dadurch, dass die fallenden Regentropfen durch den Wind aus ihrer Bahn abgelenkt werden. Die Intensität der Belastung wird von der Windrichtung, der Windgeschwindigkeit, der Niederschlagsintensität und der Windströmung an der Gebäudehülle bestimmt.",
+      "vertiefung": "Bemerkenswert ist, dass nur eine der vier Größen mit dem Regen selbst zu tun hat — die anderen drei sind Windgrößen. Deshalb greift die Regenkarte zu kurz, wenn man sie für sich nimmt: Sie kennt nur die Niederschlagsmenge, nicht die Lage und nicht die Form des Gebäudes.",
+      "tags": ["schlagregen", "wind", "fassade"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 385",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-002",
+      "typ": "karte",
+      "frage": "Warum stehen Nord- und Ostfassaden in Deutschland relativ selten unter Schlagregenbelastung?",
+      "antwort": "Weil die vorherrschende Windrichtung in Deutschland etwa Südwest ist. Nord- und Ostfassaden liegen damit meist im Windschatten und stehen selten unter Staudruck.",
+      "vertiefung": "Das ist eine der wenigen Stellen, an denen die Himmelsrichtung beim Feuchteschutz eine Rolle spielt — beim Wärmeschutz ist es umgekehrt die Südseite, die Sonderbehandlung braucht. Für die Bauphysik zählen dabei die langfristigen Mittelwerte des Windes, nicht die Spitzenwerte; die sind für die Standsicherheit maßgeblich.",
+      "tags": ["windrichtung", "orientierung", "staudruck"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 384",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-003",
+      "typ": "karte",
+      "frage": "Warum weist die Schlagregenbelastung an Gebäudekanten Spitzenwerte auf?",
+      "antwort": "Weil die Windgeschwindigkeit dort besonders hoch ist. Im Strömungsbild erkennt man das an den eng zusammenlaufenden Stromlinien.",
+      "vertiefung": "Dieselbe Strömungsverdichtung, die an der Kante die Windlast erhöht, treibt dort auch mehr Wasser gegen die Fassade. Zusätzlich nimmt die Windgeschwindigkeit mit der Höhe zu — deshalb rücken Hochhäuser in den Beanspruchungsgruppen eine Stufe nach oben, unabhängig davon, wie viel es am Ort regnet.",
+      "tags": ["gebäudekante", "strömung", "belastung"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 385",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-004",
+      "typ": "karte",
+      "frage": "Was besagt die Beziehung W = w · √t, und was bedeutet sie für die Wasseraufnahme einer Fassade?",
+      "antwort": "W ist die pro Flächeneinheit aufgenommene Wassermenge in kg/m², t die Saugzeit in Stunden und w der Wasseraufnahmekoeffizient in kg/(m²·h^0,5). Die aufgenommene Wassermenge wächst also mit der Wurzel der Saugzeit, nicht linear — beim Saugversuch ergibt sich über der Wurzel der Zeit eine Gerade, deren Steigung dem stoffspezifischen w-Wert entspricht.",
+      "vertiefung": "Praktisch heißt das: In den ersten Minuten eines Regens nimmt die Wand am meisten Wasser auf, danach immer langsamer. Ein kurzer, heftiger Schauer belastet eine saugende Fassade deshalb überproportional stark. Aus demselben Grund wird w aus der Wasseraufnahme nach 24 Stunden geteilt durch die Wurzel aus 24 bestimmt.",
+      "tags": ["wasseraufnahmekoeffizient", "kapillar", "saugversuch"],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.6; Richter/Jenisch, Lehrbuch der Bauphysik, S. 382",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-005",
+      "typ": "karte",
+      "frage": "Warum ist ein wasserdichter Anstrich auf der Wandaußenseite bauphysikalisch problematisch?",
+      "antwort": "Weil wasserdichte oder wasserabweisende Anstriche im Allgemeinen auch relativ dampfdicht sind. Sie bilden damit eine Dampfsperre auf der falschen Seite: Die von innen kommende Feuchte staut sich unmittelbar unter dem Anstrich, was leicht zur Blasenbildung oder zum Abblättern führt.",
+      "vertiefung": "Die Regel lautet deshalb: bei der Auswahl die geringstmögliche Dampfdichtigkeit wählen. Genau dieser Zielkonflikt steckt auch in der Definition von wasserabweisend, die neben dem w-Wert zusätzlich eine Obergrenze für den sd-Wert und für das Produkt aus beiden fordert — die Schicht soll Wasser abweisen und Dampf durchlassen.",
+      "tags": ["anstrich", "dampfsperre", "blasenbildung"],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 159",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-006",
+      "typ": "karte",
+      "frage": "Warum ist ein Riss bei einer oberflächenbehandelten Wand gefährlicher als bei einer von Natur aus saugenden Wand?",
+      "antwort": "Weil das Niederschlagswasser an der behandelten Oberfläche abläuft, statt sich über die Fläche zu verteilen, und deshalb konzentriert auf den Riss einwirkt.",
+      "vertiefung": "Das ist ein unerwarteter Nebeneffekt einer an sich richtigen Maßnahme: Die Beschichtung verhindert das flächige Saugen und schafft damit erst den konzentrierten Wasserstrom. Abhilfe schaffen rissüberbrückende Beschichtungen oder, bei Spaltweiten unter 0,3 mm, das Hydrophobieren der oberflächennahen Wandzone.",
+      "tags": ["riss", "beschichtung", "wasserlauf"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 474",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-007",
+      "typ": "karte",
+      "frage": "Welche zwei Mauerwerksbauweisen haben sich bezüglich der Schlagregendichtheit in der Vergangenheit als riskant erwiesen?",
+      "antwort": "Einschaliges Sichtmauerwerk und zweischaliges Sichtmauerwerk mit vergossener Mörtelschale ohne Luftschicht.",
+      "vertiefung": "Beide setzen darauf, dass eine durchgehende, hohlraumfreie Mörtelschicht das Wasser aufhält — und genau diese Ausführungsqualität ist auf der Baustelle kaum sicherzustellen. Deshalb steht in der Zuordnungstabelle für die höchste Beanspruchungsgruppe das zweischalige Verblendmauerwerk und nicht die verbesserte einschalige Wand.",
+      "tags": ["sichtmauerwerk", "mörtelschale", "risiko"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 474–475",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-008",
+      "typ": "karte",
+      "frage": "Was ist die sogenannte Regenbremse beim einschaligen Sichtmauerwerk, und wie zuverlässig ist sie?",
+      "antwort": "Eine 2 cm dicke, senkrechte, versetzt durchlaufende und hohlraumfreie Mörtelfuge im Inneren der Wand. Sie kann nur bei völlig einwandfreier Ausführung Schlagregenschutz bewirken — und die ist in der Praxis nur schwer zu erreichen.",
+      "vertiefung": "Die Einschränkung im zweiten Halbsatz ist das Eigentliche an dieser Karte. Eine Konstruktion, die nur bei fehlerfreier Ausführung funktioniert, ist im Sinne der Bauleitung keine gute Konstruktion. Dasselbe Argument führt beim zweischaligen Mauerwerk dazu, keine Luftschicht mehr auszuschreiben.",
+      "tags": ["regenbremse", "sichtmauerwerk", "mörtelfuge"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 113–114",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-009",
+      "typ": "karte",
+      "frage": "Warum ist die Silikonimprägnierung bei Sichtmauerwerk beliebt, und welcher Einwand steht dagegen?",
+      "antwort": "Sie verändert das Aussehen der Wandflächen nicht, ist preiswert, und eine Schutzdauer von mehr als 20 Jahren ist erreichbar. Der Einwand: Die Hydrophobierung nutzt sich durch Verwitterung ungleichmäßig ab, sodass manche Stellen weiter Wasser abweisen und andere mehr aufnehmen — was zu Schäden führt und sich nur schwer nachbessern lässt.",
+      "vertiefung": "Hier widersprechen sich die Quellen offen: Das Lehrbuch der Bauphysik nennt die Maßnahme weit verbreitet, bewährt und sehr wirtschaftlich, Frick/Knöll warnen vor genau ihr. Beide haben recht auf ihrer Ebene — bauphysikalisch wirkt sie, über die Lebensdauer betrachtet wird sie zum Wartungsfall. Siehe das Thema Außenwand zweischalig.",
+      "tags": ["hydrophobierung", "imprägnierung", "wartung"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 475; Frick/Knöll, Baukonstruktionslehre 1, S. 136",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-010",
+      "typ": "karte",
+      "frage": "Warum sind Fassaden aus Sichtfachwerk besonders schlagregenempfindlich, und wie geht DIN 4108-3 damit um?",
+      "antwort": "An den Fugen zwischen dem Fachwerkholz und der Ausfachung bilden sich unvermeidbar Risse, in die Niederschlagswasser eindringen kann. DIN 4108-3 geht auf diesen Fall gar nicht ein; Empfehlungen finden sich stattdessen in gesonderten Veröffentlichungen.",
+      "vertiefung": "Die Ursache ist eine Materialpaarung, die nicht zusammenpasst: Holz arbeitet mit der Feuchte, die Ausfachung nicht. Deshalb laufen die Empfehlungen bei mittlerer und starker Beanspruchung auf eine Entkoppelung hinaus — Bekleidungen oder Putzsysteme mit einer Trennschicht zwischen Fachwerk und Oberputz. Bei geringer Beanspruchung dagegen sollen die Stoffe möglichst dampfdurchlässig bleiben.",
+      "tags": ["fachwerk", "riss", "entkoppelung"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 475–476",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-011",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche gestalterischen Maßnahmen tragen zum Schlagregenschutz einer Fassade bei?",
+      "optionen": [
+        "weit herabgezogene Dächer",
+        "große Dachüberstände",
+        "nach unten zurückspringende Fassadenflächen",
+        "wasserableitende Gesimse",
+        "bündig mit der Fassade abschließende Dachränder",
+        "möglichst glatte, ungegliederte Fassadenflächen über die volle Gebäudehöhe"
+      ],
+      "richtig": [0, 1, 2, 3],
+      "antwort": "Die ersten vier. Bündige Dachränder und durchgehend ungegliederte Fassaden bewirken das Gegenteil: Das Wasser läuft über die ganze Fassadenhöhe ab und sammelt sich nach unten hin immer weiter an.",
+      "vertiefung": "Diese Maßnahmen kosten keine zusätzliche Schicht und keine Wartung — sie sind die einzige Art von Schlagregenschutz, die nicht altert. Deshalb lohnt es sich, sie im Entwurf zu klären und nicht erst im Detail: Ein Dachüberstand lässt sich später nicht nachrüsten, ein Anstrich schon.",
+      "tags": ["formgebung", "dachüberstand", "entwurf"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 473; Lübbe, Klausurtraining Bauphysik, S. 159",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zur Festlegung der Beanspruchungsgruppe sind richtig?",
+      "optionen": [
+        "Die Beanspruchungsgruppe ist im Einzelfall festzulegen.",
+        "Ein wesentlicher Einfluss für die Zuordnung ist die Jahresniederschlagsmenge.",
+        "Zu berücksichtigen sind außerdem die örtliche Lage des Gebäudes und die Gebäudeart.",
+        "Auch Höhenlage und Gebäudeform wie Dachüberstand und Gebäudehöhe müssen berücksichtigt werden.",
+        "Die Regenkarte legt die Beanspruchungsgruppe verbindlich fest.",
+        "Windgeschützte Lagen werden unabhängig von der Niederschlagsmenge immer der Gruppe I zugeordnet."
+      ],
+      "richtig": [0, 1, 2, 3],
+      "antwort": "Die ersten vier. Die Regenkarte liefert nur den Einstieg in die Beurteilung, nicht das Ergebnis. Und windgeschützte Lagen führen zwar zu einer niedrigeren Einstufung, aber nicht automatisch zur Gruppe I — besonders windgeschützte Lagen gehören zu Gruppe I, einfach windgeschützte zu Gruppe II.",
+      "vertiefung": "Der Unterschied zwischen den beiden falschen Antworten und den richtigen ist derselbe: eine Tabelle abzulesen gegen eine Lage zu beurteilen. Hochhäuser und Gebäude in exponierter Lage rücken jeweils eine Gruppe nach oben — ein Punkthochhaus in Berlin kann so in Gruppe II landen, obwohl die Karte Gruppe I zeigt.",
+      "tags": ["beanspruchungsgruppe", "regenkarte", "einzelfall"],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 331–332; Mauerwerk Atlas, Abschn. 2.6",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-013",
+      "typ": "mehrfachauswahl",
+      "frage": "Auf welche Arten kann der Querschnitt einer Wand schlagregendicht ausgebildet werden?",
+      "optionen": [
+        "homogene Wand aus einem Baustoff, der von Natur aus wenig oder langsam Wasser aufnimmt",
+        "hinterlüftete Schale vor der Wand, die den Regen abhält",
+        "undurchlässige Schicht innerhalb des Wandquerschnitts",
+        "Behandlung der Oberfläche, sodass sie kein kapillares Saugen mehr zeigt",
+        "eine Dampfsperre auf der Außenseite der Wand",
+        "eine Wand mit möglichst hohem Wasseraufnahmekoeffizienten"
+      ],
+      "richtig": [0, 1, 2, 3],
+      "antwort": "Die ersten vier sind die vier Wirkprinzipien. Eine Dampfsperre außen ist gerade der klassische Fehler, und ein hoher Wasseraufnahmekoeffizient bedeutet starkes Saugen, also das Gegenteil von Schutz.",
+      "vertiefung": "Entscheidend ist der Satz davor: Die Schlagregendichtheit einer Wand ist stets anhand des gesamten Wandquerschnitts zu beurteilen, nicht anhand einer einzelnen Schicht. Die vorgesetzte Schale muss deshalb nicht einmal völlig undurchlässig sein — sie muss nur den Großteil abhalten und beständig gegen Regen und Frost sein.",
+      "tags": ["wirkprinzipien", "wandquerschnitt", "schlagregendicht"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 474",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-014",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Bedingungen gelten nach DIN 1053-1 für Sichtmauerwerk an Gebäuden, die dem dauernden Aufenthalt von Menschen dienen?",
+      "optionen": [
+        "Einschaliges Sichtmauerwerk muss in jeder Steinlage mindestens zwei Steinreihen aufweisen.",
+        "Zwischen den Steinreihen muss eine durchgehende, schichtweise versetzte, hohlraumfrei vermörtelte Längsfuge von 2 cm Dicke verlaufen.",
+        "Das Mauerwerk ist im gesamten Querschnitt vollfugig und kraftschlüssig zu mauern.",
+        "Zweischaliges Sichtmauerwerk muss zwischen den Schalen eine 2 cm dicke, ununterbrochene Mörtelschale enthalten, die als Putz auf die zuerst errichtete Hintermauerschale aufzubringen ist.",
+        "Die Mörtelschale darf auch nachträglich von oben in den Zwischenraum vergossen werden.",
+        "Außenwände aus nicht frostwiderstandsfähigen Steinen dürfen ohne Außenputz ausgeführt werden."
+      ],
+      "richtig": [0, 1, 2, 3],
+      "antwort": "Die ersten vier. Die Mörtelschale ist als Putz auf die zuerst errichtete Schale aufzubringen, nicht zu vergießen — schichtweises Vergießen ist genau die Ursache häufiger Schäden. Und Außenwände aus nicht frostwiderstandsfähigen Steinen müssen einen Außenputz erhalten und mindestens 24 cm dick sein.",
+      "vertiefung": "Alle Bedingungen zielen auf dasselbe: eine durchgehende, hohlraumfreie Sperrschicht im Inneren. Dass sie als Putz aufgebracht werden muss, hat einen kontrollierbaren Grund — man sieht sie, bevor die zweite Schale davorsteht. Beim Vergießen sieht man nichts, und genau darauf gehen die häufigen Schäden zurück.",
+      "tags": ["sichtmauerwerk", "mörtelschale", "din-1053"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 474; Frick/Knöll, Baukonstruktionslehre 1, S. 113",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Bedingungen aus DIN 1053-1, die durch DIN EN 1996 (Eurocode 6) mit nationalem Anhang abgelöst wurde. Prüfen, ob die Anforderungen an Sichtmauerwerk — zwei Steinreihen je Lage, 2 cm Längsfuge, Mörtelschale als Putz — dort fortgeschrieben wurden."
+    },
+    {
+      "id": "bp-sr-015",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Jahresniederschlagsmenge gilt im Allgemeinen die Beanspruchungsgruppe I, geringe Schlagregenbeanspruchung?",
+      "wert": 600,
+      "toleranz": 0,
+      "einheit": "mm",
+      "antwort": "Unter 600 mm. Dazu kommen besonders windgeschützte Lagen auch in Gebieten mit größeren Niederschlagsmengen.",
+      "vertiefung": "Die zweite Grenze liegt bei 800 mm: darunter Gruppe II, darüber Gruppe III. Zwei Zahlen, drei Gruppen — mehr muss man sich nicht merken, sofern man dazu weiß, dass Lage und Gebäudeart die Einstufung um eine Gruppe verschieben können.",
+      "tags": ["beanspruchungsgruppe", "jahresniederschlag", "grenzwert"],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 331; Richter/Jenisch, Lehrbuch der Bauphysik, S. 385",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Wert aus einer älteren Fassung von DIN 4108-3. Gegen DIN 4108-3:2018 prüfen, ob die Grenzen von 600 und 800 mm Jahresniederschlag unverändert gelten."
+    },
+    {
+      "id": "bp-sr-016",
+      "typ": "numerisch",
+      "frage": "Wie dick muss einschaliges Sichtmauerwerk mindestens sein, um für die Beanspruchungsgruppe I zu genügen?",
+      "wert": 31,
+      "toleranz": 0,
+      "einheit": "cm",
+      "antwort": "Mindestens 31 cm. Für die Beanspruchungsgruppe II sind mindestens 37,5 cm erforderlich; für Gruppe III genügt einschaliges Sichtmauerwerk nicht mehr.",
+      "vertiefung": "Die Dicke wirkt hier nicht als Dämmung, sondern als Speicher: Je dicker die Wand, desto länger dauert es, bis die Feuchtefront die Innenseite erreicht, und desto mehr Zeit bleibt zum Austrocknen. Genau deshalb hört das Prinzip bei Gruppe III auf zu funktionieren — dort hilft nur noch eine zweite Schale.",
+      "tags": ["sichtmauerwerk", "wanddicke", "beanspruchungsgruppe"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 113 und 115; Richter/Jenisch, Lehrbuch der Bauphysik, Tafel 8.7",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Wert aus einer älteren Fassung von DIN 4108-3 in Verbindung mit DIN 1053-1. Gegen DIN 4108-3:2018 prüfen, ob die Mindestdicken von 31 cm und 37,5 cm unverändert gelten."
+    },
+    {
+      "id": "bp-sr-017",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Spaltweite lässt sich der Gefahr von Rissen in einer oberflächenbehandelten Wand durch Hydrophobieren der oberflächennahen Wandzone begegnen?",
+      "wert": 0.3,
+      "toleranz": 0,
+      "einheit": "mm",
+      "antwort": "Bis zu Spaltweiten unter 0,3 mm. Bei größeren Rissen helfen nur rissüberbrückende Beschichtungen.",
+      "vertiefung": "Eine verwandte Größenordnung nennt der Mauerwerk Atlas aus den Freilandversuchen in Holzkirchen: Risse von etwa 0,2 mm Breite beeinträchtigen die Funktion des Putzes als Regenschutz nicht wesentlich, sofern der Putzgrund nicht kapillarleitend oder selbst wasserhemmend ist. Beide Werte liegen in derselben Größenordnung — die Grenze zwischen unkritisch und kritisch liegt bei wenigen Zehntelmillimetern.",
+      "tags": ["riss", "hydrophobierung", "spaltweite"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 474; Mauerwerk Atlas, Abschn. 2.6",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-018",
+      "typ": "zuordnung",
+      "frage": "Ordne die Saugfähigkeitsgruppe dem zugehörigen Bereich des Wasseraufnahmekoeffizienten in kg/(m²·h^0,5) zu.",
+      "paare": [
+        ["stark saugend", "w größer 2,0"],
+        ["wasserhemmend", "w über 0,5 bis 2,0"],
+        ["wasserabweisend", "w über 0,001 bis 0,5"],
+        ["wasserdicht", "w kleiner oder gleich 0,001"]
+      ],
+      "antwort": "Stark saugend: w größer 2,0. Wasserhemmend: 0,5 < w ≤ 2,0. Wasserabweisend: 0,001 < w ≤ 0,5. Wasserdicht: w ≤ 0,001 kg/(m²·h^0,5). Für wasserabweisende Putze und Beschichtungen kommen zwei weitere Bedingungen hinzu: sd höchstens 2,0 m und das Produkt w mal sd höchstens 0,2 kg/(m·h^0,5).",
+      "vertiefung": "Die drei Bedingungen für wasserabweisend beschreiben zusammen, was die Schicht leisten soll: wenig Wasser aufnehmen, Dampf durchlassen und beides zugleich. Nur der w-Wert allein genügt nicht, sonst wäre ein dampfdichter Lack die beste Lösung — und genau der ist der klassische Fehler.",
+      "tags": ["saugfähigkeitsgruppe", "wasseraufnahmekoeffizient", "grenzwerte"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, S. 382 und Tafel 8.8",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Die Quellen widersprechen sich beim Produkt w · sd: Das Lehrbuch der Bauphysik nennt höchstens 0,2 kg/(m·h^0,5), der Mauerwerk Atlas höchstens 2,0. Lohmeyer rechnet in anderen Einheiten. Gegen DIN 4108-3:2018 prüfen und auf einen Wert festlegen; die Gruppengrenzen für w selbst sind ebenfalls abzugleichen."
+    },
+    {
+      "id": "bp-sr-019",
+      "typ": "zuordnung",
+      "frage": "Ordne der Schlagregen-Beanspruchungsgruppe die zugehörige Jahresniederschlagsmenge und typische Lage zu.",
+      "paare": [
+        ["Beanspruchungsgruppe I, gering", "unter 600 mm; besonders windgeschützte Lagen"],
+        ["Beanspruchungsgruppe II, mittel", "600 bis 800 mm; windgeschützte Lagen bei größeren Mengen"],
+        ["Beanspruchungsgruppe III, stark", "über 800 mm; Küstengebiete, Mittel- und Hochgebirgslagen, Alpenvorland"],
+        ["Hochhäuser und Gebäude in exponierter Lage", "jeweils eine Gruppe höher als nach der Niederschlagsmenge"]
+      ],
+      "antwort": "Gruppe I: unter 600 mm sowie besonders windgeschützte Lagen auch in Gebieten mit größeren Niederschlagsmengen. Gruppe II: 600 bis 800 mm sowie windgeschützte Lagen bei größeren Mengen. Gruppe III: über 800 mm sowie windreiche Gebiete auch mit geringeren Mengen, etwa Küsten, Mittel- und Hochgebirge und Alpenvorland. Hochhäuser und Gebäude in exponierter Lage werden jeweils eine Gruppe höher eingestuft.",
+      "vertiefung": "Alle vier vorliegenden Quellen geben diese Einteilung wortgleich wieder — ein seltener Fall vollständiger Übereinstimmung. Die Systematik hat dabei zwei Ebenen: Die Niederschlagsmenge liefert die Grundeinstufung, Windexposition und Gebäudehöhe verschieben sie nach oben oder unten.",
+      "tags": ["beanspruchungsgruppe", "niederschlag", "lage"],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, S. 331–332; Richter/Jenisch, Lehrbuch der Bauphysik, Tafel 3.6",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Einteilung nach einer älteren Fassung von DIN 4108-3. Gegen DIN 4108-3:2018 prüfen, ob Mengengrenzen und Lagekriterien unverändert gelten."
+    },
+    {
+      "id": "bp-sr-020",
+      "typ": "zuordnung",
+      "frage": "Ordne der Beanspruchungsgruppe die dafür jeweils ausreichende Wandbauart zu.",
+      "paare": [
+        ["Gruppe I: Putz", "Außenputz ohne besondere Anforderungen"],
+        ["Gruppe II: Putz", "wasserhemmender Außenputz"],
+        ["Gruppe III: Putz", "wasserabweisender Außenputz"],
+        ["Gruppe I: Sichtmauerwerk", "einschalig, mindestens 31 cm"],
+        ["Gruppe II: Sichtmauerwerk", "einschalig, mindestens 37,5 cm"],
+        ["Gruppe III: Sichtmauerwerk", "zweischalig, mit oder ohne Luftschicht"]
+      ],
+      "antwort": "Beim Putz steigt die Anforderung von ohne besondere Anforderungen über wasserhemmend zu wasserabweisend. Beim Sichtmauerwerk von einschalig 31 cm über einschalig 37,5 cm zu zweischalig. Unabhängig von der Gruppe zulässig sind Wärmedämmputz nach DIN 18550-3, Wärmedämmverbundsysteme mit Zulassung und hinterlüftete Bekleidungen nach DIN 18516.",
+      "vertiefung": "Die Tabelle liest sich als Steigerung, und das ist auch ihr Sinn: Innerhalb einer Bauweise wächst die Anforderung mit der Gruppe, bis die Bauweise an ihre Grenze kommt. Beim einschaligen Sichtmauerwerk ist das bei Gruppe III der Fall — dann hilft nur der Wechsel der Bauweise, nicht mehr die Steigerung.",
+      "tags": ["wandbauart", "beanspruchungsgruppe", "zuordnung"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, Tafel 8.7; Frick/Knöll, Baukonstruktionslehre 1, S. 115",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Zuordnung nach einer älteren Fassung von DIN 4108-3, Tabelle 1. Gegen DIN 4108-3:2018 prüfen, ob die Wandbauarten und ihre Zuordnung unverändert gelten."
+    },
+    {
+      "id": "bp-sr-021",
+      "typ": "zuordnung",
+      "frage": "Ordne dem Baustoff seinen Wasseraufnahmekoeffizienten in kg/(m²·h^0,5) zu.",
+      "paare": [
+        ["Vollziegel", "20 bis 30"],
+        ["Kalksandvollstein", "4 bis 8"],
+        ["Bimsbeton", "1,5 bis 2,5"],
+        ["Kalkzementputz", "2 bis 4"],
+        ["Gipsbauplatten", "35 bis 70"],
+        ["Kunststoffdispersionsbeschichtung", "0,05 bis 0,2"]
+      ],
+      "antwort": "Vollziegel 20 bis 30, Kalksandvollstein 4 bis 8, Bimsbeton 1,5 bis 2,5, Kalkzementputz 2 bis 4, Gipsbauplatten 35 bis 70, Kunststoffdispersionsbeschichtung 0,05 bis 0,2 kg/(m²·h^0,5).",
+      "vertiefung": "Drei Größenordnungen liegen zwischen der Beschichtung und den Gipsbauplatten. Aufschlussreich ist der Vergleich mit den Saugfähigkeitsgruppen: Vollziegel und Gipsbauplatten sind weit im stark saugenden Bereich, Kalkzementputz liegt an der Grenze, und nur die Beschichtung erreicht wasserabweisend. Ein Sichtziegel ohne Schutz saugt also erheblich — deshalb die geforderte Wanddicke.",
+      "tags": ["wasseraufnahmekoeffizient", "baustoffe", "kennwerte"],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, Tafel 3.19, S. 330",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-022",
+      "typ": "zuordnung",
+      "frage": "Ordne der Beanspruchungsgruppe die zulässige Schwellenhöhe offener, schwellenförmiger Horizontalfugen zwischen vorgefertigten Wandplatten zu.",
+      "paare": [
+        ["Beanspruchungsgruppe I", "Schwellenhöhe bis 60 mm"],
+        ["Beanspruchungsgruppe II", "Schwellenhöhe bis 80 mm"],
+        ["Beanspruchungsgruppe III, offene Fuge", "Schwellenhöhe bis 100 mm"],
+        ["Beanspruchungsgruppe III, mit Fugendichtmasse", "zusätzliche Schwelle bis 50 mm"]
+      ],
+      "antwort": "Gruppe I bis 60 mm, Gruppe II bis 80 mm, Gruppe III bis 100 mm bei offener Fuge. Wird die Fuge nach DIN 18540-1 mit Dichtmasse geschlossen, genügt in Gruppe III eine zusätzliche Schwelle bis 50 mm. An Vertikalfugen werden überhaupt erst bei Gruppe III Maßnahmen für notwendig gehalten.",
+      "vertiefung": "Die Schwelle ist ein rein konstruktiver Schutz: Sie zwingt das Wasser, erst eine Stufe zu überwinden, bevor es nach innen gelangen kann. Je stärker die Beanspruchung, desto höher die Stufe — und wer die Fuge zusätzlich abdichtet, darf die Stufe halbieren. Dass Vertikalfugen erst in Gruppe III behandelt werden, liegt daran, dass Wasser an ihnen nach unten abläuft statt sich zu sammeln.",
+      "tags": ["fuge", "schwellenhöhe", "fertigteil"],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, Tafel 3.22, S. 337; Richter/Jenisch, Lehrbuch der Bauphysik, Tafel 8.10",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Werte aus einer älteren Fassung von DIN 4108-3 in Verbindung mit DIN 18540-1. Gegen DIN 4108-3:2018 prüfen, ob die Schwellenhöhen unverändert gelten."
+    },
+    {
+      "id": "bp-sr-023",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Baustoffe in die Reihenfolge steigender Wasseraufnahme, vom am wenigsten saugenden zum am stärksten saugenden.",
+      "schritte": [
+        "Kunststoffdispersionsbeschichtung",
+        "Bimsbeton",
+        "Kalkzementputz",
+        "Kalksandvollstein",
+        "Vollziegel",
+        "Gipsbauplatten"
+      ],
+      "antwort": "Kunststoffdispersionsbeschichtung (0,05 bis 0,2), Bimsbeton (1,5 bis 2,5), Kalkzementputz (2 bis 4), Kalksandvollstein (4 bis 8), Vollziegel (20 bis 30), Gipsbauplatten (35 bis 70) — jeweils in kg/(m²·h^0,5).",
+      "vertiefung": "Die Reihe erklärt eine Reihe von Baupraktiken auf einen Blick: warum Gipsbauplatten nichts an einer Außenwand zu suchen haben, warum Sichtziegel eine große Wanddicke brauchen und warum die Beschichtung als einzige in den wasserabweisenden Bereich fällt. Achtung bei Bimsbeton und Kalkzementputz — ihre Bereiche überlappen sich, die Reihenfolge gilt für die Mittelwerte.",
+      "tags": ["wasseraufnahme", "baustoffe", "reihenfolge"],
+      "quelle": "Lohmeyer/Post, Praktische Bauphysik, Tafel 3.19, S. 330",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-024",
+      "typ": "vergleich",
+      "frage": "Zwei Gebäude in derselben Lage. Bei welchem trifft der Schlagregen auf die gesamte Fassadenfläche, sodass sich das ablaufende Wasser nach unten hin immer weiter aufsummiert?",
+      "seiten": [
+        {
+          "titel": "ohne Schutz durch die Formgebung",
+          "bild": "bilder/bp-schlagregen-fassade-ungeschuetzt.svg",
+          "beschreibung": "Der Dachrand schließt bündig mit der Fassade ab, die Fassadenfläche läuft ohne Gliederung über die volle Gebäudehöhe durch. Das Niederschlagswasser trifft auf jeden Punkt der Fassade und läuft von oben nach unten daran herab."
+        },
+        {
+          "titel": "mit Schutz durch die Formgebung",
+          "bild": "bilder/bp-schlagregen-fassade-geschuetzt.svg",
+          "beschreibung": "Ein weit herabgezogenes Dach mit großem Überstand schirmt die oberen Fassadenteile ab, das Obergeschoss springt zurück und ein Gesims gliedert die Wand. Das Wasser tropft am Dachrand und am Gesims frei ab, statt die Fassade hinunterzulaufen."
+        }
+      ],
+      "richtig": 0,
+      "antwort": "Beim linken Gebäude. Dort läuft das Wasser über die volle Höhe an der Fassade herab und summiert sich nach unten immer weiter auf. Rechts tropft es am Dachüberstand und am Gesims frei ab, sodass die darunterliegenden Flächen weitgehend trocken bleiben.",
+      "vertiefung": "Dieser Schutz kostet keine zusätzliche Schicht und altert nicht — er steckt in der Form und lässt sich deshalb nur im Entwurf erreichen, nicht mehr im Detail. Die Maßnahmen im Einzelnen: weit herabgezogene Dächer, große Dachüberstände, nach unten zurückspringende Fassadenflächen und wasserableitende Gesimse.",
+      "tags": ["formgebung", "dachüberstand", "gesims"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, Bild 8.13, S. 473",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-025",
+      "typ": "freitext",
+      "frage": "Beschreibe die beiden Wege, auf denen Schlagregenwasser in eine Außenwand eindringt, und was jeweils dagegen hilft.",
+      "pruefpunkte": [
+        "Erster Weg: kapillare Saugwirkung der Wandoberfläche.",
+        "Zweiter Weg: Eindringen infolge des Staudrucks über Risse, Spalten oder fehlerhafte Abdichtungen.",
+        "Gegen das kapillare Saugen helfen wasserhemmende oder wasserabweisende Putze und Beschichtungen.",
+        "Wie stark ein Baustoff saugt, beschreibt der Wasseraufnahmekoeffizient w.",
+        "Gegen den Staudruck helfen konstruktive Maßnahmen, keine Oberflächenbehandlung.",
+        "Dazu gehören eine vorgesetzte Schale, eine undurchlässige Schicht im Querschnitt oder abgedichtete Fugen und Anschlüsse.",
+        "Die erforderliche Abgabe des aufgenommenen Wassers an das Außenklima muss gewährleistet bleiben."
+      ],
+      "antwort": "Das auftreffende Regenwasser kann erstens durch die kapillare Saugwirkung der Oberfläche in die Wand aufgenommen werden und zweitens infolge des Staudrucks über Risse, Spalten oder fehlerhafte Abdichtungen in die Konstruktion eindringen. Gegen den ersten Weg helfen wasserhemmende oder wasserabweisende Putze und Beschichtungen, also die Begrenzung des Wasseraufnahmekoeffizienten. Gegen den zweiten Weg hilft keine Oberflächenbehandlung, sondern nur die Konstruktion: eine vorgesetzte Schale, eine undurchlässige Schicht im Wandquerschnitt oder abgedichtete Fugen und Anschlüsse. In beiden Fällen muss die Abgabe des aufgenommenen Wassers an das Außenklima gewährleistet bleiben.",
+      "vertiefung": "Die Unterscheidung erklärt, warum ein und dieselbe Maßnahme mal wirkt und mal nicht. Ein wasserabweisender Anstrich senkt den w-Wert und bremst damit das Saugen — auf einen Riss hat er keinen Einfluss, im Gegenteil: Er schafft erst den konzentrierten Wasserstrom, der den Riss findet.",
+      "tags": ["eindringwege", "kapillar", "staudruck"],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.6; Lübbe, Klausurtraining Bauphysik, S. 159",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-026",
+      "typ": "freitext",
+      "frage": "Erkläre die vier Wirkprinzipien, mit denen ein Wandquerschnitt schlagregendicht ausgebildet werden kann, und nenne zu jedem ein Beispiel.",
+      "pruefpunkte": [
+        "Die Schlagregendichtheit ist stets anhand des gesamten Wandquerschnitts zu beurteilen.",
+        "Erstens: homogene Wand aus einem Baustoff, der wenig oder langsam Wasser aufnimmt, etwa Sichtbeton.",
+        "Alternativ genügt bei diesem Prinzip auch ausreichende Speicherfähigkeit bei entsprechend großer Wanddicke.",
+        "Zweitens: eine hinterlüftete Schale vor der Wand, etwa Schindeln, Platten auf Traggerüsten oder eine Vormauerschale.",
+        "Diese Schale muss nicht völlig undurchlässig sein, aber beständig gegen Regenbelastung und Frost.",
+        "Drittens: eine undurchlässige Schicht im Wandquerschnitt, etwa eine geschlossene Mörtelschale, eine hydrophobe Kerndämmung oder eine Dichtungsbahn.",
+        "Viertens: eine Oberflächenbehandlung, die das kapillare Saugen unterbindet, etwa Anstriche, mineralische Putze, Kunstharzputze oder Imprägniermittel.",
+        "Beim vierten Prinzip ist die Gefahr durch Risse größer, weil das ablaufende Wasser konzentriert auf sie einwirkt."
+      ],
+      "antwort": "Die Schlagregendichtheit einer Wand ist stets am gesamten Wandquerschnitt zu beurteilen. Erstens kann eine homogen aufgebaute Wand aus einem Baustoff gewählt werden, der von Natur aus wenig oder nur langsam Wasser aufnimmt, etwa Sichtbeton, oder der bei entsprechend großer Wanddicke genügend speicherfähig ist. Zweitens kann eine hinterlüftete Schale vor die Wand gesetzt werden — Schindeln, Platten auf Traggerüsten oder Vormauerschalen; sie muss beständig gegen Regen und Frost sein, aber nicht völlig undurchlässig. Drittens kann eine undurchlässige Schicht in die Wand eingebaut werden, etwa eine geschlossene Mörtelschale, eine hydrophobe Kerndämmschicht oder eine Dichtungsbahn. Viertens kann die Oberfläche durch Anstriche, mineralische Putze, Kunstharzputze oder Imprägniermittel so behandelt werden, dass sie kein kapillares Saugen mehr zeigt; hier ist die von Rissen ausgehende Gefahr größer als beim ersten Prinzip.",
+      "vertiefung": "Die vier Prinzipien lassen sich nach ihrer Robustheit ordnen: Die hinterlüftete Schale verzeiht am meisten, weil sie undicht sein darf und das Wasser trotzdem abgeführt wird. Die Oberflächenbehandlung verzeiht am wenigsten, weil sie nur so gut ist wie die Fläche, die sie bedeckt — ein einziger Riss hebt ihre Wirkung an dieser Stelle auf.",
+      "tags": ["wirkprinzipien", "wandquerschnitt", "schlagregendicht"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, Bild 8.14, S. 474",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-027",
+      "typ": "freitext",
+      "frage": "Worauf ist bei der Auswahl von Anstrichen zum Schlagregenschutz zu achten, und warum?",
+      "pruefpunkte": [
+        "Wasserdichte oder wasserabweisende Anstriche sind im Allgemeinen relativ dampfdicht.",
+        "Sie bilden damit eine Dampfsperre auf der falschen Seite.",
+        "Die Feuchte staut sich unmittelbar unter dem Anstrich.",
+        "Folgen sind Blasenbildung und Abblättern des Anstrichstoffs.",
+        "Zu wählen ist deshalb die geringstmögliche Dampfdichtigkeit.",
+        "Die Atmungsfähigkeit der Außenwand darf nicht wesentlich behindert werden.",
+        "Deshalb fordert die Definition wasserabweisend neben dem w-Wert auch eine Obergrenze für den sd-Wert und für das Produkt aus beiden."
+      ],
+      "antwort": "Wasserdichte oder wasserabweisende Anstriche sind im Allgemeinen relativ dampfdicht und wirken dann als Dampfsperre auf der falschen Seite: Die von innen nach außen wandernde Feuchte staut sich unmittelbar unter dem Anstrich, was leicht zur Blasenbildung oder zum Abblättern führt. Bei der Auswahl ist deshalb die geringstmögliche Dampfdichtigkeit zu wählen. Dahinter steht die allgemeinere Forderung, dass die Maßnahmen zum Schlagregenschutz die Atmungsfähigkeit der Außenwand nicht wesentlich behindern dürfen — die Wand muss Feuchte nach außen abgeben können. Genau deshalb fordert die Definition wasserabweisend neben dem Wasseraufnahmekoeffizienten auch eine Obergrenze für die diffusionsäquivalente Luftschichtdicke und für das Produkt aus beiden.",
+      "vertiefung": "Zwei Anforderungen ziehen hier in entgegengesetzte Richtungen, und die Norm löst das über ein Produkt statt über zwei Einzelwerte: Eine Schicht darf etwas dampfdichter sein, wenn sie dafür weniger saugt. Dasselbe Denken steckt hinter dem Verbot alukaschierter Dämmplatten in der Kerndämmung. Siehe das Thema Feuchteschutz.",
+      "tags": ["anstrich", "dampfdichtigkeit", "atmungsfähigkeit"],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 159; Lohmeyer/Post, Praktische Bauphysik, S. 330",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-028",
+      "typ": "bildbeschriftung",
+      "frage": "Schlagregen an einer Außenwand. Benenne die bezeichneten Vorgänge und Bauteile.",
+      "referenz": "bilder/bp-schlagregen-eindringwege-blank.svg",
+      "punkte": [
+        { "nr": 1, "x": 85.4, "y": 23.1, "name": "vom Wind abgelenkte Regentropfen" },
+        { "nr": 2, "x": 48.5, "y": 28.8, "name": "kapillares Saugen der Oberfläche" },
+        { "nr": 3, "x": 68.3, "y": 40.4, "name": "Staudruck am Staupunkt" },
+        { "nr": 4, "x": 55.1, "y": 61.2, "name": "Riss als Eindringweg" },
+        { "nr": 5, "x": 57.6, "y": 48.1, "name": "ablaufendes Niederschlagswasser" },
+        { "nr": 6, "x": 41.5, "y": 76.9, "name": "Austrocknung nach außen" }
+      ],
+      "antwort": "1 vom Wind abgelenkte Regentropfen, 2 kapillares Saugen der Oberfläche, 3 Staudruck am Staupunkt, 4 Riss als Eindringweg, 5 ablaufendes Niederschlagswasser, 6 Austrocknung nach außen.",
+      "vertiefung": "Zwei der sechs Pfeile zeigen nach außen, nicht nach innen — das ablaufende Wasser und die Austrocknung. Sie gehören genauso zum Schlagregenschutz wie die Abwehr: Eine Wand, die Wasser aufnimmt, es aber wieder abgeben kann, ist einer Wand überlegen, die beides nicht kann.",
+      "tags": ["eindringwege", "kapillar", "staudruck"],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.6; Richter/Jenisch, Lehrbuch der Bauphysik, S. 385",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-029",
+      "typ": "fehlersuche",
+      "frage": "An dieser Außenwand ist eine Schicht falsch gewählt. Markiere den Bereich, in dem der Fehler liegt.",
+      "referenz": "bilder/bp-schlagregen-fehler.svg",
+      "bereiche": [
+        { "nr": 1, "x": 22.2, "y": 48.1, "name": "Innenputz" },
+        { "nr": 2, "x": 36.2, "y": 48.1, "name": "tragendes Mauerwerk" },
+        { "nr": 3, "x": 54.3, "y": 48.1, "name": "Wärmedämmung" },
+        { "nr": 4, "x": 61.6, "y": 76.9, "name": "Außenputz" },
+        { "nr": 5, "x": 64.3, "y": 23.1, "name": "äußere Beschichtung" }
+      ],
+      "fehlerNr": 5,
+      "folge": "Die äußere Beschichtung ist dampfdicht. Der von innen nach außen gerichtete Diffusionsstrom wird unmittelbar davor gestoppt, die Feuchte staut sich zwischen Außenputz und Beschichtung. Die Folge sind Blasenbildung und Abblättern des Anstrichs, langfristig Durchfeuchtung des Außenputzes und Frostschäden darin.",
+      "antwort": "Der Fehler liegt in Bereich 5, der äußeren Beschichtung: Sie ist zwar wasserdicht, aber auch dampfdicht und wirkt damit als Dampfsperre auf der falschen Seite. Zu wählen wäre eine Beschichtung mit der geringstmöglichen Dampfdichtigkeit — wasserabweisend verlangt neben einem niedrigen w-Wert ausdrücklich auch einen begrenzten sd-Wert.",
+      "vertiefung": "Der Fehler ist vor dem Auftragen nicht zu sehen und danach nur am Schaden — Blasen und Abplatzungen zeigen sich oft erst nach dem ersten Winter. Deshalb steht die Dampfdurchlässigkeit im Leistungsverzeichnis und nicht nur die Wasserabweisung.",
+      "tags": ["beschichtung", "dampfsperre", "ausführungsfehler"],
+      "quelle": "Lübbe, Klausurtraining Bauphysik, S. 159; Lohmeyer/Post, Praktische Bauphysik, S. 330",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-030",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis, wie Schlagregen auf eine Außenwand einwirkt. Zeichne die beiden Eindringwege und mache deutlich, was an der Oberfläche bleibt und was nach außen zurückgeht.",
+      "referenz": "bilder/bp-schlagregen-eindringwege.svg",
+      "pruefpunkte": [
+        "Innen und außen sind eindeutig gekennzeichnet.",
+        "Die Regentropfen treffen schräg auf die Fassade, nicht senkrecht von oben.",
+        "Das kapillare Saugen ist als Eindringen über die Fläche dargestellt.",
+        "Der Staudruck ist als senkrecht auf die Fläche gerichtete Kraft dargestellt.",
+        "Ein Riss in der äußeren Schicht ist eingezeichnet.",
+        "Am Riss ist das Eindringen unter Staudruck dargestellt.",
+        "Das an der Oberfläche ablaufende Wasser ist dargestellt.",
+        "Die Austrocknung nach außen ist als Gegenrichtung dargestellt."
+      ],
+      "antwort": "Siehe Referenzzeichnung: schräg auftreffende Tropfen, kapillares Saugen über die Fläche, Staudruck auf die Fläche, ein Riss als Eindringweg, das ablaufende Wasser an der Oberfläche und die Austrocknung nach außen.",
+      "vertiefung": "Wer beim Zeichnen die Regentropfen senkrecht fallen lässt, hat das Thema verfehlt — ohne Wind gibt es keinen Schlagregen, nur Niederschlag auf waagerechte Flächen. Die Schräge ist keine zeichnerische Freiheit, sondern die Definition.",
+      "tags": ["eindringwege", "schlagregen", "skizze"],
+      "quelle": "Mauerwerk Atlas, Abschn. 2.6; Richter/Jenisch, Lehrbuch der Bauphysik, S. 385",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-031",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis die vier Wirkprinzipien der Schlagregendichtheit eines Wandquerschnitts nebeneinander und beschrifte sie.",
+      "referenz": "bilder/bp-schlagregen-wirkprinzipien.svg",
+      "pruefpunkte": [
+        "Vier getrennte Wandquerschnitte sind nebeneinander gezeichnet.",
+        "Bei allen vier trifft der Schlagregen von derselben Seite auf.",
+        "Erstes Prinzip: eine homogene Wand ohne zusätzliche Schicht, erkennbar dicker gezeichnet.",
+        "Zweites Prinzip: eine Vorsatzschale mit deutlichem Luftspalt davor.",
+        "Beim zweiten Prinzip ist die Hinterlüftung des Spalts dargestellt.",
+        "Drittes Prinzip: eine dünne undurchlässige Schicht innerhalb des Wandquerschnitts.",
+        "Viertes Prinzip: eine dünne Schicht auf der Außenoberfläche.",
+        "Die vier Prinzipien sind benannt."
+      ],
+      "antwort": "Siehe Referenzzeichnung: A homogene Wand aus wenig saugendem Baustoff, B hinterlüftete Vorsatzschale vor der Wand, C undurchlässige Schicht im Wandquerschnitt, D Oberflächenbehandlung gegen kapillares Saugen.",
+      "vertiefung": "Beim Zeichnen wird sichtbar, was die vier unterscheidet: die Lage der schützenden Schicht im Querschnitt — davor, darin, darauf oder gar keine. Genau diese Lage entscheidet darüber, was passiert, wenn die Schicht versagt.",
+      "tags": ["wirkprinzipien", "wandquerschnitt", "skizze"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, Bild 8.14, S. 474",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bp-sr-032",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis ein Gebäude, das allein durch seine Form gegen Schlagregen geschützt ist. Zeichne mindestens drei wirksame Maßnahmen ein und zeige, wohin das Wasser geht.",
+      "referenz": "bilder/bp-schlagregen-fassade-geschuetzt.svg",
+      "pruefpunkte": [
+        "Der Schlagregen trifft schräg von einer Seite auf.",
+        "Ein weit herabgezogenes Dach ist erkennbar.",
+        "Das Dach hat einen großen Überstand über die Fassade hinaus.",
+        "Ein Geschoss springt gegenüber dem darunterliegenden zurück.",
+        "Ein wasserableitendes Gesims gliedert die Wand.",
+        "Das Wasser tropft am Dachrand frei ab, statt an der Fassade herunterzulaufen.",
+        "Auch am Gesims tropft das Wasser frei ab.",
+        "Die geschützten Fassadenflächen bleiben erkennbar trocken."
+      ],
+      "antwort": "Siehe Referenzzeichnung: weit herabgezogenes Dach mit großem Überstand, zurückspringendes Obergeschoss und ein wasserableitendes Gesims; das Wasser tropft an Dachrand und Gesims frei ab, die darunterliegenden Fassadenflächen bleiben weitgehend trocken.",
+      "vertiefung": "Diese Skizze ist die einzige im Thema, die nichts über Schichten und Kennwerte aussagt — und die wirksamste Maßnahme zeigt. Ein Dachüberstand braucht keine Wartung, keinen Normnachweis und keine Prüfbescheinigung; er muss nur im Entwurf da sein.",
+      "tags": ["formgebung", "dachüberstand", "skizze"],
+      "quelle": "Richter/Jenisch, Lehrbuch der Bauphysik, Bild 8.13, S. 473",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}

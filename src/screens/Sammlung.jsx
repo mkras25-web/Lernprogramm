@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import LokalBild from '../components/LokalBild.jsx'
 import {
   MEILENSTEIN_GRUPPEN,
   MEILENSTEIN_STUFEN,
@@ -104,7 +105,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
               >
                 <div className="kartenBild">
                   {k.frei && k.bild ? (
-                    <img src={k.bild} alt="" />
+                    <LokalBild src={k.bild} alt="" platzhalter={false} />
                   ) : (
                     <span className="fortschrittZahl">{Math.round(k.anteil * 100)} %</span>
                   )}
@@ -189,7 +190,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
           <article className="grosseKarte" onClick={(e) => e.stopPropagation()}>
             <p className="kartenHerkunft">{offen.modulTitel}</p>
             <h2 className="ueberschrift">{offen.titel}</h2>
-            {offen.bild && <img className="grossesBild" src={offen.bild} alt="" />}
+            {offen.bild && <LokalBild className="grossesBild" src={offen.bild} alt="" />}
             <dl className="kartenWerte">
               <div><dt>Rang</dt><dd>{offen.rang}</dd></div>
               <div><dt>Items</dt><dd>{offen.gesamt}</dd></div>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 660" width="820" height="660">
+  <defs>
+    <pattern id="bgMauer" width="36" height="18" patternUnits="userSpaceOnUse">
+      <rect width="36" height="18" fill="#a98467"/>
+      <path d="M0 0 H36 M0 9 H36 M0 18 H36" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M18 0 V9 M0 9 V18 M36 9 V18" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <rect width="820" height="660" fill="#f0ead2"/>
+  <rect x="150" y="400" width="110" height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="560" y="400" width="110" height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="150" y="250" width="45"  height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="625" y="250" width="45"  height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <path d="M195 400 A215 215 0 0 1 625 400 H560 A150 150 0 0 0 260 400 Z" fill="#dde5b6" stroke="#414833" stroke-width="2.4"/>
+  <path d="M260.0 400.0 L195.0 400.0" stroke="#414833" stroke-width="2"/>
+  <path d="M269.0 348.7 L208.0 326.5" stroke="#414833" stroke-width="2"/>
+  <path d="M295.1 303.6 L245.3 261.8" stroke="#414833" stroke-width="2"/>
+  <path d="M335.0 270.1 L302.5 213.8" stroke="#414833" stroke-width="2"/>
+  <path d="M384.0 252.3 L372.7 188.3" stroke="#414833" stroke-width="2"/>
+  <path d="M436.0 252.3 L447.3 188.3" stroke="#414833" stroke-width="2"/>
+  <path d="M485.0 270.1 L517.5 213.8" stroke="#414833" stroke-width="2"/>
+  <path d="M524.9 303.6 L574.7 261.8" stroke="#414833" stroke-width="2"/>
+  <path d="M551.0 348.7 L612.0 326.5" stroke="#414833" stroke-width="2"/>
+  <path d="M560.0 400.0 L625.0 400.0" stroke="#414833" stroke-width="2"/>
+  <path d="M110 400 H710" stroke="#6c584c" stroke-width="1.6" stroke-dasharray="10 6"/>
+  <path d="M410 400 V250" stroke="#6c584c" stroke-width="1.4"/>
+  <path d="M401 400 h18 M401 250 h18" stroke="#6c584c" stroke-width="1.4"/>
+  <path d="M260 452 H560" stroke="#6c584c" stroke-width="1.4"/>
+  <path d="M260 444 v16 M560 444 v16" stroke="#6c584c" stroke-width="1.4"/>
+  <g font-family="Georgia, serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#414833">
+    <g><circle cx="205" cy="480" r="15" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="205" y="486">1</text></g>
+    <g><circle cx="410" cy="215" r="15" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="410" y="221">2</text></g>
+    <g><circle cx="300" cy="320" r="15" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="300" y="326">3</text></g>
+    <g><circle cx="545" cy="255" r="15" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="545" y="261">4</text></g>
+    <g><circle cx="690" cy="400" r="15" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="690" y="406">5</text></g>
+    <g><circle cx="410" cy="478" r="15" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="410" y="484">6</text></g>
+  </g>
+  <path d="M60 570 H760" stroke="#d9d2b4" stroke-width="2"/>
+  <g font-family="Georgia, serif" font-size="17" fill="#414833">
+    <text x="60" y="600">1  Widerlager</text>
+    <text x="60" y="626">2  Schlussstein im Scheitel</text>
+    <text x="330" y="600">3  Leibung</text>
+    <text x="330" y="626">4  Rücken</text>
+    <text x="560" y="600">5  Kämpferlinie</text>
+    <text x="560" y="626">6  Spannweite</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-34 0 974 430" width="974" height="430">
+  <defs>
+    <pattern id="wpMauer" width="30" height="15" patternUnits="userSpaceOnUse">
+      <rect width="30" height="15" fill="#a98467"/>
+      <path d="M0 0 H30 M0 7.5 H30 M0 15 H30" stroke="#8c6a53" stroke-width="1.1"/>
+      <path d="M15 0 V7.5 M0 7.5 V15 M30 7.5 V15" stroke="#8c6a53" stroke-width="1.1"/>
+    </pattern>
+    <pattern id="wpDaemm" width="13" height="13" patternUnits="userSpaceOnUse">
+      <rect width="13" height="13" fill="#adc178"/>
+      <path d="M-3 10 L10 -3 M0 13 L13 0 M3 16 L16 3" stroke="#8fa85f" stroke-width="1.3"/>
+    </pattern>
+  </defs>
+  <rect x="-34" y="0" width="974" height="430" fill="#f0ead2"/>
+  <rect x="40" y="70" width="120" height="250" fill="url(#wpMauer)" stroke="#414833" stroke-width="2"/>
+  <path d="M230 95 L172 129" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M168 131 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M230 140 L172 174" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M168 176 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M230 185 L172 219" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M168 221 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <rect x="262" y="70" width="70" height="250" fill="url(#wpMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="332" y="70" width="24" height="250" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+  <rect x="356" y="70" width="26" height="250" fill="url(#wpMauer)" stroke="#414833" stroke-width="2"/>
+  <path d="M344 306 V110" stroke="#6c584c" stroke-width="1.8" stroke-dasharray="7 5"/>
+  <path d="M344 96 l-6 14 h12 z" fill="#6c584c"/>
+  <path d="M452 95 L394 129" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M390 131 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M452 140 L394 174" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M390 176 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M452 185 L394 219" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M390 221 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <rect x="484" y="70" width="60" height="250" fill="url(#wpMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="544" y="70" width="14" height="250" fill="#9a6b1f" stroke="#414833" stroke-width="2"/>
+  <rect x="558" y="70" width="46" height="250" fill="url(#wpMauer)" stroke="#414833" stroke-width="2"/>
+  <path d="M674 95 L616 129" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M612 131 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M674 140 L616 174" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M612 176 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M674 185 L616 219" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M612 221 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <rect x="706" y="70" width="120" height="250" fill="url(#wpMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="826" y="70" width="10" height="250" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+  <path d="M906 95 L848 129" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M844 131 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M906 140 L848 174" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M844 176 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <path d="M906 185 L848 219" stroke="#6c584c" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M844 221 l14 -10 l-2 13 z" fill="#6c584c"/>
+  <text x="100" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#414833">A</text>
+  <text x="100" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">homogene Wand aus wenig</text>
+  <text x="100" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">saugendem Baustoff</text>
+  <text x="322" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#414833">B</text>
+  <text x="322" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">hinterlüftete Vorsatzschale</text>
+  <text x="322" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">vor der Wand</text>
+  <text x="544" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#414833">C</text>
+  <text x="544" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">undurchlässige Schicht</text>
+  <text x="544" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">im Wandquerschnitt</text>
+  <text x="771" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="19" font-weight="bold" fill="#414833">D</text>
+  <text x="771" y="388" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">Oberflächenbehandlung</text>
+  <text x="771" y="410" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#414833">gegen kapillares Saugen</text>
+</svg>

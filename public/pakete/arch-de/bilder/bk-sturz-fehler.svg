@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" width="820" height="560">
+  <defs>
+    <pattern id="bgMauer" width="36" height="18" patternUnits="userSpaceOnUse">
+      <rect width="36" height="18" fill="#a98467"/>
+      <path d="M0 0 H36 M0 9 H36 M0 18 H36" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M18 0 V9 M0 9 V18 M36 9 V18" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <rect width="820" height="560" fill="#f0ead2"/>
+  <rect x="150" y="400" width="110" height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="560" y="400" width="110" height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="150" y="250" width="45"  height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="625" y="250" width="45"  height="150" fill="url(#bgMauer)" stroke="#414833" stroke-width="2"/>
+  <path d="M195 400 A215 215 0 0 1 625 400 H560 A150 150 0 0 0 260 400 Z" fill="#dde5b6" stroke="#414833" stroke-width="2.4"/>
+  <path d="M260.0 400.0 L195.0 400.0" stroke="#414833" stroke-width="2"/>
+  <path d="M271.4 342.6 L211.4 317.7" stroke="#414833" stroke-width="2"/>
+  <path d="M303.9 293.9 L258.0 248.0" stroke="#414833" stroke-width="2"/>
+  <path d="M352.6 261.4 L327.7 201.4" stroke="#414833" stroke-width="2"/>
+  <path d="M410.0 250.0 L410.0 185.0" stroke="#414833" stroke-width="2"/>
+  <path d="M467.4 261.4 L492.3 201.4" stroke="#414833" stroke-width="2"/>
+  <path d="M516.1 293.9 L562.0 248.0" stroke="#414833" stroke-width="2"/>
+  <path d="M548.6 342.6 L608.6 317.7" stroke="#414833" stroke-width="2"/>
+  <path d="M560.0 400.0 L625.0 400.0" stroke="#414833" stroke-width="2"/>
+  <path d="M110 400 H710" stroke="#6c584c" stroke-width="1.6" stroke-dasharray="10 6"/>
+</svg>

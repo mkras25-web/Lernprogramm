@@ -1,5 +1,6 @@
 import Ring from '../components/Ring.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
+import LokalBild from '../components/LokalBild.jsx'
 import { naechsterRang, rangFuer } from '../lib/fortschritt.js'
 import { bauwerkFuer } from '../lib/stufen.js'
 
@@ -218,7 +219,7 @@ export default function Heute({
                 .slice(0, 6)
                 .map((k) => (
                   <li key={k.id} className="bandKarte">
-                    {k.bild && <img src={k.bild} alt="" />}
+                    {k.bild && <LokalBild src={k.bild} alt="" platzhalter={false} />}
                     <span>{k.titel}</span>
                   </li>
                 ))}

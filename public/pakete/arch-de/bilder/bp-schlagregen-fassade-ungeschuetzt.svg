@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480">
+  <defs><pattern id="faMw" width="30" height="15" patternUnits="userSpaceOnUse"><rect width="30" height="15" fill="#a98467"/><path d="M0 0 H30 M0 7.5 H30 M0 15 H30" stroke="#8c6a53" stroke-width="1.1"/><path d="M15 0 V7.5 M0 7.5 V15 M30 7.5 V15" stroke="#8c6a53" stroke-width="1.1"/></pattern></defs>
+  <rect width="520" height="480" fill="#f0ead2"/>
+  <text x="260" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="19" fill="#414833">ohne Schutz durch die Formgebung</text>
+  <rect x="120" y="120" width="180" height="290" fill="url(#faMw)" stroke="#414833" stroke-width="2"/>
+  <rect x="112" y="104" width="196" height="18" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+  <path d="M440 90 L312 166" stroke="#6c584c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M312 166 L321 155 L326 164 Z" fill="#6c584c"/>
+  <path d="M455 160 L312 246" stroke="#6c584c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M312 246 L321 235 L326 244 Z" fill="#6c584c"/>
+  <path d="M440 240 L312 326" stroke="#6c584c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M312 326 L320 315 L326 323 Z" fill="#6c584c"/>
+  <path d="M312 122 V404" stroke="#9a6b1f" stroke-width="2.2" stroke-dasharray="11 6"/>
+  <path d="M316 122 V404" stroke="#9a6b1f" stroke-width="2.2" stroke-dasharray="11 6"/>
+  <path d="M320 122 V404" stroke="#9a6b1f" stroke-width="2.2" stroke-dasharray="11 6"/>
+  <text x="260" y="446" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#414833">Niederschlag trifft die ganze Fassade</text>
+</svg>

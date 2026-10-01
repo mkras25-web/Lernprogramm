@@ -1,0 +1,526 @@
+{
+  "thema": "bk-stuerze",
+  "titel": "Stürze, Auflager, Lastabtragung über Öffnungen",
+  "erklaerung": {
+    "absaetze": [
+      "Jede Öffnung unterbricht den Lastfluss in einer Wand. Das Mauerwerk über der Öffnung fällt aber nicht herunter, sondern stützt sich gewölbeartig auf den Pfeilern rechts und links ab — jeder Stein verkeilt sich mit seinen Nachbarn. Deshalb trägt ein Sturz nicht die ganze Wand über sich, sondern nur den Teil, der sich nicht mehr abstützen kann. Das ist der Grundgedanke, aus dem alles Weitere folgt.",
+      "Nach DIN 1053-1 wird dieser Teil durch ein gleichseitiges Dreieck über dem Sturz umschrieben: Die Stützweite ist die Grundseite, die Schenkel steigen unter 60 Grad an. Nur das Gewicht des Mauerwerks in diesem Belastungsdreieck ist anzusetzen. Gleichmäßig verteilte Deckenlasten oberhalb des Dreiecks bleiben unberücksichtigt; Deckenlasten, die innerhalb liegen — etwa bei Deckenplatten oder Balkendecken mit Balkenabständen bis 1,25 m — werden nur auf der Strecke angesetzt, auf der sie im Dreieck liegen. Bei kleineren Öffnungen genügt eine überschlägige Ermittlung. Meistens tragen Stürze jedoch zusätzlich Deckenauflager oder Unterzüge, dann ist zu rechnen.",
+      "Für die Ausführung gibt es eine ganze Reihe von Lösungen. Vorgefertigte Stahlbetonstürze in Mauerbreite decken kleine Öffnungen in nichttragenden Zwischenwänden ab. Vorgefertigte Ziegelstürze bieten den besseren Putzgrund: Profilierte Sonderziegel bilden zusammen mit Vergussbeton und Bewehrung den biegesteifen Zuggurt, die Übermauerung darüber wirkt als Druckzone — erst im Zusammenwirken beider entsteht die volle Tragfähigkeit. Daneben stehen Schalungssteine als verlorene Schalung, bewehrtes Mauerwerk, Stahlprofile und, rein formal, die mit Winkelkonsolen abgefangene Grenadierschicht, die gar nichts trägt. Bei Stahlbetondecken und höherer Beanspruchung ist der Stahlbetonsturz die Regelausführung.",
+      "Gemauerte Bögen arbeiten mit derselben Keilwirkung, nur sichtbar gemacht. Ihre Teile haben eigene Namen: Widerlager, Kämpferpunkte und Kämpferlinie unten, Scheitel und Schlussstein oben, Leibung innen, Rücken außen, dazu Spannweite und Stich- oder Pfeilhöhe. Die Stichhöhe unterscheidet die Bogenarten — beim Rundbogen ist sie die halbe Spannweite, beim Segmentbogen ein Fünfzehntel bis ein Zwanzigstel, beim scheitrechten Bogen nur ein Fünfzigstel. Zwei Regeln gelten immer: ungerade Steinzahl, damit im Scheitel ein Schlussstein und keine Fuge liegt, und Lagerfugen senkrecht zur Leibung, deren Linien auf den Bogenmittelpunkt zeigen.",
+      "Der Sturz ist die empfindlichste Stelle der Außenwand, weil dort drei Dinge zusammenkommen: ein durchgehendes Bauteil aus Beton oder Stahl, ein Wechsel der Materialien und meist noch ein Rollladenkasten. Wird die Dämmung vor den Sturz betoniert, verringert das den statisch wirksamen Querschnitt und führt fast immer zu Rissen im Außenputz — durch Wärmestau vor der Dämmung, unterschiedliche Materialeigenschaften und zu rasches Abbinden. Örtlich hergestellte Rollladenaussparungen sind aus denselben Gründen Schwachstellen im Wandgefüge."
+    ],
+    "merksatz": "Der Sturz trägt das Dreieck, nicht die Wand.",
+    "bild": "bilder/bk-sturz-belastungsdreieck.svg",
+    "bildunterschrift": "Gewölbewirkung über einer Maueröffnung: Nur das Mauerwerk im gleichseitigen Belastungsdreieck liegt auf dem Sturz, die Last darüber wandert seitlich in die Widerlager.",
+    "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 140–146"
+  },
+  "items": [
+    {
+      "id": "bk-stz-001",
+      "typ": "karte",
+      "frage": "Warum muss ein Sturz nicht das gesamte Mauerwerk tragen, das über der Öffnung steht?",
+      "antwort": "Weil sich die darüberliegenden Wandteile gewölbeartig abstützen. Mauerwerk wirkt über der Öffnung wie ein Gewölbe: Die Steine verkeilen sich gegenseitig und leiten die Last seitlich in die Pfeiler neben der Öffnung. Auf dem Sturz lastet nur der Teil, der sich nicht mehr abstützen kann.",
+      "vertiefung": "Das ist derselbe Mechanismus, der einen gemauerten Bogen trägt — nur unsichtbar. Der gemauerte Bogen macht ihn zur Konstruktion, der Sturz nutzt ihn stillschweigend als Rechenvorteil. Wer das einmal verstanden hat, braucht das Belastungsdreieck nicht auswendig zu lernen, sondern kann es herleiten.",
+      "tags": ["gewölbewirkung", "sturz", "lastabtragung"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 140",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-002",
+      "typ": "karte",
+      "frage": "Wie entsteht beim vorgefertigten Ziegelsturz die Tragwirkung?",
+      "antwort": "Profilierte Sonderziegel werden aneinandergereiht und bilden zusammen mit dem Vergussbeton und der Bewehrung den biegesteifen Zuggurt des Sturzes. Die volle Tragfähigkeit erlangt er erst im Zusammenwirken mit der Übermauerung aus Ziegeln beziehungsweise mit dem Beton des Deckenauflagers oder Ringbalkens, die als Druckzone wirken.",
+      "vertiefung": "Der Ziegelsturz allein ist also kein fertiger Träger, sondern nur dessen untere Hälfte. Das hat eine praktische Folge: Wird die Übermauerung nicht ausgeführt oder zu früh belastet, fehlt die Druckzone und der Sturz versagt. Sein eigentlicher Vorteil gegenüber dem Stahlbetonsturz ist der bessere Putzgrund — gleiches Material, gleiches Saugverhalten, keine Rissfuge im Putz.",
+      "tags": ["ziegelsturz", "zuggurt", "druckzone"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 141",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-003",
+      "typ": "karte",
+      "frage": "Welche Tragfunktion hat eine Grenadierschicht, die mit Winkelkonsolen und durchgesteckten Halteeisen gesichert ist?",
+      "antwort": "Gar keine. Solche Stürze werden aus formalen Gründen im Sichtmauerwerk ausgeführt; getragen wird die Last von der dahinterliegenden Konstruktion.",
+      "vertiefung": "Ein nützlicher Merkfall: Was wie ein Sturz aussieht, ist manchmal nur die Ansicht eines Sturzes. Dasselbe gilt für den scheitrechten Bogen vor einem tragenden Stahlbetonsturz — die sichtbare Schicht erfüllt die gestalterische, die verdeckte die statische Aufgabe. Wer beim Bestandsaufmaß den einen für den anderen hält, schätzt die Tragfähigkeit völlig falsch ein.",
+      "tags": ["grenadierschicht", "sichtmauerwerk", "tragfunktion"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 142",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-004",
+      "typ": "karte",
+      "frage": "Warum sind Stahlbetonstürze, die nicht aus Fertigteilen bestehen, in ihrer Höhenlage unabhängig von den Mauerwerksschichten?",
+      "antwort": "Weil sie an Ort und Stelle geschalt und betoniert werden. Ihre Höhe richtet sich nach der statischen Erfordernis, nicht nach dem Schichtmaß des Mauerwerks.",
+      "vertiefung": "Bei Fertigteilstürzen ist es umgekehrt: Sie werden in Schichthöhen hergestellt, die zu den Steinformaten passen, damit sie sich ohne Ausgleichsschicht einfügen. Genau dafür gibt es für Sichtmauerwerk aus Ziegeln und Kalksandsteinen die passenden Schalensteine — aus ihnen lassen sich Stürze vorfertigen, oder sie dienen als verlorene Schalung für örtlich betonierte Stürze.",
+      "tags": ["stahlbetonsturz", "schichtmaß", "ausführung"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 142",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-005",
+      "typ": "karte",
+      "frage": "Warum erhalten Mauerbögen stets eine ungerade Anzahl von Bogensteinen?",
+      "antwort": "Damit im Scheitel kein Fuge liegt, sondern ein Schlussstein. Bei gerader Steinzahl träfen sich zwei Steine genau im höchsten Punkt — dort, wo der Bogen die Keilwirkung schließen muss.",
+      "vertiefung": "Der Scheitel ist die Stelle, an der sich die beiden Bogenhälften gegeneinander abstützen. Eine Fuge genau dort wäre die schwächste Stelle an der ungünstigsten Position. Der Schlussstein ist zugleich der Stein, der beim Einwölben zuletzt gesetzt wird und den Bogen erst tragfähig macht — vorher hält ihn nur die Einrüstung.",
+      "tags": ["mauerbogen", "schlussstein", "scheitel"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-006",
+      "typ": "karte",
+      "frage": "Was bezeichnen beim Mauerbogen die Begriffe Widerlager, Kämpferpunkt und Kämpferlinie?",
+      "antwort": "Widerlager sind die Mauerstücke, zwischen die sich der Bogen spannt. Kämpferpunkte sind die Punkte, in denen der Bogen am Widerlager beginnt. Die Kämpferlinie ist die Verbindungslinie der zu demselben Widerlager gehörenden Kämpferpunkte.",
+      "vertiefung": "Die drei Begriffe beschreiben denselben Ort aus drei Blickwinkeln: das Bauteil, den Punkt und die Linie. Praktisch wichtig ist die Lage der Kämpferfläche — bei Rundbögen liegt sie in der Regel waagerecht in Kämpferhöhe, bei Segmentbögen und scheitrechten Bögen dagegen schräg, nach dem Bogenmittelpunkt gerichtet.",
+      "tags": ["mauerbogen", "widerlager", "kämpfer"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 143",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-007",
+      "typ": "karte",
+      "frage": "Warum sind örtlich hergestellte Rollladenaussparungen Schwachstellen im Wandgefüge?",
+      "antwort": "Wegen der unterschiedlichen Materialeigenschaften und der daraus folgenden Rissgefahr an den Übergängen. Von der Industrie werden stattdessen Rollladenkastenelemente angeboten, die die Anforderungen an die Dämmung erfüllen.",
+      "vertiefung": "Der Rollladenkasten sitzt genau dort, wo ohnehin schon der Sturz die Wand unterbricht — zwei Materialwechsel auf engstem Raum. Beim zweischaligen Mauerwerk ist der Kasten hinter der Vormauerschale anzuordnen, die Hinterlüftung muss oberhalb erfolgen und im Bereich der Luftschicht ist eine Feuchtigkeitsisolierung vorzusehen.",
+      "tags": ["rollladen", "aussparung", "riss"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 146; Mauerwerk Atlas, Abschn. 3.13 Öffnungen",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-008",
+      "typ": "karte",
+      "frage": "Wozu dienen die durchlaufenden Mauerschichten zwischen der Oberkante eines Mauerbogens und dem Deckenauflager?",
+      "antwort": "Der besseren Lastverteilung. Ohne sie träfe die Auflagerlast der Decke punktuell auf den Bogenrücken.",
+      "vertiefung": "Der Bogen ist darauf angewiesen, gleichmäßig belastet zu werden — eine einseitige oder punktuelle Last verschiebt die Stützlinie und kann ihn aufreißen. Dieselbe Überlegung steckt hinter der Regel, dass bei Rundbögen über schmalen Pfeilern das Widerlager ausgekragt werden muss: Eine keilartig wirkende Auflast über dem Pfeiler würde sonst die Auflager verschieben.",
+      "tags": ["mauerbogen", "lastverteilung", "deckenauflager"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 143",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-009",
+      "typ": "karte",
+      "frage": "Worauf werden Mauerbögen eingewölbt, und welche Überhöhung ist dabei üblich?",
+      "antwort": "Auf einer Einrüstung mit Lehr- beziehungsweise Wölbscheiben, meistens mit einer Überhöhung — dem sogenannten Stich — von einem Fünfzigstel der Öffnungsbreite.",
+      "vertiefung": "Die Überhöhung ist eine Vorwegnahme: Beim Ausrüsten setzt sich der Bogen, weil sich die Mörtelfugen zusammendrücken und die Widerlager geringfügig nachgeben. Wer ohne Überhöhung wölbt, bekommt einen durchhängenden Bogen. Dasselbe Maß von einem Fünfzigstel taucht beim scheitrechten Bogen wieder auf, dort allerdings als planmäßige Stichhöhe.",
+      "tags": ["einrüstung", "wölbscheibe", "überhöhung"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 145",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-010",
+      "typ": "karte",
+      "frage": "Was ist zu tun, wenn ein gemauerter scheitrechter Bogen oder Rundbogen die ermittelten Auflasten nicht aufnehmen kann?",
+      "antwort": "Er wird als bewehrtes Mauerwerk ausgeführt, oder es werden Stahlbeton-Entlastungsstürze vorgesehen, die hinter dem Sichtmauerwerk liegen.",
+      "vertiefung": "Der Entlastungssturz ist die ehrlichste Lösung dieses Konflikts: Die sichtbare Schicht darf weiter aussehen wie ein Bogen, die Last nimmt ein Bauteil auf, das niemand sieht. Wegen des hohen Arbeitsaufwands werden gemauerte Stürze heute ohnehin oft als Fertigteile hergestellt und komplett auf die vorbereiteten Widerlager gesetzt.",
+      "tags": ["entlastungssturz", "bewehrtes mauerwerk", "bogen"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 145",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-011",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Sturzausbildungen kommen für Sichtmauerwerk in Frage?",
+      "optionen": [
+        "vorgefertigte oder örtlich hergestellte Stürze aus bewehrtem Mauerwerk",
+        "Stürze aus Stahlprofilen, etwa Verblendmauerwerk auf Stahlwinkel",
+        "Stürze mit Schalungssteinen als verlorene Schalung",
+        "scheitrechte Bögen und Rundbögen",
+        "eine Grenadierschicht, die mit Winkelkonsolen abgefangen ist",
+        "verputzte Stahlbetonstürze in Mauerbreite ohne weitere Maßnahme"
+      ],
+      "richtig": [0, 1, 2, 3, 4],
+      "antwort": "Alle außer der letzten. Für Sichtmauerwerk kommen bewehrtes Mauerwerk, Stahlprofile, Schalungssteine, gemauerte Bögen und die abgefangene Grenadierschicht in Frage. Ein verputzter Stahlbetonsturz wäre in einer Sichtmauerwerksfassade genau das, was man nicht sehen will.",
+      "vertiefung": "Die Auswahl folgt einer einfachen Logik: In Sichtmauerwerk muss die Sturzlösung entweder selbst aus Steinen bestehen oder sich dahinter verstecken. Die Grenadierschicht ist der Grenzfall — sie sieht aus wie ein Sturz, trägt aber nichts. Vorgefertigte Stahlbetonstürze in Mauerbreite gehören dagegen in nichttragende Zwischenwände, wo sie verputzt werden.",
+      "tags": ["sichtmauerwerk", "sturzarten", "auswahl"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 141–142",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zur Berücksichtigung von Deckenlasten beim Belastungsdreieck sind richtig?",
+      "optionen": [
+        "Gleichmäßig verteilte Deckenlasten oberhalb des Belastungsdreiecks bleiben bei der Bemessung unberücksichtigt.",
+        "Deckenlasten, die innerhalb des Dreiecks als gleichmäßig verteilte Last wirken, sind nur auf der Strecke einzusetzen, auf der sie im Dreieck liegen.",
+        "Als gleichmäßig verteilt gelten Deckenplatten und Balkendecken mit Balkenabständen bis 1,25 m.",
+        "Bei kleineren Öffnungen kann die Dimensionierung überschlägig ermittelt werden.",
+        "Stürze sind in der Regel nur durch das Belastungsdreieck beansprucht.",
+        "Auflagerlasten aus Unterzügen dürfen wie Deckenlasten oberhalb des Dreiecks vernachlässigt werden."
+      ],
+      "richtig": [0, 1, 2, 3],
+      "antwort": "Die ersten vier Aussagen sind richtig. Meistens werden Stürze jedoch zusätzlich durch Deckenauflager, oft auch durch Sturz- beziehungsweise Unterzugauflager belastet, und ihre Dimensionierung ist dann durch Berechnung nachzuweisen.",
+      "vertiefung": "Die beiden falschen Antworten beschreiben denselben Denkfehler: Das Belastungsdreieck ist eine Regel für das Eigengewicht des Mauerwerks, keine Generalerlaubnis, alles andere wegzulassen. Eine Einzellast aus einem Unterzug bricht die Gewölbewirkung, auf die sich die ganze Regel stützt.",
+      "tags": ["belastungsdreieck", "deckenlast", "bemessung"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 141",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Regel aus DIN 1053-1, Abschn. 8.5.3. Gegen DIN EN 1996-1-1 mit nationalem Anhang prüfen, ob das gleichseitige Belastungsdreieck und die Behandlung der Deckenlasten innerhalb und oberhalb dort unverändert fortgeschrieben wurden."
+    },
+    {
+      "id": "bk-stz-013",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Regeln gelten für die Fugen eines Mauerbogens?",
+      "optionen": [
+        "Die Lagerfugen müssen senkrecht zur Bogenleibung verlaufen.",
+        "Die Lagerfugen müssen durch die ganze Tiefe des Bogens verlaufen.",
+        "Die Fugenlinien sind an der Stirn des Bogens nach dem Bogenmittelpunkt gerichtet.",
+        "Die Stoßfugen zweier nebeneinanderliegender Schichten dürfen nicht zusammenfallen.",
+        "Die Fugendicke an der Leibung darf bei gewöhnlichen Mauerziegeln nicht kleiner als 1/2 cm sein.",
+        "Am Rücken darf die Fuge beliebig breit werden, weil sie dort nicht sichtbar ist."
+      ],
+      "richtig": [0, 1, 2, 3, 4],
+      "antwort": "Alle außer der letzten. Am Rücken darf die Fuge bei gewöhnlichen Mauerziegeln nicht größer als 2 cm werden. Für stark gekrümmte Bögen sind spezielle Keilsteine erforderlich; bei Normalsteinen werden die Lagerfugen an der Rückseite umso breiter, je dicker der Bogen ist.",
+      "vertiefung": "Die Fugenregeln sind nichts anderes als die Bedingung dafür, dass die Keilwirkung funktioniert: Steht die Fuge nicht senkrecht zur Leibung, kann der Stein abgleiten. Bei dicken Bögen hilft ein Kunstgriff — man wölbt sie in einzelnen, übereinanderliegenden Ringen ein, statt eine einzige, nach außen immer breiter klaffende Fuge zuzulassen.",
+      "tags": ["mauerbogen", "lagerfuge", "keilwirkung"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-014",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Stützweite sind Fertigteilstürze als Einfeldträger zugelassen?",
+      "wert": 3.0,
+      "toleranz": 0,
+      "einheit": "m",
+      "antwort": "Bis 3,00 m. Fertigteilstürze können eine schlaffe oder vorgespannte Bewehrung haben.",
+      "vertiefung": "Die Grenze markiert den Punkt, an dem die Standardlösung aufhört. Darüber wird gerechnet und individuell konstruiert — bei der Vormauerschale einer zweischaligen Wand etwa nennt der Mauerwerk Atlas 2 m als Grenze für den gemauerten scheitrechten Sturz, darüber wird er mit Stahlprofilen unterstützt.",
+      "tags": ["fertigteilsturz", "stützweite", "einfeldträger"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 141",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Zulassungsgrenze nach dem Stand der zitierten Auflage. Gegen die aktuellen bauaufsichtlichen Zulassungen beziehungsweise DIN EN 845-2 für vorgefertigte Stürze prüfen, ob 3,00 m Stützweite weiterhin gilt."
+    },
+    {
+      "id": "bk-stz-015",
+      "typ": "numerisch",
+      "frage": "Welcher Ballendurchmesser ist bei Rollläden je nach Öffnungshöhe und Profilart mindestens zu berücksichtigen?",
+      "wert": 20,
+      "toleranz": 0,
+      "einheit": "cm",
+      "antwort": "Mindestens 20 cm. Danach richtet sich die Höhe des Einbaukastens und damit die Höhenlage des Sturzes.",
+      "vertiefung": "Diese Zahl entscheidet im Entwurf mehr, als sie vermuten lässt: Zwanzig Zentimeter Kasten über jedem Fenster verschieben die Sturzunterkante nach unten oder die Geschosshöhe nach oben. Deshalb werden tragende Stürze bei Rollladeneinbau — wenn möglich — als Überzug ausgebildet, oder man plant gleich tragende Rollladenkästen ein.",
+      "tags": ["rollladen", "ballendurchmesser", "sturz"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 145",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-016",
+      "typ": "zuordnung",
+      "frage": "Ordne der Bogenart die zugehörige Stichhöhe zu.",
+      "paare": [
+        ["Rundbogen (Halbkreisbogen)", "Stich = halbe Spannweite"],
+        ["Segmentbogen (Flachbogen)", "Stich = 1/20 bis 1/15 der Spannweite"],
+        ["scheitrechter Bogen", "Stich = 1/50 der Spannweite"]
+      ],
+      "antwort": "Rundbogen: Stich gleich der halben Spannweite. Segmentbogen: ein Zwanzigstel bis ein Fünfzehntel der Spannweite. Scheitrechter Bogen: ein Fünfzigstel der Spannweite — bei rund 1,25 m Spannweite also nur 1 bis 2 cm.",
+      "vertiefung": "Die Reihe ist zugleich eine Reihe abnehmender Tragfähigkeit und zunehmender Widerlagerkräfte: Je flacher der Bogen, desto stärker drückt er seitlich statt nach unten. Deshalb sind die Widerlager beim scheitrechten Bogen schräg und nach dem Bogenmittelpunkt gerichtet, und deshalb sind seine Stützweiten so begrenzt.",
+      "tags": ["bogenarten", "stichhöhe", "spannweite"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.70, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-017",
+      "typ": "zuordnung",
+      "frage": "Ordne den Bogenteilen ihre Definition zu.",
+      "paare": [
+        ["Scheitel", "höchster Punkt des Bogens"],
+        ["Leibung", "untere Fläche des Bogens beziehungsweise innere Wandung der Maueröffnung"],
+        ["Rücken", "obere Fläche des Bogens"],
+        ["Stirn oder Haupt", "Ansichtsfläche des Bogens"],
+        ["Schlussstein", "Wölbstein im Scheitel"],
+        ["Spannweite", "lichte waagerechte Entfernung der Widerlager voneinander"],
+        ["Gewände", "seitliche Begrenzungen der ganzen Maueröffnung"],
+        ["Hintermauerung", "Mauerwerk über dem Bogen bis zur Rückenhöhe"]
+      ],
+      "antwort": "Scheitel: höchster Punkt. Leibung: untere Fläche des Bogens beziehungsweise innere Wandung der Öffnung. Rücken: obere Fläche. Stirn oder Haupt: Ansichtsfläche. Schlussstein: Wölbstein im Scheitel. Spannweite: lichte waagerechte Entfernung der Widerlager. Gewände: seitliche Begrenzungen der Maueröffnung. Hintermauerung: Mauerwerk über dem Bogen bis zur Rückenhöhe.",
+      "vertiefung": "Drei Begriffspaare lassen sich leicht verwechseln: Leibung und Rücken sind unten und oben, Stirn ist die Ansicht von vorn, Tiefe die Abmessung nach hinten — sie entspricht im Allgemeinen der Mauerdicke. Als Breite und Höhe einer Öffnung gelten dabei immer die Lichtmaße, nicht die Rohbaumaße.",
+      "tags": ["bogenteile", "begriffe", "mauerbogen"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 143–144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-018",
+      "typ": "zuordnung",
+      "frage": "Ordne die Randbedingung dem zugehörigen Anhaltswert für die Stützweite zu.",
+      "paare": [
+        ["scheitrechter Bogen in einer 24 cm dicken Wand", "Stützweite bis etwa 80 cm"],
+        ["scheitrechter Bogen in einer 36,5 cm dicken Wand", "Stützweite bis etwa 120 cm"],
+        ["gemauerter scheitrechter Sturz in der Vormauerschale", "Spannweite bis etwa 2 m"],
+        ["Vormauerschale bei größerer Spannweite", "mit Stahlprofilen unterstützen"]
+      ],
+      "antwort": "In 24 cm dicken Wänden bis etwa 80 cm, in 36,5 cm dicken Wänden bis etwa 120 cm Stützweite. In der Vormauerschale einer zweischaligen Wand kann der Sturz bei Spannweiten bis zu 2 m als scheitrechter Sturz gemauert werden; bei größeren Spannweiten wird er mit Stahlprofilen unterstützt.",
+      "vertiefung": "Der Zusammenhang ist einleuchtend: Je dicker die Wand, desto größer die Tiefe des Bogens und damit die Fläche, über die sich die Keile abstützen. Die Vormauerschale ist mit 11,5 cm deutlich dünner als beide genannten Wände — dass dort trotzdem 2 m möglich sind, liegt daran, dass sie nur ihr eigenes Gewicht trägt.",
+      "tags": ["scheitrechter bogen", "stützweite", "wanddicke"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 145; Mauerwerk Atlas, Abschn. 3.12 Öffnungen",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-019",
+      "typ": "zuordnung",
+      "frage": "Ordne der Sturzart ihren typischen Anwendungsfall zu.",
+      "paare": [
+        ["vorgefertigter Stahlbetonsturz in Mauerbreite", "kleinere Öffnungen in nichttragenden Zwischenwänden"],
+        ["vorgefertigter Ziegelsturz", "wenn ein besserer Putzgrund gebraucht wird"],
+        ["Schalungssteine, etwa KS-U-Schalen", "verlorene Schalung für örtlich betonierte Stürze"],
+        ["Stahlbetonsturz", "Regelausführung bei Stahlbetondecken und besonderer Beanspruchung"],
+        ["abgefangene Grenadierschicht", "formale Lösung im Sichtmauerwerk, ohne Tragfunktion"],
+        ["gemauerter Bogen", "Altbausanierung im Sichtmauerwerk bei nicht zu großen Spannweiten"]
+      ],
+      "antwort": "Vorgefertigte Stahlbetonstürze in Mauerbreite für kleinere Öffnungen in nichttragenden Zwischenwänden; vorgefertigte Ziegelstürze für den besseren Putzgrund; Schalungssteine als verlorene Schalung; Stahlbetonstürze als Regelausführung bei Stahlbetondecken und besonderer Beanspruchung; die abgefangene Grenadierschicht als rein formale Lösung; gemauerte Bögen bei Altbausanierungen im Sichtmauerwerk für nicht zu große Spannweiten.",
+      "vertiefung": "Zwei Kriterien entscheiden praktisch immer: Wie groß ist die Last, und was sieht man hinterher? Die Reihe von oben nach unten ist eine Reihe abnehmender Tragfähigkeit und zunehmender gestalterischer Rücksicht — bis hin zur Grenadierschicht, die nur noch aussieht wie ein Sturz.",
+      "tags": ["sturzarten", "anwendung", "auswahl"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 141–143",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-020",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Teile eines Mauerbogens in die Reihenfolge von unten nach oben.",
+      "schritte": [
+        "Widerlager",
+        "Kämpferlinie",
+        "Leibung",
+        "Schlussstein im Scheitel",
+        "Rücken",
+        "Hintermauerung"
+      ],
+      "antwort": "Von unten nach oben: Widerlager, Kämpferlinie, Leibung, Schlussstein im Scheitel, Rücken, Hintermauerung.",
+      "vertiefung": "Die Reihenfolge ist zugleich die Reihenfolge des Bauens: Erst stehen die Widerlager, dann wird auf der Einrüstung von den Kämpferpunkten aus gewölbt, zuletzt kommt der Schlussstein — und erst danach trägt der Bogen sich selbst und kann hintermauert werden.",
+      "tags": ["mauerbogen", "aufbau", "reihenfolge"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.71, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-021",
+      "typ": "freitext",
+      "frage": "Erkläre die Gewölbewirkung über einer Maueröffnung und was daraus für die Bemessung eines Sturzes folgt.",
+      "pruefpunkte": [
+        "Das Mauerwerk über der Öffnung stützt sich gewölbeartig auf den seitlich begrenzenden Pfeilern ab.",
+        "Die Steine wirken wie Keile und übertragen die Last seitlich statt nach unten.",
+        "Auf dem Sturz lastet deshalb nur ein Teil des darüberstehenden Mauerwerks.",
+        "Dieser Teil wird durch ein gleichseitiges Dreieck über der Stützweite umschrieben.",
+        "Die Schenkel des Dreiecks steigen unter 60 Grad an.",
+        "Gleichmäßig verteilte Deckenlasten oberhalb des Dreiecks bleiben unberücksichtigt.",
+        "Deckenlasten innerhalb des Dreiecks werden nur auf der Strecke angesetzt, auf der sie darin liegen.",
+        "Bei zusätzlichen Auflagerlasten aus Decken oder Unterzügen ist die Dimensionierung zu berechnen."
+      ],
+      "antwort": "Mauerwerk über einer Öffnung stützt sich gewölbeartig ab: Die Steine verkeilen sich gegenseitig und leiten die Last seitlich in die Pfeiler, die die Öffnung begrenzen. Auf dem Sturz lastet deshalb nur der Teil des Mauerwerks, der von diesem Gewölbe nicht mehr getragen wird. Nach DIN 1053-1, Abschn. 8.5.3 wird er durch ein gleichseitiges Dreieck über der Stützweite umschrieben, dessen Schenkel unter 60 Grad ansteigen. Gleichmäßig verteilte Deckenlasten oberhalb des Dreiecks bleiben bei der Bemessung unberücksichtigt; Lasten innerhalb sind nur auf der Strecke einzusetzen, auf der sie im Dreieck liegen. Weil Stürze meistens zusätzlich durch Deckenauflager oder Unterzüge belastet werden, ist ihre Dimensionierung in der Regel durch Berechnung nachzuweisen.",
+      "vertiefung": "Die Regel ist ein schönes Beispiel dafür, wie eine Norm ein physikalisches Phänomen in eine zeichenbare Form bringt. Das Gewölbe existiert nicht als Bauteil, nur als Kraftfluss — das Dreieck macht daraus eine Fläche, die man ausmessen und deren Gewicht man ansetzen kann. Wer das Dreieck ohne den Gedanken dahinter lernt, kann nicht beurteilen, wann es nicht mehr gilt.",
+      "tags": ["gewölbewirkung", "belastungsdreieck", "bemessung"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 140–141",
+      "stand": "2026-09",
+      "geprueft": false,
+      "pruefhinweis": "Der Verweis auf DIN 1053-1, Abschn. 8.5.3 ist zu aktualisieren. Gegen DIN EN 1996-1-1 mit nationalem Anhang prüfen, unter welcher Bezeichnung und in welcher Form das Belastungsdreieck dort geregelt ist."
+    },
+    {
+      "id": "bk-stz-022",
+      "typ": "freitext",
+      "frage": "Warum ist ein in das Mauerwerk einbindender Stahlbetonsturz, der zur Wärmedämmung mit Holzwolleleichtbauplatten ummantelt ist, eine bedenkliche Lösung?",
+      "pruefpunkte": [
+        "Die vorgesetzte Dämmung verringert den statisch wirksamen Sturzquerschnitt.",
+        "Es kommt trotz Überspannung der Leichtbauplatten mit Putzträgern zu Rissbildungen im Außenputz.",
+        "Eine Ursache ist der Wärmestau vor der Dämmung.",
+        "Eine weitere Ursache sind die unterschiedlichen Materialeigenschaften von Platte und Mauerwerk.",
+        "Auch zu rasches Abbinden des frischen Außenputzes trägt dazu bei.",
+        "Auf Dauer kommt es außerdem fast immer zu farblichen Markierungen in der Fassade.",
+        "Besser, aber aufwendiger ist ein Sturzfertigteil, das als verlorene Schalung für den Deckenrand dient und die Dämmung rückseitig trägt.",
+        "Wegen der geringeren statisch wirksamen Breite muss dieser Sturz bei hoher Belastung als Überzug ausgebildet werden."
+      ],
+      "antwort": "Die anbetonierte Dämmung verringert zum einen den statisch wirksamen Querschnitt des Sturzes. Zum anderen kommt es — trotz Überspannung der Leichtbauplatten mit Putzträgern — fast immer zu Rissen im Außenputz: durch Wärmestau vor der Dämmung, durch die unterschiedlichen Materialeigenschaften von Platte und angrenzendem Mauerwerk und durch zu rasches Abbinden des frischen Außenputzes. Auf Dauer zeichnet sich der Sturz zusätzlich farblich in der Fassade ab. Besser, aber aufwendiger ist ein Sturzfertigteil, das beim Betonieren des Deckenrandes als verlorene Schalung dient und die Wärmedämmung rückseitig trägt; wegen der geringeren statisch wirksamen Breite muss es bei hoher Belastung als Überzug ausgebildet werden.",
+      "vertiefung": "Bemerkenswert ist, dass Frick/Knöll auch die bessere Lösung noch als bauphysikalisch bedenklich bezeichnen. Der Sturz ist eben die Stelle, an der die Dämmebene zwangsläufig auf ein tragendes Bauteil trifft — man kann den Konflikt entschärfen, aber nicht auflösen. Siehe das Thema Wärmebrücken.",
+      "tags": ["sturz", "wärmedämmung", "riss"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 142–143",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-023",
+      "typ": "freitext",
+      "frage": "Erkläre, wie ein Mauerbogen seine Last abträgt, und was daraus für die Widerlager folgt.",
+      "pruefpunkte": [
+        "Mauerbögen wirken als Ganzes oder in ihren Teilen wie Keile.",
+        "Sie übertragen die auf ihnen ruhenden Lasten auf die Pfeiler oder Mauern, die die Öffnung seitlich begrenzen.",
+        "Die Last wird also seitlich abgetragen, nicht senkrecht nach unten.",
+        "Daraus entsteht am Widerlager neben der senkrechten auch eine waagerechte Kraftkomponente.",
+        "Je flacher der Bogen, desto größer wird diese waagerechte Komponente.",
+        "Die Widerlager für Rundbögen liegen in der Regel waagerecht in Kämpferhöhe.",
+        "Scheitrechte Bögen und Segmentbögen erhalten schräge Widerlager, die nach dem Bogenmittelpunkt gerichtet sind.",
+        "Über schmalen Pfeilern muss das Widerlager ausgekragt werden, sonst kann eine keilartig wirkende Auflast die Auflager verschieben."
+      ],
+      "antwort": "Mauerbögen wirken als Ganzes oder in ihren Teilen wie Keile: Sie übertragen die auf ihnen ruhenden Lasten auf die Pfeiler oder Mauern, die jede Maueröffnung seitlich begrenzen. Die Last läuft also schräg nach außen, und am Widerlager entsteht neben der senkrechten eine waagerechte Kraftkomponente, die umso größer wird, je flacher der Bogen ist. Deshalb liegen die Widerlager für Rundbögen in der Regel waagerecht in Kämpferhöhe, während scheitrechte Bögen und Segmentbögen schräge, nach dem Bogenmittelpunkt gerichtete Widerlager erhalten. Über schmalen Pfeilern ist das Widerlager auszukragen — eine keilartig wirkende Auflast über dem Pfeiler kann sonst die Auflager verschieben.",
+      "vertiefung": "Der Bogenschub ist der Grund, warum Bögen in Reihe einfacher sind als einzelne: Bei nebeneinanderliegenden Bögen heben sich die waagerechten Kräfte benachbarter Bögen gegenseitig auf, nur am Ende der Reihe braucht es ein kräftiges Widerlager. Dasselbe Prinzip trägt jede Arkade und jede Brücke mit mehreren Feldern.",
+      "tags": ["mauerbogen", "bogenschub", "widerlager"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 143–145",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-024",
+      "typ": "vergleich",
+      "frage": "Zwei Ausführungen eines Sturzes in der Außenwand, beide von Frick/Knöll als bedenklich bezeichnet. Bei welcher der beiden liegt die Wärmedämmung rückseitig am Fertigteil, sodass der statisch wirksame Querschnitt nicht durch eine vorgesetzte Dämmplatte beschnitten wird?",
+      "seiten": [
+        {
+          "titel": "Sturz mit anbetonierter Wärmedämmung",
+          "bild": "bilder-lokal/bk-sturz-daemmung-anbetoniert.png",
+          "beschreibung": "Vertikalschnitt: Der in das Mauerwerk einbindende Stahlbetonsturz ist außenseitig mit Holzwolleleichtbauplatten ummantelt und anschließend verputzt. Frick/Knöll bezeichnen diese Ausführung als nur bedingt geeignet."
+        },
+        {
+          "titel": "Sturzfertigteil als verlorene Schalung",
+          "bild": "bilder-lokal/bk-sturz-ueberzug.png",
+          "beschreibung": "Vertikalschnitt: Ein Sturzfertigteil bildet beim Betonieren die verlorene Schalung für den Deckenrand, die Wärmedämmung liegt rückseitig am Fertigteil. Wegen der geringeren statisch wirksamen Breite ist der Sturz als Überzug ausgebildet."
+        }
+      ],
+      "richtig": 1,
+      "antwort": "Bei der rechten Ausführung. Dort trägt das Sturzfertigteil die Dämmung rückseitig und dient beim Betonieren als verlorene Schalung für den Deckenrand. Weil die statisch wirksame Breite dadurch kleiner wird, muss der Sturz bei hoher Belastung als Überzug ausgebildet werden. Links dagegen ist der Stahlbetonsturz außen mit Wärmedämmung ummantelt, was den Querschnitt beschneidet und zu Rissen im Außenputz führt.",
+      "vertiefung": "Interessant ist, dass Frick/Knöll beide Lösungen kritisch sehen — die rechte heißt dort immer noch bauphysikalisch bedenklich, nur eben besser und aufwendiger. Das ist ein ehrlicher Befund: Am Sturz trifft die Dämmebene zwangsläufig auf ein tragendes Bauteil, und jede Lösung ist ein Kompromiss zwischen Querschnitt und Dämmung.",
+      "tags": ["sturz", "wärmedämmung", "überzug"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.68 und 6.69, S. 143",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-025",
+      "typ": "bildbeschriftung",
+      "frage": "Gewölbewirkung über einer Maueröffnung. Benenne die bezeichneten Bauteile und Flächen.",
+      "referenz": "bilder/bk-sturz-belastungsdreieck-blank.svg",
+      "punkte": [
+        { "nr": 1, "x": 51.2, "y": 31.6, "name": "Belastungsdreieck, gleichseitig über der Stützweite" },
+        { "nr": 2, "x": 51.2, "y": 49.2, "name": "Sturz" },
+        { "nr": 3, "x": 51.2, "y": 64.5, "name": "lichte Maueröffnung" },
+        { "nr": 4, "x": 22.0, "y": 11.0, "name": "Deckenlast oberhalb des Dreiecks" },
+        { "nr": 5, "x": 22.0, "y": 63.9, "name": "Widerlager neben der Öffnung" }
+      ],
+      "antwort": "1 Belastungsdreieck, gleichseitig über der Stützweite, 2 Sturz, 3 lichte Maueröffnung, 4 Deckenlast oberhalb des Dreiecks, 5 Widerlager neben der Öffnung.",
+      "vertiefung": "Achte auf die Pfeile: Sie stehen links und rechts vom Dreieck, nicht darüber. Genau das ist die Aussage der Zeichnung — die Deckenlast wandert an der Öffnung vorbei in die Widerlager und erreicht den Sturz gar nicht.",
+      "tags": ["belastungsdreieck", "gewölbewirkung", "sturz"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.61, S. 141",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-026",
+      "typ": "bildbeschriftung",
+      "frage": "Ansicht eines Rundbogens über einer Maueröffnung. Benenne die bezeichneten Teile.",
+      "referenz": "bilder/bk-sturz-bogenteile-blank.svg",
+      "punkte": [
+        { "nr": 1, "x": 25.0, "y": 85.7, "name": "Widerlager" },
+        { "nr": 2, "x": 50.0, "y": 38.4, "name": "Schlussstein im Scheitel" },
+        { "nr": 3, "x": 36.6, "y": 57.1, "name": "Leibung" },
+        { "nr": 4, "x": 66.5, "y": 45.5, "name": "Rücken" },
+        { "nr": 5, "x": 84.1, "y": 71.4, "name": "Kämpferlinie" },
+        { "nr": 6, "x": 50.0, "y": 85.4, "name": "Spannweite" }
+      ],
+      "antwort": "1 Widerlager, 2 Schlussstein im Scheitel, 3 Leibung, 4 Rücken, 5 Kämpferlinie, 6 Spannweite.",
+      "vertiefung": "Zähle die Bogensteine nach: Es sind neun, also eine ungerade Zahl — deshalb sitzt im Scheitel ein Stein und keine Fuge. Die senkrechte Maßlinie in der Mitte ist die Stich- oder Pfeilhöhe, beim Rundbogen genau die halbe Spannweite.",
+      "tags": ["bogenteile", "rundbogen", "begriffe"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.71, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-027",
+      "typ": "fehlersuche",
+      "frage": "Der Rundbogen über dieser Maueröffnung ist falsch gemauert. Markiere den Bereich, in dem der Fehler liegt.",
+      "referenz": "bilder/bk-sturz-fehler.svg",
+      "bereiche": [
+        { "nr": 1, "x": 25.0, "y": 85.7, "name": "linkes Widerlager" },
+        { "nr": 2, "x": 50.0, "y": 38.4, "name": "Scheitel des Bogens" },
+        { "nr": 3, "x": 36.6, "y": 57.1, "name": "Leibung" },
+        { "nr": 4, "x": 66.5, "y": 45.5, "name": "Rücken" },
+        { "nr": 5, "x": 79.0, "y": 57.1, "name": "rechte Hintermauerung" }
+      ],
+      "fehlerNr": 2,
+      "folge": "Der Bogen hat eine gerade Anzahl von Bogensteinen, deshalb liegt im Scheitel eine Fuge statt eines Schlusssteins. Genau dort müssen sich die beiden Bogenhälften gegeneinander abstützen — die Keilwirkung ist an der höchstbeanspruchten Stelle unterbrochen. Der Bogen kann im Scheitel aufreißen und bei Belastung durchsacken.",
+      "antwort": "Der Fehler liegt in Bereich 2, dem Scheitel: Der Bogen hat eine gerade Steinzahl, sodass dort eine Fuge sitzt. Mauerbögen erhalten stets eine ungerade Anzahl von Bogensteinen, damit im Scheitel ein Schlussstein liegt.",
+      "vertiefung": "Der Fehler entsteht fast immer beim Einteilen vor dem Wölben und ist danach nicht mehr zu korrigieren, ohne den halben Bogen abzutragen. Deshalb wird die Steinzahl an der Lehrscheibe aufgerissen, bevor der erste Stein gesetzt wird.",
+      "tags": ["mauerbogen", "schlussstein", "ausführungsfehler"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-028",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis die Gewölbewirkung über einer Maueröffnung. Zeichne die Öffnung, den Sturz, das Belastungsdreieck und mache deutlich, welche Lasten den Sturz erreichen und welche nicht.",
+      "referenz": "bilder/bk-sturz-belastungsdreieck.svg",
+      "pruefpunkte": [
+        "Eine Maueröffnung mit Widerlagern links und rechts ist erkennbar.",
+        "Über der Öffnung liegt ein Sturz.",
+        "Über dem Sturz ist ein Dreieck eingezeichnet.",
+        "Das Dreieck ist gleichseitig, die Grundseite ist die Stützweite.",
+        "Die Schenkel steigen unter 60 Grad an.",
+        "Die Stützweite ist bemaßt.",
+        "Deckenlasten oberhalb des Dreiecks sind als an der Öffnung vorbeilaufend dargestellt.",
+        "Es wird deutlich, dass nur das Mauerwerk im Dreieck auf dem Sturz lastet."
+      ],
+      "antwort": "Siehe Referenzzeichnung: Über der Öffnung steht der Sturz, darüber das gleichseitige Belastungsdreieck mit 60-Grad-Schenkeln über der Stützweite; die Deckenlasten setzen links und rechts außerhalb des Dreiecks an und laufen in die Widerlager.",
+      "vertiefung": "Beim Zeichnen lohnt die Probe: Verdoppelt man die Stützweite, verdoppelt sich die Grundseite — aber die Fläche des Dreiecks vervierfacht sich. Die Last auf dem Sturz wächst also quadratisch mit der Öffnungsbreite, nicht linear. Das erklärt, warum große Öffnungen so schnell nach Stahl oder Stahlbeton verlangen.",
+      "tags": ["belastungsdreieck", "gewölbewirkung", "skizze"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.61, S. 141",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-029",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis einen Rundbogen über einer Maueröffnung und beschrifte seine Teile.",
+      "referenz": "bilder/bk-sturz-bogenteile.svg",
+      "pruefpunkte": [
+        "Widerlager links und rechts sind gezeichnet.",
+        "Die Kämpferlinie ist als waagerechte Linie in Kämpferhöhe eingetragen.",
+        "Der Bogen ist als Ring zwischen Leibung und Rücken dargestellt.",
+        "Die Leibung ist als innere, der Rücken als äußere Fläche benannt.",
+        "Die Lagerfugen verlaufen radial, also senkrecht zur Leibung.",
+        "Die Anzahl der Bogensteine ist ungerade.",
+        "Im Scheitel liegt ein Schlussstein, keine Fuge.",
+        "Die Spannweite ist bemaßt.",
+        "Die Stich- oder Pfeilhöhe ist eingetragen und entspricht der halben Spannweite."
+      ],
+      "antwort": "Siehe Referenzzeichnung: Widerlager, waagerechte Kämpferlinie, Bogenring zwischen Leibung und Rücken mit radialen Lagerfugen, ungerader Steinzahl und Schlussstein im Scheitel; Spannweite und Stichhöhe sind bemaßt, letztere ist beim Rundbogen die halbe Spannweite.",
+      "vertiefung": "Die radialen Fugen sind der Teil, den man beim Zeichnen am leichtesten vergisst — und genau sie machen den Unterschied zwischen einem Bogen und einem gebogenen Balken. Steht eine Fuge nicht senkrecht zur Leibung, kann der Stein abgleiten und die Keilwirkung bricht zusammen.",
+      "tags": ["rundbogen", "bogenteile", "skizze"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.71, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    },
+    {
+      "id": "bk-stz-030",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis die drei Bogenarten nebeneinander — Rundbogen, Segmentbogen und scheitrechter Bogen — jeweils über derselben Spannweite, und trage die Stichhöhe ein.",
+      "referenz": "bilder/bk-sturz-bogenarten.svg",
+      "pruefpunkte": [
+        "Alle drei Bögen sind über derselben Spannweite gezeichnet.",
+        "Der Rundbogen ist als Halbkreis dargestellt.",
+        "Beim Rundbogen ist die Stichhöhe die halbe Spannweite.",
+        "Der Segmentbogen ist deutlich flacher, mit einer Stichhöhe von etwa einem Fünfzehntel bis einem Zwanzigstel der Spannweite.",
+        "Der scheitrechte Bogen ist fast gerade, mit einer Stichhöhe von einem Fünfzigstel der Spannweite.",
+        "Bei allen drei Bögen verlaufen die Lagerfugen radial.",
+        "Die Widerlager sind links und rechts angedeutet.",
+        "Die Kämpferlinie ist eingetragen."
+      ],
+      "antwort": "Siehe Referenzzeichnung: Rundbogen mit Stich gleich der halben Spannweite, Segmentbogen mit einem Fünfzehntel bis Zwanzigstel, scheitrechter Bogen mit einem Fünfzigstel — alle drei über derselben Spannweite, mit radialen Lagerfugen und angedeuteten Widerlagern.",
+      "vertiefung": "Die Zeichnung macht sichtbar, warum der scheitrechte Bogen so heißt: Er ist geometrisch noch ein Bogen, sieht aber aus wie ein gerader Sturz. Sein winziger Stich von ein bis zwei Zentimetern bei gut einem Meter Spannweite ist gerade genug, damit sich die Steine verkeilen — und genau deshalb sind seine Stützweiten so streng begrenzt.",
+      "tags": ["bogenarten", "stichhöhe", "skizze"],
+      "quelle": "Frick/Knöll, Baukonstruktionslehre 1, Bild 6.70, S. 144",
+      "stand": "2026-09",
+      "geprueft": true
+    }
+  ]
+}

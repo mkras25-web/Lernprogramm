@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 480" width="520" height="480">
+  <defs><pattern id="faMw" width="30" height="15" patternUnits="userSpaceOnUse"><rect width="30" height="15" fill="#a98467"/><path d="M0 0 H30 M0 7.5 H30 M0 15 H30" stroke="#8c6a53" stroke-width="1.1"/><path d="M15 0 V7.5 M0 7.5 V15 M30 7.5 V15" stroke="#8c6a53" stroke-width="1.1"/></pattern></defs>
+  <rect width="520" height="480" fill="#f0ead2"/>
+  <text x="260" y="36" text-anchor="middle" font-family="Georgia, serif" font-size="19" fill="#414833">mit Schutz durch die Formgebung</text>
+  <rect x="120" y="120" width="150" height="110" fill="url(#faMw)" stroke="#414833" stroke-width="2"/>
+  <rect x="120" y="248" width="180" height="162" fill="url(#faMw)" stroke="#414833" stroke-width="2"/>
+  <path d="M104 118 L352 88 L352 106 L104 136 Z" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+  <rect x="112" y="230" width="186" height="18" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+  <path d="M452 110 L364 162" stroke="#6c584c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M364 162 L373 151 L378 160 Z" fill="#6c584c"/>
+  <path d="M462 178 L368 232" stroke="#6c584c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M368 232 L377 221 L382 230 Z" fill="#6c584c"/>
+  <path d="M452 258 L372 306" stroke="#6c584c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M372 306 L381 295 L386 304 Z" fill="#6c584c"/>
+  <path d="M352 108 V196" stroke="#9a6b1f" stroke-width="2.2" stroke-dasharray="11 6"/>
+  <path d="M352 206 l-6 -14 h12 z" fill="#9a6b1f"/>
+  <path d="M298 250 V330" stroke="#9a6b1f" stroke-width="2.2" stroke-dasharray="11 6"/>
+  <path d="M298 340 l-6 -14 h12 z" fill="#9a6b1f"/>
+  <text x="260" y="446" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#414833">Wasser tropft frei ab, Fassade bleibt trocken</text>
+</svg>

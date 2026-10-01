@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" width="820" height="520">
+  <defs>
+    <pattern id="srMauer" width="36" height="18" patternUnits="userSpaceOnUse">
+      <rect width="36" height="18" fill="#a98467"/>
+      <path d="M0 0 H36 M0 9 H36 M0 18 H36" stroke="#8c6a53" stroke-width="1.2"/>
+      <path d="M18 0 V9 M0 9 V18 M36 9 V18" stroke="#8c6a53" stroke-width="1.2"/>
+    </pattern>
+  </defs>
+  <rect width="820" height="520" fill="#f0ead2"/>
+  <rect x="180" y="60" width="20"  height="380" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+  <rect x="200" y="60" width="240" height="380" fill="url(#srMauer)" stroke="#414833" stroke-width="2"/>
+  <rect x="440" y="60" width="22"  height="380" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+  <path d="M790 70 L640 156" stroke="#6c584c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M640 156 l16 -12 l-2 15 z" fill="#6c584c"/>
+  <path d="M760 130 L610 216" stroke="#6c584c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M610 216 l16 -12 l-2 15 z" fill="#6c584c"/>
+  <path d="M800 180 L650 266" stroke="#6c584c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M650 266 l16 -12 l-2 15 z" fill="#6c584c"/>
+  <path d="M770 240 L620 326" stroke="#6c584c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M620 326 l16 -12 l-2 15 z" fill="#6c584c"/>
+  <path d="M795 300 L645 386" stroke="#6c584c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M645 386 l16 -12 l-2 15 z" fill="#6c584c"/>
+  <path d="M600 210 H480" stroke="#9a6b1f" stroke-width="3.4"/>
+  <path d="M462 210 l20 -8 v16 z" fill="#9a6b1f"/>
+  <path d="M462 120 H500" stroke="#9a6b1f" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <path d="M462 150 H500" stroke="#9a6b1f" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <path d="M462 180 H500" stroke="#9a6b1f" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <path d="M420 120 l14 -6 v12 z M420 150 l14 -6 v12 z M420 180 l14 -6 v12 z" fill="#9a6b1f"/>
+  <path d="M462 120 H436" stroke="#9a6b1f" stroke-width="2"/>
+  <path d="M462 150 H436" stroke="#9a6b1f" stroke-width="2"/>
+  <path d="M462 180 H436" stroke="#9a6b1f" stroke-width="2"/>
+  <path d="M451 290 l-7 14 l9 14 l-8 14 l7 14" stroke="#414833" stroke-width="2.6" fill="none"/>
+  <path d="M540 346 H470" stroke="#9a6b1f" stroke-width="2.6"/>
+  <path d="M452 346 l20 -7 v14 z" fill="#9a6b1f"/>
+  <path d="M472 70 V430" stroke="#6c584c" stroke-width="2.4" stroke-dasharray="12 7"/>
+  <path d="M472 444 l-7 -16 h14 z" fill="#6c584c"/>
+  <path d="M300 400 H520" stroke="#adc178" stroke-width="2.6" stroke-dasharray="9 6"/>
+  <path d="M536 400 l-18 -8 v16 z" fill="#adc178"/>
+  <text x="86" y="252" font-family="Georgia, serif" font-size="19" fill="#6c584c">innen</text>
+  <text x="660" y="470" font-family="Georgia, serif" font-size="19" fill="#6c584c">außen</text>
+</svg>

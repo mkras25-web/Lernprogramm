@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 420" width="840" height="420">
+  <defs>
+    <pattern id="baMauer" width="30" height="15" patternUnits="userSpaceOnUse">
+      <rect width="30" height="15" fill="#a98467"/>
+      <path d="M0 0 H30 M0 7.5 H30 M0 15 H30" stroke="#8c6a53" stroke-width="1.1"/>
+      <path d="M15 0 V7.5 M0 7.5 V15 M30 7.5 V15" stroke="#8c6a53" stroke-width="1.1"/>
+    </pattern>
+  </defs>
+  <rect width="840" height="420" fill="#f0ead2"/>
+  <rect x="14" y="300" width="46" height="54" fill="url(#baMauer)" stroke="#414833" stroke-width="1.8"/>
+  <rect x="240" y="300" width="46" height="54" fill="url(#baMauer)" stroke="#414833" stroke-width="1.8"/>
+  <path d="M20.0 300.0 A130.0 130.0 0 0 1 280.0 300.0 L240.0 300.0 A90.0 90.0 0 0 0 60.0 300.0 Z" fill="#dde5b6" stroke="#414833" stroke-width="2.2"/>
+  <path d="M60.0 300.0 L20.0 300.0" stroke="#414833" stroke-width="1.8"/>
+  <path d="M68.9 261.0 L32.9 243.6" stroke="#414833" stroke-width="1.8"/>
+  <path d="M93.9 229.6 L68.9 198.4" stroke="#414833" stroke-width="1.8"/>
+  <path d="M130.0 212.3 L121.1 173.3" stroke="#414833" stroke-width="1.8"/>
+  <path d="M170.0 212.3 L178.9 173.3" stroke="#414833" stroke-width="1.8"/>
+  <path d="M206.1 229.6 L231.1 198.4" stroke="#414833" stroke-width="1.8"/>
+  <path d="M231.1 261.0 L267.1 243.6" stroke="#414833" stroke-width="1.8"/>
+  <path d="M240.0 300.0 L280.0 300.0" stroke="#414833" stroke-width="1.8"/>
+  <path d="M4 300 H296" stroke="#6c584c" stroke-width="1.4" stroke-dasharray="8 5"/>
+  <path d="M150 300 V210.0" stroke="#6c584c" stroke-width="1.6"/>
+  <path d="M142 300 h16 M142 210.0 h16" stroke="#6c584c" stroke-width="1.6"/>
+  <text x="150" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#414833">Rundbogen</text>
+  <text x="150" y="396" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6c584c">Stich z = s/2</text>
+  <rect x="284" y="300" width="46" height="54" fill="url(#baMauer)" stroke="#414833" stroke-width="1.8"/>
+  <rect x="510" y="300" width="46" height="54" fill="url(#baMauer)" stroke="#414833" stroke-width="1.8"/>
+  <path d="M319.5 261.4 A383.5 383.5 0 0 1 520.5 261.4 L510.0 300.0 A343.5 343.5 0 0 0 330.0 300.0 Z" fill="#dde5b6" stroke="#414833" stroke-width="2.2"/>
+  <path d="M330.0 300.0 L319.5 261.4" stroke="#414833" stroke-width="1.8"/>
+  <path d="M355.3 294.1 L347.8 254.9" stroke="#414833" stroke-width="1.8"/>
+  <path d="M381.1 290.2 L376.5 250.5" stroke="#414833" stroke-width="1.8"/>
+  <path d="M407.0 288.2 L405.5 248.3" stroke="#414833" stroke-width="1.8"/>
+  <path d="M433.0 288.2 L434.5 248.3" stroke="#414833" stroke-width="1.8"/>
+  <path d="M458.9 290.2 L463.5 250.5" stroke="#414833" stroke-width="1.8"/>
+  <path d="M484.7 294.1 L492.2 254.9" stroke="#414833" stroke-width="1.8"/>
+  <path d="M510.0 300.0 L520.5 261.4" stroke="#414833" stroke-width="1.8"/>
+  <path d="M274 300 H566" stroke="#6c584c" stroke-width="1.4" stroke-dasharray="8 5"/>
+  <path d="M420 300 V288.0" stroke="#6c584c" stroke-width="1.6"/>
+  <path d="M412 300 h16 M412 288.0 h16" stroke="#6c584c" stroke-width="1.6"/>
+  <text x="420" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#414833">Segmentbogen</text>
+  <text x="420" y="396" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6c584c">z = 1/20 bis 1/15 · s</text>
+  <rect x="564" y="300" width="46" height="54" fill="url(#baMauer)" stroke="#414833" stroke-width="1.8"/>
+  <rect x="790" y="300" width="46" height="54" fill="url(#baMauer)" stroke="#414833" stroke-width="1.8"/>
+  <path d="M606.8 260.1 A1166.8 1166.8 0 0 1 793.2 260.1 L790.0 300.0 A1126.8 1126.8 0 0 0 610.0 300.0 Z" fill="#dde5b6" stroke="#414833" stroke-width="2.2"/>
+  <path d="M610.0 300.0 L606.8 260.1" stroke="#414833" stroke-width="1.8"/>
+  <path d="M635.7 298.2 L633.4 258.3" stroke="#414833" stroke-width="1.8"/>
+  <path d="M661.4 297.1 L660.0 257.1" stroke="#414833" stroke-width="1.8"/>
+  <path d="M687.1 296.5 L686.7 256.5" stroke="#414833" stroke-width="1.8"/>
+  <path d="M712.9 296.5 L713.3 256.5" stroke="#414833" stroke-width="1.8"/>
+  <path d="M738.6 297.1 L740.0 257.1" stroke="#414833" stroke-width="1.8"/>
+  <path d="M764.3 298.2 L766.6 258.3" stroke="#414833" stroke-width="1.8"/>
+  <path d="M790.0 300.0 L793.2 260.1" stroke="#414833" stroke-width="1.8"/>
+  <path d="M554 300 H846" stroke="#6c584c" stroke-width="1.4" stroke-dasharray="8 5"/>
+  <path d="M700 300 V296.4" stroke="#6c584c" stroke-width="1.6"/>
+  <path d="M692 300 h16 M692 296.4 h16" stroke="#6c584c" stroke-width="1.6"/>
+  <text x="700" y="370" text-anchor="middle" font-family="Georgia, serif" font-size="17" fill="#414833">scheitrechter Bogen</text>
+  <text x="700" y="396" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#6c584c">z = 1/50 · s</text>
+</svg>

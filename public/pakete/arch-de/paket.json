@@ -2,7 +2,7 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.11.0",
+  "version": "0.13.0",
   "gestaltung": "arch",
   "module": [
     {
@@ -55,7 +55,9 @@
         },
         {
           "id": "bk-stuerze",
-          "titel": "Stürze, Auflager, Lastabtragung über Öffnungen"
+          "titel": "Stürze, Auflager, Lastabtragung über Öffnungen",
+          "datei": "items/bk-stuerze.json",
+          "bild": "bilder/bk-sturz-belastungsdreieck.svg"
         },
         {
           "id": "bk-flachdach",
@@ -195,7 +197,9 @@
         },
         {
           "id": "bp-schlagregen",
-          "titel": "Schlagregenschutz und Fassadenbeanspruchung"
+          "titel": "Schlagregenschutz und Fassadenbeanspruchung",
+          "datei": "items/bp-schlagregen.json",
+          "bild": "bilder/bp-schlagregen-wirkprinzipien.svg"
         },
         {
           "id": "bp-sommer",
