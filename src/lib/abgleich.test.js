@@ -253,7 +253,20 @@ describe('Anmeldung (OAuth mit PKCE)', () => {
       search: '',
       assign: vi.fn(),
     }
+    globalThis.document = { baseURI: 'https://name.github.io/lernprogramm/' }
     globalThis.history = { replaceState: vi.fn() }
+  })
+
+  it('loest die Rueckkehradresse ueber document.baseURI auf, nicht ueber location.pathname', async () => {
+    // Genau der Fehler vom 2026-10-02: ein Aufruf von .../sync-config.json
+    // im selben Tab laesst den Service Worker die App-Huelle liefern, die
+    // Adresszeile bleibt aber bei der Datei stehen. document.baseURI ist in
+    // diesem Fall ebenfalls die Datei-Adresse - rueckkehrAdresse() muss das
+    // trotzdem auf das Verzeichnis zurueckfuehren.
+    globalThis.document = { baseURI: 'https://name.github.io/lernprogramm/sync-config.json' }
+    await verbindungStarten('mein-schluessel')
+    const ziel = new URL(location.assign.mock.calls[0][0])
+    expect(ziel.searchParams.get('redirect_uri')).toBe('https://name.github.io/lernprogramm/')
   })
 
   it('leitet mit PKCE-Pruefwert und genau der eingetragenen Rueckkehradresse zu Dropbox', async () => {

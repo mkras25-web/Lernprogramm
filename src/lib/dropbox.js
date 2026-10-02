@@ -67,8 +67,20 @@ export async function appSchluessel() {
 
 // Genau diese Adresse muss in der Dropbox-Konsole als "Redirect URI"
 // eingetragen sein.
+//
+// Bewusst NICHT einfach location.pathname nehmen: Der Service Worker
+// (PWA) liefert die App-Hülle fuer jede nicht zwischengespeicherte
+// Adresse innerhalb seines Bereichs aus (z. B. ruft jemand direkt
+// .../sync-config.json im Browser auf, um den Schluessel zu pruefen -
+// das zeigt dann die App, aber die Adresszeile bleibt
+// .../sync-config.json stehen). location.pathname.replace(...) wuerde
+// in diesem Fall genau diese falsche Adresse an Dropbox schicken, und
+// die Anmeldung schlaegt mit "Invalid redirect_uri" fehl - genau
+// passiert am 2026-10-02. new URL('./', document.baseURI) loest "./"
+// IMMER gegen das Verzeichnis der aktuellen Adresse auf, unabhaengig
+// davon, welche Datei dort "sichtbar" war.
 export function rueckkehrAdresse() {
-  return location.origin + location.pathname.replace(/index\.html$/, '')
+  return new URL('./', document.baseURI).href
 }
 
 function zufallText(laenge) {
