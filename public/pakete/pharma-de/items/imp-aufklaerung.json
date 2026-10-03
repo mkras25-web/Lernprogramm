@@ -1,0 +1,394 @@
+{
+  "thema": "imp-aufklaerung",
+  "titel": "Aufklärung, Einwilligung und Dokumentation",
+  "erklaerung": {
+    "absaetze": [
+      "Aufklärung und Einwilligung sind keine Formalien vor der eigentlichen Leistung, sie sind Teil der Leistung. Ohne wirksame Einwilligung ist die Injektion rechtlich eine Körperverletzung, so sorgfältig sie auch ausgeführt wurde. Und weil im Streitfall die behandelnde Person nachweisen muss, dass aufgeklärt und eingewilligt wurde, entscheidet die Dokumentation darüber, ob dieser Nachweis gelingt.",
+      "Aufgeklärt wird nach § 630e BGB grundsätzlich mündlich, ergänzend können schriftliche Informationen ausgehändigt werden. Merkblätter gibt es regelmäßig aktualisiert vom Robert Koch-Institut, vom Deutschen Grünen Kreuz und von Forum Impfen; für die COVID-19-Impfung stellt das RKI Aufklärungs-, Anamnese- und Einwilligungsbögen auch als Übersetzungen und in leichter Sprache bereit. Diese Materialien lassen sich mit den berufsstandseigenen Anamnesebögen und Einwilligungserklärungen kombinieren. Der entscheidende Punkt bleibt: Das Merkblatt ergänzt das Gespräch, es ersetzt es nicht.",
+      "Inhaltlich muss das Gespräch nach § 35a Abs. 4 ApBetrO mindestens den Nutzen der Impfung und die zu verhütende Krankheit, mögliche Nebenwirkungen, Komplikationen und Kontraindikationen, Verhaltensempfehlungen für die Zeit danach, Beginn und Dauer des Impfschutzes sowie Hinweise zu Auffrischimpfungen umfassen. Das Schulungsskript führt zusätzlich die Behandlungsmöglichkeiten der Erkrankung und die Durchführung der Impfung selbst auf. Die Einwilligung muss vor der Applikation vorliegen und kann jederzeit widerrufen werden; wurde sie schriftlich erklärt, ist der Patientin nach § 630e Abs. 2 BGB eine Kopie mitzugeben.",
+      "Die Impfung selbst ist unverzüglich in den Impfausweis einzutragen. Dorthin gehören Name und Geburtsdatum der geimpften Person, das Datum, Bezeichnung und Chargenbezeichnung des Impfstoffs, die Krankheit, gegen die geimpft wurde, Name und Anschrift der Apotheke sowie Name und Unterschrift der impfenden Apothekerin. Liegt der Impfausweis nicht vor, ist eine Impfbescheinigung auszustellen; auf Wunsch wird die Impfung später nachgetragen. Für die Chargenbezeichnung lässt sich die beiliegende Vignette verwenden, was Übertragungsfehler vermeidet.",
+      "Getrennt davon bleibt die Dokumentation in der Apotheke. Anamnesebogen, Einwilligungserklärung und Dokumentationsbogen sind nach § 630f BGB zehn Jahre aufzubewahren, schriftlich oder digital. Empfehlenswert ist zusätzlich, das Aufklärungsmerkblatt mit Notizen zum Gespräch abzulegen – im Haftungsfall ist das oft der aussagekräftigste Beleg dafür, worüber tatsächlich gesprochen wurde. Die Bundesapothekerkammer stellt für den Dokumentationsbogen ein Formblatt bereit."
+    ],
+    "merksatz": "Das Merkblatt ergänzt das Gespräch, die Dokumentation beweist es – beides ersetzt einander nicht.",
+    "bild": "bilder/imp-ablauf.svg",
+    "bildunterschrift": "Aufklärung und Einwilligung sind die Schritte 2 und 3, die Dokumentation ist Schritt 8. Zwischen Einwilligung und Applikation darf kein Schritt fehlen.",
+    "quelle": "BAK-Muster-SOP Grippeschutzimpfung, Stand 12.09.2025, Abschnitte 8 und 10; Menn, Skript Stand 24.11.2025"
+  },
+  "items": [
+    {
+      "id": "imp-au-001",
+      "typ": "karte",
+      "frage": "In welcher Form ist aufzuklären, und welche Rolle spielt das Aufklärungsmerkblatt?",
+      "antwort": "Grundsätzlich mündlich. Schriftliche Informationen können ergänzend ausgehändigt werden, ersetzen das Gespräch aber nicht. Die Aufklärung muss rechtzeitig genug erfolgen, dass eine wohlüberlegte Entscheidung möglich ist, verständlich sein und alle wesentlichen Umstände umfassen.",
+      "vertiefung": "„Rechtzeitig“ schließt die Aufklärung unmittelbar vor dem Einstich aus. In der Praxis heißt das: Merkblatt und Anamnesebogen werden vor dem Termin ausgehändigt oder im Wartebereich gelesen, das Gespräch findet davor statt – nicht während die Spritze schon aufgezogen ist.",
+      "tags": [
+        "aufklaerung",
+        "bgb",
+        "ablauf"
+      ],
+      "quelle": "§ 630e BGB; Skript Menn 2025, Folie „Patient*innenrechte nach § 630e BGB“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-002",
+      "typ": "mehrfachauswahl",
+      "frage": "Worüber ist im Aufklärungsgespräch zu informieren?",
+      "antwort": "Über die zu verhütende Krankheit und ihre Behandlungsmöglichkeiten, über Wirkung und Nutzen der Impfung, über Kontraindikationen, über die Durchführung der Impfung, über Beginn und Dauer des Impfschutzes, über das Verhalten nach der Impfung sowie über mögliche unerwünschte Arzneimittelwirkungen und Impfkomplikationen.",
+      "vertiefung": "Die Durchführung selbst zu erklären wird oft übersprungen, kostet aber nur einen Satz und nimmt gerade ängstlichen Patientinnen viel ab. Wer weiß, dass in den Oberarmmuskel gespritzt wird und wie lange es dauert, sitzt ruhiger.",
+      "tags": [
+        "aufklaerung",
+        "inhalte",
+        "beratung"
+      ],
+      "quelle": "Skript Menn 2025, Folie „Aufklärung über“; § 35a Abs. 4 ApBetrO",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Die zu verhütende Krankheit und ihre Behandlungsmöglichkeiten",
+        "Wirkung und Nutzen der Impfung",
+        "Kontraindikationen",
+        "Durchführung der Impfung",
+        "Beginn und Dauer des Impfschutzes",
+        "Verhalten nach der Impfung",
+        "Mögliche unerwünschte Wirkungen und Impfkomplikationen"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "imp-au-003",
+      "typ": "karte",
+      "frage": "Woher stammen die Aufklärungsmerkblätter für Impfungen in Apotheken?",
+      "antwort": "Sie werden regelmäßig in aktualisierter Fassung unter anderem vom Robert Koch-Institut, vom Deutschen Grünen Kreuz und von Forum Impfen bereitgestellt. Für die COVID-19-Impfung bietet das RKI Aufklärungs- sowie Anamnese- und Einwilligungsbögen an, auch als Übersetzungen und in leichter Sprache. Für die Influenza-Impfung gibt es verschiedene Anbieter; die Übersetzungen auf rki.de basieren auf einem Muster des Deutschen Grünen Kreuzes.",
+      "vertiefung": "Die Materialien lassen sich mit den berufsstandseigenen Anamnesebögen und Einwilligungserklärungen kombinieren. Wichtig ist, bei jeder Saison die aktuelle Fassung zu ziehen – ein Merkblatt mit veralteter Impfstoffangabe untergräbt genau den Beweiswert, um dessentwillen man es ablegt.",
+      "tags": [
+        "aufklaerung",
+        "material",
+        "organisation"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 8.1; Skript Menn 2025, Folie „Aufklärungsmerkblatt, Anamnesebogen“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-004",
+      "typ": "karte",
+      "frage": "Was ist zu tun, wenn die Einwilligung schriftlich erklärt wurde?",
+      "antwort": "Der Patientin ist nach § 630e Abs. 2 BGB eine Kopie der Einwilligungserklärung mitzugeben. Das Original verbleibt in der Apotheke und unterliegt dort der zehnjährigen Aufbewahrungspflicht.",
+      "vertiefung": "Am einfachsten wird die Kopie gleich am Impftag erstellt und zusammen mit der Impfbescheinigung ausgehändigt. Wer darauf wartet, bis jemand danach fragt, hat einen Vorgang mehr zu bearbeiten und erfüllt die Pflicht später als vorgesehen.",
+      "tags": [
+        "aufklaerung",
+        "einwilligung",
+        "bgb"
+      ],
+      "quelle": "§ 630e Abs. 2 BGB; BAK-Muster-SOP 2025, Abschnitt 8.1",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-005",
+      "typ": "karte",
+      "frage": "Kann eine einmal erteilte Einwilligung zurückgenommen werden?",
+      "antwort": "Ja, jederzeit. Nach den §§ 630a bis 630d BGB müssen Patientinnen vor der Maßnahme nach einer Aufklärung einwilligen und können die Einwilligung jederzeit widerrufen. Bei Minderjährigen ist die Einwilligung der Sorgeberechtigten einzuholen.",
+      "vertiefung": "„Jederzeit“ gilt auch noch, wenn die Spritze bereits aufgezogen auf dem Tablett liegt. Für die Apotheke heißt das, den Impfstoff als Verlust zu verbuchen und nicht weiterzuverwenden – und das ohne Diskussion, denn ein Drängen würde die Freiwilligkeit der Einwilligung infrage stellen.",
+      "tags": [
+        "aufklaerung",
+        "einwilligung",
+        "bgb"
+      ],
+      "quelle": "§§ 630a–d BGB; Skript Menn 2025, Folie „Patient*innenrechte nach §§ 630a – d BGB“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-006",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Angaben gehören in den Impfausweis beziehungsweise in die Impfbescheinigung?",
+      "antwort": "Name und Geburtsdatum der zu impfenden Person, das Datum der Schutzimpfung, Bezeichnung und Chargenbezeichnung des Impfstoffs, der Name der Krankheit, gegen die geimpft wird, Name und Anschrift der Apotheke sowie Name und Unterschrift der impfenden Apothekerin. Die Versichertennummer gehört nicht dazu.",
+      "vertiefung": "Die Chargenbezeichnung ist die Angabe, auf die es im Rückrufsfall ankommt – sie ist der einzige Weg, betroffene Geimpfte später zu identifizieren. Die beiliegende Vignette spart hier Zeit und vermeidet Zahlendreher.",
+      "tags": [
+        "dokumentation",
+        "impfausweis",
+        "pflichtangaben"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 10.1; § 22 Abs. 1 IfSG",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Name und Geburtsdatum der geimpften Person",
+        "Datum der Schutzimpfung",
+        "Bezeichnung und Chargenbezeichnung des Impfstoffs",
+        "Name der Krankheit, gegen die geimpft wird",
+        "Name und Anschrift der Apotheke",
+        "Name und Unterschrift der impfenden Apothekerin",
+        "Versichertennummer der geimpften Person"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "imp-au-007",
+      "typ": "karte",
+      "frage": "Was ist zu tun, wenn die Patientin ihren Impfausweis nicht dabei hat?",
+      "antwort": "Es ist eine Impfbescheinigung auszustellen. Auf Wunsch der Patientin wird die Impfung zu einem späteren Zeitpunkt in den Impfausweis eingetragen. Der Eintrag beziehungsweise die Bescheinigung hat unverzüglich zu erfolgen – die Impfung darf nicht undokumentiert bleiben.",
+      "vertiefung": "Die Bescheinigung ist damit kein Behelf zweiter Klasse, sondern der vorgesehene Weg. Praktisch gehört ein Vordruck dafür in die Materialliste des Impfraums, sonst wird im Einzelfall improvisiert und die Pflichtangaben geraten unvollständig.",
+      "tags": [
+        "dokumentation",
+        "impfausweis",
+        "organisation"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 10.1",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-008",
+      "typ": "zuordnung",
+      "frage": "Ordne den Unterlagen zu, wohin sie nach der Impfung gehören.",
+      "antwort": "Impfausweis oder Impfbescheinigung: an die geimpfte Person. Kopie der Einwilligungserklärung: an die geimpfte Person. Anamnesebogen, Einwilligungserklärung im Original und Dokumentationsbogen: in die Apotheke, zehn Jahre aufzubewahren. Aufklärungsmerkblatt mit Notizen: in die Apotheke, empfohlen aber nicht vorgeschrieben.",
+      "vertiefung": "Die Zweiteilung ist der Kern: Die Patientin bekommt den Nachweis der Impfung, die Apotheke behält den Nachweis des ordnungsgemäßen Vorgehens. Beides zusammen deckt die beiden unterschiedlichen Zwecke ab.",
+      "tags": [
+        "dokumentation",
+        "unterlagen",
+        "systematik"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 10.1 und 10.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        [
+          "Impfausweis oder Impfbescheinigung",
+          "an die geimpfte Person"
+        ],
+        [
+          "Kopie der Einwilligungserklärung",
+          "an die geimpfte Person"
+        ],
+        [
+          "Anamnesebogen",
+          "in die Apotheke, 10 Jahre"
+        ],
+        [
+          "Einwilligungserklärung im Original",
+          "in die Apotheke, 10 Jahre"
+        ],
+        [
+          "Dokumentationsbogen der Schutzimpfung",
+          "in die Apotheke, 10 Jahre"
+        ],
+        [
+          "Aufklärungsmerkblatt mit Gesprächsnotizen",
+          "in die Apotheke, empfohlen"
+        ]
+      ]
+    },
+    {
+      "id": "imp-au-009",
+      "typ": "karte",
+      "frage": "Warum lohnt es sich, das Aufklärungsmerkblatt mit Notizen zum Gespräch abzulegen, obwohl es nicht vorgeschrieben ist?",
+      "antwort": "Weil im Streitfall die behandelnde Person nachweisen muss, dass aufgeklärt wurde. Eine formularmäßig abgehakte Einwilligung belegt, dass unterschrieben wurde; ein Merkblatt mit handschriftlichen Notizen belegt, worüber tatsächlich gesprochen wurde – etwa über eine konkrete Nachfrage der Patientin und die darauf gegebene Antwort.",
+      "vertiefung": "Zwei Stichworte am Rand genügen dafür meist. Der Aufwand steht in keinem Verhältnis zu dem, was im Haftungsfall davon abhängt, und ist in der Routine kaum spürbar.",
+      "tags": [
+        "dokumentation",
+        "haftung",
+        "praxis"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 10.2; §§ 630f–h BGB",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-010",
+      "typ": "reihenfolge",
+      "frage": "Bringe Aufklärung, Einwilligung, Impfung und Dokumentation in die rechtlich zwingende Reihenfolge.",
+      "antwort": "Aufklärung rechtzeitig vor der Entscheidung, Einwilligung vor der Applikation, Applikation, unverzüglicher Eintrag in Impfausweis oder Bescheinigung, Ablage der Unterlagen in der Apotheke.",
+      "vertiefung": "Die Reihenfolge klingt selbstverständlich, wird im Betrieb aber regelmäßig verdichtet: Aufklärung und Einwilligung rutschen zusammen an den Impfplatz, die Dokumentation ans Ende des Tages. Beides verwässert genau den Beweiswert, den die Vorschriften herstellen sollen.",
+      "tags": [
+        "aufklaerung",
+        "ablauf",
+        "dokumentation"
+      ],
+      "quelle": "§§ 630e, 630f BGB; BAK-Muster-SOP 2025, Abschnitte 8 und 10",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Aufklärung mündlich, rechtzeitig für eine wohlüberlegte Entscheidung",
+        "Einwilligung der Patientin, vor der Applikation",
+        "Bei schriftlicher Einwilligung: Kopie für die Patientin",
+        "Applikation des Impfstoffs",
+        "Unverzüglicher Eintrag in Impfausweis oder Ausstellen einer Impfbescheinigung",
+        "Ablage von Anamnesebogen, Einwilligung und Dokumentationsbogen in der Apotheke"
+      ]
+    },
+    {
+      "id": "imp-au-011",
+      "typ": "karte",
+      "frage": "Welches Hilfsmittel stellt die Bundesapothekerkammer für die Dokumentation der Impfung bereit?",
+      "antwort": "Ein Formblatt mit dem Titel „Vorlage für die Dokumentation der Durchführung der Schutzimpfung in der Apotheke“, zuletzt revidiert im November 2025. Es ist Teil der Arbeitshilfen zur Qualitätssicherung und ergänzt die Muster-SOP.",
+      "vertiefung": "Der Vorteil eines Formblatts liegt weniger in der Zeitersparnis als in der Vollständigkeit: Was abgefragt wird, wird auch dokumentiert. Freitextdokumentation lässt im Alltag zuverlässig genau die Angaben weg, die später gebraucht werden.",
+      "tags": [
+        "dokumentation",
+        "material",
+        "organisation"
+      ],
+      "quelle": "Skript Menn 2025, Abschnitt „Dokumentation“ (BAK-Formblatt, Stand 11.11.2025)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Unterlagen und Materialien müssen im Impfraum für Aufklärung und Dokumentation bereitliegen?",
+      "antwort": "Aufklärungsmerkblätter, Formulare für die Einverständniserklärung, die Datenschutzinformation, ein Formular für die Impfbescheinigung, der Dokumentationsbogen, die aktuelle Fachinformation der verwendeten Impfstoffe sowie gegebenenfalls ein kleiner Apothekenstempel für das Impfbuch.",
+      "vertiefung": "Der Apothekenstempel wirkt wie eine Nebensächlichkeit, erspart aber das handschriftliche Eintragen von Name und Anschrift bei jedem einzelnen Impfausweis – und sorgt dafür, dass diese Pflichtangabe lesbar und vollständig im Ausweis steht.",
+      "tags": [
+        "dokumentation",
+        "material",
+        "organisation"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 5",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Aufklärungsmerkblätter",
+        "Formulare für die Einverständniserklärung",
+        "Datenschutzinformation",
+        "Formular für die Impfbescheinigung",
+        "Dokumentationsbogen",
+        "Aktuelle Fachinformation der Impfstoffe",
+        "Apothekenstempel für das Impfbuch"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "imp-au-013",
+      "typ": "karte",
+      "frage": "Wie wird die Chargenbezeichnung am sichersten dokumentiert?",
+      "antwort": "Über die dem Impfstoff beiliegende Vignette, die in den Impfausweis und auf den Dokumentationsbogen geklebt wird. Sie enthält Bezeichnung und Chargenbezeichnung und vermeidet die Übertragungsfehler, die beim Abschreiben alphanumerischer Chargennummern entstehen.",
+      "vertiefung": "Die Chargenbezeichnung ist die einzige Angabe, über die sich im Rückrufsfall nachvollziehen lässt, wer betroffen ist. Ein Zahlendreher macht die gesamte Dokumentation an diesem Punkt wertlos – und bleibt bis zum Ernstfall unbemerkt.",
+      "tags": [
+        "dokumentation",
+        "praxis",
+        "arzneimittelsicherheit"
+      ],
+      "quelle": "Skript Menn 2025, Folie „Impfdokumentation (§ 22 Abs. 1 IfSG)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-014",
+      "typ": "karte",
+      "frage": "Eine Patientin spricht wenig Deutsch. Welche Möglichkeiten gibt es für die Aufklärung?",
+      "antwort": "Das Robert Koch-Institut stellt die Aufklärungs-, Anamnese- und Einwilligungsbögen für die COVID-19-Impfung in Übersetzungen und in leichter Sprache bereit. Für die Influenza-Impfung sind auf rki.de ebenfalls Übersetzungen verfügbar, die auf einem Muster des Deutschen Grünen Kreuzes basieren.",
+      "vertiefung": "Die schriftliche Übersetzung löst allerdings nicht das Problem des mündlichen Gesprächs, das nach § 630e BGB den Kern der Aufklärung bildet. Lässt sich die Verständigung nicht sicherstellen, ist das ein Grund, die Impfung zu verschieben – eine Einwilligung, die nicht verstanden wurde, ist keine wirksame Einwilligung.",
+      "tags": [
+        "aufklaerung",
+        "material",
+        "beratung"
+      ],
+      "quelle": "Skript Menn 2025, Folie „Aufklärungsmerkblatt, Anamnesebogen, Bezug fremdsprachiger Aufklärungsmaterialien“; § 630e BGB",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-au-015",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zur Dokumentation in der Apotheke treffen zu?",
+      "antwort": "Die Aufbewahrung kann schriftlich oder digital erfolgen, sie beträgt zehn Jahre, die Pflicht ergibt sich aus § 630f BGB, und die Patientin hat ein Recht auf Einsicht beziehungsweise auf Abschriften. Nicht zutreffend ist, dass die Unterlagen nach Ablauf der Impfsaison vernichtet werden dürften.",
+      "vertiefung": "Die Wahl zwischen Papier und digitaler Ablage ist eine organisatorische. Entscheidend ist, dass bei einer digitalen Lösung über zehn Jahre hinweg Lesbarkeit und Zugriff gesichert bleiben – ein Zeitraum, in dem sich Software und Datenträger mehrfach ändern.",
+      "tags": [
+        "dokumentation",
+        "aufbewahrung",
+        "organisation"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 10.2; §§ 630f, 630g BGB",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Die Aufbewahrung kann schriftlich oder digital erfolgen",
+        "Die Aufbewahrungsfrist beträgt zehn Jahre",
+        "Die Pflicht ergibt sich aus § 630f BGB",
+        "Die Patientin hat Anspruch auf Einsicht oder Abschriften",
+        "Nach Ende der Impfsaison dürfen die Unterlagen vernichtet werden"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "imp-au-016",
+      "typ": "freitext",
+      "frage": "Beschreibe, wie sich die Dokumentation für die Patientin von der Dokumentation für die Apotheke unterscheidet – nach Zweck, Inhalt und Verbleib.",
+      "antwort": "Die Dokumentation für die Patientin ist der Nachweis der Impfung selbst. Sie besteht aus dem Eintrag in den Impfausweis oder einer Impfbescheinigung und enthält Name und Geburtsdatum, Datum, Bezeichnung und Charge des Impfstoffs, die Krankheit, Name und Anschrift der Apotheke sowie Name und Unterschrift der impfenden Person. Sie geht mit der Patientin nach Hause und dient ihr gegenüber Dritten als Beleg. Die Dokumentation für die Apotheke ist dagegen der Nachweis des ordnungsgemäßen Vorgehens. Sie besteht aus Anamnesebogen, Einwilligungserklärung und Dokumentationsbogen, bleibt in der Apotheke und wird dort nach § 630f BGB zehn Jahre aufbewahrt. Ihr Zweck ist die Beweisführung im Haftungsfall, denn die Beweislast für Aufklärung und Einwilligung liegt bei der behandelnden Person.",
+      "vertiefung": "Die Kopie der Einwilligungserklärung überbrückt beide Welten: Das Original bleibt als Beweismittel in der Apotheke, die Kopie geht nach § 630e Abs. 2 BGB an die Patientin. Wer diesen Unterschied im Kopf hat, dokumentiert nicht doppelt und lässt auch nichts weg.",
+      "tags": [
+        "dokumentation",
+        "systematik",
+        "verstaendnis"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 10.1 und 10.2; §§ 630e–g BGB",
+      "stand": "2026-10",
+      "geprueft": true,
+      "pruefpunkte": [
+        "Patientendokumentation ist der Nachweis der Impfung",
+        "Sie besteht aus Impfausweis-Eintrag oder Impfbescheinigung mit den Pflichtangaben",
+        "Apothekendokumentation ist der Nachweis des ordnungsgemäßen Vorgehens",
+        "Sie besteht aus Anamnesebogen, Einwilligung und Dokumentationsbogen",
+        "Aufbewahrung in der Apotheke über zehn Jahre nach § 630f BGB",
+        "Begründung über die Beweislast für Aufklärung und Einwilligung",
+        "Die Kopie der Einwilligung geht nach § 630e Abs. 2 BGB an die Patientin"
+      ]
+    },
+    {
+      "id": "imp-au-017",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis den vollständigen Ablauf einer Impfung in der Apotheke, von der Eignungsprüfung bis zur Ablage der Unterlagen. Markiere, an welcher Stelle die Einwilligung spätestens vorliegen muss.",
+      "antwort": "Acht Schritte: Eignung prüfen, aufklären, Einwilligung einholen, vorbereiten, applizieren, nachsorgen, entsorgen, dokumentieren. Die Einwilligung muss vor der Applikation vorliegen – also spätestens am Ende von Schritt drei und vor Schritt fünf.",
+      "vertiefung": "Die Skizze macht sichtbar, was in der Routine verrutscht: Aufklärung und Einwilligung werden gern an den Impfplatz verschoben, die Dokumentation ans Ende des Tages. Beides verwässert genau die Nachweiskette, auf die es im Haftungsfall ankommt.",
+      "tags": [
+        "aufklaerung",
+        "ablauf",
+        "skizze"
+      ],
+      "quelle": "eigene Darstellung nach BAK-Muster-SOP 2025 und §§ 630e–f BGB",
+      "stand": "2026-10",
+      "geprueft": true,
+      "referenz": "bilder/imp-ablauf.svg",
+      "pruefpunkte": [
+        "Eignung prüfen: Anamnese, Impfhistorie, Kontraindikationen",
+        "Aufklären: mündlich, rechtzeitig vor der Entscheidung",
+        "Einwilligung einholen – zwingend vor der Applikation",
+        "Vorbereiten: Fertigspritze, Händedesinfektion, Sichtkontrolle",
+        "Applizieren: Arm und Stelle wählen, desinfizieren, i. m. injizieren",
+        "Nachsorgen: Tupfer, ggf. Pflaster, mindestens 15 Minuten Nachbeobachtung",
+        "Entsorgen: kein Recapping, zertifizierter Abwurfbehälter",
+        "Dokumentieren: Impfausweis oder Bescheinigung, Unterlagen 10 Jahre"
+      ]
+    }
+  ]
+}

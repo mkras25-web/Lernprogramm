@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 984 580" width="984" height="580">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d8a"/></marker>
+  </defs>
+  <rect width="984" height="580" fill="#eef2f3"/>
+  <rect x="24" y="118" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="54" cy="152" r="17" fill="#2f7d8a"/>
+  <path d="M246 211 H258" stroke="#2f7d8a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="264" y="118" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="294" cy="152" r="17" fill="#2f7d8a"/>
+  <path d="M486 211 H498" stroke="#2f7d8a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="504" y="118" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="534" cy="152" r="17" fill="#2f7d8a"/>
+  <path d="M726 211 H738" stroke="#2f7d8a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="744" y="118" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="774" cy="152" r="17" fill="#2f7d8a"/>
+  <rect x="24" y="354" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="54" cy="388" r="17" fill="#2f7d8a"/>
+  <path d="M246 447 H258" stroke="#2f7d8a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="264" y="354" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="294" cy="388" r="17" fill="#2f7d8a"/>
+  <path d="M486 447 H498" stroke="#2f7d8a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="504" y="354" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="534" cy="388" r="17" fill="#2f7d8a"/>
+  <path d="M726 447 H738" stroke="#2f7d8a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="744" y="354" width="216" height="186" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <circle cx="774" cy="388" r="17" fill="#2f7d8a"/>
+  <path d="M960 304 V330 H24 V356" stroke="#2f7d8a" stroke-width="2.5" fill="none" stroke-dasharray="7 6" marker-end="url(#a)"/>
+  <g>
+    <text x="24" y="42" font-size="18" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ablauf einer Impfung in der Apotheke</text>
+    <text x="24" y="68" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Acht Schritte vom Wunsch der Patientin bis zur Dokumentation. Jeder Schritt hat eine eigene rechtliche Grundlage.</text>
+    <text x="54" y="157" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">1</text>
+    <text x="82" y="158" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Eignung prüfen</text>
+    <text x="44" y="200" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Anamnese und Impfhistorie</text>
+    <text x="44" y="226" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kontraindikationen abfragen</text>
+    <text x="44" y="252" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">ggf. an den Arzt verweisen</text>
+    <text x="294" y="157" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">2</text>
+    <text x="322" y="158" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Aufklären</text>
+    <text x="284" y="200" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">mündlich, verständlich</text>
+    <text x="284" y="226" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">rechtzeitig vor der Impfung</text>
+    <text x="284" y="252" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Nutzen, Risiken, Verhalten</text>
+    <text x="534" y="157" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">3</text>
+    <text x="562" y="158" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Einwilligung</text>
+    <text x="524" y="200" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">vor der Applikation</text>
+    <text x="524" y="226" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">bei Schriftform: Kopie</text>
+    <text x="524" y="252" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">für die Patientin</text>
+    <text x="774" y="157" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">4</text>
+    <text x="802" y="158" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Vorbereiten</text>
+    <text x="764" y="200" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Fertigspritze temperieren</text>
+    <text x="764" y="226" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Hände desinfizieren</text>
+    <text x="764" y="252" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Sichtkontrolle der Spritze</text>
+    <text x="54" y="393" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">5</text>
+    <text x="82" y="394" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Applizieren</text>
+    <text x="44" y="436" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Arm und Stelle wählen</text>
+    <text x="44" y="462" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Haut desinfizieren, trocknen</text>
+    <text x="44" y="488" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">i. m. in den Deltamuskel</text>
+    <text x="294" y="393" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">6</text>
+    <text x="322" y="394" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Nachsorgen</text>
+    <text x="284" y="436" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Tupfer, ggf. Pflaster</text>
+    <text x="284" y="462" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">mindestens 15 Minuten</text>
+    <text x="284" y="488" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">sitzen lassen</text>
+    <text x="534" y="393" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">7</text>
+    <text x="562" y="394" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Entsorgen</text>
+    <text x="524" y="436" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">kein Recapping</text>
+    <text x="524" y="462" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Abwurfbehälter nach</text>
+    <text x="524" y="488" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">TRBA 250</text>
+    <text x="774" y="393" font-size="14" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">8</text>
+    <text x="802" y="394" font-size="15" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Dokumentieren</text>
+    <text x="764" y="436" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Impfausweis oder</text>
+    <text x="764" y="462" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Bescheinigung</text>
+    <text x="764" y="488" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Unterlagen 10 Jahre</text>
+  </g>
+</svg>

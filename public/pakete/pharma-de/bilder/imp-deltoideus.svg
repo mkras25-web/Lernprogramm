@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 800" width="760" height="800">
+  <defs>
+    <marker id="dp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f3439"/>
+    </marker>
+    <marker id="dpm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#587681"/>
+    </marker>
+    <marker id="dps" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M10,0 L0,5 L10,10 z" fill="#587681"/>
+    </marker>
+  </defs>
+
+  <rect width="760" height="800" fill="#eef2f3"/>
+
+  <!-- Schulter und Oberarm -->
+  <path d="M150 560 L150 268 Q150 176 248 152 Q300 139 352 152 Q450 176 450 268 L450 560 Z"
+        fill="#f3e0c8" stroke="#a9876a" stroke-width="2.5"/>
+
+  <!-- Humerus angedeutet -->
+  <path d="M300 236 L300 560" stroke="#d6c3ae" stroke-width="26" stroke-linecap="round"/>
+
+  <!-- Deltamuskel -->
+  <path d="M178 232 Q300 186 422 232 L352 462 Q300 486 248 462 Z"
+        fill="#cfe0e3" stroke="#587681" stroke-width="2.5"/>
+
+  <!-- Akromion -->
+  <path d="M232 168 Q300 146 368 168 L368 196 Q300 176 232 196 Z" fill="#dfe8ea" stroke="#1f3439" stroke-width="2.5"/>
+
+  <!-- Gefahrzone oben -->
+  <rect x="200" y="200" width="200" height="56" fill="#b03a2e" opacity="0.14"/>
+  <!-- Gefahrzone unten -->
+  <rect x="210" y="402" width="180" height="70" fill="#b03a2e" opacity="0.14"/>
+
+  <!-- Injektionszone -->
+  <ellipse cx="300" cy="330" rx="74" ry="56" fill="#3f7d5a" opacity="0.2"/>
+  <ellipse cx="300" cy="330" rx="74" ry="56" fill="none" stroke="#3f7d5a" stroke-width="3"/>
+
+  <!-- Mittellinie -->
+  <line x1="300" y1="176" x2="300" y2="500" stroke="#1f3439" stroke-width="1.6" stroke-dasharray="7 6"/>
+
+  <!-- Einstichpunkt -->
+  <line x1="274" y1="330" x2="326" y2="330" stroke="#b03a2e" stroke-width="2"/>
+  <line x1="300" y1="304" x2="300" y2="356" stroke="#b03a2e" stroke-width="2"/>
+  <circle cx="300" cy="330" r="8" fill="#b03a2e"/>
+
+  <!-- Querfinger -->
+  <g stroke="#587681" stroke-width="2" fill="none">
+    <path d="M404 190 h34"/>
+    <path d="M404 274 h34"/>
+    <path d="M421 190 v84"/>
+    <path d="M414 218 h14"/>
+    <path d="M414 246 h14"/>
+  </g>
+
+  <!-- Masslinie rechts -->
+  <path d="M566 190 v140" stroke="#587681" stroke-width="2" marker-start="url(#dps)" marker-end="url(#dpm)"/>
+  <path d="M452 190 h126" stroke="#587681" stroke-width="1.4"/>
+  <path d="M392 330 h186" stroke="#587681" stroke-width="1.4"/>
+
+  <!-- Hinweispfeile -->
+  <path d="M176 228 L246 222" stroke="#b03a2e" stroke-width="2.5" marker-end="url(#dp)"/>
+  <path d="M176 440 L252 432" stroke="#b03a2e" stroke-width="2.5" marker-end="url(#dp)"/>
+
+  <g id="beschriftung" font-family="Segoe UI, Helvetica, Arial, sans-serif" fill="#1f3439">
+    <text x="24" y="40" font-size="18" font-weight="600">Injektionsstelle am Musculus deltoideus</text>
+    <text x="24" y="63" font-size="13" fill="#587681">intramuskulär, senkrecht zur Hautoberfläche</text>
+
+    <text x="300" y="130" font-size="14" font-weight="600" text-anchor="middle">Akromion (Schulterhöhe)</text>
+    <text x="462" y="202" font-size="13" fill="#587681">drei Querfinger</text>
+    <text x="462" y="220" font-size="13" fill="#587681">ohne Daumen</text>
+    <text x="590" y="250" font-size="13.5" fill="#587681">7 bis 13 cm</text>
+    <text x="590" y="268" font-size="13.5" fill="#587681">unter dem</text>
+    <text x="590" y="286" font-size="13.5" fill="#587681">Akromion</text>
+
+    <path d="M394 402 L352 350" stroke="#3f7d5a" stroke-width="1.6"/>
+    <text x="398" y="408" font-size="14" font-weight="600" fill="#3f7d5a">Injektionszone</text>
+    <text x="398" y="428" font-size="13" fill="#587681">größte Vorwölbung des</text>
+    <text x="398" y="446" font-size="13" fill="#587681">Deltamuskels, in der Mittellinie</text>
+
+    <text x="24" y="214" font-size="13.5" font-weight="600" fill="#b03a2e">zu hoch</text>
+    <text x="24" y="232" font-size="12.5" fill="#587681">Schleimbeutel,</text>
+    <text x="24" y="249" font-size="12.5" fill="#587681">N. axillaris</text>
+
+    <text x="24" y="426" font-size="13.5" font-weight="600" fill="#b03a2e">zu tief</text>
+    <text x="24" y="444" font-size="12.5" fill="#587681">N. radialis,</text>
+    <text x="24" y="461" font-size="12.5" fill="#587681">Humerus</text>
+
+    <text x="300" y="520" font-size="13" text-anchor="middle" fill="#587681">Mittellinie des Oberarms</text>
+
+    <g font-size="13.5">
+      <text x="24" y="596" font-weight="600">Immer beachten</text>
+      <text x="24" y="624" fill="#587681">Arm locker herunterhängen lassen, nie im Stehen impfen – beide Personen sitzen.</text>
+      <text x="24" y="648" fill="#587681">Einstichstelle muss vollständig frei liegen; aufgekrempelte Ärmel stauen das Blut.</text>
+      <text x="24" y="672" fill="#587681">Nicht in Tätowierungen, Narben oder Muttermale injizieren.</text>
+      <text x="24" y="696" fill="#587681">Nach Hautdesinfektion erst injizieren, wenn die Stelle trocken ist.</text>
+      <text x="24" y="720" fill="#587681">Aspirieren nur bei der COVID-19-Impfung.</text>
+      <text x="24" y="752" font-weight="600" fill="#2f7d8a">Armwahl: linker Arm bei Rechtshändern und umgekehrt; bei krankem und gesundem</text>
+      <text x="24" y="774" font-weight="600" fill="#2f7d8a">Arm immer in den gesunden; bei Brustkrebspatientinnen den gegenüberliegenden.</text>
+    </g>
+  </g>
+</svg>

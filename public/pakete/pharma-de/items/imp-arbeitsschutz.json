@@ -1,0 +1,290 @@
+{
+  "thema": "imp-arbeitsschutz",
+  "titel": "Arbeitsschutz, Hygiene und Lagerung",
+  "erklaerung": {
+    "absaetze": [
+      "Mit der Impfung zieht in die Apotheke eine Tätigkeit ein, die es dort vorher nicht gab: der Umgang mit spitzen Gegenständen und potenziell infektiösem Material. Damit gelten Regelwerke, die bislang keine Rolle spielten – das Arbeitsschutzgesetz, die Biostoffverordnung, die Verordnung zur arbeitsmedizinischen Vorsorge, die Technischen Regeln für Biologische Arbeitsstoffe und die Unfallverhütungsvorschriften der Berufsgenossenschaft. Sie richten sich an alle angestellten Mitarbeitenden und definieren Mindestanforderungen, deren Einhaltung der Arbeitgeber vor Ort kontrolliert und die von staatlichen Behörden und Berufsgenossenschaften überwacht wird.",
+      "Vor der ersten Impfung stehen deshalb organisatorische Schritte, für die die Apothekeninhaberin verantwortlich ist. Die Aufnahme der Tätigkeit als impfende Apothekerin ist vorab dem Betriebsarzt sowie der Berufs- und Betriebshaftpflichtversicherung anzuzeigen. Für Tätigkeiten mit Infektionsgefährdung ist eine arbeitsmedizinische Vorsorge durch den Betriebsarzt vorgesehen, früher als G42-Untersuchung bezeichnet, bei der unter anderem der Hepatitis-B-Status beurteilt wird. Diese Untersuchung dürfen nach § 7 ArbMedVV nur Fachärztinnen für Arbeits- oder Betriebsmedizin durchführen – der Hausarzt in der Regel nicht.",
+      "Der Arbeitsplatz ist in die Gefährdungsbeurteilung und in das Qualitätsmanagementsystem aufzunehmen, wobei der Betriebsarzt unterstützt. In der Betriebsanweisung werden unter anderem Schutzkittel, Handpflegemittel, das gegebenenfalls erforderliche Tragen von Einmalhandschuhen und gegebenenfalls Atemschutz festgelegt; ebenso, dass werdende und stillende Mütter unter Berücksichtigung der Gefährdungsbeurteilung nicht beschäftigt werden. Die Betriebsanweisung muss in einer für die Beschäftigten verständlichen Form und Sprache abgefasst, an geeigneter Stelle bekannt gemacht und ausgelegt oder ausgehängt werden; sie darf mit dem Hygieneplan kombiniert werden.",
+      "Die größte konkrete Gefahr ist die Nadelstichverletzung, und sie entsteht fast immer an derselben Stelle: beim Zurückstecken der Schutzkappe. Recapping ist deshalb zu unterlassen. Spritze, Kanüle und kontaminierte Gegenstände gehen stattdessen unmittelbar in einen zertifizierten Abwurfbehälter nach TRBA 250 und DIN EN ISO 23907, wobei die Kanüle an der Einkerbung des Behälters abgestreift wird. Der Behälter steht dafür in Reichweite der zu impfenden Person, nicht auf dem Nebentisch.",
+      "Die Hygiene folgt dem Hygienemanagement der Apotheke nach § 4a ApBetrO mit Festlegungen zu Personal- und Raumhygiene im Hygieneplan und der Dokumentation der durchgeführten Reinigung und Desinfektion. Für den Impfbereich ist ein gesonderter Schutzkittel vorgesehen. Einmalhandschuhe sind unsteril und dienen dem Eigenschutz – sie werden deshalb nicht selbst desinfiziert. Bei den Desinfektionsmitteln kommt es auf die Zulassung für den jeweiligen Zweck und auf die Einwirkzeit an: für Haut und Hände sind fünfzehn bis dreißig Sekunden die Faustregel, für Flächen deutlich länger nach Herstellerangabe."
+    ],
+    "merksatz": "Kein Recapping, kein Desinfizieren von Handschuhen, keine Injektion in feuchte Haut – drei Handgriffe, die man sich abgewöhnen muss.",
+    "bild": "bilder/imp-kanuele.svg",
+    "bildunterschrift": "Die Nadelstichverletzung entsteht beim Zurückstecken der Schutzkappe. Das mittlere Feld ist der Handgriff, den es nicht geben darf.",
+    "quelle": "Menn, Skript Stand 24.11.2025, Abschnitte „Arbeitsschutz“ und „Hygienevorschriften“; BAK-Muster-SOP Grippeschutzimpfung, Stand 12.09.2025"
+  },
+  "items": [
+    {
+      "id": "imp-as-001",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Regelwerke des Arbeitsschutzes sind für die impfende Apotheke einschlägig?",
+      "antwort": "Das Arbeitsschutzgesetz, die Biostoffverordnung, die Verordnung zur arbeitsmedizinischen Vorsorge, die Technischen Regeln für Biologische Arbeitsstoffe und die Unfallverhütungsvorschriften der Berufsgenossenschaft für Gesundheitsdienst und Wohlfahrtspflege.",
+      "vertiefung": "Die DGUV Vorschrift 1 beziehungsweise BGV A1 mit den Grundsätzen der Prävention wird in der Muster-SOP ausdrücklich als mitgeltende Unterlage geführt. Sie gehört damit in die Dokumentenlenkung der Apotheke, nicht nur in den Hinterkopf.",
+      "tags": ["arbeitsschutz", "normen", "organisation"],
+      "quelle": "Skript Menn 2025, Folie „Arbeitsschutz (1)“; BAK-Muster-SOP 2025, Abschnitt 11",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Arbeitsschutzgesetz (ArbSchG)",
+        "Biostoffverordnung (BioStoffV)",
+        "Arbeitsmedizinische Vorsorge-Verordnung (ArbMedVV)",
+        "Technische Regeln für Biologische Arbeitsstoffe (TRBA)",
+        "Unfallverhütungsvorschriften der BGW (DGUV)",
+        "Medizinprodukte-Betreiberverordnung"
+      ],
+      "richtig": [0, 1, 2, 3, 4]
+    },
+    {
+      "id": "imp-as-002",
+      "typ": "karte",
+      "frage": "Wem ist die Aufnahme der Impftätigkeit vorab anzuzeigen, und wer ist dafür verantwortlich?",
+      "antwort": "Dem Betriebsarzt sowie der Berufs- und Betriebshaftpflichtversicherung. Verantwortlich dafür ist die Apothekeninhaberin beziehungsweise der Apothekeninhaber.",
+      "vertiefung": "Die Anzeige an die Haftpflichtversicherung wird am ehesten vergessen und ist die mit den unangenehmsten Folgen: Eine nicht angezeigte Tätigkeitserweiterung kann im Schadensfall den Versicherungsschutz kosten – und zwar genau dann, wenn man ihn braucht.",
+      "tags": ["arbeitsschutz", "organisation", "haftung"],
+      "quelle": "Skript Menn 2025, Folie „Arbeitsschutz (3)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-003",
+      "typ": "karte",
+      "frage": "Welche arbeitsmedizinische Vorsorge ist für impfendes Personal vorgesehen, und wer darf sie durchführen?",
+      "antwort": "Für Tätigkeiten mit Infektionsgefährdung ist eine Beurteilung durch den Betriebsarzt vorgesehen, früher als G42-Untersuchung bezeichnet; beurteilt wird unter anderem der Hepatitis-B-Status. Durchführen dürfen sie ausschließlich Ärztinnen und Ärzte mit der Gebietsbezeichnung Arbeitsmedizin oder Betriebsmedizin. Hausärzte erfüllen diese Anforderung nach § 7 ArbMedVV in der Regel nicht.",
+      "vertiefung": "Das ist die Frage, die in jeder Apotheke mindestens einmal gestellt wird – weil der Weg zum Hausarzt kürzer ist. Die Antwort ist eindeutig: Eine beim Hausarzt durchgeführte Untersuchung erfüllt die Anforderung nicht.",
+      "tags": ["arbeitsschutz", "vorsorge", "organisation"],
+      "quelle": "Skript Menn 2025, Folie „Arbeitsschutz (4)“; § 7 ArbMedVV",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-004",
+      "typ": "karte",
+      "frage": "Welcher Impfschutz wird beim impfenden Personal selbst beurteilt, und wie wird vorgegangen, wenn er fehlt?",
+      "antwort": "Der Schutz gegen Hepatitis B. Die Beurteilung nimmt der Betriebsarzt vor; fehlt ein ausreichender Schutz, erfolgt gegebenenfalls die Impfung mit anschließender Titerkontrolle.",
+      "vertiefung": "Hepatitis B ist der Erreger mit dem höchsten Übertragungsrisiko bei einer Nadelstichverletzung – deutlich höher als Hepatitis C oder HIV. Gegen ihn gibt es als einzigen der drei eine wirksame Impfung, was ihn zum sinnvollsten Ansatzpunkt des Eigenschutzes macht.",
+      "tags": ["arbeitsschutz", "vorsorge", "eigenschutz"],
+      "quelle": "Skript Menn 2025, Folie „Arbeitsschutz (4)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-005",
+      "typ": "mehrfachauswahl",
+      "frage": "Was wird in der Betriebsanweisung für den Impfbereich festgelegt?",
+      "antwort": "Unter anderem Schutzkittel, Handpflegemittel, das gegebenenfalls erforderliche Tragen von Einmalhandschuhen beim Impfen, gegebenenfalls Atemschutz sowie die Festlegung, dass werdende und stillende Mütter nicht beschäftigt werden. Die Preisgestaltung der Impfleistung gehört nicht hinein.",
+      "vertiefung": "Die Betriebsanweisung muss in einer für die Beschäftigten verständlichen Form und Sprache abgefasst und an geeigneter Stelle bekannt gemacht, ausgelegt oder ausgehängt werden. Sie darf mit dem Hygieneplan kombiniert werden, was in einer kleinen Apotheke meist die praktikablere Lösung ist.",
+      "tags": ["arbeitsschutz", "betriebsanweisung", "organisation"],
+      "quelle": "Skript Menn 2025, Folien „Arbeitsschutz (5)“ und zu TRBA 250 Abschnitt 7.1.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Schutzkittel",
+        "Handpflegemittel",
+        "Gegebenenfalls Einmalhandschuhe beim Impfen",
+        "Gegebenenfalls Atemschutz, etwa FFP2",
+        "Keine Beschäftigung werdender und stillender Mütter",
+        "Die Preisgestaltung der Impfleistung"
+      ],
+      "richtig": [0, 1, 2, 3, 4]
+    },
+    {
+      "id": "imp-as-006",
+      "typ": "karte",
+      "frage": "Was ist Recapping, und warum ist es zu unterlassen?",
+      "antwort": "Recapping ist das Zurückstecken der Schutzkappe auf die gebrauchte Kanüle. Es ist die mit Abstand häufigste Ursache von Nadelstichverletzungen, weil die Nadel dabei auf die haltende Hand zugeführt wird. Stattdessen wird die Kanüle unmittelbar im zertifizierten Abwurfbehälter entsorgt, indem sie an dessen Einkerbung abgestreift wird.",
+      "vertiefung": "Die Bewegung ist bei erfahrenem Personal automatisiert und läuft gerade deshalb unbemerkt ab. Dagegen hilft keine Konzentration, sondern nur die Anordnung: Der Abwurfbehälter steht in Reichweite, damit die Kanüle gar nicht erst über eine Strecke getragen werden muss.",
+      "tags": ["arbeitsschutz", "nadelstich", "entsorgung"],
+      "quelle": "Skript Menn 2025, Folien „Arbeitsschutz (6) bis (9)“ und „Entsorgung“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-007",
+      "typ": "karte",
+      "frage": "Nach welchen Normen müssen die Abwurfbehälter für Kanülen zertifiziert sein?",
+      "antwort": "Nach TRBA 250 und DIN EN ISO 23907. Der Behälter muss gesondert gekennzeichnet, durchstichsicher und bruchfest sein und für potenziell infektiöse Abfälle mit Verletzungsgefahr vorgesehen sein.",
+      "vertiefung": "Entscheidend ist, dass es sich um ein zertifiziertes Produkt handelt und nicht um einen improvisierten Behälter. Ein stabiler Kanister sieht durchstichsicher aus, ist aber nicht geprüft – und im Fall einer Verletzung ist das genau die Frage, die gestellt wird.",
+      "tags": ["arbeitsschutz", "entsorgung", "normen"],
+      "quelle": "Skript Menn 2025, Folien „Arbeitsschutz (9)“ und „Entsorgung“; BAK-Muster-SOP 2025, Abschnitt 9.4.2",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-008",
+      "typ": "karte",
+      "frage": "Müssen Einmalhandschuhe beim Impfen desinfiziert werden?",
+      "antwort": "Nein. Die Handschuhe sind unsteril und dienen dem Eigenschutz, nicht der Sterilität des Vorgangs. Eine Desinfektion der Handschuhe ist deshalb nicht erforderlich. Desinfiziert werden die Hände – und zwar vor dem Anziehen.",
+      "vertiefung": "Die Desinfektion von Handschuhen ist nicht nur überflüssig, sondern schädlich: Sie greift das Material an und kann zu unbemerkten Mikroperforationen führen. Bei grober Verschmutzung, etwa mit Blut, werden die Handschuhe gewechselt und nicht gereinigt.",
+      "tags": ["arbeitsschutz", "hygiene", "typischer-fehler"],
+      "quelle": "Skript Menn 2025, Folie „Hygienemaßnahmen“ (Impfraum)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-009",
+      "typ": "numerisch",
+      "frage": "Welche Einwirkzeit gilt als Faustregel für die Haut- und Händedesinfektion?",
+      "antwort": "15 bis 30 Sekunden sind optimal.",
+      "vertiefung": "Für Flächen liegt die Einwirkzeit deutlich höher und richtet sich nach den Herstellerangaben. Die Faustregel ersetzt nicht den Blick auf das Etikett des konkreten Mittels – sie hilft nur gegen die verbreitete Praxis, nach zwei Sekunden weiterzuarbeiten.",
+      "tags": ["hygiene", "desinfektion", "kennwerte"],
+      "quelle": "Skript Menn 2025, Folien „Hygienemaßnahmen (2)“ und „Desinfektionsmittel“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 30,
+      "einheit": "Sekunden (Obergrenze der Faustregel)",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-as-010",
+      "typ": "mehrfachauswahl",
+      "frage": "Worauf kommt es bei der Auswahl der Desinfektionsmittel an?",
+      "antwort": "Auf die Zulassung für den jeweiligen Zweck – Hand, Haut oder Fläche –, auf die Einhaltung der Einwirkzeit und auf das Wirkspektrum, das begrenzt viruzid, begrenzt viruzid plus oder viruzid sein kann. Ein handbedienungsfreier Spender ist optional. Dass ein Mittel möglichst breit wirkt, ist für sich genommen kein Auswahlkriterium – maßgeblich ist der Zweck.",
+      "vertiefung": "Die Muster-SOP verlangt für den Impfraum Hände-, Haut- und Flächendesinfektionsmittel mindestens bakterizid. Das Skript beschreibt zusätzlich die viruziden Abstufungen. Beides zusammen heißt: Die Mindestanforderung steht fest, die konkrete Wahl richtet sich nach dem Einsatzzweck – Flächen nach Blutkontakt stellen andere Anforderungen als die Hautdesinfektion vor dem Einstich.",
+      "tags": ["hygiene", "desinfektion", "auswahl"],
+      "quelle": "Skript Menn 2025, Folie „Desinfektionsmittel“; BAK-Muster-SOP 2025, Abschnitt 5",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Zulassung für Hand, Haut beziehungsweise Flächen",
+        "Einhaltung der angegebenen Einwirkzeit",
+        "Wirkspektrum: begrenzt viruzid, begrenzt viruzid plus oder viruzid",
+        "Handbedienungsfreier Spender als Option",
+        "Möglichst breites Wirkspektrum unabhängig vom Zweck"
+      ],
+      "richtig": [0, 1, 2, 3]
+    },
+    {
+      "id": "imp-as-011",
+      "typ": "karte",
+      "frage": "Was regelt das Hygienemanagement nach § 4a ApBetrO für den Impfbetrieb?",
+      "antwort": "Das hygienische Verhalten am Arbeitsplatz, die Festlegungen zu Reinigung und Desinfektion im Hygieneplan – getrennt nach Personalhygiene und Raumhygiene – sowie die Dokumentation der durchgeführten Reinigung und Desinfektion. Für den Impfbereich ist ein gesonderter Schutzkittel vorgesehen.",
+      "vertiefung": "Dass der Schutzkittel gesondert für den Impfbereich vorgehalten wird, ist der Punkt, der im Alltag verwässert. Ein Kittel, der zwischen Offizin und Impfraum wandert, erfüllt seinen Zweck nicht. Dazu gehört auch die Dokumentation – sie ist Teil der Vorgabe, nicht Kür.",
+      "tags": ["hygiene", "apbetro", "organisation"],
+      "quelle": "§ 4a ApBetrO; Skript Menn 2025, Folien „Hygienemaßnahmen (1)“ und „Hygienemaßnahmen“ (Impfraum)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-012",
+      "typ": "zuordnung",
+      "frage": "Ordne den Verantwortlichkeiten die zugehörige Aufgabe zu.",
+      "antwort": "Apothekenleitung: Verantwortung für die Durchführung der Impfung insgesamt. Apothekeninhaberin: Anzeige der Tätigkeit an Betriebsarzt und Haftpflichtversicherung sowie die Gefährdungsbeurteilung. Betriebsarzt: arbeitsmedizinische Vorsorge und Beurteilung des Hepatitis-B-Status. Staatliche Behörden und Berufsgenossenschaften: Überwachung des Arbeitsschutzes. Geschulte Apothekerin: die Applikation selbst.",
+      "vertiefung": "Die Trennung zwischen Apothekenleitung und Inhaberin fällt in der inhabergeführten Apotheke zusammen, in Filialverbünden aber nicht. Dort ist zu klären, wer die Anzeigen vornimmt und wer die Gefährdungsbeurteilung unterschreibt.",
+      "tags": ["arbeitsschutz", "verantwortung", "organisation"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 3; Skript Menn 2025, Folien „Arbeitsschutz (2) bis (4)“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        ["Apothekenleitung", "Verantwortung für die Durchführung der Impfung"],
+        ["Apothekeninhaberin", "Anzeige der Tätigkeit und Gefährdungsbeurteilung"],
+        ["Betriebsarzt", "arbeitsmedizinische Vorsorge und Hepatitis-B-Status"],
+        ["Behörden und Berufsgenossenschaften", "Überwachung des Arbeitsschutzes"],
+        ["Geschulte Apothekerin", "Applikation des Impfstoffs"]
+      ]
+    },
+    {
+      "id": "imp-as-013",
+      "typ": "karte",
+      "frage": "Dürfen schwangere oder stillende Mitarbeiterinnen im Impfbereich eingesetzt werden?",
+      "antwort": "Nein. Werdende und stillende Mütter werden unter Berücksichtigung der Gefährdungsbeurteilung nicht beschäftigt; das ist auch in der Betriebsanweisung festzulegen.",
+      "vertiefung": "Davon zu unterscheiden ist die Frage, ob Schwangere geimpft werden dürfen – dort lautet die Antwort anders. Beim Arbeitsschutz geht es um den Umgang mit spitzen Gegenständen und potenziell infektiösem Material, nicht um die Impfung selbst.",
+      "tags": ["arbeitsschutz", "mutterschutz", "organisation"],
+      "quelle": "Skript Menn 2025, Folien „Arbeitsschutz (3)“ und „(5)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-014",
+      "typ": "karte",
+      "frage": "Wie sind die Impfstoffe in der Apotheke zu lagern?",
+      "antwort": "So, dass die Qualität nicht nachteilig beeinflusst wird und Verwechslungen vermieden werden. Maßgeblich sind die Lagerungshinweise des Herstellers; es gilt die Leitlinie zur Qualitätssicherung „Prüfung und Lagerung der Fertigarzneimittel“.",
+      "vertiefung": "Die Vermeidung von Verwechslungen steht gleichrangig neben der Temperatur und wird dabei leicht übersehen. In einer Saison, in der Influenza-Standardimpfstoff, Hochdosis-Impfstoff und COVID-19-Impfstoff nebeneinander im selben Kühlschrank liegen, ist die räumliche Trennung die eigentliche Schutzmaßnahme.",
+      "tags": ["lagerung", "qualitaet", "organisation"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 4",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-as-015",
+      "typ": "mehrfachauswahl",
+      "frage": "Welches Material muss nach der Muster-SOP im Raum für die Grippeschutzimpfung vorhanden sein?",
+      "antwort": "Arbeitskleidung, gegebenenfalls medizinische Einmalhandschuhe, ein geeignetes mindestens bakterizides Hände- und Hautdesinfektionsmittel, ein geeignetes mindestens bakterizides Flächendesinfektionsmittel, gegebenenfalls Sicherheitskanülen, Zellstofftupfer und Wundschnellverband, spezielle Entsorgungsbehälter für Spritzen, Kanülen und Tupfer sowie die aktuelle Fachinformation und ein Notfallplan.",
+      "vertiefung": "Der Notfallplan ist das Element, das sich am leichtesten zusammen mit der Notfallausrüstung prüfen lässt: Beides gehört in dieselbe regelmäßige Kontrolle, bei der auch die Verfallsdaten der Epinephrin-Notfallpens angesehen werden.",
+      "tags": ["arbeitsschutz", "material", "organisation"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 5",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Arbeitskleidung",
+        "Mindestens bakterizides Hände- und Hautdesinfektionsmittel",
+        "Mindestens bakterizides Flächendesinfektionsmittel",
+        "Zellstofftupfer und Wundschnellverband",
+        "Spezielle Entsorgungsbehälter für Spritzen, Kanülen und Tupfer",
+        "Aktuelle Fachinformation der Impfstoffe",
+        "Notfallplan"
+      ],
+      "richtig": [0, 1, 2, 3, 4, 5, 6]
+    },
+    {
+      "id": "imp-as-016",
+      "typ": "reihenfolge",
+      "frage": "Eine Apotheke will erstmals Grippeschutzimpfungen anbieten. Bringe die vorbereitenden Schritte in eine sinnvolle Reihenfolge.",
+      "antwort": "Ärztliche Schulung absolvieren, Tätigkeit beim Betriebsarzt und bei der Haftpflichtversicherung anzeigen, arbeitsmedizinische Vorsorge mit Beurteilung des Hepatitis-B-Status, Gefährdungsbeurteilung erstellen und in das QM-System aufnehmen, Betriebsanweisung und Hygieneplan erstellen und aushängen, Impfraum und Material einrichten, Bedarf melden und Impfstoff bestellen.",
+      "vertiefung": "Die Reihenfolge folgt der Abhängigkeit: Ohne Schulung gibt es keine Tätigkeit anzuzeigen, ohne Gefährdungsbeurteilung keine fundierte Betriebsanweisung. Die Impfstoffbestellung steht am Ende der Liste, aber zeitlich weit vorn – die Bedarfsmeldung läuft bis zum 15. Januar.",
+      "tags": ["arbeitsschutz", "organisation", "ablauf"],
+      "quelle": "Skript Menn 2025, Folien „Arbeitsschutz (3) bis (5)“; BAK-Muster-SOP 2025, Abschnitte 3 bis 5",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Ärztliche Schulung nach § 20c IfSG absolvieren",
+        "Aufnahme der Tätigkeit dem Betriebsarzt und der Haftpflichtversicherung anzeigen",
+        "Arbeitsmedizinische Vorsorge mit Beurteilung des Hepatitis-B-Status",
+        "Gefährdungsbeurteilung erstellen und in das QM-System aufnehmen",
+        "Betriebsanweisung und Hygieneplan erstellen, bekannt machen und aushängen",
+        "Impfraum einrichten und Material einschließlich Notfallausrüstung bereitstellen",
+        "Bedarf melden und Impfstoff bestellen"
+      ]
+    },
+    {
+      "id": "imp-as-017",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zum Arbeitsschutz in der impfenden Apotheke treffen zu?",
+      "antwort": "Der Arbeitsschutz gilt für alle Tätigkeitsbereiche und alle angestellten Mitarbeitenden, er definiert Mindestanforderungen, er begründet grundlegende Pflichten des Arbeitgebers sowie Mitwirkungspflichten und Rechte der Beschäftigten, und die Kontrolle vor Ort obliegt dem Arbeitgeber, während staatliche Behörden und Berufsgenossenschaften überwachen. Nicht zutreffend ist, dass er nur für die impfende Person gelte.",
+      "vertiefung": "Dass auch die Beschäftigten Mitwirkungspflichten haben, wird selten betont, ist aber praktisch bedeutsam: Wer die Betriebsanweisung kennt und trotzdem recappt, handelt pflichtwidrig. Der Arbeitsschutz ist keine Einbahnstraße vom Arbeitgeber zum Personal.",
+      "tags": ["arbeitsschutz", "systematik", "organisation"],
+      "quelle": "Skript Menn 2025, Folie „Arbeitsschutz (2)“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Gilt für alle Tätigkeitsbereiche und alle angestellten Mitarbeitenden",
+        "Definiert Mindestanforderungen",
+        "Begründet Pflichten des Arbeitgebers und Mitwirkungspflichten der Beschäftigten",
+        "Kontrolle durch den Arbeitgeber vor Ort, Überwachung durch Behörden und Berufsgenossenschaften",
+        "Gilt ausschließlich für die impfende Person"
+      ],
+      "richtig": [0, 1, 2, 3]
+    },
+    {
+      "id": "imp-as-018",
+      "typ": "freitext",
+      "frage": "Beim Entsorgen einer gebrauchten Kanüle sticht sich eine Mitarbeiterin in den Finger. Welche Vorüberlegungen und Strukturen hätten diesen Fall betreffen müssen, und was ergibt sich daraus für die Apotheke?",
+      "antwort": "Der Fall berührt mehrere Vorkehrungen, die vorher getroffen sein müssen. Die Tätigkeit mit Infektionsgefährdung hätte in der Gefährdungsbeurteilung erfasst sein müssen, die Mitarbeiterin hätte über die arbeitsmedizinische Vorsorge beim Betriebsarzt einen beurteilten und gegebenenfalls aufgefrischten Hepatitis-B-Schutz haben müssen, und die Betriebsanweisung hätte das Verbot des Recappings sowie den Umgang mit dem Abwurfbehälter festlegen müssen. Organisatorisch gehört der zertifizierte Behälter nach TRBA 250 und DIN EN ISO 23907 in Reichweite, damit die ungeschützte Kanüle keinen Weg zurücklegt. Der Vorfall selbst ist ein Arbeitsunfall und damit der Berufsgenossenschaft zu melden; die weitere Vorgehensweise richtet sich nach dem Notfall- beziehungsweise Hygieneplan der Apotheke und der betriebsärztlichen Betreuung. Im Nachgang ist zu prüfen, ob die Gefährdungsbeurteilung und die Betriebsanweisung anzupassen sind.",
+      "vertiefung": "Die gelieferten Unterlagen beschreiben die Prävention ausführlich, enthalten aber keinen ausformulierten Ablauf für die Erstversorgung nach einer Nadelstichverletzung. Dieser Teil gehört in den eigenen Hygiene- und Notfallplan und ist mit dem Betriebsarzt abzustimmen.",
+      "tags": ["arbeitsschutz", "nadelstich", "fallbeispiel"],
+      "quelle": "Skript Menn 2025, Folien „Arbeitsschutz (3) bis (9)“; BAK-Muster-SOP 2025, Abschnitt 9.4",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die gelieferten Dokumente behandeln die Prävention der Nadelstichverletzung, nicht die Erstversorgung und das Meldeverfahren danach. Dieser Teil ist am eigenen Hygiene- und Notfallplan sowie an den Vorgaben der BGW auszurichten.",
+      "pruefpunkte": [
+        "Erfassung der Tätigkeit in der Gefährdungsbeurteilung",
+        "Hepatitis-B-Status über die arbeitsmedizinische Vorsorge beurteilt",
+        "Betriebsanweisung mit Recapping-Verbot und Entsorgungsregel",
+        "Zertifizierter Abwurfbehälter nach TRBA 250 und DIN EN ISO 23907 in Reichweite",
+        "Der Vorfall ist ein Arbeitsunfall und der Berufsgenossenschaft zu melden",
+        "Weiteres Vorgehen nach dem eigenen Notfall- und Hygieneplan sowie betriebsärztlich",
+        "Im Nachgang Gefährdungsbeurteilung und Betriebsanweisung überprüfen"
+      ]
+    }
+  ]
+}

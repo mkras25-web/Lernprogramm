@@ -1,0 +1,366 @@
+{
+  "thema": "imp-durchfuehrung",
+  "titel": "Durchführung: Vorbereitung, Applikation, Nachsorge",
+  "erklaerung": {
+    "absaetze": [
+      "Die eigentliche Injektion dauert Sekunden, der Ablauf drumherum entscheidet über das Ergebnis. Die impfende Person muss Sicherheit und Kompetenz vermitteln, und dafür ist vor allem eines nötig: ausreichend Zeit. Ein gehetzter Ablauf überträgt sich unmittelbar auf die zu impfende Person und erhöht die Wahrscheinlichkeit einer vasovagalen Reaktion.",
+      "Zur Vorbereitung gehören die Fertigspritze aus dem Kühlschrank, das Entfernen der Sekundärverpackung, Arbeitskleidung, Händedesinfektion mit beachteter Einwirkzeit und vollständigem Abtrocknen sowie gegebenenfalls Einmalhandschuhe. Vor der Applikation steht die Sichtkontrolle: Die Suspension muss farblos bis leicht opaleszierend und partikelfrei sein; die Herstellerangaben sind maßgeblich. Besteht der Verdacht auf einen Qualitätsmangel, darf nicht appliziert werden, und die Fertigspritze ist für eine eventuelle Rückgabe aufzuheben.",
+      "Geimpft wird im Sitzen oder im Liegen, niemals im Stehen – und beide Personen sitzen. Der Arm richtet sich nach dem Wunsch der zu impfenden Person, grundsätzlich wird der nicht dominante Arm gewählt. Mehrere Ausnahmen gehen vor: bei Brustkrebspatientinnen die Gegenseite, bei einem kranken und einem gesunden Arm immer der gesunde, und Tätowierungen, Narben, Pockenimpfnarben sowie Muttermale werden gemieden. Die Einstichstelle muss vollständig frei liegen; ein hochgeschobener Ärmel staut das Blut, erschwert die Orientierung und macht beim Herunterrutschen eine erneute Desinfektion erforderlich.",
+      "Die Stelle selbst liegt in der Mittellinie des Oberarms über der größten Vorwölbung des Deltamuskels, etwa drei Querfinger ohne Daumen unterhalb des Akromions, was ungefähr sieben bis dreizehn Zentimetern entspricht. Injiziert wird senkrecht zur Hautoberfläche, ausreichend tief – die Muster-SOP nennt rund zwei Zentimeter –, zügig und ohne die Spritze dabei noch zu bewegen. Aspiriert wird ausschließlich bei der COVID-19-Impfung. Vor dem Einstich muss die Haut nach der Desinfektion trocken sein, denn mitinjiziertes Desinfektionsmittel schmerzt.",
+      "Nach der Injektion wird ein Zellstofftupfer sanft aufgelegt; tritt ein Blutstropfen aus, hält die geimpfte Person ihn ein bis zwei Minuten selbst. Anschließend Kontrolle mit einem frischen Tupfer und gegebenenfalls Wundschnellverband. Die geimpfte Person bleibt mindestens fünfzehn Minuten sitzen, bei Risikopersonen nach einer COVID-19-Impfung fünfzehn bis dreißig Minuten. Spritze, Kanüle und kontaminierte Tupfer gehen sofort in den zertifizierten Abwurfbehälter, die Arbeitsfläche wird desinfiziert. Zum Abschluss folgt der erneute Hinweis auf die normalen Impfreaktionen der nächsten Tage."
+    ],
+    "merksatz": "Nie im Stehen, nie in den kranken Arm, nie in feuchte Haut – und aspirieren nur bei COVID-19.",
+    "bild": "bilder/imp-deltoideus.svg",
+    "bildunterschrift": "Die Injektionszone liegt in der Mittellinie über der größten Vorwölbung des Deltamuskels. Zu hoch drohen Schleimbeutel und N. axillaris, zu tief N. radialis und Humerus.",
+    "quelle": "BAK-Muster-SOP Grippeschutzimpfung, Stand 12.09.2025, Abschnitt 9; Menn, Skript Stand 24.11.2025, Abschnitt „Durchführung der Impfung“"
+  },
+  "items": [
+    {
+      "id": "imp-du-001",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die markierten Strukturen und Zonen am Oberarm.",
+      "antwort": "Akromion, Zone zu weit oben, Musculus deltoideus, Injektionszone, Zone zu weit unten, Humerus.",
+      "vertiefung": "Die beiden roten Zonen sind der Grund für die Dreifingerregel. Oberhalb liegen der subakromiale Schleimbeutel und der N. axillaris, unterhalb verläuft der N. radialis und der Knochen rückt näher. Beide Fehler führen zu lang anhaltenden Schmerzen, die fälschlich der Impfung selbst zugeschrieben werden.",
+      "tags": ["durchfuehrung", "anatomie", "zeichnung"],
+      "quelle": "eigene Darstellung nach BAK-Muster-SOP 2025, Abschnitt 9.2.2, und Skript Menn 2025, Folien „Durchführung der Impfung (4)“ und „(7)“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "referenz": "bilder/imp-deltoideus-blank.svg",
+      "punkte": [
+        { "nr": 1, "x": 39.5, "y": 12.9, "name": "Akromion – Schulterhöhe, Bezugspunkt für die Messung" },
+        { "nr": 2, "x": 33.9, "y": 24.6, "name": "zu weit oben – Schleimbeutel und N. axillaris" },
+        { "nr": 3, "x": 50.5, "y": 39.6, "name": "Musculus deltoideus" },
+        { "nr": 4, "x": 39.5, "y": 45.8, "name": "Injektionszone – größte Vorwölbung, in der Mittellinie" },
+        { "nr": 5, "x": 33.9, "y": 68.1, "name": "zu weit unten – N. radialis" },
+        { "nr": 6, "x": 39.5, "y": 86.3, "name": "Humerus" }
+      ]
+    },
+    {
+      "id": "imp-du-002",
+      "typ": "karte",
+      "frage": "Wie wird die Einstichstelle am Oberarm bestimmt?",
+      "antwort": "In der Mittellinie des Oberarms über der größten Vorwölbung des Deltamuskels, etwa drei Querfinger ohne Daumen unterhalb der Schulterhöhe. Das Schulungsskript beziffert den Abstand mit ungefähr sieben bis dreizehn Zentimetern unterhalb des Akromions.",
+      "vertiefung": "Die Dreifingerregel ist eine Faustregel, die sich dem Körperbau anpasst – breite Hände gehören meist zu breiten Schultern. Die Zentimeterangabe ist die Kontrolle dafür. Beides zusammen schützt vor den beiden typischen Fehllagen: zu hoch in Richtung Schleimbeutel, zu tief in Richtung N. radialis.",
+      "tags": ["durchfuehrung", "anatomie", "technik"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 9.2.2; Skript Menn 2025, Folien „Durchführung der Impfung (4)“ und „(7)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-003",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis einen Oberarm von vorn und trage ein: Akromion, Deltamuskel, Injektionszone sowie die Bereiche, die zu hoch und zu tief liegen. Vermerke auch die Maßangaben.",
+      "antwort": "Das Akromion als knöcherner Bezugspunkt oben, darunter der dreieckige Deltamuskel. Die Injektionszone liegt in der Mittellinie über der größten Vorwölbung, drei Querfinger beziehungsweise sieben bis dreizehn Zentimeter unterhalb des Akromions. Oberhalb davon der kritische Bereich mit Schleimbeutel und N. axillaris, unterhalb der Bereich mit N. radialis und dem näher rückenden Humerus.",
+      "vertiefung": "Wer diese Skizze einmal selbst gezeichnet hat, braucht am Impfplatz keine Erinnerungshilfe mehr. Entscheidend sind die drei Bezugsgrößen: der knöcherne Fixpunkt oben, die Mittellinie seitlich und die Vorwölbung als Tiefenorientierung.",
+      "tags": ["durchfuehrung", "anatomie", "skizze"],
+      "quelle": "eigene Darstellung nach BAK-Muster-SOP 2025 und Skript Menn 2025",
+      "stand": "2026-10",
+      "geprueft": true,
+      "referenz": "bilder/imp-deltoideus.svg",
+      "pruefpunkte": [
+        "Akromion als knöcherner Bezugspunkt oben eingezeichnet",
+        "Deltamuskel als dreieckige Form darunter",
+        "Injektionszone in der Mittellinie über der größten Vorwölbung",
+        "Abstand mit drei Querfingern beziehungsweise 7 bis 13 cm angegeben",
+        "Zu hoher Bereich mit Schleimbeutel und N. axillaris markiert",
+        "Zu tiefer Bereich mit N. radialis markiert"
+      ]
+    },
+    {
+      "id": "imp-du-004",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte der Vorbereitung vor der Applikation in die richtige Reihenfolge.",
+      "antwort": "Fertigspritze aus dem Kühlschrank holen und Sekundärverpackung entfernen, Arbeitskleidung anziehen, Hände desinfizieren, gegebenenfalls Einmalhandschuhe anziehen, Sichtkontrolle der Spritze und Dokumentation auf dem Dokumentationsbogen.",
+      "vertiefung": "Die Reihenfolge von Händedesinfektion und Handschuhen wird oft vertauscht. Desinfiziert wird vor dem Anziehen – die Handschuhe dienen dem Eigenschutz, nicht der Sterilität, und werden deshalb auch nicht selbst desinfiziert.",
+      "tags": ["durchfuehrung", "vorbereitung", "ablauf"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 9.1",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Fertigspritze aus dem Kühlschrank holen, Sekundärverpackung entfernen",
+        "Arbeitskleidung anziehen",
+        "Hände desinfizieren, Einwirkzeit beachten und vollständig abtrocknen lassen",
+        "Gegebenenfalls medizinische Einmalhandschuhe anziehen",
+        "Sichtkontrolle der Spritze und Dokumentation auf dem Dokumentationsbogen"
+      ]
+    },
+    {
+      "id": "imp-du-005",
+      "typ": "karte",
+      "frage": "Worauf achtet die Sichtkontrolle der Fertigspritze, und was ist bei einem auffälligen Befund zu tun?",
+      "antwort": "Die Suspension muss farblos bis leicht opaleszierend und partikelfrei sein; maßgeblich sind die Herstellerangaben. Besteht der Verdacht auf einen Qualitätsmangel oder wird einer festgestellt, darf der Impfstoff nicht appliziert werden. Die Fertigspritze ist für eine eventuell erforderliche Rückgabe aufzuheben, und die Maßnahmen bei Qualitätsmängeln sind zu ergreifen.",
+      "vertiefung": "Das Aufheben der Spritze ist der Punkt, der unter Zeitdruck verloren geht – sie landet im Abwurfbehälter und steht für die Prüfung durch den Hersteller nicht mehr zur Verfügung. Es gilt die Leitlinie „Risiken bei Arzneimitteln – Maßnahmen in der Apotheke“.",
+      "tags": ["durchfuehrung", "qualitaet", "arzneimittelsicherheit"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 4 und 9.1.5",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-006",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Regeln gelten für die Auswahl des Arms?",
+      "antwort": "Grundsätzlich der nicht dominante Arm, also der linke bei Rechtshändern und umgekehrt, und nach dem Wunsch der zu impfenden Person. Bei Brustkrebspatientinnen wird der gegenüberliegende Arm gewählt, bei einem kranken und einem gesunden Arm immer der gesunde. Tätowierungen, Narben und Muttermale werden gemieden, Depotarzneimittel sind zu beachten. Der Arm mit dem stärkeren Muskel ist kein Auswahlkriterium.",
+      "vertiefung": "Das Schulungsskript ergänzt einen weiteren Gesichtspunkt: Wenn möglich und erinnerlich wird derselbe Arm wie bei der vorhergehenden Impfung gewählt. Der Impfausweis gibt darüber Auskunft – ein guter Grund, ihn vor und nicht erst nach der Impfung aufzuschlagen.",
+      "tags": ["durchfuehrung", "armwahl", "technik"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 9.2.1; Skript Menn 2025, Folie „Durchführung der Impfung (1)“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Grundsätzlich der nicht dominante Arm",
+        "Bei Brustkrebspatientinnen der gegenüberliegende Arm",
+        "Bei einem kranken und einem gesunden Arm immer der gesunde",
+        "Tätowierungen, Narben und Muttermale meiden",
+        "Depotarzneimittel beachten",
+        "Immer der Arm mit dem kräftigeren Muskel"
+      ],
+      "richtig": [0, 1, 2, 3, 4]
+    },
+    {
+      "id": "imp-du-007",
+      "typ": "karte",
+      "frage": "Warum darf nicht im Stehen geimpft werden?",
+      "antwort": "Wegen der Gefahr einer vasovagalen Reaktion mit Sturz. Das Skript formuliert es als Regel: Nie im Stehen impfen, beide Personen sitzen. Alternativ wird im Liegen geimpft. Vor der Impfung ist die Position zu klären, zusammen mit einer kurzen Anamnese zu bisherigen Ereignissen bei Impfungen.",
+      "vertiefung": "Dass auch die impfende Person sitzt, hat einen zweiten Grund: Aus dem Sitzen ist die Stelle besser zu beurteilen, und die Haltung signalisiert Ruhe. Beides reduziert die Wahrscheinlichkeit, dass es überhaupt zu einer Kreislaufreaktion kommt.",
+      "tags": ["durchfuehrung", "sicherheit", "technik"],
+      "quelle": "Skript Menn 2025, Folie „Durchführung der Impfung (1)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-008",
+      "typ": "karte",
+      "frage": "Warum reicht es nicht, den Ärmel hochzuschieben?",
+      "antwort": "Weil ein hochgeschobener Ärmel das Blut staut und damit die Blutungsgefahr erhöht, weil er die Orientierung am Oberarm erschwert und weil eine erneute Desinfektion erforderlich wird, sobald er wieder über die Einstichstelle rutscht. Die Einstichstelle muss vollständig frei liegen – der gesamte Bereich der Regio deltoidea muss überschaubar sein.",
+      "vertiefung": "In der Praxis heißt das, die zu impfende Person den Arm freimachen zu lassen, bevor desinfiziert wird, und nicht zwischendurch. Das ist auch ein Grund für den sicht- und hörgeschützten Impfraum: Wer sich ausziehen soll, braucht Privatsphäre.",
+      "tags": ["durchfuehrung", "technik", "hygiene"],
+      "quelle": "Skript Menn 2025, Folie „Durchführung der Impfung (2)“; BAK-Muster-SOP 2025, Abschnitt 9.2.1",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-009",
+      "typ": "karte",
+      "frage": "Wie wird die Einstichstelle desinfiziert – und warum weichen die Unterlagen an diesem Punkt voneinander ab?",
+      "antwort": "Die Muster-SOP beschreibt sprühen, mit einem Tupfer abwischen und nochmals sprühen, dann Einwirkzeit beachten und vollständig abtrocknen lassen. Das Schulungsskript hält das Nachwischen beziehungsweise Trockenreiben mit einem unsterilen Tupfer ausdrücklich für nicht erforderlich und verlangt nur das Einsprühen mit anschließender Einwirkzeit. Einig sind sich beide darin, dass erst injiziert wird, wenn die Stelle trocken ist.",
+      "vertiefung": "Der gemeinsame Kern ist der praktisch wichtige: Mitinjiziertes Desinfektionsmittel schmerzt, und eine nicht abgelaufene Einwirkzeit macht die Desinfektion wirkungslos. Für die eigene SOP sollte eine der beiden Varianten verbindlich festgelegt werden.",
+      "tags": ["durchfuehrung", "hygiene", "einordnung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 9.2.3; Skript Menn 2025, Folie „Durchführung der Impfung (3)“",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die beiden gelieferten Dokumente beschreiben das Vorgehen unterschiedlich (BAK-SOP: sprühen – wischen – sprühen; Skript: nur sprühen, Nachwischen nicht erforderlich). Die Festlegung für die eigene Arbeitsanweisung ist bewusst zu treffen; die Angaben des verwendeten Desinfektionsmittels sind maßgeblich."
+    },
+    {
+      "id": "imp-du-010",
+      "typ": "karte",
+      "frage": "Wie wird die Schutzkappe von der Kanüle entfernt?",
+      "antwort": "Die Kappe wird am Ende angefasst, die Kanüle mit einem Fingernagel auf der Spritze fixiert und die Kappe abgezogen – nie gedreht. Durch das Drehen kann sich die Kanüle vom Konus lösen.",
+      "vertiefung": "Dasselbe Prinzip gilt umgekehrt: Nach der Injektion wird die Kappe nicht wieder aufgesetzt. Das Recapping ist die mit Abstand häufigste Ursache der Nadelstichverletzung, und zwar gerade bei erfahrenem Personal, das die Bewegung automatisiert ausführt.",
+      "tags": ["durchfuehrung", "technik", "arbeitsschutz"],
+      "quelle": "Skript Menn 2025, Folie „Hygienisch sicheres Arbeiten (2)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-011",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte der Applikation in die richtige Reihenfolge.",
+      "antwort": "Position klären und Arm auswählen, Einstichstelle freimachen und ermitteln, Haut desinfizieren und trocknen lassen, Fertigspritze gebrauchsfertig machen, einstechen, injizieren, Spritze entfernen.",
+      "vertiefung": "Dass die Spritze erst nach der Hautdesinfektion gebrauchsfertig gemacht wird, hat einen praktischen Grund: Die Einwirkzeit des Desinfektionsmittels lässt sich so sinnvoll nutzen, statt sie abzuwarten.",
+      "tags": ["durchfuehrung", "ablauf", "technik"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 9.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Impfposition klären und Arm auswählen",
+        "Einstichstelle freimachen",
+        "Einstichstelle ermitteln: drei Querfinger unterhalb der Schulterhöhe, größte Vorwölbung",
+        "Haut desinfizieren, Einwirkzeit beachten und trocknen lassen",
+        "Fertigspritze gebrauchsfertig machen, Kanülenkappe abziehen",
+        "Senkrecht zur Hautoberfläche in den Deltamuskel einstechen",
+        "Gleichmäßig und vollständig injizieren, dann die Spritze entfernen"
+      ]
+    },
+    {
+      "id": "imp-du-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Aussagen zur Injektionstechnik treffen zu?",
+      "antwort": "Injiziert wird intramuskulär in den Musculus deltoideus, senkrecht zur Hautoberfläche und ausreichend tief – die Muster-SOP nennt etwa zwei Zentimeter. Der Arm hängt locker herunter. Injiziert wird zügig, aber ohne Hast, und die Spritze wird dabei nicht mehr bewegt; auch das Herausziehen erfolgt nicht zu schnell. Ein Wechsel auf die subkutane Gabe ist nicht vorgesehen.",
+      "vertiefung": "Das „nicht mehr bewegen“ ist der Punkt, der über den Schmerz entscheidet. Jede Lageveränderung der liegenden Kanüle reizt das Gewebe zusätzlich – deshalb wird die Spritze vor dem Einstich in ein bis zwei Zentimetern Abstand positioniert und die Bewegung in einem Zug ausgeführt.",
+      "tags": ["durchfuehrung", "technik", "injektion"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 9.2.6 und 9.2.7; Skript Menn 2025, Folie „Durchführung der Impfung (4)“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Intramuskulär in den Musculus deltoideus",
+        "Senkrecht zur Hautoberfläche, etwa zwei Zentimeter tief",
+        "Der Arm hängt locker herunter beziehungsweise liegt locker",
+        "Zügig injizieren, die Spritze dabei nicht mehr bewegen",
+        "Nicht zu schnell herausziehen",
+        "Bei Patientinnen mit Blutungsneigung auf subkutan wechseln"
+      ],
+      "richtig": [0, 1, 2, 3, 4]
+    },
+    {
+      "id": "imp-du-013",
+      "typ": "karte",
+      "frage": "Bei welcher der beiden Impfungen wird aspiriert?",
+      "antwort": "Nur bei der COVID-19-Impfung, und dort leicht. Bei der Influenza-Impfung ist keine Aspiration vorgesehen.",
+      "vertiefung": "Die Aspiration ist bei intramuskulären Injektionen allgemein verlassen worden, weil sie den Schmerz erhöht und im Deltamuskel keine relevanten Gefäße zu treffen sind. Dass sie für die COVID-19-Impfung weiter empfohlen wird, ist eine bewusste Ausnahme – und genau deshalb ein beliebter Prüfungsinhalt.",
+      "tags": ["durchfuehrung", "technik", "covid"],
+      "quelle": "Skript Menn 2025, Folie „Durchführung der Impfung (4)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-014",
+      "typ": "numerisch",
+      "frage": "Welche Kanülengröße empfiehlt die Muster-SOP für die Grippeschutzimpfung?",
+      "antwort": "25 G, 0,50 × 25 mm (ein Zoll).",
+      "vertiefung": "Das Schulungsskript nennt für den vorbereiteten Impfplatz allgemeiner eine Nadellänge von 20 bis 50 mm. Für Patientinnen mit Gerinnungsstörung wird ausdrücklich eine besonders feine Kanüle verwendet – die Stärke ist also keine feste Größe, sondern eine Entscheidung.",
+      "tags": ["durchfuehrung", "material", "kennwerte"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 5; Skript Menn 2025, Folie „Vorbereitung des Impfplatzes“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 25,
+      "einheit": "mm Kanülenlänge",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-du-015",
+      "typ": "karte",
+      "frage": "Wie wird nach der Injektion mit einem austretenden Blutstropfen umgegangen?",
+      "antwort": "Ein Tupfer wird auf die Stelle gelegt und die geimpfte Person aufgefordert, ihn ein bis zwei Minuten zu halten. Danach wird ein frischer Tupfer aufgelegt und nach kurzer Zeit kontrolliert, ob erneut Blut ausgetreten ist. Ist das nicht der Fall, wird ein Wundschnellverband angelegt.",
+      "vertiefung": "Die Kontrolle mit dem frischen Tupfer ist der Schritt, der häufig entfällt – dann wird das Pflaster auf eine noch blutende Stelle geklebt und die Patientin entdeckt es zu Hause. Bei Patientinnen unter Antikoagulation gilt ohnehin die längere Kompression von mindestens zwei Minuten.",
+      "tags": ["durchfuehrung", "nachsorge", "technik"],
+      "quelle": "Skript Menn 2025, Folie „Durchführung der Impfung (6)“; BAK-Muster-SOP 2025, Abschnitt 9.3",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-016",
+      "typ": "numerisch",
+      "frage": "Wie lange soll die geimpfte Person nach der Impfung mindestens sitzen bleiben?",
+      "antwort": "Mindestens 15 Minuten.",
+      "vertiefung": "Nach einer COVID-19-Impfung werden bei Risikopersonen 15 bis 30 Minuten Nachbeobachtung empfohlen – welche Personen das sind, ergibt sich aus der Anamnese, weshalb sie auch für diesen Schritt gebraucht wird. Während der Wartezeit gehört ein beruhigendes Wort dazu, etwa die Frage, ob alles in Ordnung ist.",
+      "tags": ["durchfuehrung", "nachsorge", "sicherheit"],
+      "quelle": "Skript Menn 2025, Folie „Nachbereitung“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 15,
+      "einheit": "Minuten",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-du-017",
+      "typ": "mehrfachauswahl",
+      "frage": "Was gehört zur Nachbereitung nach der Impfung?",
+      "antwort": "Die Mülltrennung beachten, die entleerte Fertigspritze mit Kanüle und die benutzten Tupfer in einen gesondert gekennzeichneten, durchstichsicheren und bruchfesten Abwurfbehälter für potenziell infektiöse Abfälle mit Verletzungsgefahr entsorgen, den Tisch desinfizieren und bei grober Verschmutzung säubern sowie gegebenenfalls verwendete Einmalhandschuhe ebenfalls in den Abwurfbehälter geben.",
+      "vertiefung": "Bei blutverschmutzten Handschuhen werden diese vor der Flächendesinfektion gewechselt – sonst verteilt man die Kontamination über die Fläche, die man gerade reinigen will.",
+      "tags": ["durchfuehrung", "nachbereitung", "hygiene"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 9.4",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Mülltrennung beachten",
+        "Spritze mit Kanüle und benutzte Tupfer in den Abwurfbehälter für potenziell infektiöse Abfälle",
+        "Tisch desinfizieren, bei grober Verschmutzung zusätzlich säubern",
+        "Verwendete Einmalhandschuhe ebenfalls in den Abwurfbehälter",
+        "Die Kanüle vor der Entsorgung mit der Schutzkappe sichern"
+      ],
+      "richtig": [0, 1, 2, 3]
+    },
+    {
+      "id": "imp-du-018",
+      "typ": "zuordnung",
+      "frage": "Ordne die Beobachtungen danach zu, ob es sich um eine übliche Impfreaktion oder um eine Impfkomplikation handelt.",
+      "antwort": "Übliche Impfreaktion: anhaltende Rötung, Schwellung oder Schmerzhaftigkeit an der Injektionsstelle über ein bis drei Tage; Fieber unter 39,5 °C, Kopf- und Gliederschmerzen, Mattigkeit, Übelkeit, Schwellung der regionären Lymphknoten. Impfkomplikation: akute Gesichtslähmung, Überempfindlichkeitsreaktionen wie Nesselsucht oder Gesichtsschwellung, anaphylaktische Reaktionen, Herzmuskel- und Herzbeutelentzündungen.",
+      "vertiefung": "Die Abgrenzung ist nicht nur begrifflich: Nach § 20 Abs. 2 Satz 2 IfSG ist eine Impfkomplikation eine über das übliche Ausmaß einer Impfreaktion hinausgehende gesundheitliche Schädigung – und damit meldepflichtig. Die übliche Impfreaktion ist es nicht.",
+      "tags": ["durchfuehrung", "impfreaktion", "abgrenzung"],
+      "quelle": "Skript Menn 2025, Folien „Impfreaktionen“ und „Impfkomplikationen“ (§ 20 Abs. 2 Satz 2 IfSG)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        ["Rötung und Schmerzhaftigkeit an der Einstichstelle über zwei Tage", "übliche Impfreaktion"],
+        ["Fieber unter 39,5 °C, Mattigkeit, Gliederschmerzen", "übliche Impfreaktion"],
+        ["Schwellung der regionären Lymphknoten", "übliche Impfreaktion"],
+        ["Akute Gesichtslähmung", "Impfkomplikation"],
+        ["Nesselsucht und Gesichtsschwellung", "Impfkomplikation"],
+        ["Anaphylaktische Reaktion", "Impfkomplikation"],
+        ["Herzmuskel- oder Herzbeutelentzündung", "Impfkomplikation"]
+      ]
+    },
+    {
+      "id": "imp-du-019",
+      "typ": "karte",
+      "frage": "Wie lange dauern übliche Impfreaktionen, und was ist darüber zu sagen?",
+      "antwort": "Lokale Reaktionen an der Injektionsstelle dauern ein bis drei Tage, gelegentlich länger; systemische Reaktionen ebenfalls ein bis drei Tage. Darauf ist im Rahmen der Nachbereitung noch einmal hinzuweisen, auch wenn es bereits Teil des Aufklärungsgesprächs war.",
+      "vertiefung": "Die Wiederholung am Ende hat einen praktischen Grund: Was vor der Impfung gesagt wurde, ist in der Anspannung oft nicht angekommen. Der Hinweis danach, wenn die Patientin ohnehin fünfzehn Minuten sitzt, erreicht sie verlässlicher.",
+      "tags": ["durchfuehrung", "impfreaktion", "beratung"],
+      "quelle": "Skript Menn 2025, Folien „Impfreaktionen“ und „Nachbereitung“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-du-020",
+      "typ": "mehrfachauswahl",
+      "frage": "Was gehört auf das vorbereitete Instrumententablett beziehungsweise an den Impfplatz?",
+      "antwort": "Ein desinfizierbares kleines Instrumententablett mit der frisch aufgezogenen beziehungsweise bereitgelegten Impfspritze, Tupfer und Pflaster, eine Abwurfschale, eine Sprühflasche mit Hautdesinfektionsmittel und ein zertifizierter Kanülen-Abwurfbehälter. Zur Ausstattung des Raumes gehört außerdem die Notfallausrüstung mit Erste-Hilfe-Kasten und zwei Epinephrin-Notfallpens.",
+      "vertiefung": "Zwei Notfallpens statt einem ist kein Übermaß: Ein Pen kann fehlauslösen oder die Dosis bei schwerer Reaktion nicht ausreichen. Die Ausstattung gehört regelmäßig auf Verfallsdatum geprüft – ein abgelaufener Pen im Schrank ist schlimmer als keiner, weil man sich auf ihn verlässt.",
+      "tags": ["durchfuehrung", "material", "organisation"],
+      "quelle": "Skript Menn 2025, Folien „Vorbereitung des Impfplatzes“ und „Material“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Desinfizierbares Instrumententablett mit vorbereiteter Impfspritze",
+        "Tupfer und Wundschnellverband",
+        "Abwurfschale",
+        "Sprühflasche mit Hautdesinfektionsmittel",
+        "Zertifizierter Kanülen-Abwurfbehälter",
+        "Notfallausrüstung mit Erste-Hilfe-Kasten und zwei Epinephrin-Notfallpens"
+      ],
+      "richtig": [0, 1, 2, 3, 4, 5]
+    },
+    {
+      "id": "imp-du-021",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Anforderungen gelten für den Raum, in dem geimpft wird?",
+      "antwort": "Ein separater, gut durchlüftbarer Raum, hör- und sichtgeschützt, mit leicht zu reinigenden und zu desinfizierenden Oberflächen überall dort, wo Personenkontakt möglich ist. Weiter gehören dazu eine Liege, Stühle mit Armlehnen, Ablagen für Garderobe und Material, ein Abwurfbehälter in der Nähe der zu impfenden Person, ein Papierkorb sowie ein Waschbecken mit Seife und Handtüchern in der Nähe.",
+      "vertiefung": "Die Stühle mit Armlehnen und die Liege sind keine Komfortfrage, sondern Teil der Sicherheitsausstattung: Sie machen das Impfen im Sitzen oder Liegen überhaupt erst möglich und fangen eine Kreislaufreaktion ab. Dass der Abwurfbehälter in Reichweite steht, verkürzt den Weg mit der ungeschützten Kanüle auf ein Minimum.",
+      "tags": ["durchfuehrung", "raum", "organisation"],
+      "quelle": "Skript Menn 2025, Folie „Impfraum“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Separater, gut durchlüftbarer Raum",
+        "Hör- und sichtgeschützt",
+        "Leicht zu reinigende und zu desinfizierende Oberflächen",
+        "Liege und Stühle mit Armlehnen",
+        "Abwurfbehälter in der Nähe der zu impfenden Person",
+        "Waschbecken mit Seife und Handtüchern in der Nähe",
+        "Ein Fenster zur Offizin, damit der Ablauf beobachtet werden kann"
+      ],
+      "richtig": [0, 1, 2, 3, 4, 5]
+    },
+    {
+      "id": "imp-du-022",
+      "typ": "freitext",
+      "frage": "Eine Patientin wird nach der Injektion blass, klagt über Schwindel und beginnt zu schwitzen. Wie ordnest du das ein und wie reagierst du?",
+      "antwort": "Das Bild spricht in erster Linie für eine vasovagale Reaktion, die unmittelbar nach der Injektion auftritt und nicht auf einer Wirkung des Impfstoffs beruht. Die Patientin bleibt sitzen oder wird hingelegt, die Beine werden hochgelagert, es wird beruhigend mit ihr gesprochen und sie wird nicht allein gelassen. Die vorgeschriebene Nachbeobachtung von mindestens fünfzehn Minuten ist genau für solche Fälle gedacht und wird hier entsprechend verlängert, bis die Patientin stabil ist. Abzugrenzen ist die anaphylaktische Reaktion, die zu den Impfkomplikationen zählt und für die die Notfallausrüstung mit den Epinephrin-Notfallpens bereitsteht; Hinweise darauf wären Nesselsucht, Gesichtsschwellung oder Atemnot. Jede über das übliche Maß hinausgehende Reaktion ist zu dokumentieren.",
+      "vertiefung": "Die gelieferten Unterlagen beschreiben die Notfallausrüstung und die Nachbeobachtung, enthalten aber kein ausgearbeitetes Notfallmanagement. Der Notfallplan gehört nach der Muster-SOP in den Impfraum und ist Teil der eigenen Arbeitsanweisung – dieses Item ersetzt ihn nicht.",
+      "tags": ["durchfuehrung", "nachsorge", "fallbeispiel"],
+      "quelle": "Skript Menn 2025, Folien „Nachbereitung“, „Impfkomplikationen“ und „Material“; BAK-Muster-SOP 2025, Abschnitt 5 (Notfallplan)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die gelieferten Dokumente enthalten kein ausformuliertes Notfallmanagement, sondern nur Hinweise auf Notfallausrüstung, Nachbeobachtung und die Liste der Impfkomplikationen. Der konkrete Ablauf ist am eigenen Notfallplan und an der ärztlichen Schulung auszurichten.",
+      "pruefpunkte": [
+        "Einordnung als vasovagale Reaktion, nicht als Wirkung des Impfstoffs",
+        "Patientin hinlegen beziehungsweise sitzen lassen, Beine hochlagern",
+        "Beruhigend sprechen, nicht allein lassen",
+        "Nachbeobachtung über die 15 Minuten hinaus verlängern",
+        "Abgrenzung zur anaphylaktischen Reaktion mit Nesselsucht, Gesichtsschwellung, Atemnot",
+        "Notfallausrüstung mit Epinephrin-Notfallpens ist für diesen Fall vorgehalten",
+        "Dokumentation der Reaktion"
+      ]
+    }
+  ]
+}

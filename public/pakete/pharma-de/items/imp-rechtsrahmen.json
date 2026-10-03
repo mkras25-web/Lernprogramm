@@ -1,0 +1,431 @@
+{
+  "thema": "imp-rechtsrahmen",
+  "titel": "Rechtsrahmen: Berechtigung, Anspruch, Pflichten",
+  "erklaerung": {
+    "absaetze": [
+      "Eine Impfung in der Apotheke berührt gleichzeitig vier Rechtsgebiete, und jedes beantwortet eine andere Frage. Das Infektionsschutzgesetz sagt, ob man überhaupt impfen darf. Das Sozialgesetzbuch V sagt, wer die Leistung bezahlt. Das Bürgerliche Gesetzbuch regelt das Verhältnis zur Patientin – Aufklärung, Einwilligung, Dokumentation. Die Apothekenbetriebsordnung schließlich macht die handwerklichen Vorgaben für den Betrieb. Wer eines davon übersieht, hat unter Umständen fachlich einwandfrei geimpft und trotzdem ein Problem.",
+      "Die Berechtigung steht in § 20c IfSG. Apothekerinnen und Apotheker dürfen Grippeschutzimpfungen ab 18 Jahren und Schutzimpfungen gegen SARS-CoV-2 ab 12 Jahren durchführen. Zwei Voraussetzungen müssen dafür erfüllt sein: eine ärztliche Schulung und die Durchführung als Personal einer öffentlichen Apotheke. Wer die ärztliche Schulung zur COVID-19-Impfung oder zur Grippeschutzimpfung im Rahmen der Modellprojekte bereits erfolgreich abgeschlossen hat, braucht keine erneute Schulung.",
+      "Der Anspruch der gesetzlich Versicherten folgt aus § 20i Abs. 1 SGB V in Verbindung mit der Schutzimpfungs-Richtlinie des Gemeinsamen Bundesausschusses, die inhaltlich der STIKO-Empfehlung entspricht. Beide Impfungen sind damit Regelversorgung, nicht Modellprojekt. Über die Richtlinie hinaus gibt es Ergänzungsverträge des DAV mit einzelnen Krankenkassen, etwa für die Grippeschutzimpfung ab 18 Jahren. Privatversicherte und Selbstzahlende dürfen ebenfalls geimpft werden; ob die private Kasse zahlt, ist individuell zu klären.",
+      "Die §§ 630a bis 630h BGB gelten für jede Behandlung, auch für eine Impfung in der Offizin. Aufgeklärt wird grundsätzlich mündlich, rechtzeitig genug für eine wohlüberlegte Entscheidung, verständlich und umfassend. Die Einwilligung muss vor der Applikation vorliegen und kann jederzeit widerrufen werden. Es ist eine Patientenakte zu führen und zehn Jahre aufzubewahren. Entscheidend ist die Beweislast: Im Streitfall muss die behandelnde Person nachweisen, dass Aufklärung und Einwilligung stattgefunden haben – nicht die Patientin das Gegenteil.",
+      "Die Apothekenbetriebsordnung regelt zwei praktisch wichtige Punkte. § 35a Abs. 2 erlaubt, nichtapprobiertes pharmazeutisches Personal bei Vorbereitung und Dokumentation einzubinden, sofern es nachweislich geschult und ausreichend qualifiziert ist; die Schulungen sind zu dokumentieren, eine Delegation an nicht qualifizierte Mitarbeitende ist nicht gestattet. § 35a Abs. 4 listet auf, was das Aufklärungsgespräch mindestens enthalten muss. Die Impfdokumentation selbst richtet sich nach § 22 IfSG – wird sie nicht vorschriftsmäßig geführt, drohen bis zu 2.500 Euro Bußgeld."
+    ],
+    "merksatz": "IfSG sagt ob, SGB V sagt wer zahlt, BGB sagt wie gegenüber der Patientin, ApBetrO sagt wie im Betrieb.",
+    "bild": "bilder/imp-rechtsrahmen.svg",
+    "bildunterschrift": "Die vier Regelwerke und die Frage, die jedes von ihnen beantwortet. Im Streitfall greift keines ersatzweise für ein anderes.",
+    "quelle": "Menn, Durchführung von Schutzimpfungen in öffentlichen Apotheken, Praktische Teile 5 und 6, Skript Stand 24.11.2025; BAK-Arbeitshilfe Muster-SOP Grippeschutzimpfung, Stand 12.09.2025"
+  },
+  "items": [
+    {
+      "id": "imp-rr-001",
+      "typ": "karte",
+      "frage": "Welche Rechtsnorm berechtigt Apothekerinnen und Apotheker zur Durchführung von Schutzimpfungen, und welche Impfungen umfasst sie?",
+      "antwort": "§ 20c Infektionsschutzgesetz. Er berechtigt zur Durchführung von Grippeschutzimpfungen bei Personen ab 18 Jahren und von Schutzimpfungen gegen das Coronavirus SARS-CoV-2 bei Personen ab 12 Jahren.",
+      "vertiefung": "Die Norm ist abschließend: Andere Impfungen – etwa gegen Pneumokokken, Herpes zoster oder Tetanus – sind von ihr nicht gedeckt, so naheliegend sie im Beratungsgespräch auch sein mögen. Die Altersgrenzen sind unterschiedlich und werden regelmäßig verwechselt.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "berechtigung"
+      ],
+      "quelle": "§ 20c IfSG; Skript Menn 2025, Folie „Infektionsschutzgesetz (IfSG)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-002",
+      "typ": "numerisch",
+      "frage": "Ab welchem Alter darf in der Apotheke gegen Influenza geimpft werden?",
+      "antwort": "Ab 18 Jahren.",
+      "vertiefung": "Die Grenze liegt bei der Grippeimpfung höher als bei der COVID-19-Impfung. Die Zulassung der Influenza-Impfstoffe selbst reicht weiter – sie gilt für Erwachsene und Kinder ab 6 Monaten –, die Berechtigung der Apotheke nach § 20c IfSG aber nicht.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "altersgrenzen"
+      ],
+      "quelle": "§ 20c IfSG; Skript Menn 2025, Merkblatt Impfen",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 18,
+      "einheit": "Jahre",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-rr-003",
+      "typ": "numerisch",
+      "frage": "Ab welchem Alter darf in der Apotheke gegen COVID-19 geimpft werden?",
+      "antwort": "Ab 12 Jahren.",
+      "vertiefung": "Bei 12- bis 17-Jährigen ist zusätzlich die Zustimmung der Sorgeberechtigten erforderlich, gegebenenfalls beider, und mindestens ein Sorgeberechtigter muss anwesend sein. Unabhängig davon besteht derzeit keine generelle STIKO-Empfehlung mehr für Kinder und Jugendliche – die Berechtigung bleibt bestehen, die Empfehlung ist eine andere Frage.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "altersgrenzen"
+      ],
+      "quelle": "§ 20c IfSG; Skript Menn 2025, Folie „Formale Anforderungen an Impfinteressierte“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 12,
+      "einheit": "Jahre",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-rr-004",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Voraussetzungen muss erfüllen, wer nach § 20c IfSG impfen will?",
+      "antwort": "Eine ärztliche Schulung und die Durchführung als Personal einer öffentlichen Apotheke. Nicht erforderlich sind eine erneute Schulung bei bereits abgeschlossener ärztlicher Schulung zur COVID-19- oder Grippeschutzimpfung sowie eine gesonderte Approbation über die bestehende hinaus.",
+      "vertiefung": "Die zweite Voraussetzung wird leicht überlesen: Die Berechtigung hängt am Beschäftigungsverhältnis in einer öffentlichen Apotheke, nicht an der Person allein. Wer die Schulung hat, aber nicht in einer öffentlichen Apotheke tätig ist, darf auf dieser Grundlage nicht impfen.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "berechtigung"
+      ],
+      "quelle": "§ 20c IfSG; Skript Menn 2025",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Eine ärztliche Schulung",
+        "Durchführung als Personal einer öffentlichen Apotheke",
+        "Eine erneute Schulung, auch wenn die ärztliche Schulung zur COVID-19-Impfung bereits abgeschlossen ist",
+        "Eine gesonderte Zusatzapprobation"
+      ],
+      "richtig": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "imp-rr-005",
+      "typ": "zuordnung",
+      "frage": "Ordne der Rechtsnorm zu, was sie regelt.",
+      "antwort": "§ 20c IfSG die Berechtigung zum Impfen · § 20i SGB V den Anspruch der GKV-Versicherten · § 630e BGB die Aufklärung · § 630f BGB die Patientenakte und die Aufbewahrungsfrist · § 35a ApBetrO die Aufklärungsinhalte und die Delegation · § 22 IfSG die Impfdokumentation · § 132e SGB V die Bedarfsmeldung der Grippeimpfstoffe.",
+      "vertiefung": "Die Systematik lohnt sich, weil im Gespräch mit Kasse, Behörde oder Rechtsanwalt jeweils ein anderes Regelwerk angesprochen wird. Wer die Zuordnung kennt, findet die einschlägige Stelle sofort statt sie zu suchen.",
+      "tags": [
+        "recht",
+        "systematik",
+        "normen"
+      ],
+      "quelle": "Skript Menn 2025, Abschnitt „Rechtliche Grundlagen“; BAK-Muster-SOP 2025",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        [
+          "§ 20c IfSG",
+          "Berechtigung zur Durchführung der Impfung"
+        ],
+        [
+          "§ 20i Abs. 1 SGB V",
+          "Anspruch der GKV-Versicherten"
+        ],
+        [
+          "§ 630e BGB",
+          "Aufklärung der Patientin"
+        ],
+        [
+          "§ 630f BGB",
+          "Patientenakte und Aufbewahrung über 10 Jahre"
+        ],
+        [
+          "§ 35a ApBetrO",
+          "Inhalte der Aufklärung und Delegation an Personal"
+        ],
+        [
+          "§ 22 IfSG",
+          "Pflichtangaben der Impfdokumentation"
+        ],
+        [
+          "§ 132e SGB V",
+          "Bedarfsmeldung der saisonalen Grippeimpfstoffe"
+        ]
+      ]
+    },
+    {
+      "id": "imp-rr-006",
+      "typ": "karte",
+      "frage": "Woraus ergibt sich der Anspruch gesetzlich Versicherter auf die Impfung in der Apotheke?",
+      "antwort": "Aus § 20i Abs. 1 SGB V in Verbindung mit der Schutzimpfungs-Richtlinie des Gemeinsamen Bundesausschusses nach § 92 SGB V. Die Richtlinie entspricht inhaltlich der STIKO-Empfehlung. Beide Impfungen sind damit Regelversorgung.",
+      "vertiefung": "Praktisch heißt das: Was die STIKO nicht empfiehlt, steht in der Regel auch nicht in der Richtlinie und wird nicht von der GKV getragen. Darüber hinaus gibt es Ergänzungsverträge des DAV mit einzelnen Kassen, die zusätzliche Ansprüche eröffnen – etwa für die Grippeschutzimpfung ab 18 Jahren.",
+      "tags": [
+        "recht",
+        "abrechnung",
+        "anspruch"
+      ],
+      "quelle": "§ 20i Abs. 1 SGB V; Skript Menn 2025, Folie „Anspruch und Vergütung“; BAK-Muster-SOP 2025",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-007",
+      "typ": "mehrfachauswahl",
+      "frage": "Eine privatversicherte Patientin möchte sich in der Apotheke gegen Grippe impfen lassen. Welche Aussagen treffen zu?",
+      "antwort": "Die Impfung ist erlaubt, denn die Berechtigung nach § 20c IfSG hängt nicht am Versicherungsstatus. Ob und in welchem Umfang die private Krankenversicherung erstattet, ist individuell mit ihr zu klären. Selbstzahlende dürfen ebenfalls geimpft werden. Nicht zutreffend ist, dass die Impfung GKV-Versicherten vorbehalten wäre.",
+      "vertiefung": "Die Trennung ist sauber: Die Berechtigung regelt das Infektionsschutzgesetz, die Bezahlung das Sozialrecht beziehungsweise der private Versicherungsvertrag. Eine fehlende Kostenübernahme macht die Impfung nicht unzulässig, sondern nur zur Privatleistung.",
+      "tags": [
+        "recht",
+        "abrechnung",
+        "beratung"
+      ],
+      "quelle": "Skript Menn 2025, Merkblatt Impfen und Folie „Anspruch und Vergütung“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Die Impfung ist zulässig, der Versicherungsstatus ist für die Berechtigung irrelevant",
+        "Die Erstattung ist individuell mit der PKV zu klären",
+        "Auch Selbstzahlende ohne Versicherung dürfen geimpft werden",
+        "Die Impfung in der Apotheke ist GKV-Versicherten vorbehalten"
+      ],
+      "richtig": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "imp-rr-008",
+      "typ": "karte",
+      "frage": "Welche Anforderungen stellt § 630e BGB an die Aufklärung?",
+      "antwort": "Sie erfolgt durch die behandelnde Person oder eine zur Durchführung befähigte Person, grundsätzlich mündlich und gegebenenfalls ergänzend schriftlich, rechtzeitig genug für eine wohlüberlegte Entscheidung, in verständlicher Weise und umfassend über alle wesentlichen Umstände – insbesondere Art, Umfang, Durchführung, Folgen und Risiken, Notwendigkeit, Dringlichkeit, Eignung, Erfolgsaussichten und Alternativen.",
+      "vertiefung": "„Grundsätzlich mündlich“ ist der Kern. Ein ausgehändigtes Merkblatt ersetzt das Gespräch nicht, es ergänzt es. Und „rechtzeitig“ schließt die Aufklärung unmittelbar vor der Injektion aus – die Patientin muss noch überlegen können.",
+      "tags": [
+        "recht",
+        "bgb",
+        "aufklaerung"
+      ],
+      "quelle": "§ 630e BGB; Skript Menn 2025, Folie „Patient*innenrechte nach § 630e BGB“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-009",
+      "typ": "karte",
+      "frage": "Wer trägt im Streitfall die Beweislast dafür, dass Aufklärung und Einwilligung stattgefunden haben?",
+      "antwort": "Die behandelnde Person. Nach den §§ 630f bis 630h BGB muss sie Einwilligung und Aufklärung nachweisen. Hinzu kommt die Vermutung eines Behandlungsfehlers unter anderem bei Verletzungen von Leben, Körper oder Gesundheit im Bereich eines voll beherrschbaren Behandlungsrisikos sowie bei mangelnder Befähigung der behandelnden Person.",
+      "vertiefung": "Das ist der eigentliche Grund für die sorgfältige Dokumentation: Sie ist kein Verwaltungsselbstzweck, sondern das einzige Beweismittel, das die Apotheke später noch in der Hand hat. Ein nicht dokumentiertes Aufklärungsgespräch gilt im Zweifel als nicht geführt.",
+      "tags": [
+        "recht",
+        "bgb",
+        "haftung"
+      ],
+      "quelle": "§§ 630f–h BGB; Skript Menn 2025, Folie „Patient*innenrechte nach §§ 630f – h BGB“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-010",
+      "typ": "numerisch",
+      "frage": "Wie lange sind die Unterlagen zur Impfung in der Apotheke aufzubewahren?",
+      "antwort": "10 Jahre.",
+      "vertiefung": "Die Frist ergibt sich aus § 630f BGB. Aufzubewahren sind Anamnesebogen, Einwilligungserklärung und Dokumentationsbogen der Schutzimpfung, schriftlich oder digital. Empfehlenswert ist zusätzlich das Aufklärungsmerkblatt mit Notizen zum Gespräch.",
+      "tags": [
+        "recht",
+        "dokumentation",
+        "fristen"
+      ],
+      "quelle": "§ 630f BGB; BAK-Muster-SOP 2025, Abschnitt 10.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 10,
+      "einheit": "Jahre",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-rr-011",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Unterlagen muss die Apotheke nach der Impfung zehn Jahre aufbewahren?",
+      "antwort": "Pflicht sind Anamnesebogen, Einwilligungserklärung und Dokumentationsbogen der Schutzimpfung. Empfehlenswert, aber nicht vorgeschrieben, ist das Aufklärungsmerkblatt mit Notizen zum Aufklärungsgespräch. Der Impfausweis bleibt selbstverständlich bei der Patientin.",
+      "vertiefung": "Die Unterscheidung zwischen Pflicht und Empfehlung ist im Streitfall gerade umgekehrt wertvoll: Das Merkblatt mit handschriftlichen Notizen ist oft der beste Beleg dafür, dass tatsächlich gesprochen wurde und worüber.",
+      "tags": [
+        "recht",
+        "dokumentation",
+        "aufbewahrung"
+      ],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 10.2 (nach § 630f BGB)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Anamnesebogen",
+        "Einwilligungserklärung",
+        "Dokumentationsbogen der Schutzimpfung",
+        "Aufklärungsmerkblatt mit Notizen – empfehlenswert, nicht Pflicht",
+        "Der Impfausweis der geimpften Person"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "imp-rr-012",
+      "typ": "karte",
+      "frage": "Welche Aufgaben darf nichtapprobiertes pharmazeutisches Personal bei der Impfung übernehmen?",
+      "antwort": "Nach § 35a Abs. 2 ApBetrO darf es die Apothekerin oder den Apotheker bei der Vorbereitung und der Dokumentation der Impfung unterstützen, soweit es entsprechend nachweislich geschult und ausreichend qualifiziert ist. Die Schulungsmaßnahmen sind zu dokumentieren. Eine Delegation an Mitarbeitende ohne entsprechende Qualifikation ist nicht gestattet. Die Applikation selbst bleibt der approbierten, geschulten Person vorbehalten.",
+      "vertiefung": "Die Verantwortung für die Durchführung insgesamt liegt bei der Apothekenleitung. Der nachweisbare Schulungsnachweis ist dabei der kritische Punkt: Ohne dokumentierte Schulung ist die Unterstützung formal nicht gedeckt, auch wenn die Mitarbeiterin die Handgriffe beherrscht.",
+      "tags": [
+        "recht",
+        "apbetro",
+        "delegation"
+      ],
+      "quelle": "§ 35a Abs. 2 ApBetrO; BAK-Muster-SOP 2025, Abschnitt 3",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-013",
+      "typ": "mehrfachauswahl",
+      "frage": "Was muss das Aufklärungsgespräch nach § 35a Abs. 4 ApBetrO insbesondere enthalten?",
+      "antwort": "Informationen über den Nutzen der Impfung und die zu verhütende Krankheit, Hinweise auf mögliche Nebenwirkungen, Komplikationen und Kontraindikationen, Empfehlungen zu Verhaltensmaßnahmen im Anschluss an die Impfung, Informationen über Beginn und Dauer des Impfschutzes sowie Hinweise zu Auffrischimpfungen.",
+      "vertiefung": "Beginn und Dauer des Schutzes sowie die Auffrischung werden im Alltag am ehesten vergessen, dabei sind sie für die Patientin oft das Interessanteste – gerade die Frage, ab wann der Schutz greift und ob im nächsten Herbst erneut geimpft werden muss.",
+      "tags": [
+        "recht",
+        "apbetro",
+        "aufklaerung"
+      ],
+      "quelle": "§ 35a Abs. 4 ApBetrO; BAK-Muster-SOP 2025, Abschnitt 8.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Nutzen der Impfung und die zu verhütende Krankheit",
+        "Mögliche Nebenwirkungen, Komplikationen und Kontraindikationen",
+        "Verhaltensmaßnahmen im Anschluss an die Impfung",
+        "Beginn und Dauer des Impfschutzes",
+        "Hinweise zu Auffrischimpfungen",
+        "Der Einkaufspreis des verwendeten Impfstoffs"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "imp-rr-014",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Angaben verlangt § 22 Abs. 1 IfSG für die Impfdokumentation?",
+      "antwort": "Datum der Impfung, Bezeichnung und Chargenbezeichnung des Impfstoffs, die Krankheit, gegen die geimpft wurde, Name und Geburtsdatum der geimpften Person, Name und Anschrift der verantwortlichen Person sowie deren Bestätigung. Die Diagnose einer Grunderkrankung gehört nicht dazu.",
+      "vertiefung": "Für die Chargenbezeichnung lässt sich die beiliegende Vignette nutzen – das spart Zeit und vermeidet Übertragungsfehler. Wird die Dokumentation nicht vorschriftsmäßig geführt, drohen bis zu 2.500 Euro Bußgeld.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "dokumentation"
+      ],
+      "quelle": "§ 22 Abs. 1 IfSG; Skript Menn 2025, Folie „Impfdokumentation“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Datum der Impfung",
+        "Bezeichnung und Chargenbezeichnung des Impfstoffs",
+        "Krankheit, gegen die geimpft wurde",
+        "Name und Geburtsdatum der geimpften Person",
+        "Name und Anschrift der verantwortlichen Person sowie deren Bestätigung",
+        "Die Grunderkrankung, aus der sich die Indikation ergibt"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "imp-rr-015",
+      "typ": "numerisch",
+      "frage": "Bis zu welcher Höhe droht ein Bußgeld, wenn die Impfdokumentation nicht vorschriftsmäßig geführt wird?",
+      "antwort": "Bis zu 2.500 Euro.",
+      "vertiefung": "Die Summe ist weniger relevant als das, was sie signalisiert: Die Dokumentation ist keine Formalie, sondern eine bußgeldbewehrte Pflicht. Und sie ist zugleich das Beweismittel, das im Haftungsfall über die Beweislast entscheidet.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "dokumentation"
+      ],
+      "quelle": "Skript Menn 2025, Folie „Impfdokumentation (§ 22 Abs. 1 IfSG)“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 2500,
+      "einheit": "Euro",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-rr-016",
+      "typ": "karte",
+      "frage": "Was ist bei der Einwilligung von 12- bis 17-Jährigen zur COVID-19-Impfung zu beachten?",
+      "antwort": "Es ist die Zustimmung der Sorgeberechtigten erforderlich, gegebenenfalls beider. Die Sorgeberechtigten müssen sich ausweisen, und mindestens einer von ihnen muss bei der Impfung anwesend sein. Grundlage ist § 630d BGB, wonach bei Minderjährigen die Einwilligung der Sorgeberechtigten einzuholen ist.",
+      "vertiefung": "Davon zu trennen ist die Frage der Empfehlung: Für Kinder und Jugendliche besteht derzeit keine generelle STIKO-Empfehlung mehr. Die Berechtigung nach § 20c IfSG ab 12 Jahren bleibt davon unberührt – aber ohne Empfehlung fehlt in der Regel auch der Leistungsanspruch.",
+      "tags": [
+        "recht",
+        "bgb",
+        "minderjaehrige"
+      ],
+      "quelle": "§ 630d BGB; Skript Menn 2025, Folien „Formale Anforderungen an Impfinteressierte“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-017",
+      "typ": "karte",
+      "frage": "Wer meldet den Bedarf an saisonalen Grippeimpfstoffen für die Apotheken, bis wann und an wen?",
+      "antwort": "Nach § 132e Abs. 2 SGB V meldet die Spitzenorganisation der Apotheker den Bedarf bis zum 15. Januar eines Kalenderjahres an das Paul-Ehrlich-Institut, und zwar auf Grundlage der durch die Apotheken geplanten Bestellungen. Die verbindlichen Vorbestellungen selbst sind nach den Vorgaben der Hersteller individuell zu organisieren.",
+      "vertiefung": "Der Termin wirkt weit vorgelagert, ist aber der Grund für die lange Planungsvorlaufzeit bei Grippeimpfstoffen: Wer im Januar keinen Bedarf meldet, hat im Herbst möglicherweise keinen Impfstoff. Die Meldung ersetzt nicht die eigene Vorbestellung.",
+      "tags": [
+        "recht",
+        "beschaffung",
+        "organisation"
+      ],
+      "quelle": "§ 132e Abs. 2 SGB V; BAK-Muster-SOP 2025, Abschnitt 4",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-rr-018",
+      "typ": "freitext",
+      "frage": "Eine Patientin verlangt nach der Impfung Einsicht in ihre Unterlagen und eine Kopie der Einwilligungserklärung. Wie ist zu verfahren, und worauf stützt sich das?",
+      "antwort": "Beides steht ihr zu. Nach § 630g BGB ist ihr unverzüglich Einsicht in die Patientenakte zu gewähren beziehungsweise sind Abschriften auszuhändigen. Wurde die Einwilligung schriftlich erklärt, ist ihr nach § 630e Abs. 2 BGB ohnehin eine Kopie der Einwilligungserklärung mitzugeben – das sollte bereits am Impftag geschehen sein. Die Apotheke behält ihre Originale, denn Anamnesebogen, Einwilligungserklärung und Dokumentationsbogen unterliegen der zehnjährigen Aufbewahrungspflicht nach § 630f BGB.",
+      "vertiefung": "Praktisch heißt das, den Kopiervorgang gleich in den Ablauf einzubauen, statt ihn als Ausnahmefall zu behandeln. Eine Patientin, die später nachfragt, bekommt damit sofort eine Antwort – und die Apotheke dokumentiert zugleich, dass sie ihrer Pflicht nachgekommen ist.",
+      "tags": [
+        "recht",
+        "bgb",
+        "beratung"
+      ],
+      "quelle": "§§ 630e Abs. 2, 630f, 630g BGB; BAK-Muster-SOP 2025, Abschnitt 8.1",
+      "stand": "2026-10",
+      "geprueft": true,
+      "pruefpunkte": [
+        "Einsicht in die Patientenakte ist unverzüglich zu gewähren (§ 630g BGB)",
+        "Bei schriftlicher Einwilligung ist eine Kopie mitzugeben (§ 630e Abs. 2 BGB)",
+        "Die Kopie gehört bereits am Impftag ausgehändigt",
+        "Die Originale verbleiben in der Apotheke",
+        "Aufbewahrungspflicht von 10 Jahren nach § 630f BGB"
+      ]
+    },
+    {
+      "id": "imp-rr-019",
+      "typ": "vergleich",
+      "frage": "Bei beiden Impfwünschen liegt dieselbe Situation vor. Welche der beiden Impfungen darf nach § 20c IfSG in der Apotheke durchgeführt werden?",
+      "antwort": "Impfwunsch B. Die Berechtigung nach § 20c IfSG gilt für Schutzimpfungen gegen SARS-CoV-2 ab 12 Jahren, für Grippeschutzimpfungen dagegen erst ab 18 Jahren. Die Zustimmung der Sorgeberechtigten ist bei der COVID-19-Impfung einer Minderjährigen zusätzlich erforderlich und hier erfüllt – sie ersetzt aber nicht die Altersgrenze bei der Grippeschutzimpfung.",
+      "vertiefung": "Die beiden Altersgrenzen sind der am häufigsten verwechselte Punkt des ganzen Rechtsrahmens, gerade weil die Grippeimpfung die vertrautere ist. Zu beachten bleibt, dass die Berechtigung zur Durchführung und die STIKO-Empfehlung zwei verschiedene Fragen sind: Für Kinder und Jugendliche besteht derzeit keine generelle COVID-19-Impfempfehlung, womit in aller Regel auch kein Leistungsanspruch besteht.",
+      "tags": [
+        "recht",
+        "ifsg",
+        "altersgrenzen",
+        "fallbeispiel"
+      ],
+      "quelle": "§ 20c IfSG; Skript Menn 2025, Merkblatt Impfen und Folien „Formale Anforderungen an Impfinteressierte“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "seiten": [
+        {
+          "titel": "Impfwunsch A",
+          "bild": "bilder/imp-fall-a.svg",
+          "beschreibung": "Grippeschutzimpfung bei einer 15-Jährigen, Sorgeberechtigte haben zugestimmt."
+        },
+        {
+          "titel": "Impfwunsch B",
+          "bild": "bilder/imp-fall-b.svg",
+          "beschreibung": "COVID-19-Impfung bei einer 15-Jährigen, Sorgeberechtigte haben zugestimmt."
+        }
+      ],
+      "richtig": 1
+    }
+  ]
+}

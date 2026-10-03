@@ -1,0 +1,281 @@
+{
+  "thema": "imp-stiko",
+  "titel": "STIKO-Empfehlung und Impfstoffauswahl",
+  "erklaerung": {
+    "absaetze": [
+      "Die STIKO-Empfehlung entscheidet in der Praxis über zwei Dinge gleichzeitig: ob jemand geimpft werden soll und ob die Kasse zahlt. Die Schutzimpfungs-Richtlinie des G-BA folgt ihr inhaltlich, und daraus leitet sich der Anspruch nach § 20i SGB V ab. Fachliche Empfehlung und Leistungsanspruch fallen damit in aller Regel zusammen – wer die Empfehlung kennt, kennt auch die Abrechnungsgrundlage.",
+      "Bei der Influenza gilt eine jährliche Impfung im Herbst. Empfohlen ist sie unter anderem für Personen ab 60 Jahren, für Menschen mit relevanten Grundkrankheiten, für Schwangere, für Bewohnerinnen und Bewohner von Pflegeeinrichtungen, für Kontaktpersonen von Risikopersonen sowie bei beruflichem Infektionsrisiko – wozu inzwischen ausdrücklich auch der Umgang mit bestimmten Tierarten zählt. Ein weiterer Anlass, der leicht übersehen wird, ist die Reise in ein saisonal betroffenes Gebiet außerhalb der hiesigen Grippesaison.",
+      "Bei COVID-19 steht ein anderer Begriff im Mittelpunkt: die Basisimmunität. Sie gilt als erreicht, wenn drei Antigenkontakte stattgefunden haben, wobei Infektionen und Impfungen gleichermaßen zählen. Wer sie noch nicht hat, bekommt die Standardimpfung. Darauf aufbauend wird jährlich im Herbst aufgefrischt, und zwar für dieselben Risikogruppen wie bei der Influenza. Bei Indikationsimpfungen kann auf die Auffrischung verzichtet werden, wenn bei immungesunden Personen im Jahr zuvor eine SARS-CoV-2-Infektion stattgefunden hat.",
+      "Die Impfstoffauswahl folgt bei der Influenza vor allem dem Alter. Zwischen 18 und 60 Jahren wird mit einem verfügbaren saisonalen Standardimpfstoff geimpft, der die aktuell von der WHO empfohlene Antigenkombination enthält. Ab 60 Jahren empfiehlt die STIKO einen Hochdosis-Impfstoff oder einen MF59-adjuvantierten Impfstoff; beide sollen die im Alter nachlassende Immunantwort durch eine stärkere Aktivierung der humoralen und zellulären Immunität verbessern. Steht keiner von beiden zur Verfügung oder ist er aus medizinischen Gründen nicht möglich, etwa wegen erhöhter Reaktogenität bei früheren Impfungen, ist ein Standardimpfstoff ausdrücklich zu bevorzugen – gegenüber der Alternative, gar nicht zu impfen.",
+      "Bei den Abständen zu anderen Impfungen ist die Lage einfacher, als viele erwarten. Alle hier verwendeten Impfstoffe sind Totimpfstoffe, und es ist weder zu anderen Totimpfstoffen noch vor oder nach Lebendimpfstoffen ein Mindestabstand einzuhalten. Die einzige Besonderheit betrifft die nasale Influenza-Impfung, die als Lebendimpfstoff gilt. Werden Influenza- und COVID-19-Impfung gleichzeitig verabreicht, soll das in der Regel an unterschiedlichen Gliedmaßen geschehen; Impfreaktionen treten dann häufiger auf als bei zeitlich getrennter Gabe."
+    ],
+    "merksatz": "Influenza entscheidet das Alter über den Impfstoff, COVID-19 die Zahl der Antigenkontakte über die Indikation.",
+    "quelle": "Menn, Durchführung von Schutzimpfungen in öffentlichen Apotheken, Skript Stand 24.11.2025 (STIKO-Stände 29.09.2025 und 13.11.2025); BAK-Muster-SOP Grippeschutzimpfung, Stand 12.09.2025"
+  },
+  "items": [
+    {
+      "id": "imp-st-001",
+      "typ": "karte",
+      "frage": "Warum ist die STIKO-Empfehlung für die Apotheke nicht nur eine fachliche, sondern auch eine abrechnungsrelevante Größe?",
+      "antwort": "Weil die Schutzimpfungs-Richtlinie des Gemeinsamen Bundesausschusses ihr inhaltlich entspricht und der Anspruch der GKV-Versicherten nach § 20i Abs. 1 SGB V sich aus dieser Richtlinie ableitet. Was nicht empfohlen ist, steht in der Regel auch nicht in der Richtlinie und wird nicht von der Kasse getragen.",
+      "vertiefung": "Die Ausnahme sind die Ergänzungsverträge des DAV mit einzelnen Krankenkassen, die über die Richtlinie hinausgehende Ansprüche eröffnen können – etwa für die Grippeschutzimpfung ab 18 Jahren. Wer diese Verträge kennt, kann auch außerhalb der Indikationsgruppen abrechnen.",
+      "tags": ["stiko", "abrechnung", "systematik"],
+      "quelle": "Skript Menn 2025, Merkblatt Impfen; BAK-Muster-SOP 2025, Abschnitt 6",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-002",
+      "typ": "mehrfachauswahl",
+      "frage": "Für welche Gruppen empfiehlt die STIKO die jährliche Influenza-Impfung?",
+      "antwort": "Für Personen ab 60 Jahren, für Menschen mit relevanten Grundkrankheiten, für Schwangere, für Bewohnerinnen und Bewohner von Pflegeeinrichtungen, für Kontaktpersonen von Risikopersonen und bei beruflichem Infektionsrisiko einschließlich des Umgangs mit bestimmten Tierarten.",
+      "vertiefung": "Die Gruppe der Kontaktpersonen wird im Beratungsgespräch am häufigsten übersehen: Wer mit einem Risikopatienten in einem Haushalt lebt, ist selbst Zielgruppe – auch wenn er jung und gesund ist. Das ist oft das überzeugendste Argument im Gespräch.",
+      "tags": ["stiko", "influenza", "indikation"],
+      "quelle": "Skript Menn 2025, Folie „STIKO-Empfehlung“ (Stand 29.09.2025)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die Indikationsgruppen stammen aus dem Skriptstand November 2025 und damit aus der Saison 2025/26. Die STIKO aktualisiert ihre Empfehlung jährlich im Epidemiologischen Bulletin; die Gruppen sind vor Verwendung gegen die aktuelle Fassung zu prüfen.",
+      "optionen": [
+        "Personen ab 60 Jahren",
+        "Personen mit relevanten Grundkrankheiten",
+        "Schwangere",
+        "Bewohnerinnen und Bewohner von Pflegeeinrichtungen",
+        "Kontaktpersonen von Risikopersonen",
+        "Personen mit beruflichem Infektionsrisiko"
+      ],
+      "richtig": [0, 1, 2, 3, 4, 5]
+    },
+    {
+      "id": "imp-st-003",
+      "typ": "karte",
+      "frage": "Welche berufliche Indikation für die Influenza-Impfung ist zuletzt ausdrücklich ergänzt worden?",
+      "antwort": "Der Kontakt mit bestimmten Tierarten – genannt werden Schweine, Geflügel, Vögel und Robben. Hintergrund ist das Risiko der Übertragung zoonotischer Influenzaviren und der Reassortierung, wenn ein Mensch gleichzeitig mit einem humanen und einem tierischen Influenzavirus infiziert ist.",
+      "vertiefung": "Die Impfung schützt nicht vor dem tierischen Virus. Ihr Zweck ist ein anderer: Sie soll verhindern, dass eine gleichzeitige humane Influenza-Infektion dem tierischen Virus die Gelegenheit zum Genaustausch gibt. Das ist ein Argument, das in der Beratung von Landwirten und Tierärzten trägt.",
+      "tags": ["stiko", "influenza", "indikation"],
+      "quelle": "Skript Menn 2025, Merkblatt Impfen („Neu: Kontakt mit Schweinen, Geflügel, Vögeln, Robben“)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die Angabe stammt aus dem Skriptstand November 2025. Der genaue Wortlaut der beruflichen Indikation ist gegen die aktuelle STIKO-Empfehlung zu prüfen."
+    },
+    {
+      "id": "imp-st-004",
+      "typ": "karte",
+      "frage": "Was versteht die STIKO bei COVID-19 unter Basisimmunität?",
+      "antwort": "Drei Antigenkontakte. Dabei zählen Impfungen und durchgemachte Infektionen gleichermaßen, in beliebiger Kombination. Wer die Basisimmunität noch nicht erreicht hat, erhält die Standardimpfung; darauf aufbauend wird bei den Indikationsgruppen jährlich im Herbst aufgefrischt.",
+      "vertiefung": "Dass Infektionen mitzählen, ist der Punkt, an dem die Beratung meist hakt. In der Anamnese ist deshalb nicht nur nach Impfungen, sondern ausdrücklich auch nach durchgemachten Infektionen zu fragen – andernfalls wird systematisch zu viel geimpft.",
+      "tags": ["stiko", "covid", "begriffe"],
+      "quelle": "Skript Menn 2025, Folie „STIKO-Empfehlung“ (Stand 29.09.2025)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-005",
+      "typ": "numerisch",
+      "frage": "Wie viele Antigenkontakte sind für eine Basisimmunität gegen SARS-CoV-2 erforderlich?",
+      "antwort": "3 Antigenkontakte, aus Impfungen und/oder Infektionen.",
+      "tags": ["stiko", "covid", "kennwerte"],
+      "quelle": "Skript Menn 2025, Folie „STIKO-Empfehlung“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 3,
+      "einheit": "Antigenkontakte",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-st-006",
+      "typ": "karte",
+      "frage": "Unter welcher Bedingung kann bei einer COVID-19-Indikationsimpfung auf die jährliche Auffrischung verzichtet werden?",
+      "antwort": "Wenn bei einer immungesunden Person im Jahr zuvor eine SARS-CoV-2-Infektion stattgefunden hat. Die durchgemachte Infektion wirkt dann wie die Auffrischung.",
+      "vertiefung": "Die Einschränkung auf Immungesunde ist wesentlich: Bei immundefizienten Personen ist nicht verlässlich davon auszugehen, dass die Infektion eine belastbare Immunantwort hinterlassen hat. Für sie bleibt es bei der regulären Auffrischung.",
+      "tags": ["stiko", "covid", "indikation"],
+      "quelle": "Skript Menn 2025, Folie „STIKO-Empfehlung“ (Stand 29.09.2025)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Saisonabhängige Empfehlung aus dem Skriptstand November 2025; vor Verwendung gegen die aktuelle STIKO-Empfehlung zu prüfen."
+    },
+    {
+      "id": "imp-st-007",
+      "typ": "zuordnung",
+      "frage": "Ordne den Altersgruppen den nach STIKO empfohlenen Influenza-Impfstoff zu.",
+      "antwort": "18 bis 60 Jahre: ein verfügbarer saisonaler Standardimpfstoff. Ab 60 Jahren: ein Hochdosis-Impfstoff oder ein MF59-adjuvantierter Impfstoff. Ab 60 Jahren bei erhöhter Reaktogenität in der Vorgeschichte oder fehlender Verfügbarkeit: ebenfalls ein Standardimpfstoff, ei- oder zellbasiert.",
+      "vertiefung": "Die dritte Zeile ist die praktisch wichtigste: Sie verhindert, dass bei Lieferengpässen gar nicht geimpft wird. Die STIKO stellt ausdrücklich fest, dass der Standardimpfstoff gegenüber der Alternative, keine Influenza-Impfung zu verabreichen, zu bevorzugen ist.",
+      "tags": ["stiko", "influenza", "impfstoffauswahl"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 7; Skript Menn 2025, Folie „Impfstoff-Auswahl nach STIKO-Empfehlung“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        ["18 bis 60 Jahre", "saisonaler Standard-Influenza-Impfstoff"],
+        ["ab 60 Jahre, Regelfall", "Hochdosis- oder MF59-adjuvantierter Impfstoff"],
+        ["ab 60 Jahre, erhöhte Reaktogenität oder nicht verfügbar", "saisonaler Standardimpfstoff, ei- oder zellbasiert"]
+      ]
+    },
+    {
+      "id": "imp-st-008",
+      "typ": "karte",
+      "frage": "Warum empfiehlt die STIKO ab 60 Jahren einen Hochdosis- oder MF59-adjuvantierten Influenza-Impfstoff?",
+      "antwort": "Weil die Immunantwort im höheren Lebensalter nachlässt. Beide Impfstoffe sollen das ausgleichen, indem sie die humorale und die zelluläre Immunität stärker aktivieren – der Hochdosis-Impfstoff über eine höhere Antigenmenge, der adjuvantierte über den Wirkverstärker MF59.",
+      "vertiefung": "Die stärkere Aktivierung hat ihren Preis in einer höheren Reaktogenität. Genau deshalb sieht die Empfehlung den Ausweg auf den Standardimpfstoff vor, wenn eine frühere Impfung ungewöhnlich stark reagiert hat. Das ist kein Rückschritt, sondern eine abgewogene Entscheidung.",
+      "tags": ["stiko", "influenza", "verstaendnis"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 7",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-009",
+      "typ": "reihenfolge",
+      "frage": "Eine 72-jährige Patientin möchte sich gegen Grippe impfen lassen. Bringe die Entscheidungsschritte zur Impfstoffauswahl in die richtige Reihenfolge.",
+      "antwort": "Alter feststellen, Hochdosis- oder MF59-Impfstoff als Regelfall prüfen, Verfügbarkeit und medizinische Gründe gegen diese Impfstoffe klären, gegebenenfalls auf einen Standardimpfstoff ausweichen, und in jedem Fall impfen statt auf den Wunschimpfstoff zu warten.",
+      "vertiefung": "Der letzte Schritt ist die eigentliche Botschaft der Empfehlung. Die Reihenfolge ist eine Präferenzordnung, keine Ausschlussliste – das Impfziel wird auch mit dem zweitbesten Impfstoff erreicht, mit gar keinem nicht.",
+      "tags": ["stiko", "influenza", "ablauf"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 7",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Alter der Patientin feststellen: ab 60 Jahren gilt die besondere Empfehlung",
+        "Als Regelfall einen Hochdosis- oder MF59-adjuvantierten Impfstoff vorsehen",
+        "Verfügbarkeit prüfen und medizinische Gründe erfragen, etwa erhöhte Reaktogenität bei früheren Impfungen",
+        "Steht keiner von beiden zur Verfügung oder spricht etwas dagegen: auf einen saisonalen Standardimpfstoff ausweichen",
+        "In jedem Fall impfen – keine Impfung ist die schlechteste aller Varianten"
+      ]
+    },
+    {
+      "id": "imp-st-010",
+      "typ": "mehrfachauswahl",
+      "frage": "Wonach richtet sich die Auswahl des COVID-19-Impfstoffs?",
+      "antwort": "Nach der Altersgruppe, nach der Zulassung des Präparats, nach der Varianten-Anpassung und nach dem Zeitpunkt – also danach, ob es um den Aufbau der Basisimmunität oder um eine Auffrischimpfung geht. Die Blutgruppe spielt keine Rolle.",
+      "vertiefung": "Die Varianten-Anpassung ist der Punkt, der sich am schnellsten ändert und der sich deshalb am wenigsten auswendig lernen lässt. Dafür ist die STIKO-App gedacht, die neben den aktuellen Empfehlungen auch die Fachinformationen aller Impfstoffe und Hinweise bei Lieferengpässen enthält.",
+      "tags": ["stiko", "covid", "impfstoffauswahl"],
+      "quelle": "Skript Menn 2025, Folie „Impfstoff-Auswahl nach STIKO-Empfehlung“ (13.11.2025)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Altersgruppe",
+        "Zulassung des Präparats",
+        "Varianten-Anpassung",
+        "Zeitpunkt: Grundimmunisierung oder Auffrischimpfung",
+        "Blutgruppe der zu impfenden Person"
+      ],
+      "richtig": [0, 1, 2, 3]
+    },
+    {
+      "id": "imp-st-011",
+      "typ": "karte",
+      "frage": "Handelt es sich bei den in der Apotheke verwendeten Influenza- und COVID-19-Impfstoffen um Tot- oder Lebendimpfstoffe?",
+      "antwort": "Um Totimpfstoffe. Das gilt für alle in der Apotheke applizierten Impfstoffe gegen Influenza und COVID-19. Die einzige Ausnahme im Influenza-Bereich ist der nasal zu verabreichende Lebendimpfstoff, der in der Apotheke nicht zum Einsatz kommt.",
+      "vertiefung": "Die Einordnung hat praktische Folgen für die Abstandsregeln und für die Beratung immundefizienter Personen: Bei Totimpfstoffen besteht kein Risiko einer Impfinfektion, die Impfung kann aber schwächer wirken. Das ist etwas anderes als eine Kontraindikation.",
+      "tags": ["stiko", "impfstoffe", "begriffe"],
+      "quelle": "Skript Menn 2025, Folien „Auswahl der Impfstoffe“ und „Abstände zwischen Impfungen“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Mindestabstände sind zwischen der Influenza- oder COVID-19-Impfung und anderen Impfungen einzuhalten?",
+      "antwort": "Keine. Weder zu anderen Totimpfstoffen noch vor oder nach Lebendimpfstoffen ist ein Mindestabstand erforderlich. Das gilt beispielsweise für Pneumokokken, Herpes zoster, Tetanus-Diphtherie-Pertussis-Polio ebenso wie für Masern-Mumps-Röteln, Varizellen oder Gelbfieber.",
+      "vertiefung": "Diese Regel räumt mit einem hartnäckigen Missverständnis auf. Die klassische Vier-Wochen-Regel gilt ausschließlich zwischen zwei Lebendimpfstoffen, die nicht am selben Tag gegeben werden – und keiner der hier verwendeten Impfstoffe ist ein Lebendimpfstoff.",
+      "tags": ["stiko", "abstaende", "typischer-fehler"],
+      "quelle": "Skript Menn 2025, Folie „Abstände zwischen Impfungen“; BAK-Muster-SOP 2025, Abschnitt 6.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Kein Abstand zu anderen Totimpfstoffen wie Pneumokokken oder Herpes zoster",
+        "Kein Abstand vor Lebendimpfstoffen wie Masern-Mumps-Röteln",
+        "Kein Abstand nach Lebendimpfstoffen wie Varizellen oder Gelbfieber",
+        "Mindestens vier Wochen Abstand zu jeder anderen Impfung"
+      ],
+      "richtig": [0, 1, 2]
+    },
+    {
+      "id": "imp-st-013",
+      "typ": "zuordnung",
+      "frage": "Ordne die Impfungen danach zu, ob es sich um einen Tot- oder einen Lebendimpfstoff handelt.",
+      "antwort": "Totimpfstoffe: Pneumokokken, Herpes zoster, Influenza als Injektion, Diphtherie-Tetanus-Pertussis-Polio. Lebendimpfstoffe: Masern-Mumps-Röteln, Varizellen, Influenza nasal, Gelbfieber, orale Typhus-Impfung.",
+      "vertiefung": "Der Stolperstein ist die Influenza, die in beiden Spalten vorkommt: Die injizierte Form ist ein Totimpfstoff, die nasale ein Lebendimpfstoff. Für die Apotheke ist nur die injizierte Form relevant, für die Beratung zu Abständen aber beide.",
+      "tags": ["stiko", "impfstoffe", "abstaende"],
+      "quelle": "Skript Menn 2025, Folie „Abstände zwischen Impfungen“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        ["Pneumokokken", "Totimpfstoff"],
+        ["Herpes zoster", "Totimpfstoff"],
+        ["Influenza als Injektion", "Totimpfstoff"],
+        ["Masern-Mumps-Röteln", "Lebendimpfstoff"],
+        ["Varizellen", "Lebendimpfstoff"],
+        ["Influenza nasal", "Lebendimpfstoff"],
+        ["Gelbfieber", "Lebendimpfstoff"]
+      ]
+    },
+    {
+      "id": "imp-st-014",
+      "typ": "karte",
+      "frage": "Was ist zu beachten, wenn Influenza- und COVID-19-Impfung am selben Termin verabreicht werden?",
+      "antwort": "Die Gabe soll in der Regel an unterschiedlichen Gliedmaßen erfolgen. Dabei ist darauf hinzuweisen, dass Impfreaktionen häufiger auftreten können als bei zeitlich getrennter Gabe. Immunantwort und Nebenwirkungsprofil entsprechen nach den vorliegenden Erfahrungen mit Nicht-COVID-19-Impfstoffen aber im Allgemeinen denen der jeweils alleinigen Anwendung.",
+      "vertiefung": "Der Hinweis auf die häufigeren Impfreaktionen gehört ins Aufklärungsgespräch, nicht erst in die Nachbesprechung. Wer vorher weiß, dass beide Arme schmerzen können, wertet das nicht als Komplikation.",
+      "tags": ["stiko", "kombination", "aufklaerung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6.3 (Hinweis)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-015",
+      "typ": "karte",
+      "frage": "Welcher Anlass für eine Grippeschutzimpfung geht über die saisonalen STIKO-Empfehlungen für Deutschland hinaus?",
+      "antwort": "Eine Reise in ein saisonal betroffenes Gebiet. Da die Grippesaison auf der Südhalbkugel und in den Tropen anders verläuft, kann eine Impfung auch außerhalb der hiesigen Saison sinnvoll sein.",
+      "vertiefung": "In der Beratung ist das die Gelegenheit, nach Reiseplänen zu fragen, statt nur die Indikationsgruppen abzuarbeiten. Zu klären bleibt dann allerdings die Kostenseite: Eine reisebedingte Impfung fällt nicht ohne Weiteres unter die Schutzimpfungs-Richtlinie.",
+      "tags": ["stiko", "influenza", "beratung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-016",
+      "typ": "karte",
+      "frage": "Welches Nachschlagewerk stellt das RKI für die tagesaktuelle Impfempfehlung bereit, und was enthält es?",
+      "antwort": "Die STIKO@rki-App, verfügbar für Android und iOS sowie als Web-Version. Sie enthält die aktuellen Impfempfehlungen der STIKO, die Fachinformationen aller Impfstoffe, FAQs, Erklärfilme und Infomaterial, Reiseimpfempfehlungen sowie Empfehlungen bei Lieferengpässen.",
+      "vertiefung": "Für die Offizin ist vor allem der letzte Punkt praktisch: Bei einem Lieferengpass steht dort, welcher Impfstoff ersatzweise in Frage kommt – eine Frage, die sich jede Saison mindestens einmal stellt und die sich nicht auswendig lernen lässt.",
+      "tags": ["stiko", "werkzeuge", "organisation"],
+      "quelle": "Skript Menn 2025, Folie „STIKO@rki (App)“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-st-017",
+      "typ": "mehrfachauswahl",
+      "frage": "Eine 34-jährige gesunde Patientin ohne Grunderkrankung und ohne beruflichen Kontakt zu Risikogruppen fragt nach der Grippeimpfung. Welche Aussagen treffen zu?",
+      "antwort": "Sie gehört nicht zu den STIKO-Indikationsgruppen, darf aber geimpft werden – die Berechtigung nach § 20c IfSG gilt ab 18 Jahren unabhängig von der Indikation. Ob die Kasse zahlt, hängt davon ab, ob ein Ergänzungsvertrag greift; andernfalls ist es eine Privatleistung. Zu prüfen ist außerdem, ob sie mit einer Risikoperson zusammenlebt, denn dann wäre sie doch Zielgruppe.",
+      "vertiefung": "Die Frage nach dem Haushalt ist der entscheidende Zusatz. Sie verwandelt eine Wunschimpfung ohne Erstattung häufig in eine empfohlene Impfung mit Leistungsanspruch – und ist in zehn Sekunden gestellt.",
+      "tags": ["stiko", "beratung", "fallbeispiel"],
+      "quelle": "Skript Menn 2025, Merkblatt Impfen; BAK-Muster-SOP 2025, Abschnitt 6",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Sie darf geimpft werden, auch ohne STIKO-Indikation",
+        "Ohne Indikation und ohne Ergänzungsvertrag ist es eine Privatleistung",
+        "Es ist zu klären, ob sie mit einer Risikoperson in einem Haushalt lebt",
+        "Ohne STIKO-Indikation ist die Impfung in der Apotheke unzulässig"
+      ],
+      "richtig": [0, 1, 2]
+    },
+    {
+      "id": "imp-st-018",
+      "typ": "freitext",
+      "frage": "Ein 68-jähriger Patient berichtet, er habe im Februar eine durch Test gesicherte COVID-19-Infektion durchgemacht und sei insgesamt zweimal geimpft. Er fragt, ob er diesen Herbst eine COVID-19-Impfung braucht. Wie gehst du vor?",
+      "antwort": "Zunächst die Antigenkontakte zählen: zwei Impfungen plus eine Infektion ergeben drei Antigenkontakte, die Basisimmunität ist damit erreicht. Es geht also nicht mehr um den Aufbau der Basisimmunität, sondern um die jährliche Auffrischung, für die er mit 68 Jahren zur Indikationsgruppe gehört. Zu klären ist dann, ob er immungesund ist und wie lange die Infektion zurückliegt: Bei immungesunden Personen kann auf die Auffrischung verzichtet werden, wenn im Jahr zuvor eine SARS-CoV-2-Infektion stattgefunden hat. Da die Infektion in diesem Jahr liegt, trifft das hier zu – die Entscheidung gehört aber in ein Gespräch, in dem auch sein eigener Wunsch und mögliche Grunderkrankungen Platz haben.",
+      "vertiefung": "Der Fall zeigt, warum die Anamnese bei COVID-19 anders aussieht als bei der Influenza: Ohne die Frage nach durchgemachten Infektionen lässt sich weder die Basisimmunität noch der mögliche Verzicht auf die Auffrischung beurteilen. Bei der Grippeimpfung dagegen wird unabhängig von früheren Erkrankungen jährlich geimpft.",
+      "tags": ["stiko", "covid", "beratung"],
+      "quelle": "Skript Menn 2025, Folien „STIKO-Empfehlung“ (Stand 29.09.2025)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die Regel zum Verzicht auf die Auffrischung nach durchgemachter Infektion stammt aus dem Skriptstand November 2025 und ist saisonabhängig; vor Verwendung gegen die aktuelle STIKO-Empfehlung zu prüfen. Der Rechenweg über die Antigenkontakte bleibt davon unberührt.",
+      "pruefpunkte": [
+        "Antigenkontakte zählen: Impfungen und Infektionen zusammen",
+        "Zwei Impfungen plus eine Infektion ergeben drei Kontakte – Basisimmunität erreicht",
+        "Es geht damit um die Auffrischung, nicht um die Grundimmunisierung",
+        "Mit 68 Jahren gehört er zur Indikationsgruppe für die jährliche Auffrischung",
+        "Bei Immungesunden kann nach einer Infektion im Vorjahr auf die Auffrischung verzichtet werden",
+        "Immunstatus und Grunderkrankungen erfragen und die Entscheidung gemeinsam treffen"
+      ]
+    }
+  ]
+}

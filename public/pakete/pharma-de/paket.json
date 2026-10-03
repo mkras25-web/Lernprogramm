@@ -2,7 +2,7 @@
   "id": "pharma-de",
   "titel": "Pharmazie",
   "sprache": "de",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "gestaltung": "pharma",
   "module": [
     {
@@ -18,10 +18,55 @@
       ],
       "bereich": "arzneimitteltherapie",
       "phase": "frueh"
+    },
+    {
+      "id": "impfen",
+      "titel": "Impfen in der öffentlichen Apotheke",
+      "themen": [
+        {
+          "id": "imp-rechtsrahmen",
+          "titel": "Rechtsrahmen: Berechtigung, Anspruch, Pflichten",
+          "datei": "items/imp-rechtsrahmen.json",
+          "bild": "bilder/imp-rechtsrahmen.svg"
+        },
+        {
+          "id": "imp-stiko",
+          "titel": "STIKO-Empfehlung und Impfstoffauswahl",
+          "datei": "items/imp-stiko.json",
+          "bild": "bilder/imp-eignung.svg"
+        },
+        {
+          "id": "imp-eignung",
+          "titel": "Impffähigkeit: Kontraindikationen und besondere Patientengruppen",
+          "datei": "items/imp-eignung.json",
+          "bild": "bilder/imp-eignung.svg"
+        },
+        {
+          "id": "imp-aufklaerung",
+          "titel": "Aufklärung, Einwilligung und Dokumentation",
+          "datei": "items/imp-aufklaerung.json",
+          "bild": "bilder/imp-ablauf.svg"
+        },
+        {
+          "id": "imp-durchfuehrung",
+          "titel": "Durchführung: Vorbereitung, Applikation, Nachsorge",
+          "datei": "items/imp-durchfuehrung.json",
+          "bild": "bilder/imp-deltoideus.svg"
+        },
+        {
+          "id": "imp-arbeitsschutz",
+          "titel": "Arbeitsschutz, Hygiene und Lagerung",
+          "datei": "items/imp-arbeitsschutz.json",
+          "bild": "bilder/imp-kanuele.svg"
+        }
+      ],
+      "bereich": "praevention",
+      "phase": "frueh"
     }
   ],
   "bereiche": {
-    "arzneimitteltherapie": "Arzneimitteltherapie und Interaktionen"
+    "arzneimitteltherapie": "Arzneimitteltherapie und Interaktionen",
+    "praevention": "Prävention und Impfen"
   },
   "phasen": {
     "frueh": "Früh beginnen",

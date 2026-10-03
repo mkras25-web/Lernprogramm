@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 610" width="940" height="610">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f3439"/></marker>
+  </defs>
+  <rect width="940" height="610" fill="#eef2f3"/>
+  <g>
+  <rect x="330" y="52" width="280" height="58" rx="10" fill="#2f7d8a" stroke="#2f7d8a" stroke-width="2"/>
+  <rect x="30" y="210" width="260" height="282" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="30" y="210" width="260" height="62" rx="10" fill="#b03a2e"/>
+  <rect x="30" y="254" width="260" height="18" fill="#b03a2e"/>
+  <path d="M160 128 L160 200" stroke="#b03a2e" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="340" y="210" width="260" height="282" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="340" y="210" width="260" height="62" rx="10" fill="#c8873a"/>
+  <rect x="340" y="254" width="260" height="18" fill="#c8873a"/>
+  <path d="M470 128 L470 200" stroke="#c8873a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="650" y="210" width="260" height="282" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="650" y="210" width="260" height="62" rx="10" fill="#3f7d5a"/>
+  <rect x="650" y="254" width="260" height="18" fill="#3f7d5a"/>
+  <path d="M780 128 L780 200" stroke="#3f7d5a" stroke-width="2.5" marker-end="url(#a)"/>
+    <text x="24" y="32" font-size="18" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Beurteilung der Impffähigkeit: drei mögliche Ergebnisse</text>
+    <text x="470" y="80" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Individuelle Beurteilung</text>
+    <text x="470" y="101" font-size="12.5" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Anamnese · Impfhistorie · Fachinformation</text>
+    <text x="160" y="240" font-size="16" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Nicht impfen</text>
+    <text x="160" y="262" font-size="12" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">absolute Kontraindikation</text>
+    <text x="48" y="300" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">schwere akute Erkrankung</text>
+    <text x="48" y="328" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">fieberhafter Infekt</text>
+    <text x="48" y="356" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Überempfindlichkeit gegen</text>
+    <text x="48" y="384" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">einen Impfstoffbestandteil</text>
+    <text x="48" y="412" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">allergische Sofortreaktion</text>
+    <text x="48" y="440" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">nach früherer Dosis</text>
+    <text x="470" y="240" font-size="16" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Erst zum Arzt</text>
+    <text x="470" y="262" font-size="12" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">individuell abwägen</text>
+    <text x="358" y="300" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">ungewöhnliche Reaktion nach</text>
+    <text x="358" y="328" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">früherer Impfung</text>
+    <text x="358" y="356" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Operation in drei Tagen</text>
+    <text x="358" y="384" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Therapie mit Gerinnungs-</text>
+    <text x="358" y="412" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">hemmern</text>
+    <text x="358" y="440" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Schwangerschaft</text>
+    <text x="780" y="240" font-size="16" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Impfen</text>
+    <text x="780" y="262" font-size="12" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">keine Kontraindikation</text>
+    <text x="668" y="300" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">banaler Infekt</text>
+    <text x="668" y="328" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kontakt zu Ansteckenden</text>
+    <text x="668" y="356" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Krampfanfälle in der Familie</text>
+    <text x="668" y="384" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ekzem, lokale Hautinfektion</text>
+    <text x="668" y="412" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">niedrige/lokale Corticoide</text>
+    <text x="668" y="440" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Immundefekt · Stillzeit</text>
+  <rect x="30" y="520" width="880" height="66" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+    <text x="52" y="548" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Mindestabstände zu anderen Tot- oder Lebendimpfstoffen sind nicht erforderlich. Influenza und COVID-19 gleichzeitig:</text>
+    <text x="52" y="570" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">in der Regel an unterschiedlichen Gliedmaßen – Impfreaktionen treten dann häufiger auf als bei getrennter Gabe.</text>
+  </g>
+</svg>

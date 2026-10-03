@@ -1,0 +1,308 @@
+{
+  "thema": "imp-eignung",
+  "titel": "Impffähigkeit: Kontraindikationen und besondere Patientengruppen",
+  "erklaerung": {
+    "absaetze": [
+      "Vor jeder Impfung steht eine individuelle Beurteilung, und sie hat genau drei mögliche Ergebnisse: impfen, nicht impfen oder an die Ärztin verweisen. Grundlage sind die Impf- und Genesungshistorie der Patientin sowie die Hinweise der Fachinformation. Der häufigste Fehler in der Offizin ist nicht die falsche Entscheidung, sondern die unterlassene Frage – wer die Anamnese abkürzt, trifft die Entscheidung auf unvollständiger Grundlage.",
+      "Die absoluten Kontraindikationen sind kurz und für beide Impfungen nahezu gleich: eine schwere akute Erkrankung, ein fieberhafter Infekt und eine Überempfindlichkeit gegen Bestandteile des Impfstoffs. Bei der COVID-19-Impfung kommt die allergische Sofortreaktion nach einer vorangegangenen Dosis hinzu. Alles andere ist entweder keine Kontraindikation oder ein Fall für die individuelle Abwägung.",
+      "Die zweite Gruppe sind die Fälle, in denen nicht die Entscheidung gegen die Impfung, sondern gegen die Impfung in der Apotheke zu treffen ist. Dazu gehören ungewöhnliche Reaktionen nach einer früheren Impfung, ein geplanter operativer Eingriff innerhalb der nächsten drei Tage, eine Therapie mit gerinnungsbeeinflussenden Arzneimitteln und die Schwangerschaft. Der Verweis an die Ärztin ist hier kein Rückzug, sondern die sachgerechte Entscheidung – die Impfung findet statt, nur an anderer Stelle.",
+      "Die dritte und längste Liste ist die der Umstände, die gerade keine Kontraindikation darstellen, aber regelmäßig für eine gehalten werden: banale Infekte, Kontakt zu ansteckenden Personen, Krampfanfälle in der Familie, Ekzeme und lokalisierte Hautinfektionen, niedrig dosierte oder lokal angewendete Corticoide, Krebserkrankungen, chronische Erkrankungen und die Stillzeit. Auch angeborene oder erworbene Immundefekte sind keine Kontraindikation; hier ist lediglich darüber aufzuklären, dass die Impfung möglicherweise nicht ausreichend wirkt. Das ist ein wichtiger Unterschied: nicht gefährlich, sondern möglicherweise weniger wirksam.",
+      "Besondere Sorgfalt verlangen zwei Gruppen. Bei Gerinnungsstörungen – unter Antikoagulation, bei Thrombozytopenie oder bei Hämophilie – wird weiterhin intramuskulär geimpft; ein Wechsel auf die subkutane Gabe ist ausdrücklich nicht vorgesehen. Stattdessen wird eine sehr feine Injektionskanüle verwendet und die Einstichstelle anschließend mindestens zwei Minuten fest komprimiert. Bei immundefizienten Personen kann eine erweiterte Grundimmunisierung mit zusätzlichen Impfdosen erforderlich sein – eine Entscheidung, die in ärztliche Hand gehört."
+    ],
+    "merksatz": "Drei Ergebnisse, nicht zwei: impfen, nicht impfen, oder impfen lassen – beim Arzt.",
+    "bild": "bilder/imp-eignung.svg",
+    "bildunterschrift": "Die Beurteilung der Impffähigkeit führt zu einem von drei Ergebnissen. Die mittlere Spalte ist die, die am häufigsten übersehen wird – dort wird geimpft, nur nicht in der Apotheke.",
+    "quelle": "BAK-Muster-SOP Grippeschutzimpfung, Stand 12.09.2025, Abschnitt 6; Menn, Skript Stand 24.11.2025, Abschnitt „Kontraindikationen, besondere Umstände und besondere Patientengruppen“"
+  },
+  "items": [
+    {
+      "id": "imp-ei-001",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Umstände sind absolute Kontraindikationen für die Grippeschutzimpfung?",
+      "antwort": "Eine schwere akute Erkrankung, ein fieberhafter Infekt und eine Überempfindlichkeit gegen Bestandteile des Impfstoffs. Weder eine Schwangerschaft noch die Stillzeit noch ein angeborener oder erworbener Immundefekt sind absolute Kontraindikationen.",
+      "vertiefung": "Die Zusammensetzung des konkreten Präparats steht in der Fachinformation. Der Hinweis auf „Bestandteile des Impfstoffs“ ist deshalb kein Freibrief für pauschale Allergieausschlüsse, sondern eine Aufforderung, bei bekannter Allergie konkret nachzusehen.",
+      "tags": ["eignung", "kontraindikation", "influenza"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6.1",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Schwere akute Erkrankung",
+        "Fieberhafter Infekt",
+        "Überempfindlichkeit gegen Bestandteile des Impfstoffs",
+        "Schwangerschaft",
+        "Stillzeit",
+        "Angeborener oder erworbener Immundefekt"
+      ],
+      "richtig": [0, 1, 2]
+    },
+    {
+      "id": "imp-ei-002",
+      "typ": "karte",
+      "frage": "Ab welcher Körpertemperatur gilt ein fieberhafter Infekt als Kontraindikation – und warum ist die Antwort nicht ganz eindeutig?",
+      "antwort": "Die Muster-SOP der Bundesapothekerkammer nennt für die Grippeschutzimpfung eine Temperatur über 38,5 °C und führt banale Infekte unter 38,5 °C ausdrücklich als Nicht-Kontraindikation. Das Schulungsskript nennt für die COVID-19-Impfung dagegen 37,5 °C und bezeichnet auch bei der Influenza-Impfung Infekte unter 37,5 °C als unbedenklich. Die beiden Quellen weichen hier voneinander ab.",
+      "vertiefung": "Praktisch bedeutsam ist der Bereich zwischen 37,5 und 38,5 °C. Für die eigene Arbeitsanweisung sollte eine der beiden Schwellen verbindlich festgelegt und begründet werden, statt sie im Einzelfall auszuhandeln. Im Zweifel ist die niedrigere Schwelle die vorsichtigere – und das Verschieben der Impfung um wenige Tage ist bei einer saisonalen Impfung selten ein echtes Problem.",
+      "tags": ["eignung", "kontraindikation", "einordnung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 6.1 und 6.3 (38,5 °C); Skript Menn 2025, Folien „Kontraindikationen Influenzaimpfung“, „Kontraindikationen Covid-Impfungen“ und „Keine Kontraindikationen!“ (37,5 °C)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die beiden gelieferten Dokumente nennen unterschiedliche Fieberschwellen (38,5 °C in der BAK-SOP, 37,5 °C im Skript). Welcher Wert in die eigene SOP übernommen wird, ist eine bewusst zu treffende Festlegung; die Fachinformation des verwendeten Impfstoffs ist dabei maßgeblich."
+    },
+    {
+      "id": "imp-ei-003",
+      "typ": "karte",
+      "frage": "Welche zusätzliche Kontraindikation gilt bei der COVID-19-Impfung, die es bei der Influenza-Impfung so nicht gibt?",
+      "antwort": "Eine allergische Sofortreaktion nach einer vorangegangenen COVID-19-Impfung. Wer auf die erste Dosis mit einer Sofortreaktion reagiert hat, erhält keine weitere Dosis desselben Impfstoffs in der Apotheke.",
+      "vertiefung": "Davon zu unterscheiden ist die verzögerte oder lokale Reaktion, die keine Kontraindikation darstellt. Die Anamnese muss also nicht nur erfassen, ob es eine Reaktion gab, sondern wann sie aufgetreten ist und wie sie aussah.",
+      "tags": ["eignung", "kontraindikation", "covid"],
+      "quelle": "Skript Menn 2025, Folie „Kontraindikationen Covid-Impfungen“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-004",
+      "typ": "zuordnung",
+      "frage": "Ordne die Umstände danach zu, ob nicht geimpft wird, an den Arzt verwiesen wird oder normal geimpft werden kann.",
+      "antwort": "Nicht impfen: schwere akute Erkrankung, Überempfindlichkeit gegen einen Impfstoffbestandteil. An den Arzt verweisen: ungewöhnliche Reaktion nach einer früheren Impfung, Operation in den nächsten drei Tagen, Schwangerschaft. Normal impfen: banaler Infekt, Krampfanfälle in der Familie, Stillzeit.",
+      "vertiefung": "Die Dreiteilung ist das eigentliche Arbeitsmittel. Wer nur zwischen „impfen“ und „nicht impfen“ unterscheidet, schickt entweder Patientinnen unnötig weg oder impft in Situationen, die eine ärztliche Abwägung gebraucht hätten.",
+      "tags": ["eignung", "kontraindikation", "systematik"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 6.1 bis 6.3",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        ["Schwere akute Erkrankung", "nicht impfen"],
+        ["Überempfindlichkeit gegen einen Impfstoffbestandteil", "nicht impfen"],
+        ["Ungewöhnliche Reaktion nach einer früheren Impfung", "an den Arzt verweisen"],
+        ["Operation innerhalb der nächsten drei Tage", "an den Arzt verweisen"],
+        ["Schwangerschaft", "an den Arzt verweisen"],
+        ["Banaler Infekt ohne relevantes Fieber", "normal impfen"],
+        ["Krampfanfälle in der Familie", "normal impfen"],
+        ["Stillzeit", "normal impfen"]
+      ]
+    },
+    {
+      "id": "imp-ei-005",
+      "typ": "mehrfachauswahl",
+      "frage": "In welchen Fällen ist zu prüfen, ob die Patientin besser an die Ärztin verwiesen wird, statt in der Apotheke geimpft zu werden?",
+      "antwort": "Bei allergischen Reaktionen, hohem Fieber oder anderen ungewöhnlichen Reaktionen nach einer früheren Impfung, bei einem geplanten operativen Eingriff innerhalb der nächsten drei Tage, bei einer Therapie mit gerinnungsbeeinflussenden Arzneimitteln, bei Schwangerschaft sowie bei sonstigen Umständen, die eine weitergehende ärztliche Beratung erfordern könnten.",
+      "vertiefung": "Alle vier benannten Fälle haben gemeinsam, dass sie eine Abwägung verlangen, für die in der Offizin die Grundlage fehlt – die Vorgeschichte, der Operationstermin, der aktuelle Gerinnungsstatus. Der Verweis ist damit keine Vorsichtsmaßnahme ins Blaue, sondern folgt aus einer konkreten Informationslücke.",
+      "tags": ["eignung", "arztverweis", "beratung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6.2",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Ungewöhnliche Reaktion nach einer früheren Impfung",
+        "Geplanter operativer Eingriff innerhalb der nächsten drei Tage",
+        "Therapie mit Arzneimitteln, die die Blutgerinnung beeinflussen",
+        "Schwangerschaft",
+        "Einnahme eines Antibiotikums wegen einer ausgeheilten Infektion"
+      ],
+      "richtig": [0, 1, 2, 3]
+    },
+    {
+      "id": "imp-ei-006",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche der folgenden Umstände sind ausdrücklich keine Kontraindikation für die Impfung?",
+      "antwort": "Alle außer der Überempfindlichkeit gegen einen Impfstoffbestandteil. Banale Infekte, der mögliche Kontakt zu ansteckenden Personen, Krampfanfälle in der Familie, Ekzeme und lokalisierte Hautinfektionen, die Behandlung mit niedrig dosierten oder lokal angewendeten Corticoiden sowie die Stillzeit sind keine Kontraindikationen.",
+      "vertiefung": "Diese Liste ist im Beratungsalltag wertvoller als die Liste der echten Kontraindikationen, weil fast alle davon regelmäßig als Grund für eine Absage genannt werden – von Patientinnen ebenso wie von Kolleginnen.",
+      "tags": ["eignung", "kontraindikation", "typischer-fehler"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6.3",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Banaler Infekt ohne relevantes Fieber",
+        "Möglicher Kontakt zu Personen mit ansteckenden Krankheiten",
+        "Krampfanfälle in der Familie",
+        "Ekzem oder lokalisierte Hautinfektion",
+        "Niedrig dosierte oder lokal angewendete Corticoide",
+        "Stillzeit",
+        "Überempfindlichkeit gegen einen Bestandteil des Impfstoffs"
+      ],
+      "richtig": [0, 1, 2, 3, 4, 5]
+    },
+    {
+      "id": "imp-ei-007",
+      "typ": "karte",
+      "frage": "Wie ist mit einer Patientin mit angeborenem oder erworbenem Immundefekt umzugehen?",
+      "antwort": "Ein Immundefekt ist keine Kontraindikation für die Impfung mit einem Totimpfstoff. Sie darf geimpft werden, ist aber darüber aufzuklären, dass die Impfung gegebenenfalls nicht ausreichend wirkt. Bei ausgeprägter Immundefizienz kann eine erweiterte Grundimmunisierung mit zusätzlichen Impfdosen erforderlich sein – diese Entscheidung gehört in ärztliche Hand.",
+      "vertiefung": "Der Unterschied zwischen „gefährlich“ und „möglicherweise wirkungslos“ ist der Kern. Bei Lebendimpfstoffen wäre der Immundefekt tatsächlich ein Sicherheitsproblem; bei den hier verwendeten Totimpfstoffen ist es ausschließlich eine Frage der Wirksamkeit. Zu den betroffenen Gruppen zählen Organtransplantierte, Hämodialyse-Patientinnen, HIV-Infizierte mit nachweisbarer Viruslast und Personen unter Hochdosistherapie mit Corticoiden oder Methotrexat.",
+      "tags": ["eignung", "immundefizienz", "beratung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6.3; Skript Menn 2025, Folie „Spezielle Personengruppen und Situationen“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-008",
+      "typ": "karte",
+      "frage": "Wie wird eine Patientin unter Antikoagulation geimpft?",
+      "antwort": "Intramuskulär wie alle anderen auch – ein Wechsel auf die subkutane Gabe ist ausdrücklich nicht vorgesehen. Angepasst wird die Technik: eine sehr feine Injektionskanüle und anschließend eine feste Kompression der Einstichstelle über mindestens zwei Minuten.",
+      "vertiefung": "Der Wechsel auf subkutan ist ein verbreiteter, aber falscher Reflex. Er würde die Immunantwort verschlechtern und entspricht nicht der Zulassung der Impfstoffe. Das Blutungsrisiko wird stattdessen über Kanülenstärke und Kompression beherrscht.",
+      "tags": ["eignung", "gerinnung", "technik"],
+      "quelle": "Skript Menn 2025, Folie „Spezielle Personengruppen und Situationen“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-009",
+      "typ": "numerisch",
+      "frage": "Wie lange soll die Einstichstelle bei einer Patientin mit Gerinnungsstörung nach der Injektion fest komprimiert werden?",
+      "antwort": "Mindestens 2 Minuten.",
+      "vertiefung": "Das ist deutlich länger, als es sich anfühlt. In der Praxis hilft es, die Zeit anzusagen oder die geimpfte Person den Tupfer selbst halten zu lassen – sonst wird regelmäßig zu früh losgelassen.",
+      "tags": ["eignung", "gerinnung", "technik"],
+      "quelle": "Skript Menn 2025, Folie „Spezielle Personengruppen und Situationen“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "wert": 2,
+      "einheit": "Minuten",
+      "toleranz": 0
+    },
+    {
+      "id": "imp-ei-010",
+      "typ": "karte",
+      "frage": "Ist die Einnahme von Gerinnungshemmern nun eine Kontraindikation oder nicht? Die Unterlagen scheinen sich zu widersprechen.",
+      "antwort": "Sie ist keine absolute Kontraindikation. Das Skript führt die Blutungsneigung und die Einnahme von Gerinnungsmedikamenten ausdrücklich unter den Nicht-Kontraindikationen auf, nennt an anderer Stelle aber eine Therapie etwa mit Phenprocoumon als Fall für eine individuelle Risikoabschätzung. Beides zusammen ergibt: geimpft werden darf, aber nur nach Abwägung und mit angepasster Technik. Die Muster-SOP ordnet diesen Fall dem Verweis an die Ärztin zu.",
+      "vertiefung": "Die praktische Auflösung liegt in der Unterscheidung zwischen stabiler und instabiler Situation. Eine gut eingestellte Dauerantikoagulation ist etwas anderes als eine frisch begonnene Therapie oder ein schwankender INR. Für die eigene SOP sollte festgelegt werden, welche dieser Fälle in der Apotheke bleiben und welche nicht.",
+      "tags": ["eignung", "gerinnung", "einordnung"],
+      "quelle": "Skript Menn 2025, Folien „Relative Kontraindikationen“ und „Keine Kontraindikationen!“; BAK-Muster-SOP 2025, Abschnitt 6.2",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die gelieferten Unterlagen ordnen die Antikoagulation unterschiedlich ein: Die BAK-SOP nennt sie als Grund für einen Arztverweis, das Skript führt sie sowohl unter den relativen als auch unter den Nicht-Kontraindikationen. Die Festlegung für die eigene Apotheke ist bewusst zu treffen."
+    },
+    {
+      "id": "imp-ei-011",
+      "typ": "karte",
+      "frage": "Wie wird mit Schwangeren umgegangen, die sich gegen Grippe impfen lassen möchten?",
+      "antwort": "Die STIKO empfiehlt Schwangeren die Influenza-Impfung, ab dem zweiten Trimenon. Für die Durchführung in der Apotheke gilt jedoch Zurückhaltung: Die Muster-SOP zählt die Schwangerschaft zu den Fällen, in denen zu prüfen ist, ob besser an die Ärztin verwiesen wird, und das Schulungsskript formuliert es als klare Regel – Schwangere nicht in der Apotheke impfen.",
+      "vertiefung": "Der Widerspruch ist nur scheinbar: Empfohlen ist die Impfung, der Ort ist die andere Frage. In der Beratung ist deshalb nicht abzuraten, sondern weiterzuleiten – und zwar mit der Information, dass die Impfung sinnvoll ist. Das ist eine ganz andere Botschaft als ein schlichtes Nein.",
+      "tags": ["eignung", "schwangerschaft", "arztverweis"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6.2; Skript Menn 2025, Folie „Formale Anforderungen für Apotheker*innen an Impfinteressierte“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-012",
+      "typ": "karte",
+      "frage": "Eine Patientin berichtet von einer Hühnereiweißallergie. Was folgt daraus für die Grippeimpfung?",
+      "antwort": "Das Skript führt die Hühnereiweißallergie unter den Kontraindikationen der Influenza-Impfung auf. Praktisch führt der Weg jedoch nicht zwangsläufig zum Impfverzicht: Es stehen zellbasierte Influenza-Impfstoffe zur Verfügung, die ohne Hühnerei hergestellt werden. Maßgeblich ist in jedem Fall die Zusammensetzung laut Fachinformation des konkreten Präparats.",
+      "vertiefung": "Zu klären ist außerdem, wie die Allergie sich äußert. Zwischen einer berichteten Unverträglichkeit und einer dokumentierten anaphylaktischen Reaktion liegt ein erheblicher Unterschied, und nur Letztere rechtfertigt den Ausschluss ohne weitere Prüfung.",
+      "tags": ["eignung", "allergie", "impfstoffauswahl"],
+      "quelle": "Skript Menn 2025, Folie „Kontraindikationen Influenzaimpfung“; BAK-Muster-SOP 2025, Abschnitt 7 (ei- oder zellbasierte Impfstoffe)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-013",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Vorerkrankungen oder Behandlungen stehen einer Impfung nicht entgegen?",
+      "antwort": "Krebserkrankungen, Allergien außerhalb der Impfstoffbestandteile, Fieberkrämpfe in der Anamnese, die Behandlung mit Antibiotika, chronische Erkrankungen einschließlich einer HIV-Infektion ohne nachweisbare Viruslast sowie nicht progrediente Erkrankungen des Zentralnervensystems.",
+      "vertiefung": "Bei Krebserkrankungen und chronischen Leiden liegt die Sache sogar umgekehrt: Diese Personen gehören häufig zu den Indikationsgruppen, für die die Impfung besonders empfohlen ist. Die Erkrankung ist also nicht das Hindernis, sondern der Grund.",
+      "tags": ["eignung", "kontraindikation", "typischer-fehler"],
+      "quelle": "Skript Menn 2025, Folie „Keine Kontraindikationen!“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Krebserkrankung",
+        "Allergien, die sich nicht gegen Impfstoffbestandteile richten",
+        "Fieberkrämpfe in der Anamnese",
+        "Behandlung mit einem Antibiotikum",
+        "HIV-Infektion ohne nachweisbare Viruslast",
+        "Nicht progrediente Erkrankung des Zentralnervensystems",
+        "Allergische Sofortreaktion auf die vorangegangene COVID-19-Impfung"
+      ],
+      "richtig": [0, 1, 2, 3, 4, 5]
+    },
+    {
+      "id": "imp-ei-014",
+      "typ": "zuordnung",
+      "frage": "Ordne den Situationen den empfohlenen zeitlichen Abstand zur Impfung zu.",
+      "antwort": "Operation: drei Tage. Blutspende: 14 Tage Abstand empfehlenswert. Chemotherapie: 14 Tage. Sport und besondere Belastung des Impfarms: drei bis fünf Tage nach der Impfung pausieren.",
+      "vertiefung": "Der Abstand zur Operation ist der einzige, der auch in die Entscheidung über den Impfort einfließt: Ein Eingriff innerhalb der nächsten drei Tage ist in der Muster-SOP ein Grund, an die Ärztin zu verweisen. Die übrigen Abstände sind Beratungsinhalte, keine Ausschlusskriterien.",
+      "tags": ["eignung", "abstaende", "beratung"],
+      "quelle": "Skript Menn 2025, Folie „Verhalten vor und nach Impfungen“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "paare": [
+        ["Geplante Operation", "3 Tage Abstand"],
+        ["Blutspende", "14 Tage Abstand empfehlenswert"],
+        ["Chemotherapie", "14 Tage Abstand"],
+        ["Sport und Belastung des Impfarms", "3 bis 5 Tage pausieren"]
+      ]
+    },
+    {
+      "id": "imp-ei-015",
+      "typ": "karte",
+      "frage": "Welchen Rat gibt man zum Verhalten in den Tagen nach der Impfung?",
+      "antwort": "Sport und körperliche Anstrengung sollten nach Möglichkeit drei bis fünf Tage pausiert werden, und besondere Belastungen des Impfarms sind für denselben Zeitraum zu vermeiden. Zusätzlich ist auf die möglichen normalen Impfreaktionen in den nächsten Tagen hinzuweisen – Rötung an der Einstichstelle, erhöhte Temperatur, ein Gefühl der Abgeschlagenheit.",
+      "vertiefung": "Der Hinweis gehört nach § 35a Abs. 4 ApBetrO ohnehin zum Pflichtinhalt der Aufklärung. Wer ihn gibt, verhindert zwei Dinge: unnötige Arztbesuche wegen einer normalen Impfreaktion und die Enttäuschung, die aus einer unerwarteten Reaktion ein Argument gegen künftige Impfungen macht.",
+      "tags": ["eignung", "beratung", "nachsorge"],
+      "quelle": "Skript Menn 2025, Folien „Verhalten vor und nach Impfungen“ und „Nachbereitung“",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-016",
+      "typ": "karte",
+      "frage": "Worauf stützt sich die Beurteilung der Impffähigkeit, und wo findet man weiterführende Informationen?",
+      "antwort": "Auf die Impf- und Genesungshistorie der Patientin sowie auf die Hinweise in der Fachinformation des verwendeten Impfstoffs. Weiterführende Informationen enthalten die Empfehlungen der STIKO im Epidemiologischen Bulletin des RKI und die Schutzimpfungs-Richtlinie des Gemeinsamen Bundesausschusses.",
+      "vertiefung": "Die Fachinformation ist dabei die konkreteste Quelle, weil sie präparatebezogen ist. Sie gehört deshalb nach der Muster-SOP in aktueller Fassung in den Impfraum – nicht als Nachschlagewerk für den Notfall, sondern als Arbeitsmittel.",
+      "tags": ["eignung", "quellen", "organisation"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 5 und 6",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "imp-ei-017",
+      "typ": "mehrfachauswahl",
+      "frage": "Ein 74-jähriger Patient mit gut eingestelltem Typ-2-Diabetes und einem leichten Schnupfen ohne Fieber möchte geimpft werden. Was trifft zu?",
+      "antwort": "Er darf geimpft werden: Ein banaler Infekt ohne relevantes Fieber ist keine Kontraindikation, und chronische Erkrankungen sind es ebenfalls nicht. Im Gegenteil gehört er mit 74 Jahren und als chronisch Kranker zu den Indikationsgruppen. Bei der Influenza-Impfung ist ab 60 Jahren ein Hochdosis- oder MF59-adjuvantierter Impfstoff vorgesehen.",
+      "vertiefung": "Dieser Fall ist der Normalfall an der Sichtwahl, und er wird regelmäßig falsch entschieden – der Schnupfen führt zur Absage, obwohl er gerade kein Grund dafür ist. Die relevante Frage ist nicht, ob der Patient erkältet ist, sondern ob er fiebert.",
+      "tags": ["eignung", "fallbeispiel", "beratung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 6.3 und 7",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Er darf geimpft werden, der banale Infekt ist keine Kontraindikation",
+        "Der Diabetes ist keine Kontraindikation, sondern begründet die Indikation",
+        "Mit 74 Jahren ist ein Hochdosis- oder MF59-adjuvantierter Influenza-Impfstoff vorgesehen",
+        "Der Schnupfen erfordert eine Verschiebung um mindestens eine Woche"
+      ],
+      "richtig": [0, 1, 2]
+    },
+    {
+      "id": "imp-ei-018",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte der Eignungsbeurteilung in eine sinnvolle Reihenfolge.",
+      "antwort": "Impf- und Genesungshistorie erfassen, absolute Kontraindikationen abfragen, Umstände prüfen, die für einen Arztverweis sprechen, Fachinformation des vorgesehenen Präparats abgleichen, Entscheidung treffen und dokumentieren.",
+      "vertiefung": "Die Reihenfolge spart Zeit: Die absoluten Kontraindikationen sind in drei Fragen abgehandelt und beenden den Vorgang gegebenenfalls sofort. Erst danach lohnt der Blick in die Fachinformation, der sich auf das tatsächlich vorgesehene Präparat bezieht.",
+      "tags": ["eignung", "ablauf", "beratung"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitt 6",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Impf- und Genesungshistorie erfassen",
+        "Absolute Kontraindikationen abfragen: schwere akute Erkrankung, Fieber, Überempfindlichkeit",
+        "Umstände prüfen, die für einen Verweis an die Ärztin sprechen",
+        "Hinweise der Fachinformation zum vorgesehenen Präparat abgleichen",
+        "Entscheidung treffen und auf dem Anamnesebogen dokumentieren"
+      ]
+    },
+    {
+      "id": "imp-ei-019",
+      "typ": "freitext",
+      "frage": "Eine 59-jährige Patientin nimmt seit Jahren Apixaban wegen Vorhofflimmerns und möchte die Grippeimpfung. Sie hat keine weiteren Erkrankungen und kein Fieber. Wie gehst du vor und was begründest du ihr gegenüber?",
+      "antwort": "Zunächst feststellen, dass keine absolute Kontraindikation vorliegt – kein Fieber, keine schwere akute Erkrankung, keine bekannte Überempfindlichkeit. Die Antikoagulation ist keine absolute Kontraindikation, sie verlangt aber eine individuelle Risikoabschätzung, und die Muster-SOP nennt sie als Grund für eine Prüfung des Arztverweises. Entscheidet man sich für die Impfung in der Apotheke, bleibt es bei der intramuskulären Gabe – kein Wechsel auf subkutan –, mit sehr feiner Kanüle und anschließender fester Kompression über mindestens zwei Minuten. Der Patientin gegenüber ist zu begründen, dass die Antikoagulation die Impfung nicht verbietet, sondern die Technik verändert, und dass ein Hämatom an der Einstichstelle wahrscheinlicher ist als sonst. Mit 59 Jahren erhält sie einen Standardimpfstoff; die Empfehlung für Hochdosis- oder MF59-adjuvantierte Impfstoffe greift erst ab 60.",
+      "vertiefung": "Dass die Altersgrenze hier um ein Jahr verfehlt wird, ist ein guter Anlass, im nächsten Jahr aktiv darauf hinzuweisen. Die Impfhistorie in der Apothekendokumentation macht das möglich.",
+      "tags": ["eignung", "gerinnung", "fallbeispiel"],
+      "quelle": "BAK-Muster-SOP 2025, Abschnitte 6.2 und 7; Skript Menn 2025, Folie „Spezielle Personengruppen und Situationen“",
+      "stand": "2026-10",
+      "geprueft": true,
+      "pruefpunkte": [
+        "Absolute Kontraindikationen abgefragt und ausgeschlossen",
+        "Antikoagulation ist keine absolute Kontraindikation, verlangt aber eine Abwägung",
+        "Die Muster-SOP nennt sie als Grund, einen Arztverweis zu prüfen",
+        "Bei Impfung in der Apotheke: intramuskulär, kein Wechsel auf subkutan",
+        "Sehr feine Kanüle und mindestens zwei Minuten feste Kompression",
+        "Mit 59 Jahren Standardimpfstoff, die Empfehlung ab 60 greift noch nicht"
+      ]
+    }
+  ]
+}

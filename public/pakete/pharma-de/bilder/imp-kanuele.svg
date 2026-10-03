@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440">
+  <rect width="900" height="440" fill="#eef2f3"/>
+  <rect x="24" y="96" width="268" height="272" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="316" y="96" width="268" height="272" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="608" y="96" width="268" height="272" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="76" y="189" width="96" height="32" rx="4" fill="#f8fafb" stroke="#587681" stroke-width="2.5"/>
+  <rect x="82" y="194" width="54" height="22" fill="#f3e0c8"/>
+  <rect x="56" y="185" width="20" height="40" rx="3" fill="#587681"/>
+  <rect x="172" y="197" width="14" height="16" rx="3" fill="#587681"/>
+  <line x1="186" y1="205" x2="236" y2="205" stroke="#1f3439" stroke-width="2.5"/>
+  <rect x="188" y="194" width="52" height="22" rx="5" fill="#2f7d8a" opacity="0.55" stroke="#2f7d8a" stroke-width="2"/>
+  <rect x="368" y="189" width="96" height="32" rx="4" fill="#f8fafb" stroke="#587681" stroke-width="2.5"/>
+  <rect x="374" y="194" width="54" height="22" fill="#f3e0c8"/>
+  <rect x="348" y="185" width="20" height="40" rx="3" fill="#587681"/>
+  <rect x="464" y="197" width="14" height="16" rx="3" fill="#587681"/>
+  <line x1="478" y1="205" x2="528" y2="205" stroke="#1f3439" stroke-width="2.5"/>
+  <rect x="480" y="194" width="52" height="22" rx="5" fill="#2f7d8a" opacity="0.55" stroke="#2f7d8a" stroke-width="2"/>
+  <path d="M196 182 L214 166" stroke="#1f3439" stroke-width="2.5"/>
+  <circle cx="470" cy="205" r="48" fill="none" stroke="#b03a2e" stroke-width="7"/>
+  <line x1="436" y1="171" x2="504" y2="239" stroke="#b03a2e" stroke-width="7"/>
+  <path d="M680 190 h152 v78 h-152 z" fill="#f3e0c8" stroke="#c8873a" stroke-width="2.5"/>
+  <path d="M680 190 h152 v18 h-152 z" fill="#c8873a"/>
+  <path d="M742 190 v-16 h28 v16" fill="none" stroke="#1f3439" stroke-width="2.5"/>
+  <g>
+    <text x="24" y="42" font-size="18" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kanüle: die drei Handgriffe, bei denen etwas schiefgeht</text>
+    <text x="24" y="68" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Die Nadelstichverletzung entsteht fast immer beim Auf- oder Zurückstecken der Schutzkappe.</text>
+    <text x="158" y="130" font-size="15" fill="#1f3439" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">1 · Kappe abziehen</text>
+    <text x="158" y="152" font-size="12" fill="#587681" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">vor der Injektion</text>
+    <text x="450" y="130" font-size="15" fill="#1f3439" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">2 · Recapping</text>
+    <text x="450" y="152" font-size="12" fill="#587681" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">nach der Injektion</text>
+    <text x="742" y="130" font-size="15" fill="#1f3439" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">3 · Entsorgen</text>
+    <text x="742" y="152" font-size="12" fill="#587681" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">sofort, am Platz</text>
+    <text x="44" y="276" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kappe am Ende anfassen</text>
+    <text x="44" y="298" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kanüle mit dem Fingernagel</text>
+    <text x="44" y="320" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">auf der Spritze fixieren</text>
+    <text x="44" y="342" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kappe abziehen – nie drehen</text>
+    <text x="336" y="276" font-size="12.5" fill="#b03a2e" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Schutzkappe nie wieder</text>
+    <text x="336" y="298" font-size="12.5" fill="#b03a2e" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">aufsetzen</text>
+    <text x="336" y="320" font-size="12.5" fill="#b03a2e" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ergebnis des Recappings ist</text>
+    <text x="336" y="342" font-size="12.5" fill="#b03a2e" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">die Nadelstichverletzung</text>
+    <text x="628" y="276" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kanüle an der Einkerbung</text>
+    <text x="628" y="298" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">des Behälters abstreifen</text>
+    <text x="628" y="320" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">zertifiziert nach TRBA 250</text>
+    <text x="628" y="342" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">und DIN EN ISO 23907</text>
+    <text x="24" y="406" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Der Abwurfbehälter gehört in Reichweite der zu impfenden Person – nicht auf den Nebentisch.</text>
+  </g>
+</svg>

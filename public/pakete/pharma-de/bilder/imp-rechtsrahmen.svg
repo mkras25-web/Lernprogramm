@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f3439"/></marker>
+  </defs>
+  <rect width="900" height="520" fill="#eef2f3"/>
+  <rect x="24" y="96" width="192" height="236" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="24" y="96" width="192" height="64" rx="10" fill="#2f7d8a"/>
+  <rect x="24" y="142" width="192" height="18" fill="#2f7d8a"/>
+  <rect x="244" y="96" width="192" height="236" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="244" y="96" width="192" height="64" rx="10" fill="#3f7d5a"/>
+  <rect x="244" y="142" width="192" height="18" fill="#3f7d5a"/>
+  <rect x="464" y="96" width="192" height="236" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="464" y="96" width="192" height="64" rx="10" fill="#c8873a"/>
+  <rect x="464" y="142" width="192" height="18" fill="#c8873a"/>
+  <rect x="684" y="96" width="192" height="236" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="684" y="96" width="192" height="64" rx="10" fill="#b03a2e"/>
+  <rect x="684" y="142" width="192" height="18" fill="#b03a2e"/>
+  <g>
+    <text x="24" y="42" font-size="18" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Vier Regelwerke, vier verschiedene Fragen</text>
+    <text x="24" y="68" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Wer in der Apotheke impft, bewegt sich gleichzeitig in vier Rechtsgebieten. Jedes beantwortet eine andere Frage.</text>
+    <text x="120" y="126" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Darf ich impfen?</text>
+    <text x="120" y="149" font-size="11.5" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">§ 20c IfSG</text>
+    <circle cx="44" cy="189" r="3" fill="#2f7d8a"/>
+    <text x="56" y="193" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Grippe ab 18 Jahren</text>
+    <circle cx="44" cy="227" r="3" fill="#2f7d8a"/>
+    <text x="56" y="231" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">COVID-19 ab 12 Jahren</text>
+    <circle cx="44" cy="265" r="3" fill="#2f7d8a"/>
+    <text x="56" y="269" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">ärztliche Schulung nötig</text>
+    <circle cx="44" cy="303" r="3" fill="#2f7d8a"/>
+    <text x="56" y="307" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">nur in der Apotheke</text>
+    <text x="340" y="126" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Wer zahlt?</text>
+    <text x="340" y="149" font-size="11.5" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">§ 20i SGB V</text>
+    <circle cx="264" cy="189" r="3" fill="#3f7d5a"/>
+    <text x="276" y="193" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Leistung der GKV</text>
+    <circle cx="264" cy="227" r="3" fill="#3f7d5a"/>
+    <text x="276" y="231" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">über SI-Richtlinie des G-BA</text>
+    <circle cx="264" cy="265" r="3" fill="#3f7d5a"/>
+    <text x="276" y="269" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ergänzungsverträge DAV</text>
+    <circle cx="264" cy="303" r="3" fill="#3f7d5a"/>
+    <text x="276" y="307" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">PKV individuell klären</text>
+    <text x="560" y="126" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Wie behandle ich?</text>
+    <text x="560" y="149" font-size="11.5" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">§§ 630a–h BGB</text>
+    <circle cx="484" cy="189" r="3" fill="#c8873a"/>
+    <text x="496" y="193" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Aufklärung vor der Impfung</text>
+    <circle cx="484" cy="227" r="3" fill="#c8873a"/>
+    <text x="496" y="231" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Einwilligung, widerrufbar</text>
+    <circle cx="484" cy="265" r="3" fill="#c8873a"/>
+    <text x="496" y="269" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Patientenakte führen</text>
+    <circle cx="484" cy="303" r="3" fill="#c8873a"/>
+    <text x="496" y="307" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Aufbewahrung 10 Jahre</text>
+    <text x="780" y="126" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Was muss ich tun?</text>
+    <text x="780" y="149" font-size="11.5" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">§ 35a ApBetrO · § 22 IfSG</text>
+    <circle cx="704" cy="189" r="3" fill="#b03a2e"/>
+    <text x="716" y="193" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Inhalte der Aufklärung</text>
+    <circle cx="704" cy="227" r="3" fill="#b03a2e"/>
+    <text x="716" y="231" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Delegation nur geschult</text>
+    <circle cx="704" cy="265" r="3" fill="#b03a2e"/>
+    <text x="716" y="269" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Pflichtangaben der Doku</text>
+    <circle cx="704" cy="303" r="3" fill="#b03a2e"/>
+    <text x="716" y="307" font-size="12" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Bußgeld bis 2.500 €</text>
+  <rect x="24" y="368" width="852" height="116" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+    <text x="48" y="402" font-size="14" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Der rote Faden</text>
+    <text x="48" y="430" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Die Berechtigung kommt aus dem IfSG, die Bezahlung aus dem SGB V, die Sorgfaltspflichten</text>
+    <text x="48" y="452" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">gegenüber der Patientin aus dem BGB, die handwerklichen Vorgaben aus ApBetrO und IfSG.</text>
+    <text x="48" y="474" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Fehlt eines davon, ist die Impfung nicht gedeckt – auch wenn sie fachlich richtig war.</text>
+  </g>
+</svg>
