@@ -14,7 +14,7 @@ import {
   skizzeLoeschen,
   speicherSichern,
 } from './lib/speicher.js'
-import { BEWERTUNG, pensumBauen, statistik, zustaendeBerechnen } from './lib/planer.js'
+import { BEWERTUNG, intervallVorschau, pensumBauen, statistik, zustaendeBerechnen } from './lib/planer.js'
 import {
   baustellen,
   beherrschungsgrad,
@@ -207,7 +207,10 @@ export default function App({ profilId, onProfilWechseln }) {
   // Alles, was gelernt und gezaehlt wird - gesichtete Ausschluesse raus.
   const aktiveItems = useMemo(() => lernbareItems(items, marken), [items, marken])
 
-  const zustaende = useMemo(() => zustaendeBerechnen(ereignisse), [ereignisse])
+  const zustaende = useMemo(
+    () => zustaendeBerechnen(ereignisse, { zielBehaltensrate: opt.zielBehaltensrate }),
+    [ereignisse, opt.zielBehaltensrate]
+  )
 
   const aktiveEreignisse = useMemo(() => {
     const erlaubt = new Set(aktiveItems.map((i) => i.id))
@@ -393,6 +396,11 @@ export default function App({ profilId, onProfilWechseln }) {
     setAnsicht,
     setErklaerthema,
     onSpeicherfehler: (text) => setMeldung({ art: 'fehler', text }),
+    onSitzungsende: ({ antworten, richtig, minuten }) =>
+      setMeldung({
+        art: 'erfolg',
+        text: `Sitzung beendet · ${antworten} ${antworten === 1 ? 'Antwort' : 'Antworten'}, ${richtig} richtig (${Math.round((richtig / antworten) * 100)} %) · ${minuten} min`,
+      }),
   })
 
   // Aktueller Stand ueber eine Ref: zwei schnelle Aenderungen hintereinander
@@ -694,6 +702,9 @@ export default function App({ profilId, onProfilWechseln }) {
           marke={marken.get(item.id)}
           thema={themen.find((t) => t.id === item.themaId)}
           istNeu={!zustaende.has(item.id)}
+          intervalle={intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate })}
+          // Problemkarte: ab 6 Fehlern (Nutzerentscheidung 6A)
+          istProblem={(zustaende.get(item.id)?.fehler ?? 0) >= 6}
           glossar={glossar}
           fruehereSkizzen={skizzen.filter((s) => s.itemId === item.id)}
           kannZurueck={Boolean(letzteAktion)}
@@ -861,6 +872,7 @@ export default function App({ profilId, onProfilWechseln }) {
           baustellen={baustellenStapel.length}
           skizzen={skizzenStapel.length}
           neue={neueItems.length}
+          tagesziel={opt.tagesziel ?? 0}
           offeneSitzung={offeneSitzung}
           onFortsetzen={sitzungFortsetzen}
           onVerwerfen={verwerfen}
@@ -915,14 +927,22 @@ export default function App({ profilId, onProfilWechseln }) {
             // Pruefung danebenging, wird im Lernstapel wieder faellig.
             const neueEreignisse = []
             for (const ergebnis of p.items) {
-              if (ergebnis.richtig === null) continue
+              // Die Ergebnisse tragen "anteil" (0..1), kein "richtig" - frueher
+              // wurde hier ergebnis.richtig gelesen (immer undefined), und JEDE
+              // Pruefungsantwort landete als "Nochmal" in der Planung.
+              if (ergebnis.anteil === null || ergebnis.anteil === undefined) continue
               const item = items.find((i) => i.id === ergebnis.itemId)
               if (!item) continue
+              // Teilpunkte (Entscheidung 18A): voll richtig = Gut, ab der
+              // Haelfte = Schwer, darunter = Nochmal.
+              const bewertung = ergebnis.anteil >= 1
+                ? BEWERTUNG.GUT
+                : ergebnis.anteil >= 0.5 ? BEWERTUNG.SCHWER : BEWERTUNG.NOCHMAL
               neueEreignisse.push(
                 await ereignisSpeichern({
                   itemId: item.id,
                   paketId: item.paketId,
-                  bewertung: ergebnis.richtig ? BEWERTUNG.GUT : BEWERTUNG.NOCHMAL,
+                  bewertung,
                   dauerMs: 0,
                   quelle: 'pruefung',
                 })

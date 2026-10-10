@@ -1,67 +1,72 @@
 import { describe, it, expect } from 'vitest'
-import { BEWERTUNG, zustaendeBerechnen, pensumBauen, statistik } from './planer.js'
+import { BEWERTUNG, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik } from './planer.js'
 
 const TAG = 24 * 60 * 60 * 1000
 
-describe('zustaendeBerechnen (SM-2)', () => {
-  it('startet nach der ersten Bewertung mit Intervall 1 Tag', () => {
-    const ts = Date.now()
-    const z = zustaendeBerechnen([{ itemId: 'a', bewertung: BEWERTUNG.GUT, ts }]).get('a')
-    expect(z.intervall).toBe(1)
-    expect(z.wiederholungen).toBe(1)
-    expect(z.faelligAb).toBe(ts + TAG)
+describe('zustaendeBerechnen (FSRS)', () => {
+  const ts = new Date('2026-10-01T10:00:00').getTime()
+  const ein = (bewertung, t = ts, art) => ({ itemId: 'a', bewertung, ts: t, art })
+
+  it('plant nach der ersten richtigen Antwort mindestens einen Tag', () => {
+    const z = zustaendeBerechnen([ein(BEWERTUNG.GUT)]).get('a')
+    expect(z.intervall).toBeGreaterThanOrEqual(1)
+    expect(z.faelligAb).toBeGreaterThan(ts)
+    expect(z.gesamtAntworten).toBe(1)
+    expect(z.fehler).toBe(0)
   })
 
-  it('NOCHMAL wirft das Intervall auf 0 zurueck und senkt die Leichtigkeit', () => {
-    const ts = Date.now()
-    const z = zustaendeBerechnen([
-      { itemId: 'a', bewertung: BEWERTUNG.GUT, ts },
-      { itemId: 'a', bewertung: BEWERTUNG.NOCHMAL, ts: ts + TAG },
-    ]).get('a')
-    expect(z.intervall).toBe(0)
-    expect(z.wiederholungen).toBe(0)
-    expect(z.leichtigkeit).toBeCloseTo(2.3) // 2.5 - 0.2
-    expect(z.fehler).toBe(1)
-    expect(z.gesamtAntworten).toBe(2)
+  it('LEICHT plant weiter als GUT, GUT weiter als SCHWER', () => {
+    const iv = (b) => zustaendeBerechnen([ein(BEWERTUNG.GUT), ein(b, ts + 3 * TAG)]).get('a').intervall
+    expect(iv(BEWERTUNG.LEICHT)).toBeGreaterThan(iv(BEWERTUNG.GUT))
+    expect(iv(BEWERTUNG.GUT)).toBeGreaterThan(iv(BEWERTUNG.SCHWER))
   })
 
-  it('LEICHT springt bei der zweiten Wiederholung auf 5 Tage, GUT auf 3', () => {
-    const ts = Date.now()
-    const mitLeicht = zustaendeBerechnen([
-      { itemId: 'a', bewertung: BEWERTUNG.GUT, ts },
-      { itemId: 'a', bewertung: BEWERTUNG.LEICHT, ts: ts + TAG },
-    ]).get('a')
-    expect(mitLeicht.intervall).toBe(5)
-
-    const mitGut = zustaendeBerechnen([
-      { itemId: 'b', bewertung: BEWERTUNG.GUT, ts },
-      { itemId: 'b', bewertung: BEWERTUNG.GUT, ts: ts + TAG },
-    ]).get('b')
-    expect(mitGut.intervall).toBe(3)
+  it('NOCHMAL verkuerzt das Intervall und zaehlt einen Fehler', () => {
+    const gut = zustaendeBerechnen([ein(BEWERTUNG.GUT), ein(BEWERTUNG.GUT, ts + 3 * TAG)]).get('a')
+    const nochmal = zustaendeBerechnen([ein(BEWERTUNG.GUT), ein(BEWERTUNG.NOCHMAL, ts + 3 * TAG)]).get('a')
+    expect(nochmal.intervall).toBeLessThan(gut.intervall)
+    expect(nochmal.fehler).toBe(1)
+    expect(nochmal.gesamtAntworten).toBe(2)
   })
 
-  it('SCHWER staucht das berechnete Intervall danach um 30 %', () => {
-    const ts = Date.now()
-    const z = zustaendeBerechnen([
-      { itemId: 'a', bewertung: BEWERTUNG.GUT, ts }, // intervall 1, leichtigkeit 2.5
-      { itemId: 'a', bewertung: BEWERTUNG.GUT, ts: ts + TAG }, // intervall 3, leichtigkeit 2.5
-      { itemId: 'a', bewertung: BEWERTUNG.SCHWER, ts: ts + 4 * TAG },
-    ]).get('a')
-    // leichtigkeit: 2.5 - 0.15 = 2.35; roh: round(3 * 2.35) = 7; gestaucht: round(7 * 0.7) = 5
-    expect(z.leichtigkeit).toBeCloseTo(2.35)
-    expect(z.intervall).toBe(5)
-    expect(z.wiederholungen).toBe(3)
+  it('Uebungsmodi zaehlen fuer die Planung hoechstens einmal pro Karte und Tag', () => {
+    const einmal = zustaendeBerechnen([ein(BEWERTUNG.GUT, ts, 'marathon')]).get('a')
+    const fuenfmal = zustaendeBerechnen(
+      [0, 1, 2, 3, 4].map((k) => ein(BEWERTUNG.GUT, ts + k * 60_000, 'marathon'))
+    ).get('a')
+    expect(fuenfmal.intervall).toBe(einmal.intervall)
+    expect(fuenfmal.faelligAb).toBe(einmal.faelligAb)
+    expect(fuenfmal.gesamtAntworten).toBe(5) // Statistik zaehlt weiter alles
   })
 
-  it('leichtigkeit faellt nie unter das Minimum von 1.3', () => {
-    const ts = Date.now()
-    const ereignisse = Array.from({ length: 10 }, (_, i) => ({
-      itemId: 'a',
-      bewertung: BEWERTUNG.NOCHMAL,
-      ts: ts + i * TAG,
-    }))
-    const z = zustaendeBerechnen(ereignisse).get('a')
-    expect(z.leichtigkeit).toBeGreaterThanOrEqual(1.3)
+  it('am naechsten Tag zaehlt eine Uebung wieder', () => {
+    const z1 = zustaendeBerechnen([ein(BEWERTUNG.GUT, ts, 'marathon')]).get('a')
+    const z2 = zustaendeBerechnen([ein(BEWERTUNG.GUT, ts, 'marathon'), ein(BEWERTUNG.GUT, ts + 2 * TAG, 'marathon')]).get('a')
+    expect(z2.intervall).toBeGreaterThan(z1.intervall)
+  })
+
+  it('alte Ereignisse ohne Betriebsart gelten als normale Wiederholung', () => {
+    const z = zustaendeBerechnen([ein(BEWERTUNG.GUT), ein(BEWERTUNG.GUT, ts + 3 * TAG)]).get('a')
+    expect(z.wiederholungen).toBe(2)
+  })
+})
+
+describe('intervallVorschau', () => {
+  it('ordnet die vier Bewertungen aufsteigend', () => {
+    const v = intervallVorschau(undefined, { jetzt: new Date('2026-10-01T10:00:00').getTime() })
+    expect(v[BEWERTUNG.NOCHMAL]).toBeLessThanOrEqual(v[BEWERTUNG.SCHWER])
+    expect(v[BEWERTUNG.SCHWER]).toBeLessThanOrEqual(v[BEWERTUNG.GUT])
+    expect(v[BEWERTUNG.GUT]).toBeLessThan(v[BEWERTUNG.LEICHT])
+  })
+  it('stimmt mit der tatsaechlichen Planung ueberein', () => {
+    const t = new Date('2026-10-01T10:00:00').getTime()
+    const v = intervallVorschau(undefined, { jetzt: t })
+    const z = zustaendeBerechnen([{ itemId: 'a', bewertung: BEWERTUNG.GUT, ts: t }]).get('a')
+    expect(z.intervall).toBe(v[BEWERTUNG.GUT])
+  })
+  it('kurze Schreibweise', () => {
+    expect(intervallKurz(4)).toBe('4 T.')
+    expect(intervallKurz(91)).toBe('3 Mon.')
   })
 })
 
@@ -85,21 +90,24 @@ describe('pensumBauen', () => {
     expect(pensum.filter((i) => i.id.startsWith('neu'))).toHaveLength(1)
   })
 
-  it('deckelt neue und Auffrischungs-Items durch maxProTag, nicht die faelligen', () => {
-    // Faellige Wiederholungen sind Pflicht und duerfen nicht verschwinden,
-    // nur weil zufaellig viele am selben Tag anstehen.
+  it('deckelt auch die faelligen auf maxProTag, die aeltesten zuerst, und pausiert neue', () => {
+    // Nutzerentscheidung 2026-10-10: nach einer Pause hoechstens maxProTag,
+    // der Rest wartet ("aufgeschoben"). Neue kommen erst ohne Rueckstand.
     const jetzt = Date.now()
     const faelligeItems = Array.from({ length: 15 }, (_, i) => ({ id: `f${i}` }))
     const neueItemsArr = Array.from({ length: 10 }, (_, i) => ({ id: `n${i}` }))
     const items = [...faelligeItems, ...neueItemsArr]
-    const zustaende = new Map(faelligeItems.map((it) => [it.id, { faelligAb: jetzt - TAG, intervall: 5 }]))
-    const { pensum, faelligGesamt, neuGesamt } = pensumBauen(items, zustaende, {
+    const zustaende = new Map(faelligeItems.map((it, i) => [it.id, { faelligAb: jetzt - (i + 1) * TAG, intervall: 5 }]))
+    const { pensum, faelligGesamt, aufgeschoben, neuImPensum } = pensumBauen(items, zustaende, {
       neuProTag: 6, maxProTag: 10, auffrischungAnteil: 0,
     })
     expect(faelligGesamt).toBe(15)
-    expect(neuGesamt).toBe(10)
-    expect(pensum.filter((i) => i.id.startsWith('f'))).toHaveLength(15)
-    expect(pensum.filter((i) => i.id.startsWith('n'))).toHaveLength(0)
+    expect(pensum).toHaveLength(10)
+    expect(aufgeschoben).toBe(5)
+    expect(neuImPensum).toBe(0)
+    // die am laengsten ueberfaelligen (f14 ... f5) sind dabei
+    expect(pensum.map((i) => i.id)).toContain('f14')
+    expect(pensum.map((i) => i.id)).not.toContain('f0')
   })
 })
 

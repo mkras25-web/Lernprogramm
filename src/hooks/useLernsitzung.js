@@ -40,6 +40,7 @@ export function useLernsitzung({
   setAnsicht,
   setErklaerthema,
   onSpeicherfehler,
+  onSitzungsende,
 }) {
   const [sitzung, setSitzung] = useState(null)
   const [position, setPosition] = useState(0)
@@ -50,6 +51,14 @@ export function useLernsitzung({
   const [verlauf, setVerlauf] = useState([])
   const [offeneSitzung, setOffeneSitzung] = useState(null)
   const startZeit = useRef(Date.now())
+  // Bilanz der laufenden Sitzung fuer die Meldung am Ende (Nutzer-
+  // entscheidung 9B: kurze Meldung statt eigener Abschlusskarte).
+  const bilanz = useRef({ antworten: 0, richtig: 0, start: Date.now() })
+  function bilanzMelden() {
+    const b = bilanz.current
+    if (b.antworten > 0) onSitzungsende?.({ ...b, minuten: Math.max(1, Math.round((Date.now() - b.start) / 60000)) })
+    bilanz.current = { antworten: 0, richtig: 0, start: Date.now() }
+  }
   const sitzungSchluessel = sitzungSchluesselFuer(profilId)
 
   useEffect(() => {
@@ -120,6 +129,7 @@ export function useLernsitzung({
     setSitzung(neueSitzung)
     setPosition(0)
     setLetzteXp(0)
+    bilanz.current = { antworten: 0, richtig: 0, start: Date.now() }
     setVerlauf([])
     setErklaerthema(null)
     startZeit.current = Date.now()
@@ -135,6 +145,7 @@ export function useLernsitzung({
       sitzungSichern(null)
       return
     }
+    bilanz.current = { antworten: 0, richtig: 0, start: Date.now() }
     setSitzung({ art: offeneSitzung.art, pensum })
     setPosition(Math.min(offeneSitzung.position, pensum.length - 1))
     setLetzteXp(0)
@@ -149,6 +160,7 @@ export function useLernsitzung({
     // beendet war - dann war sitzungJetzt null und der Zugriff auf
     // .art brach die ganze Oberflaeche ab.
     if (!sitzungJetzt?.pensum?.length) {
+      bilanzMelden()
       setAnsicht('heute')
       setSitzung(null)
       setPosition(0)
@@ -169,6 +181,7 @@ export function useLernsitzung({
     }
 
     if (naechste >= sitzungJetzt.pensum.length + zusatz) {
+      bilanzMelden()
       setAnsicht('heute')
       setSitzung(null)
       setPosition(0)
@@ -183,6 +196,27 @@ export function useLernsitzung({
   async function bewerten(bewertung, skizzenbild, hilfeGenutzt = false) {
     const item = sitzung?.pensum?.[position]
     if (!item) return
+    let sitzungBasis = sitzung
+
+    // Neubewertung nach dem Zurueckblaettern ERSETZT die alte (Nutzer-
+    // entscheidung 2A) - frueher zaehlten beide, auch fuer die XP. Geloescht
+    // wird wie bei "Rueckgaengig" samt Loeschvermerk, sonst braechte der
+    // Dropbox-Abgleich die alte Bewertung vom anderen Geraet zurueck.
+    const frueher = verlauf.find((v) => v.position === position)
+    if (frueher && sitzung.art !== 'blaettern') {
+      try {
+        await ereignisLoeschen(frueher.ereignisId)
+      } catch (e) {
+        onSpeicherfehler?.(`Alte Bewertung nicht ersetzt: ${e?.message ?? e}`)
+        return
+      }
+      setEreignisse((alte) => alte.filter((e) => e.id !== frueher.ereignisId))
+      bilanz.current.antworten -= 1
+      if (frueher.richtig) bilanz.current.richtig -= 1
+      // Ein frueheres "Nochmal" hatte die Karte ans Ende gehaengt -
+      // diesen Stand zuruecknehmen, sonst kaeme sie doppelt.
+      sitzungBasis = { ...sitzung, pensum: frueher.pensumVorher }
+    }
 
     if (skizzenbild && opt.skizzenSichern) {
       const eintrag = await skizzeSpeichern(item.id, skizzenbild)
@@ -202,6 +236,9 @@ export function useLernsitzung({
         bewertung,
         dauerMs: Date.now() - startZeit.current,
         hilfe: hilfeGenutzt || undefined,
+        // Betriebsart: Uebungsmodi zaehlen fuer die Planung nur einmal pro
+        // Karte und Tag (planer.js, UEBUNGSARTEN).
+        art: sitzungBasis.art,
       })
     } catch (e) {
       // Nicht weiterblaettern: sonst waere die Antwort still verloren.
@@ -213,12 +250,19 @@ export function useLernsitzung({
     // pensumVorher merkt sich den Stapel vor dieser Bewertung - bei
     // "Nochmal" haengt bewerten() das Item erneut ans Ende an, das muss
     // ein spaeteres Rueckgaengig mit zurueckdrehen.
-    setVerlauf((alt) => [...alt.slice(-49), { ereignisId: ereignis.id, position, pensumVorher: sitzung.pensum }])
+    const richtig = bewertung !== BEWERTUNG.NOCHMAL
+    bilanz.current.antworten += 1
+    if (richtig) bilanz.current.richtig += 1
+    setVerlauf((alt) => [
+      ...alt.filter((v) => v !== frueher).slice(-49),
+      { ereignisId: ereignis.id, position, pensumVorher: sitzungBasis.pensum, richtig },
+    ])
 
     let zusatz = 0
-    let sitzungJetzt = sitzung
+    let sitzungJetzt = sitzungBasis
+    if (sitzungBasis !== sitzung) setSitzung(sitzungBasis)
     if (bewertung === BEWERTUNG.NOCHMAL) {
-      sitzungJetzt = { ...sitzung, pensum: [...sitzung.pensum, item] }
+      sitzungJetzt = { ...sitzungBasis, pensum: [...sitzungBasis.pensum, item] }
       setSitzung(sitzungJetzt)
       zusatz = 1
     }
@@ -233,6 +277,8 @@ export function useLernsitzung({
     if (verlauf.length === 0 || !sitzung) return
     const eintrag = verlauf[verlauf.length - 1]
     await ereignisLoeschen(eintrag.ereignisId)
+    bilanz.current.antworten -= 1
+    if (eintrag.richtig) bilanz.current.richtig -= 1
     setEreignisse((alte) => alte.filter((e) => e.id !== eintrag.ereignisId))
     const pensumWiederhergestellt = eintrag.pensumVorher
     setSitzung((alt) => (alt.pensum.length !== pensumWiederhergestellt.length
@@ -246,9 +292,8 @@ export function useLernsitzung({
   }
 
   function zurueckblaettern() {
-    // Blaettert nur zurueck - gespeicherte Bewertungen bleiben.
-    // Wer erneut bewertet, erzeugt ein zweites Ereignis; das ist
-    // gewollt, weil auch die zweite Antwort eine Antwort ist.
+    // Blaettert nur zurueck - die gespeicherte Bewertung bleibt, bis
+    // erneut bewertet wird; die neue ersetzt sie dann (siehe bewerten).
     if (position === 0) return
     const neu = position - 1
     setPosition(neu)
@@ -260,6 +305,7 @@ export function useLernsitzung({
   // Sitzung ohne Weiterspielen verlassen - der gespeicherte Stand
   // (fuer "Fortsetzen") bleibt dabei erhalten.
   function verlassen() {
+    bilanzMelden()
     setAnsicht('heute')
     setSitzung(null)
   }

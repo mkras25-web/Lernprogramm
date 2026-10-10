@@ -5,7 +5,7 @@ import { naechsterRang, rangFuer } from '../lib/fortschritt.js'
 import { bauwerkFuer } from '../lib/stufen.js'
 
 export default function Heute({
-  level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue,
+  level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
   pruefungHinweis, onPruefung,
@@ -51,7 +51,11 @@ export default function Heute({
             einheit="%"
             bezeichnung={quote ? `an ${quote.tage} von ${quote.vonTagen} Tagen` : 'der Tage gelernt'}
           />
-          <Kennzahl wert={erledigt} bezeichnung="heute" />
+          <Kennzahl
+            wert={erledigt}
+            einheit={tagesziel > 0 ? `/ ${tagesziel}` : undefined}
+            bezeichnung={tagesziel > 0 ? (erledigt >= tagesziel ? 'Tagesziel erreicht' : 'Tagesziel') : 'heute'}
+          />
           <Kennzahl wert={werte.lernzeitHeuteMin} einheit="min" bezeichnung="Lernzeit" />
           <Kennzahl wert={freieKarten} bezeichnung="Detailkarten" />
         </section>
@@ -67,6 +71,7 @@ export default function Heute({
                 <p className="nebentext">
                   {tagesplan.wiederholungImPensum} Wiederholungen · {tagesplan.neuImPensum} neu ·
                   etwa {Math.max(1, Math.round(offen * 0.5))} Minuten
+                  {tagesplan.aufgeschoben > 0 && ` · ${tagesplan.aufgeschoben} weitere warten (Obergrenze)`}
                 </p>
               </div>
               <button className="knopf haupt schmal" onClick={() => onStart('ueben')}>

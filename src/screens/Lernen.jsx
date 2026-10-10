@@ -7,7 +7,7 @@ import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import LokalBild from '../components/LokalBild.jsx'
 import Notizfeld from '../components/Notizfeld.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
-import { BEWERTUNG } from '../lib/planer.js'
+import { BEWERTUNG, intervallKurz } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
 import { mischen } from '../lib/mischen.js'
 
@@ -28,6 +28,8 @@ export default function Lernen({
   marke,
   thema,
   istNeu,
+  intervalle,
+  istProblem,
   glossar,
   fruehereSkizzen,
   kannZurueck,
@@ -220,6 +222,7 @@ export default function Lernen({
         <article className="karteninhalt">
           <p className="herkunft">
             {istNeu && <span className="neuMarke">Neu</span>}
+            {istProblem && <span className="problemMarke">Problemkarte</span>}
             {item.modulTitel} · {item.themaTitel}
             {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
             {item.bearbeitet && <span className="bearbeitetMarke">bearbeitet</span>}
@@ -231,7 +234,9 @@ export default function Lernen({
               : item.frage}
           </h1>
 
-          {istNeu && thema?.erklaerung && (
+          {/* Erklaerung: bei neuen Karten vorab, sonst nach dem Aufdecken -
+              gerade nach einem Fehler hilft das Nachlesen am meisten (7A). */}
+          {(istNeu || aufgedeckt) && thema?.erklaerung && (
             <div className="erklaerkasten">
               <button className="textknopf" onClick={() => setErklaerungOffen((o) => !o)}>
                 {erklaerungOffen ? 'Erklärung ausblenden' : 'Erklärung zum Thema zeigen'}
@@ -281,6 +286,13 @@ export default function Lernen({
               {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
               <Normen item={item} glossar={glossar} />
             </div>
+          )}
+
+          {istProblem && aufgedeckt && (
+            <p className="problemHinweis">
+              Diese Karte klappt bisher nicht ({'≥'}6 Fehler). Erklärung zum Thema lesen oder die
+              Karte zur Überarbeitung vormerken (Sichtung „Überarbeiten“).
+            </p>
           )}
 
           <div className="marken">
@@ -408,22 +420,26 @@ export default function Lernen({
                 className={urteil === 'falsch' ? 'knopf vorschlag' : 'knopf'}
                 onClick={() => bewerten(BEWERTUNG.NOCHMAL)}
               >
-                Nochmal <span className="taste">1</span>
+                <span className="bewertungZeile">Nochmal <span className="taste">1</span></span>
+                {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.NOCHMAL])}</small>}
               </button>
               {stufen === 4 && (
                 <button className="knopf" onClick={() => bewerten(BEWERTUNG.SCHWER)}>
-                  Schwer <span className="taste">2</span>
+                  <span className="bewertungZeile">Schwer <span className="taste">2</span></span>
+                  {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.SCHWER])}</small>}
                 </button>
               )}
               <button
                 className={urteil === 'richtig' ? 'knopf vorschlag' : 'knopf'}
                 onClick={() => bewerten(BEWERTUNG.GUT)}
               >
-                Gut <span className="taste">{stufen === 4 ? '3' : '2'}</span>
+                <span className="bewertungZeile">Gut <span className="taste">{stufen === 4 ? '3' : '2'}</span></span>
+                {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.GUT])}</small>}
               </button>
               {stufen === 4 && (
                 <button className="knopf" onClick={() => bewerten(BEWERTUNG.LEICHT)}>
-                  Leicht <span className="taste">4</span>
+                  <span className="bewertungZeile">Leicht <span className="taste">4</span></span>
+                  {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.LEICHT])}</small>}
                 </button>
               )}
             </div>

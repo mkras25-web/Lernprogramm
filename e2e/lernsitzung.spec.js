@@ -47,3 +47,51 @@ test('Notiz: Tippen in der Mitte laesst die Schreibmarke an ihrem Platz', async 
   await feld.pressSequentially('xyz', { delay: 120 })
   await expect(feld).toHaveValue('AAxyzAA BBBB')
 })
+
+async function ereignisAnzahl(page) {
+  return page.evaluate(async () => {
+    const dbs = await indexedDB.databases()
+    const name = dbs.map((d) => d.name).find((n) => n?.startsWith('lernprogramm_'))
+    const db = await new Promise((ok, nein) => {
+      const a = indexedDB.open(name)
+      a.onsuccess = () => ok(a.result)
+      a.onerror = () => nein(a.error)
+    })
+    const n = await new Promise((ok) => {
+      const r = db.transaction('ereignisse').objectStore('ereignisse').count()
+      r.onsuccess = () => ok(r.result)
+    })
+    db.close()
+    return n
+  })
+}
+
+test('Neubewertung nach dem Zurueckblaettern ersetzt die alte Bewertung (2A)', async ({ page }) => {
+  await angemeldet(page, 'Neubewertung')
+  await page.keyboard.press('Space')
+  await page.keyboard.press('3')
+  await expect.poll(() => stand(page)).toMatch(/^1\//)
+  await page.keyboard.press('ArrowLeft')
+  await expect.poll(() => stand(page)).toMatch(/^0\//)
+  await page.keyboard.press('Space')
+  await page.keyboard.press('4')
+  await expect.poll(() => stand(page)).toMatch(/^1\//)
+  expect(await ereignisAnzahl(page)).toBe(1)
+})
+
+test('Am Sitzungsende erscheint eine Bilanz (9B)', async ({ page }) => {
+  await angemeldet(page, 'Bilanz')
+  await page.locator('.lernkopf .textknopf', { hasText: 'Zurück' }).click()
+  await page.locator('.artKachel', { hasText: 'Schnellrunde' }).click()
+  await page.keyboard.press('Space')
+  await page.keyboard.press('3')
+  await page.locator('.lernkopf .textknopf', { hasText: 'Zurück' }).click()
+  await expect(page.locator('.meldung')).toContainText('Sitzung beendet · 1 Antwort, 1 richtig')
+})
+
+test('Bewertungsknoepfe zeigen das naechste Intervall (8A)', async ({ page }) => {
+  await angemeldet(page, 'Vorschau')
+  await page.keyboard.press('Space')
+  await expect(page.locator('.bewertung .intervallHinweis')).toHaveCount(4)
+  await expect(page.locator('.bewertung .knopf', { hasText: 'Leicht' }).locator('.intervallHinweis')).toHaveText(/\d+ (T\.|Mon\.)/)
+})

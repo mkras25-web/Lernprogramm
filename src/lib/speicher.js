@@ -209,7 +209,7 @@ export async function alleEreignisse() {
   })
 }
 
-export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, hilfe, quelle }) {
+export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, hilfe, quelle, art }) {
   const ereignis = {
     id: erzeugeId(),
     ts: Date.now(),
@@ -220,6 +220,7 @@ export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, h
     dauerMs,
     hilfe,
     quelle,
+    art,
   }
   const store = await transaktion('readwrite')
   const fertig = abgeschlossen(store)

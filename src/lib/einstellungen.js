@@ -52,6 +52,11 @@ export const STANDARD = {
   breite: 'breit',
   neuProTag: 6,
   maxProTag: 30,
+  // FSRS: angestrebte Behaltenswahrscheinlichkeit beim Wiederholen.
+  // Hoeher = mehr Wiederholungen, sicherer; niedriger = weniger Aufwand.
+  zielBehaltensrate: 0.9,
+  // Tagesziel in Antworten (0 = aus). Ein Ziel, keine Obergrenze.
+  tagesziel: 0,
   reihenfolge: 'gemischt',
   bewertungsstufen: 4,
   ungeprueftZulassen: true,

@@ -262,12 +262,45 @@ export default function Einstellungen({
           <div className="zeile">
             <div className="zeileText">
               <p className="zeileTitel">Obergrenze pro Tag</p>
-              <p className="zeileHinweis">Schützt vor Überfälligkeitsbergen nach einer Pause.</p>
+              <p className="zeileHinweis">
+                Höchstens so viele Karten pro Tag – auch fällige. Nach einer Pause kommen die am
+                längsten überfälligen zuerst, der Rest wartet; neue Karten pausieren so lange.
+              </p>
             </div>
             <Wahl
               wert={werte.maxProTag}
               optionen={[[20, '20'], [30, '30'], [50, '50'], [999, 'ohne']]}
               onWahl={(w) => aendern('maxProTag', w)}
+            />
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Tagesziel</p>
+              <p className="zeileHinweis">
+                Wie viele Antworten du dir pro Tag vornimmst. Ein Ziel, keine Grenze – Heute zeigt
+                den Stand.
+              </p>
+            </div>
+            <Wahl
+              wert={werte.tagesziel ?? 0}
+              optionen={[[0, 'aus'], [10, '10'], [20, '20'], [30, '30'], [50, '50']]}
+              onWahl={(w) => aendern('tagesziel', w)}
+            />
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Ziel-Behaltensrate</p>
+              <p className="zeileHinweis">
+                Wie sicher du eine Karte beim Wiederholen noch wissen sollst (Verfahren FSRS).
+                Höher heißt öfter wiederholen, niedriger spart Zeit.
+              </p>
+            </div>
+            <Wahl
+              wert={werte.zielBehaltensrate ?? 0.9}
+              optionen={[[0.85, '85 %'], [0.9, '90 %'], [0.95, '95 %']]}
+              onWahl={(w) => aendern('zielBehaltensrate', w)}
             />
           </div>
 
