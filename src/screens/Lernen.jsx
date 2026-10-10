@@ -6,6 +6,9 @@ import Bildpunkte from '../components/Bildpunkte.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import LokalBild from '../components/LokalBild.jsx'
 import Notizfeld from '../components/Notizfeld.jsx'
+import Fallaufgabe from '../components/Fallaufgabe.jsx'
+import SieheAuch from '../components/SieheAuch.jsx'
+import MeldenFeld from '../components/MeldenFeld.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { BEWERTUNG, intervallKurz } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
@@ -30,6 +33,7 @@ export default function Lernen({
   istNeu,
   intervalle,
   istProblem,
+  themen,
   glossar,
   fruehereSkizzen,
   kannZurueck,
@@ -43,6 +47,7 @@ export default function Lernen({
   const [aufgedeckt, setAufgedeckt] = useState(false)
   const [eingabe, setEingabe] = useState(null)
   const [notizOffen, setNotizOffen] = useState(false)
+  const [meldenOffen, setMeldenOffen] = useState(false)
   const [erklaerungOffen, setErklaerungOffen] = useState(false)
   const [hilfeGenutzt, setHilfeGenutzt] = useState(false)
   const bildRef = useRef(null)
@@ -52,6 +57,7 @@ export default function Lernen({
     setAufgedeckt(false)
     setEingabe(null)
     setNotizOffen(false)
+    setMeldenOffen(false)
     setErklaerungOffen(false)
     setHilfeGenutzt(false)
   }, [item.id, position])
@@ -285,13 +291,18 @@ export default function Lernen({
               <p className="quelle">{item.quelle}</p>
               {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
               <Normen item={item} glossar={glossar} />
+              <SieheAuch ids={item.siehe} themen={themen} />
             </div>
           )}
 
           {istProblem && aufgedeckt && (
             <p className="problemHinweis">
-              Diese Karte klappt bisher nicht ({'≥'}6 Fehler). Erklärung zum Thema lesen oder die
-              Karte zur Überarbeitung vormerken (Sichtung „Überarbeiten“).
+              Diese Karte klappt bisher nicht ({'≥'}6 Fehler). Erklärung zum Thema lesen – oder
+              melden, falls die Karte selbst das Problem ist. Sie steht ohnehin schon in der
+              Meldeliste für den Web-Chat.{' '}
+              {!meldenOffen && (
+                <button className="textknopf" onClick={() => setMeldenOffen(true)}>Melden</button>
+              )}
             </p>
           )}
 
@@ -307,6 +318,12 @@ export default function Lernen({
               onClick={() => setNotizOffen((n) => !n)}
             >
               Notiz
+            </button>
+            <button
+              className={marke?.meldung ? 'markenKnopf aktiv' : 'markenKnopf'}
+              onClick={() => setMeldenOffen((o) => !o)}
+            >
+              {marke?.meldung ? '⚑︎ Gemeldet' : '⚑︎ Melden'}
             </button>
             <span className="markenTrenner" />
             {/* Am Desktop display:contents (wirkungslos), mobil eine eigene
@@ -327,6 +344,22 @@ export default function Lernen({
               ))}
             </span>
           </div>
+
+          {meldenOffen && (
+            <MeldenFeld
+              key={item.id}
+              meldung={marke?.meldung}
+              onMelden={(meldung) => {
+                onMarke(item.id, { einspruch: true, meldung })
+                setMeldenOffen(false)
+              }}
+              onZurueckziehen={() => {
+                onMarke(item.id, { einspruch: null, meldung: null })
+                setMeldenOffen(false)
+              }}
+              onSchliessen={() => setMeldenOffen(false)}
+            />
+          )}
 
           {notizOffen && (
             <Notizfeld
@@ -572,6 +605,10 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
     return <Skizzenfeld referenz={item.referenz} aufgedeckt={gesperrt} bildRef={bildRef} />
   }
 
+  if (item.typ === 'fall') {
+    return <Fallaufgabe key={item.id + seed} item={item} gesperrt={gesperrt} />
+  }
+
   if (item.typ === 'mehrfachauswahl') {
     const reihe = mischen(item.optionen.length, seed)
     const gewaehlt = wert ?? []
@@ -594,6 +631,9 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
                 onClick={() => setWert(aktiv ? gewaehlt.filter((g) => g !== i) : [...gewaehlt, i])}
               >
                 {item.optionen[i]}
+                {/* Begruendung je Option (Feld "warum", 21A) - erst nach dem
+                    Aufdecken, sonst verraete sie die Loesung. */}
+                {gesperrt && item.warum?.[i] && <span className="optionWarum">{item.warum[i]}</span>}
               </button>
             </li>
           )

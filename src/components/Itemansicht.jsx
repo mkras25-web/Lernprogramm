@@ -77,10 +77,23 @@ function Aufgabenteil({ item }) {
               <span className={item.richtig.includes(i) ? 'option richtig' : 'option'}>
                 {item.richtig.includes(i) ? '✓ ' : '· '}
                 {text}
+                {item.warum?.[i] && <span className="optionWarum">{item.warum[i]}</span>}
               </span>
             </li>
           ))}
         </ul>
+      )
+
+    case 'fall':
+      return (
+        <ol className="fallTeile">
+          {(item.teile ?? []).map((t, i) => (
+            <li key={i} className="fallTeil offen">
+              <p className="fallFrage"><span className="fallNr">Teil {i + 1}</span> {t.frage}</p>
+              <p className="fallAntwort">{t.antwort}</p>
+            </li>
+          ))}
+        </ol>
       )
 
     case 'numerisch':

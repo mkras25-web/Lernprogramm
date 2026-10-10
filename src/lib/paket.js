@@ -92,6 +92,10 @@ export async function paketLaden(paketId) {
             }
           : null,
         anzahl: (daten.items ?? []).length,
+        // Optional aus der Themendatei (2026-10-10): Lernziele ("Du kannst
+        // ...") und Querverweise auf andere Themen-IDs.
+        lernziele: Array.isArray(daten.lernziele) ? daten.lernziele : null,
+        siehe: Array.isArray(daten.siehe) ? daten.siehe : null,
       })
 
       for (const item of daten.items ?? []) {
@@ -101,6 +105,8 @@ export async function paketLaden(paketId) {
           // Erklaerende Abbildung zur Antwort (mit bildunterschrift) -
           // wird nach dem Aufdecken bzw. in der Itemansicht gezeigt.
           bild: item.bild ? `${wurzel}/${item.bild}` : undefined,
+          // Ausgangsbild einer Fallaufgabe (Typ "fall")
+          fallbild: item.fallbild ? `${wurzel}/${item.fallbild}` : undefined,
           // Die Bilder einer Gegenuebestellung liegen im Paketordner wie
           // jede Referenz - ohne diese Zeilen bliebe der Pfad relativ zur
           // aufgerufenen Seite und das Bild liefe ins Leere.

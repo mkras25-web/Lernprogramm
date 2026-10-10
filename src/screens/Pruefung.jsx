@@ -891,6 +891,8 @@ function loesungZeilen(item) {
       return (item.punkte ?? []).map((p) => `${p.nr}: ${p.name}`)
     case 'fehlersuche':
       return [`Bereich ${item.fehlerNr}`]
+    case 'fall':
+      return (item.teile ?? []).map((t, i) => `Teil ${i + 1}: ${t.antwort}`)
     default:
       return item.antwort ? [item.antwort] : []
   }

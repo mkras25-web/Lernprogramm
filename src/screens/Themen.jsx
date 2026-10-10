@@ -13,7 +13,10 @@ export default function Themen({
   phasen,
   onStart,
   onErklaerung,
+  onWunschliste,
 }) {
+  // Abdeckungsuebersicht (20A): welche Themen haben schon Inhalt?
+  const [abdeckung, setAbdeckung] = useState(false)
   const liste = Object.entries(bereiche ?? {})
   const [bereich, setBereich] = useState(liste[0]?.[0] ?? null)
   const [offenesModul, setOffenesModul] = useState(null)
@@ -45,10 +48,25 @@ export default function Themen({
     <div className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Themen</h1>
-        <button className="knopf schmal" onClick={() => onStart('ueben', {})}>
-          Alles gemischt lernen
-        </button>
+        <div className="wahl">
+          <button
+            className={abdeckung ? 'knopf schmal aktiv' : 'knopf schmal'}
+            onClick={() => setAbdeckung((a) => !a)}
+          >
+            {abdeckung ? 'Zurück zu den Themen' : 'Abdeckung'}
+          </button>
+          <button className="knopf schmal" onClick={() => onStart('ueben', {})}>
+            Alles gemischt lernen
+          </button>
+        </div>
       </div>
+
+      {abdeckung && (
+        <Abdeckung module={module} themen={themen} phasen={phasen} onWunschliste={onWunschliste} />
+      )}
+
+      {!abdeckung && (
+        <>
 
       <input
         className="suchfeld"
@@ -170,6 +188,51 @@ export default function Themen({
           </section>
         )
       })}
+        </>
+      )}
     </div>
+  )
+}
+
+// Uebersicht, welche Themen schon Aufgaben haben - je Modul, nach Phase
+// geordnet; dazu der Export der leeren Themen als Wunschliste fuer den
+// Web-Chat.
+function Abdeckung({ module, themen, phasen, onWunschliste }) {
+  const reihenfolge = { frueh: 0, mittel: 1, spaet: 2 }
+  const sortiert = [...module].sort((a, b) => (reihenfolge[a.phase] ?? 9) - (reihenfolge[b.phase] ?? 9))
+  const mitInhalt = themen.filter((t) => !t.geplant).length
+  return (
+    <section className="block">
+      <div className="aufruf ruhig">
+        <div>
+          <p className="aufrufZahl">{mitInhalt} von {themen.length} Themen haben Aufgaben</p>
+          <p className="nebentext">
+            Die leeren Themen lassen sich als Wunschliste für den Web-Chat exportieren – nach
+            Phase geordnet, früh zuerst.
+          </p>
+        </div>
+        <button className="knopf schmal" onClick={onWunschliste}>Wunschliste exportieren</button>
+      </div>
+      <ul className="abdeckungsliste">
+        {sortiert.map((m) => {
+          const eigene = themen.filter((t) => t.modulId === m.id)
+          const voll = eigene.filter((t) => !t.geplant).length
+          return (
+            <li key={m.id} className="abdeckungModul">
+              <p className="themaTitel">
+                {m.titel}{' '}
+                <span className={`phaseMarke phase-${m.phase}`}>{phasen?.[m.phase]}</span>
+              </p>
+              <p className="themaZeile2">{voll} von {eigene.length} Themen mit Inhalt</p>
+              <div className="abdeckungBalken" aria-hidden="true">
+                {eigene.map((t) => (
+                  <span key={t.id} className={t.geplant ? 'leer' : 'voll'} title={`${t.titel}${t.geplant ? ' – noch leer' : ` – ${t.anzahl} Aufgaben`}`} />
+                ))}
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
   )
 }

@@ -14,6 +14,8 @@ export const PUNKTE = {
   bildbeschriftung: 4,
   rechnen: 4,
   skizze: 4,
+  // Fallaufgabe: mehrere aufeinander aufbauende Teilfragen (21E)
+  fall: 4,
 }
 
 export const PUNKTE_STANDARD = 1

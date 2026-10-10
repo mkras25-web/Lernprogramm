@@ -1,6 +1,7 @@
 import LokalBild from './LokalBild.jsx'
+import SieheAuch from './SieheAuch.jsx'
 
-export default function Erklaerstueck({ thema, anzahlHeute, onLernen, onUeben, onZurueck }) {
+export default function Erklaerstueck({ thema, themen, anzahlHeute, onLernen, onUeben, onZurueck, onThema }) {
   const e = thema.erklaerung
 
   return (
@@ -13,6 +14,15 @@ export default function Erklaerstueck({ thema, anzahlHeute, onLernen, onUeben, o
         <p className="herkunft">{thema.modulTitel}</p>
         <h1 className="ueberschrift">{thema.titel}</h1>
       </div>
+
+      {thema.lernziele?.length > 0 && (
+        <section className="lernziele">
+          <h2 className="abschnitt">Lernziele</h2>
+          <ul>
+            {thema.lernziele.map((z, i) => <li key={i}>{z}</li>)}
+          </ul>
+        </section>
+      )}
 
       <div className="erklaerung">
         <div className="erklaerungText">
@@ -37,6 +47,8 @@ export default function Erklaerstueck({ thema, anzahlHeute, onLernen, onUeben, o
       </div>
 
       {e?.quelle && <p className="quelle">{e.quelle}</p>}
+
+      <SieheAuch ids={thema.siehe} themen={themen} onOeffnen={onThema} />
 
       <div className="steuerung">
         {anzahlHeute > 0 ? (

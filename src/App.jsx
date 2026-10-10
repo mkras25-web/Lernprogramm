@@ -39,6 +39,7 @@ import { abgleichen, abgleichStand } from './lib/abgleich.js'
 import { dropboxMoeglich, istVerbunden, meldungAbholen } from './lib/dropbox.js'
 import { serienquote } from './lib/stufen.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
+import { meldungenMarkdown, meldungenSammeln, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
 import Themen from './screens/Themen.jsx'
 import Sammlung from './screens/Sammlung.jsx'
@@ -105,6 +106,9 @@ export default function App({ profilId, onProfilWechseln }) {
   // kuenftig auch Pharmazie) - kommt aus paket.json ("gestaltung"),
   // nicht aus einer Fallunterscheidung nach Paket-Id. Siehe stufen.js.
   const [gestaltung, setGestaltung] = useState('arch')
+  // Kopfdaten des aktiven Pakets (Titel, Version) - fuer Exporte und die
+  // Meldung nach einem neuen Paketstand.
+  const [paketInfo, setPaketInfo] = useState(null)
   const [paketliste, setPaketliste] = useState([])
   const [pruefungen, setPruefungen] = useState([])
   const [ereignisse, setEreignisse] = useState([])
@@ -197,6 +201,7 @@ export default function App({ profilId, onProfilWechseln }) {
         setBereiche(paketDaten.bereiche ?? {})
         setPhasen(paketDaten.phasen ?? {})
         setGestaltung(paketDaten.paket?.gestaltung ?? 'arch')
+        setPaketInfo(paketDaten.paket ? { id: paketDaten.paket.id, titel: paketDaten.paket.titel, version: paketDaten.paket.version } : null)
         setEreignisse(gespeicherte)
         setSkizzen(gespeicherteSkizzen)
         setMarken(new Map(gespeicherteMarken.map((m) => [m.itemId, m])))
@@ -348,6 +353,50 @@ export default function App({ profilId, onProfilWechseln }) {
     }
     meilensteineVorher.current = aktuell
   }, [meilensteine, laedt, opt.aufstiegFeiern])
+
+  // Rueckkanal zum Web-Chat (19A/6A): alles, was ueberarbeitet werden sollte.
+  const meldeliste = useMemo(
+    () => meldungenSammeln({ items, marken, zustaende }),
+    [items, marken, zustaende]
+  )
+
+  // Neuer Paketstand (22A): Fingerabdruck je Item mit dem zuletzt gesehenen
+  // Stand vergleichen und einmal melden, was neu oder ueberarbeitet ist -
+  // inklusive, wie viele davon eigene Meldungen waren.
+  useEffect(() => {
+    if (laedt || rohItems.length === 0 || !paketInfo) return
+    const schluessel = `paketstand_${profilId}_${paketInfo.id}`
+    const abdruck = (it) => {
+      const text = JSON.stringify(it)
+      let h = 0
+      for (let i = 0; i < text.length; i++) h = (h * 31 + text.charCodeAt(i)) | 0
+      return h
+    }
+    const jetzt = Object.fromEntries(rohItems.map((it) => [it.id, abdruck(it)]))
+    let vorher = null
+    try {
+      vorher = JSON.parse(localStorage.getItem(schluessel) ?? 'null')
+    } catch {
+      vorher = null
+    }
+    try {
+      localStorage.setItem(schluessel, JSON.stringify({ version: paketInfo.version, abdruecke: jetzt }))
+    } catch {
+      /* Speicher voll - Meldung entfaellt dann einfach */
+    }
+    if (!vorher?.abdruecke) return // erster Start mit dieser Funktion: nur merken
+    const neu = Object.keys(jetzt).filter((id) => !(id in vorher.abdruecke))
+    const geaendert = Object.keys(jetzt).filter((id) => id in vorher.abdruecke && vorher.abdruecke[id] !== jetzt[id])
+    if (neu.length === 0 && geaendert.length === 0) return
+    const gemeldet = geaendert.filter((id) => marken.get(id)?.meldung || marken.get(id)?.einspruch).length
+    const teile = []
+    if (neu.length) teile.push(`${neu.length} ${neu.length === 1 ? 'neue Karte' : 'neue Karten'}`)
+    if (geaendert.length) teile.push(`${geaendert.length} überarbeitet${gemeldet ? ` (${gemeldet} davon deine Meldungen)` : ''}`)
+    setMeldung({
+      art: 'erfolg',
+      text: `Neuer Inhaltsstand${paketInfo.version && vorher.version !== paketInfo.version ? ` ${paketInfo.version}` : ''}: ${teile.join(', ')}.`,
+    })
+  }, [laedt, rohItems, paketInfo])
 
   const themenFortschritt = useMemo(() => {
     const karte = new Map()
@@ -723,6 +772,7 @@ export default function App({ profilId, onProfilWechseln }) {
           intervalle={intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate })}
           // Problemkarte: ab 6 Fehlern (Nutzerentscheidung 6A)
           istProblem={(zustaende.get(item.id)?.fehler ?? 0) >= 6}
+          themen={themen}
           glossar={glossar}
           fruehereSkizzen={skizzen.filter((s) => s.itemId === item.id)}
           kannZurueck={Boolean(letzteAktion)}
@@ -743,6 +793,8 @@ export default function App({ profilId, onProfilWechseln }) {
       <div className="huelle einspaltig">
         <Erklaerstueck
           thema={thema}
+          themen={themen}
+          onThema={(id) => setErklaerthema(id)}
           // Dieselbe Rechnung wie der Sitzungsstart (heutiges Pensum des
           // Themas) - frueher stand hier die Gesamtzahl aus der Paketdatei.
           anzahlHeute={pensumBauen(erlaubteItems.filter((i) => i.themaId === thema.id), zustaende, {
@@ -915,6 +967,12 @@ export default function App({ profilId, onProfilWechseln }) {
           phasen={phasen}
           onStart={sitzungStarten}
           onErklaerung={setErklaerthema}
+          onWunschliste={() =>
+            textHerunterladen(
+              wunschlisteMarkdown({ module, themen, phasen }),
+              `wunschliste-themen-${new Date().toISOString().slice(0, 10)}.md`
+            )
+          }
         />
       )}
       {ansicht === 'sichtung' && (
@@ -1010,6 +1068,13 @@ export default function App({ profilId, onProfilWechseln }) {
           letzteSicherung={opt.letzteSicherung}
           onExport={exportKlick}
           onExportCsv={csvExportKlick}
+          anzahlMeldungen={meldeliste.length}
+          onMeldungenExport={() =>
+            textHerunterladen(
+              meldungenMarkdown({ eintraege: meldeliste, paket: paketInfo }),
+              `meldungen-${new Date().toISOString().slice(0, 10)}.md`
+            )
+          }
           onImport={importKlick}
           onMeldung={setMeldung}
           onLoeschen={loeschen}

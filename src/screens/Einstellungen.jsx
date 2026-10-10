@@ -33,7 +33,7 @@ function useSpeicherSchaetzung() {
 
 export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung,
-  onExport, onExportCsv, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
+  onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
 }) {
   const [loeschfrage, setLoeschfrage] = useState(false)
   const [palettenfenster, setPalettenfenster] = useState(false)
@@ -489,6 +489,20 @@ export default function Einstellungen({
               </p>
             </div>
             <button className="knopf schmal" onClick={onExportCsv}>Als CSV</button>
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Meldungen für den Web-Chat</p>
+              <p className="zeileHinweis">
+                {anzahlMeldungen > 0
+                  ? `${anzahlMeldungen} Karten zum Überarbeiten: Meldungen, Einsprüche, „Überarbeiten“-Sichtungen, eigene Fassungen und Problemkarten. Als Markdown-Datei zum Einfügen in den Themen-Chat.`
+                  : 'Zurzeit keine gemeldeten oder auffälligen Karten.'}
+              </p>
+            </div>
+            <button className="knopf schmal" disabled={anzahlMeldungen === 0} onClick={onMeldungenExport}>
+              Exportieren
+            </button>
           </div>
 
           {speicher && (
