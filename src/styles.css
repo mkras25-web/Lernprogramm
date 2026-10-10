@@ -3072,7 +3072,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 /* Runde 5: Sprungmarken, Gefahrenzone, Klausuren, Paketschalter, Update */
 .sprungmarken { display: flex; flex-wrap: wrap; gap: 0.375rem; }
 .feldgruppe.gefahrzone { border-color: var(--warnung); background: color-mix(in srgb, var(--warnung) 5%, var(--flaeche)); }
-.versionsHinweis { margin-top: 0.25rem; opacity: 0.8; }
+.versionsHinweis { margin-top: 0.25rem; }
 .klausurtermine { display: flex; flex-direction: column; gap: 0.5rem; min-width: min(100%, 22rem); }
 .klausurListe { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
 .klausurListe li { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
@@ -3087,4 +3087,182 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 .updateHinweis .knopf { flex-shrink: 0; }
 @media (max-width: 59.99rem) {
   .klausurLeiste { order: -2; }
+}
+
+/* ==================================================================
+   RUNDE 6 (2026-10-10): Desktop-Gestaltung und Kontraste
+   ------------------------------------------------------------------
+   Teil 1 gilt ueberall (bewusst, Entscheidung 47A): lesbare Kontraste
+   statt per Deckkraft abgeblasster Elemente. Teil 2 steht in einer
+   Media Query ab 60rem und aendert nur den Desktop.
+   ================================================================== */
+
+/* --- Teil 1: Kontraste (47A) --------------------------------------- */
+/* Nicht verfuegbare/geplante Elemente: gestrichelt und in Nebentextfarbe
+   statt halb durchsichtig (lag in fast allen Paletten unter 3:1). */
+.pruefKachel.aus, .artKachel.aus, .kachel.gesperrt {
+  opacity: 1;
+  border-style: dashed;
+  background: transparent;
+  box-shadow: none;
+}
+.pruefKachel.aus .pruefTitel, .artKachel.aus .artTitel, .kachel.gesperrt .kachelTitel { color: var(--rinde); }
+.themenzeile.geplant { opacity: 1; }
+.themenzeile.geplant .themaTitel { color: var(--rinde); }
+/* Kleine Texte in --lehm (helle Erdfarbe) -> Nebentextfarbe */
+.artFuss, .planZeichen, .bestwertZusatz, .punktwahlHinweis { color: var(--rinde); }
+.trefferOeffnen .zeileHinweis, .feldhinweis, .kategorieMarke.k-streichen { opacity: 1; }
+/* Symbole der Betriebsarten: Akzentton, aber abgedunkelt (war bis 1,5:1) */
+.artZeichen { color: color-mix(in srgb, var(--fortschritt) 50%, var(--tusche)); }
+/* Offene Meilensteine: blasser Rahmen bleibt, Schrift lesbar */
+.stempel.offen .stempelZeichen, .stempel.offen .stempelTitel, .stempel.offen .stempelFuss { opacity: 1; color: var(--rinde); }
+.stempelMaterial, .stempelFuss { opacity: 1; }
+
+/* Paletten, deren Nebentextfarbe knapp unter 4,5:1 lag (4,0-4,4):
+   minimal abgedunkelt, Charakter bleibt. */
+html[data-palette="terracotta"] { --rinde: #6c5040; }
+html[data-palette="marine"] { --rinde: #335c75; }
+html[data-palette="spektrum"] { --rinde: #496480; }
+html[data-palette="seekarte"] { --rinde: #24557a; }
+html[data-palette="fjord"] { --rinde: #44616a; }
+
+/* Ring in Kacheln: Ring ist selbst ein div und wuchs mit der Regel fuer
+   den Textblock mit (stand dann mitten in der Kachel). */
+.fortschrittKachel > .ring { flex: 0 0 auto; }
+
+/* "Durchblaettern": mobil Kachel, am Desktop Textlink (41A) */
+.blaetternLink { display: none; }
+
+/* Fortschritt (42A): Zahlen an Saeulen, Kalender mit Monaten/Legende,
+   Beherrschung als Verlauf hell -> kraeftig */
+.saeule { position: relative; }
+.saeuleZahl { font-size: 0.6875rem; color: var(--rinde); text-align: center; line-height: 1.2; }
+.kalenderMonate { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; margin-bottom: 0.25rem; font-size: 0.6875rem; color: var(--rinde); }
+.kalenderMonate span { white-space: nowrap; overflow: visible; }
+.kalenderLegende { display: flex; align-items: center; gap: 3px; margin-top: 0.5rem; font-size: 0.6875rem; color: var(--rinde); }
+.kalenderLegende .feld { width: 0.75rem; height: 0.75rem; aspect-ratio: auto; }
+.kalenderLegende span:first-child { margin-right: 0.25rem; }
+.kalenderLegende span:last-child { margin-left: 0.25rem; }
+.verteilungBalken.grad-neu span { background: color-mix(in srgb, var(--fortschritt) 25%, var(--linie)); }
+.verteilungBalken.grad-angelernt span { background: color-mix(in srgb, var(--fortschritt) 55%, var(--linie)); }
+.verteilungBalken.grad-sicher span { background: var(--fortschritt); }
+.verteilungBalken.grad-gefestigt span { background: color-mix(in srgb, var(--fortschritt) 70%, var(--tusche)); }
+.verteilungBalken.grad-gemeistert span { background: color-mix(in srgb, var(--fortschritt) 40%, var(--tusche)); }
+
+/* Lernkopf: durchgehender Balken ab 30 Karten (40A) */
+.schnitt.durchgehend { background: var(--linie); border-radius: 999px; overflow: hidden; }
+.schnitt.durchgehend span { display: block; height: 100%; background: var(--fortschritt); transition: width 300ms ease; }
+
+/* Dunkle Paletten: Metall-Meilensteine gedaempft, nur Rahmen/Glanz in
+   Metallfarbe (46A) - volle Kupfer-/Silberflaechen leuchteten grell. */
+html[data-palette="dunkel"] .stempel.frei, html[data-palette="graphit"] .stempel.frei {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--stufe-a) 22%, var(--flaeche)), color-mix(in srgb, var(--stufe-b) 30%, var(--flaeche)));
+  color: var(--tusche);
+}
+html[data-palette="dunkel"] .stempel.frei .stempelTitel, html[data-palette="graphit"] .stempel.frei .stempelTitel,
+html[data-palette="dunkel"] .stempel.frei .stempelMaterial, html[data-palette="graphit"] .stempel.frei .stempelMaterial { color: var(--tusche); }
+html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette="graphit"] .stempel.frei .stempelBalken span { background: var(--stufe-a); }
+
+/* --- Teil 2: Desktop (ab 60rem) ----------------------------------- */
+@media (min-width: 60rem) {
+  /* 36A: Seitenleiste bleibt links, der Inhalt wird im restlichen Platz
+     zentriert statt bei 2560px links zu kleben. */
+  .huelle { max-width: none; }
+  .huelle:not(.einspaltig) > .schirm {
+    width: 100%;
+    max-width: calc(var(--spaltenbreite) - 18.5rem);
+    justify-self: center;
+  }
+  .huelle.einspaltig { margin: 0 auto; }
+
+  /* 44A: Seitenleiste gruppiert, Profil und Stufe unten */
+  .navGruppe {
+    margin: 0.875rem 0 0.25rem 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rinde);
+  }
+  .navGruppe:first-of-type { margin-top: 0.25rem; }
+  .navTrenner { display: block; height: 1px; margin: 0.75rem 0.75rem 0.5rem 0; background: var(--linie); }
+  .navFuss {
+    margin-top: auto;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    padding: 0.5rem 0.75rem;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--linie);
+    font: inherit;
+    color: var(--tusche);
+    text-align: left;
+    cursor: pointer;
+  }
+  .navFussText { display: flex; flex-direction: column; min-width: 0; }
+  .navFussName { font-size: 0.9375rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .navFussStufe { font-size: 0.75rem; color: var(--rinde); }
+  .navigation .paketSchalter { margin: 0 0 0.5rem 0.75rem; }
+  /* 46A: aktiver Eintrag deutlicher (auch in dunklen Paletten) */
+  .navKnopf.aktiv { font-weight: 600; background: var(--flaeche-tief); }
+
+  /* 41A: Heute - fuenf Kennzahlen in einer Zeile, Lernen bleibt die
+     einzige Hauptflaeche, Durchblaettern als Link */
+  .heuteRaster > .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .heuteRaster > .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
+  .aufruf { justify-content: flex-start; }
+  /* Der Ring ist selbst ein div und wuchs mit "flex: 1 1 12rem" (Regel
+     fuer den Textblock) mit - stand dann mitten in der Leerflaeche. */
+  .aufruf > .ring { flex: 0 0 auto; min-width: 0; }
+  .aufruf.pruefungAufruf { background: var(--flaeche); border-color: var(--karte-rand); }
+  .aufruf.pruefungAufruf .knopf.haupt { background: var(--flaeche); color: var(--tusche); border-color: var(--lehm); }
+  .artKacheln li.nurMobilKachel { display: none; }
+  .blaetternLink { display: inline-block; margin-top: 0.75rem; align-self: flex-start; }
+
+  /* 37A: Bewertungsleiste breit und fest am unteren Rand, wie mobil */
+  .lernschirm .steuerung {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    width: 100%;
+    max-width: 58rem;
+    margin: auto auto 0;
+    padding: 1rem 0 1.25rem;
+    background: var(--papier);
+    border-top: 1px solid var(--linie);
+  }
+  .lernschirm .bewertung { max-width: none; width: 100%; }
+  /* .schirm > .steuerung zentriert seine Kinder (align-items: center) -
+     die Bewertungsleiste soll aber die volle Breite fuellen. */
+  .schirm.lernschirm > .steuerung { align-items: stretch; }
+  .lernschirm .bewertung .knopf { min-height: 3.25rem; }
+  .steuerung .arten .knopf.haupt { min-width: 18rem; }
+
+  /* 39A: Sichtungs-Chips im Lernen gedaempft, bis man darauf zeigt */
+  .lernschirm .marken { transition: opacity 150ms ease; }
+
+  /* 43B: Nachschlagen kompakter, Suchfeld bleibt beim Scrollen oben */
+  .treffer { gap: 0.5rem; }
+  .trefferKarte { padding: 0.75rem 1rem; gap: 0.375rem; }
+  .schirm > .suchfeld { position: sticky; top: 0; z-index: 3; box-shadow: 0 6px 10px -8px rgba(0, 0, 0, 0.25); }
+}
+
+@media (min-width: 60rem) and (hover: hover) {
+  .lernschirm .marken { opacity: 0.55; }
+  .lernschirm .marken:hover, .lernschirm .marken:focus-within { opacity: 1; }
+
+  /* 48A: dezente Bewegung - Karten heben sich beim Zeigen leicht an
+     (aus bei Animationen aus / reduzierter Bewegung, siehe oben). */
+  .kachel, .pruefKachel, .fortschrittKachel, .trefferKarte, .stempel { transition: transform 150ms ease, box-shadow 150ms ease; }
+  .kachel:hover, .pruefKachel:hover:not(:disabled), .fortschrittKachel:hover, .trefferKarte:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  }
+}
+
+/* 49A: 1024-1200px - Heute-Kopf untereinander statt eingequetscht */
+@media (min-width: 60rem) and (max-width: 74.99rem) {
+  .heuteRaster { grid-template-columns: minmax(0, 1fr); }
 }

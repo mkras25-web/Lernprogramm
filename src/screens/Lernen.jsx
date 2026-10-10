@@ -229,25 +229,60 @@ export default function Lernen({
   const namenReihenfolge = item.typ === 'bildbeschriftung' ? mischen(namen.length, seed + 11) : []
   const kategorie = kategorieAus(marke)
 
+  // Loesung als eigener Block (38A): bei einspaltigen Aufgaben steht sie
+  // NACH der eigenen Eingabe (Frage -> deine Antwort -> Loesung), bei
+  // Bildaufgaben bleibt sie in der linken Spalte neben der Zeichnung.
+  const antwortBlock = aufgedeckt && (
+      <div className="antwort">
+        {item.pruefpunkte && <Pruefliste key={item.id} punkte={item.pruefpunkte} />}
+        <p className="antworttext">{item.antwort}</p>
+        {item.vertiefung && vertiefungZeigen && (
+          <p className="vertiefung">{item.vertiefung}</p>
+        )}
+        {item.bild && (
+          <figure style={{ margin: 0 }}>
+            <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />
+            {item.bildunterschrift && (
+              <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
+                {item.bildunterschrift}
+              </figcaption>
+            )}
+          </figure>
+        )}
+        <p className="quelle">{item.quelle}</p>
+        {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
+        <Normen item={item} glossar={glossar} />
+        <SieheAuch ids={item.siehe} themen={themen} />
+      </div>
+    )
+
   return (
     <div className="schirm lernschirm">
       <header className="lernkopf">
         <button className="textknopf" onClick={onZurueck}>Zurück</button>
-        <div className="schnitt" role="img" aria-label={`${position} von ${gesamt}`}>
-          {schichten.map((_, i) => (
-            <span key={i} className={i < position ? 'schicht voll' : 'schicht'} />
-          ))}
-        </div>
+        {/* Ab 30 Karten ein durchgehender Balken statt kaum unterscheidbarer
+            Kaestchen (40A); im Marathon ohnehin kein festes Ende. */}
+        {gesamt > 30 || art === 'marathon' ? (
+          <div className="schnitt durchgehend" role="img" aria-label={`${position} von ${gesamt}`}>
+            <span style={{ width: `${art === 'marathon' ? 100 : Math.round((position / Math.max(gesamt, 1)) * 100)}%` }} />
+          </div>
+        ) : (
+          <div className="schnitt" role="img" aria-label={`${position} von ${gesamt}`}>
+            {schichten.map((_, i) => (
+              <span key={i} className={i < position ? 'schicht voll' : 'schicht'} />
+            ))}
+          </div>
+        )}
         {level && (
           <span className="lernkopfBau" title={`Stufe ${level.stufe}`}>
             <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={30} titel={false} marke={false} />
           </span>
         )}
-        <span className="pensumZahl">
-          {art === 'marathon' ? `${position} · Marathon` : `${position}/${gesamt}`}
-          {(faellig > 0 || neu > 0) && (
-            <span className="nebentext"> · {faellig} W · {neu} neu</span>
-          )}
+        <span
+          className="pensumZahl"
+          title={faellig > 0 || neu > 0 ? `Noch ${faellig} Wiederholungen, ${neu} neue Karten` : undefined}
+        >
+          {art === 'marathon' ? `${position} · Marathon` : `${position} von ${gesamt}`}
         </span>
         {letzteXp > 0 && art !== 'blaettern' && <span className="xpFlug">+{letzteXp} XP</span>}
       </header>
@@ -299,29 +334,7 @@ export default function Lernen({
             />
           )}
 
-          {aufgedeckt && (
-            <div className="antwort">
-              {item.pruefpunkte && <Pruefliste key={item.id} punkte={item.pruefpunkte} />}
-              <p className="antworttext">{item.antwort}</p>
-              {item.vertiefung && vertiefungZeigen && (
-                <p className="vertiefung">{item.vertiefung}</p>
-              )}
-              {item.bild && (
-                <figure style={{ margin: 0 }}>
-                  <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />
-                  {item.bildunterschrift && (
-                    <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
-                      {item.bildunterschrift}
-                    </figcaption>
-                  )}
-                </figure>
-              )}
-              <p className="quelle">{item.quelle}</p>
-              {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
-              <Normen item={item} glossar={glossar} />
-              <SieheAuch ids={item.siehe} themen={themen} />
-            </div>
-          )}
+          {zweispaltig && antwortBlock}
 
           {istProblem && aufgedeckt && (
             <p className="problemHinweis">
@@ -433,6 +446,8 @@ export default function Lernen({
             </div>
           )}
         </div>
+
+        {!zweispaltig && antwortBlock}
       </div>
 
       <div className="steuerung">

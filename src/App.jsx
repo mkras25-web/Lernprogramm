@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import Bauabschnitt from './components/Bauabschnitt.jsx'
 import { paketLaden, paketeLaden } from './lib/paket.js'
 import {
   allesLoeschen,
@@ -59,17 +60,19 @@ import Tastenhilfe from './components/Tastenhilfe.jsx'
 // ︎ (Text-Darstellungs-Selektor) hinter jedem Symbol - ohne das
 // rendert Safari z. B. das Zahnrad farbig als Emoji, obwohl alle
 // anderen Symbole hier einfache einfarbige Linienzeichen bleiben.
+// gruppe: Ueberschrift in der Desktop-Seitenleiste (44A) - Lernen,
+// Nachschlagen, Auswertung; Einstellungen unten abgesetzt.
 const NAVIGATION = [
-  { id: 'heute', titel: 'Heute', symbol: '◴︎' },
-  { id: 'themen', titel: 'Themen', symbol: '▤︎' },
-  { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕︎' },
-  { id: 'glossar', titel: 'Normen', symbol: '§︎' },
-  { id: 'heft', titel: 'Mein Heft', symbol: '❐︎' },
-  { id: 'fehlerbuch', titel: 'Fehlerbuch', symbol: '✕︎' },
-  { id: 'pruefung', titel: 'Prüfungen', symbol: '✓︎' },
-  { id: 'skizzen', titel: 'Skizzen', symbol: '✎︎' },
-  { id: 'fortschritt', titel: 'Fortschritt', symbol: '◑︎' },
-  { id: 'einstellungen', titel: 'Einstellungen', symbol: '⛭︎' },
+  { id: 'heute', titel: 'Heute', symbol: '◴︎', gruppe: 'Lernen' },
+  { id: 'themen', titel: 'Themen', symbol: '▤︎', gruppe: 'Lernen' },
+  { id: 'pruefung', titel: 'Prüfungen', symbol: '✓︎', gruppe: 'Lernen' },
+  { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕︎', gruppe: 'Nachschlagen' },
+  { id: 'glossar', titel: 'Normen', symbol: '§︎', gruppe: 'Nachschlagen' },
+  { id: 'heft', titel: 'Mein Heft', symbol: '❐︎', gruppe: 'Nachschlagen' },
+  { id: 'fehlerbuch', titel: 'Fehlerbuch', symbol: '✕︎', gruppe: 'Nachschlagen' },
+  { id: 'skizzen', titel: 'Skizzen', symbol: '✎︎', gruppe: 'Nachschlagen' },
+  { id: 'fortschritt', titel: 'Fortschritt', symbol: '◑︎', gruppe: 'Auswertung' },
+  { id: 'einstellungen', titel: 'Einstellungen', symbol: '⛭︎', gruppe: 'unten' },
 ]
 
 // Mobil (< 60rem): untere Leiste mit vier Hauptzielen plus "Mehr", das
@@ -936,16 +939,29 @@ export default function App({ profilId, onProfilWechseln }) {
         {paketliste.length > 1 && (
           <PaketSchalter paketliste={paketliste} aktiv={opt.aktivesPaket} onWahl={(id) => setOpt((o) => ({ ...o, aktivesPaket: id }))} />
         )}
-        {NAVIGATION.map((n) => (
-          <button
-            key={n.id}
-            className={navAktiv(n.id, ansicht) ? 'navKnopf aktiv' : 'navKnopf'}
-            onClick={() => setAnsicht(n.id)}
-          >
-            <span aria-hidden="true">{n.symbol}</span>
-            {n.titel}
-          </button>
+        {NAVIGATION.map((n, i) => (
+          <Fragment key={n.id}>
+            {n.gruppe !== 'unten' && n.gruppe !== NAVIGATION[i - 1]?.gruppe && (
+              <span className="navGruppe">{n.gruppe}</span>
+            )}
+            {n.gruppe === 'unten' && <span className="navTrenner" aria-hidden="true" />}
+            <button
+              className={navAktiv(n.id, ansicht) ? 'navKnopf aktiv' : 'navKnopf'}
+              aria-current={navAktiv(n.id, ansicht) ? 'page' : undefined}
+              onClick={() => setAnsicht(n.id)}
+            >
+              <span aria-hidden="true">{n.symbol}</span>
+              {n.titel}
+            </button>
+          </Fragment>
         ))}
+        <button className="navFuss" onClick={onProfilWechseln} title="Profil wechseln">
+          <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={34} titel={false} marke={false} />
+          <span className="navFussText">
+            <span className="navFussName">{profilName}</span>
+            <span className="navFussStufe">Stufe {level.stufe} · Profil wechseln</span>
+          </span>
+        </button>
       </nav>
 
       <nav className="tabLeiste" aria-label="Hauptnavigation">

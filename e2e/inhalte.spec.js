@@ -44,7 +44,7 @@ async function angemeldet(page, name) {
 test('Fallaufgabe: Teile einzeln aufdecken, Querverweis oeffnet das andere Thema', async ({ page }) => {
   await mitTestfeldern(page)
   await angemeldet(page, 'Fall')
-  await page.locator('.artKachel', { hasText: 'Durchblättern' }).click()
+  await page.locator('.blaetternLink').click() // am Desktop Textlink statt Kachel (41A)
   await expect(page.locator('.frage')).toContainText('TESTFALL')
   await expect(page.locator('.fallAntwort')).toHaveCount(0)
   await page.getByRole('button', { name: 'Teil 1 aufdecken' }).click()

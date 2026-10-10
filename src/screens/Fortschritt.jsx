@@ -42,6 +42,21 @@ export default function Fortschritt({
     grad,
     anzahl: items.filter((i) => beherrschungsgrad(zustaende.get(i.id)) === grad).length,
   }))
+  // Leitzahl (42A): angelernt oder besser - "sicher" allein stand bei
+  // frischen Profilen lange auf 0 und wirkte entmutigend.
+  const begonnen = verteilung.filter((v) => v.grad !== 'neu').reduce((s, v) => s + v.anzahl, 0)
+  const anteilBegonnen = items.length ? begonnen / items.length : 0
+
+  // Monatsbeschriftung ueber dem Kalender: je Wochenspalte (7 Felder) der
+  // Monat, sobald er wechselt.
+  const monate = []
+  for (let w = 0; w * 7 < felder.length; w++) {
+    const tag = felder[w * 7]?.datum
+    const vorher = w > 0 ? felder[(w - 1) * 7]?.datum : null
+    monate.push(tag && (!vorher || tag.getMonth() !== vorher.getMonth())
+      ? tag.toLocaleDateString('de-DE', { month: 'short' })
+      : '')
+  }
 
   return (
     <div className="schirm">
@@ -68,13 +83,13 @@ export default function Fortschritt({
         </div>
         <div className="fortschrittGesamt">
           <Ring
-            anteil={aussicht.anteil}
+            anteil={anteilBegonnen}
             groesse={92}
             staerke={7}
-            beschriftung={`${Math.round(aussicht.anteil * 100)}`}
+            beschriftung={`${Math.round(anteilBegonnen * 100)} %`}
           />
           <p className="nebentext">
-            {aussicht.sicher} von {items.length} sicher
+            {begonnen} von {items.length} angelernt oder besser · davon {aussicht.sicher} sicher
             {aussicht.wochen ? ` · Rest in etwa ${aussicht.wochen} Wochen` : ''}
           </p>
         </div>
@@ -137,6 +152,7 @@ export default function Fortschritt({
           <div className="saeulen">
             {zeiten.map((z) => (
               <div key={z.id} className="saeule">
+                <span className="saeuleZahl">{z.anzahl}</span>
                 <div
                   className="saeuleFuellung"
                   style={{ height: `${(z.anzahl / maxZeit) * 100}%` }}
@@ -150,14 +166,22 @@ export default function Fortschritt({
 
         <section className="block">
           <h2 className="abschnitt">Letzte zwanzig Wochen</h2>
+          <div className="kalenderMonate" aria-hidden="true">
+            {monate.map((m, i) => <span key={i}>{m}</span>)}
+          </div>
           <div className="kalender">
             {felder.map((f, i) => (
               <span
                 key={i}
                 className={`feld stufe${dichte(f.anzahl)}`}
-                title={`${f.datum.toLocaleDateString('de-DE')}: ${f.anzahl}`}
+                title={`${f.datum.toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'short' })}: ${f.anzahl} ${f.anzahl === 1 ? 'Antwort' : 'Antworten'}`}
               />
             ))}
+          </div>
+          <div className="kalenderLegende" aria-hidden="true">
+            <span>weniger</span>
+            {[0, 1, 2, 3, 4].map((st) => <span key={st} className={`feld stufe${st}`} />)}
+            <span>mehr</span>
           </div>
         </section>
 
@@ -166,7 +190,8 @@ export default function Fortschritt({
           <div className="saeulen">
             {vorschau.map((anzahl, i) => (
               <div key={i} className="saeule">
-                <div className="saeuleFuellung" style={{ height: `${(anzahl / maxVorschau) * 100}%` }} />
+                <span className="saeuleZahl">{anzahl}</span>
+                <div className="saeuleFuellung" style={{ height: `${(anzahl / maxVorschau) * 100}%` }} title={`${anzahl} fällig`} />
                 <span className="saeuleName">{i === 0 ? 'heute' : `+${i}`}</span>
               </div>
             ))}
@@ -179,7 +204,7 @@ export default function Fortschritt({
             {verteilung.map((v) => (
               <li key={v.grad}>
                 <span className="verteilungName">{v.grad}</span>
-                <span className="verteilungBalken">
+                <span className={`verteilungBalken grad-${v.grad}`}>
                   <span style={{ width: `${items.length ? (v.anzahl / items.length) * 100 : 0}%` }} />
                 </span>
                 <span className="verteilungZahl">{v.anzahl}</span>
@@ -213,7 +238,7 @@ export default function Fortschritt({
           <ul className="fortschrittKacheln">
             {(module ?? []).filter((m) => m.gesamt > 0).map((m) => (
               <li key={m.id} className="fortschrittKachel">
-                <Bauabschnitt stufe={stufeAusAnteil(m.anteil)} gestaltung={gestaltung} groesse={44} titel={false} />
+                <Ring anteil={m.anteil} groesse={40} staerke={4} />
                 <div>
                   <p className="kachelZeile stark">{m.titel}</p>
                   <p className="kachelZeile">
@@ -233,7 +258,7 @@ export default function Fortschritt({
           <ul className="fortschrittKacheln">
             {themen.map((t) => (
               <li key={t.id} className="fortschrittKachel">
-                <Bauabschnitt stufe={stufeAusAnteil(t.anteil)} gestaltung={gestaltung} groesse={44} titel={false} />
+                <Ring anteil={t.anteil} groesse={40} staerke={4} />
                 <div>
                   <p className="kachelZeile stark">{t.titel}</p>
                   <p className="kachelZeile">

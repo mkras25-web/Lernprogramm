@@ -73,3 +73,24 @@ for (const format of FORMATE) {
     })
   })
 }
+
+// Desktop (2026-10-10): dieselbe Pruefung bei 1024 und 1920 px - die
+// Desktop-Gestaltung (Runde 6) hatte bei 1024 zwischenzeitlich Knoepfe
+// seitlich hinausgeschoben.
+for (const format of [{ width: 1024, height: 768 }, { width: 1920, height: 1080 }]) {
+  test.describe(`Desktop ${format.width}x${format.height}`, () => {
+    test.use({ viewport: format })
+    test(`Kein horizontaler Overflow am Desktop (${format.width}px)`, async ({ page }) => {
+      await page.goto('/')
+      await page.getByPlaceholder('Name für ein neues Profil').fill('Overflow-Desktop')
+      await page.getByRole('button', { name: 'Profil anlegen' }).click()
+      await page.locator('.profilKnopf', { hasText: 'Overflow-Desktop' }).click()
+      await page.waitForSelector('nav.navigation')
+      for (const ziel of ['heute', 'themen', 'pruefung', 'sichtung', 'glossar', 'heft', 'fehlerbuch', 'skizzen', 'fortschritt', 'sammlung', 'einstellungen']) {
+        await page.evaluate((z) => { window.location.hash = `#/${z}` }, ziel)
+        await page.waitForTimeout(150)
+        await keinOverflow(page, ziel, format.width)
+      }
+    })
+  })
+}

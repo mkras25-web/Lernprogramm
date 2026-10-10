@@ -114,7 +114,7 @@ export default function Heute({
 
         {pruefungHinweis && (
           <section className="heuteBreit">
-            <div className="aufruf">
+            <div className="aufruf pruefungAufruf">
               <span className="artZeichen" style={{ fontSize: '1.5rem' }}>✓︎</span>
               <div>
                 <p className="aufrufZahl">{pruefungHinweis.text}</p>
@@ -247,9 +247,14 @@ export default function Heute({
               zeichen="▤︎"
               titel="Durchblättern"
               text="Nachschlagen ohne Wertung"
+              klasse="nurMobilKachel"
               onKlick={() => onStart('blaettern')}
             />
           </ul>
+          {/* Am Desktop kein siebter Kachel-Rest in eigener Zeile (41A) */}
+          <button className="textknopf blaetternLink" onClick={() => onStart('blaettern')}>
+            Alle Karten durchblättern (ohne Wertung)
+          </button>
         </section>
 
         <section className="block heuteBreit">
@@ -278,9 +283,9 @@ export default function Heute({
   )
 }
 
-function ArtKachel({ zeichen, titel, text, aus, onKlick }) {
+function ArtKachel({ zeichen, titel, text, aus, onKlick, klasse }) {
   return (
-    <li>
+    <li className={klasse}>
       <button className={aus ? 'artKachel aus' : 'artKachel'} disabled={aus} onClick={onKlick}>
         <span className="artZeichen" aria-hidden="true">{zeichen}</span>
         <span className="artTitel">{titel}</span>
