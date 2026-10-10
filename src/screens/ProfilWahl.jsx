@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import Schleier from '../components/Schleier.jsx'
 import { datenbankFuerProfilSetzen, exportieren } from '../lib/speicher.js'
 import DropboxBereich from '../components/DropboxBereich.jsx'
 import { meldungAbholen } from '../lib/dropbox.js'
@@ -294,7 +295,7 @@ export default function ProfilWahl({
       )}
 
       {loeschKandidat && (
-        <div className="schleier" onClick={() => setLoeschKandidat(null)}>
+        <Schleier onSchliessen={() => setLoeschKandidat(null)}>
           <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
             <h2 className="ueberschrift">Profil „{loeschKandidat.name}" löschen?</h2>
             <p className="nebentext">
@@ -331,7 +332,7 @@ export default function ProfilWahl({
               </button>
             </div>
           </article>
-        </div>
+        </Schleier>
       )}
     </div>
   )

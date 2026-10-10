@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Schleier from '../components/Schleier.jsx'
 import { PALETTEN, SCHRIFTGROESSEN, STANDARD } from '../lib/einstellungen.js'
 import DropboxBereich from '../components/DropboxBereich.jsx'
 import {
@@ -610,7 +611,7 @@ export default function Einstellungen({
       </section>
 
       {palettenfenster && (
-        <div className="schleier" onClick={() => setPalettenfenster(false)}>
+        <Schleier onSchliessen={() => setPalettenfenster(false)}>
           <article className="grosseKarte" style={{ maxWidth: '44rem' }} onClick={(e) => e.stopPropagation()}>
             <h2 className="ueberschrift">Farbpalette</h2>
             <p className="nebentext">
@@ -638,11 +639,11 @@ export default function Einstellungen({
               Schließen
             </button>
           </article>
-        </div>
+        </Schleier>
       )}
 
       {loeschfrage && (
-        <div className="schleier" onClick={() => setLoeschfrage(false)}>
+        <Schleier onSchliessen={() => setLoeschfrage(false)}>
           <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
             <h2 className="ueberschrift">Bist du sicher?</h2>
             <p className="nebentext">
@@ -682,7 +683,7 @@ export default function Einstellungen({
               </button>
             </div>
           </article>
-        </div>
+        </Schleier>
       )}
     </div>
   )

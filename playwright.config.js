@@ -8,7 +8,10 @@ export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 1 : 0,
+  // WebKit wird unter voller Parallel-Last gelegentlich zaeh (wechselnde
+  // Einzeltests, einzeln immer gruen) - ein Wiederholungsversuch; solche
+  // Faelle erscheinen im Bericht als "flaky" statt still zu verschwinden.
+  retries: 1,
   reporter: 'list',
   use: {
     baseURL: 'http://localhost:5175',

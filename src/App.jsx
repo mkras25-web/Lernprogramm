@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import Schleier from './components/Schleier.jsx'
 import Bauabschnitt from './components/Bauabschnitt.jsx'
 import { paketLaden, paketeLaden } from './lib/paket.js'
 import {
@@ -196,16 +197,6 @@ export default function App({ profilId, onProfilWechseln }) {
     abfrage.addEventListener('change', schliessenFallsDesktop)
     return () => abfrage.removeEventListener('change', schliessenFallsDesktop)
   }, [])
-
-  // Escape schliesst das Blatt - wie die anderen Schleier-Dialoge.
-  useEffect(() => {
-    if (!mehrOffen) return
-    const taste = (e) => {
-      if (e.key === 'Escape') setMehrOffen(false)
-    }
-    window.addEventListener('keydown', taste)
-    return () => window.removeEventListener('keydown', taste)
-  }, [mehrOffen])
 
   const [erklaerthema, setErklaerthema] = useState(null)
   const [aufstieg, setAufstieg] = useState(null)
@@ -997,14 +988,9 @@ export default function App({ profilId, onProfilWechseln }) {
       </nav>
 
       {mehrOffen && (
-        <div className="mehrSchleier" onClick={() => setMehrOffen(false)}>
-          <div
-            className="mehrBlatt"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Weitere Bereiche"
-            onClick={(e) => e.stopPropagation()}
-          >
+        // Escape, Fokus und Hintergrund-Klick regelt der Schleier.
+        <Schleier onSchliessen={() => setMehrOffen(false)} klasse="mehrSchleier" beschriftung="Weitere Bereiche">
+          <div className="mehrBlatt" onClick={(e) => e.stopPropagation()}>
             <div className="mehrGriff" aria-hidden="true" />
             <h2 className="mehrTitel">Mehr</h2>
             {paketliste.length > 1 && (
@@ -1028,11 +1014,11 @@ export default function App({ profilId, onProfilWechseln }) {
               </button>
             ))}
           </div>
-        </div>
+        </Schleier>
       )}
 
       {importFrage && (
-        <div className="schleier" onClick={() => setImportFrage(null)}>
+        <Schleier onSchliessen={() => setImportFrage(null)}>
           <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
             <h2 className="ueberschrift">Andere Person?</h2>
             <p className="nebentext">
@@ -1059,7 +1045,7 @@ export default function App({ profilId, onProfilWechseln }) {
               </button>
             </div>
           </article>
-        </div>
+        </Schleier>
       )}
 
       {updateBereit && !offenePruefung && (

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import Schleier from '../components/Schleier.jsx'
 
 // Uebersicht aller gespeicherten Skizzen, nach Item gruppiert.
 // Zeigt die Entwicklung ueber die Zeit und erlaubt das Aufraeumen.
@@ -74,17 +75,17 @@ export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zei
       ))}
 
       {gross && (
-        <div className="schleier" onClick={() => setGross(null)}>
+        <Schleier onSchliessen={() => setGross(null)}>
           <div className="lupenBuehne" onClick={(e) => e.stopPropagation()}>
             <img src={gross.bild} alt="" />
             <p className="nebentext">{new Date(gross.ts).toLocaleString('de-DE')}</p>
             <button className="knopf schmal" onClick={() => setGross(null)}>Schließen</button>
           </div>
-        </div>
+        </Schleier>
       )}
 
       {loeschKandidat && (
-        <div className="schleier" onClick={() => setLoeschKandidat(null)}>
+        <Schleier onSchliessen={() => setLoeschKandidat(null)}>
           <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
             <h2 className="ueberschrift">Bist du sicher?</h2>
             <p className="nebentext">
@@ -106,7 +107,7 @@ export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zei
               </button>
             </div>
           </article>
-        </div>
+        </Schleier>
       )}
     </div>
   )

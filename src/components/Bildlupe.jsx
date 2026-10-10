@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Schleier from './Schleier.jsx'
 import LokalBild, { BildPlatzhalter } from './LokalBild.jsx'
 
 // Zeichnungen sind auf kleinen Schirmen unlesbar. Ein Klick oeffnet
@@ -17,14 +18,14 @@ export default function Bildlupe({ src, alt = '', className = 'referenz' }) {
       </button>
 
       {offen && (
-        <div className="schleier" onClick={() => setOffen(false)}>
+        <Schleier onSchliessen={() => setOffen(false)}>
           <div className="lupenBuehne" onClick={(e) => e.stopPropagation()}>
             <img src={src} alt={alt} />
             <button className="knopf schmal" onClick={() => setOffen(false)}>
               Schließen
             </button>
           </div>
-        </div>
+        </Schleier>
       )}
     </>
   )

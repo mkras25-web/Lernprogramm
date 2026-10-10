@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Schleier from '../components/Schleier.jsx'
 import LokalBild from '../components/LokalBild.jsx'
 import {
   MEILENSTEIN_GRUPPEN,
@@ -201,7 +202,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, rei
       </section>
 
       {offen && (
-        <div className="schleier" onClick={() => setOffen(null)}>
+        <Schleier onSchliessen={() => setOffen(null)}>
           <article className="grosseKarte" onClick={(e) => e.stopPropagation()}>
             <p className="kartenHerkunft">{offen.modulTitel}</p>
             <h2 className="ueberschrift">{offen.titel}</h2>
@@ -220,7 +221,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, rei
               <button className="knopf schmal" onClick={() => setOffen(null)}>Schließen</button>
             </div>
           </article>
-        </div>
+        </Schleier>
       )}
     </div>
   )

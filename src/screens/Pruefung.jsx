@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import Schleier from '../components/Schleier.jsx'
 import {
   PRUEFUNGSARTEN,
   REIFE_SCHWELLE,
@@ -462,7 +463,7 @@ export default function Pruefung({
         </div>
 
         {rueckfrage && (
-          <div className="schleier" onClick={() => setRueckfrage(null)}>
+          <Schleier onSchliessen={() => setRueckfrage(null)}>
             <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
               {rueckfrage === 'abbrechen' ? (
                 <>
@@ -512,7 +513,7 @@ export default function Pruefung({
                 </>
               )}
             </article>
-          </div>
+          </Schleier>
         )}
       </div>
     )

@@ -14,7 +14,7 @@ test('Pruefung ueberlebt den Bildschirmwechsel und laesst sich auf Heute fortset
   await angemeldet(page, 'Pruefling')
   await page.locator('.artKachel', { hasText: 'Wochenprüfung' }).click()
   await expect(page.locator('.lernkopf .pensumZahl')).toContainText('1/12')
-  await page.getByRole('button', { name: 'Weiter' }).click()
+  await page.getByRole('button', { name: 'Weiter', exact: true }).click()
   await expect(page.locator('.lernkopf .pensumZahl')).toContainText('2/12')
 
   await page.locator('.navKnopf', { hasText: 'Heute' }).click()
@@ -39,7 +39,7 @@ test('Abbrechen und Abgeben mit offenen Fragen fragen nach', async ({ page }) =>
   await page.getByRole('button', { name: 'Weiter bearbeiten' }).click()
   await expect(page.locator('.lernkopf')).toBeVisible()
 
-  for (let i = 0; i < 11; i++) await page.getByRole('button', { name: 'Weiter' }).click()
+  for (let i = 0; i < 11; i++) await page.getByRole('button', { name: 'Weiter', exact: true }).click()
   await page.getByRole('button', { name: 'Prüfung abgeben' }).click()
   await expect(page.getByRole('heading', { name: 'Wirklich abgeben?' })).toBeVisible()
   await page.getByRole('button', { name: 'Trotzdem abgeben' }).click()

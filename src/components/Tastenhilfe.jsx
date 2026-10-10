@@ -1,3 +1,5 @@
+import Schleier from './Schleier.jsx'
+
 // Zentrale Tastenkuerzel-Uebersicht. Die meisten Kuerzel sind schon
 // direkt am jeweiligen Knopf sichtbar (siehe .taste in Lernen.jsx,
 // .tastenHinweis in Sichtung.jsx) - dieses Fenster ist der eine Ort,
@@ -47,7 +49,7 @@ const GRUPPEN = [
 export default function Tastenhilfe({ offen, onSchliessen }) {
   if (!offen) return null
   return (
-    <div className="schleier" onClick={onSchliessen}>
+    <Schleier onSchliessen={onSchliessen}>
       <article className="grosseKarte" style={{ maxWidth: '32rem' }} onClick={(e) => e.stopPropagation()}>
         <h2 className="ueberschrift">Tastenkürzel</h2>
         {GRUPPEN.map((g) => (
@@ -65,6 +67,6 @@ export default function Tastenhilfe({ offen, onSchliessen }) {
         ))}
         <button className="knopf" onClick={onSchliessen}>Schließen</button>
       </article>
-    </div>
+    </Schleier>
   )
 }

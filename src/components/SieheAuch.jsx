@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Schleier from './Schleier.jsx'
 
 // Querverweise auf andere Themen (Feld "siehe": Liste von Themen-IDs, am
 // Item oder an der Themendatei - Entscheidung 21C). Im Lernbildschirm
@@ -24,7 +25,7 @@ export default function SieheAuch({ ids, themen, onOeffnen }) {
         </button>
       ))}
       {offen && (
-        <div className="schleier" onClick={() => setOffen(null)}>
+        <Schleier onSchliessen={() => setOffen(null)}>
           <article className="grosseKarte" style={{ maxWidth: '40rem' }} onClick={(ev) => ev.stopPropagation()}>
             <p className="herkunft">{offen.modulTitel}</p>
             <h2 className="ueberschrift">{offen.titel}</h2>
@@ -35,7 +36,7 @@ export default function SieheAuch({ ids, themen, onOeffnen }) {
             {!e && <p className="nebentext">Zu diesem Thema gibt es noch kein Erklärstück.</p>}
             <button className="knopf schmal" onClick={() => setOffen(null)}>Schließen</button>
           </article>
-        </div>
+        </Schleier>
       )}
     </div>
   )
