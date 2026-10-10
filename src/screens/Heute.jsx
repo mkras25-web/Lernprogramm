@@ -8,7 +8,7 @@ export default function Heute({
   level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
-  pruefungHinweis, onPruefung,
+  pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen,
 }) {
   const offen = tagesplan.pensum.length
   const erledigt = werte.antwortenHeute
@@ -140,6 +140,27 @@ export default function Heute({
                 </p>
               </div>
               <button className="textknopf" onClick={onAufstiegGesehen}>ausblenden</button>
+            </div>
+          </section>
+        )}
+
+        {offenePruefung && (
+          <section className="heuteBreit heuteSitzung">
+            <div className="aufruf ruhig">
+              <div>
+                <p className="aufrufZahl">
+                  {offenePruefung.abgegeben ? 'Prüfung noch nicht gespeichert' : 'Angefangene Prüfung'}
+                </p>
+                <p className="nebentext">
+                  {offenePruefung.titel} ·{' '}
+                  {offenePruefung.abgegeben
+                    ? 'abgegeben, Auswertung offen'
+                    : `${offenePruefung.beantwortet} von ${offenePruefung.gesamt} beantwortet`}
+                </p>
+              </div>
+              <button className="knopf haupt schmal" onClick={onPruefungFortsetzen}>
+                Fortsetzen
+              </button>
             </div>
           </section>
         )}

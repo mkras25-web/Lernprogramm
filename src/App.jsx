@@ -121,6 +121,24 @@ export default function App({ profilId, onProfilWechseln }) {
   // Hintergrund z. B. eine Bewertung ausloesen.
   const [tastenhilfeOffen, setTastenhilfeOffen] = useState(false)
 
+  // Angefangene Pruefung (Pruefung.jsx speichert sie je Profil, 14A) -
+  // hier nur die Kurzfassung fuer den Aufruf "Pruefung fortsetzen" auf Heute.
+  const pruefungSchluessel = `offenePruefung_${profilId}`
+  const [offenePruefung, setOffenePruefung] = useState(() => {
+    try {
+      const stand = JSON.parse(localStorage.getItem(`offenePruefung_${profilId}`) ?? 'null')
+      if (!stand?.itemIds?.length) return null
+      return {
+        titel: stand.lauf?.titel,
+        gesamt: stand.itemIds.length,
+        beantwortet: Object.keys(stand.antworten ?? {}).length,
+        abgegeben: Boolean(stand.abgegeben),
+      }
+    } catch {
+      return null
+    }
+  })
+
   const [opt, setOpt] = useState(() => einstellungenLaden(profilId))
   const [ansicht, setAnsicht] = useState('heute')
   // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): das
@@ -884,6 +902,8 @@ export default function App({ profilId, onProfilWechseln }) {
           onPruefung={() => setAnsicht('pruefung')}
           sicherungFaellig={sicherungFaellig}
           onSichern={() => exportKlick(false)}
+          offenePruefung={offenePruefung}
+          onPruefungFortsetzen={() => setAnsicht('pruefung')}
         />
       )}
       {ansicht === 'themen' && (
@@ -919,6 +939,9 @@ export default function App({ profilId, onProfilWechseln }) {
           bereiche={bereiche}
           pruefungen={pruefungen}
           onFehlerLernen={(ids) => sitzungStarten('fehlerstapel', { ids })}
+          speicherSchluessel={pruefungSchluessel}
+          onStand={setOffenePruefung}
+          onThemaUeben={(themaId) => sitzungStarten('ueben', { themaId })}
           onSpeichern={async (p) => {
             const eintrag = await pruefungSpeichern(p)
             setPruefungen((alte) => [...alte, eintrag])

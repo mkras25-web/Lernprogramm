@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   PRUEFUNGSARTEN,
   REIFE_SCHWELLE,
@@ -15,14 +15,91 @@ import Bildpunkte from '../components/Bildpunkte.jsx'
 import { mischen, seedAus } from '../lib/mischen.js'
 import LokalBild from '../components/LokalBild.jsx'
 
+// Laufende Pruefung wird je Profil gespeichert (Entscheidung 14A): wer
+// mitten drin den Bildschirm wechselt oder die App schliesst, setzt spaeter
+// fort - frueher waren Antworten und sogar eine fertige, noch nicht
+// gespeicherte Auswertung beim Wegklicken verloren.
+function standLesen(schluessel) {
+  if (!schluessel) return null
+  try {
+    return JSON.parse(localStorage.getItem(schluessel) ?? 'null')
+  } catch {
+    return null
+  }
+}
+
+function standWiederherstellen(stand, items) {
+  if (!stand?.itemIds?.length) return null
+  const nachId = new Map(items.map((i) => [i.id, i]))
+  const laufItems = stand.itemIds.map((id) => nachId.get(id)).filter(Boolean)
+  if (laufItems.length === 0) return null
+  const lauf = { ...stand.lauf, items: laufItems }
+  let auswertung = null
+  if (stand.abgegeben) {
+    const urteile = stand.abgegeben.urteile ?? {}
+    auswertung = {
+      dauerMs: stand.abgegeben.dauerMs,
+      ergebnisse: auswerten(laufItems, stand.antworten ?? {}).map((e) =>
+        !e.automatisch && urteile[e.item.id] !== undefined
+          ? { ...e, anteil: urteile[e.item.id], erreicht: urteile[e.item.id] * e.punkte }
+          : e
+      ),
+    }
+  }
+  return {
+    lauf,
+    position: Math.min(stand.position ?? 0, laufItems.length - 1),
+    antworten: stand.antworten ?? {},
+    markiert: new Set(stand.markiert ?? []),
+    auswertung,
+  }
+}
+
 export default function Pruefung({
   items, themen, zustaende, module, bereiche, pruefungen, onSpeichern, onFehlerLernen,
+  speicherSchluessel, onStand, onThemaUeben,
 }) {
-  const [lauf, setLauf] = useState(null)
-  const [position, setPosition] = useState(0)
-  const [antworten, setAntworten] = useState({})
-  const [markiert, setMarkiert] = useState(new Set())
-  const [auswertung, setAuswertung] = useState(null)
+  const [anfang] = useState(() => standWiederherstellen(standLesen(speicherSchluessel), items))
+  const [lauf, setLauf] = useState(anfang?.lauf ?? null)
+  const [position, setPosition] = useState(anfang?.position ?? 0)
+  const [antworten, setAntworten] = useState(anfang?.antworten ?? {})
+  const [markiert, setMarkiert] = useState(anfang?.markiert ?? new Set())
+  const [auswertung, setAuswertung] = useState(anfang?.auswertung ?? null)
+  // Rueckfrage-Dialog: 'abbrechen' | 'abgeben' | null
+  const [rueckfrage, setRueckfrage] = useState(null)
+
+  useEffect(() => {
+    if (!speicherSchluessel) return
+    if (!lauf) {
+      localStorage.removeItem(speicherSchluessel)
+      onStand?.(null)
+      return
+    }
+    const urteile = {}
+    for (const e of auswertung?.ergebnisse ?? []) {
+      if (!e.automatisch && e.anteil !== null) urteile[e.item.id] = e.anteil
+    }
+    const { items: laufItems, ...laufOhneItems } = lauf
+    const stand = {
+      lauf: laufOhneItems,
+      itemIds: laufItems.map((i) => i.id),
+      position,
+      antworten,
+      markiert: [...markiert],
+      abgegeben: auswertung ? { dauerMs: auswertung.dauerMs, urteile } : null,
+    }
+    try {
+      localStorage.setItem(speicherSchluessel, JSON.stringify(stand))
+    } catch {
+      /* Speicher voll - Pruefung laeuft trotzdem weiter */
+    }
+    onStand?.({
+      titel: lauf.titel,
+      gesamt: laufItems.length,
+      beantwortet: laufItems.filter((i) => antworten[i.id] !== undefined).length,
+      abgegeben: Boolean(auswertung),
+    })
+  }, [lauf, position, antworten, markiert, auswertung, speicherSchluessel])
 
   const faellig = useMemo(() => monatspruefungFaellig(pruefungen), [pruefungen])
   const verfuegbar = useMemo(() => gepruefteItems(items).length, [items])
@@ -82,7 +159,13 @@ export default function Pruefung({
     setAuswertung(null)
   }
 
-  function abgeben() {
+  function abgeben(trotzdem = false) {
+    const offen = lauf.items.filter((i) => antworten[i.id] === undefined)
+    if (offen.length > 0 && !trotzdem) {
+      setRueckfrage('abgeben')
+      return
+    }
+    setRueckfrage(null)
     setAuswertung({
       ergebnisse: auswerten(lauf.items, antworten),
       dauerMs: Date.now() - lauf.start,
@@ -125,6 +208,13 @@ export default function Pruefung({
     const offen = auswertung.ergebnisse.filter((e) => e.erreicht === null)
     const zahlen = ergebnisRechnen(auswertung.ergebnisse)
     const fehler = auswertung.ergebnisse.filter((e) => e.anteil !== null && e.anteil < 1)
+    const vorlaeufig = offen.length > 0
+    // Fehler nach Thema gruppiert, mit direktem Weg zum Ueben (16A)
+    const fehlerJeThema = [...fehler.reduce((karte, e) => {
+      const eintrag = karte.get(e.item.themaId) ?? { themaId: e.item.themaId, titel: e.item.themaTitel, anzahl: 0 }
+      eintrag.anzahl += 1
+      return karte.set(e.item.themaId, eintrag)
+    }, new Map()).values()].sort((a, b) => b.anzahl - a.anzahl)
 
     return (
       <div className="schirm">
@@ -139,12 +229,18 @@ export default function Pruefung({
             <span className="ergebnisEinheit">%</span>
           </div>
           <div>
-            <p className="aufrufZahl">{zahlen.note}</p>
+            <p className="aufrufZahl">{vorlaeufig ? 'Vorläufig' : zahlen.note}</p>
             <p className="nebentext">
               {zahlen.erreicht} von {zahlen.moeglich} Punkten · {auswertung.ergebnisse.length} Fragen
               · {Math.round(auswertung.dauerMs / 60000)} Minuten
             </p>
-            {!zahlen.bestanden && (
+            {vorlaeufig && (
+              <p className="nebentext">
+                Endgültig erst, wenn du die {offen.length} frei formulierten Antworten unten
+                selbst beurteilt hast.
+              </p>
+            )}
+            {!vorlaeufig && !zahlen.bestanden && (
               <p className="nebentext warnton">
                 Nicht bestanden. Eine Wiederholung dieser Prüfung ist erforderlich.
               </p>
@@ -157,6 +253,36 @@ export default function Pruefung({
             {offen.length} frei formulierte Antworten musst du selbst beurteilen. Vergleiche mit
             der Musterantwort und entscheide ehrlich – ungenau zählt als falsch.
           </p>
+        )}
+
+        {!vorlaeufig && fehlerJeThema.length > 0 && (
+          <section className="block">
+            <h2 className="abschnitt">Fehler nach Thema</h2>
+            <ul className="themenliste">
+              {fehlerJeThema.map((t) => (
+                <li key={t.themaId}>
+                  <div className="themenzeile">
+                    <span className="planZeichen">✕︎</span>
+                    <div className="themaInfo">
+                      <p className="themaTitel">{t.titel}</p>
+                      <p className="themaZeile2">{t.anzahl} Fehler</p>
+                    </div>
+                    <div className="themenzeileAktionen">
+                      <button
+                        className="knopf schmal"
+                        onClick={() => {
+                          abschliessen()
+                          onThemaUeben?.(t.themaId)
+                        }}
+                      >
+                        Thema üben
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
         )}
 
         <ul className="treffer">
@@ -173,10 +299,22 @@ export default function Pruefung({
                 {markiert.has(e.item.id) && <span className="kategorieMarke k-spaeter">markiert</span>}
               </p>
               <p className="trefferFrage">{e.item.frage}</p>
-              {typeof e.eingabe === 'string' && e.eingabe.trim() && (
-                <p className="eigeneAntwort">Deine Antwort: {e.eingabe}</p>
+              {/* Eigene Antwort neben der Loesung (16A) - frueher stand bei
+                  Auswahl-, Zuordnungs- und Zahlaufgaben gar nicht, was man
+                  selbst gewaehlt hatte. */}
+              <div className="antwortVergleich">
+                <div>
+                  <p className="abschnitt">Deine Antwort</p>
+                  <AntwortAnzeige zeilen={eingabeZeilen(e.item, e.eingabe)} leer="keine Antwort" />
+                </div>
+                <div>
+                  <p className="abschnitt">Lösung</p>
+                  <AntwortAnzeige zeilen={loesungZeilen(e.item)} />
+                </div>
+              </div>
+              {loesungZeilen(e.item)[0] !== e.item.antwort && e.item.antwort && (
+                <p className="trefferAntwort">{e.item.antwort}</p>
               )}
-              <p className="trefferAntwort">{e.item.antwort}</p>
 
               {e.erreicht === null && (
                 <div className="wahl">
@@ -232,7 +370,7 @@ export default function Pruefung({
     return (
       <div className="schirm lernschirm">
         <header className="lernkopf">
-          <button className="textknopf" onClick={() => setLauf(null)}>Abbrechen</button>
+          <button className="textknopf" onClick={() => setRueckfrage('abbrechen')}>Abbrechen</button>
           <div className="schnitt">
             {lauf.items.map((i, n) => (
               <span
@@ -290,7 +428,7 @@ export default function Pruefung({
                 Weiter
               </button>
             ) : (
-              <button className="knopf haupt schmal" onClick={abgeben}>Prüfung abgeben</button>
+              <button className="knopf haupt schmal" onClick={() => abgeben()}>Prüfung abgeben</button>
             )}
             {markiert.size > 0 && (
               <button
@@ -314,8 +452,63 @@ export default function Pruefung({
           </div>
           <p className="nebentext" style={{ marginTop: '0.75rem' }}>
             Keine Rückmeldung vor der Abgabe. Unbeantwortete Fragen zählen als falsch.
+            Du kannst jederzeit den Bildschirm wechseln – die Prüfung bleibt gespeichert.
           </p>
         </div>
+
+        {rueckfrage && (
+          <div className="schleier" onClick={() => setRueckfrage(null)}>
+            <article className="grosseKarte gefahr" onClick={(e) => e.stopPropagation()}>
+              {rueckfrage === 'abbrechen' ? (
+                <>
+                  <h2 className="ueberschrift">Prüfung verwerfen?</h2>
+                  <p className="nebentext">
+                    {beantwortet} von {lauf.items.length} Fragen sind beantwortet. Verworfen gehen
+                    sie verloren. Zum Unterbrechen einfach den Bildschirm wechseln – die Prüfung
+                    bleibt dann gespeichert und lässt sich fortsetzen.
+                  </p>
+                  <div className="wahl">
+                    <button className="knopf schmal" onClick={() => setRueckfrage(null)}>
+                      Weiter bearbeiten
+                    </button>
+                    <button
+                      className="knopf schmal gefahr"
+                      onClick={() => {
+                        setRueckfrage(null)
+                        setLauf(null)
+                      }}
+                    >
+                      Verwerfen
+                    </button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h2 className="ueberschrift">Wirklich abgeben?</h2>
+                  <p className="nebentext">
+                    {lauf.items.length - beantwortet} von {lauf.items.length} Fragen sind noch
+                    unbeantwortet und zählen als falsch.
+                  </p>
+                  <div className="wahl">
+                    <button
+                      className="knopf schmal"
+                      onClick={() => {
+                        setRueckfrage(null)
+                        const erste = lauf.items.findIndex((i) => antworten[i.id] === undefined)
+                        if (erste >= 0) setPosition(erste)
+                      }}
+                    >
+                      Zur ersten offenen Frage
+                    </button>
+                    <button className="knopf schmal gefahr" onClick={() => abgeben(true)}>
+                      Trotzdem abgeben
+                    </button>
+                  </div>
+                </>
+              )}
+            </article>
+          </div>
+        )}
       </div>
     )
   }
@@ -644,4 +837,61 @@ function PruefEingabe({ item, wert, setWert, seed }) {
               placeholder="Antwort in eigenen Worten …"
               onChange={(e) => setWert(e.target.value)} />
   )
+}
+
+// --- Anzeige eigener Antworten und Loesungen in der Auswertung ----------
+function AntwortAnzeige({ zeilen, leer }) {
+  if (!zeilen.length) return <p className="nebentext">{leer ?? '–'}</p>
+  if (zeilen.length === 1) return <p className="eigeneAntwort">{zeilen[0]}</p>
+  return (
+    <ul className="eigeneAntwort antwortListe">
+      {zeilen.map((z, i) => <li key={i}>{z}</li>)}
+    </ul>
+  )
+}
+
+function leerOderNichts(eingabe) {
+  return eingabe === undefined || eingabe === null || (typeof eingabe === 'string' && !eingabe.trim())
+}
+
+function eingabeZeilen(item, eingabe) {
+  if (leerOderNichts(eingabe)) return []
+  switch (item.typ) {
+    case 'mehrfachauswahl':
+      return eingabe.map((i) => item.optionen?.[i]).filter(Boolean)
+    case 'zuordnung':
+      return item.paare.map(([links], i) =>
+        `${links} → ${eingabe[i] !== undefined ? item.paare[eingabe[i]]?.[1] : '–'}`)
+    case 'numerisch':
+    case 'rechnen':
+      return [`${eingabe}${item.einheit ? ` ${item.einheit}` : ''}`]
+    case 'vergleich':
+      return [item.seiten?.[eingabe]?.titel ?? String(eingabe)]
+    case 'bildbeschriftung':
+      return (item.punkte ?? []).map((p) =>
+        `${p.nr}: ${eingabe[p.nr] !== undefined ? item.punkte[eingabe[p.nr]]?.name : '–'}`)
+    case 'fehlersuche':
+      return [`Bereich ${eingabe}`]
+    default:
+      return typeof eingabe === 'string' ? [eingabe] : []
+  }
+}
+
+function loesungZeilen(item) {
+  switch (item.typ) {
+    case 'mehrfachauswahl':
+      return (item.richtig ?? []).map((i) => item.optionen?.[i]).filter(Boolean)
+    case 'zuordnung':
+      return item.paare.map(([links, rechts]) => `${links} → ${rechts}`)
+    case 'numerisch':
+      return [`${String(item.wert).replace('.', ',')}${item.einheit ? ` ${item.einheit}` : ''}`]
+    case 'vergleich':
+      return [item.seiten?.[item.richtig]?.titel ?? item.antwort]
+    case 'bildbeschriftung':
+      return (item.punkte ?? []).map((p) => `${p.nr}: ${p.name}`)
+    case 'fehlersuche':
+      return [`Bereich ${item.fehlerNr}`]
+    default:
+      return item.antwort ? [item.antwort] : []
+  }
 }

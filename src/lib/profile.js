@@ -102,6 +102,7 @@ export async function profilLoeschen(id) {
   schreiben(liste)
   localStorage.removeItem(`einstellungen_${id}`)
   localStorage.removeItem(`offeneSitzung_${id}`)
+  localStorage.removeItem(`offenePruefung_${id}`)
   localStorage.removeItem(`geloescht_${id}`)
   // Dropbox-Merker mitloeschen (Schluessel siehe abgleich.js). Blieben sie
   // stehen, galt die eigene Dropbox-Datei nach "Profil aus Dropbox neu
