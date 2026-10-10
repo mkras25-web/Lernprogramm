@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 import fs from 'node:fs'
 
 // Rundlauf: Fortschritt sichern und in einem neuen Profil wieder einlesen.
 test('Sichern und als neues Profil einlesen ergibt denselben Stand', async ({ page }, info) => {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill('Quelle')
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, 'Quelle')
   await page.locator('.profilKnopf', { hasText: 'Quelle' }).click()
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
   for (let i = 0; i < 3; i++) {

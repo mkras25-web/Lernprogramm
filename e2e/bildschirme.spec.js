@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Runde 5 (2026-10-10): Bildschirmadressen, neue Bildschirme, Querwege,
 // Tastatur-Navigation, Sichten-Schalter, Profilnamen, Klausur-Countdown.
 async function angemeldet(page, name) {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, name)
   await page.locator('.profilKnopf', { hasText: name }).click()
   await expect(page.locator('nav.navigation')).toBeVisible()
 }
@@ -69,8 +69,7 @@ test('Nachschlagen: Checkboxen erst im Sichten-Modus', async ({ page }) => {
 test('Doppelter Profilname wird abgelehnt', async ({ page }) => {
   await page.goto('/')
   for (let i = 0; i < 2; i++) {
-    await page.getByPlaceholder('Name für ein neues Profil').fill('Doppelt')
-    await page.getByRole('button', { name: 'Profil anlegen' }).click()
+    await profilAnlegen(page, 'Doppelt')
   }
   await expect(page.locator('.profilKnopf', { hasText: 'Doppelt' })).toHaveCount(1)
   await expect(page.locator('.meldung')).toContainText('gibt es schon')

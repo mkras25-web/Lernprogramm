@@ -1,4 +1,5 @@
 import { test, expect, devices } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Regressionstest fuer die mobile Navigation (Umbau 2026-10-10): statt
 // eines schwebenden Menueknopfs mit 3x3-Kachel-Overlay (lief bei 320px
@@ -8,8 +9,7 @@ import { test, expect, devices } from '@playwright/test'
 // sichtbaren Seitenleiste (siehe App.jsx, Mobil-Block in styles.css).
 async function angemeldet(page, name) {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, name)
   await page.locator('.profilKnopf', { hasText: name }).click()
 }
 

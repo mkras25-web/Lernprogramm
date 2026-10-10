@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Regressionstest fuer eine ganze Fehlerklasse (zweiter Fall nach dem
 // .navKnopf-Hintergrund-Bug): eine Desktop-Override-Regel wurde in
@@ -9,8 +10,7 @@ import { test, expect } from '@playwright/test'
 // und Titel wirkten "mittig" statt in festen Spalten ausgerichtet.
 test('Themenzeile ist bei Desktop-Breite ein festes Grid, nicht die Mobil-Flex-Regel', async ({ page }) => {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill('Themenzeile-Desktop')
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, 'Themenzeile-Desktop')
   await page.locator('.profilKnopf', { hasText: 'Themenzeile-Desktop' }).click()
   await page.locator('.navKnopf', { hasText: 'Themen' }).click()
 

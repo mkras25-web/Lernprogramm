@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 import fs from 'node:fs'
 
 // Neue optionale Inhaltsfelder (Runde 4, 2026-10-10). Die Lerninhalte selbst
@@ -35,8 +36,7 @@ async function mitTestfeldern(page) {
 
 async function angemeldet(page, name) {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, name)
   await page.locator('.profilKnopf', { hasText: name }).click()
   await expect(page.locator('nav.navigation')).toBeVisible()
 }

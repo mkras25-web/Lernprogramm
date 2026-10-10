@@ -1,4 +1,5 @@
 import { test, expect, devices } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Regressionstest fuer einen Bug: ohne user-select/touch-action auf
 // <button> interpretiert Safari auf dem iPhone einen Tipp leicht als
@@ -35,8 +36,7 @@ test('Buttons haben die noetigen Touch-CSS-Eigenschaften gesetzt', async ({ page
 test('Profil anlegen funktioniert per Tipp (Grundfunktion, ohne die native Geste zu pruefen)', async ({ page }) => {
   await page.goto('/')
 
-  await page.getByPlaceholder('Name für ein neues Profil').fill('Touch-Test')
-  await page.getByRole('button', { name: 'Profil anlegen' }).tap()
+  await profilAnlegen(page, 'Touch-Test', { tippen: true })
   await page.locator('.profilKnopf', { hasText: 'Touch-Test' }).tap()
 
   // Mobil navigiert die untere Leiste (siehe touch-nav.spec.js fuer den

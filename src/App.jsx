@@ -1,6 +1,11 @@
-import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Schleier from './components/Schleier.jsx'
-import Bauabschnitt from './components/Bauabschnitt.jsx'
+import Navigation, { AuswertungReiter } from './components/Navigation.jsx'
+import Ladeskelett from './components/Ladeskelett.jsx'
+import { ansichtAusAdresse, useAdresse } from './hooks/useAdresse.js'
+import { useTastaturNavigation } from './hooks/useTastaturNavigation.js'
+import { useAbgleich } from './hooks/useAbgleich.js'
+import { useKennzahlen } from './hooks/useKennzahlen.js'
 import { paketLaden, paketeLaden } from './lib/paket.js'
 import {
   allesLoeschen,
@@ -16,32 +21,12 @@ import {
   skizzeLoeschen,
   speicherSichern,
 } from './lib/speicher.js'
-import { BEWERTUNG, intervallVorschau, pensumBauen, statistik, zustaendeBerechnen } from './lib/planer.js'
-import {
-  baustellen,
-  beherrschungsgrad,
-  kartenAuswerten,
-  levelAus,
-  meilensteineAuswerten,
-  MEILENSTEIN_STUFEN,
-  raengeFuer,
-  moduleAuswerten,
-  serieBerechnen,
-  xpFuerPruefung,
-  xpFuerMeilensteine,
-  xpGesamt,
-  rekorde,
-  csvAusEreignissen,
-} from './lib/fortschritt.js'
-import { itemsAnreichern, lernbareItems } from './lib/sichtung.js'
-import { monatspruefungFaellig, pruefungsplan } from './lib/pruefung.js'
+import { BEWERTUNG, intervallVorschau, pensumBauen } from './lib/planer.js'
+import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
-import { abgleichen, abgleichStand } from './lib/abgleich.js'
-import { dropboxMoeglich, istVerbunden, meldungAbholen } from './lib/dropbox.js'
-import { serienquote } from './lib/stufen.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
-import { meldungenMarkdown, meldungenSammeln, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
+import { meldungenMarkdown, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
 import Themen from './screens/Themen.jsx'
 import Sammlung from './screens/Sammlung.jsx'
@@ -57,62 +42,6 @@ import Fehlerbuch from './screens/Fehlerbuch.jsx'
 import Lernzettel from './screens/Lernzettel.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
-
-// ︎ (Text-Darstellungs-Selektor) hinter jedem Symbol - ohne das
-// rendert Safari z. B. das Zahnrad farbig als Emoji, obwohl alle
-// anderen Symbole hier einfache einfarbige Linienzeichen bleiben.
-// gruppe: Ueberschrift in der Desktop-Seitenleiste (44A) - Lernen,
-// Nachschlagen, Auswertung; Einstellungen unten abgesetzt.
-const NAVIGATION = [
-  { id: 'heute', titel: 'Heute', symbol: '◴︎', gruppe: 'Lernen' },
-  { id: 'themen', titel: 'Themen', symbol: '▤︎', gruppe: 'Lernen' },
-  { id: 'pruefung', titel: 'Prüfungen', symbol: '✓︎', gruppe: 'Lernen' },
-  { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕︎', gruppe: 'Nachschlagen' },
-  { id: 'glossar', titel: 'Normen', symbol: '§︎', gruppe: 'Nachschlagen' },
-  { id: 'heft', titel: 'Mein Heft', symbol: '❐︎', gruppe: 'Nachschlagen' },
-  { id: 'fehlerbuch', titel: 'Fehlerbuch', symbol: '✕︎', gruppe: 'Nachschlagen' },
-  { id: 'skizzen', titel: 'Skizzen', symbol: '✎︎', gruppe: 'Nachschlagen' },
-  { id: 'fortschritt', titel: 'Fortschritt', symbol: '◑︎', gruppe: 'Auswertung' },
-  { id: 'einstellungen', titel: 'Einstellungen', symbol: '⛭︎', gruppe: 'unten' },
-]
-
-// Mobil (< 60rem): untere Leiste mit vier Hauptzielen plus "Mehr", das
-// die uebrigen Ziele als Blatt von unten oeffnet. Ab 60rem bleibt es bei
-// der Seitenleiste (.navigation), die Leiste ist dort per CSS aus.
-const HAUPTZIELE = ['heute', 'themen', 'pruefung', 'fortschritt']
-const MEHR_UNTERTITEL = {
-  sichtung: 'Volltextsuche, Lesezeichen, Sichtung',
-  glossar: 'Glossar der Regelwerke',
-  heft: 'Alle Notizen und Lesezeichen',
-  fehlerbuch: 'Jede Karte, die je falsch war',
-  skizzen: 'Gespeicherte Zeichnungen',
-  einstellungen: 'Palette, Schrift, Sichern, Dropbox',
-}
-
-// Sammlung ist seit 2026-10-10 ein Reiter unter Fortschritt (25A) - eigene
-// Adresse (#/sammlung), aber kein eigener Navigationseintrag.
-const ZIELE = new Set([...NAVIGATION.map((n) => n.id), 'sammlung', 'lernen'])
-const navAktiv = (id, ansicht) => ansicht === id || (id === 'fortschritt' && ansicht === 'sammlung')
-
-// Bildschirmadresse im Hash-Teil (#/themen), Entscheidung 27A: Zurueck/Vor
-// und Neuladen bleiben auf dem Bildschirm. Bewusst "#/..." statt "#themen":
-// ein nackter Hash liesse den Browser zu einem gleichnamigen Element
-// springen (und Scrollpositionen sollen sich nicht aendern).
-function ansichtAusAdresse() {
-  const treffer = /^#\/([a-z]+)/.exec(window.location.hash)
-  return treffer && ZIELE.has(treffer[1]) ? treffer[1] : null
-}
-
-// Themen, in denen jedes Item gemeistert ist.
-function themenFortschritt0(items, zustaende) {
-  const karte = new Map()
-  for (const item of items) {
-    const grad = beherrschungsgrad(zustaende.get(item.id))
-    const bisher = karte.get(item.themaId)
-    karte.set(item.themaId, bisher === false ? false : grad === 'gemeistert')
-  }
-  return [...karte.values()].filter(Boolean)
-}
 
 export default function App({ profilId, onProfilWechseln }) {
   const profilName = useMemo(
@@ -181,23 +110,6 @@ export default function App({ profilId, onProfilWechseln }) {
     setNachschlagenItem(id)
     setAnsicht('sichtung')
   }
-  // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): das
-  // "Mehr"-Blatt der unteren Leiste. Ab 60rem gibt es weder Leiste noch
-  // Blatt, die Seitenleiste zeigt alle Ziele.
-  const [mehrOffen, setMehrOffen] = useState(false)
-
-  // Bleibt das Blatt offen, waehrend das Fenster (oder eine
-  // Bildschirmdrehung) ueber die Desktop-Breite waechst, soll es nicht
-  // haengen bleiben, bis wieder verkleinert wird.
-  useEffect(() => {
-    const abfrage = window.matchMedia('(min-width: 60rem)')
-    const schliessenFallsDesktop = () => {
-      if (abfrage.matches) setMehrOffen(false)
-    }
-    abfrage.addEventListener('change', schliessenFallsDesktop)
-    return () => abfrage.removeEventListener('change', schliessenFallsDesktop)
-  }, [])
-
   const [erklaerthema, setErklaerthema] = useState(null)
   const [aufstieg, setAufstieg] = useState(null)
   const stufeVorher = useRef(null)
@@ -250,96 +162,30 @@ export default function App({ profilId, onProfilWechseln }) {
   }, [meldung])
 
 
-  // Bearbeitete Fassungen ueberlagern das Paket.
-  const items = useMemo(() => itemsAnreichern(rohItems, marken), [rohItems, marken])
-
-  // Alles, was gelernt und gezaehlt wird - gesichtete Ausschluesse raus.
-  const aktiveItems = useMemo(() => lernbareItems(items, marken), [items, marken])
-
-  const zustaende = useMemo(
-    () => zustaendeBerechnen(ereignisse, { zielBehaltensrate: opt.zielBehaltensrate }),
-    [ereignisse, opt.zielBehaltensrate]
-  )
-
-  const aktiveEreignisse = useMemo(() => {
-    const erlaubt = new Set(aktiveItems.map((i) => i.id))
-    return ereignisse.filter((e) => erlaubt.has(e.itemId))
-  }, [ereignisse, aktiveItems])
-
-  const werte = useMemo(() => statistik(aktiveEreignisse, zustaende), [aktiveEreignisse, zustaende])
-  // Zwei Durchgaenge, weil Meilensteine XP geben und zugleich von der
-  // Stufe abhaengen: erst die Stufe ohne sie, daraus die Meilensteine,
-  // daraus die endgueltige Stufe. Ohne diese Trennung haengt die
-  // Rechnung im Kreis.
-  const xpBasis = useMemo(() => {
-    const ausLernen = xpGesamt(aktiveEreignisse, items)
-    const ausPruefungen = pruefungen.reduce((s, p) => s + xpFuerPruefung(p), 0)
-    return ausLernen + ausPruefungen
-  }, [aktiveEreignisse, items, pruefungen])
-  const levelRoh = useMemo(() => levelAus(xpBasis), [xpBasis])
-  const serie = useMemo(() => serieBerechnen(ereignisse), [ereignisse])
-  // Zweite, ruhigere Ebene neben der Serie: an wie vielen der letzten
-  // dreissig Tage wurde gelernt. Faellt nach einer Pause nicht auf null.
-  const quote = useMemo(() => serienquote(ereignisse), [ereignisse])
-  const module = useMemo(
-    () => moduleAuswerten(paketModule, aktiveItems, zustaende),
-    [paketModule, aktiveItems, zustaende]
-  )
-  const karten = useMemo(
-    () => kartenAuswerten(aktiveItems, zustaende, themen),
-    [aktiveItems, zustaende, themen]
-  )
-
-  // Meilensteine haengen von der Stufe ab, die Stufe von den
-  // Meilenstein-XP. Frueher wurde nur einmal mit der Stufe OHNE
-  // Meilenstein-XP gerechnet - die Sammlung zeigte dann "Stufe zehn: 8 von
-  // 10", waehrend Heute schon Stufe 11 meldete. Jetzt wird wechselseitig
-  // gerechnet, bis sich die Stufe nicht mehr aendert (meist 1-2 Runden).
-  const { meilensteine, xpMeilensteine, level } = useMemo(() => {
-    const gemeisterteThemen = [...themenFortschritt0(aktiveItems, zustaende)].filter(Boolean).length
-    const werteRekord = rekorde(aktiveEreignisse)
-    const sortiert = [...pruefungen].sort((a, b) => b.ts - a.ts)
-    let serieBestanden = 0
-    for (const p of sortiert) {
-      if (p.bestanden) serieBestanden += 1
-      else break
-    }
-
-    const auswerten = (lv) => meilensteineAuswerten({
-      skizzen: skizzen.length,
-      antworten: aktiveEreignisse.length,
-      serie: serie.tage,
-      stufe: lv.stufe,
-      xp: lv.xp,
-      minuten: werteRekord.gesamtMinuten,
-      aktiveTage: werteRekord.aktiveTage,
-      pruefungen: pruefungen.length,
-      bestanden: pruefungen.filter((p) => p.bestanden).length,
-      bestandenSerie: serieBestanden,
-      bestePruefung: pruefungen.reduce((m, p) => Math.max(m, p.prozent ?? 0), 0),
-      gemeisterteThemen,
-      sicher: aktiveItems.filter((i) => (zustaende.get(i.id)?.intervall ?? 0) >= 7).length,
-      gemeistert: aktiveItems.filter((i) => (zustaende.get(i.id)?.intervall ?? 0) >= 60).length,
-      detailkarten: karten.filter((k) => k.frei).length,
-      moduleBegonnen: module.filter((m) => m.begonnen > 0).length,
-      gesichtet: [...marken.values()].filter((m) => m.kategorie).length,
-      notizen: [...marken.values()].filter((m) => m.notiz).length,
-      sicherungen: opt.letzteSicherung ? 1 : 0,
-    }, gestaltung)
-
-    let lv = levelRoh
-    let liste = auswerten(lv)
-    for (let runde = 0; runde < 6; runde++) {
-      const naechste = levelAus(xpBasis + xpFuerMeilensteine(liste))
-      if (naechste.stufe === lv.stufe && naechste.xp === lv.xp) break
-      lv = naechste
-      liste = auswerten(lv)
-    }
-    const xpM = xpFuerMeilensteine(liste)
-    return { meilensteine: liste, xpMeilensteine: xpM, level: levelAus(xpBasis + xpM) }
-  }, [skizzen, aktiveEreignisse, serie, levelRoh, xpBasis, pruefungen, marken, aktiveItems, zustaende,
-      karten, module, opt.letzteSicherung, gestaltung])
-
+  // Alle abgeleiteten Zahlen (hooks/useKennzahlen.js, 52B).
+  const {
+    items,
+    aktiveItems,
+    zustaende,
+    aktiveEreignisse,
+    werte,
+    serie,
+    quote,
+    module,
+    karten,
+    meilensteine,
+    xpMeilensteine,
+    level,
+    meldeliste,
+    themenFortschritt,
+    erlaubteItems,
+    tagesplan,
+    baustellenStapel,
+    skizzenStapel,
+    neueItems,
+    pruefungHinweis,
+    sicherungFaellig,
+  } = useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung })
 
   // Stufenaufstieg bemerken. Beim ersten Durchlauf nur merken, damit
   // nicht jeder Seitenaufruf als Aufstieg gefeiert wird. Wer es ruhig
@@ -380,12 +226,6 @@ export default function App({ profilId, onProfilWechseln }) {
     meilensteineVorher.current = aktuell
   }, [meilensteine, laedt, opt.aufstiegFeiern])
 
-  // Rueckkanal zum Web-Chat (19A/6A): alles, was ueberarbeitet werden sollte.
-  const meldeliste = useMemo(
-    () => meldungenSammeln({ items, marken, zustaende }),
-    [items, marken, zustaende]
-  )
-
   // Neuer Paketstand (22A): Fingerabdruck je Item mit dem zuletzt gesehenen
   // Stand vergleichen und einmal melden, was neu oder ueberarbeitet ist -
   // inklusive, wie viele davon eigene Meldungen waren.
@@ -423,44 +263,6 @@ export default function App({ profilId, onProfilWechseln }) {
       text: `Neuer Inhaltsstand${paketInfo.version && vorher.version !== paketInfo.version ? ` ${paketInfo.version}` : ''}: ${teile.join(', ')}.`,
     })
   }, [laedt, rohItems, paketInfo])
-
-  const themenFortschritt = useMemo(() => {
-    const karte = new Map()
-    for (const item of aktiveItems) {
-      if (!karte.has(item.themaId)) karte.set(item.themaId, { gesamt: 0, sicher: 0, faellig: 0 })
-      const eintrag = karte.get(item.themaId)
-      const zustand = zustaende.get(item.id)
-      eintrag.gesamt += 1
-      if (zustand && zustand.intervall >= 7) eintrag.sicher += 1
-      if (zustand && zustand.faelligAb <= Date.now()) eintrag.faellig += 1
-    }
-    for (const e of karte.values()) e.anteil = e.gesamt ? e.sicher / e.gesamt : 0
-    return karte
-  }, [aktiveItems, zustaende])
-
-  const erlaubteItems = useMemo(
-    () => (opt.ungeprueftZulassen ? aktiveItems : aktiveItems.filter((i) => i.geprueft !== false)),
-    [aktiveItems, opt.ungeprueftZulassen]
-  )
-
-  const tagesplan = useMemo(
-    () =>
-      pensumBauen(erlaubteItems, zustaende, {
-        neuProTag: opt.neuProTag,
-        maxProTag: opt.maxProTag,
-      }),
-    [erlaubteItems, zustaende, opt.neuProTag, opt.maxProTag]
-  )
-
-  const baustellenStapel = useMemo(
-    () => baustellen(erlaubteItems, zustaende, 20).map((b) => b.item),
-    [erlaubteItems, zustaende]
-  )
-  const skizzenStapel = useMemo(() => erlaubteItems.filter((i) => i.typ === 'skizze'), [erlaubteItems])
-  const neueItems = useMemo(
-    () => erlaubteItems.filter((i) => !zustaende.has(i.id)),
-    [erlaubteItems, zustaende]
-  )
 
   const {
     sitzung,
@@ -514,70 +316,18 @@ export default function App({ profilId, onProfilWechseln }) {
   // den Bildschirm (wie in Linear/Gmail). Nie in Eingabefeldern, nie bei
   // offenem Dialog und nie im Lernbildschirm (der hat eigene Kuerzel).
   const [suchFokus, setSuchFokus] = useState(0)
-  useEffect(() => {
-    const ZIELTASTEN = {
-      h: 'heute', t: 'themen', n: 'sichtung', o: 'glossar', m: 'heft', b: 'fehlerbuch',
-      p: 'pruefung', s: 'skizzen', f: 'fortschritt', a: 'sammlung', e: 'einstellungen',
-    }
-    let gWartet = 0
-    function taste(ev) {
-      if (ev.ctrlKey || ev.metaKey || ev.altKey) return
-      if (ev.target.matches?.('input, textarea, select, [contenteditable="true"]')) return
-      if (ansichtRef.current === 'lernen' || document.querySelector('.schleier, .mehrSchleier')) return
-      if (ev.key === '/') {
-        ev.preventDefault()
-        setAnsicht('sichtung')
-        setSuchFokus((n) => n + 1)
-        return
-      }
-      if (ev.key === '?') {
-        ev.preventDefault()
-        setTastenhilfeOffen(true)
-        return
-      }
-      const k = ev.key.toLowerCase()
-      if (gWartet && Date.now() - gWartet < 1500 && ZIELTASTEN[k]) {
-        ev.preventDefault()
-        gWartet = 0
-        setAnsicht(ZIELTASTEN[k])
-        return
-      }
-      gWartet = k === 'g' ? Date.now() : 0
-    }
-    window.addEventListener('keydown', taste)
-    return () => window.removeEventListener('keydown', taste)
-  }, [])
-
-  // --- Adresse <-> Ansicht (27A) -------------------------------------------
   const ansichtRef = useRef(ansicht)
   ansichtRef.current = ansicht
+  useTastaturNavigation({ ansichtRef, setAnsicht, setSuchFokus, setTastenhilfeOffen })
+
+  // --- Adresse <-> Ansicht (27A) -------------------------------------------
   const verlassenRef = useRef(null)
   verlassenRef.current = verlassen
-  const ausVerlauf = useRef(false)
-  useEffect(() => {
-    const ziel = `#/${ansicht}`
-    if (ausVerlauf.current) {
-      ausVerlauf.current = false
-      return
-    }
-    if (window.location.hash === ziel) return
-    // Erster Eintrag ersetzt (kein leerer Schritt zurueck), danach neue Eintraege.
-    if (!window.location.hash) window.history.replaceState(null, '', ziel)
-    else window.history.pushState(null, '', ziel)
-  }, [ansicht])
-  useEffect(() => {
-    function zurueck() {
-      const ziel = ansichtAusAdresse() ?? 'heute'
-      setErklaerthema(null)
-      setLernzettelThema(null)
-      if (ansichtRef.current === 'lernen' && ziel !== 'lernen') verlassenRef.current?.()
-      ausVerlauf.current = true
-      // Ohne laufende Sitzung fuehrt "#/lernen" (Vor-Taste) zu Heute.
-      setAnsicht(ziel === 'lernen' && ansichtRef.current !== 'lernen' ? 'heute' : ziel)
-    }
-    window.addEventListener('popstate', zurueck)
-    return () => window.removeEventListener('popstate', zurueck)
-  }, [])
+  useAdresse(ansicht, setAnsicht, ansichtRef, (ziel) => {
+    setErklaerthema(null)
+    setLernzettelThema(null)
+    if (ansichtRef.current === 'lernen' && ziel !== 'lernen') verlassenRef.current?.()
+  })
 
   async function markeAendern(itemId, aenderung) {
     const vorher = markenRef.current.get(itemId) ?? {}
@@ -606,23 +356,6 @@ export default function App({ profilId, onProfilWechseln }) {
     await skizzeLoeschen(id)
     setSkizzen((alte) => alte.filter((s) => s.id !== id))
   }
-
-  const pruefungHinweis = useMemo(() => {
-    if (monatspruefungFaellig(pruefungen) && aktiveItems.some((i) => i.geprueft !== false)) {
-      return { art: 'monat', text: 'Monatsprüfung fällig' }
-    }
-    const plan = pruefungsplan(themen, aktiveItems, zustaende, pruefungen, 1)
-    if (plan.length > 0) {
-      return { art: 'thema', text: `Prüfung verfügbar: ${plan[0].thema.titel}` }
-    }
-    return null
-  }, [pruefungen, themen, aktiveItems, zustaende])
-
-  const sicherungFaellig = useMemo(() => {
-    if (ereignisse.length < 50) return false
-    if (!opt.letzteSicherung) return true
-    return Date.now() - opt.letzteSicherung > 30 * 24 * 60 * 60 * 1000
-  }, [ereignisse.length, opt.letzteSicherung])
 
   // Der Dateiname traegt das Profil und das Datum: mehrere Geraete legen
   // ihre Sicherungen in denselben Dropbox-Ordner, und beim Einlesen soll
@@ -732,74 +465,10 @@ export default function App({ profilId, onProfilWechseln }) {
     setPruefungen(p)
   }
 
-  // --- Abgleich ueber Dropbox (siehe lib/abgleich.js) -------------------
-  // still = im Hintergrund (Start, nach dem Lernen, App wird verlassen):
-  // nur bei uebernommenen Staenden eine Meldung, Fehler nur im Stand.
-  const [abgleichZustand, setAbgleichZustand] = useState(() => ({ laeuft: false, ...abgleichStand(profilId) }))
-  const abgleichRef = useRef(null)
-  abgleichRef.current = async function jetztAbgleichen(still = true) {
-    if (!dropboxMoeglich() || !istVerbunden()) return
-    setAbgleichZustand((z) => ({ ...z, laeuft: true }))
-    try {
-      const b = await abgleichen({ profilId, profilName, mitSkizzen: opt.dropboxSkizzen === true })
-      const neu = b.ereignisse + b.skizzen + b.marken + b.pruefungen + b.geloescht
-      if (neu > 0) await zustandNeuLesen()
-      if (!still) {
-        setMeldung({
-          art: 'erfolg',
-          text: neu > 0 ? `Abgeglichen: ${b.ereignisse} neue Antworten von anderen Geräten übernommen.` : 'Abgeglichen – nichts Neues.',
-        })
-      } else if (neu > 0) {
-        setMeldung({ art: 'erfolg', text: `Fortschritt von einem anderen Gerät übernommen (${b.ereignisse} Antworten).` })
-      }
-    } catch (e) {
-      if (!still) setMeldung({ art: 'fehler', text: `Abgleich nicht möglich: ${e.message}` })
-    } finally {
-      setAbgleichZustand({ laeuft: false, ...abgleichStand(profilId) })
-    }
-  }
-  // Ueber eine Ref statt direkt aus opt: die Effekte unten (Sichtbarkeit,
-  // Start) halten sonst die Funktion vom ersten Render fest, und das
-  // Ausschalten von "automatisch abgleichen" wirkte beim Verlassen nicht.
-  const autoAbgleichRef = useRef(opt.dropboxAuto)
-  autoAbgleichRef.current = opt.dropboxAuto
-  const automatischAbgleichen = () => {
-    if (autoAbgleichRef.current !== false) abgleichRef.current?.(true)
-  }
-
-  // Nach einer Lernsitzung (Wechsel weg vom Lernbildschirm).
-  const vorherigeAnsicht = useRef(null)
-  useEffect(() => {
-    if (vorherigeAnsicht.current === 'lernen' && ansicht !== 'lernen') automatischAbgleichen()
-    vorherigeAnsicht.current = ansicht
-  }, [ansicht])
-
-  // Rueckmeldung der Dropbox-Anmeldung (ausgefuehrt in main.jsx, vor dem Start).
-  useEffect(() => {
-    const m = meldungAbholen()
-    if (m) setMeldung(m)
-  }, [])
-
-  // Beim Start des Profils, sobald die Inhalte geladen sind.
-  useEffect(() => {
-    if (!laedt) automatischAbgleichen()
-  }, [laedt])
-
-  // Beim Verlassen der App (Push) bzw. Zurueckkehren nach laengerer Pause (Pull).
-  useEffect(() => {
-    let zuletzt = Date.now()
-    function sichtbarkeit() {
-      if (document.visibilityState === 'hidden') {
-        zuletzt = Date.now()
-        automatischAbgleichen()
-      } else if (Date.now() - zuletzt > 120_000) {
-        zuletzt = Date.now()
-        automatischAbgleichen()
-      }
-    }
-    document.addEventListener('visibilitychange', sichtbarkeit)
-    return () => document.removeEventListener('visibilitychange', sichtbarkeit)
-  }, [])
+  // --- Abgleich ueber Dropbox (hooks/useAbgleich.js) ----------------------
+  const { abgleichZustand, jetztAbgleichen } = useAbgleich({
+    profilId, profilName, opt, laedt, ansicht, zustandNeuLesen, setMeldung,
+  })
 
   async function loeschen() {
     await allesLoeschen()
@@ -812,34 +481,7 @@ export default function App({ profilId, onProfilWechseln }) {
   }
 
   if (laedt) {
-    return (
-      <div className="huelle einspaltig">
-        <div className="schirm" role="status" aria-label="Paket wird geladen">
-          <div className="heuteRaster" aria-hidden="true">
-            <section className="stufe">
-              <span className="skeleton skeletonBau" />
-              <div className="stufeText">
-                <span className="skeleton" style={{ width: '7rem', height: '0.75rem' }} />
-                <span className="skeleton" style={{ width: '9rem', height: '1.5rem', marginTop: '0.4rem' }} />
-                <span className="skeleton" style={{ width: '95%', height: '0.9375rem', marginTop: '0.6rem' }} />
-                <span className="skeleton" style={{ width: '60%', height: '0.9375rem', marginTop: '0.4rem' }} />
-              </div>
-            </section>
-            <section className="kennzahlen">
-              {[1, 2, 3, 4, 5].map((n) => (
-                <span key={n} className="skeleton" style={{ height: '4.25rem' }} />
-              ))}
-            </section>
-            <section className="heuteBreit heuteLernen">
-              <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
-            </section>
-            <section className="heuteBreit">
-              <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
-            </section>
-          </div>
-        </div>
-      </div>
-    )
+    return <Ladeskelett />
   }
 
   if (fehler) {
@@ -926,96 +568,18 @@ export default function App({ profilId, onProfilWechseln }) {
 
   return (
     <div className="huelle">
-      <nav className="navigation">
-        {paketliste.length > 1 && (
-          <PaketSchalter paketliste={paketliste} aktiv={opt.aktivesPaket} onWahl={(id) => setOpt((o) => ({ ...o, aktivesPaket: id }))} />
-        )}
-        {NAVIGATION.map((n, i) => (
-          <Fragment key={n.id}>
-            {n.gruppe !== 'unten' && n.gruppe !== NAVIGATION[i - 1]?.gruppe && (
-              <span className="navGruppe">{n.gruppe}</span>
-            )}
-            {n.gruppe === 'unten' && <span className="navTrenner" aria-hidden="true" />}
-            <button
-              className={navAktiv(n.id, ansicht) ? 'navKnopf aktiv' : 'navKnopf'}
-              aria-current={navAktiv(n.id, ansicht) ? 'page' : undefined}
-              onClick={() => setAnsicht(n.id)}
-            >
-              <span aria-hidden="true">{n.symbol}</span>
-              {n.titel}
-            </button>
-          </Fragment>
-        ))}
-        <button className="navFuss" onClick={onProfilWechseln} title="Profil wechseln">
-          <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={34} titel={false} marke={false} />
-          <span className="navFussText">
-            <span className="navFussName">{profilName}</span>
-            <span className="navFussStufe">Stufe {level.stufe} · Profil wechseln</span>
-          </span>
-        </button>
-      </nav>
-
-      <nav className="tabLeiste" aria-label="Hauptnavigation">
-        {HAUPTZIELE.map((id) => {
-          const n = NAVIGATION.find((z) => z.id === id)
-          const aktiv = navAktiv(id, ansicht) && !mehrOffen
-          return (
-            <button
-              key={id}
-              className={aktiv ? 'tabKnopf aktiv' : 'tabKnopf'}
-              aria-current={aktiv ? 'page' : undefined}
-              onClick={() => {
-                setAnsicht(id)
-                setMehrOffen(false)
-              }}
-            >
-              <span className="tabSymbol" aria-hidden="true">{n.symbol}</span>
-              <span className="tabName">{n.titel}</span>
-              {id === 'pruefung' && pruefungHinweis && (
-                <span className="tabPunkt" title={pruefungHinweis.text} />
-              )}
-            </button>
-          )
-        })}
-        <button
-          className={mehrOffen || !HAUPTZIELE.some((id) => navAktiv(id, ansicht)) ? 'tabKnopf aktiv' : 'tabKnopf'}
-          aria-expanded={mehrOffen}
-          onClick={() => setMehrOffen((o) => !o)}
-        >
-          <span className="tabSymbol" aria-hidden="true">⋯︎</span>
-          <span className="tabName">Mehr</span>
-        </button>
-      </nav>
-
-      {mehrOffen && (
-        // Escape, Fokus und Hintergrund-Klick regelt der Schleier.
-        <Schleier onSchliessen={() => setMehrOffen(false)} klasse="mehrSchleier" beschriftung="Weitere Bereiche">
-          <div className="mehrBlatt" onClick={(e) => e.stopPropagation()}>
-            <div className="mehrGriff" aria-hidden="true" />
-            <h2 className="mehrTitel">Mehr</h2>
-            {paketliste.length > 1 && (
-              <PaketSchalter paketliste={paketliste} aktiv={opt.aktivesPaket} onWahl={(id) => setOpt((o) => ({ ...o, aktivesPaket: id }))} />
-            )}
-            {NAVIGATION.filter((n) => !HAUPTZIELE.includes(n.id)).map((n) => (
-              <button
-                key={n.id}
-                className={ansicht === n.id ? 'mehrZeile aktiv' : 'mehrZeile'}
-                onClick={() => {
-                  setAnsicht(n.id)
-                  setMehrOffen(false)
-                }}
-              >
-                <span className="mehrSymbol" aria-hidden="true">{n.symbol}</span>
-                <span className="mehrText">
-                  <span className="mehrName">{n.titel}</span>
-                  <span className="mehrUntertitel">{MEHR_UNTERTITEL[n.id]}</span>
-                </span>
-                <span className="mehrPfeil" aria-hidden="true">›</span>
-              </button>
-            ))}
-          </div>
-        </Schleier>
-      )}
+      <Navigation
+        ansicht={ansicht}
+        setAnsicht={setAnsicht}
+        paketliste={paketliste}
+        aktivesPaket={opt.aktivesPaket}
+        onPaketWahl={(id) => setOpt((o) => ({ ...o, aktivesPaket: id }))}
+        level={level}
+        gestaltung={gestaltung}
+        profilName={profilName}
+        onProfilWechseln={onProfilWechseln}
+        pruefungHinweis={pruefungHinweis}
+      />
 
       {importFrage && (
         <Schleier onSchliessen={() => setImportFrage(null)}>
@@ -1233,7 +797,7 @@ export default function App({ profilId, onProfilWechseln }) {
       )}
       {ansicht === 'einstellungen' && (
         <Einstellungen
-          abgleich={{ ...abgleichZustand, onJetzt: () => abgleichRef.current?.(false) }}
+          abgleich={{ ...abgleichZustand, onJetzt: jetztAbgleichen }}
           werte={opt}
           setzen={setOpt}
           anzahlEreignisse={ereignisse.length}
@@ -1263,40 +827,3 @@ export default function App({ profilId, onProfilWechseln }) {
   )
 }
 
-// Reiter oben in Fortschritt und Sammlung (25A): beide Teile der Auswertung.
-function AuswertungReiter({ ansicht, setAnsicht }) {
-  return (
-    <div className="reiter auswertungReiter">
-      <button
-        className={ansicht === 'fortschritt' ? 'reiterKnopf aktiv' : 'reiterKnopf'}
-        onClick={() => setAnsicht('fortschritt')}
-      >
-        Übersicht
-      </button>
-      <button
-        className={ansicht === 'sammlung' ? 'reiterKnopf aktiv' : 'reiterKnopf'}
-        onClick={() => setAnsicht('sammlung')}
-      >
-        Sammlung
-      </button>
-    </div>
-  )
-}
-
-// Paketschalter (32A): oben in der Seitenleiste bzw. im Mehr-Blatt.
-function PaketSchalter({ paketliste, aktiv, onWahl }) {
-  return (
-    <div className="paketSchalter" role="group" aria-label="Inhaltspaket">
-      {paketliste.map((pa) => (
-        <button
-          key={pa.id}
-          className={pa.id === aktiv ? 'wahlKnopf aktiv' : 'wahlKnopf'}
-          aria-pressed={pa.id === aktiv}
-          onClick={() => onWahl(pa.id)}
-        >
-          {pa.kurz ?? pa.titel.split(' ')[0]}
-        </button>
-      ))}
-    </div>
-  )
-}

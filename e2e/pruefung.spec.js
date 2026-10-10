@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Pruefung unterbrechen und fortsetzen (14A), Rueckfragen (15A),
 // Auswertung mit eigener Antwort (16A) - 2026-10-10.
 async function angemeldet(page, name) {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, name)
   await page.locator('.profilKnopf', { hasText: name }).click()
   await page.locator('.navKnopf', { hasText: 'Prüfungen' }).click()
 }

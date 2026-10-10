@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Rauchtest fuer den kompletten Einstiegspfad: Profil anlegen oeffnet
 // die eigentliche App (IndexedDB-Speicher, Paketlader, Navigation).
@@ -8,8 +9,7 @@ import { test, expect } from '@playwright/test'
 test('Profil anlegen fuehrt in die App mit sichtbarer Navigation', async ({ page }) => {
   await page.goto('/')
 
-  await page.getByPlaceholder('Name für ein neues Profil').fill('E2E-Test')
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, 'E2E-Test')
 
   // "Profil anlegen" legt das Profil nur an (siehe ProfilGate.jsx) - erst
   // ein Klick auf die Profilzeile selbst waehlt es aktiv und oeffnet App.jsx.

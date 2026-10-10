@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Dialoge einheitlich (51A, 2026-10-10): Fokus hinein, Tab bleibt drin,
 // Escape schliesst, Fokus kehrt zurueck.
 async function angemeldet(page, name) {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, name)
   await page.locator('.profilKnopf', { hasText: name }).click()
   await expect(page.locator('nav.navigation')).toBeVisible()
 }

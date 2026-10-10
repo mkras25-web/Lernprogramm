@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Kritische Pfade der Lernsitzung (2026-10-10 ergaenzt, vor dem Umbau der
 // Wiederholungsplanung): Tastatur, Rueckgaengig, Notiz-Schreibmarke.
 async function angemeldet(page, name) {
   await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).click()
+  await profilAnlegen(page, name)
   await page.locator('.profilKnopf', { hasText: name }).click()
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
   await expect(page.locator('.lernkopf')).toBeVisible()

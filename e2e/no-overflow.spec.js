@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { profilAnlegen } from './hilfen.js'
 
 // Regressionstest fuer eine ganze Klasse von Bugs: auf schmalen
 // Breiten liefen wiederholt einzelne Elemente seitlich ueber (fehlender
@@ -48,8 +49,7 @@ for (const format of FORMATE) {
 
     test(`Kein horizontaler Overflow auf keinem Bildschirm (${format.width}px)`, async ({ page }) => {
       await page.goto('/')
-      await page.getByPlaceholder('Name für ein neues Profil').fill('Overflow-Test')
-      await page.getByRole('button', { name: 'Profil anlegen' }).tap()
+      await profilAnlegen(page, 'Overflow-Test', { tippen: true })
       await page.locator('.profilKnopf', { hasText: 'Overflow-Test' }).tap()
       await page.waitForSelector('.tabLeiste')
       await keinOverflow(page, 'Heute', format.width)
@@ -82,8 +82,7 @@ for (const format of [{ width: 1024, height: 768 }, { width: 1920, height: 1080 
     test.use({ viewport: format })
     test(`Kein horizontaler Overflow am Desktop (${format.width}px)`, async ({ page }) => {
       await page.goto('/')
-      await page.getByPlaceholder('Name für ein neues Profil').fill('Overflow-Desktop')
-      await page.getByRole('button', { name: 'Profil anlegen' }).click()
+      await profilAnlegen(page, 'Overflow-Desktop')
       await page.locator('.profilKnopf', { hasText: 'Overflow-Desktop' }).click()
       await page.waitForSelector('nav.navigation')
       for (const ziel of ['heute', 'themen', 'pruefung', 'sichtung', 'glossar', 'heft', 'fehlerbuch', 'skizzen', 'fortschritt', 'sammlung', 'einstellungen']) {
