@@ -19,7 +19,7 @@ const FORMATE = [
 ]
 
 const HAUPT = ['Themen', 'Prüfungen', 'Fortschritt']
-const MEHR = ['Nachschlagen', 'Normen', 'Sammlung', 'Skizzen', 'Einstellungen']
+const MEHR = ['Nachschlagen', 'Normen', 'Mein Heft', 'Fehlerbuch', 'Skizzen', 'Einstellungen']
 
 async function keinOverflow(page, name, breite) {
   const treffer = await page.evaluate((w) => {
@@ -59,6 +59,11 @@ for (const format of FORMATE) {
         await page.waitForTimeout(150)
         await keinOverflow(page, ziel, format.width)
       }
+      // Sammlung ist ein Reiter unter Fortschritt
+      await page.locator('.tabKnopf', { hasText: 'Fortschritt' }).tap()
+      await page.locator('.auswertungReiter .reiterKnopf', { hasText: 'Sammlung' }).tap()
+      await page.waitForTimeout(150)
+      await keinOverflow(page, 'Sammlung', format.width)
       for (const ziel of MEHR) {
         await page.locator('.tabKnopf', { hasText: 'Mehr' }).tap()
         await page.locator('.mehrZeile', { hasText: ziel }).tap()

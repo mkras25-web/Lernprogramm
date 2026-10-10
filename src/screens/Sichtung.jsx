@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import Notizfeld from '../components/Notizfeld.jsx'
 import { KATEGORIEN, TYPNAMEN, UNGESICHTET, kategorieAus } from '../lib/sichtung.js'
-import { passt } from '../lib/suche.js'
+import { trefferWert, vorbereiten } from '../lib/suche.js'
 import Itemansicht from '../components/Itemansicht.jsx'
 
 const MARKENFILTER = [
@@ -17,18 +17,48 @@ const MARKENFILTER = [
 // zweier fast gleicher Listen.
 export default function Sichtung({
   items, themen, marken, ereignisse, zustaende, glossar, onMarke, onSammel,
-  weiterNachMarke = false,
+  weiterNachMarke = false, startItem = null, onStartItemErledigt, suchFokus = 0,
 }) {
+  const suchfeldRef = useRef(null)
+  // Taste "/" (App.jsx) setzt den Fokus ins Suchfeld.
+  useEffect(() => {
+    if (suchFokus > 0) suchfeldRef.current?.focus()
+  }, [suchFokus])
   const [suche, setSuche] = useState('')
   const [filter, setFilter] = useState('alle')
   const [marke, setMarkeFilter] = useState('alle')
   const [thema, setThema] = useState('alle')
   const [ausgewaehlt, setAusgewaehlt] = useState(new Set())
+  // Sichten-Modus (23B): Checkboxen und Sammelaktionen nur, wenn er an ist -
+  // zum blossen Nachschlagen sind sie Ballast. Pro Geraet gemerkt.
+  const [sichten, setSichtenRoh] = useState(() => {
+    try {
+      return localStorage.getItem('nachschlagen_sichten') === 'an'
+    } catch {
+      return false
+    }
+  })
+  const setSichten = (an) => {
+    setSichtenRoh(an)
+    if (!an) setAusgewaehlt(new Set())
+    try {
+      localStorage.setItem('nachschlagen_sichten', an ? 'an' : 'aus')
+    } catch {
+      /* egal */
+    }
+  }
   const [offenesItem, setOffenesItem] = useState(null)
   // Scrollposition der Liste: beim Oeffnen einer Karte wird die Liste
   // ausgehaengt, beim Zurueckkehren landete man sonst wieder ganz oben -
   // gegen den Wunsch, ununterbrochen durch alle Fragen zu scrollen.
   const listenPosition = useRef(null)
+  // Von aussen angeforderte Karte (Fehlerbuch, Heft, Baustellen,
+  // Pruefungsauswertung) einmal oeffnen.
+  useEffect(() => {
+    if (!startItem) return
+    setOffenesItem(startItem)
+    onStartItemErledigt?.()
+  }, [startItem])
   useLayoutEffect(() => {
     if (offenesItem === null && listenPosition.current !== null) {
       window.scrollTo(0, listenPosition.current)
@@ -44,8 +74,32 @@ export default function Sichtung({
   const [bearbeite, setBearbeite] = useState(null)
   const [entwurf, setEntwurf] = useState({ frage: '', antwort: '' })
 
+  // Suchtexte einmal je Item vorbereiten; die Eingabe wird entkoppelt
+  // (useDeferredValue), damit das Tippen nie auf die Liste warten muss.
+  const suchIndex = useMemo(
+    () =>
+      new Map(
+        items.map((i) => [
+          i.id,
+          [
+            { feld: vorbereiten(i.frage), gewicht: 3 },
+            { feld: vorbereiten([...(i.tags ?? []), i.themaTitel, i.modulTitel].join(' ')), gewicht: 2 },
+            { feld: vorbereiten([i.antwort, i.vertiefung].filter(Boolean).join(' ')), gewicht: 1 },
+            {
+              feld: vorbereiten([i.frage, i.antwort, i.vertiefung, i.themaTitel, i.modulTitel, ...(i.tags ?? [])].filter(Boolean).join(' ')),
+              gewicht: 0.5,
+            },
+          ],
+        ])
+      ),
+    [items]
+  )
+  const sucheVerzoegert = useDeferredValue(suche)
+
   const gefiltert = useMemo(() => {
-    return items.filter((i) => {
+    const begriff = sucheVerzoegert.trim()
+    const werte = new Map()
+    const liste = items.filter((i) => {
       if (thema !== 'alle' && i.themaId !== thema) return false
       const m = marken.get(i.id)
       if (marke === 'lesezeichen' && !m?.lesezeichen) return false
@@ -53,14 +107,16 @@ export default function Sichtung({
       if (marke === 'einspruch' && !m?.einspruch) return false
       if (marke === 'bearbeitet' && !m?.frage && !m?.antwort) return false
       if (filter !== 'alle' && kategorieAus(m).id !== filter) return false
-      if (suche.trim()) {
-        const text = [i.frage, i.antwort, i.vertiefung, i.themaTitel, i.modulTitel,
-                      ...(i.tags ?? [])].filter(Boolean).join(' ')
-        if (!passt(suche, text)) return false
+      if (begriff) {
+        const w = trefferWert(begriff, suchIndex.get(i.id))
+        if (w <= 0) return false
+        werte.set(i.id, w)
       }
       return true
     })
-  }, [items, marken, filter, thema, marke, suche])
+    // Mit Suchbegriff nach Trefferguete, sonst Paketreihenfolge.
+    return begriff ? liste.sort((a, b) => werte.get(b.id) - werte.get(a.id)) : liste
+  }, [items, marken, filter, thema, marke, sucheVerzoegert, suchIndex])
 
   const zaehler = useMemo(() => {
     const z = { ungesichtet: 0 }
@@ -121,6 +177,9 @@ export default function Sichtung({
   useEffect(() => {
     if (!offenesItem) return
     function taste(e) {
+      // Offener Dialog (z. B. Tastenhilfe ueber "?") liegt davor - dann
+      // keine Sichtungs-Kuerzel im Hintergrund.
+      if (document.querySelector('.schleier')) return
       const ziel = e.target?.tagName
       if (ziel === 'INPUT' || ziel === 'TEXTAREA' || ziel === 'SELECT') return
       if (e.ctrlKey || e.altKey || e.metaKey) return
@@ -331,7 +390,14 @@ export default function Sichtung({
   return (
     <div className="schirm">
       <div className="themenKopf">
-        <h1 className="ueberschrift">Nachschlagen und Sichten</h1>
+        <h1 className="ueberschrift">Nachschlagen</h1>
+        <button
+          className={sichten ? 'knopf schmal aktiv' : 'knopf schmal'}
+          aria-pressed={sichten}
+          onClick={() => setSichten(!sichten)}
+        >
+          {sichten ? 'Sichten beenden' : 'Sichten'}
+        </button>
         <p className="nebentext">
           {zaehler.ungesichtet} ungesichtet · {zaehler.relevant} relevant ·{' '}
           {zaehler.spaeter} später · {zaehler.ueberarbeiten} überarbeiten ·{' '}
@@ -340,6 +406,7 @@ export default function Sichtung({
       </div>
 
       <input
+        ref={suchfeldRef}
         className="suchfeld"
         value={suche}
         onChange={(e) => setSuche(e.target.value)}
@@ -396,7 +463,7 @@ export default function Sichtung({
         <span className="zeileHinweis">
           {gefiltert.length} {gefiltert.length === 1 ? 'Eintrag' : 'Einträge'}
         </span>
-        {gefiltert.length > 0 && (
+        {sichten && gefiltert.length > 0 && (
           <button
             className="textknopf"
             onClick={() => setAusgewaehlt(new Set(gefiltert.map((i) => i.id)))}
@@ -404,7 +471,7 @@ export default function Sichtung({
             Alle auswählen
           </button>
         )}
-        {ausgewaehlt.size > 0 && (
+        {sichten && ausgewaehlt.size > 0 && (
           <>
             <button className="textknopf" onClick={() => setAusgewaehlt(new Set())}>
               Auswahl aufheben
@@ -430,12 +497,14 @@ export default function Sichtung({
           return (
             <li key={item.id} className="trefferKarte">
               <div className="sichtungKopf">
-                <input
-                  type="checkbox"
-                  checked={ausgewaehlt.has(item.id)}
-                  onChange={() => umschalten(item.id)}
-                  onClick={(e) => e.stopPropagation()}
-                />
+                {sichten && (
+                  <input
+                    type="checkbox"
+                    checked={ausgewaehlt.has(item.id)}
+                    onChange={() => umschalten(item.id)}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                )}
                 <p className="herkunft">
                   {item.modulTitel} · {item.themaTitel} · {TYPNAMEN[item.typ] ?? item.typ}
                   {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}

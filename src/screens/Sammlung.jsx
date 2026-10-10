@@ -27,7 +27,7 @@ function stempelTooltip(m) {
 
 // Detailkarten sind kein Zufallsfund, sondern Beleg fuer Beherrschung.
 // Deshalb zeigt auch die verschlossene Karte, wie weit es noch ist.
-export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
+export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, reiter, onThemaUeben }) {
   const [offen, setOffen] = useState(null)
   const [gruppe, setGruppe] = useState('alle')
 
@@ -42,6 +42,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
 
   return (
     <div className="schirm">
+      {reiter}
       <div className="themenKopf">
         <h1 className="ueberschrift">Sammlung</h1>
         <button className="knopf schmal" onClick={() => window.print()}>
@@ -96,26 +97,40 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
           steigt sie auf „Ausführung", und wenn 80 % der Items sogar „gemeistert" sind, auf
           „Meisterschaft". Verschlossene Karten zeigen schon den aktuellen Anteil.
         </p>
-        <ul className="kartengitter">
-          {karten.map((k) => (
-            <li key={k.id}>
-              <button
-                className={k.frei ? `karte rang-${rangKlasse(k.rang)}` : 'karte verschlossen'}
-                onClick={() => k.frei && setOffen(k)}
-              >
-                <div className="kartenBild">
-                  {k.frei && k.bild ? (
-                    <LokalBild src={k.bild} alt="" platzhalter={false} />
-                  ) : (
-                    <span className="fortschrittZahl">{Math.round(k.anteil * 100)} %</span>
-                  )}
-                </div>
+        {karten.some((k) => k.frei) && (
+          <ul className="kartengitter">
+            {karten.filter((k) => k.frei).map((k) => (
+              <li key={k.id}>
+                <button className={`karte rang-${rangKlasse(k.rang)}`} onClick={() => setOffen(k)}>
+                  <div className="kartenBild">
+                    {k.bild ? (
+                      <LokalBild src={k.bild} alt="" platzhalter={false} />
+                    ) : (
+                      <span className="fortschrittZahl">{Math.round(k.anteil * 100)} %</span>
+                    )}
+                  </div>
+                  <span className="kartenTitel">{k.titel}</span>
+                  <span className="kartenRang">{k.rang}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+        {/* Verschlossene Karten flach statt grosser leerer Platzhalter (25A):
+            Titel und Fortschritt bis zur Freischaltung bei 80 %. */}
+        {karten.some((k) => !k.frei) && (
+          <ul className="kartenVerschlossen">
+            {karten.filter((k) => !k.frei).map((k) => (
+              <li key={k.id} className="karteFlach">
                 <span className="kartenTitel">{k.titel}</span>
-                <span className="kartenRang">{k.frei ? k.rang : 'verschlossen'}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
+                <span className="karteFlachBalken" aria-hidden="true">
+                  <span style={{ width: `${Math.min(100, Math.round((k.anteil / 0.8) * 100))}%` }} />
+                </span>
+                <span className="kartenRang">{Math.round(k.anteil * 100)} % · frei ab 80 %</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       <section className="block">
@@ -196,7 +211,14 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
               <div><dt>Items</dt><dd>{offen.gesamt}</dd></div>
               <div><dt>gemeistert</dt><dd>{offen.gemeistert}</dd></div>
             </dl>
-            <button className="knopf" onClick={() => setOffen(null)}>Schließen</button>
+            <div className="wahl">
+              {onThemaUeben && (
+                <button className="knopf schmal haupt" onClick={() => onThemaUeben(offen.id)}>
+                  Thema wiederholen
+                </button>
+              )}
+              <button className="knopf schmal" onClick={() => setOffen(null)}>Schließen</button>
+            </div>
           </article>
         </div>
       )}

@@ -8,8 +8,15 @@ export default function Heute({
   level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
-  pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen,
+  pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
 }) {
+  // Klausur-Countdown (4B): naechste anstehende Klausur(en), nur Anzeige.
+  const heuteBeginn = new Date()
+  heuteBeginn.setHours(0, 0, 0, 0)
+  const anstehend = klausuren
+    .map((k) => ({ ...k, tage: Math.round((new Date(`${k.datum}T00:00`) - heuteBeginn) / 86400000) }))
+    .filter((k) => k.tage >= 0)
+    .sort((a, b) => a.tage - b.tage)
   const offen = tagesplan.pensum.length
   const erledigt = werte.antwortenHeute
   const anteilHeute = offen === 0 ? 1 : Math.min(1, erledigt / (erledigt + offen))
@@ -21,6 +28,18 @@ export default function Heute({
   return (
     <div className="schirm">
       <div className="heuteRaster">
+        {anstehend.length > 0 && (
+          <section className="heuteBreit klausurLeiste">
+            {anstehend.slice(0, 3).map((k, i) => (
+              <p key={k.id} className={i === 0 ? 'klausurNaechste' : 'klausurWeitere'}>
+                <span className="klausurTage">
+                  {k.tage === 0 ? 'heute' : k.tage === 1 ? 'morgen' : `in ${k.tage} Tagen`}
+                </span>{' '}
+                Klausur {k.titel} · {new Date(`${k.datum}T00:00`).toLocaleDateString('de-DE')}
+              </p>
+            ))}
+          </section>
+        )}
         <section className="stufe">
           <Bauabschnitt stufe={level.stufe} gestaltung={gestaltung} groesse={128} />
           <div className="stufeText">

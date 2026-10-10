@@ -50,6 +50,9 @@ import Skizzen from './screens/Skizzen.jsx'
 import Pruefung from './screens/Pruefung.jsx'
 import Glossar from './screens/Glossar.jsx'
 import Lernen from './screens/Lernen.jsx'
+import MeinHeft from './screens/MeinHeft.jsx'
+import Fehlerbuch from './screens/Fehlerbuch.jsx'
+import Lernzettel from './screens/Lernzettel.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 
@@ -61,8 +64,9 @@ const NAVIGATION = [
   { id: 'themen', titel: 'Themen', symbol: '▤︎' },
   { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕︎' },
   { id: 'glossar', titel: 'Normen', symbol: '§︎' },
+  { id: 'heft', titel: 'Mein Heft', symbol: '❐︎' },
+  { id: 'fehlerbuch', titel: 'Fehlerbuch', symbol: '✕︎' },
   { id: 'pruefung', titel: 'Prüfungen', symbol: '✓︎' },
-  { id: 'sammlung', titel: 'Sammlung', symbol: '◈︎' },
   { id: 'skizzen', titel: 'Skizzen', symbol: '✎︎' },
   { id: 'fortschritt', titel: 'Fortschritt', symbol: '◑︎' },
   { id: 'einstellungen', titel: 'Einstellungen', symbol: '⛭︎' },
@@ -75,9 +79,24 @@ const HAUPTZIELE = ['heute', 'themen', 'pruefung', 'fortschritt']
 const MEHR_UNTERTITEL = {
   sichtung: 'Volltextsuche, Lesezeichen, Sichtung',
   glossar: 'Glossar der Regelwerke',
-  sammlung: 'Detailkarten und Meilensteine',
+  heft: 'Alle Notizen und Lesezeichen',
+  fehlerbuch: 'Jede Karte, die je falsch war',
   skizzen: 'Gespeicherte Zeichnungen',
   einstellungen: 'Palette, Schrift, Sichern, Dropbox',
+}
+
+// Sammlung ist seit 2026-10-10 ein Reiter unter Fortschritt (25A) - eigene
+// Adresse (#/sammlung), aber kein eigener Navigationseintrag.
+const ZIELE = new Set([...NAVIGATION.map((n) => n.id), 'sammlung', 'lernen'])
+const navAktiv = (id, ansicht) => ansicht === id || (id === 'fortschritt' && ansicht === 'sammlung')
+
+// Bildschirmadresse im Hash-Teil (#/themen), Entscheidung 27A: Zurueck/Vor
+// und Neuladen bleiben auf dem Bildschirm. Bewusst "#/..." statt "#themen":
+// ein nackter Hash liesse den Browser zu einem gleichnamigen Element
+// springen (und Scrollpositionen sollen sich nicht aendern).
+function ansichtAusAdresse() {
+  const treffer = /^#\/([a-z]+)/.exec(window.location.hash)
+  return treffer && ZIELE.has(treffer[1]) ? treffer[1] : null
 }
 
 // Themen, in denen jedes Item gemeistert ist.
@@ -118,11 +137,11 @@ export default function App({ profilId, onProfilWechseln }) {
   const [laedt, setLaedt] = useState(true)
   const [meldung, setMeldung] = useState(null)
   const [importFrage, setImportFrage] = useState(null)
-  // Bewusst nur ueber einen Knopf in den Einstellungen erreichbar, nicht
-  // ueber eine globale "?"-Taste: Lernen und Sichtung haben eigene,
-  // aktive Tastaturkuerzel (1-4, R/S/U/X, ...) - ein global offenes
-  // Overlay wuerde deren Tasten unbemerkt durchlassen und im
-  // Hintergrund z. B. eine Bewertung ausloesen.
+  // Ueber den Knopf in den Einstellungen und seit 2026-10-10 auch ueber die
+  // Taste "?" (45A). Frueher bewusst nicht global, weil die Kuerzel von
+  // Lernen und Sichtung hinter dem offenen Fenster weitergewirkt haetten -
+  // beide Handler ignorieren Tasten jetzt, solange ein .schleier offen ist,
+  // und "?" wirkt im Lernbildschirm gar nicht.
   const [tastenhilfeOffen, setTastenhilfeOffen] = useState(false)
 
   // Angefangene Pruefung (Pruefung.jsx speichert sie je Profil, 14A) -
@@ -144,7 +163,20 @@ export default function App({ profilId, onProfilWechseln }) {
   })
 
   const [opt, setOpt] = useState(() => einstellungenLaden(profilId))
-  const [ansicht, setAnsicht] = useState('heute')
+  // Nach dem Neuladen auf "#/lernen" startet die App auf Heute - dort steht
+  // die angefangene Sitzung zum Fortsetzen bereit (nie ein leerer Bildschirm).
+  const [ansicht, setAnsicht] = useState(() => {
+    const a = ansichtAusAdresse()
+    return a && a !== 'lernen' ? a : 'heute'
+  })
+  // In Nachschlagen direkt eine Karte oeffnen (Querwege 26A: Fehlerbuch,
+  // Heft, Baustellen, Pruefungsfehler).
+  const [nachschlagenItem, setNachschlagenItem] = useState(null)
+  const [lernzettelThema, setLernzettelThema] = useState(null)
+  const oeffneItem = (id) => {
+    setNachschlagenItem(id)
+    setAnsicht('sichtung')
+  }
   // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): das
   // "Mehr"-Blatt der unteren Leiste. Ab 60rem gibt es weder Leiste noch
   // Blatt, die Seitenleiste zeigt alle Ziele.
@@ -475,6 +507,84 @@ export default function App({ profilId, onProfilWechseln }) {
   // und die zweite ueberschrieb die erste.
   const markenRef = useRef(marken)
   markenRef.current = marken
+  // --- Neue App-Version (31A) ----------------------------------------------
+  const [updateBereit, setUpdateBereit] = useState(false)
+  useEffect(() => {
+    const bereit = () => setUpdateBereit(true)
+    window.addEventListener('app-update-bereit', bereit)
+    return () => window.removeEventListener('app-update-bereit', bereit)
+  }, [])
+
+  // --- Tastatur-Navigation (29A/45A) -----------------------------------------
+  // "/" springt in die Suche, "?" zeigt die Kuerzel, "G" + Buchstabe wechselt
+  // den Bildschirm (wie in Linear/Gmail). Nie in Eingabefeldern, nie bei
+  // offenem Dialog und nie im Lernbildschirm (der hat eigene Kuerzel).
+  const [suchFokus, setSuchFokus] = useState(0)
+  useEffect(() => {
+    const ZIELTASTEN = {
+      h: 'heute', t: 'themen', n: 'sichtung', o: 'glossar', m: 'heft', b: 'fehlerbuch',
+      p: 'pruefung', s: 'skizzen', f: 'fortschritt', a: 'sammlung', e: 'einstellungen',
+    }
+    let gWartet = 0
+    function taste(ev) {
+      if (ev.ctrlKey || ev.metaKey || ev.altKey) return
+      if (ev.target.matches?.('input, textarea, select, [contenteditable="true"]')) return
+      if (ansichtRef.current === 'lernen' || document.querySelector('.schleier, .mehrSchleier')) return
+      if (ev.key === '/') {
+        ev.preventDefault()
+        setAnsicht('sichtung')
+        setSuchFokus((n) => n + 1)
+        return
+      }
+      if (ev.key === '?') {
+        ev.preventDefault()
+        setTastenhilfeOffen(true)
+        return
+      }
+      const k = ev.key.toLowerCase()
+      if (gWartet && Date.now() - gWartet < 1500 && ZIELTASTEN[k]) {
+        ev.preventDefault()
+        gWartet = 0
+        setAnsicht(ZIELTASTEN[k])
+        return
+      }
+      gWartet = k === 'g' ? Date.now() : 0
+    }
+    window.addEventListener('keydown', taste)
+    return () => window.removeEventListener('keydown', taste)
+  }, [])
+
+  // --- Adresse <-> Ansicht (27A) -------------------------------------------
+  const ansichtRef = useRef(ansicht)
+  ansichtRef.current = ansicht
+  const verlassenRef = useRef(null)
+  verlassenRef.current = verlassen
+  const ausVerlauf = useRef(false)
+  useEffect(() => {
+    const ziel = `#/${ansicht}`
+    if (ausVerlauf.current) {
+      ausVerlauf.current = false
+      return
+    }
+    if (window.location.hash === ziel) return
+    // Erster Eintrag ersetzt (kein leerer Schritt zurueck), danach neue Eintraege.
+    if (!window.location.hash) window.history.replaceState(null, '', ziel)
+    else window.history.pushState(null, '', ziel)
+  }, [ansicht])
+  useEffect(() => {
+    function zurueck() {
+      const ziel = ansichtAusAdresse() ?? 'heute'
+      setErklaerthema(null)
+      setLernzettelThema(null)
+      if (ansichtRef.current === 'lernen' && ziel !== 'lernen') verlassenRef.current?.()
+      ausVerlauf.current = true
+      // Ohne laufende Sitzung fuehrt "#/lernen" (Vor-Taste) zu Heute.
+      setAnsicht(ziel === 'lernen' && ansichtRef.current !== 'lernen' ? 'heute' : ziel)
+    }
+    window.addEventListener('popstate', zurueck)
+    return () => window.removeEventListener('popstate', zurueck)
+  }, [])
+
   async function markeAendern(itemId, aenderung) {
     const vorher = markenRef.current.get(itemId) ?? {}
     const neu = { itemId, ...vorher, ...aenderung }
@@ -787,6 +897,17 @@ export default function App({ profilId, onProfilWechseln }) {
     )
   }
 
+  if (lernzettelThema) {
+    const thema = themen.find((t) => t.id === lernzettelThema)
+    if (thema) {
+      return (
+        <div className="huelle einspaltig">
+          <Lernzettel thema={thema} items={aktiveItems} marken={marken} onZurueck={() => setLernzettelThema(null)} />
+        </div>
+      )
+    }
+  }
+
   if (erklaerthema) {
     const thema = themen.find((t) => t.id === erklaerthema)
     return (
@@ -812,10 +933,13 @@ export default function App({ profilId, onProfilWechseln }) {
   return (
     <div className="huelle">
       <nav className="navigation">
+        {paketliste.length > 1 && (
+          <PaketSchalter paketliste={paketliste} aktiv={opt.aktivesPaket} onWahl={(id) => setOpt((o) => ({ ...o, aktivesPaket: id }))} />
+        )}
         {NAVIGATION.map((n) => (
           <button
             key={n.id}
-            className={ansicht === n.id ? 'navKnopf aktiv' : 'navKnopf'}
+            className={navAktiv(n.id, ansicht) ? 'navKnopf aktiv' : 'navKnopf'}
             onClick={() => setAnsicht(n.id)}
           >
             <span aria-hidden="true">{n.symbol}</span>
@@ -827,7 +951,7 @@ export default function App({ profilId, onProfilWechseln }) {
       <nav className="tabLeiste" aria-label="Hauptnavigation">
         {HAUPTZIELE.map((id) => {
           const n = NAVIGATION.find((z) => z.id === id)
-          const aktiv = ansicht === id && !mehrOffen
+          const aktiv = navAktiv(id, ansicht) && !mehrOffen
           return (
             <button
               key={id}
@@ -847,7 +971,7 @@ export default function App({ profilId, onProfilWechseln }) {
           )
         })}
         <button
-          className={mehrOffen || !HAUPTZIELE.includes(ansicht) ? 'tabKnopf aktiv' : 'tabKnopf'}
+          className={mehrOffen || !HAUPTZIELE.some((id) => navAktiv(id, ansicht)) ? 'tabKnopf aktiv' : 'tabKnopf'}
           aria-expanded={mehrOffen}
           onClick={() => setMehrOffen((o) => !o)}
         >
@@ -867,6 +991,9 @@ export default function App({ profilId, onProfilWechseln }) {
           >
             <div className="mehrGriff" aria-hidden="true" />
             <h2 className="mehrTitel">Mehr</h2>
+            {paketliste.length > 1 && (
+              <PaketSchalter paketliste={paketliste} aktiv={opt.aktivesPaket} onWahl={(id) => setOpt((o) => ({ ...o, aktivesPaket: id }))} />
+            )}
             {NAVIGATION.filter((n) => !HAUPTZIELE.includes(n.id)).map((n) => (
               <button
                 key={n.id}
@@ -919,6 +1046,16 @@ export default function App({ profilId, onProfilWechseln }) {
         </div>
       )}
 
+      {updateBereit && !offenePruefung && (
+        <div className="meldung erfolg updateHinweis" role="status">
+          <p>Neue Version der App verfügbar.</p>
+          <button className="knopf schmal haupt" onClick={() => window.__appAktualisieren?.()}>
+            Neu laden
+          </button>
+          <button onClick={() => setUpdateBereit(false)} aria-label="Später">✕︎</button>
+        </div>
+      )}
+
       {meldung && (
         <div
           className={`meldung${meldung.art === 'fehler' ? ' fehler' : ''}${meldung.art === 'erfolg' ? ' erfolg' : ''}`}
@@ -956,6 +1093,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onSichern={() => exportKlick(false)}
           offenePruefung={offenePruefung}
           onPruefungFortsetzen={() => setAnsicht('pruefung')}
+          klausuren={opt.klausuren ?? []}
         />
       )}
       {ansicht === 'themen' && (
@@ -967,6 +1105,7 @@ export default function App({ profilId, onProfilWechseln }) {
           phasen={phasen}
           onStart={sitzungStarten}
           onErklaerung={setErklaerthema}
+          onLernzettel={setLernzettelThema}
           onWunschliste={() =>
             textHerunterladen(
               wunschlisteMarkdown({ module, themen, phasen }),
@@ -986,6 +1125,9 @@ export default function App({ profilId, onProfilWechseln }) {
           onMarke={markeAendern}
           onSammel={sammelSichtung}
           weiterNachMarke={opt.sichtungWeiter}
+          startItem={nachschlagenItem}
+          suchFokus={suchFokus}
+          onStartItemErledigt={() => setNachschlagenItem(null)}
         />
       )}
       {ansicht === 'pruefung' && (
@@ -1000,6 +1142,7 @@ export default function App({ profilId, onProfilWechseln }) {
           speicherSchluessel={pruefungSchluessel}
           onStand={setOffenePruefung}
           onThemaUeben={(themaId) => sitzungStarten('ueben', { themaId })}
+          onItemOeffnen={oeffneItem}
           onSpeichern={async (p) => {
             const eintrag = await pruefungSpeichern(p)
             setPruefungen((alte) => [...alte, eintrag])
@@ -1033,15 +1176,40 @@ export default function App({ profilId, onProfilWechseln }) {
           }}
         />
       )}
-      {ansicht === 'glossar' && <Glossar glossar={glossar} />}
+      {ansicht === 'glossar' && (
+        <Glossar
+          glossar={glossar}
+          items={aktiveItems}
+          bereiche={bereiche}
+          onUeben={(ids) => sitzungStarten('fehlerstapel', { ids })}
+          onItemOeffnen={oeffneItem}
+        />
+      )}
       {ansicht === 'sammlung' && (
-        <Sammlung karten={karten} meilensteine={meilensteine} xpMeilensteine={xpMeilensteine} />
+        <Sammlung
+          karten={karten}
+          meilensteine={meilensteine}
+          xpMeilensteine={xpMeilensteine}
+          reiter={<AuswertungReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
+          onThemaUeben={(themaId) => sitzungStarten('ueben', { themaId })}
+        />
+      )}
+      {ansicht === 'heft' && <MeinHeft items={items} marken={marken} onOeffnen={oeffneItem} />}
+      {ansicht === 'fehlerbuch' && (
+        <Fehlerbuch
+          items={aktiveItems}
+          ereignisse={aktiveEreignisse}
+          zustaende={zustaende}
+          onUeben={(ids) => sitzungStarten('fehlerstapel', { ids })}
+          onOeffnen={oeffneItem}
+        />
       )}
       {ansicht === 'skizzen' && (
         <Skizzen
           skizzen={skizzen}
           items={items}
           onLoeschen={skizzeEntfernen}
+          onNeuZeichnen={(itemId) => sitzungStarten('fehlerstapel', { ids: [itemId] })}
           zeichenaufgaben={skizzenStapel.length}
           onUeben={() => sitzungStarten('skizzen', {})}
         />
@@ -1055,6 +1223,10 @@ export default function App({ profilId, onProfilWechseln }) {
           level={level}
           gestaltung={gestaltung}
           module={module}
+          reiter={<AuswertungReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
+          onThemaUeben={(themaId) => sitzungStarten('ueben', { themaId })}
+          onModulUeben={(modulId) => sitzungStarten('ueben', { modulId })}
+          onItemOeffnen={oeffneItem}
         />
       )}
       {ansicht === 'einstellungen' && (
@@ -1085,6 +1257,44 @@ export default function App({ profilId, onProfilWechseln }) {
       )}
 
       <Tastenhilfe offen={tastenhilfeOffen} onSchliessen={() => setTastenhilfeOffen(false)} />
+    </div>
+  )
+}
+
+// Reiter oben in Fortschritt und Sammlung (25A): beide Teile der Auswertung.
+function AuswertungReiter({ ansicht, setAnsicht }) {
+  return (
+    <div className="reiter auswertungReiter">
+      <button
+        className={ansicht === 'fortschritt' ? 'reiterKnopf aktiv' : 'reiterKnopf'}
+        onClick={() => setAnsicht('fortschritt')}
+      >
+        Übersicht
+      </button>
+      <button
+        className={ansicht === 'sammlung' ? 'reiterKnopf aktiv' : 'reiterKnopf'}
+        onClick={() => setAnsicht('sammlung')}
+      >
+        Sammlung
+      </button>
+    </div>
+  )
+}
+
+// Paketschalter (32A): oben in der Seitenleiste bzw. im Mehr-Blatt.
+function PaketSchalter({ paketliste, aktiv, onWahl }) {
+  return (
+    <div className="paketSchalter" role="group" aria-label="Inhaltspaket">
+      {paketliste.map((pa) => (
+        <button
+          key={pa.id}
+          className={pa.id === aktiv ? 'wahlKnopf aktiv' : 'wahlKnopf'}
+          aria-pressed={pa.id === aktiv}
+          onClick={() => onWahl(pa.id)}
+        >
+          {pa.kurz ?? pa.titel.split(' ')[0]}
+        </button>
+      ))}
     </div>
   )
 }

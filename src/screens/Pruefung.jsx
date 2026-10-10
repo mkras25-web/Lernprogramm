@@ -57,7 +57,7 @@ function standWiederherstellen(stand, items) {
 
 export default function Pruefung({
   items, themen, zustaende, module, bereiche, pruefungen, onSpeichern, onFehlerLernen,
-  speicherSchluessel, onStand, onThemaUeben,
+  speicherSchluessel, onStand, onThemaUeben, onItemOeffnen,
 }) {
   const [anfang] = useState(() => standWiederherstellen(standLesen(speicherSchluessel), items))
   const [lauf, setLauf] = useState(anfang?.lauf ?? null)
@@ -314,6 +314,11 @@ export default function Pruefung({
               </div>
               {loesungZeilen(e.item)[0] !== e.item.antwort && e.item.antwort && (
                 <p className="trefferAntwort">{e.item.antwort}</p>
+              )}
+              {onItemOeffnen && e.anteil !== null && e.anteil < 1 && (
+                <button className="textknopf" style={{ alignSelf: 'flex-start' }} onClick={() => onItemOeffnen(e.item.id)}>
+                  Karte in Nachschlagen öffnen
+                </button>
               )}
 
               {e.erreicht === null && (

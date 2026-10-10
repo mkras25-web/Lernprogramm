@@ -120,6 +120,32 @@ export default function Lernen({
     onBewerten(bewertung, bild, hilfeGenutzt)
   }
 
+  // Aktueller Stand fuer den Tasten-Handler: der wird erst nach dem
+  // Neuzeichnen neu gebunden - eine Taste genau dazwischen sah sonst noch
+  // den alten Stand (z. B. "nichts rueckgaengig zu machen").
+  const rueckgaengigRef = useRef({ kannZurueck, onRueckgaengig })
+  rueckgaengigRef.current = { kannZurueck, onRueckgaengig }
+
+  // Kam der Fokus per Tab-Taste (dann loesen Enter/Leertaste den Knopf
+  // aus) oder per Maus/Finger (dann bleibt es beim Kuerzel "aufdecken")?
+  // :focus-visible taugt dafuer nicht: Chromium setzt es nach einem
+  // Mausklick, sobald danach irgendeine Taste gedrueckt wird.
+  const fokusPerTab = useRef(false)
+  useEffect(() => {
+    const tab = (e) => {
+      if (e.key === 'Tab') fokusPerTab.current = true
+    }
+    const zeiger = () => {
+      fokusPerTab.current = false
+    }
+    window.addEventListener('keydown', tab, true)
+    window.addEventListener('pointerdown', zeiger, true)
+    return () => {
+      window.removeEventListener('keydown', tab, true)
+      window.removeEventListener('pointerdown', zeiger, true)
+    }
+  }, [])
+
   // Tastenkuerzel. Leertaste deckt auf, Ziffern bewerten.
   useEffect(() => {
     function taste(e) {
@@ -146,19 +172,21 @@ export default function Lernen({
         return
       }
       if (e.code === 'Space' || e.key === 'Enter') {
-        // Per Tastatur angesteuerter Knopf (Tab, sichtbarer Fokus): Enter/
-        // Leertaste loesen DIESEN Knopf aus, nicht "Aufdecken". Nach einem
-        // Mausklick hat der Knopf keinen sichtbaren Fokus - dann bleibt es
-        // beim gewohnten Kuerzel.
-        if (e.target.matches('button:focus-visible, a:focus-visible')) return
+        // Per Tab angesteuerter Knopf: Enter/Leertaste loesen DIESEN Knopf
+        // aus, nicht "Aufdecken". Nach einem Mausklick bleibt es beim
+        // gewohnten Kuerzel (siehe fokusPerTab).
+        if (fokusPerTab.current && e.target.matches('button, a')) return
         e.preventDefault()
         if (!aufgedeckt) setAufgedeckt(true)
         else if (art === 'blaettern') bewerten(BEWERTUNG.GUT)
         return
       }
-      if (e.key === 'Backspace' && kannZurueck) {
+      if (e.key === 'Backspace') {
+        // Immer abfangen: in WebKit heisst die Taste sonst "Seite zurueck" -
+        // seit den Bildschirmadressen (#/lernen) verliesse das die Sitzung,
+        // wenn gerade nichts rueckgaengig zu machen ist.
         e.preventDefault()
-        onRueckgaengig()
+        if (rueckgaengigRef.current.kannZurueck) rueckgaengigRef.current.onRueckgaengig()
         return
       }
       if (e.key === 'ArrowLeft' && position > 0) {

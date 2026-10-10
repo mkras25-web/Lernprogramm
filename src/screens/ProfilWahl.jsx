@@ -2,6 +2,15 @@ import { useEffect, useMemo, useState } from 'react'
 import { datenbankFuerProfilSetzen, exportieren } from '../lib/speicher.js'
 import DropboxBereich from '../components/DropboxBereich.jsx'
 import { meldungAbholen } from '../lib/dropbox.js'
+import { paketeLaden } from '../lib/paket.js'
+import { laden as einstellungenLaden, speichern as einstellungenSpeichern } from '../lib/einstellungen.js'
+
+// Doppelte Profilnamen sind nicht erlaubt (Entscheidung 33B) - zwei
+// gleich heissende Profile waren in der Liste nicht zu unterscheiden.
+function nameVergeben(profile, name, ausserId = null) {
+  const n = name.trim().toLocaleLowerCase('de-DE')
+  return profile.some((p) => p.id !== ausserId && p.name.trim().toLocaleLowerCase('de-DE') === n)
+}
 
 const AVATAR_FARBEN = ['#adc178', '#a98467', '#457b9d', '#c1734a', '#7d8471', '#1b9aaa']
 
@@ -35,6 +44,24 @@ export default function ProfilWahl({
   const [loeschKandidat, setLoeschKandidat] = useState(null)
   const [bestaetigung, setBestaetigung] = useState('')
   const [meldung, setMeldung] = useState(null)
+  // Paketschalter (32A): das Inhaltspaket gilt je Profil; hier gewaehlt,
+  // wird es fuer das als naechstes geoeffnete Profil eingetragen.
+  const [paketliste, setPaketliste] = useState([])
+  const [paketWahl, setPaketWahl] = useState(null)
+  useEffect(() => {
+    paketeLaden().then(setPaketliste).catch(() => setPaketliste([]))
+  }, [])
+
+  function oeffnen(id) {
+    if (paketWahl) {
+      try {
+        einstellungenSpeichern(id, { ...einstellungenLaden(id), aktivesPaket: paketWahl })
+      } catch {
+        /* Einstellungen nicht lesbar - Profil oeffnet mit seinem Paket */
+      }
+    }
+    onWahl(id)
+  }
 
   // Rueckmeldung der Dropbox-Anmeldung (siehe main.jsx).
   useEffect(() => {
@@ -59,11 +86,19 @@ export default function ProfilWahl({
     e.preventDefault()
     const name = neuerName.trim()
     if (!name) return
+    if (nameVergeben(profile, name)) {
+      setMeldung({ art: 'fehler', text: `Ein Profil „${name}“ gibt es schon – bitte einen anderen Namen wählen.` })
+      return
+    }
     onErstellen(name)
     setNeuerName('')
   }
 
   function umbenennen(id, name) {
+    if (nameVergeben(profile, name, id)) {
+      setMeldung({ art: 'fehler', text: `Ein Profil „${name.trim()}“ gibt es schon – bitte einen anderen Namen wählen.` })
+      return
+    }
     onUmbenennen(id, name)
     setBearbeiten(null)
   }
@@ -121,6 +156,29 @@ export default function ProfilWahl({
         <h1 className="ueberschrift">Wer lernt gerade?</h1>
         {hinweis && <p className="nebentext">{hinweis}</p>}
 
+        {paketliste.length > 1 && sortiert.length > 0 && (
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Inhaltspaket</p>
+              <p className="zeileHinweis">Gilt für das Profil, das du als Nächstes öffnest.</p>
+            </div>
+            <div className="wahl">
+              <button className={!paketWahl ? 'wahlKnopf aktiv' : 'wahlKnopf'} onClick={() => setPaketWahl(null)}>
+                wie zuletzt
+              </button>
+              {paketliste.map((pa) => (
+                <button
+                  key={pa.id}
+                  className={paketWahl === pa.id ? 'wahlKnopf aktiv' : 'wahlKnopf'}
+                  onClick={() => setPaketWahl(pa.id)}
+                >
+                  {pa.titel}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
         {sortiert.length > 0 && (
           <ul className="profilListe">
             {sortiert.map((p) => (
@@ -133,7 +191,7 @@ export default function ProfilWahl({
                   />
                 ) : (
                   <div className="profilZeile">
-                    <button className="profilKnopf" onClick={() => onWahl(p.id)}>
+                    <button className="profilKnopf" onClick={() => oeffnen(p.id)}>
                       <span className="profilAvatar" style={{ background: p.farbe ?? avatarFarbe(p.id) }} aria-hidden="true">
                         {initialen(p.name)}
                       </span>

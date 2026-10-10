@@ -14,6 +14,7 @@ export default function Themen({
   onStart,
   onErklaerung,
   onWunschliste,
+  onLernzettel,
 }) {
   // Abdeckungsuebersicht (20A): welche Themen haben schon Inhalt?
   const [abdeckung, setAbdeckung] = useState(false)
@@ -170,6 +171,11 @@ export default function Themen({
                           {t.erklaerung && (
                             <button className="artKnopf" onClick={() => onErklaerung(t.id)}>
                               Erklärung
+                            </button>
+                          )}
+                          {onLernzettel && (
+                            <button className="artKnopf" onClick={() => onLernzettel(t.id)}>
+                              Lernzettel
                             </button>
                           )}
                           <button

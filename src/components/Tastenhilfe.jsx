@@ -5,6 +5,25 @@
 // "?" oder den Knopf in den Einstellungen.
 const GRUPPEN = [
   {
+    titel: 'Überall (außer beim Lernen)',
+    kuerzel: [
+      ['/', 'In die Suche (Nachschlagen) springen'],
+      ['?', 'Diese Übersicht öffnen'],
+      ['G dann H', 'Heute'],
+      ['G dann T', 'Themen'],
+      ['G dann P', 'Prüfungen'],
+      ['G dann F', 'Fortschritt'],
+      ['G dann A', 'Sammlung'],
+      ['G dann N', 'Nachschlagen'],
+      ['G dann O', 'Normen'],
+      ['G dann M', 'Mein Heft'],
+      ['G dann B', 'Fehlerbuch'],
+      ['G dann S', 'Skizzen'],
+      ['G dann E', 'Einstellungen'],
+      ['Esc', 'Dialog oder Mehr-Blatt schließen'],
+    ],
+  },
+  {
     titel: 'Beim Lernen',
     kuerzel: [
       ['Leertaste', 'Antwort/Referenz aufdecken, danach weiter'],

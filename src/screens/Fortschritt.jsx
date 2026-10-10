@@ -19,7 +19,10 @@ import { bauwerkFuer, reifegradFuer, stufeAusAnteil } from '../lib/stufen.js'
 import { TYPNAMEN } from '../lib/sichtung.js'
 
 
-export default function Fortschritt({ ereignisse, items, zustaende, werte, level, gestaltung = 'arch', module }) {
+export default function Fortschritt({
+  ereignisse, items, zustaende, werte, level, gestaltung = 'arch', module,
+  reiter, onThemaUeben, onModulUeben, onItemOeffnen,
+}) {
   const felder = tagesverlauf(ereignisse, 140)
   const vorschau = faelligkeitsvorschau(zustaende, 7)
   const maxVorschau = Math.max(1, ...vorschau)
@@ -42,6 +45,7 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
 
   return (
     <div className="schirm">
+      {reiter}
       <h1 className="ueberschrift">Fortschritt</h1>
 
       {/* Kopfzeile: Rang, Stufe, Gesamtfortschritt */}
@@ -216,6 +220,9 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
                     {reifegradFuer(m.anteil, gestaltung, m.begonnen > 0).name} · {m.sicher} von {m.gesamt} sicher
                   </p>
                 </div>
+                {onModulUeben && (
+                  <button className="artKnopf kachelAktion" onClick={() => onModulUeben(m.id)}>Üben</button>
+                )}
               </li>
             ))}
           </ul>
@@ -234,6 +241,9 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
                     {t.trefferquote !== null ? ` · ${t.trefferquote} % Treffer` : ''}
                   </p>
                 </div>
+                {onThemaUeben && (
+                  <button className="artKnopf kachelAktion" onClick={() => onThemaUeben(t.id)}>Üben</button>
+                )}
               </li>
             ))}
           </ul>
@@ -245,8 +255,10 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
             <ul className="baustellen">
               {stapel.map(({ item, zustand }) => (
                 <li key={item.id}>
-                  <span className="baustelleFrage">{item.frage}</span>
-                  <span className="baustelleZahl">{zustand.fehler}× daneben</span>
+                  <button className="trefferOeffnen" onClick={() => onItemOeffnen?.(item.id)}>
+                    <span className="baustelleFrage">{item.frage}</span>
+                    <span className="baustelleZahl">{zustand.fehler}× daneben · Öffnen →</span>
+                  </button>
                 </li>
               ))}
             </ul>

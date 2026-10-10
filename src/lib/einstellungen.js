@@ -57,6 +57,8 @@ export const STANDARD = {
   zielBehaltensrate: 0.9,
   // Tagesziel in Antworten (0 = aus). Ein Ziel, keine Obergrenze.
   tagesziel: 0,
+  // Klausurtermine fuer den Countdown auf Heute: [{ id, titel, datum }]
+  klausuren: [],
   reihenfolge: 'gemischt',
   bewertungsstufen: 4,
   ungeprueftZulassen: true,

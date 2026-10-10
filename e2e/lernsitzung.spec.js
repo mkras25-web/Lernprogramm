@@ -29,7 +29,7 @@ test('Per Tab angesteuerter Knopf reagiert auf Enter statt aufzudecken', async (
   await angemeldet(page, 'Tabfokus')
   const lesezeichen = page.locator('.markenKnopf', { hasText: 'Lesezeichen' })
   await lesezeichen.focus()
-  // :focus-visible wie bei echter Tastaturbedienung erzwingen
+  // wie bei echter Tastaturbedienung per Tab ankommen
   await page.keyboard.press('Shift+Tab')
   await page.keyboard.press('Tab')
   await expect(lesezeichen).toBeFocused()
@@ -94,4 +94,13 @@ test('Bewertungsknoepfe zeigen das naechste Intervall (8A)', async ({ page }) =>
   await page.keyboard.press('Space')
   await expect(page.locator('.bewertung .intervallHinweis')).toHaveCount(4)
   await expect(page.locator('.bewertung .knopf', { hasText: 'Leicht' }).locator('.intervallHinweis')).toHaveText(/\d+ (T\.|Mon\.)/)
+})
+
+test('Nach Mausklick auf einen Knopf deckt die Leertaste weiterhin auf', async ({ page }) => {
+  await angemeldet(page, 'Mausklick')
+  await page.locator('.markenKnopf', { hasText: 'Lesezeichen' }).click()
+  await expect(page.locator('.markenKnopf', { hasText: 'Lesezeichen' })).toHaveClass(/aktiv/)
+  await page.keyboard.press('Space')
+  await expect(page.locator('.bewertung')).toBeVisible()
+  await expect(page.locator('.markenKnopf', { hasText: 'Lesezeichen' })).toHaveClass(/aktiv/)
 })

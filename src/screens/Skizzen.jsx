@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 
 // Uebersicht aller gespeicherten Skizzen, nach Item gruppiert.
 // Zeigt die Entwicklung ueber die Zeit und erlaubt das Aufraeumen.
-export default function Skizzen({ skizzen, items, onLoeschen, zeichenaufgaben = 0, onUeben }) {
+export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zeichenaufgaben = 0, onUeben }) {
   const [gross, setGross] = useState(null)
   const [loeschKandidat, setLoeschKandidat] = useState(null)
 
@@ -47,6 +47,11 @@ export default function Skizzen({ skizzen, items, onLoeschen, zeichenaufgaben = 
         <section key={g.item?.id ?? Math.random()} className="block">
           <h2 className="abschnitt">{g.item?.themaTitel ?? 'Unbekanntes Thema'}</h2>
           <p className="trefferFrage">{g.item?.frage ?? 'Item nicht mehr im Paket'}</p>
+          {g.item && onNeuZeichnen && (
+            <button className="textknopf" style={{ alignSelf: 'flex-start' }} onClick={() => onNeuZeichnen(g.item.id)}>
+              Aufgabe erneut zeichnen
+            </button>
+          )}
           <div className="skizzenband" style={{ marginTop: '0.75rem' }}>
             {g.eintraege.map((s) => (
               <figure key={s.id} className="skizzenEintrag">

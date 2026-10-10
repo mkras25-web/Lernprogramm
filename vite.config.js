@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 import { readdirSync, rmSync, existsSync } from 'node:fs'
 import { join, resolve } from 'node:path'
+import { readFileSync } from 'node:fs'
+
+// Version und Build-Datum fuer die Anzeige in den Einstellungen (31A).
+const PAKET = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))
 
 // Urheberrechtlich geschuetzte Buchausschnitte (public/pakete/*/bilder-lokal)
 // duerfen nie in einen Build wandern, den man veroeffentlicht - auch nicht,
@@ -63,7 +67,10 @@ export default defineConfig({
     // mitgecached, damit einmal geladene Themen auch ohne Verbindung
     // weiter lernbar bleiben - ohne extra Downloadschritt.
     VitePWA({
-      registerType: 'autoUpdate',
+      // 'prompt' statt 'autoUpdate' (31A): eine neue Version wartet, bis der
+      // Nutzer "Neu laden" waehlt - nie mitten in einer Sitzung (siehe
+      // main.jsx und den Update-Hinweis in App.jsx).
+      registerType: 'prompt',
       includeAssets: ['icons/*.svg', 'icons/*.png'],
       manifest: {
         name: 'Lernprogramm',
@@ -115,6 +122,10 @@ export default defineConfig({
     }),
   ],
   base: './',
+  define: {
+    __APP_VERSION__: JSON.stringify(PAKET.version),
+    __BUILD_DATUM__: JSON.stringify(new Date().toLocaleDateString('de-DE')),
+  },
   test: {
     environment: 'node',
     include: ['src/**/*.test.js'],

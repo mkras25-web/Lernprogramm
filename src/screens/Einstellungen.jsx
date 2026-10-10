@@ -86,7 +86,29 @@ export default function Einstellungen({
     <div className="schirm">
       <h1 className="ueberschrift">Einstellungen</h1>
 
-      <section className="block">
+      {/* Sprungmarken (35A) als Knoepfe mit scrollIntoView - keine
+          href="#..."-Anker, die wuerden mit den Bildschirmadressen (#/...)
+          kollidieren. */}
+      <nav className="sprungmarken" aria-label="Abschnitte">
+        {[
+          ['einst-profil', 'Profil'],
+          ['einst-paket', 'Inhaltspaket'],
+          ['einst-darstellung', 'Darstellung'],
+          ['einst-lernen', 'Lernen'],
+          ['einst-daten', 'Daten'],
+          ['einst-gefahr', 'Zurücksetzen'],
+        ].map(([id, name]) => (
+          <button
+            key={id}
+            className="wahlKnopf"
+            onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+          >
+            {name}
+          </button>
+        ))}
+      </nav>
+
+      <section className="block" id="einst-profil">
         <h2 className="abschnitt">Profil</h2>
         <div className="feldgruppe">
           <div className="zeile">
@@ -105,7 +127,7 @@ export default function Einstellungen({
         </div>
       </section>
 
-      <section className="block">
+      <section className="block" id="einst-paket">
         <h2 className="abschnitt">Inhaltspaket</h2>
         <div className="feldgruppe">
           <div className="zeile">
@@ -131,7 +153,7 @@ export default function Einstellungen({
         </div>
       </section>
 
-      <section className="block">
+      <section className="block" id="einst-darstellung">
         <h2 className="abschnitt">Darstellung</h2>
         <div className="feldgruppe">
           <div className="zeile">
@@ -241,7 +263,7 @@ export default function Einstellungen({
         </div>
       </section>
 
-      <section className="block">
+      <section className="block" id="einst-lernen">
         <h2 className="abschnitt">Lernen</h2>
         <div className="feldgruppe">
           <div className="zeile">
@@ -271,6 +293,20 @@ export default function Einstellungen({
               wert={werte.maxProTag}
               optionen={[[20, '20'], [30, '30'], [50, '50'], [999, 'ohne']]}
               onWahl={(w) => aendern('maxProTag', w)}
+            />
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Klausurtermine</p>
+              <p className="zeileHinweis">
+                Heute zeigt einen Countdown bis zur nächsten Klausur. Die Planung bleibt davon
+                unberührt.
+              </p>
+            </div>
+            <Klausurtermine
+              liste={werte.klausuren ?? []}
+              onAendern={(liste) => aendern('klausuren', liste)}
             />
           </div>
 
@@ -402,7 +438,7 @@ export default function Einstellungen({
         </div>
       </section>
 
-      <section className="block">
+      <section className="block" id="einst-daten">
         <h2 className="abschnitt">Daten</h2>
         <div className="feldgruppe">
           <div className="zeile">
@@ -517,6 +553,18 @@ export default function Einstellungen({
             </div>
           )}
 
+          <p className="zeileHinweis versionsHinweis">
+            Version {typeof __APP_VERSION__ !== 'undefined' ? __APP_VERSION__ : 'Entwicklung'}
+            {typeof __BUILD_DATUM__ !== 'undefined' ? ` · gebaut am ${__BUILD_DATUM__}` : ''}
+          </p>
+        </div>
+      </section>
+
+      {/* Gefahrenzone (35A): Unumkehrbares deutlich abgesetzt, nicht mehr
+          zwischen Export-Knoepfen, die genauso aussahen. */}
+      <section className="block" id="einst-gefahr">
+        <h2 className="abschnitt">Zurücksetzen und Löschen</h2>
+        <div className="feldgruppe gefahrzone">
           <div className="zeile">
             <div className="zeileText">
               <p className="zeileTitel">Einstellungen zurücksetzen</p>
@@ -652,6 +700,43 @@ function Wahl({ wert, optionen, onWahl }) {
           {name}
         </button>
       ))}
+    </div>
+  )
+}
+
+function Klausurtermine({ liste, onAendern }) {
+  const [titel, setTitel] = useState('')
+  const [datum, setDatum] = useState('')
+  const sortiert = [...liste].sort((a, b) => a.datum.localeCompare(b.datum))
+  return (
+    <div className="klausurtermine">
+      {sortiert.length > 0 && (
+        <ul className="klausurListe">
+          {sortiert.map((k) => (
+            <li key={k.id}>
+              <span>{k.titel}</span>
+              <span className="zeileHinweis">{new Date(`${k.datum}T00:00`).toLocaleDateString('de-DE')}</span>
+              <button className="textknopf" onClick={() => onAendern(liste.filter((x) => x.id !== k.id))}>
+                entfernen
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <form
+        className="klausurNeu"
+        onSubmit={(e) => {
+          e.preventDefault()
+          if (!titel.trim() || !datum) return
+          onAendern([...liste, { id: `${Date.now()}`, titel: titel.trim(), datum }])
+          setTitel('')
+          setDatum('')
+        }}
+      >
+        <input className="suchfeld" value={titel} onChange={(e) => setTitel(e.target.value)} placeholder="z. B. Bauphysik" />
+        <input className="suchfeld" type="date" value={datum} onChange={(e) => setDatum(e.target.value)} />
+        <button className="knopf schmal" type="submit" disabled={!titel.trim() || !datum}>Hinzufügen</button>
+      </form>
     </div>
   )
 }
