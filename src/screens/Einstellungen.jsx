@@ -198,7 +198,9 @@ export default function Einstellungen({
             />
           </div>
 
-          <div className="zeile">
+          {/* nurDesktop: Inhaltsbreite wirkt erst ab 60rem (Seitenleisten-
+              Layout), mobil ohne Funktion - dort per CSS ausgeblendet. */}
+          <div className="zeile nurDesktop">
             <div className="zeileText">
               <p className="zeileTitel">Inhaltsbreite</p>
               <p className="zeileHinweis">Breit nutzt den Bildschirm aus, schmal hält Zeilen kürzer.</p>
@@ -493,7 +495,9 @@ export default function Einstellungen({
         </div>
       </section>
 
-      <section className="block">
+      {/* Tastenkuerzel ergeben nur mit Tastatur Sinn - auf reinen
+          Touch-Geraeten ausgeblendet (geraete-, nicht breitenabhaengig). */}
+      <section className="block nurTastatur">
         <h2 className="abschnitt">Hilfe</h2>
         <div className="feldgruppe">
           <div className="zeile">

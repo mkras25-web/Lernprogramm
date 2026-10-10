@@ -67,6 +67,18 @@ const NAVIGATION = [
   { id: 'einstellungen', titel: 'Einstellungen', symbol: '⛭︎' },
 ]
 
+// Mobil (< 60rem): untere Leiste mit vier Hauptzielen plus "Mehr", das
+// die uebrigen Ziele als Blatt von unten oeffnet. Ab 60rem bleibt es bei
+// der Seitenleiste (.navigation), die Leiste ist dort per CSS aus.
+const HAUPTZIELE = ['heute', 'themen', 'pruefung', 'fortschritt']
+const MEHR_UNTERTITEL = {
+  sichtung: 'Volltextsuche, Lesezeichen, Sichtung',
+  glossar: 'Glossar der Regelwerke',
+  sammlung: 'Detailkarten und Meilensteine',
+  skizzen: 'Gespeicherte Zeichnungen',
+  einstellungen: 'Palette, Schrift, Sichern, Dropbox',
+}
+
 // Themen, in denen jedes Item gemeistert ist.
 function themenFortschritt0(items, zustaende) {
   const karte = new Map()
@@ -111,23 +123,32 @@ export default function App({ profilId, onProfilWechseln }) {
 
   const [opt, setOpt] = useState(() => einstellungenLaden(profilId))
   const [ansicht, setAnsicht] = useState('heute')
-  // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): dort
-  // ist .navigation standardmaessig ausgeblendet und oeffnet sich erst
-  // durch navMenuKnopf als Kachel-Uebersicht. Ab 60rem ignoriert die
-  // Desktop-Seitenleiste diesen Zustand vollstaendig.
-  const [navOffen, setNavOffen] = useState(false)
+  // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): das
+  // "Mehr"-Blatt der unteren Leiste. Ab 60rem gibt es weder Leiste noch
+  // Blatt, die Seitenleiste zeigt alle Ziele.
+  const [mehrOffen, setMehrOffen] = useState(false)
 
-  // Faellt die Kachel-Uebersicht offen bleiben, waehrend das Fenster
-  // (oder eine Bildschirmdrehung) über die Desktop-Breite waechst, soll
-  // sie nicht als Overlay haengen bleiben, bis wieder verkleinert wird.
+  // Bleibt das Blatt offen, waehrend das Fenster (oder eine
+  // Bildschirmdrehung) ueber die Desktop-Breite waechst, soll es nicht
+  // haengen bleiben, bis wieder verkleinert wird.
   useEffect(() => {
     const abfrage = window.matchMedia('(min-width: 60rem)')
     const schliessenFallsDesktop = () => {
-      if (abfrage.matches) setNavOffen(false)
+      if (abfrage.matches) setMehrOffen(false)
     }
     abfrage.addEventListener('change', schliessenFallsDesktop)
     return () => abfrage.removeEventListener('change', schliessenFallsDesktop)
   }, [])
+
+  // Escape schliesst das Blatt - wie die anderen Schleier-Dialoge.
+  useEffect(() => {
+    if (!mehrOffen) return
+    const taste = (e) => {
+      if (e.key === 'Escape') setMehrOffen(false)
+    }
+    window.addEventListener('keydown', taste)
+    return () => window.removeEventListener('keydown', taste)
+  }, [mehrOffen])
 
   const [erklaerthema, setErklaerthema] = useState(null)
   const [aufstieg, setAufstieg] = useState(null)
@@ -591,7 +612,7 @@ export default function App({ profilId, onProfilWechseln }) {
         <div className="schirm" role="status" aria-label="Paket wird geladen">
           <div className="heuteRaster" aria-hidden="true">
             <section className="stufe">
-              <span className="skeleton" style={{ width: '8rem', height: '8rem', borderRadius: '4px', flexShrink: 0 }} />
+              <span className="skeleton skeletonBau" />
               <div className="stufeText">
                 <span className="skeleton" style={{ width: '7rem', height: '0.75rem' }} />
                 <span className="skeleton" style={{ width: '9rem', height: '1.5rem', marginTop: '0.4rem' }} />
@@ -604,7 +625,7 @@ export default function App({ profilId, onProfilWechseln }) {
                 <span key={n} className="skeleton" style={{ height: '4.25rem' }} />
               ))}
             </section>
-            <section className="heuteBreit">
+            <section className="heuteBreit heuteLernen">
               <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
             </section>
             <section className="heuteBreit">
@@ -674,23 +695,12 @@ export default function App({ profilId, onProfilWechseln }) {
 
   return (
     <div className="huelle">
-      <nav
-        className={navOffen ? 'navigation offen' : 'navigation'}
-        onClick={(e) => {
-          // Klick auf den Hintergrund der geoeffneten Kachel-Uebersicht
-          // (nicht auf einen der Knoepfe selbst) schliesst sie wieder -
-          // wie bei den anderen Schleier-Dialogen im Programm.
-          if (e.target === e.currentTarget) setNavOffen(false)
-        }}
-      >
+      <nav className="navigation">
         {NAVIGATION.map((n) => (
           <button
             key={n.id}
             className={ansicht === n.id ? 'navKnopf aktiv' : 'navKnopf'}
-            onClick={() => {
-              setAnsicht(n.id)
-              setNavOffen(false)
-            }}
+            onClick={() => setAnsicht(n.id)}
           >
             <span aria-hidden="true">{n.symbol}</span>
             {n.titel}
@@ -698,14 +708,69 @@ export default function App({ profilId, onProfilWechseln }) {
         ))}
       </nav>
 
-      <button
-        className="navMenuKnopf"
-        onClick={() => setNavOffen((o) => !o)}
-        aria-label={navOffen ? 'Menü schließen' : 'Menü öffnen'}
-        aria-expanded={navOffen}
-      >
-        <span aria-hidden="true">{navOffen ? '✕︎' : '☰︎'}</span>
-      </button>
+      <nav className="tabLeiste" aria-label="Hauptnavigation">
+        {HAUPTZIELE.map((id) => {
+          const n = NAVIGATION.find((z) => z.id === id)
+          const aktiv = ansicht === id && !mehrOffen
+          return (
+            <button
+              key={id}
+              className={aktiv ? 'tabKnopf aktiv' : 'tabKnopf'}
+              aria-current={aktiv ? 'page' : undefined}
+              onClick={() => {
+                setAnsicht(id)
+                setMehrOffen(false)
+              }}
+            >
+              <span className="tabSymbol" aria-hidden="true">{n.symbol}</span>
+              <span className="tabName">{n.titel}</span>
+              {id === 'pruefung' && pruefungHinweis && (
+                <span className="tabPunkt" title={pruefungHinweis.text} />
+              )}
+            </button>
+          )
+        })}
+        <button
+          className={mehrOffen || !HAUPTZIELE.includes(ansicht) ? 'tabKnopf aktiv' : 'tabKnopf'}
+          aria-expanded={mehrOffen}
+          onClick={() => setMehrOffen((o) => !o)}
+        >
+          <span className="tabSymbol" aria-hidden="true">⋯︎</span>
+          <span className="tabName">Mehr</span>
+        </button>
+      </nav>
+
+      {mehrOffen && (
+        <div className="mehrSchleier" onClick={() => setMehrOffen(false)}>
+          <div
+            className="mehrBlatt"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Weitere Bereiche"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mehrGriff" aria-hidden="true" />
+            <h2 className="mehrTitel">Mehr</h2>
+            {NAVIGATION.filter((n) => !HAUPTZIELE.includes(n.id)).map((n) => (
+              <button
+                key={n.id}
+                className={ansicht === n.id ? 'mehrZeile aktiv' : 'mehrZeile'}
+                onClick={() => {
+                  setAnsicht(n.id)
+                  setMehrOffen(false)
+                }}
+              >
+                <span className="mehrSymbol" aria-hidden="true">{n.symbol}</span>
+                <span className="mehrText">
+                  <span className="mehrName">{n.titel}</span>
+                  <span className="mehrUntertitel">{MEHR_UNTERTITEL[n.id]}</span>
+                </span>
+                <span className="mehrPfeil" aria-hidden="true">›</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {importFrage && (
         <div className="schleier" onClick={() => setImportFrage(null)}>
@@ -837,7 +902,13 @@ export default function App({ profilId, onProfilWechseln }) {
         <Sammlung karten={karten} meilensteine={meilensteine} xpMeilensteine={xpMeilensteine} />
       )}
       {ansicht === 'skizzen' && (
-        <Skizzen skizzen={skizzen} items={items} onLoeschen={skizzeEntfernen} />
+        <Skizzen
+          skizzen={skizzen}
+          items={items}
+          onLoeschen={skizzeEntfernen}
+          zeichenaufgaben={skizzenStapel.length}
+          onUeben={() => sitzungStarten('skizzen', {})}
+        />
       )}
       {ansicht === 'fortschritt' && (
         <Fortschritt

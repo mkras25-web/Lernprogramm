@@ -16,20 +16,8 @@ import {
 import Ring from '../components/Ring.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import { bauwerkFuer, reifegradFuer, stufeAusAnteil } from '../lib/stufen.js'
+import { TYPNAMEN } from '../lib/sichtung.js'
 
-const TYPNAMEN = {
-  karte: 'Karteikarte',
-  mehrfachauswahl: 'Mehrfachauswahl',
-  numerisch: 'Zahlenwert',
-  zuordnung: 'Zuordnung',
-  skizze: 'Skizze',
-  reihenfolge: 'Reihenfolge',
-  bildbeschriftung: 'Bildbeschriftung',
-  fehlersuche: 'Fehlersuche',
-  vergleich: 'Gegenüberstellung',
-  freitext: 'Eigene Erklärung',
-  rechnen: 'Rechenaufgabe',
-}
 
 export default function Fortschritt({ ereignisse, items, zustaende, werte, level, gestaltung = 'arch', module }) {
   const felder = tagesverlauf(ereignisse, 140)

@@ -39,8 +39,8 @@ test('Profil anlegen funktioniert per Tipp (Grundfunktion, ohne die native Geste
   await page.getByRole('button', { name: 'Profil anlegen' }).tap()
   await page.locator('.profilKnopf', { hasText: 'Touch-Test' }).tap()
 
-  // Mobil ist .navigation standardmaessig ausgeblendet und oeffnet sich
-  // erst ueber navMenuKnopf (siehe touch-nav.spec.js fuer den Menu-Test
-  // selbst) - hier zaehlt nur, dass die App ueberhaupt angekommen ist.
-  await expect(page.locator('.navMenuKnopf')).toBeVisible()
+  // Mobil navigiert die untere Leiste (siehe touch-nav.spec.js fuer den
+  // Navigationstest selbst) - hier zaehlt nur, dass die App ueberhaupt
+  // angekommen ist.
+  await expect(page.locator('.tabLeiste')).toBeVisible()
 })

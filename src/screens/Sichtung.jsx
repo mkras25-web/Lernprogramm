@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { KATEGORIEN, UNGESICHTET, kategorieAus } from '../lib/sichtung.js'
+import { KATEGORIEN, TYPNAMEN, UNGESICHTET, kategorieAus } from '../lib/sichtung.js'
 import { passt } from '../lib/suche.js'
 import Itemansicht from '../components/Itemansicht.jsx'
 
@@ -424,7 +424,7 @@ export default function Sichtung({
                   onClick={(e) => e.stopPropagation()}
                 />
                 <p className="herkunft">
-                  {item.modulTitel} · {item.themaTitel} · {item.typ}
+                  {item.modulTitel} · {item.themaTitel} · {TYPNAMEN[item.typ] ?? item.typ}
                   {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
                   {k.id !== 'ungesichtet' && (
                     <span className={`kategorieMarke k-${k.id}`}>{k.symbol} {k.name}</span>

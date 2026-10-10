@@ -294,19 +294,23 @@ export default function Lernen({
               Notiz
             </button>
             <span className="markenTrenner" />
-            <span className="zeileHinweis">Sichtung:</span>
-            {KATEGORIEN.map((k) => (
-              <button
-                key={k.id}
-                className={kategorie.id === k.id ? 'markenKnopf aktiv' : 'markenKnopf'}
-                title={`Als "${k.name}" einordnen`}
-                onClick={() =>
-                  onMarke(item.id, { kategorie: kategorie.id === k.id ? null : k.id })
-                }
-              >
-                {k.symbol} {k.name}
-              </button>
-            ))}
+            {/* Am Desktop display:contents (wirkungslos), mobil eine eigene
+                Zeile, damit "Sichtung:" nicht allein am Zeilenende haengt. */}
+            <span className="markenGruppe">
+              <span className="zeileHinweis">Sichtung:</span>
+              {KATEGORIEN.map((k) => (
+                <button
+                  key={k.id}
+                  className={kategorie.id === k.id ? 'markenKnopf aktiv' : 'markenKnopf'}
+                  title={`Als "${k.name}" einordnen`}
+                  onClick={() =>
+                    onMarke(item.id, { kategorie: kategorie.id === k.id ? null : k.id })
+                  }
+                >
+                  {k.symbol} {k.name}
+                </button>
+              ))}
+            </span>
           </div>
 
           {notizOffen && (
@@ -365,7 +369,7 @@ export default function Lernen({
             </button>
             {art === 'training' && item.referenz && !hilfeGenutzt && (
               <button className="artKnopf" onClick={() => setHilfeGenutzt(true)}>
-                Referenz kurz zeigen <span className="taste">halbe XP</span>
+                Referenz kurz zeigen <span className="taste bleibt">halbe XP</span>
               </button>
             )}
             {position > 0 && (

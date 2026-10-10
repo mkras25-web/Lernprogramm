@@ -56,7 +56,9 @@ export default function Heute({
           <Kennzahl wert={freieKarten} bezeichnung="Detailkarten" />
         </section>
 
-        <section className="heuteBreit">
+        {/* heuteLernen/heuteSitzung: nur Ansatzpunkte fuer die mobile
+            Reihenfolge (CSS order, siehe styles.css) - Desktop unberuehrt. */}
+        <section className="heuteBreit heuteLernen">
           {offen > 0 ? (
             <div className="aufruf">
               <Ring anteil={anteilHeute} groesse={56} staerke={5} />
@@ -138,7 +140,7 @@ export default function Heute({
         )}
 
         {offeneSitzung && (
-          <section className="heuteBreit">
+          <section className="heuteBreit heuteSitzung">
             <div className="aufruf ruhig">
               <div>
                 <p className="aufrufZahl">Angefangene Sitzung</p>

@@ -18,6 +18,33 @@
 
   --rund: 4px;
   --schatten: 0 1px 2px rgba(65, 72, 51, 0.08);
+
+  /* Kartendesign (2026-10-10 vereinheitlicht, mobil und Desktop): alle
+     kartenartigen Bausteine stuetzen sich auf diese Werte statt auf
+     eigene. Drei Innenabstaende je nach Rolle - kompakt (kleine Kachel
+     mit Kennzahl/Kurztext), normal (Karte mit Titel und Text), Flaeche
+     (grosse Gruppe wie Einstellungen-Block). Bewusste Abweichungen
+     (Rang-Rahmen, Materialstufen, gestrichelt fuer verschlossen) setzen
+     nur Farbe/Staerke/Stil, nie eine eigene Grundform. */
+  --karte-rand: var(--linie);
+  --karte-radius: var(--rund);
+  --karte-innen-kompakt: 0.75rem;
+  --karte-innen: 1rem;
+  --karte-innen-flaeche: 1.25rem;
+
+  /* Abstandsraster (4px-Schritte) fuer den Mobil-Block am Dateiende.
+     Rollen statt Einzelwerte: Seitenrand und Abschnittsabstand wachsen
+     leicht mit der Breite (320px bis Tablet hochkant), alles innerhalb
+     eines Abschnitts bleibt fest - so bleibt der Rhythmus auf jedem
+     Handy gleich, und Abschnitte sind immer deutlich weiter voneinander
+     entfernt als Karten untereinander. */
+  --rand-seite: clamp(1rem, 0.5rem + 2.5vw, 1.5rem);
+  --abstand-abschnitt: clamp(2rem, 1.5rem + 2.5vw, 2.75rem);
+  --abstand-titel: 0.75rem;
+  --abstand-liste: 0.75rem;
+  --abstand-gruppe: 0.5rem;
+  --abstand-text: 0.375rem;
+  --tab-hoehe: 3.5rem;
 }
 
 * { box-sizing: border-box; }
@@ -55,10 +82,10 @@ button {
 
 .schirm {
   flex: 1;
-  /* Unten Platz fuer navMenuKnopf reservieren (3.25rem Durchmesser +
-     Abstand vom Rand + Sicherheitsabstand), sonst verdeckt der
-     schwebende Knopf am Ende der Seite Inhalte/Knoepfe. Ab 60rem
-     ersetzt die Desktop-Regel weiter unten diesen Wert vollstaendig. */
+  /* Mobil wird dieser Wert vom Mobil-Block am Dateiende ersetzt (Platz
+     fuer die untere Leiste, Seitenrand aus --rand-seite), ab 60rem von
+     der Desktop-Regel weiter unten - er greift praktisch nirgends mehr
+     und bleibt nur als neutraler Grundwert stehen. */
   padding: 1.5rem 1.25rem calc(5.5rem + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
@@ -119,6 +146,10 @@ button {
    Gradient-Verschiebung; bei Animationen aus bzw. reduced-motion (siehe
    die beiden Regeln weiter unten in der Datei) ein ruhiger Flaechenton
    statt eines mitten im Verlauf eingefrorenen Farbsprungs. */
+/* Platzhalter fuer das Levelicon - frueher inline 8rem, jetzt Klasse,
+   damit der Mobil-Block die kleinere Groesse setzen kann. */
+.skeletonBau { width: 8rem; height: 8rem; flex-shrink: 0; }
+
 .skeleton {
   display: block;
   width: 100%;
@@ -237,9 +268,9 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 
 .kennzahl {
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
-  padding: 0.75rem 0.5rem;
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
+  padding: var(--karte-innen-kompakt);
   text-align: center;
 }
 
@@ -346,10 +377,10 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: var(--karte-innen);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   color: inherit;
   cursor: pointer;
   box-shadow: var(--schatten);
@@ -386,10 +417,10 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
-  padding: 0.75rem;
+  padding: var(--karte-innen-kompakt);
   background: var(--flaeche);
-  border: 1px solid var(--lehm);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   color: inherit;
   cursor: pointer;
   box-shadow: var(--schatten);
@@ -705,13 +736,19 @@ button:not(:disabled):active { transform: scale(0.96); }
 }
 
 /* Navigation. Mobil (Basisregeln hier, mobile-first wie der Rest der
-   Datei) standardmaessig ausgeblendet und nur als Kachel-Uebersicht
-   sichtbar, solange navMenuKnopf sie offen haelt - bei neun Eintraegen
-   war eine dauerhaft sichtbare Leiste (vorher: repeat(4, 1fr)) immer
-   unsymmetrisch (4+4+1). Ab 60rem (siehe Media Query weiter unten)
-   wird daraus wieder die immer sichtbare Seitenleiste, und die
-   Kachel-Regeln hier greifen dort gar nicht mehr. */
+   Datei) ist die Seitenleiste ausgeblendet - dort navigiert die untere
+   .tabLeiste mit dem "Mehr"-Blatt (Regeln im Mobil-Block am Dateiende).
+   Ab 60rem (siehe Media Query weiter unten) wird .navigation wieder
+   die immer sichtbare Seitenleiste. Leiste und Blatt sind in der
+   Basis aus und werden nur im Mobil-Block eingeschaltet - so koennen
+   sie strukturell nie auf dem Desktop erscheinen. */
 .navigation { display: none; }
+.tabLeiste, .mehrSchleier { display: none; }
+
+/* Gruppiert die Sichtungs-Marken im Lernbildschirm. Ausserhalb des
+   Mobil-Blocks wirkungslos, die Kinder verhalten sich wie direkte
+   Kinder von .marken. */
+.markenGruppe { display: contents; }
 
 .navKnopf {
   font: inherit;
@@ -724,66 +761,6 @@ button:not(:disabled):active { transform: scale(0.96); }
 }
 
 .navKnopf.aktiv { color: var(--tusche); }
-
-/* Alle .offen-Regeln (Kachel-Uebersicht) hart in eine Max-Width-Media-
-   Query eingeschlossen, nicht nur ueber die JS-Bereinigung (React
-   useEffect mit matchMedia) verlassen: falls die "offen"-Klasse aus
-   irgendeinem Grund (z. B. Fenster waehrend geoeffnetem Menu ueber
-   60rem verbreitert, bevor der Reset feuert) haengen bleibt, greifen
-   diese hoch-spezifischen Selektoren (bis zu 4 Klassen) sonst trotzdem
-   auf der Desktop-Seitenleiste, weil sie mehr Gewicht haben als deren
-   einfache Regeln. So ist es strukturell unmoeglich, nicht nur bereinigt. */
-@media (max-width: 59.99rem) {
-  .navigation.offen {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    position: fixed;
-    inset: 0;
-    z-index: 30;
-    align-content: center;
-    justify-items: stretch;
-    background: rgba(65, 72, 51, 0.5);
-    padding: 1.5rem;
-    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
-  }
-
-  .navigation.offen .navKnopf {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.375rem;
-    aspect-ratio: 1;
-    padding: 0.5rem;
-    background: var(--papier);
-    border: 1px solid var(--linie);
-    border-radius: var(--rund);
-    box-shadow: var(--schatten);
-  }
-
-  .navigation.offen .navKnopf span { font-size: 1.375rem; }
-  .navigation.offen .navKnopf.aktiv { border-color: var(--fortschritt); border-width: 2px; }
-
-  .navMenuKnopf {
-    position: fixed;
-    right: 1rem;
-    bottom: calc(1rem + env(safe-area-inset-bottom));
-    z-index: 31;
-    width: 3.25rem;
-    height: 3.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.375rem;
-    border-radius: 50%;
-    border: 1px solid var(--linie);
-    background: var(--papier);
-    color: var(--tusche);
-    box-shadow: var(--schatten);
-    cursor: pointer;
-  }
-}
 
 @media (max-width: 26rem) {
   .bewertung { grid-template-columns: repeat(2, 1fr); }
@@ -986,8 +963,6 @@ html[data-palette="graphit"] mark { background: #1f4750; }
     border-right: 1px solid var(--linie);
   }
 
-  .navMenuKnopf { display: none; }
-
   .navKnopf {
     display: flex;
     align-items: center;
@@ -1087,10 +1062,10 @@ html[data-palette="graphit"] mark { background: #1f4750; }
    ------------------------------------------------------------------ */
 .feldgruppe {
   display: flex; flex-direction: column; gap: 1rem;
-  padding: 1.25rem;
+  padding: var(--karte-innen-flaeche);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
 }
 
 .zeile { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
@@ -1171,10 +1146,10 @@ html[data-palette="graphit"] mark { background: #1f4750; }
   align-items: center;
   gap: 0.625rem 0.875rem;
   width: 100%;
-  padding: 0.75rem 0.875rem;
+  padding: var(--karte-innen-kompakt);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   font: inherit;
   color: inherit;
   text-align: left;
@@ -1245,10 +1220,10 @@ html[data-palette="graphit"] mark { background: #1f4750; }
 .treffer { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
 
 .trefferKarte {
-  padding: 1rem;
+  padding: var(--karte-innen);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -1375,8 +1350,8 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   gap: 0.75rem;
   padding: 0.5rem 0.75rem;
   background: transparent;
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   cursor: pointer;
   font: inherit;
   font-size: 0.875rem;
@@ -1535,10 +1510,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .normen { display: flex; flex-direction: column; gap: 0.5rem; }
 
 .normkasten {
-  padding: 1rem 1.125rem;
+  padding: var(--karte-innen);
   background: var(--flaeche);
-  border: 1px solid var(--lehm);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -1779,6 +1754,13 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .phaseMarke.phase-mittel { border-color: var(--lehm); }
 .phaseMarke.phase-spaet { border-color: var(--linie); }
 
+/* Freigeschaltete Detailkarten heben sich bewusst mit dem kraeftigeren
+   Lehm-Rand von den gestrichelten verschlossenen ab - einzige gewollte
+   Abweichung von --karte-rand (nur Farbe, Grundform bleibt gemeinsam). */
+/* Spezifitaet bewusst nur (0,2,0) und VOR den Rang-Regeln, damit
+   .karte.rang-meisterschaft (Tusche-Rand) weiterhin gewinnt. */
+.karte:not(.verschlossen) { border-color: var(--lehm); }
+
 /* Karten-Raenge ohne Umlaut im Klassennamen */
 .karte.rang-ausfuehrung { border-width: 2px; }
 .karte.rang-meisterschaft { border-width: 2px; border-color: var(--tusche); }
@@ -1796,10 +1778,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: var(--karte-innen);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   font: inherit;
   color: inherit;
   text-align: left;
@@ -1856,10 +1838,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 1rem;
+  padding: var(--karte-innen);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   font: inherit;
   color: inherit;
   text-align: left;
@@ -1881,10 +1863,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   align-items: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  padding: 1.25rem;
+  padding: var(--karte-innen-flaeche);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
 }
 
 .fortschrittKopf > div { flex: 1; min-width: 12rem; }
@@ -1909,10 +1891,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   grid-template-columns: 1.5rem 1fr;
   grid-template-rows: auto auto auto;
   column-gap: 0.5rem;
-  padding: 0.75rem 0.875rem;
+  padding: var(--karte-innen-kompakt);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
 }
 
 .bestwertZeichen { grid-row: 1 / 3; color: var(--lehm); font-size: 1.125rem; }
@@ -1942,10 +1924,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.625rem 0.875rem;
+  padding: var(--karte-innen-kompakt);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   min-width: 0;
 }
 
@@ -2164,10 +2146,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   gap: 1rem;
-  padding: 1.25rem;
+  padding: var(--karte-innen-flaeche);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
 }
 
 .bereitschaftZahl {
@@ -2211,10 +2193,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0.875rem 1rem;
+  padding: var(--karte-innen);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
   font: inherit;
   color: inherit;
   text-align: left;
@@ -2284,10 +2266,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.625rem 0.875rem;
+  padding: var(--karte-innen-kompakt);
   background: var(--flaeche);
-  border: 1px solid var(--linie);
-  border-radius: var(--rund);
+  border: 1px solid var(--karte-rand);
+  border-radius: var(--karte-radius);
 }
 
 .naechste li > div { min-width: 0; }
@@ -2501,9 +2483,9 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
-  padding: 1rem 0.75rem 0.85rem;
+  padding: var(--karte-innen);
   min-height: 10.5rem;
-  border-radius: 3px;
+  border-radius: var(--karte-radius);
   background: var(--flaeche);
   text-align: center;
 }
@@ -2666,3 +2648,337 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 }
 .bildFehlt strong { font-weight: 600; }
 .bildflaeche > .bildFehlt { min-height: 12rem; }
+
+/* ==================================================================
+   MOBIL (Hochkant-Handy, Tablet hochkant, schmales PC-Fenster)
+   2026-10-10. Alles Mobile steht gebuendelt HIER am Dateiende, in einer
+   Media Query, die nur unter 60rem greift - aus zwei Gruenden:
+   1. Desktop ist dadurch per Konstruktion unberuehrt (keine Basisregel
+      wird geaendert, also auch keine Gegen-Eintraege im 60rem-Block
+      noetig - siehe "Mobil-Anpassungen" in CLAUDE.md).
+   2. Die Position am Ende gewinnt bei gleicher Spezifitaet gegen jede
+      Basisregel, egal wo sie in der Datei steht (genau die Falle, die
+      bei .navKnopf/.themenzeile frueher zu Bugs fuehrte).
+   Abstaende kommen ausschliesslich aus den Rollen-Tokens in :root
+   (--rand-seite, --abstand-*), Schriftgroessen bleiben bewusst wie sie
+   sind (Nutzerwunsch: Hierarchie passt, nur Text klebte an Elementen).
+   ================================================================== */
+@media (max-width: 59.99rem) {
+
+  /* --- Grundgeruest ------------------------------------------------ */
+  .schirm {
+    padding: 1.5rem var(--rand-seite)
+      calc(var(--tab-hoehe) + env(safe-area-inset-bottom) + 2rem);
+    gap: var(--abstand-abschnitt);
+  }
+  /* Lernen/Erklaerstueck laufen ohne Leiste (eigener Vollbild-Modus). */
+  .huelle.einspaltig > .schirm { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); }
+  .schirm.lernschirm { gap: 1.25rem; }
+
+  .heuteRaster, .fortschrittRaster, .lernRaster { gap: var(--abstand-abschnitt); }
+  .abschnitt { margin-bottom: var(--abstand-titel); }
+  /* Liste direkt unter der Ueberschrift: der Titelabstand reicht, kein
+     zweiter oben drauf (sonst 24 statt 12px, je nach Bildschirm). */
+  .abschnitt + .themenliste, .abschnitt + .kartengitter,
+  .abschnitt + .stempelwand, .abschnitt + .verteilung { margin-top: 0; }
+  .nebentext + .nebentext { margin-top: var(--abstand-text); }
+
+  /* --- Untere Leiste + "Mehr"-Blatt ------------------------------- */
+  .tabLeiste {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 0.25rem max(0.25rem, env(safe-area-inset-right)) calc(0.25rem + env(safe-area-inset-bottom)) max(0.25rem, env(safe-area-inset-left));
+    background: var(--papier);
+    border-top: 1px solid var(--linie);
+  }
+  .tabKnopf {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.125rem;
+    min-height: var(--tab-hoehe);
+    min-width: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    font: inherit;
+    font-size: 0.6875rem;
+    letter-spacing: 0.01em;
+    color: var(--rinde);
+    cursor: pointer;
+  }
+  .tabSymbol {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 3.25rem;
+    height: 1.75rem;
+    font-size: 1.0625rem;
+    line-height: 1;
+    border-radius: 999px;
+    transition: background-color 150ms ease;
+  }
+  /* Beschriftung darf bei grosser Schrift (125 %) auf 320px nicht die
+     Leiste sprengen - lieber gekuerzt als seitlicher Ueberlauf. */
+  .tabName { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tabKnopf.aktiv { color: var(--tusche); font-weight: 600; }
+  .tabKnopf.aktiv .tabSymbol { background: var(--flaeche-tief); }
+  .tabPunkt {
+    position: absolute;
+    top: 0.4rem;
+    left: calc(50% + 0.85rem);
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--warnung);
+    box-shadow: 0 0 0 2px var(--papier);
+  }
+
+  .mehrSchleier {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    background: rgba(65, 72, 51, 0.45);
+    animation: aufblenden 150ms ease;
+  }
+  .mehrBlatt {
+    width: 100%;
+    max-width: 30rem;
+    max-height: 85dvh;
+    overflow-y: auto;
+    padding: 0.5rem var(--rand-seite) calc(1rem + env(safe-area-inset-bottom));
+    background: var(--papier);
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.18);
+    animation: blattHoch 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .mehrGriff { width: 2.25rem; height: 0.25rem; margin: 0.25rem auto 0.75rem; border-radius: 2px; background: var(--linie); }
+  .mehrTitel { margin: 0 0 0.5rem; font-family: var(--serife); font-size: 1.25rem; font-weight: 400; }
+  .mehrZeile {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    width: 100%;
+    min-height: 3.5rem;
+    padding: 0.5rem 0.25rem;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--linie);
+    font: inherit;
+    color: var(--tusche);
+    text-align: left;
+    cursor: pointer;
+  }
+  .mehrZeile.aktiv .mehrName { font-weight: 600; }
+  .mehrSymbol { flex: 0 0 2rem; text-align: center; font-size: 1.125rem; color: var(--rinde); }
+  .mehrText { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.125rem; }
+  .mehrName { font-size: 1rem; }
+  .mehrUntertitel { font-size: 0.8125rem; color: var(--rinde); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mehrPfeil { color: var(--rinde); font-size: 1.25rem; }
+
+  /* Meldungen ueber der Leiste statt darauf. */
+  .meldung { bottom: calc(var(--tab-hoehe) + env(safe-area-inset-bottom) + 1rem); }
+  .huelle.einspaltig .meldung { bottom: calc(1.5rem + env(safe-area-inset-bottom)); }
+
+  /* --- Heute -------------------------------------------------------- */
+  /* Der Haupt-Aufruf "Lernen" (und eine angefangene Sitzung) kommt
+     zuerst - vorher lag er auf kleinen Handys unter dem Falz. */
+  .heuteLernen, .heuteSitzung { order: -1; }
+
+  .stufe { align-items: flex-start; gap: var(--abstand-liste) 1rem; }
+  .stufe > .bauabschnitt svg { width: 5.5rem; height: auto; }
+  .skeletonBau { width: 5.5rem; height: 5.5rem; }
+  .stufeText { gap: var(--abstand-text); }
+  .stufeText .ueberschrift { line-height: 1.2; }
+  .rangName { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; line-height: 1.4; }
+  .rangName .bauWerk { margin-left: 0; }
+  .bauBalken { margin: 0.25rem 0; }
+
+  /* Kennzahlen: 3 + 2 statt 2 + 2 + eine volle Zeile. */
+  .kennzahlen { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: var(--abstand-gruppe); }
+  .kennzahlen > * { grid-column: span 3; }
+  .kennzahlen > :last-child:nth-child(odd) { grid-column: span 3; }
+  .kennzahlen:has(> :nth-child(5):last-child) > :nth-child(-n+3) { grid-column: span 2; }
+  .kennzahlen:has(> :nth-child(3):last-child) > * { grid-column: span 2; }
+  .kennzahlName { margin-top: var(--abstand-text); line-height: 1.3; }
+
+  .aufruf { gap: var(--abstand-liste) 1rem; padding: var(--karte-innen); }
+  .aufruf > div { flex: 1 1 0; display: flex; flex-direction: column; gap: var(--abstand-text); }
+  .aufruf > div > * { margin: 0; }
+  .aufruf > .ring { flex: 0 0 auto; display: flex; }
+  .aufruf > .textknopf { flex: 1 1 100%; }
+
+  .artKacheln { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--abstand-liste); }
+  .artTitel, .pruefTitel { overflow-wrap: break-word; hyphens: auto; }
+  .artKacheln li:has(> .aus) { order: 1; }
+  .artKachel { gap: var(--abstand-text); padding: var(--karte-innen-kompakt) var(--karte-innen); }
+  .artZeichen { margin-bottom: 0.125rem; }
+
+  /* --- Lernen ------------------------------------------------------- */
+  /* Kopf zweizeilig: oben Zurueck + Stand, darunter der Balken ueber die
+     volle Breite - vorher lief "0/43 · 43 W · 211 neu" rechts hinaus. */
+  /* Fragetext mobil etwas kleiner (Nutzerwunsch: bei 320px oft 4-5
+     Zeilen) - waechst mit der Breite bis zum alten Wert 1.375rem. */
+  .frage { font-size: clamp(1.1875rem, 1rem + 0.9vw, 1.375rem); line-height: 1.35; }
+  .lernkopf { flex-wrap: wrap; gap: 0.625rem 0.75rem; }
+  .lernkopf .schnitt { order: 5; flex: 1 1 100%; }
+  .lernkopf .pensumZahl { margin-left: auto; white-space: normal; text-align: right; }
+  .karteninhalt { gap: 1.25rem; }
+  .herkunft { gap: var(--abstand-text) 0.5rem; line-height: 1.5; }
+  .marken { gap: var(--abstand-gruppe); }
+  .markenTrenner { display: none; }
+  .markenGruppe { display: flex; flex-wrap: wrap; align-items: center; gap: var(--abstand-gruppe); flex-basis: 100%; }
+  .markenGruppe > .zeileHinweis { margin-right: 0.125rem; }
+  .markenKnopf { padding: 0.375rem 0.75rem; }
+
+  /* Steuerung als feste Daumenleiste unten - Bewertung immer erreichbar,
+     auch bei langer Antwort, ohne erst ans Seitenende zu scrollen. */
+  .lernschirm .steuerung {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    margin: auto calc(-1 * var(--rand-seite)) 0;
+    padding: 0.75rem var(--rand-seite) calc(0.75rem + env(safe-area-inset-bottom));
+    background: var(--papier);
+    border-top: 1px solid var(--linie);
+  }
+  .huelle.einspaltig > .schirm.lernschirm { padding-bottom: 0; }
+  /* Laufende Pruefung: gleicher Lernschirm, aber innerhalb der normalen
+     Huelle mit sichtbarer unterer Leiste - die Daumenleiste muss darueber
+     kleben statt darunter zu verschwinden. */
+  .huelle:not(.einspaltig) .lernschirm .steuerung {
+    bottom: calc(var(--tab-hoehe) + 0.5rem + 1px + env(safe-area-inset-bottom));
+    padding-bottom: 0.75rem;
+  }
+  .schirm > .steuerung { align-items: stretch; }
+  .steuerung .arten { gap: var(--abstand-gruppe); }
+  .steuerung .arten > * { flex: 1 1 auto; }
+  .steuerung .arten .knopf.haupt,
+  .schirm > .steuerung > .knopf.haupt { flex-basis: 100%; min-width: 0; width: 100%; }
+  .bewertung { gap: var(--abstand-gruppe); }
+  .bewertung .knopf { min-height: 3rem; }
+  .urteilZeile { margin-bottom: var(--abstand-gruppe); }
+
+  /* --- Themen ------------------------------------------------------- */
+  .themenKopf { align-items: center; gap: var(--abstand-gruppe) 1rem; }
+  .reiter { gap: var(--abstand-gruppe); }
+  .reiterKnopf { padding: 0.5rem 0.75rem; }
+  .themenliste { gap: var(--abstand-gruppe); margin-top: var(--abstand-titel); }
+  .themenzeile { gap: var(--abstand-liste) 0.875rem; align-items: flex-start; }
+  .themenzeileAktionen { align-self: center; }
+  .phaseMarke { margin-left: 0.375rem; }
+  .themaInfo { display: flex; flex-direction: column; gap: 0.25rem; }
+  /* Browser-Standardabstand der <p> (1em) riss Titel und Infozeile
+     auseinander und schob den Titel unter das Symbol daneben. */
+  .themaInfo > * { margin: 0; }
+  .themaTitel { line-height: 1.35; }
+  .themenzeileAktionen { gap: var(--abstand-gruppe); }
+  .artKnopf { min-height: 2.5rem; }
+
+  /* --- Einstellungen ----------------------------------------------- */
+  /* Vorher: Abstand innerhalb einer Einstellung (1.5rem) groesser als
+     zwischen zwei Einstellungen (1rem) - die Gruppen kippten. Jetzt
+     klar: Trennlinie zwischen Einstellungen, enger innerhalb. */
+  .feldgruppe { gap: 1.25rem; padding: var(--karte-innen); }
+  .feldgruppe > * + * { padding-top: 1.25rem; border-top: 1px solid var(--linie); }
+  /* Bedienelemente immer UNTER dem Text, linksbuendig - vorher standen
+     sie je nach Textlaenge mal rechts daneben, mal darunter. */
+  .zeile { gap: var(--abstand-liste) 1rem; }
+  .zeile > .zeileText { flex: 1 1 100%; max-width: none; }
+  .nurDesktop { display: none; }
+  .zeileText { gap: 0.25rem; }
+  .wahl { gap: var(--abstand-gruppe); }
+  .wahlKnopf { padding: 0.5rem 0.875rem; }
+  .groessenKnopf { min-width: 2.75rem; min-height: 2.5rem; }
+  .palettenwahl { gap: var(--abstand-gruppe); }
+
+  /* --- Fortschritt / Pruefungen / Sammlung ------------------------- */
+  .fortschrittKopf { gap: 1rem; padding: var(--karte-innen); }
+  .bestwerte { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--abstand-gruppe); }
+  .bestwertName { margin-top: 0.125rem; }
+  .fortschrittKacheln, .pruefKacheln, .naechste { gap: var(--abstand-gruppe); }
+  /* min(...,100%): feste Mindestbreiten liefen bei groesserer Schrift
+     (Einstellung 125 %) auf 320px seitlich ueber. */
+  .naechste { grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); }
+  .pruefKacheln { grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr)); }
+  .bereitschaft { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding: var(--karte-innen); }
+  .kartengitter { gap: var(--abstand-liste); }
+  .kartengitter, .stempelwand { margin-top: var(--abstand-titel); }
+  .stempelwand { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--abstand-gruppe); }
+  .stempel { min-height: 9.5rem; }
+  .kartenTitel, .stempelTitel { hyphens: auto; }
+  .verteilung { gap: var(--abstand-gruppe); }
+
+  /* --- Nachschlagen / Normen --------------------------------------- */
+  .treffer { gap: var(--abstand-liste); }
+  /* Filterkopf: "Marke:" auf Hoehe der Chips, Themenauswahl volle Breite,
+     Auswahl-Checkbox gross genug zum Antippen. */
+  .wahl { align-items: center; }
+  .zeile > .paarWahl { flex: 1 1 100%; max-width: 100%; min-height: 2.75rem; }
+  .sichtungKopf input[type="checkbox"] { width: 1.25rem; height: 1.25rem; margin-top: 0.125rem; flex-shrink: 0; }
+  /* Formeltext wie "W/(m·K)" hat keine Umbruchstelle und lief bei
+     groesserer Schrift seitlich hinaus. */
+  .trefferFrage, .trefferAntwort { overflow-wrap: anywhere; }
+  .normen { gap: var(--abstand-gruppe); }
+  .normTitel { hyphens: auto; }
+
+  /* --- Tippflaechen ------------------------------------------------- */
+  /* Reine Textknoepfe ("Zurueck", "aendern", "Erklaerung zeigen")
+     bekommen eine unsichtbar vergroesserte Trefferflaeche - Optik und
+     Layout bleiben gleich. */
+  .textknopf { position: relative; }
+  /* Nur nach oben/unten vergroessert - seitlich wuerde es am rechten
+     Rand den Bildschirm verbreitern. */
+  .textknopf::after { content: ''; position: absolute; inset: -0.625rem 0; }
+}
+
+/* Tablet hochkant: Leiste nicht ueber die volle Breite auseinanderziehen
+   (eigene Query statt verschachtelt - aeltere Safari-Versionen kennen
+   verschachtelte Media Queries nicht zuverlaessig). */
+/* Zuordnungsaufgaben auf schmalen Handys gestapelt: Begriff oben,
+   Auswahl/Loesung darunter in voller Breite - nebeneinander wurde die
+   rechte Spalte rechtsbuendig und sehr schmal. */
+/* Handybreite: Aktionen einer Themen-/Vorschlagszeile immer in eigener
+   Zeile (rechtsbuendig) - vorher je nach Titellaenge mal daneben, mal
+   darunter. Ab Tablet-Breite passen sie einheitlich daneben. */
+@media (max-width: 35.99rem) {
+  .themenzeileAktionen { flex-basis: 100%; }
+  .themenzeileAktionen:empty { display: none; }
+}
+
+@media (max-width: 29.99rem) {
+  .paare li { flex-direction: column; gap: 0.375rem; }
+  .paarRechts { text-align: left; }
+  .paare .paarWahl { max-width: 100%; width: 100%; min-height: 2.75rem; }
+}
+
+@media (min-width: 36rem) and (max-width: 59.99rem) {
+  .kartengitter, .stempelwand { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tabLeiste { padding-left: calc(50% - 16rem); padding-right: calc(50% - 16rem); }
+}
+
+@keyframes blattHoch {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* Tastenkuerzel-Hinweise nur fuer Geraete mit Tastatur/Maus - auf
+   reinen Touch-Geraeten ("Leertaste", "U", "1-4") ohne Funktion.
+   Bewusst GERAETE-, nicht breitenabhaengig (Nutzerentscheidung
+   2026-10-10): ein schmales PC-Fenster mit Tastatur behaelt sie, ein
+   Tablet im Querformat verliert sie. Ausnahme von "mobil = Breite". */
+@media (hover: none) and (pointer: coarse) {
+  /* .bleibt: Marke mit echter Information statt Tastenkuerzel
+     ("halbe XP" im Training) - bleibt auch auf Touch sichtbar. */
+  .taste:not(.bleibt), .tastenMarke, .tastenHinweis, .feldhinweis, .nurTastatur { display: none; }
+}

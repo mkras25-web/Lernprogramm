@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 
 // Uebersicht aller gespeicherten Skizzen, nach Item gruppiert.
 // Zeigt die Entwicklung ueber die Zeit und erlaubt das Aufraeumen.
-export default function Skizzen({ skizzen, items, onLoeschen }) {
+export default function Skizzen({ skizzen, items, onLoeschen, zeichenaufgaben = 0, onUeben }) {
   const [gross, setGross] = useState(null)
   const [loeschKandidat, setLoeschKandidat] = useState(null)
 
@@ -27,10 +27,20 @@ export default function Skizzen({ skizzen, items, onLoeschen }) {
       </p>
 
       {gruppen.length === 0 && (
-        <p className="nebentext">
-          Noch keine Skizze gespeichert. Sie entstehen, sobald du eine Zeichenaufgabe im
-          Zeichenfeld bearbeitest.
-        </p>
+        <div className="aufruf ruhig">
+          <div>
+            <p className="aufrufZahl">Noch keine Skizze gespeichert</p>
+            <p className="nebentext">
+              Sie entstehen, sobald du eine Zeichenaufgabe im Zeichenfeld bearbeitest.
+              {zeichenaufgaben > 0 && ` ${zeichenaufgaben} Zeichenaufgaben stehen bereit.`}
+            </p>
+          </div>
+          {zeichenaufgaben > 0 && onUeben && (
+            <button className="knopf haupt schmal" onClick={onUeben}>
+              Zeichenaufgaben üben
+            </button>
+          )}
+        </div>
       )}
 
       {gruppen.map((g) => (

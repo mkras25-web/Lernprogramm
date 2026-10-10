@@ -41,3 +41,19 @@ export function itemsAnreichern(items, marken) {
     }
   })
 }
+
+// Lesbare Namen der Aufgabentypen - gemeinsam fuer Fortschritt
+// ("Nach Aufgabenart") und Nachschlagen (Kartenkopf).
+export const TYPNAMEN = {
+  karte: 'Karteikarte',
+  mehrfachauswahl: 'Mehrfachauswahl',
+  numerisch: 'Zahlenwert',
+  zuordnung: 'Zuordnung',
+  skizze: 'Skizze',
+  reihenfolge: 'Reihenfolge',
+  bildbeschriftung: 'Bildbeschriftung',
+  fehlersuche: 'Fehlersuche',
+  vergleich: 'Gegenüberstellung',
+  freitext: 'Eigene Erklärung',
+  rechnen: 'Rechenaufgabe',
+}

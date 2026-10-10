@@ -1,26 +1,32 @@
-import { test, expect, devices } from '@playwright/test'
+import { test, expect } from '@playwright/test'
 
 // Regressionstest fuer eine ganze Klasse von Bugs: auf schmalen
 // Breiten liefen wiederholt einzelne Elemente seitlich ueber (fehlender
 // min-width:0 bei Flex-/Grid-Kindern, feste minmax()-Mindestbreiten
 // groesser als der verfuegbare Platz, fehlendes Leerzeichen zwischen
-// Text und Badge im JSX). Statt jeden Einzelfall zu testen: einmal
-// generisch pro Bildschirm bei der schmalsten sinnvollen Breite (ein
-// iPhone SE, 320px) pruefen, dass nichts aus .schirm herausragt.
-const { defaultBrowserType, ...schmalKontext } = devices['iPhone SE']
-test.use(schmalKontext)
+// Text und Badge im JSX). Statt jeden Einzelfall zu testen: generisch
+// pro Bildschirm pruefen, dass nichts aus .schirm herausragt und die
+// Seite nicht breiter als das Fenster wird.
+//
+// Seit 2026-10-10 bei allen fuenf Pflichtformaten der Testregel in
+// CLAUDE.md ("Testregel Mobil"), nicht mehr nur bei 320px.
+const FORMATE = [
+  { width: 320, height: 568 },
+  { width: 360, height: 780 },
+  { width: 390, height: 844 },
+  { width: 430, height: 932 },
+  { width: 768, height: 1024 },
+]
 
-async function angemeldet(page, name) {
-  await page.goto('/')
-  await page.getByPlaceholder('Name für ein neues Profil').fill(name)
-  await page.getByRole('button', { name: 'Profil anlegen' }).tap()
-  await page.locator('.profilKnopf', { hasText: name }).tap()
-  await page.waitForSelector('.navMenuKnopf')
-}
+const HAUPT = ['Themen', 'Prüfungen', 'Fortschritt']
+const MEHR = ['Nachschlagen', 'Normen', 'Sammlung', 'Skizzen', 'Einstellungen']
 
-async function keinOverflow(page, name) {
-  const treffer = await page.evaluate(() => {
+async function keinOverflow(page, name, breite) {
+  const treffer = await page.evaluate((w) => {
     const ergebnisse = []
+    if (document.documentElement.scrollWidth > w + 1) {
+      ergebnisse.push(`Seite: ${document.documentElement.scrollWidth - w}px breiter als Fenster`)
+    }
     document.querySelectorAll('.schirm, .schirm *').forEach((el) => {
       const stil = getComputedStyle(el)
       if (
@@ -32,20 +38,33 @@ async function keinOverflow(page, name) {
       }
     })
     return ergebnisse
-  })
-  expect(treffer, `Overflow auf "${name}": ${treffer.join(', ')}`).toEqual([])
+  }, breite)
+  expect(treffer, `Overflow auf "${name}" bei ${breite}px: ${treffer.join(', ')}`).toEqual([])
 }
 
-const SEITEN = ['Themen', 'Nachschlagen', 'Normen', 'Prüfungen', 'Sammlung', 'Skizzen', 'Fortschritt', 'Einstellungen']
+for (const format of FORMATE) {
+  test.describe(`${format.width}x${format.height}`, () => {
+    test.use({ viewport: format, isMobile: true, hasTouch: true, deviceScaleFactor: 2 })
 
-test('Kein horizontaler Overflow auf einem 320px-Handy, auf keinem Bildschirm', async ({ page }) => {
-  await angemeldet(page, 'Overflow-Test')
-  await keinOverflow(page, 'Heute')
+    test(`Kein horizontaler Overflow auf keinem Bildschirm (${format.width}px)`, async ({ page }) => {
+      await page.goto('/')
+      await page.getByPlaceholder('Name für ein neues Profil').fill('Overflow-Test')
+      await page.getByRole('button', { name: 'Profil anlegen' }).tap()
+      await page.locator('.profilKnopf', { hasText: 'Overflow-Test' }).tap()
+      await page.waitForSelector('.tabLeiste')
+      await keinOverflow(page, 'Heute', format.width)
 
-  for (const ziel of SEITEN) {
-    await page.tap('.navMenuKnopf')
-    await page.locator('.navigation.offen .navKnopf', { hasText: ziel }).tap()
-    await page.waitForTimeout(150)
-    await keinOverflow(page, ziel)
-  }
-})
+      for (const ziel of HAUPT) {
+        await page.locator('.tabKnopf', { hasText: ziel }).tap()
+        await page.waitForTimeout(150)
+        await keinOverflow(page, ziel, format.width)
+      }
+      for (const ziel of MEHR) {
+        await page.locator('.tabKnopf', { hasText: 'Mehr' }).tap()
+        await page.locator('.mehrZeile', { hasText: ziel }).tap()
+        await page.waitForTimeout(150)
+        await keinOverflow(page, ziel, format.width)
+      }
+    })
+  })
+}
