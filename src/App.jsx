@@ -238,7 +238,12 @@ export default function App({ profilId, onProfilWechseln }) {
     [aktiveItems, zustaende, themen]
   )
 
-  const meilensteine = useMemo(() => {
+  // Meilensteine haengen von der Stufe ab, die Stufe von den
+  // Meilenstein-XP. Frueher wurde nur einmal mit der Stufe OHNE
+  // Meilenstein-XP gerechnet - die Sammlung zeigte dann "Stufe zehn: 8 von
+  // 10", waehrend Heute schon Stufe 11 meldete. Jetzt wird wechselseitig
+  // gerechnet, bis sich die Stufe nicht mehr aendert (meist 1-2 Runden).
+  const { meilensteine, xpMeilensteine, level } = useMemo(() => {
     const gemeisterteThemen = [...themenFortschritt0(aktiveItems, zustaende)].filter(Boolean).length
     const werteRekord = rekorde(aktiveEreignisse)
     const sortiert = [...pruefungen].sort((a, b) => b.ts - a.ts)
@@ -248,12 +253,12 @@ export default function App({ profilId, onProfilWechseln }) {
       else break
     }
 
-    return meilensteineAuswerten({
+    const auswerten = (lv) => meilensteineAuswerten({
       skizzen: skizzen.length,
       antworten: aktiveEreignisse.length,
       serie: serie.tage,
-      stufe: levelRoh.stufe,
-      xp: levelRoh.xp,
+      stufe: lv.stufe,
+      xp: lv.xp,
       minuten: werteRekord.gesamtMinuten,
       aktiveTage: werteRekord.aktiveTage,
       pruefungen: pruefungen.length,
@@ -269,11 +274,20 @@ export default function App({ profilId, onProfilWechseln }) {
       notizen: [...marken.values()].filter((m) => m.notiz).length,
       sicherungen: opt.letzteSicherung ? 1 : 0,
     }, gestaltung)
-  }, [skizzen, aktiveEreignisse, serie, levelRoh, pruefungen, marken, aktiveItems, zustaende,
+
+    let lv = levelRoh
+    let liste = auswerten(lv)
+    for (let runde = 0; runde < 6; runde++) {
+      const naechste = levelAus(xpBasis + xpFuerMeilensteine(liste))
+      if (naechste.stufe === lv.stufe && naechste.xp === lv.xp) break
+      lv = naechste
+      liste = auswerten(lv)
+    }
+    const xpM = xpFuerMeilensteine(liste)
+    return { meilensteine: liste, xpMeilensteine: xpM, level: levelAus(xpBasis + xpM) }
+  }, [skizzen, aktiveEreignisse, serie, levelRoh, xpBasis, pruefungen, marken, aktiveItems, zustaende,
       karten, module, opt.letzteSicherung, gestaltung])
 
-  const xpMeilensteine = useMemo(() => xpFuerMeilensteine(meilensteine), [meilensteine])
-  const level = useMemo(() => levelAus(xpBasis + xpMeilensteine), [xpBasis, xpMeilensteine])
 
   // Stufenaufstieg bemerken. Beim ersten Durchlauf nur merken, damit
   // nicht jeder Seitenaufruf als Aufstieg gefeiert wird. Wer es ruhig
@@ -378,14 +392,21 @@ export default function App({ profilId, onProfilWechseln }) {
     setSkizzen,
     setAnsicht,
     setErklaerthema,
+    onSpeicherfehler: (text) => setMeldung({ art: 'fehler', text }),
   })
 
+  // Aktueller Stand ueber eine Ref: zwei schnelle Aenderungen hintereinander
+  // (z. B. Lesezeichen, dann Notiz) lasen sonst beide den alten Render-Stand
+  // und die zweite ueberschrieb die erste.
+  const markenRef = useRef(marken)
+  markenRef.current = marken
   async function markeAendern(itemId, aenderung) {
-    const vorher = marken.get(itemId) ?? {}
+    const vorher = markenRef.current.get(itemId) ?? {}
     const neu = { itemId, ...vorher, ...aenderung }
     for (const [feld, wert] of Object.entries(aenderung)) {
       if (wert === null) delete neu[feld]
     }
+    markenRef.current = new Map(markenRef.current).set(itemId, neu)
     await markeSetzen(neu)
     setMarken((alte) => new Map(alte).set(itemId, neu))
   }
@@ -558,8 +579,13 @@ export default function App({ profilId, onProfilWechseln }) {
       setAbgleichZustand({ laeuft: false, ...abgleichStand(profilId) })
     }
   }
+  // Ueber eine Ref statt direkt aus opt: die Effekte unten (Sichtbarkeit,
+  // Start) halten sonst die Funktion vom ersten Render fest, und das
+  // Ausschalten von "automatisch abgleichen" wirkte beim Verlassen nicht.
+  const autoAbgleichRef = useRef(opt.dropboxAuto)
+  autoAbgleichRef.current = opt.dropboxAuto
   const automatischAbgleichen = () => {
-    if (opt.dropboxAuto !== false) abgleichRef.current?.(true)
+    if (autoAbgleichRef.current !== false) abgleichRef.current?.(true)
   }
 
   // Nach einer Lernsitzung (Wechsel weg vom Lernbildschirm).
@@ -657,8 +683,10 @@ export default function App({ profilId, onProfilWechseln }) {
           art={sitzung.art}
           position={position}
           gesamt={sitzung.pensum.length}
-          faellig={tagesplan.faelligGesamt}
-          neu={tagesplan.neuGesamt}
+          // Zahlen der laufenden Sitzung (Rest ab der aktuellen Position),
+          // nicht die globalen - in einer Themensitzung stand sonst "211 neu".
+          faellig={sitzung.pensum.slice(position).filter((i) => zustaende.has(i.id)).length}
+          neu={sitzung.pensum.slice(position).filter((i) => !zustaende.has(i.id)).length}
           letzteXp={letzteXp}
           stufen={opt.bewertungsstufen}
           vertiefungZeigen={opt.vertiefungZeigen}
@@ -686,7 +714,14 @@ export default function App({ profilId, onProfilWechseln }) {
       <div className="huelle einspaltig">
         <Erklaerstueck
           thema={thema}
+          // Dieselbe Rechnung wie der Sitzungsstart (heutiges Pensum des
+          // Themas) - frueher stand hier die Gesamtzahl aus der Paketdatei.
+          anzahlHeute={pensumBauen(erlaubteItems.filter((i) => i.themaId === thema.id), zustaende, {
+            neuProTag: opt.neuProTag,
+            maxProTag: opt.maxProTag,
+          }).pensum.length}
           onLernen={() => sitzungStarten('ueben', { themaId: thema.id })}
+          onUeben={() => sitzungStarten('marathon', { themaId: thema.id })}
           onZurueck={() => setErklaerthema(null)}
         />
       </div>

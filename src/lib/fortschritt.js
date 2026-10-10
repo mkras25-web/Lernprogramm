@@ -418,8 +418,8 @@ export const MEILENSTEINE = [
   { id: 'ms-serie-100', gruppe: 'ausdauer', titel: 'Hundert Tage am Stück', feld: 'serie', ziel: 100 },
   { id: 'ms-tage-30', gruppe: 'ausdauer', titel: 'Dreißig aktive Tage', feld: 'aktiveTage', ziel: 30 },
   { id: 'ms-tage-100', gruppe: 'ausdauer', titel: 'Hundert aktive Tage', feld: 'aktiveTage', ziel: 100 },
-  { id: 'ms-zeit-600', gruppe: 'ausdauer', titel: 'Zehn Stunden gelernt', feld: 'minuten', ziel: 600 },
-  { id: 'ms-zeit-3000', gruppe: 'ausdauer', titel: 'Fünfzig Stunden gelernt', feld: 'minuten', ziel: 3000 },
+  { id: 'ms-zeit-600', gruppe: 'ausdauer', titel: 'Zehn Stunden gelernt', feld: 'minuten', ziel: 600, einheit: ' min' },
+  { id: 'ms-zeit-3000', gruppe: 'ausdauer', titel: 'Fünfzig Stunden gelernt', feld: 'minuten', ziel: 3000, einheit: ' min' },
 
   // Umfang
   { id: 'ms-antworten-100', gruppe: 'menge', titel: 'Hundert Antworten', feld: 'antworten', ziel: 100 },
@@ -450,8 +450,8 @@ export const MEILENSTEINE = [
   { id: 'ms-pruefung-10', gruppe: 'pruefung', titel: 'Zehn Prüfungen', feld: 'pruefungen', ziel: 10 },
   { id: 'ms-pruefung-bestanden', gruppe: 'pruefung', titel: 'Erste bestandene Prüfung', feld: 'bestanden', ziel: 1 },
   { id: 'ms-pruefung-serie', gruppe: 'pruefung', titel: 'Fünf bestandene in Folge', feld: 'bestandenSerie', ziel: 5 },
-  { id: 'ms-pruefung-gut', gruppe: 'pruefung', titel: 'Mindestens gut geschrieben', feld: 'bestePruefung', ziel: 81 },
-  { id: 'ms-pruefung-sehrgut', gruppe: 'pruefung', titel: 'Sehr gut geschrieben', feld: 'bestePruefung', ziel: 92 },
+  { id: 'ms-pruefung-gut', gruppe: 'pruefung', titel: 'Mindestens gut geschrieben', feld: 'bestePruefung', ziel: 81, einheit: ' %' },
+  { id: 'ms-pruefung-sehrgut', gruppe: 'pruefung', titel: 'Sehr gut geschrieben', feld: 'bestePruefung', ziel: 92, einheit: ' %' },
 
   // Beherrschung
   { id: 'ms-sicher-50', gruppe: 'beherrschung', titel: 'Fünfzig Items sicher', feld: 'sicher', ziel: 50 },

@@ -65,7 +65,7 @@ export default function Heute({
               <div>
                 <p className="aufrufZahl">{offen} Items warten</p>
                 <p className="nebentext">
-                  {tagesplan.faelligGesamt} Wiederholungen · {Math.min(tagesplan.neuGesamt, offen)} neu ·
+                  {tagesplan.wiederholungImPensum} Wiederholungen · {tagesplan.neuImPensum} neu ·
                   etwa {Math.max(1, Math.round(offen * 0.5))} Minuten
                 </p>
               </div>

@@ -214,9 +214,9 @@ function Aufgabenteil({ item }) {
 function faelligkeitText(zustand) {
   if (!zustand) return 'Noch nicht gelernt'
   const tage = Math.round((zustand.faelligAb - Date.now()) / 86400000)
-  if (tage < 0) return `Seit ${Math.abs(tage)} Tagen fällig · Intervall ${zustand.intervall} Tage`
-  if (tage === 0) return `Heute fällig · Intervall ${zustand.intervall} Tage`
-  return `Wieder fällig in ${tage} ${tage === 1 ? 'Tag' : 'Tagen'} · Intervall ${zustand.intervall} Tage`
+  if (tage < 0) return `Seit ${Math.abs(tage)} Tagen fällig · Intervall ${intervallText(zustand.intervall)}`
+  if (tage === 0) return `Heute fällig · Intervall ${intervallText(zustand.intervall)}`
+  return `Wieder fällig in ${tage} ${tage === 1 ? 'Tag' : 'Tagen'} · Intervall ${intervallText(zustand.intervall)}`
 }
 
 const BEWERTUNGSNAMEN = { 1: 'Nochmal', 2: 'Schwer', 3: 'Gut', 4: 'Leicht' }
@@ -238,4 +238,8 @@ function Verlauf({ ereignisse }) {
       </ol>
     </>
   )
+}
+
+function intervallText(tage) {
+  return `${tage} ${tage === 1 ? 'Tag' : 'Tage'}`
 }

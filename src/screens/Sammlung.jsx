@@ -20,9 +20,9 @@ function stempelTooltip(m) {
   if (m.frei) {
     const aktuell = MEILENSTEIN_STUFEN[m.stufe - 1].name
     const naechste = MEILENSTEIN_STUFEN[m.stufe].name
-    return `${m.titel} · ${aktuell} erreicht · ${m.stand} von ${m.ziel} für ${naechste}`
+    return `${m.titel} · ${aktuell} erreicht · ${m.stand} von ${m.ziel}${m.einheit ?? ''} für ${naechste}`
   }
-  return `${m.titel} · ${m.stand} von ${m.ziel} für Bronze`
+  return `${m.titel} · ${m.stand} von ${m.ziel}${m.einheit ?? ''} für Bronze`
 }
 
 // Detailkarten sind kein Zufallsfund, sondern Beleg fuer Beherrschung.
@@ -79,7 +79,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
                 <Ring anteil={m.anteil} groesse={38} staerke={4} />
                 <div>
                   <p className="kachelZeile stark">{m.titel}</p>
-                  <p className="kachelZeile">{m.stand} von {m.ziel}</p>
+                  <p className="kachelZeile">{m.stand} von {m.ziel}{m.einheit ?? ''}</p>
                 </div>
               </li>
             ))}
@@ -90,11 +90,11 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
       <section className="block">
         <h2 className="abschnitt">Detailkarten</h2>
         <p className="zeileHinweis">
-          Entsteht automatisch für jedes Thema, sobald mindestens 80 % seiner Items
-          „sicher" oder besser sitzen (siehe Beherrschungsgrade im Fortschritt) - kein
-          Zufallsfund, sondern Beleg für gelerntes Wissen. Ab 95 % wird die Karte zu
-          „Ausführung", sobald 80 % der Items sogar „gemeistert" sind zu „Meisterschaft".
-          Die verschlossene Karte zeigt schon den aktuellen Anteil.
+          Eine Detailkarte entsteht automatisch für jedes Thema, sobald mindestens 80 %
+          seiner Items „sicher" oder besser sitzen (siehe Beherrschungsgrade im
+          Fortschritt) – kein Zufallsfund, sondern Beleg für gelerntes Wissen. Bei 95 %
+          steigt sie auf „Ausführung", und wenn 80 % der Items sogar „gemeistert" sind, auf
+          „Meisterschaft". Verschlossene Karten zeigen schon den aktuellen Anteil.
         </p>
         <ul className="kartengitter">
           {karten.map((k) => (
@@ -172,7 +172,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0 }) {
                 <span className="stempelFuss">
                   {m.maxStufe
                     ? `${MEILENSTEIN_GRUPPEN[m.gruppe]} · ${xpFuerMeilenstein(m)} XP`
-                    : `${m.stand} von ${m.ziel} für ${MEILENSTEIN_STUFEN[m.stufe].name}`}
+                    : `${m.stand} von ${m.ziel}${m.einheit ?? ''} für ${MEILENSTEIN_STUFEN[m.stufe].name}`}
                 </span>
                 {!m.maxStufe && (
                   <span className="stempelBalken" aria-hidden="true">

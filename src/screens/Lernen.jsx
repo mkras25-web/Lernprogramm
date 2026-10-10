@@ -5,23 +5,12 @@ import Normen from '../components/Normen.jsx'
 import Bildpunkte from '../components/Bildpunkte.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import LokalBild from '../components/LokalBild.jsx'
+import Notizfeld from '../components/Notizfeld.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { BEWERTUNG } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
+import { mischen } from '../lib/mischen.js'
 
-// Feste Reihenfolge waere auswendig lernbar - deshalb wird bei jedem
-// Erscheinen neu gemischt. Der Seed haengt an Item und Position, damit
-// die Reihenfolge innerhalb einer Frage stabil bleibt.
-function mischen(laenge, seed) {
-  const reihe = Array.from({ length: laenge }, (_, i) => i)
-  let zufall = seed
-  for (let i = reihe.length - 1; i > 0; i--) {
-    zufall = (zufall * 1103515245 + 12345) & 0x7fffffff
-    const j = zufall % (i + 1)
-    ;[reihe[i], reihe[j]] = [reihe[j], reihe[i]]
-  }
-  return reihe
-}
 
 export default function Lernen({
   item,
@@ -126,7 +115,16 @@ export default function Lernen({
   // Tastenkuerzel. Leertaste deckt auf, Ziffern bewerten.
   useEffect(() => {
     function taste(e) {
-      const imFeld = e.target.matches('input, textarea, select')
+      // Offener Dialog/Bildlupe (.schleier) liegt ueber der Karte: Ziffern
+      // und Leertaste duerfen nicht die Karte dahinter bewerten.
+      if (document.querySelector('.schleier')) return
+      // Strg/Alt/Cmd-Kombinationen gehoeren dem Browser.
+      if (e.ctrlKey || e.metaKey || e.altKey) {
+        if (!(e.key === 'Enter' && e.target.matches('textarea'))) return
+      }
+      // Checkboxen (Pruefpunkte) sind kein Textfeld - nach einem Klick
+      // darauf blieben 1-4 sonst wirkungslos.
+      const imFeld = e.target.matches('input:not([type="checkbox"]):not([type="radio"]), textarea, select')
       if (imFeld) {
         // In einem Eingabefeld gehoert die Leertaste dem Text.
         // Enter bestaetigt die Eingabe und gibt den Fokus frei -
@@ -140,6 +138,11 @@ export default function Lernen({
         return
       }
       if (e.code === 'Space' || e.key === 'Enter') {
+        // Per Tastatur angesteuerter Knopf (Tab, sichtbarer Fokus): Enter/
+        // Leertaste loesen DIESEN Knopf aus, nicht "Aufdecken". Nach einem
+        // Mausklick hat der Knopf keinen sichtbaren Fokus - dann bleibt es
+        // beim gewohnten Kuerzel.
+        if (e.target.matches('button:focus-visible, a:focus-visible')) return
         e.preventDefault()
         if (!aufgedeckt) setAufgedeckt(true)
         else if (art === 'blaettern') bewerten(BEWERTUNG.GUT)
@@ -314,11 +317,10 @@ export default function Lernen({
           </div>
 
           {notizOffen && (
-            <textarea
-              className="notizfeld"
-              value={marke?.notiz ?? ''}
-              placeholder="Eigene Randbemerkung zu diesem Item …"
-              onChange={(e) => onMarke(item.id, { notiz: e.target.value })}
+            <Notizfeld
+              key={item.id}
+              wert={marke?.notiz}
+              onSpeichern={(t) => onMarke(item.id, { notiz: t })}
             />
           )}
         </article>

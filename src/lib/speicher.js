@@ -77,14 +77,54 @@ function oeffnen() {
         db.createObjectStore(PRUEFUNGEN, { keyPath: 'id' })
       }
     }
-    anfrage.onsuccess = () => resolve(anfrage.result)
+    anfrage.onsuccess = () => {
+      const db = anfrage.result
+      // Verbindung kann von aussen verloren gehen (WebKit nach Hintergrund:
+      // "Connection to Indexed Database server lost", neue DB-Version in
+      // einem zweiten Tab). Dann beim naechsten Zugriff neu oeffnen statt
+      // bis zum Neuladen jeden Schreibvorgang scheitern zu lassen.
+      const verwerfen = () => {
+        if (dbPromise === eigenes) dbPromise = null
+      }
+      db.onclose = verwerfen
+      db.onversionchange = () => {
+        db.close()
+        verwerfen()
+      }
+      resolve(db)
+    }
     anfrage.onerror = () => reject(anfrage.error)
+  })
+  const eigenes = dbPromise
+  // Ein gescheitertes Oeffnen nicht dauerhaft merken.
+  eigenes.catch(() => {
+    if (dbPromise === eigenes) dbPromise = null
   })
   return dbPromise
 }
 
-function transaktion(modus, name = STORE) {
-  return oeffnen().then((db) => db.transaction(name, modus).objectStore(name))
+async function transaktion(modus, name = STORE) {
+  try {
+    const db = await oeffnen()
+    return db.transaction(name, modus).objectStore(name)
+  } catch (e) {
+    // Einmal neu verbinden (geschlossene Verbindung -> InvalidStateError).
+    if (e?.name !== 'InvalidStateError') throw e
+    dbPromise = null
+    const db = await oeffnen()
+    return db.transaction(name, modus).objectStore(name)
+  }
+}
+
+// Wartet, bis die Transaktion wirklich geschrieben ist (nicht nur die
+// einzelne Anfrage angenommen) - erst dann gilt etwas als gespeichert.
+function abgeschlossen(store) {
+  const tx = store.transaction
+  return new Promise((resolve, reject) => {
+    tx.oncomplete = () => resolve()
+    tx.onerror = () => reject(tx.error ?? new Error('Speichern fehlgeschlagen.'))
+    tx.onabort = () => reject(tx.error ?? new Error('Speichern abgebrochen (Speicher voll?).'))
+  })
 }
 
 function alleAus(name) {
@@ -182,11 +222,9 @@ export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, h
     quelle,
   }
   const store = await transaktion('readwrite')
-  await new Promise((resolve, reject) => {
-    const anfrage = store.add(ereignis)
-    anfrage.onsuccess = resolve
-    anfrage.onerror = () => reject(anfrage.error)
-  })
+  const fertig = abgeschlossen(store)
+  store.add(ereignis)
+  await fertig
   return ereignis
 }
 
@@ -389,17 +427,14 @@ async function vereinigen(name, eintraege, schluessel, geloescht = {}) {
     (e) => e && e[schluessel] && !vorhandene.has(e[schluessel]) && !(e[schluessel] in geloescht)
   )
 
+  if (neue.length === 0) return 0
+  // Eine Transaktion fuer alles; ein Fehler (Speicher voll, Abbruch) wird
+  // weitergereicht statt verschluckt - sonst merkte sich der Abgleich die
+  // Datei als "gelesen" und der Rest kaeme nie mehr an.
   const store = await transaktion('readwrite', name)
-  await Promise.all(
-    neue.map(
-      (e) =>
-        new Promise((resolve) => {
-          const anfrage = store.put(e)
-          anfrage.onsuccess = resolve
-          anfrage.onerror = resolve
-        })
-    )
-  )
+  const fertig = abgeschlossen(store)
+  for (const e of neue) store.put(e)
+  await fertig
   return neue.length
 }
 

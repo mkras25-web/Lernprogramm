@@ -12,6 +12,7 @@ import {
 } from '../lib/pruefung.js'
 import { punkteFuer } from '../lib/punkte.js'
 import Bildpunkte from '../components/Bildpunkte.jsx'
+import { mischen, seedAus } from '../lib/mischen.js'
 import LokalBild from '../components/LokalBild.jsx'
 
 export default function Pruefung({
@@ -259,6 +260,7 @@ export default function Pruefung({
           <h1 className="frage">{item.frage}</h1>
           <PruefEingabe
             item={item}
+            seed={seedAus(item.id + lauf.start)}
             wert={antworten[item.id]}
             setWert={(w) => setAntworten({ ...antworten, [item.id]: w })}
           />
@@ -294,8 +296,16 @@ export default function Pruefung({
               <button
                 className="artKnopf"
                 onClick={() => {
-                  const naechste = lauf.items.findIndex((i) => markiert.has(i.id))
-                  if (naechste >= 0) setPosition(naechste)
+                  // Naechste Markierung NACH der aktuellen Frage, am Ende
+                  // wieder von vorn - frueher immer die erste.
+                  const n = lauf.items.length
+                  for (let k = 1; k <= n; k++) {
+                    const i = (position + k) % n
+                    if (markiert.has(lauf.items[i].id)) {
+                      setPosition(i)
+                      break
+                    }
+                  }
                 }}
               >
                 Zu markierter Frage ({markiert.size})
@@ -322,7 +332,7 @@ export default function Pruefung({
       <section className="bereitschaft">
         <div>
           <p className="bereitschaftZahl">{verfuegbar}</p>
-          <p className="kennzahlName">geprüfte Items bereit</p>
+          <p className="kennzahlName">Items prüfungsbereit</p>
         </div>
         <div>
           <p className="bereitschaftZahl">{reifeThemen}</p>
@@ -410,10 +420,10 @@ export default function Pruefung({
                   <div className="themaInfo">
                     <p className="themaTitel">{e.thema.titel}</p>
                     <p className="themaZeile2">
-                      {e.verfuegbar} geprüfte Items ·{' '}
+                      {e.verfuegbar} Items bereit ·{' '}
                       {e.letzte
                         ? `zuletzt ${e.letzte.prozent} % am ${new Date(e.letzte.ts).toLocaleDateString('de-DE')}`
-                        : 'noch nie geprüft'}
+                        : 'noch keine Themenprüfung'}
                     </p>
                   </div>
                   <div className="themenzeileAktionen">
@@ -544,12 +554,12 @@ function Verlaufskurve({ pruefungen }) {
   )
 }
 
-function PruefEingabe({ item, wert, setWert }) {
+function PruefEingabe({ item, wert, setWert, seed }) {
   if (item.typ === 'mehrfachauswahl') {
     const gewaehlt = wert ?? []
     return (
       <ul className="optionen">
-        {item.optionen.map((text, i) => (
+        {mischen(item.optionen.length, seed).map((i) => (
           <li key={i}>
             <button
               className={gewaehlt.includes(i) ? 'option aktiv' : 'option'}
@@ -557,7 +567,7 @@ function PruefEingabe({ item, wert, setWert }) {
                 setWert(gewaehlt.includes(i) ? gewaehlt.filter((g) => g !== i) : [...gewaehlt, i])
               }
             >
-              {text}
+              {item.optionen[i]}
             </button>
           </li>
         ))}
@@ -585,8 +595,8 @@ function PruefEingabe({ item, wert, setWert }) {
             <select className="paarWahl" value={zuordnung[i] ?? ''}
                     onChange={(e) => setWert({ ...zuordnung, [i]: Number(e.target.value) })}>
               <option value="">bitte zuordnen …</option>
-              {item.paare.map(([, rechts], j) => (
-                <option key={j} value={j}>{rechts}</option>
+              {mischen(item.paare.length, seed + 5).map((j) => (
+                <option key={j} value={j}>{item.paare[j][1]}</option>
               ))}
             </select>
           </li>
@@ -604,6 +614,7 @@ function PruefEingabe({ item, wert, setWert }) {
           punkte={item.typ === 'fehlersuche' ? item.bereiche : item.punkte}
           zuordnung={item.typ === 'bildbeschriftung' ? (wert ?? {}) : null}
           namen={namen}
+          reihenfolge={mischen(namen.length, seed + 11)}
           gewaehlt={item.typ === 'fehlersuche' ? (wert ?? null) : null}
           onWahl={(nr, index) =>
             item.typ === 'fehlersuche' ? setWert(nr) : setWert({ ...(wert ?? {}), [nr]: index })

@@ -28,14 +28,24 @@ export async function paketLaden(paketId) {
   }
   const paket = await antwort.json()
 
-  // Normenglossar ist optional - fehlt es, bleibt die Funktion still.
-  let normen = {}
-  try {
-    const normAntwort = await fetch(`${wurzel}/normen.json`)
-    if (normAntwort.ok) normen = (await normAntwort.json()).eintraege ?? {}
-  } catch {
-    /* kein Glossar vorhanden */
+  // Alle Themendateien und das Glossar GLEICHZEITIG anfordern - frueher
+  // wurden sie in der Schleife nacheinander geladen (gemessen 2026-10-10:
+  // 2,4 s bis Heute bei 150 ms Latenz, jetzt etwa zwei Latenzen). Die
+  // Auswertung unten bleibt in Paketreihenfolge.
+  const jsonOderNull = (url) =>
+    fetch(url)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null)
+  const vorab = new Map()
+  for (const modul of paket.module ?? []) {
+    for (const thema of modul.themen ?? []) {
+      if (thema.datei && !vorab.has(thema.datei)) vorab.set(thema.datei, jsonOderNull(`${wurzel}/${thema.datei}`))
+    }
   }
+
+  // Normenglossar ist optional - fehlt es, bleibt die Funktion still.
+  const normDaten = await jsonOderNull(`${wurzel}/normen.json`)
+  const normen = normDaten?.eintraege ?? {}
 
   const items = []
   const themen = []
@@ -65,14 +75,13 @@ export async function paketLaden(paketId) {
         continue
       }
 
-      const datenAntwort = await fetch(`${wurzel}/${thema.datei}`)
-      if (!datenAntwort.ok) {
+      const daten = await vorab.get(thema.datei)
+      if (!daten) {
         console.warn(`Thema "${thema.id}" fehlt: ${thema.datei}`)
         themen.push({ ...grund, geplant: true, erklaerung: null, anzahl: 0 })
         continue
       }
 
-      const daten = await datenAntwort.json()
       themen.push({
         ...grund,
         geplant: false,

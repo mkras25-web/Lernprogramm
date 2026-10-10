@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
+import Notizfeld from '../components/Notizfeld.jsx'
 import { KATEGORIEN, TYPNAMEN, UNGESICHTET, kategorieAus } from '../lib/sichtung.js'
 import { passt } from '../lib/suche.js'
 import Itemansicht from '../components/Itemansicht.jsx'
@@ -24,6 +25,18 @@ export default function Sichtung({
   const [thema, setThema] = useState('alle')
   const [ausgewaehlt, setAusgewaehlt] = useState(new Set())
   const [offenesItem, setOffenesItem] = useState(null)
+  // Scrollposition der Liste: beim Oeffnen einer Karte wird die Liste
+  // ausgehaengt, beim Zurueckkehren landete man sonst wieder ganz oben -
+  // gegen den Wunsch, ununterbrochen durch alle Fragen zu scrollen.
+  const listenPosition = useRef(null)
+  useLayoutEffect(() => {
+    if (offenesItem === null && listenPosition.current !== null) {
+      window.scrollTo(0, listenPosition.current)
+      listenPosition.current = null
+    } else if (offenesItem !== null) {
+      window.scrollTo(0, 0)
+    }
+  }, [offenesItem])
   // Beim Öffnen wird die Reihenfolge festgehalten. Sonst rutscht die
   // Liste unter einem weg, sobald eine Marke gesetzt wird und das Item
   // aus dem Filter fällt - dann führt "Nächstes" ins Leere.
@@ -75,6 +88,7 @@ export default function Sichtung({
   }
 
   function oeffnen(id) {
+    listenPosition.current = window.scrollY
     setBlaetterliste(gefiltert.map((i) => i.id))
     setOffenesItem(id)
   }
@@ -302,11 +316,10 @@ export default function Sichtung({
               </div>
             </>
           ) : (
-            <textarea
-              className="notizfeld"
-              value={m.notiz ?? ''}
-              placeholder="Eigene Randbemerkung zu diesem Item …"
-              onChange={(e) => onMarke(item.id, { notiz: e.target.value })}
+            <Notizfeld
+              key={item.id}
+              wert={m.notiz}
+              onSpeichern={(t) => onMarke(item.id, { notiz: t })}
             />
           )}
         </section>

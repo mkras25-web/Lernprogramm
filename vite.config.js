@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 import { readdirSync, rmSync, existsSync } from 'node:fs'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 
 // Urheberrechtlich geschuetzte Buchausschnitte (public/pakete/*/bilder-lokal)
 // duerfen nie in einen Build wandern, den man veroeffentlicht - auch nicht,
@@ -10,21 +10,38 @@ import { join } from 'node:path'
 // Entwicklungsordner nur fuer den PC-Betrieb; aufs Handy kommen sie ueber
 // den ZIP-Import in den Einstellungen.
 function ohneLokaleBilder() {
+  // Ausgabeordner aus der aufgeloesten Konfiguration statt fest "dist" -
+  // mit "vite build --outDir X" blieben die Bilder sonst im Build (und in
+  // der Precache-Liste) liegen (nachgewiesen 2026-10-10).
+  let ausgabe = 'dist'
+  const restePruefen = () => {
+    const pakete = join(ausgabe, 'pakete')
+    if (!existsSync(pakete)) return
+    for (const p of readdirSync(pakete, { withFileTypes: true })) {
+      if (p.isDirectory() && existsSync(join(pakete, p.name, 'bilder-lokal'))) {
+        throw new Error(`Build abgebrochen: ${join(pakete, p.name, 'bilder-lokal')} ist noch im Build - Buchausschnitte duerfen nie veroeffentlicht werden.`)
+      }
+    }
+  }
   return {
     name: 'ohne-lokale-bilder',
     apply: 'build',
     // Vor dem PWA-Plugin (das danach die Precache-Liste erzeugt).
     enforce: 'post',
+    configResolved(config) {
+      ausgabe = resolve(config.root, config.build.outDir)
+    },
     closeBundle: {
       order: 'pre',
       handler() {
-        const pakete = join('dist', 'pakete')
+        const pakete = join(ausgabe, 'pakete')
         if (!existsSync(pakete)) return
         for (const p of readdirSync(pakete, { withFileTypes: true })) {
           if (p.isDirectory()) {
             rmSync(join(pakete, p.name, 'bilder-lokal'), { recursive: true, force: true })
           }
         }
+        restePruefen()
       },
     },
   }
@@ -66,6 +83,9 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
+        // Zweite Sicherung neben dem Loeschen oben: Buchausschnitte nie in
+        // die Precache-Liste (die verteilt sie sonst auf jedes Geraet).
+        globIgnores: ['**/bilder-lokal/**'],
         runtimeCaching: [
           {
             // Ueber die Einstellungen eingelesene Buchausschnitte (siehe
@@ -84,7 +104,10 @@ export default defineConfig({
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'pakete-inhalte',
-              expiration: { maxEntries: 500, maxAgeSeconds: 60 * 60 * 24 * 30 },
+              // Kein Ablaufdatum mehr: mit maxAgeSeconds (30 Tage) lieferte
+              // der Cache nach einem Monat nur offline "Inhalt fehlt".
+              // StaleWhileRevalidate frischt online ohnehin auf.
+              expiration: { maxEntries: 2000 },
             },
           },
         ],

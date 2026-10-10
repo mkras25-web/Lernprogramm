@@ -36,7 +36,12 @@ export default class Fehlergrenze extends Component {
             <button
               className="knopf schmal"
               onClick={() => {
-                localStorage.removeItem('offeneSitzung')
+                // Profilbezogen heisst der Schluessel offeneSitzung_<profilId>
+                // (useLernsitzung.js) - alle Varianten entfernen, die
+                // Fehlergrenze kennt das aktive Profil nicht.
+                for (const k of Object.keys(localStorage)) {
+                  if (k === 'offeneSitzung' || k.startsWith('offeneSitzung_')) localStorage.removeItem(k)
+                }
                 window.location.reload()
               }}
             >

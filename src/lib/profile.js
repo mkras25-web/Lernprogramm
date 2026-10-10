@@ -103,6 +103,11 @@ export async function profilLoeschen(id) {
   localStorage.removeItem(`einstellungen_${id}`)
   localStorage.removeItem(`offeneSitzung_${id}`)
   localStorage.removeItem(`geloescht_${id}`)
+  // Dropbox-Merker mitloeschen (Schluessel siehe abgleich.js). Blieben sie
+  // stehen, galt die eigene Dropbox-Datei nach "Profil aus Dropbox neu
+  // laden" als schon gelesen - der leere lokale Stand ueberschrieb dann die
+  // einzige Sicherung (nachgewiesen 2026-10-10, Test in abgleich.test.js).
+  for (const art of ['gesehen', 'upload', 'stand']) localStorage.removeItem(`dropbox_${art}_${id}`)
   if (aktivesProfilId() === id) localStorage.removeItem(AKTIV_SCHLUESSEL)
   await datenbankLoeschen(id)
 }

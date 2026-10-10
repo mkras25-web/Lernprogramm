@@ -12,6 +12,7 @@ import {
 } from './speicher.js'
 import { abgleichen, dateiname, profilAusDateiname, profileInDropbox } from './abgleich.js'
 import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
+import { profilErstellen, profilLoeschen } from './profile.js'
 
 // ---------------------------------------------------------------- Umgebung
 // Ein "Geraet" ist ein eigener Browserspeicher: eigene IndexedDB und eigenes
@@ -207,6 +208,40 @@ describe('Abgleich ueber Dropbox', () => {
     delete geraete.pc
     const wieder = await abgleich('pc')
     expect(wieder.ereignisse).toBe(2)
+  })
+
+  // Regressionstest Datenverlust (2026-10-10): Profil lokal loeschen und
+  // ueber "Profile in Dropbox" neu laden ueberschrieb die eigene Datei mit
+  // einem leeren Stand, weil die Dropbox-Merker das Loeschen ueberlebten.
+  it('Profil loeschen und aus Dropbox neu laden stellt wieder her statt zu ueberschreiben', async () => {
+    await geraetWaehlen('handy')
+    await datenbankFuerProfilSetzen(PROFIL)
+    for (let i = 0; i < 5; i++) await antworten('item-' + i)
+    await abgleichen({ profilId: PROFIL, profilName: 'Max' })
+    const name = dateiname(PROFIL)
+    expect(JSON.parse(ordner.get(name).text).ereignisse).toHaveLength(5)
+
+    profilErstellen('Max', PROFIL)
+    await profilLoeschen(PROFIL)
+    profilErstellen('Max', PROFIL)
+    await datenbankFuerProfilSetzen(PROFIL)
+    await abgleichen({ profilId: PROFIL, profilName: 'Max' })
+
+    expect(await alleEreignisse()).toHaveLength(5)
+    expect(JSON.parse(ordner.get(name).text).ereignisse).toHaveLength(5)
+  })
+
+  it('ueberschreibt die eigene Datei nicht, wenn sie sich nicht einlesen laesst', async () => {
+    await geraetWaehlen('handy')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('item-1')
+    await abgleichen({ profilId: PROFIL, profilName: 'Max' })
+    const name = dateiname(PROFIL)
+    // Datei in Dropbox beschaedigt (neuer Hash, kein JSON)
+    ordner.set(name, { text: 'kaputt', hash: 'h-kaputt', zeit: new Date().toISOString() })
+    await antworten('item-2')
+    await expect(abgleichen({ profilId: PROFIL, profilName: 'Max' })).rejects.toThrow(/nicht überschrieben/)
+    expect(ordner.get(name).text).toBe('kaputt')
   })
 
   it('liest nur Dateien des eigenen Profils', async () => {

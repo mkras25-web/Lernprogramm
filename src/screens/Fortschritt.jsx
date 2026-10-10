@@ -213,7 +213,7 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
                 <div>
                   <p className="kachelZeile stark">{m.titel}</p>
                   <p className="kachelZeile">
-                    {reifegradFuer(m.anteil, gestaltung).name} · {m.sicher} von {m.gesamt} sicher
+                    {reifegradFuer(m.anteil, gestaltung, m.begonnen > 0).name} · {m.sicher} von {m.gesamt} sicher
                   </p>
                 </div>
               </li>
@@ -230,7 +230,7 @@ export default function Fortschritt({ ereignisse, items, zustaende, werte, level
                 <div>
                   <p className="kachelZeile stark">{t.titel}</p>
                   <p className="kachelZeile">
-                    {reifegradFuer(t.anteil, gestaltung).name} · {t.sicher} von {t.gesamt} sicher
+                    {reifegradFuer(t.anteil, gestaltung, t.trefferquote !== null).name} · {t.sicher} von {t.gesamt} sicher
                     {t.trefferquote !== null ? ` · ${t.trefferquote} % Treffer` : ''}
                   </p>
                 </div>

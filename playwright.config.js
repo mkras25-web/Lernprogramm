@@ -16,6 +16,9 @@ export default defineConfig({
   },
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
+    // Das iPhone ist das Hauptgeraet - deshalb zusaetzlich WebKit (Safari-
+    // Engine). Die Mobil-Tests setzen ihre Formate selbst.
+    { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
   webServer: {
     command: 'npm run dev -- --port 5175 --strictPort',

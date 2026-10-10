@@ -65,7 +65,9 @@ export default function DropboxBereich({ onMeldung, abgleich, onProfilLaden, pro
       <div className="zeile">
         <div className="zeileText">
           <p className="zeileTitel">Dropbox-Abgleich</p>
-          <p className="zeileHinweis">
+          {/* div statt p: darin steht ein <details> (Probleme beim Verbinden),
+              das in einem Absatz kein gueltiges HTML waere. */}
+          <div className="zeileHinweis">
             {!moeglich &&
               'Der automatische Abgleich braucht eine https-Adresse (z. B. die GitHub-Adresse der App) oder localhost – über die WLAN-Adresse des PCs geht er nicht. Sichern und Einlesen per Datei funktioniert überall.'}
             {moeglich && schluessel === null && 'Wird geprüft …'}
@@ -79,10 +81,13 @@ export default function DropboxBereich({ onMeldung, abgleich, onProfilLaden, pro
             )}
             {moeglich && schluessel && !verbunden && (
               <>
-                Nicht verbunden. Der Fortschritt wird dann in deinem Dropbox-Ordner „Apps“
-                gehalten – die App sieht nur diesen einen Ordner. Meldet Dropbox einen
-                Fehler zur „redirect_uri“: diese Adresse muss in der Dropbox-Konsole unter
-                „Redirect URIs“ stehen: <code>{rueckkehrAdresse()}</code>
+                Nicht verbunden. Der Fortschritt liegt dann in deinem Dropbox-Ordner „Apps“ –
+                die App sieht nur diesen einen Ordner.
+                <details className="technikHinweis">
+                  <summary>Probleme beim Verbinden?</summary>
+                  Meldet Dropbox einen Fehler zur „redirect_uri“, muss diese Adresse in der
+                  Dropbox-Konsole unter „Redirect URIs“ stehen: <code>{rueckkehrAdresse()}</code>
+                </details>
               </>
             )}
             {moeglich && schluessel && verbunden && (
@@ -91,7 +96,7 @@ export default function DropboxBereich({ onMeldung, abgleich, onProfilLaden, pro
                 {abgleich?.fehler && <> Letzter Fehler: {abgleich.fehler}</>}
               </>
             )}
-          </p>
+          </div>
         </div>
         {moeglich && schluessel === '' && (
           <div className="wahl">

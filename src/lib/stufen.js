@@ -198,8 +198,11 @@ export function stufeAusAnteil(anteil) {
   return Math.max(1, Math.round(a * STUFEN_JE_WERK))
 }
 
-export function reifegradFuer(anteil, gestaltung = 'arch') {
+// begonnen: es gibt schon Antworten, aber noch nichts sitzt sicher -
+// dann nicht "unberuehrt" (stand frueher neben "68 % Treffer").
+export function reifegradFuer(anteil, gestaltung = 'arch', begonnen = false) {
   const stufe = stufeAusAnteil(anteil)
+  if (stufe === 0 && begonnen) return { stufe: 0, name: 'begonnen', satz: 'Angefangen, noch nichts sicher.' }
   if (stufe === 0) return { stufe: 0, name: 'unberührt', satz: 'Noch nichts angefangen.' }
   const b = bauwerkFuer(stufe, gestaltung)
   return { stufe, name: b.abschnitt.name, satz: b.abschnitt.satz }

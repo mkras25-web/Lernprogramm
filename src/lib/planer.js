@@ -107,6 +107,10 @@ export function pensumBauen(
 
   return {
     pensum,
+    // Was davon tatsaechlich heute im Pensum steckt (Heute zeigte frueher
+    // "43 neu", gemeint war neuGesamt - alle je ungesehenen Items).
+    neuImPensum: neueItems.length,
+    wiederholungImPensum: pensum.length - neueItems.length,
     faelligGesamt: faellig.length,
     neuGesamt: neu.length,
     auffrischung: Math.min(anzahlAuffrischung, sitzt.length),

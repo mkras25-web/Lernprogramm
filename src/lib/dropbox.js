@@ -34,6 +34,22 @@ function schreiben(schluessel, wert) {
 
 // PKCE und OAuth brauchen crypto.subtle - das gibt es nur in sicheren
 // Kontexten (https oder localhost), nicht ueber die WLAN-Adresse des PCs.
+
+// Netzwerkaufrufe an Dropbox mit Zeitlimit: ein haengender Aufruf liess den
+// Abgleich sonst bis zum Neuladen blockiert ("laeuft" blieb gesetzt).
+const ZEITLIMIT_MS = 30_000
+function mitZeitlimit(url, optionen = {}) {
+  const signal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+    ? AbortSignal.timeout(ZEITLIMIT_MS)
+    : undefined
+  return fetch(url, { ...optionen, signal }).catch((e) => {
+    if (e?.name === 'TimeoutError' || e?.name === 'AbortError') {
+      throw new Error('Dropbox antwortet nicht (Zeitüberschreitung nach 30 s).')
+    }
+    throw e
+  })
+}
+
 export function dropboxMoeglich() {
   return typeof crypto !== 'undefined' && Boolean(crypto.subtle) && typeof fetch !== 'undefined'
 }
@@ -115,7 +131,7 @@ export async function verbindungStarten(appKey) {
 }
 
 async function tokenAnfrage(formular) {
-  const antwort = await fetch(TOKEN_URL, {
+  const antwort = await mitZeitlimit(TOKEN_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(formular),
@@ -236,7 +252,7 @@ async function pruefen(antwort) {
 async function rpc(pfad, body) {
   const token = await zugriffstoken()
   const antwort = await pruefen(
-    await fetch(`${API_URL}${pfad}`, {
+    await mitZeitlimit(`${API_URL}${pfad}`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -259,7 +275,7 @@ export async function dateienAuflisten() {
 export async function herunterladen(name) {
   const token = await zugriffstoken()
   const antwort = await pruefen(
-    await fetch(`${CONTENT_URL}/files/download`, {
+    await mitZeitlimit(`${CONTENT_URL}/files/download`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}`, 'Dropbox-API-Arg': JSON.stringify({ path: `/${name}` }) },
     })
@@ -272,7 +288,7 @@ export async function herunterladen(name) {
 export async function hochladen(name, text) {
   const token = await zugriffstoken()
   const antwort = await pruefen(
-    await fetch(`${CONTENT_URL}/files/upload`, {
+    await mitZeitlimit(`${CONTENT_URL}/files/upload`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,

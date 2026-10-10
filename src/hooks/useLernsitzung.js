@@ -39,6 +39,7 @@ export function useLernsitzung({
   setSkizzen,
   setAnsicht,
   setErklaerthema,
+  onSpeicherfehler,
 }) {
   const [sitzung, setSitzung] = useState(null)
   const [position, setPosition] = useState(0)
@@ -193,13 +194,20 @@ export function useLernsitzung({
       return
     }
 
-    const ereignis = await ereignisSpeichern({
-      itemId: item.id,
-      paketId: item.paketId,
-      bewertung,
-      dauerMs: Date.now() - startZeit.current,
-      hilfe: hilfeGenutzt || undefined,
-    })
+    let ereignis
+    try {
+      ereignis = await ereignisSpeichern({
+        itemId: item.id,
+        paketId: item.paketId,
+        bewertung,
+        dauerMs: Date.now() - startZeit.current,
+        hilfe: hilfeGenutzt || undefined,
+      })
+    } catch (e) {
+      // Nicht weiterblaettern: sonst waere die Antwort still verloren.
+      onSpeicherfehler?.(`Antwort nicht gespeichert: ${e?.message ?? e}. Bitte nochmal bewerten.`)
+      return
+    }
     setEreignisse((alte) => [...alte, ereignis])
     setLetzteXp(xpFuerEreignis(ereignis, item))
     // pensumVorher merkt sich den Stapel vor dieser Bewertung - bei

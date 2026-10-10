@@ -104,9 +104,18 @@ async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
 
   // 2. Eigene Datei schreiben - nur, wenn sich seit dem letzten Mal etwas
   //    geaendert hat (oder sie in Dropbox fehlt).
+  const eigeneDatei = vorhanden.find((e) => e.name === eigen)
+  // Sicherheitsnetz: die eigene Datei nie ueberschreiben, solange ihr
+  // aktueller Stand nicht erfolgreich eingelesen wurde (unlesbar, Import
+  // fehlgeschlagen) - sonst koennte ein leerer oder unvollstaendiger
+  // lokaler Stand die einzige Sicherung ersetzen.
+  if (eigeneDatei && gesehen[eigen] !== eigeneDatei.content_hash) {
+    localStorage.setItem(gesehenSchluessel(profilId), JSON.stringify(gesehen))
+    throw new Error('Die eigene Sicherung in Dropbox ließ sich nicht einlesen – sie wurde zum Schutz nicht überschrieben.')
+  }
   const text = await exportieren({ mitSkizzen, profilId, profilName })
   const stempel = await fingerabdruck(text)
-  const inDropbox = vorhanden.some((e) => e.name === eigen)
+  const inDropbox = Boolean(eigeneDatei)
   if (!inDropbox || stempel !== localStorage.getItem(uploadSchluessel(profilId))) {
     const meta = await dropbox.hochladen(eigen, text)
     gesehen[eigen] = meta.content_hash

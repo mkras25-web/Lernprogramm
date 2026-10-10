@@ -1,6 +1,6 @@
 import LokalBild from './LokalBild.jsx'
 
-export default function Erklaerstueck({ thema, onLernen, onZurueck }) {
+export default function Erklaerstueck({ thema, anzahlHeute, onLernen, onUeben, onZurueck }) {
   const e = thema.erklaerung
 
   return (
@@ -39,9 +39,16 @@ export default function Erklaerstueck({ thema, onLernen, onZurueck }) {
       {e?.quelle && <p className="quelle">{e.quelle}</p>}
 
       <div className="steuerung">
-        <button className="knopf haupt" onClick={onLernen}>
-          {thema.anzahl} Items lernen
-        </button>
+        {anzahlHeute > 0 ? (
+          <button className="knopf haupt" onClick={onLernen}>
+            {anzahlHeute} {anzahlHeute === 1 ? 'Item' : 'Items'} lernen
+          </button>
+        ) : (
+          // Nichts faellig: der Knopf startete frueher still gar nichts.
+          <button className="knopf haupt" onClick={onUeben}>
+            Heute nichts fällig – trotzdem üben
+          </button>
+        )}
       </div>
     </div>
   )

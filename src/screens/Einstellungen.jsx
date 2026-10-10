@@ -13,7 +13,7 @@ import {
 // zeigen, ob der Speicher trotz mehrerer Profile mit eigener IndexedDB
 // noch unauffaellig ist.
 function alsMB(bytes) {
-  return (bytes / (1024 * 1024)).toFixed(1)
+  return (bytes / (1024 * 1024)).toLocaleString('de-DE', { minimumFractionDigits: 1, maximumFractionDigits: 1 })
 }
 
 function useSpeicherSchaetzung() {
@@ -519,8 +519,8 @@ export default function Einstellungen({
           <article className="grosseKarte" style={{ maxWidth: '44rem' }} onClick={(e) => e.stopPropagation()}>
             <h2 className="ueberschrift">Farbpalette</h2>
             <p className="nebentext">
-              Die Auswahl wirkt sofort. Bei einigen Paletten habe ich einen dunklen Neutralton
-              ergänzt, weil sonst kein Text lesbar wäre.
+              Die Auswahl wirkt sofort. Einige Paletten haben einen ergänzten dunklen
+              Neutralton, damit Text lesbar bleibt.
             </p>
             <div className="palettenfenster">
               {PALETTEN.map((pa) => (
