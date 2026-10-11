@@ -279,6 +279,8 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   font-family: var(--serife);
   font-size: 1.375rem;
   line-height: 1.1;
+  /* Kennzahlen mit Textwert (etwa Notenstufen) duerfen umbrechen */
+  overflow-wrap: anywhere;
 }
 
 .kennzahlEinheit { font-size: 0.8125rem; color: var(--rinde); }
@@ -340,7 +342,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .bandKarte img { width: 100%; height: 5rem; object-fit: contain; }
 
 /* Themen */
-.reiter { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.reiter { display: flex; flex-wrap: wrap; gap: 0.375rem; }
 
 .reiterKnopf {
   font: inherit;
@@ -366,6 +368,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
+  grid-auto-rows: 1fr;
 }
 
 .kachel {
@@ -384,11 +387,12 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   color: inherit;
   cursor: pointer;
   box-shadow: var(--schatten);
+  height: 100%;
 }
 
 .kachel.gesperrt { opacity: 0.45; cursor: default; box-shadow: none; }
 .kachelTitel { font-family: var(--serife); font-size: 1rem; }
-.kachelZeile { font-size: 0.75rem; color: var(--rinde); }
+.kachelZeile { margin: 0; font-size: 0.75rem; line-height: 1.35; color: var(--rinde); overflow-wrap: break-word; hyphens: auto; }
 
 .marke {
   position: absolute;
@@ -409,6 +413,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.75rem;
+  grid-auto-rows: 1fr;
 }
 
 .karte {
@@ -496,7 +501,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .feld.stufe4 { background: var(--tusche); }
 
 .saeulen { display: flex; align-items: flex-end; gap: 0.5rem; height: 6rem; }
-.saeule { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+.saeule { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; position: relative; }
 .saeuleFuellung { background: var(--fortschritt); border-radius: 2px 2px 0 0; min-height: 2px; }
 .saeuleName { font-size: 0.6875rem; color: var(--rinde); text-align: center; padding-top: 0.25rem; }
 
@@ -519,7 +524,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .baustelleZahl { font-size: 0.75rem; color: var(--warnung); }
 
 /* Lernen */
-.lernschirm { gap: 1.25rem; }
+.lernschirm { gap: 1.25rem; min-height: calc(100dvh - 2rem); justify-content: flex-start; }
 .lernkopf { display: flex; align-items: center; gap: 1rem; }
 .schnitt { flex: 1; display: flex; gap: 2px; height: 0.5rem; }
 .schicht { flex: 1; border: 1px solid var(--linie); border-radius: 1px; }
@@ -537,7 +542,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   to { opacity: 0.55; }
 }
 
-.karteninhalt { display: flex; flex-direction: column; gap: 1rem; }
+.karteninhalt { display: flex; flex-direction: column; gap: 1rem; max-width: 58rem; }
 
 .herkunft {
   margin: 0;
@@ -570,6 +575,8 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  max-width: 58rem;
+  animation: aufblenden 200ms ease;
 }
 
 .antworttext { margin: 0; font-family: var(--serife); font-size: 1.0625rem; line-height: 1.6; }
@@ -793,15 +800,17 @@ html[data-palette="kalk"] {
 
 html[data-palette="terracotta"] {
   --papier: #f6ede4; --flaeche: #fcf6ef; --flaeche-tief: #ecd9c6;
-  --akzent: #c1734a; --lehm: #b08968; --rinde: #7a5c48;
+  --akzent: #c1734a; --lehm: #b08968;
   --tusche: #43312a; --linie: #e2d3c2; --warnung: #9a3b1f;
+  --rinde: #6c5040; /* abgedunkelt auf 4,5:1 (47A) */
 }
 
 html[data-palette="marine"] {
   --papier: #f1faee; --flaeche: #f8fdf6; --flaeche-tief: #cbe8e6;
-  --akzent: #457b9d; --lehm: #8fc3c6; --rinde: #3d6b87;
+  --akzent: #457b9d; --lehm: #8fc3c6;
   --tusche: #1d3557; --linie: #cfe3e0;
   --warnung: #d23440; /* war #e63946, 3.90:1 -> 4.56:1 */
+  --rinde: #335c75; /* abgedunkelt auf 4,5:1 (47A) */
 }
 
 /* Signal: #8d99ae traegt als Text nur 2,5:1, deshalb ein dunklerer
@@ -824,9 +833,10 @@ html[data-palette="ocker"] {
    sind ergaenzt, die sieben Farben bleiben fuer Akzente und Marken. */
 html[data-palette="spektrum"] {
   --papier: #fbf7f0; --flaeche: #fffdf8; --flaeche-tief: #fdeccb;
-  --akzent: #43aa8b; --lehm: #f8961e; --rinde: #577590;
+  --akzent: #43aa8b; --lehm: #f8961e;
   --tusche: #2f3e46; --linie: #ece4d6;
   --warnung: #d03639; /* war #f94144, 3.35:1 -> 4.61:1 */
+  --rinde: #496480; /* abgedunkelt auf 4,5:1 (47A) */
 }
 
 html[data-palette="kupfer"] {
@@ -838,9 +848,10 @@ html[data-palette="kupfer"] {
 
 html[data-palette="seekarte"] {
   --papier: #d9dcd6; --flaeche: #e9ebe6; --flaeche-tief: #b9d6e2;
-  --akzent: #3a7ca5; --lehm: #81c3d7; --rinde: #2f6690;
+  --akzent: #3a7ca5; --lehm: #81c3d7;
   --tusche: #16425b; --linie: #c4c8bf;
   --warnung: #9f442c; /* war #a4462d, 4.34:1 -> 4.54:1 */
+  --rinde: #24557a; /* abgedunkelt auf 4,5:1 (47A) */
 }
 
 /* Lagune: #06d6a0 und #ffc43d sind reine Fuellfarben, fuer Text zu
@@ -886,8 +897,9 @@ html[data-palette="amethyst"] {
 
 html[data-palette="fjord"] {
   --papier: #eef2f3; --flaeche: #f7fafb; --flaeche-tief: #dbe6e8;
-  --akzent: #c96b56; --lehm: #8aa3aa; --rinde: #51707a;
+  --akzent: #c96b56; --lehm: #8aa3aa;
   --tusche: #22333a; --linie: #cdd8da; --warnung: #a13d33;
+  --rinde: #44616a; /* abgedunkelt auf 4,5:1 (47A) */
 }
 
 html[data-palette="waldgruen"] {
@@ -935,17 +947,18 @@ html[data-palette="graphit"] mark { background: #1f4750; }
      --spaltenbreite gerade gesetzt ist. Navigation soll immer am
      linken Rand anliegen. */
   .huelle {
-    max-width: var(--spaltenbreite);
     margin: 0;
     display: grid;
     grid-template-columns: 12rem minmax(0, 1fr);
     gap: 2.5rem;
     padding: 0 2rem;
+    max-width: none;
   }
 
   .huelle.einspaltig {
     display: block;
     max-width: var(--spaltenbreite);
+    margin: 0 auto;
   }
 
   .schirm { padding: 2.5rem 0 3rem; gap: 2.25rem; }
@@ -978,7 +991,9 @@ html[data-palette="graphit"] mark { background: #1f4750; }
   .navKnopf.aktiv {
     border-top-color: transparent;
     border-left-color: var(--fortschritt);
-    background: var(--flaeche);
+    /* 46A: aktiver Eintrag deutlicher (auch in dunklen Paletten) */
+    font-weight: 600;
+    background: var(--flaeche-tief);
   }
 
   /* Startbildschirm: Kopfbereich dreispaltig, Rest ueber volle Breite */
@@ -994,7 +1009,7 @@ html[data-palette="graphit"] mark { background: #1f4750; }
   .kennzahlen { grid-template-columns: repeat(4, 1fr); }
   .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
 
-  .aufruf { flex-wrap: nowrap; }
+  .aufruf { flex-wrap: nowrap; justify-content: flex-start; }
   .aufruf > div { min-width: 12rem; }
   .aufruf > button.knopf { flex: none; }
 
@@ -1049,7 +1064,6 @@ html[data-palette="graphit"] mark { background: #1f4750; }
   /* Der Steuerungsblock hatte eine Maximalbreite, aber keine
      Zentrierung - dadurch klebte er am linken Rand, waehrend die Frage
      im zweispaltigen Raster sass. */
-  .lernschirm .steuerung { max-width: 44rem; margin-left: auto; margin-right: auto; }
   .bewertung { max-width: 44rem; }
 }
 
@@ -1102,10 +1116,10 @@ html[data-palette="graphit"] mark { background: #1f4750; }
 }
 
 .palette.aktiv { border-color: var(--tusche); color: var(--tusche); }
-.palettenstreifen { display: flex; }
-.palettenstreifen span { width: 1.25rem; height: 1.25rem; }
-.palettenstreifen span:first-child { border-radius: 2px 0 0 2px; }
-.palettenstreifen span:last-child { border-radius: 0 2px 2px 0; }
+.palettenstreifen { display: flex; flex: 0 0 auto; }
+.palettenstreifen span { width: 1.5rem; height: 1.5rem; }
+.palettenstreifen span:first-child { border-radius: 3px 0 0 3px; }
+.palettenstreifen span:last-child { border-radius: 0 3px 3px 0; }
 
 .schieber { width: 11rem; accent-color: var(--fortschritt); }
 .knopf.gefahr { border-color: var(--warnung); color: var(--warnung); }
@@ -1275,8 +1289,8 @@ html[data-animationen="aus"] * { animation: none !important; transition: none !i
 
 @media print {
   .navigation, .steuerung, .arten, .werkzeuge { display: none; }
-  .huelle { display: block; max-width: none; }
-  .kartengitter { grid-template-columns: repeat(3, 1fr); }
+  .huelle { display: block; max-width: none; padding: 0; }
+  .kartengitter { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
 }
 
 /* ------------------------------------------------------------------
@@ -1370,15 +1384,10 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 @media (min-width: 40rem) {
   .palettenfenster { grid-template-columns: 1fr 1fr; max-width: 42rem; }
 }
-
-.palettenstreifen { display: flex; flex: 0 0 auto; }
-.palettenstreifen span { width: 1.5rem; height: 1.5rem; }
-.palettenstreifen span:first-child { border-radius: 3px 0 0 3px; }
-.palettenstreifen span:last-child { border-radius: 0 3px 3px 0; }
 .paletteName { flex: 1; text-align: left; }
 .paletteHaken { color: var(--tusche); }
 
-.themenzeile.geplant { opacity: 0.5; cursor: default; background: transparent; border-style: dashed; }
+.themenzeile.geplant { cursor: default; background: transparent; border-style: dashed; opacity: 1; }
 
 /* ------------------------------------------------------------------
    Sichtung, Tastenkuerzel, Lupe
@@ -1396,7 +1405,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 
 .knopf.vorschlag { border-width: 2px; border-color: var(--tusche); font-weight: 600; }
 
-.urteilZeile { margin: 0 0 0.625rem; font-size: 0.8125rem; }
+.urteilZeile { margin: 0 0 0.625rem; font-size: 0.8125rem; text-align: center; }
 .urteilZeile.richtig { color: var(--rinde); }
 .urteilZeile.falsch { color: var(--warnung); }
 
@@ -1538,7 +1547,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 
 /* Meilensteine */
 .karte.meilenstein { cursor: default; }
-.meilensteinZeichen { font-size: 2rem; color: var(--lehm); }
+.meilensteinZeichen { font-size: 2.25rem; color: var(--lehm); }
 .karte.verschlossen .meilensteinZeichen { color: var(--linie); }
 
 /* Pruefung */
@@ -1664,8 +1673,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 }
 
 .bildpunkt {
-  position: absolute;
-  transform: translate(-50%, -50%);
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 50%;
@@ -1675,6 +1682,8 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   font: inherit;
   font-size: 0.8125rem;
   cursor: pointer;
+  position: static;
+  transform: none;
 }
 
 .bildpunkt.gewaehlt { background: var(--tusche); color: var(--papier); }
@@ -1708,19 +1717,13 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 /* "haupt" setzt volle Breite - in einer Knopfreihe waere das falsch. */
 .arten .knopf.haupt { width: auto; min-width: 14rem; }
 
-.urteilZeile { text-align: center; }
-
 /* Erklaerstueck und Pruefung nutzen dieselbe Leiste */
 .schirm > .steuerung { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 .schirm > .steuerung > .knopf.haupt { width: auto; min-width: 16rem; }
 
-/* Kennzahlen mit Textwert (etwa Notenstufen) brauchen kleinere Schrift */
-.kennzahlWert { overflow-wrap: anywhere; }
-
 /* ------------------------------------------------------------------
    Fachbereiche und Phasen
    ------------------------------------------------------------------ */
-.reiter { gap: 0.375rem; }
 
 .reiterZahl {
   margin-left: 0.4rem;
@@ -1812,9 +1815,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
    ------------------------------------------------------------------ */
 @media print {
   .navigation, .steuerung, .arten, .werkzeuge, .themenKopf button, .reiter { display: none !important; }
-  .huelle { display: block; max-width: none; padding: 0; }
   .schirm { padding: 0; gap: 1rem; }
-  .kartengitter { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
   .karte, .kennzahl, .trefferKarte { break-inside: avoid; box-shadow: none; }
   .karte.verschlossen { display: none; }
   .schleier { display: none; }
@@ -1831,6 +1832,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: 0.75rem;
+  grid-auto-rows: 1fr;
 }
 
 .artKachel {
@@ -1848,10 +1850,13 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
   cursor: pointer;
   box-shadow: var(--schatten);
   transition: border-color 150ms ease, transform 150ms ease;
+  height: 100%;
+  justify-content: flex-start;
 }
 
 .artKachel.aus { opacity: 0.4; cursor: default; box-shadow: none; }
-.artZeichen { font-size: 1.75rem; line-height: 1; color: var(--fortschritt); }
+/* Farbe: Akzentton, aber abgedunkelt (war bis 1,5:1) */
+.artZeichen { font-size: 1.75rem; line-height: 1; color: color-mix(in srgb, var(--fortschritt) 50%, var(--tusche)); }
 .artTitel { font-family: var(--serife); font-size: 1.0625rem; }
 .artText { font-size: 0.8125rem; color: var(--rinde); }
 
@@ -1884,6 +1889,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
      vorhandenen Karten strecken. */
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: 0.625rem;
+  grid-auto-rows: 1fr;
 }
 
 .bestwert {
@@ -1918,6 +1924,7 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
      Platz und lief seitlich ueber. */
   grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
   gap: 0.5rem;
+  grid-auto-rows: 1fr;
 }
 
 .fortschrittKachel {
@@ -1936,14 +1943,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 /* Vollstaendiger Text statt Auslassung: Umbruch ist erlaubt, die
    gleiche Kachelhoehe kommt aus grid-auto-rows. Lange deutsche
    Komposita duerfen trennen, statt die Kachel zu sprengen. */
-.kachelZeile {
-  margin: 0;
-  font-size: 0.75rem;
-  line-height: 1.35;
-  color: var(--rinde);
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
 
 .kachelZeile.stark {
   font-family: var(--serife);
@@ -1960,21 +1959,13 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
    Ort, der sich nicht bewegt. Deshalb steht die Steuerungsleiste
    immer unten, unabhaengig davon, wie lang die Antwort ausfaellt.
    ------------------------------------------------------------------ */
-.lernschirm {
-  min-height: calc(100dvh - 2rem);
-  justify-content: flex-start;
-}
 
 .lernschirm .steuerung { margin-top: auto; padding-top: 1.5rem; }
-
-.karteninhalt { max-width: 58rem; }
-.antwort { max-width: 58rem; }
 .lernRaster:not(.einspurig) .karteninhalt,
 .lernRaster:not(.einspurig) .antwort { max-width: none; }
 
 /* Die Antwort erscheint ohne Sprung: der Block hat von Anfang an
    dieselbe Ausrichtung wie die Frage. */
-.antwort { animation: aufblenden 200ms ease; }
 
 @keyframes aufblenden {
   from { opacity: 0; }
@@ -1993,30 +1984,16 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 /* ------------------------------------------------------------------
    Kacheln gleich hoch - auch bei unterschiedlich langem Text
    ------------------------------------------------------------------ */
-.artKacheln { grid-auto-rows: 1fr; }
 .artKacheln li { display: flex; }
 
-.artKachel {
-  height: 100%;
-  justify-content: flex-start;
-}
-
 .artKachel .artText { margin-top: auto; }
-
-.kacheln { grid-auto-rows: 1fr; }
 .kacheln li { display: flex; }
-.kachel { height: 100%; }
-
-.kartengitter { grid-auto-rows: 1fr; }
 /* min-width:0 - ohne das wachsen Grid-Zellen mit besonders langem,
    nicht umgebrochenem Titel (min-width:auto ist der Grid-Standard)
    ueber ihre 1fr-Spaltenbreite hinaus, nur diese eine Spalte lief dann
    ueber den Rand hinaus. */
 .kartengitter li { display: flex; min-width: 0; }
 .kartengitter .karte { height: 100%; }
-
-.bestwerte { grid-auto-rows: 1fr; }
-.fortschrittKacheln { grid-auto-rows: 1fr; }
 
 /* ------------------------------------------------------------------
    Pruefung: gleiche Ruhe wie im Lernbildschirm
@@ -2075,7 +2052,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
    dessen Kreis das Auswahlfenster des Nachbarn verdecken. */
 .bildpunktHuelle { position: absolute; transform: translate(-50%, -50%); }
 .bildpunktHuelle.offen { z-index: 2; }
-.bildpunkt { position: static; transform: none; }
 .bildpunkt.belegt { background: var(--flaeche-tief); border-color: var(--rinde); }
 
 .punktName {
@@ -2277,7 +2253,6 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 .karte.meilenstein.frei { border-color: var(--lehm); }
 .karte.meilenstein .kartenBild { aspect-ratio: 4 / 3; background: var(--flaeche); border: none; }
 .karte.meilenstein.frei .kartenBild { background: var(--flaeche-tief); }
-.meilensteinZeichen { font-size: 2.25rem; color: var(--lehm); }
 
 /* ------------------------------------------------------------------
    Nachschlagen und Sichten
@@ -2543,7 +2518,8 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 .stempel.stufe-4 { --stufe-a: #f3f7f8; --stufe-b: #c9d3d6; --stufe-rand: #7c8f96; --stufe-text: #223034; }
 .stempel.stufe-5 { --stufe-a: #6ea3e0; --stufe-b: #1c4d8f; --stufe-rand: #123a70; --stufe-text: #eef4ff; }
 .stempel.stufe-6 { --stufe-a: #e0637a; --stufe-b: #8c1c33; --stufe-rand: #5c0f1f; --stufe-text: #fff0f2; }
-.stempel.stufe-7 { --stufe-a: #eafcff; --stufe-b: #a6e8ef; --stufe-rand: #4fb8c4; --stufe-text: #123840; }
+.stempel.stufe-7 { --stufe-a: #eafcff; --stufe-b: #a6e8ef; --stufe-rand: #4fb8c4; --stufe-text: #123840; border-width: 3px; box-shadow: 0 0 16px color-mix(in srgb, var(--stufe-rand) 60%, transparent),
+              inset 0 0 10px rgba(255, 255, 255, 0.6); }
 
 .stempel.frei {
   background: linear-gradient(135deg, var(--stufe-a), var(--stufe-b));
@@ -2557,11 +2533,6 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
    Schimmer - die Karte soll mit jeder Stufe sichtbar wertvoller wirken. */
 .stempel.stufe-3, .stempel.stufe-4 { border-width: 2px; }
 .stempel.stufe-5, .stempel.stufe-6 { border-width: 3px; box-shadow: 0 0 10px color-mix(in srgb, var(--stufe-rand) 45%, transparent); }
-.stempel.stufe-7 {
-  border-width: 3px;
-  box-shadow: 0 0 16px color-mix(in srgb, var(--stufe-rand) 60%, transparent),
-              inset 0 0 10px rgba(255, 255, 255, 0.6);
-}
 
 /* Icon waechst und beginnt ab Saphir zu leuchten - die zweite,
    vom Material unabhaengige Weiterentwicklung pro Stufe. */
@@ -2875,14 +2846,13 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   .reiterKnopf { padding: 0.5rem 0.75rem; }
   .themenliste { gap: var(--abstand-gruppe); margin-top: var(--abstand-titel); }
   .themenzeile { gap: var(--abstand-liste) 0.875rem; align-items: flex-start; }
-  .themenzeileAktionen { align-self: center; }
+  .themenzeileAktionen { align-self: center; gap: var(--abstand-gruppe); }
   .phaseMarke { margin-left: 0.375rem; }
   .themaInfo { display: flex; flex-direction: column; gap: 0.25rem; }
   /* Browser-Standardabstand der <p> (1em) riss Titel und Infozeile
      auseinander und schob den Titel unter das Symbol daneben. */
   .themaInfo > * { margin: 0; }
   .themaTitel { line-height: 1.35; }
-  .themenzeileAktionen { gap: var(--abstand-gruppe); }
   .artKnopf { min-height: 2.5rem; }
 
   /* --- Einstellungen ----------------------------------------------- */
@@ -2897,7 +2867,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   .zeile > .zeileText { flex: 1 1 100%; max-width: none; }
   .nurDesktop { display: none; }
   .zeileText { gap: 0.25rem; }
-  .wahl { gap: var(--abstand-gruppe); }
+  .wahl { gap: var(--abstand-gruppe); align-items: center; }
   .wahlKnopf { padding: 0.5rem 0.875rem; }
   .groessenKnopf { min-width: 2.75rem; min-height: 2.5rem; }
   .palettenwahl { gap: var(--abstand-gruppe); }
@@ -2923,7 +2893,6 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   .treffer { gap: var(--abstand-liste); }
   /* Filterkopf: "Marke:" auf Hoehe der Chips, Themenauswahl volle Breite,
      Auswahl-Checkbox gross genug zum Antippen. */
-  .wahl { align-items: center; }
   .zeile > .paarWahl { flex: 1 1 100%; max-width: 100%; min-height: 2.75rem; }
   .sichtungKopf input[type="checkbox"] { width: 1.25rem; height: 1.25rem; margin-top: 0.125rem; flex-shrink: 0; }
   /* Formeltext wie "W/(m·K)" hat keine Umbruchstelle und lief bei
@@ -3107,24 +3076,13 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   box-shadow: none;
 }
 .pruefKachel.aus .pruefTitel, .artKachel.aus .artTitel, .kachel.gesperrt .kachelTitel { color: var(--rinde); }
-.themenzeile.geplant { opacity: 1; }
 .themenzeile.geplant .themaTitel { color: var(--rinde); }
 /* Kleine Texte in --lehm (helle Erdfarbe) -> Nebentextfarbe */
 .artFuss, .planZeichen, .bestwertZusatz, .punktwahlHinweis { color: var(--rinde); }
 .trefferOeffnen .zeileHinweis, .feldhinweis, .kategorieMarke.k-streichen { opacity: 1; }
-/* Symbole der Betriebsarten: Akzentton, aber abgedunkelt (war bis 1,5:1) */
-.artZeichen { color: color-mix(in srgb, var(--fortschritt) 50%, var(--tusche)); }
 /* Offene Meilensteine: blasser Rahmen bleibt, Schrift lesbar */
 .stempel.offen .stempelZeichen, .stempel.offen .stempelTitel, .stempel.offen .stempelFuss { opacity: 1; color: var(--rinde); }
 .stempelMaterial, .stempelFuss { opacity: 1; }
-
-/* Paletten, deren Nebentextfarbe knapp unter 4,5:1 lag (4,0-4,4):
-   minimal abgedunkelt, Charakter bleibt. */
-html[data-palette="terracotta"] { --rinde: #6c5040; }
-html[data-palette="marine"] { --rinde: #335c75; }
-html[data-palette="spektrum"] { --rinde: #496480; }
-html[data-palette="seekarte"] { --rinde: #24557a; }
-html[data-palette="fjord"] { --rinde: #44616a; }
 
 /* Ring in Kacheln: Ring ist selbst ein div und wuchs mit der Regel fuer
    den Textblock mit (stand dann mitten in der Kachel). */
@@ -3135,7 +3093,6 @@ html[data-palette="fjord"] { --rinde: #44616a; }
 
 /* Fortschritt (42A): Zahlen an Saeulen, Kalender mit Monaten/Legende,
    Beherrschung als Verlauf hell -> kraeftig */
-.saeule { position: relative; }
 .saeuleZahl { font-size: 0.6875rem; color: var(--rinde); text-align: center; line-height: 1.2; }
 .kalenderMonate { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; margin-bottom: 0.25rem; font-size: 0.6875rem; color: var(--rinde); }
 .kalenderMonate span { white-space: nowrap; overflow: visible; }
@@ -3167,13 +3124,11 @@ html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette
 @media (min-width: 60rem) {
   /* 36A: Seitenleiste bleibt links, der Inhalt wird im restlichen Platz
      zentriert statt bei 2560px links zu kleben. */
-  .huelle { max-width: none; }
   .huelle:not(.einspaltig) > .schirm {
     width: 100%;
     max-width: calc(var(--spaltenbreite) - 18.5rem);
     justify-self: center;
   }
-  .huelle.einspaltig { margin: 0 auto; }
 
   /* 44A: Seitenleiste gruppiert, Profil und Stufe unten */
   .navGruppe {
@@ -3205,14 +3160,11 @@ html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette
   .navFussName { font-size: 0.9375rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .navFussStufe { font-size: 0.75rem; color: var(--rinde); }
   .navigation .paketSchalter { margin: 0 0 0.5rem 0.75rem; }
-  /* 46A: aktiver Eintrag deutlicher (auch in dunklen Paletten) */
-  .navKnopf.aktiv { font-weight: 600; background: var(--flaeche-tief); }
 
   /* 41A: Heute - fuenf Kennzahlen in einer Zeile, Lernen bleibt die
      einzige Hauptflaeche, Durchblaettern als Link */
   .heuteRaster > .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .heuteRaster > .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
-  .aufruf { justify-content: flex-start; }
   /* Der Ring ist selbst ein div und wuchs mit "flex: 1 1 12rem" (Regel
      fuer den Textblock) mit - stand dann mitten in der Leerflaeche. */
   .aufruf > .ring { flex: 0 0 auto; min-width: 0; }
@@ -3223,6 +3175,8 @@ html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette
 
   /* 37A: Bewertungsleiste breit und fest am unteren Rand, wie mobil */
   .lernschirm .steuerung {
+    margin-left: auto;
+    margin-right: auto;
     position: sticky;
     bottom: 0;
     z-index: 5;
