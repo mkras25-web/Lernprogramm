@@ -9,8 +9,9 @@ import Bauabschnitt from './Bauabschnitt.jsx'
 // ︎ (Text-Darstellungs-Selektor) hinter jedem Symbol - ohne das
 // rendert Safari z. B. das Zahnrad farbig als Emoji, obwohl alle
 // anderen Symbole hier einfache einfarbige Linienzeichen bleiben.
-// gruppe: Ueberschrift in der Desktop-Seitenleiste (44A) - Lernen,
-// Nachschlagen, Auswertung; Einstellungen unten abgesetzt.
+// gruppe: urspruenglich Ueberschriften der Desktop-Seitenleiste (44A); auf
+// Wunsch 2026-10-11 wieder entfernt (zu unruhig). Wirksam ist nur noch
+// 'unten': Einstellungen per Trennlinie abgesetzt.
 const NAVIGATION = [
   { id: 'heute', titel: 'Heute', symbol: '◴︎', gruppe: 'Lernen' },
   { id: 'themen', titel: 'Themen', symbol: '▤︎', gruppe: 'Lernen' },
@@ -77,11 +78,8 @@ export default function Navigation({
         {paketliste.length > 1 && (
           <PaketSchalter paketliste={paketliste} aktiv={aktivesPaket} onWahl={onPaketWahl} />
         )}
-        {NAVIGATION.map((n, i) => (
+        {NAVIGATION.map((n) => (
           <Fragment key={n.id}>
-            {n.gruppe !== 'unten' && n.gruppe !== NAVIGATION[i - 1]?.gruppe && (
-              <span className="navGruppe">{n.gruppe}</span>
-            )}
             {n.gruppe === 'unten' && <span className="navTrenner" aria-hidden="true" />}
             <button
               className={navAktiv(n.id, ansicht) ? 'navKnopf aktiv' : 'navKnopf'}

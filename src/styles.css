@@ -3130,16 +3130,8 @@ html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette
     justify-self: center;
   }
 
-  /* 44A: Seitenleiste gruppiert, Profil und Stufe unten */
-  .navGruppe {
-    margin: 0.875rem 0 0.25rem 0.75rem;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--rinde);
-  }
-  .navGruppe:first-of-type { margin-top: 0.25rem; }
+  /* 44A: Profil und Stufe unten, Einstellungen per Linie abgesetzt
+     (Gruppenueberschriften auf Wunsch 2026-10-11 entfernt) */
   .navTrenner { display: block; height: 1px; margin: 0.75rem 0.75rem 0.5rem 0; background: var(--linie); }
   .navFuss {
     margin-top: auto;

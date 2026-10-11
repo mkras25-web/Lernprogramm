@@ -109,6 +109,10 @@ export async function profilLoeschen(id) {
   // laden" als schon gelesen - der leere lokale Stand ueberschrieb dann die
   // einzige Sicherung (nachgewiesen 2026-10-10, Test in abgleich.test.js).
   for (const art of ['gesehen', 'upload', 'stand']) localStorage.removeItem(`dropbox_${art}_${id}`)
+  // Zuletzt gesehener Inhaltsstand je Paket (22A, App.jsx)
+  for (const k of Object.keys(localStorage)) {
+    if (k.startsWith(`paketstand_${id}_`)) localStorage.removeItem(k)
+  }
   if (aktivesProfilId() === id) localStorage.removeItem(AKTIV_SCHLUESSEL)
   await datenbankLoeschen(id)
 }
