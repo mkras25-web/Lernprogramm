@@ -1,0 +1,874 @@
+{
+ "thema": "bp-luftschall",
+ "titel": "Luftschallschutz",
+ "lernziele": [
+  "Du kannst Luftschall und Körperschall unterscheiden und die Wege benennen, auf denen Schall von außen in einen Raum gelangt.",
+  "Du kannst die drei Strategien gegen Luftschallübertragung erklären und sagen, wann das Masse-Feder-Masse-Prinzip wirkt und wann nicht.",
+  "Du kannst begründen, warum die Anschlussfuge über das Ergebnis entscheidet, und das erforderliche Fugenschalldämmmaß abschätzen.",
+  "Du kannst den Weg vom Außenlärmpegel zum erforderlichen Schalldämmmaß der Einzelbauteile beschreiben."
+ ],
+ "erklaerung": {
+  "absaetze": [
+   "Schall kommt auf mehreren Wegen in den Raum, und nur einer davon führt durch das Fenster. Luftschall breitet sich von seiner Quelle kugelförmig durch die Luft aus; wird ein festes Material angeregt, entsteht Körperschall, der in den Bauteilen weiterläuft und anderswo wieder als Luftschall abgestrahlt wird. Deshalb gelten schallschutztechnische Anforderungen nie dem Fenster allein, sondern dem gesamten Außenbauteil im eingebauten Zustand: Fenster, Rollladenkästen, Lüftungseinrichtungen und die Außenwand mit ihren Bauanschlüssen. Die Anforderung wird als resultierendes Schalldämmmaß erf. R'w,res an die Summe aller Einzelbauteile gestellt.",
+   "Gegen die Übertragung durch die Fläche gibt es drei Strategien. Die erste ist Masse: Ein Bauteil aus Material hoher Dichte und ausreichender Dicke ist träge und lässt sich von Luftschallwellen nur schwer zum Schwingen anregen. Die zweite ist die möglichst effektive Abdichtung aller Fugen, Spalten und Ritzen. Die dritte ist die zweischalige Konstruktion ohne starre Verbindungsmittel mit gedämmtem Zwischenraum — das Prinzip Masse-Feder-Masse. Es wirkt besonders gut, wenn beide Schalen unterschiedliche Masse und verschiedene Koinzidenzgrenzfrequenzen haben, hat aber einen Preis: die Systemeigenfrequenz, bei der sich die Dämmung zunächst verschlechtert und die deshalb möglichst tief liegen sollte. Eine einzige starre Verbindung — eine Schallbrücke — hebt die Wirkung wieder auf; dagegen hilft nur die schalltechnische Entkopplung.",
+   "Öffnungselemente sind fast immer die Schwachstelle: viele Materialwechsel, konstruktive Fugen und gegenüber der Wand ein geringeres Flächengewicht. Schallschutzfenster begegnen dem mit einer Isolierverglasung mit asymmetrischem Aufbau — außen und innen Scheiben unterschiedlicher Dicke und damit verschiedener Eigenresonanzfrequenzen. Welche davon außen liegt, ist schalltechnisch gleichgültig; aus Gründen der Windlast wird meist die dickere nach außen gesetzt. Eine Dreifachverglasung bringt dagegen kaum etwas: Die Werte sind mit Rw bis etwa 50 dB vergleichbar, und die Mittelscheibe hat praktisch keinen Einfluss.",
+   "Über das Ergebnis entscheidet am Ende die Anschlussfuge. Dasselbe Fenster, das nach Prüfnorm 45 dB erreicht, kommt mit voll ausgeschäumter Fuge auf 43 dB, mit einem einzigen Keilloch im Schaum auf 33 dB, mit einer umlaufenden Haarfuge auf 32 dB und mit leerer Fuge auf 12 dB. Bereits kleine Löcher können das Gesamtergebnis um mehr als 10 dB verschlechtern — auch deshalb, weil der Schalldruck an Kanten etwa das Vierfache und in Ecken das Sechzehnfache des Werts in Elementmitte beträgt. Als Richtwert gilt RST,w ≥ Rw,R + 10 dB; dann verliert das Fenster durch die Fuge nicht mehr als 1 dB. Die Abdichtung muss umlaufend, weichfedernd, dauerelastisch, alterungsbeständig und leicht auswechselbar sein.",
+   "Der Nachweis geht raumweise vor: erst den Lärmpegelbereich aus dem maßgeblichen Außenlärmpegel bestimmen, dann das erforderliche resultierende Schalldämmmaß aus Lärmpegelbereich und Raumart ablesen, dann die Korrektur nach dem Verhältnis von Außenbauteilfläche zu Raumgrundfläche anbringen und zuletzt die Anforderung nach Flächenanteilen auf die Einzelbauteile aufteilen. Und noch eine Folge gehört dazu: Eine umlaufend dichte Fuge macht den Falzraum so dicht, dass der Mindestluftwechsel bei geschlossenem Fenster nicht mehr sichergestellt ist. Wer Schallschutz plant, plant deshalb die Lüftung mit."
+  ],
+  "merksatz": "Das Fenster kann nur so leise sein wie seine Fuge.",
+  "bild": "bilder/bp-luftschall-wege.svg",
+  "bildunterschrift": "Sechs Wege führen den Schall in den Raum; die Anforderung gilt ihnen allen zusammen.",
+  "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 66–69, und Werkstoffe und Komponenten, Konstruktionsarten, S. 100"
+ },
+ "siehe": [
+  "bp-luftdicht",
+  "bk-fenster",
+  "bk-aw-zweischalig"
+ ],
+ "items": [
+  {
+   "id": "bp-ls-001",
+   "typ": "karte",
+   "frage": "Wie unterscheiden sich Luftschall und Körperschall, und wann spricht man von Schalldämmung, wann von Schallabsorption?",
+   "antwort": "Luftschall breitet sich von seiner Quelle annähernd kugelförmig durch das Medium Luft aus. Körperschall entsteht, wenn ein festes Material angeregt wird, etwa durch Schritte auf dem Boden; in den Bauteilen breiten sich Schallwellen aus, die bei direktem Kontakt die Luft auf der anderen Seite wieder anregen und dort als Luftschall weitertransportiert werden. Befinden sich Schallquelle und Nutzer in getrennten räumlichen Bereichen, spricht man von Schalldämmung; sind beide im gleichen Raum, geht es vor allem um Schallabsorption an den Innenraumoberflächen.",
+   "vertiefung": "Die Unterscheidung ist mehr als Terminologie: Körperschall kann sehr lange Wege zurücklegen. Sind feste Bauteile direkt konstruktiv gekoppelt, also starr miteinander verbunden — eine Installationswand mit der Decke etwa —, breitet sich Schall über große Distanzen aus. Bei flankierenden Bauteilen heißt das Flankenübertragung oder Schalllängsleitung.",
+   "tags": [
+    "luftschall",
+    "körperschall",
+    "grundbegriffe"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-002",
+   "typ": "bildbeschriftung",
+   "frage": "Benennen Sie die sechs Wege, auf denen Luftschall von außen in den Raum gelangt.",
+   "referenz": "bilder/bp-luftschall-wege-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 36.9,
+     "y": 75.9,
+     "name": "Weg durch die Außenwand"
+    },
+    {
+     "nr": 2,
+     "x": 36.9,
+     "y": 48.6,
+     "name": "Weg durch das Fenster"
+    },
+    {
+     "nr": 3,
+     "x": 36.9,
+     "y": 32.7,
+     "name": "Weg durch die Bauteilanschlussfuge"
+    },
+    {
+     "nr": 4,
+     "x": 62.2,
+     "y": 60.8,
+     "name": "flankierende Übertragung über die Decke"
+    },
+    {
+     "nr": 5,
+     "x": 44.2,
+     "y": 55.7,
+     "name": "Schallbrücke am Estrich"
+    },
+    {
+     "nr": 6,
+     "x": 28.7,
+     "y": 24.1,
+     "name": "Rollladenkasten als Einbau"
+    }
+   ],
+   "antwort": "1 der Weg durch die Außenwand, wo die Masse entscheidet. 2 der Weg durch das Fenster, meist das schwächste Einzelbauteil. 3 der Weg durch die Bauteilanschlussfuge. 4 die flankierende Übertragung über die Decke, auch Schalllängsleitung genannt. 5 die Schallbrücke, hier der schwimmende Estrich, der die Wand an einer Stelle berührt. 6 der Rollladenkasten als Einbau.",
+   "vertiefung": "Alle sechs Wege zählen zusammen. Schallschutztechnische Anforderungen gelten für das gesamte Außenbauteil im eingebauten Zustand — neben dem Fenster betrifft das Einbauten wie Rollladenkästen und Lüftungseinrichtungen sowie die Außenwand mit ihren Bauanschlüssen. Die Anforderung wird als resultierendes Schalldämmmaß erf. R'w,res an die Summe aller Einzelbauteile gestellt.",
+   "bild": "bilder/bp-luftschall-wege.svg",
+   "bildunterschrift": "Die sechs Übertragungswege beschriftet.",
+   "tags": [
+    "übertragungswege",
+    "außenbauteil",
+    "flankenübertragung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67–68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-003",
+   "typ": "skizze",
+   "frage": "Skizzieren Sie den Vertikalschnitt durch eine Außenwand mit Fenster und tragen Sie alle Wege ein, auf denen Luftschall in den Raum gelangt.",
+   "referenz": "bilder/bp-luftschall-wege.svg",
+   "pruefpunkte": [
+    "außen und innen sind bezeichnet.",
+    "Ein Weg führt durch die Außenwand selbst.",
+    "Ein Weg führt durch das Fenster.",
+    "Ein Weg führt durch die Bauteilanschlussfuge zwischen Fenster und Wand.",
+    "Der Rollladenkasten ist als eigener Einbau eingezeichnet.",
+    "Die flankierende Übertragung über die Geschossdecke ist dargestellt.",
+    "Eine Schallbrücke ist als starrer Kontakt gekennzeichnet, etwa am Estrich.",
+    "Es wird deutlich, dass die Anforderung dem gesamten Außenbauteil gilt, nicht dem Fenster allein."
+   ],
+   "antwort": "Drei Wege durch das Außenbauteil selbst — Wand, Fenster, Anschlussfuge —, dazu der Rollladenkasten als Einbau, die flankierende Übertragung über die Decke und die Schallbrücke als starrer Kontakt. Zusammen ergeben sie das resultierende Schalldämmmaß.",
+   "vertiefung": "Wer diese Skizze im Kopf hat, erkennt schnell den häufigsten Planungsfehler: Es wird ein teures Fenster ausgeschrieben und der Rest dem Zufall überlassen. Öffnungselemente sind zwar fast immer die Schwachstelle, aber ein gutes Fenster in einer schlechten Fuge bringt nichts.",
+   "tags": [
+    "übertragungswege",
+    "skizze",
+    "außenbauteil"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67–68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-004",
+   "typ": "karte",
+   "frage": "Warum stellen Öffnungselemente fast immer schalltechnische Schwachstellen dar?",
+   "antwort": "Weil sie drei Nachteile auf einmal haben: viele Materialwechsel, konstruktive Fugen und gegenüber den umgebenden Außenwandbauteilen meist ein geringeres Flächengewicht — und damit eine geringere Schalldämmung.",
+   "vertiefung": "Das geringere Flächengewicht ist der Punkt, an dem sich die Physik nicht überlisten lässt: Die wichtigste Maßnahme gegen Luftschallübertragung ist, das Bauteil möglichst schwer und damit träge auszubilden. Ein Fenster kann das naturgemäß nicht leisten, deshalb arbeitet es mit dem zweiten Prinzip, dem Masse-Feder-Masse-System aus mehreren Scheiben.",
+   "tags": [
+    "öffnungselemente",
+    "schwachstelle",
+    "flächengewicht"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67–68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-005",
+   "typ": "mehrfachauswahl",
+   "frage": "Für welche Bauteile gilt die schallschutztechnische Anforderung an ein Außenbauteil?",
+   "optionen": [
+    "für das Fenster",
+    "für Einbauten wie Rollladenkästen",
+    "für Lüftungseinrichtungen",
+    "für die Außenwand mit ihren Bauanschlüssen",
+    "allein für das Fenster, weil es das schwächste Bauteil ist"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig, aber nicht allein — das Fenster ist nur ein Einzelbauteil unter mehreren.",
+    "Richtig. Der Rollladenkasten ist ein Einbau in der Hüllfläche und wird mitgerechnet.",
+    "Richtig. Auch Lüftungseinrichtungen sind Teil des Außenbauteils.",
+    "Richtig. Die Außenwand und die Bauanschlüsse gehören dazu.",
+    "Falsch. Allgemein gelten die Anforderungen für das gesamte Außenbauteil im eingebauten Zustand, nicht für ein Einzelbauteil."
+   ],
+   "antwort": "Richtig sind die ersten vier. Schallschutztechnische Anforderungen gelten für das gesamte Außenbauteil im eingebauten Zustand: Fenster, Einbauten wie Rollladenkästen, Lüftungseinrichtungen und die Außenwand mit Bauanschlüssen. Die Anforderung wird als resultierendes Schalldämmmaß erf. R'w,res an die Summe aller Einzelbauteile gestellt.",
+   "vertiefung": "Aus dieser Summenbetrachtung folgt der Planungsweg: Erst wird die erforderliche resultierende Gesamtschalldämmung bestimmt, dann wird die erforderliche Schalldämmung der einzelnen Bestandteile — etwa der Fenster — anhand der Flächenanteile festgelegt. Ein Fenster mit hohem Rw nützt wenig, wenn daneben ein ungedämmter Rollladenkasten sitzt.",
+   "bild": "bilder/bp-luftschall-wege.svg",
+   "bildunterschrift": "Alle Wege zählen zusammen zum resultierenden Schalldämmmaß.",
+   "tags": [
+    "außenbauteil",
+    "resultierendes schalldämmmaß",
+    "einbauten"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-006",
+   "typ": "karte",
+   "frage": "Welche drei Strategien gibt es gegen die Luftschallübertragung durch ein Bauteil?",
+   "antwort": "Erstens die Erhöhung der Masse: Das Bauteil wird möglichst schwer und damit träge ausgebildet — ein Material mit hoher Dichte und ausreichender Dicke lässt sich durch Luftschallwellen nur in geringem Maße zum Schwingen anregen. Zweitens eine möglichst effektive Abdichtung aller Fugen, Spalten und Ritzen. Drittens eine zweischalige Konstruktion ohne starre Verbindungsmittel mit gedämmtem Zwischenraum, das Prinzip Masse-Feder-Masse.",
+   "vertiefung": "Die drei Strategien wirken gegen verschiedene Wege, und keine ersetzt die andere. Masse hilft gegen den Durchgang durch die Fläche, die Abdichtung gegen den Durchgang durch Fugen, das zweischalige System gegen beides zugleich — aber nur, solange es nicht durch eine starre Verbindung kurzgeschlossen wird.",
+   "bild": "bilder/bp-luftschall-massefeder.svg",
+   "bildunterschrift": "Masse allein oder Masse-Feder-Masse.",
+   "tags": [
+    "masse",
+    "abdichtung",
+    "zweischalig"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67–68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-007",
+   "typ": "freitext",
+   "frage": "Erklären Sie das Prinzip Masse-Feder-Masse: Wie wirkt es, unter welcher Bedingung ist es besonders wirksam, und welchen Nachteil hat es?",
+   "pruefpunkte": [
+    "Eine zweischalige Konstruktion ohne starre Verbindungsmittel mit gedämmtem Zwischenraum mildert die Luftschallübertragung ab.",
+    "Die beiden Schalen sind die Massen, der gedämmte Zwischenraum ist die Feder.",
+    "Besonders effektiv ist das System, wenn beide Schalen eine unterschiedliche Masse haben.",
+    "Ebenso, wenn sie verschiedene Koinzidenzgrenzfrequenzen aufweisen.",
+    "Nachteil: Zweischalige Systeme haben eine spezifische Systemeigenfrequenz.",
+    "Bei dieser Frequenz verschlechtert sich die Schalldämmung zunächst.",
+    "Die Systemeigenfrequenz sollte deshalb möglichst tief liegen.",
+    "Eine starre Verbindung zwischen den Schalen hebt die Wirkung auf."
+   ],
+   "antwort": "Zwei Schalen ohne starre Verbindungsmittel, dazwischen ein gedämmter Zwischenraum: Die Schalen sind die Massen, der Zwischenraum ist die Feder. Besonders effektiv sind solche Systeme, wenn beide Schalen eine unterschiedliche Masse und verschiedene Koinzidenzgrenzfrequenzen aufweisen. Der Nachteil ist die spezifische Systemeigenfrequenz: Bei ihr verschlechtert sich die Schalldämmung zunächst, sie sollte deshalb möglichst tief liegen. Und das Ganze funktioniert nur, solange keine starre Verbindung die beiden Schalen kurzschließt.",
+   "vertiefung": "Dasselbe Prinzip steckt im Mehrscheiben-Isolierglas: zwei Scheiben, dazwischen der Scheibenzwischenraum als Feder. Deshalb hat der Scheibenabstand Einfluss auf die Federwirkung — und deshalb arbeiten Schallschutzfenster mit unterschiedlich dicken Scheiben, also mit unterschiedlichen Massen.",
+   "bild": "bilder/bp-luftschall-massefeder.svg",
+   "bildunterschrift": "Einschalig gegen zweischalig.",
+   "tags": [
+    "masse-feder-masse",
+    "systemeigenfrequenz",
+    "zweischalig"
+   ],
+   "siehe": [
+    "bk-aw-zweischalig"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67–68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-008",
+   "typ": "karte",
+   "frage": "Was ist eine Schallbrücke, und wie begegnet man ihr?",
+   "antwort": "Eine Schallbrücke ist eine minimale Kontaktstelle zwischen Bauteilen, über die Schallübertragung nahezu uneingeschränkt stattfindet. Körperschallschutz stellt deshalb besonders hohe Anforderungen an Planung und Ausführung. Die Lösung liegt in einer schalltechnischen Entkopplung, also einer weichen Verbindung aller relevanten Bauteile — etwa von Fußbodenbelag und Rohdecke oder von Sanitärinstallation und Wand —, sodass sich Schwingungen nicht direkt übertragen.",
+   "vertiefung": "Das Wort minimal ist hier wörtlich zu nehmen: Es braucht keine durchgehende Verbindung, ein Punkt genügt. Der klassische Fall ist der schwimmende Estrich, dessen Randstreifen an einer Stelle fehlt — der ganze Aufbau ist dann schalltechnisch an die Wand angeschlossen.",
+   "bild": "bilder/bp-luftschall-wege.svg",
+   "bildunterschrift": "Stelle 5 zeigt die Schallbrücke am Estrich.",
+   "tags": [
+    "schallbrücke",
+    "entkopplung",
+    "körperschall"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-009",
+   "typ": "karte",
+   "frage": "Was versteht man unter Flankenübertragung, und welche Strategie wirkt dagegen?",
+   "antwort": "Breitet sich Körperschall über flankierende Bauteile aus, spricht man von Flankenübertragung oder Schalllängsleitung — der Schall nimmt also nicht den direkten Weg durch das trennende Bauteil, sondern den Umweg über angrenzende Wände und Decken. Eine mögliche Strategie gegen direkte und flankierende Luftschallübertragung besteht in der Erhöhung der Masse der an der Übertragung beteiligten Bauteile.",
+   "vertiefung": "Deshalb genügt es nicht, das trennende Bauteil zu betrachten. Die zweite Antwort auf Flankenübertragung ist die Entkopplung: Wo Masse nicht erhöht werden kann, muss die starre Kopplung aufgelöst werden. Bei Fenstern können stabile, erforderlichenfalls wärmegedämmte Zargenkonstruktionen die Schallnebenwege reduzieren.",
+   "tags": [
+    "flankenübertragung",
+    "schalllängsleitung",
+    "masse"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67; DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 125",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-010",
+   "typ": "vergleich",
+   "frage": "Dasselbe Fenster, dieselbe Wand, zwei Ausführungen der Anschlussfuge. Welche ist schalltechnisch brauchbar?",
+   "richtig": 1,
+   "seiten": [
+    {
+     "titel": "Einbaufall A",
+     "bild": "bilder/bp-luftschall-fuge-leer.svg",
+     "beschreibung": "Die Fuge zwischen Wand und Blendrahmen ist leer geblieben."
+    },
+    {
+     "titel": "Einbaufall B",
+     "bild": "bilder/bp-luftschall-fuge-gedaemmt.svg",
+     "beschreibung": "Die Fuge ist über die ganze Tiefe mit PUR-Montageschaum ausgefüllt, der Schaum haftet an beiden Fugenflanken."
+    }
+   ],
+   "antwort": "Brauchbar ist nur Einbaufall B. Dasselbe Fenster erreicht nach Prüfnorm ein Schalldämmmaß von 45 dB. Mit voll ausgeschäumter Fuge, deren Schaum an den Fugenflanken haftet, bleiben davon 43 dB. Bei leerer Fuge zwischen Fenster und Wand sind es 12 dB — der Schallschutz des Fensters ist damit praktisch wirkungslos.",
+   "vertiefung": "Die Zwischenstufen zeigen, wie empfindlich die Fuge ist: Eine umlaufende Haarfuge zwischen Schaum und Wand lässt 32 dB übrig, ein einziges Keilloch im Schaum 33 dB. Bereits kleine Löcher oder Haarfugen im Anschlussbereich können das Gesamtergebnis um mehr als 10 dB verschlechtern.",
+   "tags": [
+    "anschlussfuge",
+    "fugenschalldämmung",
+    "ausführung"
+   ],
+   "siehe": [
+    "bk-fenster",
+    "bp-luftdicht"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68–69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-011",
+   "typ": "numerisch",
+   "frage": "Ein Fenster erreicht nach Prüfnorm 45 dB. Welches Schalldämmmaß wurde gemessen, wenn die Fuge zum Baukörper voll ausgeschäumt ist und der Schaum an den Fugenflanken haftet?",
+   "wert": 43,
+   "toleranz": 0,
+   "einheit": "dB",
+   "antwort": "43 dB — es gehen also nur 2 dB verloren.",
+   "vertiefung": "Der Wert markiert die Obergrenze dessen, was eine geschäumte Fuge leisten kann, und zugleich den Abstand zu allen fehlerhaften Varianten: umlaufende Haarfuge 32 dB, ein Keilloch im Schaum 33 dB, leere Fuge 12 dB. Zwischen sorgfältig und fast sorgfältig liegen rund 10 dB.",
+   "bild": "bilder/bp-luftschall-fuge-gedaemmt.svg",
+   "bildunterschrift": "Voll ausgeschäumte Fuge mit Haftung an beiden Flanken.",
+   "tags": [
+    "fugenschalldämmung",
+    "ausführungsqualität",
+    "messwerte"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-012",
+   "typ": "zuordnung",
+   "frage": "Ein Fenster mit 45 dB nach Prüfnorm. Ordnen Sie jeder Anschlussausbildung das gemessene Schalldämmmaß Rw,P im eingebauten Zustand zu.",
+   "paare": [
+    [
+     "Fenstereinbau nach Prüfnorm",
+     "45 dB"
+    ],
+    [
+     "Fuge voll ausgeschäumt, Schaum haftet an den Fugenflanken",
+     "43 dB"
+    ],
+    [
+     "ein Keilloch im Schaum",
+     "33 dB"
+    ],
+    [
+     "umlaufende Haarfuge zwischen Schaum und Wand",
+     "32 dB"
+    ],
+    [
+     "leere Fuge zwischen Fenster und Wand",
+     "12 dB"
+    ]
+   ],
+   "antwort": "Nach Prüfnorm 45 dB, voll ausgeschäumt mit Haftung an den Flanken 43 dB, ein Keilloch im Schaum 33 dB, umlaufende Haarfuge 32 dB, leere Fuge 12 dB.",
+   "vertiefung": "Bemerkenswert ist der Sprung zwischen 43 und 33 dB: Ein einziges Keilloch kostet so viel wie eine umlaufende Haarfuge. Die Schalldämmung richtet sich nicht nach dem Durchschnitt der Ausführung, sondern nach ihrer schwächsten Stelle.",
+   "tags": [
+    "messwerte",
+    "anschlussausbildung",
+    "fehlstellen"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-013",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jeder Ausbildung einer 10 mm breiten Anschlussfuge ihr Fugenschalldämmmaß RST,w zu.",
+   "paare": [
+    [
+     "leere Fuge",
+     "15 dB"
+    ],
+    [
+     "Mineralfaser ausgestopft",
+     "35 bis 45 dB"
+    ],
+    [
+     "PUR-Montageschaum",
+     "mindestens 50 dB"
+    ],
+    [
+     "Multifunktionsband, Komprimierungsgrad höchstens 35 %",
+     "mindestens 40 dB"
+    ],
+    [
+     "beidseitig mit Hinterfüllschnur und elastischem Dichtstoff versiegelt",
+     "mindestens 55 dB"
+    ]
+   ],
+   "antwort": "Leere Fuge 15 dB, mit Mineralfaser ausgestopft 35 bis 45 dB je nach Stopfgrad, PUR-Montageschaum mindestens 50 dB, Multifunktionsband bei einem Komprimierungsgrad von höchstens 35 % mindestens 40 dB, beidseitig mit Hinterfüllschnur und elastischem Dichtstoff versiegelt mindestens 55 dB — jeweils bei 10 mm Fugenbreite.",
+   "vertiefung": "Die Fugenbreite verschiebt alle Werte nach unten: Dieselbe leere Fuge kommt bei 20 mm nur noch auf 10 dB und bei 30 mm auf 5 dB. Die Schalldämmung nimmt mit größer werdenden Fugenbreiten und -längen ab; sie sollten deshalb auf ein Minimum begrenzt werden.",
+   "tags": [
+    "fugenschalldämmmaß",
+    "fugenbreite",
+    "dichtsysteme"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-014",
+   "typ": "numerisch",
+   "frage": "Um wie viel Dezibel soll das Fugenschalldämmmaß RST,w über dem bewerteten Schalldämmmaß Rw,R des Fensters liegen, damit sich die Gesamtschalldämmung nicht verringert?",
+   "wert": 10,
+   "toleranz": 0,
+   "einheit": "dB",
+   "antwort": "Als Richtwert gilt RST,w ≥ Rw,R + 10 dB.",
+   "vertiefung": "Ist dieses Verhältnis gewährleistet, verringert sich das Schalldämmmaß des Fensters durch die ausgeführte Fuge normalerweise um nicht mehr als 1 dB. Der Zuschlag ist nötig, weil das Verhältnis von Fensterfläche zur Länge der Anschlussfuge ungünstig ist — rechnerisch ergibt sich daraus ein höheres erforderliches Fugenschalldämmmaß.",
+   "tags": [
+    "fugenschalldämmmaß",
+    "richtwert",
+    "planung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-015",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Maßnahmen mindern die negativen Effekte des Fugenschalls?",
+   "optionen": [
+    "Dichtstoffe und Dichtungsbänder verbessern den Anschluss auch akustisch.",
+    "Die beidseitige Anordnung von Abdichtungen erhöht das Fugenschalldämmmaß gegenüber einer einseitigen deutlich.",
+    "Fugendämmungen mit PUR-Schaum, Spritzkork oder Mineralfasern dienen zugleich dem Wärme- und dem Schallschutz.",
+    "Bei Stopfmaterialien ist eine möglichst satte Fugenfüllung anzustreben.",
+    "Eine versetzte Fugenanordnung, etwa über Maueranschläge, lenkt die Schallwellen um.",
+    "Dichtfolien lassen sich den genannten Dichtsystemen ohne Weiteres gleichsetzen."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "warum": [
+    "Richtig. Was die Fuge dichter macht, macht sie in der Regel auch leiser.",
+    "Richtig. Raum- und außenseitig abgedichtet ist deutlich besser als raumseitig abgedichtet und außen nur konstruktiv geschlossen.",
+    "Richtig. Die Fugendämmung wirkt in Verbindung mit den Abdichtungssystemen in beide Richtungen.",
+    "Richtig. Beim Ausstopfen entscheidet der Stopfgrad über das Ergebnis — die Spanne reicht von 35 bis 45 dB.",
+    "Richtig. Die Umlenkung der Schallwellen ist ein konstruktives Mittel, kein stoffliches.",
+    "Falsch. Dichtfolien können aufgrund ihrer geringeren Masse nicht ohne Weiteres mit den vorgenannten Dichtsystemen gleichgesetzt werden."
+   ],
+   "antwort": "Richtig sind die ersten fünf. Falsch ist die letzte Aussage: Dichtfolien haben eine geringere Masse und lassen sich deshalb nicht ohne Weiteres mit Dichtstoffen und Dichtungsbändern gleichsetzen.",
+   "vertiefung": "Dass ausgerechnet die Masse der Folie den Unterschied macht, ist der rote Faden des ganzen Themas: Beim Luftschall gewinnt, was schwer und träge ist. Eine Folie kann luftdicht sein und trotzdem schalltechnisch wenig leisten — Luftdichtheit und Schalldämmung sind verwandt, aber nicht dasselbe.",
+   "tags": [
+    "fugenschall",
+    "dichtsysteme",
+    "maßnahmen"
+   ],
+   "siehe": [
+    "bp-luftdicht"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-016",
+   "typ": "karte",
+   "frage": "Welche Eigenschaften muss eine Fugenabdichtung in baukonstruktiver Hinsicht haben — und welches Folgeproblem erzeugt sie bei hohen Schallschutzanforderungen?",
+   "antwort": "Sie muss umlaufend, weichfedernd, dauerelastisch, alterungsbeständig und leicht auswechselbar sein. Bei hohen Schallschutzanforderungen führt eine solche Ausführung jedoch zu einem so dichten Falzraum, dass der Mindestluftwechsel bei geschlossenem Fenster nicht mehr sichergestellt ist. In solchen Fällen lässt sich ein schalldämmendes Lüftungsfenster einbauen, bei dem die Außenluft über einen schallschluckend ausgebildeten Kanal unter, neben oder über dem Fenster mechanisch angesaugt wird.",
+   "vertiefung": "Geschieht das unter dem Fenster, kann die Luft gegebenenfalls sogar direkt über einen dort befindlichen Heizkörper erwärmt werden. Eine luftdichte Anschlussfuge ist also sowohl für den Wärme- und Feuchteschutz als auch für den Schallschutz Grundvoraussetzung — und erzeugt dieselbe Folgefrage nach der Lüftung.",
+   "tags": [
+    "fugenabdichtung",
+    "lüftungsfenster",
+    "mindestluftwechsel"
+   ],
+   "siehe": [
+    "bp-luftdicht"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68–69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-017",
+   "typ": "numerisch",
+   "frage": "Wie groß ist der Schalldruck in einer Ecke im Verhältnis zum Schalldruck in der Elementmitte?",
+   "wert": 16,
+   "toleranz": 0,
+   "einheit": "fach",
+   "antwort": "Etwa das Sechzehnfache. An Kanten ist es etwa das Vierfache.",
+   "vertiefung": "Daraus ergibt sich die besondere Abhängigkeit der Schalldämmung von der Qualität der Fugenausbildung — und ein praktischer Hinweis: Die Ecken des Anschlusses sind nicht die Stelle, an der man die Sorgfalt sparen darf. Dort wirkt der sechzehnfache Druck auf die Abdichtung.",
+   "tags": [
+    "schalldruck",
+    "ecken",
+    "fugenausbildung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-018",
+   "typ": "reihenfolge",
+   "frage": "Bringen Sie die Schritte des Nachweises nach DIN 4109 in die richtige Reihenfolge.",
+   "schritte": [
+    "den Lärmpegelbereich aus dem maßgeblichen Außenlärmpegel bestimmen",
+    "das erforderliche resultierende Schalldämmmaß erf. R'w,res aus Lärmpegelbereich und Raumart ablesen",
+    "die Korrektur nach dem Verhältnis der Außenbauteilfläche zur Raumgrundfläche anbringen",
+    "die erforderliche Schalldämmung auf die Einzelbauteile nach ihren Flächenanteilen aufteilen"
+   ],
+   "antwort": "Erst den Lärmpegelbereich bestimmen, dann erf. R'w,res aus Lärmpegelbereich und Raumart ablesen, dann die Korrektur nach dem Flächenverhältnis anbringen und zuletzt die Anforderung auf die Einzelbauteile nach ihren Flächenanteilen aufteilen.",
+   "vertiefung": "Vorgegangen wird raumweise: Für jeden Raum wird die erforderliche Schalldämmung ermittelt und anschließend für das gesamte Außenbauteil ausgelegt. Dabei ist der zu reduzierende Außenschallpegel im Verhältnis zur geplanten Nutzung und den dafür zulässigen Innenschallpegeln zu berücksichtigen.",
+   "bild": "bilder/bp-luftschall-nachweis.svg",
+   "bildunterschrift": "Die vier Schritte des Verfahrens.",
+   "tags": [
+    "din 4109",
+    "nachweis",
+    "verfahren"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 66, 69",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte und Verfahren nach DIN 4109 in der im Buch zitierten Fassung. Gegen DIN 4109-1:2018-01 mit DIN 4109-2 prüfen, ob die Einteilung in sieben Lärmpegelbereiche, die maßgeblichen Außenlärmpegel und die zugehörigen Anforderungen an erf. R'w,res unverändert gelten."
+  },
+  {
+   "id": "bp-ls-019",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jedem Lärmpegelbereich nach DIN 4109 seinen maßgeblichen Außenlärmpegel zu.",
+   "paare": [
+    [
+     "Lärmpegelbereich I",
+     "bis 55 dB(A)"
+    ],
+    [
+     "Lärmpegelbereich III",
+     "61 bis 65 dB(A)"
+    ],
+    [
+     "Lärmpegelbereich V",
+     "71 bis 75 dB(A)"
+    ],
+    [
+     "Lärmpegelbereich VII",
+     "über 80 dB(A)"
+    ]
+   ],
+   "antwort": "Bereich I bis 55 dB(A), Bereich III 61 bis 65 dB(A), Bereich V 71 bis 75 dB(A), Bereich VII über 80 dB(A). Dazwischen liegen II mit 56 bis 60, IV mit 66 bis 70 und VI mit 76 bis 80 dB(A).",
+   "vertiefung": "Die Bereiche sind, abgesehen vom ersten und letzten, in Fünf-Dezibel-Schritten gestaffelt. Fünf Dezibel klingen wenig, bedeuten aber eine deutlich wahrnehmbare Änderung — und in der Anforderungstabelle meist die nächste Stufe für das Außenbauteil.",
+   "tags": [
+    "lärmpegelbereich",
+    "din 4109",
+    "außenlärmpegel"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 66",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte und Verfahren nach DIN 4109 in der im Buch zitierten Fassung. Gegen DIN 4109-1:2018-01 mit DIN 4109-2 prüfen, ob die Einteilung in sieben Lärmpegelbereiche, die maßgeblichen Außenlärmpegel und die zugehörigen Anforderungen an erf. R'w,res unverändert gelten."
+  },
+  {
+   "id": "bp-ls-020",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jedem Lärmpegelbereich das erforderliche resultierende Schalldämmmaß erf. R'w,res für Aufenthaltsräume in Wohnungen zu.",
+   "paare": [
+    [
+     "Lärmpegelbereich I und II",
+     "30 dB"
+    ],
+    [
+     "Lärmpegelbereich III",
+     "35 dB"
+    ],
+    [
+     "Lärmpegelbereich IV",
+     "40 dB"
+    ],
+    [
+     "Lärmpegelbereich V",
+     "45 dB"
+    ],
+    [
+     "Lärmpegelbereich VI",
+     "50 dB"
+    ]
+   ],
+   "antwort": "Für Aufenthaltsräume in Wohnungen gilt in den Bereichen I und II 30 dB, in III 35 dB, in IV 40 dB, in V 45 dB und in VI 50 dB. Für Bereich VII sind die Anforderungen aufgrund der örtlichen Gegebenheiten festzulegen.",
+   "vertiefung": "Dieselbe Tabelle führt strengere Werte für Bettenräume in Krankenanstalten und Sanatorien und mildere für Büroräume. Der Grund liegt in der Nutzung, nicht in der Bauweise: An Außenbauteile von Räumen, in denen der eindringende Außenlärm wegen der dort ausgeübten Tätigkeiten nur einen untergeordneten Beitrag zum Innenraumpegel leistet, werden keine Anforderungen gestellt.",
+   "tags": [
+    "erf. r'w,res",
+    "aufenthaltsräume",
+    "din 4109"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 66",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte und Verfahren nach DIN 4109 in der im Buch zitierten Fassung. Gegen DIN 4109-1:2018-01 mit DIN 4109-2 prüfen, ob die Einteilung in sieben Lärmpegelbereiche, die maßgeblichen Außenlärmpegel und die zugehörigen Anforderungen an erf. R'w,res unverändert gelten."
+  },
+  {
+   "id": "bp-ls-021",
+   "typ": "numerisch",
+   "frage": "Das Verhältnis der Außenbauteilfläche eines Aufenthaltsraums zu seiner Grundfläche beträgt 1,0. Welcher Korrekturwert ist auf das erforderliche resultierende Schalldämmmaß anzuwenden?",
+   "wert": 1,
+   "toleranz": 0,
+   "einheit": "dB",
+   "antwort": "+1 dB.",
+   "vertiefung": "Die Korrekturreihe reicht von +5 dB bei einem Verhältnis von 2,5 bis −3 dB bei 0,4; bei 0,8 ist sie null. Dahinter steckt eine einfache Überlegung: Je größer die Außenbauteilfläche im Verhältnis zur Raumgrundfläche, desto mehr Lärm gelangt pro Quadratmeter Raum herein — und desto besser muss das Bauteil sein.",
+   "tags": [
+    "korrekturwert",
+    "flächenverhältnis",
+    "din 4109"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 66",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte und Verfahren nach DIN 4109 in der im Buch zitierten Fassung. Gegen DIN 4109-1:2018-01 mit DIN 4109-2 prüfen, ob die Einteilung in sieben Lärmpegelbereiche, die maßgeblichen Außenlärmpegel und die zugehörigen Anforderungen an erf. R'w,res unverändert gelten."
+  },
+  {
+   "id": "bp-ls-022",
+   "typ": "karte",
+   "frage": "Was bedeutet das Wort „bewertet“ im bewerteten Schalldämmmaß, und für welchen Frequenzbereich gilt es?",
+   "antwort": "„Bewertet“ bezieht sich darauf, dass die Messwerte für das Schalldämmmaß mit einer festgelegten Bezugskurve nach DIN EN ISO 717-1 verglichen werden, die den typischen Verlauf eines Massivbauteils zeigt. Herangezogen wird der Frequenzbereich von 100 bis 3150 Hz; bei Anforderungen an die Raumakustik, etwa an Nachhallzeit oder Dämpfung, sind es 50 bis 5000 Hz.",
+   "vertiefung": "Der Widerstand eines Wand-, Decken- oder Fensterbauteils gegen den Durchgang von Luftschall wird durch das Schalldämmmaß R und die Schallpegeldifferenz D beschrieben — Letztere ist die Differenz zwischen den beiden betreffenden Bereichen, etwa außen und innen. Beide werden für einen definierten Frequenzbereich festgelegt und in Dezibel angegeben.",
+   "tags": [
+    "bewertetes schalldämmmaß",
+    "frequenzbereich",
+    "din en iso 717-1"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-023",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jeder Größe ihre Bedeutung zu.",
+   "paare": [
+    [
+     "R",
+     "Schalldämmmaß: Widerstand eines Bauteils gegen den Durchgang von Luftschall"
+    ],
+    [
+     "D",
+     "Schallpegeldifferenz zwischen zwei Bereichen, etwa außen und innen"
+    ],
+    [
+     "C",
+     "Spektrum-Anpassungswert für rosa Rauschen, A-bewertet"
+    ],
+    [
+     "Ctr",
+     "Spektrum-Anpassungswert für standardisierten städtischen Straßenverkehrslärm, A-bewertet"
+    ],
+    [
+     "RST,w",
+     "bewertetes Fugenschalldämmmaß der Bauanschlussfuge"
+    ]
+   ],
+   "antwort": "R ist das Schalldämmmaß, D die Schallpegeldifferenz zwischen zwei Bereichen, C der Spektrum-Anpassungswert für rosa Rauschen, Ctr der für standardisierten städtischen Straßenverkehrslärm, beide A-bewertet, und RST,w das bewertete Fugenschalldämmmaß der Bauanschlussfuge.",
+   "vertiefung": "C und Ctr sind Korrekturwerte, die eine Übereinstimmung zwischen den aus den Messwerten abgeleiteten Einzahlwerten und der subjektiv empfundenen Geräuschminderung herstellen sollen. Je nach erwarteten Außenbedingungen wird das Emissionsspektrum angepasst — an einer Hauptstraße ist Ctr der aussagekräftigere Wert.",
+   "tags": [
+    "kenngrößen",
+    "spektrum-anpassungswerte",
+    "fugenschalldämmmaß"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 67, 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-024",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt für die Schallschutzklassen von Fenstern nach der VDI-Richtlinie 2719?",
+   "optionen": [
+    "Die Richtlinie nennt sechs Schallschutzklassen.",
+    "Die Spanne reicht von 25 dB für Einfachfenster mit Einfachverglasung bis über 50 dB.",
+    "Über 50 dB erreichen Kastenfenster mit getrennten Blendrahmen sowie besonderer Dichtung und Verglasung.",
+    "Zu jeder Klasse gehört ein am Bau gemessenes R'w und ein höheres, im Prüfstand nachzuweisendes Rw.",
+    "Die Richtlinie ersetzt DIN 4109 für den Schallschutz der Gebäudehülle."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Es sind sechs Klassen.",
+    "Richtig. Das untere Ende markiert das einfachverglaste Einfachfenster.",
+    "Richtig. Der Scheibenabstand des Kastenfensters und die besondere Dichtung und Verglasung machen den Unterschied.",
+    "Richtig. In Klasse 1 etwa stehen 25 bis 29 dB am Bau einem im Prüfstand nachzuweisenden Rw von mindestens 27 dB gegenüber — der Prüfstandswert liegt jeweils höher.",
+    "Falsch. Für den Schallschutz von Gebäudehüllen ist neben DIN 4109 „Schallschutz im Hochbau“ im Wesentlichen die VDI 2719 relevant; sie tritt daneben, nicht an ihre Stelle."
+   ],
+   "antwort": "Richtig sind die ersten vier. Die VDI 2719 nennt sechs Schallschutzklassen von 25 dB für Einfachfenster mit Einfachverglasung bis über 50 dB für Kastenfenster mit getrennten Blendrahmen sowie besonderer Dichtung und Verglasung, und zu jeder Klasse gehört neben dem am Bau gemessenen R'w ein höherer, im Prüfstand nachzuweisender Rw-Wert. Sie ersetzt DIN 4109 jedoch nicht, sondern ergänzt sie.",
+   "vertiefung": "Dass der Prüfstandswert über dem Bauwert liegt, ist kein Rechentrick, sondern die eingebaute Erwartung, dass am Bau etwas verloren geht — in Klasse 1 zwei Dezibel, in allen anderen Klassen ebenfalls. Genau diese Differenz entscheidet sich an der Anschlussfuge.",
+   "tags": [
+    "vdi 2719",
+    "schallschutzklassen",
+    "fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68–69",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Schallschutzklassen nach VDI 2719; die Tabelle verweist zudem auf die abgelöste DIN 52210. Gegen die geltende Fassung der VDI 2719 und gegen DIN EN ISO 10140 mit DIN EN ISO 717-1 prüfen, ob die sechs Klassen mit diesen Grenzen noch so geführt werden."
+  },
+  {
+   "id": "bp-ls-025",
+   "typ": "mehrfachauswahl",
+   "frage": "Warum werden Schallschutzfenster mit asymmetrischem Scheibenaufbau gebaut?",
+   "optionen": [
+    "Außen- und innenseitig kommen Scheiben unterschiedlicher Dicke zum Einsatz.",
+    "Dadurch haben sie verschiedene Eigenresonanzfrequenzen.",
+    "Aus Sicht des Schallschutzes ist unerheblich, welche Scheibe außen liegt.",
+    "Aus Gründen der Lastabtragung wird meist die dickere Scheibe außen eingebaut.",
+    "Die dickere Scheibe muss aus schalltechnischen Gründen außen liegen."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Der asymmetrische Aufbau ist das Kennzeichen des Schallschutzfensters.",
+    "Richtig. Verschiedene Dicken bedeuten verschiedene Eigenresonanzfrequenzen — die Schwachstellen beider Scheiben fallen nicht zusammen.",
+    "Richtig. Für das Ergebnis spielt die Reihenfolge keine Rolle.",
+    "Richtig. Maßgeblich ist hier die Windlast, nicht die Akustik.",
+    "Falsch. Schalltechnisch ist die Anordnung gleichgültig; die Entscheidung fällt aus Gründen der Lastabtragung."
+   ],
+   "antwort": "Richtig sind die ersten vier. Bei Schallschutzfenstern werden meist mehrere Optimierungsmaßnahmen kombiniert, üblicherweise aber mindestens eine spezielle Isolierverglasung mit asymmetrischem Aufbau: außen und innen Scheiben unterschiedlicher Dicke und damit verschiedener Eigenresonanzfrequenzen. Welche Scheibe außen liegt, ist aus Sicht des Schallschutzes unerheblich — aus Gründen der Lastabtragung, vor allem der Windlast, wird jedoch meist die dickere außen eingebaut.",
+   "vertiefung": "Der asymmetrische Aufbau ist die Fensterfassung derselben Regel, die für zweischalige Wände gilt: Ein Masse-Feder-Masse-System ist besonders effektiv, wenn beide Schalen unterschiedliche Masse und verschiedene Koinzidenzgrenzfrequenzen haben.",
+   "bild": "bilder/bp-luftschall-fenster.svg",
+   "bildunterschrift": "Symmetrisch gegen asymmetrisch aufgebaute Verglasung.",
+   "tags": [
+    "schallschutzfenster",
+    "asymmetrisch",
+    "verglasung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-026",
+   "typ": "karte",
+   "frage": "Bringt eine Dreifachverglasung gegenüber einer Zweifachverglasung besseren Schallschutz?",
+   "antwort": "Nein, nicht nennenswert. Der Einsatz von Dreifachverglasung führt gegenüber Zweifachverglasung zu vergleichbaren Schallschutzwerten — Rw bis etwa 50 dB —, allerdings bauartbedingt zu höherer Gesamtdicke und höherem Gewicht. Untersuchungen am ift Rosenheim und an der HFT Stuttgart haben gezeigt, dass die Mittelscheibe praktisch keinen Einfluss auf das Ergebnis der Schallschutzwerte hat.",
+   "vertiefung": "Das ist eines der verbreitetsten Missverständnisse im Gespräch mit Bauherren: Dreifachverglasung wird für den Wärmeschutz eingebaut, nicht für den Schallschutz. Wer leisere Räume will, gewinnt mehr über den asymmetrischen Aufbau, den Scheibenabstand und vor allem über die Anschlussfuge.",
+   "bild": "bilder/bp-luftschall-fenster.svg",
+   "bildunterschrift": "Nicht die Zahl der Scheiben entscheidet, sondern ihre unterschiedlichen Dicken.",
+   "tags": [
+    "dreifachverglasung",
+    "verglasung",
+    "missverständnis"
+   ],
+   "siehe": [
+    "bp-uwert"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-027",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Faktoren bestimmen neben der Fugenausbildung die Schalldämmung eines Fensters?",
+   "optionen": [
+    "die Art des Fensters — Einfach-, Verbund- oder Kastenfenster",
+    "das Rahmenmaterial",
+    "der Aufbau der Verglasung, wobei der Scheibenabstand die Federwirkung beeinflusst",
+    "die Glasdicken, also Masse und asymmetrischer Aufbau",
+    "die Glasart, etwa Float oder Verbundsicherheitsglas mit Gießharz oder speziellen PVB-Folien",
+    "die Art der Beschläge und die Anzahl der Verriegelungen",
+    "die Gasfüllung im Scheibenzwischenraum, mit einem Verbesserungspotenzial von etwa 10 dB"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "warum": [
+    "Richtig. Beim Kastenfenster verbessert der hohe Scheibenabstand die Schalldämmung.",
+    "Richtig. Das Rahmenmaterial gehört zu den bestimmenden Faktoren.",
+    "Richtig. Der Scheibenabstand wirkt als Feder im Masse-Feder-Masse-System.",
+    "Richtig. Masse und asymmetrischer Aufbau sind die beiden Hebel an der Verglasung.",
+    "Richtig. Die Glasart verändert das Schwingungsverhalten der Scheibe.",
+    "Richtig — sie erhöhen die Dichtigkeit, auch bei Windlasten.",
+    "Falsch in der Zahl. Die Gasfüllung bringt nur etwa 1 dB Verbesserungspotenzial."
+   ],
+   "antwort": "Richtig sind die ersten sechs: Fensterart, Rahmenmaterial, Verglasungsaufbau mit dem Scheibenabstand als Feder, Glasdicken, Glasart und die Beschläge mit der Zahl der Verriegelungen. Falsch ist allein die Zahl beim letzten Punkt — die Gasfüllung im Scheibenzwischenraum bringt etwa 1 dB, nicht 10 dB.",
+   "vertiefung": "Die Liste ist nach abnehmendem Hebel lesbar: Fensterart und Verglasungsaufbau entscheiden über Größenordnungen, die Gasfüllung über ein einziges Dezibel. Wer Schallschutz einkauft, sollte das Geld deshalb nicht in die Füllung stecken.",
+   "tags": [
+    "fensterschalldämmung",
+    "einflussfaktoren",
+    "verglasung"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69; DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-028",
+   "typ": "freitext",
+   "frage": "Ein Fenster mit geprüften 45 dB wird eingebaut; die Fuge wird ausgeschäumt, aber zwischen Schaum und Wand bleibt eine umlaufende Haarfuge. Erklären Sie, warum das Ergebnis so stark einbricht und was daraus für die Planung folgt.",
+   "pruefpunkte": [
+    "Mit umlaufender Haarfuge bleiben vom geprüften Wert nur 32 dB übrig.",
+    "Bereits kleine Löcher oder Haarfugen im Anschlussbereich können das Gesamtergebnis um mehr als 10 dB verschlechtern.",
+    "Die Schalldämmung hängt besonders stark von der Qualität der Fugenausbildung ab.",
+    "Grund dafür ist unter anderem, dass der Schalldruck an Kanten etwa das Vierfache und in Ecken etwa das Sechzehnfache des Werts in Elementmitte beträgt.",
+    "Die Fugenabdichtung muss umlaufend ausgeführt sein.",
+    "Als Richtwert gilt RST,w ≥ Rw,R + 10 dB.",
+    "Dann verringert sich das Schalldämmmaß des Fensters durch die Fuge um nicht mehr als 1 dB.",
+    "Für die Planung heißt das: Das Fugenschalldämmmaß ist mit auszuschreiben, nicht nur das Fenster."
+   ],
+   "antwort": "Mit umlaufender Haarfuge bleiben von 45 dB nur 32 dB übrig. Bereits kleine Löcher oder Haarfugen im Anschlussbereich können das Gesamtergebnis um mehr als 10 dB verschlechtern — die Schalldämmung hängt deshalb besonders stark von der Qualität der Fugenausbildung ab. Ein Grund dafür ist, dass der Schalldruck an Kanten etwa dem Vierfachen und in Ecken sogar dem Sechzehnfachen des Werts in Elementmitte entspricht; die Fehlstelle liegt also dort, wo der Druck am höchsten ist. Für die Planung folgt daraus: Die Abdichtung muss umlaufend, weichfedernd, dauerelastisch, alterungsbeständig und leicht auswechselbar sein, und das Fugenschalldämmmaß gehört in die Ausschreibung — als Richtwert RST,w ≥ Rw,R + 10 dB, womit sich das Schalldämmmaß des Fensters durch die Fuge um nicht mehr als 1 dB verringert.",
+   "vertiefung": "Der Vergleich mit dem Keilloch macht es noch deutlicher: Ein einziger Fehler im Schaum kostet 33 statt 43 dB — ungefähr so viel wie die umlaufende Haarfuge. Beim Schallschutz gibt es keinen Mittelwert über die Ausführung, nur die schwächste Stelle.",
+   "tags": [
+    "haarfuge",
+    "ausführungsqualität",
+    "ausschreibung"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68–69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-029",
+   "typ": "numerisch",
+   "frage": "Welches Verbesserungspotenzial hat die Gasfüllung im Scheibenzwischenraum für die Schalldämmung eines Fensters?",
+   "wert": 1,
+   "toleranz": 0,
+   "einheit": "dB",
+   "antwort": "Etwa 1 dB.",
+   "vertiefung": "Zum Vergleich: Der Unterschied zwischen einer sorgfältig und einer fast sorgfältig ausgeführten Anschlussfuge liegt bei rund 10 dB. Die Gasfüllung ist damit der kleinste der genannten Hebel — sie wird aus Gründen des Wärmeschutzes eingebaut, nicht wegen des Schalls.",
+   "tags": [
+    "gasfüllung",
+    "verglasung",
+    "größenordnung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ls-030",
+   "typ": "fall",
+   "frage": "Vierzehn Wohnungen in einem Neubau an einer stark befahrenen Hauptstraße. Der Bauherr hat Fenster der Schallschutzklasse 4 ausgeschrieben und fragt, ob damit „alles erledigt“ sei. Die Wohnzimmer haben raumhohe Fensterbänder, der Rollladenkasten sitzt über jeder Öffnung, und die Lüftung ist noch nicht geplant.",
+   "teile": [
+    {
+     "frage": "Reicht die Festlegung auf eine Fensterklasse aus?",
+     "antwort": "Nein. Schallschutztechnische Anforderungen gelten für das gesamte Außenbauteil im eingebauten Zustand — neben dem Fenster betrifft das Einbauten wie Rollladenkästen und Lüftungseinrichtungen sowie die Außenwand mit ihren Bauanschlüssen. Die Anforderung wird als resultierendes Schalldämmmaß erf. R'w,res an die Summe aller Einzelbauteile gestellt. Erst nach Bestimmung der erforderlichen resultierenden Gesamtschalldämmung wird die erforderliche Schalldämmung der einzelnen Bestandteile anhand der Flächenanteile festgelegt — die Fensterklasse ist also ein Ergebnis, kein Ausgangspunkt."
+    },
+    {
+     "frage": "Welche Rolle spielen die raumhohen Fensterbänder für das Ergebnis?",
+     "antwort": "Eine doppelte. Erstens ist das Fenster gegenüber der Außenwand das schwächere Bauteil: viele Materialwechsel, konstruktive Fugen und ein geringeres Flächengewicht. Zweitens geht das Verhältnis der Außenbauteilfläche zur Raumgrundfläche in die Anforderung ein; bei großen Fensterflächen fällt die Korrektur positiv aus und das erforderliche resultierende Schalldämmmaß steigt. Hinzu kommt, dass die Schalldämmung mit größer werdenden Fugenlängen abnimmt — ein Fensterband hat davon reichlich."
+    },
+    {
+     "frage": "Worauf kommt es bei der Ausführung der Anschlussfugen an?",
+     "antwort": "Auf alles. Dasselbe Fenster erreicht nach Prüfnorm 45 dB, mit voll ausgeschäumter Fuge 43 dB, mit umlaufender Haarfuge 32 dB und mit leerer Fuge 12 dB. Als Richtwert gilt RST,w ≥ Rw,R + 10 dB; ist das gewährleistet, verliert das Fenster durch die Fuge nicht mehr als 1 dB. Die Abdichtung muss umlaufend, weichfedernd, dauerelastisch, alterungsbeständig und leicht auswechselbar sein, beidseitig angeordnet bringt sie deutlich mehr als einseitig. Besondere Sorgfalt verlangen die Ecken, weil dort etwa der sechzehnfache Schalldruck wirkt."
+    },
+    {
+     "frage": "Was folgt für die Lüftung?",
+     "antwort": "Eine umlaufend dichte Fugenausführung führt bei hohen Schallschutzanforderungen zu einem so dichten Falzraum, dass der Mindestluftwechsel bei geschlossenem Fenster nicht mehr sichergestellt ist. Die Lüftung ist also mitzuplanen, nicht nachzureichen. Eine Lösung ist das schalldämmende Lüftungsfenster, bei dem die Außenluft über einen schallschluckend ausgebildeten Kanal unter, neben oder über dem Fenster mechanisch angesaugt wird; liegt der Kanal unten, kann die Luft gegebenenfalls direkt über einen dort befindlichen Heizkörper erwärmt werden. Lüftungseinrichtungen zählen dabei selbst zum Außenbauteil und gehen in das resultierende Schalldämmmaß ein."
+    }
+   ],
+   "fallbild": "bilder/bp-luftschall-nachweis.svg",
+   "antwort": "Die Fensterklasse ist das Ergebnis der Rechnung, nicht ihr Anfang. Zu bestimmen ist zuerst das erforderliche resultierende Schalldämmmaß des gesamten Außenbauteils, dann die Aufteilung auf Wand, Fenster, Rollladenkästen und Lüftungseinrichtungen nach Flächenanteilen. Die Anschlussfugen entscheiden anschließend darüber, ob das bestellte Fenster seine Leistung überhaupt in den Raum bringt — und die Lüftung gehört in dieselbe Planung.",
+   "vertiefung": "Der Fall zeigt die beiden Enden desselben Fadens: Je besser der Schallschutz, desto dichter die Hülle, und je dichter die Hülle, desto dringender das Lüftungskonzept. Luftdichtheit und Schalldämmung sind verwandt — eine luftdichte Anschlussfuge ist für beide Grundvoraussetzung.",
+   "tags": [
+    "planungsfall",
+    "außenbauteil",
+    "lüftung"
+   ],
+   "siehe": [
+    "bp-luftdicht",
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 66, 68–69",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte und Verfahren nach DIN 4109 in der im Buch zitierten Fassung. Gegen DIN 4109-1:2018-01 mit DIN 4109-2 prüfen, ob die Einteilung in sieben Lärmpegelbereiche, die maßgeblichen Außenlärmpegel und die zugehörigen Anforderungen an erf. R'w,res unverändert gelten."
+  }
+ ]
+}

@@ -2,7 +2,7 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "gestaltung": "arch",
   "module": [
     {
@@ -213,7 +213,9 @@
         },
         {
           "id": "bp-luftschall",
-          "titel": "Luftschallschutz"
+          "titel": "Luftschallschutz",
+          "datei": "items/bp-luftschall.json",
+          "bild": "bilder/bp-luftschall-wege.svg"
         },
         {
           "id": "bp-trittschall",
