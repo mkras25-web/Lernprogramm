@@ -1,0 +1,864 @@
+{
+ "thema": "bk-fenster",
+ "titel": "Fenster: Aufbau, Einbaulage, Anschluss",
+ "lernziele": [
+  "Du kannst erklären, warum der Baukörperanschluss Sache des Planers ist und welche Anforderungen die Anschlussfuge erfüllen muss.",
+  "Du kannst das 3-Ebenen-Modell zeichnen und jeder Ebene ihre Aufgabe und ihre Dichtigkeitsanforderung zuordnen.",
+  "Du kannst Anschlagsart und Einbaulage auseinanderhalten und begründen, welche Einbaulage bauphysikalisch günstig ist.",
+  "Du erkennst die typischen Fehler am Fensteranschluss — fehlende mechanische Befestigung, offene Raumseite, Dreiflankenfuge — und kannst sagen, was sie bewirken."
+ ],
+ "erklaerung": {
+  "absaetze": [
+   "Nicht das Fenster ist die Schwachstelle der Gebäudehülle, sondern die rund zwanzig Millimeter ringsum. Alles innerhalb des Öffnungsbauteils — die Fügung von Glas und Blendrahmen, die Eckverbindung der Profile — löst und verantwortet der Hersteller oder der Handwerker. Der Baukörperanschluss dagegen zählt zum Aufgabengebiet des Planers: Er muss die Öffnung so weit in Leistungsbeschreibung und Regeldetails übersetzen, dass ein klares Anforderungsprofil entsteht. Weil dort mehrere Gewerke zusammentreffen, besteht erheblicher Koordinierungsbedarf — und ungeeignete oder mangelhaft ausgeführte Abdichtungen sind eine der Hauptursachen für Bauschäden im Bereich von Öffnungen.",
+   "Zum Verständnis der Begriffe: Bewegliche Elemente heißen Flügel, der Flügelrahmen nimmt die Ausfachung auf, der Flügel selbst sitzt im Blendrahmen; horizontale Rahmenteile sind Riegel oder Kämpfer, vertikale Pfosten. Davon zu trennen ist die Geometrie der Wandöffnung, die drei Anschlagsarten kennt: Beim stumpfen Anschlag gibt die Öffnung die Tiefenposition nicht vor, das Element kann von innen oder außen eingebracht werden, und zwischen Rahmenaußenkante und Wandöffnung bleiben in der Regel vier bis sechs Zentimeter. Der Innenanschlag liegt gegen einen außenliegenden Laibungsvorsprung und wird von innen eingebaut, der Außenanschlag gegen einen innenliegenden und muss von außen eingebaut werden, häufig mit Gerüst. Beide bieten mehr Fugenfläche für Dicht- und Dämmstoffe, verändern aber die Ansicht.",
+   "Die Einbaulage ist die Entscheidung, aus der fast alles Weitere folgt. Grundsätzlich sollten Fenster in der Dämmebene der Gebäudehülle liegen, die thermische Trennebene der Profile idealerweise im Bereich der 13-Grad-Isotherme. Wie viel daran hängt, zeigen die Berechnungen für eine monolithische Wand von 365 mm mit R = 0,56 m²·K/W: innenbündig θsi,min 10,6 °C und fRsi 0,69, mittig 11,0 °C und 0,70, außenbündig dagegen nur 7,7 °C und 0,56. Der außenbündige Anschluss ist immer problematisch, während die beiden anderen bei gut wärmedämmenden Außenwänden nicht durch Tauwasser gefährdet sind. Wird er aus gestalterischen Gründen trotzdem gewählt, muss die raumseitige Laibung mit mindestens 20 mm Wärmedämmmaterial belegt werden — dann steigt fRsi auf 0,72.",
+   "Die Fuge selbst wird in drei Ebenen gedacht. Ebene 1 trennt Raum- und Außenklima und wird in mitteleuropäischem Klima raumseitig umlaufend möglichst luftdicht ausgeführt; ihre Temperatur muss über der schimmelkritischen Temperatur liegen. Ebene 2 ist der Funktionsbereich: Hier werden die Lasten in den Baukörper eingeleitet, hier liegen Wärme- und Schallschutz, und hier muss es trocken bleiben. Ebene 3 ist der Wetterschutz aus Wind- und Regensperre. Entscheidend ist das Verhältnis der beiden äußeren Ebenen zueinander: Ebene 3 muss schlagregendicht, aber dampfdiffusionsoffener sein als Ebene 1 oder abschnittsweise geöffnet werden. Nur dann ist keine unzulässige Feuchteerhöhung im Funktionsbereich zu erwarten.",
+   "Wo es schiefgeht, ist absehbar. Ortschäume, Kleber und Ähnliches eignen sich nicht für eine definierte Befestigung — diese muss stets mechanisch und umlaufend auf allen vier Seiten erfolgen, und der Untergrund entscheidet mit, denn bei Lochbaustoffen und hochwärmedämmenden Steinen sind viele Befestigungsmittel ungeeignet. Haftet der Dichtstoff auch am Fugengrund, kann die Fuge keine Bewegungen aufnehmen; Dreiflankenfugen sind ausnahmslos ungeeignet. Der Sturzanschluss mit Rollladenkasten ist wärmebrückentechnisch besonders empfindlich — Stichwort Rollladenpilz. Und die leere Fuge kostet nicht ein paar Dezibel, sondern fast alles: Ein Fenster mit 45 dB nach Prüfnorm kommt mit leerer Anschlussfuge auf 12 dB."
+  ],
+  "merksatz": "Innen dichter als außen — und befestigt wird mechanisch, nicht mit Schaum.",
+  "bild": "bilder/bk-fenster-einbaulage.svg",
+  "bildunterschrift": "Einbaulage des Fensters in der Laibung: dieselbe Wand, vier Anschlüsse, sehr verschiedene Oberflächentemperaturen.",
+  "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–137, und Werkstoffe und Komponenten, Konstruktionsarten, S. 99–100; Lehrbuch der Bauphysik, Abschn. 7.2, S. 197–200"
+ },
+ "siehe": [
+  "bp-waermebruecken",
+  "bp-schlagregen",
+  "bk-stuerze"
+ ],
+ "items": [
+  {
+   "id": "bk-fen-001",
+   "typ": "karte",
+   "frage": "Die Fügung zwischen Glas und Blendrahmen löst der Hersteller, die Eckverbindung der Rahmenprofile der Handwerker. Wer verantwortet den Baukörperanschluss?",
+   "antwort": "Der Baukörperanschluss — also die Anschlussfuge zwischen Öffnungselement und Gebäudehülle — zählt zum Aufgabengebiet des Planers. Er muss Gestaltung und Ausführung der Gebäudeöffnung anhand der objektspezifischen Gegebenheiten in ausreichend detaillierte planerische Vorgaben umsetzen: Leistungsbeschreibung und Regeldetails, aus denen sich ein klares Anforderungsprofil ergibt.",
+   "vertiefung": "Das ist die Trennlinie, an der die meisten Schäden entstehen. Innerhalb des Öffnungsbauteils ist alles Produkt und damit geregelt; die zwanzig Millimeter ringsum sind Planung. Weil dort mehrere Gewerke zusammentreffen, besteht bei Planung und Bauleitung erheblicher Koordinierungsbedarf — ungeeignete oder mangelhaft ausgeführte Abdichtungen sind eine der Hauptursachen für Bauschäden im Bereich von Öffnungen.",
+   "tags": [
+    "baukörperanschluss",
+    "anschlussfuge",
+    "planung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–120, 128",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-002",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Anforderungen muss die Anschlussfuge erfüllen, damit im Anschlussbereich keine Schäden entstehen?",
+   "optionen": [
+    "eine definierte Befestigung und Lastabtragung",
+    "eine ausreichende Wärmedämmung der Anschlussfuge",
+    "einen raumseitig umlaufend luftdichten Fugenabschluss",
+    "eine außenseitig schlagregendichte Anbindung",
+    "die Vermeidung unzulässiger Feuchteanreicherung im Anschlussbereich",
+    "eine raumseitig dampfdichtere Ausbildung als außen, damit die Fuge nach innen austrocknet",
+    "einen vollständig dampfdichten Abschluss auf beiden Seiten"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "warum": [
+    "Richtig. Alle planmäßig einwirkenden Kräfte müssen sicher in den Baukörper übertragen werden, umgekehrt darf das Bauteil nicht durch Kräfte aus dem Bauwerk beansprucht werden.",
+    "Richtig. Der verbleibende Fugenraum ist zur Verbesserung von Wärmedämmung und Schallschutz möglichst vollständig mit Dämmstoff auszufüllen.",
+    "Richtig. In mitteleuropäischem Klima muss die Trennung von Raum- und Außenklima als raumseitige Abdichtung umlaufend möglichst luftdicht ausgeführt sein.",
+    "Richtig. Die Ebene des Wetterschutzes verhindert außen den Eintritt von Niederschlag, auch unter starkem Winddruck.",
+    "Richtig. Der Funktionsbereich muss trocken bleiben; eingedrungene oder ausgefallene Feuchtigkeit muss nach außen abgeführt werden können.",
+    "Falsch, und zwar genau andersherum. Die Fuge trocknet nach außen aus: Ebene 3 ist dampfdiffusionsoffener als Ebene 1 auszuführen oder abschnittsweise zu öffnen.",
+    "Falsch. Ein beidseitig dampfdichter Abschluss schließt Feuchtigkeit im Funktionsbereich ein. Sie muss über Diffusion oder über Öffnungen in schlagregengeschützten Bereichen entweichen können."
+   ],
+   "antwort": "Richtig sind die ersten fünf: definierte Befestigung und Lastabtragung, ausreichende Wärmedämmung der Fuge, raumseitig umlaufend luftdichter Fugenabschluss, außenseitig schlagregendichte Anbindung und die Vermeidung unzulässiger Feuchteanreicherung — dazu kommt die Dauerhaftigkeit der Umsetzung. Falsch sind die beiden letzten: Die Fuge muss nach außen austrocknen können, nicht nach innen, und darf nicht beidseitig dampfdicht geschlossen werden.",
+   "vertiefung": "Die Reihenfolge der fünf Punkte ist kein Zufall: Erst steht die Statik, dann die Bauphysik, dann die Dauerhaftigkeit. Wer in dieser Reihenfolge plant, merkt früh, dass die Befestigungsmittel die Dämmebene durchstoßen und die Klötze Platz wegnehmen, den später der Dichtstoff braucht.",
+   "bild": "bilder/bk-fenster-3ebenen.svg",
+   "bildunterschrift": "Die Anschlussfuge im Horizontalschnitt: Wetterschutz außen, Funktionsbereich in der Mitte, Luftdichtheitsebene innen.",
+   "tags": [
+    "anschlussfuge",
+    "anforderungen",
+    "luftdichtheit"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 120, 126, 129",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-003",
+   "typ": "bildbeschriftung",
+   "frage": "Benennen Sie die drei Ebenen der Anschlussfuge und die vier übrigen bezeichneten Bauteile im Horizontalschnitt.",
+   "referenz": "bilder/bk-fenster-3ebenen-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 21.6,
+     "y": 46.3,
+     "name": "Ebene 3 – Wetterschutz"
+    },
+    {
+     "nr": 2,
+     "x": 27.3,
+     "y": 55.8,
+     "name": "Ebene 2 – Funktionsbereich"
+    },
+    {
+     "nr": 3,
+     "x": 59.9,
+     "y": 46.3,
+     "name": "Ebene 1 – Trennung von Raum- und Außenklima"
+    },
+    {
+     "nr": 4,
+     "x": 57.0,
+     "y": 72.9,
+     "name": "Blendrahmen"
+    },
+    {
+     "nr": 5,
+     "x": 39.8,
+     "y": 30.2,
+     "name": "Mauerwerk mit Laibungsfläche"
+    },
+    {
+     "nr": 6,
+     "x": 36.9,
+     "y": 46.3,
+     "name": "Distanzklotz"
+    },
+    {
+     "nr": 7,
+     "x": 44.1,
+     "y": 55.8,
+     "name": "mechanisches Befestigungsmittel"
+    }
+   ],
+   "antwort": "1 Ebene 3 – Wetterschutz, schlagregendicht und diffusionsfähiger als Ebene 1. 2 Ebene 2 – Funktionsbereich mit Lastabtragung, Wärme- und Schallschutz; er muss trocken bleiben. 3 Ebene 1 – Trennung von Raum- und Außenklima, raumseitig umlaufend luftdicht. 4 Blendrahmen. 5 Mauerwerk, dessen untere Fläche hier die Laibung und damit die eine Fugenflanke bildet. 6 Distanzklotz. 7 mechanisches Befestigungsmittel, etwa ein Rahmendübel oder eine Direktbefestigungsschraube.",
+   "vertiefung": "Das 3-Ebenen-Modell gilt für mitteleuropäisches Klima und Räume mit normalem Innenklima. Bei klimatisierten oder gekühlten Räumen — und in anderen Klimazonen — ist es objektbezogen zu überprüfen: In trockenen und milden Zonen kann auf die Luftdichtheitsebene unter Umständen ganz verzichtet werden, in anderen liegt sie außen.",
+   "bild": "bilder/bk-fenster-3ebenen.svg",
+   "bildunterschrift": "Die drei Ebenen und die Bauteile der Anschlussfuge, beschriftet.",
+   "tags": [
+    "3-ebenen-modell",
+    "anschlussfuge",
+    "bauteile"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 123, 125",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-004",
+   "typ": "karte",
+   "frage": "Was ist die Aufgabe von Ebene 1 des 3-Ebenen-Modells, und welche Bedingung muss ihre Temperatur erfüllen?",
+   "antwort": "Ebene 1 trennt Raum- und Außenklima. Sie muss in einer Ebene liegen, deren Temperatur über der für Schimmelpilzwachstum kritischen Temperatur des Raumklimas liegt — dem 80-%-Luftfeuchte-Kriterium. Dabei ist unbedingt erforderlich, dass sie die gesamte Fläche der Außenwand ohne Unterbrechung abdeckt; in mitteleuropäischem Klima wird sie als raumseitige Abdichtung umlaufend möglichst luftdicht ausgeführt.",
+   "vertiefung": "Die luftdichte Abdichtung leistet drei Dinge zugleich: Sie verhindert, dass Feuchtigkeit mit der Raumluft in die Konstruktion eindringt und dort an kalten Stellen als Tauwasser ausfällt, sie unterbindet unkontrollierte Wärmeverluste durch Durchströmung von innen nach außen, und sie verhindert Zugluft durch Durchströmung von außen nach innen. Besonderes Augenmerk gilt den Ecken und einem dichten Übergang dort, wo die Dichtebenen konstruktiv versetzt sind — am Rollladenkasten und im Fensterbank- oder Schwellenbereich.",
+   "bild": "bilder/bk-fenster-3ebenen.svg",
+   "bildunterschrift": "Ebene 1 liegt raumseitig am inneren Ende der Fuge.",
+   "tags": [
+    "luftdichtheit",
+    "3-ebenen-modell",
+    "tauwasser"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 129",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-005",
+   "typ": "karte",
+   "frage": "Was leistet Ebene 3, und warum darf sie nicht einfach so dicht wie möglich sein?",
+   "antwort": "Ebene 3 ist der Wetterschutz aus Wind- und Regensperre: Sie verhindert außen weitgehend den Eintritt von Niederschlag, auch unter starkem Winddruck. Sie darf aber nicht beliebig dicht sein, weil Feuchtigkeit aus dem Wandsystem nach außen abgeführt werden muss. Sichergestellt wird das durch ausreichend diffusionsfähige Dichtsysteme in Ebene 3 oder durch Öffnungen in schlagregengeschützten Bereichen.",
+   "vertiefung": "Eingedrungenes Regenwasser muss kontrolliert und direkt nach außen abgeführt werden — das ist der Grund für das zweistufige Fugenprinzip, bei dem Regen- und Windsperre in räumlich getrennten Ebenen liegen und Wasser, das hinter die Regensperre gelangt, trotzdem nach außen geführt wird. Dasselbe Prinzip steckt schon in der Fälzung zwischen Flügel- und Blendrahmen.",
+   "tags": [
+    "wetterschutz",
+    "schlagregen",
+    "diffusion"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 129–130",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-006",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jedem Bestandteil der Anschlussfuge seine Aufgabe zu.",
+   "paare": [
+    [
+     "Ebene 1 – Trennung von Raum- und Außenklima",
+     "raumseitig umlaufend luftdicht, über der schimmelkritischen Temperatur"
+    ],
+    [
+     "Ebene 2 – Funktionsbereich",
+     "Lastabtragung, Wärme- und Schallschutz; muss trocken bleiben"
+    ],
+    [
+     "Ebene 3 – Wetterschutz",
+     "schlagregendicht und diffusionsfähiger als Ebene 1"
+    ],
+    [
+     "Hinterfüllstrang",
+     "begrenzt die Fugentiefe und sichert die Zweiflankenhaftung"
+    ],
+    [
+     "Multifunktionsband",
+     "setzt alle drei Ebenen in einem Produkt um und füllt die Fuge über die Bauteiltiefe"
+    ],
+    [
+     "Trag- und Distanzklotz",
+     "nimmt nur Druck auf und wird gegen Verrutschen gesichert"
+    ]
+   ],
+   "antwort": "Ebene 1 ist die raumseitig umlaufend luftdichte Schicht, deren Temperatur über der schimmelkritischen Temperatur liegen muss. Ebene 2 ist der Funktionsbereich für Lastabtragung, Wärme- und Schallschutz und muss trocken bleiben. Ebene 3 ist der Wetterschutz, schlagregendicht und diffusionsfähiger als Ebene 1. Der Hinterfüllstrang begrenzt die Fugentiefe und sichert die Zweiflankenhaftung. Das Multifunktionsband setzt alle drei Ebenen in einem Produkt um. Trag- und Distanzklötze nehmen nur Druck auf und werden gegen Verrutschen gesichert.",
+   "vertiefung": "Multifunktionsbänder füllen nahezu den gesamten Fugenraum über die Bauteiltiefe aus. Das hat eine Folge, die man beim Planen leicht übersieht: Für Trag- und Distanzklötze bleibt kein Platz mehr, es muss also ein abgestimmtes Befestigungssystem mit Distanzbefestigung eingesetzt werden.",
+   "tags": [
+    "3-ebenen-modell",
+    "dichtsysteme",
+    "klötze"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 123, 127, 133",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-007",
+   "typ": "freitext",
+   "frage": "Eine Anschlussfuge ist außen mit einer dampfdichten Folie verklebt und zum Raum hin offen geblieben. Erklären Sie, was in der Fuge passiert und wie sie stattdessen aufgebaut sein müsste.",
+   "pruefpunkte": [
+    "Raumluft kann über die offene Fuge in den Fugenbereich eindringen.",
+    "Warme, feuchte Raumluft kühlt in der Fuge ab.",
+    "Bei kalter Witterung unterschreitet die Temperatur in der Fuge den Taupunkt.",
+    "Es fällt unkontrolliert Tauwasser aus, der Feuchtegehalt in der Fuge und den angrenzenden Werkstoffen steigt.",
+    "Dazu kommen unkontrollierte Wärmeverluste und Zugluft über die Anschlussfuge.",
+    "Richtig ist: Ebene 1 raumseitig umlaufend geschlossen.",
+    "Das Abdichtungssystem der Ebene 3 muss dampfdiffusionsoffener sein als Ebene 1 oder abschnittsweise geöffnet werden.",
+    "Nur in dieser Ausführung ist keine unzulässige Feuchteerhöhung im Funktionsbereich zu erwarten."
+   ],
+   "antwort": "Über die offene Raumseite strömt warme, feuchte Raumluft in die Anschlussfuge, kühlt dort ab und unterschreitet bei kalter Witterung die Taupunkttemperatur — es fällt unkontrolliert Tauwasser aus, und der Feuchtegehalt in der Fuge und den angrenzenden Werkstoffen steigt. Dazu kommen unkontrollierte Wärmeverluste und Zugluft. Richtig ist der umgekehrte Aufbau: Ebene 1 raumseitig umlaufend geschlossen, damit die Raumluft gar nicht erst in die Fuge gelangt, und das Abdichtungssystem der Ebene 3 dampfdiffusionsoffener als Ebene 1 oder abschnittsweise geöffnet. Nur so ist keine unzulässige Feuchteerhöhung im Funktionsbereich zu erwarten.",
+   "vertiefung": "Der Merksatz „innen dichter als außen“ ist keine Faustregel, sondern die einzige der drei denkbaren Ausführungen, die funktioniert. Ganz ohne Abdichtung sammelt sich Feuchtigkeit von beiden Seiten; nur außen abgedichtet, kommt sie von innen; nur die dritte Variante hält die Raumluft draußen und lässt die Fuge nach außen austrocknen.",
+   "tags": [
+    "dichtebenen",
+    "tauwasser",
+    "diffusion"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 129–130",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-008",
+   "typ": "skizze",
+   "frage": "Skizzieren Sie den Horizontalschnitt durch die seitliche Anschlussfuge eines Fensters und tragen Sie die drei Ebenen, den Distanzklotz und das Befestigungsmittel ein.",
+   "referenz": "bilder/bk-fenster-3ebenen.svg",
+   "pruefpunkte": [
+    "außen und innen sind eindeutig bezeichnet.",
+    "Mauerwerk und Blendrahmen begrenzen die Fuge als deren beide Flanken.",
+    "Ebene 3 – Wetterschutz liegt am äußeren Ende der Fuge.",
+    "Ebene 2 – Funktionsbereich liegt dazwischen und ist mit Dämmstoff ausgefüllt.",
+    "Ebene 1 – Luftdichtheitsebene liegt am raumseitigen Ende.",
+    "Ein Distanzklotz steht im Funktionsbereich zwischen Rahmen und Laibung.",
+    "Ein mechanisches Befestigungsmittel durchdringt die Fuge und verankert den Rahmen im Mauerwerk.",
+    "Die Laibungsfläche setzt sich beidseits der Fuge nach außen und nach innen fort."
+   ],
+   "antwort": "Von außen nach innen: Wetterschutz, Funktionsbereich mit Dämmstoff und Distanzklotz, Luftdichtheitsebene. Fugenflanken sind oben die Laibung des Mauerwerks und unten der Blendrahmen; das mechanische Befestigungsmittel durchdringt die Fuge und verankert den Rahmen im Mauerwerk.",
+   "vertiefung": "Wer diese Skizze im Kopf hat, kann jedes Fensterdetail prüfen, indem er die drei Ebenen sucht. Fehlt eine, fehlt sie auch am Bau — die drei Ebenen müssen in der Konstruktion klar definiert und ausführbar sein.",
+   "tags": [
+    "3-ebenen-modell",
+    "anschlussfuge",
+    "skizze"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 123",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-009",
+   "typ": "karte",
+   "frage": "Welche drei Anschlagsarten unterscheidet man, und worauf bezieht sich diese Einteilung?",
+   "antwort": "Stumpfer Anschlag, Innenanschlag und Außenanschlag. Die Einteilung bezieht sich auf die Geometrie der Wandöffnung — also darauf, ob und auf welcher Seite die Laibung einen Vorsprung hat, gegen den das Element angeschlagen wird. Beim stumpfen Anschlag ist die Tiefenposition des Fensters durch die Wandöffnung nicht vorgegeben; der Innenanschlag liegt gegen einen außenliegenden, der Außenanschlag gegen einen innenliegenden Laibungsvorsprung.",
+   "vertiefung": "Anschlagsart und Einbaulage sind zwei verschiedene Entscheidungen, die gern verwechselt werden. Die Anschlagsart beschreibt die Form der Öffnung, die Einbaulage die Tiefenposition des Fensters darin. Beim stumpfen Anschlag ist die Tiefenlage frei wählbar — dort ist die Einbaulage also eine eigene, bewusste Planungsentscheidung.",
+   "bild": "bilder/bk-fenster-anschlagsarten.svg",
+   "bildunterschrift": "Die drei Anschlagsarten im Horizontalschnitt; orange die Fläche, gegen die das Element angeschlagen wird.",
+   "tags": [
+    "anschlagsarten",
+    "laibung",
+    "wandöffnung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-010",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt für Innenanschlag und Außenanschlag?",
+   "optionen": [
+    "Beim Innenanschlag erfolgt der Einbau von innen.",
+    "Beim Außenanschlag muss der Einbau von außen erfolgen, häufig ist dazu ein Gerüst erforderlich.",
+    "Beim Außenanschlag ist das Fensterelement vollständig der Witterung ausgesetzt.",
+    "Die größeren Anschlussfugenflächen sind ein Vorteil für die Aufnahme von Dicht- und Dämmstoffen.",
+    "Beide Anschlagsarten haben geometrisch bedingt Folgen für die Innen- und Außenansicht.",
+    "Innen- und Außenanschlag unterscheiden sich nur in der Montagerichtung, sonst sind sie gleichwertig."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "warum": [
+    "Richtig. Der Innenanschlag liegt gegen einen außenliegenden Laibungsvorsprung; das Element wird von innen dagegen gesetzt.",
+    "Richtig. Das Element muss von außen gegen den innenliegenden Vorsprung geführt werden — das kostet Gerüst und damit Geld.",
+    "Richtig. Der innenliegende Vorsprung schützt das Element nicht; es liegt vor der Wand und ist voll der Witterung ausgesetzt.",
+    "Richtig. Die prinzipiell größeren Anschlussfugenflächen bieten mehr Raum für Dicht- und Dämmstoffe als der stumpfe Anschlag.",
+    "Richtig. Der Vorsprung ist sichtbar und verändert das Bild der Laibung innen wie außen.",
+    "Falsch. Sie unterscheiden sich außerdem im Witterungsschutz während und nach dem Einbau, im Montageaufwand und in der Ansicht."
+   ],
+   "antwort": "Richtig sind die ersten fünf. Der Innenanschlag wird von innen eingebaut, der Außenanschlag von außen, häufig mit Gerüst, und sein Element ist vollständig der Witterung ausgesetzt. Beide bieten gegenüber dem stumpfen Anschlag größere Anschlussfugenflächen für Dicht- und Dämmstoffe, haben aber geometrisch bedingt Folgen für Innen- und Außenansicht. Gleichwertig sind sie damit gerade nicht.",
+   "vertiefung": "Die Bezeichnung ist leicht zu verwechseln: Innenanschlag heißt nicht „Vorsprung innen“, sondern „das Element liegt innen an“ — der Vorsprung sitzt also außen. Merkhilfe: Benannt wird die Seite, auf der das Fenster liegt, und das ist zugleich die Seite, von der eingebaut wird.",
+   "bild": "bilder-lokal/bk-fenster-innenanschlag-zweischalig.png",
+   "bildunterschrift": "Innenanschlag im zweischaligen Mauerwerk: Das Fenster liegt innen gegen den außenliegenden Vorsprung der Innenschale.",
+   "tags": [
+    "anschlagsarten",
+    "innenanschlag",
+    "außenanschlag"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124; DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.14.2 (PDF 222)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-011",
+   "typ": "numerisch",
+   "frage": "Wie groß ist beim stumpfen Anschlag in der Regel der Abstand zwischen Rahmenaußenkante und Wandöffnung?",
+   "wert": 5,
+   "toleranz": 1,
+   "einheit": "cm",
+   "antwort": "In der Regel etwa 4 bis 6 cm.",
+   "vertiefung": "Das Maß ist nicht frei gewählt, sondern ergibt sich geometrisch aus dem Raumbedarf beim Aufschlagen typischer Rahmen- beziehungsweise Türblattbreiten. Deshalb funktioniert es auch bei Türen — und deshalb ist es keine Zahl, die man unterschreiten sollte, um Fugenbreite zu sparen.",
+   "bild": "bilder/bk-fenster-anschlagsarten.svg",
+   "bildunterschrift": "Beim stumpfen Anschlag (links) gibt die Öffnung die Tiefenposition nicht vor.",
+   "tags": [
+    "stumpfer anschlag",
+    "maße",
+    "wandöffnung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-012",
+   "typ": "skizze",
+   "frage": "Skizzieren Sie die drei Anschlagsarten im Horizontalschnitt und kennzeichnen Sie jeweils die Fläche, gegen die das Element angeschlagen wird.",
+   "referenz": "bilder/bk-fenster-anschlagsarten.svg",
+   "pruefpunkte": [
+    "Drei Schnitte mit jeweils bezeichneter Außen- und Innenseite.",
+    "Stumpfer Anschlag: durchgehend ebene Laibung ohne Vorsprung.",
+    "Innenanschlag: Laibungsvorsprung auf der Außenseite.",
+    "Das Element liegt beim Innenanschlag raumseitig gegen diesen Vorsprung an.",
+    "Außenanschlag: Laibungsvorsprung auf der Innenseite.",
+    "Das Element liegt beim Außenanschlag außenseitig gegen diesen Vorsprung an.",
+    "Der Vorsprung überdeckt den Blendrahmen in der Ansicht."
+   ],
+   "antwort": "Drei Horizontalschnitte: beim stumpfen Anschlag eine ebene Laibung, beim Innenanschlag ein außenliegender Vorsprung, gegen den das Element von innen anliegt, beim Außenanschlag ein innenliegender Vorsprung, gegen den das Element von außen anliegt. In beiden Anschlagsfällen überdeckt der Vorsprung den Blendrahmen.",
+   "vertiefung": "Wer die drei Schnitte nebeneinander zeichnet, sieht sofort, warum dauerhaft dichte Anschlüsse von außenbündig eingesetzten Elementen aufwendig und anspruchsvoll sind: Dort fehlt die überdeckende Flanke, die beim Innenanschlag die Fuge konstruktiv abdeckt.",
+   "tags": [
+    "anschlagsarten",
+    "skizze",
+    "laibung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-013",
+   "typ": "karte",
+   "frage": "Wo sollte ein Fenster zur Vermeidung von Wärmebrücken liegen, und wo idealerweise die thermische Trennebene des Profils?",
+   "antwort": "Grundsätzlich sollten Fenster in der Dämmebene der Gebäudehülle liegen, die thermische Trennebene der Profile idealerweise im Bereich der 13-Grad-Isotherme. Je nach Profildämmqualität und Wärmedämmstandard der Gebäudehülle sind geringe Abweichungen jedoch nicht sehr entscheidend.",
+   "vertiefung": "Die 13-Grad-Isotherme ist dieselbe Linie, die als Schimmelpilzkriterium über die Fuge gelegt wird: Liegt sie innerhalb der geschlossenen Konstruktion, ist die Gefahr der Schimmelpilz- und Tauwasserbildung ausreichend gering. Bei monolithischen Wänden mit Steinen sehr geringer Wärmeleitfähigkeit — etwa 0,08 W/(m·K) — kann die Lage des Fensters unter Wärmebrückengesichtspunkten dagegen weitgehend frei festgelegt werden, weil kritische Oberflächentemperaturen nur unter sehr extremen Bedingungen auftreten.",
+   "bild": "bilder-lokal/bk-fenster-sturz-kerndaemmung.png",
+   "bildunterschrift": "Fenstersturz im kerngedämmten Mauerwerk mit Rollladenkasten: Das Fenster sitzt in der Ebene der Kerndämmung.",
+   "tags": [
+    "einbaulage",
+    "dämmebene",
+    "isotherme"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 125; DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.12.3 (PDF 221)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-014",
+   "typ": "vergleich",
+   "frage": "Zwei Ausführungen derselben Dichtstofffuge. Welche ist fachgerecht?",
+   "richtig": 1,
+   "seiten": [
+    {
+     "titel": "Fuge A",
+     "bild": "bilder/bk-fenster-fuge-falsch.svg",
+     "beschreibung": "Der Dichtstoff füllt die Fuge bis auf den Fugengrund aus und haftet an beiden Flanken und am Fugengrund."
+    },
+    {
+     "titel": "Fuge B",
+     "bild": "bilder/bk-fenster-fuge-richtig.svg",
+     "beschreibung": "Ein geschlossenzelliger Hinterfüllstrang liegt im Fugengrund, der Dichtstoff haftet nur an den beiden Flanken und ist leicht konkav."
+    }
+   ],
+   "antwort": "Fachgerecht ist Fuge B. Dichtstoffe sind fast immer mit einem nicht saugenden, geschlossenzelligen Hinterfüllmaterial zu verwenden; es begrenzt die Fuge im Fugengrund und gewährleistet die Zweiflankenhaftung und damit die optimale Bewegungsaufnahmefähigkeit. Fuge A zeigt eine Dreiflankenhaftung: Haftet der Dichtstoff neben den beiden seitlichen Flanken auch am Fugengrund, kann die Fuge keine Bewegungen aufnehmen. Dreiflankenfugen sind ausnahmslos ungeeignet und müssen konstruktiv vermieden werden.",
+   "vertiefung": "Bei den im Fensterbereich erforderlichen Fugenbreiten von mindestens 10 mm soll sich ein Tiefen- zu Breitenverhältnis von t ≈ 0,5 · b ergeben, mindestens aber 6 mm Tiefe. Die leicht konkave Form, die der Hinterfüllstrang erzwingt, ist kein Schönheitsmerkmal: Sie begünstigt die Bewegungsfähigkeit im Material und reduziert die Spannungen in den Haftflächen. Dasselbe Verdikt wie für Dreiflankenfugen gilt übrigens für Dreiecksfugen.",
+   "tags": [
+    "dichtstoff",
+    "hinterfüllstrang",
+    "dreiflankenhaftung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 132–133",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-015",
+   "typ": "numerisch",
+   "frage": "Welchen Temperaturfaktor fRsi erreicht der außenbündige Fensteranschluss in einer 365 mm dicken monolithischen Wand mit R = 0,56 m²·K/W?",
+   "wert": 0.56,
+   "toleranz": 0.01,
+   "antwort": "fRsi = 0,56, bei einer minimalen Oberflächentemperatur von 7,7 °C (θi = 20 °C, θe = −10 °C).",
+   "vertiefung": "Zum Vergleich: Derselbe Wandaufbau erreicht mittig 0,70 und innenbündig 0,69. Der außenbündige Anschluss fällt also nicht knapp durch, sondern deutlich — und er verliert zugleich am meisten Wärme: ψ beträgt 0,29 W/(m·K) gegenüber 0,12 beim mittigen Anschluss.",
+   "bild": "bilder/bk-fenster-einbaulage.svg",
+   "bildunterschrift": "Die vier Fälle der Tafel 7.1 mit θsi,min, fRsi und ψ.",
+   "tags": [
+    "frsi",
+    "einbaulage",
+    "wärmebrücke"
+   ],
+   "siehe": [
+    "bp-waermebruecken"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 7.2 Fensteranschlüsse, S. 198 (PDF 215)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-016",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt nach den Berechnungen der Tafel 7.1 für den außenbündigen Fensteranschluss in einer monolithischen Wand?",
+   "optionen": [
+    "Er ist immer problematisch, auch bei gut wärmedämmenden Außenwänden.",
+    "Die raumseitige Fensterlaibung ist mit mindestens 20 mm Wärmedämmmaterial zu belegen.",
+    "Mit dieser Laibungsdämmung bleibt er bei Luftfeuchten von etwa 55 % tauwasserfrei.",
+    "Er hat von den drei Anordnungen den größten längenbezogenen Wärmedurchgangskoeffizienten ψ.",
+    "Mit zunehmendem Wärmedurchlasswiderstand R der Wand sinkt die Oberflächentemperatur an der gefährdeten Stelle.",
+    "Bei raumseitiger Wärmedämmung der Außenwand ist er unkritisch."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Während mittiger und innenbündiger Anschluss bei gut wärmedämmenden Außenwänden nicht durch Tauwasser gefährdet sind, ist der außenbündige Anschluss immer problematisch.",
+    "Richtig. Ohne diese Dämmschicht auf der raumseitigen Laibung bleibt die Winkeltemperatur zu niedrig.",
+    "Richtig. Die 20 mm sind genau darauf bemessen, bei etwa 55 % Luftfeuchte tauwasserfrei zu bleiben.",
+    "Richtig. Bei R = 0,56 m²·K/W beträgt ψ 0,29 W/(m·K) gegenüber 0,12 mittig und 0,17 innenbündig.",
+    "Falsch, es ist umgekehrt: Mit zunehmendem R der Wand wird die Oberflächentemperatur an der gefährdeten Stelle höher und die spezifische Temperaturabsenkung niedriger.",
+    "Falsch. Bei raumseitiger Wärmedämmung sind die Temperaturverhältnisse beim außenbündigen Anschluss sehr kritisch; er sollte dort vermieden werden."
+   ],
+   "antwort": "Richtig sind die ersten vier: Der außenbündige Anschluss ist immer problematisch, die raumseitige Laibung ist mit mindestens 20 mm Dämmmaterial zu belegen, damit bleibt er bei etwa 55 % Luftfeuchte tauwasserfrei, und er hat von den drei Anordnungen das größte ψ. Falsch ist, dass ein höherer Wärmedurchlasswiderstand die Oberflächentemperatur senken würde — er hebt sie. Und falsch ist, dass eine Innendämmung die Lage entschärft: Dort wird der außenbündige Anschluss sehr kritisch und sollte vermieden werden.",
+   "vertiefung": "Die Ursache ist nicht nur Geometrie. Wegen der hohen Wärmeleitfähigkeit des Mauerwerkmaterials im Vergleich zu Holz entsteht neben dem Rahmenanschluss in der Wand ein thermischer Kurzschluss mit erhöhter Wärmestromdichte — und der verursacht die Temperaturabnahme. Deshalb hilft auch ausgerechnet eine dünne Dämmschicht auf der Laibung so viel: Sie unterbricht genau diesen Kurzschluss.",
+   "bild": "bilder/bk-fenster-einbaulage.svg",
+   "bildunterschrift": "Fall C ist der außenbündige Anschluss, Fall D derselbe mit 20 mm Laibungsdämmung.",
+   "tags": [
+    "außenbündig",
+    "tauwasser",
+    "laibungsdämmung"
+   ],
+   "siehe": [
+    "bp-feuchte"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 7.2 Fensteranschlüsse, S. 197–198 (PDF 214–215)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-017",
+   "typ": "freitext",
+   "frage": "Beim innenbündigen Fensteranschluss liegt das Temperaturminimum der raumseitigen Oberfläche nicht dort, wo man es erwartet. Wo liegt es, und wie erklärt sich das?",
+   "pruefpunkte": [
+    "Bei mittigem und außenbündigem Anschluss liegt das Minimum im Winkel zwischen Rahmen und Laibung.",
+    "Beim innenbündigen Anschluss ist es um knapp 100 mm neben die Laibungskante gerückt.",
+    "Verständlich wird das über den Verlauf der Wärmestromlinien.",
+    "Die Oberflächentemperatur der Laibung steigt geometriebedingt zur Kante hin an.",
+    "Der Anstieg ist umso ausgeprägter, je größer die Laibungsfläche ist.",
+    "Die Temperatur im Winkel zwischen Rahmen und Laibung ist umso höher, je näher der Anschluss zum Innenraum rückt."
+   ],
+   "antwort": "Es liegt um knapp 100 mm neben die Laibungskante gerückt, nicht im Winkel zwischen Rahmen und Laibung wie bei den beiden anderen Anordnungen. Erklären lässt sich das über den Verlauf der Wärmestromlinien: Die Oberflächentemperatur der Laibung steigt geometriebedingt zur Kante hin an, und zwar umso ausgeprägter, je größer die Laibungsfläche wird. Zugleich ist die Temperatur im Winkel umso höher, je näher der Anschluss zum Innenraum rückt. Beim innenbündigen Anschluss ist der Winkel deshalb nicht mehr die kälteste Stelle — die liegt ein Stück daneben auf der Wandfläche.",
+   "vertiefung": "Praktische Folge: Wer am innenbündig eingebauten Fenster die Oberflächentemperatur misst oder eine Thermografie auswertet, darf nicht in der Ecke messen. Dort ist es wärmer als zehn Zentimeter weiter — und genau diese zehn Zentimeter entscheiden darüber, ob der gemessene Wert den tatsächlichen Mindestwert trifft.",
+   "bild": "bilder/bk-fenster-einbaulage.svg",
+   "bildunterschrift": "In Fall A markiert der Kreis die kälteste Stelle neben der Laibungskante.",
+   "tags": [
+    "innenbündig",
+    "oberflächentemperatur",
+    "wärmestromlinien"
+   ],
+   "siehe": [
+    "bp-waermebruecken"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 7.2 Fensteranschlüsse, S. 198, 200 (PDF 215, 217)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-018",
+   "typ": "numerisch",
+   "frage": "Mit wie viel Millimetern Wärmedämmmaterial muss die raumseitige Fensterlaibung bei außenbündigem Anschluss mindestens belegt werden, damit sie bei rund 55 % Luftfeuchte tauwasserfrei bleibt?",
+   "wert": 20,
+   "toleranz": 0,
+   "einheit": "mm",
+   "antwort": "Mit mindestens 20 mm.",
+   "vertiefung": "Die Wirkung ist erstaunlich groß für zwei Zentimeter: In derselben Wand mit R = 0,56 m²·K/W steigt θsi,min von 7,7 auf 11,6 °C und fRsi von 0,56 auf 0,72, während ψ von 0,29 auf 0,14 W/(m·K) sinkt. Die Dämmschicht unterbricht den thermischen Kurzschluss zwischen Rahmen und Mauerwerk — deshalb genügt so wenig.",
+   "bild": "bilder/bk-fenster-einbaulage.svg",
+   "bildunterschrift": "Fall D: außenbündiger Anschluss mit 20 mm Dämmung auf der raumseitigen Laibung.",
+   "tags": [
+    "laibungsdämmung",
+    "außenbündig",
+    "tauwasser"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 7.2 Fensteranschlüsse, S. 198 (PDF 215)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-019",
+   "typ": "zuordnung",
+   "frage": "Monolithische Wand, 365 mm, R = 0,56 m²·K/W, θi = 20 °C, θe = −10 °C. Ordnen Sie jeder Einbaulage ihre minimale Oberflächentemperatur θsi,min zu.",
+   "paare": [
+    [
+     "innenbündig",
+     "10,6 °C"
+    ],
+    [
+     "mittig",
+     "11,0 °C"
+    ],
+    [
+     "außenbündig",
+     "7,7 °C"
+    ],
+    [
+     "außenbündig mit 20 mm Laibungsdämmung",
+     "11,6 °C"
+    ]
+   ],
+   "antwort": "innenbündig 10,6 °C, mittig 11,0 °C, außenbündig 7,7 °C, außenbündig mit 20 mm Laibungsdämmung 11,6 °C.",
+   "vertiefung": "Zwei Dinge fallen auf. Erstens liegt mittig vor innenbündig — die beste Lage ist nicht die innerste, weil sich bei mittigem Einbau das Verhältnis der Innen- zur Außenfläche am günstigsten ergibt. Zweitens schlägt der außenbündige Anschluss mit Laibungsdämmung alle drei anderen Fälle: Die Dämmschicht ist wirksamer als jede Verschiebung des Fensters in der Laibung.",
+   "bild": "bilder/bk-fenster-einbaulage.svg",
+   "bildunterschrift": "Die vier Fälle der Tafel 7.1 nebeneinander.",
+   "tags": [
+    "einbaulage",
+    "oberflächentemperatur",
+    "tafel 7.1"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 7.2 Fensteranschlüsse, S. 198 (PDF 215)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-020",
+   "typ": "karte",
+   "frage": "Auf der Baustelle wird der Blendrahmen mit Ortschaum fixiert und ausgeschäumt. Reicht das als Befestigung?",
+   "antwort": "Nein. Ortschäume, Kleber oder ähnliche Baumaterialien eignen sich nach derzeitigem Stand der Technik nicht für eine definierte Befestigung; diese muss stets mechanisch erfolgen. Auch Dübel, Laschen und dergleichen reichen allein zur definierten Abtragung der in Fensterebene wirkenden Lasten nicht aus. Fenster und Außentüren in Lochfassaden besitzen in der Regel eine umlaufende mechanische Befestigung mit geeigneten Befestigungsmitteln — alle vier Seiten müssen mit dem Baukörper verbunden werden.",
+   "vertiefung": "Ebenfalls nicht mehr Stand der Technik ist das Anschießen mit Bolzen oder Nägeln, weil dadurch die Qualität der Befestigung nicht dauerhaft sichergestellt ist. Und Keile, die während der Montage als Fixierhilfen dienen, müssen nach der Befestigung entfernt werden — sie sind Montagehilfe, nicht Auflager.",
+   "tags": [
+    "befestigung",
+    "ortschaum",
+    "lastabtragung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122, 125, 127",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-021",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt für Trag- und Distanzklötze in der Anschlussfuge?",
+   "optionen": [
+    "Sie dürfen nur auf Druck belastet werden und sind gegen Verrutschen zu sichern.",
+    "Sie sind so anzuordnen, dass es nicht zu einer Einspannung des Rahmens kommt.",
+    "Ihr Material muss dauerhaft formstabil sein und eine geringe Wärmeleitfähigkeit besitzen.",
+    "Ihre Breite ist so auf Rahmendicke und Fugenausbildung abzustimmen, dass sich die nachfolgenden Abdichtungsmaßnahmen einwandfrei ausführen lassen.",
+    "Fenstertüren benötigen ab einer Breite von 1 m auch am unteren Rahmenprofil mittig Tragklötze.",
+    "Bei Distanz-Befestigungssystemen sind sie in jedem Fall zusätzlich erforderlich."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "warum": [
+    "Richtig. Unterlegklötze werden nur auf Druck belastet und gegen Verrutschen gesichert.",
+    "Richtig. Jeder Rahmenteil muss in eine Richtung frei bleiben, damit Profilwärmedehnungen keine Zwängungen erzeugen.",
+    "Richtig. Bewährt haben sich duroplastische Kunststoffe und beständiges Holz.",
+    "Richtig. Ein zu breiter Klotz nimmt dem Dichtstoff den Platz, den er für die Zweiflankenhaftung braucht.",
+    "Richtig. Begehbare Schwellen sind darüber hinaus über die gesamte Öffnungsbreite trittfest zu unterbauen.",
+    "Falsch. Bei Distanz-Befestigungssystemen sind Unterlegklötze nicht erforderlich, wenn entsprechende Nachweise des Herstellers vorliegen und die Anwendungsgrenzen eingehalten werden."
+   ],
+   "antwort": "Richtig sind die ersten fünf. Klötze nehmen nur Druck auf, werden gegen Verrutschen gesichert, dürfen den Rahmen nicht einspannen, müssen formstabil und wenig wärmeleitend sein, und ihre Breite muss die nachfolgende Abdichtung zulassen; Fenstertüren ab 1 m Breite brauchen auch unten mittig Tragklötze. Falsch ist die letzte Aussage: Bei Distanz-Befestigungssystemen entfallen die Klötze, wenn Nachweise des Herstellers vorliegen.",
+   "vertiefung": "Der Bewegungsausgleich wird meist über Langlöcher oder Ankerschienen sichergestellt; eine starre Befestigung ist nur in Ausnahmefällen denkbar — kleine Fenster, Baukörper ohne Formänderungen. Wer den Rahmen rundum starr verschraubt, baut sich die Zwängung ein, die er mit den Klötzen gerade vermeiden wollte.",
+   "bild": "bilder/bk-fenster-3ebenen.svg",
+   "bildunterschrift": "Der Distanzklotz steht im Funktionsbereich zwischen Laibung und Blendrahmen.",
+   "tags": [
+    "tragklotz",
+    "distanzklotz",
+    "lastabtragung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 123, 125",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-022",
+   "typ": "fehlersuche",
+   "frage": "Der Horizontalschnitt zeigt die seitliche Anschlussfuge eines Fensters in einer monolithischen Außenwand, Raum mit normalem Innenklima. In einem der vier markierten Bereiche ist die Ausführung falsch. Welcher ist es?",
+   "referenz": "bilder/bk-fenster-fehler.svg",
+   "bereiche": [
+    {
+     "nr": 1,
+     "x": 44.1,
+     "y": 47.9,
+     "name": "Befestigung des Blendrahmens"
+    },
+    {
+     "nr": 2,
+     "x": 21.6,
+     "y": 39.6,
+     "name": "äußerer Fugenabschluss"
+    },
+    {
+     "nr": 3,
+     "x": 59.9,
+     "y": 39.6,
+     "name": "raumseitiger Fugenabschluss"
+    },
+    {
+     "nr": 4,
+     "x": 29.8,
+     "y": 47.9,
+     "name": "Füllung des Fugenraums"
+    }
+   ],
+   "fehlerNr": 3,
+   "folge": "Über die offene Raumseite strömt warme, feuchte Raumluft in die Anschlussfuge. Sie kühlt dort ab, unterschreitet bei kalter Witterung die Taupunkttemperatur und fällt unkontrolliert als Tauwasser aus; der Feuchtegehalt in der Fuge und den angrenzenden Werkstoffen steigt. Dazu kommen unkontrollierte Wärmeverluste und Zugluft über die Anschlussfuge.",
+   "antwort": "Falsch ist Bereich 3, der raumseitige Fugenabschluss: Die Fuge ist zum Raum hin offen geblieben. Die Trennung von Raum- und Außenklima muss als raumseitige Abdichtung umlaufend möglichst luftdicht ausgeführt sein. Die übrigen drei Bereiche sind in Ordnung — außen ein schlagregendichter, diffusionsfähiger Abschluss, der Fugenraum möglichst vollständig mit Dämmstoff ausgefüllt, und der Blendrahmen mechanisch befestigt.",
+   "vertiefung": "Der Fall ist gefährlich, weil er sich gut anfühlt: außen dicht, Fuge gedämmt, Rahmen fest. Genau diese Ausführung — Ebene 1 nicht geschlossen, Ebene 3 geschlossen — ist aber die zweite der drei Varianten, und sie führt zum Tauwasserausfall beim Einströmen von warmer, feuchter Raumluft. Nur wenn Ebene 1 umlaufend geschlossen ist, ist keine unzulässige Feuchteerhöhung im Funktionsbereich zu erwarten.",
+   "tags": [
+    "luftdichtheit",
+    "tauwasser",
+    "anschlussfuge"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 129–130",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-023",
+   "typ": "karte",
+   "frage": "Warum ist der Befestigungsgrund bei hochwärmedämmenden Steinen und Lochbaustoffen ein eigenes Planungsthema?",
+   "antwort": "Weil nicht nur die Tragfähigkeit des Befestigungsmittels die Lastaufnahme begrenzt, sondern der Untergrund: Hochwärmedämmende Steine — Lochsteine, Steine mit porigem Gefüge, gefüllte Steine — haben zum Teil nur geringe Festigkeit; bei Lochsteinen liegen die Befestigungsmittel unterschiedlich zu den Hohlräumen, woraus eine große Streubreite der Festigkeitswerte folgt; Bautoleranzen führen bei Durchsteckmontage zu unterschiedlichen freien Dübellängen; und die Lage in Fugen oder nahe an Rändern spielt eine Rolle. Bolzen-, Schwerlast- und Schraubanker sind bei Lochbaustoffen und porigen Steinen nicht geeignet.",
+   "vertiefung": "Dazu kommt eine Einschränkung, die am Zeichenbrett leicht übersehen wird: Bei Hochlochziegeln ist eine Befestigung parallel zur Lochung nicht möglich. Die übliche Anschlusslösung funktioniert deshalb nur bei Beton, Holz oder Ähnlichem — für Ziegelwände ist eine aufwendigere Lösung notwendig. Und ist die Wand gemauert, darf die Mörtelfuge nicht auf Zug belastet werden.",
+   "tags": [
+    "befestigung",
+    "lochsteine",
+    "mauerwerk"
+   ],
+   "siehe": [
+    "bk-aw-zweischalig"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 127–129",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-024",
+   "typ": "numerisch",
+   "frage": "Ein Fenster erreicht nach Prüfnorm ein Schalldämmmaß Rw,P von 45 dB. Welcher Wert wurde für dasselbe Fenster mit leerer Fuge zwischen Fenster und Wand gemessen?",
+   "wert": 12,
+   "toleranz": 0,
+   "einheit": "dB",
+   "antwort": "12 dB. Die leere Anschlussfuge macht den Schallschutz des Fensters praktisch zunichte.",
+   "vertiefung": "Die Zwischenstufen sind ebenso lehrreich: Eine umlaufende Haarfuge zwischen Schaum und Wand lässt 32 dB übrig, ein einziges Keilloch im Schaum 33 dB, und erst die voll ausgeschäumte Fuge, deren Schaum an den Fugenflanken haftet, kommt auf 43 dB. Bereits kleine Löcher oder Haarfugen im Anschlussbereich können das Gesamtergebnis um mehr als 10 dB verschlechtern.",
+   "tags": [
+    "schallschutz",
+    "fugenschalldämmung",
+    "anschlussfuge"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68–69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-025",
+   "typ": "reihenfolge",
+   "frage": "Bringen Sie die Arbeitsschritte beim Herstellen einer Anschlussfuge mit Dichtstoff in die richtige Reihenfolge.",
+   "schritte": [
+    "geeignete Fugenflanken herstellen, etwa durch bündig abgestrichene Mörtelfugen oder einen Glattstrich",
+    "das Element mit Trag- und Distanzklötzen ausrichten, deren Breite die spätere Abdichtung zulässt",
+    "den Blendrahmen umlaufend mechanisch am Baukörper befestigen",
+    "den verbleibenden Fugenraum möglichst vollständig mit Dämmstoff ausfüllen",
+    "den geschlossenzelligen Hinterfüllstrang als Abschluss der Dämmstoffverfüllung einlegen",
+    "den Fugendichtstoff aufbringen, der mit dem Hinterfüllstrang eine Funktionseinheit bildet"
+   ],
+   "antwort": "Erst die Fugenflanken herstellen, dann das Element mit Klötzen ausrichten, dann umlaufend mechanisch befestigen, dann den Fugenraum mit Dämmstoff ausfüllen, dann den Hinterfüllstrang einlegen und zuletzt den Dichtstoff aufbringen.",
+   "vertiefung": "Zwei Schritte werden regelmäßig vertauscht oder weggelassen. Die Fugenflanken stellt in der Regel die montierende oder die ausführende Rohbaufirma her — sie sind zwingende Voraussetzung für eine fachgerechte Abdichtung und keine Nacharbeit. Und der Hinterfüllstrang gehört zwischen Dämmung und Dichtstoff: Er schützt die Fugenflanken vor Verschmutzung durch PUR-Schäume, verhindert ein undefiniertes Anhaften am Dämmstoff und stellt die konkave Fugenform sicher.",
+   "tags": [
+    "ausführung",
+    "anschlussfuge",
+    "dichtstoff"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 127–128",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-026",
+   "typ": "karte",
+   "frage": "Warum ist der Fenstersturz in Verbindung mit einem Rollladenkasten wärmebrückentechnisch besonders empfindlich?",
+   "antwort": "Weil hier häufig der sogenannte Rollladenpilz entsteht. Der Innenbereich von Rollladenkästen ist zum Vermeiden von Wärmebrücken allseitig zu dämmen, und der Wärmedurchgangskoeffizient im Bereich von Rollladenkästen darf nicht zu groß sein; die Hersteller sollten dafür einen Nachweis erbringen.",
+   "vertiefung": "Der Rollladenkasten ist auch sonst eine Sonderstelle der Fuge: Er erzeugt einen konstruktiv bedingten Versatz der Dichtebenen, dem beim Herstellen der Luftdichtheit besonderes Augenmerk gilt. Und bei brennbaren Wärmedämmverbundsystemen braucht er wie der Fenstersturz gegebenenfalls eine eigene Brandbarriere, weil es auch über den Kasten nicht zur Brandausbreitung kommen darf.",
+   "tags": [
+    "rollladenkasten",
+    "wärmebrücke",
+    "sturz"
+   ],
+   "siehe": [
+    "bk-stuerze"
+   ],
+   "quelle": "Praktische Bauphysik, Abschn. 2.3 Wärmeschutz im Hochbau, S. 147; DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 126, 129",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-027",
+   "typ": "freitext",
+   "frage": "Erklären Sie die Wirkungsweise imprägnierter Fugendichtungsbänder und nennen Sie die Bedingungen, unter denen sie dauerhaft funktionieren.",
+   "pruefpunkte": [
+    "Die Funktionsweise beruht auf der Expansion des Bands in der Fuge.",
+    "Bänder üben ausschließlich Druckkräfte auf die angrenzenden Flächen aus.",
+    "Deshalb eignen sie sich dort, wo keine Zugbeanspruchung auftreten darf — etwa gegen bestehenden Putz mit unzureichender Tragfähigkeit.",
+    "Die Fugenflanken müssen dem Expansionsdruck ausreichend Widerstand bieten.",
+    "Sie müssen weitgehend eben sein und möglichst planparallel verlaufen.",
+    "Zwingend ist die Einhaltung eines ausreichenden Kompressionsgrads im eingebauten Zustand.",
+    "Die Herstellerwerte bmin und bmax dürfen weder über- noch unterschritten werden, auch nicht im Bereich von Unebenheiten.",
+    "Als Verhältnis sollte bmax ≤ 0,75 · tF eingehalten werden, damit das Band nicht herausrutscht.",
+    "Grundlage der Anwendung ist DIN 18542."
+   ],
+   "antwort": "Im Gegensatz zu Dichtstoffen beruht die Funktionsweise von Dichtungsbändern auf ihrer Expansion in der Fuge: Sie üben ausschließlich Druckkräfte auf die angrenzenden Flächen aus. Daraus folgt ihr Einsatzbereich — überall dort, wo keine Zugbeanspruchung auftreten darf, etwa bei der Abdichtung gegen bestehenden Putz mit unzureichender Tragfähigkeit. Daraus folgen aber auch die Bedingungen: Die Fugenflanken müssen dem Expansionsdruck ausreichend Widerstand bieten, weitgehend eben sein und möglichst planparallel verlaufen. Zwingende Voraussetzung für die dauerhafte Funktionsfähigkeit ist ein ausreichender Kompressionsgrad im eingebauten Zustand: Die Vorgaben des Bandherstellers für bmin und bmax dürfen weder über- noch unterschritten werden, auch nicht im Bereich von Unebenheiten. Damit das Band nicht aus der Fuge rutscht, sollte je nach Einbausituation bmax ≤ 0,75 · tF eingehalten werden. Grundlage der Anwendung ist DIN 18542.",
+   "vertiefung": "Dichtungsbänder haben einen sehr geringen Wasserdampfdiffusionswiderstand und sorgen im Außenbereich deshalb für guten Feuchteausgleich der Fuge bei gleichzeitiger Schlagregendichtheit — sie passen also von Haus aus zur Rolle der Ebene 3. Die Weiterentwicklung sind Multifunktionsbänder, die alle drei Ebenen in einem Produkt umsetzen: innen luftdicht, außen schlagregendicht, dazwischen dämmend.",
+   "tags": [
+    "fugendichtungsband",
+    "din 18542",
+    "kompression"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 133–134",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-028",
+   "typ": "fall",
+   "frage": "Neubau, monolithisches Mauerwerk aus hochwärmedämmenden Lochziegeln, 365 mm. Der Entwurfsverfasser möchte die Fenster aus gestalterischen Gründen außenbündig setzen; über den Öffnungen sind Rollladenkästen vorgesehen. Der Rohbauunternehmer schlägt vor, die Rahmen mit Ortschaum zu setzen und außen mit einer Dichtfolie zu überkleben, die Innenseite bleibe offen.",
+   "teile": [
+    {
+     "frage": "Welche bauphysikalische Folge hat die außenbündige Lage, und was ist zu tun, wenn sie beibehalten wird?",
+     "antwort": "Der außenbündige Anschluss ist immer problematisch: In einer 365 mm dicken monolithischen Wand mit R = 0,56 m²·K/W sinkt θsi,min auf 7,7 °C, fRsi auf 0,56, während ψ auf 0,29 W/(m·K) steigt. Wird von der Regel, Fenster in der Dämmebene anzuordnen, aus gestalterischen Gründen abgewichen, sind zusätzliche Dämmmaßnahmen im Bereich des Anschlusses erforderlich: Die raumseitige Fensterlaibung ist mit mindestens 20 mm Wärmedämmmaterial zu belegen, damit sie bei etwa 55 % Luftfeuchte tauwasserfrei bleibt. Damit steigt θsi,min auf 11,6 °C und fRsi auf 0,72. Zu prüfen bleibt, ob die sehr geringe Wärmeleitfähigkeit der verwendeten Steine die Lage entschärft — bei Steinen um 0,08 W/(m·K) kann die Fensterlage unter Wärmebrückengesichtspunkten weitgehend frei festgelegt werden."
+    },
+    {
+     "frage": "Was ist zur Befestigung in diesem Mauerwerk zu sagen?",
+     "antwort": "Ortschäume eignen sich nach derzeitigem Stand der Technik nicht für eine definierte Befestigung; diese muss stets mechanisch und umlaufend auf allen vier Seiten erfolgen. Der Befestigungsgrund ist hier zusätzlich kritisch: Hochwärmedämmende Steine und Lochbaustoffe haben zum Teil geringe Festigkeit, die Lage der Befestigungsmittel zu den Hohlräumen erzeugt eine große Streubreite der Festigkeitswerte, und bei Hochlochziegeln ist eine Befestigung parallel zur Lochung nicht möglich. Bolzen-, Schwerlast- und Schraubanker sind für Lochbaustoffe nicht geeignet; infrage kommen Direktbefestigungsschrauben, Kunststoff- oder Metallrahmendübel sowie Verbund- und Injektionsanker, bei hochwärmedämmenden Steinen mit dem Hersteller abgestimmt."
+    },
+    {
+     "frage": "Was ist zum vorgeschlagenen Fugenaufbau zu sagen?",
+     "antwort": "Er ist falsch herum. Außen geschlossen und innen offen heißt: Warme, feuchte Raumluft strömt in die Fuge, kühlt ab, unterschreitet die Taupunkttemperatur und fällt als Tauwasser aus; dazu kommen unkontrollierte Wärmeverluste und Zugluft. Richtig ist Ebene 1 raumseitig umlaufend luftdicht, Ebene 2 möglichst vollständig mit Dämmstoff ausgefüllt und Ebene 3 schlagregendicht, aber dampfdiffusionsoffener als Ebene 1 oder abschnittsweise geöffnet."
+    },
+    {
+     "frage": "Worauf ist am Rollladenkasten zusätzlich zu achten?",
+     "antwort": "Der Anschluss am Fenstersturz in Verbindung mit einem Rollladenkasten ist hinsichtlich der Wärmebrücken besonders empfindlich — hier entsteht häufig der sogenannte Rollladenpilz. Der Innenbereich ist allseitig zu dämmen, der Wärmedurchgangskoeffizient im Bereich des Kastens darf nicht zu groß sein, und der Hersteller sollte dafür einen Nachweis erbringen. Konstruktionsbedingt versetzt der Kasten außerdem die Dichtebenen; diesem Übergang gilt beim Herstellen der Luftdichtheit besonderes Augenmerk."
+    }
+   ],
+   "fallbild": "bilder/bk-fenster-einbaulage.svg",
+   "antwort": "Die außenbündige Lage ist nur mit mindestens 20 mm Dämmung auf der raumseitigen Laibung vertretbar, die Befestigung muss mechanisch, umlaufend und auf den Lochziegel abgestimmt sein, und der Fugenaufbau ist umzudrehen: innen luftdicht, außen diffusionsoffener. Der Rollladenkasten braucht allseitige Dämmung und besondere Sorgfalt am Versatz der Dichtebenen.",
+   "vertiefung": "Der Fall zeigt, dass die drei Entscheidungen zusammenhängen. Die gestalterische Festlegung auf außenbündig erzeugt den Wärmebrückenbedarf, der Steintyp begrenzt die Befestigungsmittel, und beides zusammen bestimmt, wie viel Platz in der Fuge für Klötze, Dämmstoff und Dichtsystem bleibt. Wer eine der drei Fragen allein beantwortet, verschiebt das Problem nur.",
+   "tags": [
+    "einbaulage",
+    "befestigung",
+    "rollladenkasten"
+   ],
+   "siehe": [
+    "bp-waermebruecken",
+    "bk-stuerze"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 7.2 Fensteranschlüsse, S. 197–198 (PDF 214–215); DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 125, 127–130; Praktische Bauphysik, Abschn. 2.3 Wärmeschutz im Hochbau, S. 147",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fen-029",
+   "typ": "karte",
+   "frage": "In welche Beanspruchungsgruppen werden Fenster nach DIN 18055 eingeteilt, und wonach richtet sich die Einstufung im Normalfall?",
+   "antwort": "In die Beanspruchungsgruppen A bis D. Kriterium ist im Normalfall die Gebäudehöhe; in Sonderfällen können auch andere Aspekte maßgeblich sein, etwa die geografische Lage oder die Einbauart der Fenster.",
+   "vertiefung": "Die Gruppe ist im Leistungsverzeichnis anzugeben — sie ist also eine Planungsleistung, keine Produkteigenschaft, die man dem Hersteller überlässt. Bei Wahl der Gruppe D sind zusätzlich die Anforderungen selbst anzugeben, weil die Norm dort keine festen Werte mehr vorgibt.",
+   "tags": [
+    "fenster",
+    "schlagregendichtheit",
+    "din 18055"
+   ],
+   "siehe": [
+    "bp-schlagregen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.3, S. 476 (PDF 491)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 18055 in der im Buch zitierten Fassung. Gegen DIN 18055:2014-11 und die Klassifizierung nach DIN EN 12208 prüfen, ob die Beanspruchungsgruppen A bis D noch so bezeichnet werden und ob die Gebäudehöhe weiterhin das Hauptkriterium ist."
+  },
+  {
+   "id": "bk-fen-030",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt für die Angabe der Beanspruchungsgruppe eines Fensters nach DIN 18055?",
+   "optionen": [
+    "Die Beanspruchungsgruppe ist im Leistungsverzeichnis anzugeben.",
+    "Im Normalfall ist die Gebäudehöhe das Kriterium.",
+    "Bei Wahl der Gruppe D sind die Anforderungen zusätzlich anzugeben.",
+    "Die geografische Lage darf die Einstufung nicht beeinflussen.",
+    "Die Einstufung nimmt der Fensterhersteller vor."
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig. Die Angabe gehört ins Leistungsverzeichnis und ist damit Sache der Planung.",
+    "Richtig. Im Normalfall richtet sich die Einstufung nach der Gebäudehöhe.",
+    "Richtig. Für die Gruppe D gibt die Norm keine festen Werte vor, die Anforderungen sind deshalb zusätzlich anzugeben.",
+    "Falsch. In Sonderfällen können gerade andere Aspekte maßgeblich sein, unter anderem die geografische Lage.",
+    "Falsch. Die Einstufung ist eine Planungsleistung; der Hersteller liefert gegen die angegebene Gruppe."
+   ],
+   "antwort": "Richtig sind die ersten drei. Die Beanspruchungsgruppe ist im Leistungsverzeichnis anzugeben, im Normalfall richtet sie sich nach der Gebäudehöhe, und bei Wahl der Gruppe D sind die Anforderungen zusätzlich anzugeben. In Sonderfällen können statt der Gebäudehöhe andere Aspekte maßgeblich sein — die geografische Lage ist also gerade nicht ausgeschlossen, und die Einstufung ist nicht Sache des Herstellers.",
+   "vertiefung": "Die Prüfung der Schlagregendichtheit von Fenstern ist damit an derselben Stelle geregelt wie die Beanspruchungsgruppen der Wand — und mit derselben Logik: Erst wird die Beanspruchung bestimmt, dann das Bauteil danach ausgewählt. Wer die Wand nach Gruppe III auslegt und das Fenster dem Hersteller überlässt, hat die schwächste Stelle nicht geplant.",
+   "tags": [
+    "fenster",
+    "leistungsverzeichnis",
+    "din 18055"
+   ],
+   "siehe": [
+    "bp-schlagregen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.3, S. 476 (PDF 491)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 18055 in der im Buch zitierten Fassung. Gegen DIN 18055:2014-11 und die Klassifizierung nach DIN EN 12208 prüfen, ob die Beanspruchungsgruppen A bis D noch so bezeichnet werden und ob die Gebäudehöhe weiterhin das Hauptkriterium ist."
+  }
+ ]
+}

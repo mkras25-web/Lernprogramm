@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480">
+<defs>
+<pattern id="mw" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+  <rect width="14" height="14" fill="#a98467"/>
+  <line x1="0" y1="0" x2="0" y2="14" stroke="#6c584c" stroke-width="1.1" opacity="0.55"/>
+</pattern>
+<pattern id="dm" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+  <rect width="10" height="10" fill="#adc178"/>
+  <line x1="0" y1="0" x2="0" y2="10" stroke="#f7f3e4" stroke-width="2" opacity="0.7"/>
+</pattern>
+<pattern id="hz" width="9" height="9" patternUnits="userSpaceOnUse">
+  <rect width="9" height="9" fill="#dde5b6"/>
+  <line x1="0" y1="0" x2="9" y2="9" stroke="#6c584c" stroke-width="0.9" opacity="0.5"/>
+</pattern>
+<pattern id="pu" width="8" height="8" patternUnits="userSpaceOnUse">
+  <rect width="8" height="8" fill="#f7f3e4"/>
+  <circle cx="4" cy="4" r="1.6" fill="#adc178"/>
+</pattern>
+</defs>
+<rect x="0" y="0" width="880" height="480" fill="#f0ead2"/>
+<text x="440.0" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="19" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">Die Anschlussfuge in drei Ebenen</text>
+<text x="440.0" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Horizontalschnitt durch die seitliche Fuge — mitteleuropäisches Klima, Raum mit normalem Innenklima</text>
+<rect x="46" y="95" width="14" height="105" fill="#f7f3e4" stroke="#414833" stroke-width="1.4"/>
+<rect x="640" y="95" width="14" height="105" fill="#f7f3e4" stroke="#414833" stroke-width="1.4"/>
+<rect x="60" y="95" width="580" height="105" fill="url(#mw)" stroke="#414833" stroke-width="2"/>
+<rect x="160" y="200" width="62" height="90" fill="url(#pu)" stroke="#414833" stroke-width="1.4"/>
+<rect x="222" y="200" width="274" height="90" fill="url(#dm)" stroke="#414833" stroke-width="1.4"/>
+<rect x="496" y="200" width="64" height="90" fill="#6c584c" stroke="#414833" stroke-width="1.4"/>
+<rect x="291" y="200" width="68" height="90" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<rect x="160" y="290" width="400" height="110" fill="url(#hz)" stroke="#414833" stroke-width="2"/>
+<rect x="424" y="162" width="11" height="192" fill="#f7f3e4" stroke="#414833" stroke-width="1.8"/>
+<rect x="412" y="348" width="35" height="12" rx="3" fill="#f7f3e4" stroke="#414833" stroke-width="1.8"/>
+<line x1="342" y1="400" x2="342" y2="452" stroke="#6c584c" stroke-width="2.4"/>
+<line x1="352" y1="400" x2="352" y2="452" stroke="#6c584c" stroke-width="2.4"/>
+<text x="362" y="442" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#6c584c" font-weight="normal" font-style="normal">Verglasung</text>
+<line x1="222" y1="200" x2="222" y2="290" stroke="#414833" stroke-width="1.4" stroke-dasharray="6 5"/>
+<line x1="496" y1="200" x2="496" y2="290" stroke="#414833" stroke-width="1.4" stroke-dasharray="6 5"/>
+<text x="46" y="83" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#6c584c" font-weight="bold" font-style="normal">außen</text>
+<text x="654" y="83" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="end" fill="#6c584c" font-weight="bold" font-style="normal">innen</text>
+<line x1="60" y1="200" x2="160" y2="200" stroke="#414833" stroke-width="2"/>
+<line x1="560" y1="200" x2="640" y2="200" stroke="#414833" stroke-width="2"/>
+<text x="70" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="start" fill="#6c584c" font-weight="normal" font-style="normal">Laibung,</text>
+<text x="70" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="start" fill="#6c584c" font-weight="normal" font-style="normal">außen</text>
+<text x="630" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="end" fill="#6c584c" font-weight="normal" font-style="normal">Laibung,</text>
+<text x="630" y="246" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="end" fill="#6c584c" font-weight="normal" font-style="normal">innen</text>
+<circle cx="190" cy="222" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="190" y="227" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">1</text>
+<circle cx="240" cy="268" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="240" y="273" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">2</text>
+<circle cx="527" cy="222" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="527" y="227" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">3</text>
+<circle cx="502" cy="350" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="502" y="355" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">4</text>
+<circle cx="350" cy="145" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="350" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">5</text>
+<circle cx="325" cy="222" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="325" y="227" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">6</text>
+<circle cx="388" cy="268" r="13" fill="#f7f3e4" stroke="#414833" stroke-width="2"/><text x="388" y="273" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">7</text>
+</svg>
