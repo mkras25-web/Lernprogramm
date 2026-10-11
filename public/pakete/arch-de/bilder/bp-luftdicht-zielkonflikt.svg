@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+<defs>
+<pattern id="mw" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+  <rect width="14" height="14" fill="#a98467"/>
+  <line x1="0" y1="0" x2="0" y2="14" stroke="#6c584c" stroke-width="1.1" opacity="0.55"/>
+</pattern>
+<pattern id="dm" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+  <rect width="10" height="10" fill="#adc178"/>
+  <line x1="0" y1="0" x2="0" y2="10" stroke="#f7f3e4" stroke-width="2" opacity="0.7"/>
+</pattern>
+<pattern id="hz" width="9" height="9" patternUnits="userSpaceOnUse">
+  <rect width="9" height="9" fill="#dde5b6"/>
+  <line x1="0" y1="0" x2="9" y2="9" stroke="#6c584c" stroke-width="0.9" opacity="0.5"/>
+</pattern>
+<marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+        orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#9a6b1f"/></marker>
+<marker id="pfk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+        orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6c584c"/></marker>
+</defs>
+<rect x="0" y="0" width="900" height="500" fill="#f0ead2"/>
+<text x="450.0" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="19" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">Der Zielkonflikt der Luftdichtheit</text>
+<text x="450.0" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Beide Richtungen sind Fehler — die erforderliche Frischluftmenge liegt dazwischen</text>
+<rect x="286" y="84" width="328" height="76" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="450" y="108" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">erforderliche Frischluftmenge</text>
+<text x="450" y="128" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Personenzahl · Aktivität</text>
+<text x="450" y="145" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Schadstoffquellen · Feuchtequellen</text>
+<line x1="286" y1="122" x2="214" y2="122" stroke="#414833" stroke-width="2.4" marker-end="url(#pfk)"/>
+<line x1="614" y1="122" x2="686" y2="122" stroke="#414833" stroke-width="2.4" marker-end="url(#pfk)"/>
+<rect x="46" y="176" width="384" height="212" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="1.8"/>
+<text x="238" y="204" font-family="Segoe UI, Arial, sans-serif" font-size="15" text-anchor="middle" fill="#9a6b1f" font-weight="bold" font-style="normal">zu geringer Luftwechsel</text>
+<text x="238" y="226" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">zum Beispiel dichter Neubau ohne Lüftungskonzept</text>
+<circle cx="82" cy="250" r="3.5" fill="#414833"/>
+<text x="98" y="255" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">mangelhafte Hygiene</text>
+<circle cx="82" cy="276" r="3.5" fill="#414833"/>
+<text x="98" y="281" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Schadstoffbelastung</text>
+<circle cx="82" cy="302" r="3.5" fill="#414833"/>
+<text x="98" y="307" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Schimmelbildung</text>
+<circle cx="82" cy="328" r="3.5" fill="#414833"/>
+<text x="98" y="333" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">gegebenenfalls Bauschäden</text>
+<rect x="114" y="348" width="248" height="30" rx="15" fill="#adc178" stroke="#414833" stroke-width="1.6"/>
+<text x="238" y="368" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">Lüftungskonzept planen</text>
+<rect x="470" y="176" width="384" height="212" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="1.8"/>
+<text x="662" y="204" font-family="Segoe UI, Arial, sans-serif" font-size="15" text-anchor="middle" fill="#9a6b1f" font-weight="bold" font-style="normal">zu hoher Luftwechsel</text>
+<text x="662" y="226" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">zum Beispiel undichter Altbau mit hoher Fugenlüftung</text>
+<circle cx="506" cy="250" r="3.5" fill="#414833"/>
+<text x="522" y="255" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">unnötige Wärmeverluste</text>
+<circle cx="506" cy="276" r="3.5" fill="#414833"/>
+<text x="522" y="281" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">mangelhafte Behaglichkeit</text>
+<circle cx="506" cy="302" r="3.5" fill="#414833"/>
+<text x="522" y="307" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Bauschäden durch Feuchteeintrag in Bauteile</text>
+<rect x="538" y="348" width="248" height="30" rx="15" fill="#adc178" stroke="#414833" stroke-width="1.6"/>
+<text x="662" y="368" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">luftdicht bauen</text>
+<text x="450" y="424" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#9a6b1f" font-weight="normal" font-style="italic">Beide Spalten gehören zusammen: Wer luftdicht baut, schuldet dem Gebäude ein Lüftungskonzept.</text>
+<text x="450" y="452" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Nach DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, gedr. S. 65.</text>
+</svg>

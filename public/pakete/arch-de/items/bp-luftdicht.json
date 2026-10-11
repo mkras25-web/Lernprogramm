@@ -1,0 +1,856 @@
+{
+ "thema": "bp-luftdicht",
+ "titel": "Luftdichtheit, Winddichtheit, Blower Door",
+ "lernziele": [
+  "Du kannst begründen, warum eine Gebäudehülle luftdicht sein muss, und die drei Wirkungen der luftdichten Abdichtung nennen.",
+  "Du kannst die Luftdichtheitsebene in einem Gebäudeschnitt in einem Zug zeichnen und die kritischen Anschlussstellen benennen.",
+  "Du kannst das Blower-Door-Verfahren erklären, n50 einordnen und sagen, was der Test nicht leistet.",
+  "Du kannst den Zielkonflikt zwischen Luftdichtheit und Mindestluftwechsel darstellen und daraus ein Lüftungskonzept begründen."
+ ],
+ "erklaerung": {
+  "absaetze": [
+   "Luftdichtheit ist keine Eigenschaft eines Bauteils, sondern einer Linie. Die luftdichte Abdichtung liegt in aller Regel auf der Raumseite und leistet drei Dinge zugleich: Sie verhindert, dass Feuchtigkeit mit der Raumluft in die Konstruktion eindringt und an kalten Stellen als Tauwasser ausfällt, sie unterbindet unkontrollierte Wärmeverluste durch Durchströmung von innen nach außen, und sie verhindert Zugluft durch Durchströmung von außen nach innen. Entscheidend ist dabei nicht die Qualität der einzelnen Stelle, sondern die Geschlossenheit: Es ist unbedingt erforderlich, dass die Ebene die gesamte Fläche ohne Unterbrechung abdeckt.",
+   "Warum gerade die Luftströmung so gefährlich ist, zeigt der Vergleich der Feuchtetransportmechanismen. Eine Luftströmung von warm nach kalt über undichte Fugen führt zu Tauwasserbildung an kühleren Oberflächen, und über diese meist langsame Strömung können größere Mengen Wasser in die Konstruktion eingetragen werden. Die Wasserdampfdiffusion dagegen ist wesentlich träger, und die Feuchtemengen sind deutlich geringer. Die umgekehrte Strömung von kalt nach warm erzeugt kein Tauwasser in der Konstruktion, wohl aber Zugluft. Daraus folgt das Prinzip für das Gesamtsystem aus Bauteil, Fuge und Wand: innen dichter als außen. Der Wetterschutz außen besteht aus Wind- und Regensperre und muss dampfdiffusionsoffener bleiben, damit die Konstruktion nach außen austrocknen kann.",
+   "Nachgewiesen wird die Luftdichtheit auf zwei Ebenen. Einzelne Bauteile und die Fugen zwischen ihnen werden nach DIN EN 12114 im Labor geprüft; als praktisch luftdicht gilt dort ein Luftdurchlasskoeffizient a < 0,1 m³/[h·m·(daPa)^(2/3)], derselbe Wert, den DIN 4108-2 für Bauteil- und Anschlussfugen fordert. Fenster und Türen werden nach DIN EN 12207 in die Klassen 1 bis 4 eingeteilt, mit Referenzluftdurchlässigkeiten von 50, 27, 9 und 3 m³/(h·m²) bei 100 Pa. Das ganze Gebäude wird nach DIN EN 13829 vor Ort geprüft — das Differenzdruck-Messverfahren, bekannt als Blower-Door-Test: Ein Ventilator erzeugt 50 Pa, gemessen wird der nötige Volumenstrom, und daraus ergibt sich n50. Der Test erfasst immer die ganze Hülle; quantitative Aussagen zu einzelnen Fugen oder Fenstern kann er deshalb nicht liefern.",
+   "Luftdichtheit lässt sich allerdings nicht maximieren, denn sie steht im Zielkonflikt mit dem Mindestluftwechsel: Die eine Seite minimiert Lüftungswärmeverluste und verbessert den Schallschutz, die andere sichert die Hygiene. Ein zu geringer Luftwechsel bringt mangelhafte Hygiene, Schadstoffbelastung und Schimmelbildung, ein zu hoher unnötige Wärmeverluste, mangelhafte Behaglichkeit und Bauschäden durch Feuchteeintrag. Nach DIN 4108-2 ist im Mittel mindestens ein Luftwechsel von 0,5 1/h während der Heizperiode zu planen, empfehlenswert für Aufenthaltsräume sind eher 0,8 bis 1,0 1/h. Sichergestellt werden darf er nur über definierte Öffnungen oder Lüftungseinrichtungen — Konstruktions- und Anschlussfugen dürfen nicht dazu beitragen, weil sie undefiniert sind.",
+   "Wo es schiefgeht, ist meist der Materialwechsel. DIN 4108-7 beschreibt die anerkannten Regeln der Technik für die Ausbildung der Luftdichtheitsebene und liefert Musterdetails — behandelt aber ausdrücklich nicht die funktionsbedingten Fugen und Öffnungen wie Gurtdurchführungen von Rollladenkästen. Besonderes Augenmerk gilt den Ecken und dem Übergang dort, wo die Dichtebenen konstruktiv versetzt sind. Und die Sanierung hat ihren eigenen Fallstrick: Alte Fenster waren undicht und sicherten dadurch einen hohen Luftwechsel, der im Winter für geringe Luftfeuchte sorgte und Schimmel verhinderte — zum Preis enormer Lüftungswärmeverluste. Wer sie austauscht, ohne die Lüftung mitzuplanen, beseitigt den Schutz und lässt das Problem zurück."
+  ],
+  "merksatz": "Wer luftdicht baut, schuldet dem Gebäude ein Lüftungskonzept.",
+  "bild": "bilder/bp-luftdicht-huellflaeche.svg",
+  "bildunterschrift": "Die Luftdichtheitsebene umschließt das beheizte Volumen ohne Unterbrechung; jede markierte Stelle ist ein Anschluss, keine Lücke.",
+  "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59–65, und Baukörperanschluss und baulicher Kontext, S. 121, 129; Praktische Bauphysik, Abschn. 2.3.6, S. 148"
+ },
+ "siehe": [
+  "bp-feuchte",
+  "bp-waermebruecken",
+  "bk-fenster"
+ ],
+ "items": [
+  {
+   "id": "bp-ld-001",
+   "typ": "karte",
+   "frage": "Welche drei Dinge leistet eine luftdichte Abdichtung der Gebäudehülle?",
+   "antwort": "Erstens verhindert sie, dass Feuchtigkeit mit der Raumluft in die Konstruktion eindringt und dort an Stellen, deren Oberflächentemperatur unter der Taupunkttemperatur liegt, als Tauwasser ausfällt. Zweitens unterbindet sie unkontrollierte Wärmeverluste durch Durchströmung von innen nach außen. Drittens verhindert sie Zuglufterscheinungen durch Durchströmung von außen nach innen.",
+   "vertiefung": "Die drei Wirkungen greifen an derselben Stelle an, werden aber von verschiedenen Gewerken verantwortet — und genau deshalb fällt die Luftdichtheit so oft zwischen die Stühle. Besonderes Augenmerk gilt den Ecken und einem dichten Übergang dort, wo die Dichtebenen konstruktiv versetzt sind: am Rollladenkasten und im Fensterbank- oder Schwellenbereich.",
+   "bild": "bilder/bp-luftdicht-huellflaeche.svg",
+   "bildunterschrift": "Die Luftdichtheitsebene umschließt das beheizte Volumen ohne Unterbrechung.",
+   "tags": [
+    "luftdichtheit",
+    "tauwasser",
+    "zugluft"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 129",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-002",
+   "typ": "vergleich",
+   "frage": "Dieselbe undichte Fuge, zwei Strömungsrichtungen im Winter. In welchem Fall entsteht Tauwasser in der Konstruktion?",
+   "richtig": 0,
+   "seiten": [
+    {
+     "titel": "Strömung A",
+     "bild": "bilder/bp-luftdicht-konvektion-aussen.svg",
+     "beschreibung": "Warme, feuchte Raumluft strömt durch die Fuge nach außen."
+    },
+    {
+     "titel": "Strömung B",
+     "bild": "bilder/bp-luftdicht-konvektion-innen.svg",
+     "beschreibung": "Kalte Außenluft strömt durch die Fuge nach innen."
+    }
+   ],
+   "antwort": "In Fall A. Eine Luftströmung von warm nach kalt über nicht abgedichtete oder undichte Fugen führt zu Tauwasserbildung an kühleren Oberflächen; über diese meist langsame Luftströmung können größere Mengen an Wasser in die Konstruktion eingetragen werden. Die umgekehrte Strömung von kalt nach warm, etwa durch Winddruck, führt zu keiner Tauwasserbildung in der Konstruktion, wohl aber zu unerwünschten Zuglufterscheinungen.",
+   "vertiefung": "Der Vergleich mit der Diffusion macht die Größenordnung deutlich: Die Wasserdampfdiffusion ist gegenüber Konvektionsvorgängen wesentlich träger, und die Feuchtemengen sind deutlich geringer. Wer also über die Dampfbremse diskutiert, die Anschlussfuge aber offen lässt, hat die kleinere der beiden Größen optimiert.",
+   "tags": [
+    "konvektion",
+    "tauwasser",
+    "fuge"
+   ],
+   "siehe": [
+    "bp-feuchte"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-003",
+   "typ": "freitext",
+   "frage": "Luftdichtheit ist kein Wert, den man maximieren kann. Erklären Sie den Zielkonflikt und was aus ihm für die Planung folgt.",
+   "pruefpunkte": [
+    "Es besteht ein Zielkonflikt zwischen Luftdichtheit und Mindestluftwechsel.",
+    "Luftdichtheit dient der Minimierung der Lüftungswärmeverluste und der Optimierung des Schallschutzes.",
+    "Der Mindestluftwechsel dient der Hygienesicherung.",
+    "Zu geringer Luftwechsel — etwa dichter Neubau ohne Lüftungskonzept — führt zu mangelhafter Hygiene, Schadstoffbelastung, Schimmelbildung und gegebenenfalls Bauschäden.",
+    "Zu hoher Luftwechsel — etwa undichter Altbau mit hoher Fugenlüftung — führt zu unnötigen Wärmeverlusten, mangelhafter Behaglichkeit und Bauschäden durch Feuchteeintrag in Bauteile.",
+    "Die erforderliche Frischluftmenge hängt von Personenzahl, Aktivität, Schadstoffquellen und Feuchtequellen ab.",
+    "Sehr hohe Dichtigkeiten führen je nach Nutzung zu erhöhter Raumluftfeuchte, wenn der Luftwechsel nicht anderweitig sichergestellt ist.",
+    "Gebäude mit sehr dichten Hüllen erfordern deshalb eine angepasste Lüftungsstrategie."
+   ],
+   "antwort": "Luftdichtheit und Mindestluftwechsel ziehen in entgegengesetzte Richtungen: Die eine Seite minimiert Lüftungswärmeverluste und verbessert den Schallschutz, die andere sichert die Hygiene. Beide Extreme sind Fehler. Ein zu geringer Luftwechsel — der dichte Neubau ohne Lüftungskonzept — bringt mangelhafte Hygiene, Schadstoffbelastung, Schimmelbildung und gegebenenfalls Bauschäden. Ein zu hoher Luftwechsel — der undichte Altbau mit hoher Fugenlüftung — bringt unnötige Wärmeverluste, mangelhafte Behaglichkeit und Bauschäden durch Feuchteeintrag in Bauteile. Dazwischen liegt die erforderliche Frischluftmenge, die sich aus Personenzahl, Aktivität, Schadstoff- und Feuchtequellen ergibt. Daraus folgt: Wer luftdicht baut, schuldet dem Gebäude ein Lüftungskonzept.",
+   "vertiefung": "Der historische Fall zeigt beide Seiten in einem Gebäude. Die großen Luftundichtigkeiten alter Fensterkonstruktionen stellten einen hohen Luftwechsel sicher und sorgten gerade im Winter für verhältnismäßig geringe Luftfeuchtigkeit, sodass bei ausreichender Beheizung keine Schimmelpilzbildung auftrat. Der Preis dafür waren enorme Lüftungswärmeverluste und ein hoher Heizenergieaufwand.",
+   "bild": "bilder/bp-luftdicht-zielkonflikt.svg",
+   "bildunterschrift": "Beide Richtungen sind Fehler; die erforderliche Frischluftmenge liegt dazwischen.",
+   "tags": [
+    "zielkonflikt",
+    "mindestluftwechsel",
+    "lüftungskonzept"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61, 64–65",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-004",
+   "typ": "bildbeschriftung",
+   "frage": "Benennen Sie die sechs markierten Stellen der Luftdichtheitsebene im Gebäudeschnitt.",
+   "referenz": "bilder/bp-luftdicht-huellflaeche-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 28.3,
+     "y": 36.5,
+     "name": "Dichtungsbahn in der Dachfläche"
+    },
+    {
+     "nr": 2,
+     "x": 17.8,
+     "y": 46.9,
+     "name": "Anschluss Dach an Außenwand"
+    },
+    {
+     "nr": 3,
+     "x": 17.8,
+     "y": 77.1,
+     "name": "Luftdichtheitsebene der Außenwand"
+    },
+    {
+     "nr": 4,
+     "x": 72.0,
+     "y": 52.1,
+     "name": "Baukörperanschlussfuge am Fenster"
+    },
+    {
+     "nr": 5,
+     "x": 33.3,
+     "y": 66.7,
+     "name": "einbindende Geschossdecke"
+    },
+    {
+     "nr": 6,
+     "x": 57.8,
+     "y": 33.3,
+     "name": "Durchdringung der Hüllfläche"
+    }
+   ],
+   "antwort": "1 Dichtungsbahn in der Dachfläche. 2 Anschluss Dach an Außenwand — hier wechselt das Material, die Ebene muss durchverbunden werden. 3 Luftdichtheitsebene der Außenwand, raumseitig. 4 Baukörperanschlussfuge am Fenster. 5 einbindende Geschossdecke — die Ebene muss über die Deckenstirn geführt werden. 6 Durchdringung der Hüllfläche, etwa durch eine Leitung.",
+   "vertiefung": "Entscheidend ist nicht, dass jede einzelne Stelle dicht ist, sondern dass sie eine zusammenhängende Linie bilden: Es ist unbedingt erforderlich, dass die Ebene die gesamte Fläche ohne Unterbrechung abdeckt. Deshalb lohnt der alte Planerkniff, den Schnitt mit einem Stift in einem Zug zu umfahren — wo man absetzen muss, ist die Ebene unterbrochen.",
+   "bild": "bilder/bp-luftdicht-huellflaeche.svg",
+   "bildunterschrift": "Die sechs Stellen beschriftet.",
+   "tags": [
+    "luftdichtheitsebene",
+    "hüllfläche",
+    "anschlüsse"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-005",
+   "typ": "skizze",
+   "frage": "Skizzieren Sie den Schnitt durch ein Gebäude und ziehen Sie die Luftdichtheitsebene in einem Zug um das beheizte Volumen.",
+   "referenz": "bilder/bp-luftdicht-huellflaeche.svg",
+   "pruefpunkte": [
+    "Die Linie ist geschlossen und umläuft das beheizte Volumen ohne Unterbrechung.",
+    "Sie liegt raumseitig, nicht außen.",
+    "Im Dach verläuft sie in der Dachfläche als Dichtungsbahn.",
+    "An der Außenwand verläuft sie an der raumseitigen Wandfläche.",
+    "Nach unten begrenzt sie das beheizte Volumen über der Kellerdecke.",
+    "Am Übergang Dach zu Außenwand ist der Materialwechsel als Anschluss gezeichnet.",
+    "Die einbindende Geschossdecke unterbricht die Linie nicht.",
+    "Fensteranschlussfugen und Durchdringungen sind als Teil der Ebene gekennzeichnet."
+   ],
+   "antwort": "Eine geschlossene, raumseitig verlaufende Linie: in der Dachfläche als Dichtungsbahn, an der Außenwand raumseitig, unten über der Kellerdecke. Die Materialwechsel am Traufpunkt, die einbindende Geschossdecke, die Fensteranschlussfugen und jede Durchdringung sind Stellen der Ebene, keine Unterbrechungen.",
+   "vertiefung": "DIN 4108-7 beschreibt für genau diese Aufgabe die anerkannten Regeln der Technik — Materialwahl je nach Baukonstruktion, Vorbereitung der Untergründe, Lage der Dichtungsbahnen, Durchdringungen — und liefert eine große Sammlung von Musterdetails.",
+   "tags": [
+    "luftdichtheitsebene",
+    "skizze",
+    "din 4108-7"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-006",
+   "typ": "karte",
+   "frage": "Was wird beim Blower-Door-Test gemessen, und nach welcher Norm?",
+   "antwort": "Durch das Differenzdruck-Messverfahren, bekannt als Blower-Door-Test, wird die Luftdichtheit der gesamten Gebäudehülle nach DIN EN 13829 vor Ort nachgewiesen — dann ohne Einzelnachweis für Baukörperanschlussfugen oder Bauteile. Ein Ventilator in einer Gebäudeöffnung erzeugt eine Druckdifferenz von 50 Pa; gemessen wird der Volumenstrom, der nötig ist, um diesen Druck zu halten. Daraus ergibt sich die Luftwechselrate n50 als Volumenstrom bei 50 Pa, bezogen auf das beheizte Luftvolumen.",
+   "vertiefung": "Zur Abgrenzung: Die Luftdichtheit einzelner Bauteile und der Fugen zwischen Bauteilen wird nicht hier, sondern nach DIN EN 12114 im Labor bestimmt. Die Blower Door misst immer das ganze Haus.",
+   "bild": "bilder/bp-luftdicht-blowerdoor.svg",
+   "bildunterschrift": "Ventilator in der Gebäudeöffnung, Unterdruck 50 Pa, Messung des Volumenstroms.",
+   "tags": [
+    "blower door",
+    "din en 13829",
+    "n50"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-007",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jedem Fall den Grenzwert für n50 bei einer Druckdifferenz von 50 Pa zu.",
+   "paare": [
+    [
+     "Gebäude ohne raumlufttechnische Anlage",
+     "n50 ≤ 3,0 1/h"
+    ],
+    [
+     "Gebäude mit raumlufttechnischer Anlage",
+     "n50 ≤ 1,5 1/h"
+    ],
+    [
+     "Passivhausstandard",
+     "n50 ≤ 0,6 1/h"
+    ]
+   ],
+   "antwort": "Ohne raumlufttechnische Anlagen n50 ≤ 3,0 1/h, mit raumlufttechnischen Anlagen n50 ≤ 1,5 1/h, Passivhausstandard n50 ≤ 0,6 1/h.",
+   "vertiefung": "Die Grenzwerte sind an einen Vorteil gekoppelt: Wer die Luftdichtheitsüberprüfung durchführt und die Werte einhält, darf bei der Energiebilanzierung einen günstigeren Ansatz für die Lüftungswärmeverluste verwenden. Die Logik hinter der Staffelung ist einfach — wer eine Anlage hat, die den Luftwechsel kontrolliert herstellt, darf und muss dichter bauen.",
+   "bild": "bilder/bp-luftdicht-blowerdoor.svg",
+   "bildunterschrift": "Die drei Grenzwerte im Überblick.",
+   "tags": [
+    "n50",
+    "grenzwert",
+    "blower door"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte aus der EnEV 2014, Anlage 4. Gegen das GEG in der geltenden Fassung prüfen, ob die Grenzwerte n50 ≤ 3,0 1/h ohne und n50 ≤ 1,5 1/h mit raumlufttechnischer Anlage unverändert übernommen wurden und ob der Nachweis weiterhin nach DIN EN 13829 oder inzwischen nach DIN EN ISO 9972 zu führen ist."
+  },
+  {
+   "id": "bp-ld-008",
+   "typ": "karte",
+   "frage": "Luftdicht und winddicht — welche Ebene liegt wo, und nach welchem Prinzip?",
+   "antwort": "Die luftdichte Abdichtung ist in aller Regel auf der Raumseite angeordnet, also in Ebene 1 des 3-Ebenen-Modells. Der Wetterschutz besteht aus Wind- und Regensperre und liegt außen in Ebene 3. Das Prinzip für das Gesamtsystem aus Bauteil, Fuge und Wand lautet „innen dichter als außen“: Ebene 3 muss dampfdiffusionsoffener sein als Ebene 1 oder abschnittsweise geöffnet werden, damit Feuchtigkeit nach außen entweichen kann.",
+   "vertiefung": "Die Lage der Luftdichtheitsebene ist keine Naturkonstante, sondern auf mitteleuropäisches Klima abgestimmt. In anderen Klimazonen ist sie gegebenenfalls anzupassen, also zum Beispiel nach außen zu verlegen; in trockenen und milden Zonen kann unter Umständen vollständig auf sie verzichtet werden.",
+   "bild": "bilder/bp-luftdicht-huellflaeche.svg",
+   "bildunterschrift": "Die Luftdichtheitsebene liegt raumseitig und umschließt das beheizte Volumen.",
+   "tags": [
+    "winddichtheit",
+    "luftdichtheit",
+    "3-ebenen-modell"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121, 129; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 65",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-009",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Mechanismen tragen Feuchtigkeit in eine Außenwandkonstruktion ein?",
+   "optionen": [
+    "Schlagregen, der durch offene Fugen von der Luftströmung angetrieben wird",
+    "Kapillarzug ohne äußere Einwirkung wie Winddruck",
+    "Wasserdampfkonvektion durch undichte Fugen",
+    "Wasserdampfdiffusion aufgrund des Differenzklimas zwischen innen und außen",
+    "Wasserdampfdiffusion trägt dabei deutlich größere Feuchtemengen ein als die Konvektion"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Dringen von der Luftströmung angetriebene Wassertropfen durch offene Fugen ein, muss das Wasser durch konstruktive Maßnahmen definiert aus dem Bauteil abgeleitet werden.",
+    "Richtig. Dieser Eintrag lässt sich durch die konstruktive Vermeidung von Kapillarfugen verhindern.",
+    "Richtig. Luftströmung von warm nach kalt über undichte Fugen führt zu Tauwasserbildung an kühleren Oberflächen.",
+    "Richtig. Sie hängt vom Wasserdampfdiffusionswiderstand der Materialien und deren Dicke ab.",
+    "Falsch, und zwar deutlich. Die Diffusion ist im Vergleich zu Konvektionsvorgängen wesentlich träger, und die Feuchtemengen sind deutlich geringer."
+   ],
+   "antwort": "Richtig sind die ersten vier: Schlagregen durch offene Fugen, Kapillarzug, Wasserdampfkonvektion und Wasserdampfdiffusion. Falsch ist die letzte Aussage — die Diffusion ist gegenüber der Konvektion wesentlich träger, und die Feuchtemengen sind deutlich geringer.",
+   "vertiefung": "Diese Belastungen können einzeln, aber auch in Überlagerung auftreten, abhängig von der baulichen Situation, den klimatischen Randbedingungen und besonderen Einwirkungen — hoher Wasserdampfdruck im Innenraum bei Hallenbädern etwa. Bei Überlagerung sind gegebenenfalls Nachweisverfahren auf Basis dynamischer Simulationsrechnungen erforderlich.",
+   "tags": [
+    "feuchtetransport",
+    "konvektion",
+    "diffusion"
+   ],
+   "siehe": [
+    "bp-feuchte"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-010",
+   "typ": "mehrfachauswahl",
+   "frage": "Was leistet der Blower-Door-Test — und was leistet er nicht?",
+   "optionen": [
+    "Er weist die Luftdichtheit der gesamten Gebäudehülle vor Ort nach.",
+    "Er macht einen Einzelnachweis für Baukörperanschlussfugen oder Bauteile entbehrlich.",
+    "Er dient nebenbei der Beurteilung der Verarbeitungsgüte, weil Undichtheiten und mangelhafte Verarbeitung aufgedeckt werden.",
+    "Er liefert quantitative Aussagen zur Luftdurchlässigkeit einzelner Fugen oder Fenster.",
+    "Er ersetzt die Laborprüfung einzelner Bauteile nach DIN EN 12114."
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig. Das Differenzdruck-Messverfahren erfasst die Hülle als Ganzes, am fertigen Gebäude.",
+    "Richtig. Wird die Hülle als Ganzes nachgewiesen, entfällt der Einzelnachweis.",
+    "Richtig. Das ist ein Nebeneffekt, aber ein praktisch wertvoller: Der Test findet, was die Sichtkontrolle übersieht.",
+    "Falsch. Dazu ist das Verfahren nicht geeignet, da stets die gesamte Hülle erfasst wird.",
+    "Falsch. Die Luftdichtheit einzelner Bauteile und der Fugen zwischen Bauteilen wird nach DIN EN 12114 im Labor bestimmt — das ist eine andere Prüfung mit einem anderen Zweck."
+   ],
+   "antwort": "Richtig sind die ersten drei. Der Test weist die Luftdichtheit der gesamten Hülle vor Ort nach, macht damit den Einzelnachweis für Anschlussfugen und Bauteile entbehrlich und deckt nebenbei Verarbeitungsmängel auf. Nicht leisten kann er quantitative Aussagen zu einzelnen Fugen oder Fenstern, denn er erfasst immer die ganze Hülle — und er ersetzt die Laborprüfung nach DIN EN 12114 nicht.",
+   "vertiefung": "Die Konsequenz für die Praxis: Ein durchgefallener Blower-Door-Test sagt, dass das Gebäude undicht ist, aber nicht, wo. Dafür braucht es die Leckageortung während der Messung — und die findet man am besten, bevor die Bekleidungen geschlossen sind.",
+   "tags": [
+    "blower door",
+    "nachweis",
+    "din en 12114"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61, 65",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-011",
+   "typ": "karte",
+   "frage": "Welche Fugenarten unterscheidet man in der Gebäudehülle?",
+   "antwort": "Grundsätzlich Funktionsfugen und Konstruktionsfugen. Die Funktionsfuge wird regelmäßig geöffnet — etwa die Fuge zwischen Flügel- und Blendrahmen — und darf in begrenztem Maße luftdurchlässig sein. Die Konstruktionsfugen gliedern sich weiter: innerhalb eines Bauteils, zwischen Bauteilen als Bauteilfuge und zum Baukörper als Baukörperanschlussfuge. Bauteilfugen gibt es starr, ohne Bewegungsaufnahme, und beweglich; die Baukörperanschlussfuge muss luftdicht sein und zugleich Bewegungen aufnehmen.",
+   "vertiefung": "Die Einteilung entscheidet darüber, was erlaubt ist. Nur die Funktionsfuge darf überhaupt Luft durchlassen, weil sie planmäßig geöffnet wird und ihr Verhalten über Dichtprofile definiert ist. Alle übrigen Fugen sind undefiniert — und was undefiniert ist, darf nicht Teil des Lüftungskonzepts sein.",
+   "tags": [
+    "fugenarten",
+    "funktionsfuge",
+    "anschlussfuge"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 62",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-012",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jeder Fugenart ihr typisches Beispiel zu.",
+   "paare": [
+    [
+     "Funktionsfuge, öffenbar",
+     "Fuge zwischen Flügel- und Blendrahmen"
+    ],
+    [
+     "Bauteilfuge, weitgehend geschlossen",
+     "Fugen an Revisionsdeckeln"
+    ],
+    [
+     "Bauteilfuge, starr",
+     "Stoß von Blendrahmen mit einem Verbreiterungsprofil"
+    ],
+    [
+     "Bauteilfuge, beweglich",
+     "Kopplung zweier großer Blendrahmen"
+    ],
+    [
+     "Baukörperanschlussfuge",
+     "Anschluss des Blendrahmens an den Baukörper"
+    ]
+   ],
+   "antwort": "Die öffenbare Funktionsfuge ist die Fuge zwischen Flügel- und Blendrahmen. Die weitgehend geschlossene Bauteilfuge findet sich an Revisionsdeckeln. Die starre Bauteilfuge entsteht beim Stoß eines Blendrahmens mit einem Verbreiterungsprofil, die bewegliche bei der Kopplung zweier großer Blendrahmen. Die Baukörperanschlussfuge verbindet den Blendrahmen mit dem Baukörper.",
+   "vertiefung": "An den Dichtsystemen lässt sich die Reihe ablesen: Funktionsfugen und Revisionsdeckel bekommen speziell auf die Funktion abgestimmte Dichtprofile, starre Bauteilfugen Dichtbänder, Dichtprofile oder Kleb- und Dichtstoffe, und die Baukörperanschlussfuge die ganze Bandbreite — Dichtstoffe, imprägnierte Dichtungsbänder, Multifunktionsbänder, Fugendichtbänder und Dichtfolien. Je mehr eine Fuge können muss, desto größer die Auswahl.",
+   "tags": [
+    "fugenarten",
+    "dichtsysteme",
+    "beispiele"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 62",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-013",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Fugen dürfen zum Mindestluftwechsel eines Gebäudes beitragen?",
+   "optionen": [
+    "Baukörperanschlussfugen, wenn sie gleichmäßig über die Hülle verteilt sind",
+    "Bauteilfugen, wenn ihre Luftdurchlässigkeit im Labor geprüft wurde",
+    "Funktionsfugen zu öffnender Fenster und Fenstertüren",
+    "keine der genannten Fugen"
+   ],
+   "richtig": [
+    3
+   ],
+   "warum": [
+    "Falsch. Konstruktions- und Anschlussfugen dürfen grundsätzlich nicht zum Mindestluftwechsel beitragen, da sie undefiniert beziehungsweise nicht definierbar sind; sie müssen luftundurchlässig ausgeführt werden.",
+    "Falsch. Auch eine geprüfte Bauteilfuge bleibt eine Konstruktionsfuge und darf nicht angesetzt werden.",
+    "Falsch, seit der EnEV 2014. Im Gegensatz zur EnEV 2009 ist das nicht mehr erlaubt, weil die Luftdichtheit aktueller Produkte in Deutschland inzwischen sehr hoch ist.",
+    "Richtig. Der Mindestluftwechsel muss über definierte Öffnungen oder Lüftungseinrichtungen hergestellt werden, nicht über Undichtheiten."
+   ],
+   "antwort": "Keine. Konstruktions- und Anschlussfugen dürfen grundsätzlich nicht zum Mindestluftwechsel beitragen, weil sie undefiniert beziehungsweise nicht definierbar sind, und müssen deshalb luftundurchlässig ausgeführt werden. Auch die Funktionsfugen zu öffnender Fenster und Fenstertüren dürfen seit der EnEV 2014 nicht mehr angesetzt werden — anders als nach der EnEV 2009 —, weil die Luftdichtheit aktueller Produkte in Deutschland inzwischen sehr hoch ist.",
+   "vertiefung": "Das ist der Satz, der die Fugenlüftung als Planungsinstrument beendet hat. Seither garantieren bei der Gebäudeplanung entweder definierte Öffnungen — Fenster, Öffnungen im Rahmen, Lamellen — in Kombination mit angepasstem Nutzerverhalten oder Lüftungseinrichtungen den Mindestluftwechsel.",
+   "tags": [
+    "mindestluftwechsel",
+    "fugenlüftung",
+    "enev"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61, 63",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Regelung der EnEV 2014. Gegen das GEG in der geltenden Fassung prüfen, ob das Verbot, Funktionsfugen zu öffnender Fenster für den Mindestluftwechsel anzusetzen, unverändert fortgilt."
+  },
+  {
+   "id": "bp-ld-014",
+   "typ": "numerisch",
+   "frage": "Ab welchem fugenlängenbezogenen Luftdurchlasskoeffizienten a gilt eine Fuge als praktisch luftdicht? Geben Sie den Grenzwert in m³/[h·m·(daPa)^(2/3)] an.",
+   "wert": 0.1,
+   "toleranz": 0,
+   "einheit": "m³/[h·m·(daPa)^(2/3)]",
+   "antwort": "Eine im Labor nach DIN EN 12114 ermittelte Luftdurchlässigkeit von a < 0,1 m³/[h·m·(daPa)^(2/3)] gilt als praktisch luftdicht. Derselbe Wert ist nach DIN 4108-2 die Anforderung an Bauteil- und Anschlussfugen.",
+   "vertiefung": "Der Exponent 2/3 ist kein Schönheitsfehler, sondern Physik: Der Fugendurchlass wächst nicht linear mit dem Druck, sondern schwächer. Deshalb muss zu jedem a-Wert der Bezugsdruck mitgenannt werden — der Wert allein ist ohne die Einheit sinnlos.",
+   "tags": [
+    "fugendurchlasskoeffizient",
+    "din 4108-2",
+    "din en 12114"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63; Praktische Bauphysik, Abschn. 2.3 Wärmeschutz im Hochbau, S. 148",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-015",
+   "typ": "numerisch",
+   "frage": "Bei Außentüren darf der Fugendurchlasskoeffizient der Funktionsfugen größer sein als bei Bauteilanschlussfugen. Welchen Wert in m³/(m·h) darf er nicht überschreiten?",
+   "wert": 2.0,
+   "toleranz": 0,
+   "einheit": "m³/(m·h) in daPa^(2/3)",
+   "antwort": "a ≤ 2,0 m³/(m·h) in daPa^(2/3) — also das Zwanzigfache des Werts für Bauteilanschlussfugen, der bei a ≤ 0,1 liegt.",
+   "vertiefung": "Die Begründung steckt in der Fugenart: Es sind Funktionsfugen und keine Bauteilanschlussfugen. Eine Tür muss sich öffnen lassen, eine Anschlussfuge nicht. Dieselbe Logik erklärt, warum die Luftdichtheit von Fenstern und Fenstertüren nach DIN 18055 geregelt ist, die Anschlussfuge aber nach DIN 4108.",
+   "tags": [
+    "außentür",
+    "fugendurchlasskoeffizient",
+    "funktionsfuge"
+   ],
+   "quelle": "Praktische Bauphysik, Abschn. 2.3 Wärmeschutz im Hochbau, S. 148",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-016",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jeder Klasse nach DIN EN 12207 die Referenzluftdurchlässigkeit bei 100 Pa zu.",
+   "paare": [
+    [
+     "Klasse 1",
+     "50 m³/(h·m²)"
+    ],
+    [
+     "Klasse 2",
+     "27 m³/(h·m²)"
+    ],
+    [
+     "Klasse 3",
+     "9 m³/(h·m²)"
+    ],
+    [
+     "Klasse 4",
+     "3 m³/(h·m²)"
+    ]
+   ],
+   "antwort": "Klasse 1 entspricht 50 m³/(h·m²), Klasse 2 27 m³/(h·m²), Klasse 3 9 m³/(h·m²) und Klasse 4 3 m³/(h·m²), jeweils bezogen auf 100 Pa.",
+   "vertiefung": "Die Zahlenreihe fällt nicht gleichmäßig, sondern ungefähr halbierend und dann drittelnd — der Sprung von Klasse 2 auf 3 ist der größte. Dazu gehören Mindestprüfdrücke von 150, 300, 600 und 600 Pa: Die höheren Klassen werden nicht nur strenger bewertet, sondern auch härter geprüft.",
+   "tags": [
+    "din en 12207",
+    "luftdurchlässigkeit",
+    "klassen"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 62–63",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-017",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Anforderungsklasse nach DIN EN 12207 gilt für Fenster, und wie schwer ist sie zu erreichen?",
+   "optionen": [
+    "Fenster in Gebäuden mit bis zu zwei Vollgeschossen: mindestens Klasse 2",
+    "Fenster in Gebäuden mit mehr als zwei Vollgeschossen: mindestens Klasse 3",
+    "Standardfensterelemente erreichen in Deutschland bereits Klasse 4",
+    "Selbst bei komplexen Hebe-Schiebe-Türen lässt sich meist Klasse 3 erzielen",
+    "Die Anforderungen stellen in Deutschland in der Regel eine besondere Herausforderung dar"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Die Staffelung folgt der Gebäudehöhe, weil mit ihr die Windbelastung steigt.",
+    "Richtig. Oberhalb von zwei Vollgeschossen gilt die nächsthöhere Klasse.",
+    "Richtig. Die Produktentwicklung ist der Anforderung davongelaufen.",
+    "Richtig. Hebe-Schiebe-Türen gelten als tendenziell kritisch, schaffen aber meist Klasse 3.",
+    "Falsch. Genau das Gegenteil steht in der Quelle: In Deutschland stellen diese Anforderungen in der Regel keine besondere Herausforderung dar."
+   ],
+   "antwort": "Richtig sind die ersten vier: bis zwei Vollgeschosse mindestens Klasse 2, darüber mindestens Klasse 3; Standardfensterelemente erreichen bereits Klasse 4, und selbst komplexe Hebe-Schiebe-Türen schaffen meist Klasse 3. Eine besondere Herausforderung sind die Anforderungen in Deutschland deshalb in der Regel nicht.",
+   "vertiefung": "Für feste Fugen bei Fassaden gibt es eine eigene Reihe: die Klassen A1 bis A4 nach DIN EN 12152. Wer Fenster- und Fassadenangaben nebeneinander liest, muss also auf den Buchstaben achten, sonst vergleicht er zwei verschiedene Klassifizierungen.",
+   "tags": [
+    "din en 12207",
+    "anforderungsklasse",
+    "vollgeschosse"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Die Zuordnung der Mindestklassen nach Vollgeschossen stammt aus der EnEV 2014. Gegen das GEG in der geltenden Fassung prüfen, ob die Anforderung „bis zwei Vollgeschosse mindestens Klasse 2, darüber mindestens Klasse 3“ unverändert fortgilt."
+  },
+  {
+   "id": "bp-ld-018",
+   "typ": "karte",
+   "frage": "Vier Normen, vier verschiedene Aufgaben: Was regeln DIN EN 12114, DIN EN 13829, DIN EN 12207 und DIN 4108-7 im Zusammenhang mit der Luftdichtheit?",
+   "antwort": "DIN EN 12114 bestimmt die Luftdichtheit von Bauteilen und von Fugen zwischen Bauteilen im Labor. DIN EN 13829 weist die Luftdichtheit der gesamten Gebäudehülle vor Ort nach — das Differenzdruckverfahren, der Blower-Door-Test. DIN EN 12207 klassifiziert die Luftdurchlässigkeit von Fenstern und Türen in die Klassen 1 bis 4. DIN 4108-7 beschreibt die anerkannten Regeln der Technik bei der Ausbildung der Luftdichtheitsebene.",
+   "vertiefung": "Die Reihe lässt sich nach dem Prüfobjekt sortieren: Bauteil im Labor, Produkt in der Klassifizierung, Gebäude vor Ort — und dazu die Planungsnorm für die Ebene selbst. Anforderungen an die Luft- und Fugendurchlässigkeit stehen daneben noch in DIN 4108 und im Energieeinsparrecht.",
+   "tags": [
+    "normen",
+    "luftdichtheit",
+    "nachweis"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61, 63",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-019",
+   "typ": "karte",
+   "frage": "Was beschreibt DIN 4108-7 — und welche Fugen behandelt sie ausdrücklich nicht?",
+   "antwort": "DIN 4108-7 beschreibt die anerkannten Regeln der Technik bei der Ausbildung der Luftdichtheitsebene anhand von Planungs- und Ausführungsempfehlungen: Materialwahl je nach Baukonstruktion, Vorbereitung von Untergründen, Lage von Dichtungsbahnen, Durchdringungen und mehr, dazu eine große Sammlung von Musterdetails. Nicht behandelt werden funktionsbedingte Fugen und Öffnungen in der Gebäudehülle — Gurtdurchführungen von Rollladenkästen etwa oder Fugen an zu öffnenden Bauteilen wie Fensterflügeln.",
+   "vertiefung": "Diese Lücke ist der Grund, warum die Gurtdurchführung so oft undicht bleibt: Sie fällt zwischen die Norm für die Luftdichtheitsebene und die Normen für die Fensterprodukte. Bei dem heute geforderten Wärmeschutz birgt insbesondere der Bereich der Bauteil- und Baukörperanschlussfugen ein hohes Schadenspotenzial — Missachtung der Regeln hat erhöhte Lüftungswärmeverluste, Tauwasserbildung in der Konstruktion und ein unbehagliches Wohnraumklima zur Folge.",
+   "tags": [
+    "din 4108-7",
+    "luftdichtheitsebene",
+    "rollladenkasten"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-020",
+   "typ": "numerisch",
+   "frage": "Welchen durchschnittlichen Luftwechsel muss die Planung nach DIN 4108-2 während der Heizperiode mindestens sicherstellen, damit die gesundheitliche Unbedenklichkeit als erfüllt gilt?",
+   "wert": 0.5,
+   "toleranz": 0,
+   "einheit": "1/h",
+   "antwort": "Mindestens 0,5 1/h im Durchschnitt während der Heizperiode.",
+   "vertiefung": "Der Wert ist eine Untergrenze, kein Zielwert: Empfehlenswert für Aufenthaltsräume in Wohngebäuden sind eher 0,8 bis 1,0 1/h. Und er ist nicht zu verwechseln mit n50 — der Mindestluftwechsel beschreibt den Betrieb, n50 die Dichtheit unter Prüfdruck.",
+   "tags": [
+    "mindestluftwechsel",
+    "din 4108-2",
+    "heizperiode"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-021",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt für die Sicherung des Mindestluftwechsels?",
+   "optionen": [
+    "Für Aufenthaltsräume in Wohngebäuden sind eher Werte von 0,8 bis 1,0 1/h empfehlenswert.",
+    "Ein Nichtraucherraum sollte pro Person und Stunde mit mindestens 20 m³ Außenluft versorgt werden.",
+    "Für einen Raucherraum sind mindestens 30 m³ pro Person und Stunde anzusetzen.",
+    "Die Frischluftmenge muss die Zielpersonen auch tatsächlich erreichen.",
+    "Die geforderte Menge hängt allein vom Raumvolumen ab."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. 0,5 1/h ist die Untergrenze, 0,8 bis 1,0 1/h die Empfehlung.",
+    "Richtig. Das entspricht etwa 5,6 Litern Luft pro Sekunde.",
+    "Richtig. Der höhere Wert folgt aus der zusätzlichen Schadstoffquelle.",
+    "Richtig. Je gerichteter die Luftströmung geführt wird, desto näher lässt sich die Planung an die Mindestwerte legen, ohne die Innenraumluftqualität zu gefährden.",
+    "Falsch. Die Werte pro Person gelten unabhängig vom jeweiligen Raumvolumen."
+   ],
+   "antwort": "Richtig sind die ersten vier. Empfehlenswert sind 0,8 bis 1,0 1/h; pro Person und Stunde sind mindestens 20 m³ Außenluft anzusetzen, im Raucherraum mindestens 30 m³, und die Frischluft muss die Zielpersonen auch erreichen. Falsch ist, dass allein das Raumvolumen maßgeblich wäre — die Personenwerte gelten unabhängig davon.",
+   "vertiefung": "Dass die Luft die Personen erreichen muss, ist mehr als eine Floskel: Je gerichteter die Strömung geführt wird, desto näher darf die Planung an die Mindestwerte heran, was für eine energieoptimierte Lüftungsplanung wichtig ist. Umgekehrt nützt der rechnerisch richtige Volumenstrom nichts, wenn er am Schreibtisch vorbeiströmt.",
+   "tags": [
+    "mindestluftwechsel",
+    "frischluftmenge",
+    "hygiene"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61–62",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-022",
+   "typ": "reihenfolge",
+   "frage": "Bringen Sie die vier Lüftungsstufen nach DIN 1946-6 in die Reihenfolge aufsteigender Außenluftvolumenströme.",
+   "schritte": [
+    "Lüftung zum Feuchteschutz",
+    "reduzierte Lüftung",
+    "Nennlüftung",
+    "Intensivlüftung"
+   ],
+   "antwort": "Lüftung zum Feuchteschutz, reduzierte Lüftung, Nennlüftung, Intensivlüftung.",
+   "vertiefung": "Die Nennlüftung entspricht dem bei Anwesenheit der Bewohner für die Sicherstellung der hygienischen Verhältnisse erforderlichen Maß — sie ist also der Normalfall, nicht das Maximum. Für die Stufen oberhalb der Lüftung zum Feuchteschutz darf die manuelle Fensterlüftung mit angesetzt werden.",
+   "tags": [
+    "din 1946-6",
+    "lüftungsstufen",
+    "wohnungslüftung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 62",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-023",
+   "typ": "karte",
+   "frage": "Warum nimmt die Lüftung zum Feuchteschutz unter den vier Lüftungsstufen eine Sonderstellung ein?",
+   "antwort": "Weil sie als einzige auch ohne Mitwirkung des Bewohners funktionieren muss. Sie dient dazu, während der Abwesenheit der Bewohner auftretende Feuchtelasten abzuführen, um Bauschäden und Schimmelbildung auszuschließen. Sichergestellt wird sie entweder durch ausreichende Fugenlüftung oder durch mechanische Luftförderung. Für die darüber hinausgehenden Lüftungsstufen darf die manuelle Fensterlüftung mit angesetzt werden.",
+   "vertiefung": "Hier liegt der eigentliche Grund, warum ein Lüftungskonzept zur dichten Hülle gehört. Alle anderen Stufen darf man dem Nutzer überlassen; diese eine nicht, weil sie genau dann gebraucht wird, wenn niemand da ist, der ein Fenster öffnen könnte.",
+   "tags": [
+    "feuchteschutz",
+    "lüftungsstufen",
+    "din 1946-6"
+   ],
+   "siehe": [
+    "bp-feuchte"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 62",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-024",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jeder Fensterstellung die zugehörige Luftwechselrate n bei freier Lüftung zu.",
+   "paare": [
+    [
+     "geschlossen",
+     "0 bis 0,5 1/h"
+    ],
+    [
+     "in Kippstellung, Rollladen zu",
+     "0,3 bis 1,5 1/h"
+    ],
+    [
+     "in Kippstellung, Rollladen auf",
+     "0,8 bis 4 1/h"
+    ],
+    [
+     "halb geöffnet",
+     "5 bis 10 1/h"
+    ],
+    [
+     "ganz geöffnet",
+     "8 bis 15 1/h"
+    ],
+    [
+     "ganz geöffnet, gegenüberliegend (Querlüftung)",
+     "über 20 1/h"
+    ]
+   ],
+   "antwort": "Geschlossen 0 bis 0,5 1/h, in Kippstellung mit geschlossenem Rollladen 0,3 bis 1,5 1/h, in Kippstellung mit offenem Rollladen 0,8 bis 4 1/h, halb geöffnet 5 bis 10 1/h, ganz geöffnet 8 bis 15 1/h und bei Querlüftung über 20 1/h.",
+   "vertiefung": "Daraus folgt die Dauer bis zum vollständigen Luftaustausch — und die ist das eigentliche Argument gegen das Dauerkippen: Das gekippte Fenster mit geschlossenem Rollladen braucht 45 bis 180 Minuten, die Querlüftung weniger als 3. Gelüftet wird in derselben Zeit also entweder einmal richtig oder gar nicht.",
+   "tags": [
+    "freie lüftung",
+    "fensterstellung",
+    "luftwechselrate"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-025",
+   "typ": "numerisch",
+   "frage": "Wie groß ist der Druckunterschied, der sich bei freier Lüftung allein aus dem Temperaturunterschied zwischen innen und außen ergibt?",
+   "wert": 4,
+   "toleranz": 1,
+   "einheit": "Pa",
+   "antwort": "Typischerweise 3 bis 5 Pa.",
+   "vertiefung": "Der Wert ist gering, reicht aber bereits als treibende Kraft für natürliche Lüftungskonzepte — etwa durch eine geeignete Anordnung von Lüftungsöffnungen im Bereich von Fenstern, Zuluft unten und Abluft oben, solange die Innentemperatur über der Außentemperatur liegt, sonst umgekehrt. Zum Vergleich: Der Druckunterschied durch von außen einwirkende Windkräfte liegt mit etwa 10 bis 25 Pa deutlich höher und kann den thermischen Effekt aufheben oder sogar umkehren. Dagegen helfen spezielle Windabweiser vor den Öffnungselementen.",
+   "tags": [
+    "thermischer auftrieb",
+    "freie lüftung",
+    "winddruck"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 62",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-026",
+   "typ": "karte",
+   "frage": "An historischen Fenstern war Tauwasser unvermeidbar — warum gab es dort trotzdem in der Regel keinen Schimmel?",
+   "antwort": "Weil die großen Luftundichtigkeiten dieser Fensterkonstruktionen einen hohen Luftwechsel sicherstellten und gerade im Winter für eine verhältnismäßig geringe Luftfeuchtigkeit sorgten, sodass in Zusammenhang mit einer ausreichenden Beheizung Schimmelpilzbildung verhindert wurde. Das Tauwasser selbst fiel insbesondere im Bereich der Einfachscheiben an; dafür gab es konstruktive Maßnahmen zur Ableitung, etwa Rinnen und teilweise sogar Sammelbehälter, die vom Nutzer geleert werden mussten oder so dimensioniert waren, dass das Wasser wieder verdunsten konnte.",
+   "vertiefung": "Der Preis dafür waren enorme Lüftungswärmeverluste und ein hoher Heizenergieaufwand. Bei den heutigen sehr luftdichten Konstruktionen kommt der Vermeidung von Tauwasser- und Schimmelpilzbildung auf raumseitigen Bauteiloberflächen deshalb eine ganz andere Bedeutung zu — die mögliche Folgen für die Gesundheit der Nutzer gehen weit über kosmetische Aspekte hinaus.",
+   "tags": [
+    "bestand",
+    "schimmel",
+    "fugenlüftung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 64",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-027",
+   "typ": "fehlersuche",
+   "frage": "Der Schnitt zeigt die Luftdichtheitsebene eines beheizten Gebäudes. An vier Stellen ist sie markiert; an einer davon ist die Ausführung falsch. Welche ist es?",
+   "referenz": "bilder/bp-luftdicht-fehler.svg",
+   "bereiche": [
+    {
+     "nr": 1,
+     "x": 17.8,
+     "y": 40.2,
+     "name": "Anschluss Dach an Außenwand"
+    },
+    {
+     "nr": 2,
+     "x": 33.3,
+     "y": 57.1,
+     "name": "einbindende Geschossdecke"
+    },
+    {
+     "nr": 3,
+     "x": 28.3,
+     "y": 31.3,
+     "name": "Dachfläche"
+    },
+    {
+     "nr": 4,
+     "x": 17.8,
+     "y": 66.1,
+     "name": "Außenwand"
+    }
+   ],
+   "fehlerNr": 1,
+   "folge": "Die Luftdichtheitsebene deckt die Hüllfläche nicht mehr ohne Unterbrechung ab. An der Lücke strömt warme, feuchte Raumluft in die Konstruktion, kühlt ab und fällt als Tauwasser aus; dazu kommen erhöhte Lüftungswärmeverluste und Zugluft. Die Stelle liegt zudem an einem Materialwechsel, wo ohnehin das höchste Schadenspotenzial besteht.",
+   "antwort": "Falsch ist Bereich 1, der Anschluss des Daches an die Außenwand: Dort endet die Luftdichtheitsebene, statt durchverbunden zu werden. Es ist unbedingt erforderlich, dass die Ebene die gesamte Fläche ohne Unterbrechung abdeckt. Die übrigen drei Bereiche sind in Ordnung — die Dachfläche ist durchgehend ausgeführt, die Ebene läuft raumseitig an der Außenwand durch, und sie wird über die Stirn der einbindenden Geschossdecke geführt.",
+   "vertiefung": "Der Materialwechsel ist die typische Stelle. DIN 4108-7 widmet ihm eigene Musterdetails, weil hier zwei Gewerke und zwei Materialien aufeinandertreffen und beide davon ausgehen, der jeweils andere übernehme den Anschluss. Beim Blower-Door-Test fällt eine solche Lücke sofort auf — nur eben erst, wenn die Bekleidung schon geschlossen ist.",
+   "tags": [
+    "luftdichtheitsebene",
+    "anschluss",
+    "leckage"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 63",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-028",
+   "typ": "freitext",
+   "frage": "Bei 20 °C Raumluft und 50 % relativer Luftfeuchte nennt die Bauphysik zwei verschiedene kritische Oberflächentemperaturen. Welche, und warum reicht die niedrigere nicht aus?",
+   "pruefpunkte": [
+    "Die Taupunkttemperatur liegt bei 9,3 °C.",
+    "Die schimmelpilzkritische Temperatur liegt bei 12,6 °C.",
+    "Schimmelpilz entsteht nicht nur als Folge von Tauwasserbildung.",
+    "Er kann schon früher durch Kapillarkondensation einsetzen.",
+    "Auslöser sind über längere Zeit anhaltende Luftfeuchtigkeiten von etwa 80 % im oberflächennahen Bereich.",
+    "Dazu muss ein geeigneter Nährboden kommen, zum Beispiel Hausstaub.",
+    "Deshalb wird für die Beurteilung die 13-Grad-Isotherme statt der 10-Grad-Isotherme herangezogen.",
+    "Die Mindestanforderung lautet fRsi ≥ 0,70 an der ungünstigsten Stelle des Baukörperanschlusses."
+   ],
+   "antwort": "Die Taupunkttemperatur beträgt 9,3 °C, die schimmelpilzkritische Temperatur 12,6 °C. Die niedrigere reicht nicht, weil Schimmelpilz nicht nur als Folgeerscheinung von schlechter Belüftung und Tauwasserbildung entsteht, sondern schon früher durch Kapillarkondensation einsetzen kann — nämlich wenn über einen längeren Zeitraum Luftfeuchtigkeiten von etwa 80 % im oberflächennahen Bereich herrschen und ein geeigneter Nährboden wie Hausstaub vorhanden ist. Deshalb wird für die Beurteilung inzwischen die 13-Grad-Isotherme statt der 10-Grad-Isotherme herangezogen, und der Temperaturfaktor muss an der ungünstigsten Stelle des Baukörperanschlusses — ohne Berücksichtigung des Fensters selbst — fRsi ≥ 0,70 erfüllen.",
+   "vertiefung": "Der Temperaturfaktor wird nach DIN EN ISO 10211 ermittelt und ist denkbar einfach gebaut: fRsi = (θsi − θe) / (θi − θe), wobei θsi die raumseitige Oberflächentemperatur ist. Unter den Randbedingungen nach DIN 4108-2 folgt aus fRsi ≥ 0,70 eine Mindestoberflächentemperatur von 12,6 °C. Der Index Rsi verweist auf den zugrunde gelegten raumseitigen Wärmeübergangswiderstand.",
+   "tags": [
+    "taupunkt",
+    "schimmelpilzkriterium",
+    "frsi"
+   ],
+   "siehe": [
+    "bp-waermebruecken",
+    "bp-feuchte"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 64–65",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-029",
+   "typ": "numerisch",
+   "frage": "Welche raumseitige Oberflächentemperatur muss ein Bauteil unter den Randbedingungen nach DIN 4108-2 mindestens erreichen, um das Schimmelpilzkriterium zu erfüllen?",
+   "wert": 12.6,
+   "toleranz": 0.1,
+   "einheit": "°C",
+   "antwort": "Mindestens 12,6 °C — das entspricht der Mindestanforderung fRsi ≥ 0,70.",
+   "vertiefung": "Die Anforderung gilt an der ungünstigsten Stelle des Baukörperanschlusses, und zwar ohne Berücksichtigung des Fensters selbst. Ermittelt wird die Oberflächentemperatur zum Beispiel anhand einer Isothermenberechnung.",
+   "tags": [
+    "schimmelpilzkriterium",
+    "oberflächentemperatur",
+    "frsi"
+   ],
+   "siehe": [
+    "bp-waermebruecken"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 65",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bp-ld-030",
+   "typ": "fall",
+   "frage": "Mehrfamilienhaus von 1968, im vergangenen Sommer wurden alle Fenster gegen neue mit Dreifachverglasung getauscht; sonst wurde nichts verändert. Im Februar meldet eine Mieterin Schimmel in den Zimmerecken an der Außenwand und beschlagene Scheiben am Morgen. Vor dem Tausch hatte es in der Wohnung nie Schimmel gegeben.",
+   "teile": [
+    {
+     "frage": "Warum tritt der Schimmel gerade nach dem Fenstertausch auf, obwohl die neuen Fenster besser sind als die alten?",
+     "antwort": "Die alten Fenster waren undicht und stellten damit einen hohen Luftwechsel sicher, der im Winter für verhältnismäßig geringe Luftfeuchtigkeit sorgte — zusammen mit ausreichender Beheizung wurde so Schimmelpilzbildung verhindert. Mit den neuen, sehr dichten Fenstern entfällt diese unfreiwillige Fugenlüftung. Sehr hohe Dichtigkeiten führen je nach Nutzung zu einer erhöhten Raumluftfeuchte, wenn der entsprechende Luftwechsel nicht anderweitig sichergestellt ist; das kann zu hygienischen Problemen und Bauschäden führen. Die kalten Außenwandecken sind unverändert geblieben — nur die Luftfeuchte im Raum ist gestiegen."
+    },
+    {
+     "frage": "Welche Temperatur muss die Oberfläche in der Ecke erreichen, und warum genügt der Taupunkt als Maßstab nicht?",
+     "antwort": "Bei 20 °C und 50 % relativer Luftfeuchte liegt die Taupunkttemperatur bei 9,3 °C, die schimmelpilzkritische Temperatur jedoch bei 12,6 °C. Schimmelpilz entsteht nicht erst bei Tauwasserausfall, sondern bereits durch Kapillarkondensation, wenn über längere Zeit etwa 80 % relative Luftfeuchte im oberflächennahen Bereich herrschen und ein Nährboden wie Hausstaub vorhanden ist. Maßgeblich ist deshalb die 13-Grad-Isotherme und die Anforderung fRsi ≥ 0,70 an der ungünstigsten Stelle."
+    },
+    {
+     "frage": "Wie lässt sich die Luftdichtheit des Gebäudes überprüfen, und was sagt diese Prüfung nicht aus?",
+     "antwort": "Über das Differenzdruck-Messverfahren nach DIN EN 13829, den Blower-Door-Test: Ein Ventilator erzeugt 50 Pa Druckdifferenz, gemessen wird der dafür nötige Volumenstrom, woraus sich n50 ergibt. Der Test erfasst immer die gesamte Hülle und ist deshalb nicht geeignet, quantitative Aussagen zur Luftdurchlässigkeit einzelner Fugen oder Fenster zu treffen. Als Nebeneffekt deckt er Undichtheiten und mangelhafte Verarbeitung auf und erlaubt so eine Beurteilung der Verarbeitungsgüte."
+    },
+    {
+     "frage": "Was gehört zur Lösung?",
+     "antwort": "Ein Lüftungskonzept, das den Mindestluftwechsel sichert, ohne ihn den Undichtheiten zu überlassen: Nach DIN 4108-2 sind im Mittel mindestens 0,5 1/h während der Heizperiode zu planen, empfehlenswert für Aufenthaltsräume sind 0,8 bis 1,0 1/h. Die Lüftung zum Feuchteschutz nach DIN 1946-6 muss dabei auch ohne Mitwirkung der Bewohner funktionieren, also über ausreichende Fugenlüftung oder mechanische Luftförderung. Konstruktions- und Anschlussfugen dürfen dazu nicht herangezogen werden, weil sie undefiniert sind. Parallel ist die Oberflächentemperatur in den Ecken zu prüfen; erfüllt sie fRsi ≥ 0,70 nicht, hilft Lüften allein nicht."
+    }
+   ],
+   "fallbild": "bilder/bp-luftdicht-zielkonflikt.svg",
+   "antwort": "Der Fenstertausch hat nicht den Schimmel erzeugt, sondern die unfreiwillige Lüftung beseitigt, die ihn bisher verhindert hat. Zu klären sind beide Seiten: die Raumluftfeuchte über ein Lüftungskonzept und die Oberflächentemperatur der Ecken über den Temperaturfaktor. Wer nur eine der beiden angeht, löst den Fall nicht.",
+   "vertiefung": "Der Fall ist der Zielkonflikt in Reinform, nur zeitversetzt: Das Gebäude ist über Nacht von der rechten Spalte — zu hoher Luftwechsel, unnötige Wärmeverluste — in die linke gewandert, zu geringer Luftwechsel mit Schimmelbildung. Dass die Sanierung dazwischen nichts an der Lüftung geändert hat, ist der eigentliche Planungsfehler.",
+   "tags": [
+    "sanierung",
+    "schimmel",
+    "lüftungskonzept"
+   ],
+   "siehe": [
+    "bp-feuchte",
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 61, 64–65",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}

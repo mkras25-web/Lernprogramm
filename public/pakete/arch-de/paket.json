@@ -2,7 +2,7 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.14.0",
+  "version": "0.16.0",
   "gestaltung": "arch",
   "module": [
     {
@@ -47,7 +47,9 @@
         },
         {
           "id": "bk-fenster",
-          "titel": "Fenster: Aufbau, Einbaulage, Anschluss"
+          "titel": "Fenster: Aufbau, Einbaulage, Anschluss",
+          "datei": "items/bk-fenster.json",
+          "bild": "bilder/bk-fenster-einbaulage.svg"
         },
         {
           "id": "bk-oeffnungen",
@@ -195,7 +197,9 @@
         },
         {
           "id": "bp-luftdicht",
-          "titel": "Luftdichtheit, Winddichtheit, Blower Door"
+          "titel": "Luftdichtheit, Winddichtheit, Blower Door",
+          "datei": "items/bp-luftdicht.json",
+          "bild": "bilder/bp-luftdicht-huellflaeche.svg"
         },
         {
           "id": "bp-schlagregen",
