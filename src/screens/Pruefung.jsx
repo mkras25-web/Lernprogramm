@@ -130,6 +130,10 @@ export default function Pruefung({
   // "Nach Thema". In themenReife (und damit in den Kennzahlen) bleiben
   // sie bewusst draussen.
   const geplanteThemen = useMemo(() => themen.filter((t) => t.geplant), [themen])
+  // Bei vielen geplanten Themen (arch-de: ueber 150) nur die ersten paar
+  // zeigen - sonst besteht der Bildschirm am Handy fast nur aus Grau.
+  const GEPLANT_SICHTBAR = 6
+  const [alleGeplanten, setAlleGeplanten] = useState(false)
 
   const bereichsReife = useMemo(
     () =>
@@ -701,7 +705,7 @@ export default function Pruefung({
               </button>
             </li>
           ))}
-          {geplanteThemen.map((t) => (
+          {(alleGeplanten ? geplanteThemen : geplanteThemen.slice(0, GEPLANT_SICHTBAR)).map((t) => (
             <li key={t.id}>
               <div className="pruefKachel geplant" aria-disabled="true">
                 <span className="pruefTitel">{t.titel}</span>
@@ -710,6 +714,15 @@ export default function Pruefung({
             </li>
           ))}
         </ul>
+        {geplanteThemen.length > GEPLANT_SICHTBAR && (
+          <p className="geplantMehr">
+            <button className="artKnopf" onClick={() => setAlleGeplanten((a) => !a)}>
+              {alleGeplanten
+                ? 'Geplante Themen wieder einklappen'
+                : `Weitere ${geplanteThemen.length - GEPLANT_SICHTBAR} geplante Themen zeigen`}
+            </button>
+          </p>
+        )}
       </section>
 
       <section className="block">
@@ -727,6 +740,7 @@ export default function Pruefung({
                   </span>
                   <span className="verteilungBalken">
                     <span
+                      className={p.bestanden ? undefined : 'durchgefallen'}
                       style={{ width: `${p.prozent}%`, background: p.bestanden ? '' : 'var(--warnung)' }}
                     />
                   </span>
@@ -760,6 +774,7 @@ function Verlaufskurve({ pruefungen }) {
       {pruefungen.map((p, i) => {
         const [x, y] = punkte[i].split(',')
         return <circle key={p.id} cx={x} cy={y} r="1.2"
+                       className={p.bestanden ? 'verlaufPunkt' : 'verlaufPunkt durchgefallen'}
                        fill={p.bestanden ? 'var(--fortschritt)' : 'var(--warnung)'} />
       })}
     </svg>

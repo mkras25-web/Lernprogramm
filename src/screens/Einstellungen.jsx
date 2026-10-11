@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
-import { PALETTEN, SCHRIFTGROESSEN, STANDARD } from '../lib/einstellungen.js'
+import { PALETTEN, SCHRIFTGROESSEN, STANDARD, farbenblindSchalten } from '../lib/einstellungen.js'
 import DropboxBereich from '../components/DropboxBereich.jsx'
 import {
   lokaleBilderImportieren,
@@ -210,14 +210,16 @@ export default function Einstellungen({
             <div className="zeileText">
               <p className="zeileTitel">Farbenblindmodus</p>
               <p className="zeileHinweis">
-                Richtig und falsch bekommen zusätzlich ein Zeichen, Akzente wechseln auf ein
-                blau-orangenes Paar. Farbe trägt dann nie allein die Aussage.
+                Wechselt auf die Palette „Farbsicher“ (Blau/Orange statt Grün/Rot) und
+                kennzeichnet richtig, falsch und bestanden überall zusätzlich mit Zeichen,
+                Rahmen oder Mustern. Farbe trägt dann nie allein die Aussage. Beim
+                Ausschalten kehrt die vorherige Palette zurück.
               </p>
             </div>
             <Wahl
               wert={werte.farbenblind}
               optionen={[[false, 'Aus'], [true, 'An']]}
-              onWahl={(w) => aendern('farbenblind', w)}
+              onWahl={(w) => setzen(farbenblindSchalten(werte, w))}
             />
           </div>
 

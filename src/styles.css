@@ -936,6 +936,36 @@ html[data-palette="graphit"] .blatt {
 html[data-palette="graphit"] mark { background: #1f4750; }
 
 /* ------------------------------------------------------------------
+   Farbsicher hell/dunkel (2026-10-11), nach der Okabe-Ito-Reihe:
+   Fortschritt/richtig = Blau, Warnung/falsch = Orange/Zinnober, sonst
+   nur neutrale Grautoene. Blau gegen Orange bleibt bei Protanopie,
+   Deuteranopie und Tritanopie unterscheidbar, zusaetzlich trennen sich
+   beide deutlich in der Helligkeit. Der Farbenblindmodus waehlt diese
+   Paletten automatisch (einstellungen.js, farbenblindSchalten).
+   Kontrast: tusche/rinde/warnung >= 4,5:1 auf papier und flaeche,
+   akzent >= 4,5:1 (wird auch als Linien-/Ringfarbe genutzt).
+   ------------------------------------------------------------------ */
+html[data-palette="farbsicher"] {
+  --papier: #f4f4f1; --flaeche: #fbfbf9; --flaeche-tief: #d9e7f2;
+  --akzent: #0072b2; --lehm: #6e6e6e; --rinde: #4a4a4a;
+  --tusche: #1f2328; --linie: #d5d5d0; --warnung: #a64b00;
+}
+
+html[data-palette="farbsicher-dunkel"] {
+  --papier: #16191d; --flaeche: #1f2328; --flaeche-tief: #1f3448;
+  --akzent: #56b4e9; --lehm: #6b7680; --rinde: #b0b8c0;
+  --tusche: #eef1f4; --linie: #343b43; --warnung: #e69f00;
+  --schatten: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+html[data-palette="farbsicher-dunkel"] .kartenBild,
+html[data-palette="farbsicher-dunkel"] .grossesBild,
+html[data-palette="farbsicher-dunkel"] .referenz,
+html[data-palette="farbsicher-dunkel"] .blatt {
+  background: #f4f2e8;
+}
+html[data-palette="farbsicher-dunkel"] mark { background: #1f4a66; }
+
+/* ------------------------------------------------------------------
    Desktop. Ab 60rem seitliche Navigation und zweispaltiges Raster.
    Die Huelle bleibt ein Raster - der Lernbildschirm bekommt eine
    eigene Klasse, sonst laege sein Inhalt in der Navigationsspalte.
@@ -1296,12 +1326,11 @@ html[data-animationen="aus"] * { animation: none !important; transition: none !i
 /* ------------------------------------------------------------------
    Farbenblindmodus. Farbe ist dann nie der einzige Traeger einer
    Aussage: richtig und falsch bekommen zusaetzlich ein Zeichen,
-   Randstaerken werden unterschiedlich.
+   Randstaerken werden unterschiedlich. Die Farben selbst kommen aus der
+   Palette - der Modus schaltet beim Einschalten auf "Farbsicher" um
+   (einstellungen.js), statt hier einzelne Token zu ueberschreiben (das
+   traf frueher nur einen Teil und passte nicht zu dunklen Paletten).
    ------------------------------------------------------------------ */
-html[data-farbenblind="an"] {
-  --akzent: #3a7ca5;
-  --warnung: #b35c00;
-}
 
 html[data-farbenblind="an"] .option.richtig::before { content: "✓ "; font-weight: 700; }
 html[data-farbenblind="an"] .option.falsch::before { content: "✗ "; font-weight: 700; }
@@ -1315,6 +1344,58 @@ html[data-farbenblind="an"] .karte.rang-meisterschaft::after { content: "★"; p
 html[data-farbenblind="an"] .feld.stufe1 { outline: 1px solid var(--linie); }
 html[data-farbenblind="an"] .feld.stufe3 { outline: 1px solid var(--tusche); }
 html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
+
+/* Alle uebrigen Richtig/Falsch-Stellen (2026-10-11) - vorher nur
+   Auswahlaufgaben und Urteil. */
+html[data-farbenblind="an"] .itemansicht .option.richtig::before,
+html[data-farbenblind="an"] .reihenfolge li.richtig::before,
+html[data-farbenblind="an"] .zuordnungsliste li.richtig::before,
+html[data-farbenblind="an"] .paare li.paarRichtig::before,
+html[data-farbenblind="an"] .urteilZeile.richtig::before,
+html[data-farbenblind="an"] .verlaufRichtig::before { content: "✓ "; font-weight: 700; flex: none; }
+html[data-farbenblind="an"] .reihenfolge li.falsch::before,
+html[data-farbenblind="an"] .zuordnungsliste li.falsch::before,
+html[data-farbenblind="an"] .paare li.paarFalsch::before,
+html[data-farbenblind="an"] .urteilZeile.falsch::before,
+html[data-farbenblind="an"] .verlaufFalsch::before,
+html[data-farbenblind="an"] .zuordnungDaneben::before { content: "✗ "; font-weight: 700; flex: none; }
+html[data-farbenblind="an"] .reihenfolge li.falsch,
+html[data-farbenblind="an"] .vergleichSeite.falsch { border-style: dashed; }
+html[data-farbenblind="an"] .zuordnungsliste li.falsch,
+html[data-farbenblind="an"] .paare li.paarFalsch { border-bottom-style: dashed; }
+html[data-farbenblind="an"] .zuordnungsliste li.richtig,
+html[data-farbenblind="an"] .paare li.paarRichtig { border-bottom-width: 2px; }
+/* Vergleich und Pruefungsergebnis: Marke oben rechts, damit das
+   Innenlayout (Bild + Text) unangetastet bleibt. */
+html[data-farbenblind="an"] .vergleichSeite.richtig,
+html[data-farbenblind="an"] .vergleichSeite.falsch,
+html[data-farbenblind="an"] .ergebnisblatt { position: relative; }
+html[data-farbenblind="an"] .vergleichSeite.richtig::after,
+html[data-farbenblind="an"] .ergebnisblatt.bestanden::after {
+  content: "✓"; position: absolute; top: 0.375rem; right: 0.5rem; font-weight: 700; color: var(--tusche);
+}
+html[data-farbenblind="an"] .vergleichSeite.falsch::after,
+html[data-farbenblind="an"] .ergebnisblatt.durchgefallen::after {
+  content: "✗"; position: absolute; top: 0.375rem; right: 0.5rem; font-weight: 700; color: var(--warnung);
+}
+html[data-farbenblind="an"] .ergebnisblatt.durchgefallen { border-style: dashed; border-left-style: solid; }
+/* Pruefungsergebnis auf den Kacheln: unter der Schwelle gestrichelt + Zeichen */
+html[data-farbenblind="an"] .pruefErgebnis.schwach { border-style: dashed; }
+html[data-farbenblind="an"] .pruefErgebnis.schwach::before { content: "✗ "; }
+/* Bildpunkte: Loesung = dicker Ring, daneben = gestrichelter Ring mit Kreuz */
+html[data-farbenblind="an"] .bildpunkt.daneben { border-style: dashed; border-color: var(--tusche); }
+html[data-farbenblind="an"] .bildpunkt.loesung { outline: 2px solid var(--tusche); outline-offset: 1px; }
+/* Verlauf der Pruefungen: durchgefallen schraffiert (Balken) bzw. hohl (Kurve) */
+html[data-farbenblind="an"] .verteilungBalken span.durchgefallen {
+  background-image: repeating-linear-gradient(135deg, transparent 0 3px, color-mix(in srgb, var(--papier) 65%, transparent) 3px 6px) !important;
+}
+html[data-farbenblind="an"] .verlaufPunkt.durchgefallen { fill: var(--papier); stroke: var(--warnung); stroke-width: 0.6; }
+/* Kennzahl-Vergleich: Pfeil statt nur Farbe */
+html[data-farbenblind="an"] .besser::before { content: " ▲"; }
+html[data-farbenblind="an"] .schlechter::before { content: " ▼"; }
+/* Fortschrittsfelder: feste Gruentoene folgen im Modus der Palette */
+html[data-farbenblind="an"] .feld.stufe1 { background: color-mix(in srgb, var(--fortschritt) 25%, var(--flaeche)); }
+html[data-farbenblind="an"] .feld.stufe3 { background: color-mix(in srgb, var(--fortschritt) 65%, var(--tusche)); }
 
 /* ------------------------------------------------------------------
    Schriftgroesse als Stufen statt Schieberegler
@@ -3112,13 +3193,17 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 
 /* Dunkle Paletten: Metall-Meilensteine gedaempft, nur Rahmen/Glanz in
    Metallfarbe (46A) - volle Kupfer-/Silberflaechen leuchteten grell. */
-html[data-palette="dunkel"] .stempel.frei, html[data-palette="graphit"] .stempel.frei {
+html[data-palette="dunkel"] .stempel.frei, html[data-palette="graphit"] .stempel.frei,
+html[data-palette="farbsicher-dunkel"] .stempel.frei {
   background: linear-gradient(135deg, color-mix(in srgb, var(--stufe-a) 22%, var(--flaeche)), color-mix(in srgb, var(--stufe-b) 30%, var(--flaeche)));
   color: var(--tusche);
 }
 html[data-palette="dunkel"] .stempel.frei .stempelTitel, html[data-palette="graphit"] .stempel.frei .stempelTitel,
-html[data-palette="dunkel"] .stempel.frei .stempelMaterial, html[data-palette="graphit"] .stempel.frei .stempelMaterial { color: var(--tusche); }
-html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette="graphit"] .stempel.frei .stempelBalken span { background: var(--stufe-a); }
+html[data-palette="dunkel"] .stempel.frei .stempelMaterial, html[data-palette="graphit"] .stempel.frei .stempelMaterial,
+html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelTitel,
+html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelMaterial { color: var(--tusche); }
+html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette="graphit"] .stempel.frei .stempelBalken span,
+html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { background: var(--stufe-a); }
 
 /* --- Teil 2: Desktop (ab 60rem) ----------------------------------- */
 @media (min-width: 60rem) {
@@ -3254,3 +3339,6 @@ html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette
   box-shadow: none;
 }
 .pruefKachel.geplant .pruefTitel { color: var(--ausgegraut); }
+/* Knopf "weitere geplante Themen" in Pruefungen > Nach Thema: unter dem
+   Raster, damit er nicht wie eine weitere Kachel wirkt. */
+.geplantMehr { display: flex; justify-content: center; margin: 0.75rem 0 0; }

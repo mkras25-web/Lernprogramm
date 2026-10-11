@@ -33,6 +33,11 @@ export const PALETTEN = [
   { id: 'waldgruen', name: 'Waldgrün', dunkel: false, tupfer: ['#f2f1e4', '#dbe4c4', '#a8752f', '#8a9a5b', '#3f5c33'] },
   { id: 'koralle', name: 'Koralle', dunkel: false, tupfer: ['#fdf1e7', '#fbdccb', '#1f7d78', '#c98a6e', '#8a4a3a'] },
   { id: 'graphit', name: 'Graphit', dunkel: true, tupfer: ['#1a1d21', '#2c343c', '#3ec9e0', '#5b6b76', '#9fb0bb'] },
+  // Farbsicher (Okabe-Ito): Blau fuer richtig/Fortschritt, Orange fuer
+  // falsch/Warnung - fuer Rot-Gruen- und Blau-Gelb-Schwaeche gleich gut
+  // unterscheidbar. Der Farbenblindmodus waehlt sie automatisch.
+  { id: 'farbsicher', name: 'Farbsicher', dunkel: false, farbsicher: true, tupfer: ['#f4f4f1', '#d9e7f2', '#0072b2', '#a64b00', '#1f2328'] },
+  { id: 'farbsicher-dunkel', name: 'Farbsicher dunkel', dunkel: true, farbsicher: true, tupfer: ['#16191d', '#1f3448', '#56b4e9', '#e69f00', '#eef1f4'] },
 ]
 
 export const SCHRIFTGROESSEN = [
@@ -92,6 +97,28 @@ export function laden(profilId) {
   } catch {
     return { ...STANDARD }
   }
+}
+
+// Farbenblindmodus an/aus. Beim Einschalten wechselt die Palette auf die
+// passende farbsichere (hell/dunkel wie die bisherige), die alte Wahl wird
+// gemerkt und beim Ausschalten wiederhergestellt. Wer danach im Modus
+// selbst eine andere Palette waehlt, behaelt sie - die Zeichen und Muster
+// des Modus gelten in jeder Palette.
+export function farbenblindSchalten(werte, an) {
+  if (an === werte.farbenblind) return werte
+  if (an) {
+    const bisher = PALETTEN.find((p) => p.id === werte.palette)
+    if (bisher?.farbsicher) return { ...werte, farbenblind: true }
+    return {
+      ...werte,
+      farbenblind: true,
+      paletteVorFarbenblind: werte.palette,
+      palette: bisher?.dunkel ? 'farbsicher-dunkel' : 'farbsicher',
+    }
+  }
+  const { paletteVorFarbenblind, ...rest } = werte
+  const zurueck = PALETTEN.find((p) => p.farbsicher && p.id === werte.palette) && paletteVorFarbenblind
+  return { ...rest, farbenblind: false, palette: zurueck || werte.palette }
 }
 
 export function speichern(profilId, einstellungen) {
