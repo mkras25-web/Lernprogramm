@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import Ring from '../components/Ring.jsx'
+import NichtVerfuegbar from '../components/NichtVerfuegbar.jsx'
 import { passt } from '../lib/suche.js'
 
 // Drei Ebenen: alles, ein Modul, ein einzelnes Thema. Darueber liegen
@@ -108,17 +109,22 @@ export default function Themen({
         const leer = m.gesamt === 0
         return (
           <section key={m.id} className="block">
-            <div className={leer ? 'themenzeile geplant' : 'themenzeile'} style={{ cursor: 'default' }}>
+            <div
+              className={leer ? 'themenzeile geplant' : 'themenzeile'}
+              style={{ cursor: 'default' }}
+              aria-disabled={leer || undefined}
+            >
               <Ring anteil={m.anteil} groesse={40} staerke={4} />
               <div className="themaInfo">
                 <p className="themaTitel">
                   {m.titel}
                   <span className={`phaseMarke phase-${m.phase}`}>{phasen?.[m.phase]}</span>
+                  {leer && <NichtVerfuegbar />}
                 </p>
                 <p className="themaZeile2">
                   {leer
-                    ? `${eigene.length} Themen geplant, noch ohne Inhalte`
-                    : `${m.themen} Themen · ${m.sicher} von ${m.gesamt} sicher` +
+                    ? `${eigeneAlle.length} Themen geplant, noch ohne Inhalte`
+                    : `${m.themen} von ${eigeneAlle.length} Themen verfügbar · ${m.sicher} von ${m.gesamt} sicher` +
                       (m.faellig > 0 ? ` · ${m.faellig} fällig` : '')}
                 </p>
               </div>
@@ -145,11 +151,11 @@ export default function Themen({
                   if (t.geplant) {
                     return (
                       <li key={t.id}>
-                        <div className="themenzeile geplant">
+                        <div className="themenzeile geplant" aria-disabled="true">
                           <Ring anteil={0} groesse={34} staerke={4} />
                           <div className="themaInfo">
                             <p className="themaTitel">{t.titel}</p>
-                            <p className="themaZeile2">noch ohne Inhalte</p>
+                            <p className="themaZeile2"><NichtVerfuegbar /></p>
                           </div>
                           <div className="themenzeileAktionen" />
                         </div>

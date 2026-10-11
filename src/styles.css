@@ -3212,3 +3212,45 @@ html[data-palette="dunkel"] .stempel.frei .stempelBalken span, html[data-palette
 @media (min-width: 60rem) and (max-width: 74.99rem) {
   .heuteRaster { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ==================================================================
+   Geplante Inhalte (2026-10-11): Themen/Module ohne Aufgaben stehen
+   sichtbar in Themen, Pruefungen > Nach Thema und Nachschlagen, aber
+   hell ausgegraut und mit Marke "Noch nicht verfuegbar". Gilt bewusst
+   mobil UND am Desktop (Nutzerwunsch). Kein opacity auf der ganzen Zeile
+   (47A): Text bleibt bei etwa 3:1, die Marke sagt es zusaetzlich in
+   Worten.
+   ================================================================== */
+:root { --ausgegraut: color-mix(in srgb, var(--rinde) 70%, var(--papier)); }
+.themenzeile.geplant {
+  background: transparent;
+  border: 1px dashed var(--linie);
+  box-shadow: none;
+}
+.themenzeile.geplant .themaTitel,
+.themenzeile.geplant .themaZeile2 { color: var(--ausgegraut); }
+.themenzeile.geplant .ring { opacity: 0.35; }
+.nichtVerfuegbar {
+  display: inline-block;
+  margin-left: 0.375rem;
+  padding: 0.0625rem 0.5rem;
+  border: 1px dashed var(--linie);
+  border-radius: 999px;
+  font-family: var(--groteske);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--ausgegraut);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.themaZeile2 > .nichtVerfuegbar:first-child,
+.pruefZeile > .nichtVerfuegbar:first-child { margin-left: 0; }
+.pruefKachel.geplant {
+  cursor: default;
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--linie);
+  box-shadow: none;
+}
+.pruefKachel.geplant .pruefTitel { color: var(--ausgegraut); }

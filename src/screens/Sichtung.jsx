@@ -453,8 +453,10 @@ export default function Sichtung({
 
         <select className="paarWahl" value={thema} onChange={(e) => setThema(e.target.value)}>
           <option value="alle">Alle Themen</option>
-          {themen.filter((t) => !t.geplant).map((t) => (
-            <option key={t.id} value={t.id}>{t.modulTitel} · {t.titel}</option>
+          {themen.map((t) => (
+            <option key={t.id} value={t.id} disabled={t.geplant}>
+              {t.modulTitel} · {t.titel}{t.geplant ? ' (noch nicht verfügbar)' : ''}
+            </option>
           ))}
         </select>
       </div>

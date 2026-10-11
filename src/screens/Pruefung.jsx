@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
+import NichtVerfuegbar from '../components/NichtVerfuegbar.jsx'
 import {
   PRUEFUNGSARTEN,
   REIFE_SCHWELLE,
@@ -125,6 +126,10 @@ export default function Pruefung({
         .sort((a, b) => b.anzahl - a.anzahl),
     [themen, items, pruefungen, zustaende]
   )
+  // Nur zur Anzeige: geplante Themen erscheinen ausgegraut am Ende von
+  // "Nach Thema". In themenReife (und damit in den Kennzahlen) bleiben
+  // sie bewusst draussen.
+  const geplanteThemen = useMemo(() => themen.filter((t) => t.geplant), [themen])
 
   const bereichsReife = useMemo(
     () =>
@@ -694,6 +699,14 @@ export default function Pruefung({
                   </span>
                 )}
               </button>
+            </li>
+          ))}
+          {geplanteThemen.map((t) => (
+            <li key={t.id}>
+              <div className="pruefKachel geplant" aria-disabled="true">
+                <span className="pruefTitel">{t.titel}</span>
+                <span className="pruefZeile"><NichtVerfuegbar /></span>
+              </div>
             </li>
           ))}
         </ul>
