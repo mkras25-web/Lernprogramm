@@ -1,0 +1,900 @@
+{
+ "thema": "bk-flachdach",
+ "titel": "Flachdach: Warmdach und Umkehrdach",
+ "erklaerung": {
+  "absaetze": [
+   "Jedes abgedichtete Flachdach besteht über der tragenden Decke aus denselben vier Funktionsschichten: einer diffusionshemmenden Schicht, der Wärmedämmung, der Abdichtung und einem Oberflächenschutz oder einer Auflast. Die Bauweisen unterscheiden sich nicht darin, welche Schichten vorkommen, sondern ausschließlich darin, in welcher Reihenfolge sie liegen. Die eine Frage, aus der sich alles Weitere ergibt, lautet: Liegt die Abdichtung über oder unter der Wärmedämmung?",
+   "Beim klassischen Flachdach liegt sie darüber, also auf der kalten Seite. Damit ist eine Dampfsperre unter der Dämmung zwingend: Im Winter wandert Wasserdampf von innen nach außen, trifft unter der praktisch dampfdichten Abdichtung auf eine kalte Fläche und fällt dort als Tauwasser aus. Die Sperre hält diese Diffusion zurück, bevor sie die Dämmung erreicht. Die bituminöse Ausführung beginnt mit dem Einebnen der Decke und einem Voranstrich; darauf wird eine Bitumenbahn streifen- oder punktweise als Dampfsperre geklebt, sodass darunter eine durchgehende Luftschicht bleibt — die Druckausgleichsschicht. Ebenso punktweise folgt die Wärmedämmung, dann die zweilagige Abdichtung aus zwei verklebten Schweißbahnen von zusammen etwa 10 mm, schließlich als Oberflächenschutz eine helle Beschichtung, eine Schieferbestreuung oder eine Kiesschüttung auf Trennlage. Kennzeichnend ist, dass alle Schichten miteinander verklebt sind.",
+   "Die zweite große Entscheidung ist deshalb, ob verklebt oder lose verlegt wird, und sie hängt an der Windsogsicherung. Bei der Polymer-Variante liegt eine 0,4 mm dicke Polyethylenfolie lose auf der Decke und wirkt als Dampfbremse und Druckausgleichsschicht zugleich, darauf lose die Dämmung und eine mindestens 1,2 mm dicke Polymerdichtungsbahn zwischen zwei Synthesefaser-Vliesen. Weil nichts klebt, muss das Dach gegen Windsog beschwert werden: in der Regel mit 5 cm Kies der Körnung 16 bis 32 mm, die zugleich als Oberflächenschutz dient. Statt der Beschwerung kann die Abdichtung auch durch Dübel oder Anker mit der tragenden Decke verbunden werden.",
+   "Die übrigen Bauweisen sind Antworten auf dieselbe eine Frage. Beim Umkehrdach liegt die Abdichtung unmittelbar auf der Decke, also warm; eine Dampfsperre entfällt. Dafür liegt die Dämmung im Nassen und muss aus durchfeuchtungshemmendem Extruderschaum bestehen, übernimmt zugleich den mechanischen Schutz der Abdichtung und darf nicht aufschwimmen — gute Entwässerung und Auflast sind Bedingung, die Dämmung wird reichlich bemessen und die Tragkonstruktion als thermische Pufferzone schwer ausgeführt. Beim Duodach liegt die Abdichtung geschützt zwischen zwei Dämmlagen; fehlt unter der unteren eine Dampfsperre, darf der Wärmedurchlasswiderstand unterhalb der Abdichtung etwa 20 % desjenigen oberhalb nicht überschreiten. Es entsteht meist dadurch, dass ein vorhandenes klassisches Flachdach aufgewertet wird. Das Industriedach schließlich sitzt auf verzinktem Trapezblech, trägt eine aufgeklebte Dampfsperre und eine so druck- und biegefeste Dämmung, dass es begehbar ist; die Abdichtung aus verschweißten Polymerbahnen ist punktuell verklebt oder am Blech verankert.",
+   "Für den Feuchteschutz gilt als Grundregel, dass in Richtung der Diffusion — von innen nach außen — die s_d-Werte abnehmen und die Wärmedurchlasswiderstände zunehmen. Das abgedichtete Flachdach verletzt die erste Hälfte dieser Regel notgedrungen, denn die Abdichtung ganz außen ist sehr dicht. Deshalb verlangt DIN 4108-3 für nicht belüftete Dächer mit Dachabdichtung zwei Bedingungen, damit kein rechnerischer Tauwassernachweis nötig wird: eine diffusionshemmende Schicht mit s_d,i ≥ 100 m unterhalb der Dämmung und höchstens 20 % des Gesamtwärmedurchlasswiderstandes unterhalb dieser Schicht. Bei diffusionsdichten Dämmstoffen wie Schaumglas auf starren Unterlagen kann die zusätzliche Schicht entfallen; Umkehrdächer sind mit dampfdurchlässiger Auflast ohnehin nachweisfrei, ebenso Dächer aus Porenbeton nach DIN 4223.",
+   "Genutzte Dächer bauen auf demselben Aufbau auf, ergänzt um eine Schutzschicht aus kräftigem Vlies oder einer Gummischnitzelmatte: begehbar mit Plattenbelag auf Splittbett oder Stelzen, befahrbar mit lastverteilender Betonplatte auf einer Pufferschicht, begrünt nach dem Prinzip des Umkehrdachs mit Vlies, Dränschicht aus etwa 8 cm Kies 16/32, Filtervlies und Pflanzsubstrat. Nur extensiv genutzte Dächer mit rund 10 cm Vegetationsschicht folgen den Fachregeln des Dachdeckerhandwerks; befahrene und intensiv genutzte Dächer werden nach den Regeln der Bauwerksabdichtung ausgebildet, womit die Druckausgleichsschichten entfallen und vollflächig geklebt werden kann. Die Fallstricke sitzen überall dort, wo Wasser stehen bleibt oder die Dämmung aufschwimmt. Geplant wird nach DIN 18531, ausgeführt unter VOB nach DIN 18338, und für die massive Decke darunter gilt DIN 18530."
+  ]
+ },
+ "items": [
+  {
+   "id": "bk-fd-001",
+   "typ": "karte",
+   "frage": "Jedes abgedichtete Flachdach besteht im Kern aus denselben vier Funktionsschichten über der tragenden Decke. Welche sind das?",
+   "antwort": "Dampfsperre beziehungsweise Dampfbremse, Wärmedämmschicht, Dachabdichtung und Oberflächenschutz oder Auflast. Die Bauweisen unterscheiden sich nicht in diesen Schichten, sondern nur in ihrer Reihenfolge — vor allem darin, ob die Abdichtung über oder unter der Dämmung liegt.",
+   "vertiefung": "Es lohnt sich, diese vier Schichten als festen Satz im Kopf zu haben. Jede Flachdachfrage lässt sich dann darauf zurückführen: Welche Schicht fehlt, welche sitzt an der falschen Stelle, welche muss wegen ihrer Lage aus einem anderen Werkstoff sein.",
+   "tags": [
+    "flachdach",
+    "schichtenfolge",
+    "grundlagen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-002",
+   "typ": "karte",
+   "frage": "Was ist die Druckausgleichsschicht beim bituminösen Flachdach und wie entsteht sie?",
+   "antwort": "Eine durchgehende Luftschicht unmittelbar unter der Dampfsperre. Sie entsteht dadurch, dass die Bitumenbahn auf den Voranstrich der Betondecke nur streifenförmig oder punktuell aufgeklebt wird, sodass zwischen den Klebestreifen Luft verbunden bleibt.",
+   "vertiefung": "Die Schicht gleicht Dampfdruckspitzen aus, die aus der Baufeuchte der Decke und aus Temperaturwechseln entstehen. Ohne sie bilden sich Blasen, die die Abdichtung von unten anheben. Bei befahrenen und intensiv genutzten Dächern verzichtet man bewusst darauf — dort wird vollflächig geklebt, siehe die Aufgaben zur Nutzung.",
+   "tags": [
+    "druckausgleichsschicht",
+    "dampfsperre",
+    "bitumen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-003",
+   "typ": "karte",
+   "frage": "Warum erhält das klassische Flachdach eine Dampfsperre unter der Wärmedämmung?",
+   "antwort": "Im Winter wandert Wasserdampf von innen nach außen. Die Dampfsperre hält diese Diffusion zurück, bevor sie die Wärmedämmschicht erreicht — dort würde der Dampf am kalten Rand der Dämmung unter der Abdichtung als Tauwasser ausfallen und die Dämmwirkung zerstören.",
+   "vertiefung": "Der entscheidende Umstand ist, dass die Abdichtung oben praktisch dampfdicht ist. Was einmal in die Dämmung hineindiffundiert, kommt nach außen nicht mehr heraus. Deshalb muss die Sperre unten sitzen und nicht etwa oben.",
+   "tags": [
+    "dampfsperre",
+    "tauwasser",
+    "klassisches flachdach"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-004",
+   "typ": "karte",
+   "frage": "Welche Aufgaben hat der Oberflächenschutz über der Dachabdichtung?",
+   "antwort": "Er schützt die Abdichtung vor UV-Strahlung, Witterung und mechanischer Beanspruchung. Ausgeführt wird er als Beschichtung heller Farbe, als Schieferbestreuung oder als Kiesschüttung auf Trennlage. Bei lose verlegten Schichten wirkt die Kiesschüttung zugleich als Beschwerung gegen Windsog.",
+   "vertiefung": "Die helle Farbe ist kein Schönheitsmerkmal: Sie senkt die Oberflächentemperatur und damit die thermische Längenänderung der Abdichtung. Dunkle Bitumenflächen erreichen im Sommer leicht 80 Grad, unter einer Kiesschüttung bleiben es rund 40.",
+   "tags": [
+    "oberflächenschutz",
+    "abdichtung",
+    "kies"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-005",
+   "typ": "karte",
+   "frage": "Welches Dämmmaterial ist beim Umkehrdach zulässig und warum nur dieses?",
+   "antwort": "Extruderschaum, also ein durchfeuchtungshemmender Dämmstoff. Beim Umkehrdach liegt die Dämmung oberhalb der Abdichtung und damit dauerhaft im Nassen — Sickerwasser läuft an ihr vorbei zur Abdichtung hinunter. Ein saugfähiger Dämmstoff würde sich vollsaugen und seine Dämmwirkung verlieren.",
+   "vertiefung": "Damit kehrt sich auch die Rolle der Dämmung um: Sie ist beim Umkehrdach nicht nur Wärmeschutz, sondern zugleich die mechanische Schutzschicht der Abdichtung nach oben.",
+   "tags": [
+    "umkehrdach",
+    "extruderschaum",
+    "dämmstoff"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-006",
+   "typ": "karte",
+   "frage": "Worin unterscheiden sich die bituminöse und die Polymer-Variante des einschaligen Flachdachs in der Befestigung der Schichten?",
+   "antwort": "Bei der bituminösen Variante sind alle Schichten miteinander verklebt — das ist ihr Kennzeichen. Bei der Polymer-Variante werden Folie, Dämmung und Dichtungsbahn lose aufeinandergelegt; weil nichts klebt, braucht das Dach eine Beschwerungsschicht oder eine Verbindung durch Dübel und Anker.",
+   "vertiefung": "Verklebt oder lose ist die zweite große Entscheidung am Flachdach, nach der Lage der Abdichtung. Sie entscheidet darüber, ob Windsog durch Haftung oder durch Gewicht aufgenommen wird — und damit über die gesamte Dachlast.",
+   "tags": [
+    "windsog",
+    "beschwerung",
+    "polymerbahn",
+    "bitumen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-007",
+   "typ": "karte",
+   "frage": "Welche Grundregel gilt für die Schichtenfolge eines Bauteils, wenn man Tauwasser im Inneren vermeiden will?",
+   "antwort": "In Richtung der stattfindenden Diffusion, also im Allgemeinen von innen nach außen, nehmen die s_d-Werte ab und die Wärmedurchlasswiderstände R zu. Innen dicht und wenig dämmend, außen offen und stark dämmend.",
+   "vertiefung": "Das abgedichtete Flachdach verletzt die erste Hälfte dieser Regel notgedrungen: Die Abdichtung ganz außen hat einen sehr hohen s_d-Wert. Genau deshalb verlangt die Norm darunter eine Sperre mit s_d,i ≥ 100 m — die Regel wird nicht eingehalten, sondern durch eine noch dichtere Schicht innen wiederhergestellt.",
+   "tags": [
+    "diffusion",
+    "grundregel",
+    "sd-wert"
+   ],
+   "quelle": "Lohmeyer, Praktische Bauphysik, Abschn. 3.5.3.2, S. 304 (PDF 324)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-008",
+   "typ": "karte",
+   "frage": "Welche drei Normen nennt das Lehrbuch für Planung, Ausführung und Unterkonstruktion von Dächern mit Dachabdichtungen?",
+   "antwort": "DIN 18531 für das Entwerfen, DIN 18338 für die Ausführung von Dachabdichtungsarbeiten bei Vereinbarung der VOB und DIN 18530 für massive Deckenkonstruktionen unter Dachabdichtungen.",
+   "vertiefung": "DIN 18530 wird gern übersehen, obwohl sie oft der Grund für Schäden ist: Sie regelt Trennschichten, Lager und Ringanker, mit denen Risse und Verformungen in Wänden und Dachdecke vermieden werden. Eine perfekte Abdichtung nützt wenig, wenn sich die Decke darunter frei bewegt.",
+   "tags": [
+    "normen",
+    "din 18531",
+    "din 18530"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-009",
+   "typ": "karte",
+   "frage": "Warum wird beim Umkehrdach empfohlen, die Tragkonstruktion in schwerer Bauart auszuführen?",
+   "antwort": "Sie soll als thermische Pufferzone wirken. Weil an Plattenfugen und ähnlichen Stellen in gewissem Umfang Sickerwasser bis zur Abdichtung vordringt, kühlt die Konstruktion dort örtlich aus; eine schwere Decke gleicht diese Temperaturschwankungen aus. Aus demselben Grund wird die Wärmedämmung reichlich bemessen.",
+   "vertiefung": "Hier zeigt sich der Preis des Umkehrdachs: Man kauft den Schutz der Abdichtung mit einem bauphysikalisch weniger berechenbaren Aufbau. Die Mehrdicke der Dämmung ist ein Zuschlag für etwas, das man nicht genau beziffern kann.",
+   "tags": [
+    "umkehrdach",
+    "pufferzone",
+    "sickerwasser"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-010",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen über das Umkehrdach treffen zu?",
+   "optionen": [
+    "Die Abdichtung wird direkt auf die tragende Decke gelegt.",
+    "Die Wärmedämmschicht übernimmt den mechanischen Schutz der Abdichtung nach oben.",
+    "Als Dämmstoff ist durchfeuchtungshemmender Extruderschaum erforderlich.",
+    "Gute Entwässerung und Auflast müssen das Aufschwimmen der Dämmung verhindern.",
+    "Unter der Wärmedämmung ist zusätzlich eine Dampfsperre anzuordnen.",
+    "Kiesschüttungen als Deckschicht sind besonders problematisch."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "antwort": "Richtig sind die ersten vier Aussagen. Die Abdichtung liegt direkt auf der tragenden Decke, die Dämmung darüber übernimmt den mechanischen Schutz, sie muss aus Extruderschaum bestehen, und sie darf bei starkem Wasseranfall nicht aufschwimmen. Eine Dampfsperre braucht das Umkehrdach nicht — die Abdichtung liegt bereits auf der warmen Seite der Dämmung. Kiesschüttungen sind gerade unproblematisch; schwierig sind Plattenbeläge und Pflanzsubstrate.",
+   "vertiefung": "Die vierte Aussage ist diejenige, die in der Praxis am häufigsten unterschätzt wird. Extruderschaum hat eine Rohdichte von etwa 30 bis 40 kg je Kubikmeter — bei Starkregen und verstopftem Ablauf schwimmt er auf wie ein Floß und nimmt die Auflast gleich mit.",
+   "tags": [
+    "umkehrdach",
+    "aufschwimmen",
+    "mehrfachauswahl"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-011",
+   "typ": "mehrfachauswahl",
+   "frage": "Bei der Polymer-Variante liegen alle Schichten lose aufeinander. Wodurch kann die abhebende Wirkung des Windsogs aufgenommen werden?",
+   "optionen": [
+    "eine 5 cm dicke Kiesschüttung der Körnung 16 bis 32 mm",
+    "Dübel oder Anker, die die Abdichtung mit der tragenden Decke verbinden",
+    "eine Schieferbestreuung auf der obersten Dichtungsbahn",
+    "ein Anstrich heller Farbe auf der Abdichtung",
+    "der Verzicht auf die Trennlage unter der Kiesschüttung"
+   ],
+   "richtig": [
+    0,
+    1
+   ],
+   "antwort": "Durch eine Beschwerungsschicht, in der Regel eine 5 cm dicke Kiesschüttung der Körnung 16 bis 32 mm, oder stattdessen durch Dübel beziehungsweise Anker, die die Abdichtung mit der tragenden Decke verbinden. Eine Verklebung scheidet bei dieser Bauweise gerade aus, und ein Anstrich oder eine Schieferbestreuung sind reiner Oberflächenschutz ohne Gewicht.",
+   "vertiefung": "Die Entscheidung fällt meist über die Tragfähigkeit der Decke. 5 cm Kies wiegen rund 90 kg je Quadratmeter — bei einer leichten Konstruktion ist das sehr viel, und dann bleibt nur die mechanische Befestigung.",
+   "tags": [
+    "windsog",
+    "beschwerung",
+    "befestigung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-012",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche nicht belüfteten Dächer bedürfen nach DIN 4108-3 keines rechnerischen Nachweises des Tauwasserausfalls?",
+   "optionen": [
+    "Dächer mit s_d,i ≥ 100 m unter der Wärmedämmung und höchstens 20 % des Gesamtwärmedurchlasswiderstandes darunter",
+    "Dächer aus Porenbeton nach DIN 4223 ohne diffusionshemmende Schicht an der Unterseite und ohne zusätzliche Wärmedämmung",
+    "Umkehrdächer mit dampfdurchlässiger Auflast auf der Wärmedämmschicht",
+    "alle Dächer ohne diffusionshemmende Schicht",
+    "alle Dächer mit Kiesschüttung als Oberflächenschutz"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "antwort": "Die ersten drei. Nachweisfrei sind Dächer mit einer diffusionshemmenden Schicht mit s_d,i ≥ 100 m unterhalb der Wärmedämmung bei eingehaltener 20-Prozent-Grenze, Dächer aus Porenbeton nach DIN 4223 ganz ohne diffusionshemmende Schicht an der Unterseite sowie Umkehrdächer mit dampfdurchlässiger Auflast. Ein Dach ohne jede diffusionshemmende Schicht ist nicht allgemein nachweisfrei, und eine Kiesschüttung allein sagt über den Feuchteschutz nichts aus.",
+   "vertiefung": "Der Porenbetonfall wirkt auf den ersten Blick wie ein Widerspruch zu allem anderen. Er beruht darauf, dass Porenbeton selbst feuchtespeicherfähig ist und das im Winter anfallende Wasser bis zur Verdunstungsperiode zwischenlagert, ohne Schaden zu nehmen.",
+   "tags": [
+    "din 4108-3",
+    "nachweisfrei",
+    "tauwasser"
+   ],
+   "quelle": "Lohmeyer, Praktische Bauphysik, Tafel 3.9, S. 303–304 (PDF 320–323)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 4108-3:2001-07 ist durch DIN 4108-3:2018-10 ersetzt. Zu prüfen: Gelten s_d,i ≥ 100 m, die 20-Prozent-Grenze und die Nachweisfreiheit der aufgeführten Dachaufbauten in der Fassung von 2018 unverändert weiter?"
+  },
+  {
+   "id": "bk-fd-013",
+   "typ": "mehrfachauswahl",
+   "frage": "Was kennzeichnet das Industriedach?",
+   "optionen": [
+    "geringes Gewicht für große Spannweiten bei geringen Kosten",
+    "Trapezblech als Tragkonstruktion, verzinkt und beschichtet",
+    "aufgeklebte Dampfsperre auf dem Trapezblech",
+    "druck- und biegefeste Wärmedämmung, sodass das Dach begehbar ist",
+    "Kiesschüttung als Beschwerung gegen Windsog",
+    "Stahlbetondecke als tragende Schicht"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "antwort": "Richtig sind die ersten vier. Das Industriedach soll bei großen Spannweiten ein geringes Gewicht haben; es sitzt in der Regel auf verzinktem und beschichtetem Trapezblech, darauf eine aufgeklebte Dampfsperre und eine so druck- und biegefeste Dämmung, dass das Dach begehbar ist. Die Abdichtung aus verschweißten Polymerdichtungsbahnen wird punktuell oder linienförmig verklebt oder mit Ankern am Trapezblech befestigt. Eine Kiesbeschwerung verbietet sich wegen des Gewichts, und die tragende Decke ist gerade keine Betonplatte.",
+   "vertiefung": "Die Forderung nach Begehbarkeit ist hier konstruktiv, nicht nutzungsbedingt: Auf Trapezblech trägt die Dämmung über den Sicken frei; ohne ausreichende Biegefestigkeit tritt man beim Warten der Dachfläche hindurch.",
+   "tags": [
+    "industriedach",
+    "trapezblech",
+    "leichtbau"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-014",
+   "typ": "mehrfachauswahl",
+   "frage": "Ein Flachdach wird als genutztes Dach ausgebildet. Welche Aufbauten über der Abdichtung nennt das Lehrbuch?",
+   "optionen": [
+    "Schutzschicht aus kräftigem Vlies oder einer Gummischnitzelmatte",
+    "Plattenbelag auf Splittbett oder auf Stelzen beim begehbaren Dach",
+    "lastverteilende Betonplatte auf einer Pufferschicht beim befahrbaren Dach",
+    "Prinzip des Umkehrdachs beim begrünten Dach",
+    "unmittelbar auf die Abdichtung geklebter Nutzbelag",
+    "zweite Dampfsperre oberhalb der Nutzschicht"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "antwort": "Richtig sind die ersten vier. Über der Abdichtung folgt zunächst eine Schutzschicht aus kräftigem Vlies oder einer Gummischnitzelmatte. Beim begehbaren Dach liegt ein Plattenbelag auf einem Splittbett oder auf Stelzen, beim befahrbaren Dach eine lastverteilende Betonplatte auf einer Pufferschicht aus Sand, Splitt oder Schaumstoff, beim begrünten Dach wird das Prinzip des Umkehrdachs angewandt. Eine direkt auf die Abdichtung geklebte Nutzschicht und eine zusätzliche Dampfsperre darüber gehören nicht dazu.",
+   "vertiefung": "Allen drei Nutzungen ist gemeinsam, dass zwischen Abdichtung und Nutzschicht etwas Weiches liegt — Vlies, Splitt, Sand, Schaumstoff. Die Abdichtung ist ein dünnes, zähes Band; was sie zerstört, sind Punktlasten und Kanten, nicht Flächenlasten.",
+   "tags": [
+    "genutztes dach",
+    "terrasse",
+    "begrünung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-015",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Folgen hat es, wenn beim Umkehrdach die Entwässerung versagt und sich Wasser über der Abdichtung staut?",
+   "optionen": [
+    "Die Wärmedämmplatten schwimmen auf.",
+    "Die Auflast wird angehoben oder verschoben.",
+    "Die Abdichtung liegt stellenweise ungeschützt frei.",
+    "Die Abdichtung wird durch das stehende Wasser wasserdurchlässig.",
+    "Die Dampfsperre unter der Dämmung wird durchfeuchtet."
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "antwort": "Richtig sind die ersten drei. Die Dämmplatten schwimmen auf, die Auflast wird mit angehoben oder verschoben, und die freigelegte Abdichtung ist wieder ungeschützt der UV-Strahlung und mechanischer Beanspruchung ausgesetzt. Die Abdichtung selbst wird durch das stehende Wasser nicht undicht — sie liegt ja ohnehin im Nassen — und eine Dampfsperre fehlt beim Umkehrdach planmäßig.",
+   "vertiefung": "Hier liegt der eigentliche Unterschied zum klassischen Dach: Dort ist der verstopfte Ablauf ein Lastproblem, hier wird er sofort zum Problem der Lagesicherheit. Deshalb gehören beim Umkehrdach Notüberläufe und die Kontrolle der Abläufe zur Konstruktion, nicht zur Wartung.",
+   "tags": [
+    "umkehrdach",
+    "entwässerung",
+    "aufschwimmen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-016",
+   "typ": "numerisch",
+   "frage": "Ein nicht belüftetes Dach mit Dachabdichtung soll ohne rechnerischen Nachweis des Tauwasserausfalls auskommen. Welchen Mindestwert muss die wasserdampfdiffusionsäquivalente Luftschichtdicke s_d,i der diffusionshemmenden Schicht unterhalb der Wärmedämmung dafür haben?",
+   "wert": 100,
+   "toleranz": 0,
+   "einheit": "m",
+   "bild": "bilder/bk-flachdach-20-prozent.svg",
+   "bildunterschrift": "Die beiden Bedingungen für die Nachweisfreiheit nicht belüfteter Dächer mit Dachabdichtung: s_d,i ≥ 100 m unter der Dämmung und höchstens 20 % des Gesamtwärmedurchlasswiderstandes unterhalb dieser Schicht.",
+   "antwort": "s_d,i ≥ 100 m. Zusätzlich darf der Wärmedurchlasswiderstand aller Schichten unterhalb dieser Schicht höchstens 20 % des Gesamtwärmedurchlasswiderstandes betragen.",
+   "vertiefung": "100 m diffusionsäquivalente Luftschichtdicke ist sehr viel — eine Bitumenbahn oder eine Aluminiumverbundfolie erreicht das, eine PE-Folie von 0,2 mm nicht. Der Wert ist der Grund, warum beim klassischen Flachdach von Dampfsperre und nicht von Dampfbremse gesprochen wird.",
+   "tags": [
+    "sd-wert",
+    "dampfsperre",
+    "din 4108-3"
+   ],
+   "quelle": "Lohmeyer, Praktische Bauphysik, Tafel 3.9, S. 303–304 (PDF 320–323)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 4108-3:2001-07 ist durch DIN 4108-3:2018-10 ersetzt. Zu prüfen: Gelten s_d,i ≥ 100 m, die 20-Prozent-Grenze und die Nachweisfreiheit der aufgeführten Dachaufbauten in der Fassung von 2018 unverändert weiter?"
+  },
+  {
+   "id": "bk-fd-017",
+   "typ": "numerisch",
+   "frage": "Wie viel Prozent des Gesamtwärmedurchlasswiderstandes darf der Wärmedurchlasswiderstand der Bauteilschichten unterhalb der diffusionshemmenden Schicht bei nicht belüfteten Dächern ohne rechnerischen Nachweis höchstens betragen?",
+   "wert": 20,
+   "toleranz": 0,
+   "einheit": "%",
+   "antwort": "Höchstens 20 % des Gesamtwärmedurchlasswiderstandes. Bei Dächern mit nebeneinanderliegenden Bereichen unterschiedlichen Wärmedurchlasswiderstandes ist der Gefachbereich zugrunde zu legen.",
+   "vertiefung": "Die Regel sorgt dafür, dass die Dampfsperre warm bleibt. Läge viel Dämmung unter ihr, fiele ihre Temperatur unter den Taupunkt der Raumluft und das Tauwasser schlüge sich an ihrer Unterseite nieder — also im Raum, nicht in der Konstruktion.",
+   "tags": [
+    "20-prozent-regel",
+    "din 4108-3",
+    "tauwasser"
+   ],
+   "quelle": "Lohmeyer, Praktische Bauphysik, Tafel 3.9, S. 303–304 (PDF 320–323)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 4108-3:2001-07 ist durch DIN 4108-3:2018-10 ersetzt. Zu prüfen: Gelten s_d,i ≥ 100 m, die 20-Prozent-Grenze und die Nachweisfreiheit der aufgeführten Dachaufbauten in der Fassung von 2018 unverändert weiter?"
+  },
+  {
+   "id": "bk-fd-018",
+   "typ": "numerisch",
+   "frage": "Welche Dicke hat die Kiesschüttung, die beim lose verlegten Flachdach als Beschwerungsschicht gegen Windsog aufgebracht wird, in der Regel?",
+   "wert": 5,
+   "toleranz": 0,
+   "einheit": "cm",
+   "antwort": "5 cm, in der Körnung 16 bis 32 mm. Sie wirkt gleichzeitig als Oberflächenschutz der Abdichtung.",
+   "vertiefung": "Die Körnung ist kein Nebenwert: Feinerer Kies würde sich mit Staub und Laub zusetzen und das Dach allmählich in eine wassersaugende Schicht verwandeln. 16/32 bleibt auch nach Jahren durchlässig.",
+   "tags": [
+    "kiesschüttung",
+    "beschwerung",
+    "windsog"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-019",
+   "typ": "numerisch",
+   "frage": "Welche Schichtdicke haben die zwei miteinander verklebten Schweißbahnen der zweilagigen Abdichtung eines bituminösen Flachdachs zusammen etwa?",
+   "wert": 10,
+   "toleranz": 1,
+   "einheit": "mm",
+   "antwort": "Etwa 10 mm.",
+   "vertiefung": "Zweilagig ist hier keine Verdopplung aus Vorsicht, sondern Methode: Die Nähte der beiden Lagen werden versetzt angeordnet, sodass keine Fehlstelle durchgeht. Die Dicke ist eher Nebenprodukt dieser Anordnung.",
+   "tags": [
+    "abdichtung",
+    "schweißbahn",
+    "bitumen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-020",
+   "typ": "numerisch",
+   "frage": "Welche Mindestdicke muss die Polymerdichtungsbahn bei der Polymer-Variante des einschaligen Flachdachs haben?",
+   "wert": 1.2,
+   "toleranz": 0,
+   "einheit": "mm",
+   "antwort": "Mindestens 1,2 mm. Sie wird zum Schutz oben und unten von einem Synthesefaser-Vlies bedeckt.",
+   "vertiefung": "Der Vergleich mit den rund 10 mm der bituminösen Lösung zeigt den Unterschied der beiden Denkweisen: Bitumen dichtet über Masse, Polymer über Materialgüte. Dafür verzeiht die dünne Bahn weniger beim Verlegen, und das Vlies beidseitig ist Pflicht, nicht Zugabe.",
+   "tags": [
+    "polymerdichtungsbahn",
+    "abdichtung",
+    "vlies"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-021",
+   "typ": "numerisch",
+   "frage": "Bei einem Duodach ohne Dampfsperre unter der unteren Dämmlage beträgt der Wärmedurchlasswiderstand aller Schichten unterhalb der Abdichtung 0,30 m²·K/W. Wie groß muss der Wärmedurchlasswiderstand der Schichten oberhalb der Abdichtung mindestens sein?",
+   "wert": 1.5,
+   "toleranz": 0.01,
+   "einheit": "m²·K/W",
+   "antwort": "Mindestens 1,50 m²·K/W. Das Lehrbuch verlangt, dass der Wärmedurchlasswiderstand unterhalb der Abdichtung nicht größer ist als etwa 20 % desjenigen oberhalb: 0,30 ≤ 0,20 · R_oben, also R_oben ≥ 0,30 / 0,20 = 1,50 m²·K/W.",
+   "vertiefung": "Achtung auf die Bezugsgröße. Das Lehrbuch bezieht die 20 % beim Duodach auf die Schichten oberhalb der Abdichtung, DIN 4108-3 bezieht sie beim nicht belüfteten Dach auf den Gesamtwiderstand. 20 % des Oberen entspricht rund 16,7 % des Gesamten — die Lehrbuchregel ist also die schärfere. Beide Zahlen heißen 20 %, meinen aber nicht dasselbe.",
+   "tags": [
+    "duodach",
+    "wärmedurchlasswiderstand",
+    "rechnen"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Zwei Fassungen derselben 20-Prozent-Regel mit verschiedener Bezugsgröße: Lehrbuch der Bauphysik bezieht sie beim Duodach auf R oberhalb der Abdichtung, Lohmeyer nach DIN 4108-3:2001-07 auf den Gesamtwärmedurchlasswiderstand. Zu prüfen: Welche Bezugsgröße nennt DIN 4108-3:2018-10?"
+  },
+  {
+   "id": "bk-fd-022",
+   "typ": "vergleich",
+   "frage": "Zwei Flachdachbauweisen im Schnitt, außen oben. Bei welcher der beiden liegt die Dachabdichtung dauerhaft vor UV-Strahlung, Hagelschlag und starken Temperaturwechseln geschützt?",
+   "seiten": [
+    {
+     "titel": "Klassisches Flachdach",
+     "bild": "bilder/bk-flachdach-vergleich-klassisch.svg",
+     "beschreibung": "Vertikalschnitt von außen nach innen: Kiesschüttung als Beschwerung, Trennlage, zweilagige Abdichtung, druckfeste Wärmedämmung, Dampfsperre mit s_d ≥ 100 m, Stahlbetondecke."
+    },
+    {
+     "titel": "Umkehrdach",
+     "bild": "bilder/bk-flachdach-vergleich-umkehr.svg",
+     "beschreibung": "Vertikalschnitt von außen nach innen: dampfdurchlässige Kiesauflast, Trennvlies, Wärmedämmung aus Extruderschaum, Abdichtung unmittelbar auf der Stahlbetondecke."
+    }
+   ],
+   "richtig": 1,
+   "antwort": "Beim rechten Aufbau, dem Umkehrdach. Dort liegt die Abdichtung unmittelbar auf der tragenden Decke, und die Wärmedämmschicht darüber übernimmt zugleich den mechanischen Schutz nach oben. Beim linken, klassischen Aufbau liegt die Abdichtung als oberste wasserführende Schicht unter der Kiesschüttung und ist nur durch diesen Oberflächenschutz gedeckt.",
+   "vertiefung": "Der Preis dieses Schutzes ist, dass die Dämmung im Nassen liegt. Man verschiebt das Risiko von der Abdichtung auf die Dämmung — vertretbar, weil die Abdichtung das einzige Bauteil ist, dessen Versagen das Gebäude sofort trifft, während eine feuchte Dämmung zunächst nur Energie kostet.",
+   "tags": [
+    "umkehrdach",
+    "klassisches flachdach",
+    "abdichtung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-023",
+   "typ": "zuordnung",
+   "frage": "Ordne jeder Flachdachbauweise das Kennzeichen zu, an dem man sie im Schnitt erkennt.",
+   "bild": "bilder/bk-flachdach-bauweisen.svg",
+   "bildunterschrift": "Die vier Bauweisen nebeneinander, jeweils außen oben.",
+   "paare": [
+    [
+     "klassisches Flachdach",
+     "Abdichtung über der Dämmung, Dampfsperre darunter"
+    ],
+    [
+     "Umkehrdach",
+     "Dämmung über der Abdichtung, Abdichtung direkt auf der Decke"
+    ],
+    [
+     "Duodach",
+     "Abdichtung zwischen zwei Lagen Wärmedämmstoff"
+    ],
+    [
+     "Industriedach",
+     "Trapezblech als Tragkonstruktion, alles verklebt oder verankert"
+    ]
+   ],
+   "antwort": "Klassisches Flachdach: Abdichtung über der Dämmung, Dampfsperre darunter. Umkehrdach: Dämmung über der Abdichtung, Abdichtung direkt auf der Decke. Duodach: Abdichtung zwischen zwei Dämmlagen. Industriedach: Trapezblech als Tragkonstruktion, alle Schichten verklebt oder verankert.",
+   "vertiefung": "Die Reihe ist zugleich eine Entwicklungsgeschichte. Das Duodach entsteht fast immer dadurch, dass auf ein vorhandenes klassisches Flachdach eine zweite Dämmlage gelegt wird — es ist die Antwort auf eine Sanierungsaufgabe, nicht eine am Reißbrett entworfene Bauweise.",
+   "tags": [
+    "bauweisen",
+    "zuordnung",
+    "schichtenfolge"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-024",
+   "typ": "zuordnung",
+   "frage": "Ordne jeder Nutzung eines Flachdachs den Aufbau zu, der nach dem Lehrbuch über der Schutzschicht folgt.",
+   "paare": [
+    [
+     "begehbares Dach",
+     "Plattenbelag auf Splittbett oder auf Stelzen"
+    ],
+    [
+     "befahrbares Dach",
+     "lastverteilende Betonplatte auf einer Pufferschicht"
+    ],
+    [
+     "begrüntes Dach",
+     "Dränschicht aus 8 cm Kies 16/32, Filtervlies, Pflanzsubstrat"
+    ],
+    [
+     "nicht genutztes Dach",
+     "Kiesschüttung 5 cm als Beschwerung und Oberflächenschutz"
+    ]
+   ],
+   "antwort": "Begehbares Dach: Plattenbelag auf Splittbett oder Stelzen. Befahrbares Dach: lastverteilende Betonplatte auf einer Pufferschicht aus Sand, Splitt oder Schaumstoff. Begrüntes Dach: Dränschicht aus 8 cm Kies 16/32, Filtervlies, Pflanzsubstrat. Nicht genutztes Dach: Kiesschüttung 5 cm als Beschwerung und Oberflächenschutz.",
+   "vertiefung": "Die Pufferschicht beim befahrbaren Dach hat zwei Aufgaben zugleich: Sie verteilt die Radlast und entkoppelt die Betonplatte von der Abdichtung, damit deren Temperaturbewegung nicht an der Abdichtung zerrt. Deshalb reicht ein Vlies dort nicht aus.",
+   "tags": [
+    "nutzung",
+    "terrasse",
+    "begrünung",
+    "zuordnung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-025",
+   "typ": "zuordnung",
+   "frage": "Ordne den Schichten des klassischen Flachdachs ihre Hauptaufgabe zu.",
+   "paare": [
+    [
+     "Voranstrich",
+     "Haftgrund auf der eingeebneten Betondecke"
+    ],
+    [
+     "Dampfsperre",
+     "hält die Wasserdampfdiffusion von innen zurück"
+    ],
+    [
+     "Druckausgleichsschicht",
+     "baut Dampfdruckspitzen unter der Dampfsperre ab"
+    ],
+    [
+     "Wärmedämmschicht",
+     "Wärmeschutz der Dachfläche"
+    ],
+    [
+     "Dachabdichtung",
+     "hält Niederschlagswasser vom Bauwerk ab"
+    ],
+    [
+     "Kiesschüttung",
+     "Beschwerung gegen Windsog und Oberflächenschutz"
+    ]
+   ],
+   "antwort": "Voranstrich: Haftgrund auf der eingeebneten Betondecke. Dampfsperre: hält die Winterdiffusion vor der Dämmung zurück. Druckausgleichsschicht: baut Dampfdruckspitzen unter der Sperre ab. Wärmedämmschicht: Wärmeschutz. Abdichtung: hält Niederschlagswasser ab. Kiesschüttung: Beschwerung und Oberflächenschutz.",
+   "vertiefung": "Bemerkenswert ist, dass zwei dieser sechs Schichten gar nicht gegen Wasser von außen arbeiten, sondern gegen Dampf und Druck von innen. Wer ein Flachdach nur als Dichtungsaufgabe begreift, übersieht die Hälfte der Konstruktion.",
+   "tags": [
+    "schichten",
+    "funktion",
+    "zuordnung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-026",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Arbeitsschritte beim bituminösen klassischen Flachdach in die richtige Reihenfolge, beginnend auf der tragenden Decke.",
+   "schritte": [
+    "Betondecke einebnen und lose Teile entfernen",
+    "Voranstrich aufbringen",
+    "Bitumenbahn als Dampfsperre streifen- oder punktweise aufkleben",
+    "Wärmedämmschicht punktuell oder streifenförmig aufkleben",
+    "erste Dichtungslage linien- oder punktförmig aufkleben",
+    "zweite Schweißbahn vollflächig mit der ersten verkleben",
+    "Trennlage und Kiesschüttung als Oberflächenschutz aufbringen"
+   ],
+   "antwort": "Einebnen der Betondecke und Entfernen loser Teile, Voranstrich, streifen- oder punktweises Aufkleben der Bitumenbahn als Dampfsperre, Aufkleben der Wärmedämmschicht, erste Dichtungslage linien- oder punktförmig aufkleben, zweite Schweißbahn vollflächig damit verkleben, Trennlage und Kiesschüttung als Oberflächenschutz.",
+   "vertiefung": "Die Reihenfolge enthält zweimal dasselbe Prinzip: Die jeweils untere Lage wird nur punkt- oder streifenweise geklebt, die obere vollflächig. Unten soll Luft durchgehen können, oben nicht — daran erkennt man beim Aufmaß auf der Baustelle sofort, ob richtig gearbeitet wurde.",
+   "tags": [
+    "arbeitsschritte",
+    "bitumen",
+    "reihenfolge"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-027",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schichten des Umkehrdachs in die richtige Reihenfolge, von innen nach außen.",
+   "schritte": [
+    "tragende Decke",
+    "Dachabdichtung",
+    "Wärmedämmung aus Extruderschaum",
+    "Trennvlies",
+    "dampfdurchlässige Deckschicht aus Grobkies"
+   ],
+   "antwort": "Tragende Decke, Dachabdichtung, Wärmedämmung aus Extruderschaum, Trennvlies, dampfdurchlässige Deckschicht aus Grobkies.",
+   "vertiefung": "Es sind nur fünf Schichten statt sieben — das Umkehrdach ist die schlankere Konstruktion. Es spart Voranstrich, Dampfsperre und Druckausgleichsschicht ein, weil die Abdichtung auf der warmen Seite der Dämmung liegt und dort gar kein Tauwasser ausfallen kann.",
+   "tags": [
+    "umkehrdach",
+    "schichtenfolge",
+    "reihenfolge"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-028",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schichten eines begrünten Daches über der Dachabdichtung in die richtige Reihenfolge, von unten nach oben.",
+   "schritte": [
+    "durchfeuchtungshemmender Wärmedämmstoff über der Abdichtung",
+    "Vlieslage",
+    "Dränschicht aus etwa 8 cm Kies der Körnung 16/32 mm",
+    "kräftiges Vlies als Filter",
+    "Pflanzsubstrat"
+   ],
+   "antwort": "Durchfeuchtungshemmender Wärmedämmstoff als Schutz der Abdichtung, Vlieslage, Dränschicht aus etwa 8 cm Kies der Körnung 16/32 mm, kräftiges Vlies als Filter, Pflanzsubstrat.",
+   "vertiefung": "Das zweite Vlies ist das wichtigere: Ohne Filter wandert Feinmaterial aus dem Substrat in die Kiesschicht und setzt sie binnen weniger Jahre zu. Dann steht das Wasser, die Dämmung schwimmt auf und die Begrünung ertrinkt — drei Schäden aus einer vergessenen Lage.",
+   "tags": [
+    "gründach",
+    "dränschicht",
+    "reihenfolge"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-029",
+   "typ": "fehlersuche",
+   "frage": "Der Schnitt zeigt ein klassisches Flachdach über einer Stahlbetondecke, außen oben. Der Aufbau ist fehlerhaft. Markiere den Bereich, in dem der Fehler liegt.",
+   "referenz": "bilder/bk-flachdach-fehler.svg",
+   "bereiche": [
+    {
+     "nr": 1,
+     "x": 24.4,
+     "y": 19.2,
+     "name": "Oberfläche über der Abdichtung"
+    },
+    {
+     "nr": 2,
+     "x": 53.7,
+     "y": 29.2,
+     "name": "Abdichtungsebene"
+    },
+    {
+     "nr": 3,
+     "x": 24.4,
+     "y": 38.3,
+     "name": "Dämmebene"
+    },
+    {
+     "nr": 4,
+     "x": 53.7,
+     "y": 45.0,
+     "name": "Ebene zwischen Dämmung und Decke"
+    },
+    {
+     "nr": 5,
+     "x": 24.4,
+     "y": 50.6,
+     "name": "tragende Decke"
+    }
+   ],
+   "fehlerNr": 4,
+   "folge": "Ohne Dampfsperre diffundiert im Winter Wasserdampf aus dem Raum durch die Decke in die Wärmedämmung. Die Abdichtung darüber ist praktisch dampfdicht, der Dampf kann also nicht entweichen und fällt an der Unterseite der Abdichtung als Tauwasser aus. Die Dämmung durchfeuchtet und verliert ihre Wirkung, unter der Abdichtung bilden sich Blasen, und das im Sommer verdampfende Wasser hebt sie ab.",
+   "antwort": "Der Fehler liegt in Bereich 4, der Ebene zwischen Wärmedämmung und Stahlbetondecke: Dort fehlt die Dampfsperre. Beim klassischen Flachdach muss unter der Wärmedämmung eine diffusionshemmende Schicht liegen, die die winterliche Diffusion von innen nach außen zurückhält.",
+   "vertiefung": "Der Fehler ist am fertigen Dach von außen nicht zu sehen und von innen auch nicht. Er zeigt sich erst nach ein, zwei Heizperioden als steigender Energieverbrauch, später als Blasenbildung in der Abdichtung. Deshalb ist die Dampfsperre eine der wenigen Schichten, deren Einbau fotografisch dokumentiert werden sollte.",
+   "tags": [
+    "dampfsperre",
+    "ausführungsfehler",
+    "tauwasser"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-030",
+   "typ": "freitext",
+   "frage": "Erkläre, warum das Umkehrdach ohne Dampfsperre auskommt, obwohl im Winter dieselbe Diffusion von innen nach außen stattfindet wie beim klassischen Flachdach.",
+   "pruefpunkte": [
+    "Beim Umkehrdach liegt die Abdichtung direkt auf der tragenden Decke.",
+    "Damit liegt sie auf der warmen Seite der Wärmedämmung.",
+    "Der ankommende Wasserdampf ist dort noch warm und weit über dem Taupunkt.",
+    "An einer warmen Fläche kann kein Tauwasser ausfallen.",
+    "Beim klassischen Dach liegt die Abdichtung auf der kalten Seite der Dämmung.",
+    "Dort kondensiert diffundierender Dampf an der Unterseite der Abdichtung.",
+    "Deshalb ist nur beim klassischen Dach eine Dampfsperre unter der Dämmung nötig.",
+    "Die Auflast des Umkehrdachs muss dampfdurchlässig sein, zum Beispiel Grobkies."
+   ],
+   "antwort": "Beim Umkehrdach liegt die Abdichtung unmittelbar auf der tragenden Decke und damit auf der warmen Seite der Wärmedämmung. Der von innen kommende Wasserdampf erreicht die dampfdichte Abdichtung, solange er noch warm ist und weit über dem Taupunkt liegt — er kann dort gar nicht ausfallen. Beim klassischen Dach liegt die Abdichtung dagegen auf der kalten Seite der Dämmung; dort trifft diffundierender Dampf auf eine kalte, dichte Fläche und kondensiert. Deshalb braucht nur das klassische Dach eine Sperre, und deshalb nennt DIN 4108-3 Umkehrdächer mit dampfdurchlässiger Auflast ausdrücklich nachweisfrei.",
+   "vertiefung": "Die Formulierung „die Abdichtung liegt warm“ ist der Schlüssel zu fast allen Flachdachfragen. Wo eine dampfdichte Schicht warm liegt, ist sie unkritisch; wo sie kalt liegt, braucht es innen eine noch dichtere Schicht. Dasselbe Argument erklärt die Bedingung beim Duodach.",
+   "tags": [
+    "umkehrdach",
+    "diffusion",
+    "taupunkt"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-031",
+   "typ": "freitext",
+   "frage": "Beim befahrenen und intensiv genutzten Dach entfallen die Druckausgleichsschichten und es wird vollflächig geklebt. Begründe, warum das möglich und sogar vorteilhaft ist.",
+   "pruefpunkte": [
+    "Befahrene, begangene und intensiv genutzte Dächer werden nach den Regeln der Bauwerksabdichtung ausgebildet.",
+    "Nur extensiv genutzte Dächer mit etwa 10 cm Vegetationsschicht folgen den Fachregeln des Dachdeckerhandwerks.",
+    "Die schwere Auflage hält die Abdichtung nieder.",
+    "Dampfdruck kann die Abdichtung deshalb nicht mehr abheben.",
+    "Damit wird die Druckausgleichsschicht entbehrlich.",
+    "Es kann vollflächig geklebt werden.",
+    "Vollflächige Klebung verhindert, dass eingedrungenes Wasser unter der Abdichtung wandert.",
+    "Dadurch bleibt die Fehlstelle auffindbar."
+   ],
+   "antwort": "Befahrene, begangene und intensiv genutzte Dächer mit dickschichtigen Auflagen sind nach den Regeln der Bauwerksabdichtung auszubilden, nicht nach den Fachregeln des Dachdeckerhandwerks. Die schwere Auflage hält die Abdichtung nieder, sodass Dampfdruck sie nicht mehr abheben kann — die Druckausgleichsschicht wird entbehrlich. Dadurch kann vollflächig geklebt werden, und das bringt den entscheidenden Vorteil: Dringt irgendwo Wasser ein, bleibt es an der Fehlstelle und kann sich nicht unter der Abdichtung ausbreiten. Die Leckortung wird damit überhaupt erst möglich. Nur extensiv genutzte Dächer mit etwa 10 cm dicken Vegetationsschichten werden weiterhin wie gewöhnliche Dächer mit Abdichtungen behandelt.",
+   "vertiefung": "Dieser Zusammenhang erklärt, warum Leckortung bei lose verlegten Dächern so gefürchtet ist: Das Wasser tritt dort innen an einer ganz anderen Stelle aus als es oben eingedrungen ist, weil es unter der Abdichtung bis zum nächsten Durchbruch wandert.",
+   "tags": [
+    "genutztes dach",
+    "vollflächige klebung",
+    "leckortung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 18195 wurde 2017 in die Normenreihe DIN 18531 bis DIN 18535 überführt. Zu prüfen: Nach welcher Norm sind befahrene und intensiv genutzte Dächer heute abzudichten — DIN 18531-5 oder DIN 18532?"
+  },
+  {
+   "id": "bk-fd-032",
+   "typ": "freitext",
+   "frage": "Ein Bauherr möchte sein bestehendes klassisches Flachdach durch eine zweite Dämmlage oberhalb der vorhandenen Abdichtung aufwerten. Erkläre, welche Bauweise dabei entsteht, welche Bedingung zu prüfen ist und was zusätzlich erforderlich wird.",
+   "pruefpunkte": [
+    "Es entsteht ein Duodach.",
+    "Die Abdichtung liegt dann zwischen zwei Lagen Wärmedämmstoff.",
+    "Fehlt unter der unteren Dämmlage eine Dampfsperre, gilt eine Tauwasserbedingung.",
+    "Der Wärmedurchlasswiderstand unterhalb der Abdichtung darf etwa 20 % desjenigen oberhalb nicht überschreiten.",
+    "Die neue obere Dämmlage muss daher deutlich dicker sein als die vorhandene untere.",
+    "Eine Beschwerungsschicht muss das Aufschwimmen der oberen Dämmlage verhindern.",
+    "Die obere Dämmlage muss durchfeuchtungshemmend sein, da sie im Nassen liegt.",
+    "Das Duodach entsteht in der Regel genau auf diesem Weg, als Verbesserung eines klassischen Flachdachs."
+   ],
+   "antwort": "Es entsteht ein Duodach: Die vorhandene Abdichtung liegt dann geschützt zwischen zwei Lagen Wärmedämmstoff. Zu prüfen ist die Tauwasserbedingung — fehlt unterhalb der unteren Dämmlage eine Dampfsperre, darf der Wärmedurchlasswiderstand aller Schichten unterhalb der Abdichtung nicht größer sein als etwa 20 % des Wärmedurchlasswiderstandes der Schichten oberhalb. Praktisch heißt das: Die neue obere Lage muss deutlich dicker sein als die alte untere. Zusätzlich ist eine Beschwerungsschicht erforderlich, die das Aufschwimmen der oberen Dämmlage verhindert, und die obere Lage muss wie beim Umkehrdach durchfeuchtungshemmend sein.",
+   "vertiefung": "Dass das Duodach meist nicht entworfen, sondern erzeugt wird, erklärt seine Eigenart. Man arbeitet mit einer Konstruktion, die man nicht vollständig kennt — ob unter der alten Dämmung eine funktionsfähige Dampfsperre liegt, weiß man oft nicht. Deshalb rechnet man sicherheitshalber mit dem ungünstigen Fall, dass keine da ist.",
+   "tags": [
+    "duodach",
+    "sanierung",
+    "aufwertung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Die 20-Prozent-Bedingung stammt aus dem Lehrbuch der Bauphysik und bezieht sich dort auf R oberhalb der Abdichtung, während DIN 4108-3:2001-07 den Gesamtwärmedurchlasswiderstand zugrunde legt. Zu prüfen: Welche Bezugsgröße und welcher Grenzwert gelten nach DIN 4108-3:2018-10 für das Duodach?"
+  },
+  {
+   "id": "bk-fd-033",
+   "typ": "bildbeschriftung",
+   "frage": "Vertikalschnitt durch ein klassisches Flachdach, außen oben. Benenne die bezeichneten Schichten.",
+   "referenz": "bilder/bk-flachdach-schichten-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 35.4,
+     "y": 21.2,
+     "name": "Kiesschüttung als Beschwerung und Oberflächenschutz"
+    },
+    {
+     "nr": 2,
+     "x": 64.6,
+     "y": 30.8,
+     "name": "Trennlage"
+    },
+    {
+     "nr": 3,
+     "x": 35.4,
+     "y": 37.8,
+     "name": "Dachabdichtung, zweilagig"
+    },
+    {
+     "nr": 4,
+     "x": 64.6,
+     "y": 51.5,
+     "name": "Wärmedämmung"
+    },
+    {
+     "nr": 5,
+     "x": 35.4,
+     "y": 64.8,
+     "name": "Dampfsperre"
+    },
+    {
+     "nr": 6,
+     "x": 64.6,
+     "y": 76.0,
+     "name": "Stahlbetondecke"
+    }
+   ],
+   "antwort": "1 Kiesschüttung als Beschwerung und Oberflächenschutz, 2 Trennlage, 3 Dachabdichtung, zweilagig, 4 Wärmedämmung, 5 Dampfsperre, 6 Stahlbetondecke.",
+   "vertiefung": "Nützlich ist die Probe von unten nach oben: Auf die tragende Decke folgt zuerst das Dichte, dann das Dämmende, dann wieder das Dichte, dann das Schwere. Diese Abfolge dicht – dämmend – dicht – schwer gilt für jedes klassische Flachdach, gleich aus welchen Werkstoffen es gebaut ist.",
+   "tags": [
+    "schichtenfolge",
+    "klassisches flachdach",
+    "bildbeschriftung"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-034",
+   "typ": "skizze",
+   "frage": "Skizziere aus dem Gedächtnis den Schnitt durch ein klassisches Flachdach über einer Stahlbetondecke. Zeichne alle Schichten von der Decke bis zum Oberflächenschutz und beschrifte sie.",
+   "referenz": "bilder/bk-flachdach-schichten.svg",
+   "pruefpunkte": [
+    "Die tragende Stahlbetondecke ist unten dargestellt.",
+    "Außen ist oben, innen unten.",
+    "Unmittelbar über der Decke liegt die Dampfsperre.",
+    "Darüber folgt die Wärmedämmschicht.",
+    "Über der Dämmung liegt die Dachabdichtung.",
+    "Die Abdichtung ist als zweilagig erkennbar oder bezeichnet.",
+    "Über der Abdichtung liegt eine Trennlage.",
+    "Den Abschluss bildet die Kiesschüttung als Oberflächenschutz.",
+    "Alle Schichten sind beschriftet."
+   ],
+   "antwort": "Siehe Referenzzeichnung: von innen nach außen Stahlbetondecke mit Gefälle, Dampfsperre, Wärmedämmung, zweilagige Abdichtung, Trennlage, Kiesschüttung.",
+   "vertiefung": "Beim Zeichnen fällt auf, wie dünn die beiden entscheidenden Schichten sind: Dampfsperre und Abdichtung zusammen kaum mehr als ein Zentimeter in einem Aufbau von dreißig. Die ganze Funktionsfähigkeit des Daches hängt an diesen beiden Bändern — und an ihren Anschlüssen an Attika, Ablauf und Durchdringung, wo sie unterbrochen werden müssen.",
+   "tags": [
+    "skizze",
+    "klassisches flachdach",
+    "schichtenfolge"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-035",
+   "typ": "skizze",
+   "frage": "Stelle klassisches Flachdach und Umkehrdach in zwei Schnitten nebeneinander dar. Mache deutlich, worin sich die Schichtenfolge unterscheidet und welche Schicht beim Umkehrdach entfällt.",
+   "referenz": "bilder/bk-flachdach-bauweisen.svg",
+   "pruefpunkte": [
+    "Zwei Schnitte sind nebeneinander dargestellt, außen jeweils oben.",
+    "Beim klassischen Flachdach liegt die Abdichtung über der Wärmedämmung.",
+    "Beim klassischen Flachdach liegt unter der Dämmung eine Dampfsperre.",
+    "Beim Umkehrdach liegt die Wärmedämmung über der Abdichtung.",
+    "Beim Umkehrdach liegt die Abdichtung unmittelbar auf der tragenden Decke.",
+    "Beim Umkehrdach ist keine Dampfsperre eingezeichnet.",
+    "Beide Aufbauten haben oben eine Auflast beziehungsweise einen Oberflächenschutz.",
+    "Der Unterschied in der Lage der Abdichtung ist klar erkennbar."
+   ],
+   "antwort": "Siehe Referenzzeichnung, die ersten beiden Aufbauten: Beim klassischen Flachdach liegt die Abdichtung über der Dämmung und darunter eine Dampfsperre; beim Umkehrdach liegt die Dämmung über der Abdichtung, die unmittelbar auf der Decke sitzt, und die Dampfsperre entfällt.",
+   "vertiefung": "Wer beide Schnitte nebeneinander zeichnet, sieht die eigentliche Pointe: Es sind dieselben vier Schichten, nur zwei davon sind vertauscht — und aus dieser einen Vertauschung folgen ein anderer Dämmstoff, eine andere Auflast und eine Schicht weniger.",
+   "tags": [
+    "skizze",
+    "umkehrdach",
+    "vergleich"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.2, S. 471–473 (PDF 486–488)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-fd-036",
+   "typ": "skizze",
+   "frage": "Skizziere die beiden Bedingungen, unter denen ein nicht belüftetes Dach mit Dachabdichtung ohne rechnerischen Tauwassernachweis auskommt. Zeichne einen Schnitt und trage ein, worauf sich die beiden Werte beziehen.",
+   "referenz": "bilder/bk-flachdach-20-prozent.svg",
+   "pruefpunkte": [
+    "Ein Dachschnitt mit tragender Decke, Dampfsperre, Dämmung und Abdichtung ist gezeichnet.",
+    "Außen ist oben, innen unten.",
+    "Die diffusionshemmende Schicht liegt unterhalb der Wärmedämmung.",
+    "Für diese Schicht ist s_d,i ≥ 100 m angegeben.",
+    "Der Bereich unterhalb der diffusionshemmenden Schicht ist markiert.",
+    "Für diesen Bereich ist die Grenze von 20 % angegeben.",
+    "Die Bezugsgröße ist der Gesamtwärmedurchlasswiderstand des Daches.",
+    "Beide Bedingungen müssen gleichzeitig erfüllt sein."
+   ],
+   "antwort": "Siehe Referenzzeichnung: Unterhalb der Wärmedämmung liegt eine diffusionshemmende Schicht mit s_d,i ≥ 100 m. Der Wärmedurchlasswiderstand aller Schichten unterhalb dieser Schicht darf höchstens 20 % des Gesamtwärmedurchlasswiderstandes betragen.",
+   "vertiefung": "Der zweite Wert ist der unanschaulichere und wird deshalb oft falsch angewandt. Es geht nicht um das Verhältnis von unten zu oben, sondern von unten zum Ganzen — und die Bezugsschicht ist die Dampfsperre, nicht die Abdichtung. Wer das verwechselt, rechnet beim Duodach mit der falschen Grenze.",
+   "tags": [
+    "skizze",
+    "din 4108-3",
+    "20-prozent-regel"
+   ],
+   "quelle": "Lohmeyer, Praktische Bauphysik, Tafel 3.9, S. 303–304 (PDF 320–323)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "DIN 4108-3:2001-07 ist durch DIN 4108-3:2018-10 ersetzt. Zu prüfen: Gelten s_d,i ≥ 100 m, die 20-Prozent-Grenze und die Nachweisfreiheit der aufgeführten Dachaufbauten in der Fassung von 2018 unverändert weiter?"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "gestaltung": "arch",
   "module": [
     {
@@ -61,7 +61,9 @@
         },
         {
           "id": "bk-flachdach",
-          "titel": "Flachdach: Warmdach und Umkehrdach"
+          "titel": "Flachdach: Warmdach und Umkehrdach",
+          "datei": "items/bk-flachdach.json",
+          "bild": "bilder/bk-flachdach-schichten.svg"
         },
         {
           "id": "bk-gruendach",

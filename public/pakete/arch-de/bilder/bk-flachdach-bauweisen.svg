@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520">
+  <defs>
+    <pattern id="fdBeton" width="18" height="18" patternUnits="userSpaceOnUse">
+      <rect width="18" height="18" fill="#dde5b6"/>
+      <circle cx="4" cy="6" r="1.8" fill="#a9b183"/><circle cx="13" cy="13" r="1.5" fill="#a9b183"/>
+    </pattern>
+    <pattern id="fdDaemm" width="13" height="13" patternUnits="userSpaceOnUse">
+      <rect width="13" height="13" fill="#adc178"/>
+      <path d="M-3 10 L10 -3 M0 13 L13 0 M3 16 L16 3" stroke="#8fa85f" stroke-width="1.4"/>
+    </pattern>
+    <pattern id="fdKies" width="22" height="16" patternUnits="userSpaceOnUse">
+      <rect width="22" height="16" fill="#f7f3e4"/>
+      <circle cx="6" cy="6" r="3.6" fill="none" stroke="#a98467" stroke-width="1.5"/>
+      <circle cx="16" cy="11" r="2.8" fill="none" stroke="#a98467" stroke-width="1.5"/>
+    </pattern>
+    <pattern id="fdErde" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#e4dcc0"/>
+      <path d="M0 12 L12 0" stroke="#c3b894" stroke-width="1.2"/>
+    </pattern>
+    <pattern id="fdPlatten" width="46" height="18" patternUnits="userSpaceOnUse">
+      <rect width="46" height="18" fill="#f7f3e4"/>
+      <rect x="1" y="1" width="44" height="16" fill="none" stroke="#6c584c" stroke-width="1.6"/>
+    </pattern>
+  </defs>
+  <rect width="1000" height="520" fill="#f0ead2"/>
+  <text x="140" y="96" font-family="Georgia, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#414833">Klassisches Flachdach</text>
+  <rect x="50" y="120" width="180" height="24" fill="url(#fdKies)" stroke="#414833" stroke-width="2"/>
+  <rect x="50" y="144" width="180" height="12" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+  <rect x="50" y="156" width="180" height="16" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+  <rect x="50" y="172" width="180" height="56" fill="url(#fdDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="50" y="228" width="180" height="12" fill="#a98467" stroke="#414833" stroke-width="2"/>
+  <rect x="50" y="240" width="180" height="52" fill="url(#fdBeton)" stroke="#414833" stroke-width="2"/>
+  <text x="140" y="330" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">Abdichtung über der</text>
+  <text x="140" y="352" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">Dämmung, Dampfsperre</text>
+  <text x="140" y="374" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">darunter</text>
+  <text x="380" y="96" font-family="Georgia, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#414833">Umkehrdach</text>
+  <rect x="290" y="120" width="180" height="30" fill="url(#fdKies)" stroke="#414833" stroke-width="2"/>
+  <rect x="290" y="150" width="180" height="12" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+  <rect x="290" y="162" width="180" height="56" fill="url(#fdDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="290" y="218" width="180" height="16" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+  <rect x="290" y="234" width="180" height="52" fill="url(#fdBeton)" stroke="#414833" stroke-width="2"/>
+  <text x="380" y="330" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">Dämmung über der</text>
+  <text x="380" y="352" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">Abdichtung, keine</text>
+  <text x="380" y="374" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">Dampfsperre nötig</text>
+  <text x="620" y="96" font-family="Georgia, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#414833">Duodach</text>
+  <rect x="530" y="120" width="180" height="24" fill="url(#fdKies)" stroke="#414833" stroke-width="2"/>
+  <rect x="530" y="144" width="180" height="12" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+  <rect x="530" y="156" width="180" height="34" fill="url(#fdDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="530" y="190" width="180" height="16" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+  <rect x="530" y="206" width="180" height="34" fill="url(#fdDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="530" y="240" width="180" height="52" fill="url(#fdBeton)" stroke="#414833" stroke-width="2"/>
+  <text x="620" y="330" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">Abdichtung zwischen</text>
+  <text x="620" y="352" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">zwei Dämmlagen, meist</text>
+  <text x="620" y="374" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">durch Aufwertung</text>
+  <text x="860" y="96" font-family="Georgia, serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#414833">Industriedach</text>
+  <rect x="770" y="120" width="180" height="16" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+  <rect x="770" y="136" width="180" height="50" fill="url(#fdDaemm)" stroke="#414833" stroke-width="2"/>
+  <rect x="770" y="186" width="180" height="12" fill="#a98467" stroke="#414833" stroke-width="2"/>
+  <path d="M770 198 h7.5 l7.5 22 h7.5 l7.5 -22 h7.5 l7.5 22 h7.5 l7.5 -22 h7.5 l7.5 22 h7.5 l7.5 -22 h7.5 l7.5 22 h7.5 l7.5 -22 h7.5 l7.5 22 h7.5 l7.5 -22 h7.5 l7.5 22 h7.5 l7.5 -22" fill="none" stroke="#414833" stroke-width="2.6" stroke-linejoin="round"/>
+  <text x="860" y="330" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">leicht, auf Trapezblech,</text>
+  <text x="860" y="352" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">alles verklebt oder</text>
+  <text x="860" y="374" font-family="Georgia, serif" font-size="15" text-anchor="middle" fill="#414833">mechanisch befestigt</text>
+  <path d="M50 404 H950" stroke="#d9d2b4" stroke-width="2"/>
+  <g font-family="Georgia, serif" font-size="16" fill="#414833">
+    <rect x="50" y="424" width="36" height="18" fill="url(#fdKies)" stroke="#414833" stroke-width="1.8"/>
+    <text x="96" y="438">Kiesschüttung</text>
+    <rect x="290" y="424" width="36" height="18" fill="#d9d2b4" stroke="#414833" stroke-width="1.8"/>
+    <text x="336" y="438">Trennlage</text>
+    <rect x="530" y="424" width="36" height="18" fill="#6c584c" stroke="#414833" stroke-width="1.8"/>
+    <text x="576" y="438">Abdichtung</text>
+    <rect x="770" y="424" width="36" height="18" fill="url(#fdDaemm)" stroke="#414833" stroke-width="1.8"/>
+    <text x="816" y="438">Wärmedämmung</text>
+    <rect x="50" y="462" width="36" height="18" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+    <text x="96" y="476">Dampfsperre</text>
+    <rect x="290" y="462" width="36" height="18" fill="url(#fdBeton)" stroke="#414833" stroke-width="1.8"/>
+    <text x="336" y="476">Stahlbetondecke</text>
+    <path d="M530 478 l9 -16 l9 16 l9 -16 l9 16" fill="none" stroke="#414833" stroke-width="2.4"/>
+    <text x="576" y="476">Trapezblech</text>
+  </g>
+</svg>
