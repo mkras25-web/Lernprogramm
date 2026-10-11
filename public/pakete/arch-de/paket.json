@@ -2,7 +2,7 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "gestaltung": "arch",
   "module": [
     {
@@ -53,7 +53,9 @@
         },
         {
           "id": "bk-oeffnungen",
-          "titel": "Türen, Tore, Öffnungen im Mauerwerk"
+          "titel": "Türen, Tore, Öffnungen im Mauerwerk",
+          "datei": "items/bk-oeffnungen.json",
+          "bild": "bilder/bk-oeffnungen-statik.svg"
         },
         {
           "id": "bk-stuerze",

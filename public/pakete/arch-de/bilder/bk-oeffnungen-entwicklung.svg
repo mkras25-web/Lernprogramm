@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" width="920" height="400">
+<defs>
+<pattern id="mw" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+  <rect width="14" height="14" fill="#a98467"/>
+  <line x1="0" y1="0" x2="0" y2="14" stroke="#6c584c" stroke-width="1.1" opacity="0.55"/>
+</pattern>
+<pattern id="dm" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+  <rect width="10" height="10" fill="#adc178"/>
+  <line x1="0" y1="0" x2="0" y2="10" stroke="#f7f3e4" stroke-width="2" opacity="0.7"/>
+</pattern>
+<pattern id="hz" width="9" height="9" patternUnits="userSpaceOnUse">
+  <rect width="9" height="9" fill="#dde5b6"/>
+  <line x1="0" y1="0" x2="9" y2="9" stroke="#6c584c" stroke-width="0.9" opacity="0.5"/>
+</pattern>
+<pattern id="bt" width="12" height="12" patternUnits="userSpaceOnUse">
+  <rect width="12" height="12" fill="#d9d2b4"/>
+  <circle cx="3" cy="4" r="1.4" fill="#6c584c" opacity="0.5"/>
+  <circle cx="9" cy="9" r="1.1" fill="#6c584c" opacity="0.5"/>
+</pattern>
+<marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+        orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#9a6b1f"/></marker>
+<marker id="pfk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6"
+        orient="auto-start-reverse"><path d="M0,1 L9,5 L0,9 z" fill="#6c584c"/></marker>
+</defs>
+<rect x="0" y="0" width="920" height="400" fill="#f0ead2"/>
+<text x="460.0" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="19" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">Vom Lochfenster zur Vorhangfassade</text>
+<text x="460.0" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Ansicht — die umsetzbaren Formate sind im Lauf der Baugeschichte stetig gewachsen</text>
+<rect x="44" y="92" width="176" height="152" fill="url(#mw)" stroke="#414833" stroke-width="1.8"/>
+<rect x="68" y="126" width="54" height="80" fill="#dde5b6" stroke="#414833" stroke-width="1.8"/>
+<rect x="142" y="126" width="54" height="80" fill="#dde5b6" stroke="#414833" stroke-width="1.8"/>
+<text x="44" y="272" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="start" fill="#414833" font-weight="bold" font-style="normal">Lochfenster</text>
+<text x="44" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">einzelne Öffnungen in der</text>
+<text x="44" y="311" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Massivwand, hier stumpf</text>
+<text x="44" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">angeschlagen</text>
+<rect x="270" y="92" width="176" height="152" fill="url(#mw)" stroke="#414833" stroke-width="1.8"/>
+<rect x="286" y="134" width="144" height="64" fill="#dde5b6" stroke="#414833" stroke-width="1.8"/>
+<line x1="322.0" y1="134" x2="322.0" y2="198" stroke="#414833" stroke-width="1.6"/>
+<line x1="358.0" y1="134" x2="358.0" y2="198" stroke="#414833" stroke-width="1.6"/>
+<line x1="394.0" y1="134" x2="394.0" y2="198" stroke="#414833" stroke-width="1.6"/>
+<text x="270" y="272" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="start" fill="#414833" font-weight="bold" font-style="normal">Fensterband</text>
+<text x="270" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Elemente über Koppelstücke am</text>
+<text x="270" y="311" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Blendrahmen zusammengesetzt</text>
+<rect x="496" y="92" width="176" height="152" fill="url(#mw)" stroke="#414833" stroke-width="1.8"/>
+<rect x="512" y="108" width="144" height="136" fill="#dde5b6" stroke="#414833" stroke-width="1.8"/>
+<line x1="584.0" y1="108" x2="584.0" y2="244" stroke="#414833" stroke-width="2.6"/>
+<text x="496" y="272" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="start" fill="#414833" font-weight="bold" font-style="normal">Fensterwand</text>
+<text x="496" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Fenstertüren und Elemente mit</text>
+<text x="496" y="311" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">zusätzlichem Mittelpfosten</text>
+<rect x="722" y="92" width="176" height="152" fill="url(#mw)" stroke="#414833" stroke-width="1.8"/>
+<rect x="722" y="92" width="176" height="152" fill="#dde5b6" stroke="#414833" stroke-width="1.8"/>
+<line x1="780.6666666666666" y1="92" x2="780.6666666666666" y2="244" stroke="#414833" stroke-width="2.6"/>
+<line x1="839.3333333333334" y1="92" x2="839.3333333333334" y2="244" stroke="#414833" stroke-width="2.6"/>
+<line x1="722" y1="166" x2="898" y2="166" stroke="#414833" stroke-width="2.2"/>
+<text x="722" y="272" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="start" fill="#414833" font-weight="bold" font-style="normal">Vorhangfassade</text>
+<text x="722" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Pfosten-Riegel-Fassade mit</text>
+<text x="722" y="311" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Einsatzelementen</text>
+<line x1="30" y1="338" x2="890" y2="338" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="30" y="364" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="start" fill="#9a6b1f" font-weight="normal" font-style="italic">Je größer das Format, desto weniger trägt die Wand selbst — und desto mehr muss der Baukörperanschluss leisten.</text>
+</svg>

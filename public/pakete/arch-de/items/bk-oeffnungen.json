@@ -1,0 +1,686 @@
+{
+ "thema": "bk-oeffnungen",
+ "titel": "Türen, Tore, Öffnungen im Mauerwerk",
+ "lernziele": [
+  "Du kannst erklären, mit welchen Mitteln eine Öffnung in ein Flächenbauteil gebracht wird und welche statischen Anforderungen dabei gelten.",
+  "Du kannst die Begriffe am Öffnungselement sicher verwenden und Zarge, Blindstock und Schwelle auseinanderhalten.",
+  "Du kannst die Kräfte benennen, die auf ein Öffnungselement wirken, und sagen, welche Klötze sie aufnehmen.",
+  "Du kannst die Besonderheiten von Türöffnungen gegenüber Fenstern nennen — vom Bodenanschluss bis zum höhengleichen Terrassenübergang."
+ ],
+ "erklaerung": {
+  "absaetze": [
+   "Eine Öffnung ist zuerst ein Tragproblem. Vergleichsweise einfach sind Konstruktionen, bei denen sie durch Weglassen entsteht — die in Scheiben oder Pfeiler aufgelöste Wand, das Fachwerk mit einem nicht ausgefachten Feld. In vielen Fällen braucht es jedoch zusätzliche Maßnahmen: Entlastungsbögen, Stürze, Auswechslungen von Balken, angepasste Bewehrung oder andere Verstärkungen. Zwei Forderungen gelten dabei immer und in beide Richtungen: Die Standsicherheit der Außenwand darf nicht gefährdet werden, die Lasten aus dem Öffnungsbauteil müssen sicher in den Baukörper eingeleitet werden — und umgekehrt dürfen die Bauteile nicht durch Kräfte aus dem Bauwerk beansprucht werden.",
+   "Die umsetzbaren Formate sind über die Baugeschichte stetig gewachsen: vom Lochfenster in der Massivwand über das Fensterband, dessen Elemente durch Koppelstücke am Blendrahmen zusammengesetzt werden, und die Fensterwand mit zusätzlichem Mittelpfosten bis zur Pfosten-Riegel-Fassade mit Einsatzelementen. Je größer das Format, desto weniger trägt die Wand selbst und desto mehr muss der Baukörperanschluss leisten.",
+   "Für das Element selbst gilt eine feste Begriffsordnung. Bewegliche Teile heißen Flügel, der Flügelrahmen nimmt die Ausfachung auf, und der Flügel sitzt im Blendrahmen; horizontale Rahmenteile sind Riegel oder Kämpfer, vertikale Pfosten, der die Öffnung aufteilende heißt Setzpfosten. Bei bodentiefen Öffnungen ändert sich etwas Entscheidendes: Der untere Abschluss heißt Schwelle, und der Blendrahmen läuft nur noch dreiseitig um. Dasselbe gilt für die Türzarge, während die Fensterzarge vierseitig umläuft. Vom Blindstock unterscheidet sich die Zarge dadurch, dass sie nach dem Einbau sichtbar bleibt.",
+   "An jedem Öffnungselement wirken vier Arten von Kräften: die Eigenlast, die vertikale Nutzlast am geöffneten Flügel — nach DIN EN 13115 in vier Klassen von 200 bis 800 N —, die Windlast rechtwinklig zur Elementebene und, bei Elementen bis unter Brüstungshöhe, eine horizontale Nutzlast. Aufgenommen werden sie von Tragklötzen unten und Distanzklötzen seitlich, die nur auf Druck belastet und gegen Verrutschen gesichert sind und den Rahmen nicht einspannen dürfen. Eine Überlagerung der Lastfälle aus Eigengewicht, Wind und Nutzlast ist nicht erforderlich.",
+   "Türen unterscheiden sich vom Fenster vor allem am Boden. Bei der Türöffnung ohne Anschlag im zweischaligen Mauerwerk steht die Tür bevorzugt an der Außenseite der Tragwand; ein Stahlprofil schließt den Bodenaufbau ab und bildet zugleich den unteren Türanschlag, die Rollschicht der Schwelle braucht ein eigenes Auflager. Schlägt die Tür nach außen auf, übernimmt eine umlaufende Blechzarge den Regenschutz des oberen Anschlags und bildet am Fußpunkt Schwelle und Anschlag — sie ist deshalb trittstabil zu wählen. Und wer den schwellenlosen Austritt auf die Terrasse will, entscheidet das im Rohbau: Der höhengleiche Übergang verlangt einen Absatz in der Geschossdecke, davor eine Wasserrinne mit Gitterrost am Entwässerungssystem."
+  ],
+  "merksatz": "Die Öffnung ist zuerst ein Tragproblem und erst dann ein Bauteil.",
+  "bild": "bilder/bk-oeffnungen-statik.svg",
+  "bildunterschrift": "Vier Wege, eine Öffnung in ein Flächenbauteil zu bringen — und nur einer kommt ohne Zusatzmaßnahmen aus.",
+  "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–128, und Werkstoffe und Komponenten, Konstruktionsarten, S. 100; DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Details 3.16.2 bis 3.18.2"
+ },
+ "siehe": [
+  "bk-fenster",
+  "bk-stuerze",
+  "bk-aw-zweischalig"
+ ],
+ "items": [
+  {
+   "id": "bk-oef-001",
+   "typ": "karte",
+   "frage": "Mit welchen Mitteln bringt man eine Öffnung in ein Flächenbauteil?",
+   "antwort": "Vergleichsweise einfach sind Konstruktionen, bei denen die Öffnung durch Weglassen oder Nichtbauen entsteht — etwa bei der Auflösung einer Wand in Wandscheiben oder -pfeiler oder beim Fachwerk, wo einzelne Bereiche nicht durch Füllungen geschlossen werden. In vielen Fällen sind jedoch zusätzliche Maßnahmen im betroffenen Flächenbauteil erforderlich: Entlastungsbögen, Stürze, Auswechslungen von Balken, die Anpassung von Bewehrung oder andere Verstärkungen.",
+   "vertiefung": "Die Möglichkeiten haben im Verlauf der Baugeschichte stetig zugenommen, insbesondere bei den umsetzbaren Formaten: zu Beginn meist begrenzt auf einzelne Löcher, später erweitert zu horizontalen Bändern, letztlich zu geschoss- und gebäudehohen Lösungen. Je größer das Format, desto weniger trägt die Wand selbst.",
+   "bild": "bilder/bk-oeffnungen-statik.svg",
+   "bildunterschrift": "Vier Wege, eine Öffnung in ein Flächenbauteil zu bringen.",
+   "tags": [
+    "öffnung",
+    "sturz",
+    "tragwerk"
+   ],
+   "siehe": [
+    "bk-stuerze"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–120",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-002",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche statischen Anforderungen ergeben sich, wenn Öffnungen in flächige Bauteile eingebaut werden?",
+   "optionen": [
+    "Die Standsicherheit der Außenwand darf nicht gefährdet werden.",
+    "Lasten, die aus den Öffnungsbauteilen resultieren, müssen sicher in den Baukörper eingeleitet werden.",
+    "In Betonwänden erfordern die erhöhten Spannungen im Bereich der Öffnungen eine angepasste Bewehrung.",
+    "Umgekehrt dürfen die Öffnungsbauteile nicht durch Kräfte aus dem Bauwerk beansprucht werden.",
+    "Eine Öffnung, die durch Weglassen entsteht, erfordert in jedem Fall zusätzliche Verstärkungen."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Das ist die erste der beiden statischen Grundforderungen.",
+    "Richtig. Das ist die zweite — sie betrifft den Baukörperanschluss.",
+    "Richtig. Die Bewehrungsführung ist an der Öffnung anzupassen.",
+    "Richtig. Die Kräfte sollen in eine Richtung fließen; Zwängungen aus dem Bauwerk sind vom Element fernzuhalten.",
+    "Falsch. Vergleichsweise einfach sind gerade die Konstruktionen, bei denen die Öffnung durch Weglassen oder Nichtbauen entsteht — etwa beim Fachwerk."
+   ],
+   "antwort": "Richtig sind die ersten vier. Die Standsicherheit der Wand darf nicht gefährdet werden, die Lasten aus den Öffnungsbauteilen müssen sicher in den Baukörper eingeleitet werden, bei Betonwänden ist die Bewehrung anzupassen, und umgekehrt dürfen die Bauteile nicht durch Kräfte aus dem Bauwerk beansprucht werden. Falsch ist die letzte Aussage: Öffnungen durch Weglassen sind der einfache Fall.",
+   "vertiefung": "Die beiden ersten Punkte lesen sich wie eine Selbstverständlichkeit, bilden aber die Trennlinie zwischen Tragwerksplanung und Baukörperanschluss. Die Wand muss die Öffnung aushalten — und das Element muss seine eigenen Lasten loswerden, ohne dass die Wand ihm ihre aufdrängt.",
+   "bild": "bilder/bk-oeffnungen-statik.svg",
+   "bildunterschrift": "Entlastungsbogen, Sturz, angepasste Bewehrung, Weglassen.",
+   "tags": [
+    "standsicherheit",
+    "lastabtragung",
+    "bewehrung"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–120",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-003",
+   "typ": "reihenfolge",
+   "frage": "Bringen Sie die Öffnungsarten in die Reihenfolge, in der sie baugeschichtlich möglich wurden — vom kleinsten zum größten Format.",
+   "schritte": [
+    "Lochfenster",
+    "Fensterband",
+    "Fensterwand",
+    "Vorhangfassade"
+   ],
+   "antwort": "Lochfenster, Fensterband, Fensterwand, Vorhangfassade.",
+   "vertiefung": "Die Entwicklung ist zugleich eine Verschiebung der Verantwortung: Beim Lochfenster trägt die Massivwand und das Element füllt ein Loch; bei der Vorhangfassade trägt eine Pfosten-Riegel-Konstruktion, in die Einsatzelemente eingesetzt werden. Was die Wand nicht mehr leistet, muss der Anschluss leisten.",
+   "bild": "bilder/bk-oeffnungen-entwicklung.svg",
+   "bildunterschrift": "Vom Lochfenster zur Vorhangfassade.",
+   "tags": [
+    "lochfenster",
+    "fensterband",
+    "vorhangfassade"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 120–121",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-004",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jeder Öffnungsart ihre Beschreibung zu.",
+   "paare": [
+    [
+     "Lochfenster",
+     "einzelne Öffnung in der Massivwand, gegebenenfalls mit dazwischenliegenden Wandpfeilern"
+    ],
+    [
+     "Fensterband",
+     "Elemente werden durch Koppelstücke am Blendrahmen zu einem Band zusammengesetzt"
+    ],
+    [
+     "Fensterwand",
+     "Fensterwände oder Fenstertüren aus Fensterelementen mit zusätzlichem Mittelpfosten"
+    ],
+    [
+     "Vorhangfassade",
+     "Pfosten-Riegel-Fassade mit Einsatzelementen, fest verglast oder öffenbar"
+    ]
+   ],
+   "antwort": "Das Lochfenster ist die einzelne Öffnung in der Massivwand, gegebenenfalls mit dazwischenliegenden Wandpfeilern. Beim Fensterband werden Elemente durch Koppelstücke am Blendrahmen zusammengesetzt. Die Fensterwand besteht aus Fensterelementen mit zusätzlichem Mittelpfosten. Die Vorhangfassade ist eine Pfosten-Riegel-Fassade mit Einsatzelementen.",
+   "vertiefung": "Das Koppelstück beim Fensterband ist mehr als ein Verbindungsteil: Wo zwei Elemente gekoppelt werden, entsteht eine Kopplungsfuge, die bei größeren Bewegungen selbst Bewegungen aufnehmen muss. Beim Fensterband ist damit zu rechnen.",
+   "bild": "bilder/bk-oeffnungen-entwicklung.svg",
+   "bildunterschrift": "Die vier Arten in der Ansicht.",
+   "tags": [
+    "öffnungsarten",
+    "fensterband",
+    "koppelstück"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-005",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie jedem Begriff am Öffnungselement seine Bedeutung zu.",
+   "paare": [
+    [
+     "Flügel",
+     "das bewegliche Element"
+    ],
+    [
+     "Blendrahmen",
+     "der fest stehende Rahmen, in dem der Flügel sitzt"
+    ],
+    [
+     "Flügelrahmen",
+     "nimmt die Ausfachung auf, meist das Glas"
+    ],
+    [
+     "Riegel oder Kämpfer",
+     "horizontales Rahmenteil"
+    ],
+    [
+     "Pfosten",
+     "vertikales Rahmenteil; der die Öffnung aufteilende heißt Setzpfosten"
+    ],
+    [
+     "Sprossen",
+     "senkrecht oder waagrecht unterteilende, meist schlankere Profile innerhalb des Flügels"
+    ]
+   ],
+   "antwort": "Der Flügel ist das bewegliche Element, der Blendrahmen der fest stehende Rahmen, in dem der Flügel sitzt. Der Flügelrahmen nimmt die Ausfachung auf, meist Glas. Horizontale Rahmenteile heißen Riegel oder Kämpfer, vertikale Pfosten; der die Öffnung aufteilende vertikale Pfosten wird auch Setzpfosten genannt. Sprossen sind senkrecht oder waagrecht unterteilende, meist schlankere Profile innerhalb des Flügels.",
+   "vertiefung": "Sprossen können auch in einer Festverglasung direkt im Blendrahmen sitzen — sie gehören also nicht zwingend zum Flügel. Die Unterscheidung lohnt sich in der Ausschreibung, weil Sprossen im Flügel und Sprossen im Blendrahmen verschiedene Bauteile sind.",
+   "tags": [
+    "begriffe",
+    "blendrahmen",
+    "pfosten"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-006",
+   "typ": "karte",
+   "frage": "Was ändert sich am Blendrahmen, wenn eine Öffnung bodentief wird?",
+   "antwort": "Bei bodentiefen Öffnungen — etwa Außen- oder bodentiefen Fenstertüren — nennt man den unteren Abschluss Schwelle; der Blendrahmen läuft entsprechend nur dreiseitig um.",
+   "vertiefung": "Daraus folgt eine Reihe von Besonderheiten, die das normale Fenster nicht kennt: Die Schwelle muss begehbar sein und wird deshalb bei Fenster- und Außentüren über die gesamte Öffnungsbreite trittfest unterbaut. Und weil der Rahmen unten offen ist, braucht die Abdichtung dort eine eigene Lösung.",
+   "bild": "bilder/bk-oeffnungen-zargen.svg",
+   "bildunterschrift": "Wo der Rahmen am Boden aufhört, beginnt die Schwelle.",
+   "tags": [
+    "schwelle",
+    "bodentief",
+    "blendrahmen"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100; DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 123",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-007",
+   "typ": "karte",
+   "frage": "Worin unterscheiden sich Fensterzarge und Türzarge, und was leistet eine Zargenlösung?",
+   "antwort": "Die Fensterzarge läuft vierseitig um, die Türzarge bildet einen dreiseitigen Rahmen — oben, links, rechts. Zargenlösungen bestehen aus einer Zarge und einem darauf angepassten Zargenfenster; sie ermöglichen eine einfache, gewerkegetrennte Montage ohne zusätzliche Nacharbeiten. Nach Abschluss der Einbauarbeiten bleibt die Zarge sichtbar.",
+   "vertiefung": "Vorteilhaft ist, dass Zarge, Zargenfenster und Dämmplatte aufeinander abgestimmt sind. Die Verwendung von Zargen ist heute allerdings ein Merkmal regionaler Bautradition und sehr uneinheitlich — als Einbauhilfe bei Wärmedämmverbundsystemen gewinnt sie jedoch wieder an Bedeutung.",
+   "bild": "bilder/bk-oeffnungen-zargen.svg",
+   "bildunterschrift": "Vierseitig umlaufend oder dreiseitig mit Schwelle.",
+   "tags": [
+    "zarge",
+    "zargenfenster",
+    "montage"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124; DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-008",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Vorteile bietet ein Blindstock?",
+   "optionen": [
+    "Schutz des Fensters in der Bauphase",
+    "Erleichterung eines späteren Fenstertauschs",
+    "erleichterte Montage in der Dämmebene vor dem Tragwerk",
+    "Der Blindstock bleibt nach dem Einbau sichtbar und übernimmt gestalterische Aufgaben."
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig. Der Blindstock wird vorab gesetzt, das eigentliche Fenster kommt später.",
+    "Richtig. Beim Tausch bleibt der Blindstock stehen.",
+    "Richtig. Als Kunststoffblindstock ist er eine Alternative zu Montagewinkeln.",
+    "Falsch. Der Blindstock ist eine vorab gesetzte Rahmenkonstruktion, die am Ende gerade nicht mehr sichtbar ist — darin unterscheidet er sich von der Zarge."
+   ],
+   "antwort": "Richtig sind die ersten drei: Schutz des Fensters in der Bauphase, Erleichterung eines späteren Fenstertauschs und erleichterte Montage in der Dämmebene vor dem Tragwerk, als Kunststoffblindstock alternativ zu Montagewinkeln. Falsch ist die letzte Aussage — der Blindstock ist am Ende nicht mehr sichtbar, anders als die Zarge.",
+   "vertiefung": "Früher war der Blindstock stets aus Holz, heute gibt es ihn auch aus Metall oder Kunststoff. Die Unterscheidung zur Zarge ist leicht zu merken: Was man nach dem Einbau noch sieht, ist eine Zarge; was verschwindet, ein Blindstock.",
+   "tags": [
+    "blindstock",
+    "zarge",
+    "montage"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-009",
+   "typ": "karte",
+   "frage": "Wofür werden Zargen heute vor allem eingesetzt?",
+   "antwort": "Als Einbauhilfe — Vorabzarge — bei Wärmedämmverbundsystemen gewinnen sie zunehmend an Bedeutung. Solche Vorwandmontage-Systeme dienen der Befestigung und Abdichtung von Fenstern in der Dämmebene; sie können die Montage beschleunigen und Gewerkeschnittstellen entschärfen. Ein weiteres wichtiges Anwendungsgebiet sind Kellerfenster.",
+   "vertiefung": "Der Schallschutz ist ein dritter Grund: Zargen sind besonders von Vorteil bei Mauerwerk mit geringer Festigkeit und bei Anforderungen an den Schallschutz, da die Schallnebenwege gedämmt werden. Stabile, erforderlichenfalls wärmegedämmte Zargenkonstruktionen können diese Nebenwege reduzieren.",
+   "tags": [
+    "vorabzarge",
+    "wdvs",
+    "vorwandmontage"
+   ],
+   "siehe": [
+    "bp-luftschall"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124–125",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-010",
+   "typ": "bildbeschriftung",
+   "frage": "Benennen Sie die vier Kräfte und die zwei Bauteile, die an einem Öffnungselement markiert sind.",
+   "referenz": "bilder/bk-oeffnungen-lasten-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 33.6,
+     "y": 39.2,
+     "name": "Eigenlast des Flügels"
+    },
+    {
+     "nr": 2,
+     "x": 77.4,
+     "y": 50.0,
+     "name": "vertikale Nutzlast am geöffneten Flügel"
+    },
+    {
+     "nr": 3,
+     "x": 12.6,
+     "y": 57.6,
+     "name": "Windlast"
+    },
+    {
+     "nr": 4,
+     "x": 44.6,
+     "y": 64.0,
+     "name": "horizontale Nutzlast"
+    },
+    {
+     "nr": 5,
+     "x": 28.5,
+     "y": 76.6,
+     "name": "Tragklotz"
+    },
+    {
+     "nr": 6,
+     "x": 26.5,
+     "y": 52.8,
+     "name": "Distanzklotz"
+    }
+   ],
+   "antwort": "1 die Eigenlast des Flügels, vertikal in der Elementebene. 2 die vertikale Nutzlast am geöffneten Flügel. 3 die Windlast, rechtwinklig zur Elementebene, als Druck und Sog. 4 die horizontale Nutzlast. 5 der Tragklotz, der nur Druck aufnimmt und gegen Verrutschen gesichert ist. 6 der Distanzklotz, der Kräfte horizontal in der Elementebene aufnimmt.",
+   "vertiefung": "Eine Überlagerung der Kräfte aus Eigengewicht, Wind und Nutzlast ist nicht erforderlich — die Lastfälle werden einzeln betrachtet. Am größten ist die Belastung einzelner Auflagerpunkte in Fensterebene übrigens bei entriegeltem und minimal geöffnetem Flügel, nicht bei weit offenem.",
+   "bild": "bilder/bk-oeffnungen-lasten.svg",
+   "bildunterschrift": "Die vier Kräfte und die beiden Klotzarten beschriftet.",
+   "tags": [
+    "lasten",
+    "tragklotz",
+    "distanzklotz"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-011",
+   "typ": "skizze",
+   "frage": "Skizzieren Sie ein Öffnungselement in der Ansicht und tragen Sie die einwirkenden Kräfte sowie die Lage von Trag- und Distanzklötzen ein.",
+   "referenz": "bilder/bk-oeffnungen-lasten.svg",
+   "pruefpunkte": [
+    "Das Element sitzt in einer Wandöffnung, der Blendrahmen ist erkennbar.",
+    "Die Eigenlast wirkt vertikal in der Elementebene.",
+    "Am geöffneten Flügel wirkt zusätzlich eine vertikale Nutzlast.",
+    "Die Windlast wirkt rechtwinklig zur Elementebene, als Druck und als Sog.",
+    "Eine horizontale Nutzlast ist bei Elementen bis unter Brüstungshöhe eingetragen.",
+    "Tragklötze liegen unten und nehmen nur Druck auf.",
+    "Distanzklötze liegen seitlich und nehmen horizontale Kräfte in der Elementebene auf.",
+    "Die Klötze sind so angeordnet, dass der Rahmen nicht eingespannt wird."
+   ],
+   "antwort": "Vier Kräfte und zwei Klotzarten: Eigenlast und vertikale Nutzlast in der Elementebene, Windlast rechtwinklig dazu, horizontale Nutzlast bei niedrigen Elementen; unten Tragklötze, seitlich Distanzklötze, beide nur auf Druck belastet und ohne Einspannung des Rahmens.",
+   "vertiefung": "Jeder Rahmenteil muss in eine Richtung frei bleiben, damit Zwängungen aus Profilwärmedehnungen vermieden werden. Der Bewegungsausgleich wird meist über Langlöcher oder Ankerschienen sichergestellt.",
+   "tags": [
+    "lasten",
+    "skizze",
+    "klötze"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-012",
+   "typ": "zuordnung",
+   "frage": "Ordnen Sie den Klassen der vertikalen Nutzlast nach DIN EN 13115 ihre Werte zu.",
+   "paare": [
+    [
+     "Klasse 1",
+     "200 N"
+    ],
+    [
+     "Klasse 2",
+     "400 N"
+    ],
+    [
+     "Klasse 3",
+     "600 N"
+    ],
+    [
+     "Klasse 4",
+     "800 N"
+    ]
+   ],
+   "antwort": "Klasse 1 entspricht 200 N, Klasse 2 400 N, Klasse 3 600 N und Klasse 4 800 N.",
+   "vertiefung": "Gemeint ist die zusätzliche Belastung des Flügelrahmens schließseitig durch eine Person, etwa beim Reinigen. Um die Klasse korrekt vorzugeben, muss der Planer die aus der Nutzung zu erwartenden Anforderungen berücksichtigen — also auch die Höhe des Risikos für eine missbräuchliche Nutzung. Im Schulbau ist sie höher als in einer Privatwohnung und verlangt dort eine robustere Lösung.",
+   "tags": [
+    "nutzlast",
+    "din en 13115",
+    "klassen"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-013",
+   "typ": "numerisch",
+   "frage": "Welche vertikale Nutzlast ist bei der höchsten Klasse nach DIN EN 13115 am geöffneten Flügel anzusetzen?",
+   "wert": 800,
+   "toleranz": 0,
+   "einheit": "N",
+   "antwort": "800 N — Klasse 4.",
+   "vertiefung": "Die Last wirkt schließseitig am Flügelrahmen. Zu beachten ist dabei, dass die Belastung einzelner Auflagerpunkte in Fensterebene bei entriegeltem und minimal geöffnetem Flügel am größten ist; dann wirken auch horizontale Kräfte in Fensterebene, vor allem auf die seitlichen Distanzklötze.",
+   "bild": "bilder/bk-oeffnungen-lasten.svg",
+   "bildunterschrift": "Die vertikale Nutzlast greift am geöffneten Flügel an.",
+   "tags": [
+    "nutzlast",
+    "flügel",
+    "auflager"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-014",
+   "typ": "numerisch",
+   "frage": "Welche horizontale Nutzlast ist bei Elementen bis unter Brüstungshöhe in verkehrsgefährdeten Bereichen ohne nennenswerten Publikumsverkehr anzusetzen?",
+   "wert": 0.5,
+   "toleranz": 0,
+   "einheit": "kN/m",
+   "antwort": "0,5 kN/m. Mit nennenswertem Publikumsverkehr sind es 1,0 kN/m, bei Sondernutzung 2,0 kN/m.",
+   "vertiefung": "Die Last wirkt in einer Höhe bis 1,2 m. Sie ist nicht mit den Kräften aus Eigengewicht und Wind zu überlagern — eine Überlagerung dieser Lastfälle ist nicht erforderlich.",
+   "tags": [
+    "horizontale nutzlast",
+    "brüstungshöhe",
+    "verkehrslast"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte nach DIN 1055-3, die das Buch zitiert. Gegen DIN EN 1991-1-1 (Eurocode 1, Teil 1-1) mit nationalem Anhang prüfen, ob die horizontalen Nutzlasten von 0,5, 1,0 und 2,0 kN/m für Elemente bis unter Brüstungshöhe unverändert gelten."
+  },
+  {
+   "id": "bk-oef-015",
+   "typ": "karte",
+   "frage": "Welche Besonderheiten gelten bei der Lastabtragung von Fenstertüren und Außentüren?",
+   "antwort": "Fenstertüren benötigen ab einer Breite von 1 m auch am unteren Rahmenprofil mittig Tragklötze. Begehbare Schwellen bei Fenster- und Außentüren sind über die gesamte Öffnungsbreite trittfest zu unterbauen. Bei Außentüren empfiehlt sich weiterhin eine druckfeste Hinterfütterung im Bereich des Schließblechs.",
+   "vertiefung": "Alle drei Punkte haben dieselbe Ursache: Eine Tür wird benutzt, ein Fenster nur bedient. Daraus folgen Lasten, die das Fenster nicht kennt — man tritt darauf, man wirft sie zu, man drückt dagegen. Die druckfeste Hinterfütterung am Schließblech ist der Punkt, an dem sich das beim Zuschlagen entscheidet.",
+   "tags": [
+    "außentür",
+    "tragklotz",
+    "schwelle"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 123",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-016",
+   "typ": "numerisch",
+   "frage": "Ab welcher Breite benötigen Fenstertüren auch am unteren Rahmenprofil mittig Tragklötze?",
+   "wert": 1,
+   "toleranz": 0,
+   "einheit": "m",
+   "antwort": "Ab einer Breite von 1 m.",
+   "vertiefung": "Die Breite der Unterlegklötze ist dabei auf die Rahmendicke und die vorgesehene Fugenausbildung so abzustimmen, dass sich die nachfolgenden Abdichtungsmaßnahmen einwandfrei ausführen lassen. Ein zu breiter Klotz nimmt dem Dichtstoff den Platz.",
+   "tags": [
+    "fenstertür",
+    "tragklotz",
+    "maße"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 123",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-017",
+   "typ": "freitext",
+   "frage": "Beschreiben Sie die Ausbildung einer Türöffnung ohne Anschlag im zweischaligen Mauerwerk.",
+   "pruefpunkte": [
+    "Es gelten ähnliche Bedingungen wie bei Fenstern ohne Anschlag.",
+    "Wegen des Bodenanschlusses hat die Tür ihren Standort bevorzugt an der Außenseite der Tragwand.",
+    "Den Abschluss des Bodenaufbaus bildet ein Stahlprofil.",
+    "Dieses Stahlprofil stellt zugleich den unteren Türanschlag her.",
+    "Die Rollschicht der Schwelle benötigt ein eigenes Auflager.",
+    "Die Dämmebene wird durch eine auf der Außenseite in der Laibung umlaufende Holzzarge abgedeckt.",
+    "Der Sturz kann bei üblichen Türbreiten als gemauerter scheitrechter Sturz ausgeführt werden.",
+    "Die Belüftung der Vormauerschale erfolgt darüber.",
+    "Die Folie als Feuchtigkeitssperre oberhalb der Zarge muss unterhalb der Belüftung in die Vormauerschale geführt werden."
+   ],
+   "antwort": "Für Türöffnungen ohne Anschlag gelten ähnliche Bedingungen wie bei Fenstern ohne Anschlag. Wegen des Bodenanschlusses im Bereich der zweischaligen Außenwand hat die Tür ihren Standort bevorzugt an der Außenseite der Tragwand. Den Abschluss des Bodenaufbaus bildet ein Stahlprofil, das gleichzeitig den unteren Türanschlag herstellt; die Rollschicht der Schwelle benötigt ein eigenes Auflager. Die Dämmebene wird durch eine auf der Außenseite in der Laibung umlaufende Holzzarge abgedeckt. Der Sturz kann bei üblichen Türbreiten als gemauerter scheitrechter Sturz ausgeführt werden, darüber erfolgt die Belüftung der Vormauerschale. Die Folie als Feuchtigkeitssperre oberhalb der Zarge muss unterhalb dieser Belüftung in die Vormauerschale geführt werden.",
+   "vertiefung": "Der letzte Punkt ist der, an dem solche Details scheitern: Führt man die Feuchtigkeitssperre oberhalb der Belüftungsebene in die Vormauerschale, entwässert man in die Dämmung statt nach außen. Die Reihenfolge von oben nach unten lautet Sperre, dann Belüftung.",
+   "tags": [
+    "türöffnung",
+    "zweischalig",
+    "feuchtigkeitssperre"
+   ],
+   "siehe": [
+    "bk-aw-zweischalig",
+    "bk-stuerze"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.16.2 (PDF 221)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-018",
+   "typ": "karte",
+   "frage": "Was ist bei einer nach außen aufschlagenden Tür mit Außenanschlag zu beachten?",
+   "antwort": "Der Regenschutz des oberen Anschlags ist sicherzustellen. Diese Funktion übernimmt die umlaufende Blechzarge, die am Fußpunkt zugleich Schwelle und Türanschlag bildet. Aufgrund dessen sollte ihre Stärke trittstabil gewählt werden. Bei zweischaligem Mauerwerk ist die Blechzarge von der Vormauerschale abgetrennt auszuführen; dabei kann dann ein Spalt für die Belüftung der Vormauerschale ausgebildet werden.",
+   "vertiefung": "Die Blechzarge erfüllt hier drei Aufgaben zugleich — Regenschutz oben, Schwelle und Türanschlag unten. Genau deshalb entscheidet ihre Blechstärke über die Gebrauchstauglichkeit: Sie wird betreten.",
+   "tags": [
+    "außenanschlag",
+    "blechzarge",
+    "regenschutz"
+   ],
+   "siehe": [
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.1 (PDF 222)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-019",
+   "typ": "karte",
+   "frage": "Eine Tür ist hinter Laibung und Sturz innen angeschlagen, der Sturz ist 24 cm stark gemauert und die Laibung bleibt sichtbar. Worauf ist zu achten?",
+   "antwort": "Darauf, dass der Sturz ausreichend gedämmt ist und eine Feuchtigkeitssperre eingebaut wird.",
+   "vertiefung": "Der sichtbar gemauerte Sturz ist gestalterisch reizvoll und bauphysikalisch heikel: Er ist ein durchgehendes Bauteil von außen nach innen und damit die klassische Wärmebrücke über der Öffnung. Dieselbe Logik wie beim Fenstersturz mit Rollladenkasten — was über der Öffnung durchläuft, muss gedämmt werden.",
+   "tags": [
+    "innenanschlag",
+    "sturz",
+    "wärmebrücke"
+   ],
+   "siehe": [
+    "bk-stuerze",
+    "bp-waermebruecken"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.2 (PDF 222)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-020",
+   "typ": "vergleich",
+   "frage": "Zwei Lösungen für den Übergang vom Innenraum auf die Terrasse. Welche kommt ohne Höhenunterschied aus?",
+   "richtig": 1,
+   "seiten": [
+    {
+     "titel": "Terrassenanschluss A",
+     "bild": "bilder/bk-oeffnungen-schwelle-stufe.svg",
+     "beschreibung": "Der Terrassenbelag liegt tiefer als der Innenboden; der Höhenunterschied wird am Austritt überwunden."
+    },
+    {
+     "titel": "Terrassenanschluss B",
+     "bild": "bilder/bk-oeffnungen-schwelle-hoehengleich.svg",
+     "beschreibung": "Innenboden und Terrassenbelag liegen auf gleicher Höhe; vor der Öffnung liegt eine Rinne mit Gitterrost."
+    }
+   ],
+   "antwort": "Ohne Höhenunterschied kommt Lösung B aus. Terrassenanschlüsse am Übergang zum Innenraum können grundsätzlich mit Stufen gelöst werden; der höhengleiche Übergang von innen nach außen wird dagegen mit einem entsprechenden Absatz in der Geschossdecke möglich. Der Übergang von der Türöffnung zur Terrasse wird mit einer Wasserrinne mit Gitterrost ausgeführt, die an das Entwässerungssystem angeschlossen wird.",
+   "vertiefung": "Der Absatz in der Decke ist der Preis des höhengleichen Übergangs: Er muss in der Tragwerksplanung vorgesehen sein und lässt sich später nicht nachrüsten. Wer Barrierefreiheit am Austritt will, entscheidet das in der Rohbauplanung, nicht im Ausbau.",
+   "tags": [
+    "terrassenanschluss",
+    "höhengleich",
+    "entwässerung"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2 (PDF 223)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-021",
+   "typ": "freitext",
+   "frage": "Was ist beim höhengleichen Übergang zur Terrasse konstruktiv zu lösen, und welche Rolle spielt dabei die Wandkonstruktion?",
+   "pruefpunkte": [
+    "Der höhengleiche Übergang verlangt einen entsprechenden Absatz in der Geschossdecke.",
+    "Vor der Öffnung wird eine Wasserrinne mit Gitterrost ausgeführt.",
+    "Diese Rinne wird an das Entwässerungssystem angeschlossen.",
+    "Bei zweischaliger Wand wird die Vormauerschale auf einer durchgehenden Konsole oberhalb der Dachdämmung gelagert.",
+    "Bei einschaligem Mauerwerk mit verputzter Oberfläche kann die Wand auf der Decke aufgestellt werden.",
+    "Bei kerngedämmtem Aufbau wird die Außenschale wiederum auf einer durchgehenden Konsole gelagert.",
+    "Alternativ lässt sich der Übergang grundsätzlich auch mit Stufen lösen."
+   ],
+   "antwort": "Zu lösen sind zwei Dinge: die Höhenlage und das Wasser. Der höhengleiche Übergang wird durch einen entsprechenden Absatz in der Geschossdecke möglich; vor der Öffnung liegt eine Wasserrinne mit Gitterrost, die an das Entwässerungssystem angeschlossen wird. Die Wandkonstruktion entscheidet über die Auflagerung: Bei zweischaliger Wand wird die Vormauerschale auf einer durchgehenden Konsole oberhalb der Dachdämmung gelagert, ebenso bei kerngedämmtem Aufbau die Außenschale; bei einschaligem Mauerwerk mit verputzter Oberfläche kann die Wand dagegen auf der Decke aufgestellt werden. Grundsätzlich bleibt die Lösung mit Stufen die einfachere Alternative.",
+   "vertiefung": "Die Rinne ist nicht nur Komfort, sondern Teil der Abdichtung: Ohne Höhenunterschied fehlt die Schutzhöhe, die sonst den Innenraum vor anstehendem Wasser bewahrt. Sie muss deshalb leistungsfähig und an das Entwässerungssystem angeschlossen sein, nicht bloß vorhanden.",
+   "tags": [
+    "höhengleich",
+    "rinne",
+    "konsole"
+   ],
+   "siehe": [
+    "bk-aw-zweischalig"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2 (PDF 223)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-022",
+   "typ": "mehrfachauswahl",
+   "frage": "Was gilt für die Prüfung der Schlagregendichtheit von Fenstern und Außentüren nach DIN EN 12208?",
+   "optionen": [
+    "Die Norm definiert zwei bauliche Varianten mit jeweils angepassten Prüfverfahren.",
+    "Verfahren A gilt für Fenster oder Außentüren ohne baulichen Schutz gegen Eindringen von Regen im oberen Bereich.",
+    "Verfahren B gilt für Elemente, die im oberen Bereich geschützt sind, etwa durch tiefe Einbaulage, Regenschutzdach, Innenanschlag oder Loggia.",
+    "Die Anforderungen und Klassifizierungen richten sich unter anderem nach der Gebäudehöhe.",
+    "Beide Verfahren werden bis zur selben höchsten Klasse geführt."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig. Die Norm unterscheidet geschützte und ungeschützte Einbaulage.",
+    "Richtig. Ohne baulichen Schutz im oberen Bereich gilt Verfahren A.",
+    "Richtig. Der bauliche Schutz kann konstruktiv oder durch die Einbaulage entstehen.",
+    "Richtig. Je nach Gebäudehöhe gelten verschiedene Anforderungen und Klassifizierungen.",
+    "Falsch. Verfahren A reicht bis Klasse 9A, Verfahren B endet bei 7B."
+   ],
+   "antwort": "Richtig sind die ersten vier. DIN EN 12208 definiert zwei bauliche Varianten: Verfahren A für Elemente ohne baulichen Schutz gegen Eindringen von Regen im oberen Bereich und Verfahren B für geschützte Elemente, etwa durch tiefe Einbaulage, Regenschutzdach, Innenanschlag oder Loggia. Falsch ist die letzte Aussage: Verfahren A reicht bis 9A, Verfahren B nur bis 7B.",
+   "vertiefung": "Dass die geschützte Einbaulage früher endet, ist kein Mangel der Norm, sondern ihre Logik: Was konstruktiv geschützt ist, muss nicht denselben Prüfdruck aushalten. Umgekehrt heißt das für die Planung, dass ein Innenanschlag oder eine tiefe Einbaulage Anforderungen an das Element selbst senken kann.",
+   "tags": [
+    "schlagregendichtheit",
+    "din en 12208",
+    "einbaulage"
+   ],
+   "siehe": [
+    "bp-schlagregen",
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59–60",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-023",
+   "typ": "karte",
+   "frage": "Was regelt beim Einbau von Brandschutzelementen den Baukörperanschluss?",
+   "antwort": "Bei zugelassenen Produkten ist der Einbau durch den Verwendbarkeitsnachweis geregelt; der Baukörperanschluss stellt dabei einen wesentlichen Bestandteil dar. In der Anlage „Dokument B“ der Zulassung werden Art, Ausführung und Lage der Befestigungselemente und Anschlussmaterialien beschrieben. Diese Vorgaben sind für die Ausführung zwingend zu beachten.",
+   "vertiefung": "Das ist der eine Fall, in dem der Planer den Anschluss nicht frei entwirft: Beim Brandschutzelement ist das Detail Teil der Zulassung. Abweichungen sind keine Planungsentscheidung, sondern heben die Verwendbarkeit auf.",
+   "tags": [
+    "brandschutz",
+    "zulassung",
+    "baukörperanschluss"
+   ],
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 128",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-oef-024",
+   "typ": "fall",
+   "frage": "Einfamilienhaus, zweischaliges Mauerwerk mit Kerndämmung. Vom Wohnzimmer soll eine Tür nach außen auf eine Terrasse führen. Der Bauherr wünscht einen schwellenlosen Austritt; die Tür soll nach außen aufschlagen. Die Tragwerksplanung ist noch nicht abgeschlossen.",
+   "teile": [
+    {
+     "frage": "Was muss jetzt, vor Abschluss der Tragwerksplanung, entschieden werden?",
+     "antwort": "Die Höhenlage. Ein höhengleicher Übergang von innen nach außen wird durch einen entsprechenden Absatz in der Geschossdecke möglich — das ist eine Rohbauentscheidung und lässt sich im Ausbau nicht nachholen. Zu klären ist außerdem die Auflagerung der Vormauerschale: Bei kerngedämmtem Aufbau wird die Außenschale auf einer durchgehenden Konsole gelagert. Wird stattdessen die einfachere Lösung mit einer Stufe gewählt, entfällt beides."
+    },
+    {
+     "frage": "Wie wird das Wasser am schwellenlosen Austritt beherrscht?",
+     "antwort": "Der Übergang von der Türöffnung zur Terrasse wird mit einer Wasserrinne mit Gitterrost ausgeführt, die an das Entwässerungssystem angeschlossen wird. Sie ersetzt die Schutzhöhe, die sonst der Höhenunterschied liefern würde. Zusätzlich lässt sich die Beanspruchung über die Einbausituation senken: Nach DIN EN 12208 gilt für Elemente, die im oberen Bereich baulich geschützt sind — etwa durch tiefe Einbaulage, Regenschutzdach, Innenanschlag oder Loggia —, das Prüfverfahren B statt A."
+    },
+    {
+     "frage": "Was folgt aus der nach außen aufschlagenden Tür?",
+     "antwort": "Der Regenschutz des oberen Anschlags ist sicherzustellen; das übernimmt eine umlaufende Blechzarge, die am Fußpunkt zugleich Schwelle und Türanschlag bildet und deshalb trittstabil zu dimensionieren ist. Bei zweischaligem Mauerwerk ist diese Blechzarge von der Vormauerschale abgetrennt auszuführen, wodurch sich ein Spalt für die Belüftung der Vormauerschale ausbilden lässt."
+    },
+    {
+     "frage": "Worauf ist bei Befestigung und Lastabtragung zu achten?",
+     "antwort": "Die Tür ist umlaufend mechanisch zu befestigen, auf allen vier Seiten. Als Fenstertür mit mehr als 1 m Breite braucht sie auch am unteren Rahmenprofil mittig Tragklötze, und die begehbare Schwelle ist über die gesamte Öffnungsbreite trittfest zu unterbauen. Im Bereich des Schließblechs empfiehlt sich eine druckfeste Hinterfütterung. Die vertikale Nutzlast am geöffneten Flügel ist nach DIN EN 13115 in eine Klasse von 200 bis 800 N einzuordnen; die Klötze dürfen dabei nur auf Druck belastet werden und den Rahmen nicht einspannen."
+    }
+   ],
+   "fallbild": "bilder/bk-oeffnungen-schwelle-hoehengleich.svg",
+   "antwort": "Der schwellenlose Austritt ist vor allem eine Rohbauentscheidung — Absatz in der Geschossdecke und Konsole für die Vormauerschale — und erst danach eine Frage der Entwässerung über die Rinne. Die nach außen aufschlagende Tür verlangt zusätzlich die umlaufende Blechzarge als Regenschutz und Schwelle, und bei der Befestigung gelten die schärferen Regeln für begehbare Elemente.",
+   "vertiefung": "Der Fall zeigt die Reihenfolge, in der Öffnungen entschieden werden: erst die Geometrie des Rohbaus, dann der Wasserweg, dann das Element, zuletzt die Befestigung. Wer in der umgekehrten Reihenfolge plant, stellt am Ende fest, dass die Decke keinen Absatz hat.",
+   "tags": [
+    "terrassentür",
+    "planungsablauf",
+    "befestigung"
+   ],
+   "siehe": [
+    "bk-aw-zweischalig",
+    "bk-fenster"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2 (PDF 223); DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.1 (PDF 222); DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59–60",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}
