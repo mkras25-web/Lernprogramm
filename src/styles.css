@@ -1347,18 +1347,22 @@ html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
 
 /* Alle uebrigen Richtig/Falsch-Stellen (2026-10-11) - vorher nur
    Auswahlaufgaben und Urteil. */
+/* Die Listen (Reihenfolge, Zuordnung) sind Raster bzw. Flex-Zeilen - das
+   Zeichen haengt deshalb am Text in der Zeile, nicht an der Zeile selbst
+   (sonst belegte es die erste Rasterspalte). In der Nachschlage-Ansicht
+   sind alle Paare die Loesung, dort kein Haken an jedem Paar. */
 html[data-farbenblind="an"] .itemansicht .option.richtig::before,
-html[data-farbenblind="an"] .reihenfolge li.richtig::before,
-html[data-farbenblind="an"] .zuordnungsliste li.richtig::before,
-html[data-farbenblind="an"] .paare li.paarRichtig::before,
+html[data-farbenblind="an"] .reihenfolge li.richtig .reihenText::before,
+html[data-farbenblind="an"] .zuordnungsliste li.richtig .zuordnungText::before,
+html[data-farbenblind="an"] .paare li.paarRichtig .paarLinks::before,
 html[data-farbenblind="an"] .urteilZeile.richtig::before,
-html[data-farbenblind="an"] .verlaufRichtig::before { content: "✓ "; font-weight: 700; flex: none; }
-html[data-farbenblind="an"] .reihenfolge li.falsch::before,
-html[data-farbenblind="an"] .zuordnungsliste li.falsch::before,
-html[data-farbenblind="an"] .paare li.paarFalsch::before,
+html[data-farbenblind="an"] .verlaufRichtig::before { content: "✓ "; font-weight: 700; }
+html[data-farbenblind="an"] .reihenfolge li.falsch .reihenText::before,
+html[data-farbenblind="an"] .zuordnungsliste li.falsch .zuordnungText::before,
+html[data-farbenblind="an"] .paare li.paarFalsch .paarLinks::before,
 html[data-farbenblind="an"] .urteilZeile.falsch::before,
-html[data-farbenblind="an"] .verlaufFalsch::before,
-html[data-farbenblind="an"] .zuordnungDaneben::before { content: "✗ "; font-weight: 700; flex: none; }
+html[data-farbenblind="an"] .verlaufFalsch::before { content: "✗ "; font-weight: 700; }
+html[data-farbenblind="an"] .itemansicht .paare li.paarRichtig .paarLinks::before { content: none; }
 html[data-farbenblind="an"] .reihenfolge li.falsch,
 html[data-farbenblind="an"] .vergleichSeite.falsch { border-style: dashed; }
 html[data-farbenblind="an"] .zuordnungsliste li.falsch,
@@ -1382,7 +1386,7 @@ html[data-farbenblind="an"] .ergebnisblatt.durchgefallen { border-style: dashed;
 /* Pruefungsergebnis auf den Kacheln: unter der Schwelle gestrichelt + Zeichen */
 html[data-farbenblind="an"] .pruefErgebnis.schwach { border-style: dashed; }
 html[data-farbenblind="an"] .pruefErgebnis.schwach::before { content: "✗ "; }
-/* Bildpunkte: Loesung = dicker Ring, daneben = gestrichelter Ring mit Kreuz */
+/* Bildpunkte: Loesung = zusaetzlicher Ring, daneben = gestrichelter Rand */
 html[data-farbenblind="an"] .bildpunkt.daneben { border-style: dashed; border-color: var(--tusche); }
 html[data-farbenblind="an"] .bildpunkt.loesung { outline: 2px solid var(--tusche); outline-offset: 1px; }
 /* Verlauf der Pruefungen: durchgefallen schraffiert (Balken) bzw. hohl (Kurve) */

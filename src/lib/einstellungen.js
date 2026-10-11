@@ -93,7 +93,7 @@ export function laden(profilId) {
     // wird nie von der Systemeinstellung ueberschrieben.
     const standard = { ...STANDARD }
     if (gespeichert.palette === undefined && systemDunkel()) standard.palette = 'dunkel'
-    return { ...standard, ...gespeichert }
+    return farbenblindNachziehen({ ...standard, ...gespeichert })
   } catch {
     return { ...STANDARD }
   }
@@ -119,6 +119,18 @@ export function farbenblindSchalten(werte, an) {
   const { paletteVorFarbenblind, ...rest } = werte
   const zurueck = PALETTEN.find((p) => p.farbsicher && p.id === werte.palette) && paletteVorFarbenblind
   return { ...rest, farbenblind: false, palette: zurueck || werte.palette }
+}
+
+// Profile, die den Modus schon vor den farbsicheren Paletten (2026-10-11)
+// eingeschaltet hatten, bekamen frueher Blau/Orange per festem Tausch.
+// Ohne diesen Schritt saehen sie jetzt wieder Gruen/Braun. Nur wenn noch
+// nie umgeschaltet wurde (paletteVorFarbenblind fehlt) - sonst wuerde eine
+// spaeter bewusst gewaehlte Palette bei jedem Laden ueberschrieben.
+export function farbenblindNachziehen(werte) {
+  if (!werte.farbenblind || werte.paletteVorFarbenblind !== undefined) return werte
+  const bisher = PALETTEN.find((p) => p.id === werte.palette)
+  if (bisher?.farbsicher) return { ...werte, paletteVorFarbenblind: null }
+  return farbenblindSchalten({ ...werte, farbenblind: false }, true)
 }
 
 export function speichern(profilId, einstellungen) {
