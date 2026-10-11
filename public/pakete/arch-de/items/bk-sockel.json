@@ -1,462 +1,708 @@
 {
-  "titel": "Sockel und erdberührte Bauteile",
-  "items": [
-    {
-      "id": "bk-sock-001",
-      "typ": "karte",
-      "frage": "Warum wird die Perimeterdämmung außerhalb der Abdichtung angeordnet und nicht innerhalb?",
-      "antwort": "Die Dämmung schützt die Abdichtung mechanisch beim Verfüllen der Baugrube und hält sie gleichzeitig auf der warmen Seite der Konstruktion. Dadurch fällt an der Abdichtungsebene kein Tauwasser an und sie ist vor Frost geschützt.",
-      "vertiefung": "Dieselbe Logik gilt allgemein: Dämmstoffe gehören bauphysikalisch möglichst auf die Kaltseite, Abdichtungs- und Dichtebenen auf die warme Seite. Alternativen zur Dämmung als Schutzschicht sind Dränplatten oder Noppenbahnen.",
-      "tags": [
-        "perimeter",
-        "abdichtung",
-        "schichtenlogik"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 131; DETAIL Atlas Baustoff, S. 144",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-002",
-      "typ": "mehrfachauswahl",
-      "frage": "Welche Dämmstoffe kommen für die Perimeterdämmung in Frage?",
-      "optionen": [
-        "Polystyrol-Extruderschaum (XPS)",
-        "Schaumglas (CG)",
-        "Polystyrol-Partikelschaum mit Mindestrohdichte 30 kg/m³",
-        "Mineralwolle",
-        "Holzfaserdämmplatte",
-        "Zellulosefaser"
-      ],
-      "richtig": [
-        0,
-        1,
-        2
-      ],
-      "antwort": "XPS, Schaumglas und EPS-Partikelschaum ab 30 kg/m³ Rohdichte.",
-      "vertiefung": "Mineralwolle und die organischen Dämmstoffe scheiden aus: Sie nehmen Wasser auf, verlieren dadurch Dämmwirkung und Festigkeit, und organische Stoffe zersetzen sich im feuchten Erdreich.",
-      "tags": [
-        "perimeter",
-        "daemmstoffe"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 131",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-003",
-      "typ": "karte",
-      "frage": "Welche zwei Eigenschaften muss ein Perimeterdämmstoff zwingend mitbringen – und warum gerade diese?",
-      "antwort": "Beständigkeit gegen Wasseraufnahme, weil der Dämmstoff dauerhaft im feuchten Erdreich liegt, und hohe Druckbelastbarkeit, weil Erddruck und bei Dämmung unter der Bodenplatte auch Bauwerkslasten aufzunehmen sind.",
-      "vertiefung": "Hinzu kommt Frostbeständigkeit. Diese Zusatzaufgaben gegenüber Wasser, Frost und Erddruck müssen durch eine allgemeine bauaufsichtliche Zulassung abgesichert sein.",
-      "tags": [
-        "perimeter",
-        "anforderungen"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 131",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-004",
-      "typ": "zuordnung",
-      "frage": "Ordne die Kurzzeichen nach DIN V 4108-10 ihrem Anwendungsgebiet zu.",
-      "paare": [
-        [
-          "PW",
-          "Außenliegende Wärmedämmung von Wänden gegen Erdreich, außerhalb der Abdichtung"
-        ],
-        [
-          "PB",
-          "Außenliegende Wärmedämmung unter der Bodenplatte gegen Erdreich"
-        ],
-        [
-          "WAP",
-          "Außendämmung der Wand unter Putz"
-        ],
-        [
-          "WZ",
-          "Kerndämmung zweischaliger Wände"
-        ]
-      ],
-      "vertiefung": "Das vollständige Typenkurzzeichen setzt sich aus Anwendungsgebiet und Produkteigenschaft zusammen, etwa PW-dh für eine Perimeterdämmung mit hoher Druckbelastbarkeit.",
-      "tags": [
-        "normen",
-        "kurzzeichen",
-        "perimeter"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 134 (nach DIN V 4108-10, Tab. 1)",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-005",
-      "typ": "karte",
-      "frage": "Was besagt die Produkteigenschaft 'wd' nach DIN V 4108-10, und für welche Anwendungen steht sie?",
-      "antwort": "Wasseraufnahme durch flüssiges Wasser oder Diffusion – die höchste Stufe der Wasseranforderung. Typische Anwendungen sind Perimeterdämmung und Umkehrdach.",
-      "vertiefung": "Die Abstufung lautet wk (keine Anforderung, etwa Innendämmung), wf (flüssiges Wasser, etwa Außenwand und Dach) und wd. Bei der Druckbelastbarkeit läuft die Skala von dk über dg, dm, dh, ds bis dx.",
-      "tags": [
-        "normen",
-        "kurzzeichen",
-        "perimeter"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 135 (nach DIN V 4108-10, Tab. 2)",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-006",
-      "typ": "numerisch",
-      "frage": "Ab welcher Wärmeleitfähigkeit gilt ein Baustoff nach DIN 4108 als Wärmedämmstoff?",
-      "wert": 0.1,
-      "einheit": "W/(m·K)",
-      "toleranz": 0,
-      "antwort": "Unterhalb von 0,1 W/(m·K).",
-      "vertiefung": "Zum Vergleich: ruhende Luft liegt bei 0,024 W/(m·K), Metalle erreichen bis 400, Vakuum-Isolations-Paneele kommen auf 0,004 bis 0,008.",
-      "tags": [
-        "bauphysik",
-        "waermeschutz",
-        "kennwerte"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 132",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-007",
-      "typ": "karte",
-      "frage": "Warum verliert ein durchfeuchteter Dämmstoff so massiv an Wirkung?",
-      "antwort": "Wasser leitet Wärme rund 25-mal besser als Luft – 0,598 gegenüber 0,024 W/(m·K). Da die Dämmwirkung auf eingeschlossener ruhender Luft beruht, zerstört eingelagertes Wasser genau das Wirkprinzip.",
-      "vertiefung": "Hinzu kommen Folgeschäden: Korrosion, Schimmelpilzbildung, Frostschäden und bei organischen Dämmstoffen Zersetzung.",
-      "tags": [
-        "bauphysik",
-        "feuchteschutz",
-        "prinzip"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 135",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-008",
-      "typ": "numerisch",
-      "frage": "Welche Mindestrohdichte muss Polystyrol-Partikelschaum für die Verwendung als Perimeterdämmung aufweisen?",
-      "wert": 30,
-      "einheit": "kg/m³",
-      "toleranz": 0,
-      "antwort": "30 kg/m³.",
-      "vertiefung": "Übliches EPS für Fassadendämmung beginnt bereits bei 15 kg/m³. Die höhere Rohdichte liefert die nötige Druckfestigkeit und reduziert die Wasseraufnahme.",
-      "tags": [
-        "perimeter",
-        "daemmstoffe",
-        "kennwerte"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 131",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-009",
-      "typ": "karte",
-      "frage": "Warum lässt sich Schaumglas als Perimeterdämmung praktisch nicht zurückgewinnen?",
-      "antwort": "Es wird in der Regel bitumenverklebt eingebaut. Die flächige, kraftschlüssige Verklebung macht einen sortenreinen Rückbau unmöglich.",
-      "vertiefung": "Allgemeines Prinzip: Die Befestigungsart entscheidet über die Wiederverwendbarkeit. Lose eingebaute Dämmstoffe lassen sich gut zurückgewinnen, flächig verklebte praktisch nicht. Das ist bei jeder Materialwahl mit Kreislaufanspruch der entscheidende Punkt.",
-      "tags": [
-        "daemmstoffe",
-        "nachhaltigkeit",
-        "rueckbau"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 136f.",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-010",
-      "typ": "karte",
-      "frage": "Warum soll der Diffusionswiderstand der Bauteilschichten von innen nach außen abnehmen?",
-      "antwort": "Damit Feuchte, die von der warmen Innenseite in das Bauteil eindringt, nach außen hin ungehindert abtrocknen kann. Eine dichtere Außenschicht würde den Feuchtetransport stauen und zu Tauwasseransammlung im Bauteil führen.",
-      "vertiefung": "Nach DIN 4108-3 gilt eine Schicht mit sd ≤ 0,5 m als diffusionsoffen, ab sd ≥ 1500 m als diffusionsdicht, dazwischen als diffusionshemmend. Die Menge des Tauwassers lässt sich mit dem Glaserverfahren überprüfen.",
-      "tags": [
-        "bauphysik",
-        "feuchteschutz",
-        "prinzip"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 135 und 145",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-011",
-      "typ": "karte",
-      "frage": "Warum ist bei einer Innendämmung ein Dampfdiffusionsnachweis unerlässlich?",
-      "antwort": "Die Innendämmung senkt die Temperatur der dahinterliegenden Wandkonstruktion, weil diese nun vollständig auf der Kaltseite liegt. Damit steigt die Gefahr des Tauwasserausfalls im Bauteil erheblich.",
-      "vertiefung": "Deshalb braucht die Innendämmung in der Regel eine sehr sorgfältig verarbeitete Dampfbremse auf der Raumseite. Wärmebrücken an Wand- und Deckenanschlüssen sind dabei praktisch nicht zu vermeiden. Innendämmung wird meist nur gewählt, wenn die Fassade erhalten bleiben muss.",
-      "tags": [
-        "bauphysik",
-        "innendaemmung",
-        "feuchteschutz"
-      ],
-      "quelle": "DETAIL Atlas Baustoff, S. 135",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-012",
-      "typ": "numerisch",
-      "frage": "Mit welchem Mindestradius ist der Übergang von der Kelleraußenwand zum Fundament als Hohlkehle auszurunden?",
-      "wert": 4,
-      "einheit": "cm",
-      "toleranz": 0,
-      "antwort": "Mindestens 4 cm.",
-      "vertiefung": "Die Ausrundung verhindert, dass die Abdichtung an der einspringenden Kante scharf abknickt und dort reißt. Vergleichbare Ausrundungen finden sich an allen Abdichtungskehlen.",
-      "tags": [
-        "abdichtung",
-        "sockel",
-        "detail"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 133",
-      "stand": "2026-09",
-      "geprueft": false,
-      "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Wert gegen aktuelle Norm abgleichen."
-    },
-    {
-      "id": "bk-sock-013",
-      "typ": "numerisch",
-      "frage": "Bis zu welcher Höhe über Geländeoberkante muss der Sockelbereich abgedichtet und gegen Spritzwasser geschützt werden?",
-      "wert": 20,
-      "einheit": "cm",
-      "toleranz": 5,
-      "antwort": "Bis etwa 20 cm über Geländeoberkante.",
-      "vertiefung": "Die vertikale Abdichtung selbst soll aus optischen und technischen Gründen nicht über die Geländeoberkante hochgeführt werden. Stattdessen kommen im Sichtbereich Dichtschlämme oder geeignete Sockelputze zum Einsatz.",
-      "tags": [
-        "abdichtung",
-        "sockel",
-        "spritzwasser"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 133",
-      "stand": "2026-09",
-      "geprueft": false,
-      "pruefhinweis": "Quelle argumentiert über DIN 18195; Spritzwasserbereich in DIN 18533 prüfen."
-    },
-    {
-      "id": "bk-sock-014",
-      "typ": "numerisch",
-      "frage": "Wie breit muss die Überlappung zwischen horizontaler und vertikaler Abdichtung mindestens sein?",
-      "wert": 10,
-      "einheit": "cm",
-      "toleranz": 0,
-      "antwort": "Mindestens 10 cm, ausgebildet als rückläufiger Stoß.",
-      "vertiefung": "Rückläufig bedeutet, dass die Stoßrichtung gegen die Wasserlaufrichtung arbeitet, sodass Wasser nicht in die Naht gedrückt wird. Dieselbe Überlappung gilt für den Anschluss der Sockelabdichtung an die vertikale Abdichtung.",
-      "tags": [
-        "abdichtung",
-        "sockel",
-        "detail"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 133",
-      "stand": "2026-09",
-      "geprueft": false,
-      "pruefhinweis": "Quelle argumentiert über DIN 18195; Wert gegen DIN 18533 abgleichen."
-    },
-    {
-      "id": "bk-sock-015",
-      "typ": "karte",
-      "frage": "Wozu dient ein Schutzvlies zwischen Abdichtung und mechanischer Schutzschicht?",
-      "antwort": "Es wirkt als Trenn- und Gleitschicht. Wenn sich die Baugrubenverfüllung setzt, wandert die Schutzschicht nach unten – ohne Vlies würde diese Bewegung die Abdichtung abscheren.",
-      "vertiefung": "Die Schutzschicht selbst – Noppenbahn, Dämmplatte oder Dränplatte – schützt gegen Beschädigung beim Verfüllen und Verdichten. Vlies und Schutzschicht lösen also zwei verschiedene Probleme: Setzung und mechanische Beschädigung.",
-      "tags": [
-        "abdichtung",
-        "sockel",
-        "detail"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 133",
-      "stand": "2026-09",
-      "geprueft": false,
-      "pruefhinweis": "Konstruktives Prinzip unstrittig; Normbezug der Quelle ist DIN 18195."
-    },
-    {
-      "id": "bk-sock-016",
-      "typ": "karte",
-      "frage": "Warum wird bei zweischaligem Mauerwerk die Sockelabdichtung auf der Außenseite der Innenschale hochgeführt und nicht hinter der Verblendschale?",
-      "antwort": "Die Innenschale ist die tragende und wärmedämmende Ebene, die trocken bleiben muss. Die Außenschale darf durchfeuchten – Wasser, das sie durchdringt, sickert im Schalenzwischenraum ab und wird über die Entwässerungsöffnungen am Wandfuß nach außen geführt.",
-      "vertiefung": "Das ist das Grundprinzip der zweischaligen Wand: Die äußere Schale ist Wetterschale, nicht Dichtebene. Am Wandfuß sind dafür Öffnungen von mindestens 5000 mm² je 20 m² Wandfläche vorzusehen.",
-      "tags": [
-        "abdichtung",
-        "sockel",
-        "zweischalig",
-        "prinzip"
-      ],
-      "quelle": "DETAIL Atlas Mauerwerk, S. 126 und 133",
-      "stand": "2026-09",
-      "geprueft": false,
-      "pruefhinweis": "Konstruktives Prinzip unstrittig; Normbezug der Quelle ist DIN 18195."
-    },
-    {
-      "id": "bk-sock-017",
-      "typ": "bildbeschriftung",
-      "frage": "Benenne die Schichten und Ebenen im Sockelanschluss einer zweischaligen Außenwand.",
-      "referenz": "bilder/sockel-zweischalig-blank.svg",
-      "punkte": [
-        {
-          "nr": 1,
-          "x": 27,
-          "y": 26,
-          "name": "Außenschale (Verblendmauerwerk)"
-        },
-        {
-          "nr": 2,
-          "x": 37,
-          "y": 26,
-          "name": "Kerndämmung"
-        },
-        {
-          "nr": 3,
-          "x": 53,
-          "y": 25,
-          "name": "Tragende Innenschale"
-        },
-        {
-          "nr": 4,
-          "x": 42,
-          "y": 62,
-          "name": "Vertikale Abdichtung"
-        },
-        {
-          "nr": 5,
-          "x": 27,
-          "y": 42,
-          "name": "Entwässerungsöffnung am Fußpunkt"
-        },
-        {
-          "nr": 6,
-          "x": 37,
-          "y": 67,
-          "name": "Perimeterdämmung"
-        },
-        {
-          "nr": 7,
-          "x": 42,
-          "y": 40,
-          "name": "Sockelabdichtung über Gelände"
-        },
-        {
-          "nr": 8,
-          "x": 53,
-          "y": 87,
-          "name": "Querschnittsabdichtung"
-        },
-        {
-          "nr": 9,
-          "x": 67,
-          "y": 93,
-          "name": "Bodenplatte"
-        }
-      ],
-      "antwort": "Von außen nach innen: Verblendschale, Kerndämmung, tragende Innenschale. Die Dichtebene liegt auf deren Außenseite und läuft ohne Unterbrechung von der Querschnittsabdichtung bis über die Geländeoberkante.",
-      "vertiefung": "Die Reihenfolge der Nummern folgt keiner Logik – sie ist absichtlich gemischt, damit die Position und nicht die Zählweise abgefragt wird.",
-      "tags": [
-        "sockel",
-        "zweischalig",
-        "bildbeschriftung"
-      ],
-      "quelle": "Schematische Zeichnung nach DETAIL Atlas Mauerwerk",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-018",
-      "typ": "fehlersuche",
-      "frage": "In dieser Sockelzeichnung steckt ein schwerer Fehler in der Anordnung der Dichtebene. In welchem Bereich?",
-      "referenz": "bilder/sockel-fehler.svg",
-      "bereiche": [
-        {
-          "nr": 1,
-          "x": 27,
-          "y": 26,
-          "name": "Verblendschale"
-        },
-        {
-          "nr": 2,
-          "x": 33,
-          "y": 28,
-          "name": "Abdichtung hinter der Verblendschale"
-        },
-        {
-          "nr": 3,
-          "x": 53,
-          "y": 25,
-          "name": "Innenschale"
-        },
-        {
-          "nr": 4,
-          "x": 45,
-          "y": 67,
-          "name": "Perimeterdämmung"
-        },
-        {
-          "nr": 5,
-          "x": 53,
-          "y": 87,
-          "name": "Querschnittsabdichtung"
-        },
-        {
-          "nr": 6,
-          "x": 67,
-          "y": 93,
-          "name": "Bodenplatte"
-        }
-      ],
-      "fehlerNr": 2,
-      "folge": "Die Abdichtung liegt auf der Innenseite der Verblendschale statt auf der Außenseite der Innenschale. Wasser, das die Wetterschale durchdringt, wird dadurch im Schalenzwischenraum eingesperrt, statt am Fußpunkt abzusickern. Die Kerndämmung durchfeuchtet und verliert ihre Wirkung.",
-      "antwort": "Bereich 2 – die vertikale Abdichtung sitzt an der falschen Schale.",
-      "vertiefung": "Zwei weitere Mängel stecken in derselben Zeichnung: Die Perimeterdämmung liegt innerhalb statt außerhalb der Abdichtungsebene, und die Hohlkehle am Übergang zur Bodenplatte fehlt. Der gefragte Fehler ist aber der folgenschwerste, weil er die gesamte Funktionsweise der zweischaligen Wand aufhebt.",
-      "tags": [
-        "sockel",
-        "abdichtung",
-        "fehlersuche"
-      ],
-      "quelle": "Eigene Darstellung nach DETAIL Atlas Mauerwerk",
-      "stand": "2026-09",
-      "geprueft": true
-    },
-    {
-      "id": "bk-sock-019",
-      "typ": "vergleich",
-      "frage": "Zwei Sockelausführungen. Bei welcher bleibt die Kerndämmung dauerhaft funktionsfähig?",
-      "seiten": [
-        {
-          "titel": "Ausführung A",
-          "bild": "bilder/sockel-zweischalig.svg",
-          "beschreibung": "Abdichtung auf der Außenseite der Innenschale, Perimeterdämmung davor, Entwässerungsöffnungen am Fußpunkt."
-        },
-        {
-          "titel": "Ausführung B",
-          "bild": "bilder/sockel-fehler.svg",
-          "beschreibung": "Abdichtung an der Innenseite der Verblendschale, Perimeterdämmung hinter der Dichtebene, keine Hohlkehle."
-        }
-      ],
-      "richtig": 0,
-      "antwort": "Ausführung A. Nur dort kann eingedrungenes Wasser im Schalenzwischenraum absickern und die Wand durch die Fußpunktöffnungen verlassen.",
-      "vertiefung": "Bei B wird das Wasser an der Dichtebene gestaut, die genau dort liegt, wo es abfließen müsste. Die Dämmung steht dauerhaft im Feuchtebereich – ein Schaden, der sich erst nach Jahren zeigt und dann nur durch Rückbau der Verblendschale zu beheben ist.",
-      "tags": [
-        "sockel",
-        "zweischalig",
-        "vergleich"
-      ],
-      "quelle": "Eigene Darstellung nach DETAIL Atlas Mauerwerk",
-      "stand": "2026-09",
-      "geprueft": true
-    }
-  ],
-  "thema": "sockel-erdberuehrt",
-  "erklaerung": {
-    "absaetze": [
-      "Der Sockel ist die Stelle, an der ein Gebäude drei Angriffe gleichzeitig aushält: aufsteigende Feuchte aus dem Erdreich, Spritzwasser vom Gelände und Erddruck gegen die Kellerwand. Deshalb häufen sich hier die Bauschäden.",
-      "Die Ordnung der Schichten folgt einer einzigen Frage: Wo liegt die Dichtebene? Sie gehört auf die Außenseite der tragenden Wand und muss ohne Unterbrechung von der Bodenplatte bis über das Gelände laufen. Alles Weitere ordnet sich ihr unter.",
-      "Die Perimeterdämmung liegt außerhalb der Abdichtung. Sie schützt diese beim Verfüllen der Baugrube und hält sie zugleich auf der warmen Seite, wo kein Tauwasser anfällt und kein Frost wirkt. Dafür muss sie selbst wasserunempfindlich, druckfest und frostbeständig sein – deshalb kommen nur XPS, Schaumglas und dichtes EPS in Frage.",
-      "Bei zweischaligem Mauerwerk kommt eine zweite Logik hinzu: Die äußere Schale ist Wetterschale, nicht Dichtebene. Sie darf durchfeuchten. Wasser sickert im Schalenzwischenraum ab und verlässt die Wand durch Öffnungen am Fußpunkt."
+ "titel": "Sockel und erdberührte Bauteile",
+ "items": [
+  {
+   "id": "bk-sock-001",
+   "typ": "karte",
+   "frage": "Warum wird die Perimeterdämmung außerhalb der Abdichtung angeordnet und nicht innerhalb?",
+   "antwort": "Die Dämmung schützt die Abdichtung mechanisch beim Verfüllen der Baugrube und hält sie gleichzeitig auf der warmen Seite der Konstruktion. Dadurch fällt an der Abdichtungsebene kein Tauwasser an und sie ist vor Frost geschützt.",
+   "vertiefung": "Dieselbe Logik gilt allgemein: Dämmstoffe gehören bauphysikalisch möglichst auf die Kaltseite, Abdichtungs- und Dichtebenen auf die warme Seite. Alternativen zur Dämmung als Schutzschicht sind Dränplatten oder Noppenbahnen.",
+   "tags": [
+    "perimeter",
+    "abdichtung",
+    "schichtenlogik"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 131; DETAIL Atlas Baustoff, S. 144",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-002",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Dämmstoffe kommen für die Perimeterdämmung in Frage?",
+   "optionen": [
+    "Polystyrol-Extruderschaum (XPS)",
+    "Schaumglas (CG)",
+    "Polystyrol-Partikelschaum mit Mindestrohdichte 30 kg/m³",
+    "Mineralwolle",
+    "Holzfaserdämmplatte",
+    "Zellulosefaser"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "antwort": "XPS, Schaumglas und EPS-Partikelschaum ab 30 kg/m³ Rohdichte.",
+   "vertiefung": "Mineralwolle und die organischen Dämmstoffe scheiden aus: Sie nehmen Wasser auf, verlieren dadurch Dämmwirkung und Festigkeit, und organische Stoffe zersetzen sich im feuchten Erdreich.",
+   "tags": [
+    "perimeter",
+    "daemmstoffe"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 131",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-003",
+   "typ": "karte",
+   "frage": "Welche zwei Eigenschaften muss ein Perimeterdämmstoff zwingend mitbringen – und warum gerade diese?",
+   "antwort": "Beständigkeit gegen Wasseraufnahme, weil der Dämmstoff dauerhaft im feuchten Erdreich liegt, und hohe Druckbelastbarkeit, weil Erddruck und bei Dämmung unter der Bodenplatte auch Bauwerkslasten aufzunehmen sind.",
+   "vertiefung": "Hinzu kommt Frostbeständigkeit. Diese Zusatzaufgaben gegenüber Wasser, Frost und Erddruck müssen durch eine allgemeine bauaufsichtliche Zulassung abgesichert sein.",
+   "tags": [
+    "perimeter",
+    "anforderungen"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 131",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-004",
+   "typ": "zuordnung",
+   "frage": "Ordne die Kurzzeichen nach DIN V 4108-10 ihrem Anwendungsgebiet zu.",
+   "paare": [
+    [
+     "PW",
+     "Außenliegende Wärmedämmung von Wänden gegen Erdreich, außerhalb der Abdichtung"
     ],
-    "merksatz": "Erst die Dichtebene festlegen, dann alles andere daran ausrichten.",
-    "bildunterschrift": "Sockelanschluss einer zweischaligen Außenwand, schematisch",
-    "quelle": "Nach DETAIL Atlas Mauerwerk und DETAIL Atlas Baustoff"
+    [
+     "PB",
+     "Außenliegende Wärmedämmung unter der Bodenplatte gegen Erdreich"
+    ],
+    [
+     "WAP",
+     "Außendämmung der Wand unter Putz"
+    ],
+    [
+     "WZ",
+     "Kerndämmung zweischaliger Wände"
+    ]
+   ],
+   "antwort": "PW steht für die außenliegende Wärmedämmung von Wänden gegen Erdreich, außerhalb der Abdichtung; PB für die außenliegende Wärmedämmung unter der Bodenplatte gegen Erdreich; WAP für die Außendämmung der Wand unter Putz; WZ für die Kerndämmung zweischaliger Wände.",
+   "vertiefung": "Das vollständige Typenkurzzeichen setzt sich aus Anwendungsgebiet und Produkteigenschaft zusammen, etwa PW-dh für eine Perimeterdämmung mit hoher Druckbelastbarkeit.",
+   "tags": [
+    "normen",
+    "kurzzeichen",
+    "perimeter"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 134 (nach DIN V 4108-10, Tab. 1)",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-005",
+   "typ": "karte",
+   "frage": "Was besagt die Produkteigenschaft 'wd' nach DIN V 4108-10, und für welche Anwendungen steht sie?",
+   "antwort": "Wasseraufnahme durch flüssiges Wasser oder Diffusion – die höchste Stufe der Wasseranforderung. Typische Anwendungen sind Perimeterdämmung und Umkehrdach.",
+   "vertiefung": "Die Abstufung lautet wk (keine Anforderung, etwa Innendämmung), wf (flüssiges Wasser, etwa Außenwand und Dach) und wd. Bei der Druckbelastbarkeit läuft die Skala von dk über dg, dm, dh, ds bis dx.",
+   "tags": [
+    "normen",
+    "kurzzeichen",
+    "perimeter"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 135 (nach DIN V 4108-10, Tab. 2)",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-006",
+   "typ": "numerisch",
+   "frage": "Ab welcher Wärmeleitfähigkeit gilt ein Baustoff nach DIN 4108 als Wärmedämmstoff?",
+   "wert": 0.1,
+   "einheit": "W/(m·K)",
+   "toleranz": 0,
+   "antwort": "Unterhalb von 0,1 W/(m·K).",
+   "vertiefung": "Zum Vergleich: ruhende Luft liegt bei 0,024 W/(m·K), Metalle erreichen bis 400, Vakuum-Isolations-Paneele kommen auf 0,004 bis 0,008.",
+   "tags": [
+    "bauphysik",
+    "waermeschutz",
+    "kennwerte"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 132",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-007",
+   "typ": "karte",
+   "frage": "Warum verliert ein durchfeuchteter Dämmstoff so massiv an Wirkung?",
+   "antwort": "Wasser leitet Wärme rund 25-mal besser als Luft – 0,598 gegenüber 0,024 W/(m·K). Da die Dämmwirkung auf eingeschlossener ruhender Luft beruht, zerstört eingelagertes Wasser genau das Wirkprinzip.",
+   "vertiefung": "Hinzu kommen Folgeschäden: Korrosion, Schimmelpilzbildung, Frostschäden und bei organischen Dämmstoffen Zersetzung.",
+   "tags": [
+    "bauphysik",
+    "feuchteschutz",
+    "prinzip"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 135",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-008",
+   "typ": "numerisch",
+   "frage": "Welche Mindestrohdichte muss Polystyrol-Partikelschaum für die Verwendung als Perimeterdämmung aufweisen?",
+   "wert": 30,
+   "einheit": "kg/m³",
+   "toleranz": 0,
+   "antwort": "30 kg/m³.",
+   "vertiefung": "Übliches EPS für Fassadendämmung beginnt bereits bei 15 kg/m³. Die höhere Rohdichte liefert die nötige Druckfestigkeit und reduziert die Wasseraufnahme.",
+   "tags": [
+    "perimeter",
+    "daemmstoffe",
+    "kennwerte"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 131",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-009",
+   "typ": "karte",
+   "frage": "Warum lässt sich Schaumglas als Perimeterdämmung praktisch nicht zurückgewinnen?",
+   "antwort": "Es wird in der Regel bitumenverklebt eingebaut. Die flächige, kraftschlüssige Verklebung macht einen sortenreinen Rückbau unmöglich.",
+   "vertiefung": "Allgemeines Prinzip: Die Befestigungsart entscheidet über die Wiederverwendbarkeit. Lose eingebaute Dämmstoffe lassen sich gut zurückgewinnen, flächig verklebte praktisch nicht. Das ist bei jeder Materialwahl mit Kreislaufanspruch der entscheidende Punkt.",
+   "tags": [
+    "daemmstoffe",
+    "nachhaltigkeit",
+    "rueckbau"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 136f.",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-010",
+   "typ": "karte",
+   "frage": "Warum soll der Diffusionswiderstand der Bauteilschichten von innen nach außen abnehmen?",
+   "antwort": "Damit Feuchte, die von der warmen Innenseite in das Bauteil eindringt, nach außen hin ungehindert abtrocknen kann. Eine dichtere Außenschicht würde den Feuchtetransport stauen und zu Tauwasseransammlung im Bauteil führen.",
+   "vertiefung": "Nach DIN 4108-3 gilt eine Schicht mit sd ≤ 0,5 m als diffusionsoffen, ab sd ≥ 1500 m als diffusionsdicht, dazwischen als diffusionshemmend. Die Menge des Tauwassers lässt sich mit dem Glaserverfahren überprüfen.",
+   "tags": [
+    "bauphysik",
+    "feuchteschutz",
+    "prinzip"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 135 und 145",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-011",
+   "typ": "karte",
+   "frage": "Warum ist bei einer Innendämmung ein Dampfdiffusionsnachweis unerlässlich?",
+   "antwort": "Die Innendämmung senkt die Temperatur der dahinterliegenden Wandkonstruktion, weil diese nun vollständig auf der Kaltseite liegt. Damit steigt die Gefahr des Tauwasserausfalls im Bauteil erheblich.",
+   "vertiefung": "Deshalb braucht die Innendämmung in der Regel eine sehr sorgfältig verarbeitete Dampfbremse auf der Raumseite. Wärmebrücken an Wand- und Deckenanschlüssen sind dabei praktisch nicht zu vermeiden. Innendämmung wird meist nur gewählt, wenn die Fassade erhalten bleiben muss.",
+   "tags": [
+    "bauphysik",
+    "innendaemmung",
+    "feuchteschutz"
+   ],
+   "quelle": "DETAIL Atlas Baustoff, S. 135",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-012",
+   "typ": "numerisch",
+   "frage": "Mit welchem Mindestradius ist der Übergang von der Kelleraußenwand zum Fundament als Hohlkehle auszurunden?",
+   "wert": 4,
+   "einheit": "cm",
+   "toleranz": 0,
+   "antwort": "Mindestens 4 cm.",
+   "vertiefung": "Die Ausrundung verhindert, dass die Abdichtung an der einspringenden Kante scharf abknickt und dort reißt. Vergleichbare Ausrundungen finden sich an allen Abdichtungskehlen.",
+   "tags": [
+    "abdichtung",
+    "sockel",
+    "detail"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 133",
+   "stand": "2026-09",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Wert gegen aktuelle Norm abgleichen."
+  },
+  {
+   "id": "bk-sock-013",
+   "typ": "numerisch",
+   "frage": "Bis zu welcher Höhe über Geländeoberkante muss der Sockelbereich abgedichtet und gegen Spritzwasser geschützt werden?",
+   "wert": 20,
+   "einheit": "cm",
+   "toleranz": 5,
+   "antwort": "Bis etwa 20 cm über Geländeoberkante.",
+   "vertiefung": "Die vertikale Abdichtung selbst soll aus optischen und technischen Gründen nicht über die Geländeoberkante hochgeführt werden. Stattdessen kommen im Sichtbereich Dichtschlämme oder geeignete Sockelputze zum Einsatz.",
+   "tags": [
+    "abdichtung",
+    "sockel",
+    "spritzwasser"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 133",
+   "stand": "2026-09",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; Spritzwasserbereich in DIN 18533 prüfen."
+  },
+  {
+   "id": "bk-sock-014",
+   "typ": "numerisch",
+   "frage": "Wie breit muss die Überlappung zwischen horizontaler und vertikaler Abdichtung mindestens sein?",
+   "wert": 10,
+   "einheit": "cm",
+   "toleranz": 0,
+   "antwort": "Mindestens 10 cm, ausgebildet als rückläufiger Stoß.",
+   "vertiefung": "Rückläufig bedeutet, dass die Stoßrichtung gegen die Wasserlaufrichtung arbeitet, sodass Wasser nicht in die Naht gedrückt wird. Dieselbe Überlappung gilt für den Anschluss der Sockelabdichtung an die vertikale Abdichtung.",
+   "tags": [
+    "abdichtung",
+    "sockel",
+    "detail"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 133",
+   "stand": "2026-09",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; Wert gegen DIN 18533 abgleichen."
+  },
+  {
+   "id": "bk-sock-015",
+   "typ": "karte",
+   "frage": "Wozu dient ein Schutzvlies zwischen Abdichtung und mechanischer Schutzschicht?",
+   "antwort": "Es wirkt als Trenn- und Gleitschicht. Wenn sich die Baugrubenverfüllung setzt, wandert die Schutzschicht nach unten – ohne Vlies würde diese Bewegung die Abdichtung abscheren.",
+   "vertiefung": "Die Schutzschicht selbst – Noppenbahn, Dämmplatte oder Dränplatte – schützt gegen Beschädigung beim Verfüllen und Verdichten. Vlies und Schutzschicht lösen also zwei verschiedene Probleme: Setzung und mechanische Beschädigung.",
+   "tags": [
+    "abdichtung",
+    "sockel",
+    "detail"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 133",
+   "stand": "2026-09",
+   "geprueft": false,
+   "pruefhinweis": "Konstruktives Prinzip unstrittig; Normbezug der Quelle ist DIN 18195."
+  },
+  {
+   "id": "bk-sock-016",
+   "typ": "karte",
+   "frage": "Warum wird bei zweischaligem Mauerwerk die Sockelabdichtung auf der Außenseite der Innenschale hochgeführt und nicht hinter der Verblendschale?",
+   "antwort": "Die Innenschale ist die tragende und wärmedämmende Ebene, die trocken bleiben muss. Die Außenschale darf durchfeuchten – Wasser, das sie durchdringt, sickert im Schalenzwischenraum ab und wird über die Entwässerungsöffnungen am Wandfuß nach außen geführt.",
+   "vertiefung": "Das ist das Grundprinzip der zweischaligen Wand: Die äußere Schale ist Wetterschale, nicht Dichtebene. Am Wandfuß sind dafür Öffnungen von mindestens 5000 mm² je 20 m² Wandfläche vorzusehen.",
+   "tags": [
+    "abdichtung",
+    "sockel",
+    "zweischalig",
+    "prinzip"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, S. 126 und 133",
+   "stand": "2026-09",
+   "geprueft": false,
+   "pruefhinweis": "Konstruktives Prinzip unstrittig; Normbezug der Quelle ist DIN 18195."
+  },
+  {
+   "id": "bk-sock-017",
+   "typ": "bildbeschriftung",
+   "frage": "Benenne die Schichten und Ebenen im Sockelanschluss einer zweischaligen Außenwand.",
+   "referenz": "bilder/sockel-zweischalig-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 27,
+     "y": 26,
+     "name": "Außenschale (Verblendmauerwerk)"
+    },
+    {
+     "nr": 2,
+     "x": 37,
+     "y": 26,
+     "name": "Kerndämmung"
+    },
+    {
+     "nr": 3,
+     "x": 53,
+     "y": 25,
+     "name": "Tragende Innenschale"
+    },
+    {
+     "nr": 4,
+     "x": 42,
+     "y": 62,
+     "name": "Vertikale Abdichtung"
+    },
+    {
+     "nr": 5,
+     "x": 27,
+     "y": 42,
+     "name": "Entwässerungsöffnung am Fußpunkt"
+    },
+    {
+     "nr": 6,
+     "x": 37,
+     "y": 67,
+     "name": "Perimeterdämmung"
+    },
+    {
+     "nr": 7,
+     "x": 42,
+     "y": 40,
+     "name": "Sockelabdichtung über Gelände"
+    },
+    {
+     "nr": 8,
+     "x": 53,
+     "y": 87,
+     "name": "Querschnittsabdichtung"
+    },
+    {
+     "nr": 9,
+     "x": 67,
+     "y": 93,
+     "name": "Bodenplatte"
+    }
+   ],
+   "antwort": "Von außen nach innen: Verblendschale, Kerndämmung, tragende Innenschale. Die Dichtebene liegt auf deren Außenseite und läuft ohne Unterbrechung von der Querschnittsabdichtung bis über die Geländeoberkante.",
+   "vertiefung": "Die Reihenfolge der Nummern folgt keiner Logik – sie ist absichtlich gemischt, damit die Position und nicht die Zählweise abgefragt wird.",
+   "tags": [
+    "sockel",
+    "zweischalig",
+    "bildbeschriftung"
+   ],
+   "quelle": "Schematische Zeichnung nach DETAIL Atlas Mauerwerk",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-018",
+   "typ": "fehlersuche",
+   "frage": "In dieser Sockelzeichnung steckt ein schwerer Fehler in der Anordnung der Dichtebene. In welchem Bereich?",
+   "referenz": "bilder/sockel-fehler.svg",
+   "bereiche": [
+    {
+     "nr": 1,
+     "x": 27,
+     "y": 26,
+     "name": "Verblendschale"
+    },
+    {
+     "nr": 2,
+     "x": 33,
+     "y": 28,
+     "name": "Abdichtung hinter der Verblendschale"
+    },
+    {
+     "nr": 3,
+     "x": 53,
+     "y": 25,
+     "name": "Innenschale"
+    },
+    {
+     "nr": 4,
+     "x": 45,
+     "y": 67,
+     "name": "Perimeterdämmung"
+    },
+    {
+     "nr": 5,
+     "x": 53,
+     "y": 87,
+     "name": "Querschnittsabdichtung"
+    },
+    {
+     "nr": 6,
+     "x": 67,
+     "y": 93,
+     "name": "Bodenplatte"
+    }
+   ],
+   "fehlerNr": 2,
+   "folge": "Die Abdichtung liegt auf der Innenseite der Verblendschale statt auf der Außenseite der Innenschale. Wasser, das die Wetterschale durchdringt, wird dadurch im Schalenzwischenraum eingesperrt, statt am Fußpunkt abzusickern. Die Kerndämmung durchfeuchtet und verliert ihre Wirkung.",
+   "antwort": "Bereich 2 – die vertikale Abdichtung sitzt an der falschen Schale.",
+   "vertiefung": "Zwei weitere Mängel stecken in derselben Zeichnung: Die Perimeterdämmung liegt innerhalb statt außerhalb der Abdichtungsebene, und die Hohlkehle am Übergang zur Bodenplatte fehlt. Der gefragte Fehler ist aber der folgenschwerste, weil er die gesamte Funktionsweise der zweischaligen Wand aufhebt.",
+   "tags": [
+    "sockel",
+    "abdichtung",
+    "fehlersuche"
+   ],
+   "quelle": "Eigene Darstellung nach DETAIL Atlas Mauerwerk",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-019",
+   "typ": "vergleich",
+   "frage": "Zwei Sockelausführungen. Bei welcher bleibt die Kerndämmung dauerhaft funktionsfähig?",
+   "seiten": [
+    {
+     "titel": "Ausführung A",
+     "bild": "bilder/sockel-zweischalig.svg",
+     "beschreibung": "Abdichtung auf der Außenseite der Innenschale, Perimeterdämmung davor, Entwässerungsöffnungen am Fußpunkt."
+    },
+    {
+     "titel": "Ausführung B",
+     "bild": "bilder/sockel-fehler.svg",
+     "beschreibung": "Abdichtung an der Innenseite der Verblendschale, Perimeterdämmung hinter der Dichtebene, keine Hohlkehle."
+    }
+   ],
+   "richtig": 0,
+   "antwort": "Ausführung A. Nur dort kann eingedrungenes Wasser im Schalenzwischenraum absickern und die Wand durch die Fußpunktöffnungen verlassen.",
+   "vertiefung": "Bei B wird das Wasser an der Dichtebene gestaut, die genau dort liegt, wo es abfließen müsste. Die Dämmung steht dauerhaft im Feuchtebereich – ein Schaden, der sich erst nach Jahren zeigt und dann nur durch Rückbau der Verblendschale zu beheben ist.",
+   "tags": [
+    "sockel",
+    "zweischalig",
+    "vergleich"
+   ],
+   "quelle": "Eigene Darstellung nach DETAIL Atlas Mauerwerk",
+   "stand": "2026-09",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-020",
+   "typ": "numerisch",
+   "frage": "Bis zu welcher Höhe über der Geländeoberfläche ist ein Außenputz wegen der Spritzwasserbeanspruchung als Zementputz auszuführen?",
+   "wert": 50,
+   "toleranz": 0,
+   "einheit": "cm",
+   "antwort": "Bis etwa 50 cm über der Geländeoberfläche.",
+   "vertiefung": "Die Höhe ergibt sich aus der Rücksprunghöhe des Regentropfens, der auf eine waagerechte Fläche trifft. Sie gilt deshalb nicht nur am Gelände: Dieselbe Zone entsteht über Gesimsen, über Balkonkragplatten und an Säulenfüßen.",
+   "tags": [
+    "spritzwasser",
+    "sockel",
+    "zementputz"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.3, S. 478 (PDF 493)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-021",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Bauteile sind nach dem Lehrbuch besonders durch Spritzwasser gefährdet?",
+   "optionen": [
+    "Außenwände unmittelbar über dem Gelände",
+    "Außenwände über Gesimsen",
+    "Außenwände über Balkonkragplatten",
+    "Säulenfüße und Brüstungen",
+    "die Dachfläche selbst",
+    "die Kellersohle"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "antwort": "Richtig sind die ersten vier: Außenwände unmittelbar über dem Gelände, über Gesimsen und über Balkonkragplatten sowie Säulenfüße und Brüstungen. Die Dachfläche selbst und die Kellersohle sind keine Spritzwasserbereiche — dort wirken andere Lastfälle.",
+   "vertiefung": "Auffällig ist, dass nur eine der vier Stellen am Boden liegt. Spritzwasser entsteht überall dort, wo Regen auf eine waagerechte oder schwach geneigte Fläche trifft und an ein aufgehendes Bauteil geschleudert wird — die Balkonplatte im vierten Obergeschoss erzeugt denselben Effekt wie das Gelände.",
+   "tags": [
+    "spritzwasser",
+    "sockel",
+    "balkon"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.3, S. 478 (PDF 493)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-022",
+   "typ": "freitext",
+   "frage": "An einer Außenwand zeigen sich im Sockelbereich Durchfeuchtungsschäden. Der Gutachter führt sie auf aufsteigende Bodenfeuchtigkeit zurück. Welchen Einwand nennt das Lehrbuch?",
+   "pruefpunkte": [
+    "Spritzwasserschäden werden häufig irrtümlich auf aufsteigende Bodenfeuchtigkeit zurückgeführt.",
+    "Spritzwasser entsteht, wenn Regen auf horizontale oder schwach geneigte Flächen trifft.",
+    "Das Wasser wird von dort an die Fassade geschleudert.",
+    "Angrenzende aufsteigende Bauteile werden durchfeuchtet, geschädigt oder verschmutzt.",
+    "Im Spritzwasserbereich sind zusätzliche Schutzmaßnahmen erforderlich.",
+    "Alternativ dürfen nur gegen Feuchte, Frost und Verschmutzung unempfindliche Baustoffe eingesetzt werden.",
+    "Außenputz ist bis etwa 50 cm über Gelände als Zementputz auszuführen.",
+    "Bei gefährdeten Baustoffen wie Holz kann stattdessen Abstand gehalten werden."
+   ],
+   "antwort": "Schäden infolge Spritzwasser werden immer wieder irrtümlich auf aufsteigende Bodenfeuchtigkeit zurückgeführt. Spritzwasser tritt dort auf, wo Regen auf horizontale oder schwach geneigte Flächen auftrifft und an die Fassade geschleudert wird; angrenzende aufsteigende Bauteile werden dadurch durchfeuchtet, geschädigt oder verschmutzt. Zu prüfen ist deshalb zuerst, ob im Spritzwasserbereich die erforderlichen Schutzmaßnahmen getroffen wurden — Außenputz als Zementputz bis etwa 50 cm über Gelände, oder unempfindliche Baustoffe, oder bei gefährdeten Baustoffen wie Holz ein Abstand zum Spritzwasserbereich.",
+   "vertiefung": "Die Verwechslung ist folgenreich, weil die Gegenmaßnahmen völlig verschieden sind: Gegen aufsteigende Feuchte hilft nur eine Querschnittsabdichtung im Mauerwerk, gegen Spritzwasser eine Oberflächenmaßnahme oder ein Kiesstreifen. Wer das eine für das andere hält, saniert teuer und ohne Wirkung.",
+   "tags": [
+    "spritzwasser",
+    "aufsteigende feuchte",
+    "schadensbild"
+   ],
+   "quelle": "Lehrbuch der Bauphysik, Abschn. 8.3.3, S. 478 (PDF 493)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "bk-sock-023",
+   "typ": "karte",
+   "frage": "Welche Schutzmaßnahmen gelten bei gemauerten Kellern grundsätzlich, und gegen welchen Lastfall?",
+   "antwort": "Es gelten die Schutzmaßnahmen für nichtdrückendes Wasser — der Lastfall, der bei den meisten Bauvorhaben vorkommt. Ausgeführt wird er etwa durch geklebte Sperrschichten aus Bitumenbahnen oder Kunststoffbahnen oder durch eine Bitumendickbeschichtung.",
+   "vertiefung": "„Nichtdrückend“ heißt nicht „trocken“: Das Wasser steht nur nicht unter Druck, weil es versickern kann. Sobald Stauwasser oder drückendes Wasser auftritt, gelten andere Anforderungen — die Einstufung des Lastfalls steht deshalb am Anfang jeder Kellerabdichtung, nicht die Wahl des Stoffes.",
+   "tags": [
+    "keller",
+    "abdichtung",
+    "lastfall"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.1 (PDF 229)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Gegen DIN 18533-1 bis -3 prüfen, ob Wassereinwirkungsklasse, Abdichtungsstoffe und das genannte Maß unverändert gelten."
+  },
+  {
+   "id": "bk-sock-024",
+   "typ": "karte",
+   "frage": "Wie werden horizontale und vertikale Sperrschicht im gemauerten Keller miteinander verbunden, und welche zusätzliche Sicherung ist möglich?",
+   "antwort": "Die horizontale Sperrschicht muss zuverlässig an die vertikale angeschlossen werden. Zur Sicherheit kann nach der zweiten Mauerwerkschicht eine waagrechte zweite Sperrschicht eingearbeitet werden.",
+   "vertiefung": "Die zweite Lage ist eine Redundanz, keine Pflicht — und sie sitzt bewusst oberhalb der ersten. Versagt der Anschluss unten, fängt die obere Lage die aufsteigende Feuchte ab, bevor sie das aufgehende Mauerwerk erreicht.",
+   "tags": [
+    "keller",
+    "sperrschicht",
+    "anschluss"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.1 (PDF 229)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Gegen DIN 18533-1 bis -3 prüfen, ob Wassereinwirkungsklasse, Abdichtungsstoffe und das genannte Maß unverändert gelten."
+  },
+  {
+   "id": "bk-sock-025",
+   "typ": "karte",
+   "frage": "Welcher Putz darf im Erdreich und auf den Sperrschichten verwendet werden, und wie wird der Übergang zum darüberliegenden Putz ausgebildet?",
+   "antwort": "Im Erdreich und auf den Sperrschichten dürfen nur Verputze mit reinem Zementmörtel der Mörtelgruppe II verwendet werden. Der Übergang zum Kalkzementmörtelverputz ist mit einer Trennung durch Kellenschnitt auszuführen.",
+   "vertiefung": "Der Kellenschnitt ist eine der kleinsten und am häufigsten vergessenen Maßnahmen am Bau: eine bewusst gesetzte Trennfuge zwischen zwei Putzen, die unterschiedlich arbeiten. Ohne sie reißt der Putz irgendwo — nur eben nicht dort, wo man es geplant hat.",
+   "tags": [
+    "sockel",
+    "zementmörtel",
+    "kellenschnitt"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.1 (PDF 229)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Gegen DIN 18533-1 bis -3 prüfen, ob Wassereinwirkungsklasse, Abdichtungsstoffe und das genannte Maß unverändert gelten."
+  },
+  {
+   "id": "bk-sock-026",
+   "typ": "numerisch",
+   "frage": "Wie weit ist der Zementmörtelverputz im Sockelbereich mindestens über das Erdreich hochzuführen?",
+   "wert": 15,
+   "toleranz": 0,
+   "einheit": "cm",
+   "antwort": "Mindestens 15 cm über das Erdreich.",
+   "vertiefung": "Dieses Maß ist nicht mit den anderen Sockelhöhen zu verwechseln: Die Sockelabdichtung reicht bis etwa 20 cm über Geländeoberkante, und der Außenputz wird wegen der Spritzwasserbeanspruchung bis etwa 50 cm über Gelände als Zementputz ausgeführt. Drei Zahlen, drei verschiedene Aufgaben.",
+   "tags": [
+    "sockel",
+    "zementmörtel",
+    "maße"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.1 (PDF 229)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Gegen DIN 18533-1 bis -3 prüfen, ob Wassereinwirkungsklasse, Abdichtungsstoffe und das genannte Maß unverändert gelten."
+  },
+  {
+   "id": "bk-sock-027",
+   "typ": "zuordnung",
+   "frage": "Drei Höhenmaße am Sockel, die leicht verwechselt werden. Ordne jedem Maß seine Aufgabe zu.",
+   "paare": [
+    [
+     "mindestens 15 cm über Erdreich",
+     "so weit ist der Zementmörtelverputz hochzuführen"
+    ],
+    [
+     "etwa 20 cm über Geländeoberkante",
+     "so weit reicht die Abdichtung des Sockelbereichs"
+    ],
+    [
+     "etwa 50 cm über Gelände",
+     "so weit ist der Außenputz wegen Spritzwasser als Zementputz auszuführen"
+    ]
+   ],
+   "antwort": "15 cm über Erdreich ist die Mindesthöhe des Zementmörtelverputzes, 20 cm über Geländeoberkante die Höhe der Sockelabdichtung, und bis etwa 50 cm über Gelände wird der Außenputz wegen der Spritzwasserbeanspruchung als Zementputz ausgeführt.",
+   "vertiefung": "Die drei Maße stammen aus drei verschiedenen Überlegungen: Der Putz im Erdreich schützt die Sperrschicht, die Abdichtung schützt das Mauerwerk vor Bodenfeuchte, und der Zementputz bis 50 cm schützt vor dem zurückspritzenden Regentropfen. Wer nur eine Zahl kennt, löst nur eines der drei Probleme.",
+   "tags": [
+    "sockel",
+    "maße",
+    "verwechslungsgefahr"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.1 (PDF 229); DETAIL Atlas Mauerwerk, S. 133; Lehrbuch der Bauphysik, Abschn. 8.3.3, S. 478 (PDF 493)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Zwei der drei Maße stammen aus Quellen, die über DIN 18195 argumentieren. Gegen DIN 18533 prüfen, ob die Höhe der Sockelabdichtung und die Mindesthöhe des Zementmörtelverputzes unverändert gelten; das Maß von 50 cm für den Spritzwasserbereich stammt aus dem Lehrbuch und ist davon unberührt."
+  },
+  {
+   "id": "bk-sock-028",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schichten und Maßnahmen am Sockel einer zweischaligen Wand in die richtige Reihenfolge von unten nach oben.",
+   "schritte": [
+    "Betonfundament mit Fundamentfuß",
+    "horizontale Sperrschicht, über den Fundamentfuß hochgeführt",
+    "zweite Mauerwerkschicht, bis über die die Sperrschicht geführt wird",
+    "untere Steinschicht der Vormauerung, die Feuchtigkeit abführen kann",
+    "horizontale Sperrschicht unterhalb der offenen Stoßfugen",
+    "Belüftung der Vormauerschale in der dritten Schicht über dem Erdreich"
+   ],
+   "antwort": "Von unten nach oben: Betonfundament mit Fundamentfuß, darüber die horizontale Sperrschicht, die über den Fundamentfuß bis über die zweite Mauerwerkschicht hochgeführt wird; die Vormauerschale wird auf den Fundamentfuß aufgestellt, ihre untere Steinschicht muss eine Abführung von Feuchtigkeit ermöglichen. Unterhalb der offenen Stoßfugen liegt eine horizontale Sperrschicht, und die Belüftung der Vormauerschale wird in der dritten Schicht über dem Erdreich angeordnet.",
+   "vertiefung": "Die Reihenfolge erklärt sich aus dem Wasserweg: Was die Vormauerschale durchdringt, läuft im Schalenzwischenraum nach unten, wird von der horizontalen Sperrschicht aufgefangen und über die offenen Stoßfugen darüber nach außen geführt. Liegt die Sperrschicht über den Stoßfugen, läuft das Wasser daran vorbei ins Mauerwerk.",
+   "tags": [
+    "sockel",
+    "zweischalig",
+    "schichtenfolge"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.2 (PDF 229)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Gegen DIN 18533-1 bis -3 prüfen, ob Wassereinwirkungsklasse, Abdichtungsstoffe und das genannte Maß unverändert gelten."
+  },
+  {
+   "id": "bk-sock-029",
+   "typ": "freitext",
+   "frage": "Beschreibe den Sockelanschluss bei zweischaligem Mauerwerk: Wie wird die Sperrschicht geführt, wo steht die Vormauerschale, und wie verlässt Wasser die Konstruktion?",
+   "pruefpunkte": [
+    "Die Sperrschicht wird über den Fundamentfuß bis über die zweite Mauerwerkschicht hochgeführt.",
+    "Die Vormauerschale kann auf den Fundamentfuß aufgestellt werden.",
+    "Die untere Steinschicht der Vormauerung muss eine Abführung von Feuchtigkeit ermöglichen.",
+    "Die Belüftung der Vormauerschale wird in der dritten Schicht über dem Erdreich angeordnet.",
+    "Unterhalb der offenen Stoßfugen ist eine horizontale Sperrschicht anzuordnen.",
+    "Die Außenschale ist Wetterschale, nicht Dichtebene — sie darf durchfeuchten.",
+    "Die Dichtebene liegt auf der Außenseite der tragenden Innenschale."
+   ],
+   "antwort": "Die Sperrschicht wird über den Fundamentfuß bis über die zweite Mauerwerkschicht hochgeführt; die Vormauerschale kann dann auf den Fundamentfuß aufgestellt werden. Ihre untere Steinschicht muss eine Abführung von Feuchtigkeit ermöglichen, die Belüftung der Vormauerschale liegt in der dritten Schicht über dem Erdreich, und unterhalb der offenen Stoßfugen ist eine horizontale Sperrschicht anzuordnen. Dahinter steht das Grundprinzip der zweischaligen Wand: Die äußere Schale ist Wetterschale und darf durchfeuchten, die Dichtebene liegt auf der Außenseite der tragenden Innenschale, und eingedrungenes Wasser verlässt die Wand am Fußpunkt.",
+   "vertiefung": "Zwei Sperrschichten mit zwei verschiedenen Aufgaben treffen hier aufeinander: Die eine schützt das aufgehende Mauerwerk vor Bodenfeuchte, die andere fängt das Wasser aus dem Schalenzwischenraum ab und leitet es über die offenen Stoßfugen hinaus. Wer sie verwechselt oder zu einer zusammenzieht, sperrt das Wasser ein.",
+   "tags": [
+    "sockel",
+    "zweischalig",
+    "entwässerung"
+   ],
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Sockel, Detail 3.21.2 (PDF 229)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Quelle argumentiert über DIN 18195; für erdberührte Bauteile gilt seit 2017 DIN 18533. Gegen DIN 18533-1 bis -3 prüfen, ob Wassereinwirkungsklasse, Abdichtungsstoffe und das genannte Maß unverändert gelten."
+  },
+  {
+   "id": "bk-sock-030",
+   "typ": "skizze",
+   "frage": "Skizziere den Sockelanschluss einer zweischaligen Außenwand mit allen Ebenen von der Bodenplatte bis über die Geländeoberkante.",
+   "referenz": "bilder/sockel-zweischalig.svg",
+   "pruefpunkte": [
+    "Von außen nach innen: Verblendschale, Kerndämmung, tragende Innenschale.",
+    "Die Dichtebene liegt auf der Außenseite der tragenden Innenschale.",
+    "Sie läuft ohne Unterbrechung von der Querschnittsabdichtung bis über die Geländeoberkante.",
+    "Die Perimeterdämmung liegt außerhalb der Abdichtung.",
+    "Am Fußpunkt der Vormauerschale sind Entwässerungsöffnungen eingezeichnet.",
+    "Der Übergang von der Kelleraußenwand zum Fundament ist als Hohlkehle ausgerundet.",
+    "Die Geländeoberkante ist eingetragen und die Abdichtung reicht darüber hinaus.",
+    "Die horizontale Querschnittsabdichtung im Mauerwerk ist dargestellt."
+   ],
+   "antwort": "Eine durchgehende Dichtebene auf der Außenseite der Innenschale, von der Querschnittsabdichtung bis über das Gelände; davor die Perimeterdämmung, davor die Verblendschale mit Entwässerungsöffnungen am Fuß; am Übergang zum Fundament eine Hohlkehle.",
+   "vertiefung": "Wer die Skizze in einem Zug zeichnen kann, hat die Grundregel des Themas verstanden: erst die Dichtebene festlegen, dann alles andere daran ausrichten. Jede Schicht beantwortet die Frage, ob sie vor oder hinter dieser Linie liegt.",
+   "tags": [
+    "sockel",
+    "zweischalig",
+    "skizze"
+   ],
+   "quelle": "Schematische Zeichnung nach DETAIL Atlas Mauerwerk",
+   "stand": "2026-10",
+   "geprueft": true
   }
+ ],
+ "thema": "sockel-erdberuehrt",
+ "erklaerung": {
+  "absaetze": [
+   "Der Sockel ist die Stelle, an der ein Gebäude drei Angriffe gleichzeitig aushält: aufsteigende Feuchte aus dem Erdreich, Spritzwasser vom Gelände und Erddruck gegen die Kellerwand. Deshalb häufen sich hier die Bauschäden.",
+   "Die Ordnung der Schichten folgt einer einzigen Frage: Wo liegt die Dichtebene? Sie gehört auf die Außenseite der tragenden Wand und muss ohne Unterbrechung von der Bodenplatte bis über das Gelände laufen. Alles Weitere ordnet sich ihr unter.",
+   "Die Perimeterdämmung liegt außerhalb der Abdichtung. Sie schützt diese beim Verfüllen der Baugrube und hält sie zugleich auf der warmen Seite, wo kein Tauwasser anfällt und kein Frost wirkt. Dafür muss sie selbst wasserunempfindlich, druckfest und frostbeständig sein – deshalb kommen nur XPS, Schaumglas und dichtes EPS in Frage.",
+   "Bei zweischaligem Mauerwerk kommt eine zweite Logik hinzu: Die äußere Schale ist Wetterschale, nicht Dichtebene. Sie darf durchfeuchten. Wasser sickert im Schalenzwischenraum ab und verlässt die Wand durch Öffnungen am Fußpunkt."
+  ],
+  "merksatz": "Erst die Dichtebene festlegen, dann alles andere daran ausrichten.",
+  "bild": "bilder/sockel-zweischalig.svg",
+  "bildunterschrift": "Sockelanschluss einer zweischaligen Außenwand, schematisch",
+  "quelle": "Nach DETAIL Atlas Mauerwerk und DETAIL Atlas Baustoff"
+ }
 }

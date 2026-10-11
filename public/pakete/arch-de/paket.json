@@ -2,7 +2,7 @@
   "id": "arch-de",
   "titel": "Architektur (Deutschland)",
   "sprache": "de",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "gestaltung": "arch",
   "module": [
     {
