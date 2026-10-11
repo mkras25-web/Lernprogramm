@@ -6,6 +6,7 @@ import {
   kartenAuswerten,
   levelAus,
   meilensteineAuswerten,
+  meilensteinWerte,
   moduleAuswerten,
   serieBerechnen,
   xpFuerPruefung,
@@ -81,6 +82,17 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
   const { meilensteine, xpMeilensteine, level } = useMemo(() => {
     const gemeisterteThemen = [...themenFortschritt0(aktiveItems, zustaende)].filter(Boolean).length
     const werteRekord = rekorde(aktiveEreignisse)
+    const neuere = meilensteinWerte(aktiveEreignisse, aktiveItems, zustaende, pruefungen)
+    // Paketumfang fuer die gedeckelten Meilensteine. Typen nur aus dem,
+    // was tatsaechlich gelernt werden kann (Zeichenfragen ggf. aus).
+    const umfang = {
+      items: aktiveItems.length,
+      themen: new Set(aktiveItems.map((i) => i.themaId)).size,
+      module: new Set(aktiveItems.map((i) => i.modulId)).size,
+      typen: new Set(
+        aktiveItems.filter((i) => !opt.zeichenAusblenden || i.typ !== 'skizze').map((i) => i.typ)
+      ).size,
+    }
     const sortiert = [...pruefungen].sort((a, b) => b.ts - a.ts)
     let serieBestanden = 0
     for (const p of sortiert) {
@@ -89,6 +101,7 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
     }
 
     const auswerten = (lv) => meilensteineAuswerten({
+      ...neuere,
       skizzen: skizzen.length,
       antworten: aktiveEreignisse.length,
       serie: serie.tage,
@@ -99,7 +112,6 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
       pruefungen: pruefungen.length,
       bestanden: pruefungen.filter((p) => p.bestanden).length,
       bestandenSerie: serieBestanden,
-      bestePruefung: pruefungen.reduce((m, p) => Math.max(m, p.prozent ?? 0), 0),
       gemeisterteThemen,
       sicher: aktiveItems.filter((i) => (zustaende.get(i.id)?.intervall ?? 0) >= 7).length,
       gemeistert: aktiveItems.filter((i) => (zustaende.get(i.id)?.intervall ?? 0) >= 60).length,
@@ -107,8 +119,9 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
       moduleBegonnen: module.filter((m) => m.begonnen > 0).length,
       gesichtet: [...marken.values()].filter((m) => m.kategorie).length,
       notizen: [...marken.values()].filter((m) => m.notiz).length,
+      meldungen: [...marken.values()].filter((m) => m.meldung || m.einspruch).length,
       sicherungen: opt.letzteSicherung ? 1 : 0,
-    }, gestaltung)
+    }, gestaltung, umfang)
 
     let lv = levelRoh
     let liste = auswerten(lv)
@@ -121,7 +134,7 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
     const xpM = xpFuerMeilensteine(liste)
     return { meilensteine: liste, xpMeilensteine: xpM, level: levelAus(xpBasis + xpM) }
   }, [skizzen, aktiveEreignisse, serie, levelRoh, xpBasis, pruefungen, marken, aktiveItems, zustaende,
-      karten, module, opt.letzteSicherung, gestaltung])
+      karten, module, opt.letzteSicherung, opt.zeichenAusblenden, gestaltung])
 
 
   // Rueckkanal zum Web-Chat (19A/6A): alles, was ueberarbeitet werden sollte.
@@ -144,9 +157,16 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
     return karte
   }, [aktiveItems, zustaende])
 
+  // Zeichenfragen ausblenden (Einstellung): weder im Lernstapel noch in
+  // Pruefungen. Sie bleiben gezaehlt und im Nachschlagen sichtbar.
+  const ohneZeichnen = useMemo(
+    () => (opt.zeichenAusblenden ? aktiveItems.filter((i) => i.typ !== 'skizze') : aktiveItems),
+    [aktiveItems, opt.zeichenAusblenden]
+  )
+
   const erlaubteItems = useMemo(
-    () => (opt.ungeprueftZulassen ? aktiveItems : aktiveItems.filter((i) => i.geprueft !== false)),
-    [aktiveItems, opt.ungeprueftZulassen]
+    () => (opt.ungeprueftZulassen ? ohneZeichnen : ohneZeichnen.filter((i) => i.geprueft !== false)),
+    [ohneZeichnen, opt.ungeprueftZulassen]
   )
 
   const tagesplan = useMemo(
@@ -169,15 +189,15 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
   )
 
   const pruefungHinweis = useMemo(() => {
-    if (monatspruefungFaellig(pruefungen) && aktiveItems.some((i) => i.geprueft !== false)) {
+    if (monatspruefungFaellig(pruefungen) && ohneZeichnen.some((i) => i.geprueft !== false)) {
       return { art: 'monat', text: 'Monatsprüfung fällig' }
     }
-    const plan = pruefungsplan(themen, aktiveItems, zustaende, pruefungen, 1)
+    const plan = pruefungsplan(themen, ohneZeichnen, zustaende, pruefungen, 1)
     if (plan.length > 0) {
       return { art: 'thema', text: `Prüfung verfügbar: ${plan[0].thema.titel}` }
     }
     return null
-  }, [pruefungen, themen, aktiveItems, zustaende])
+  }, [pruefungen, themen, ohneZeichnen, zustaende])
 
   const sicherungFaellig = useMemo(() => {
     if (ereignisse.length < 50) return false
@@ -201,6 +221,7 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
     meldeliste,
     themenFortschritt,
     erlaubteItems,
+    pruefItems: ohneZeichnen,
     tagesplan,
     baustellenStapel,
     skizzenStapel,

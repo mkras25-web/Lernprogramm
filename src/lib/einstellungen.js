@@ -70,6 +70,8 @@ export const STANDARD = {
   vertiefungZeigen: true,
   ueberspringenErlauben: true,
   skizzenSichern: true,
+  // Zeichenfragen (Typ "skizze") weder lernen noch pruefen.
+  zeichenAusblenden: false,
   sichtungWeiter: false,
   aufstiegFeiern: true,
   dropboxAuto: true,

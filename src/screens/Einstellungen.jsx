@@ -413,6 +413,21 @@ export default function Einstellungen({
 
           <div className="zeile">
             <div className="zeileText">
+              <p className="zeileTitel">Zeichenfragen</p>
+              <p className="zeileHinweis">
+                Ausgeblendet kommen Zeichenaufgaben weder beim Lernen noch in Prüfungen dran.
+                Im Nachschlagen bleiben sie sichtbar.
+              </p>
+            </div>
+            <Wahl
+              wert={werte.zeichenAusblenden}
+              optionen={[[false, 'Zeigen'], [true, 'Ausblenden']]}
+              onWahl={(w) => aendern('zeichenAusblenden', w)}
+            />
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
               <p className="zeileTitel">Beim Sichten weiterspringen</p>
               <p className="zeileHinweis">
                 Nach dem Setzen einer Sichtungsmarke gleich zum nächsten ungesichteten Item.

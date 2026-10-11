@@ -5,7 +5,7 @@ import { naechsterRang, rangFuer } from '../lib/fortschritt.js'
 import { bauwerkFuer } from '../lib/stufen.js'
 
 export default function Heute({
-  level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, neue, tagesziel = 0,
+  level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, zeichenAus = false, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
@@ -225,14 +225,14 @@ export default function Heute({
             <ArtKachel
               zeichen="✎︎"
               titel="Nur Skizzen"
-              text={skizzen > 0 ? `${skizzen} Zeichenaufgaben` : 'keine vorhanden'}
+              text={zeichenAus ? 'ausgeblendet' : skizzen > 0 ? `${skizzen} Zeichenaufgaben` : 'keine vorhanden'}
               aus={skizzen === 0}
               onKlick={() => onStart('skizzen')}
             />
             <ArtKachel
               zeichen="◎︎"
               titel="Training"
-              text="Mit Referenzhilfe, halbe XP"
+              text={zeichenAus ? 'ausgeblendet' : 'Mit Referenzhilfe, halbe XP'}
               aus={skizzen === 0}
               onKlick={() => onStart('training')}
             />

@@ -3,6 +3,8 @@ import {
   MEILENSTEIN_STUFEN,
   MEILENSTEINE,
   meilensteineAuswerten,
+  meilensteinWerte,
+  zieleFuer,
   xpFuerMeilenstein,
   xpFuerMeilensteine,
 } from './fortschritt.js'
@@ -70,7 +72,7 @@ describe('meilensteineAuswerten', () => {
     const ausgewertet = meilensteineAuswerten(daten)
     for (const m of ausgewertet) {
       expect(m.maxStufe).toBe(true)
-      expect(m.stufe).toBe(7)
+      expect(m.stufe).toBe(m.ziele.length)
     }
   })
 })
@@ -96,5 +98,131 @@ describe('xpFuerMeilenstein / xpFuerMeilensteine', () => {
     const ausgewertet = meilensteineAuswerten(daten)
     const nurZielMs = ausgewertet.filter((m) => m.id === ZIEL_MS.id)
     expect(xpFuerMeilensteine(nurZielMs)).toBe(0)
+  })
+})
+
+describe('eigene Stufenziele und Deckel', () => {
+  const finde = (liste, id) => liste.find((m) => m.id === id)
+
+  it('jeder Meilenstein hat 1-7 streng steigende Ziele', () => {
+    for (const m of MEILENSTEINE) {
+      const ziele = zieleFuer(m, { items: 337, themen: 13, module: 3, typen: 11 })
+      expect(ziele.length).toBeGreaterThanOrEqual(1)
+      expect(ziele.length).toBeLessThanOrEqual(7)
+      for (let i = 1; i < ziele.length; i++) expect(ziele[i]).toBeGreaterThan(ziele[i - 1])
+    }
+  })
+
+  it('ids sind eindeutig und jede Gruppe hat ein Symbol', async () => {
+    const { MEILENSTEIN_SYMBOLE, MEILENSTEIN_GRUPPEN } = await import('./fortschritt.js')
+    expect(new Set(MEILENSTEINE.map((m) => m.id)).size).toBe(MEILENSTEINE.length)
+    for (const m of MEILENSTEINE) {
+      expect(MEILENSTEIN_SYMBOLE[m.gruppe]).toBeTruthy()
+      expect(MEILENSTEIN_GRUPPEN[m.gruppe]).toBeTruthy()
+    }
+  })
+
+  it('einstufiger Meilenstein: Bronze ist zugleich die hoechste Stufe', () => {
+    const m = finde(meilensteineAuswerten({ stufe: 10 }), 'ms-stufe-10')
+    expect(m.ziele).toEqual([10])
+    expect(m.stufe).toBe(1)
+    expect(m.maxStufe).toBe(true)
+    expect(finde(meilensteineAuswerten({ stufe: 9 }), 'ms-stufe-10').frei).toBe(false)
+  })
+
+  it('Pruefungs-Prozente zaehlen als Anzahl, Silber braucht keine 162 %', () => {
+    const m = finde(meilensteineAuswerten({ pruefungenGut: 2 }), 'ms-pruefung-gut')
+    expect(m.stufe).toBe(2)
+    expect(m.einheit).toBeUndefined()
+  })
+
+  it('Deckel kappt Stufen am Paketumfang, die letzte Stufe ist "alles"', () => {
+    const m = MEILENSTEINE.find((x) => x.id === 'ms-sicher-200')
+    expect(zieleFuer(m, { items: 337 })).toEqual([200, 337])
+    expect(zieleFuer(m, { items: 150 })).toEqual([150])
+    expect(zieleFuer(m)).toHaveLength(7)
+    const voll = finde(meilensteineAuswerten({ sicher: 337 }, 'arch', { items: 337 }), 'ms-sicher-200')
+    expect(voll.maxStufe).toBe(true)
+    expect(voll.stufe).toBe(2)
+  })
+
+  it('Pharma-Titel fuer die Wochenend-Karte', () => {
+    expect(finde(meilensteineAuswerten({}, 'pharma'), 'ms-wochenende').titel).toBe('Wochenendschicht')
+    expect(finde(meilensteineAuswerten({}), 'ms-wochenende').titel).toBe('Wochenendbaustelle')
+  })
+})
+
+describe('meilensteinWerte', () => {
+  const MIN = 60000
+  const um = (jahr, monat, tag, std, min = 0) => new Date(jahr, monat, tag, std, min).getTime()
+  const e = (ts, bewertung = 3, extra = {}) => ({ itemId: 'a', ts, bewertung, dauerMs: 10000, ...extra })
+
+  it('Fruehaufsteher und Nachteule je Tag einmal', () => {
+    const w = meilensteinWerte([
+      e(um(2026, 9, 5, 6)), e(um(2026, 9, 5, 7)), e(um(2026, 9, 6, 23)), e(um(2026, 9, 7, 2)), e(um(2026, 9, 7, 12)),
+    ], [], new Map())
+    expect(w.fruehTage).toBe(1)
+    expect(w.nachtTage).toBe(2)
+  })
+
+  it('Wochenende nur mit Samstag und Sonntag, Rueckkehr nach mehr als sieben Tagen', () => {
+    // 10.10.2026 ist ein Samstag.
+    const w = meilensteinWerte([
+      e(um(2026, 9, 10, 12)), e(um(2026, 9, 11, 12)), e(um(2026, 9, 17, 12)), e(um(2026, 9, 26, 12)),
+    ], [], new Map())
+    expect(w.wochenenden).toBe(1)
+    expect(w.rueckkehren).toBe(1)
+  })
+
+  it('Trefferserie, Fehler-dann-richtig, fehlerfreier Tag', () => {
+    const start = um(2026, 9, 1, 10)
+    const liste = [e(start, 1, { itemId: 'x' })]
+    for (let i = 1; i <= 20; i++) liste.push(e(start + i * MIN, 3, { itemId: i === 5 ? 'x' : 'a' }))
+    liste.push(e(um(2026, 9, 2, 10), 3))
+    for (let i = 1; i <= 19; i++) liste.push(e(um(2026, 9, 2, 10) + i * MIN, 4))
+    const w = meilensteinWerte(liste, [], new Map())
+    expect(w.trefferserie).toBe(40)
+    expect(w.ausFehlern).toBe(1)
+    expect(w.fehlerfreieTage).toBe(1)
+    expect(w.besterTag).toBe(21)
+  })
+
+  it('Langer Atem: Block ab 30 min mit Luecken bis 5 min', () => {
+    const start = um(2026, 9, 1, 10)
+    const block = Array.from({ length: 11 }, (_, i) => e(start + i * 4 * MIN))
+    const kurz = [e(um(2026, 9, 1, 15)), e(um(2026, 9, 1, 15, 10))]
+    expect(meilensteinWerte([...block, ...kurz], [], new Map()).langeBloecke).toBe(1)
+  })
+
+  it('Betriebsarten, Skizzen ohne Hilfe, Themen und Typen', () => {
+    const items = [
+      { id: 's', typ: 'skizze', themaId: 't1' },
+      { id: 'k', typ: 'karte', themaId: 't1' },
+      { id: 'm', typ: 'karte', themaId: 't2' },
+    ]
+    const zustaende = new Map([
+      ['s', { intervall: 200, fehler: 6 }],
+      ['k', { intervall: 1, fehler: 0 }],
+    ])
+    const w = meilensteinWerte([
+      e(1, 3, { itemId: 's' }), e(2, 3, { itemId: 's', hilfe: true }), e(3, 1, { itemId: 's' }),
+      e(4, 3, { itemId: 'k', art: 'marathon' }), e(5, 3, { itemId: 'k', art: 'schnell' }),
+    ], items, zustaende, [
+      { bestanden: true, art: 'thema', themaId: 't1', prozent: 100 },
+      { bestanden: true, art: 'thema', themaId: 't1', prozent: 85 },
+      { bestanden: false, art: 'monat', prozent: 40 },
+    ])
+    expect(w.skizzenOhneHilfe).toBe(1)
+    expect(w.marathonAntworten).toBe(1)
+    expect(w.schnellAntworten).toBe(1)
+    expect(w.themenBesucht).toBe(1)
+    expect(w.themenKomplett).toBe(1)
+    expect(w.typen).toBe(2)
+    expect(w.problemeGeloest).toBe(1)
+    expect(w.langzeit).toBe(1)
+    expect(w.themenGeprueft).toBe(1)
+    expect(w.pruefungenGut).toBe(2)
+    expect(w.pruefungenSehrGut).toBe(1)
+    expect(w.pruefungenVoll).toBe(1)
   })
 })

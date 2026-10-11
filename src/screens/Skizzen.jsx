@@ -3,7 +3,7 @@ import Schleier from '../components/Schleier.jsx'
 
 // Uebersicht aller gespeicherten Skizzen, nach Item gruppiert.
 // Zeigt die Entwicklung ueber die Zeit und erlaubt das Aufraeumen.
-export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zeichenaufgaben = 0, onUeben }) {
+export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zeichenaufgaben = 0, zeichenAus = false, onUeben }) {
   const [gross, setGross] = useState(null)
   const [loeschKandidat, setLoeschKandidat] = useState(null)
 
@@ -33,7 +33,9 @@ export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zei
             <p className="aufrufZahl">Noch keine Skizze gespeichert</p>
             <p className="nebentext">
               Sie entstehen, sobald du eine Zeichenaufgabe im Zeichenfeld bearbeitest.
-              {zeichenaufgaben > 0 && ` ${zeichenaufgaben} Zeichenaufgaben stehen bereit.`}
+              {zeichenAus
+                ? ' Zeichenaufgaben sind in den Einstellungen ausgeblendet.'
+                : zeichenaufgaben > 0 && ` ${zeichenaufgaben} Zeichenaufgaben stehen bereit.`}
             </p>
           </div>
           {zeichenaufgaben > 0 && onUeben && (
@@ -48,7 +50,7 @@ export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zei
         <section key={g.item?.id ?? Math.random()} className="block">
           <h2 className="abschnitt">{g.item?.themaTitel ?? 'Unbekanntes Thema'}</h2>
           <p className="trefferFrage">{g.item?.frage ?? 'Item nicht mehr im Paket'}</p>
-          {g.item && onNeuZeichnen && (
+          {g.item && onNeuZeichnen && !zeichenAus && (
             <button className="textknopf" style={{ alignSelf: 'flex-start' }} onClick={() => onNeuZeichnen(g.item.id)}>
               Aufgabe erneut zeichnen
             </button>

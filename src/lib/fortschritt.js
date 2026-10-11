@@ -7,6 +7,7 @@
 import { BEWERTUNG } from './planer.js'
 import { punkteFuer } from './punkte.js'
 import { bedarfFuerStufe, levelAus } from './stufen.js'
+import { PROBLEM_SCHWELLE } from './meldungen.js'
 
 // Levelkurve und Bauabschnitte stehen in stufen.js. Hier nur
 // weitergereicht, damit alle bisherigen Aufrufe unveraendert bleiben.
@@ -366,10 +367,6 @@ export const MEILENSTEIN_STUFEN = [
   { stufe: 7, name: 'Diamant', multiplikator: 100 },
 ]
 
-function zieleFuer(m) {
-  return MEILENSTEIN_STUFEN.map((s) => Math.max(1, Math.round(m.ziel * s.multiplikator)))
-}
-
 // Jede erreichte Stufe zaehlt einzeln (nicht nur die hoechste) - der
 // Sprung von Bronze zu Silber soll sich in XP genauso lohnen wie jeder
 // andere. m braucht stufe/ziele aus meilensteineAuswerten().
@@ -394,7 +391,9 @@ export function xpFuerMeilensteine(liste) {
 // als Emoji statt als einfaches Linienzeichen wie die anderen.
 export const MEILENSTEIN_SYMBOLE = {
   ausdauer: '◷︎',
+  gewohnheit: '☼︎',
   menge: '▦︎',
+  vielfalt: '◈︎',
   zeichnen: '✎︎',
   pruefung: '✓︎',
   beherrschung: '★︎',
@@ -403,13 +402,26 @@ export const MEILENSTEIN_SYMBOLE = {
 
 export const MEILENSTEIN_GRUPPEN = {
   ausdauer: 'Ausdauer',
+  gewohnheit: 'Gewohnheit',
   menge: 'Umfang',
+  vielfalt: 'Vielfalt',
   zeichnen: 'Zeichnen',
   pruefung: 'Prüfungen',
   beherrschung: 'Beherrschung',
   ordnung: 'Ordnung',
 }
 
+// Felder je Meilenstein:
+// - ziel: Bronze-Ziel; die weiteren Stufen sind Vielfache davon
+//   (MEILENSTEIN_STUFEN.multiplikator).
+// - ziele (optional): eigene Stufenziele statt der Vielfachen - fuer
+//   Werte, bei denen x100 unsinnig waere. Weniger als sieben Eintraege =
+//   weniger Stufen ([5] = nur Bronze).
+// - deckel (optional): Kennzahl, die vom Umfang des Pakets begrenzt ist
+//   ('items', 'themen', 'module', 'typen'). Stufen ueber dem Paketumfang
+//   fallen weg, die letzte wird "alles" - sonst stuende z. B. "400 Items
+//   sicher" bei einem Paket mit 337 Items. Waechst das Paket, wachsen
+//   die Stufen mit (die oberste kann dann wieder offen sein).
 export const MEILENSTEINE = [
   // Ausdauer
   { id: 'ms-serie-3', gruppe: 'ausdauer', titel: 'Drei Tage am Stück', feld: 'serie', ziel: 3 },
@@ -420,52 +432,82 @@ export const MEILENSTEINE = [
   { id: 'ms-tage-100', gruppe: 'ausdauer', titel: 'Hundert aktive Tage', feld: 'aktiveTage', ziel: 100 },
   { id: 'ms-zeit-600', gruppe: 'ausdauer', titel: 'Zehn Stunden gelernt', feld: 'minuten', ziel: 600, einheit: ' min' },
   { id: 'ms-zeit-3000', gruppe: 'ausdauer', titel: 'Fünfzig Stunden gelernt', feld: 'minuten', ziel: 3000, einheit: ' min' },
+  { id: 'ms-langer-atem', gruppe: 'ausdauer', titel: 'Langer Atem', feld: 'langeBloecke', ziel: 3 },
+
+  // Gewohnheit
+  { id: 'ms-frueh', gruppe: 'gewohnheit', titel: 'Frühaufsteher', feld: 'fruehTage', ziele: [5, 10, 25, 50, 100, 200, 365] },
+  { id: 'ms-nacht', gruppe: 'gewohnheit', titel: 'Nachteule', feld: 'nachtTage', ziele: [5, 10, 25, 50, 100, 200, 365] },
+  { id: 'ms-wochenende', gruppe: 'gewohnheit', titel: 'Wochenendbaustelle', feld: 'wochenenden', ziele: [4, 8, 16, 26, 52, 104, 156] },
+  { id: 'ms-rueckkehr', gruppe: 'gewohnheit', titel: 'Wieder an Bord', feld: 'rueckkehren', ziele: [1, 2, 3, 5, 8, 12, 20] },
 
   // Umfang
   { id: 'ms-antworten-100', gruppe: 'menge', titel: 'Hundert Antworten', feld: 'antworten', ziel: 100 },
   { id: 'ms-antworten-1000', gruppe: 'menge', titel: 'Tausend Antworten', feld: 'antworten', ziel: 1000 },
   { id: 'ms-antworten-5000', gruppe: 'menge', titel: 'Fünftausend Antworten', feld: 'antworten', ziel: 5000 },
-  { id: 'ms-stufe-5', gruppe: 'menge', titel: 'Stufe fünf', feld: 'stufe', ziel: 5 },
-  { id: 'ms-stufe-10', gruppe: 'menge', titel: 'Stufe zehn', feld: 'stufe', ziel: 10 },
-  { id: 'ms-stufe-25', gruppe: 'menge', titel: 'Stufe fünfundzwanzig', feld: 'stufe', ziel: 25 },
-  { id: 'ms-stufe-50', gruppe: 'menge', titel: 'Erstes Bauwerk fertig', feld: 'stufe', ziel: 50 },
-  { id: 'ms-stufe-75', gruppe: 'menge', titel: 'Stadthaus im Rohbau', feld: 'stufe', ziel: 75 },
-  { id: 'ms-stufe-100', gruppe: 'menge', titel: 'Zweites Bauwerk fertig', feld: 'stufe', ziel: 100 },
+  { id: 'ms-bester-tag', gruppe: 'menge', titel: 'Starker Tag', feld: 'besterTag', ziele: [50, 100, 150, 200, 300, 400, 500] },
+  { id: 'ms-marathon', gruppe: 'menge', titel: 'Marathonläufer', feld: 'marathonAntworten', ziele: [200, 400, 1000, 2000, 4000, 7000, 10000] },
+  { id: 'ms-schnell', gruppe: 'menge', titel: 'Schnelldenker', feld: 'schnellAntworten', ziel: 100 },
+  // Die Stufen-Meilensteine bilden schon selbst eine Leiter - als
+  // Vielfache gerechnet hiesse Diamant fuer "Stufe zehn" Stufe 1000.
+  { id: 'ms-stufe-5', gruppe: 'menge', titel: 'Stufe fünf', feld: 'stufe', ziele: [5] },
+  { id: 'ms-stufe-10', gruppe: 'menge', titel: 'Stufe zehn', feld: 'stufe', ziele: [10] },
+  { id: 'ms-stufe-25', gruppe: 'menge', titel: 'Stufe fünfundzwanzig', feld: 'stufe', ziele: [25] },
+  { id: 'ms-stufe-50', gruppe: 'menge', titel: 'Erstes Bauwerk fertig', feld: 'stufe', ziele: [50] },
+  { id: 'ms-stufe-75', gruppe: 'menge', titel: 'Stadthaus im Rohbau', feld: 'stufe', ziele: [75] },
+  { id: 'ms-stufe-100', gruppe: 'menge', titel: 'Zweites Bauwerk fertig', feld: 'stufe', ziele: [100] },
   // ^ Diese drei Titel erzaehlen konkret vom Architektur-Bauwerk - fuer
   // andere Gestaltungen (Pharmazie) ueberschrieben, siehe
   // MEILENSTEIN_TITEL_GESTALTUNG unten. Absichtlich nicht generisch
   // umformuliert: die Architektur-Formulierung bleibt fuer bestehende
   // Nutzer unveraendert (Vorgabe = "arch").
   { id: 'ms-xp-5000', gruppe: 'menge', titel: 'Fünftausend XP', feld: 'xp', ziel: 5000 },
-  { id: 'ms-module-3', gruppe: 'menge', titel: 'Drei Module begonnen', feld: 'moduleBegonnen', ziel: 3 },
+  { id: 'ms-module-3', gruppe: 'menge', titel: 'Drei Module begonnen', feld: 'moduleBegonnen', ziel: 3, deckel: 'module' },
+
+  // Vielfalt
+  { id: 'ms-typen', gruppe: 'vielfalt', titel: 'Alleskönner', feld: 'typen', ziele: [3, 5, 7, 9, 11, 13], deckel: 'typen' },
+  { id: 'ms-themen-besucht', gruppe: 'vielfalt', titel: 'Themenwanderer', feld: 'themenBesucht', ziel: 5, deckel: 'themen' },
+  { id: 'ms-thema-komplett', gruppe: 'vielfalt', titel: 'Einmal komplett', feld: 'themenKomplett', ziel: 1, deckel: 'themen' },
 
   // Zeichnen
   { id: 'ms-skizze-1', gruppe: 'zeichnen', titel: 'Erste Zeichnung', feld: 'skizzen', ziel: 1 },
   { id: 'ms-skizze-10', gruppe: 'zeichnen', titel: 'Zehn Zeichnungen', feld: 'skizzen', ziel: 10 },
   { id: 'ms-skizze-50', gruppe: 'zeichnen', titel: 'Fünfzig Zeichnungen', feld: 'skizzen', ziel: 50 },
   { id: 'ms-skizze-100', gruppe: 'zeichnen', titel: 'Hundert Zeichnungen', feld: 'skizzen', ziel: 100 },
+  { id: 'ms-ohne-hilfe', gruppe: 'zeichnen', titel: 'Ohne Spickzettel', feld: 'skizzenOhneHilfe', ziel: 10 },
 
   // Pruefungen
   { id: 'ms-pruefung-1', gruppe: 'pruefung', titel: 'Erste Prüfung', feld: 'pruefungen', ziel: 1 },
   { id: 'ms-pruefung-10', gruppe: 'pruefung', titel: 'Zehn Prüfungen', feld: 'pruefungen', ziel: 10 },
   { id: 'ms-pruefung-bestanden', gruppe: 'pruefung', titel: 'Erste bestandene Prüfung', feld: 'bestanden', ziel: 1 },
   { id: 'ms-pruefung-serie', gruppe: 'pruefung', titel: 'Fünf bestandene in Folge', feld: 'bestandenSerie', ziel: 5 },
-  { id: 'ms-pruefung-gut', gruppe: 'pruefung', titel: 'Mindestens gut geschrieben', feld: 'bestePruefung', ziel: 81, einheit: ' %' },
-  { id: 'ms-pruefung-sehrgut', gruppe: 'pruefung', titel: 'Sehr gut geschrieben', feld: 'bestePruefung', ziel: 92, einheit: ' %' },
+  // Zaehlen Pruefungen ab 81 bzw. 92 % - frueher war die beste Prozentzahl
+  // das Feld, dann hiesse Silber 162 %.
+  { id: 'ms-pruefung-gut', gruppe: 'pruefung', titel: 'Mindestens gut geschrieben', feld: 'pruefungenGut', ziel: 1 },
+  { id: 'ms-pruefung-sehrgut', gruppe: 'pruefung', titel: 'Sehr gut geschrieben', feld: 'pruefungenSehrGut', ziel: 1 },
+  { id: 'ms-volle-punktzahl', gruppe: 'pruefung', titel: 'Volle Punktzahl', feld: 'pruefungenVoll', ziele: [1, 2, 3, 5, 10, 15, 25] },
+  { id: 'ms-breit-geprueft', gruppe: 'pruefung', titel: 'Breit geprüft', feld: 'themenGeprueft', ziel: 3, deckel: 'themen' },
 
   // Beherrschung
-  { id: 'ms-sicher-50', gruppe: 'beherrschung', titel: 'Fünfzig Items sicher', feld: 'sicher', ziel: 50 },
-  { id: 'ms-sicher-200', gruppe: 'beherrschung', titel: 'Zweihundert Items sicher', feld: 'sicher', ziel: 200 },
-  { id: 'ms-gemeistert-25', gruppe: 'beherrschung', titel: 'Fünfundzwanzig gemeistert', feld: 'gemeistert', ziel: 25 },
-  { id: 'ms-thema-1', gruppe: 'beherrschung', titel: 'Erstes Thema gemeistert', feld: 'gemeisterteThemen', ziel: 1 },
-  { id: 'ms-thema-5', gruppe: 'beherrschung', titel: 'Fünf Themen gemeistert', feld: 'gemeisterteThemen', ziel: 5 },
-  { id: 'ms-karten-5', gruppe: 'beherrschung', titel: 'Fünf Detailkarten', feld: 'detailkarten', ziel: 5 },
+  { id: 'ms-sicher-50', gruppe: 'beherrschung', titel: 'Fünfzig Items sicher', feld: 'sicher', ziel: 50, deckel: 'items' },
+  { id: 'ms-sicher-200', gruppe: 'beherrschung', titel: 'Zweihundert Items sicher', feld: 'sicher', ziel: 200, deckel: 'items' },
+  { id: 'ms-gemeistert-25', gruppe: 'beherrschung', titel: 'Fünfundzwanzig gemeistert', feld: 'gemeistert', ziel: 25, deckel: 'items' },
+  { id: 'ms-langzeit', gruppe: 'beherrschung', titel: 'Langzeitgedächtnis', feld: 'langzeit', ziel: 10, deckel: 'items' },
+  { id: 'ms-thema-1', gruppe: 'beherrschung', titel: 'Erstes Thema gemeistert', feld: 'gemeisterteThemen', ziel: 1, deckel: 'themen' },
+  { id: 'ms-thema-5', gruppe: 'beherrschung', titel: 'Fünf Themen gemeistert', feld: 'gemeisterteThemen', ziel: 5, deckel: 'themen' },
+  { id: 'ms-karten-5', gruppe: 'beherrschung', titel: 'Fünf Detailkarten', feld: 'detailkarten', ziel: 5, deckel: 'themen' },
+  { id: 'ms-problem-geloest', gruppe: 'beherrschung', titel: 'Problem gelöst', feld: 'problemeGeloest', ziel: 3, deckel: 'items' },
+  { id: 'ms-aus-fehlern', gruppe: 'beherrschung', titel: 'Aus Fehlern gelernt', feld: 'ausFehlern', ziel: 25, deckel: 'items' },
+  { id: 'ms-trefferserie', gruppe: 'beherrschung', titel: 'Trefferserie', feld: 'trefferserie', ziel: 25 },
+  { id: 'ms-fehlerfrei', gruppe: 'beherrschung', titel: 'Fehlerfreier Tag', feld: 'fehlerfreieTage', ziel: 3 },
 
   // Ordnung
-  { id: 'ms-gesichtet-50', gruppe: 'ordnung', titel: 'Fünfzig Items gesichtet', feld: 'gesichtet', ziel: 50 },
-  { id: 'ms-gesichtet-200', gruppe: 'ordnung', titel: 'Zweihundert gesichtet', feld: 'gesichtet', ziel: 200 },
-  { id: 'ms-notizen-10', gruppe: 'ordnung', titel: 'Zehn eigene Notizen', feld: 'notizen', ziel: 10 },
-  { id: 'ms-gesichert', gruppe: 'ordnung', titel: 'Fortschritt gesichert', feld: 'sicherungen', ziel: 1 },
+  { id: 'ms-gesichtet-50', gruppe: 'ordnung', titel: 'Fünfzig Items gesichtet', feld: 'gesichtet', ziel: 50, deckel: 'items' },
+  { id: 'ms-gesichtet-200', gruppe: 'ordnung', titel: 'Zweihundert gesichtet', feld: 'gesichtet', ziel: 200, deckel: 'items' },
+  { id: 'ms-notizen-10', gruppe: 'ordnung', titel: 'Zehn eigene Notizen', feld: 'notizen', ziel: 10, deckel: 'items' },
+  { id: 'ms-qualitaet', gruppe: 'ordnung', titel: 'Qualitätsprüfer', feld: 'meldungen', ziel: 5, deckel: 'items' },
+  // Kann nur 0 oder 1 sein - als Vielfache gerechnet hiesse Diamant
+  // "100 von 1".
+  { id: 'ms-gesichert', gruppe: 'ordnung', titel: 'Fortschritt gesichert', feld: 'sicherungen', ziele: [1] },
 ]
 
 // Nur die Meilensteine, die woertlich vom Architektur-Bauwerk erzaehlen,
@@ -476,18 +518,143 @@ const MEILENSTEIN_TITEL_GESTALTUNG = {
   'ms-stufe-50': { pharma: 'Erste Charge fertig' },
   'ms-stufe-75': { pharma: 'Zweite Charge in Arbeit' },
   'ms-stufe-100': { pharma: 'Zweite Charge fertig' },
+  'ms-wochenende': { pharma: 'Wochenendschicht' },
 }
 
-export function meilensteineAuswerten(daten, gestaltung = 'arch') {
+// Stufenziele eines Meilensteins, bei Bedarf auf den Paketumfang
+// begrenzt (siehe "deckel" oben).
+export function zieleFuer(m, umfang = {}) {
+  const roh = m.ziele ?? MEILENSTEIN_STUFEN.map((s) => Math.max(1, Math.round(m.ziel * s.multiplikator)))
+  const grenze = m.deckel ? umfang[m.deckel] : undefined
+  if (grenze === undefined) return roh
+  const max = Math.max(1, grenze)
+  const unter = roh.filter((z) => z < max)
+  return [...unter, max].slice(0, MEILENSTEIN_STUFEN.length)
+}
+
+// Alle Werte der neueren Meilensteine, die sich aus dem Ereignisprotokoll
+// ergeben - einmal gerechnet, nicht je Meilenstein-Durchgang.
+// ereignisse: Antworten, items: lernbare Items, zustaende: aus dem Planer.
+export function meilensteinWerte(ereignisse, items, zustaende, pruefungen = []) {
+  const sortiert = [...ereignisse].sort((a, b) => a.ts - b.ts)
+  const richtig = (e) => e.bewertung !== BEWERTUNG.NOCHMAL
+  const tagSchluessel = (d) => `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`
+  const typVon = new Map(items.map((i) => [i.id, i.typ]))
+
+  const fruehTage = new Set()
+  const nachtTage = new Set()
+  const jeTag = new Map() // Schluessel -> { anzahl, fehler, datum }
+  let marathonAntworten = 0
+  let schnellAntworten = 0
+  let skizzenOhneHilfe = 0
+  let trefferserie = 0
+  let laufend = 0
+  let langeBloecke = 0
+  let blockStart = null
+  let blockEnde = null
+  const nochmalGesehen = new Set()
+  const ausFehlern = new Set()
+
+  for (const e of sortiert) {
+    const d = new Date(e.ts)
+    const tag = tagSchluessel(d)
+    const stunde = d.getHours()
+    if (stunde >= 4 && stunde < 8) fruehTage.add(tag)
+    if (stunde >= 22 || stunde < 4) nachtTage.add(tag)
+    if (!jeTag.has(tag)) jeTag.set(tag, { anzahl: 0, fehler: 0, datum: new Date(d.getFullYear(), d.getMonth(), d.getDate()) })
+    const eintrag = jeTag.get(tag)
+    eintrag.anzahl += 1
+    if (!richtig(e)) eintrag.fehler += 1
+
+    if (e.art === 'marathon') marathonAntworten += 1
+    if (e.art === 'schnell') schnellAntworten += 1
+    if (typVon.get(e.itemId) === 'skizze' && !e.hilfe && richtig(e)) skizzenOhneHilfe += 1
+
+    laufend = richtig(e) ? laufend + 1 : 0
+    trefferserie = Math.max(trefferserie, laufend)
+
+    if (e.bewertung === BEWERTUNG.NOCHMAL) nochmalGesehen.add(e.itemId)
+    else if (e.bewertung >= BEWERTUNG.GUT && nochmalGesehen.has(e.itemId)) ausFehlern.add(e.itemId)
+
+    // Lernbloecke: Antworten mit hoechstens fuenf Minuten Abstand gehoeren
+    // zusammen; ein Block zaehlt ab dreissig Minuten.
+    const start = e.ts - (e.dauerMs ?? 0)
+    if (blockEnde === null || start - blockEnde > 5 * 60000) {
+      if (blockEnde !== null && blockEnde - blockStart >= 30 * 60000) langeBloecke += 1
+      blockStart = start
+    }
+    blockEnde = e.ts
+  }
+  if (blockEnde !== null && blockEnde - blockStart >= 30 * 60000) langeBloecke += 1
+
+  const tage = [...jeTag.values()].map((t) => t.datum).sort((a, b) => a - b)
+  const tagNr = (d) => Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / TAG)
+  const aktiv = new Set(tage.map(tagNr))
+  let wochenenden = 0
+  let rueckkehren = 0
+  for (let i = 0; i < tage.length; i++) {
+    if (tage[i].getDay() === 6 && aktiv.has(tagNr(tage[i]) + 1)) wochenenden += 1
+    // Mindestens sieben Tage ohne Antwort dazwischen.
+    if (i > 0 && tagNr(tage[i]) - tagNr(tage[i - 1]) > 7) rueckkehren += 1
+  }
+
+  const themen = new Map() // themaId -> { gesamt, gesehen }
+  const typen = new Set()
+  let problemeGeloest = 0
+  let langzeit = 0
+  for (const item of items) {
+    const z = zustaende.get(item.id)
+    if (!themen.has(item.themaId)) themen.set(item.themaId, { gesamt: 0, gesehen: 0 })
+    const t = themen.get(item.themaId)
+    t.gesamt += 1
+    if (!z) continue
+    t.gesehen += 1
+    typen.add(item.typ)
+    if ((z.fehler ?? 0) >= PROBLEM_SCHWELLE && (z.intervall ?? 0) >= 7) problemeGeloest += 1
+    if ((z.intervall ?? 0) >= 180) langzeit += 1
+  }
+
+  const geprueft = new Set(
+    pruefungen.filter((p) => p.bestanden && p.art === 'thema' && p.themaId).map((p) => p.themaId)
+  )
+
+  return {
+    fruehTage: fruehTage.size,
+    nachtTage: nachtTage.size,
+    wochenenden,
+    rueckkehren,
+    langeBloecke,
+    besterTag: Math.max(0, ...[...jeTag.values()].map((t) => t.anzahl)),
+    fehlerfreieTage: [...jeTag.values()].filter((t) => t.anzahl >= 20 && t.fehler === 0).length,
+    marathonAntworten,
+    schnellAntworten,
+    skizzenOhneHilfe,
+    trefferserie,
+    ausFehlern: ausFehlern.size,
+    problemeGeloest,
+    langzeit,
+    typen: typen.size,
+    themenBesucht: [...themen.values()].filter((t) => t.gesehen > 0).length,
+    themenKomplett: [...themen.values()].filter((t) => t.gesamt > 0 && t.gesehen === t.gesamt).length,
+    themenGeprueft: geprueft.size,
+    pruefungenGut: pruefungen.filter((p) => (p.prozent ?? 0) >= 81).length,
+    pruefungenSehrGut: pruefungen.filter((p) => (p.prozent ?? 0) >= 92).length,
+    pruefungenVoll: pruefungen.filter((p) => (p.prozent ?? 0) >= 100).length,
+  }
+}
+
+// umfang: { items, themen, module, typen } des aktiven Pakets, fuer die
+// "deckel"-Meilensteine. Fehlt er, gelten die ungedeckelten Ziele.
+export function meilensteineAuswerten(daten, gestaltung = 'arch', umfang = {}) {
   return MEILENSTEINE.map((m) => {
     const stand = daten[m.feld] ?? 0
-    const ziele = zieleFuer(m)
+    const ziele = zieleFuer(m, umfang)
     let stufe = 0
     for (const z of ziele) {
       if (stand < z) break
       stufe += 1
     }
-    const maxStufe = stufe >= MEILENSTEIN_STUFEN.length
+    const maxStufe = stufe >= ziele.length
     const naechstesZiel = maxStufe ? null : ziele[stufe]
     const vorherigesZiel = stufe > 0 ? ziele[stufe - 1] : 0
     const anteil = maxStufe
@@ -502,12 +669,12 @@ export function meilensteineAuswerten(daten, gestaltung = 'arch') {
       stufe,
       maxStufe,
       // ziel bleibt fuer Abwaertskompatibilitaet das jeweils naechste
-      // (noch nicht erreichte) Ziel - Diamant-Ziel, sobald maximal.
+      // (noch nicht erreichte) Ziel - das letzte, sobald maximal.
       ziel: naechstesZiel ?? ziele[ziele.length - 1],
       anteil,
       frei: stufe > 0,
       beschreibung: maxStufe
-        ? 'Höchste Stufe (Diamant) erreicht'
+        ? `Höchste Stufe (${MEILENSTEIN_STUFEN[ziele.length - 1].name}) erreicht`
         : `${naechstesZiel} für ${MEILENSTEIN_STUFEN[stufe].name}`,
     }
   })

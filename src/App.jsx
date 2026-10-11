@@ -179,6 +179,7 @@ export default function App({ profilId, onProfilWechseln }) {
     meldeliste,
     themenFortschritt,
     erlaubteItems,
+    pruefItems,
     tagesplan,
     baustellenStapel,
     skizzenStapel,
@@ -644,6 +645,7 @@ export default function App({ profilId, onProfilWechseln }) {
           karten={karten}
           baustellen={baustellenStapel.length}
           skizzen={skizzenStapel.length}
+          zeichenAus={opt.zeichenAusblenden}
           neue={neueItems.length}
           tagesziel={opt.tagesziel ?? 0}
           offeneSitzung={offeneSitzung}
@@ -698,7 +700,7 @@ export default function App({ profilId, onProfilWechseln }) {
       )}
       {ansicht === 'pruefung' && (
         <Pruefung
-          items={aktiveItems}
+          items={pruefItems}
           themen={themen}
           zustaende={zustaende}
           module={module}
@@ -777,6 +779,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onLoeschen={skizzeEntfernen}
           onNeuZeichnen={(itemId) => sitzungStarten('fehlerstapel', { ids: [itemId] })}
           zeichenaufgaben={skizzenStapel.length}
+          zeichenAus={opt.zeichenAusblenden}
           onUeben={() => sitzungStarten('skizzen', {})}
         />
       )}

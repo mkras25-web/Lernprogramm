@@ -12,11 +12,13 @@ import Ring from '../components/Ring.jsx'
 const RANGKLASSEN = { Entwurf: 'entwurf', 'Ausführung': 'ausfuehrung', Meisterschaft: 'meisterschaft' }
 const rangKlasse = (rang) => RANGKLASSEN[rang] ?? 'entwurf'
 
-// Sieben Materialstufen statt nur erreicht/nicht erreicht - siehe
-// MEILENSTEIN_STUFEN in fortschritt.js fuer die Ziel-Vervielfachung.
+// Bis zu sieben Materialstufen statt nur erreicht/nicht erreicht - siehe
+// MEILENSTEIN_STUFEN in fortschritt.js. Manche Meilensteine haben weniger
+// Stufen (m.ziele), z. B. nur Bronze.
 function stempelTooltip(m) {
   if (m.maxStufe) {
-    return `${m.titel} · Diamant, höchste Stufe erreicht · ${xpFuerMeilenstein(m)} XP gesamt`
+    const hoechste = MEILENSTEIN_STUFEN[m.ziele.length - 1].name
+    return `${m.titel} · ${hoechste}, höchste Stufe erreicht · ${xpFuerMeilenstein(m)} XP gesamt`
   }
   if (m.frei) {
     const aktuell = MEILENSTEIN_STUFEN[m.stufe - 1].name
@@ -178,7 +180,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, rei
                   <span className="stempelMaterial">{MEILENSTEIN_STUFEN[m.stufe - 1].name}</span>
                 )}
                 <span className="stempelStufen" aria-hidden="true">
-                  {MEILENSTEIN_STUFEN.map((s) => (
+                  {MEILENSTEIN_STUFEN.slice(0, m.ziele.length).map((s) => (
                     <span
                       key={s.stufe}
                       className={s.stufe <= m.stufe ? 'stufePip erreicht' : 'stufePip'}
