@@ -104,6 +104,7 @@ export async function profilLoeschen(id) {
   localStorage.removeItem(`offeneSitzung_${id}`)
   localStorage.removeItem(`offenePruefung_${id}`)
   localStorage.removeItem(`geloescht_${id}`)
+  localStorage.removeItem(`kursplan_${id}`)
   // Dropbox-Merker mitloeschen (Schluessel siehe abgleich.js). Blieben sie
   // stehen, galt die eigene Dropbox-Datei nach "Profil aus Dropbox neu
   // laden" als schon gelesen - der leere lokale Stand ueberschrieb dann die

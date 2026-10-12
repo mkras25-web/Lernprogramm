@@ -58,7 +58,7 @@ function standWiederherstellen(stand, items) {
 }
 
 export default function Pruefung({
-  items, themen, zustaende, module, bereiche, pruefungen, onSpeichern, onFehlerLernen,
+  items, themen, zustaende, module, bereiche, pruefungen, onSpeichern, onFehlerLernen, kurse = [],
   speicherSchluessel, onStand, onThemaUeben, onItemOeffnen,
 }) {
   const [anfang] = useState(() => standWiederherstellen(standLesen(speicherSchluessel), items))
@@ -160,6 +160,7 @@ export default function Pruefung({
       titel: zusatz.titel ?? vorgabe.titel,
       themaId: zusatz.bereich?.themaId ?? null,
       bereichId: zusatz.bereich?.bereich ?? null,
+      kursId: zusatz.kursId ?? null,
       items: gewaehlt,
       start: Date.now(),
     })
@@ -200,6 +201,7 @@ export default function Pruefung({
       titel: lauf.titel,
       themaId: lauf.themaId,
       bereichId: lauf.bereichId,
+      kursId: lauf.kursId ?? undefined,
       ...zahlen,
       dauerMs: auswertung.dauerMs,
       items: auswertung.ergebnisse.map((e) => ({
@@ -592,6 +594,42 @@ export default function Pruefung({
               </button>
             </div>
           ))}
+        </section>
+      )}
+
+      {kurse.length > 0 && (
+        <section className="block">
+          <h2 className="abschnitt">Probeklausur nach Kurs</h2>
+          <ul className="artKacheln">
+            {kurse.map((u) => {
+              const letzte = historie.find((p) => p.art === 'kurs' && p.kursId === u.kurs.id)
+              return (
+                <li key={u.kurs.id}>
+                  <button
+                    className="artKachel"
+                    disabled={u.pruefIds.length === 0}
+                    onClick={() => starten('kurs', {
+                      nurIds: u.pruefIds,
+                      titel: `Probeklausur ${u.kurs.titel}`,
+                      kursId: u.kurs.id,
+                    })}
+                  >
+                    <span className="artZeichen">{PRUEFUNGSARTEN.kurs.zeichen}</span>
+                    <span className="artTitel">{u.kurs.titel}</span>
+                    <span className="artText">
+                      {Math.min(PRUEFUNGSARTEN.kurs.anzahl, u.pruefIds.length)} von {u.pruefIds.length} Kursfragen
+                      {u.ungeprueft > 0 && ` · ${u.ungeprueft} ungeprüfte ausgenommen`}
+                    </span>
+                    <span className="artFuss">
+                      {u.pruefIds.length === 0
+                        ? 'noch keine geprüften Kursfragen'
+                        : letzte ? `zuletzt ${letzte.prozent} %` : 'noch nie abgelegt'}
+                    </span>
+                  </button>
+                </li>
+              )
+            })}
+          </ul>
         </section>
       )}
 

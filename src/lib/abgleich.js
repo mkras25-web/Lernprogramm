@@ -81,7 +81,7 @@ async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
   const eigen = dateiname(profilId)
   const vorhanden = await dropbox.dateienAuflisten()
   const gesehen = lesen(gesehenSchluessel(profilId), {})
-  const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, geloescht: 0, dateien: 0 }
+  const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, kursplan: 0, geloescht: 0, dateien: 0 }
 
   // 1. Andere Staende holen - und die eigene Datei, falls sie in Dropbox
   //    liegt, lokal aber unbekannt ist (frisch installiert, Browserdaten
@@ -97,7 +97,7 @@ async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
     } catch {
       continue // beschaedigte oder fremde Datei - die anderen trotzdem lesen
     }
-    for (const k of ['ereignisse', 'skizzen', 'marken', 'pruefungen', 'geloescht']) bericht[k] += teil[k] ?? 0
+    for (const k of ['ereignisse', 'skizzen', 'marken', 'pruefungen', 'kursplan', 'geloescht']) bericht[k] += teil[k] ?? 0
     bericht.dateien += 1
     gesehen[eintrag.name] = eintrag.content_hash
   }

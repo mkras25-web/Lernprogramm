@@ -40,6 +40,10 @@ export const PRUEFUNGSARTEN = {
     id: 'nach', titel: 'Nachprüfung', anzahl: 15, zeichen: '↻︎',
     text: 'Nur die zuletzt falschen Fragen',
   },
+  kurs: {
+    id: 'kurs', titel: 'Probeklausur', anzahl: 30, zeichen: '◈︎',
+    text: 'Nur die Fragen eines Kurses',
+  },
 }
 
 export function gepruefteItems(items, bereich = {}) {

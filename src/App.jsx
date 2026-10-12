@@ -15,6 +15,10 @@ import {
   ereignisSpeichern,
   exportieren,
   importieren,
+  kursplanEintragLoeschen,
+  kursplanEintragSetzen,
+  kursplanLesen,
+  kursplanSchreiben,
   allePruefungen,
   markeSetzen,
   pruefungSpeichern,
@@ -25,6 +29,16 @@ import { BEWERTUNG, intervallVorschau, pensumBauen } from './lib/planer.js'
 import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
+import {
+  endspurt,
+  kennungenImInhalt,
+  klausurplan,
+  klausurreife,
+  kursAenderung,
+  kursItems,
+  naechsteKlausur,
+  vorschlaege,
+} from './lib/kurs.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
 import { meldungenMarkdown, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
@@ -96,6 +110,19 @@ export default function App({ profilId, onProfilWechseln }) {
   })
 
   const [opt, setOpt] = useState(() => einstellungenLaden(profilId))
+  // Kurse und Klausurtermine (speicher.js, reist mit Sicherung/Abgleich).
+  const [kursplan, setKursplan] = useState(() => {
+    const plan = kursplanLesen(profilId)
+    if (plan.vorhanden) return plan
+    // Einmalig: die Klausurtermine lagen bis 2026-10-12 in den
+    // Einstellungen (reisten nicht mit) - hierher uebernehmen.
+    const alt = (opt.klausuren ?? []).map((k) => ({ ...k, ts: Date.now() }))
+    return kursplanSchreiben({ kurse: [], klausuren: alt }, profilId)
+  })
+  const kursplanAendern = {
+    setzen: (art, eintrag) => setKursplan(kursplanEintragSetzen(art, eintrag, profilId)),
+    loeschen: (art, id) => setKursplan(kursplanEintragLoeschen(art, id, profilId)),
+  }
   // Nach dem Neuladen auf "#/lernen" startet die App auf Heute - dort steht
   // die angefangene Sitzung zum Fortsetzen bereit (nie ein leerer Bildschirm).
   const [ansicht, setAnsicht] = useState(() => {
@@ -187,6 +214,33 @@ export default function App({ profilId, onProfilWechseln }) {
     pruefungHinweis,
     sicherungFaellig,
   } = useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung })
+
+  // Kurse (lib/kurs.js): je Kurs Fragen, naechste Klausur, Reife, Plan.
+  const kursKennungen = useMemo(() => kennungenImInhalt(items), [items])
+  const kursUebersicht = useMemo(() => {
+    const lernbar = new Set(erlaubteItems.map((i) => i.id))
+    const pruefbar = new Set(pruefItems.filter((i) => i.geprueft !== false).map((i) => i.id))
+    return kursplan.kurse.map((kurs) => {
+      const alle = kursItems(aktiveItems, marken, kurs.id)
+      const lernItems = alle.filter((i) => lernbar.has(i.id))
+      const klausur = naechsteKlausur(kurs.id, kursplan.klausuren)
+      const zeitpunkt = klausur ? new Date(`${klausur.datum}T00:00`).getTime() : Date.now()
+      const reife = klausurreife(lernItems, zustaende, aktiveEreignisse, { zeitpunkt })
+      const plan = klausurplan(lernItems, zustaende, { klausur, neuProTag: opt.neuProTag })
+      const pruefIds = alle.filter((i) => pruefbar.has(i.id)).map((i) => i.id)
+      return {
+        kurs,
+        items: alle,
+        lernItems,
+        klausur,
+        reife,
+        plan,
+        pruefIds,
+        ungeprueft: alle.length - pruefIds.length,
+        vorschlaege: vorschlaege(aktiveItems, marken, kurs),
+      }
+    })
+  }, [kursplan, aktiveItems, erlaubteItems, pruefItems, marken, zustaende, aktiveEreignisse, opt.neuProTag])
 
   // Stufenaufstieg bemerken. Beim ersten Durchlauf nur merken, damit
   // nicht jeder Seitenaufruf als Aufstieg gefeiert wird. Wer es ruhig
@@ -332,7 +386,9 @@ export default function App({ profilId, onProfilWechseln }) {
 
   async function markeAendern(itemId, aenderung) {
     const vorher = markenRef.current.get(itemId) ?? {}
-    const neu = { itemId, ...vorher, ...aenderung }
+    // Frischer Zeitstempel: sonst behielt die Marke den alten ts, und der
+    // Abgleich hielt eine aeltere Fassung vom anderen Geraet fuer neuer.
+    const neu = { itemId, ...vorher, ...aenderung, ts: Date.now() }
     for (const [feld, wert] of Object.entries(aenderung)) {
       if (wert === null) delete neu[feld]
     }
@@ -341,11 +397,39 @@ export default function App({ profilId, onProfilWechseln }) {
     setMarken((alte) => new Map(alte).set(itemId, neu))
   }
 
+  // Frage in einen Kurs / aus einem Kurs (Marke, reist mit dem Abgleich).
+  function kursFrageSetzen(itemId, kursId, rein) {
+    return markeAendern(itemId, kursAenderung(markenRef.current.get(itemId), kursId, rein))
+  }
+
+  async function kursSammel(ids, kursId, rein) {
+    const neueKarte = new Map(markenRef.current)
+    for (const id of ids) {
+      const vorher = neueKarte.get(id) ?? {}
+      const eintrag = { itemId: id, ...vorher, ...kursAenderung(vorher, kursId, rein), ts: Date.now() }
+      for (const [feld, wert] of Object.entries(eintrag)) if (wert === null) delete eintrag[feld]
+      await markeSetzen(eintrag)
+      neueKarte.set(id, eintrag)
+    }
+    markenRef.current = neueKarte
+    setMarken(neueKarte)
+  }
+
+  function kursStarten(kursId, art) {
+    const u = kursUebersicht.find((x) => x.kurs.id === kursId)
+    if (!u) return
+    const kursIds = new Set(u.lernItems.map((i) => i.id))
+    if (art === 'kursplan') sitzungStarten('kursplan', { kursIds, ids: u.plan.pensum.map((i) => i.id) })
+    else if (art === 'endspurt') sitzungStarten('endspurt', { kursIds, ids: endspurt(u.reife).map((i) => i.id) })
+    else if (art === 'alle') sitzungStarten('fehlerstapel', { ids: [...kursIds] })
+    else sitzungStarten(art, { kursIds })
+  }
+
   async function sammelSichtung(ids, kategorie) {
     const neueKarte = new Map(marken)
     for (const id of ids) {
       const vorher = neueKarte.get(id) ?? {}
-      const eintrag = { itemId: id, ...vorher, kategorie }
+      const eintrag = { itemId: id, ...vorher, kategorie, ts: Date.now() }
       if (kategorie === null) delete eintrag.kategorie
       await markeSetzen(eintrag)
       neueKarte.set(id, eintrag)
@@ -464,6 +548,7 @@ export default function App({ profilId, onProfilWechseln }) {
     setSkizzen(s)
     setMarken(new Map(m.map((x) => [x.itemId, x])))
     setPruefungen(p)
+    setKursplan(kursplanLesen(profilId))
   }
 
   // --- Abgleich ueber Dropbox (hooks/useAbgleich.js) ----------------------
@@ -524,6 +609,8 @@ export default function App({ profilId, onProfilWechseln }) {
           fruehereSkizzen={skizzen.filter((s) => s.itemId === item.id)}
           kannZurueck={Boolean(letzteAktion)}
           onMarke={markeAendern}
+          kurse={kursplan.kurse}
+          onKurs={kursFrageSetzen}
           onBewerten={bewerten}
           onUeberspringen={() => weiter()}
           onZurueckblaettern={zurueckblaettern}
@@ -661,7 +748,12 @@ export default function App({ profilId, onProfilWechseln }) {
           onSichern={() => exportKlick(false)}
           offenePruefung={offenePruefung}
           onPruefungFortsetzen={() => setAnsicht('pruefung')}
-          klausuren={opt.klausuren ?? []}
+          klausuren={kursplan.klausuren}
+          kurse={kursUebersicht}
+          onKurs={kursStarten}
+          onVorschlaegeUebernehmen={(u) => kursSammel(u.vorschlaege.map((i) => i.id), u.kurs.id, true)}
+          onKursPruefung={() => setAnsicht('pruefung')}
+          onKurseVerwalten={() => setAnsicht('einstellungen')}
         />
       )}
       {ansicht === 'themen' && (
@@ -692,6 +784,9 @@ export default function App({ profilId, onProfilWechseln }) {
           glossar={glossar}
           onMarke={markeAendern}
           onSammel={sammelSichtung}
+          kurse={kursplan.kurse}
+          onKurs={kursFrageSetzen}
+          onKursSammel={kursSammel}
           weiterNachMarke={opt.sichtungWeiter}
           startItem={nachschlagenItem}
           suchFokus={suchFokus}
@@ -701,6 +796,7 @@ export default function App({ profilId, onProfilWechseln }) {
       {ansicht === 'pruefung' && (
         <Pruefung
           items={pruefItems}
+          kurse={kursUebersicht}
           themen={themen}
           zustaende={zustaende}
           module={module}
@@ -803,6 +899,9 @@ export default function App({ profilId, onProfilWechseln }) {
           abgleich={{ ...abgleichZustand, onJetzt: jetztAbgleichen }}
           werte={opt}
           setzen={setOpt}
+          kursplan={kursplan}
+          kursplanAendern={kursplanAendern}
+          kennungen={kursKennungen}
           anzahlEreignisse={ereignisse.length}
           anzahlSkizzen={skizzen.length}
           paketliste={paketliste}

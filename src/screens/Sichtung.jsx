@@ -17,6 +17,7 @@ const MARKENFILTER = [
 // zweier fast gleicher Listen.
 export default function Sichtung({
   items, themen, marken, ereignisse, zustaende, glossar, onMarke, onSammel,
+  kurse = [], onKurs, onKursSammel,
   weiterNachMarke = false, startItem = null, onStartItemErledigt, suchFokus = 0,
 }) {
   const suchfeldRef = useRef(null)
@@ -106,6 +107,14 @@ export default function Sichtung({
       if (marke === 'notiz' && !m?.notiz) return false
       if (marke === 'einspruch' && !m?.einspruch) return false
       if (marke === 'bearbeitet' && !m?.frage && !m?.antwort) return false
+      // Kursfilter: "kurs:<id>" = im Kurs, "vorschlag:<id>" = vom Inhalt
+      // fuer den Kurs vorgeschlagen (Itemfeld "kurse"), noch nicht drin.
+      if (marke.startsWith('kurs:') && !(m?.kurse ?? []).includes(marke.slice(5))) return false
+      if (marke.startsWith('vorschlag:')) {
+        const kurs = kurse.find((k) => k.id === marke.slice(10))
+        if (!kurs?.kennung || !(i.kurse ?? []).includes(kurs.kennung)) return false
+        if ((m?.kurse ?? []).includes(kurs.id)) return false
+      }
       if (filter !== 'alle' && kategorieAus(m).id !== filter) return false
       if (begriff) {
         const w = trefferWert(begriff, suchIndex.get(i.id))
@@ -116,7 +125,7 @@ export default function Sichtung({
     })
     // Mit Suchbegriff nach Trefferguete, sonst Paketreihenfolge.
     return begriff ? liste.sort((a, b) => werte.get(b.id) - werte.get(a.id)) : liste
-  }, [items, marken, filter, thema, marke, sucheVerzoegert, suchIndex])
+  }, [items, marken, filter, thema, marke, sucheVerzoegert, suchIndex, kurse])
 
   const zaehler = useMemo(() => {
     const z = { ungesichtet: 0 }
@@ -334,6 +343,18 @@ export default function Sichtung({
             >
               ⚑︎ Stimmt so nicht
             </button>
+            {onKurs && kurse.map((kk) => {
+              const drin = (m.kurse ?? []).includes(kk.id)
+              return (
+                <button
+                  key={kk.id}
+                  className={drin ? 'markenKnopf aktiv' : 'markenKnopf'}
+                  onClick={() => onKurs(item.id, kk.id, !drin)}
+                >
+                  {drin ? '✓︎' : '+︎'} Kurs {kk.titel}
+                </button>
+              )
+            })}
             <button className="markenKnopf" onClick={() => bearbeitenStarten(item)}>
               ✎ Bearbeiten
             </button>
@@ -449,6 +470,24 @@ export default function Sichtung({
               {name}
             </button>
           ))}
+          {kurse.map((k) => (
+            <button
+              key={k.id}
+              className={marke === `kurs:${k.id}` ? 'wahlKnopf aktiv' : 'wahlKnopf'}
+              onClick={() => setMarkeFilter(`kurs:${k.id}`)}
+            >
+              Kurs {k.titel}
+            </button>
+          ))}
+          {kurse.filter((k) => k.kennung).map((k) => (
+            <button
+              key={`v-${k.id}`}
+              className={marke === `vorschlag:${k.id}` ? 'wahlKnopf aktiv' : 'wahlKnopf'}
+              onClick={() => setMarkeFilter(`vorschlag:${k.id}`)}
+            >
+              Vorschläge {k.titel}
+            </button>
+          ))}
         </div>
 
         <select className="paarWahl" value={thema} onChange={(e) => setThema(e.target.value)}>
@@ -488,6 +527,22 @@ export default function Sichtung({
             <button className="wahlKnopf" onClick={() => sammelSetzen(null)}>
               zurücksetzen
             </button>
+            {onKursSammel && kurse.map((k) => (
+              <span key={k.id} className="sammelKurs">
+                <button
+                  className="wahlKnopf"
+                  onClick={() => { onKursSammel([...ausgewaehlt], k.id, true); setAusgewaehlt(new Set()) }}
+                >
+                  + Kurs {k.titel}
+                </button>
+                <button
+                  className="wahlKnopf"
+                  onClick={() => { onKursSammel([...ausgewaehlt], k.id, false); setAusgewaehlt(new Set()) }}
+                >
+                  − Kurs {k.titel}
+                </button>
+              </span>
+            ))}
           </>
         )}
       </div>
@@ -515,6 +570,9 @@ export default function Sichtung({
                   )}
                   {m.lesezeichen && <span className="kategorieMarke">Lesezeichen</span>}
                   {m.einspruch && <span className="kategorieMarke k-ueberarbeiten">⚑︎</span>}
+                  {kurse.filter((kk) => (m.kurse ?? []).includes(kk.id)).map((kk) => (
+                    <span key={kk.id} className="kategorieMarke k-relevant">Kurs {kk.titel}</span>
+                  ))}
                 </p>
               </div>
 

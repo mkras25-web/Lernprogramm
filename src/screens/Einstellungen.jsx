@@ -35,6 +35,7 @@ function useSpeicherSchaetzung() {
 export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung,
   onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
+  kursplan = { kurse: [], klausuren: [] }, kursplanAendern, kennungen = new Map(),
 }) {
   const [loeschfrage, setLoeschfrage] = useState(false)
   const [palettenfenster, setPalettenfenster] = useState(false)
@@ -301,15 +302,28 @@ export default function Einstellungen({
 
           <div className="zeile">
             <div className="zeileText">
+              <p className="zeileTitel">Kurse</p>
+              <p className="zeileHinweis">
+                Eigene Fragensammlungen, z. B. für einen Unikurs. Die Fragen bleiben im Gesamtpool;
+                Heute zeigt je Kurs Plan, Endspurt und Probeklausur. Die Kennung verbindet den Kurs
+                mit Vorschlägen aus dem Inhalt (Web-Chat).
+              </p>
+            </div>
+            <Kursliste kurse={kursplan.kurse} kennungen={kennungen} aendern={kursplanAendern} />
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
               <p className="zeileTitel">Klausurtermine</p>
               <p className="zeileHinweis">
-                Heute zeigt einen Countdown bis zur nächsten Klausur. Die Planung bleibt davon
-                unberührt.
+                Heute zeigt einen Countdown. Mit Kurs plant die App die Kursfragen bis zu diesem
+                Tag; die normale Planung bleibt unberührt.
               </p>
             </div>
             <Klausurtermine
-              liste={werte.klausuren ?? []}
-              onAendern={(liste) => aendern('klausuren', liste)}
+              liste={kursplan.klausuren}
+              kurse={kursplan.kurse}
+              aendern={kursplanAendern}
             />
           </div>
 
@@ -722,9 +736,77 @@ function Wahl({ wert, optionen, onWahl }) {
   )
 }
 
-function Klausurtermine({ liste, onAendern }) {
+// Kurs-Kennung: Kleinbuchstaben, Ziffern, Bindestrich - so schreibt sie
+// auch der Web-Chat ins Itemfeld "kurse".
+function kennungAus(text) {
+  return text.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+}
+
+function Kursliste({ kurse, kennungen, aendern }) {
+  const [titel, setTitel] = useState('')
+  const [kennung, setKennung] = useState('')
+  const bekannt = [...kennungen.entries()]
+  return (
+    <div className="klausurtermine">
+      {kurse.length > 0 && (
+        <ul className="klausurListe">
+          {[...kurse].sort((a, b) => a.titel.localeCompare(b.titel)).map((k) => (
+            <li key={k.id}>
+              <span>{k.titel}</span>
+              <span className="zeileHinweis">
+                {k.kennung
+                  ? `Kennung ${k.kennung}${kennungen.get(k.kennung) ? ` · ${kennungen.get(k.kennung)} Vorschläge im Inhalt` : ''}`
+                  : 'ohne Kennung'}
+              </span>
+              <button className="textknopf" onClick={() => aendern.loeschen('kurse', k.id)}>
+                entfernen
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      <form
+        className="klausurNeu"
+        onSubmit={(e) => {
+          e.preventDefault()
+          if (!titel.trim()) return
+          aendern.setzen('kurse', {
+            id: `kurs-${Date.now()}`,
+            titel: titel.trim(),
+            kennung: kennungAus(kennung) || undefined,
+          })
+          setTitel('')
+          setKennung('')
+        }}
+      >
+        <input className="suchfeld" value={titel} onChange={(e) => setTitel(e.target.value)} placeholder="z. B. Baurecht" />
+        <input
+          className="suchfeld"
+          value={kennung}
+          onChange={(e) => setKennung(e.target.value)}
+          placeholder="Kennung, z. B. baurecht-ws26"
+          list="kursKennungen"
+        />
+        <datalist id="kursKennungen">
+          {bekannt.map(([k, n]) => <option key={k} value={k}>{`${n} Fragen im Inhalt`}</option>)}
+        </datalist>
+        <button className="knopf schmal" type="submit" disabled={!titel.trim()}>Kurs anlegen</button>
+      </form>
+      {bekannt.length > 0 && (
+        <p className="zeileHinweis">
+          Im Inhalt vorkommende Kennungen: {bekannt.map(([k, n]) => `${k} (${n})`).join(', ')}
+        </p>
+      )}
+    </div>
+  )
+}
+
+function Klausurtermine({ liste, kurse, aendern }) {
   const [titel, setTitel] = useState('')
   const [datum, setDatum] = useState('')
+  const [kursId, setKursId] = useState('')
+  const kursName = (id) => kurse.find((k) => k.id === id)?.titel
   const sortiert = [...liste].sort((a, b) => a.datum.localeCompare(b.datum))
   return (
     <div className="klausurtermine">
@@ -733,8 +815,11 @@ function Klausurtermine({ liste, onAendern }) {
           {sortiert.map((k) => (
             <li key={k.id}>
               <span>{k.titel}</span>
-              <span className="zeileHinweis">{new Date(`${k.datum}T00:00`).toLocaleDateString('de-DE')}</span>
-              <button className="textknopf" onClick={() => onAendern(liste.filter((x) => x.id !== k.id))}>
+              <span className="zeileHinweis">
+                {new Date(`${k.datum}T00:00`).toLocaleDateString('de-DE')}
+                {k.kursId && ` · Kurs ${kursName(k.kursId) ?? '(gelöscht)'}`}
+              </span>
+              <button className="textknopf" onClick={() => aendern.loeschen('klausuren', k.id)}>
                 entfernen
               </button>
             </li>
@@ -746,13 +831,25 @@ function Klausurtermine({ liste, onAendern }) {
         onSubmit={(e) => {
           e.preventDefault()
           if (!titel.trim() || !datum) return
-          onAendern([...liste, { id: `${Date.now()}`, titel: titel.trim(), datum }])
+          aendern.setzen('klausuren', {
+            id: `${Date.now()}`,
+            titel: titel.trim(),
+            datum,
+            kursId: kursId || undefined,
+          })
           setTitel('')
           setDatum('')
+          setKursId('')
         }}
       >
         <input className="suchfeld" value={titel} onChange={(e) => setTitel(e.target.value)} placeholder="z. B. Bauphysik" />
         <input className="suchfeld" type="date" value={datum} onChange={(e) => setDatum(e.target.value)} />
+        {kurse.length > 0 && (
+          <select className="paarWahl" value={kursId} onChange={(e) => setKursId(e.target.value)}>
+            <option value="">ohne Kurs</option>
+            {kurse.map((k) => <option key={k.id} value={k.id}>Kurs {k.titel}</option>)}
+          </select>
+        )}
         <button className="knopf schmal" type="submit" disabled={!titel.trim() || !datum}>Hinzufügen</button>
       </form>
     </div>

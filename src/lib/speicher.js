@@ -259,7 +259,7 @@ export async function skizzeLoeschen(id) {
 // (Schluessel itemId) koennen spaeter neu gesetzt werden - dort zaehlt
 // der Zeitstempel.
 
-const VERMERK_ARTEN = ['ereignisse', 'skizzen', 'pruefungen', 'marken']
+const VERMERK_ARTEN = ['ereignisse', 'skizzen', 'pruefungen', 'marken', 'kurse', 'klausuren']
 
 function vermerkSchluessel() {
   return `geloescht_${aktuellesProfil}`
@@ -287,6 +287,85 @@ function vermerken(art, schluessel, ts = Date.now()) {
   const vermerke = loeschvermerke()
   for (const k of schluessel) vermerke[art][k] = Math.max(vermerke[art][k] ?? 0, ts)
   vermerkeSchreiben(vermerke)
+}
+
+// --- Kursplan: Kurse und Klausurtermine (2026-10-12) ----------------
+//
+// Je Profil in localStorage: { kurse: [...], klausuren: [...] }, jeder
+// Eintrag mit id und ts. Anders als die Einstellungen reist der Kursplan
+// mit Sicherung und Dropbox-Abgleich - sonst zeigten die Kursmarken der
+// Fragen (marke.kurse) auf dem anderen Geraet auf unbekannte Kurse. Beim
+// Einlesen gewinnt je id der neuere Eintrag; Geloeschtes hinterlaesst
+// einen Loeschvermerk (Arten "kurse"/"klausuren").
+//   Kurs:    { id, titel, kennung?, ts }   kennung = Kurs-Kennung im Inhalt
+//                                           (Itemfeld "kurse", Vorschlaege)
+//   Klausur: { id, titel, datum: 'JJJJ-MM-TT', kursId?, ts }
+export const KURSPLAN_ARTEN = ['kurse', 'klausuren']
+
+function kursplanSchluessel(profilId = aktuellesProfil) {
+  return `kursplan_${profilId}`
+}
+
+export function kursplanLesen(profilId = aktuellesProfil) {
+  const leer = { kurse: [], klausuren: [], vorhanden: false }
+  try {
+    const roh = JSON.parse(localStorage.getItem(kursplanSchluessel(profilId)) ?? 'null')
+    if (!roh || typeof roh !== 'object') return leer
+    const plan = { vorhanden: true }
+    for (const art of KURSPLAN_ARTEN) {
+      plan[art] = Array.isArray(roh[art]) ? roh[art].filter((e) => e && e.id) : []
+    }
+    return plan
+  } catch {
+    return leer
+  }
+}
+
+export function kursplanSchreiben(plan, profilId = aktuellesProfil) {
+  const daten = Object.fromEntries(KURSPLAN_ARTEN.map((a) => [a, plan[a] ?? []]))
+  localStorage.setItem(kursplanSchluessel(profilId), JSON.stringify(daten))
+  return { ...daten, vorhanden: true }
+}
+
+// Anlegen oder Aendern (gleiche id) - setzt immer einen frischen ts.
+export function kursplanEintragSetzen(art, eintrag, profilId = aktuellesProfil) {
+  const plan = kursplanLesen(profilId)
+  const neu = { ...eintrag, ts: Date.now() }
+  const liste = plan[art].filter((e) => e.id !== neu.id)
+  return kursplanSchreiben({ ...plan, [art]: [...liste, neu] }, profilId)
+}
+
+export function kursplanEintragLoeschen(art, id, profilId = aktuellesProfil) {
+  const plan = kursplanLesen(profilId)
+  // Loeschvermerk, damit der Abgleich den Eintrag nicht zurueckbringt.
+  if (profilId === aktuellesProfil) vermerken(art, [id])
+  return kursplanSchreiben({ ...plan, [art]: plan[art].filter((e) => e.id !== id) }, profilId)
+}
+
+// Fremden Kursplan (aus Sicherung/Abgleich) einarbeiten: je id der
+// neuere, vermerkte Loeschungen bleiben geloescht. Liefert die Zahl der
+// uebernommenen Eintraege.
+function kursplanVereinigen(fremd, vermerke) {
+  const plan = kursplanLesen()
+  let anzahl = 0
+  for (const art of KURSPLAN_ARTEN) {
+    const nachId = new Map(plan[art].map((e) => [e.id, e]))
+    for (const e of Array.isArray(fremd?.[art]) ? fremd[art] : []) {
+      if (!e?.id) continue
+      if ((vermerke[art]?.[e.id] ?? -1) >= (e.ts ?? 0)) continue
+      const lokal = nachId.get(e.id)
+      if (lokal && (lokal.ts ?? 0) >= (e.ts ?? 0)) continue
+      nachId.set(e.id, e)
+      anzahl += 1
+    }
+    // Vermerkte (auch frisch von fremd uebernommene) Loeschungen anwenden.
+    for (const [id, e] of nachId) {
+      if ((vermerke[art]?.[id] ?? -1) >= (e.ts ?? 0)) nachId.delete(id)
+    }
+    plan[art] = [...nachId.values()]
+  }
+  kursplanSchreiben(plan)
+  return anzahl
 }
 
 // Loescht die Datenbank eines Profils vollstaendig - fuer "Profil
@@ -414,6 +493,7 @@ export async function exportieren({ mitSkizzen = true, profilId, profilName } = 
       skizzen: mitSkizzen ? skizzen : [],
       marken,
       pruefungen,
+      kursplan: Object.fromEntries(KURSPLAN_ARTEN.map((a) => [a, kursplanLesen()[a]])),
       geloescht: loeschvermerke(),
     },
     null,
@@ -510,11 +590,14 @@ export async function importieren(text) {
     anzahlMarken += 1
   }
 
+  const anzahlKursplan = kursplanVereinigen(daten.kursplan, vermerke)
+
   return {
     ereignisse: anzahlEreignisse,
     skizzen: anzahlSkizzen,
     marken: anzahlMarken,
     pruefungen: anzahlPruefungen,
+    kursplan: anzahlKursplan,
     geloescht: entfernt,
   }
 }

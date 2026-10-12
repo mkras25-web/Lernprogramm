@@ -38,6 +38,8 @@ export default function Lernen({
   fruehereSkizzen,
   kannZurueck,
   onMarke,
+  kurse = [],
+  onKurs,
   onBewerten,
   onUeberspringen,
   onZurueckblaettern,
@@ -384,6 +386,24 @@ export default function Lernen({
                 </button>
               ))}
             </span>
+            {kurse.length > 0 && onKurs && (
+              <span className="markenGruppe">
+                <span className="zeileHinweis">Kurs:</span>
+                {kurse.map((k) => {
+                  const drin = (marke?.kurse ?? []).includes(k.id)
+                  return (
+                    <button
+                      key={k.id}
+                      className={drin ? 'markenKnopf aktiv' : 'markenKnopf'}
+                      title={drin ? `Aus dem Kurs "${k.titel}" nehmen` : `Zum Kurs "${k.titel}" hinzufügen`}
+                      onClick={() => onKurs(item.id, k.id, !drin)}
+                    >
+                      {drin ? '✓︎' : '+︎'} {k.titel}
+                    </button>
+                  )
+                })}
+              </span>
+            )}
           </div>
 
           {meldenOffen && (

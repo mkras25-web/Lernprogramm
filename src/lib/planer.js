@@ -25,7 +25,7 @@ export const BEWERTUNG = {
 // Uebungsmodi: zaehlen fuer XP und Statistik voll, fuer die Planung aber
 // hoechstens einmal pro Karte und Tag (Nutzerentscheidung 2026-10-10).
 // Vorher schob z. B. fuenfmal "Gut" im Marathon eine Karte Monate weit.
-export const UEBUNGSARTEN = ['marathon', 'schnell', 'fehlerstapel']
+export const UEBUNGSARTEN = ['marathon', 'schnell', 'fehlerstapel', 'endspurt']
 
 export const ZIEL_BEHALTENSRATE_STANDARD = 0.9
 
@@ -101,6 +101,13 @@ export function zustaendeBerechnen(ereignisse, { zielBehaltensrate } = {}) {
   }
 
   return zustaende
+}
+
+// Vorhergesagte Behaltenswahrscheinlichkeit (0..1) einer Karte zu einem
+// Zeitpunkt - fuer die Klausurreife (kurs.js). Neue Karte = 0.
+export function retrievabilityAm(karte, zeitpunkt) {
+  if (!karte?.last_review || !(karte.stability > 0)) return 0
+  return planer().get_retrievability(karte, new Date(zeitpunkt), false)
 }
 
 // Vorschau fuer die Bewertungsknoepfe: welches Intervall (in Tagen)

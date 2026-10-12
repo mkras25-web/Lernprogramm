@@ -3,12 +3,14 @@ import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import LokalBild from '../components/LokalBild.jsx'
 import { naechsterRang, rangFuer } from '../lib/fortschritt.js'
 import { bauwerkFuer } from '../lib/stufen.js'
+import { tageBis } from '../lib/kurs.js'
 
 export default function Heute({
   level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, zeichenAus = false, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
+  kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten,
 }) {
   // Klausur-Countdown (4B): naechste anstehende Klausur(en), nur Anzeige.
   const heuteBeginn = new Date()
@@ -111,6 +113,17 @@ export default function Heute({
             </div>
           )}
         </section>
+
+        {kurse.map((u) => (
+          <KursKarte
+            key={u.kurs.id}
+            u={u}
+            onKurs={onKurs}
+            onVorschlaege={() => onVorschlaegeUebernehmen?.(u)}
+            onPruefung={onKursPruefung}
+            onVerwalten={onKurseVerwalten}
+          />
+        ))}
 
         {pruefungHinweis && (
           <section className="heuteBreit">
@@ -280,6 +293,85 @@ export default function Heute({
         </section>
       </div>
     </div>
+  )
+}
+
+// Ein Kurs (lib/kurs.js): Klausurreife, Tagesplan und die Kurs-Lernarten.
+function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten }) {
+  const { kurs, klausur, reife, plan } = u
+  const tage = klausur ? tageBis(klausur) : null
+  const nichtReif = reife.gesamt - reife.sicher
+  const termin = klausur
+    ? `Klausur ${tage === 0 ? 'heute' : tage === 1 ? 'morgen' : `in ${tage} Tagen`} · ${new Date(`${klausur.datum}T00:00`).toLocaleDateString('de-DE')}`
+    : 'ohne Klausurtermin'
+  return (
+    <section className="block heuteBreit">
+      <div className="themenKopf">
+        <h2 className="abschnitt">Kurs {kurs.titel}</h2>
+        <button className="textknopf" onClick={onVerwalten}>{termin}</button>
+      </div>
+      {u.items.length === 0 ? (
+        <p className="nebentext">
+          Noch keine Fragen im Kurs. Markiere sie beim Lernen (Knopf „Kurs“) oder in Nachschlagen
+          mit „Sichten“ gesammelt.
+        </p>
+      ) : (
+        <>
+          <div className="aufruf">
+            <Ring anteil={reife.anteil} groesse={56} staerke={5} />
+            <div>
+              <p className="aufrufZahl">
+                {reife.sicher} von {reife.gesamt} {klausur ? 'klausurreif' : 'sicher'}
+              </p>
+              <p className="nebentext">
+                {plan.pensum.length > 0
+                  ? `Heute im Plan: ${plan.faellig} fällig` +
+                    (plan.vorgezogen ? ` · ${plan.vorgezogen} vorgezogen` : '') +
+                    ` · ${plan.neu} neu` +
+                    (plan.neuGesamt > plan.neu ? ` (${plan.neuGesamt} neue insgesamt)` : '')
+                  : 'Für heute ist der Kursplan erledigt.'}
+              </p>
+            </div>
+            <button
+              className="knopf haupt schmal"
+              disabled={plan.pensum.length === 0}
+              onClick={() => onKurs(kurs.id, 'kursplan')}
+            >
+              Kursplan lernen
+            </button>
+          </div>
+          <ul className="artKacheln">
+            <ArtKachel
+              zeichen="⚑︎"
+              titel="Endspurt"
+              text={nichtReif > 0 ? `${nichtReif} noch nicht ${klausur ? 'klausurreif' : 'sicher'}, bis alles sitzt` : 'alles sitzt'}
+              aus={nichtReif === 0}
+              onKlick={() => onKurs(kurs.id, 'endspurt')}
+            />
+            <ArtKachel
+              zeichen="∞︎"
+              titel="Alle Kursfragen"
+              text={`${u.lernItems.length} Fragen gemischt`}
+              aus={u.lernItems.length === 0}
+              onKlick={() => onKurs(kurs.id, 'alle')}
+            />
+            <ArtKachel
+              zeichen="◈︎"
+              titel="Probeklausur"
+              text={u.pruefIds.length > 0 ? `aus ${u.pruefIds.length} geprüften Kursfragen` : 'noch keine geprüften'}
+              aus={u.pruefIds.length === 0}
+              onKlick={onPruefung}
+            />
+          </ul>
+        </>
+      )}
+      {u.vorschlaege.length > 0 && (
+        <p className="nebentext">
+          {u.vorschlaege.length} Fragen sind im Inhalt für diesen Kurs vorgeschlagen.{' '}
+          <button className="textknopf" onClick={onVorschlaege}>Alle übernehmen</button>
+        </p>
+      )}
+    </section>
   )
 }
 

@@ -93,6 +93,8 @@ export function useLernsitzung({
     let grundmenge = erlaubteItems
     if (bereich.modulId) grundmenge = grundmenge.filter((i) => i.modulId === bereich.modulId)
     if (bereich.themaId) grundmenge = grundmenge.filter((i) => i.themaId === bereich.themaId)
+    // Kurs (kurs.js): nur die Fragen des Kurses, sonst alles wie gewohnt.
+    if (bereich.kursIds) grundmenge = grundmenge.filter((i) => bereich.kursIds.has(i.id))
 
     let pensum
     if (art === 'baustellen') pensum = baustellenStapel.filter((i) => grundmenge.includes(i))
@@ -115,6 +117,11 @@ export function useLernsitzung({
       ).slice(0, 25)
     }
     else if (art === 'blaettern') pensum = grundmenge
+    else if (art === 'kursplan' || art === 'endspurt') {
+      // Fertig berechnete Reihenfolge aus kurs.js (Klausurplan/Endspurt).
+      const nachId = new Map(grundmenge.map((i) => [i.id, i]))
+      pensum = (bereich.ids ?? []).map((id) => nachId.get(id)).filter(Boolean)
+    }
     else {
       pensum = pensumBauen(grundmenge, zustaende, {
         neuProTag: opt.neuProTag,

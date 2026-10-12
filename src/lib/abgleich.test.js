@@ -9,6 +9,9 @@ import {
   ereignisSpeichern,
   exportieren,
   importieren,
+  kursplanEintragLoeschen,
+  kursplanEintragSetzen,
+  kursplanLesen,
 } from './speicher.js'
 import { abgleichen, dateiname, profilAusDateiname, profileInDropbox } from './abgleich.js'
 import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
@@ -130,6 +133,60 @@ describe('Loeschvermerke', () => {
     // Und die alte Sicherung danach noch einmal: bleibt geloescht.
     await importieren(vorher)
     expect((await alleEreignisse()).map((e) => e.id)).toEqual([e1.id])
+  })
+})
+
+describe('Kursplan (Kurse und Klausurtermine)', () => {
+  const titel = (art) => kursplanLesen()[art].map((e) => e.titel).sort()
+
+  it('reist per Dropbox, neuere Aenderung gewinnt, Loeschen kommt nicht zurueck', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    kursplanEintragSetzen('kurse', { id: 'k1', titel: 'Baurecht', kennung: 'baurecht-ws26' })
+    kursplanEintragSetzen('klausuren', { id: 'x1', titel: 'Baurecht I', datum: '2027-02-14', kursId: 'k1' })
+    await abgleich('pc')
+
+    const handy = await abgleich('phone')
+    expect(handy.kursplan).toBe(2)
+    expect(titel('kurse')).toEqual(['Baurecht'])
+    expect(kursplanLesen().klausuren[0].kursId).toBe('k1')
+
+    // Handy benennt um (neuerer ts) - der PC uebernimmt.
+    await new Promise((r) => setTimeout(r, 5))
+    kursplanEintragSetzen('kurse', { id: 'k1', titel: 'Baurecht I', kennung: 'baurecht-ws26' })
+    await abgleich('phone')
+    await abgleich('pc')
+    expect(titel('kurse')).toEqual(['Baurecht I'])
+
+    // PC loescht die Klausur; das Handy (dessen Datei sie noch hat) folgt.
+    kursplanEintragLoeschen('klausuren', 'x1')
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(kursplanLesen().klausuren).toEqual([])
+    await abgleich('pc')
+    expect(kursplanLesen().klausuren).toEqual([])
+  })
+
+  it('eine aeltere Sicherung ueberschreibt keinen neueren Kurs', async () => {
+    await geraetWaehlen('a')
+    await datenbankFuerProfilSetzen(PROFIL)
+    kursplanEintragSetzen('kurse', { id: 'k1', titel: 'Alt' })
+    const alt = await exportieren({ profilId: PROFIL, profilName: 'Max' })
+    await new Promise((r) => setTimeout(r, 5))
+    kursplanEintragSetzen('kurse', { id: 'k1', titel: 'Neu' })
+    const bericht = await importieren(alt)
+    expect(bericht.kursplan).toBe(0)
+    expect(titel('kurse')).toEqual(['Neu'])
+  })
+
+  it('Profil loeschen entfernt auch den Kursplan', async () => {
+    await geraetWaehlen('a')
+    const { id } = profilErstellen('Test')
+    await datenbankFuerProfilSetzen(id)
+    kursplanEintragSetzen('kurse', { id: 'k1', titel: 'X' })
+    expect(localStorage.getItem(`kursplan_${id}`)).not.toBeNull()
+    await profilLoeschen(id)
+    expect(localStorage.getItem(`kursplan_${id}`)).toBeNull()
   })
 })
 
