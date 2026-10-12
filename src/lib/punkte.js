@@ -24,6 +24,26 @@ export function punkteFuer(item) {
   return PUNKTE[item?.typ] ?? PUNKTE_STANDARD
 }
 
+// Zuordnung: Mehrere Paare duerfen dieselbe rechte Seite haben (zweimal
+// "93 %"). Richtig ist deshalb jede Wahl mit dem passenden Text, nicht
+// nur genau der Index des eigenen Paares.
+export function paarRichtig(item, i, gewaehlt) {
+  if (gewaehlt === undefined || gewaehlt === null) return false
+  return item.paare[gewaehlt]?.[1] === item.paare[i][1]
+}
+
+// Auswahlliste fuer die rechte Spalte: jeder Text nur einmal, vertreten
+// durch sein erstes Vorkommen. Die Reihenfolge von `reihe` bleibt.
+export function paarOptionen(item, reihe) {
+  return reihe.filter((j) => ersterPaarIndex(item, j) === j)
+}
+
+// Gespeicherte Wahl auf den Index abbilden, den die Auswahlliste zeigt.
+export function ersterPaarIndex(item, j) {
+  if (j === undefined || j === null) return j
+  return item.paare.findIndex((p) => p[1] === item.paare[j]?.[1])
+}
+
 // Anteil der erreichten Punkte, zwischen 0 und 1. Aufgaben mit
 // mehreren Teilantworten werden anteilig gewertet - wer sieben von
 // neun Punkten richtig benennt, hat nicht nichts gewusst.
@@ -40,7 +60,7 @@ export function anteilRichtig(item, eingabe) {
     }
 
     case 'zuordnung': {
-      const treffer = item.paare.filter((_, i) => eingabe[i] === i).length
+      const treffer = item.paare.filter((_, i) => paarRichtig(item, i, eingabe[i])).length
       return treffer / item.paare.length
     }
 

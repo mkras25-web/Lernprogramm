@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { punkteFuer, anteilRichtig, selbstBewertbar, note } from './punkte.js'
+import { punkteFuer, anteilRichtig, selbstBewertbar, note, paarRichtig, paarOptionen, ersterPaarIndex } from './punkte.js'
 
 describe('punkteFuer', () => {
   it('liefert die hinterlegten Punkte je Aufgabentyp', () => {
@@ -31,6 +31,18 @@ describe('anteilRichtig', () => {
     const item = { typ: 'zuordnung', paare: [['a', '1'], ['b', '2'], ['c', '3']] }
     expect(anteilRichtig(item, { 0: 0, 1: 1, 2: 2 })).toBe(1)
     expect(anteilRichtig(item, { 0: 0, 1: 2, 2: 1 })).toBeCloseTo(1 / 3)
+  })
+
+  it('zuordnung: gleichlautende rechte Seiten sind austauschbar', () => {
+    const item = { typ: 'zuordnung', paare: [['a', '93 %'], ['b', '93 %'], ['c', '87 %']] }
+    // b bekommt das erste "93 %" (Index 0) - trotzdem richtig
+    expect(anteilRichtig(item, { 0: 0, 1: 0, 2: 2 })).toBe(1)
+    expect(anteilRichtig(item, { 0: 1, 1: 0, 2: 2 })).toBe(1)
+    expect(anteilRichtig(item, { 0: 2, 1: 0, 2: 0 })).toBeCloseTo(1 / 3)
+    expect(paarRichtig(item, 1, undefined)).toBe(false)
+    // Auswahlliste ohne Dubletten, Reihenfolge bleibt
+    expect(paarOptionen(item, [2, 1, 0])).toEqual([2, 0])
+    expect(ersterPaarIndex(item, 1)).toBe(0)
   })
 
   it('numerisch: deutsches Komma wird verstanden, Toleranz greift', () => {

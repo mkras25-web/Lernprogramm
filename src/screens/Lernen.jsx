@@ -14,6 +14,7 @@ import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { BEWERTUNG, intervallKurz } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
 import { mischen } from '../lib/mischen.js'
+import { paarRichtig, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
 
 
 export default function Lernen({
@@ -86,7 +87,7 @@ export default function Lernen({
     if (item.typ === 'zuordnung') {
       const zuordnung = eingabe ?? {}
       if (Object.keys(zuordnung).length < item.paare.length) return null
-      return item.paare.every((_, i) => zuordnung[i] === i) ? 'richtig' : 'falsch'
+      return item.paare.every((_, i) => paarRichtig(item, i, zuordnung[i])) ? 'richtig' : 'falsch'
     }
     if (item.typ === 'reihenfolge') {
       const reihe = eingabe ?? null
@@ -874,7 +875,7 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
       <ul className="paare">
         {item.paare.map(([links], i) => {
           const gewaehlt = zuordnung[i]
-          const richtig = gesperrt && gewaehlt === i
+          const richtig = gesperrt && paarRichtig(item, i, gewaehlt)
           return (
             <li key={i} className={gesperrt ? (richtig ? 'paarRichtig' : 'paarFalsch') : ''}>
               <span className="paarLinks">{links}</span>
@@ -883,11 +884,11 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
               ) : (
                 <select
                   className="paarWahl"
-                  value={gewaehlt ?? ''}
+                  value={ersterPaarIndex(item, gewaehlt) ?? ''}
                   onChange={(e) => setWert({ ...zuordnung, [i]: Number(e.target.value) })}
                 >
                   <option value="">bitte zuordnen …</option>
-                  {reihe.map((j) => (
+                  {paarOptionen(item, reihe).map((j) => (
                     <option key={j} value={j}>{item.paare[j][1]}</option>
                   ))}
                 </select>

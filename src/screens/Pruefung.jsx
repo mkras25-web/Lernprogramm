@@ -12,7 +12,7 @@ import {
   pruefungBauen,
   pruefungsplan,
 } from '../lib/pruefung.js'
-import { punkteFuer } from '../lib/punkte.js'
+import { punkteFuer, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
 import Bildpunkte from '../components/Bildpunkte.jsx'
 import { mischen, seedAus } from '../lib/mischen.js'
 import LokalBild from '../components/LokalBild.jsx'
@@ -857,10 +857,10 @@ function PruefEingabe({ item, wert, setWert, seed }) {
         {item.paare.map(([links], i) => (
           <li key={i}>
             <span className="paarLinks">{links}</span>
-            <select className="paarWahl" value={zuordnung[i] ?? ''}
+            <select className="paarWahl" value={ersterPaarIndex(item, zuordnung[i]) ?? ''}
                     onChange={(e) => setWert({ ...zuordnung, [i]: Number(e.target.value) })}>
               <option value="">bitte zuordnen …</option>
-              {mischen(item.paare.length, seed + 5).map((j) => (
+              {paarOptionen(item, mischen(item.paare.length, seed + 5)).map((j) => (
                 <option key={j} value={j}>{item.paare[j][1]}</option>
               ))}
             </select>
