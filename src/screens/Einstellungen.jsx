@@ -270,6 +270,23 @@ export default function Einstellungen({
       <section className="block" id="einst-lernen">
         <h2 className="abschnitt">Lernen</h2>
         <div className="feldgruppe">
+          {/* Ganz oben im Abschnitt: wurde als "Zeichenfragen" mitten in der
+              Liste nicht gefunden (2026-10-12). */}
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Zeichenaufgaben (Skizzen)</p>
+              <p className="zeileHinweis">
+                Ausgeschaltet kommen Aufgaben, bei denen du etwas zeichnen sollst, weder beim
+                Lernen noch in Prüfungen dran. Im Nachschlagen bleiben sie sichtbar.
+              </p>
+            </div>
+            <Wahl
+              wert={werte.zeichenAusblenden}
+              optionen={[[false, 'An'], [true, 'Aus']]}
+              onWahl={(w) => aendern('zeichenAusblenden', w)}
+            />
+          </div>
+
           <div className="zeile">
             <div className="zeileText">
               <p className="zeileTitel">Neue Items pro Tag</p>
@@ -422,21 +439,6 @@ export default function Einstellungen({
               wert={werte.skizzenSichern}
               optionen={[[true, 'An'], [false, 'Aus']]}
               onWahl={(w) => aendern('skizzenSichern', w)}
-            />
-          </div>
-
-          <div className="zeile">
-            <div className="zeileText">
-              <p className="zeileTitel">Zeichenfragen</p>
-              <p className="zeileHinweis">
-                Ausgeblendet kommen Zeichenaufgaben weder beim Lernen noch in Prüfungen dran.
-                Im Nachschlagen bleiben sie sichtbar.
-              </p>
-            </div>
-            <Wahl
-              wert={werte.zeichenAusblenden}
-              optionen={[[false, 'Zeigen'], [true, 'Ausblenden']]}
-              onWahl={(w) => aendern('zeichenAusblenden', w)}
             />
           </div>
 
