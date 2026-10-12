@@ -17,6 +17,50 @@ export const MELDEGRUENDE = [
 
 export const PROBLEM_SCHWELLE = 6
 
+// Melden (Nutzerwunsch 2026-10-12): eine gemeldete Karte gilt sofort als
+// "Ueberarbeiten" - damit ist sie nicht mehr lernbar (sichtung.js) und
+// kommt weder im Lernen noch in Pruefungen dran, bis der Web-Chat sie
+// ueberarbeitet hat. Die vorherige Sichtung wird gemerkt und beim
+// Zurueckziehen wiederhergestellt. Rueckgabe: Aenderung fuer markeAendern
+// (null loescht ein Feld). meldung = { grund, text, ts } oder null (nur
+// Einspruch "Stimmt so nicht").
+export function meldenAenderung(marke, meldung = null) {
+  const aenderung = { einspruch: true, kategorie: 'ueberarbeiten' }
+  if (meldung) aenderung.meldung = meldung
+  if (marke?.kategorie !== 'ueberarbeiten' && marke?.kategorieVorMeldung === undefined) {
+    aenderung.kategorieVorMeldung = marke?.kategorie ?? 'keine'
+  }
+  return aenderung
+}
+
+export function zurueckziehenAenderung(marke) {
+  const aenderung = { einspruch: null, meldung: null, kategorieVorMeldung: null }
+  // Nur zuruecksetzen, wenn die Sichtung seit dem Melden nicht von Hand
+  // geaendert wurde.
+  if (marke?.kategorie === 'ueberarbeiten' && marke?.kategorieVorMeldung !== undefined) {
+    aenderung.kategorie = marke.kategorieVorMeldung === 'keine' ? null : marke.kategorieVorMeldung
+  }
+  return aenderung
+}
+
+export function istGemeldet(marke) {
+  return Boolean(marke?.meldung || marke?.einspruch)
+}
+
+// Meldungen von vor 2026-10-12 (oder von einem Geraet mit altem Stand)
+// nachziehen: gemeldet, aber noch lernbar eingeordnet und nie von dieser
+// Regel beruehrt (kein kategorieVorMeldung). Wer eine gemeldete Karte
+// danach bewusst wieder auf "Relevant" setzt, behaelt das.
+export function meldungenNachziehen(marken) {
+  const aenderungen = []
+  for (const [itemId, m] of marken) {
+    if (!istGemeldet(m) || m.kategorieVorMeldung !== undefined) continue
+    if (m.kategorie && m.kategorie !== 'relevant') continue
+    aenderungen.push([itemId, meldenAenderung(m)])
+  }
+  return aenderungen
+}
+
 const grundName = (id) => MELDEGRUENDE.find(([g]) => g === id)?.[1] ?? id
 
 // Liefert je Item die Gruende, warum es in die Liste gehoert.

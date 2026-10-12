@@ -1,6 +1,7 @@
 import { useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import Notizfeld from '../components/Notizfeld.jsx'
 import { KATEGORIEN, TYPNAMEN, UNGESICHTET, kategorieAus } from '../lib/sichtung.js'
+import { meldenAenderung, zurueckziehenAenderung } from '../lib/meldungen.js'
 import { trefferWert, vorbereiten } from '../lib/suche.js'
 import Itemansicht from '../components/Itemansicht.jsx'
 
@@ -339,7 +340,7 @@ export default function Sichtung({
             </button>
             <button
               className={m.einspruch ? 'markenKnopf aktiv' : 'markenKnopf'}
-              onClick={() => onMarke(item.id, { einspruch: !m.einspruch })}
+              onClick={() => onMarke(item.id, m.einspruch ? zurueckziehenAenderung(m) : meldenAenderung(m))}
             >
               ⚑︎ Stimmt so nicht
             </button>

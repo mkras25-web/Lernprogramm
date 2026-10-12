@@ -12,6 +12,8 @@ import {
   kursplanEintragLoeschen,
   kursplanEintragSetzen,
   kursplanLesen,
+  alleMarken,
+  markeSetzen,
 } from './speicher.js'
 import { abgleichen, dateiname, profilAusDateiname, profileInDropbox } from './abgleich.js'
 import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
@@ -187,6 +189,33 @@ describe('Kursplan (Kurse und Klausurtermine)', () => {
     expect(localStorage.getItem(`kursplan_${id}`)).not.toBeNull()
     await profilLoeschen(id)
     expect(localStorage.getItem(`kursplan_${id}`)).toBeNull()
+  })
+})
+
+describe('Marken mit gleichem Zeitstempel (Fehler bis 2026-10-12)', () => {
+  it('eine haengengebliebene Meldung kommt beim Abgleich doch noch an, und zwar auf beiden Geraeten', async () => {
+    // Beide Geraete haben dieselbe Marke mit ts 1000; das Handy hat danach
+    // gemeldet, aber den alten ts behalten.
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('item-1')
+    await markeSetzen({ itemId: 'item-1', kategorie: 'relevant', lesezeichen: true, ts: 1000 })
+    await abgleich('pc')
+    await geraetWaehlen('phone')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await markeSetzen({ itemId: 'item-1', kategorie: 'relevant', einspruch: true, meldung: { grund: 'falsch' }, ts: 1000 })
+    await abgleich('phone')
+
+    await abgleich('pc')
+    const pc = (await alleMarken()).find((m) => m.itemId === 'item-1')
+    expect(pc.meldung).toEqual({ grund: 'falsch' })
+    expect(pc.lesezeichen).toBe(true)
+    expect(pc.ts).toBeGreaterThan(1000)
+
+    await abgleich('phone')
+    const handy = (await alleMarken()).find((m) => m.itemId === 'item-1')
+    expect(handy.lesezeichen).toBe(true)
+    expect(handy.meldung).toEqual({ grund: 'falsch' })
   })
 })
 

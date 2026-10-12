@@ -161,6 +161,19 @@ export function useLernsitzung({
     setAnsicht('lernen')
   }
 
+  // Gemeldete Karte (Lernen.jsx): ohne Bewertung weiter und alle spaeteren
+  // Vorkommen aus dem Stapel nehmen - sie soll nicht noch einmal kommen.
+  function ausSitzungNehmen(itemId) {
+    if (!sitzung) return
+    const pensum = [
+      ...sitzung.pensum.slice(0, position + 1),
+      ...sitzung.pensum.slice(position + 1).filter((i) => i.id !== itemId),
+    ]
+    const neu = { ...sitzung, pensum }
+    setSitzung(neu)
+    weiter(0, neu)
+  }
+
   function weiter(zusatz = 0, sitzungJetzt = sitzung) {
     // Zwei schnelle Tastendruecke auf dem letzten Item konnten diese
     // Funktion ein zweites Mal aufrufen, nachdem die Sitzung schon
@@ -326,6 +339,7 @@ export function useLernsitzung({
     sitzungStarten,
     sitzungFortsetzen,
     weiter,
+    ausSitzungNehmen,
     bewerten,
     rueckgaengig,
     zurueckblaettern,

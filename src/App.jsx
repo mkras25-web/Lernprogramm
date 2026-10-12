@@ -40,7 +40,7 @@ import {
   vorschlaege,
 } from './lib/kurs.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
-import { meldungenMarkdown, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
+import { meldungenMarkdown, meldungenNachziehen, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
 import Themen from './screens/Themen.jsx'
 import Sammlung from './screens/Sammlung.jsx'
@@ -138,6 +138,9 @@ export default function App({ profilId, onProfilWechseln }) {
     setAnsicht('sichtung')
   }
   const [erklaerthema, setErklaerthema] = useState(null)
+  // Id der zuletzt in der Sitzung gemeldeten Karte - die naechste Karte
+  // bestaetigt kurz, dass sie aus dem Stapel ist (Lernen.jsx).
+  const [gemeldetHinweis, setGemeldetHinweis] = useState(null)
   const [aufstieg, setAufstieg] = useState(null)
   const stufeVorher = useRef(null)
   const meilensteineVorher = useRef(null)
@@ -328,6 +331,7 @@ export default function App({ profilId, onProfilWechseln }) {
     sitzungStarten,
     sitzungFortsetzen,
     weiter,
+    ausSitzungNehmen,
     bewerten,
     rueckgaengig,
     zurueckblaettern,
@@ -424,6 +428,23 @@ export default function App({ profilId, onProfilWechseln }) {
     else if (art === 'alle') sitzungStarten('fehlerstapel', { ids: [...kursIds] })
     else sitzungStarten(art, { kursIds })
   }
+
+  // Gemeldete Karten stehen auf "Ueberarbeiten" (meldungen.js) - auch
+  // aeltere Meldungen und solche, die per Abgleich hereinkommen.
+  const nachziehenLaeuft = useRef(false)
+  useEffect(() => {
+    if (laedt || nachziehenLaeuft.current) return
+    const offen = meldungenNachziehen(marken)
+    if (offen.length === 0) return
+    nachziehenLaeuft.current = true
+    ;(async () => {
+      try {
+        for (const [itemId, aenderung] of offen) await markeAendern(itemId, aenderung)
+      } finally {
+        nachziehenLaeuft.current = false
+      }
+    })()
+  }, [marken, laedt])
 
   async function sammelSichtung(ids, kategorie) {
     const neueKarte = new Map(marken)
@@ -609,10 +630,16 @@ export default function App({ profilId, onProfilWechseln }) {
           fruehereSkizzen={skizzen.filter((s) => s.itemId === item.id)}
           kannZurueck={Boolean(letzteAktion)}
           onMarke={markeAendern}
+          onGemeldet={(id) => {
+            setGemeldetHinweis(id)
+            ausSitzungNehmen(id)
+          }}
+          gemeldetHinweis={gemeldetHinweis !== null && gemeldetHinweis !== item.id}
+          onHinweisGelesen={() => setGemeldetHinweis(null)}
           kurse={kursplan.kurse}
           onKurs={kursFrageSetzen}
-          onBewerten={bewerten}
-          onUeberspringen={() => weiter()}
+          onBewerten={(...a) => { setGemeldetHinweis(null); return bewerten(...a) }}
+          onUeberspringen={() => { setGemeldetHinweis(null); weiter() }}
           onZurueckblaettern={zurueckblaettern}
           onRueckgaengig={rueckgaengig}
           onZurueck={verlassen}

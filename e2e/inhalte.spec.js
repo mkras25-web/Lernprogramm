@@ -77,12 +77,14 @@ test('Lernziele und Querverweise im Erklaerstueck, Begruendung je Option in Nach
 test('Karte melden und als Markdown fuer den Web-Chat exportieren', async ({ page }, info) => {
   await angemeldet(page, 'Melden')
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
+  const itemId = await page.locator('.frage').innerText()
   await page.locator('.markenKnopf', { hasText: 'Melden' }).click()
   await page.locator('.meldenFeld .wahlKnopf', { hasText: 'Quelle prüfen' }).click()
   await page.locator('.meldenFeld textarea').fill('Seitenzahl stimmt nicht')
   await page.locator('.meldenFeld .knopf', { hasText: 'Melden' }).click()
-  await expect(page.locator('.markenKnopf', { hasText: 'Gemeldet' })).toBeVisible()
-  const itemId = await page.locator('.frage').innerText()
+  // Gemeldet (2026-10-12): Karte ist aus der Sitzung, die naechste bestaetigt es.
+  await expect(page.locator('.problemHinweis')).toContainText('Vorige Karte gemeldet')
+  await expect(page.locator('.frage')).not.toHaveText(itemId)
   await page.locator('.lernkopf .textknopf', { hasText: 'Zurück' }).click()
 
   await page.locator('.navKnopf', { hasText: 'Einstellungen' }).click()

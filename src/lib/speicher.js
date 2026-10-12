@@ -561,6 +561,11 @@ async function vermerkeAnwenden(fremd) {
   return { vermerke: lokal, entfernt }
 }
 
+function markenGleich(a, b) {
+  const ohneTs = (m) => JSON.stringify(Object.keys(m).filter((k) => k !== 'ts').sort().map((k) => [k, m[k]]))
+  return ohneTs(a) === ohneTs(b)
+}
+
 // Importiert Ereignisse, Skizzen und Marken. Vereinigt, ersetzt nicht.
 // Marken werden bewusst ueberschrieben, weil dort der neuere Stand
 // gelten soll - ein Ereignis dagegen ist unveraenderlich. Was auf einem
@@ -585,6 +590,15 @@ export async function importieren(text) {
     if (!marke?.itemId) continue
     if ((vermerke.marken[marke.itemId] ?? -1) >= (marke.ts ?? 0)) continue
     const vorhanden = lokal.get(marke.itemId)
+    if (vorhanden && (vorhanden.ts ?? 0) === (marke.ts ?? 0) && !markenGleich(vorhanden, marke)) {
+      // Gleicher Zeitstempel, anderer Inhalt: Spur des Fehlers bis
+      // 2026-10-12 (Aenderungen behielten den alten ts, z. B. eine Meldung
+      // kam nie aufs andere Geraet). Beide Fassungen vereinigen - die
+      // lokale gewinnt je Feld - und mit frischem ts weiterreichen.
+      await markeSetzen({ ...marke, ...vorhanden, ts: Date.now() })
+      anzahlMarken += 1
+      continue
+    }
     if (vorhanden && (vorhanden.ts ?? 0) >= (marke.ts ?? 0)) continue
     await markeSetzen(marke)
     anzahlMarken += 1

@@ -9,6 +9,7 @@ import Notizfeld from '../components/Notizfeld.jsx'
 import Fallaufgabe from '../components/Fallaufgabe.jsx'
 import SieheAuch from '../components/SieheAuch.jsx'
 import MeldenFeld from '../components/MeldenFeld.jsx'
+import { meldenAenderung, zurueckziehenAenderung } from '../lib/meldungen.js'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { BEWERTUNG, intervallKurz } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
@@ -38,6 +39,9 @@ export default function Lernen({
   fruehereSkizzen,
   kannZurueck,
   onMarke,
+  onGemeldet,
+  gemeldetHinweis = false,
+  onHinweisGelesen,
   kurse = [],
   onKurs,
   onBewerten,
@@ -338,6 +342,14 @@ export default function Lernen({
 
           {zweispaltig && antwortBlock}
 
+          {gemeldetHinweis && !aufgedeckt && (
+            <p className="problemHinweis">
+              Vorige Karte gemeldet – sie steht auf „Überarbeiten“ und kommt nicht mehr dran,
+              bis sie überarbeitet ist.{' '}
+              <button className="textknopf" onClick={onHinweisGelesen}>ausblenden</button>
+            </p>
+          )}
+
           {istProblem && aufgedeckt && (
             <p className="problemHinweis">
               Diese Karte klappt bisher nicht ({'≥'}6 Fehler). Erklärung zum Thema lesen – oder
@@ -410,12 +422,15 @@ export default function Lernen({
             <MeldenFeld
               key={item.id}
               meldung={marke?.meldung}
-              onMelden={(meldung) => {
-                onMarke(item.id, { einspruch: true, meldung })
+              onMelden={async (meldung) => {
+                const neu = !marke?.meldung
+                await onMarke(item.id, { ...meldenAenderung(marke, meldung), meldung })
                 setMeldenOffen(false)
+                // Erstmals gemeldet: Karte aus der Sitzung nehmen und weiter.
+                if (neu) onGemeldet?.(item.id)
               }}
               onZurueckziehen={() => {
-                onMarke(item.id, { einspruch: null, meldung: null })
+                onMarke(item.id, zurueckziehenAenderung(marke))
                 setMeldenOffen(false)
               }}
               onSchliessen={() => setMeldenOffen(false)}
