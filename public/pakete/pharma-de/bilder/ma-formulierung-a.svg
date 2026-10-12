@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" width="520" height="420">
+  <rect width="520" height="420" fill="#eef2f3"/>
+  <rect x="24" y="24" width="472" height="372" rx="10" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="24" y="24" width="472" height="46" rx="10" fill="#2f7d8a"/>
+  <rect x="24" y="56" width="472" height="14" fill="#2f7d8a"/>
+    <text x="48" y="54" font-size="16" fill="#f8fafb" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Formulierung A</text>
+    <text x="48" y="104" font-size="12.5" fill="#587681" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Problem</text>
+    <text x="48" y="126" font-size="13.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Es liegt eine Doppelmedikation vor.</text>
+    <text x="48" y="160" font-size="12.5" fill="#587681" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ursache</text>
+    <text x="48" y="182" font-size="13.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">–</text>
+    <text x="48" y="216" font-size="12.5" fill="#587681" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Vorschlag</text>
+    <text x="48" y="238" font-size="13.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Bitte klären.</text>
+</svg>

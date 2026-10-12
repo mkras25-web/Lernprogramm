@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 490" width="900" height="490">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d8a"/></marker>
+  </defs>
+  <rect width="900" height="490" fill="#eef2f3"/>
+  <rect x="40" y="112" width="260" height="300" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="40" y="112" width="260" height="66" rx="8" fill="#1f3439"/>
+  <rect x="40" y="156" width="260" height="22" fill="#1f3439"/>
+  <rect x="320" y="112" width="260" height="300" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="320" y="112" width="260" height="66" rx="8" fill="#c8873a"/>
+  <rect x="320" y="156" width="260" height="22" fill="#c8873a"/>
+  <rect x="600" y="112" width="260" height="300" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="600" y="112" width="260" height="66" rx="8" fill="#3f7d5a"/>
+  <rect x="600" y="156" width="260" height="22" fill="#3f7d5a"/>
+  <path d="M300 262 h18" stroke="#2f7d8a" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M580 262 h18" stroke="#2f7d8a" stroke-width="3" marker-end="url(#a)"/>
+    <text x="24" y="40" font-size="18" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ein ABP berichten: drei Komponenten</text>
+    <text x="24" y="64" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Jede beantwortet eine eigene Frage. Fehlt eine, ist der Eintrag unvollständig.</text>
+    <text x="170" y="145" font-size="16" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Problem</text>
+    <text x="170" y="168" font-size="12.5" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Was ist das Problem?</text>
+    <text x="62" y="206" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Art benennen: Interaktion,</text>
+    <text x="62" y="230" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">unerwünschte Wirkung,</text>
+    <text x="62" y="254" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Doppelmedikation …</text>
+    <text x="62" y="278" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif"></text>
+    <text x="62" y="302" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Bewertung angeben:</text>
+    <text x="62" y="326" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">potentiell oder manifest?</text>
+    <text x="62" y="350" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ausmaß? Dringlichkeit?</text>
+    <text x="450" y="145" font-size="16" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Ursache</text>
+    <text x="450" y="168" font-size="12.5" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Warum?</text>
+    <text x="342" y="206" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">alle nötigen Hintergrund-</text>
+    <text x="342" y="230" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">informationen geben</text>
+    <text x="342" y="254" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif"></text>
+    <text x="342" y="278" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">klarer Weg von der Ursache</text>
+    <text x="342" y="302" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">zum Problem</text>
+    <text x="342" y="326" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif"></text>
+    <text x="342" y="350" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">beteiligte Arzneistoffe und</text>
+    <text x="342" y="374" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Symptome genau benennen</text>
+    <text x="730" y="145" font-size="16" fill="#f8fafb" text-anchor="middle" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Lösungsvorschlag</text>
+    <text x="730" y="168" font-size="12.5" fill="#f8fafb" text-anchor="middle" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Was machen wir?</text>
+    <text x="622" y="206" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">wenn möglich immer</text>
+    <text x="622" y="230" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif"></text>
+    <text x="622" y="254" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">konkret statt vage –</text>
+    <text x="622" y="278" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">nicht „bitte klären“</text>
+    <text x="622" y="302" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif"></text>
+    <text x="622" y="326" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Dosisänderungen genau</text>
+    <text x="622" y="350" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">angeben, keine Unklarheit,</text>
+    <text x="622" y="374" font-size="12.5" fill="#1f3439" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">wer was tut</text>
+    <text x="24" y="452" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Eine Lösung ohne genanntes Problem ist genauso unbrauchbar wie ein Problem ohne Lösungsvorschlag.</text>
+</svg>

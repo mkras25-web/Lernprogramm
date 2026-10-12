@@ -2,7 +2,7 @@
   "id": "pharma-de",
   "titel": "Pharmazie",
   "sprache": "de",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "gestaltung": "pharma",
   "module": [
     {
@@ -62,11 +62,26 @@
       ],
       "bereich": "praevention",
       "phase": "frueh"
+    },
+    {
+      "id": "medikationsanalyse",
+      "titel": "Medikationsanalyse",
+      "themen": [
+        {
+          "id": "ma-medikationsbrief",
+          "titel": "Der Medikationsbrief: ABP auswählen, berichten, formulieren",
+          "datei": "items/ma-medikationsbrief.json",
+          "bild": "bilder/ma-drei-komponenten.svg"
+        }
+      ],
+      "bereich": "dienstleistungen",
+      "phase": "frueh"
     }
   ],
   "bereiche": {
     "arzneimitteltherapie": "Arzneimitteltherapie und Interaktionen",
-    "praevention": "Prävention und Impfen"
+    "praevention": "Prävention und Impfen",
+    "dienstleistungen": "Pharmazeutische Dienstleistungen"
   },
   "phasen": {
     "frueh": "Früh beginnen",

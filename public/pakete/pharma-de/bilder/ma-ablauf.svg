@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d8a"/></marker>
+  </defs>
+  <rect width="880" height="540" fill="#eef2f3"/>
+  <rect x="86" y="104" width="758" height="66" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="86" y="104" width="7" height="66" rx="3" fill="#2f7d8a"/>
+  <circle cx="52" cy="137" r="21" fill="#2f7d8a"/>
+  <path d="M52 162 v16" stroke="#587681" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="86" y="186" width="758" height="66" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="86" y="186" width="7" height="66" rx="3" fill="#c8873a"/>
+  <circle cx="52" cy="219" r="21" fill="#c8873a"/>
+  <path d="M52 244 v16" stroke="#587681" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="86" y="268" width="758" height="66" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="86" y="268" width="7" height="66" rx="3" fill="#1f3439"/>
+  <circle cx="52" cy="301" r="21" fill="#1f3439"/>
+  <path d="M52 326 v16" stroke="#587681" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="86" y="350" width="758" height="66" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="86" y="350" width="7" height="66" rx="3" fill="#3f7d5a"/>
+  <circle cx="52" cy="383" r="21" fill="#3f7d5a"/>
+  <path d="M52 408 v16" stroke="#587681" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="86" y="432" width="758" height="66" rx="8" fill="#f8fafb" stroke="#d7e0e2" stroke-width="2"/>
+  <rect x="86" y="432" width="7" height="66" rx="3" fill="#b03a2e"/>
+  <circle cx="52" cy="465" r="21" fill="#b03a2e"/>
+    <text x="24" y="40" font-size="18" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Von der Analyse zur versendeten Nachricht</text>
+    <text x="24" y="64" font-size="13" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Fünf Schritte. Die Auswahl der ABP steht am Anfang, nicht beim Schreiben.</text>
+    <text x="52" y="143" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">I</text>
+    <text x="112" y="130" font-size="14.5" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Medikationsanalyse</text>
+    <text x="112" y="152" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">ABP nach Relevanz und Handlungsbedarf auswählen · Medikationsplan aktualisieren</text>
+    <text x="52" y="225" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">II</text>
+    <text x="112" y="212" font-size="14.5" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Kommunikationsweg wählen</text>
+    <text x="112" y="234" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Dringendes telefonisch · Relevante ABP schriftlich</text>
+    <text x="52" y="307" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">III</text>
+    <text x="112" y="294" font-size="14.5" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Medikationsbrief befüllen</text>
+    <text x="112" y="316" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">Problem, Ursache und Lösungsvorschlag je ABP</text>
+    <text x="52" y="389" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">IV</text>
+    <text x="112" y="376" font-size="14.5" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Medikationsplan anhängen</text>
+    <text x="112" y="398" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">aktualisierte Fassung</text>
+    <text x="52" y="471" font-size="15" fill="#f8fafb" text-anchor="middle" font-weight="700" font-family="Segoe UI, Helvetica, Arial, sans-serif">V</text>
+    <text x="112" y="458" font-size="14.5" fill="#1f3439" text-anchor="start" font-weight="600" font-family="Segoe UI, Helvetica, Arial, sans-serif">Prüfen und versenden</text>
+    <text x="112" y="480" font-size="12.5" fill="#587681" text-anchor="start" font-weight="normal" font-family="Segoe UI, Helvetica, Arial, sans-serif">PDF prüfen und speichern · als Anhang einer KIM-Nachricht</text>
+</svg>

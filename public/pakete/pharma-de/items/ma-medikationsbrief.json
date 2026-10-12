@@ -1,0 +1,846 @@
+{
+  "thema": "ma-medikationsbrief",
+  "titel": "Der Medikationsbrief: ABP auswählen, berichten, formulieren",
+  "erklaerung": {
+    "absaetze": [
+      "Der Medikationsbrief ist das schriftliche Ergebnis einer Medikationsanalyse an die Arztpraxis – und die Stelle, an der sich entscheidet, ob die Analyse überhaupt etwas bewirkt. Eine fachlich hervorragende Analyse, die unverständlich, unvollständig oder im falschen Ton berichtet wird, bleibt folgenlos. Das Projekt MediBrief hat erstmals empirisch untersucht, was beide Berufsgruppen von diesem Brief erwarten, und zwar in vier Schritten: Recherche, Workshops mit Online-Befragung, Paarinterviews aus je einer Ärztin und einem Apotheker, und abschließende Workshops, aus denen eine Vorlage hervorging.",
+      "Vier Fragen strukturieren den Weg vom gefundenen Problem zum fertigen Bericht. Welche formalen Angaben braucht es? In welcher Form mache ich das? Welche arzneimittelbezogenen Probleme berichte ich? Und wie schreibe ich das? Die ersten beiden betreffen den Rahmen, die beiden anderen den Inhalt – und erfahrungsgemäß wird am meisten Zeit in die vierte Frage investiert, während die dritte über die Wirkung entscheidet.",
+      "Bei den formalen Angaben wurden 37 Kandidaten identifiziert, von denen rund die Hälfte als relevant bewertet wurde. Hinein gehören Empfänger und Kontaktdaten beider Seiten, die durchführende Apothekerin, das Erstellungsdatum, Alter und Geschlecht, die Grunderkrankungen, ein Hinweis darauf, wie die Patientin unterstützt wurde, und das Angebot telefonischer Rücksprache. Heraus fallen unter anderem Gewicht, Größe und BMI, Laborparameter, die Lebenssituation sowie Linksammlungen, Referenzlisten und Abkürzungslegenden. Bemerkenswert ist, wo die Berufsgruppen auseinandergehen: Die ärztliche Seite legt Wert auf klinische Daten wie Nierenfunktion, Komorbiditäten und Allergien, die pharmazeutische auf das, was im Gespräch mit der Patientin sichtbar wurde – Allgemeinzustand, Beschwerden, Bedenken und Therapieziele.",
+      "Welche Probleme berichtet werden, folgt einer Systematik aus sechs Kategorien: Arzneimittelauswahl, Dosierung und Therapiedauer, Interaktionen, Darreichungsform, unerwünschte Arzneimittelwirkung und Patientenbezug. Kein einziges der untersuchten Probleme wurde eindeutig als nicht berichtenswert eingestuft – aber auch keines von allen Befragten beider Gruppen gleichermaßen als relevant. Am höchsten bewertet wurden Doppelmedikation und Arzneimittel mit Kontraindikation, dahinter Interaktionen und unerwünschte Wirkungen. Patientenbezogene Probleme galten als weniger relevant, weil sie meist im Gespräch zu lösen sind. Genau das ist auch das Kriterium für den Verzicht: Nicht berichtet wird, was bereits gelöst ist und keinen ärztlichen Handlungsbedarf mehr auslöst.",
+      "Berichtet wird in drei Komponenten – Problem, Ursache, Lösungsvorschlag –, und jede beantwortet eine eigene Frage. Das Problem wird nach Art und Bewertung benannt, also etwa als Interaktion und als potentiell oder manifest. Die Ursache liefert den klaren Weg von den beteiligten Arzneistoffen zum Problem. Der Lösungsvorschlag soll konkret sein: Dosisänderungen genau angeben, keine Unklarheit darüber, wer was tut, und auf keinen Fall ein bloßes „bitte klären“. Der Ton bleibt dabei höflich – Konjunktiv, Passiv, indirekte Aufforderungen –, ohne dass der Vorschlag dadurch zurückgenommen wird. Am Ende steht der Versand als PDF mit angehängtem Medikationsplan, in der Regel über eine KIM-Nachricht."
+    ],
+    "merksatz": "Erst entscheiden, welches Problem überhaupt in den Brief gehört – dann Problem, Ursache und Lösungsvorschlag, und zwar alle drei.",
+    "bild": "bilder/ma-drei-komponenten.svg",
+    "bildunterschrift": "Die drei Komponenten eines ABP-Eintrags. Eine Lösung ohne genanntes Problem ist ebenso unbrauchbar wie ein Problem ohne Lösungsvorschlag.",
+    "quelle": "Hackenberg/Wurmbach, Erfolgreiche Arztkommunikation in der Medikationsberatung – kompetent, strukturiert, digital, Seminar Apothekerkammer Nordrhein 2026, Handout (Foliendatum 14.09.2026, Dateidatum 31.08.2026), Folien 2–19"
+  },
+  "items": [
+    {
+      "id": "ma-brief-001",
+      "typ": "karte",
+      "frage": "Was ist der Medikationsbrief, und warum entscheidet gerade er über die Wirkung einer Medikationsanalyse?",
+      "antwort": "Er ist die medikationsbezogene schriftliche Kommunikation von der Apotheke an die Arztpraxis – das Ergebnisdokument der Medikationsanalyse. Weil die Apotheke die gefundenen Probleme nicht selbst lösen kann, entscheidet die Qualität dieses Briefes darüber, ob aus der Analyse eine Therapieänderung wird. Eine fachlich einwandfreie Analyse, die unvollständig oder im falschen Ton berichtet wird, bleibt folgenlos.",
+      "vertiefung": "Das Projekt MediBrief setzt genau hier an: Es hat nicht die Analyse selbst untersucht, sondern ihre Übermittlung. Ein Formular dafür stellt die ABDA im Bereich der pharmazeutischen Dienstleistungen zur Polymedikation bereit.",
+      "tags": [
+        "medikationsbrief",
+        "grundlagen",
+        "kommunikation"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 5 und 7",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-002",
+      "typ": "karte",
+      "frage": "Welche beiden Fragen hat das Projekt MediBrief untersucht, und wer war daran beteiligt?",
+      "antwort": "Erstens: Welche Informationen rund um Patient:in, Erkrankung und Medikation sollen übermittelt werden? Zweitens: Welche arzneimittelbezogenen Probleme sollen berichtet werden beziehungsweise unter welchen Bedingungen? Beteiligt waren die Kooperationseinheit Klinische Pharmazie am Universitätsklinikum Heidelberg, der Thüringer und der Sächsische Apothekerverband, die ABDA mit dem Geschäftsbereich Arzneimittel und die Kassenärztliche Vereinigung Thüringen.",
+      "vertiefung": "Dass die Kassenärztliche Vereinigung mit am Tisch saß, ist für die Ergebnisse wesentlich: Die Relevanzbewertungen stammen nicht nur aus der pharmazeutischen Binnensicht, sondern von beiden Berufsgruppen – und genau dort liegen die interessanten Unterschiede.",
+      "tags": [
+        "medikationsbrief",
+        "projekt",
+        "grundlagen"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 4 und 5",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-003",
+      "typ": "reihenfolge",
+      "frage": "Bringe die vier Arbeitsschritte des Projekts MediBrief in die richtige Reihenfolge.",
+      "antwort": "Recherche, Workshops mit Online-Befragung, Paarinterviews, abschließende Workshops – daraus entstand die Vorlage.",
+      "vertiefung": "Die Paarinterviews in der Mitte sind der methodische Kern: Je eine ärztliche und eine pharmazeutische Person wurden gemeinsam befragt, sodass Unterschiede in der Bewertung nicht erst nachträglich aus zwei getrennten Erhebungen errechnet werden mussten.",
+      "tags": [
+        "medikationsbrief",
+        "projekt",
+        "methodik"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 3",
+      "stand": "2026-10",
+      "geprueft": true,
+      "schritte": [
+        "Recherche",
+        "Workshops und Online-Befragung",
+        "Paarinterviews",
+        "Abschließende Workshops mit Erstellung der Vorlage"
+      ]
+    },
+    {
+      "id": "ma-brief-004",
+      "typ": "karte",
+      "frage": "Welche vier Fragen führen vom gefundenen ABP zum fertigen Ergebnisbericht?",
+      "antwort": "Welche formalen Angaben braucht es? In welcher Form mache ich das? Welche ABP berichte ich? Wie schreibe ich das? Die ersten beiden betreffen den Rahmen des Briefes, die beiden anderen seinen Inhalt.",
+      "vertiefung": "Die Reihenfolge der Aufmerksamkeit ist in der Praxis oft umgekehrt zur Reihenfolge der Wirkung: Am meisten Zeit kostet die Formulierung, über den Nutzen entscheidet aber die Auswahl der Probleme. Wer zehn ABP berichtet, von denen acht keinen ärztlichen Handlungsbedarf auslösen, hat den Brief entwertet.",
+      "tags": [
+        "medikationsbrief",
+        "systematik",
+        "ablauf"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 6",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-005",
+      "typ": "bildbeschriftung",
+      "frage": "Benenne die Bestandteile eines Medikationsbriefs, die als relevante formale Angaben bewertet wurden.",
+      "antwort": "Absender mit Apotheke und durchführender Apothekerin, Empfänger mit Arztpraxis und Kontaktdaten, Erstellungsdatum, Betreffzeile, Patientenblock mit Alter, Geschlecht und Grunderkrankungen, der ABP-Eintrag mit Ursache und Lösungsvorschlag, der Hinweis auf telefonische Rücksprache und der Anhang mit dem Medikationsplan.",
+      "vertiefung": "Auffällig ist, was im Patientenblock fehlt: Gewicht, Größe, Nierenfunktion und Laborwerte wurden insgesamt nicht als relevant bewertet. Der Brief soll kurz sein, und die Angaben, die drinbleiben, sind jene, die der Praxis die Einordnung des Problems erlauben.",
+      "bild": "bilder/ma-briefformular.svg",
+      "bildunterschrift": "Dieselbe Darstellung mit Beschriftung – zum Abgleich nach dem Zuordnen.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "zeichnung"
+      ],
+      "quelle": "eigene schematische Darstellung nach Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 7 bis 9 sowie Folie 19",
+      "stand": "2026-10",
+      "geprueft": true,
+      "referenz": "bilder/ma-briefformular-blank.svg",
+      "punkte": [
+        {
+          "nr": 3,
+          "x": 10.2,
+          "y": 16.3,
+          "name": "Absender: Apotheke und durchführende:r Apotheker:in"
+        },
+        {
+          "nr": 7,
+          "x": 55.9,
+          "y": 16.3,
+          "name": "Empfänger: Arzt oder Ärztin mit Kontaktdaten der Praxis"
+        },
+        {
+          "nr": 1,
+          "x": 69.0,
+          "y": 24.3,
+          "name": "Erstellungsdatum"
+        },
+        {
+          "nr": 5,
+          "x": 10.2,
+          "y": 28.7,
+          "name": "Betreffzeile"
+        },
+        {
+          "nr": 8,
+          "x": 10.2,
+          "y": 35.9,
+          "name": "Patient:in: Alter, Geschlecht, Grunderkrankungen"
+        },
+        {
+          "nr": 2,
+          "x": 10.2,
+          "y": 48.5,
+          "name": "Arzneimittelbezogenes Problem mit Ursache und Lösungsvorschlag"
+        },
+        {
+          "nr": 6,
+          "x": 10.2,
+          "y": 68.9,
+          "name": "Hinweis auf telefonische Rücksprache"
+        },
+        {
+          "nr": 4,
+          "x": 10.2,
+          "y": 76.3,
+          "name": "Anhang: aktualisierter Medikationsplan"
+        }
+      ]
+    },
+    {
+      "id": "ma-brief-006",
+      "typ": "numerisch",
+      "frage": "Wie viele formale Angaben wurden im Projekt MediBrief als mögliche Bestandteile des Briefes identifiziert?",
+      "antwort": "37 formale Angaben.",
+      "vertiefung": "Die Zahl zeigt, wie umfangreich ein Medikationsbrief werden könnte, wenn man alles aufnähme, was denkbar ist. Genau deshalb war die Bewertung nötig – rund die Hälfte blieb übrig.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "kennwerte"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 8, nach Lepenies et al., Development of a Medication Report in Collaboration with General Practitioners and Community Pharmacists (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die Zahl stammt aus einer zum Seminarzeitpunkt unveröffentlichten Arbeit (Lepenies et al.). Gegen die publizierte Fassung prüfen, sobald sie vorliegt, ob es bei 37 identifizierten Angaben bleibt.",
+      "wert": 37,
+      "einheit": "Angaben",
+      "toleranz": 0
+    },
+    {
+      "id": "ma-brief-007",
+      "typ": "numerisch",
+      "frage": "Wie viele der identifizierten formalen Angaben wurden als relevant bewertet?",
+      "antwort": "18 von 37, also etwa die Hälfte.",
+      "vertiefung": "Die Halbierung ist die eigentliche Botschaft: Ein guter Medikationsbrief entsteht nicht dadurch, dass alles Verfügbare hineingeschrieben wird, sondern durch Auswahl. Das deckt sich mit der Forderung nach einem möglichst kurzen Bericht.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "kennwerte"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 8, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Zahl aus der unveröffentlichten Arbeit von Lepenies et al. Gegen die publizierte Fassung prüfen, ob es bei 18 von 37 als relevant bewerteten Angaben bleibt.",
+      "wert": 18,
+      "einheit": "Angaben",
+      "toleranz": 0
+    },
+    {
+      "id": "ma-brief-008",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche formalen Angaben wurden als relevant für den Medikationsbrief bewertet?",
+      "antwort": "Empfänger, Kontaktdaten der Arztpraxis, durchführende:r Apotheker:in, Kontaktdaten der Apotheke, Erstellungsdatum, Alter und Geschlecht, Grunderkrankungen, die Unterstützung der Patient:innen und der Hinweis auf telefonische Rücksprache. Eine Abkürzungslegende gehört nicht dazu.",
+      "vertiefung": "Der Hinweis auf telefonische Rücksprache ist mehr als Höflichkeit: Er hält den schnellen Kanal offen für das, was sich schriftlich nicht klären lässt, und entlastet den Brief davon, jede Eventualität abdecken zu müssen.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "inhalt"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 9, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Empfänger und Kontaktdaten der Arztpraxis",
+        "Durchführende:r Apotheker:in und Kontaktdaten der Apotheke",
+        "Erstellungsdatum",
+        "Alter und Geschlecht",
+        "Grunderkrankungen",
+        "Unterstützung der Patient:innen",
+        "Hinweis auf telefonische Rücksprache",
+        "Abkürzungslegende"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "ma-brief-009",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Angaben wurden gerade nicht als relevant für den Medikationsbrief bewertet?",
+      "antwort": "Gewicht und BMI, Größe, Nierenfunktion, auffällige Laborparameter, Lebenssituation, sonstige Beeinträchtigungen, eine Zusammenstellung hilfreicher Links, die Angabe von Referenzen und eine Abkürzungslegende. Die Grunderkrankungen dagegen wurden als relevant bewertet.",
+      "vertiefung": "Dass Referenzen und Links herausfielen, überrascht pharmazeutisch geschulte Leser am meisten – im wissenschaftlichen Schreiben gelten sie als Qualitätsmerkmal. Für den Brief an die Praxis sind sie Ballast; die Fakten selbst sollen tragen, nicht der Apparat um sie herum.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "typischer-fehler"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 9, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Gewicht und BMI",
+        "Größe",
+        "Nierenfunktion",
+        "Auffällige Laborparameter",
+        "Lebenssituation",
+        "Zusammenstellung hilfreicher Links",
+        "Angabe von Referenzen",
+        "Grunderkrankungen"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "ma-brief-010",
+      "typ": "zuordnung",
+      "frage": "Beide Berufsgruppen hielten unterschiedliche Angaben für wichtig. Ordne zu, welche Seite welche Angabe betonte.",
+      "antwort": "Die pharmazeutische Seite: Allgemeinzustand, aktuelle Beschwerden, Bedenken der Patient:innen, Ziele der Patient:innen bezüglich der Medikation. Die ärztliche Seite: Nierenfunktion, Komorbiditäten, Allergien, Auflistung aller Empfänger des Medikationsbriefs.",
+      "vertiefung": "Die Trennlinie ist aufschlussreich: Die Praxis fragt nach dem, was sie für die medizinische Entscheidung braucht und selbst nicht gerade vorliegen hat, die Apotheke bringt ein, was nur im Gespräch mit der Patientin sichtbar wird. Beide Listen zusammen beschreiben ziemlich genau, was die jeweils andere Seite beitragen kann – und das ist ein brauchbares Argument, wenn eine Praxis den Nutzen des Briefes infrage stellt.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "berufsgruppen"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 10, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Die Folie stellt die beiden Spalten nur über zwei Personensymbole gegenüber (das rechte trägt ein Stethoskop) und beschriftet sie nicht. Die Zuordnung zur ärztlichen beziehungsweise pharmazeutischen Seite ist daher aus den Symbolen erschlossen. Gegen die publizierte Fassung von Lepenies et al. oder den Foliensatz mit Beschriftung prüfen.",
+      "paare": [
+        [
+          "Allgemeinzustand",
+          "von der pharmazeutischen Seite betont"
+        ],
+        [
+          "Aktuelle Beschwerden",
+          "von der pharmazeutischen Seite betont"
+        ],
+        [
+          "Bedenken der Patient:innen",
+          "von der pharmazeutischen Seite betont"
+        ],
+        [
+          "Ziele der Patient:innen zur Medikation",
+          "von der pharmazeutischen Seite betont"
+        ],
+        [
+          "Nierenfunktion",
+          "von der ärztlichen Seite betont"
+        ],
+        [
+          "Komorbiditäten",
+          "von der ärztlichen Seite betont"
+        ],
+        [
+          "Allergien",
+          "von der ärztlichen Seite betont"
+        ],
+        [
+          "Auflistung aller Empfänger des Briefs",
+          "von der ärztlichen Seite betont"
+        ]
+      ]
+    },
+    {
+      "id": "ma-brief-011",
+      "typ": "karte",
+      "frage": "Die Nierenfunktion steht im Handout einmal unter den nicht relevanten Angaben und einmal als Angabe, die eine Berufsgruppe betont. Wie passt das zusammen?",
+      "antwort": "Beides ist dasselbe Ergebnis aus zwei Blickwinkeln. Über alle Befragten gemittelt erreichte die Nierenfunktion die Relevanzschwelle nicht und fiel damit aus der Liste der aufzunehmenden Angaben. Getrennt nach Berufsgruppen betrachtet gehört sie zu den Angaben, bei denen sich die Gruppen deutlich unterscheiden – die ärztliche Seite hielt sie für wichtig, die pharmazeutische nicht.",
+      "vertiefung": "Praktisch heißt das: Die Nierenfunktion ist keine Pflichtangabe, aber auch nichts, worauf man im Einzelfall verzichten sollte, wenn das Problem daran hängt. Bei einer Dosisanpassung wegen eingeschränkter Nierenfunktion gehört der Wert in die Ursachenkomponente des ABP-Eintrags – dort nicht als allgemeine Patientenangabe, sondern als Begründung.",
+      "tags": [
+        "medikationsbrief",
+        "formale-angaben",
+        "einordnung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 9 und 10",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-012",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Probleme gehören zur ABP-Kategorie „Arzneimittelauswahl“?",
+      "antwort": "Arzneimittel ohne Indikation, Indikation ohne Arzneimittel, zu viele Arzneimittel für eine Indikation, Kontraindikation, ungeeignetes Arzneimittel und eine von der Verordnung abweichende Arzneimittelstärke. Eine ungeeignete Dosis gehört dagegen zur Kategorie Dosierung und Therapiedauer.",
+      "vertiefung": "Die Trennlinie zwischen den beiden Kategorien lautet: Stimmt der Wirkstoff, oder stimmt seine Anwendung? „Zu viele Arzneimittel für eine Indikation“ ist die Doppelmedikation – nach den Projektergebnissen das am häufigsten als relevant bewertete Problem überhaupt.",
+      "tags": [
+        "abp",
+        "systematik",
+        "kategorien"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 11, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Arzneimittel ohne Indikation",
+        "Indikation ohne Arzneimittel",
+        "Zu viele Arzneimittel für eine Indikation",
+        "Kontraindikation",
+        "Von der Verordnung abweichende Arzneimittelstärke",
+        "Ungeeignete Dosis"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ma-brief-013",
+      "typ": "zuordnung",
+      "frage": "Ordne die Probleme ihrer ABP-Kategorie zu.",
+      "antwort": "Kontraindikation und Arzneimittel ohne Indikation gehören zur Arzneimittelauswahl. Ungeeignetes Dosierungsintervall und ungeeignete Therapiedauer zur Dosierung und Therapiedauer. Symptome aufgrund einer Interaktion zu den Interaktionen. Unsachgemäße Lagerung und Angst vor der Therapie zum Patientenbezug.",
+      "vertiefung": "Die sechs Kategorien lauten Arzneimittelauswahl, Dosierung und Therapiedauer, Interaktionen, Darreichungsform, unerwünschte Arzneimittelwirkung und Patientenbezug. Der Patientenbezug ist mit elf Problemarten die größte – und zugleich diejenige, deren Probleme am seltensten in den Brief gehören.",
+      "tags": [
+        "abp",
+        "systematik",
+        "kategorien"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 11 und 12, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "bild": "bilder/ma-abp-kategorien.svg",
+      "bildunterschrift": "Die sechs ABP-Kategorien mit der Zahl ihrer Problemarten. Der Patientenbezug ist die größte Kategorie und zugleich die, die am seltensten berichtet wird.",
+      "paare": [
+        [
+          "Kontraindikation",
+          "Arzneimittelauswahl"
+        ],
+        [
+          "Arzneimittel ohne Indikation",
+          "Arzneimittelauswahl"
+        ],
+        [
+          "Ungeeignetes Dosierungsintervall",
+          "Dosierung und Therapiedauer"
+        ],
+        [
+          "Ungeeignete Therapiedauer",
+          "Dosierung und Therapiedauer"
+        ],
+        [
+          "Symptome aufgrund einer Interaktion",
+          "Interaktionen"
+        ],
+        [
+          "Unsachgemäße Lagerung der Medikamente",
+          "Patientenbezug"
+        ],
+        [
+          "Angst vor der Therapie",
+          "Patientenbezug"
+        ]
+      ]
+    },
+    {
+      "id": "ma-brief-014",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Probleme zählen zur Kategorie „Patientenbezug“?",
+      "antwort": "Vom Patienten selbst gewählter ungeeigneter Einnahmezeitpunkt oder Dosierungsintervall, unbeabsichtigt falsche Anwendung, bewusste Anwendung eines unnötigen Arzneimittels, Arzneimittelmissbrauch, Fragen zur Arzneimitteltherapie, Probleme bei der Handhabung, nicht verstandene Anweisungen, unsachgemäße Lagerung, Angst vor der Therapie und das Nichteinhalten der vorgeschriebenen Dosis.",
+      "vertiefung": "Entscheidend ist das Wort „selbst gewählt“: Ein ungeeigneter Einnahmezeitpunkt kann in zwei Kategorien fallen. Steht er so in der Verordnung, ist es ein Problem der Dosierung; hat die Patientin ihn selbst so gewählt, ist es ein patientenbezogenes Problem – und damit eines, das meist im Gespräch zu lösen ist und nicht in den Brief gehört.",
+      "tags": [
+        "abp",
+        "patientenbezug",
+        "systematik"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 12, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Vom Patienten selbst gewählter ungeeigneter Einnahmezeitpunkt",
+        "Unbeabsichtigt falsche Arzneimittelanwendung",
+        "Arzneimittelmissbrauch",
+        "Probleme bei der Handhabung der Medikamente",
+        "Unsachgemäße Lagerung der Medikamente",
+        "Angst vor der Therapie",
+        "Interaktion zweier verordneter Arzneimittel"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": "ma-brief-015",
+      "typ": "karte",
+      "frage": "Was ergab die Relevanzbewertung der ABP in Bezug auf Einigkeit zwischen den Befragten?",
+      "antwort": "Zwei Befunde, die zusammengehören: Kein einziges ABP wurde eindeutig als nicht relevant bewertet – und zugleich wurde kein einziges von allen Ärztinnen und allen Apothekern gleichermaßen als relevant beurteilt. Alles kann also im Einzelfall berichtenswert sein, aber nichts ist es unstrittig immer.",
+      "vertiefung": "Daraus folgt eine unbequeme, aber ehrliche Konsequenz: Es gibt keine Liste, die einem die Auswahlentscheidung abnimmt. Maßgeblich bleiben Relevanz und Handlungsbedarf im konkreten Fall – und im Zweifel die Kenntnis der Praxis, an die der Brief geht.",
+      "tags": [
+        "abp",
+        "relevanz",
+        "evidenz"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 13, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-016",
+      "typ": "zuordnung",
+      "frage": "Ordne den als am relevantesten bewerteten ABP ihren Zustimmungswert zu.",
+      "antwort": "Doppelmedikation 93 %, Arzneimittel mit Kontraindikation 93 %, Interaktionen 87 %, unerwünschte Arzneimittelwirkung 87 %.",
+      "vertiefung": "Die vier teilen sich zwei Ränge, und alle vier sind Probleme, die ohne ärztliche Entscheidung nicht zu lösen sind. Genau das erklärt die hohe Zustimmung – gefragt war nicht, welches Problem am gefährlichsten ist, sondern welches in den Brief gehört.",
+      "tags": [
+        "abp",
+        "relevanz",
+        "kennwerte"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 13, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Prozentwerte aus der zum Seminarzeitpunkt unveröffentlichten Arbeit von Lepenies et al. Gegen die publizierte Fassung prüfen, ob die Rangfolge und die Werte 93 % und 87 % unverändert gelten.",
+      "paare": [
+        [
+          "Doppelmedikation",
+          "93 %"
+        ],
+        [
+          "Arzneimittel mit Kontraindikation",
+          "93 %"
+        ],
+        [
+          "Interaktionen",
+          "87 %"
+        ],
+        [
+          "Unerwünschte Arzneimittelwirkung",
+          "87 %"
+        ]
+      ]
+    },
+    {
+      "id": "ma-brief-017",
+      "typ": "numerisch",
+      "frage": "Mit welchem Zustimmungswert wurde die Doppelmedikation als relevantes ABP für den Medikationsbrief bewertet?",
+      "antwort": "93 %.",
+      "vertiefung": "Denselben Wert erreichte das Arzneimittel mit Kontraindikation. Beide Probleme haben gemeinsam, dass sie sich am Medikationsplan ablesen lassen und eine eindeutige Lösung nahelegen – das macht sie zu den dankbarsten Fällen für einen schriftlichen Bericht.",
+      "tags": [
+        "abp",
+        "relevanz",
+        "kennwerte"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 13, nach Lepenies et al. (unveröffentlicht)",
+      "stand": "2026-10",
+      "geprueft": false,
+      "pruefhinweis": "Prozentwert aus der unveröffentlichten Arbeit von Lepenies et al. Gegen die publizierte Fassung prüfen.",
+      "wert": 93,
+      "einheit": "%",
+      "toleranz": 0
+    },
+    {
+      "id": "ma-brief-018",
+      "typ": "karte",
+      "frage": "Warum wurden patientenbezogene ABP als weniger relevant für den Medikationsbrief eingestuft, und was folgt daraus für die Praxis?",
+      "antwort": "Weil sie überwiegend ohne ärztliche Entscheidung lösbar sind – Handhabung, Lagerung, Verständnisfragen und selbst gewählte Einnahmezeitpunkte lassen sich im Gespräch mit der Patientin klären. Daraus folgt kein Verzicht auf ihre Bearbeitung, sondern nur, dass sie nicht in den Brief gehören, wenn sie gelöst wurden.",
+      "vertiefung": "Die Umkehrung gilt allerdings auch: Ein patientenbezogenes Problem, das sich im Gespräch nicht lösen ließ und die Therapie weiter beeinträchtigt, gehört sehr wohl in den Brief – etwa wenn eine Darreichungsform dauerhaft nicht handhabbar ist und ein Wechsel ärztlich verordnet werden muss.",
+      "tags": [
+        "abp",
+        "patientenbezug",
+        "auswahl"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 13 und 14",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-019",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche ABP werden nicht in den Medikationsbrief aufgenommen?",
+      "antwort": "ABP, die bereits gelöst werden konnten und keinen weiteren ärztlichen Handlungsbedarf erfordern, sowie ABP zur konkreten Anwendung des Arzneimittels, die im Patientengespräch so gelöst wurden, dass sie die Therapie nicht mehr beeinträchtigen. Ein ungelöstes Problem bleibt dagegen berichtenswert, auch wenn es als gering eingeschätzt wird.",
+      "vertiefung": "Das Kriterium ist nicht die Schwere, sondern der verbleibende Handlungsbedarf der Ärztin. Diese Unterscheidung spart im Alltag viel Text – und sie ist zugleich die Rechtfertigung dafür, einen kurzen Brief abzuliefern, ohne etwas zu verschweigen.",
+      "tags": [
+        "abp",
+        "auswahl",
+        "beratung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 14, nach BAK, Empfehlungen für die Erstellung eines Medikationsbriefs",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "ABP, die bereits gelöst wurden und keinen ärztlichen Handlungsbedarf mehr erfordern",
+        "ABP zur konkreten Anwendung, die im Patientengespräch gelöst wurden",
+        "Jedes ABP, das patientenbezogen ist",
+        "Jedes ABP, dessen Ausmaß als gering eingeschätzt wird"
+      ],
+      "richtig": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "ma-brief-020",
+      "typ": "karte",
+      "frage": "Aus welchen drei Komponenten besteht die Darstellung eines ABP im Medikationsbrief?",
+      "antwort": "Problem, Ursache und Lösungsvorschlag. Sie beantworten der Reihe nach: Was ist das Problem? Warum? Was machen wir?",
+      "vertiefung": "Die Dreiteilung ist mehr als eine Gliederungshilfe – sie verhindert die beiden häufigsten Fehlformen. Ohne Ursache steht eine Behauptung im Raum, die die Praxis selbst nachvollziehen müsste; ohne Lösungsvorschlag entsteht zusätzliche Arbeit statt Entlastung.",
+      "tags": [
+        "medikationsbrief",
+        "aufbau",
+        "darstellung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 15, nach Hüttemann, Wie schreibe ich's dem Arzt?, PZ 2023, und BAK, Kommentar zur Leitlinie Medikationsanalyse",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-021",
+      "typ": "skizze",
+      "frage": "Skizziere aus dem Gedächtnis die drei Komponenten eines ABP-Eintrags. Notiere zu jeder die Frage, die sie beantwortet, und zwei inhaltliche Anforderungen.",
+      "antwort": "Problem – Was ist das Problem? Art benennen (Interaktion, unerwünschte Wirkung, Doppelmedikation) und bewerten (potentiell oder manifest, Ausmaß, Dringlichkeit). Ursache – Warum? Alle nötigen Hintergrundinformationen, ein klarer Weg von der Ursache zum Problem, beteiligte Arzneistoffe und Symptome genau benannt. Lösungsvorschlag – Was machen wir? Wenn möglich immer einer, konkret statt vage, Dosisänderungen genau angeben, keine Unklarheit darüber, wer was tut.",
+      "vertiefung": "Wer die drei Spalten einmal selbst aufgeschrieben hat, merkt beim nächsten Brief sofort, welche fehlt. Am häufigsten fehlt die Ursache, weil sie beim Schreiben selbstverständlich erscheint – der Praxis liegt der Analyseweg aber nicht vor.",
+      "tags": [
+        "medikationsbrief",
+        "aufbau",
+        "skizze"
+      ],
+      "quelle": "eigene Darstellung nach Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 15",
+      "stand": "2026-10",
+      "geprueft": true,
+      "referenz": "bilder/ma-drei-komponenten.svg",
+      "pruefpunkte": [
+        "Drei Komponenten: Problem, Ursache, Lösungsvorschlag",
+        "Problem beantwortet: Was ist das Problem? – mit Art und Bewertung",
+        "Bewertung umfasst potentiell oder manifest sowie Ausmaß und Dringlichkeit",
+        "Ursache beantwortet: Warum? – klarer Weg von der Ursache zum Problem",
+        "Beteiligte Arzneistoffe und Symptome genau benennen",
+        "Lösungsvorschlag beantwortet: Was machen wir? – wenn möglich immer vorhanden",
+        "Lösungsvorschlag konkret statt vage, Dosisänderungen genau angeben"
+      ]
+    },
+    {
+      "id": "ma-brief-022",
+      "typ": "mehrfachauswahl",
+      "frage": "Was gehört zur Komponente „Problem“ eines ABP-Eintrags?",
+      "antwort": "Die Art des Problems – also etwa Interaktion, unerwünschte Arzneimittelwirkung oder Doppelmedikation – und seine Bewertung: potentiell oder manifest, mit Angabe von Ausmaß und Dringlichkeit. Der Lösungsvorschlag und die Herleitung gehören in die beiden anderen Komponenten.",
+      "vertiefung": "„Art und Bewertung“ ist die Kurzformel. Die Bewertung ist der Teil, der im Alltag am ehesten wegfällt – dabei entscheidet gerade sie darüber, wie schnell die Praxis reagieren muss, und ersetzt damit oft einen klärenden Anruf.",
+      "tags": [
+        "medikationsbrief",
+        "aufbau",
+        "darstellung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 15",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Die Art des Problems, etwa Interaktion oder unerwünschte Wirkung",
+        "Die Angabe, ob das Problem potentiell oder manifest ist",
+        "Das Ausmaß des Problems",
+        "Die Dringlichkeit",
+        "Der konkrete Vorschlag zur Lösung"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "ma-brief-023",
+      "typ": "karte",
+      "frage": "Was bedeutet die Unterscheidung zwischen einem potentiellen und einem manifesten ABP für den Brief?",
+      "antwort": "Sie gehört in die Bewertung des Problems und bestimmt, wie das Problem zu formulieren ist. Ein manifestes Problem ist bereits eingetreten und benennbar; ein potentielles kann eintreten und verlangt, dass die Unsicherheit ausdrücklich mitgeteilt wird – gegebenenfalls zusammen mit der Information, welche Angabe zur genaueren Einschätzung fehlt, etwa ein Laborwert.",
+      "vertiefung": "Auch beim potentiellen ABP bleibt es bei der Regel, einen Lösungsvorschlag zu machen. Er darf dann an eine Voraussetzung geknüpft werden – oder es wird zumindest das empfohlene weitere Vorgehen skizziert. Ein potentielles Problem ohne jeden Vorschlag ist für die Praxis nur eine zusätzliche Aufgabe.",
+      "tags": [
+        "medikationsbrief",
+        "darstellung",
+        "bewertung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 15 und 16",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-024",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Anforderungen gelten für den Lösungsvorschlag?",
+      "antwort": "Er soll wenn möglich immer gemacht werden, konkret sein statt vage, Dosierungsänderungen genau angeben und keine Unklarheit darüber lassen, wer was machen soll oder bereits gemacht hat. Mehrere Vorschläge sind möglich, dann sinnvollerweise abgestuft dargestellt. Eine Formulierung wie „bitte klären“ erfüllt diese Anforderungen gerade nicht.",
+      "vertiefung": "„Bitte klären“ ist der Musterfall des unbrauchbaren Vorschlags: Er verlagert die Arbeit zurück und enthält keine Information, die die Praxis nicht schon hätte. Wer unsicher ist, formuliert lieber einen Vorschlag unter Vorbehalt als gar keinen.",
+      "tags": [
+        "medikationsbrief",
+        "loesungsvorschlag",
+        "darstellung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 15",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Wenn möglich immer einen Vorschlag machen",
+        "Konkret statt vage formulieren",
+        "Dosierungsänderungen genau angeben",
+        "Klarstellen, wer was machen soll oder gemacht hat",
+        "Bei mehreren Möglichkeiten abgestuft darstellen",
+        "Die Entscheidung mit „bitte klären“ offen an die Praxis zurückgeben"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": "ma-brief-025",
+      "typ": "vergleich",
+      "frage": "Beide Einträge berichten dasselbe arzneimittelbezogene Problem. Welche Formulierung erfüllt die Anforderungen an einen ABP-Eintrag?",
+      "antwort": "Formulierung B. Sie benennt das Problem nach Art und Bewertung (Doppelmedikation, manifest), liefert die Ursache mit den beteiligten Arzneistoffen und ihrer Herkunft, und macht einen konkreten Lösungsvorschlag samt Kontrollempfehlung – im Konjunktiv, also ohne Aufforderungston. Formulierung A nennt das Problem nur pauschal, lässt die Ursache offen und gibt die Arbeit mit „bitte klären“ an die Praxis zurück.",
+      "vertiefung": "Der Unterschied ist nicht Länge, sondern Entscheidbarkeit: Nach B kann die Praxis ohne Rückfrage handeln, nach A muss sie den Fall erst selbst rekonstruieren. Die Formulierung „Es könnte erwogen werden“ ist dabei kein Zurückweichen – sie ist genau die vom Berufsstand empfohlene Form, einen Vorschlag höflich und trotzdem bestimmt zu machen.",
+      "tags": [
+        "medikationsbrief",
+        "loesungsvorschlag",
+        "fallbeispiel"
+      ],
+      "quelle": "eigenes Beispiel zur Illustration der Regeln auf Handout-Folien 15 und 17 (Hackenberg/Wurmbach, AKNR-Seminar 2026)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "seiten": [
+        {
+          "titel": "Formulierung A",
+          "bild": "bilder/ma-formulierung-a.svg",
+          "beschreibung": "Problem pauschal benannt, keine Ursache, Vorschlag „Bitte klären.“"
+        },
+        {
+          "titel": "Formulierung B",
+          "bild": "bilder/ma-formulierung-b.svg",
+          "beschreibung": "Problem mit Bewertung, Ursache mit beteiligten Arzneistoffen, konkreter Vorschlag im Konjunktiv."
+        }
+      ],
+      "richtig": 1
+    },
+    {
+      "id": "ma-brief-026",
+      "typ": "karte",
+      "frage": "Ein ABP wurde bereits gelöst. Wie wird damit im Brief umgegangen?",
+      "antwort": "Zuerst ist zu prüfen, ob eine Nennung überhaupt nötig ist – ein gelöstes Problem ohne weiteren ärztlichen Handlungsbedarf gehört nicht in den Brief. Ist die Nennung sinnvoll, wird sie auch als solche formuliert, etwa mit einer einleitenden Wendung wie „Zur Info: …“.",
+      "vertiefung": "Die Kennzeichnung erspart der Praxis die Suche nach einer Handlungsaufforderung, die es nicht gibt. Ohne sie liest sich jeder Eintrag wie eine offene Aufgabe – und genau das untergräbt die Bereitschaft, den nächsten Brief zu lesen.",
+      "tags": [
+        "medikationsbrief",
+        "sonderfaelle",
+        "darstellung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 16, nach BAK, Empfehlungen für die Erstellung eines Medikationsbriefs",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-027",
+      "typ": "karte",
+      "frage": "Ein ABP wurde bereits telefonisch mit der Praxis besprochen. Wie wird es im Brief behandelt?",
+      "antwort": "Falls eine Nennung im Bericht nötig ist, wird zumindest das Problem kurz genannt. Die Regel dahinter: keine Nennung einer Lösung ohne das zugehörige Problem.",
+      "vertiefung": "Der Brief wird archiviert und später von Personen gelesen, die beim Telefonat nicht dabei waren. Eine Zeile wie „wie besprochen umgestellt“ ist dann nicht nachvollziehbar – und im Streitfall auch nicht belegfähig.",
+      "tags": [
+        "medikationsbrief",
+        "sonderfaelle",
+        "dokumentation"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 16, nach BAK, Empfehlungen für die Erstellung eines Medikationsbriefs",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-028",
+      "typ": "karte",
+      "frage": "Für die genaue Einschätzung eines ABP fehlen Informationen, etwa ein Laborwert. Wie wird das berichtet?",
+      "antwort": "Falls die Nennung im Brief nötig ist, wird die Limitation klar mitgeteilt. Trotzdem wird ein Lösungsvorschlag gemacht – gegebenenfalls unter der genannten Voraussetzung – oder zumindest das empfohlene weitere Vorgehen skizziert.",
+      "vertiefung": "Der Reflex, bei unvollständiger Datenlage lieber nichts zu schreiben, ist nachvollziehbar und falsch. Die Praxis hat den fehlenden Wert meist vorliegen; was ihr fehlt, ist der Hinweis, dass er für diese Konstellation relevant ist. Die offengelegte Limitation ist damit selbst die nützliche Information.",
+      "tags": [
+        "medikationsbrief",
+        "sonderfaelle",
+        "beratung"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 16, nach BAK, Empfehlungen für die Erstellung eines Medikationsbriefs",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-029",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche sprachlichen Mittel empfiehlt die ABDA, um Lösungsvorschläge höflich statt als Aufforderung zu formulieren?",
+      "antwort": "Konjunktiv, abschwächende Zusätze wie „ggf.“ und „evtl.“, Passivkonstruktionen und indirekte Aufforderungen. Trotzdem sollen die Vorschläge selbstbewusst vertreten werden. Der Imperativ gehört ausdrücklich nicht dazu.",
+      "vertiefung": "Die Spannung zwischen „nie als Aufforderung“ und „trotzdem selbstbewusst vertreten“ ist beabsichtigt und muss ausgehalten werden. Höflichkeit betrifft die Form, nicht den Inhalt: „Es könnte erwogen werden, X abzusetzen“ ist höflich und eindeutig zugleich – „vielleicht wäre eventuell zu überlegen, ob gegebenenfalls …“ ist nur noch unklar.",
+      "tags": [
+        "medikationsbrief",
+        "schreibstil",
+        "kommunikation"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 17",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Konjunktiv",
+        "Abschwächungen wie „ggf.“ und „evtl.“",
+        "Passivkonstruktionen",
+        "Indirekte Aufforderungen",
+        "Imperativ"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "ma-brief-030",
+      "typ": "mehrfachauswahl",
+      "frage": "Welche Anforderungen gelten für Verständlichkeit und professionellen Ton des Medikationsbriefs?",
+      "antwort": "Allgemeine Regeln von Grammatik und Rechtschreibung einhalten, unkomplizierte Sprache verwenden, sich auf das Wesentliche beschränken und ungebräuchliche Abkürzungen vermeiden. Der professionelle Ton ergibt sich in der Regel bereits aus den anderen beiden Aspekten des Schreibstils; zu vermeiden ist „Patientensprache“. Der Bericht soll möglichst kurz sein – der Ton hat jedoch Vorrang vor der Kürze.",
+      "vertiefung": "Dass eine Abkürzungslegende unter den nicht relevanten formalen Angaben steht, passt genau hierher: Statt eine Legende beizulegen, werden ungebräuchliche Abkürzungen gar nicht erst verwendet. Das ist der kürzere Weg zum selben Ziel.",
+      "tags": [
+        "medikationsbrief",
+        "schreibstil",
+        "kommunikation"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folien 9, 17 und 18",
+      "stand": "2026-10",
+      "geprueft": true,
+      "optionen": [
+        "Grammatik und Rechtschreibung einhalten",
+        "Unkomplizierte Sprache, Fokus auf das Wesentliche",
+        "Keine ungebräuchlichen Abkürzungen",
+        "Keine „Patientensprache“",
+        "Kürze geht in jedem Fall vor dem Ton"
+      ],
+      "richtig": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "ma-brief-031",
+      "typ": "karte",
+      "frage": "Wie wird ein kritisches Thema angesprochen, etwa ein vermuteter Fehler in der Verordnung?",
+      "antwort": "Nicht pauschal von einem Fehler ausgehen. Der Fokus liegt auf Fakten und neutralen Quellen, etwa mit einer Wendung wie „in der aktuellen Leitlinie …“. Für die Formulierung stehen die Formulierungshilfen der Bundesapothekerkammer in Anhang 2 der Arbeitshilfe zum Medikationsbrief zur Verfügung.",
+      "vertiefung": "Der Verweis auf eine neutrale Quelle verlagert die Autorität weg von der eigenen Person und hin zur Sache – das nimmt dem Hinweis die persönliche Spitze, ohne ihn abzuschwächen. Dass der Fehler nur vermutet ist, ist zudem oft zutreffend: Der Apotheke fehlen regelmäßig Informationen, die die Verordnung erklären würden.",
+      "tags": [
+        "medikationsbrief",
+        "schreibstil",
+        "kommunikation"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 18, nach BAK, Empfehlungen für die Erstellung eines Medikationsbriefs",
+      "stand": "2026-10",
+      "geprueft": true
+    },
+    {
+      "id": "ma-brief-032",
+      "typ": "reihenfolge",
+      "frage": "Bringe die Schritte von den gefundenen ABP bis zur versendeten Nachricht in die richtige Reihenfolge.",
+      "antwort": "Medikationsanalyse mit Auswahl der ABP nach Relevanz und Handlungsbedarf und Aktualisierung des Medikationsplans, Wahl des Kommunikationswegs, Befüllen des Medikationsbriefs, Anhängen des Medikationsplans, Prüfen, Speichern und Versenden des PDF als Anhang einer KIM-Nachricht.",
+      "vertiefung": "Der zweite Schritt wird häufig übersprungen: Dringendes gehört ans Telefon, nur die relevanten ABP gehen schriftlich. Wer alles schriftlich erledigt, verzögert genau die Fälle, die keine Verzögerung vertragen.",
+      "tags": [
+        "medikationsbrief",
+        "ablauf",
+        "organisation"
+      ],
+      "quelle": "Hackenberg/Wurmbach, AKNR-Seminar 2026, Handout-Folie 19",
+      "stand": "2026-10",
+      "geprueft": true,
+      "bild": "bilder/ma-ablauf.svg",
+      "bildunterschrift": "Die fünf Schritte von der Analyse zur versendeten Nachricht. Die Auswahl der ABP steht am Anfang, nicht erst beim Schreiben.",
+      "schritte": [
+        "Medikationsanalyse: ABP nach Relevanz und Handlungsbedarf auswählen, Medikationsplan aktualisieren",
+        "Kommunikationsweg wählen: Dringendes telefonisch, relevante ABP schriftlich",
+        "Medikationsbrief befüllen",
+        "Medikationsplan anhängen",
+        "PDF prüfen, speichern und als Anhang einer KIM-Nachricht versenden"
+      ]
+    },
+    {
+      "id": "ma-brief-033",
+      "typ": "freitext",
+      "frage": "Bei einer Medikationsanalyse fällt auf, dass eine Patientin Amlodipin von zwei verschiedenen Verordnern erhält, einmal 5 mg und einmal 10 mg. Formuliere den zugehörigen Eintrag für den Medikationsbrief und begründe deine Formulierungsentscheidungen.",
+      "antwort": "Der Eintrag braucht alle drei Komponenten. Problem: Doppelmedikation mit Amlodipin, als manifest zu bewerten, da beide Verordnungen aktuell eingenommen werden. Ursache: die beiden Verordnungen mit Stärke und Herkunft genau benennen, also Amlodipin 5 mg und Amlodipin 10 mg von zwei Verordnern, mit der Angabe, seit wann die Doppeleinnahme besteht. Lösungsvorschlag: konkret, etwa dass eine der beiden Verordnungen beendet und die verbleibende Dosis festgelegt werden könnte, mit einer Empfehlung zur Blutdruckkontrolle. Formuliert wird im Konjunktiv und ohne Aufforderungston, aber eindeutig – kein „bitte klären“. Nicht pauschal von einem Verordnungsfehler ausgehen, da die Apotheke die Vorgeschichte beider Verordnungen nicht kennt. Fehlen Angaben für die genaue Einschätzung, etwa aktuelle Blutdruckwerte, wird diese Limitation offengelegt und der Vorschlag an die Voraussetzung geknüpft.",
+      "vertiefung": "Die Doppelmedikation ist nach den Projektergebnissen das am höchsten bewertete ABP überhaupt – und zugleich eines der wenigen, bei denen die Apotheke durch den Blick auf die Gesamtmedikation einen echten Informationsvorsprung vor jedem einzelnen Verordner hat. Genau das gehört in die Ursachenkomponente, weil es der Praxis erklärt, warum die Apotheke das sehen konnte und sie nicht.",
+      "tags": [
+        "medikationsbrief",
+        "fallbeispiel",
+        "darstellung"
+      ],
+      "quelle": "eigenes Fallbeispiel nach den Regeln auf Handout-Folien 15 bis 18 (Hackenberg/Wurmbach, AKNR-Seminar 2026)",
+      "stand": "2026-10",
+      "geprueft": true,
+      "pruefpunkte": [
+        "Alle drei Komponenten vorhanden: Problem, Ursache, Lösungsvorschlag",
+        "Problem nach Art benannt (Doppelmedikation) und bewertet (manifest)",
+        "Ursache nennt beide Verordnungen mit Wirkstoff, Stärke und Herkunft",
+        "Lösungsvorschlag konkret, mit Angabe der verbleibenden Dosis",
+        "Formulierung im Konjunktiv, ohne Aufforderungston, aber eindeutig",
+        "Kein pauschaler Fehlervorwurf gegenüber dem Verordner",
+        "Fehlende Angaben werden als Limitation offengelegt, der Vorschlag trotzdem gemacht"
+      ]
+    }
+  ]
+}
