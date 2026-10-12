@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { skizzeSpeichern, ereignisSpeichern, ereignisLoeschen } from '../lib/speicher.js'
-import { BEWERTUNG, pensumBauen } from '../lib/planer.js'
+import { BEWERTUNG, pensumBauen, pensumNachNochmal } from '../lib/planer.js'
 import { xpFuerEreignis } from '../lib/fortschritt.js'
 
 // ALTER_SITZUNG_SCHLUESSEL war der einzige, profillose Speicherort vor
@@ -282,9 +282,12 @@ export function useLernsitzung({
     let sitzungJetzt = sitzungBasis
     if (sitzungBasis !== sitzung) setSitzung(sitzungBasis)
     if (bewertung === BEWERTUNG.NOCHMAL) {
-      sitzungJetzt = { ...sitzungBasis, pensum: [...sitzungBasis.pensum, item] }
-      setSitzung(sitzungJetzt)
-      zusatz = 1
+      const pensumNeu = pensumNachNochmal(sitzungBasis.pensum, position)
+      if (pensumNeu !== sitzungBasis.pensum) {
+        sitzungJetzt = { ...sitzungBasis, pensum: pensumNeu }
+        setSitzung(sitzungJetzt)
+        zusatz = 1
+      }
     }
     weiter(zusatz, sitzungJetzt)
   }

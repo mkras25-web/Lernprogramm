@@ -104,3 +104,28 @@ test('Nach Mausklick auf einen Knopf deckt die Leertaste weiterhin auf', async (
   await expect(page.locator('.bewertung')).toBeVisible()
   await expect(page.locator('.markenKnopf', { hasText: 'Lesezeichen' })).toHaveClass(/aktiv/)
 })
+
+test('Zweimal Nochmal: Karte kommt in derselben Sitzung nicht ein drittes Mal', async ({ page }) => {
+  await angemeldet(page, 'Nochmal')
+  const gesamt = async () => Number((await stand(page)).match(/von (\d+)/)[1])
+  const anfang = await gesamt()
+  const frage = (await page.locator('.frage').innerText()).trim()
+  await page.locator('button', { hasText: 'Antwort zeigen' }).click()
+  await page.keyboard.press('1')
+  await expect.poll(gesamt).toBe(anfang + 1)
+  // Klick statt Leertaste: steht der Fokus in einem Eingabefeld
+  // (numerisch), tippt die Leertaste dort hinein
+  // bis zur Wiederholung weiterbewerten (Gut)
+  for (let i = 1; i < anfang; i++) {
+    await page.locator('button', { hasText: 'Antwort zeigen' }).click()
+    await expect(page.locator('.bewertung')).toBeVisible()
+    await page.keyboard.press('3')
+    await expect.poll(() => stand(page)).toMatch(new RegExp(`^${i + 1} von`))
+  }
+  await expect(page.locator('.frage')).toHaveText(frage)
+  await page.locator('button', { hasText: 'Antwort zeigen' }).click()
+  await expect(page.locator('.urteilZeile', { hasText: 'Zweiter Versuch' })).toBeVisible()
+  await page.keyboard.press('1')
+  // Sitzung endet, statt die Karte erneut anzuhaengen
+  await expect(page.locator('.lernkopf')).toHaveCount(0)
+})

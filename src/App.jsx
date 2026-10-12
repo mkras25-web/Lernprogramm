@@ -25,7 +25,7 @@ import {
   skizzeLoeschen,
   speicherSichern,
 } from './lib/speicher.js'
-import { BEWERTUNG, intervallVorschau, pensumBauen } from './lib/planer.js'
+import { BEWERTUNG, intervallVorschau, istWiederholung, pensumBauen } from './lib/planer.js'
 import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
@@ -625,6 +625,7 @@ export default function App({ profilId, onProfilWechseln }) {
           intervalle={intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate })}
           // Problemkarte: ab 6 Fehlern (Nutzerentscheidung 6A)
           istProblem={(zustaende.get(item.id)?.fehler ?? 0) >= 6}
+          zweiterVersuch={istWiederholung(sitzung.pensum, position)}
           themen={themen}
           glossar={glossar}
           fruehereSkizzen={skizzen.filter((s) => s.itemId === item.id)}

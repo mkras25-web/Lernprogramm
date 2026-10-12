@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { BEWERTUNG, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik } from './planer.js'
+import { BEWERTUNG, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal } from './planer.js'
 
 const TAG = 24 * 60 * 60 * 1000
 
@@ -127,5 +127,18 @@ describe('statistik', () => {
 
   it('liefert null als Trefferquote ohne Ereignisse', () => {
     expect(statistik([], new Map()).trefferquote).toBeNull()
+  })
+})
+
+describe('Nochmal in der Sitzung (hoechstens eine Wiederholung)', () => {
+  const a = { id: 'a' }, b = { id: 'b' }
+  it('haengt die Karte beim ersten Nochmal ans Ende', () => {
+    expect(pensumNachNochmal([a, b], 0)).toEqual([a, b, a])
+    expect(istWiederholung([a, b, a], 0)).toBe(false)
+  })
+  it('beim zweiten Nochmal bleibt das Pensum unveraendert', () => {
+    const pensum = [a, b, a]
+    expect(istWiederholung(pensum, 2)).toBe(true)
+    expect(pensumNachNochmal(pensum, 2)).toBe(pensum)
   })
 })

@@ -123,6 +123,21 @@ export function intervallVorschau(zustand, { zielBehaltensrate, jetzt = Date.now
   return ergebnis
 }
 
+// "Nochmal" haengt eine Karte nur EINMAL pro Sitzung erneut ans Ende
+// (Nutzerentscheidung 2026-10-12). Wer sie auch beim zweiten Mal nicht
+// weiss, sieht sie erst wieder, wenn FSRS sie faellig stellt - sonst
+// konnte eine Sitzung mit einer unbekannten Karte endlos laufen.
+// Wiederholung = dieselbe Karte stand in dieser Sitzung schon frueher.
+export function istWiederholung(pensum, position) {
+  const id = pensum[position]?.id
+  return id !== undefined && pensum.slice(0, position).some((i) => i.id === id)
+}
+
+export function pensumNachNochmal(pensum, position) {
+  if (istWiederholung(pensum, position)) return pensum
+  return [...pensum, pensum[position]]
+}
+
 // "4 T.", "3 Mon.", "1,2 J." - kurz genug fuer die Bewertungsknoepfe.
 export function intervallKurz(tage) {
   if (tage < 1) return 'heute'

@@ -35,6 +35,7 @@ export default function Lernen({
   istNeu,
   intervalle,
   istProblem,
+  zweiterVersuch = false,
   themen,
   glossar,
   fruehereSkizzen,
@@ -525,6 +526,11 @@ export default function Lernen({
                 {urteil === 'richtig'
                   ? 'Automatisch als richtig erkannt – Bewertung vorgeschlagen.'
                   : 'Automatisch als falsch erkannt – bei einem Vertipper bitte korrigieren.'}
+              </p>
+            )}
+            {zweiterVersuch && (
+              <p className="urteilZeile">
+                Zweiter Versuch – bei „Nochmal“ kommt die Karte nicht mehr in dieser Sitzung, sondern wieder, wenn sie fällig ist.
               </p>
             )}
             <div className="bewertung">
