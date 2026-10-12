@@ -128,4 +128,8 @@ test('Zweimal Nochmal: Karte kommt in derselben Sitzung nicht ein drittes Mal', 
   await page.keyboard.press('1')
   // Sitzung endet, statt die Karte erneut anzuhaengen
   await expect(page.locator('.lernkopf')).toHaveCount(0)
+  // ... und steht auf Heute unter "Heute nicht gewusst"
+  const liste = page.locator('.nichtGewusst')
+  await expect(liste.locator('h2')).toHaveText('Heute nicht gewusst (1)')
+  await expect(liste.locator('summary')).toHaveText(frage)
 })

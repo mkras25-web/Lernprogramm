@@ -3046,6 +3046,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 .bewertung .knopf { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.125rem; }
 .bewertung .knopf .taste { margin-left: 0; }
 .intervallHinweis { font-size: 0.6875rem; color: var(--rinde); line-height: 1.2; }
+.bewertungBedeutung { font-size: 0.75rem; line-height: 1.2; }
 .knopf.vorschlag .intervallHinweis { color: inherit; opacity: 0.8; }
 .problemMarke {
   padding: 0.05rem 0.4rem;
@@ -3346,3 +3347,7 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
 /* Knopf "weitere geplante Themen" in Pruefungen > Nach Thema: unter dem
    Raster, damit er nicht wie eine weitere Kachel wirkt. */
 .geplantMehr { display: flex; justify-content: center; margin: 0.75rem 0 0; }
+
+/* Heute nicht gewusst (2026-10-12): Frage aufklappen, Antwort lesen. */
+.nichtGewusst details summary { cursor: pointer; }
+.nichtGewusst .nichtGewusstAntwort { margin: 0.5rem 0; white-space: pre-line; }

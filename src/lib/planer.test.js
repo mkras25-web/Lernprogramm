@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { BEWERTUNG, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal } from './planer.js'
+import { BEWERTUNG, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal, heuteNichtGewusst } from './planer.js'
 
 const TAG = 24 * 60 * 60 * 1000
 
@@ -37,6 +37,15 @@ describe('zustaendeBerechnen (FSRS)', () => {
     expect(fuenfmal.intervall).toBe(einmal.intervall)
     expect(fuenfmal.faelligAb).toBe(einmal.faelligAb)
     expect(fuenfmal.gesamtAntworten).toBe(5) // Statistik zaehlt weiter alles
+  })
+
+  it('auch beim normalen Lernen zaehlt nur die erste Bewertung des Tages', () => {
+    const nurNochmal = zustaendeBerechnen([ein(BEWERTUNG.NOCHMAL)]).get('a')
+    const danachGut = zustaendeBerechnen([ein(BEWERTUNG.NOCHMAL), ein(BEWERTUNG.GUT, ts + 5 * 60_000)]).get('a')
+    expect(danachGut.faelligAb).toBe(nurNochmal.faelligAb)
+    expect(danachGut.schwierigkeit).toBe(nurNochmal.schwierigkeit)
+    expect(danachGut.fehler).toBe(1)
+    expect(danachGut.gesamtAntworten).toBe(2)
   })
 
   it('am naechsten Tag zaehlt eine Uebung wieder', () => {
@@ -140,5 +149,21 @@ describe('Nochmal in der Sitzung (hoechstens eine Wiederholung)', () => {
     const pensum = [a, b, a]
     expect(istWiederholung(pensum, 2)).toBe(true)
     expect(pensumNachNochmal(pensum, 2)).toBe(pensum)
+  })
+})
+
+describe('heuteNichtGewusst', () => {
+  const jetzt = new Date('2026-10-12T18:00:00').getTime()
+  const e = (itemId, bewertung, stundenZurueck) => ({ itemId, bewertung, ts: jetzt - stundenZurueck * 3600_000 })
+  it('nennt Karten, deren letzte Bewertung heute Nochmal war, neueste zuerst', () => {
+    const liste = heuteNichtGewusst([
+      e('alt', BEWERTUNG.NOCHMAL, 30), // gestern
+      e('a', BEWERTUNG.NOCHMAL, 3),
+      e('a', BEWERTUNG.GUT, 2), // spaeter doch gewusst
+      e('b', BEWERTUNG.NOCHMAL, 2),
+      e('c', BEWERTUNG.GUT, 4),
+      e('c', BEWERTUNG.NOCHMAL, 1),
+    ], jetzt)
+    expect(liste).toEqual(['c', 'b'])
   })
 })

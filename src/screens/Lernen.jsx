@@ -36,6 +36,7 @@ export default function Lernen({
   intervalle,
   istProblem,
   zweiterVersuch = false,
+  heuteBewertet = false,
   themen,
   glossar,
   fruehereSkizzen,
@@ -56,7 +57,9 @@ export default function Lernen({
   const [eingabe, setEingabe] = useState(null)
   const [notizOffen, setNotizOffen] = useState(false)
   const [meldenOffen, setMeldenOffen] = useState(false)
-  const [erklaerungOffen, setErklaerungOffen] = useState(false)
+  // Beim zweiten Versuch ist die Erklaerung gleich offen: verstehen statt
+  // nur nochmal raten (Nutzerentscheidung 2026-10-12).
+  const [erklaerungOffen, setErklaerungOffen] = useState(zweiterVersuch)
   const [hilfeGenutzt, setHilfeGenutzt] = useState(false)
   const bildRef = useRef(null)
   const seed = useMemo(() => (item.id + position).split('').reduce((s, z) => s + z.charCodeAt(0), 0), [item.id, position])
@@ -66,8 +69,9 @@ export default function Lernen({
     setEingabe(null)
     setNotizOffen(false)
     setMeldenOffen(false)
-    setErklaerungOffen(false)
+    setErklaerungOffen(zweiterVersuch)
     setHilfeGenutzt(false)
+    // zweiterVersuch haengt nur an item/position
   }, [item.id, position])
 
   // Automatische Bewertung, wo die App die Antwort kennt.
@@ -313,7 +317,7 @@ export default function Lernen({
 
           {/* Erklaerung: bei neuen Karten vorab, sonst nach dem Aufdecken -
               gerade nach einem Fehler hilft das Nachlesen am meisten (7A). */}
-          {(istNeu || aufgedeckt) && thema?.erklaerung && (
+          {(istNeu || aufgedeckt || zweiterVersuch) && thema?.erklaerung && (
             <div className="erklaerkasten">
               <button className="textknopf" onClick={() => setErklaerungOffen((o) => !o)}>
                 {erklaerungOffen ? 'Erklärung ausblenden' : 'Erklärung zum Thema zeigen'}
@@ -528,9 +532,13 @@ export default function Lernen({
                   : 'Automatisch als falsch erkannt – bei einem Vertipper bitte korrigieren.'}
               </p>
             )}
-            {zweiterVersuch && (
+            {zweiterVersuch ? (
               <p className="urteilZeile">
-                Zweiter Versuch – bei „Nochmal“ kommt die Karte nicht mehr in dieser Sitzung, sondern wieder, wenn sie fällig ist.
+                Zweiter Versuch – zählt nicht mehr für die Planung. Bei „Nochmal“ kommt die Karte nicht mehr in dieser Sitzung.
+              </p>
+            ) : heuteBewertet && (
+              <p className="urteilZeile">
+                Heute schon bewertet – diese Antwort ändert die Planung nicht mehr.
               </p>
             )}
             <div className="bewertung">
@@ -539,11 +547,13 @@ export default function Lernen({
                 onClick={() => bewerten(BEWERTUNG.NOCHMAL)}
               >
                 <span className="bewertungZeile">Nochmal <span className="taste">1</span></span>
+                <small className="bewertungBedeutung">nicht gewusst</small>
                 {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.NOCHMAL])}</small>}
               </button>
               {stufen === 4 && (
                 <button className="knopf" onClick={() => bewerten(BEWERTUNG.SCHWER)}>
                   <span className="bewertungZeile">Schwer <span className="taste">2</span></span>
+                  <small className="bewertungBedeutung">mit Mühe</small>
                   {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.SCHWER])}</small>}
                 </button>
               )}
@@ -552,11 +562,13 @@ export default function Lernen({
                 onClick={() => bewerten(BEWERTUNG.GUT)}
               >
                 <span className="bewertungZeile">Gut <span className="taste">{stufen === 4 ? '3' : '2'}</span></span>
+                <small className="bewertungBedeutung">gewusst</small>
                 {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.GUT])}</small>}
               </button>
               {stufen === 4 && (
                 <button className="knopf" onClick={() => bewerten(BEWERTUNG.LEICHT)}>
                   <span className="bewertungZeile">Leicht <span className="taste">4</span></span>
+                  <small className="bewertungBedeutung">sofort gewusst</small>
                   {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.LEICHT])}</small>}
                 </button>
               )}

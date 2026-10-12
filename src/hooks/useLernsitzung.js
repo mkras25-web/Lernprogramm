@@ -256,8 +256,7 @@ export function useLernsitzung({
         bewertung,
         dauerMs: Date.now() - startZeit.current,
         hilfe: hilfeGenutzt || undefined,
-        // Betriebsart: Uebungsmodi zaehlen fuer die Planung nur einmal pro
-        // Karte und Tag (planer.js, UEBUNGSARTEN).
+        // Betriebsart: fuer Statistik und Herkunft der Antwort.
         art: sitzungBasis.art,
       })
     } catch (e) {

@@ -11,6 +11,7 @@ export default function Heute({
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
   kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten,
+  nichtGewusst = [], onOeffnen,
 }) {
   // Klausur-Countdown (4B): naechste anstehende Klausur(en), nur Anzeige.
   const heuteBeginn = new Date()
@@ -210,6 +211,29 @@ export default function Heute({
               <button className="knopf schmal" onClick={onFortsetzen}>Fortsetzen</button>
               <button className="textknopf" onClick={onVerwerfen}>Verwerfen</button>
             </div>
+          </section>
+        )}
+
+        {nichtGewusst.length > 0 && (
+          <section className="block heuteBreit nichtGewusst">
+            <h2 className="abschnitt">Heute nicht gewusst ({nichtGewusst.length})</h2>
+            <p className="nebentext">
+              Diese Karten kommen wieder, wenn sie fällig sind. Bis dahin in Ruhe durchlesen.
+            </p>
+            <ul className="treffer">
+              {nichtGewusst.map((item) => (
+                <li key={item.id} className="trefferKarte">
+                  <p className="herkunft">{item.modulTitel} · {item.themaTitel}</p>
+                  <details>
+                    <summary className="trefferFrage">{item.frage}</summary>
+                    <p className="nichtGewusstAntwort">{item.antwort}</p>
+                    <button className="textknopf" onClick={() => onOeffnen?.(item.id)}>
+                      In Nachschlagen öffnen →
+                    </button>
+                  </details>
+                </li>
+              ))}
+            </ul>
           </section>
         )}
 

@@ -25,7 +25,7 @@ import {
   skizzeLoeschen,
   speicherSichern,
 } from './lib/speicher.js'
-import { BEWERTUNG, intervallVorschau, istWiederholung, pensumBauen } from './lib/planer.js'
+import { BEWERTUNG, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWiederholung, pensumBauen } from './lib/planer.js'
 import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
@@ -217,6 +217,12 @@ export default function App({ profilId, onProfilWechseln }) {
     pruefungHinweis,
     sicherungFaellig,
   } = useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung })
+
+  // Heute nicht gewusst (Heute-Bildschirm): zum ruhigen Durchlesen.
+  const nichtGewusst = useMemo(() => {
+    const nachId = new Map(aktiveItems.map((i) => [i.id, i]))
+    return heuteNichtGewusst(aktiveEreignisse).map((id) => nachId.get(id)).filter(Boolean)
+  }, [aktiveItems, aktiveEreignisse])
 
   // Kurse (lib/kurs.js): je Kurs Fragen, naechste Klausur, Reife, Plan.
   const kursKennungen = useMemo(() => kennungenImInhalt(items), [items])
@@ -622,7 +628,12 @@ export default function App({ profilId, onProfilWechseln }) {
           marke={marken.get(item.id)}
           thema={themen.find((t) => t.id === item.themaId)}
           istNeu={!zustaende.has(item.id)}
-          intervalle={intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate })}
+          // Heute schon bewertet: weitere Antworten aendern die Planung
+          // nicht (planer.js) - dann keine irrefuehrende Vorschau.
+          intervalle={heuteBewertet(zustaende.get(item.id))
+            ? null
+            : intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate })}
+          heuteBewertet={heuteBewertet(zustaende.get(item.id))}
           // Problemkarte: ab 6 Fehlern (Nutzerentscheidung 6A)
           istProblem={(zustaende.get(item.id)?.fehler ?? 0) >= 6}
           zweiterVersuch={istWiederholung(sitzung.pensum, position)}
@@ -768,6 +779,8 @@ export default function App({ profilId, onProfilWechseln }) {
           onVerwerfen={verwerfen}
           onStart={(art) => sitzungStarten(art, {})}
           onThemen={() => setAnsicht('themen')}
+          nichtGewusst={nichtGewusst}
+          onOeffnen={oeffneItem}
           aufstieg={aufstieg}
           onAufstiegGesehen={() => setAufstieg(null)}
           pruefungHinweis={pruefungHinweis}

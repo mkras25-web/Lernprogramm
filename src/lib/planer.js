@@ -22,10 +22,12 @@ export const BEWERTUNG = {
 }
 
 
-// Uebungsmodi: zaehlen fuer XP und Statistik voll, fuer die Planung aber
-// hoechstens einmal pro Karte und Tag (Nutzerentscheidung 2026-10-10).
-// Vorher schob z. B. fuenfmal "Gut" im Marathon eine Karte Monate weit.
-export const UEBUNGSARTEN = ['marathon', 'schnell', 'fehlerstapel', 'endspurt']
+// Fuer die Planung zaehlt nur die ERSTE Bewertung einer Karte am Tag -
+// in allen Betriebsarten (2026-10-10 nur Uebungsmodi, seit 2026-10-12
+// ueberall, Nutzerentscheidung). Sie misst, ob die Karte wirklich sass;
+// ein "Gut" beim zweiten Versuch nach "Nochmal" ist nur Kurzzeit-
+// gedaechtnis, und jedes weitere "Nochmal" bestrafte die Karte erneut.
+// XP und Statistik zaehlen weiter jede Antwort.
 
 export const ZIEL_BEHALTENSRATE_STANDARD = 0.9
 
@@ -72,14 +74,13 @@ function zustandAusKarte(karte, extra) {
 export function zustaendeBerechnen(ereignisse, { zielBehaltensrate } = {}) {
   const f = planer(zielBehaltensrate)
   const zustaende = new Map()
-  const geplantAmTag = new Set() // `${itemId}|${tag}` - fuer die Uebungsregel
+  const geplantAmTag = new Set() // `${itemId}|${tag}` - erste Bewertung des Tages
 
   for (const e of ereignisse) {
     const vorher = zustaende.get(e.itemId)
     const tag = tagesSchluessel(e.ts)
     const schluessel = `${e.itemId}|${tag}`
-    const istUebung = UEBUNGSARTEN.includes(e.art)
-    const zaehltFuerPlan = !istUebung || !geplantAmTag.has(schluessel)
+    const zaehltFuerPlan = !geplantAmTag.has(schluessel)
 
     let karte = vorher?.karte ?? createEmptyCard(new Date(e.ts))
     if (zaehltFuerPlan && e.bewertung >= 1 && e.bewertung <= 4) {
@@ -121,6 +122,29 @@ export function intervallVorschau(zustand, { zielBehaltensrate, jetzt = Date.now
     ergebnis[b] = f.next(karte, zeit, b).card.scheduled_days
   }
   return ergebnis
+}
+
+// Wurde die Karte heute schon bewertet? Dann aendert eine weitere
+// Bewertung die Planung nicht mehr (siehe zustaendeBerechnen).
+export function heuteBewertet(zustand, jetzt = Date.now()) {
+  return zustand?.zuletzt !== undefined && tagesSchluessel(zustand.zuletzt) === tagesSchluessel(jetzt)
+}
+
+// Karten, deren letzte Bewertung HEUTE "Nochmal" war - die Liste
+// "Heute nicht gewusst" auf dem Heute-Bildschirm. Wer sie spaeter am Tag
+// doch noch richtig hat, faellt wieder heraus. Neueste zuerst.
+export function heuteNichtGewusst(ereignisse, jetzt = Date.now()) {
+  const heute = tagesSchluessel(jetzt)
+  const letzte = new Map()
+  for (const e of ereignisse) {
+    if (tagesSchluessel(e.ts) !== heute) continue
+    const vorher = letzte.get(e.itemId)
+    if (!vorher || e.ts >= vorher.ts) letzte.set(e.itemId, e)
+  }
+  return [...letzte.values()]
+    .filter((e) => e.bewertung === BEWERTUNG.NOCHMAL)
+    .sort((a, b) => b.ts - a.ts)
+    .map((e) => e.itemId)
 }
 
 // "Nochmal" haengt eine Karte nur EINMAL pro Sitzung erneut ans Ende

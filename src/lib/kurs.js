@@ -186,9 +186,8 @@ export function klausurplan(items, zustaende, { klausur = null, jetzt = Date.now
 }
 
 // Endspurt: alle Kursfragen, die (noch) nicht klausurreif sind - die
-// wackligsten zuerst. Die Sitzung haengt "Nochmal" ans Ende, bis alles
-// einmal sitzt; fuer FSRS zaehlt das hoechstens einmal pro Tag
-// (Betriebsart "endspurt" in UEBUNGSARTEN).
+// wackligsten zuerst. "Nochmal" haengt eine Karte einmal ans Ende; fuer
+// FSRS zaehlt nur die erste Bewertung des Tages (planer.js).
 export function endspurt(reife) {
   return reife.eintraege
     .filter((e) => !e.sicher)
