@@ -29,4 +29,11 @@ describe('Semesterkalender (F8)', () => {
     expect(wochen[0][1].datum).toBe(felder[0].datum)
     expect(wochen.every((w) => w.length === 7)).toBe(true)
   })
+
+  it('zaehlt ueber die Zeitumstellung Kalendertage, keinen Tag doppelt', () => {
+    const vorher = new Date('2026-10-24T10:00').getTime()
+    const felder = lastvorschau({ zustaende: new Map(), tage: 4, jetzt: vorher })
+    const tage = felder.map((f) => new Date(f.datum).getDate())
+    expect(tage).toEqual([24, 25, 26, 27])
+  })
 })

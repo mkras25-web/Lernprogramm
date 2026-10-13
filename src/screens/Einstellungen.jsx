@@ -381,7 +381,7 @@ export default function Einstellungen({
               <p className="zeileHinweis">
                 {werte.fsrsGewichte?.w
                   ? `Aktiv: aus ${werte.fsrsGewichte.basis ?? '?'} Bewertungen berechnet${werte.fsrsGewichte.datum ? ` am ${werte.fsrsGewichte.datum}` : ''}.`
-                  : 'Standard. Ab etwa 1000 Bewertungen lässt sich die Planung an dich anpassen: Sicherung exportieren, Einspielen\fsrs_anpassen.py ausführen, Ausgabe hier einfügen.'}
+                  : 'Standard. Ab etwa 1000 Bewertungen lässt sich die Planung an dich anpassen: Sicherung exportieren, Einspielen/fsrs_anpassen.py ausführen, Ausgabe hier einfügen.'}
               </p>
             </div>
             <GewichteFeld wert={werte.fsrsGewichte} onSetzen={(g) => aendern('fsrsGewichte', g)} />

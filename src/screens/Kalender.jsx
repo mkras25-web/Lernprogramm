@@ -32,7 +32,7 @@ export default function Kalender({ zustaende, neueAnzahl, opt, klausuren = [], k
         Erwartete Karten je Tag in den nächsten acht Wochen: fällige Wiederholungen nach heutigem Stand
         plus neue Karten ({opt.neuProTag} am Tag, solange es neue gibt). Was aus künftigem Lernen dazukommt,
         fehlt noch – die Zahlen sind eine Untergrenze.
-        {spitze?.summe > 0 && ` Spitze: ${spitze.summe} Karten am ${datum(spitze.datum)}.`}
+        {spitze?.summe > 0 && ` Spitze: ${spitze.summe} Karten am ${datum(spitze.datum)}`}
       </p>
       {ueberlast.length > 0 && (
         <p className="problemHinweis">

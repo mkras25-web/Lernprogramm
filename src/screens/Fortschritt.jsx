@@ -238,11 +238,11 @@ export default function Fortschritt({
                 <ul className="verteilung">
                   {jeModul.map((m) => (
                     <li key={m.titel}>
-                      <span className="verteilungName">{m.titel}</span>
+                      <span className="verteilungName">{m.titel} ({m.anzahl})</span>
                       <span className="verteilungBalken">
                         <span style={{ width: `${Math.round(m.tatsaechlich * 100)}%` }} />
                       </span>
-                      <span className="verteilungZahl">{prozent(m.tatsaechlich)} · {m.anzahl}</span>
+                      <span className="verteilungZahl">{prozent(m.tatsaechlich)}</span>
                     </li>
                   ))}
                 </ul>
@@ -251,7 +251,7 @@ export default function Fortschritt({
                 {fsrsGewichte?.w
                   ? `Planung mit eigenen Gewichten (berechnet aus ${fsrsGewichte.basis ?? '?'} Bewertungen).`
                   : planungswirksam >= ANPASSEN_AB
-                    ? `${planungswirksam} Bewertungen – genug, um die Planung an dich anzupassen: Einspielen\fsrs_anpassen.py, Ergebnis in den Einstellungen eintragen.`
+                    ? `${planungswirksam} Bewertungen – genug, um die Planung an dich anzupassen: Einspielen/fsrs_anpassen.py, Ergebnis in den Einstellungen eintragen.`
                     : `Anpassen der Planung an dich lohnt ab etwa ${ANPASSEN_AB} Bewertungen (bisher ${planungswirksam}).`}
               </p>
             </>

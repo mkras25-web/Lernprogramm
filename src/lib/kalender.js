@@ -17,14 +17,22 @@ function tagesBeginn(ts) {
 
 export function lastvorschau({ zustaende, neueAnzahl = 0, neuProTag = 6, maxProTag = 30, klausuren = [], tage = 56, jetzt = Date.now() }) {
   const heute = tagesBeginn(jetzt)
+  // Kalendertage statt "+24 Stunden": sonst erschien der Tag der
+  // Zeitumstellung (25.10.2026) doppelt.
+  const tagNr = (i) => {
+    const d = new Date(heute)
+    d.setDate(d.getDate() + i)
+    return d.getTime()
+  }
+  const abstandVon = (ts) => Math.round((tagesBeginn(ts) - heute) / TAG)
   const felder = Array.from({ length: tage }, (_, i) => ({
-    datum: heute + i * TAG,
+    datum: tagNr(i),
     faellig: 0,
     neu: 0,
     klausuren: [],
   }))
   for (const z of zustaende.values()) {
-    const abstand = Math.floor((tagesBeginn(z.faelligAb) - heute) / TAG)
+    const abstand = abstandVon(z.faelligAb)
     if (abstand < 0) felder[0].faellig += 1
     else if (abstand < tage) felder[abstand].faellig += 1
   }
@@ -35,7 +43,7 @@ export function lastvorschau({ zustaende, neueAnzahl = 0, neuProTag = 6, maxProT
   }
   for (const k of klausuren) {
     if (!k.datum) continue
-    const abstand = Math.round((new Date(`${k.datum}T00:00`).getTime() - heute) / TAG)
+    const abstand = abstandVon(new Date(`${k.datum}T00:00`).getTime())
     if (abstand >= 0 && abstand < tage) felder[abstand].klausuren.push(k)
   }
   for (const f of felder) {
