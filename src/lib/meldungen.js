@@ -63,6 +63,74 @@ export function meldungenNachziehen(marken) {
   return aenderungen
 }
 
+// --- Erledigte Meldungen (P10, 2026-10-13) -------------------------------
+//
+// Beim Melden merkt sich die Marke einen Fingerabdruck des Karteninhalts
+// (meldung.inhalt). Aendert eine spaetere Lieferung die Karte, gilt die
+// Meldung als erledigt: Meldung und Einspruch verschwinden, die Karte geht
+// auf "ungesichtet" zurueck (Nutzerwunsch: erst nach erneuter Sichtung
+// wieder einordnen) und die alte Meldung bleibt als "erledigt" vermerkt.
+
+// Felder, die der Inhalte-Chat beim Ueberarbeiten aendert - nicht die
+// Zuordnungen, die der Lader setzt.
+const INHALT = ['frage', 'antwort', 'vertiefung', 'quelle', 'stand', 'geprueft', 'pruefhinweis',
+  'optionen', 'richtig', 'warum', 'paare', 'schritte', 'wert', 'toleranz', 'einheit', 'pruefpunkte',
+  'punkte', 'bereiche', 'fehlerNr', 'seiten', 'teile', 'referenz', 'bild']
+
+export function inhaltsStempel(item) {
+  const text = JSON.stringify(INHALT.map((f) => item?.[f] ?? null))
+  let h = 2166136261 // FNV-1a, reicht zum Wiedererkennen
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i)
+    h = Math.imul(h, 16777619)
+  }
+  return (h >>> 0).toString(36)
+}
+
+const monat = (ts) => new Date(ts).toISOString().slice(0, 7)
+
+// Ist die gemeldete Karte seit der Meldung ueberarbeitet worden?
+export function meldungErledigt(marke, item) {
+  if (!item || !istGemeldet(marke)) return false
+  const m = marke.meldung
+  if (m?.inhalt) return m.inhalt !== inhaltsStempel(item)
+  // Meldungen von vor dem Fingerabdruck: ein neuerer "stand" (JJJJ-MM) als
+  // der Monat der Meldung zeigt eine Ueberarbeitung an.
+  const ts = m?.ts ?? marke.ts
+  return Boolean(ts && typeof item.stand === 'string' && item.stand > monat(ts))
+}
+
+export function erledigtAenderung(marke) {
+  return {
+    einspruch: null,
+    meldung: null,
+    kategorieVorMeldung: null,
+    kategorie: null,
+    erledigt: { ts: Date.now(), grund: marke?.meldung?.grund ?? 'einspruch', text: marke?.meldung?.text ?? '' },
+  }
+}
+
+// [itemId, aenderung] fuer alle gemeldeten Karten, die inzwischen
+// ueberarbeitet sind. items = rohe Paket-Items (ohne eigene Fassung).
+export function erledigteMeldungen(marken, items) {
+  const nachId = new Map(items.map((i) => [i.id, i]))
+  const ergebnis = []
+  for (const [itemId, m] of marken) {
+    if (meldungErledigt(m, nachId.get(itemId))) ergebnis.push([itemId, erledigtAenderung(m)])
+  }
+  return ergebnis
+}
+
+// --- Freigaben (P8, 2026-10-13) ------------------------------------------
+// Der Nutzer markiert eine ungepruefte Karte als selbst geprueft (mit
+// Notiz, gegen welche Fassung). Das ist ein Pruefauftrag fuer den Pruef-Chat,
+// keine Freigabe im Inhalt - geprueft wird dort mit Fundstelle gesetzt.
+export function freigabenSammeln({ items, marken }) {
+  return items
+    .filter((i) => i.geprueft === false && marken.get(i.id)?.freigabe)
+    .map((item) => ({ item, freigabe: marken.get(item.id).freigabe }))
+}
+
 const grundName = (id) => MELDEGRUENDE.find(([g]) => g === id)?.[1] ?? id
 
 // Liefert je Item die Gruende, warum es in die Liste gehoert.
@@ -83,12 +151,13 @@ export function meldungenSammeln({ items, marken, zustaende }) {
   return ergebnis
 }
 
-export function meldungenMarkdown({ eintraege, paket, datum = new Date() }) {
+export function meldungenMarkdown({ eintraege, freigaben = [], paket, datum = new Date() }) {
   const tag = datum.toLocaleDateString('de-DE')
   const zeilen = [
     `# Meldungen aus der Lern-App – ${tag}`,
     '',
-    `Paket: ${paket?.titel ?? paket?.id ?? '?'}${paket?.version ? ` (Version ${paket.version})` : ''} · ${eintraege.length} Karten`,
+    `Paket: ${paket?.titel ?? paket?.id ?? '?'}${paket?.version ? ` (Version ${paket.version})` : ''} · ${eintraege.length} Karten` +
+      (freigaben.length ? ` · ${freigaben.length} Freigaben` : ''),
     '',
     'Bitte die genannten Karten in den jeweiligen Itemdateien prüfen und',
     'überarbeiten. Quellenpflicht gilt wie immer (Buch + gedruckte Seite).',
@@ -112,6 +181,24 @@ export function meldungenMarkdown({ eintraege, paket, datum = new Date() }) {
         if (marke.frage) zeilen.push(`- Frage: ${marke.frage}`)
         if (marke.antwort) zeilen.push(`- Antwort: ${marke.antwort}`)
       }
+      zeilen.push('')
+    }
+  }
+  if (freigaben.length) {
+    zeilen.push(
+      '## Freigaben',
+      '',
+      'Karten mit `geprueft: false`, die der Nutzer selbst als geprüft markiert hat.',
+      'Prüfauftrag für den Prüf-Chat (ANLEITUNG-THEMA-CHAT.md 7.2), keine Freigabe:',
+      '`geprueft` erst mit belegter Fundstelle auf `true` setzen.',
+      ''
+    )
+    for (const { item, freigabe } of freigaben) {
+      zeilen.push(`### \`${item.id}\` · ${item.themaTitel}`, '')
+      zeilen.push(`- Nutzer: ${freigabe.text || '(ohne Notiz)'} (${new Date(freigabe.ts).toLocaleDateString('de-DE')})`)
+      if (item.pruefhinweis) zeilen.push(`- Prüfhinweis: ${item.pruefhinweis}`)
+      zeilen.push('', `**Frage:** ${item.frage}`, '', `**Antwort:** ${item.antwort ?? '–'}`)
+      if (item.quelle) zeilen.push('', `**Quelle:** ${quelleText(item.quelle)}`)
       zeilen.push('')
     }
   }

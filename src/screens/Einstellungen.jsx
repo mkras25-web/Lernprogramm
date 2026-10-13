@@ -576,7 +576,7 @@ export default function Einstellungen({
               <p className="zeileTitel">Meldungen für den Web-Chat</p>
               <p className="zeileHinweis">
                 {anzahlMeldungen > 0
-                  ? `${anzahlMeldungen} Karten zum Überarbeiten: Meldungen, Einsprüche, „Überarbeiten“-Sichtungen, eigene Fassungen und Problemkarten. Als Markdown-Datei zum Einfügen in den Themen-Chat.`
+                  ? `${anzahlMeldungen} Karten zum Überarbeiten: Meldungen, Einsprüche, „Überarbeiten“-Sichtungen, eigene Fassungen, Problemkarten und selbst geprüfte Freigaben. Als Markdown-Datei zum Einfügen in den Themen- bzw. Prüf-Chat.`
                   : 'Zurzeit keine gemeldeten oder auffälligen Karten.'}
               </p>
             </div>

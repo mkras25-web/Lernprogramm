@@ -42,7 +42,15 @@ import {
 } from './lib/kurs.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
 import { verwandteThemen } from './lib/verwandt.js'
-import { meldungenMarkdown, meldungenNachziehen, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
+import {
+  erledigteMeldungen,
+  freigabenSammeln,
+  inhaltsStempel,
+  meldungenMarkdown,
+  meldungenNachziehen,
+  textHerunterladen,
+  wunschlisteMarkdown,
+} from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
 import Themen from './screens/Themen.jsx'
 import Sammlung from './screens/Sammlung.jsx'
@@ -356,6 +364,9 @@ export default function App({ profilId, onProfilWechseln }) {
     })
   }, [laedt, rohItems, paketInfo])
 
+  // Selbst gepruefte, ungepruefte Karten fuer den Pruef-Chat (P8)
+  const freigaben = useMemo(() => freigabenSammeln({ items, marken }), [items, marken])
+
   // Verwandte Themen fuer die Verwechslungspaare im Tagespensum (L4).
   const verwandtschaft = useMemo(() => verwandteThemen(themen, aktiveItems), [themen, aktiveItems])
 
@@ -429,6 +440,12 @@ export default function App({ profilId, onProfilWechseln }) {
   })
 
   async function markeAendern(itemId, aenderung) {
+    // Neue Meldung: Fingerabdruck des Paketinhalts dazu - daran erkennt die
+    // App spaeter, dass die Karte ueberarbeitet wurde (P10).
+    if (aenderung.meldung && !aenderung.meldung.inhalt) {
+      const roh = rohItems.find((i) => i.id === itemId)
+      if (roh) aenderung = { ...aenderung, meldung: { ...aenderung.meldung, inhalt: inhaltsStempel(roh) } }
+    }
     const vorher = markenRef.current.get(itemId) ?? {}
     // Frischer Zeitstempel: sonst behielt die Marke den alten ts, und der
     // Abgleich hielt eine aeltere Fassung vom anderen Geraet fuer neuer.
@@ -474,17 +491,27 @@ export default function App({ profilId, onProfilWechseln }) {
   const nachziehenLaeuft = useRef(false)
   useEffect(() => {
     if (laedt || nachziehenLaeuft.current) return
-    const offen = meldungenNachziehen(marken)
-    if (offen.length === 0) return
+    // Zuerst ueberarbeitete Karten abhaken (P10), dann alte Meldungen
+    // nachziehen - eine erledigte Meldung gilt danach nicht mehr als gemeldet.
+    const erledigt = erledigteMeldungen(marken, rohItems)
+    const offen = erledigt.length ? [] : meldungenNachziehen(marken)
+    if (erledigt.length === 0 && offen.length === 0) return
     nachziehenLaeuft.current = true
     ;(async () => {
       try {
-        for (const [itemId, aenderung] of offen) await markeAendern(itemId, aenderung)
+        for (const [itemId, aenderung] of [...erledigt, ...offen]) await markeAendern(itemId, aenderung)
+        if (erledigt.length) {
+          setMeldung({
+            art: 'erfolg',
+            bleibt: true,
+            text: `${erledigt.length} gemeldete ${erledigt.length === 1 ? 'Karte wurde' : 'Karten wurden'} überarbeitet und ${erledigt.length === 1 ? 'steht' : 'stehen'} wieder auf „ungesichtet“ – in der Sichtung neu einordnen.`,
+          })
+        }
       } finally {
         nachziehenLaeuft.current = false
       }
     })()
-  }, [marken, laedt])
+  }, [marken, laedt, rohItems])
 
   async function sammelSichtung(ids, kategorie) {
     const neueKarte = new Map(marken)
@@ -1062,10 +1089,10 @@ export default function App({ profilId, onProfilWechseln }) {
           speicherGeschuetzt={speicherGeschuetzt}
           onExport={exportKlick}
           onExportCsv={csvExportKlick}
-          anzahlMeldungen={meldeliste.length}
+          anzahlMeldungen={meldeliste.length + freigaben.length}
           onMeldungenExport={() =>
             textHerunterladen(
-              meldungenMarkdown({ eintraege: meldeliste, paket: paketInfo }),
+              meldungenMarkdown({ eintraege: meldeliste, freigaben, paket: paketInfo }),
               `meldungen-${new Date().toISOString().slice(0, 10)}.md`
             )
           }

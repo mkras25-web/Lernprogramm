@@ -61,6 +61,8 @@ export default function Lernen({
   const [eingabe, setEingabe] = useState(null)
   const [notizOffen, setNotizOffen] = useState(false)
   const [meldenOffen, setMeldenOffen] = useState(false)
+  // Ungepruefte Karte selbst geprueft (P8)
+  const [freigabeOffen, setFreigabeOffen] = useState(false)
   // Beim zweiten Versuch ist die Erklaerung gleich offen: verstehen statt
   // nur nochmal raten (Nutzerentscheidung 2026-10-12).
   const [erklaerungOffen, setErklaerungOffen] = useState(zweiterVersuch)
@@ -81,6 +83,7 @@ export default function Lernen({
     setEingabe(null)
     setNotizOffen(false)
     setMeldenOffen(false)
+    setFreigabeOffen(false)
     setErklaerungOffen(zweiterVersuch)
     setHilfeGenutzt(false)
     setGehakt([])
@@ -467,6 +470,15 @@ export default function Lernen({
             >
               {marke?.meldung ? '⚑︎ Gemeldet' : '⚑︎ Melden'}
             </button>
+            {item.geprueft === false && (
+              <button
+                className={marke?.freigabe ? 'markenKnopf aktiv' : 'markenKnopf'}
+                title="Du hast den Prüfhinweis selbst gegen die aktuelle Fassung geprüft"
+                onClick={() => setFreigabeOffen((o) => !o)}
+              >
+                {marke?.freigabe ? '✓︎ Selbst geprüft' : 'Selbst geprüft'}
+              </button>
+            )}
             <span className="markenTrenner" />
             {/* Am Desktop display:contents (wirkungslos), mobil eine eigene
                 Zeile, damit "Sichtung:" nicht allein am Zeilenende haengt. */}
@@ -521,6 +533,23 @@ export default function Lernen({
                 setMeldenOffen(false)
               }}
               onSchliessen={() => setMeldenOffen(false)}
+            />
+          )}
+
+          {freigabeOffen && (
+            <FreigabeFeld
+              key={item.id}
+              freigabe={marke?.freigabe}
+              pruefhinweis={item.pruefhinweis}
+              onSpeichern={(text) => {
+                onMarke(item.id, { freigabe: { text, ts: Date.now() } })
+                setFreigabeOffen(false)
+              }}
+              onZuruecknehmen={() => {
+                onMarke(item.id, { freigabe: null })
+                setFreigabeOffen(false)
+              }}
+              onSchliessen={() => setFreigabeOffen(false)}
             />
           )}
 
@@ -1124,4 +1153,39 @@ function Trefferzeile({ item, gewaehlt }) {
   if (richtig.size - getroffen > 0) teile.push(`${richtig.size - getroffen} übersehen`)
   if (zuViel > 0) teile.push(`${zuViel} zu viel`)
   return <li className="trefferZeile">{teile.join(' · ')}</li>
+}
+
+// Freigabe einer ungeprueften Karte (P8, 2026-10-13): Der Nutzer hat den
+// Pruefhinweis selbst nachgeschlagen. Geht als Pruefauftrag in den Export
+// ("Freigaben") - die Karte selbst bleibt ungeprueft, bis der Pruef-Chat
+// sie mit Fundstelle freigibt.
+function FreigabeFeld({ freigabe, pruefhinweis, onSpeichern, onZuruecknehmen, onSchliessen }) {
+  const [text, setText] = useState(freigabe?.text ?? '')
+  return (
+    <div className="meldenFeld">
+      <p className="zeileTitel">Selbst geprüft</p>
+      {pruefhinweis && <p className="zeileHinweis">Prüfhinweis: {pruefhinweis}</p>}
+      <textarea
+        className="notizfeld"
+        value={text}
+        placeholder="Wogegen geprüft? z. B. „DIN 4108-3:2018, Tab. 2 – Wert gilt unverändert“"
+        onChange={(e) => setText(e.target.value)}
+      />
+      <p className="zeileHinweis">
+        Geht in den Meldungen-Export unter „Freigaben“. Die Karte bleibt „ungeprüft“, bis der Prüf-Chat
+        sie mit Fundstelle freigibt.
+      </p>
+      <div className="wahl">
+        <button className="knopf schmal" onClick={() => onSpeichern(text.trim())}>
+          {freigabe ? 'Ändern' : 'Als geprüft vormerken'}
+        </button>
+        {freigabe && (
+          <button className="knopf schmal" onClick={onZuruecknehmen}>
+            Zurücknehmen
+          </button>
+        )}
+        <button className="textknopf" onClick={onSchliessen}>Abbrechen</button>
+      </div>
+    </div>
+  )
 }
