@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { lazy, useEffect, useMemo, useRef, useState } from 'react'
+import Nachladen, { nachladenMerkerLoesen } from './components/Nachladen.jsx'
 import Schleier from './components/Schleier.jsx'
 import Navigation, { AuswertungReiter } from './components/Navigation.jsx'
 import Ladeskelett from './components/Ladeskelett.jsx'
@@ -57,24 +58,24 @@ import {
   wunschlisteMarkdown,
 } from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
-import Themen from './screens/Themen.jsx'
-import Sammlung from './screens/Sammlung.jsx'
-import Fortschritt from './screens/Fortschritt.jsx'
-import Einstellungen from './screens/Einstellungen.jsx'
-import Sichtung from './screens/Sichtung.jsx'
-import Skizzen from './screens/Skizzen.jsx'
-import Pruefung from './screens/Pruefung.jsx'
-import Glossar from './screens/Glossar.jsx'
+const Themen = lazy(() => import('./screens/Themen.jsx'))
+const Sammlung = lazy(() => import('./screens/Sammlung.jsx'))
+const Fortschritt = lazy(() => import('./screens/Fortschritt.jsx'))
+const Einstellungen = lazy(() => import('./screens/Einstellungen.jsx'))
+const Sichtung = lazy(() => import('./screens/Sichtung.jsx'))
+const Skizzen = lazy(() => import('./screens/Skizzen.jsx'))
+const Pruefung = lazy(() => import('./screens/Pruefung.jsx'))
+const Glossar = lazy(() => import('./screens/Glossar.jsx'))
 import Lernen from './screens/Lernen.jsx'
-import MeinHeft from './screens/MeinHeft.jsx'
-import Fehlerbuch from './screens/Fehlerbuch.jsx'
-import Lernzettel from './screens/Lernzettel.jsx'
-import Bilder from './screens/Bilder.jsx'
-import Kennwerte from './screens/Kennwerte.jsx'
-import Kalender from './screens/Kalender.jsx'
-import Erklaerstueck from './components/Erklaerstueck.jsx'
+const MeinHeft = lazy(() => import('./screens/MeinHeft.jsx'))
+const Fehlerbuch = lazy(() => import('./screens/Fehlerbuch.jsx'))
+const Lernzettel = lazy(() => import('./screens/Lernzettel.jsx'))
+const Bilder = lazy(() => import('./screens/Bilder.jsx'))
+const Kennwerte = lazy(() => import('./screens/Kennwerte.jsx'))
+const Kalender = lazy(() => import('./screens/Kalender.jsx'))
+const Erklaerstueck = lazy(() => import('./components/Erklaerstueck.jsx'))
 import { KartenGrenze } from './components/Fehlergrenze.jsx'
-import AusDemKopf from './components/AusDemKopf.jsx'
+const AusDemKopf = lazy(() => import('./components/AusDemKopf.jsx'))
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 
 export default function App({ profilId, onProfilWechseln }) {
@@ -516,6 +517,11 @@ export default function App({ profilId, onProfilWechseln }) {
     if (!laedt && erklaerthema && !themen.some((t) => t.id === erklaerthema)) setErklaerthema(null)
   }, [laedt, erklaerthema, themen])
 
+  // App lief an: ein spaeterer Ladefehler darf wieder einmal neu laden (T7).
+  useEffect(() => {
+    if (!laedt) nachladenMerkerLoesen()
+  }, [laedt])
+
   const nachziehenLaeuft = useRef(false)
   const inhaltSeitRef = useRef({ items: null, seit: null })
   useEffect(() => {
@@ -827,7 +833,9 @@ export default function App({ profilId, onProfilWechseln }) {
     if (thema) {
       return (
         <div className="huelle einspaltig">
-          <Lernzettel thema={thema} items={aktiveItems} marken={marken} onZurueck={() => setLernzettelThema(null)} />
+          <Nachladen>
+            <Lernzettel thema={thema} items={aktiveItems} marken={marken} onZurueck={() => setLernzettelThema(null)} />
+          </Nachladen>
         </div>
       )
     }
@@ -838,6 +846,7 @@ export default function App({ profilId, onProfilWechseln }) {
     if (thema) {
       return (
         <div className="huelle einspaltig">
+          <Nachladen>
           <AusDemKopf
             thema={thema}
             profilId={profilId}
@@ -847,6 +856,7 @@ export default function App({ profilId, onProfilWechseln }) {
               setErklaerthema(thema.id)
             }}
           />
+          </Nachladen>
         </div>
       )
     }
@@ -857,6 +867,7 @@ export default function App({ profilId, onProfilWechseln }) {
     const themaItems = aktiveItems.filter((i) => i.themaId === thema.id)
     return (
       <div className="huelle einspaltig">
+        <Nachladen>
         <Erklaerstueck
           thema={thema}
           themen={themen}
@@ -883,6 +894,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onUeben={() => sitzungStarten('marathon', { themaId: thema.id })}
           onZurueck={() => setErklaerthema(null)}
         />
+        </Nachladen>
       </div>
     )
   }
@@ -954,6 +966,8 @@ export default function App({ profilId, onProfilWechseln }) {
         </div>
       )}
 
+      {/* Bildschirme ausser Heute/Lernen laden erst bei Bedarf (T7). */}
+      <Nachladen>
       {ansicht === 'heute' && (
         <Heute
           level={level}
@@ -1197,6 +1211,8 @@ export default function App({ profilId, onProfilWechseln }) {
           onTastenhilfe={() => setTastenhilfeOffen(true)}
         />
       )}
+
+      </Nachladen>
 
       <Tastenhilfe offen={tastenhilfeOffen} onSchliessen={() => setTastenhilfeOffen(false)} />
     </div>
