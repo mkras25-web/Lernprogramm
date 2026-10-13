@@ -266,25 +266,29 @@ export async function ereignisSpeichern({ itemId, paketId, bewertung, dauerMs, h
 }
 
 // Entfernt ein einzelnes Ereignis - fuer "Rueckgaengig".
+// Vermerk zuerst (T8): bricht das Loeschen ab (Tab zu, Absturz), kommt
+// der Eintrag beim naechsten Abgleich trotzdem nicht zurueck.
 export async function ereignisLoeschen(id) {
+  vermerken('ereignisse', [id])
   const store = await transaktion('readwrite')
   await new Promise((resolve, reject) => {
     const anfrage = store.delete(id)
     anfrage.onsuccess = resolve
     anfrage.onerror = () => reject(anfrage.error)
   })
-  vermerken('ereignisse', [id])
 }
 
 // Loescht eine gespeicherte Skizze.
+// Vermerk zuerst (T8): bricht das Loeschen ab (Tab zu, Absturz), kommt
+// der Eintrag beim naechsten Abgleich trotzdem nicht zurueck.
 export async function skizzeLoeschen(id) {
+  vermerken('skizzen', [id])
   const store = await transaktion('readwrite', SKIZZEN)
   await new Promise((resolve, reject) => {
     const anfrage = store.delete(id)
     anfrage.onsuccess = resolve
     anfrage.onerror = () => reject(anfrage.error)
   })
-  vermerken('skizzen', [id])
 }
 
 // --- Loeschvermerke -----------------------------------------------
@@ -656,4 +660,77 @@ export async function importieren(text) {
     kursplan: anzahlKursplan,
     geloescht: entfernt,
   }
+}
+
+// --- Wiederherstellen aus einer Sicherheitskopie (T1, 2026-10-13) --------
+//
+// Anders als importieren(): Loeschvermerke sind endgueltig und reisen per
+// Dropbox auf alle Geraete - ein normaler Import einer Kopie von vor dem
+// Loeschen braechte deshalb nichts zurueck. Hier gilt:
+//   - was lokal noch da ist, bleibt unberuehrt (keine Dubletten)
+//   - Ereignisse/Skizzen/Pruefungen ohne Vermerk kommen mit ihrer Id zurueck
+//   - vermerkte bekommen eine abgeleitete, FESTE Id (<id>~w, <id>~w2, ...):
+//     stellt ein zweites Geraet dieselbe Kopie wieder her, trifft es auf
+//     dieselbe Id, die per Abgleich schon da ist - nichts zaehlt doppelt
+//   - Marken und Kursplan-Eintraege, die lokal fehlen, kommen mit frischem
+//     Zeitstempel zurueck (neuer als ihr Loeschvermerk)
+export function wiederherstellungsId(id, vermerkt) {
+  let kandidat = id
+  for (let n = 1; vermerkt && kandidat in vermerkt; n++) {
+    kandidat = n === 1 ? `${id}~w` : `${id}~w${n}`
+  }
+  return kandidat
+}
+
+export async function wiederherstellen(text) {
+  const daten = JSON.parse(text)
+  if (!Array.isArray(daten.ereignisse)) {
+    throw new Error('Die Kopie enthält kein Ereignisprotokoll.')
+  }
+  const vermerke = loeschvermerke()
+
+  const einfuegen = async (name, eintraege, art) => {
+    if (!Array.isArray(eintraege) || eintraege.length === 0) return 0
+    const vorhanden = new Set((await alleAus(name)).map((e) => e.id))
+    const neue = []
+    for (const e of eintraege) {
+      if (!e?.id) continue
+      const id = wiederherstellungsId(e.id, vermerke[art])
+      if (vorhanden.has(id)) continue
+      vorhanden.add(id)
+      neue.push(id === e.id ? e : { ...e, id })
+    }
+    if (neue.length === 0) return 0
+    const store = await transaktion('readwrite', name)
+    const fertig = abgeschlossen(store)
+    for (const e of neue) store.put(e)
+    await fertig
+    return neue.length
+  }
+
+  const ereignisse = await einfuegen(STORE, daten.ereignisse, 'ereignisse')
+  const skizzen = await einfuegen(SKIZZEN, daten.skizzen, 'skizzen')
+  const pruefungen = await einfuegen(PRUEFUNGEN, daten.pruefungen, 'pruefungen')
+
+  const lokal = new Set((await alleMarken()).map((m) => m.itemId))
+  let marken = 0
+  for (const m of daten.marken ?? []) {
+    if (!m?.itemId || lokal.has(m.itemId)) continue
+    await markeSetzen({ ...m, ts: Date.now() })
+    marken += 1
+  }
+
+  let kursplan = 0
+  const plan = kursplanLesen()
+  for (const art of KURSPLAN_ARTEN) {
+    const da = new Set(plan[art].map((e) => e.id))
+    for (const e of Array.isArray(daten.kursplan?.[art]) ? daten.kursplan[art] : []) {
+      if (!e?.id || da.has(e.id)) continue
+      plan[art].push({ ...e, ts: Date.now() })
+      kursplan += 1
+    }
+  }
+  if (kursplan) kursplanSchreiben(plan)
+
+  return { ereignisse, skizzen, marken, pruefungen, kursplan }
 }

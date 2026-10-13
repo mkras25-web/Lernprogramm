@@ -13,6 +13,7 @@
 
 import { exportieren, geraeteKennung, importieren, mitProfil } from './speicher.js'
 import * as dropbox from './dropbox.js'
+import { kopieEinmalAmTag } from './kopien.js'
 
 const DATEINAME = /^p-(.+)-([0-9a-f]{8})\.json$/
 
@@ -85,7 +86,70 @@ export function abgleichen({ profilId, profilName, mitSkizzen = false }) {
   return lauf
 }
 
+// --- Sicherheitskopien in Dropbox (T1, 2026-10-13) -------------------------
+//
+// Einmal am Tag je Geraet, VOR dem Einlesen der anderen Geraete: kommt dabei
+// ein "Fortschritt loeschen" herein, liegt der Stand davor noch in Dropbox.
+// Unterordner sicherungen/<profilId>/<geraet>-<JJJJMMTT>.json - die normale
+// Liste (dateienAuflisten) sieht nur Dateien im App-Ordner selbst, die Kopien
+// werden also nie als Geraetestand eingelesen. Jedes Geraet raeumt nur seine
+// eigenen Kopien (ein Schreiber je Datei, wie beim Abgleich).
+export const KOPIEN_ORDNER = 'sicherungen'
+export const KOPIEN_TAGE = 7
+const kopieSchluessel = (profilId) => `dropbox_kopie_${profilId}` // JJJJMMTT der letzten Kopie
+
+function tagesStempel(ts) {
+  const d = new Date(ts)
+  return `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`
+}
+
+async function tagesKopie({ profilId, profilName, mitSkizzen }) {
+  try {
+    // Lokal: einmal am Tag vor dem Abgleich (kopien.js).
+    await kopieEinmalAmTag({ profilId, profilName, grund: 'vor dem Abgleich' })
+  } catch (e) {
+    if (e?.name === 'ProfilGewechselt') throw e
+  }
+  const tag = tagesStempel(Date.now())
+  if (localStorage.getItem(kopieSchluessel(profilId)) === tag) return
+  try {
+    const text = await mitProfil(profilId, () => exportieren({ mitSkizzen, profilId, profilName }))
+    if (!JSON.parse(text).ereignisse?.length) return // leere Kopien verdraengten die guten
+    const ordner = `${KOPIEN_ORDNER}/${profilId}`
+    const geraet = geraeteKennung()
+    await dropbox.hochladen(`${ordner}/${geraet}-${tag}.json`, text)
+    localStorage.setItem(kopieSchluessel(profilId), tag)
+    const eigene = (await dropbox.ordnerAuflisten(ordner))
+      .map((d) => d.name)
+      .filter((n) => n.startsWith(`${geraet}-`))
+      .sort()
+      .reverse()
+    for (const name of eigene.slice(KOPIEN_TAGE)) await dropbox.loeschen(`${ordner}/${name}`)
+  } catch (e) {
+    if (e?.name === 'ProfilGewechselt') throw e
+    // Kopie ist ein Zusatz - sie darf den Abgleich nie verhindern.
+  }
+}
+
+// Kopien aller Geraete dieses Profils in Dropbox, neueste zuerst.
+export async function dropboxKopien(profilId) {
+  const ordner = `${KOPIEN_ORDNER}/${profilId}`
+  const dateien = await dropbox.ordnerAuflisten(ordner)
+  return dateien
+    .map((d) => {
+      const treffer = /^([0-9a-f]{8})-(\d{8})\.json$/.exec(d.name)
+      return treffer ? { name: d.name, pfad: `${ordner}/${d.name}`, geraet: treffer[1], tag: treffer[2] } : null
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.tag.localeCompare(a.tag) || a.geraet.localeCompare(b.geraet))
+}
+
+export function dropboxKopieLaden(pfad) {
+  return dropbox.herunterladen(pfad)
+}
+
 async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
+  await tagesKopie({ profilId, profilName, mitSkizzen })
   const eigen = dateiname(profilId)
   const vorhanden = await dropbox.dateienAuflisten()
   const gesehen = lesen(gesehenSchluessel(profilId), {})
@@ -167,7 +231,7 @@ export async function profileInDropbox() {
 }
 
 export function verbindungZuruecksetzen(profilId) {
-  for (const s of [gesehenSchluessel(profilId), uploadSchluessel(profilId), standSchluessel(profilId)]) {
+  for (const s of [gesehenSchluessel(profilId), uploadSchluessel(profilId), standSchluessel(profilId), kopieSchluessel(profilId)]) {
     localStorage.removeItem(s)
   }
 }

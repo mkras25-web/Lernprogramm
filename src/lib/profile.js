@@ -22,6 +22,7 @@ import {
   altbestandPruefen,
   altbestandUebernehmen,
 } from './speicher.js'
+import { kopienLoeschen } from './kopien.js'
 import { erzeugeId } from './id.js'
 import { ALTER_SCHLUESSEL as ALTE_EINSTELLUNGEN_SCHLUESSEL } from './einstellungen.js'
 import { ALTER_SITZUNG_SCHLUESSEL } from '../hooks/useLernsitzung.js'
@@ -102,6 +103,8 @@ export async function profilLoeschen(id) {
   // laufender Abgleich dieses Profils schreibt danach weder Datenbank noch
   // die gleich entfernten Merker zurueck.
   await datenbankLoeschen(id)
+  // Lokale Sicherheitskopien (T1) gehoeren zum Profil und gehen mit.
+  await kopienLoeschen(id).catch(() => {})
   const liste = profilListe().filter((p) => p.id !== id)
   schreiben(liste)
   localStorage.removeItem(`einstellungen_${id}`)
@@ -113,7 +116,7 @@ export async function profilLoeschen(id) {
   // stehen, galt die eigene Dropbox-Datei nach "Profil aus Dropbox neu
   // laden" als schon gelesen - der leere lokale Stand ueberschrieb dann die
   // einzige Sicherung (nachgewiesen 2026-10-10, Test in abgleich.test.js).
-  for (const art of ['gesehen', 'upload', 'stand']) localStorage.removeItem(`dropbox_${art}_${id}`)
+  for (const art of ['gesehen', 'upload', 'stand', 'kopie']) localStorage.removeItem(`dropbox_${art}_${id}`)
   // Zuletzt gesehener Inhaltsstand je Paket (22A, App.jsx)
   for (const k of Object.keys(localStorage)) {
     if (k.startsWith(`paketstand_${id}_`)) localStorage.removeItem(k)

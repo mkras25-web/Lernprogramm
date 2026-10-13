@@ -14,8 +14,11 @@ import {
   kursplanLesen,
   alleMarken,
   markeSetzen,
+  allesLoeschen,
+  wiederherstellen,
 } from './speicher.js'
-import { abgleichen, dateiname, profilAusDateiname, profileInDropbox } from './abgleich.js'
+import { abgleichen, dateiname, dropboxKopien, dropboxKopieLaden, KOPIEN_TAGE, profilAusDateiname, profileInDropbox } from './abgleich.js'
+import { kopieAnlegen, kopienListe, kopieText } from './kopien.js'
 import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
 import { profilErstellen, profilLoeschen } from './profile.js'
 
@@ -61,10 +64,20 @@ function dropboxAttrappe() {
       new Response(typeof daten === 'string' ? daten : JSON.stringify(daten), { status })
     if (url.endsWith('/files/list_folder')) {
       aufrufe.liste += 1
+      // Wie Dropbox: nur die Dateien direkt in diesem Ordner, Unterordner
+      // (sicherungen/…) erscheinen in der Liste des App-Ordners nicht.
+      const pfad = JSON.parse(opt.body).path.replace(/^\//, '')
+      const praefix = pfad ? `${pfad}/` : ''
+      const drin = [...ordner].filter(([name]) => name.startsWith(praefix) && !name.slice(praefix.length).includes('/'))
+      if (pfad && drin.length === 0) return antwort({ error_summary: 'path/not_found/..' }, 409)
       return antwort({
-        entries: [...ordner].map(([name, d]) => ({ '.tag': 'file', name, content_hash: d.hash, server_modified: d.zeit })),
+        entries: drin.map(([name, d]) => ({ '.tag': 'file', name: name.slice(praefix.length), content_hash: d.hash, server_modified: d.zeit })),
         has_more: false,
       })
+    }
+    if (url.endsWith('/files/delete_v2')) {
+      ordner.delete(JSON.parse(opt.body).path.slice(1))
+      return antwort({ metadata: {} })
     }
     if (url.endsWith('/files/upload')) {
       aufrufe.upload += 1
@@ -83,6 +96,8 @@ function dropboxAttrappe() {
 }
 
 const PROFIL = 'aaaaaaaa-1111-4222-8333-444444444444'
+// Geraetestaende im App-Ordner, ohne die Sicherheitskopien im Unterordner.
+const geraeteDateien = () => [...ordner.keys()].filter((n) => !n.includes('/'))
 
 async function antworten(itemId, bewertung = 3) {
   return ereignisSpeichern({ itemId, paketId: 'arch-de', bewertung, dauerMs: 1000 })
@@ -302,7 +317,7 @@ describe('Abgleich ueber Dropbox', () => {
     await antworten('item-3')
     const ersterLauf = await abgleich('pc')
     expect(ersterLauf.dateien).toBe(0)
-    expect(ordner.size).toBe(1)
+    expect(geraeteDateien().length).toBe(1)
 
     // Neues Geraet: holt alles.
     const handy = await abgleich('phone')
@@ -313,7 +328,7 @@ describe('Abgleich ueber Dropbox', () => {
     await antworten('item-4')
     await antworten('item-5')
     await abgleich('phone')
-    expect(ordner.size).toBe(2)
+    expect(geraeteDateien().length).toBe(2)
 
     // PC holt die zwei neuen.
     const zurueck = await abgleich('pc')
@@ -494,5 +509,99 @@ describe('Anmeldung (OAuth mit PKCE)', () => {
     expect(gesendet).toContain('grant_type=authorization_code')
     expect(JSON.parse(localStorage.getItem('dropbox_verbindung')).refreshToken).toBe('RT')
     expect(localStorage.getItem('dropbox_vorgang')).toBeNull()
+  })
+})
+
+describe('Sicherheitskopien (T1, 2026-10-13)', () => {
+  const ids = async () => (await alleEreignisse()).map((e) => e.itemId).sort()
+
+  it('Loeschen per Dropbox verteilt - Wiederherstellen aus der lokalen Kopie bringt alles zurueck, ohne Dubletten', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('a-1')
+    await antworten('a-2')
+    await markeSetzen({ itemId: 'a-1', lesezeichen: true })
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(await ids()).toEqual(['a-1', 'a-2'])
+
+    // PC: Kopie vor dem Loeschen, dann alles loeschen und verteilen.
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    const kopie = await kopieAnlegen({ profilId: PROFIL, profilName: 'Max', grund: 'vor dem Löschen' })
+    await allesLoeschen()
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(await ids()).toEqual([])
+
+    // Ein normaler Import der Kopie bringt wegen der Loeschvermerke nichts.
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    const text = await kopieText(kopie.id)
+    expect((await importieren(text)).ereignisse).toBe(0)
+
+    // Wiederherstellen schon.
+    const bericht = await wiederherstellen(text)
+    expect(bericht).toMatchObject({ ereignisse: 2, marken: 1 })
+    expect(await ids()).toEqual(['a-1', 'a-2'])
+    expect((await alleMarken()).find((m) => m.itemId === 'a-1')?.lesezeichen).toBe(true)
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(await ids()).toEqual(['a-1', 'a-2'])
+    expect((await alleMarken()).find((m) => m.itemId === 'a-1')?.lesezeichen).toBe(true)
+
+    // Das Handy stellt dieselbe Kopie auch noch her: nichts doppelt.
+    expect((await wiederherstellen(text)).ereignisse).toBe(0)
+    await abgleich('phone')
+    await abgleich('pc')
+    expect(await ids()).toEqual(['a-1', 'a-2'])
+    await abgleich('phone')
+    expect(await ids()).toEqual(['a-1', 'a-2'])
+  })
+
+  it('legt vor dem Abgleich einmal am Tag eine lokale und eine Dropbox-Kopie an und behaelt in Dropbox 7 Tage', async () => {
+    vi.useFakeTimers({ toFake: ['Date'] })
+    try {
+      vi.setSystemTime(new Date('2026-10-01T09:00'))
+      await geraetWaehlen('pc')
+      // Zugang ueber die ganzen gespielten Tage gueltig halten.
+      const v = JSON.parse(localStorage.getItem('dropbox_verbindung'))
+      localStorage.setItem('dropbox_verbindung', JSON.stringify({ ...v, ablauf: Date.now() + 30 * 86_400_000 }))
+      await datenbankFuerProfilSetzen(PROFIL)
+      await antworten('a-1')
+      await abgleich('pc')
+      await abgleich('pc') // am selben Tag keine zweite Kopie
+      expect(await kopienListe(PROFIL)).toHaveLength(1)
+      expect(await dropboxKopien(PROFIL)).toHaveLength(1)
+      for (let tag = 2; tag <= 10; tag++) {
+        vi.setSystemTime(new Date(`2026-10-${String(tag).padStart(2, '0')}T09:00`))
+        await abgleich('pc')
+      }
+      const inDropbox = await dropboxKopien(PROFIL)
+      expect(inDropbox).toHaveLength(KOPIEN_TAGE)
+      expect(inDropbox[0].tag).toBe('20261010')
+      // Die Kopie ist eine gueltige Sicherung und wird nie als Geraetestand gelesen.
+      expect(JSON.parse(await dropboxKopieLaden(inDropbox[0].pfad)).ereignisse).toHaveLength(1)
+      expect(geraeteDateien()).toHaveLength(1)
+    } finally {
+      vi.useRealTimers()
+    }
+  })
+
+  it('ein leeres Profil erzeugt keine Kopien', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await abgleich('pc')
+    expect(await kopienListe(PROFIL)).toHaveLength(0)
+    expect(await dropboxKopien(PROFIL)).toHaveLength(0)
+  })
+
+  it('Profil loeschen raeumt auch die lokalen Kopien', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('a-1')
+    await kopieAnlegen({ profilId: PROFIL, profilName: 'Max', grund: 'Test' })
+    await profilLoeschen(PROFIL)
+    expect(await kopienListe(PROFIL)).toHaveLength(0)
   })
 })

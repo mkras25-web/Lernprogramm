@@ -272,6 +272,28 @@ export async function dateienAuflisten() {
   return dateien.filter((e) => e['.tag'] === 'file')
 }
 
+// Dateien in einem Unterordner (Sicherheitskopien, T1). Fehlt der Ordner
+// noch, ist die Liste leer statt eines Fehlers.
+export async function ordnerAuflisten(pfad) {
+  let seite
+  try {
+    seite = await rpc('/files/list_folder', { path: `/${pfad}`, limit: 500 })
+  } catch (e) {
+    if (/not_found/.test(e.message)) return []
+    throw e
+  }
+  const dateien = [...seite.entries]
+  while (seite.has_more) {
+    seite = await rpc('/files/list_folder/continue', { cursor: seite.cursor })
+    dateien.push(...seite.entries)
+  }
+  return dateien.filter((e) => e['.tag'] === 'file')
+}
+
+export async function loeschen(name) {
+  return rpc('/files/delete_v2', { path: `/${name}` })
+}
+
 export async function herunterladen(name) {
   const token = await zugriffstoken()
   const antwort = await pruefen(

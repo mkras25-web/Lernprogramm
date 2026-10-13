@@ -16,6 +16,8 @@ import {
   ereignisSpeichern,
   exportieren,
   importieren,
+  mitProfil,
+  wiederherstellen,
   kursplanEintragLoeschen,
   kursplanEintragSetzen,
   kursplanLesen,
@@ -30,6 +32,7 @@ import { BEWERTUNG, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWied
 import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
+import { kopieAnlegen } from './lib/kopien.js'
 import {
   endspurt,
   kennungenImInhalt,
@@ -638,6 +641,9 @@ export default function App({ profilId, onProfilWechseln }) {
   }
 
   async function importTexte(texte) {
+    // Sicherheitskopie vor dem Einlesen (T1): eine Sicherung kann
+    // Loeschvermerke mitbringen, die hier Fortschritt entfernen.
+    await kopieAnlegen({ profilId, profilName, grund: 'vor dem Einlesen' }).catch(() => null)
     try {
       const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, kursplan: 0, geloescht: 0 }
       for (const text of texte) {
@@ -678,7 +684,24 @@ export default function App({ profilId, onProfilWechseln }) {
     profilId, profilName, opt, laedt, ansicht, zustandNeuLesen, setMeldung,
   })
 
+  // Aus einer Sicherheitskopie zurueckholen (T1, speicher.js wiederherstellen).
+  async function wiederherstellenAus(text) {
+    const b = await mitProfil(profilId, () => wiederherstellen(text))
+    await zustandNeuLesen()
+    const teile = [`${b.ereignisse} Ereignisse`, `${b.skizzen} Skizzen`, `${b.marken} Marken`, `${b.pruefungen} Prüfungen`]
+    if (b.kursplan) teile.push(`${b.kursplan} Kurs-/Klausureinträge`)
+    setMeldung({ art: 'erfolg', text: `Wiederhergestellt: ${teile.join(', ')}.` })
+  }
+
   async function loeschen() {
+    // Ohne Sicherheitskopie wird nicht geloescht (T1): das Loeschen reist per
+    // Dropbox auf alle Geraete, die Kopie ist danach der einzige Rueckweg.
+    try {
+      await kopieAnlegen({ profilId, profilName, grund: 'vor dem Löschen' })
+    } catch (e) {
+      setMeldung({ art: 'fehler', text: `Sicherheitskopie nicht möglich (${e.message}) – es wurde nichts gelöscht.` })
+      return
+    }
     await allesLoeschen()
     setEreignisse([])
     setSkizzen([])
@@ -1166,6 +1189,9 @@ export default function App({ profilId, onProfilWechseln }) {
           onImport={importKlick}
           onMeldung={setMeldung}
           onLoeschen={loeschen}
+          profilId={profilId}
+          dropboxVerbunden={dropboxMoeglich() && istVerbunden()}
+          onWiederherstellen={wiederherstellenAus}
           profilName={profilName}
           onProfilWechseln={onProfilWechseln}
           onTastenhilfe={() => setTastenhilfeOffen(true)}

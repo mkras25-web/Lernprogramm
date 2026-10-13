@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
 import { PALETTEN, SCHRIFTGROESSEN, STANDARD, farbenblindSchalten } from '../lib/einstellungen.js'
 import DropboxBereich from '../components/DropboxBereich.jsx'
+import Sicherheitskopien from '../components/Sicherheitskopien.jsx'
 import {
   lokaleBilderImportieren,
   lokaleBilderLoeschen,
@@ -37,6 +38,7 @@ export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung, speicherGeschuetzt = null,
   onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
   kursplan = { kurse: [], klausuren: [] }, kursplanAendern, kennungen = new Map(),
+  profilId, dropboxVerbunden = false, onWiederherstellen,
 }) {
   const [loeschfrage, setLoeschfrage] = useState(false)
   const [palettenfenster, setPalettenfenster] = useState(false)
@@ -572,6 +574,10 @@ export default function Einstellungen({
             )}
           </div>
 
+          {onWiederherstellen && (
+            <Sicherheitskopien profilId={profilId} dropboxVerbunden={dropboxVerbunden} onWiederherstellen={onWiederherstellen} />
+          )}
+
           <div className="zeile">
             <div className="zeileText">
               <p className="zeileTitel">Als Tabelle exportieren</p>
@@ -636,8 +642,9 @@ export default function Einstellungen({
             <div className="zeileText">
               <p className="zeileTitel">Allen Fortschritt löschen</p>
               <p className="zeileHinweis">
-                Löscht das gesamte Ereignisprotokoll. Fälligkeiten, XP, Stufen und
-                Detailkarten sind danach weg und lassen sich nicht wiederherstellen.
+                Löscht das gesamte Ereignisprotokoll – auf allen per Dropbox verbundenen
+                Geräten. Vorher entsteht automatisch eine Sicherheitskopie (oben unter
+                „Sicherheitskopien“), aus der sich alles zurückholen lässt.
               </p>
             </div>
             <button className="knopf schmal gefahr" onClick={() => setLoeschfrage(true)}>

@@ -13,6 +13,7 @@ import {
   altbestandAlsProfilUebernehmen,
 } from './lib/profile.js'
 import { datenbankFuerProfilSetzen, importieren } from './lib/speicher.js'
+import { kopieAnlegen } from './lib/kopien.js'
 import { abgleichen } from './lib/abgleich.js'
 
 // Vorgeschaltet vor App: klaert, welches Nutzerprofil gerade lernt,
@@ -143,6 +144,8 @@ export default function ProfilGate() {
     const profil = vorhanden ?? profilErstellen(name, idAusDatei)
     try {
       await datenbankFuerProfilSetzen(profil.id)
+      // Einlesen in ein bestehendes Profil: vorher Sicherheitskopie (T1).
+      if (vorhanden) await kopieAnlegen({ profilId: profil.id, profilName: profil.name, grund: 'vor dem Einlesen' }).catch(() => null)
       const bericht = await importieren(text)
       if (!vorhanden) setProfile((alle) => [...alle, profil])
       return { profil, bericht, neuAngelegt: !vorhanden }
