@@ -961,27 +961,10 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
 
   // Zuordnung wird jetzt tatsaechlich abgefragt: Die rechte Spalte ist
   // gemischt, die Zuweisung erfolgt ueber Auswahlfelder.
-  if (item.typ === 'freitext') {
-    return (
-      <div className="beschriftung">
-        <textarea
-          className="notizfeld"
-          style={{ minHeight: '8rem' }}
-          value={wert ?? ''}
-          disabled={gesperrt}
-          placeholder="In eigenen Worten erklären …"
-          onChange={(e) => setWert(e.target.value)}
-        />
-        {!gesperrt && <p className="feldhinweis">Strg + Enter bestätigt, dann Leertaste</p>}
-        {gesperrt && (wert ?? '').trim() && (
-          <div>
-            <h2 className="abschnitt">Deine Erklärung</h2>
-            <p className="eigeneAntwort">{wert}</p>
-          </div>
-        )}
-      </div>
-    )
-  }
+  // Freitext beim Lernen ohne Schreibfeld (Nutzerwunsch 2026-10-14): im Kopf
+  // beantworten, aufdecken, selbst bewerten - wie eine Karteikarte. In
+  // Pruefungen bleibt das Schreibfeld (eigenes Markup in Pruefung.jsx).
+  if (item.typ === 'freitext') return null
 
   if (item.typ === 'vergleich') {
     return (
