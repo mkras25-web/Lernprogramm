@@ -1,0 +1,810 @@
+{
+ "thema": "rb-baunvo",
+ "titel": "BauNVO: Baugebiete und Nutzungsarten",
+ "erklaerung": {
+  "absaetze": [
+   "Die Baunutzungsverordnung erspart der Gemeinde, in jedem Bebauungsplan neu zu regeln, was in einem Gebiet erlaubt ist. Statt jede Nutzung einzeln aufzuzählen, wählt sie aus einem festen Katalog einen Gebietstyp – vom Kleinsiedlungsgebiet bis zum Industriegebiet (§ 1 Abs. 2 BauNVO). Mit dieser Festsetzung werden die Vorschriften der §§ 2 bis 14 Bestandteil des Plans (§ 1 Abs. 3). Das nennt man Typenzwang: Außerhalb der Sondergebiete kann die Gemeinde keine eigenen Gebietsarten erfinden, sondern nur unter den vorgegebenen wählen und sie abwandeln. Im Flächennutzungsplan genügen oft die vier groben Bauflächen W, M, G und S; die Baugebiete mit ihren zwei- und dreibuchstabigen Kürzeln sind das Werkzeug des Bebauungsplans.",
+   "Jede Gebietsvorschrift ist gleich gebaut. Absatz 1 nennt die Zweckbestimmung, also den Charakter des Gebiets. Absatz 2 zählt auf, was allgemein zulässig ist; darauf hat der Bauherr einen Anspruch, wenn auch sonst alles stimmt. Absatz 3 nennt, was ausnahmsweise zugelassen werden kann; darüber entscheidet die Baugenehmigungsbehörde nach Ermessen (§ 31 Abs. 1 BauGB). Was in keinem der beiden Absätze steht, ist unzulässig. Über allem steht § 15 Abs. 1 BauNVO: Auch eine an sich zulässige Anlage ist im Einzelfall unzulässig, wenn sie der Eigenart des Gebiets widerspricht oder unzumutbar stört.",
+   "Die Reihenfolge der §§ 2 bis 9 folgt einer Linie vom Wohnen zum Gewerbe, und die Zweckbestimmungen beschreiben sie mit abgestuften Formeln. Das reine Wohngebiet „dient dem Wohnen“, das allgemeine „vorwiegend dem Wohnen“. Dorf-, Misch- und urbane Gebiete nehmen Gewerbe auf, „das das Wohnen nicht wesentlich stört“. Das Gewerbegebiet dient „nicht erheblich belästigenden“ Betrieben, das Industriegebiet ausschließlich Gewerbe, vorwiegend dem, das anderswo unzulässig ist. Daneben stehen die Sondergebiete: für die Erholung (§ 10) und für Nutzungen, die sich von allen anderen deutlich unterscheiden, etwa Kliniken, Hochschulen oder großflächigen Einzelhandel (§ 11). Bei der Planung sollen die Gebiete so zugeordnet werden, dass Wohngebiete möglichst wenig gestört werden (§ 50 BImSchG).",
+   "Der Katalog ist weniger starr, als er aussieht. Nach § 1 Abs. 4 bis 10 BauNVO kann die Gemeinde ein Gebiet gliedern, einzelne allgemein zulässige Nutzungen ausschließen, Ausnahmen streichen oder allgemein zulassen, Regeln für einzelne Geschosse treffen und vorhandene Betriebe absichern. Die Grenze ist immer dieselbe: Die allgemeine Zweckbestimmung muss gewahrt bleiben. Ein allgemeines Wohngebiet ohne Tankstellen ist möglich, eines ohne Wohngebäude nicht. Die jüngeren Gebietstypen zeigen, wohin sich das Recht bewegt: Das urbane Gebiet (2017) erlaubt dichte, nicht gleichgewichtige Mischung in Innenstadtlagen nach dem Leitbild der Stadt der kurzen Wege, das dörfliche Wohngebiet (2021) das Nebeneinander von Wohnen und landwirtschaftlichem Nebenerwerb.",
+   "Einige Unterscheidungen werden regelmäßig verwechselt. Läden „zur Versorgung des Gebiets“ im allgemeinen Wohngebiet sind etwas anderes als Einzelhandelsbetriebe im Mischgebiet; großflächiger Einzelhandel ist außerhalb von Kerngebieten nur in Sondergebieten zulässig, und ab mehr als 1 200 m² Geschossfläche werden Auswirkungen auf Raumordnung und Städtebau in der Regel vermutet (§ 11 Abs. 3). Vergnügungsstätten aller Art sind nur im Kerngebiet allgemein zulässig. Im Gewerbe- und Industriegebiet sind Wohnungen nur ausnahmsweise und nur für Betriebsinhaber, Betriebsleiter sowie Aufsichts- und Bereitschaftspersonal zulässig. Freie Berufe dürfen in Kleinsiedlungs-, reinen und allgemeinen Wohngebieten nur Räume nutzen, in den übrigen Gebieten auch ganze Gebäude (§ 13). Und für ältere Bebauungspläne gilt in der Regel die BauNVO-Fassung, die bei ihrer Aufstellung galt."
+  ],
+  "merksatz": "Mit dem Baugebiet setzt die Gemeinde einen ganzen Katalog fest: Absatz 2 begründet einen Anspruch, Absatz 3 erlaubt Ausnahmen, alles andere ist unzulässig – und § 15 prüft jeden Einzelfall nach.",
+  "bild": "bilder/rb-bnvo-skala.svg",
+  "bildunterschrift": "Die Baugebiete der §§ 2 bis 9 BauNVO vom Wohnen zum Gewerbe, gruppiert nach den Bauflächen W, M und G; die Sondergebiete stehen außerhalb der Reihe.",
+  "quelle": "§§ 1–15 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 194–197a, S. 72–73; Leitfaden Städtebauliche Analyse, Glossar, S. 88; § 50 Satz 1 BImSchG (Neufassung vom 17.05.2013, BGBl. I S. 1274)"
+ },
+ "lernziele": [
+  "Du kannst die Baugebiete der BauNVO mit Kürzel, Paragraf und Zweckbestimmung vom Wohnen zum Gewerbe ordnen.",
+  "Du kannst für typische Vorhaben – Laden, Gaststätte, Tankstelle, Vergnügungsstätte, Betriebswohnung – sagen, in welchem Gebiet sie allgemein, ausnahmsweise oder gar nicht zulässig sind.",
+  "Du kannst erklären, wie eine Gemeinde den Katalog nach § 1 Abs. 4 bis 10 BauNVO abwandeln kann und wo die Grenze liegt.",
+  "Du kannst die Sonderregeln für großflächigen Einzelhandel, freie Berufe und das urbane Gebiet anwenden."
+ ],
+ "siehe": [
+  "rb-bauleitplanung"
+ ],
+ "items": [
+  {
+   "id": "rb-bnvo-001",
+   "typ": "karte",
+   "frage": "Was bewirkt es, wenn ein Bebauungsplan ein Baugebiet nach der BauNVO festsetzt, etwa ein allgemeines Wohngebiet?",
+   "antwort": "Mit der Festsetzung werden die Vorschriften der §§ 2 bis 14 BauNVO für dieses Gebiet Bestandteil des Bebauungsplans (§ 1 Abs. 3 Satz 2 BauNVO), soweit der Plan sie nicht nach § 1 Abs. 4 bis 10 abwandelt. Was allgemein oder ausnahmsweise zulässig ist, muss die Gemeinde also nicht selbst aufzählen – es ergibt sich aus der Gebietsvorschrift.",
+   "vertiefung": "Man spricht von Typenzwang und Folgenormen: Die Gemeinde wählt aus einem abschließenden Katalog und erhält dafür eine fertige Regelung. Das entlastet die Planaufstellung und sorgt für eine einheitliche Gliederung der Bauflächen. Für Sondergebiete gilt das nicht – dort setzt der Plan Zweckbestimmung und Art der Nutzung selbst fest (§§ 10, 11 BauNVO).",
+   "tags": [
+    "typenzwang",
+    "folgenormen",
+    "§ 1 baunvo"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 194–195, S. 72; § 1 Abs. 3 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-002",
+   "typ": "zuordnung",
+   "frage": "Ordne die Kürzel den Baugebieten der BauNVO zu.",
+   "paare": [
+    [
+     "WS",
+     "Kleinsiedlungsgebiet"
+    ],
+    [
+     "WR",
+     "Reines Wohngebiet"
+    ],
+    [
+     "WB",
+     "Besonderes Wohngebiet"
+    ],
+    [
+     "MD",
+     "Dorfgebiet"
+    ],
+    [
+     "MDW",
+     "Dörfliches Wohngebiet"
+    ],
+    [
+     "MU",
+     "Urbanes Gebiet"
+    ],
+    [
+     "MK",
+     "Kerngebiet"
+    ],
+    [
+     "GI",
+     "Industriegebiet"
+    ]
+   ],
+   "antwort": "WS = Kleinsiedlungsgebiet, WR = reines Wohngebiet, WB = besonderes Wohngebiet, MD = Dorfgebiet, MDW = dörfliches Wohngebiet, MU = urbanes Gebiet, MK = Kerngebiet, GI = Industriegebiet.",
+   "vertiefung": "Der erste Buchstabe verrät die Familie: W für die Wohngebiete, M für die gemischten Gebiete, G für die gewerblichen. Das dörfliche Wohngebiet trägt trotz seines Namens ein M und steht in der Reihe zwischen Dorf- und Mischgebiet. Insgesamt kennt § 1 Abs. 2 zwölf Baugebiete einschließlich der Sondergebiete (SO).",
+   "tags": [
+    "baugebiete",
+    "kürzel"
+   ],
+   "quelle": "§ 1 Abs. 2 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Leitfaden Städtebauliche Analyse, Glossar, S. 88",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-003",
+   "typ": "zuordnung",
+   "frage": "Ordne die Zweckbestimmungen (jeweils Absatz 1 der Gebietsvorschrift) dem passenden Baugebiet zu.",
+   "paare": [
+    [
+     "dient dem Wohnen",
+     "Reines Wohngebiet (WR)"
+    ],
+    [
+     "dient vorwiegend dem Wohnen",
+     "Allgemeines Wohngebiet (WA)"
+    ],
+    [
+     "Wohnen und Gewerbebetriebe, die das Wohnen nicht wesentlich stören",
+     "Mischgebiet (MI)"
+    ],
+    [
+     "vorwiegend Handelsbetriebe und zentrale Einrichtungen von Wirtschaft, Verwaltung und Kultur",
+     "Kerngebiet (MK)"
+    ],
+    [
+     "vorwiegend nicht erheblich belästigende Gewerbebetriebe",
+     "Gewerbegebiet (GE)"
+    ],
+    [
+     "ausschließlich Gewerbebetriebe, vorwiegend solche, die anderswo unzulässig sind",
+     "Industriegebiet (GI)"
+    ]
+   ],
+   "antwort": "WR dient dem Wohnen, WA vorwiegend dem Wohnen. MI dient dem Wohnen und Gewerbe, das das Wohnen nicht wesentlich stört. MK dient vorwiegend Handel und zentralen Einrichtungen. GE dient vorwiegend nicht erheblich belästigendem Gewerbe, GI ausschließlich Gewerbe, vorwiegend dem anderswo unzulässigen.",
+   "vertiefung": "Achte auf die Signalwörter: „ausschließlich“ gegen „vorwiegend“, und drei Stufen der Störung – „nicht störend“ (etwa Handwerksbetriebe im WA), „nicht wesentlich störend“ (MI, MU, MD) und „nicht erheblich belästigend“ (GE). Wer die Formel kennt, kann die meisten Zulässigkeitsfragen grob einordnen, bevor er Absatz 2 liest.",
+   "tags": [
+    "zweckbestimmung",
+    "störgrad"
+   ],
+   "quelle": "§§ 3, 4, 6, 7, 8 und 9 Abs. 1 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-004",
+   "typ": "skizze",
+   "frage": "Zeichne die Baugebiete der §§ 2 bis 9 BauNVO als Liste vom Wohnen zum Gewerbe. Gib zu jedem Paragraf, Kürzel und eine Kurzformel der Zweckbestimmung an und fasse sie nach den Bauflächen W, M und G zusammen. Wo stehen die Sondergebiete?",
+   "referenz": "bilder/rb-bnvo-skala.svg",
+   "pruefpunkte": [
+    "Reihenfolge WS, WR, WA, WB, MD, MDW, MI, MU, MK, GE, GI mit den Paragrafen 2 bis 9",
+    "Kürzel richtig, auch MDW und MU",
+    "Zweckformeln: WR dient dem Wohnen, WA vorwiegend, MI und MU nicht wesentlich störendes Gewerbe, GE nicht erheblich belästigend, GI ausschließlich Gewerbe",
+    "Klammern: W für WS bis WB, M für MD bis MK, G für GE und GI",
+    "Sondergebiete (§§ 10, 11) gesondert, mit eigener Zweckbestimmung"
+   ],
+   "antwort": "Siehe Referenz: WS, WR, WA, WB (W), MD, MDW, MI, MU, MK (M), GE, GI (G) in der Reihenfolge der §§ 2 bis 9; die Sondergebiete der §§ 10 und 11 stehen außerhalb dieser Reihe.",
+   "vertiefung": "Die Gruppierung nach Bauflächen entspricht dem Schritt vom Flächennutzungsplan zum Bebauungsplan: Aus einer Wohnbaufläche W wird in der Regel ein WS, WR, WA oder WB entwickelt, aus einer gemischten Baufläche M ein Dorf-, Misch-, urbanes oder Kerngebiet, aus einer gewerblichen Baufläche G ein GE oder GI.",
+   "tags": [
+    "baugebiete",
+    "skizze",
+    "bauflächen"
+   ],
+   "quelle": "§§ 1–11 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Leitfaden Städtebauliche Analyse, Glossar, S. 88",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-005",
+   "typ": "karte",
+   "frage": "Wie sind die Gebietsvorschriften der §§ 2 bis 9 BauNVO aufgebaut, und welche Rechtsfolge hat jeder Absatz für den Bauherrn?",
+   "antwort": "Absatz 1 nennt die Zweckbestimmung des Gebiets. Absatz 2 zählt die allgemein zulässigen Nutzungen auf – entspricht ein Vorhaben ihnen und auch den übrigen Festsetzungen, hat der Bauherr einen Anspruch auf Zulassung. Absatz 3 nennt Nutzungen, die ausnahmsweise zugelassen werden können; darüber entscheidet die Baugenehmigungsbehörde nach § 31 Abs. 1 BauGB im Ermessen. Was weder in Absatz 2 noch in Absatz 3 steht, ist unzulässig.",
+   "vertiefung": "Die Zweckbestimmung ist mehr als eine Überschrift: An ihr misst sich, ob eine Ausnahme gerechtfertigt ist, wie weit die Gemeinde den Katalog abwandeln darf (§ 1 Abs. 5 und 6 BauNVO) und ob ein Vorhaben im Einzelfall der Eigenart des Gebiets widerspricht (§ 15 Abs. 1). Wer eine unzulässige Nutzung trotzdem verwirklichen will, braucht eine Befreiung nach § 31 Abs. 2 BauGB – die setzt unter anderem voraus, dass die Grundzüge der Planung nicht berührt werden.",
+   "tags": [
+    "allgemein zulässig",
+    "ausnahme",
+    "§ 31 baugb"
+   ],
+   "quelle": "§§ 2–9, 15 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 31 BauGB, Fassung vom 27.10.2025 (BGBl. 2025 I Nr. 257); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 150, S. 56; Rn. 195, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-006",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Vorhaben sind in einem allgemeinen Wohngebiet (WA) allgemein zulässig?",
+   "optionen": [
+    "Ein Mehrfamilienhaus",
+    "Eine Bäckerei, die der Versorgung des Gebiets dient",
+    "Ein Gemeindezentrum einer Kirchengemeinde",
+    "Eine Tankstelle",
+    "Ein Hotel",
+    "Ein Verwaltungsgebäude einer Behörde",
+    "Eine Spielhalle"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig – Wohngebäude, § 4 Abs. 2 Nr. 1 BauNVO.",
+    "Richtig – Laden oder nicht störender Handwerksbetrieb, der der Versorgung des Gebiets dient (§ 4 Abs. 2 Nr. 2).",
+    "Richtig – Anlage für kirchliche und soziale Zwecke (§ 4 Abs. 2 Nr. 3).",
+    "Falsch – Tankstellen sind im WA nur ausnahmsweise zulässig (§ 4 Abs. 3 Nr. 5).",
+    "Falsch – Betriebe des Beherbergungsgewerbes sind nur ausnahmsweise zulässig (§ 4 Abs. 3 Nr. 1).",
+    "Falsch – Anlagen für Verwaltungen sind nur ausnahmsweise zulässig (§ 4 Abs. 3 Nr. 3).",
+    "Falsch – Vergnügungsstätten sind im WA weder allgemein noch ausnahmsweise vorgesehen und damit unzulässig."
+   ],
+   "antwort": "Allgemein zulässig sind Wohngebäude, die der Versorgung des Gebiets dienenden Läden, Schank- und Speisewirtschaften und nicht störenden Handwerksbetriebe sowie Anlagen für kirchliche, kulturelle, soziale, gesundheitliche und sportliche Zwecke (§ 4 Abs. 2 BauNVO). Tankstelle, Hotel und Verwaltungsgebäude sind nur ausnahmsweise möglich, die Spielhalle gar nicht.",
+   "vertiefung": "Die Kette „der Versorgung des Gebiets dienend“ ist der Prüfstein: Ein Bäcker für das Quartier passt, ein Discounter mit großem Einzugsbereich nicht mehr. Die Ausnahmen des Absatzes 3 – Beherbergung, sonstige nicht störende Gewerbebetriebe, Verwaltungen, Gartenbaubetriebe, Tankstellen – kann die Gemeinde im Plan ganz ausschließen (§ 1 Abs. 6 Nr. 1).",
+   "tags": [
+    "allgemeines wohngebiet",
+    "wa",
+    "zulässigkeit"
+   ],
+   "quelle": "§ 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 195, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-007",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Vorhaben sind in einem reinen Wohngebiet (WR) allgemein zulässig?",
+   "optionen": [
+    "Ein Einfamilienhaus",
+    "Eine Kindertagesstätte für den Bedarf der Bewohner des Gebiets",
+    "Ein Wohnhaus mit betreuten Wohnungen für Pflegebedürftige",
+    "Ein kleiner Laden für den täglichen Bedarf",
+    "Eine kleine Pension",
+    "Eine Gaststätte",
+    "Ein eigenes Bürogebäude für eine Steuerberaterkanzlei"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig – Wohngebäude, § 3 Abs. 2 Nr. 1 BauNVO.",
+    "Richtig – Anlagen zur Kinderbetreuung, die den Bedürfnissen der Gebietsbewohner dienen (§ 3 Abs. 2 Nr. 2).",
+    "Richtig – Gebäude, die ganz oder teilweise der Betreuung und Pflege ihrer Bewohner dienen, zählen als Wohngebäude (§ 3 Abs. 4).",
+    "Falsch – Läden für die tägliche Versorgung sind im WR nur ausnahmsweise zulässig (§ 3 Abs. 3 Nr. 1).",
+    "Falsch – kleine Betriebe des Beherbergungsgewerbes sind nur ausnahmsweise zulässig (§ 3 Abs. 3 Nr. 1).",
+    "Falsch – Schank- und Speisewirtschaften sind im WR nicht vorgesehen und damit unzulässig.",
+    "Falsch – freie Berufe dürfen im WR nur Räume nutzen, keine ganzen Gebäude (§ 13)."
+   ],
+   "antwort": "Nur Wohngebäude – auch solche, die der Betreuung und Pflege ihrer Bewohner dienen – und Kinderbetreuungseinrichtungen für den Bedarf der Gebietsbewohner (§ 3 Abs. 2 und 4 BauNVO). Kleiner Laden und kleine Pension sind nur ausnahmsweise möglich, die Gaststätte gar nicht, und für freie Berufe sind nur Räume zulässig, kein eigenes Gebäude.",
+   "vertiefung": "Das WR ist das empfindlichste Baugebiet. Battis nennt als Beispiel: Ein störender Gewerbebetrieb wie ein größeres Hotel ist dort unzulässig. Selbst die Ausnahmen sind eng gefasst – Läden und Handwerk nur zur Deckung des täglichen Bedarfs der Bewohner, Beherbergung nur in kleinen Betrieben.",
+   "tags": [
+    "reines wohngebiet",
+    "wr",
+    "zulässigkeit"
+   ],
+   "quelle": "§§ 3 und 13 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 194, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-008",
+   "typ": "karte",
+   "frage": "Wofür ist das besondere Wohngebiet (WB) gedacht, und wie wurde es im Darmstädter Beispiel Bessungen eingesetzt?",
+   "antwort": "Für überwiegend bebaute Gebiete, die von Wohnen und weiteren vorhandenen Nutzungen geprägt sind und in denen die Wohnnutzung erhalten und fortentwickelt werden soll (§ 4a Abs. 1 BauNVO). Allgemein zulässig sind neben Wohngebäuden auch Läden, Beherbergungsbetriebe, Gaststätten, sonstige Gewerbebetriebe sowie Geschäfts- und Bürogebäude, soweit sie mit dem Wohnen vereinbar sind. Im Bessunger Bebauungsplan sind die äußeren Parzellen als WB, die inneren als WR festgesetzt – so sichert der Plan eine historisch gewachsene Struktur.",
+   "vertiefung": "Das WB ist ein Bestandsgebiet: Es setzt voraus, dass das Gebiet schon überwiegend bebaut ist, und passt nicht für ein Neubaugebiet. Nach § 4a Abs. 4 kann der Plan zudem festsetzen, dass oberhalb eines Geschosses nur Wohnungen zulässig sind oder ein Anteil der Geschossfläche für Wohnungen zu verwenden ist – ein Werkzeug gegen die Verdrängung des Wohnens.",
+   "tags": [
+    "besonderes wohngebiet",
+    "wb",
+    "bestand"
+   ],
+   "quelle": "§ 4a BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Leitfaden Städtebauliche Analyse, Glossar, S. 88",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-009",
+   "typ": "karte",
+   "frage": "Was unterscheidet das Dorfgebiet (MD) vom dörflichen Wohngebiet (MDW)?",
+   "antwort": "Im Dorfgebiet stehen die Wirtschaftsstellen land- und forstwirtschaftlicher Betriebe im Vordergrund; auf ihre Belange einschließlich ihrer Entwicklungsmöglichkeiten ist vorrangig Rücksicht zu nehmen (§ 5 Abs. 1 BauNVO). Das 2021 eingeführte dörfliche Wohngebiet dient dem Wohnen, land- und forstwirtschaftlichen Nebenerwerbsstellen und nicht wesentlich störendem Gewerbe; die Mischung muss nicht gleichgewichtig sein. Haupterwerbsbetriebe der Land- und Forstwirtschaft sind dort nur ausnahmsweise zulässig (§ 5a BauNVO).",
+   "vertiefung": "Das MDW soll ein einvernehmliches Miteinander von Wohnen und landwirtschaftlichem Nebenerwerb ermöglichen – für Dörfer, in denen ein MD mit seinem Vorrang für die Landwirtschaft nicht mehr passt. Nicht gewerbliche Anlagen zur Tierhaltung, etwa Hobbytierhaltung, sind im MDW ausdrücklich allgemein zulässig.",
+   "tags": [
+    "dorfgebiet",
+    "dörfliches wohngebiet",
+    "landwirtschaft"
+   ],
+   "quelle": "§§ 5 und 5a BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176) (§ 5a eingefügt durch Gesetz vom 14.06.2021, BGBl. I S. 1802); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-010",
+   "typ": "freitext",
+   "frage": "Vergleiche Mischgebiet (MI) und urbanes Gebiet (MU): Was haben sie gemeinsam, und worin unterscheiden sie sich?",
+   "pruefpunkte": [
+    "Gemeinsam: Wohnen plus Gewerbe, das das Wohnen nicht wesentlich stört; Geschäfts- und Bürogebäude, Einzelhandel, Gaststätten, Beherbergung, sonstige Gewerbebetriebe und Anlagen für Verwaltung und Gemeinbedarf allgemein zulässig",
+    "MU: Die Nutzungsmischung muss nicht gleichgewichtig sein (§ 6a Abs. 1 Satz 2)",
+    "MU: Festsetzungen nach Geschossen und Geschossflächenanteilen möglich (§ 6a Abs. 4), z. B. kein Wohnen im straßenseitigen Erdgeschoss",
+    "Tankstellen im MI allgemein, im MU nur ausnahmsweise; Gartenbaubetriebe im MU nicht vorgesehen",
+    "Zweck des MU: dichte, gemischte Innenstadtlagen, Stadt der kurzen Wege; eingeführt 2017, mit geringeren Anforderungen an den Lärmschutz am Tage"
+   ],
+   "antwort": "Beide dienen dem Wohnen und Gewerbebetrieben, die das Wohnen nicht wesentlich stören, und lassen weitgehend dieselben Nutzungen allgemein zu. Im MU muss die Nutzungsmischung aber nicht gleichgewichtig sein, und der Plan kann nach Geschossen und Geschossflächenanteilen steuern (§ 6a Abs. 4). Tankstellen sind im MI allgemein, im MU nur ausnahmsweise zulässig; Gartenbaubetriebe kennt das MU nicht. Das MU wurde 2017 für dichte, gemischte Innenstadtlagen eingeführt und senkt die Anforderungen an den Lärmschutz am Tage.",
+   "vertiefung": "Der Satz „Die Nutzungsmischung muss nicht gleichgewichtig sein“ steht nur beim MU und beim MDW. Im Umkehrschluss erwartet das MI eine ausgewogene Mischung von Wohnen und Gewerbe – kippt es zu einseitig in eine Richtung, verliert es seinen Charakter. Das MU folgt dem Leitbild der nutzungsgemischten „Stadt der kurzen Wege“ und löst sich damit von der Funktionstrennung, die die BauNVO lange geprägt hat.",
+   "tags": [
+    "mischgebiet",
+    "urbanes gebiet",
+    "nutzungsmischung"
+   ],
+   "quelle": "§§ 6 und 6a BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 197–197a, S. 73",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-011",
+   "typ": "skizze",
+   "frage": "Skizziere einen Gebäudeschnitt an einer Straße in einem urbanen Gebiet und trage ein, welche geschossbezogenen Festsetzungen § 6a Abs. 4 BauNVO erlaubt.",
+   "referenz": "bilder/rb-bnvo-urban.svg",
+   "pruefpunkte": [
+    "Erdgeschoss an der Straßenseite: Wohnen ausgeschlossen oder nur ausnahmsweise (Nr. 1)",
+    "Oberhalb eines festgelegten Geschosses nur Wohnungen (Nr. 2)",
+    "Bestimmter Anteil oder bestimmte Größe der Geschossfläche für Wohnungen (Nr. 3)",
+    "Bestimmter Anteil oder bestimmte Größe der Geschossfläche für gewerbliche Nutzungen (Nr. 4)",
+    "Beispielhafte Nutzungen: Laden oder Café im Erdgeschoss, Büros darüber, Wohnungen in den oberen Geschossen"
+   ],
+   "antwort": "Siehe Referenz: Im straßenseitigen Erdgeschoss kann Wohnen ausgeschlossen oder nur ausnahmsweise zugelassen werden, oberhalb eines bestimmten Geschosses können nur Wohnungen zulässig sein, und für Wohnen wie für Gewerbe lassen sich Anteile oder Größen der Geschossfläche vorschreiben.",
+   "vertiefung": "Diese Festsetzungen machen das MU steuerbar: Die Gemeinde kann belebte Erdgeschosszonen sichern und zugleich verhindern, dass ein Quartier ganz zu Büros oder ganz zu Wohnungen wird. Ähnliche Regeln kennen § 4a Abs. 4 für das besondere Wohngebiet und § 7 Abs. 4 für das Kerngebiet – dort allerdings nur zugunsten des Wohnens.",
+   "tags": [
+    "urbanes gebiet",
+    "geschossweise festsetzung",
+    "skizze"
+   ],
+   "quelle": "§§ 4a Abs. 4, 6a Abs. 4, 7 Abs. 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-012",
+   "typ": "karte",
+   "frage": "Wofür ist das Kerngebiet (MK) bestimmt, und unter welchen Voraussetzungen ist dort Wohnen zulässig?",
+   "antwort": "Kerngebiete dienen vorwiegend der Unterbringung von Handelsbetrieben sowie zentralen Einrichtungen der Wirtschaft, der Verwaltung und der Kultur (§ 7 Abs. 1 BauNVO). Allgemein zulässig sind Wohnungen für Aufsichts- und Bereitschaftspersonal, Betriebsinhaber und Betriebsleiter sowie sonstige Wohnungen nur, wenn der Bebauungsplan sie festsetzt; andere Wohnungen können ausnahmsweise zugelassen werden. Aus besonderen städtebaulichen Gründen kann der Plan für Teile des Gebiets bestimmen, dass oberhalb eines Geschosses nur Wohnungen zulässig sind oder ein Anteil der Geschossfläche für Wohnungen zu verwenden ist (§ 7 Abs. 4).",
+   "vertiefung": "Das MK ist das einzige Baugebiet, in dem Vergnügungsstätten aller Art allgemein zulässig sind, und außer den Sondergebieten das einzige, in dem großflächiger Einzelhandel zulässig ist (§ 11 Abs. 3). Tankstellen sind hier allgemein nur im Zusammenhang mit Parkhäusern und Großgaragen zulässig, sonst nur ausnahmsweise.",
+   "tags": [
+    "kerngebiet",
+    "mk",
+    "wohnen"
+   ],
+   "quelle": "§§ 7 und 11 Abs. 3 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-013",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Vorhaben sind in einem Gewerbegebiet (GE) allgemein zulässig?",
+   "optionen": [
+    "Ein Speditionsbetrieb mit Lagerhalle",
+    "Ein Bürogebäude",
+    "Eine Tankstelle",
+    "Eine Sporthalle",
+    "Eine Wohnung für den Betriebsleiter",
+    "Ein Mehrfamilienhaus",
+    "Eine Diskothek"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig – Gewerbebetriebe aller Art einschließlich Lagerhäusern (§ 8 Abs. 2 Nr. 1).",
+    "Richtig – Geschäfts-, Büro- und Verwaltungsgebäude (§ 8 Abs. 2 Nr. 2).",
+    "Richtig – Tankstellen (§ 8 Abs. 2 Nr. 3).",
+    "Richtig – Anlagen für sportliche Zwecke (§ 8 Abs. 2 Nr. 4).",
+    "Falsch – Betriebswohnungen sind nur ausnahmsweise zulässig (§ 8 Abs. 3 Nr. 1).",
+    "Falsch – Wohngebäude ohne Betriebsbezug sind im GE nicht vorgesehen und damit unzulässig.",
+    "Falsch – Vergnügungsstätten sind im GE nur ausnahmsweise zulässig (§ 8 Abs. 3 Nr. 3)."
+   ],
+   "antwort": "Allgemein zulässig sind Gewerbebetriebe aller Art einschließlich Lagerhäusern, Lagerplätzen und öffentlichen Betrieben, Geschäfts-, Büro- und Verwaltungsgebäude, Tankstellen und Anlagen für sportliche Zwecke (§ 8 Abs. 2 BauNVO). Betriebswohnung und Diskothek sind nur ausnahmsweise möglich, ein gewöhnliches Mehrfamilienhaus gar nicht.",
+   "vertiefung": "Wohnungen sind im GE nur ausnahmsweise und nur für Aufsichts- und Bereitschaftspersonal, Betriebsinhaber und Betriebsleiter zulässig – zugeordnet zum Betrieb und ihm in Grundfläche und Baumasse untergeordnet (§ 8 Abs. 3 Nr. 1). Das schützt beide Seiten: die Betriebe vor heranrückendem Wohnen und die Bewohner vor einem Gebiet, das nicht für sie gemacht ist.",
+   "tags": [
+    "gewerbegebiet",
+    "ge",
+    "zulässigkeit"
+   ],
+   "quelle": "§ 8 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-014",
+   "typ": "karte",
+   "frage": "Wodurch unterscheidet sich das Industriegebiet (GI) vom Gewerbegebiet (GE)?",
+   "antwort": "Das GE dient vorwiegend nicht erheblich belästigenden Gewerbebetrieben (§ 8 Abs. 1 BauNVO). Das GI dient ausschließlich der Unterbringung von Gewerbebetrieben, und zwar vorwiegend solcher, die in anderen Baugebieten unzulässig sind (§ 9 Abs. 1) – also gerade der erheblich belästigenden. Anlagen für sportliche Zwecke sind im GE allgemein, im GI nur ausnahmsweise zulässig; Vergnügungsstätten sind im GE ausnahmsweise möglich, im GI gar nicht.",
+   "vertiefung": "Das GI ist das Auffanggebiet für Betriebe, die sonst nirgends hinpassen. Deshalb muss es bei der Planung besonders sorgfältig platziert werden: Nach § 50 BImSchG sind Flächen einander so zuzuordnen, dass schädliche Umwelteinwirkungen auf Wohngebiete so weit wie möglich vermieden werden.",
+   "tags": [
+    "industriegebiet",
+    "gewerbegebiet",
+    "störgrad"
+   ],
+   "quelle": "§§ 8 und 9 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 50 Satz 1 BImSchG (Neufassung vom 17.05.2013, BGBl. I S. 1274)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-015",
+   "typ": "zuordnung",
+   "frage": "Wie ist eine Tankstelle in den folgenden Baugebieten zulässig?",
+   "paare": [
+    [
+     "Reines Wohngebiet (WR)",
+     "unzulässig"
+    ],
+    [
+     "Allgemeines Wohngebiet (WA)",
+     "ausnahmsweise zulässig"
+    ],
+    [
+     "Mischgebiet (MI)",
+     "allgemein zulässig"
+    ],
+    [
+     "Kerngebiet (MK)",
+     "allgemein nur in Verbindung mit Parkhäusern und Großgaragen"
+    ]
+   ],
+   "antwort": "WR: unzulässig. WA: ausnahmsweise zulässig. MI: allgemein zulässig. MK: allgemein nur in Verbindung mit Parkhäusern und Großgaragen, sonst ausnahmsweise.",
+   "vertiefung": "Die Tankstelle zeigt die Abstufung besonders deutlich: Je mehr Gewerbe ein Gebiet verträgt, desto selbstverständlicher wird sie. Im MU und im WB ist sie – anders als im MI – nur ausnahmsweise zulässig. Im WA kann die Gemeinde die Ausnahme ganz ausschließen (§ 1 Abs. 6 Nr. 1 BauNVO); Battis nennt genau dieses Beispiel.",
+   "tags": [
+    "tankstelle",
+    "zulässigkeit",
+    "vergleich der gebiete"
+   ],
+   "quelle": "§§ 3, 4, 4a, 6, 6a, 7 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 195, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-016",
+   "typ": "zuordnung",
+   "frage": "Wie sind Vergnügungsstätten in den folgenden Baugebieten zulässig?",
+   "paare": [
+    [
+     "Kerngebiet (MK)",
+     "allgemein zulässig, auch kerngebietstypische"
+    ],
+    [
+     "Mischgebiet (MI)",
+     "in überwiegend gewerblich geprägten Teilen allgemein, sonst ausnahmsweise"
+    ],
+    [
+     "Gewerbegebiet (GE)",
+     "ausnahmsweise zulässig"
+    ],
+    [
+     "Allgemeines Wohngebiet (WA)",
+     "unzulässig"
+    ]
+   ],
+   "antwort": "MK: allgemein zulässig, auch kerngebietstypische. MI: nicht kerngebietstypische in überwiegend gewerblich geprägten Teilen allgemein, sonst ausnahmsweise. GE: ausnahmsweise. WA: unzulässig.",
+   "vertiefung": "„Kerngebietstypisch“ sind Vergnügungsstätten, die wegen ihrer Zweckbestimmung oder ihres Umfangs nur in Kerngebieten allgemein zulässig sind – so umschreiben es § 4a Abs. 3 Nr. 2 und § 6a Abs. 3 Nr. 1. Im WB, MD und MU sind nicht kerngebietstypische Vergnügungsstätten ausnahmsweise zulässig. Seit 2013 kann die Gemeinde außerdem eigene Bebauungspläne zur Steuerung von Vergnügungsstätten wie Spielhallen aufstellen.",
+   "tags": [
+    "vergnügungsstätten",
+    "zulässigkeit",
+    "kerngebiet"
+   ],
+   "quelle": "§§ 4, 4a, 5, 6, 6a, 7, 8 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 194, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-017",
+   "typ": "numerisch",
+   "frage": "Ab welcher Geschossfläche (in m²) wird bei großflächigen Einzelhandelsbetrieben nach § 11 Abs. 3 BauNVO in der Regel vermutet, dass sie sich nicht nur unwesentlich auf Raumordnung und städtebauliche Entwicklung auswirken? Gefragt ist der Wert, der überschritten sein muss.",
+   "wert": 1200,
+   "toleranz": 0,
+   "einheit": "m²",
+   "antwort": "1 200 m² Geschossfläche. Wird dieser Wert überschritten, sind solche Auswirkungen in der Regel anzunehmen.",
+   "vertiefung": "Die Vermutung ist widerlegbar, und zwar in beide Richtungen: Auswirkungen können schon unter 1 200 m² vorliegen oder trotz größerer Fläche fehlen. Zu berücksichtigen sind vor allem Gliederung und Größe der Gemeinde, die verbrauchernahe Versorgung und das Warenangebot. Achtung: Maßstab ist die Geschossfläche, nicht die Verkaufsfläche.",
+   "tags": [
+    "einzelhandel",
+    "§ 11 baunvo",
+    "großflächig"
+   ],
+   "quelle": "§ 11 Abs. 3 Satz 3 und 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-018",
+   "typ": "karte",
+   "frage": "Wo dürfen Einkaufszentren und großflächige Einzelhandelsbetriebe errichtet werden, und welche Auswirkungen sind dabei gemeint?",
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Einkaufszentren sowie großflächige Einzelhandels- und vergleichbare Handelsbetriebe, die sich nicht nur unwesentlich auf die Ziele der Raumordnung oder die städtebauliche Entwicklung auswirken können, sind außer in Kerngebieten nur in eigens festgesetzten Sondergebieten zulässig (§ 11 Abs. 3 BauNVO). Gemeint sind vor allem schädliche Umwelteinwirkungen sowie Auswirkungen auf Infrastruktur und Verkehr, die Versorgung der Bevölkerung, zentrale Versorgungsbereiche in der eigenen und in anderen Gemeinden, das Orts- und Landschaftsbild und den Naturhaushalt.",
+   "vertiefung": "Die Vorschrift schützt vor allem die Innenstädte: Ein großer Markt am Ortsrand kann die Versorgung in den Zentren der eigenen und der Nachbargemeinden schwächen. Ein Sondergebiet braucht einen eigenen Bebauungsplan – und damit Abwägung, Abstimmung mit den Nachbargemeinden und Anpassung an die Ziele der Raumordnung. Umgekehrt können städtebauliche Gründe, gestützt auf ein Einzelhandelskonzept, eine solche Ansiedlung auch begrenzen.",
+   "tags": [
+    "einzelhandel",
+    "sondergebiet",
+    "zentrale versorgungsbereiche"
+   ],
+   "quelle": "§ 11 Abs. 3 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 187, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-019",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche der folgenden Gebiete sind Sondergebiete, die der Erholung dienen (§ 10 BauNVO)?",
+   "optionen": [
+    "Wochenendhausgebiet",
+    "Ferienhausgebiet",
+    "Campingplatzgebiet",
+    "Kurgebiet",
+    "Klinikgebiet",
+    "Hafengebiet"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig – ausdrücklich in § 10 Abs. 1 genannt.",
+    "Richtig – ausdrücklich in § 10 Abs. 1 genannt.",
+    "Richtig – ausdrücklich in § 10 Abs. 1 genannt; zulässig sind dort Camping- und Zeltplätze (§ 10 Abs. 5).",
+    "Falsch – Kurgebiete gehören als Gebiete für den Fremdenverkehr zu den sonstigen Sondergebieten (§ 11 Abs. 2).",
+    "Falsch – ein sonstiges Sondergebiet nach § 11 Abs. 2.",
+    "Falsch – ein sonstiges Sondergebiet nach § 11 Abs. 2."
+   ],
+   "antwort": "Wochenendhaus-, Ferienhaus- und Campingplatzgebiete (§ 10 Abs. 1 BauNVO). Kur-, Klinik- und Hafengebiete sind sonstige Sondergebiete nach § 11 Abs. 2.",
+   "vertiefung": "Die Unterscheidung hat Folgen: In Wochenendhausgebieten sind Wochenendhäuser als Einzelhäuser zulässig, und der Plan muss die zulässige Grundfläche festsetzen (§ 10 Abs. 3). Ferienhäuser müssen überwiegend und auf Dauer einem wechselnden Personenkreis zur Erholung dienen (§ 10 Abs. 4).",
+   "tags": [
+    "sondergebiet",
+    "erholung",
+    "§ 10 baunvo"
+   ],
+   "quelle": "§§ 10 und 11 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-020",
+   "typ": "karte",
+   "frage": "Darf eine Architektin ihr Büro in einem reinen Wohngebiet betreiben – und dort ein eigenes Bürogebäude errichten?",
+   "antwort": "Ein Büro in Räumen ja, ein ganzes Bürogebäude nein. Für freiberuflich Tätige und Gewerbetreibende, die ihren Beruf in ähnlicher Art ausüben, sind in Kleinsiedlungs-, reinen und allgemeinen Wohngebieten (§§ 2 bis 4) Räume zulässig, in den Baugebieten nach den §§ 4a bis 9 auch Gebäude (§ 13 BauNVO).",
+   "vertiefung": "„Räume“ heißt: einzelne Räume oder Wohnungen in einem Gebäude, nicht das ganze Gebäude. Ab dem besonderen Wohngebiet ist auch ein reines Bürohaus für freie Berufe möglich. Typische freie Berufe sind etwa Ärztinnen, Anwälte, Steuerberater, Architektinnen und Ingenieure.",
+   "tags": [
+    "freie berufe",
+    "§ 13 baunvo"
+   ],
+   "quelle": "§ 13 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-021",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Festsetzungen kann eine Gemeinde nach § 1 Abs. 4 bis 10 BauNVO treffen?",
+   "optionen": [
+    "In einem allgemeinen Wohngebiet die ausnahmsweise zulässigen Tankstellen ausschließen",
+    "In einem Mischgebiet Vergnügungsstätten ausschließen",
+    "Ein Gewerbegebiet nach der Art der Betriebe gliedern, etwa lärmintensive Betriebe vom Wohnen abrücken",
+    "Ein allgemeines Wohngebiet festsetzen, in dem Wohngebäude ausgeschlossen sind",
+    "Einen eigenen Gebietstyp „Kreativquartier“ mit selbst formulierter Nutzungsliste festsetzen, ohne ihn als Sondergebiet auszuweisen",
+    "In einem überwiegend bebauten Gebiet vorhandene Betriebe, die durch die Festsetzung unzulässig würden, für Erweiterungen und Erneuerungen absichern"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    5
+   ],
+   "warum": [
+    "Richtig – Ausnahmen können ganz oder teilweise ausgeschlossen werden (§ 1 Abs. 6 Nr. 1).",
+    "Richtig – allgemein zulässige Nutzungen können ausgeschlossen werden, wenn die Zweckbestimmung gewahrt bleibt (§ 1 Abs. 5).",
+    "Richtig – Gliederung nach der Art der Betriebe und Anlagen und ihren besonderen Bedürfnissen und Eigenschaften (§ 1 Abs. 4).",
+    "Falsch – das WA dient vorwiegend dem Wohnen; ohne Wohngebäude wäre seine Zweckbestimmung aufgehoben.",
+    "Falsch – Typenzwang: Außerhalb der Sondergebiete kann nur aus dem Katalog des § 1 Abs. 2 gewählt und dieser abgewandelt werden.",
+    "Richtig – Festsetzung nach § 1 Abs. 10 für überwiegend bebaute Gebiete."
+   ],
+   "antwort": "Zulässig sind der Ausschluss einer Ausnahme (Tankstellen im WA), der Ausschluss einzelner allgemein zulässiger Nutzungen (Vergnügungsstätten im MI), die Gliederung eines Gewerbegebiets nach Betriebsarten und die Absicherung vorhandener Betriebe. Unzulässig sind ein WA ohne Wohngebäude und ein frei erfundener Gebietstyp.",
+   "vertiefung": "Battis: Der erste Eindruck, die Gemeinde werde durch die BauNVO in ein Korsett gezwängt, täuscht – Gliederung, Ausschlüsse, geschossweise Regeln und Beschränkungen auf Teile des Gebiets erlauben differenzierte Nutzungskonzepte. Die Grenze ist stets dieselbe: Die allgemeine Zweckbestimmung des Gebiets muss gewahrt bleiben.",
+   "tags": [
+    "feinsteuerung",
+    "§ 1 baunvo",
+    "ausschluss"
+   ],
+   "quelle": "§ 1 Abs. 4–10 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 195, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-022",
+   "typ": "fall",
+   "frage": "Eine Gemeinde setzt für ein neues Quartier ein allgemeines Wohngebiet fest. Kurz nach Inkrafttreten beantragt ein Mineralölunternehmen eine Tankstelle an der Hauptzufahrt. Die Gemeinde möchte im Gebiet weder Tankstellen noch Gartenbaubetriebe, wohl aber einen Bäcker und ein Café.",
+   "teile": [
+    {
+     "frage": "Ist die Tankstelle nach dem geltenden Plan zulässig?",
+     "antwort": "Nicht allgemein, aber ausnahmsweise: Tankstellen gehören im WA zu den Ausnahmen (§ 4 Abs. 3 Nr. 5 BauNVO). Die Baugenehmigungsbehörde entscheidet nach § 31 Abs. 1 BauGB im Ermessen – einen Anspruch hat das Unternehmen nicht."
+    },
+    {
+     "frage": "Wie hätte die Gemeinde Tankstellen und Gartenbaubetriebe von vornherein ausschließen können?",
+     "antwort": "Mit einer Festsetzung, dass diese Ausnahmen nicht Bestandteil des Plans werden (§ 1 Abs. 6 Nr. 1 BauNVO). Die Zweckbestimmung des WA bleibt dabei gewahrt."
+    },
+    {
+     "frage": "Was kann die Gemeinde jetzt noch tun?",
+     "antwort": "Ist sie nicht selbst Baugenehmigungsbehörde, braucht die Ausnahme ihr Einvernehmen (§ 36 Abs. 1 BauGB). Dauerhaft hilft nur eine Planänderung: Mit dem Aufstellungsbeschluss kann sie den Antrag zurückstellen lassen oder eine Veränderungssperre beschließen (§§ 14, 15 BauGB)."
+    },
+    {
+     "frage": "Dürfte sie auch Läden und Gaststätten ausschließen – oder sogar Wohngebäude?",
+     "antwort": "Läden, Schank- und Speisewirtschaften könnte sie nach § 1 Abs. 5 BauNVO ausschließen, solange die Zweckbestimmung gewahrt bleibt – hier will sie sie aber gerade. Wohngebäude auszuschließen hieße, dem WA seine Zweckbestimmung „vorwiegend Wohnen“ zu nehmen; das ist unzulässig."
+    }
+   ],
+   "antwort": "Die Tankstelle ist im WA nur ausnahmsweise zulässig; einen Anspruch hat das Unternehmen nicht. Ausschließen hätte die Gemeinde Tankstellen und Gartenbaubetriebe nach § 1 Abs. 6 Nr. 1 BauNVO können. Jetzt bleiben ihr das Einvernehmen nach § 36 BauGB und eine Planänderung mit Sicherungsinstrumenten. Läden und Gaststätten könnte sie ausschließen, Wohngebäude nicht.",
+   "vertiefung": "Der Fall greift Battis’ Beispiel auf: Die Feinsteuerung nach § 1 Abs. 5 und 6 BauNVO ist das Standardwerkzeug, um einen Gebietstyp auf die konkrete Situation zuzuschneiden – am besten schon bei der Aufstellung des Plans.",
+   "tags": [
+    "fallaufgabe",
+    "allgemeines wohngebiet",
+    "ausnahme"
+   ],
+   "quelle": "§§ 1 Abs. 5 und 6, 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); §§ 14, 15, 31 Abs. 1, 36 Abs. 1 BauGB; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 195, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-023",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Prüfschritte in die richtige Reihenfolge: Ist eine bestimmte Nutzung in einem festgesetzten Baugebiet zulässig?",
+   "schritte": [
+    "Festgesetztes Baugebiet bestimmen – die §§ 2 bis 14 BauNVO sind Bestandteil des Plans",
+    "Prüfen, ob der Plan den Katalog nach § 1 Abs. 4 bis 10 BauNVO abgewandelt hat",
+    "Prüfen, ob die Nutzung nach Absatz 2 der Gebietsvorschrift allgemein zulässig ist",
+    "Falls nicht: prüfen, ob sie nach Absatz 3 ausnahmsweise zugelassen werden kann (§ 31 Abs. 1 BauGB)",
+    "Im Einzelfall prüfen, ob sie der Eigenart des Gebiets widerspricht oder unzumutbar stört (§ 15 Abs. 1 BauNVO)"
+   ],
+   "bild": "bilder/rb-bnvo-pruefung.svg",
+   "bildunterschrift": "Prüfschema zur Art der baulichen Nutzung im beplanten Gebiet.",
+   "antwort": "Baugebiet bestimmen – Abwandlungen nach § 1 Abs. 4 bis 10 prüfen – allgemeine Zulässigkeit nach Absatz 2 prüfen – sonst Ausnahme nach Absatz 3 und § 31 Abs. 1 BauGB prüfen – Einzelfallprüfung nach § 15 Abs. 1 BauNVO.",
+   "vertiefung": "Die Abwandlungen kommen früh, weil sie den Katalog verändern, an dem die Absätze 2 und 3 gemessen werden: Hat der Plan Tankstellen im WA ausgeschlossen, endet die Prüfung schon dort. § 15 steht am Schluss, weil er nur einschränkt – er kann ein nach dem Katalog zulässiges Vorhaben im Einzelfall verhindern, aber nie ein unzulässiges zulässig machen. Passt eine Nutzung weder in Absatz 2 noch in Absatz 3, bleibt nur eine Befreiung nach § 31 Abs. 2 BauGB.",
+   "tags": [
+    "prüfschema",
+    "zulässigkeit",
+    "§ 15 baunvo"
+   ],
+   "quelle": "§§ 1, 2–9, 15 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 31 BauGB, Fassung vom 27.10.2025 (BGBl. 2025 I Nr. 257); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 194–195, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-024",
+   "typ": "freitext",
+   "frage": "Ein Vorhaben ist nach dem Katalog des Baugebiets allgemein zulässig. Kann es trotzdem unzulässig sein? Erläutere § 15 Abs. 1 BauNVO.",
+   "pruefpunkte": [
+    "Ja – § 15 Abs. 1 ist ein Korrektiv für den Einzelfall",
+    "Satz 1: unzulässig bei Widerspruch zur Eigenart des Gebiets nach Anzahl, Lage, Umfang oder Zweckbestimmung",
+    "Satz 2: unzulässig, wenn unzumutbare Belästigungen oder Störungen im Gebiet oder seiner Umgebung ausgehen können",
+    "Satz 2 gilt auch umgekehrt: unzulässig ist auch eine Anlage, die selbst unzumutbaren Störungen ausgesetzt würde",
+    "Die Einordnung nach dem Immissionsschutzrecht allein entscheidet nicht (§ 15 Abs. 3)"
+   ],
+   "antwort": "Ja. Nach § 15 Abs. 1 Satz 1 BauNVO ist eine an sich zulässige Anlage im Einzelfall unzulässig, wenn sie der Eigenart des Baugebiets nach Anzahl, Lage, Umfang oder Zweckbestimmung widerspricht. Nach Satz 2 ist sie auch unzulässig, wenn von ihr Belästigungen oder Störungen ausgehen können, die im Gebiet selbst oder in seiner Umgebung nach dessen Eigenart unzumutbar sind – oder wenn sie selbst solchen Störungen ausgesetzt würde.",
+   "vertiefung": "§ 15 wirkt nur einschränkend. Ein Beispiel für „Anzahl“: Ein einzelner Laden passt ins WA, eine Häufung von Läden kann den Wohncharakter kippen. Dass auch die störempfindliche Anlage selbst unzulässig sein kann, schützt etwa einen Gewerbebetrieb davor, dass ihm ein Wohnhaus vor die Tür gesetzt wird. In der Rechtsprechung wird § 15 Abs. 1 als Ausprägung des Gebots der Rücksichtnahme verstanden – ein Thema für das Nachbarrecht.",
+   "tags": [
+    "§ 15 baunvo",
+    "eigenart",
+    "rücksichtnahme"
+   ],
+   "quelle": "§ 15 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-025",
+   "typ": "vergleich",
+   "frage": "Eine Gemeinde plant Wohnquartier und Industrieflächen. Welche Anordnung entspricht dem Planungsgrundsatz des § 50 BImSchG?",
+   "seiten": [
+    {
+     "titel": "Anordnung A",
+     "bild": "bilder/rb-bnvo-zuordnung-a.svg",
+     "beschreibung": "Reines Wohngebiet grenzt unmittelbar an ein Industriegebiet"
+    },
+    {
+     "titel": "Anordnung B",
+     "bild": "bilder/rb-bnvo-zuordnung-b.svg",
+     "beschreibung": "Zwischen WR und GI liegen WA, MI, GE und ein Grünstreifen"
+    }
+   ],
+   "richtig": 1,
+   "antwort": "Anordnung B. Nach § 50 Satz 1 BImSchG sind die Flächen bei der Planung einander so zuzuordnen, dass schädliche Umwelteinwirkungen auf Wohngebiete so weit wie möglich vermieden werden. Die Abstufung WR – WA – MI – GE – Grünstreifen – GI lässt jedes Gebiet an ein verträgliches Nachbargebiet grenzen.",
+   "vertiefung": "Die Abstufung folgt den Zweckformeln der BauNVO: Jedes Nachbargebiet verträgt etwas mehr Störung als das vorige. Battis nennt die Konstellation aus Anordnung A – Industriegebiet für stark umweltbelastende Anlagen unmittelbar neben einem Wohngebiet – über eine Gemeindegrenze hinweg als Verstoß gegen das Abstimmungsgebot.",
+   "tags": [
+    "§ 50 bimschg",
+    "zuordnung",
+    "immissionsschutz"
+   ],
+   "quelle": "§ 50 Satz 1 BImSchG (Neufassung vom 17.05.2013, BGBl. I S. 1274); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 139, S. 52; §§ 3–9 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-026",
+   "typ": "bildbeschriftung",
+   "frage": "Die Skizze zeigt eine abgestufte Zuordnung von Baugebieten zwischen Wohnquartier und Industrie. Benenne die markierten Bereiche.",
+   "referenz": "bilder/rb-bnvo-zuordnung-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 63.7,
+     "y": 32.0,
+     "name": "Gewerbegebiet (GE)"
+    },
+    {
+     "nr": 2,
+     "x": 28.7,
+     "y": 32.0,
+     "name": "Allgemeines Wohngebiet (WA)"
+    },
+    {
+     "nr": 3,
+     "x": 88.8,
+     "y": 54.0,
+     "name": "Industriegebiet (GI)"
+    },
+    {
+     "nr": 4,
+     "x": 11.2,
+     "y": 46.0,
+     "name": "Reines Wohngebiet (WR)"
+    },
+    {
+     "nr": 5,
+     "x": 76.2,
+     "y": 80.0,
+     "name": "Grünstreifen als Puffer"
+    },
+    {
+     "nr": 6,
+     "x": 46.2,
+     "y": 60.0,
+     "name": "Mischgebiet (MI)"
+    }
+   ],
+   "antwort": "Von links nach rechts: reines Wohngebiet, allgemeines Wohngebiet, Mischgebiet, Gewerbegebiet, Grünstreifen als Puffer, Industriegebiet.",
+   "vertiefung": "Erkennbar ist die Abstufung an der Bebauung: kleine Wohnhäuser, dann Wohnhäuser mit einzelnen anderen Nutzungen, dann gemischte Blöcke, Hallen und schließlich Hallen mit Schornstein. Statt eines Grünstreifens setzt ein Bebauungsplan häufig auch Flächen für Immissionsschutzanlagen fest (§ 9 Abs. 1 Nr. 24 BauGB).",
+   "tags": [
+    "zuordnung",
+    "baugebiete",
+    "immissionsschutz"
+   ],
+   "quelle": "§ 50 Satz 1 BImSchG (Neufassung vom 17.05.2013, BGBl. I S. 1274); §§ 3–9 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 188, S. 69",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-027",
+   "typ": "karte",
+   "frage": "Ein Bebauungsplan aus den 1980er-Jahren setzt ein allgemeines Wohngebiet fest. Nach welcher Fassung der BauNVO richtet sich, was dort zulässig ist?",
+   "antwort": "Grundsätzlich nach der Fassung, die bei der Aufstellung des Plans galt – also nach einer älteren BauNVO, nicht nach der heutigen. Die Überleitungsvorschriften knüpfen dafür an die öffentliche Auslegung des Planentwurfs an; so bestimmt etwa § 25d BauNVO, dass für Pläne, die vor dem 20.09.2013 ausgelegt wurden, die bis dahin geltende Fassung anzuwenden bleibt.",
+   "vertiefung": "Für die Praxis heißt das: Bei jedem Bestandsplan zuerst das Datum prüfen. Neuere Gebietstypen wie das urbane Gebiet (2017) oder das dörfliche Wohngebiet (2021) gibt es in alten Plänen nicht, und auch die Zulässigkeitskataloge haben sich über die Jahrzehnte verändert. Will die Gemeinde die neue Fassung anwenden, muss sie das Planverfahren erneut durchführen.",
+   "tags": [
+    "baunvo-fassung",
+    "überleitung",
+    "bestandsplan"
+   ],
+   "quelle": "§ 25d BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 197, S. 73",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-028",
+   "typ": "mehrfachauswahl",
+   "frage": "In welchen Baugebieten sind Wohngebäude allgemein zulässig?",
+   "optionen": [
+    "Reines Wohngebiet (WR)",
+    "Allgemeines Wohngebiet (WA)",
+    "Mischgebiet (MI)",
+    "Urbanes Gebiet (MU)",
+    "Kerngebiet (MK)",
+    "Gewerbegebiet (GE)",
+    "Industriegebiet (GI)"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig – § 3 Abs. 2 Nr. 1 BauNVO.",
+    "Richtig – § 4 Abs. 2 Nr. 1.",
+    "Richtig – § 6 Abs. 2 Nr. 1.",
+    "Richtig – § 6a Abs. 2 Nr. 1.",
+    "Falsch – allgemein nur Betriebswohnungen und sonstige Wohnungen, soweit der Plan sie festsetzt; andere nur ausnahmsweise (§ 7 Abs. 2 und 3).",
+    "Falsch – nur ausnahmsweise Wohnungen für Betriebsinhaber, Betriebsleiter sowie Aufsichts- und Bereitschaftspersonal (§ 8 Abs. 3 Nr. 1).",
+    "Falsch – wie im GE nur ausnahmsweise Betriebswohnungen (§ 9 Abs. 3 Nr. 1)."
+   ],
+   "antwort": "Im reinen und allgemeinen Wohngebiet, im Mischgebiet und im urbanen Gebiet (daneben auch im besonderen Wohngebiet, im Dorfgebiet und im dörflichen Wohngebiet). Im Kerngebiet nur Betriebswohnungen und sonstige Wohnungen nach Festsetzung; im Gewerbe- und Industriegebiet nur ausnahmsweise Betriebswohnungen.",
+   "vertiefung": "Wohngebäude, die ganz oder teilweise der Betreuung und Pflege ihrer Bewohner dienen, zählen nach § 3 Abs. 4 BauNVO in allen diesen Gebieten ebenfalls als Wohngebäude. Im Kleinsiedlungsgebiet sind sonstige Wohngebäude nur ausnahmsweise und mit höchstens zwei Wohnungen zulässig.",
+   "tags": [
+    "wohnen",
+    "zulässigkeit",
+    "vergleich der gebiete"
+   ],
+   "quelle": "§§ 2–9 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bnvo-029",
+   "typ": "numerisch",
+   "frage": "Wie viele Baugebietstypen zählt § 1 Abs. 2 BauNVO heute auf – einschließlich der Sondergebiete?",
+   "wert": 12,
+   "toleranz": 0,
+   "einheit": "Baugebiete",
+   "antwort": "Zwölf: WS, WR, WA, WB, MD, MDW, MI, MU, MK, GE, GI und SO.",
+   "vertiefung": "Die Zahl ist gewachsen: Das urbane Gebiet kam 2017 hinzu, das dörfliche Wohngebiet 2021. Ältere Lehrbücher und Bebauungspläne kennen deshalb nur zehn Baugebietstypen.",
+   "tags": [
+    "baugebiete",
+    "überblick"
+   ],
+   "quelle": "§ 1 Abs. 2 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}

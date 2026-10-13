@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 510" width="800" height="510" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="510" fill="#f0ead2"/>
+<rect x="20" y="450" width="760" height="40" fill="#d9d2b4"/>
+<line x1="20" y1="450" x2="780" y2="450" stroke="#414833" stroke-width="3"/>
+<text x="660" y="476" font-size="14" text-anchor="middle" font-weight="bold" fill="#6c584c" >Straße</text>
+<rect x="150" y="388" width="320" height="62" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="164" y="414" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >EG</text>
+<text x="330.0" y="426" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Laden, Café</text>
+<rect x="150" y="326" width="320" height="62" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="164" y="352" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >1. OG</text>
+<text x="330.0" y="364" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Büro, Praxis</text>
+<rect x="150" y="264" width="320" height="62" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="164" y="290" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >2. OG</text>
+<text x="330.0" y="302" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Wohnungen</text>
+<rect x="150" y="202" width="320" height="62" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="164" y="228" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >3. OG</text>
+<text x="330.0" y="240" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Wohnungen</text>
+<rect x="150" y="140" width="320" height="62" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="164" y="166" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >4. OG</text>
+<text x="330.0" y="178" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Wohnungen</text>
+<polygon points="140,140 480,140 480,128 140,128" fill="#6c584c"/>
+<line x1="470" y1="419.0" x2="540" y2="419.0" stroke="#414833" stroke-width="1.5"/>
+<circle cx="548" cy="419.0" r="11" fill="#414833"/>
+<text x="548" y="424.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
+<text x="568" y="405.0" font-size="14" text-anchor="start" font-weight="bold" fill="#414833" >Erdgeschoss zur Straße:</text>
+<text x="568" y="423.0" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Wohnen ausgeschlossen</text>
+<text x="568" y="441.0" font-size="12.5" text-anchor="start" font-weight="normal" fill="#6c584c" >(§ 6a Abs. 4 Nr. 1)</text>
+<line x1="470" y1="233.0" x2="540" y2="233.0" stroke="#414833" stroke-width="1.5"/>
+<circle cx="548" cy="233.0" r="11" fill="#414833"/>
+<text x="548" y="238.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
+<text x="568" y="219.0" font-size="14" text-anchor="start" font-weight="bold" fill="#414833" >Oberhalb eines Geschosses:</text>
+<text x="568" y="237.0" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >nur Wohnungen</text>
+<text x="568" y="255.0" font-size="12.5" text-anchor="start" font-weight="normal" fill="#6c584c" >(§ 6a Abs. 4 Nr. 2)</text>
+<polyline points="135,146 122,146 122,444 135,444" fill="none" stroke="#9a6b1f" stroke-width="2.5"/>
+<text x="104" y="295.0" font-size="13" text-anchor="middle" font-weight="bold" fill="#9a6b1f" transform="rotate(-90 104 295.0)">Mindestanteile Geschossfläche (Nr. 3, 4)</text>
+<text x="400" y="30" font-size="17" text-anchor="middle" font-weight="bold" fill="#414833" >Urbanes Gebiet (MU): geschossweise Festsetzungen</text>
+</svg>

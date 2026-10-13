@@ -511,7 +511,9 @@
         },
         {
           "id": "rb-baunvo",
-          "titel": "BauNVO: Baugebiete und Nutzungsarten"
+          "titel": "BauNVO: Baugebiete und Nutzungsarten",
+          "datei": "items/rb-baunvo.json",
+          "bild": "bilder/rb-bnvo-skala.svg"
         },
         {
           "id": "rb-mass",
