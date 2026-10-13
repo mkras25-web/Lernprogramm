@@ -1,0 +1,953 @@
+{
+ "thema": "rb-bauleitplanung",
+ "titel": "Bauleitplanung: FNP und Bebauungsplan",
+ "erklaerung": {
+  "absaetze": [
+   "Wo gebaut werden darf, entscheidet nicht der Eigentümer allein, sondern zuerst die Gemeinde: Jedes Grundstück steht unter Planvorbehalt. Die Gemeinde stellt ihre Bauleitpläne „in eigener Verantwortung“ auf (§ 2 Abs. 1 BauGB) – das ist der Kern der kommunalen Planungshoheit, die Art. 28 Abs. 2 GG schützt. Planungshoheit heißt aber auch Planungspflicht: Bauleitpläne sind aufzustellen, „sobald und soweit es für die städtebauliche Entwicklung und Ordnung erforderlich ist“ (§ 1 Abs. 3 BauGB). Einen Anspruch darauf hat niemand, auch nicht durch Vertrag. Der Staat übt nur Rechtsaufsicht aus – ob eine Planung zweckmäßig ist, entscheidet der Gemeinderat.",
+   "Die Gemeinde plant nicht im leeren Raum. Über ihr stehen die Raumordnung des Bundes, der Landesentwicklungsplan und der Regionalplan. Deren Ziele sind verbindlich: Die Bauleitpläne sind ihnen anzupassen (§ 1 Abs. 4 BauGB), in der Abwägung lassen sie sich nicht überwinden. Grundsätze der Raumordnung sind dagegen nur Belange, die abzuwägen sind. Damit die Abstimmung keine Einbahnstraße wird, gilt das Gegenstromprinzip: Die Gemeinden wirken an den übergeordneten Plänen mit. Seitlich muss die Gemeinde ihre Pläne mit den Nachbargemeinden abstimmen (§ 2 Abs. 2 BauGB). Informelle Pläne wie Rahmenpläne oder Entwicklungskonzepte binden niemanden; hat der Rat sie beschlossen, fließen ihre Ergebnisse aber in die Abwägung ein (§ 1 Abs. 6 Nr. 11 BauGB).",
+   "Die Bauleitplanung selbst ist zweistufig. Der Flächennutzungsplan (FNP) ist der vorbereitende Bauleitplan: Er stellt für das ganze Gemeindegebiet die beabsichtigte Bodennutzung in den Grundzügen dar – Wohnbauflächen, gemischte, gewerbliche und Sonderbauflächen, Verkehr, Grün, Landwirtschaft –, meist im Maßstab 1 : 5 000 bis 1 : 20 000 und nicht parzellenscharf. Er bindet die Gemeinde und die beteiligten Behörden, nicht aber den einzelnen Bürger. Der Bebauungsplan (B-Plan) ist der verbindliche Bauleitplan: Er setzt für ein Teilgebiet parzellenscharf fest, was wo und wie gebaut werden darf – Baugebiet nach BauNVO, Maß der Nutzung, Bauweise, Baugrenzen und Baulinien, Verkehrsflächen –, häufig im Maßstab 1 : 500. Er wird als Satzung beschlossen und gilt für jeden. Verbunden sind beide Stufen durch das Entwicklungsgebot: Der B-Plan ist aus dem FNP zu entwickeln (§ 8 Abs. 2 BauGB).",
+   "Das Aufstellungsverfahren ist auf Beteiligung angelegt. Es beginnt mit dem ortsüblich bekannt gemachten Aufstellungsbeschluss des Gemeinderats. Es folgen die Umweltprüfung, deren Ergebnis im Umweltbericht steht, und zwei Beteiligungsstufen: zuerst frühzeitig zu Zielen und Zwecken der Planung (§ 3 Abs. 1, § 4 Abs. 1 BauGB), dann zum ausgearbeiteten Entwurf, der seit der Novelle 2023 einen Monat, mindestens aber 30 Tage im Internet veröffentlicht wird (§ 3 Abs. 2 BauGB). Alle Stellungnahmen gehen in die Abwägung der öffentlichen und privaten Belange ein (§ 1 Abs. 7 BauGB). Den FNP beschließt der Gemeinderat mit einfachem Beschluss, die höhere Verwaltungsbehörde muss ihn genehmigen. Den B-Plan beschließt er als Satzung; eine Genehmigung braucht er nur, wenn er nicht aus dem FNP entwickelt ist. Wirksam werden beide mit der ortsüblichen Bekanntmachung. Während des Verfahrens kann die Gemeinde ihre Planung durch Veränderungssperre oder Zurückstellung sichern.",
+   "Drei Unterscheidungen sorgen in Klausuren regelmäßig für Fehler. Erstens: Der FNP „stellt dar“, der B-Plan „setzt fest“. Kennzeichnungen und nachrichtliche Übernahmen sind in beiden nur Hinweise ohne eigene Rechtswirkung, und auch die Begründung ist nicht Bestandteil des B-Plans. Zweitens: Qualifiziert ist ein B-Plan nur, wenn er mindestens Art und Maß der baulichen Nutzung, die überbaubaren Grundstücksflächen und die örtlichen Verkehrsflächen festsetzt (§ 30 Abs. 1 BauGB). Fehlt davon etwas, ist er ein gültiger einfacher B-Plan, und im Übrigen gelten § 34 oder § 35 BauGB. Drittens: Der vorhabenbezogene B-Plan (§ 12 BauGB) beruht auf dem Projekt eines Vorhabenträgers und einem Durchführungsvertrag – einen Anspruch auf den Plan begründet aber auch er nicht. Und für alle B-Pläne gilt: Sie schaffen Baurecht, aber keine Baupflicht."
+  ],
+  "merksatz": "Der Flächennutzungsplan stellt für die ganze Gemeinde dar und bindet die Verwaltung; der Bebauungsplan setzt für ein Teilgebiet parzellenscharf fest und bindet jeden – und er ist aus dem Flächennutzungsplan zu entwickeln.",
+  "bild": "bilder/rb-blp-ebenen.svg",
+  "bildunterschrift": "Planungsebenen von der Raumordnung bis zum Bauantrag: Die Bauleitpläne der Gemeinde stehen zwischen der überörtlichen Planung, an deren Ziele sie anzupassen sind, und dem einzelnen Bauvorhaben.",
+  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 128–139, S. 47–52; Rn. 171–227, S. 64–81; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 5 und 10–11; Leitfaden Städtebauliche Analyse, Glossar, S. 86–90; BauGB §§ 1–14, 30"
+ },
+ "lernziele": [
+  "Du kannst Flächennutzungsplan und Bebauungsplan nach Geltungsbereich, Inhalt, Maßstab, Rechtsform und Bindungswirkung unterscheiden.",
+  "Du kannst erklären, wie die Bauleitplanung in Raumordnung, Nachbargemeinden und informelle Planungen eingebunden ist.",
+  "Du kannst das Regelverfahren zur Aufstellung eines Bebauungsplans in der richtigen Reihenfolge wiedergeben und die Beteiligungsfristen nennen.",
+  "Du kannst einen Bebauungsplan-Ausschnitt mit Nutzungsschablone lesen und erkennen, ob er qualifiziert ist."
+ ],
+ "items": [
+  {
+   "id": "rb-blp-001",
+   "typ": "karte",
+   "frage": "Welche zwei Stufen der Bauleitplanung unterscheidet das BauGB, und wie werden sie jeweils bezeichnet?",
+   "antwort": "Den Flächennutzungsplan als vorbereitenden Bauleitplan und den Bebauungsplan als verbindlichen Bauleitplan (§ 1 Abs. 2 BauGB). Der FNP stellt für das ganze Gemeindegebiet die beabsichtigte Bodennutzung in den Grundzügen dar, ohne den Bürger in der Regel unmittelbar zu binden. Der B-Plan setzt für Teilgebiete parzellenscharf die künftige Nutzung fest.",
+   "vertiefung": "Die Begriffe sind Programm: „Vorbereitend“ heißt, der FNP bereitet die verbindliche Stufe vor und steuert sie über das Entwicklungsgebot (§ 8 Abs. 2 BauGB). „Verbindlich“ heißt, erst der B-Plan entscheidet für das einzelne Grundstück, was zulässig ist (§ 30 BauGB). Wer schreibt „der FNP setzt fest“, verwechselt die Stufen – der FNP „stellt dar“.",
+   "tags": [
+    "zweistufigkeit",
+    "flächennutzungsplan",
+    "bebauungsplan"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 128, S. 47–48; § 1 Abs. 2 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-002",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen zur kommunalen Planungshoheit treffen zu?",
+   "optionen": [
+    "Die Gemeinde stellt die Bauleitpläne in eigener Verantwortung auf.",
+    "Die Planungshoheit ist durch die Selbstverwaltungsgarantie des Art. 28 Abs. 2 GG geschützt.",
+    "Die staatliche Aufsicht darf auch prüfen, ob eine Planung städtebaulich zweckmäßig ist.",
+    "Ein Investor kann sich durch einen städtebaulichen Vertrag einen Anspruch auf Aufstellung eines Bebauungsplans sichern.",
+    "Die Kommunalaufsicht kann eine erforderliche Planung notfalls erzwingen."
+   ],
+   "richtig": [
+    0,
+    1,
+    4
+   ],
+   "warum": [
+    "Richtig – so steht es in § 2 Abs. 1 Satz 1 BauGB; „in eigener Verantwortung“ ist die Formel der Selbstverwaltung.",
+    "Richtig – die Bauleitplanung ist der wichtigste Bestandteil der Planungshoheit. Sie gilt allerdings nur „im Rahmen der Gesetze“.",
+    "Falsch – die Aufsicht ist auf die Rechtsaufsicht beschränkt (§ 6 Abs. 2, § 10 Abs. 2 BauGB). Über die Zweckmäßigkeit entscheidet der Gemeinderat.",
+    "Falsch – § 1 Abs. 3 Satz 2 BauGB schließt einen Anspruch ausdrücklich aus, auch durch Vertrag.",
+    "Richtig – der Planungshoheit entspricht eine Planungspflicht, die die Aufsicht durch Anordnung oder Ersatzvornahme durchsetzen kann."
+   ],
+   "antwort": "Zutreffend sind: Die Gemeinde plant in eigener Verantwortung (§ 2 Abs. 1 BauGB), die Planungshoheit ist durch Art. 28 Abs. 2 GG geschützt, und die Kommunalaufsicht kann eine erforderliche Planung erzwingen. Die Aufsicht ist aber reine Rechtsaufsicht, und einen Anspruch auf Planung gibt es nicht – auch nicht durch Vertrag.",
+   "vertiefung": "Die Planungshoheit hat zwei Seiten. Nach außen ist sie wehrfähig: Die Gemeinde kann sich gegen Planungen einer Nachbargemeinde oder anderer Planungsträger wehren, die sie rechtswidrig beeinträchtigen. Nach innen ist sie zugleich Pflicht. Begrenzt wird sie vertikal durch die Ziele der Raumordnung und horizontal durch die Abstimmung mit den Nachbargemeinden.",
+   "tags": [
+    "planungshoheit",
+    "rechtsaufsicht",
+    "art. 28 gg"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 130–131, S. 48–49; Rn. 135–137, S. 50–51; § 1 Abs. 3, § 2 Abs. 1, § 6 Abs. 2 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-003",
+   "typ": "karte",
+   "frage": "Wann muss eine Gemeinde Bauleitpläne aufstellen, und woran wird die „Erforderlichkeit“ gemessen?",
+   "antwort": "„Sobald und soweit es für die städtebauliche Entwicklung und Ordnung erforderlich ist“ (§ 1 Abs. 3 Satz 1 BauGB) – „sobald“ bestimmt den Zeitpunkt, „soweit“ den Umfang. Gemessen wird in erster Linie an der planerischen Konzeption der Gemeinde. Die Erforderlichkeit kann sich aber auch aus der konkreten Lage oder aus Zielen der Raumordnung ergeben.",
+   "vertiefung": "Die Formel wirkt in beide Richtungen. Sie verpflichtet zum Planen, deckt aber keine Pläne ohne städtebaulichen Grund – eine reine Negativplanung, die nur ein unerwünschtes Vorhaben verhindern soll, ist unzulässig. Seit dem Baulandmobilisierungsgesetz stellt § 1 Abs. 3 Satz 1 klar, dass auch die Ausweisung von Flächen für den Wohnbedarf in Betracht kommen kann. Aus der Anpassungspflicht an die Ziele der Raumordnung folgt nach herrschender Meinung sogar eine Erstplanungspflicht.",
+   "tags": [
+    "planungspflicht",
+    "erforderlichkeit",
+    "§ 1 abs. 3"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 137, S. 51; Rn. 105, S. 38; § 1 Abs. 3 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-004",
+   "typ": "skizze",
+   "frage": "Skizziere die Planungsebenen von der Raumordnung bis zum Bauantrag als Stufenfolge. Trage zu jeder Ebene Plan, Träger und üblichen Maßstab ein und markiere, wo Anpassungspflicht, Gegenstromprinzip und Entwicklungsgebot wirken.",
+   "referenz": "bilder/rb-blp-ebenen.svg",
+   "pruefpunkte": [
+    "Reihenfolge: Bund – Land (Landesentwicklungsplan) – Region (Regionalplan) – Gemeinde (FNP, dann B-Plan) – Bauherr (Bauantrag)",
+    "FNP und B-Plan als die zwei Stufen der Bauleitplanung zusammengefasst",
+    "Maßstäbe grob richtig: Regionalplan um 1 : 25 000, FNP 1 : 5 000 bis 1 : 20 000, B-Plan 1 : 500 bis 1 : 1 000, Bauantrag 1 : 100",
+    "Anpassung an die Ziele der Raumordnung von oben nach unten (§ 1 Abs. 4 BauGB)",
+    "Gegenstromprinzip als Rückwirkung von unten nach oben",
+    "Entwicklungsgebot zwischen FNP und B-Plan (§ 8 Abs. 2 BauGB)",
+    "Rahmenplan als informelle Zwischenstufe zwischen FNP und B-Plan"
+   ],
+   "antwort": "Siehe Referenzskizze: Raumordnung des Bundes, Landesentwicklungsplan, Regionalplan, Flächennutzungsplan, Bebauungsplan, Bauantrag – nach unten wird das Gebiet kleiner und der Maßstab größer. Die Ziele der Raumordnung wirken über die Anpassungspflicht nach unten, das Gegenstromprinzip nach oben. Zwischen FNP und B-Plan steht das Entwicklungsgebot, daneben der informelle Rahmenplan.",
+   "vertiefung": "Die Maßstäbe sind Faustwerte aus der Planungspraxis, keine Rechtsvorschrift: Der Leitfaden nennt für den FNP 1 : 5 000 bis 1 : 20 000, die Übersicht nach Hotzan 1 : 10 000. Wichtiger als die genaue Zahl ist der Sprung zwischen den beiden Bauleitplänen. Der FNP ist nicht parzellenscharf; erst im Maßstab um 1 : 500 lässt sich für jedes Grundstück ablesen, was gilt.",
+   "tags": [
+    "planungsebenen",
+    "maßstab",
+    "raumordnung"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 5 (nach Hotzan 1997) und S. 10–11; Leitfaden Städtebauliche Analyse, Glossar, S. 86 und 88; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 138, S. 51–52",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-005",
+   "typ": "zuordnung",
+   "frage": "Ordne jeder Planart ihren typischen Maßstab zu.",
+   "paare": [
+    [
+     "Landesentwicklungsplan",
+     "1 : 50 000 und kleiner"
+    ],
+    [
+     "Regionalplan",
+     "1 : 25 000"
+    ],
+    [
+     "Flächennutzungsplan",
+     "1 : 10 000"
+    ],
+    [
+     "Bebauungsplan",
+     "1 : 1 000 bis 1 : 500"
+    ],
+    [
+     "Entwurf, Bauantrag",
+     "1 : 100"
+    ],
+    [
+     "Detail, Ausführung",
+     "1 : 50 bis 1 : 1"
+    ]
+   ],
+   "antwort": "Landesentwicklungsplan: 1 : 50 000 und kleiner. Regionalplan: 1 : 25 000. Flächennutzungsplan: 1 : 10 000. Bebauungsplan: 1 : 1 000 bis 1 : 500. Entwurf und Bauantrag: 1 : 100. Detail und Ausführung: 1 : 50 bis 1 : 1.",
+   "vertiefung": "Faustregel: Je größer das Gebiet, desto kleiner der Maßstab. Der wichtigste Sprung liegt zwischen FNP und B-Plan – der FNP reicht nur für Bauflächen in den Grundzügen, erst der B-Plan um 1 : 500 ist parzellenscharf. Der Leitfaden nennt für den FNP eine Spanne von 1 : 5 000 bis 1 : 20 000; 1 : 10 000 liegt mittendrin.",
+   "tags": [
+    "maßstab",
+    "planungsebenen"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 5 (nach Hotzan 1997); Leitfaden Städtebauliche Analyse, Glossar, S. 86 und 88",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-006",
+   "typ": "zuordnung",
+   "frage": "Ordne jeder Planaussage ihre Bindungswirkung zu.",
+   "paare": [
+    [
+     "Ziel der Raumordnung",
+     "Plan ist anzupassen – in der Abwägung nicht überwindbar"
+    ],
+    [
+     "Grundsatz der Raumordnung",
+     "Belang, der in der Abwägung überwunden werden kann"
+    ],
+    [
+     "Darstellung im Flächennutzungsplan",
+     "bindet Gemeinde und beteiligte Planungsträger, nicht den Bürger"
+    ],
+    [
+     "Festsetzung im Bebauungsplan",
+     "allgemeinverbindlich, Maßstab für jedes Vorhaben"
+    ],
+    [
+     "Beschlossener städtebaulicher Rahmenplan",
+     "kein Rechtssatz, Ergebnis aber in der Abwägung zu berücksichtigen"
+    ]
+   ],
+   "antwort": "Ziel der Raumordnung: Der Bauleitplan ist anzupassen, in der Abwägung nicht überwindbar. Grundsatz der Raumordnung: Belang, der in der Abwägung überwunden werden kann. Darstellung im FNP: bindet Gemeinde und beteiligte Planungsträger, nicht den Bürger. Festsetzung im B-Plan: allgemeinverbindlich. Beschlossener Rahmenplan: kein Rechtssatz, aber in der Abwägung zu berücksichtigen.",
+   "vertiefung": "Die Abstufung lässt sich als Treppe lesen. Ziele binden die Gemeinde strikt, Grundsätze und informelle Pläne wirken nur über die Abwägung (§ 1 Abs. 6 Nr. 11, Abs. 7 BauGB). Der FNP bindet nach innen: die Gemeinde selbst über das Entwicklungsgebot (§ 8 Abs. 2) und beteiligte öffentliche Planungsträger, die nicht widersprochen haben (§ 7 BauGB). Erst der B-Plan wirkt nach außen gegenüber jedermann.",
+   "tags": [
+    "bindungswirkung",
+    "ziele der raumordnung",
+    "abwägung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 105, S. 37–38; Kontrollfrage 2, S. 45; Rn. 148, S. 55–56; Rn. 179 und 183, S. 66–67; Rn. 201, S. 74",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-007",
+   "typ": "freitext",
+   "frage": "Erkläre, wie die Bauleitplanung der Gemeinde mit der Raumordnung von Land und Region verzahnt ist. Gehe auf Anpassungspflicht und Gegenstromprinzip ein.",
+   "pruefpunkte": [
+    "Bauleitpläne sind den Zielen der Raumordnung anzupassen (§ 1 Abs. 4 BauGB)",
+    "Ziele sind verbindliche Vorgaben, Grundsätze nur Belange in der Abwägung",
+    "Die Anpassungspflicht gilt bei der Aufstellung und bei späterer Änderung der Ziele – bestehende Pläne sind nachzuziehen",
+    "Ziele lassen der Gemeinde einen eigenen Spielraum zur Konkretisierung, sie ersetzen die Bauleitplanung nicht",
+    "Gegenstromprinzip: wechselseitige Beeinflussung von Gesamtraum und Teilräumen (§ 1 Abs. 3 ROG), Mitwirkung der Gemeinden"
+   ],
+   "antwort": "Die Ziele der Raumordnung binden die Gemeinde: Bauleitpläne sind ihnen anzupassen, bei der Aufstellung und auch dann, wenn sich die Ziele später ändern. Grundsätze der Raumordnung sind dagegen nur Belange in der Abwägung. Ziele setzen einen Rahmen, den die Gemeinde selbst konkretisiert. Damit das keine Einbahnstraße wird, gilt das Gegenstromprinzip: Gesamtraum und Teilräume beeinflussen sich wechselseitig, die Gemeinden wirken an der Aufstellung der Ziele mit.",
+   "vertiefung": "Gebietsscharfe Festlegungen der Regionalplanung für einzelne Gemeindeteile – Grüngürtel, Siedlungszäsuren, Vorranggebiete – sind möglich, brauchen aber eine besondere überörtliche Rechtfertigung, weil sie tief in die Planungshoheit eingreifen. Gegen Ziele kann sich eine Gemeinde gerichtlich wehren, etwa mit einem Normenkontrollantrag nach § 47 VwGO.",
+   "tags": [
+    "gegenstromprinzip",
+    "anpassungspflicht",
+    "raumordnung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 102 und 105–107, S. 37–38; Rn. 138, S. 51–52; Kontrollfragen 2 und 3, S. 45; § 1 Abs. 4 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-008",
+   "typ": "fall",
+   "frage": "Gemeinde A plant an ihrer Gemarkungsgrenze ein Industriegebiet für stark emittierende Betriebe. Unmittelbar jenseits der Grenze liegt ein Wohngebiet der Gemeinde B.",
+   "teile": [
+    {
+     "frage": "Gegen welche Pflicht kann Gemeinde A verstoßen?",
+     "antwort": "Gegen die nachbargemeindliche Abstimmungspflicht: Bauleitpläne benachbarter Gemeinden sind aufeinander abzustimmen (§ 2 Abs. 2 BauGB). Neben die vertikale Bindung an die Raumordnung tritt damit eine horizontale Grenze der Planungshoheit."
+    },
+    {
+     "frage": "Wie wird Gemeinde B im Verfahren beteiligt?",
+     "antwort": "Als Behörde nach §§ 4, 4a BauGB – Nachbargemeinden gehören zu den zu beteiligenden Behörden. Die Abstimmung läuft also über das normale Beteiligungsverfahren."
+    },
+    {
+     "frage": "Was kann Gemeinde B tun, wenn A den Bebauungsplan trotzdem beschließt?",
+     "antwort": "Sie kann einen Normenkontrollantrag nach § 47 VwGO stellen. Wird ein Zustand geplant, der mit den Leitzielen des § 1 Abs. 5 und 6 BauGB unvereinbar wäre, hat sie einen Anspruch auf Unterlassung – die Planungshoheit der einen Gemeinde begrenzt die der anderen."
+    },
+    {
+     "frage": "Und wenn A das Industriegebiet zunächst nur im Flächennutzungsplan darstellt?",
+     "antwort": "Gegen den FNP gibt es grundsätzlich keine Normenkontrolle, weil er keine Außenwirkung hat. Wegen Verstoßes gegen § 2 Abs. 2 BauGB kann sich die Nachbargemeinde aber mit einer Feststellungsklage nach § 43 VwGO wehren."
+    }
+   ],
+   "antwort": "Gemeinde A verletzt voraussichtlich die Abstimmungspflicht nach § 2 Abs. 2 BauGB. B wird als Behörde beteiligt und kann gegen den Bebauungsplan einen Normenkontrollantrag stellen, gegen eine Darstellung im Flächennutzungsplan eine Feststellungsklage erheben.",
+   "vertiefung": "Die Nachbargemeinde kann nicht nur Immissionskonflikte geltend machen, sondern auch die Verletzung ihrer raumordnerischen Funktion, etwa als Oberzentrum, oder negative Folgen für ihre zentralen Versorgungsbereiche. Der typische Fall dafür ist ein großes Einkaufszentrum am Ortsrand der Nachbarstadt.",
+   "tags": [
+    "nachbargemeinde",
+    "abstimmungspflicht",
+    "rechtsschutz"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 139, S. 52; Rn. 186, S. 68; § 2 Abs. 2 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-009",
+   "typ": "karte",
+   "frage": "Was sind informelle Planwerke wie Rahmenplan oder Stadtentwicklungskonzept, und welche Rolle spielen sie für die Bauleitplanung?",
+   "antwort": "Gesetzlich nicht geregelte Pläne, die baurechtlich nicht binden, die formelle Bauleitplanung aber vorbereiten und ergänzen. Der städtebauliche Rahmenplan bildet eine Zwischenstufe zwischen FNP und B-Plan und stellt in mehreren thematischen Karten Konzepte zu Nutzung, Verkehr, Grün und Stadtgestalt dar. Hat die Gemeinde ein solches Konzept beschlossen, muss sie seine Ergebnisse bei der Aufstellung der Bauleitpläne berücksichtigen (§ 1 Abs. 6 Nr. 11 BauGB).",
+   "vertiefung": "Ihr Vorteil ist die frühe, „unbefangene“ Diskussion mit vielen Akteuren und die Anschaulichkeit – gerade für den Rat, der später beschließen muss. Ihr Nachteil: Sie schaffen kein Baurecht. Wer aus einem Rahmenplan einen Bauanspruch ableitet, verwechselt Konzept und Satzung. Auch städtebauliche Wettbewerbe und Masterpläne gehören zu dieser informellen Ebene.",
+   "tags": [
+    "informelle planung",
+    "rahmenplan",
+    "stadtentwicklungskonzept"
+   ],
+   "quelle": "Leitfaden Städtebauliche Analyse, Glossar, S. 90; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 10–11; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 148, S. 55–56",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-010",
+   "typ": "vergleich",
+   "frage": "Welcher der beiden Ausschnitte stammt aus einem Bebauungsplan?",
+   "seiten": [
+    {
+     "titel": "Plan A",
+     "bild": "bilder/rb-blp-fnp.svg",
+     "beschreibung": "Ausschnitt mit Legende, schematisch"
+    },
+    {
+     "titel": "Plan B",
+     "bild": "bilder/rb-blp-bplan.svg",
+     "beschreibung": "Ausschnitt mit Legende, schematisch"
+    }
+   ],
+   "richtig": 1,
+   "antwort": "Plan B ist ein Bebauungsplan: Er ist parzellenscharf und zeigt Flurstücksgrenzen, Baugrenzen, eine Baulinie und eine Nutzungsschablone mit Baugebiet (WA) und Maß der Nutzung. Plan A ist ein Flächennutzungsplan: grobe Bauflächen (W, M, G), Grünfläche, Landwirtschaft und Hauptverkehrsstraßen ohne Grundstücksbezug.",
+   "vertiefung": "Die Erkennungszeichen: Bauflächen mit einem Buchstaben (W, M, G, S) gehören zum FNP. Baugebiete mit zwei Buchstaben (WA, MI, GE …) sind typisch für den B-Plan – der FNP darf sie auch darstellen, tut es aber nur, soweit es erforderlich ist. Baugrenzen, Baulinien und Nutzungsschablonen gibt es nur im B-Plan, weil nur er festlegt, wo auf dem Grundstück gebaut werden darf.",
+   "tags": [
+    "flächennutzungsplan",
+    "bebauungsplan",
+    "planlesen"
+   ],
+   "quelle": "Leitfaden Städtebauliche Analyse, Glossar, S. 86–89; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 190, S. 70–71",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-011",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen über den Flächennutzungsplan treffen zu?",
+   "optionen": [
+    "Er umfasst das ganze Gemeindegebiet.",
+    "Er stellt die beabsichtigte Art der Bodennutzung in den Grundzügen dar.",
+    "Er ist parzellenscharf und regelt die Bebaubarkeit jedes Grundstücks.",
+    "Ein Eigentümer kann aus ihm unmittelbar einen Anspruch auf eine Baugenehmigung ableiten.",
+    "Er bindet die Gemeinde, weil sie ihre Bebauungspläne aus ihm zu entwickeln hat.",
+    "Bürger können ihn regelmäßig mit einem Normenkontrollantrag angreifen."
+   ],
+   "richtig": [
+    0,
+    1,
+    4
+   ],
+   "warum": [
+    "Richtig – § 5 Abs. 1 BauGB: „für das ganze Gemeindegebiet“. Der B-Plan gilt dagegen nur für Teilgebiete.",
+    "Richtig – „in den Grundzügen“ (§ 5 Abs. 1 Satz 1 BauGB); deshalb genügt ein Maßstab von etwa 1 : 5 000 bis 1 : 20 000.",
+    "Falsch – das ist die Aufgabe des B-Plans. Der FNP ist nicht parzellenscharf.",
+    "Falsch – der FNP wirkt grundsätzlich nur verwaltungsintern; über die Zulässigkeit entscheiden B-Plan oder §§ 34, 35 BauGB.",
+    "Richtig – Entwicklungsgebot nach § 8 Abs. 2 BauGB, eine Selbstbindung der Gemeinde.",
+    "Falsch – mangels Außenwirkung ist er keine Rechtsnorm im Sinne des § 47 VwGO. Ausnahme: Darstellungen mit Ausschlusswirkung nach § 35 Abs. 3 Satz 3 BauGB."
+   ],
+   "antwort": "Zutreffend: Er umfasst das ganze Gemeindegebiet, stellt die Bodennutzung in den Grundzügen dar und bindet die Gemeinde über das Entwicklungsgebot. Nicht zutreffend: Er ist weder parzellenscharf noch Grundlage unmittelbarer Ansprüche, und Bürger können ihn regelmäßig nicht mit der Normenkontrolle angreifen.",
+   "vertiefung": "Ganz folgenlos für den Bürger ist der FNP trotzdem nicht. Bei Vorhaben im Außenbereich kann eine widersprechende Darstellung als öffentlicher Belang entgegenstehen (§ 35 Abs. 3 Satz 1 Nr. 1 BauGB), und der Grundstücksmarkt reagiert spürbar, wenn Ackerland als Wohnbaufläche dargestellt wird.",
+   "tags": [
+    "flächennutzungsplan",
+    "rechtswirkung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 171, S. 64; Rn. 179, S. 66–67; Rn. 185–186a, S. 68; Leitfaden Städtebauliche Analyse, Glossar, S. 86; § 5 Abs. 1 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-012",
+   "typ": "zuordnung",
+   "frage": "Ordne die Kürzel aus Flächennutzungs- und Bebauungsplänen ihrer Bedeutung zu.",
+   "paare": [
+    [
+     "W",
+     "Wohnbaufläche"
+    ],
+    [
+     "M",
+     "gemischte Baufläche"
+    ],
+    [
+     "G",
+     "gewerbliche Baufläche"
+    ],
+    [
+     "S",
+     "Sonderbaufläche"
+    ],
+    [
+     "WA",
+     "allgemeines Wohngebiet"
+    ],
+    [
+     "MI",
+     "Mischgebiet"
+    ]
+   ],
+   "antwort": "W = Wohnbaufläche, M = gemischte Baufläche, G = gewerbliche Baufläche, S = Sonderbaufläche, WA = allgemeines Wohngebiet, MI = Mischgebiet.",
+   "vertiefung": "Ein Buchstabe steht für eine Baufläche nach der allgemeinen Art der Nutzung (§ 1 Abs. 1 BauNVO) – typisch für den FNP. Zwei Buchstaben stehen für ein Baugebiet nach der besonderen Art der Nutzung (§ 1 Abs. 2 BauNVO) – typisch für den B-Plan; aus der Wohnbaufläche W wird dort etwa WR, WA oder WB. Erst mit dem Baugebiet werden die Zulässigkeitsregeln der §§ 2–14 BauNVO Bestandteil des Plans.",
+   "tags": [
+    "bauflächen",
+    "baugebiete",
+    "baunvo"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 194, S. 72; Leitfaden Städtebauliche Analyse, Glossar, S. 87–88",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-013",
+   "typ": "karte",
+   "frage": "In welchem Fall wirkt ein Flächennutzungsplan ausnahmsweise unmittelbar gegenüber Privaten, und was folgt daraus für den Rechtsschutz?",
+   "antwort": "Wenn er nach § 35 Abs. 3 Satz 3 BauGB Konzentrationszonen für privilegierte Außenbereichsvorhaben darstellt, etwa für Kiesabbau oder Tierhaltungsanlagen. Solche Vorhaben sind dann außerhalb der Zonen in der Regel unzulässig. Insoweit wirkt der FNP wie ein Rechtssatz und kann von Betroffenen mit dem Normenkontrollantrag nach § 47 VwGO angegriffen werden.",
+   "vertiefung": "Das klassische Lehrbuchbeispiel waren Konzentrationszonen für Windenergie. Dafür gilt inzwischen eine Sonderregel: § 249 Abs. 1 BauGB nimmt Windenergievorhaben von § 35 Abs. 3 Satz 3 aus. Ältere Literatur ist an dieser Stelle überholt.",
+   "tags": [
+    "flächennutzungsplan",
+    "konzentrationszonen",
+    "außenwirkung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 179, S. 66–67; Rn. 186a, S. 68; § 249 Abs. 1 BauGB, Fassung vom 12.08.2025 (BGBl. 2025 I Nr. 189)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-014",
+   "typ": "zuordnung",
+   "frage": "Grundsatz: Der Bebauungsplan wird aus dem Flächennutzungsplan entwickelt. Ordne jeder Situation das passende Instrument zu.",
+   "paare": [
+    [
+     "FNP und B-Plan werden gleichzeitig aufgestellt oder geändert",
+     "Parallelverfahren (§ 8 Abs. 3)"
+    ],
+    [
+     "Ein FNP ist nicht erforderlich, der B-Plan ordnet die Entwicklung allein",
+     "selbständiger Bebauungsplan (§ 8 Abs. 2 Satz 2)"
+    ],
+    [
+     "Dringende Gründe, ein FNP ist noch nicht aufgestellt",
+     "vorzeitiger Bebauungsplan (§ 8 Abs. 4)"
+    ],
+    [
+     "Plan der Innenentwicklung weicht von den Darstellungen des FNP ab",
+     "beschleunigtes Verfahren, FNP wird berichtigt (§ 13a Abs. 2 Nr. 2)"
+    ]
+   ],
+   "antwort": "Gleichzeitige Aufstellung bzw. Änderung: Parallelverfahren (§ 8 Abs. 3). FNP entbehrlich: selbständiger B-Plan (§ 8 Abs. 2 Satz 2). Dringende Gründe, FNP fehlt noch: vorzeitiger B-Plan (§ 8 Abs. 4). Innenentwicklung mit Abweichung vom FNP: beschleunigtes Verfahren, der FNP wird berichtigt (§ 13a Abs. 2 Nr. 2).",
+   "vertiefung": "Merke die Folge für die Genehmigung: Selbständiger, im Parallelverfahren vor dem FNP bekannt gemachter und vorzeitiger B-Plan brauchen die Genehmigung der höheren Verwaltungsbehörde (§ 10 Abs. 2 BauGB) – genau die Fälle, in denen die Kontrolle über den FNP fehlt. Battis nennt als Beispiel für den selbständigen B-Plan einen Campingplatz in einem Dorf, für das sonst keine bauliche Entwicklung zu erwarten ist.",
+   "tags": [
+    "entwicklungsgebot",
+    "parallelverfahren",
+    "§ 8 baugb"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 179–182, S. 67; § 8 Abs. 2–4, § 10 Abs. 2, § 13a Abs. 2 Nr. 2 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-015",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Inhalte eines Bauleitplans nehmen an seiner Rechtswirkung teil?",
+   "optionen": [
+    "Festsetzungen im Bebauungsplan",
+    "Darstellungen im Flächennutzungsplan",
+    "Kennzeichnungen, z. B. von Flächen mit erheblich belasteten Böden",
+    "Nachrichtliche Übernahmen, z. B. eines Baudenkmals oder einer Planfeststellung",
+    "Die Begründung zum Bebauungsplan"
+   ],
+   "richtig": [
+    0,
+    1
+   ],
+   "warum": [
+    "Richtig – sie sind die rechtsverbindlichen Planaussagen mit Wirkung gegenüber jedermann.",
+    "Richtig – sie machen den materiellen Gehalt des FNP aus; an sie knüpfen Entwicklungsgebot und Anpassungspflicht an. Ihre Wirkung ist allerdings verwaltungsintern.",
+    "Falsch – Kennzeichnungen (§ 5 Abs. 3, § 9 Abs. 5 BauGB) haben nur Hinweischarakter.",
+    "Falsch – sie geben Regelungen wieder, die nach anderen Gesetzen schon verbindlich sind; der Plan selbst regelt hier nichts.",
+    "Falsch – die Begründung ist beizufügen, gehört aber nicht zum Inhalt des Plans."
+   ],
+   "antwort": "Nur die Festsetzungen des Bebauungsplans und die Darstellungen des Flächennutzungsplans. Kennzeichnungen und nachrichtliche Übernahmen sind bloße Hinweise, die Begründung ist kein Bestandteil des Plans.",
+   "vertiefung": "Dass die nachrichtliche Übernahme nur deklaratorisch ist, zeigt eine Grenze der Planungshoheit: Ein planfestgestellter Bahnkörper oder ein Denkmal gilt unabhängig davon, ob die Gemeinde ihn einträgt. Nur erst geplante Fachplanungen werden im FNP „vermerkt“; für den B-Plan ist ein solcher Vermerk nicht vorgesehen.",
+   "tags": [
+    "darstellung",
+    "festsetzung",
+    "kennzeichnung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 174, S. 65; Rn. 177–178, S. 66; Rn. 199–200, S. 73–74",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-016",
+   "typ": "karte",
+   "frage": "Ist die Begründung Bestandteil des Bebauungsplans, und was passiert, wenn sie fehlt?",
+   "antwort": "Nein. Die Begründung ist dem B-Plan beizufügen (§ 9 Abs. 8 BauGB), gehört aber nicht zu seinem Inhalt. Die Pflicht ist trotzdem zwingend: Fehlt die Begründung ganz oder ist sie nur formelhaft und nichtssagend, ist der Plan nichtig. Eine bloß unvollständige Begründung ist nach § 214 Abs. 1 Satz 1 Nr. 3 BauGB unbeachtlich.",
+   "vertiefung": "Die Begründung zeigt Bürgern, Gerichten und gegebenenfalls der Genehmigungsbehörde, ob der Plan aus dem FNP entwickelt und richtig abgewogen wurde. Der Umweltbericht ist ein notwendiger Teil der Begründung (§ 2a BauGB); fehlt er, ist das ein beachtlicher Fehler.",
+   "tags": [
+    "begründung",
+    "umweltbericht",
+    "planerhaltung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 200, S. 74; Rn. 217, S. 78",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-017",
+   "typ": "bildbeschriftung",
+   "frage": "Benenne die markierten Elemente in diesem Ausschnitt eines Bebauungsplans.",
+   "referenz": "bilder/rb-blp-bplan-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 55.0,
+     "y": 39.5,
+     "name": "Straßenverkehrsfläche"
+    },
+    {
+     "nr": 2,
+     "x": 37.5,
+     "y": 46.8,
+     "name": "Baulinie"
+    },
+    {
+     "nr": 3,
+     "x": 85.0,
+     "y": 54.8,
+     "name": "Öffentliche Grünfläche"
+    },
+    {
+     "nr": 4,
+     "x": 81.2,
+     "y": 8.1,
+     "name": "Grenze des Geltungsbereichs"
+    },
+    {
+     "nr": 5,
+     "x": 46.9,
+     "y": 22.4,
+     "name": "Nutzungsschablone"
+    },
+    {
+     "nr": 6,
+     "x": 71.2,
+     "y": 24.2,
+     "name": "Flurstücksgrenze"
+    },
+    {
+     "nr": 7,
+     "x": 12.5,
+     "y": 22.6,
+     "name": "Baugrenze"
+    },
+    {
+     "nr": 8,
+     "x": 25.0,
+     "y": 36.3,
+     "name": "Straßenbegrenzungslinie"
+    }
+   ],
+   "antwort": "Grenze des Geltungsbereichs (kräftig unterbrochen), Baugrenze (Strich-Punkt), Baulinie (Strich-Punkt an der Straße), Nutzungsschablone, Straßenverkehrsfläche, Straßenbegrenzungslinie, öffentliche Grünfläche und Flurstücksgrenze.",
+   "vertiefung": "Baulinie und Baugrenze sehen ähnlich aus, wirken aber verschieden: Auf einer Baulinie muss gebaut werden, eine Baugrenze darf nicht überschritten werden, hinter ihr darf man aber zurückbleiben (§ 23 Abs. 2 und 3 BauNVO). Den Geltungsbereich setzt der B-Plan selbst fest (§ 9 Abs. 7 BauGB). Flurstücksgrenzen sind dagegen nur Kartengrundlage – ein B-Plan kann sich über sie hinwegsetzen, etwa wenn erst eine Umlegung den künftigen Zuschnitt schafft. In echten Plänen sind die Linien farbig unterschieden; die Zeichnung hier ist vereinfacht.",
+   "tags": [
+    "planzeichen",
+    "baugrenze",
+    "baulinie"
+   ],
+   "quelle": "Leitfaden Städtebauliche Analyse, Glossar, S. 89; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 190, S. 70–71; Rn. 196, S. 73; § 23 Abs. 2 und 3 BauNVO",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-018",
+   "typ": "skizze",
+   "frage": "Skizziere einen schematischen Bebauungsplan-Ausschnitt mit einer Erschließungsstraße und zwei Baublöcken. Zeichne ein: Grenze des Geltungsbereichs, Straßenverkehrsfläche mit Straßenbegrenzungslinien, Baugrenzen, eine Baulinie, eine öffentliche Grünfläche und eine ausgefüllte Nutzungsschablone für ein allgemeines Wohngebiet.",
+   "referenz": "bilder/rb-blp-bplan.svg",
+   "pruefpunkte": [
+    "Geltungsbereich als kräftige unterbrochene Linie um das Plangebiet",
+    "Straßenverkehrsfläche zwischen zwei Straßenbegrenzungslinien",
+    "Baugrenzen umschließen die überbaubaren Flächen (Baufenster)",
+    "Baulinie an der Straßenseite, mit erkennbar anderer Linie als die Baugrenze",
+    "Öffentliche Grünfläche als eigene Fläche",
+    "Nutzungsschablone mit WA, Zahl der Vollgeschosse, GRZ, GFZ, Bauweise und Dachneigung",
+    "Flurstücksgrenzen als dünne Linien; Baufenster dürfen sie überspannen"
+   ],
+   "antwort": "Siehe Referenz: Innerhalb einer klar gezogenen Geltungsbereichsgrenze zeigt der Plan Art und Maß der Nutzung (Nutzungsschablone), die überbaubaren Grundstücksflächen (Baugrenzen, Baulinie) und die örtliche Verkehrsfläche.",
+   "vertiefung": "Enthält deine Skizze alle vier Mindestfestsetzungen des § 30 Abs. 1 BauGB, hast du einen qualifizierten Bebauungsplan gezeichnet. Prüfe die Zeichnung daran: Fehlen Schablone oder Baugrenzen, wäre es nur ein einfacher B-Plan.",
+   "tags": [
+    "bebauungsplan",
+    "planzeichen",
+    "skizze"
+   ],
+   "quelle": "Leitfaden Städtebauliche Analyse, Glossar, S. 88–89; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 13; § 30 Abs. 1 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-019",
+   "typ": "bildbeschriftung",
+   "frage": "Was gehört in die einzelnen Felder der Nutzungsschablone?",
+   "referenz": "bilder/rb-blp-schablone-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 30.0,
+     "y": 48.8,
+     "name": "Grundflächenzahl (GRZ)"
+    },
+    {
+     "nr": 2,
+     "x": 30.0,
+     "y": 75.0,
+     "name": "Bauweise"
+    },
+    {
+     "nr": 3,
+     "x": 30.0,
+     "y": 22.6,
+     "name": "Art der baulichen Nutzung"
+    },
+    {
+     "nr": 4,
+     "x": 70.0,
+     "y": 75.0,
+     "name": "Dachneigung"
+    },
+    {
+     "nr": 5,
+     "x": 70.0,
+     "y": 48.8,
+     "name": "Geschossflächenzahl (GFZ)"
+    },
+    {
+     "nr": 6,
+     "x": 70.0,
+     "y": 22.6,
+     "name": "Zahl der Vollgeschosse"
+    }
+   ],
+   "antwort": "Oben links die Art der baulichen Nutzung (Baugebiet, z. B. WA), oben rechts die Zahl der Vollgeschosse (römisch, z. B. II). In der Mitte links die Grundflächenzahl, rechts die Geschossflächenzahl. Unten links die Bauweise (o = offen, g = geschlossen), unten rechts die Dachneigung.",
+   "vertiefung": "Merkhilfe: Die Schablone liest sich von „was“ über „wie viel“ zu „wie“ – oben Nutzung und Geschosse, in der Mitte die Dichte, unten die Form. Die GRZ steht links vor der GFZ, weil die Grundfläche zuerst kommt und die Geschossfläche auf ihr aufbaut. Das Beispiel im Leitfaden lautet: W | II, 0.24 | 0.48, o | DN 15–20°.",
+   "tags": [
+    "nutzungsschablone",
+    "grz",
+    "gfz"
+   ],
+   "quelle": "Leitfaden Städtebauliche Analyse, Glossar, S. 89; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 196, S. 73",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-020",
+   "typ": "skizze",
+   "frage": "Zeichne die Nutzungsschablone für folgendes Baugebiet: allgemeines Wohngebiet, höchstens zwei Vollgeschosse, Grundflächenzahl 0,4, Geschossflächenzahl 0,8, offene Bauweise, Dachneigung 30 bis 45 Grad.",
+   "referenz": "bilder/rb-blp-schablone.svg",
+   "pruefpunkte": [
+    "Tabelle mit zwei Spalten und drei Zeilen",
+    "Oben: WA links, II rechts (Vollgeschosse in römischen Ziffern)",
+    "Mitte: 0,4 links (GRZ), 0,8 rechts (GFZ)",
+    "Unten: o links (Bauweise), DN 30–45° rechts (Dachneigung)"
+   ],
+   "antwort": "WA | II – 0,4 | 0,8 – o | DN 30–45°.",
+   "vertiefung": "Die Nutzungsschablone ist nur eine Kurzschrift. Was WA, GRZ und GFZ bedeuten, ergibt sich aus der BauNVO, die mit der Festsetzung des Baugebiets Bestandteil des Plans wird. GRZ 0,4 heißt zum Beispiel: Höchstens 40 % der Grundstücksfläche dürfen von baulichen Anlagen überdeckt werden (§ 19 Abs. 1 und 2 BauNVO). Mehr dazu in den Themen zur BauNVO und zum Maß der baulichen Nutzung.",
+   "tags": [
+    "nutzungsschablone",
+    "skizze"
+   ],
+   "quelle": "Leitfaden Städtebauliche Analyse, Glossar, S. 89; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 194, S. 72; § 19 BauNVO",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-021",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Festsetzungen muss ein Bebauungsplan mindestens enthalten, um ein qualifizierter Bebauungsplan im Sinne von § 30 Abs. 1 BauGB zu sein?",
+   "optionen": [
+    "Art der baulichen Nutzung",
+    "Maß der baulichen Nutzung",
+    "Überbaubare Grundstücksflächen",
+    "Örtliche Verkehrsflächen",
+    "Bauweise",
+    "Dachneigung",
+    "Grünflächen"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig – etwa durch Festsetzung eines Baugebiets wie WA.",
+    "Richtig – etwa durch GRZ, GFZ oder Zahl der Vollgeschosse.",
+    "Richtig – festgesetzt durch Baulinien, Baugrenzen oder Bebauungstiefen.",
+    "Richtig – gemeint sind die Verkehrsflächen, die das Gebiet erschließen.",
+    "Falsch – die Bauweise wird oft festgesetzt, gehört aber nicht zum Mindestinhalt.",
+    "Falsch – eine Gestaltungsregel, häufig als örtliche Bauvorschrift nach Landesrecht in den Plan übernommen (§ 9 Abs. 4 BauGB), kein Mindestinhalt.",
+    "Falsch – möglich nach § 9 Abs. 1 Nr. 15 BauGB, aber keine Voraussetzung für einen qualifizierten Plan."
+   ],
+   "antwort": "Art und Maß der baulichen Nutzung, die überbaubaren Grundstücksflächen und die örtlichen Verkehrsflächen – allein oder zusammen mit sonstigen baurechtlichen Vorschriften.",
+   "vertiefung": "Der qualifizierte B-Plan ist der Grundtatbestand: In seinem Geltungsbereich ist ein Vorhaben zulässig, wenn es den Festsetzungen nicht widerspricht und die Erschließung gesichert ist (§ 30 Abs. 1 BauGB). Er muss nicht alle Möglichkeiten des § 9 ausschöpfen – die vier Mindestfestsetzungen genügen. Fehlt eine davon, ist der Plan nicht ungültig, sondern ein einfacher B-Plan (§ 30 Abs. 3 BauGB).",
+   "tags": [
+    "qualifizierter bebauungsplan",
+    "§ 30 baugb",
+    "mindestfestsetzungen"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 198, S. 73; Rn. 203–204, S. 75; § 30 Abs. 1 und 3 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-022",
+   "typ": "vergleich",
+   "frage": "Welcher der beiden Ausschnitte zeigt einen qualifizierten Bebauungsplan im Sinne von § 30 Abs. 1 BauGB?",
+   "seiten": [
+    {
+     "titel": "Plan A",
+     "bild": "bilder/rb-blp-bplan.svg",
+     "beschreibung": "WA mit Nutzungsschablone, Baugrenzen, Baulinie, Straßenverkehrsfläche, Grünfläche"
+    },
+    {
+     "titel": "Plan B",
+     "bild": "bilder/rb-blp-bplan-einfach.svg",
+     "beschreibung": "WA, Straßenverkehrsfläche, Grünfläche"
+    }
+   ],
+   "richtig": 0,
+   "antwort": "Plan A. Er setzt alle vier Mindestinhalte fest: Art (WA), Maß (Vollgeschosse, GRZ, GFZ in der Schablone), überbaubare Grundstücksflächen (Baugrenzen, Baulinie) und die örtliche Verkehrsfläche. Plan B setzt nur Art und Verkehrsfläche fest; Maß und überbaubare Flächen fehlen – er ist ein einfacher Bebauungsplan.",
+   "vertiefung": "Für Plan B gilt § 30 Abs. 3 BauGB: Soweit er etwas festsetzt, gilt das; im Übrigen richtet sich die Zulässigkeit nach § 34 (im Zusammenhang bebauter Ortsteil) oder § 35 BauGB (Außenbereich). Ein einfacher B-Plan ist also kein Fehler, sondern oft eine bewusste Wahl – etwa um in einem bestehenden Quartier nur die Art der Nutzung zu steuern.",
+   "tags": [
+    "qualifizierter bebauungsplan",
+    "einfacher bebauungsplan",
+    "§ 30 baugb"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 203–204, S. 75; § 30 Abs. 1 und 3 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-023",
+   "typ": "karte",
+   "frage": "Aus welchen drei Elementen besteht der vorhabenbezogene Bebauungsplan, und welche Rolle spielt der Vorhabenträger?",
+   "antwort": "Aus dem Vorhaben- und Erschließungsplan des Investors, dem Durchführungsvertrag zwischen Vorhabenträger und Gemeinde und dem vorhabenbezogenen Bebauungsplan als Satzung, der das Baurecht schafft (§ 12 BauGB). Der Vorhabenträger entwickelt das Projekt in Abstimmung mit der Gemeinde, verpflichtet sich zur fristgerechten Durchführung und trägt die Kosten. Er muss über das Grundstück verfügen können.",
+   "vertiefung": "Trotz dieser starken Stellung bleibt die Planung Sache der Gemeinde. Das Verfahren beginnt auf Antrag des Vorhabenträgers, einen Anspruch auf den Plan hat er aber nicht (§ 1 Abs. 3 Satz 2 BauGB). Beschlossen werden darf der Plan erst, wenn der Durchführungsvertrag geschlossen ist; ein Wechsel des Vorhabenträgers braucht die Zustimmung der Gemeinde. In der Praxis unterscheidet man davon den klassischen Angebotsplan, der Baurecht für beliebige Bauherren schafft.",
+   "tags": [
+    "vorhabenbezogener bebauungsplan",
+    "durchführungsvertrag",
+    "§ 12 baugb"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 205, S. 75; Rn. 209–210, S. 76; Leitfaden Städtebauliche Analyse, Glossar, S. 88; § 12 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-024",
+   "typ": "freitext",
+   "frage": "Beschreibe Rechtsform und Rechtswirkungen des Bebauungsplans. Was bewirkt er für den Eigentümer, und was bewirkt er nicht?",
+   "pruefpunkte": [
+    "Beschluss als Satzung (§ 10 Abs. 1 BauGB) – Rechtsnorm mit Wirkung gegenüber jedermann",
+    "Festsetzungen entscheiden, ob und wie ein Grundstück genutzt werden darf (§ 30 BauGB)",
+    "Bestimmt Inhalt und Schranken des Eigentums (Art. 14 Abs. 1 Satz 2 GG) und beeinflusst den Bodenwert",
+    "Schafft Baurecht, aber keine Baupflicht",
+    "Grundlage für Vollzugsmaßnahmen: Vorkaufsrecht, Umlegung, Baugebote, Enteignung, Erschließung",
+    "Gerichtlich überprüfbar im Normenkontrollverfahren (§ 47 Abs. 1 Nr. 1 VwGO)"
+   ],
+   "antwort": "Der B-Plan wird als Satzung beschlossen und ist damit eine Rechtsnorm, die jeden bindet. Seine Festsetzungen bestimmen, ob und wie ein Grundstück genutzt werden darf, und damit Inhalt und Schranken des Eigentums. Er schafft Baurecht, verpflichtet aber nicht zum Bauen. Zugleich ist er Grundlage für Vollzugsmaßnahmen der Gemeinde wie Vorkaufsrecht, Umlegung, Baugebote und Enteignung. Angreifen lässt er sich mit dem Normenkontrollantrag nach § 47 VwGO.",
+   "vertiefung": "Dogmatisch ist der B-Plan ein Zwitter: der Form nach Satzung, dem Inhalt nach eine konkret-individuelle Regelung „im Angesicht der konkreten Sachlage“. Seit die Normenkontrolle für Bebauungspläne zulässig ist, hat der Streit um diese Zwischenstellung seine praktische Schärfe verloren. Auch ein Verwaltungsakt nach einem anderen Gesetz, etwa eine Straßenwidmung, ist rechtswidrig, wenn er dem B-Plan widerspricht.",
+   "tags": [
+    "rechtsnatur",
+    "satzung",
+    "eigentum"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 201–203, S. 74–75; Rn. 206–208, S. 75–76; § 10 Abs. 1 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-025",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schritte des Regelverfahrens zur Aufstellung eines Bebauungsplans in die richtige Reihenfolge.",
+   "schritte": [
+    "Aufstellungsbeschluss des Gemeinderats und ortsübliche Bekanntmachung",
+    "Frühzeitige Beteiligung von Öffentlichkeit und Behörden (§ 3 Abs. 1, § 4 Abs. 1)",
+    "Ausarbeitung des Entwurfs mit Begründung und Umweltbericht",
+    "Veröffentlichung des Entwurfs im Internet und Beteiligung der Behörden (§ 3 Abs. 2, § 4 Abs. 2)",
+    "Prüfung der Stellungnahmen und Abwägung (§ 1 Abs. 7)",
+    "Satzungsbeschluss (§ 10 Abs. 1)",
+    "Ortsübliche Bekanntmachung – der Plan tritt in Kraft (§ 10 Abs. 3)"
+   ],
+   "bild": "bilder/rb-blp-verfahren.svg",
+   "bildunterschrift": "Regelverfahren zur Aufstellung eines Bebauungsplans. Die Genehmigung (gestrichelt) ist nur in den Fällen des § 10 Abs. 2 BauGB nötig.",
+   "antwort": "Aufstellungsbeschluss und Bekanntmachung – frühzeitige Beteiligung von Öffentlichkeit und Behörden – Entwurf mit Begründung und Umweltbericht – Veröffentlichung im Internet und Behördenbeteiligung – Prüfung der Stellungnahmen und Abwägung – Satzungsbeschluss – ortsübliche Bekanntmachung und Inkrafttreten.",
+   "vertiefung": "Zwei Feinheiten: Die frühzeitige Öffentlichkeitsbeteiligung darf sogar vor dem förmlichen Aufstellungsbeschluss stattfinden, wenn Ziele und Zwecke schon erörterungsfähig sind, und sie kann gleichzeitig mit der frühzeitigen Behördenbeteiligung laufen (§ 4a Abs. 2 BauGB). Wird der Entwurf nach der Veröffentlichung geändert, ist er erneut zu veröffentlichen (§ 4a Abs. 3 BauGB) – ein fehleranfälliger Schritt. Eine Genehmigung braucht der B-Plan nur, wenn er nicht aus dem FNP entwickelt ist.",
+   "tags": [
+    "verfahren",
+    "beteiligung",
+    "satzungsbeschluss"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 211–227, S. 77–81; § 3 Abs. 2, § 4 Abs. 2 BauGB, Fassung vom 03.07.2023 (BGBl. 2023 I Nr. 176); § 10 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-026",
+   "typ": "karte",
+   "frage": "Wer fasst den Aufstellungsbeschluss für einen Bebauungsplan, was muss danach geschehen, und welche Rechtswirkungen knüpfen daran an?",
+   "antwort": "Der Gemeinderat – der Beschluss gehört nicht zu den Geschäften der laufenden Verwaltung. Er ist ortsüblich bekannt zu machen (§ 2 Abs. 1 Satz 2 BauGB). Erst der bekannt gemachte Aufstellungsbeschluss ermöglicht eine Veränderungssperre, die Zurückstellung von Baugesuchen (§§ 14, 15 BauGB) und Genehmigungen nach § 33 BauGB während der Planaufstellung.",
+   "vertiefung": "Für die Wirksamkeit des späteren B-Plans kommt es auf die Bekanntmachung des Aufstellungsbeschlusses nicht an, für die Sicherungsinstrumente schon. Vor dem Beschluss dürfen Verwaltung oder Planungsbüro durchaus Entwürfe ausarbeiten, und Vorgespräche mit Investoren sind üblich – Zusagen, die eine rechtmäßige Abwägung vorwegnehmen, sind aber unzulässig. Wie bekannt gemacht wird, regelt das Kommunalrecht, meist die Hauptsatzung der Gemeinde.",
+   "tags": [
+    "aufstellungsbeschluss",
+    "bekanntmachung",
+    "sicherung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 212–213, S. 77; § 2 Abs. 1 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-027",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen zur Öffentlichkeitsbeteiligung im Bauleitplanverfahren treffen zu?",
+   "optionen": [
+    "Sie läuft in zwei Stufen: frühzeitig zu Zielen und Zwecken, später zum ausgearbeiteten Entwurf.",
+    "Stellungnahmen darf nur abgeben, wer ein Grundstück im Plangebiet besitzt.",
+    "Auch Kinder und Jugendliche gehören zur Öffentlichkeit.",
+    "Bei einem Bebauungsplan kann die frühzeitige Beteiligung entfallen, wenn er sich auf das Plangebiet und die Nachbargebiete nicht oder nur unwesentlich auswirkt.",
+    "Die Stellungnahme ist ein Rechtsmittel; ihre Zurückweisung kann selbständig gerichtlich angefochten werden.",
+    "Die Gemeinde muss das Ergebnis der Prüfung fristgerechter Stellungnahmen mitteilen."
+   ],
+   "richtig": [
+    0,
+    2,
+    3,
+    5
+   ],
+   "warum": [
+    "Richtig – § 3 Abs. 1 und Abs. 2 BauGB; die beiden Stufen sind zeitlich und sachlich voneinander unabhängig.",
+    "Falsch – Stellungnahmen kann jedermann abgeben, auch wer nicht im Plangebiet wohnt.",
+    "Richtig – so ausdrücklich § 3 Abs. 1 Satz 2 BauGB.",
+    "Richtig – § 3 Abs. 1 Satz 3 Nr. 1 BauGB; ebenso, wenn Unterrichtung und Erörterung schon auf anderer Grundlage stattgefunden haben.",
+    "Falsch – die Stellungnahme ist kein Rechtsmittel; Rechtsschutz gibt es erst gegen den fertigen Plan.",
+    "Richtig – haben mehr als 50 Personen im Wesentlichen gleiche Stellungnahmen abgegeben, genügt es, ihnen Einsicht in das Ergebnis zu geben (§ 3 Abs. 2 BauGB)."
+   ],
+   "antwort": "Zutreffend: zwei Stufen, Kinder und Jugendliche gehören zur Öffentlichkeit, die frühzeitige Beteiligung kann bei einem B-Plan mit unwesentlichen Auswirkungen entfallen, und das Ergebnis der Prüfung ist mitzuteilen. Nicht zutreffend: Stellungnahmen sind nicht auf Eigentümer beschränkt, und sie sind kein Rechtsmittel.",
+   "vertiefung": "Die zweite Stufe ist ein streng förmliches Verfahren, dessen Fristen die Gerichte genau überwachen. Die Bekanntmachung muss Anstoßwirkung haben: Betroffene müssen erkennen können, dass sie sich äußern sollten – ein bloßer Verweis auf Gutachten genügt nicht. Battis beschreibt noch die öffentliche Auslegung; seit der Novelle 2023 steht die Veröffentlichung im Internet im Mittelpunkt, ergänzt um andere leicht erreichbare Zugänge wie eine Auslegung.",
+   "tags": [
+    "öffentlichkeitsbeteiligung",
+    "§ 3 baugb",
+    "stellungnahme"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 218–222, S. 78–80; § 3 Abs. 1 und 2 BauGB, Fassung vom 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-028",
+   "typ": "numerisch",
+   "frage": "Wie viele Tage muss der Entwurf eines Bauleitplans nach § 3 Abs. 2 BauGB mindestens im Internet veröffentlicht werden?",
+   "wert": 30,
+   "toleranz": 0,
+   "einheit": "Tage",
+   "antwort": "30 Tage. Die Regel lautet: für die Dauer eines Monats, mindestens jedoch für 30 Tage, bei wichtigem Grund angemessen länger.",
+   "vertiefung": "Die Untergrenze sorgt dafür, dass die Frist auch in einem kurzen Monat wie dem Februar nicht unter 30 Tage fällt. Dieselbe Formel – ein Monat, mindestens 30 Tage – gilt seit der Novelle 2023 für die Stellungnahmen der Behörden nach § 4 Abs. 2 BauGB. Ältere Lehrbücher sprechen noch von einer öffentlichen Auslegung für einen Monat.",
+   "tags": [
+    "frist",
+    "veröffentlichung",
+    "§ 3 baugb"
+   ],
+   "quelle": "§ 3 Abs. 2 Satz 1 und § 4 Abs. 2 Satz 2 BauGB, Fassung vom 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-029",
+   "typ": "freitext",
+   "frage": "Welche Rolle spielen Umweltprüfung und Umweltbericht bei der Aufstellung eines Bauleitplans?",
+   "pruefpunkte": [
+    "Umweltprüfung als Regelverfahren für Bauleitpläne (§ 2 Abs. 4 BauGB); Ausnahmen nur im vereinfachten und beschleunigten Verfahren (§§ 13, 13a)",
+    "Ermittelt werden die voraussichtlich erheblichen Umweltauswirkungen; Umfang und Detaillierungsgrad legt die Gemeinde fest",
+    "Die Behörden werden frühzeitig auch dazu gefragt (Scoping, § 4 Abs. 1)",
+    "Ergebnisse im Umweltbericht als gesondertem Teil der Begründung (§ 2a), mit allgemeinverständlicher Zusammenfassung",
+    "Fehlen von Umweltprüfung oder Umweltbericht ist ein beachtlicher Fehler"
+   ],
+   "antwort": "Die Umweltprüfung ist das Regelverfahren: Die Gemeinde ermittelt die voraussichtlich erheblichen Umweltauswirkungen der Planung, bewertet sie und beschreibt sie im Umweltbericht, einem gesonderten Teil der Begründung. Umfang und Detaillierungsgrad legt sie selbst fest, nachdem sie die Behörden frühzeitig dazu gehört hat. Verzichten darf sie nur im vereinfachten oder beschleunigten Verfahren. Fehlen Prüfung oder Bericht, ist das ein beachtlicher Fehler.",
+   "vertiefung": "Die Umweltprüfung ist integrativ angelegt: Tiere, Pflanzen, Boden, Wasser, Luft und Klima werden in ihren Wechselwirkungen betrachtet – mit Bestandsaufnahme, Prognose, Vermeidungs- und Ausgleichsmaßnahmen und Alternativen (Anlage 1 zum BauGB). Nach Inkrafttreten überwacht die Gemeinde die erheblichen Umweltauswirkungen (Monitoring, § 4c BauGB).",
+   "tags": [
+    "umweltprüfung",
+    "umweltbericht",
+    "scoping"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 215–217, S. 78; Rn. 224–225a, S. 81; § 2 Abs. 4, § 2a BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-030",
+   "typ": "karte",
+   "frage": "Was verlangt das Abwägungsgebot des § 1 Abs. 7 BauGB, und welcher Verfahrensschritt bereitet die Abwägung vor?",
+   "antwort": "Bei der Aufstellung der Bauleitpläne sind die öffentlichen und privaten Belange gegeneinander und untereinander gerecht abzuwägen (§ 1 Abs. 7 BauGB). Vorbereitet wird das durch § 2 Abs. 3 BauGB: Die Belange, die für die Abwägung von Bedeutung sind, müssen zuvor ermittelt und bewertet werden.",
+   "vertiefung": "§ 2 Abs. 3 gilt als Verfahrensgrundnorm – beide Beteiligungsstufen dienen gerade der vollständigen Ermittlung und zutreffenden Bewertung der Belange (§ 4a Abs. 1 BauGB). Die Abwägung selbst ist der Raum der planerischen Gestaltungsfreiheit; deshalb kontrollieren die Gerichte sie nur eingeschränkt.",
+   "tags": [
+    "abwägung",
+    "belange",
+    "§ 1 abs. 7"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 135, S. 50; Rn. 214, S. 77–78; Rn. 220, S. 79; § 1 Abs. 7, § 2 Abs. 3 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-031",
+   "typ": "karte",
+   "frage": "Welcher Bauleitplan braucht eine Genehmigung der höheren Verwaltungsbehörde, und wann wird er jeweils wirksam?",
+   "antwort": "Der Flächennutzungsplan immer (§ 6 Abs. 1 BauGB); er wird mit der ortsüblichen Bekanntmachung der Genehmigung wirksam (§ 6 Abs. 5). Der Bebauungsplan nur, wenn er nicht aus dem FNP entwickelt ist – also als selbständiger, als im Parallelverfahren vor dem FNP bekannt gemachter oder als vorzeitiger B-Plan (§ 10 Abs. 2). Er tritt mit der ortsüblichen Bekanntmachung des Satzungsbeschlusses bzw. der Genehmigung in Kraft (§ 10 Abs. 3).",
+   "vertiefung": "Die Genehmigung ist reine Rechtskontrolle: Versagt werden darf sie nur, wenn der Plan nicht ordnungsgemäß zustande gekommen ist oder Rechtsvorschriften widerspricht (§ 6 Abs. 2 BauGB). Entschieden wird binnen eines Monats; lehnt die Behörde nicht fristgerecht mit Gründen ab, gilt die Genehmigung als erteilt (§ 6 Abs. 4). Auch die Form unterscheidet sich: FNP durch einfachen Beschluss des Gemeinderats, B-Plan als Satzung.",
+   "tags": [
+    "genehmigung",
+    "bekanntmachung",
+    "inkrafttreten"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 131, S. 49; Rn. 227, S. 81; § 6 Abs. 1, 2, 4 und 5 BauGB, Fassung vom 03.07.2023 (BGBl. 2023 I Nr. 176); § 10 Abs. 2 und 3 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-032",
+   "typ": "numerisch",
+   "frage": "Unter welcher zulässigen Grundfläche (in m²) kann ein Bebauungsplan der Innenentwicklung ohne Vorprüfung des Einzelfalls im beschleunigten Verfahren nach § 13a BauGB aufgestellt werden?",
+   "wert": 20000,
+   "toleranz": 0,
+   "einheit": "m²",
+   "antwort": "Unter 20 000 m² zulässiger Grundfläche. Von 20 000 bis unter 70 000 m² ist das beschleunigte Verfahren nur nach einer Vorprüfung des Einzelfalls möglich, die keine erheblichen Umweltauswirkungen erwarten lässt.",
+   "vertiefung": "Das beschleunigte Verfahren ist für Wiedernutzbarmachung, Nachverdichtung und andere Maßnahmen der Innenentwicklung gedacht. Es verzichtet unter anderem auf die förmliche Umweltprüfung und erlaubt, vom FNP abzuweichen – der FNP wird dann nur berichtigt. Gemessen wird die Grundfläche im Sinne von § 19 Abs. 2 BauNVO, nicht die Größe des Plangebiets.",
+   "tags": [
+    "§ 13a baugb",
+    "innenentwicklung",
+    "beschleunigtes verfahren"
+   ],
+   "quelle": "§ 13a Abs. 1 und 2 BauGB, Fassung vom 14.06.2021 (BGBl. I S. 1802); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 181, S. 67; Rn. 215, S. 78",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-033",
+   "typ": "freitext",
+   "frage": "Wie kann eine Gemeinde verhindern, dass während der Aufstellung eines Bebauungsplans Fakten geschaffen werden? Unterscheide Veränderungssperre und Zurückstellung.",
+   "pruefpunkte": [
+    "Voraussetzung beider Instrumente: ein ortsüblich bekannt gemachter Aufstellungsbeschluss",
+    "Veränderungssperre (§ 14) wird als Satzung beschlossen und gilt flächig für das Plangebiet",
+    "Geltungsdauer: zwei Jahre, Verlängerung um ein Jahr, bei besonderen Umständen um ein weiteres (§ 17)",
+    "Zurückstellung (§ 15) betrifft ein einzelnes Baugesuch, auf Antrag der Gemeinde, bis zu zwölf Monate",
+    "Beide sichern die Planung, sie ersetzen sie nicht"
+   ],
+   "antwort": "Mit den Sicherungsinstrumenten der §§ 14 und 15 BauGB, die einen bekannt gemachten Aufstellungsbeschluss voraussetzen. Die Veränderungssperre ist eine Satzung für das Plangebiet: Vorhaben und erhebliche Veränderungen sind dort grundsätzlich unzulässig, zunächst für zwei Jahre, verlängerbar um ein Jahr und bei besonderen Umständen um ein weiteres. Die Zurückstellung betrifft ein einzelnes Baugesuch: Auf Antrag der Gemeinde setzt die Baugenehmigungsbehörde die Entscheidung bis zu zwölf Monate aus, wenn das Vorhaben die Planung unmöglich machen oder wesentlich erschweren würde.",
+   "vertiefung": "Die Zurückstellung ist das schnellere, die Veränderungssperre das umfassendere Instrument. Die Zeit einer Zurückstellung wird auf die Zweijahresfrist einer späteren Veränderungssperre angerechnet (§ 17 Abs. 1 BauGB). Dauert die Sperre länger als vier Jahre, steht den Betroffenen eine Entschädigung zu (§ 18 BauGB).",
+   "tags": [
+    "veränderungssperre",
+    "zurückstellung",
+    "sicherung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 213, S. 77; §§ 14, 15, 17, 18 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-blp-034",
+   "typ": "fall",
+   "frage": "Ein Investor möchte am Ortsrand einer Gemeinde ein großes Fachmarktzentrum errichten. Der Flächennutzungsplan stellt die Fläche als Fläche für die Landwirtschaft dar, ein Bebauungsplan existiert nicht. Die Gemeinde steht dem Projekt grundsätzlich offen gegenüber.",
+   "teile": [
+    {
+     "frage": "Kann der Investor verlangen, dass die Gemeinde einen Bebauungsplan aufstellt?",
+     "antwort": "Nein. Auf die Aufstellung von Bauleitplänen besteht kein Anspruch, und er kann auch nicht durch Vertrag begründet werden (§ 1 Abs. 3 Satz 2 BauGB) – selbst dann nicht, wenn der Investor die Planung bezahlt."
+    },
+    {
+     "frage": "Welche überörtlichen Vorgaben muss die Gemeinde prüfen, bevor sie plant?",
+     "antwort": "Die Ziele der Raumordnung in Landesentwicklungsplan und Regionalplan, etwa zur Steuerung des großflächigen Einzelhandels – an sie ist der Plan anzupassen (§ 1 Abs. 4 BauGB). Außerdem muss sie sich mit den Nachbargemeinden abstimmen, deren zentrale Versorgungsbereiche betroffen sein können (§ 2 Abs. 2 BauGB)."
+    },
+    {
+     "frage": "Welches Planungsinstrument bietet sich an, und was geschieht mit dem Flächennutzungsplan?",
+     "antwort": "Ein vorhabenbezogener Bebauungsplan nach § 12 BauGB: Der Investor legt als Vorhabenträger einen Vorhaben- und Erschließungsplan vor und verpflichtet sich im Durchführungsvertrag zu Durchführung und Kosten. Weil der B-Plan aus dem FNP zu entwickeln ist, ändert die Gemeinde den FNP – sinnvollerweise gleichzeitig im Parallelverfahren (§ 8 Abs. 3 BauGB)."
+    },
+    {
+     "frage": "Braucht der Bebauungsplan eine Genehmigung?",
+     "antwort": "Nur, wenn er bekannt gemacht werden soll, bevor die FNP-Änderung wirksam ist (§ 10 Abs. 2 i. V. m. § 8 Abs. 3 Satz 2 BauGB). Wartet die Gemeinde die genehmigte FNP-Änderung ab, ist der B-Plan aus dem FNP entwickelt und genehmigungsfrei. Die FNP-Änderung selbst braucht immer die Genehmigung der höheren Verwaltungsbehörde."
+    }
+   ],
+   "antwort": "Der Investor hat keinen Anspruch auf Planung. Die Gemeinde muss die Ziele der Raumordnung beachten und sich mit den Nachbargemeinden abstimmen. Geeignet ist ein vorhabenbezogener B-Plan mit Durchführungsvertrag; der FNP wird im Parallelverfahren geändert. Eine Genehmigung braucht der B-Plan nur, wenn er vor der wirksamen FNP-Änderung bekannt gemacht wird.",
+   "vertiefung": "Ein solcher Plan setzt typischerweise ein Sondergebiet für großflächigen Einzelhandel fest. Umgekehrt rechtfertigen städtebauliche Gründe, gestützt auf ein kommunales Einzelhandelskonzept, auch das Gegenteil: Einzelhandel am Stadtrand zu begrenzen, um die zentralen Versorgungsbereiche in der Innenstadt zu schützen.",
+   "tags": [
+    "fallaufgabe",
+    "vorhabenbezogener bebauungsplan",
+    "parallelverfahren"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 106, S. 38; Rn. 137, S. 51; Rn. 139, S. 52; Rn. 180, S. 67; Rn. 187, S. 69; Rn. 209–210, S. 76; § 1 Abs. 3 und 4, § 8 Abs. 3, § 10 Abs. 2, § 12 BauGB",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}

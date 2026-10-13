@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 646" width="800" height="646" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="646" fill="#f0ead2"/>
+<rect x="150" y="30" width="500" height="76" rx="6" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="61" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Raumordnung des Bundes</text>
+<text x="400" y="86" font-size="13.5" text-anchor="middle" font-weight="normal" fill="#414833" >Träger: Bund · Leitbilder, Grundsätze (ROG)</text>
+<rect x="156" y="132" width="488" height="76" rx="6" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="163" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Landesentwicklungsplan</text>
+<text x="400" y="188" font-size="13.5" text-anchor="middle" font-weight="normal" fill="#414833" >Träger: Land · Maßstab ≥ 1 : 50 000</text>
+<rect x="162" y="234" width="476" height="76" rx="6" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="265" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Regionalplan</text>
+<text x="400" y="290" font-size="13.5" text-anchor="middle" font-weight="normal" fill="#414833" >Träger: Region · Maßstab um 1 : 25 000</text>
+<rect x="168" y="336" width="464" height="76" rx="6" fill="#dde5b6" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="367" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Flächennutzungsplan – vorbereitend</text>
+<text x="400" y="392" font-size="13.5" text-anchor="middle" font-weight="normal" fill="#414833" >Gemeinde · ganzes Gemeindegebiet · 1 : 5 000 – 1 : 20 000</text>
+<rect x="174" y="438" width="452" height="76" rx="6" fill="#adc178" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="469" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Bebauungsplan – verbindlich</text>
+<text x="400" y="494" font-size="13.5" text-anchor="middle" font-weight="normal" fill="#414833" >Gemeinde · Satzung · parzellenscharf · 1 : 500 – 1 : 1 000</text>
+<rect x="180" y="540" width="440" height="76" rx="6" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="571" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Bauantrag, Entwurf</text>
+<text x="400" y="596" font-size="13.5" text-anchor="middle" font-weight="normal" fill="#414833" >Bauherr · Maßstab 1 : 100</text>
+<line x1="95" y1="36" x2="95" y2="318" stroke="#414833" stroke-width="4"/>
+<polygon points="83,316 107,316 95,332" fill="#414833"/>
+<text x="70" y="184.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" transform="rotate(-90 70 184.0)">Anpassung an die Ziele (§ 1 Abs. 4 BauGB)</text>
+<line x1="705" y1="50" x2="705" y2="332" stroke="#6c584c" stroke-width="4"/>
+<polygon points="693,52 717,52 705,36" fill="#6c584c"/>
+<text x="732" y="184.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#6c584c" transform="rotate(90 732 184.0)">Gegenstromprinzip (§ 1 Abs. 3 ROG)</text>
+<line x1="400" y1="412" x2="400" y2="438" stroke="#414833" stroke-width="3"/>
+<text x="412" y="430.0" font-size="13" text-anchor="start" font-weight="bold" fill="#414833" >entwickeln (§ 8 Abs. 2 BauGB)</text>
+<rect x="662" y="391.0" width="124" height="68" rx="6" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="724" y="413.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#6c584c" >Rahmenplan</text>
+<text x="724" y="431.0" font-size="12.5" text-anchor="middle" font-weight="normal" fill="#6c584c" >informell,</text>
+<text x="724" y="447.0" font-size="12.5" text-anchor="middle" font-weight="normal" fill="#6c584c" >nicht bindend</text>
+<polyline points="135,342 123,342 123,508 135,508" fill="none" stroke="#414833" stroke-width="2"/>
+<text x="110" y="425.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" transform="rotate(-90 110 425.0)">Bauleitplanung</text>
+</svg>

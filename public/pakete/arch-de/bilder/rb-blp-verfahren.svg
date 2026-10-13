@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 756" width="800" height="756" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="756" fill="#f0ead2"/>
+<rect x="170" y="30" width="520" height="66" rx="6" fill="#dde5b6" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="63.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="68.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
+<text x="226" y="58" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Aufstellungsbeschluss des Gemeinderats</text>
+<text x="226" y="80" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >ortsüblich bekannt machen (§ 2 Abs. 1 BauGB)</text>
+<line x1="430.0" y1="96" x2="430.0" y2="112" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,110 437.0,110 430.0,120" fill="#414833"/>
+<rect x="170" y="120" width="520" height="66" rx="6" fill="#dde5b6" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="153.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="158.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
+<text x="226" y="148" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Frühzeitige Beteiligung</text>
+<text x="226" y="170" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >Öffentlichkeit § 3 Abs. 1 · Behörden § 4 Abs. 1</text>
+<line x1="430.0" y1="186" x2="430.0" y2="202" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,200 437.0,200 430.0,210" fill="#414833"/>
+<rect x="170" y="210" width="520" height="66" rx="6" fill="#dde5b6" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="243.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="248.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3</text>
+<text x="226" y="238" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Entwurf mit Begründung und Umweltbericht</text>
+<text x="226" y="260" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >Umweltprüfung § 2 Abs. 4 · Begründung § 2a</text>
+<line x1="430.0" y1="276" x2="430.0" y2="292" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,290 437.0,290 430.0,300" fill="#414833"/>
+<rect x="170" y="300" width="520" height="66" rx="6" fill="#dde5b6" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="333.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="338.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >4</text>
+<text x="226" y="328" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Veröffentlichung im Internet, Behörden</text>
+<text x="226" y="350" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >1 Monat, mind. 30 Tage (§ 3 Abs. 2, § 4 Abs. 2)</text>
+<line x1="430.0" y1="366" x2="430.0" y2="382" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,380 437.0,380 430.0,390" fill="#414833"/>
+<rect x="170" y="390" width="520" height="66" rx="6" fill="#dde5b6" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="423.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="428.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >5</text>
+<text x="226" y="418" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Stellungnahmen prüfen, abwägen</text>
+<text x="226" y="440" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >Abwägung § 1 Abs. 7 · Ergebnis mitteilen</text>
+<line x1="430.0" y1="456" x2="430.0" y2="472" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,470 437.0,470 430.0,480" fill="#414833"/>
+<rect x="170" y="480" width="520" height="66" rx="6" fill="#adc178" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="513.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="518.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >6</text>
+<text x="226" y="508" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Satzungsbeschluss</text>
+<text x="226" y="530" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >§ 10 Abs. 1 BauGB</text>
+<line x1="430.0" y1="546" x2="430.0" y2="562" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,560 437.0,560 430.0,570" fill="#414833"/>
+<rect x="170" y="570" width="520" height="66" rx="6" fill="#f7f3e4" stroke="#414833" stroke-width="1.6" stroke-dasharray="8 5"/>
+<circle cx="198" cy="603.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="608.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >7</text>
+<text x="226" y="598" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Genehmigung – nur in Sonderfällen</text>
+<text x="226" y="620" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >nicht aus dem FNP entwickelt (§ 10 Abs. 2)</text>
+<line x1="430.0" y1="636" x2="430.0" y2="652" stroke="#414833" stroke-width="2.5"/>
+<polygon points="423.0,650 437.0,650 430.0,660" fill="#414833"/>
+<rect x="170" y="660" width="520" height="66" rx="6" fill="#adc178" stroke="#414833" stroke-width="1.6" />
+<circle cx="198" cy="693.0" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="198" y="698.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >8</text>
+<text x="226" y="688" font-size="17" text-anchor="start" font-weight="bold" fill="#414833" >Ortsübliche Bekanntmachung</text>
+<text x="226" y="710" font-size="13.5" text-anchor="start" font-weight="normal" fill="#6c584c" >Bebauungsplan tritt in Kraft (§ 10 Abs. 3)</text>
+<polyline points="150,40 135,40 135,716 150,716" fill="none" stroke="#9a6b1f" stroke-width="2.5"/>
+<text x="112" y="378.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#9a6b1f" transform="rotate(-90 112 378.0)">Sicherung möglich: Veränderungssperre § 14 · Zurückstellung § 15</text>
+<polyline points="705,128 720,128 720,358 705,358" fill="none" stroke="#6c584c" stroke-width="2.5"/>
+<text x="745" y="243.0" font-size="14" text-anchor="middle" font-weight="bold" fill="#6c584c" transform="rotate(90 745 243.0)">zwei Beteiligungsstufen</text>
+</svg>

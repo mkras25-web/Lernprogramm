@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="60" y="40" width="480" height="330" fill="#f7f3e4" stroke="#414833" stroke-width="3"/>
+<line x1="300.0" y1="40" x2="300.0" y2="370" stroke="#414833" stroke-width="2"/>
+<line x1="60" y1="150.0" x2="540" y2="150.0" stroke="#414833" stroke-width="2"/>
+<line x1="60" y1="260.0" x2="540" y2="260.0" stroke="#414833" stroke-width="2"/>
+<text x="300" y="400" font-size="15" text-anchor="middle" font-weight="normal" fill="#6c584c" >Nutzungsschablone (Füllschema)</text>
+</svg>

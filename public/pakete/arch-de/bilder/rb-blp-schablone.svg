@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="60" y="40" width="480" height="330" fill="#f7f3e4" stroke="#414833" stroke-width="3"/>
+<line x1="300.0" y1="40" x2="300.0" y2="370" stroke="#414833" stroke-width="2"/>
+<line x1="60" y1="150.0" x2="540" y2="150.0" stroke="#414833" stroke-width="2"/>
+<line x1="60" y1="260.0" x2="540" y2="260.0" stroke="#414833" stroke-width="2"/>
+<text x="180" y="91" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >WA</text>
+<text x="180" y="117" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Art der baulichen</text>
+<text x="180" y="133" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Nutzung</text>
+<text x="420" y="91" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >II</text>
+<text x="420" y="117" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Zahl der</text>
+<text x="420" y="133" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Vollgeschosse</text>
+<text x="180" y="201" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >0,4</text>
+<text x="180" y="227" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundflächenzahl</text>
+<text x="180" y="243" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >GRZ</text>
+<text x="420" y="201" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >0,8</text>
+<text x="420" y="227" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Geschossflächenzahl</text>
+<text x="420" y="243" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >GFZ</text>
+<text x="180" y="311" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >o</text>
+<text x="180" y="337" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Bauweise</text>
+<text x="180" y="353" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >(o = offen)</text>
+<text x="420" y="311" font-size="28" text-anchor="middle" font-weight="bold" fill="#414833" >DN 30–45°</text>
+<text x="420" y="337" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Dachneigung</text>
+<text x="300" y="400" font-size="15" text-anchor="middle" font-weight="normal" fill="#6c584c" >Nutzungsschablone (Füllschema)</text>
+</svg>

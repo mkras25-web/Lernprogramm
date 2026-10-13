@@ -505,7 +505,9 @@
       "themen": [
         {
           "id": "rb-bauleitplanung",
-          "titel": "Bauleitplanung: FNP und Bebauungsplan"
+          "titel": "Bauleitplanung: FNP und Bebauungsplan",
+          "datei": "items/rb-bauleitplanung.json",
+          "bild": "bilder/rb-blp-ebenen.svg"
         },
         {
           "id": "rb-baunvo",
