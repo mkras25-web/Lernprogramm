@@ -1509,7 +1509,7 @@ html[data-farbenblind="an"] .feld.stufe3 { background: color-mix(in srgb, var(--
 
 .knopf.vorschlag { border-width: 2px; border-color: var(--tusche); font-weight: 600; }
 /* "Gut" erst bei allen Pruefpunkten (L3) */
-.knopf:disabled { opacity: 0.45; cursor: not-allowed; }
+.bewertung .knopf:disabled { opacity: 0.45; cursor: not-allowed; }
 /* Warum-Pause vor der Vertiefung (L2) */
 .warumKnopf {
   font: inherit;

@@ -4,12 +4,14 @@
 // (bilder-lokal) fehlen online absichtlich und werden nicht verlangt.
 
 import { existsSync, readdirSync, readFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { itemFehler } from './itemPruefung.js'
 import { quelleText } from './quelle.js'
 
-const WURZEL = join(import.meta.dirname, '..', '..', 'public', 'pakete')
+// fileURLToPath statt import.meta.dirname: laeuft auch unter Node < 20.11.
+const WURZEL = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'public', 'pakete')
 const json = (pfad) => JSON.parse(readFileSync(pfad, 'utf8'))
 
 const verzeichnis = json(join(WURZEL, 'pakete.json'))

@@ -26,7 +26,7 @@ import {
   skizzeLoeschen,
   speicherSichern,
 } from './lib/speicher.js'
-import { BEWERTUNG, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWiederholung, pensumBauen } from './lib/planer.js'
+import { BEWERTUNG, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWiederholung, pensumBauen, zustaendeBerechnen } from './lib/planer.js'
 import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
@@ -278,7 +278,13 @@ export default function App({ profilId, onProfilWechseln }) {
       // Klausurtag vorhergesagt haette - zum Vergleich mit dem Ergebnis.
       const rueckblick = offenerRueckblick(kurs.id, kursplan.klausuren)
       const reifeAmTag = rueckblick
-        ? klausurreife(lernItems, zustaende, aktiveEreignisse.filter((e) => e.ts < rueckblick.zeit), { zeitpunkt: rueckblick.zeit }).anteil
+        ? (() => {
+            // Stand VOR der Klausur - spaetere Wiederholungen veraendern die
+            // Karten, die Reife am Klausurtag waere sonst geschoent.
+            const vorher = aktiveEreignisse.filter((e) => e.ts < rueckblick.zeit)
+            const zustandDamals = zustaendeBerechnen(vorher, { zielBehaltensrate: opt.zielBehaltensrate, gewichte: opt.fsrsGewichte?.w })
+            return klausurreife(lernItems, zustandDamals, vorher, { zeitpunkt: rueckblick.zeit }).anteil
+          })()
         : null
       const reife = klausurreife(lernItems, zustaende, aktiveEreignisse, { zeitpunkt })
       const plan = klausurplan(lernItems, zustaende, { klausur, neuProTag: opt.neuProTag })
@@ -297,7 +303,7 @@ export default function App({ profilId, onProfilWechseln }) {
         vorschlaege: vorschlaege(aktiveItems, marken, kurs),
       }
     })
-  }, [kursplan, aktiveItems, erlaubteItems, pruefItems, marken, zustaende, aktiveEreignisse, opt.neuProTag])
+  }, [kursplan, aktiveItems, erlaubteItems, pruefItems, marken, zustaende, aktiveEreignisse, opt.neuProTag, opt.zielBehaltensrate, opt.fsrsGewichte])
 
   // Stufenaufstieg bemerken. Beim ersten Durchlauf nur merken, damit
   // nicht jeder Seitenaufruf als Aufstieg gefeiert wird. Wer es ruhig
