@@ -65,6 +65,9 @@ import Lernen from './screens/Lernen.jsx'
 import MeinHeft from './screens/MeinHeft.jsx'
 import Fehlerbuch from './screens/Fehlerbuch.jsx'
 import Lernzettel from './screens/Lernzettel.jsx'
+import Bilder from './screens/Bilder.jsx'
+import Kennwerte from './screens/Kennwerte.jsx'
+import Kalender from './screens/Kalender.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
 import { KartenGrenze } from './components/Fehlergrenze.jsx'
 import AusDemKopf from './components/AusDemKopf.jsx'
@@ -1059,6 +1062,26 @@ export default function App({ profilId, onProfilWechseln }) {
         />
       )}
       {ansicht === 'heft' && <MeinHeft items={items} marken={marken} onOeffnen={oeffneItem} />}
+      {ansicht === 'bilder' && (
+        <Bilder
+          themen={themen}
+          items={aktiveItems}
+          onKarte={oeffneItem}
+          onThema={(id) => setErklaerthema(id)}
+        />
+      )}
+      {ansicht === 'kennwerte' && (
+        <Kennwerte gruppen={kennwerte} themen={themen} onThema={(id) => setErklaerthema(id)} />
+      )}
+      {ansicht === 'kalender' && (
+        <Kalender
+          zustaende={zustaende}
+          neueAnzahl={erlaubteItems.filter((i) => !zustaende.has(i.id)).length}
+          opt={opt}
+          klausuren={kursplan.klausuren}
+          kurse={kursUebersicht.filter((u) => !u.kurs.archiviert)}
+        />
+      )}
       {ansicht === 'fehlerbuch' && (
         <Fehlerbuch
           items={aktiveItems}

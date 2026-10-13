@@ -3485,3 +3485,54 @@ html[data-dunkel="an"] :is(img.referenz, .lupenBuehne img, .vergleichSeite img, 
 
 .gewichteFeld { display: flex; flex-direction: column; gap: 0.5rem; width: min(100%, 24rem); }
 .gewichteFeld .notizfeld { min-height: 4.5rem; }
+
+/* Bilder (F1) und Kennwerte (F3), 2026-10-13 */
+.bilderFilter { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.bilderFilter .suchfeld { flex: 1 1 14rem; }
+.kennwertListe { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.kennwert {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.125rem 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--flaeche);
+  border-radius: var(--rund);
+}
+.kennwertName { font-size: 0.9375rem; }
+.kennwertWert { font-family: var(--serife); font-size: 1.0625rem; font-weight: 600; text-align: right; white-space: nowrap; }
+.kennwertHinweis, .kennwert .quelle, .kennwertThemen { grid-column: 1 / -1; }
+.kennwertHinweis { font-size: 0.8125rem; color: var(--rinde); }
+.kennwertThemen { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Semesterkalender (F8), 2026-10-13 */
+.kalender { display: flex; flex-direction: column; gap: 0.25rem; }
+.kalenderKopf, .kalenderWoche { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.25rem; }
+.kalenderKopf span { font-size: 0.75rem; color: var(--rinde); text-align: center; }
+.kalenderTag {
+  min-height: 4.25rem;
+  padding: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+  background: var(--flaeche);
+  border-radius: var(--rund);
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+.kalenderTag.leer { background: transparent; }
+.kalenderTag.wochenende { background: var(--flaeche-tief); }
+.kalenderTag.ueberlast { border-color: var(--warnung); }
+.kalenderTag.klausurTag { border: 2px solid var(--tusche); }
+.kalenderDatum { font-size: 0.6875rem; color: var(--rinde); }
+.kalenderBalken { flex: 1; width: 0.5rem; display: flex; align-items: flex-end; min-height: 1.25rem; }
+.kalenderBalken span { display: block; width: 100%; background: var(--fortschritt); border-radius: 2px; }
+.kalenderTag.ueberlast .kalenderBalken span { background: var(--warnung); }
+.kalenderZahl { font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.kalenderKlausur {
+  font-size: 0.625rem;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
