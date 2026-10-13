@@ -6,9 +6,10 @@ const WOCHENTAGE = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So']
 // Semesterkalender (F8, 2026-10-13): alle Klausurtermine und die erwartete
 // Lernlast je Tag fuer die naechsten acht Wochen. Warnt bei Tagen ueber dem
 // Tageslimit. Ohne Export (Nutzerentscheidung).
-export default function Kalender({ zustaende, neueAnzahl, opt, klausuren = [], kurse = [] }) {
+export default function Kalender({ zustaende, ids = null, neueAnzahl, opt, klausuren = [], kurse = [] }) {
   const felder = lastvorschau({
     zustaende,
+    ids,
     neueAnzahl,
     neuProTag: opt.neuProTag,
     maxProTag: opt.maxProTag,
@@ -30,14 +31,16 @@ export default function Kalender({ zustaende, neueAnzahl, opt, klausuren = [], k
       </div>
       <p className="nebentext">
         Erwartete Karten je Tag in den nächsten acht Wochen: fällige Wiederholungen nach heutigem Stand
-        plus neue Karten ({opt.neuProTag} am Tag, solange es neue gibt). Was aus künftigem Lernen dazukommt,
-        fehlt noch – die Zahlen sind eine Untergrenze.
+        (höchstens {opt.maxProTag} am Tag, der Rest rutscht weiter) plus neue Karten ({opt.neuProTag} am Tag,
+        solange es neue gibt und Platz bleibt). Was aus künftigem Lernen dazukommt, fehlt noch – die Zahlen
+        sind eine Untergrenze.
         {spitze?.summe > 0 && ` Spitze: ${spitze.summe} Karten am ${datum(spitze.datum)}`}
       </p>
       {ueberlast.length > 0 && (
         <p className="problemHinweis">
           An {ueberlast.length} {ueberlast.length === 1 ? 'Tag' : 'Tagen'} liegt mehr an als dein Tageslimit von{' '}
-          {opt.maxProTag} Karten – dort bleibt etwas liegen. Früher anfangen oder das Limit anheben.
+          {opt.maxProTag} Karten – der Rest rutscht auf die Folgetage, neue Karten pausieren so lange. Früher
+          anfangen oder das Limit anheben.
         </p>
       )}
 
@@ -85,7 +88,7 @@ export default function Kalender({ zustaende, neueAnzahl, opt, klausuren = [], k
                       f.klausuren.length ? 'klausurTag' : '',
                       j >= 5 ? 'wochenende' : '',
                     ].join(' ')}
-                    title={`${datum(f.datum)}: ${f.faellig} fällig, ${f.neu} neu${f.klausuren.map((k) => ` · Klausur ${k.titel}`).join('')}`}
+                    title={`${datum(f.datum)}: ${f.faellig} fällig, ${f.neu} neu${f.liegen ? `, ${f.liegen} bleiben liegen` : ''}${f.klausuren.map((k) => ` · Klausur ${k.titel}`).join('')}`}
                   >
                     <span className="kalenderDatum">{datum(f.datum)}</span>
                     <span className="kalenderBalken">

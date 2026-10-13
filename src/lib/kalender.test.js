@@ -19,7 +19,19 @@ describe('Semesterkalender (F8)', () => {
     expect(felder.map((f) => f.neu)).toEqual([6, 2, 0, 0, 0])
     expect(felder[0].ueberlast).toBe(false)
     expect(felder[2].klausuren[0].titel).toBe('Baurecht')
-    expect(lastvorschau({ zustaende, neueAnzahl: 20, neuProTag: 10, maxProTag: 7, tage: 1, jetzt })[0].ueberlast).toBe(true)
+    // Neue Karten fuellen nur den Platz bis zum Limit auf, sind also nie Ueberlast.
+    expect(lastvorschau({ zustaende, neueAnzahl: 20, neuProTag: 10, maxProTag: 7, tage: 1, jetzt })[0]).toMatchObject({ neu: 6, ueberlast: false })
+  })
+
+  it('deckelt wie Heute: Ueberhang rutscht weiter, neue Karten pausieren, ausgeblendete zaehlen nicht', () => {
+    const zustaende = new Map(Array.from({ length: 12 }, (_, i) => [`f${i}`, { faelligAb: jetzt - TAG }]))
+    zustaende.set('weg', { faelligAb: jetzt - TAG })
+    const ids = new Set([...zustaende.keys()].filter((k) => k !== 'weg'))
+    const felder = lastvorschau({ zustaende, ids, neueAnzahl: 10, neuProTag: 3, maxProTag: 5, tage: 4, jetzt })
+    expect(felder.map((f) => f.faellig)).toEqual([5, 5, 2, 0])
+    expect(felder.map((f) => f.liegen)).toEqual([7, 2, 0, 0])
+    expect(felder.map((f) => f.neu)).toEqual([0, 0, 3, 3])
+    expect(felder.map((f) => f.ueberlast)).toEqual([true, true, false, false])
   })
 
   it('beginnt die Wochen am Montag', () => {

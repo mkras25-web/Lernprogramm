@@ -126,11 +126,11 @@ function antwortenJeItem(ereignisse) {
 // Klausurreife je Frage. Zeitpunkt: Klausurtag (Beginn), ohne Klausur
 // "jetzt". Liefert { eintraege: [{ item, r, streng, sicher }], sicher,
 // gesamt, anteil, zeitpunkt }.
-export function klausurreife(items, zustaende, ereignisse, { zeitpunkt = Date.now(), ziel = KURS_ZIEL_STANDARD } = {}) {
+export function klausurreife(items, zustaende, ereignisse, { zeitpunkt = Date.now(), ziel = KURS_ZIEL_STANDARD, gewichte = null } = {}) {
   const jeItem = antwortenJeItem(ereignisse)
   const eintraege = items.map((item) => {
     const z = zustaende.get(item.id)
-    const r = z?.karte ? retrievabilityAm(z.karte, zeitpunkt) : 0
+    const r = z?.karte ? retrievabilityAm(z.karte, zeitpunkt, gewichte) : 0
     const streng = strengSicher(jeItem.get(item.id) ?? [])
     return { item, r, streng, sicher: r >= ziel && streng }
   })
@@ -153,7 +153,7 @@ export function klausurreife(items, zustaende, ereignisse, { zeitpunkt = Date.no
 // 3. Neue Kursfragen: so viele, dass alle bis NEU_PUFFER Tage vor der
 //    Klausur eingefuehrt sind; ohne Klausur neuProTag.
 // Zaehlt fuer FSRS normal (Betriebsart "kursplan").
-export function klausurplan(items, zustaende, { klausur = null, jetzt = Date.now(), ziel = KURS_ZIEL_STANDARD, neuProTag = 6 } = {}) {
+export function klausurplan(items, zustaende, { klausur = null, jetzt = Date.now(), ziel = KURS_ZIEL_STANDARD, neuProTag = 6, gewichte = null } = {}) {
   const faellig = []
   const neu = []
   const vorziehbar = []
@@ -171,7 +171,7 @@ export function klausurplan(items, zustaende, { klausur = null, jetzt = Date.now
       continue
     }
     if (termin !== null && z.faelligAb > termin) {
-      const r = retrievabilityAm(z.karte, termin)
+      const r = retrievabilityAm(z.karte, termin, gewichte)
       if (r < ziel) vorziehbar.push({ item, r })
     }
   }

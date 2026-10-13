@@ -46,6 +46,7 @@ import { verwandteThemen } from './lib/verwandt.js'
 import {
   erledigteMeldungen,
   freigabenSammeln,
+  inhaltSeit,
   inhaltsStempel,
   meldungenMarkdown,
   meldungenNachziehen,
@@ -283,11 +284,11 @@ export default function App({ profilId, onProfilWechseln }) {
             // Karten, die Reife am Klausurtag waere sonst geschoent.
             const vorher = aktiveEreignisse.filter((e) => e.ts < rueckblick.zeit)
             const zustandDamals = zustaendeBerechnen(vorher, { zielBehaltensrate: opt.zielBehaltensrate, gewichte: opt.fsrsGewichte?.w })
-            return klausurreife(lernItems, zustandDamals, vorher, { zeitpunkt: rueckblick.zeit }).anteil
+            return klausurreife(lernItems, zustandDamals, vorher, { zeitpunkt: rueckblick.zeit, gewichte: opt.fsrsGewichte?.w }).anteil
           })()
         : null
-      const reife = klausurreife(lernItems, zustaende, aktiveEreignisse, { zeitpunkt })
-      const plan = klausurplan(lernItems, zustaende, { klausur, neuProTag: opt.neuProTag })
+      const reife = klausurreife(lernItems, zustaende, aktiveEreignisse, { zeitpunkt, gewichte: opt.fsrsGewichte?.w })
+      const plan = klausurplan(lernItems, zustaende, { klausur, neuProTag: opt.neuProTag, gewichte: opt.fsrsGewichte?.w })
       const pruefIds = alle.filter((i) => pruefbar.has(i.id)).map((i) => i.id)
       return {
         kurs,
@@ -506,12 +507,22 @@ export default function App({ profilId, onProfilWechseln }) {
 
   // Gemeldete Karten stehen auf "Ueberarbeiten" (meldungen.js) - auch
   // aeltere Meldungen und solche, die per Abgleich hereinkommen.
+  // Unbekanntes Thema (z. B. nach einem Paketwechsel): Themenseite schliessen
+  // statt abzustuerzen (gerendert wird sie nur fuer bekannte Themen).
+  useEffect(() => {
+    if (!laedt && erklaerthema && !themen.some((t) => t.id === erklaerthema)) setErklaerthema(null)
+  }, [laedt, erklaerthema, themen])
+
   const nachziehenLaeuft = useRef(false)
+  const inhaltSeitRef = useRef({ items: null, seit: null })
   useEffect(() => {
     if (laedt || nachziehenLaeuft.current) return
     // Zuerst ueberarbeitete Karten abhaken (P10), dann alte Meldungen
     // nachziehen - eine erledigte Meldung gilt danach nicht mehr als gemeldet.
-    const erledigt = erledigteMeldungen(marken, rohItems)
+    if (inhaltSeitRef.current.items !== rohItems && rohItems.length && paketInfo) {
+      inhaltSeitRef.current = { items: rohItems, seit: inhaltSeit(paketInfo.id, rohItems) }
+    }
+    const erledigt = inhaltSeitRef.current.seit ? erledigteMeldungen(marken, rohItems, inhaltSeitRef.current.seit) : []
     const offen = erledigt.length ? [] : meldungenNachziehen(marken)
     if (erledigt.length === 0 && offen.length === 0) return
     nachziehenLaeuft.current = true
@@ -818,7 +829,7 @@ export default function App({ profilId, onProfilWechseln }) {
     }
   }
 
-  if (erklaerthema) {
+  if (erklaerthema && themen.some((t) => t.id === erklaerthema)) {
     const thema = themen.find((t) => t.id === erklaerthema)
     const themaItems = aktiveItems.filter((i) => i.themaId === thema.id)
     return (
@@ -830,7 +841,11 @@ export default function App({ profilId, onProfilWechseln }) {
           zustaende={zustaende}
           marken={marken}
           profilId={profilId}
-          onErstRaten={() => sitzungStarten('vorab', { themaId: thema.id })}
+          // Nur anbieten, wenn die Vorab-Runde auch etwas findet: sie waehlt
+          // aus den erlaubten Karten (ohne ausgeblendete/ungepruefte).
+          onErstRaten={erlaubteItems.some((i) => i.themaId === thema.id && !zustaende.has(i.id))
+            ? () => sitzungStarten('vorab', { themaId: thema.id })
+            : null}
           onAusDemKopf={() => setKopfThema(thema.id)}
           onLernzettel={() => setLernzettelThema(thema.id)}
           onFehlerUeben={(ids) => sitzungStarten('fehlerstapel', { ids })}
@@ -1082,6 +1097,7 @@ export default function App({ profilId, onProfilWechseln }) {
       {ansicht === 'kalender' && (
         <Kalender
           zustaende={zustaende}
+          ids={new Set(erlaubteItems.map((i) => i.id))}
           neueAnzahl={erlaubteItems.filter((i) => !zustaende.has(i.id)).length}
           opt={opt}
           klausuren={kursplan.klausuren}

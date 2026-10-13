@@ -28,7 +28,21 @@ export default function Bildlupe({ src, alt = '', className = 'referenz' }) {
 // nicht geht.
 export function LupenLink({ src, alt = '', text = 'Bild vergrößern' }) {
   const [offen, setOffen] = useState(false)
-  if (!src) return null
+  // Buchausschnitte (bilder-lokal) fehlen online - dann keinen Link auf ein
+  // kaputtes Bild anbieten.
+  const [fehlt, setFehlt] = useState(false)
+  useEffect(() => {
+    setFehlt(false)
+    if (!src) return undefined
+    let aktiv = true
+    const probe = new Image()
+    probe.onerror = () => aktiv && setFehlt(true)
+    probe.src = src
+    return () => {
+      aktiv = false
+    }
+  }, [src])
+  if (!src || fehlt) return null
   return (
     <>
       <button className="textknopf lupenLink" onClick={() => setOffen(true)}>

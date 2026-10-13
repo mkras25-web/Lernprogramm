@@ -98,6 +98,10 @@ export function profilZuletztAktiv(id) {
 // Loescht ein Profil unwiderruflich: Datenbank, Einstellungen und eine
 // eventuell angefangene Sitzung. Der Aufrufer muss vorher zurueckfragen.
 export async function profilLoeschen(id) {
+  // Zuerst die Datenbank (unter der Sperre, siehe speicher.js): ein noch
+  // laufender Abgleich dieses Profils schreibt danach weder Datenbank noch
+  // die gleich entfernten Merker zurueck.
+  await datenbankLoeschen(id)
   const liste = profilListe().filter((p) => p.id !== id)
   schreiben(liste)
   localStorage.removeItem(`einstellungen_${id}`)
@@ -115,7 +119,6 @@ export async function profilLoeschen(id) {
     if (k.startsWith(`paketstand_${id}_`)) localStorage.removeItem(k)
   }
   if (aktivesProfilId() === id) localStorage.removeItem(AKTIV_SCHLUESSEL)
-  await datenbankLoeschen(id)
 }
 
 // Wird genau einmal gebraucht: beim ersten Start nach Einfuehrung der

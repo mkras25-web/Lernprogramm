@@ -115,8 +115,11 @@ export default function Lernen({
     }
     if (item.typ === 'reihenfolge') {
       // Antippen zum Einsortieren (D7): erst die vollstaendige Reihe zaehlt.
+      // Halb einsortiert und aufgedeckt ist falsch - sonst gab es kein
+      // Urteil und "Gut" blieb frei waehlbar.
       const reihe = eingabe ?? []
-      if (reihe.length < item.schritte.length) return null
+      if (reihe.length === 0) return null
+      if (reihe.length < item.schritte.length) return aufgedeckt ? 'falsch' : null
       return reihe.every((wert, i) => wert === i) ? 'richtig' : 'falsch'
     }
     if (item.typ === 'bildbeschriftung') {
@@ -145,7 +148,7 @@ export default function Lernen({
       }
     }
     return null
-  }, [item, eingabe, seed])
+  }, [item, eingabe, seed, aufgedeckt])
 
   // Pruefpunkte (L3, Nutzerentscheidung 2026-10-13): Die Haekchen schlagen
   // die Bewertung vor (unter der Haelfte Nochmal, ab der Haelfte Schwer,
@@ -157,7 +160,7 @@ export default function Lernen({
     ? null
     : gehakt.length === pruefpunkte.length
       ? BEWERTUNG.GUT
-      : gehakt.length / pruefpunkte.length >= 0.5
+      : gehakt.length / pruefpunkte.length >= 0.5 && stufen === 4
         ? BEWERTUNG.SCHWER
         : BEWERTUNG.NOCHMAL
   const gutGesperrt = pruefpunkte.length > 0 && gehakt.length < pruefpunkte.length
@@ -237,7 +240,11 @@ export default function Lernen({
         else if (art === 'blaettern' || art === 'vorab') bewerten(BEWERTUNG.GUT)
         return
       }
-      if (einfuehrungAktiv) return
+      if (einfuehrungAktiv) {
+        // Backspace auch hier abfangen (WebKit: "Seite zurueck", siehe unten).
+        if (e.key === 'Backspace') e.preventDefault()
+        return
+      }
       if (e.key.toLowerCase() === 'w' && aufgedeckt && vertiefungZeigen === 'einklappen') {
         setWarumOffen((o) => !o)
         return

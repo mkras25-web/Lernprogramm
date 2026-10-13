@@ -37,8 +37,24 @@ export function pruefliste(thema) {
   const punkte = []
   if (e.merksatz) punkte.push(e.merksatz)
   for (const absatz of e.absaetze ?? []) {
-    const satz = String(absatz).match(/^.*?[.!?](\s|$)/)?.[0]?.trim() ?? String(absatz)
+    const satz = ersterSatz(String(absatz))
     if (satz && !punkte.includes(satz)) punkte.push(satz)
   }
   return { art: 'kernaussagen', punkte }
+}
+
+// Punkt hinter einer Abkuerzung oder Ordnungszahl ("§ 35a Abs. 2",
+// "z. B.", "3. OG") beendet keinen Satz - sonst blieb "… nach § 35a Abs."
+// als Kernaussage stehen.
+const ABKUERZUNG = /(?:^|[\s(])(?:Abs|Nr|bzw|ca|vgl|ggf|evtl|inkl|max|min|bzgl|Art|Kap|Abschn|Abb|Tab|S|z|B|d|h|u|a|o|s|i|e|v|Dr|Prof|Dipl|Ing|gem|sog|Std|St|Mio|Mrd|\d+)\.$/
+
+export function ersterSatz(text) {
+  const ende = /[.!?](?=\s|$)/g
+  let treffer
+  while ((treffer = ende.exec(text))) {
+    const bis = treffer.index + 1
+    if (text[treffer.index] === '.' && ABKUERZUNG.test(text.slice(0, bis))) continue
+    return text.slice(0, bis).trim()
+  }
+  return text.trim()
 }

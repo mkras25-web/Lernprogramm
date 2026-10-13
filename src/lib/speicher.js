@@ -406,14 +406,20 @@ function kursplanVereinigen(fremd, vermerke) {
 
 // Loescht die Datenbank eines Profils vollstaendig - fuer "Profil
 // loeschen". Eine noch offene Verbindung wuerde das Loeschen blockieren,
-// darum vorher grundsaetzlich schliessen.
-export async function datenbankLoeschen(profilId) {
-  await datenbankSchliessen()
-  await new Promise((resolve) => {
-    const anfrage = indexedDB.deleteDatabase(`lernprogramm_${profilId}`)
-    anfrage.onsuccess = () => resolve()
-    anfrage.onerror = () => resolve()
-    anfrage.onblocked = () => resolve()
+// darum vorher grundsaetzlich schliessen. Laeuft unter der Sperre und
+// gibt das Profil frei, falls es das aktive ist: ein gerade laufender
+// Abgleich bricht dann beim naechsten Schritt ab (ProfilGewechselt), statt
+// die geloeschte Datenbank neu anzulegen und wieder zu fuellen.
+export function datenbankLoeschen(profilId) {
+  return exklusiv(async () => {
+    if (profilId === aktuellesProfil) aktuellesProfil = null
+    await datenbankSchliessen()
+    await new Promise((resolve) => {
+      const anfrage = indexedDB.deleteDatabase(`lernprogramm_${profilId}`)
+      anfrage.onsuccess = () => resolve()
+      anfrage.onerror = () => resolve()
+      anfrage.onblocked = () => resolve()
+    })
   })
 }
 

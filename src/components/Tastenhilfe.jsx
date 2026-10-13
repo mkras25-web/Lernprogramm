@@ -33,6 +33,7 @@ const GRUPPEN = [
       ['←', 'Eine Position zurückblättern'],
       ['⌫', 'Letzte Bewertung rückgängig machen'],
       ['U', 'Aufgabe überspringen, falls erlaubt'],
+      ['W', 'Warum-Erklärung auf- und zuklappen (Einstellung „Erst überlegen“)'],
     ],
   },
   {

@@ -3,7 +3,8 @@
 // fehlt sonst das Gesamtbild. Rein rechnend, ohne Export.
 //
 // Grobe Vorschau: faellige Wiederholungen nach dem heutigen Planungsstand
-// plus neue Karten im Tagesrhythmus (neuProTag), solange neue da sind.
+// (gedeckelt wie Heute, Ueberhang rutscht weiter) plus neue Karten im
+// Tagesrhythmus (neuProTag), solange neue da sind und Platz bleibt.
 // Wiederholungen, die aus kuenftigem Lernen entstehen, sind nicht
 // enthalten - die Zahlen sind eine Untergrenze.
 
@@ -15,7 +16,7 @@ function tagesBeginn(ts) {
   return d.getTime()
 }
 
-export function lastvorschau({ zustaende, neueAnzahl = 0, neuProTag = 6, maxProTag = 30, klausuren = [], tage = 56, jetzt = Date.now() }) {
+export function lastvorschau({ zustaende, ids = null, neueAnzahl = 0, neuProTag = 6, maxProTag = 30, klausuren = [], tage = 56, jetzt = Date.now() }) {
   const heute = tagesBeginn(jetzt)
   // Kalendertage statt "+24 Stunden": sonst erschien der Tag der
   // Zeitumstellung (25.10.2026) doppelt.
@@ -29,16 +30,28 @@ export function lastvorschau({ zustaende, neueAnzahl = 0, neuProTag = 6, maxProT
     datum: tagNr(i),
     faellig: 0,
     neu: 0,
+    liegen: 0,
     klausuren: [],
   }))
-  for (const z of zustaende.values()) {
+  // Nur Karten, die Heute auch planen wuerde (ids = erlaubte Karten):
+  // ausgeblendete, ausgeschlossene und fremde Pakete zaehlen nicht.
+  for (const [id, z] of zustaende) {
+    if (ids && !ids.has(id)) continue
     const abstand = abstandVon(z.faelligAb)
     if (abstand < 0) felder[0].faellig += 1
     else if (abstand < tage) felder[abstand].faellig += 1
   }
+  // Wie pensumBauen (planer.js): hoechstens maxProTag Wiederholungen am
+  // Tag, der Rest rutscht auf den naechsten Tag; neue Karten nur, solange
+  // dabei Platz bleibt (bei Rueckstand pausieren sie).
+  let rueckstand = 0
   let rest = neueAnzahl
   for (const f of felder) {
-    f.neu = Math.min(rest, neuProTag)
+    const anstehend = rueckstand + f.faellig
+    f.faellig = Math.min(anstehend, maxProTag)
+    rueckstand = anstehend - f.faellig
+    f.liegen = rueckstand
+    f.neu = Math.min(rest, neuProTag, maxProTag - f.faellig)
     rest -= f.neu
   }
   for (const k of klausuren) {
@@ -48,7 +61,7 @@ export function lastvorschau({ zustaende, neueAnzahl = 0, neuProTag = 6, maxProT
   }
   for (const f of felder) {
     f.summe = f.faellig + f.neu
-    f.ueberlast = f.summe > maxProTag
+    f.ueberlast = f.liegen > 0
   }
   return felder
 }

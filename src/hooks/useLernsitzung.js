@@ -90,6 +90,9 @@ export function useLernsitzung({
       ids: neueSitzung.pensum.map((i) => i.id),
       position: pos,
       ts: Date.now(),
+      // Bilanz reist mit: nach einem Neuladen nannte die Schlussmeldung
+      // sonst nur die Antworten seit dem Fortsetzen.
+      bilanz: { ...bilanz.current },
     }
     localStorage.setItem(sitzungSchluessel, JSON.stringify(daten))
     setOffeneSitzung(daten)
@@ -171,7 +174,10 @@ export function useLernsitzung({
       sitzungSichern(null)
       return
     }
-    bilanz.current = { antworten: 0, richtig: 0, start: Date.now() }
+    const b = offeneSitzung.bilanz
+    bilanz.current = b && Number.isFinite(b.antworten)
+      ? { antworten: b.antworten, richtig: b.richtig ?? 0, start: b.start ?? Date.now() }
+      : { antworten: 0, richtig: 0, start: Date.now() }
     setSitzung({ art: offeneSitzung.art, pensum })
     setPosition(Math.min(offeneSitzung.position, pensum.length - 1))
     setLetzteXp(0)

@@ -263,6 +263,22 @@ describe('Profilwechsel waehrend des Abgleichs (B1, 2026-10-13)', () => {
     }
   })
 
+  it('Profil loeschen waehrend seines Abgleichs legt die Datenbank nicht wieder an', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('a-1')
+    await antworten('a-2')
+    await abgleich('pc')
+
+    await geraetWaehlen('phone')
+    await datenbankFuerProfilSetzen(PROFIL)
+    const lauf = abgleichen({ profilId: PROFIL, profilName: 'Max' }).catch((e) => e)
+    await profilLoeschen(PROFIL)
+    expect(await lauf).toBeInstanceOf(Error)
+    const namen = (await indexedDB.databases()).map((d) => d.name)
+    expect(namen).not.toContain(`lernprogramm_${PROFIL}`)
+  })
+
   it('ein Abgleich von Profil B bekommt nie das Ergebnis eines laufenden Abgleichs von A', async () => {
     await geraetWaehlen('pc')
     await datenbankFuerProfilSetzen(PROFIL)

@@ -902,16 +902,21 @@ function GewichteFeld({ wert, onSetzen }) {
   const [text, setText] = useState('')
   const [fehler, setFehler] = useState(null)
   function uebernehmen() {
+    let roh
     try {
-      const roh = JSON.parse(text)
-      const g = Array.isArray(roh) ? { w: roh } : roh.fsrsGewichte ?? roh
-      if (!gueltigeGewichte(g.w)) throw new Error('Erwartet werden genau 21 Zahlen.')
-      onSetzen({ w: g.w, basis: g.basis, datum: g.datum })
-      setText('')
-      setFehler(null)
-    } catch (e) {
-      setFehler(e.message)
+      roh = JSON.parse(text)
+    } catch {
+      setFehler('Das ist kein gültiges JSON – bitte die Ausgabe von fsrs_anpassen.py vollständig einfügen.')
+      return
     }
+    const g = Array.isArray(roh) ? { w: roh } : roh?.fsrsGewichte ?? roh
+    if (!g || typeof g !== 'object' || !gueltigeGewichte(g.w)) {
+      setFehler('Erwartet werden genau 21 Zahlen.')
+      return
+    }
+    onSetzen({ w: g.w, basis: g.basis, datum: g.datum })
+    setText('')
+    setFehler(null)
   }
   return (
     <div className="gewichteFeld">

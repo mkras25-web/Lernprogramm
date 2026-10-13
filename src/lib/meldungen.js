@@ -77,8 +77,18 @@ const INHALT = ['frage', 'antwort', 'vertiefung', 'quelle', 'stand', 'geprueft',
   'optionen', 'richtig', 'warum', 'paare', 'schritte', 'wert', 'toleranz', 'einheit', 'pruefpunkte',
   'punkte', 'bereiche', 'fehlerNr', 'seiten', 'teile', 'referenz', 'bild']
 
-export function inhaltsStempel(item) {
-  const text = JSON.stringify(INHALT.map((f) => item?.[f] ?? null))
+// Bildpfade traegt der Lader schon mit Paketpfad, und der lautet lokal
+// "/pakete/…", online "./pakete/…" - der Stempel nimmt nur den Teil ab dem
+// Paketordner, sonst hielte das Handy eine am PC gemeldete Karte fuer
+// ueberarbeitet. praefix: null = ohne, sonst die alte Schreibweise (bis
+// 2026-10-13 gestempelt), damit aeltere Stempel weiter passen.
+const PAKETPFAD = /^[^\s"]*?pakete\/[^/\s"]+\//
+
+function stempelMit(item, praefix) {
+  const text = JSON.stringify(INHALT.map((f) => item?.[f] ?? null), (_, v) => {
+    if (typeof v !== 'string' || !PAKETPFAD.test(v)) return v
+    return praefix === null ? v.replace(PAKETPFAD, '') : v.replace(/^[^\s"]*?(?=pakete\/)/, praefix)
+  })
   let h = 2166136261 // FNV-1a, reicht zum Wiedererkennen
   for (let i = 0; i < text.length; i++) {
     h ^= text.charCodeAt(i)
@@ -87,13 +97,55 @@ export function inhaltsStempel(item) {
   return (h >>> 0).toString(36)
 }
 
+export function inhaltsStempel(item) {
+  return stempelMit(item, null)
+}
+
+function stempelPasst(stempel, item) {
+  return [null, '/', './'].some((p) => stempelMit(item, p) === stempel)
+}
+
+// Seit wann dieses Geraet den jetzigen Inhalt jeder Karte kennt
+// (localStorage, je Paket): { itemId: [stempel, seit] }. Ein Geraet, das
+// noch den alten Paketstand im Cache hat, darf eine am anderen Geraet zum
+// neueren Stand gemeldete Karte nicht abhaken - es kennt seinen Inhalt ja
+// schon laenger als die Meldung. Beim allerersten Lauf gilt alles als alt.
+export function inhaltSeit(paketId, items, jetzt = Date.now()) {
+  const schluessel = `inhaltsstempel_${paketId}`
+  let alt = null
+  try {
+    alt = JSON.parse(localStorage.getItem(schluessel) ?? 'null')
+  } catch {
+    alt = null
+  }
+  const neu = {}
+  const seit = new Map()
+  for (const item of items) {
+    const stempel = inhaltsStempel(item)
+    const vorher = alt?.[item.id]
+    const ts = vorher && vorher[0] === stempel ? vorher[1] : alt ? jetzt : 0
+    neu[item.id] = [stempel, ts]
+    seit.set(item.id, ts)
+  }
+  try {
+    localStorage.setItem(schluessel, JSON.stringify(neu))
+  } catch {
+    /* voll oder gesperrt - dann gilt beim naechsten Mal wieder alles als alt */
+  }
+  return seit
+}
+
 const monat = (ts) => new Date(ts).toISOString().slice(0, 7)
 
-// Ist die gemeldete Karte seit der Meldung ueberarbeitet worden?
-export function meldungErledigt(marke, item) {
+// Ist die gemeldete Karte seit der Meldung ueberarbeitet worden? seit =
+// Zeitpunkt, ab dem dieses Geraet den jetzigen Inhalt kennt (inhaltSeit).
+export function meldungErledigt(marke, item, seit = null) {
   if (!item || !istGemeldet(marke)) return false
   const m = marke.meldung
-  if (m?.inhalt) return m.inhalt !== inhaltsStempel(item)
+  if (m?.inhalt) {
+    if (stempelPasst(m.inhalt, item)) return false
+    return seit === null || seit > (m.ts ?? marke.ts ?? 0)
+  }
   // Meldungen von vor dem Fingerabdruck: ein neuerer "stand" (JJJJ-MM) als
   // der Monat der Meldung zeigt eine Ueberarbeitung an.
   const ts = m?.ts ?? marke.ts
@@ -112,11 +164,11 @@ export function erledigtAenderung(marke) {
 
 // [itemId, aenderung] fuer alle gemeldeten Karten, die inzwischen
 // ueberarbeitet sind. items = rohe Paket-Items (ohne eigene Fassung).
-export function erledigteMeldungen(marken, items) {
+export function erledigteMeldungen(marken, items, seit = null) {
   const nachId = new Map(items.map((i) => [i.id, i]))
   const ergebnis = []
   for (const [itemId, m] of marken) {
-    if (meldungErledigt(m, nachId.get(itemId))) ergebnis.push([itemId, erledigtAenderung(m)])
+    if (meldungErledigt(m, nachId.get(itemId), seit?.get(itemId) ?? null)) ergebnis.push([itemId, erledigtAenderung(m)])
   }
   return ergebnis
 }

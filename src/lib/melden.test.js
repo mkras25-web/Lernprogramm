@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { erledigteMeldungen, freigabenSammeln, inhaltsStempel, istGemeldet, meldenAenderung, meldungenMarkdown, meldungenNachziehen, zurueckziehenAenderung } from './meldungen.js'
+import { erledigteMeldungen, freigabenSammeln, inhaltSeit, inhaltsStempel, istGemeldet, meldenAenderung, meldungenMarkdown, meldungenNachziehen, zurueckziehenAenderung } from './meldungen.js'
 import { istLernbar } from './sichtung.js'
 
 // Wie markeAendern in App.jsx: zusammenfuehren, null loescht.
@@ -68,6 +68,51 @@ describe('Erledigte Meldungen (P10)', () => {
     expect(danach.kategorie).toBeUndefined() // ungesichtet
     expect(istLernbar(danach)).toBe(true)
     expect(danach.erledigt.text).toBe('Wert?')
+  })
+
+  it('lokale und Online-App (anderer Paketpfad) halten dieselbe Karte nicht fuer ueberarbeitet', () => {
+    const lokal = { ...item, bild: '/pakete/arch-de/bilder/a.svg' }
+    const online = { ...item, bild: './pakete/arch-de/bilder/a.svg' }
+    const marke = anwenden({}, meldenAenderung({}, { grund: 'falsch', text: '', ts: 1, inhalt: inhaltsStempel(lokal) }))
+    expect(erledigteMeldungen(new Map([['x-001', marke]]), [online])).toEqual([])
+    expect(erledigteMeldungen(new Map([['x-001', marke]]), [{ ...online, bild: './pakete/arch-de/bilder/b.svg' }])).toHaveLength(1)
+  })
+
+  it('Stempel aus der Zeit vor der Pfad-Bereinigung passen weiter', () => {
+    const lokal = { ...item, bild: '/pakete/arch-de/bilder/a.svg' }
+    // Alte Stempel wurden ueber die Pfade mit Praefix gebildet: dieselbe
+    // Karte - lokal oder online geladen - darf nicht als erledigt gelten.
+    const rohStempel = (it) => {
+      const text = JSON.stringify(['frage', 'antwort', 'vertiefung', 'quelle', 'stand', 'geprueft', 'pruefhinweis',
+        'optionen', 'richtig', 'warum', 'paare', 'schritte', 'wert', 'toleranz', 'einheit', 'pruefpunkte',
+        'punkte', 'bereiche', 'fehlerNr', 'seiten', 'teile', 'referenz', 'bild'].map((f) => it?.[f] ?? null))
+      let h = 2166136261
+      for (let i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 16777619) }
+      return (h >>> 0).toString(36)
+    }
+    const marke = anwenden({}, meldenAenderung({}, { grund: 'falsch', text: '', ts: 1, inhalt: rohStempel(lokal) }))
+    expect(erledigteMeldungen(new Map([['x-001', marke]]), [{ ...item, bild: './pakete/arch-de/bilder/a.svg' }])).toEqual([])
+  })
+
+  it('ein Geraet, das den abweichenden Inhalt schon vor der Meldung kannte, hakt nicht ab', () => {
+    const marke = anwenden({}, meldenAenderung({}, { grund: 'falsch', text: '', ts: 1000, inhalt: inhaltsStempel({ ...item, antwort: 'neu' }) }))
+    const ids = new Map([['x-001', marke]])
+    expect(erledigteMeldungen(ids, [item], new Map([['x-001', 500]]))).toEqual([]) // alter Cache
+    expect(erledigteMeldungen(ids, [item], new Map([['x-001', 2000]]))).toHaveLength(1) // spaeter geliefert
+  })
+
+  it('inhaltSeit: erster Lauf alles alt, geaenderter Inhalt bekommt den jetzigen Zeitpunkt', () => {
+    const vorher = globalThis.localStorage
+    const daten = new Map()
+    globalThis.localStorage = { getItem: (k) => daten.get(k) ?? null, setItem: (k, v) => daten.set(k, String(v)) }
+    try {
+      expect(inhaltSeit('t', [item], 100).get('x-001')).toBe(0)
+      expect(inhaltSeit('t', [item], 200).get('x-001')).toBe(0)
+      expect(inhaltSeit('t', [{ ...item, antwort: 'neu' }], 300).get('x-001')).toBe(300)
+      expect(inhaltSeit('t', [{ ...item, antwort: 'neu' }], 400).get('x-001')).toBe(300)
+    } finally {
+      globalThis.localStorage = vorher
+    }
   })
 
   it('alte Meldungen ohne Fingerabdruck gelten ueber einen neueren stand als erledigt', () => {

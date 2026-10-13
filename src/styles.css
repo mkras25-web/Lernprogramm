@@ -3480,6 +3480,10 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
 html[data-dunkel="an"] :is(img.referenz, .lupenBuehne img, .vergleichSeite img, .zettelBild img, .zettelBilder img, img.ueberlagerung) {
   filter: brightness(0.86);
 }
+/* Gedruckt wird auf weissem Papier - dort keine Abdunklung. */
+@media print {
+  html[data-dunkel="an"] :is(img.referenz, .zettelBild img, .zettelBilder img, img.ueberlagerung) { filter: none; }
+}
 
 .rueckblick { display: flex; flex-direction: column; gap: 0.375rem; padding: 0.75rem 0.875rem; margin-bottom: 0.75rem; background: var(--flaeche); border-radius: var(--rund); border-left: 3px solid var(--akzent); }
 
