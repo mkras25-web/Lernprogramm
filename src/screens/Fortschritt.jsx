@@ -17,12 +17,28 @@ import Ring from '../components/Ring.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import { bauwerkFuer, reifegradFuer, stufeAusAnteil } from '../lib/stufen.js'
 import { TYPNAMEN } from '../lib/sichtung.js'
+import { behaltensrate, wiederholungenBewerten } from '../lib/planer.js'
+
+// Ab so vielen planungswirksamen Bewertungen lohnt das Anpassen der
+// FSRS-Gewichte an die eigenen Daten (Anki-FAQ; L7, 2026-10-13).
+const ANPASSEN_AB = 1000
+const prozent = (x) => (x === null ? '–' : `${Math.round(x * 100)} %`)
 
 
 export default function Fortschritt({
   ereignisse, items, zustaende, werte, level, gestaltung = 'arch', module,
+  zielBehaltensrate = 0.9, fsrsGewichte = null,
   reiter, onThemaUeben, onModulUeben, onItemOeffnen,
 }) {
+  // Echte Behaltensrate bei Wiederholungen neben der Vorhersage (F6/L7).
+  const wiederholungen = wiederholungenBewerten(ereignisse, { zielBehaltensrate, gewichte: fsrsGewichte?.w })
+  const rate = behaltensrate(wiederholungen)
+  const vierWochen = behaltensrate(wiederholungen.filter((w) => w.ts > Date.now() - 28 * 24 * 60 * 60 * 1000))
+  const modulVon = new Map(items.map((i) => [i.id, i.modulTitel]))
+  const jeModul = [...new Set(wiederholungen.map((w) => modulVon.get(w.itemId)).filter(Boolean))]
+    .map((titel) => ({ titel, ...behaltensrate(wiederholungen.filter((w) => modulVon.get(w.itemId) === titel)) }))
+    .sort((a, b) => b.anzahl - a.anzahl)
+  const planungswirksam = new Set(ereignisse.map((e) => `${e.itemId}|${new Date(e.ts).toDateString()}`)).size
   const felder = tagesverlauf(ereignisse, 140)
   const vorschau = faelligkeitsvorschau(zustaende, 7)
   const maxVorschau = Math.max(1, ...vorschau)
@@ -196,6 +212,50 @@ export default function Fortschritt({
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="block heuteBreit">
+          <h2 className="abschnitt">Behaltensrate</h2>
+          {rate.anzahl === 0 ? (
+            <p className="nebentext">Noch keine Wiederholungen – sobald Karten wiederkommen, steht hier, wie viel du davon wirklich wusstest.</p>
+          ) : (
+            <>
+              <p className="nebentext">
+                Bei {rate.anzahl} Wiederholungen wusstest du {prozent(rate.tatsaechlich)}. Die Planung hatte{' '}
+                {prozent(rate.vorhergesagt)} erwartet, dein Ziel ist {prozent(zielBehaltensrate)}.
+                {vierWochen.anzahl > 0 && ` Letzte vier Wochen: ${prozent(vierWochen.tatsaechlich)} bei ${vierWochen.anzahl} Wiederholungen.`}
+              </p>
+              <p className="zeileHinweis">
+                {rate.anzahl < 50
+                  ? 'Noch wenige Wiederholungen – die Zahl schwankt stark.'
+                  : rate.tatsaechlich < zielBehaltensrate - 0.05
+                    ? 'Du behältst deutlich weniger als angestrebt: ein höheres Ziel in den Einstellungen bringt mehr, aber kürzere Wiederholungsabstände.'
+                    : rate.tatsaechlich > zielBehaltensrate + 0.05
+                      ? 'Du behältst mehr als angestrebt – ein etwas niedrigeres Ziel spart Wiederholungen.'
+                      : 'Ziel und Wirklichkeit passen zusammen.'}
+              </p>
+              {jeModul.length > 1 && (
+                <ul className="verteilung">
+                  {jeModul.map((m) => (
+                    <li key={m.titel}>
+                      <span className="verteilungName">{m.titel}</span>
+                      <span className="verteilungBalken">
+                        <span style={{ width: `${Math.round(m.tatsaechlich * 100)}%` }} />
+                      </span>
+                      <span className="verteilungZahl">{prozent(m.tatsaechlich)} · {m.anzahl}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="zeileHinweis">
+                {fsrsGewichte?.w
+                  ? `Planung mit eigenen Gewichten (berechnet aus ${fsrsGewichte.basis ?? '?'} Bewertungen).`
+                  : planungswirksam >= ANPASSEN_AB
+                    ? `${planungswirksam} Bewertungen – genug, um die Planung an dich anzupassen: Einspielen\fsrs_anpassen.py, Ergebnis in den Einstellungen eintragen.`
+                    : `Anpassen der Planung an dich lohnt ab etwa ${ANPASSEN_AB} Bewertungen (bisher ${planungswirksam}).`}
+              </p>
+            </>
+          )}
         </section>
 
         <section className="block">

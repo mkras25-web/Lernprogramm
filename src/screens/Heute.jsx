@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Ring from '../components/Ring.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
 import LokalBild from '../components/LokalBild.jsx'
@@ -10,7 +11,7 @@ export default function Heute({
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern, speicherGeschuetzt = null,
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
-  kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten,
+  kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten, onKlausurErgebnis,
   nichtGewusst = [], onOeffnen,
 }) {
   // Klausur-Countdown (4B): naechste anstehende Klausur(en), nur Anzeige.
@@ -123,6 +124,7 @@ export default function Heute({
             onVorschlaege={() => onVorschlaegeUebernehmen?.(u)}
             onPruefung={onKursPruefung}
             onVerwalten={onKurseVerwalten}
+            onErgebnis={onKlausurErgebnis}
           />
         ))}
 
@@ -322,8 +324,9 @@ export default function Heute({
 }
 
 // Ein Kurs (lib/kurs.js): Klausurreife, Tagesplan und die Kurs-Lernarten.
-function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten }) {
+function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten, onErgebnis }) {
   const { kurs, klausur, reife, plan } = u
+  const [ergebnis, setErgebnis] = useState('')
   const tage = klausur ? tageBis(klausur) : null
   const nichtReif = reife.gesamt - reife.sicher
   const termin = klausur
@@ -335,6 +338,45 @@ function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten }) {
         <h2 className="abschnitt">Kurs {kurs.titel}</h2>
         <button className="textknopf" onClick={onVerwalten}>{termin}</button>
       </div>
+      {/* Klausur-Rueckblick (F9, 2026-10-13): nach dem Termin das Ergebnis
+          festhalten und neben die vorhergesagte Reife stellen - so zeigt
+          sich, ob "klausurreif" wirklich reicht. Danach optional archivieren. */}
+      {u.rueckblick && onErgebnis && (
+        <div className="rueckblick">
+          <p className="zeileTitel">
+            Klausur {u.rueckblick.titel} am {new Date(`${u.rueckblick.datum}T00:00`).toLocaleDateString('de-DE')} – wie lief es?
+          </p>
+          <p className="zeileHinweis">
+            Am Klausurtag waren laut App {Math.round((u.reifeAmTag ?? 0) * 100)} % der Kursfragen klausurreif.
+          </p>
+          <form
+            className="klausurNeu"
+            onSubmit={(e) => {
+              e.preventDefault()
+              onErgebnis(u, ergebnis.trim(), false)
+            }}
+          >
+            <input
+              className="suchfeld"
+              value={ergebnis}
+              onChange={(e) => setErgebnis(e.target.value)}
+              placeholder="Note oder Ergebnis, z. B. 2,3 oder bestanden"
+            />
+            <button className="knopf schmal" type="submit" disabled={!ergebnis.trim()}>Speichern</button>
+            <button
+              className="knopf schmal"
+              type="button"
+              disabled={!ergebnis.trim()}
+              onClick={() => onErgebnis(u, ergebnis.trim(), true)}
+            >
+              Speichern und Kurs archivieren
+            </button>
+            <button className="textknopf" type="button" onClick={() => onErgebnis(u, '', false)}>
+              Ohne Ergebnis ausblenden
+            </button>
+          </form>
+        </div>
+      )}
       {u.items.length === 0 ? (
         <p className="nebentext">
           Noch keine Fragen im Kurs. Markiere sie beim Lernen (Knopf „Kurs“) oder in Nachschlagen

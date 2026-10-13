@@ -1,3 +1,4 @@
+import { gueltigeGewichte } from '../lib/planer.js'
 import { useEffect, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
 import { PALETTEN, SCHRIFTGROESSEN, STANDARD, farbenblindSchalten } from '../lib/einstellungen.js'
@@ -326,7 +327,7 @@ export default function Einstellungen({
                 mit Vorschlägen aus dem Inhalt (Web-Chat).
               </p>
             </div>
-            <Kursliste kurse={kursplan.kurse} kennungen={kennungen} aendern={kursplanAendern} />
+            <Kursliste kurse={kursplan.kurse} kennungen={kennungen} aendern={kursplanAendern} klausuren={kursplan.klausuren} />
           </div>
 
           <div className="zeile">
@@ -372,6 +373,18 @@ export default function Einstellungen({
               optionen={[[0.85, '85 %'], [0.9, '90 %'], [0.95, '95 %']]}
               onWahl={(w) => aendern('zielBehaltensrate', w)}
             />
+          </div>
+
+          <div className="zeile zeileOben">
+            <div className="zeileText">
+              <p className="zeileTitel">Eigene Planungsgewichte</p>
+              <p className="zeileHinweis">
+                {werte.fsrsGewichte?.w
+                  ? `Aktiv: aus ${werte.fsrsGewichte.basis ?? '?'} Bewertungen berechnet${werte.fsrsGewichte.datum ? ` am ${werte.fsrsGewichte.datum}` : ''}.`
+                  : 'Standard. Ab etwa 1000 Bewertungen lässt sich die Planung an dich anpassen: Sicherung exportieren, Einspielen\fsrs_anpassen.py ausführen, Ausgabe hier einfügen.'}
+              </p>
+            </div>
+            <GewichteFeld wert={werte.fsrsGewichte} onSetzen={(g) => aendern('fsrsGewichte', g)} />
           </div>
 
           <div className="zeile">
@@ -755,7 +768,7 @@ function kennungAus(text) {
     .replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
 }
 
-function Kursliste({ kurse, kennungen, aendern }) {
+function Kursliste({ kurse, kennungen, aendern, klausuren = [] }) {
   const [titel, setTitel] = useState('')
   const [kennung, setKennung] = useState('')
   const bekannt = [...kennungen.entries()]
@@ -765,12 +778,26 @@ function Kursliste({ kurse, kennungen, aendern }) {
         <ul className="klausurListe">
           {[...kurse].sort((a, b) => a.titel.localeCompare(b.titel)).map((k) => (
             <li key={k.id}>
-              <span>{k.titel}</span>
+              <span>{k.titel}{k.archiviert && ' (archiviert)'}</span>
               <span className="zeileHinweis">
                 {k.kennung
                   ? `Kennung ${k.kennung}${kennungen.get(k.kennung) ? ` · ${kennungen.get(k.kennung)} Vorschläge im Inhalt` : ''}`
                   : 'ohne Kennung'}
+                {/* Klausurergebnisse des Kurses (F9) */}
+                {klausuren
+                  .filter((x) => x.kursId === k.id && x.ergebnis)
+                  .map((x) => ` · ${x.titel}: ${x.ergebnis} (Reife am Tag ${x.reifeAmTag ?? '?'} %)`)
+                  .join('')}
               </span>
+              {k.archiviert ? (
+                <button className="textknopf" onClick={() => aendern.setzen('kurse', { ...k, archiviert: undefined })}>
+                  wieder aktivieren
+                </button>
+              ) : (
+                <button className="textknopf" onClick={() => aendern.setzen('kurse', { ...k, archiviert: true })}>
+                  archivieren
+                </button>
+              )}
               <button className="textknopf" onClick={() => aendern.loeschen('kurse', k.id)}>
                 entfernen
               </button>
@@ -864,6 +891,43 @@ function Klausurtermine({ liste, kurse, aendern }) {
         )}
         <button className="knopf schmal" type="submit" disabled={!titel.trim() || !datum}>Hinzufügen</button>
       </form>
+    </div>
+  )
+}
+
+// Eigene FSRS-Gewichte (L7, 2026-10-13): Ausgabe von
+// Einspielen/fsrs_anpassen.py einfuegen - {"fsrsGewichte": {w, basis, datum}}
+// oder nur die Liste der 21 Zahlen.
+function GewichteFeld({ wert, onSetzen }) {
+  const [text, setText] = useState('')
+  const [fehler, setFehler] = useState(null)
+  function uebernehmen() {
+    try {
+      const roh = JSON.parse(text)
+      const g = Array.isArray(roh) ? { w: roh } : roh.fsrsGewichte ?? roh
+      if (!gueltigeGewichte(g.w)) throw new Error('Erwartet werden genau 21 Zahlen.')
+      onSetzen({ w: g.w, basis: g.basis, datum: g.datum })
+      setText('')
+      setFehler(null)
+    } catch (e) {
+      setFehler(e.message)
+    }
+  }
+  return (
+    <div className="gewichteFeld">
+      <textarea
+        className="notizfeld"
+        value={text}
+        placeholder='Ausgabe von fsrs_anpassen.py, z. B. {"fsrsGewichte": {"w": [...], ...}}'
+        onChange={(e) => setText(e.target.value)}
+      />
+      {fehler && <p className="zeileHinweis fehlertext">{fehler}</p>}
+      <div className="wahl">
+        <button className="knopf schmal" disabled={!text.trim()} onClick={uebernehmen}>Übernehmen</button>
+        {wert?.w && (
+          <button className="knopf schmal" onClick={() => onSetzen(null)}>Standard wiederherstellen</button>
+        )}
+      </div>
     </div>
   )
 }

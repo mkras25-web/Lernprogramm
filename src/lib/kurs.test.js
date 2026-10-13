@@ -8,6 +8,7 @@ import {
   kursAenderung,
   kursItems,
   naechsteKlausur,
+  offenerRueckblick,
   strengSicher,
   tageBis,
   vorschlaege,
@@ -137,5 +138,19 @@ describe('Klausurplan', () => {
     const nah = klausurplan(liste, zustaende, { jetzt: JETZT, klausur: { datum: datum(5) }, ziel: 0.999 })
     expect(nah.pensum.map((i) => i.id)).toEqual(['f', 'g'])
     expect(nah.vorgezogen).toBe(1)
+  })
+})
+
+describe('offenerRueckblick (F9)', () => {
+  const jetzt = new Date('2026-10-13T12:00').getTime()
+  it('nennt die juengste vergangene Klausur ohne Ergebnis', () => {
+    const klausuren = [
+      { id: 'a', kursId: 'k', datum: '2026-09-01' },
+      { id: 'b', kursId: 'k', datum: '2026-10-10' },
+      { id: 'c', kursId: 'k', datum: '2026-11-01' },
+    ]
+    expect(offenerRueckblick('k', klausuren, jetzt).id).toBe('b')
+    expect(offenerRueckblick('k', [{ ...klausuren[1], ergebnis: '1,7' }], jetzt)).toBeNull()
+    expect(offenerRueckblick('k', [{ ...klausuren[1], rueckblickAus: true }], jetzt)).toBeNull()
   })
 })

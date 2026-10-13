@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { BEWERTUNG, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal, heuteNichtGewusst } from './planer.js'
+import { BEWERTUNG, behaltensrate, gueltigeGewichte, wiederholungenBewerten, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal, heuteNichtGewusst } from './planer.js'
 
 const TAG = 24 * 60 * 60 * 1000
 
@@ -165,5 +165,37 @@ describe('heuteNichtGewusst', () => {
       e('c', BEWERTUNG.NOCHMAL, 1),
     ], jetzt)
     expect(liste).toEqual(['c', 'b'])
+  })
+})
+
+describe('Kalibrierung und eigene Gewichte (F6/L7)', () => {
+  const TAG = 24 * 60 * 60 * 1000
+  const start = new Date('2026-09-01T10:00').getTime()
+  const ereignis = (itemId, tage, bewertung) => ({ id: `${itemId}-${tage}`, itemId, ts: start + tage * TAG, bewertung })
+
+  it('zaehlt nur Wiederholungen bekannter Karten, je Tag die erste Bewertung', () => {
+    const liste = wiederholungenBewerten([
+      ereignis('a', 0, BEWERTUNG.GUT), // erstes Lernen - keine Wiederholung
+      ereignis('a', 0, BEWERTUNG.NOCHMAL), // zweite Bewertung am selben Tag - zaehlt nicht
+      ereignis('a', 3, BEWERTUNG.GUT),
+      ereignis('a', 10, BEWERTUNG.NOCHMAL),
+    ])
+    expect(liste).toHaveLength(2)
+    expect(liste.map((w) => w.gewusst)).toEqual([true, false])
+    expect(liste.every((w) => w.p > 0 && w.p <= 1)).toBe(true)
+    const r = behaltensrate(liste)
+    expect(r.anzahl).toBe(2)
+    expect(r.tatsaechlich).toBe(0.5)
+  })
+
+  it('nimmt nur vollstaendige Gewichtslisten an', () => {
+    expect(gueltigeGewichte([1, 2, 3])).toBeNull()
+    const w = Array.from({ length: 21 }, (_, i) => 0.1 + i / 100)
+    expect(gueltigeGewichte(w)).toBe(w)
+    // Andere Gewichte ergeben eine andere Planung
+    const ev = [ereignis('a', 0, BEWERTUNG.GUT), ereignis('a', 2, BEWERTUNG.GUT)]
+    const standard = zustaendeBerechnen(ev).get('a').intervall
+    const eigen = zustaendeBerechnen(ev, { gewichte: w }).get('a').intervall
+    expect(eigen).not.toBe(standard)
   })
 })

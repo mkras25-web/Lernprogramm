@@ -60,6 +60,8 @@ export const STANDARD = {
   // FSRS: angestrebte Behaltenswahrscheinlichkeit beim Wiederholen.
   // Hoeher = mehr Wiederholungen, sicherer; niedriger = weniger Aufwand.
   zielBehaltensrate: 0.9,
+  // Eigene FSRS-Gewichte (L7): { w: [21 Zahlen], basis, datum } oder null
+  fsrsGewichte: null,
   // Tagesziel in Antworten (0 = aus). Ein Ziel, keine Obergrenze.
   tagesziel: 0,
   // Klausurtermine fuer den Countdown auf Heute: [{ id, titel, datum }]

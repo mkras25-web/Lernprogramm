@@ -44,8 +44,8 @@ export function useKennzahlen({
   const aktiveItems = useMemo(() => lernbareItems(items, marken), [items, marken])
 
   const zustaende = useMemo(
-    () => zustaendeBerechnen(ereignisse, { zielBehaltensrate: opt.zielBehaltensrate }),
-    [ereignisse, opt.zielBehaltensrate]
+    () => zustaendeBerechnen(ereignisse, { zielBehaltensrate: opt.zielBehaltensrate, gewichte: opt.fsrsGewichte?.w }),
+    [ereignisse, opt.zielBehaltensrate, opt.fsrsGewichte]
   )
 
   const aktiveEreignisse = useMemo(() => {

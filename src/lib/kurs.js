@@ -90,6 +90,17 @@ export function naechsteKlausur(kursId, klausuren, jetzt = Date.now()) {
     .sort((a, b) => a.zeit - b.zeit)[0] ?? null
 }
 
+// Klausur-Rueckblick (F9, 2026-10-13): die juengste vergangene Klausur des
+// Kurses, fuer die noch kein Ergebnis eingetragen ist.
+export function offenerRueckblick(kursId, klausuren, jetzt = Date.now()) {
+  const heute = tagesBeginn(jetzt)
+  return (klausuren ?? [])
+    .filter((k) => k.kursId === kursId && k.datum && !k.ergebnis && !k.rueckblickAus)
+    .map((k) => ({ ...k, zeit: new Date(`${k.datum}T00:00`).getTime() }))
+    .filter((k) => k.zeit < heute)
+    .sort((a, b) => b.zeit - a.zeit)[0] ?? null
+}
+
 export function tageBis(klausur, jetzt = Date.now()) {
   return Math.round((new Date(`${klausur.datum}T00:00`).getTime() - tagesBeginn(jetzt)) / TAG)
 }

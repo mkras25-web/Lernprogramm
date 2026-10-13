@@ -31,14 +31,27 @@ export const BEWERTUNG = {
 
 export const ZIEL_BEHALTENSRATE_STANDARD = 0.9
 
+// Eigene FSRS-Gewichte (L7, 2026-10-13): mit Einspielen/fsrs_anpassen.py
+// aus den eigenen Antworten berechnet und in den Einstellungen eingetragen.
+// Nur eine vollstaendige Liste von 21 Zahlen (FSRS-6, ts-fsrs 5) zaehlt,
+// sonst gelten die Standardgewichte.
+export function gueltigeGewichte(gewichte) {
+  return Array.isArray(gewichte) && gewichte.length === 21 && gewichte.every((w) => Number.isFinite(w))
+    ? gewichte
+    : null
+}
+
 const planerCache = new Map()
-function planer(zielBehaltensrate = ZIEL_BEHALTENSRATE_STANDARD) {
-  if (!planerCache.has(zielBehaltensrate)) {
+function planer(zielBehaltensrate = ZIEL_BEHALTENSRATE_STANDARD, gewichte = null) {
+  const w = gueltigeGewichte(gewichte)
+  const schluessel = `${zielBehaltensrate}|${w ? w.join(',') : 'standard'}`
+  if (!planerCache.has(schluessel)) {
     planerCache.set(
-      zielBehaltensrate,
+      schluessel,
       fsrs(
         generatorParameters({
           request_retention: zielBehaltensrate,
+          ...(w ? { w } : {}),
           // Keine Lernschritte im Minutenbereich: das Wiederholen am selben
           // Tag erledigt die Sitzung selbst ("Nochmal" haengt die Karte ans
           // Ende). Ohne Zufallsstreuung, damit Vorschau und Planung
@@ -49,7 +62,7 @@ function planer(zielBehaltensrate = ZIEL_BEHALTENSRATE_STANDARD) {
       )
     )
   }
-  return planerCache.get(zielBehaltensrate)
+  return planerCache.get(schluessel)
 }
 
 function tagesSchluessel(ts) {
@@ -71,8 +84,8 @@ function zustandAusKarte(karte, extra) {
 
 // Baut je Item den aktuellen Zustand auf. Ereignisse muessen nach
 // Zeit sortiert uebergeben werden.
-export function zustaendeBerechnen(ereignisse, { zielBehaltensrate } = {}) {
-  const f = planer(zielBehaltensrate)
+export function zustaendeBerechnen(ereignisse, { zielBehaltensrate, gewichte } = {}) {
+  const f = planer(zielBehaltensrate, gewichte)
   const zustaende = new Map()
   const geplantAmTag = new Set() // `${itemId}|${tag}` - erste Bewertung des Tages
 
@@ -106,15 +119,54 @@ export function zustaendeBerechnen(ereignisse, { zielBehaltensrate } = {}) {
 
 // Vorhergesagte Behaltenswahrscheinlichkeit (0..1) einer Karte zu einem
 // Zeitpunkt - fuer die Klausurreife (kurs.js). Neue Karte = 0.
-export function retrievabilityAm(karte, zeitpunkt) {
+export function retrievabilityAm(karte, zeitpunkt, gewichte = null) {
   if (!karte?.last_review || !(karte.stability > 0)) return 0
-  return planer().get_retrievability(karte, new Date(zeitpunkt), false)
+  return planer(ZIEL_BEHALTENSRATE_STANDARD, gewichte).get_retrievability(karte, new Date(zeitpunkt), false)
+}
+
+// Kalibrierung (F6/L7, 2026-10-13): Fuer jede planungswirksame
+// Wiederholung (erste Bewertung des Tages einer schon bekannten Karte) die
+// vorhergesagte Behaltenswahrscheinlichkeit p und ob die Karte tatsaechlich
+// gewusst wurde (alles ausser "Nochmal"). Daraus ergibt sich die echte
+// Behaltensrate (wie "True Retention" in Anki) neben der Vorhersage.
+export function wiederholungenBewerten(ereignisse, { zielBehaltensrate, gewichte } = {}) {
+  const f = planer(zielBehaltensrate, gewichte)
+  const karten = new Map()
+  const geplantAmTag = new Set()
+  const ergebnis = []
+  for (const e of ereignisse) {
+    if (!(e.bewertung >= 1 && e.bewertung <= 4)) continue
+    const schluessel = `${e.itemId}|${tagesSchluessel(e.ts)}`
+    if (geplantAmTag.has(schluessel)) continue
+    geplantAmTag.add(schluessel)
+    let karte = karten.get(e.itemId) ?? createEmptyCard(new Date(e.ts))
+    const zeit = new Date(Math.max(e.ts, karte.last_review?.getTime() ?? 0))
+    if (karte.last_review && karte.stability > 0) {
+      ergebnis.push({
+        itemId: e.itemId,
+        ts: e.ts,
+        p: f.get_retrievability(karte, zeit, false),
+        gewusst: e.bewertung !== BEWERTUNG.NOCHMAL,
+      })
+    }
+    karte = f.next(karte, zeit, e.bewertung).card
+    karten.set(e.itemId, karte)
+  }
+  return ergebnis
+}
+
+// Zusammenfassung einer Liste aus wiederholungenBewerten.
+export function behaltensrate(liste) {
+  if (liste.length === 0) return { anzahl: 0, tatsaechlich: null, vorhergesagt: null }
+  const gewusst = liste.filter((w) => w.gewusst).length
+  const p = liste.reduce((summe, w) => summe + w.p, 0)
+  return { anzahl: liste.length, tatsaechlich: gewusst / liste.length, vorhergesagt: p / liste.length }
 }
 
 // Vorschau fuer die Bewertungsknoepfe: welches Intervall (in Tagen)
 // ergaebe jede Bewertung jetzt? zustand darf fehlen (neue Karte).
-export function intervallVorschau(zustand, { zielBehaltensrate, jetzt = Date.now() } = {}) {
-  const f = planer(zielBehaltensrate)
+export function intervallVorschau(zustand, { zielBehaltensrate, gewichte, jetzt = Date.now() } = {}) {
+  const f = planer(zielBehaltensrate, gewichte)
   const karte = zustand?.karte ?? createEmptyCard(new Date(jetzt))
   const zeit = new Date(Math.max(jetzt, karte.last_review?.getTime() ?? 0))
   const ergebnis = {}

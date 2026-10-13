@@ -38,6 +38,7 @@ import {
   kursAenderung,
   kursItems,
   naechsteKlausur,
+  offenerRueckblick,
   vorschlaege,
 } from './lib/kurs.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
@@ -270,6 +271,12 @@ export default function App({ profilId, onProfilWechseln }) {
       const lernItems = alle.filter((i) => lernbar.has(i.id))
       const klausur = naechsteKlausur(kurs.id, kursplan.klausuren)
       const zeitpunkt = klausur ? new Date(`${klausur.datum}T00:00`).getTime() : Date.now()
+      // Rueckblick nach der Klausur (F9): Reife, wie die App sie fuer den
+      // Klausurtag vorhergesagt haette - zum Vergleich mit dem Ergebnis.
+      const rueckblick = offenerRueckblick(kurs.id, kursplan.klausuren)
+      const reifeAmTag = rueckblick
+        ? klausurreife(lernItems, zustaende, aktiveEreignisse.filter((e) => e.ts < rueckblick.zeit), { zeitpunkt: rueckblick.zeit }).anteil
+        : null
       const reife = klausurreife(lernItems, zustaende, aktiveEreignisse, { zeitpunkt })
       const plan = klausurplan(lernItems, zustaende, { klausur, neuProTag: opt.neuProTag })
       const pruefIds = alle.filter((i) => pruefbar.has(i.id)).map((i) => i.id)
@@ -281,6 +288,8 @@ export default function App({ profilId, onProfilWechseln }) {
         reife,
         plan,
         pruefIds,
+        rueckblick,
+        reifeAmTag,
         ungeprueft: alle.length - pruefIds.length,
         vorschlaege: vorschlaege(aktiveItems, marken, kurs),
       }
@@ -728,7 +737,7 @@ export default function App({ profilId, onProfilWechseln }) {
           // nicht (planer.js) - dann keine irrefuehrende Vorschau.
           intervalle={heuteBewertet(zustaende.get(item.id))
             ? null
-            : intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate })}
+            : intervallVorschau(zustaende.get(item.id), { zielBehaltensrate: opt.zielBehaltensrate, gewichte: opt.fsrsGewichte?.w })}
           heuteBewertet={heuteBewertet(zustaende.get(item.id))}
           // Problemkarte: ab 6 Fehlern (Nutzerentscheidung 6A)
           istProblem={(zustaende.get(item.id)?.fehler ?? 0) >= 6}
@@ -929,7 +938,18 @@ export default function App({ profilId, onProfilWechseln }) {
           offenePruefung={offenePruefung}
           onPruefungFortsetzen={() => setAnsicht('pruefung')}
           klausuren={kursplan.klausuren}
-          kurse={kursUebersicht}
+          // Archivierte Kurse (F9) verschwinden von Heute.
+          kurse={kursUebersicht.filter((u) => !u.kurs.archiviert)}
+          onKlausurErgebnis={(u, ergebnis, archivieren) => {
+            const { zeit, ...klausur } = u.rueckblick
+            kursplanAendern.setzen('klausuren', {
+              ...klausur,
+              ergebnis: ergebnis || undefined,
+              rueckblickAus: !ergebnis || undefined,
+              reifeAmTag: Math.round((u.reifeAmTag ?? 0) * 100),
+            })
+            if (archivieren) kursplanAendern.setzen('kurse', { ...u.kurs, archiviert: true })
+          }}
           onKurs={kursStarten}
           onVorschlaegeUebernehmen={(u) => kursSammel(u.vorschlaege.map((i) => i.id), u.kurs.id, true)}
           onKursPruefung={() => setAnsicht('pruefung')}
@@ -976,7 +996,7 @@ export default function App({ profilId, onProfilWechseln }) {
       {ansicht === 'pruefung' && (
         <Pruefung
           items={pruefItems}
-          kurse={kursUebersicht}
+          kurse={kursUebersicht.filter((u) => !u.kurs.archiviert)}
           themen={themen}
           zustaende={zustaende}
           module={module}
@@ -1068,6 +1088,8 @@ export default function App({ profilId, onProfilWechseln }) {
           level={level}
           gestaltung={gestaltung}
           module={module}
+          zielBehaltensrate={opt.zielBehaltensrate ?? 0.9}
+          fsrsGewichte={opt.fsrsGewichte}
           reiter={<AuswertungReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
           onThemaUeben={(themaId) => sitzungStarten('ueben', { themaId })}
           onModulUeben={(modulId) => sitzungStarten('ueben', { modulId })}

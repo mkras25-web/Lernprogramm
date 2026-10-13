@@ -169,6 +169,17 @@ describe('Kursplan (Kurse und Klausurtermine)', () => {
     expect(kursplanLesen().klausuren).toEqual([])
   })
 
+  it('Klausurergebnis und Archivierung (F9) reisen mit', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    kursplanEintragSetzen('kurse', { id: 'k1', titel: 'Baurecht', archiviert: true })
+    kursplanEintragSetzen('klausuren', { id: 'x1', titel: 'Baurecht I', datum: '2026-02-14', kursId: 'k1', ergebnis: '2,3', reifeAmTag: 87 })
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(kursplanLesen().kurse[0].archiviert).toBe(true)
+    expect(kursplanLesen().klausuren[0]).toMatchObject({ ergebnis: '2,3', reifeAmTag: 87 })
+  })
+
   it('eine aeltere Sicherung ueberschreibt keinen neueren Kurs', async () => {
     await geraetWaehlen('a')
     await datenbankFuerProfilSetzen(PROFIL)
