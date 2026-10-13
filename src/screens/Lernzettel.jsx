@@ -2,7 +2,16 @@
 // Karten mit Antwort, Quelle und eigener Notiz kompakt untereinander - zum
 // Ausdrucken oder als PDF sichern (Druckdialog des Browsers).
 
+import LokalBild from '../components/LokalBild.jsx'
 import { quelleText } from '../lib/quelle.js'
+
+// Alle Bilder einer Karte fuer den Druck (Nutzerwunsch 2026-10-13): Aufgaben-
+// bild, Fallbild, Vergleichsbilder und die erklaerende Abbildung zur Antwort.
+function kartenBilder(item) {
+  const bilder = [item.referenz, item.fallbild, ...(item.seiten ?? []).map((s) => s.bild), item.bild]
+  return [...new Set(bilder.filter(Boolean))]
+}
+
 export default function Lernzettel({ thema, items, marken, onZurueck }) {
   const eigene = items.filter((i) => i.themaId === thema.id)
   const e = thema.erklaerung
@@ -27,6 +36,12 @@ export default function Lernzettel({ thema, items, marken, onZurueck }) {
         </section>
       )}
       {e?.merksatz && <p className="merksatz">{e.merksatz}</p>}
+      {(e?.bild || thema.bild) && (
+        <figure className="zettelBild">
+          <LokalBild src={e?.bild ?? thema.bild} alt="" platzhalter={false} />
+          {e?.bildunterschrift && <figcaption className="quelle">{e.bildunterschrift}</figcaption>}
+        </figure>
+      )}
 
       <ol className="zettelListe">
         {eigene.map((item) => {
@@ -41,6 +56,13 @@ export default function Lernzettel({ thema, items, marken, onZurueck }) {
                 </ol>
               )}
               {item.vertiefung && <p className="zettelVertiefung">{item.vertiefung}</p>}
+              {kartenBilder(item).length > 0 && (
+                <div className="zettelBilder">
+                  {kartenBilder(item).map((src) => (
+                    <LokalBild key={src} src={src} alt="" platzhalter={false} />
+                  ))}
+                </div>
+              )}
               {notiz && <p className="zettelNotiz">Notiz: {notiz}</p>}
               <p className="quelle">{quelleText(item.quelle)}</p>
             </li>

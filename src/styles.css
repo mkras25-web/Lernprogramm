@@ -603,6 +603,23 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .option.richtig { border-color: var(--fortschritt); background: var(--flaeche-tief); }
 .option.falsch { border-color: var(--warnung); }
 .option:disabled { cursor: default; }
+/* Mehrfachauswahl nach dem Aufdecken (D3, 2026-10-13): richtig, aber nicht
+   gewaehlt - gestrichelt mit eigenem Zeichen, damit es sich von "richtig
+   gewaehlt" unterscheidet (vorher sahen beide gleich aus). */
+.option.uebersehen { border: 1px dashed var(--fortschritt); background: transparent; }
+.optionZeichen { display: inline-block; width: 1.25rem; font-weight: 700; }
+.option.richtig .optionZeichen { color: var(--fortschritt); }
+.option.falsch .optionZeichen { color: var(--warnung); }
+.option.uebersehen .optionZeichen { color: var(--fortschritt); }
+.optionMarke {
+  margin-left: 0.5rem;
+  padding: 0 0.375rem;
+  font-size: 0.75rem;
+  border: 1px dashed var(--fortschritt);
+  border-radius: 3px;
+  color: var(--rinde);
+}
+.trefferZeile { font-size: 0.8125rem; color: var(--rinde); padding: 0.125rem 0.25rem; }
 
 /* Rueckmeldung richtig/falsch, an jeder Stelle im Programm, an der ein
    Item gesperrt wird und dabei die Klasse "richtig"/"falsch" (bzw.
@@ -1336,6 +1353,8 @@ html[data-farbenblind="an"] .option.richtig::before { content: "✓ "; font-weig
 html[data-farbenblind="an"] .option.falsch::before { content: "✗ "; font-weight: 700; }
 html[data-farbenblind="an"] .option.richtig { border-width: 2px; }
 html[data-farbenblind="an"] .option.falsch { border-style: dashed; }
+/* Im Lernen tragen die Optionen ihr Zeichen selbst (D3) - nicht doppelt. */
+html[data-farbenblind="an"] .option:has(.optionZeichen)::before { content: none; }
 html[data-farbenblind="an"] .urteil.richtig::before { content: "✓ "; }
 html[data-farbenblind="an"] .urteil.falsch::before { content: "✗ "; }
 html[data-farbenblind="an"] .ungeprueft::before { content: "△ "; }
@@ -1489,6 +1508,28 @@ html[data-farbenblind="an"] .feld.stufe3 { background: color-mix(in srgb, var(--
 }
 
 .knopf.vorschlag { border-width: 2px; border-color: var(--tusche); font-weight: 600; }
+/* "Gut" erst bei allen Pruefpunkten (L3) */
+.knopf:disabled { opacity: 0.45; cursor: not-allowed; }
+/* Warum-Pause vor der Vertiefung (L2) */
+.warumKnopf {
+  font: inherit;
+  font-size: 0.9375rem;
+  text-align: left;
+  padding: 0.625rem 0.75rem;
+  background: transparent;
+  border: 1px dashed var(--linie);
+  border-radius: var(--rund);
+  color: var(--rinde);
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  align-items: baseline;
+}
+.warumKnopf strong { color: var(--tusche); font-weight: 600; }
+/* Einfuehrungsschritt vor dem ersten Kontakt mit einem Thema (D4) */
+.einfuehrung { display: flex; flex-direction: column; gap: 1rem; }
+.erklaerbild { margin-top: 0.75rem; }
 
 .urteilZeile { margin: 0 0 0.625rem; font-size: 0.8125rem; text-align: center; }
 .urteilZeile.richtig { color: var(--rinde); }
@@ -1582,16 +1623,41 @@ html[data-farbenblind="an"] .feld.stufe3 { background: color-mix(in srgb, var(--
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  max-width: 95vw;
-  max-height: 92dvh;
+  max-width: 98vw;
+  max-height: 96dvh;
 }
 
-.lupenBuehne img {
-  max-width: 92vw;
-  max-height: 78dvh;
-  background: #fff;
+/* Lupe mit Zoom (D1, 2026-10-13): feste Buehne, das Bild wird darin per
+   transform vergroessert und verschoben; Gesten gehoeren der Buehne. */
+.lupenFlaeche {
+  width: 96vw;
+  height: 76dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  touch-action: none;
+  cursor: zoom-in;
   border-radius: var(--rund);
 }
+.lupenFlaeche.gezoomt { cursor: grab; }
+.lupenBuehne img {
+  max-width: 100%;
+  max-height: 100%;
+  background: #fff;
+  border-radius: var(--rund);
+  transform-origin: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.lupenLeiste { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem; }
+.lupenStufe { min-width: 3.5rem; text-align: center; font-size: 0.8125rem; color: #fff; }
+.lupenHinweis { margin: 0; font-size: 0.75rem; color: rgba(255, 255, 255, 0.75); text-align: center; }
+.lupenLink { font-size: 0.8125rem; align-self: flex-start; }
+/* Lupe auf dunklem Grund: Zeichnung im Mittelpunkt, Rand knapp */
+.schleier.lupenSchleier { background: rgba(20, 22, 18, 0.9); padding: 0.5rem; }
+.vergleichSpalte { display: flex; flex-direction: column; gap: 0.25rem; min-width: 0; }
+.vergleichSpalte .vergleichSeite { flex: 1; }
 
 .skizzenEintrag { margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
 .skizzenEintrag img { cursor: zoom-in; }
@@ -1747,6 +1813,20 @@ html[data-farbenblind="an"] .feld.stufe3 { background: color-mix(in srgb, var(--
 .reihenNr { font-family: var(--serife); color: var(--rinde); text-align: center; }
 .reihenPfeile { display: flex; gap: 0.25rem; }
 .reihenPfeile .artKnopf { padding: 0.125rem 0.5rem; }
+/* Reihenfolge per Antippen (D7, 2026-10-13): oben die eingeordneten
+   Schritte (Tipp nimmt zurueck), darunter der Vorrat. */
+.reihenAuswahl { display: flex; flex-direction: column; gap: 0.75rem; }
+.reihenAuswahl .reihenfolge li { grid-template-columns: 1.75rem 1fr; }
+.reihenZurueck {
+  font: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+.reihenVorrat { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.375rem; }
 
 /* Bildpunkte */
 .bildflaeche { position: relative; display: inline-block; width: 100%; }
@@ -3118,6 +3198,8 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   .lernzettel, .heft { padding: 0 !important; }
   .lernzettel .zettelFrage { font-size: 11pt; }
   .lernzettel .zettelAntwort, .lernzettel .zettelVertiefung { font-size: 10pt; }
+  .lernzettel .zettelBild img, .lernzettel .zettelBilder img { max-height: 9cm; }
+  .lernzettel .zettelBild, .lernzettel .zettelBilder { break-inside: avoid; }
 }
 /* Normen (24B) */
 .normSchluessel { font-variant-numeric: lining-nums tabular-nums; }
@@ -3351,3 +3433,50 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
 /* Heute nicht gewusst (2026-10-12): Frage aufklappen, Antwort lesen. */
 .nichtGewusst details summary { cursor: pointer; }
 .nichtGewusst .nichtGewusstAntwort { margin: 0.5rem 0; white-space: pre-line; }
+
+/* Lernzettel: Bilder (2026-10-13) */
+.zettelBild { margin: 0; }
+.zettelBild img, .zettelBilder img {
+  display: block;
+  max-width: 100%;
+  max-height: 22rem;
+  background: #f4f2e8;
+  border-radius: var(--rund);
+}
+.zettelBilder { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.zettelBilder img { max-width: min(100%, 24rem); }
+
+/* Themenseite (F10, 2026-10-13) */
+.themaStand { margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--rinde); }
+.themaAktionen { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.zeichnungsRaster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+  gap: 0.75rem;
+}
+.zeichnungsKachel { margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.zeichnungsKachel figcaption {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.themaListe { list-style: none; margin: 0 0 0.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.themaListe li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--flaeche);
+  border-radius: var(--rund);
+}
+.themaListeFrage { font-size: 0.9375rem; }
+.themaListeText { font-size: 0.8125rem; color: var(--rinde); }
+.ausDemKopf .referenz { max-width: 100%; }
+
+/* Dunkle Paletten (D6, 2026-10-13): Die Zeichnungen haben feste helle
+   Lehmfarben und lassen sich nicht umfaerben - leicht abgedunkelt blenden
+   sie auf dunklem Grund nicht mehr. Eigene Skizzen bleiben unberuehrt. */
+html[data-dunkel="an"] :is(img.referenz, .lupenBuehne img, .vergleichSeite img, .zettelBild img, .zettelBilder img, img.ueberlagerung) {
+  filter: brightness(0.86);
+}

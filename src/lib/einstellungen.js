@@ -67,7 +67,10 @@ export const STANDARD = {
   reihenfolge: 'gemischt',
   bewertungsstufen: 4,
   ungeprueftZulassen: true,
+  // true = zeigen, 'einklappen' = erst ueberlegen, dann aufklappen (L2), false = aus
   vertiefungZeigen: true,
+  // Themen, deren Einfuehrungsschritt (D4) auf diesem Geraet gelesen ist
+  eingefuehrt: [],
   ueberspringenErlauben: true,
   skizzenSichern: true,
   // Zeichenfragen (Typ "skizze") weder lernen noch pruefen.
@@ -142,6 +145,9 @@ export function speichern(profilId, einstellungen) {
 export function anwenden(e) {
   const wurzel = document.documentElement
   wurzel.dataset.palette = e.palette
+  // Fuer Regeln, die nur in dunklen Paletten gelten (D6) - ohne jede
+  // dunkle Palette einzeln aufzuzaehlen.
+  wurzel.dataset.dunkel = PALETTEN.find((p) => p.id === e.palette)?.dunkel ? 'an' : 'aus'
   wurzel.dataset.animationen = e.animationen ? 'an' : 'aus'
   wurzel.dataset.farbenblind = e.farbenblind ? 'an' : 'aus'
   wurzel.style.setProperty('--spaltenbreite', e.breite === 'breit' ? '104rem' : '68rem')

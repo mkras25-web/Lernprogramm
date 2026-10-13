@@ -41,6 +41,7 @@ import {
   vorschlaege,
 } from './lib/kurs.js'
 import { useLernsitzung } from './hooks/useLernsitzung.js'
+import { verwandteThemen } from './lib/verwandt.js'
 import { meldungenMarkdown, meldungenNachziehen, textHerunterladen, wunschlisteMarkdown } from './lib/meldungen.js'
 import Heute from './screens/Heute.jsx'
 import Themen from './screens/Themen.jsx'
@@ -57,6 +58,7 @@ import Fehlerbuch from './screens/Fehlerbuch.jsx'
 import Lernzettel from './screens/Lernzettel.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
 import { KartenGrenze } from './components/Fehlergrenze.jsx'
+import AusDemKopf from './components/AusDemKopf.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 
 export default function App({ profilId, onProfilWechseln }) {
@@ -144,6 +146,8 @@ export default function App({ profilId, onProfilWechseln }) {
     setAnsicht('sichtung')
   }
   const [erklaerthema, setErklaerthema] = useState(null)
+  // "Aus dem Kopf" fuer ein Thema (L6)
+  const [kopfThema, setKopfThema] = useState(null)
   // Id der zuletzt in der Sitzung gemeldeten Karte - die naechste Karte
   // bestaetigt kurz, dass sie aus dem Stapel ist (Lernen.jsx).
   const [gemeldetHinweis, setGemeldetHinweis] = useState(null)
@@ -205,7 +209,9 @@ export default function App({ profilId, onProfilWechseln }) {
 
   // Rueckmeldung zu Import/Export blendet sich von selbst wieder aus.
   useEffect(() => {
-    if (!meldung) return
+    // Meldungen mit bleibt: true (Sitzungsbilanz, D5) stehen, bis man sie
+    // schliesst - nach 6 s war die Bilanz oft weg, bevor man hinsah.
+    if (!meldung || meldung.bleibt) return
     const timer = setTimeout(() => setMeldung(null), 6000)
     return () => clearTimeout(timer)
   }, [meldung])
@@ -350,6 +356,9 @@ export default function App({ profilId, onProfilWechseln }) {
     })
   }, [laedt, rohItems, paketInfo])
 
+  // Verwandte Themen fuer die Verwechslungspaare im Tagespensum (L4).
+  const verwandtschaft = useMemo(() => verwandteThemen(themen, aktiveItems), [themen, aktiveItems])
+
   const {
     sitzung,
     position,
@@ -377,10 +386,12 @@ export default function App({ profilId, onProfilWechseln }) {
     setSkizzen,
     setAnsicht,
     setErklaerthema,
+    verwandtschaft,
     onSpeicherfehler: (text) => setMeldung({ art: 'fehler', text }),
     onSitzungsende: ({ antworten, richtig, minuten }) =>
       setMeldung({
         art: 'erfolg',
+        bleibt: true,
         text: `Sitzung beendet · ${antworten} ${antworten === 1 ? 'Antwort' : 'Antworten'}, ${richtig} richtig (${Math.round((richtig / antworten) * 100)} %) · ${minuten} min`,
       }),
   })
@@ -413,6 +424,7 @@ export default function App({ profilId, onProfilWechseln }) {
   useAdresse(ansicht, setAnsicht, ansichtRef, (ziel) => {
     setErklaerthema(null)
     setLernzettelThema(null)
+    setKopfThema(null)
     if (ansichtRef.current === 'lernen' && ziel !== 'lernen') verlassenRef.current?.()
   })
 
@@ -707,6 +719,19 @@ export default function App({ profilId, onProfilWechseln }) {
           onHinweisGelesen={() => setGemeldetHinweis(null)}
           kurse={kursplan.kurse}
           onKurs={kursFrageSetzen}
+          // Einfuehrungsschritt (D4): erste neue Karte eines Themas, aus dem
+          // noch keine Karte beantwortet wurde und dessen Einfuehrung auf
+          // diesem Geraet noch nicht gelesen ist.
+          einfuehrung={
+            sitzung.art !== 'vorab' &&
+            sitzung.art !== 'blaettern' &&
+            !zustaende.has(item.id) &&
+            !(opt.eingefuehrt ?? []).includes(item.themaId) &&
+            !aktiveItems.some((i) => i.themaId === item.themaId && zustaende.has(i.id))
+          }
+          onEingefuehrt={(id) =>
+            setOpt((o) => ({ ...o, eingefuehrt: [...new Set([...(o.eingefuehrt ?? []), id])] }))
+          }
           onBewerten={(...a) => { setGemeldetHinweis(null); return bewerten(...a) }}
           onUeberspringen={() => { setGemeldetHinweis(null); weiter() }}
           onZurueckblaettern={zurueckblaettern}
@@ -729,13 +754,41 @@ export default function App({ profilId, onProfilWechseln }) {
     }
   }
 
+  if (kopfThema) {
+    const thema = themen.find((t) => t.id === kopfThema)
+    if (thema) {
+      return (
+        <div className="huelle einspaltig">
+          <AusDemKopf
+            thema={thema}
+            profilId={profilId}
+            onZurueck={() => setKopfThema(null)}
+            onErklaerung={() => {
+              setKopfThema(null)
+              setErklaerthema(thema.id)
+            }}
+          />
+        </div>
+      )
+    }
+  }
+
   if (erklaerthema) {
     const thema = themen.find((t) => t.id === erklaerthema)
+    const themaItems = aktiveItems.filter((i) => i.themaId === thema.id)
     return (
       <div className="huelle einspaltig">
         <Erklaerstueck
           thema={thema}
           themen={themen}
+          items={themaItems}
+          zustaende={zustaende}
+          marken={marken}
+          profilId={profilId}
+          onErstRaten={() => sitzungStarten('vorab', { themaId: thema.id })}
+          onAusDemKopf={() => setKopfThema(thema.id)}
+          onLernzettel={() => setLernzettelThema(thema.id)}
+          onFehlerUeben={(ids) => sitzungStarten('fehlerstapel', { ids })}
           onThema={(id) => setErklaerthema(id)}
           // Dieselbe Rechnung wie der Sitzungsstart (heutiges Pensum des
           // Themas) - frueher stand hier die Gesamtzahl aus der Paketdatei.

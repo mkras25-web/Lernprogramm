@@ -2,6 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 import { skizzeSpeichern, ereignisSpeichern, ereignisLoeschen } from '../lib/speicher.js'
 import { BEWERTUNG, pensumBauen, pensumNachNochmal } from '../lib/planer.js'
 import { xpFuerEreignis } from '../lib/fortschritt.js'
+import { verwandteNebeneinander } from '../lib/verwandt.js'
+
+// Vorab-Fragen (L1, 2026-10-13): nur Typen, die die App selbst auswerten
+// kann - beim Raten vor der Erklaerung soll die Rueckmeldung sofort kommen.
+const VORAB_TYPEN = ['mehrfachauswahl', 'numerisch', 'zuordnung', 'reihenfolge', 'vergleich']
 
 // ALTER_SITZUNG_SCHLUESSEL war der einzige, profillose Speicherort vor
 // der Einfuehrung von Nutzerprofilen - fuer die einmalige Uebernahme.
@@ -39,6 +44,7 @@ export function useLernsitzung({
   setSkizzen,
   setAnsicht,
   setErklaerthema,
+  verwandtschaft = new Map(),
   onSpeicherfehler,
   onSitzungsende,
 }) {
@@ -117,6 +123,13 @@ export function useLernsitzung({
       ).slice(0, 25)
     }
     else if (art === 'blaettern') pensum = grundmenge
+    else if (art === 'vorab') {
+      // "Erst raten": drei noch nie beantwortete Karten des Themas, bevorzugt
+      // automatisch auswertbare. Zaehlt nicht fuer die Planung (bewerten).
+      const offen = mischen(grundmenge.filter((i) => !zustaende.has(i.id)))
+      const auswertbar = offen.filter((i) => VORAB_TYPEN.includes(i.typ))
+      pensum = [...auswertbar, ...offen.filter((i) => !VORAB_TYPEN.includes(i.typ))].slice(0, 3)
+    }
     else if (art === 'kursplan' || art === 'endspurt') {
       // Fertig berechnete Reihenfolge aus kurs.js (Klausurplan/Endspurt).
       const nachId = new Map(grundmenge.map((i) => [i.id, i]))
@@ -130,6 +143,12 @@ export function useLernsitzung({
     }
 
     if (opt.reihenfolge === 'gemischt' && art !== 'blaettern') pensum = mischen(pensum)
+    // Verwechslungspaare (L4): im normalen Tagespensum verwandte Karten
+    // verschiedener Themen nacheinander - nur bei gemischter Reihenfolge,
+    // die feste Themenreihenfolge bleibt unangetastet.
+    if (opt.reihenfolge === 'gemischt' && (art === 'ueben' || art === 'heute')) {
+      pensum = verwandteNebeneinander(pensum, verwandtschaft)
+    }
     if (pensum.length === 0) return
 
     const neueSitzung = { art, pensum }
@@ -202,7 +221,14 @@ export function useLernsitzung({
 
     if (naechste >= sitzungJetzt.pensum.length + zusatz) {
       bilanzMelden()
-      setAnsicht('heute')
+      // Nach dem Raten kommt die Erklaerung (L1): jetzt liest man sie mit
+      // den eigenen Vermutungen im Kopf.
+      if (sitzungJetzt.art === 'vorab') {
+        setErklaerthema(sitzungJetzt.pensum[0]?.themaId ?? null)
+        setAnsicht('themen')
+      } else {
+        setAnsicht('heute')
+      }
       setSitzung(null)
       setPosition(0)
       sitzungSichern(null)
@@ -243,7 +269,9 @@ export function useLernsitzung({
       setSkizzen((alte) => [...alte, eintrag])
     }
 
-    if (sitzung.art === 'blaettern') {
+    // Blaettern und Vorab-Fragen speichern nichts - beim Raten vor der
+    // Erklaerung gibt es nichts zu planen (L1).
+    if (sitzung.art === 'blaettern' || sitzung.art === 'vorab') {
       weiter()
       return
     }

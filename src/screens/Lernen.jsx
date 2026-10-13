@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Skizzenfeld from '../components/Skizzenfeld.jsx'
-import Bildlupe from '../components/Bildlupe.jsx'
+import Bildlupe, { LupenLink } from '../components/Bildlupe.jsx'
 import Normen from '../components/Normen.jsx'
 import Bildpunkte from '../components/Bildpunkte.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
@@ -48,6 +48,9 @@ export default function Lernen({
   onHinweisGelesen,
   kurse = [],
   onKurs,
+  // Einfuehrungsschritt vor der ersten neuen Karte eines Themas (D4)
+  einfuehrung = false,
+  onEingefuehrt,
   onBewerten,
   onUeberspringen,
   onZurueckblaettern,
@@ -62,6 +65,14 @@ export default function Lernen({
   // nur nochmal raten (Nutzerentscheidung 2026-10-12).
   const [erklaerungOffen, setErklaerungOffen] = useState(zweiterVersuch)
   const [hilfeGenutzt, setHilfeGenutzt] = useState(false)
+  // Abgehakte Pruefpunkte (L3): steuern den Bewertungsvorschlag.
+  const [gehakt, setGehakt] = useState([])
+  // Vertiefung "erst ueberlegen" aufgeklappt (L2)
+  const [warumOffen, setWarumOffen] = useState(false)
+  // Bild zur Themen-Erklaerung im Erklaerkasten aufgeklappt (D2)
+  const [erklaerbildOffen, setErklaerbildOffen] = useState(false)
+  // Einfuehrung (D4) fuer diese Karte schon weggeklickt
+  const [eingefuehrt, setEingefuehrt] = useState(false)
   const bildRef = useRef(null)
   const seed = useMemo(() => (item.id + position).split('').reduce((s, z) => s + z.charCodeAt(0), 0), [item.id, position])
 
@@ -72,6 +83,10 @@ export default function Lernen({
     setMeldenOffen(false)
     setErklaerungOffen(zweiterVersuch)
     setHilfeGenutzt(false)
+    setGehakt([])
+    setWarumOffen(false)
+    setErklaerbildOffen(false)
+    setEingefuehrt(false)
     // zweiterVersuch haengt nur an item/position
   }, [item.id, position])
 
@@ -96,8 +111,9 @@ export default function Lernen({
       return item.paare.every((_, i) => paarRichtig(item, i, zuordnung[i])) ? 'richtig' : 'falsch'
     }
     if (item.typ === 'reihenfolge') {
-      const reihe = eingabe ?? null
-      if (!reihe) return null
+      // Antippen zum Einsortieren (D7): erst die vollstaendige Reihe zaehlt.
+      const reihe = eingabe ?? []
+      if (reihe.length < item.schritte.length) return null
       return reihe.every((wert, i) => wert === i) ? 'richtig' : 'falsch'
     }
     if (item.typ === 'bildbeschriftung') {
@@ -128,7 +144,30 @@ export default function Lernen({
     return null
   }, [item, eingabe, seed])
 
+  // Pruefpunkte (L3, Nutzerentscheidung 2026-10-13): Die Haekchen schlagen
+  // die Bewertung vor (unter der Haelfte Nochmal, ab der Haelfte Schwer,
+  // alle Gut) - und "Gut"/"Leicht" gibt es erst, wenn alle abgehakt sind.
+  // Lernende ueberschaetzen freie Antworten; der Punkt-fuer-Punkt-Abgleich
+  // macht die Selbstbewertung genauer (Rawson & Dunlosky 2011).
+  const pruefpunkte = urteil === null && art !== 'vorab' ? item.pruefpunkte ?? [] : []
+  const pruefVorschlag = pruefpunkte.length === 0
+    ? null
+    : gehakt.length === pruefpunkte.length
+      ? BEWERTUNG.GUT
+      : gehakt.length / pruefpunkte.length >= 0.5
+        ? BEWERTUNG.SCHWER
+        : BEWERTUNG.NOCHMAL
+  const gutGesperrt = pruefpunkte.length > 0 && gehakt.length < pruefpunkte.length
+  const vorschlag = urteil === 'richtig' ? BEWERTUNG.GUT : urteil === 'falsch' ? BEWERTUNG.NOCHMAL : pruefVorschlag
+  const einfuehrungAktiv = einfuehrung && !eingefuehrt && Boolean(thema?.erklaerung)
+
+  function einfuehrungFertig() {
+    setEingefuehrt(true)
+    onEingefuehrt?.(item.themaId)
+  }
+
   function bewerten(bewertung) {
+    if (gutGesperrt && (bewertung === BEWERTUNG.GUT || bewertung === BEWERTUNG.LEICHT)) return
     const bild = bildRef.current?.() ?? null
     onBewerten(bewertung, bild, hilfeGenutzt)
   }
@@ -190,8 +229,14 @@ export default function Lernen({
         // gewohnten Kuerzel (siehe fokusPerTab).
         if (fokusPerTab.current && e.target.matches('button, a')) return
         e.preventDefault()
-        if (!aufgedeckt) setAufgedeckt(true)
-        else if (art === 'blaettern') bewerten(BEWERTUNG.GUT)
+        if (einfuehrungAktiv) einfuehrungFertig()
+        else if (!aufgedeckt) setAufgedeckt(true)
+        else if (art === 'blaettern' || art === 'vorab') bewerten(BEWERTUNG.GUT)
+        return
+      }
+      if (einfuehrungAktiv) return
+      if (e.key.toLowerCase() === 'w' && aufgedeckt && vertiefungZeigen === 'einklappen') {
+        setWarumOffen((o) => !o)
         return
       }
       if (e.key === 'Backspace') {
@@ -207,7 +252,7 @@ export default function Lernen({
         onZurueckblaettern()
         return
       }
-      if (!aufgedeckt || art === 'blaettern') {
+      if (!aufgedeckt || art === 'blaettern' || art === 'vorab') {
         if (e.key.toLowerCase() === 'u' && ueberspringenErlauben) onUeberspringen()
         return
       }
@@ -247,9 +292,19 @@ export default function Lernen({
   // Bildaufgaben bleibt sie in der linken Spalte neben der Zeichnung.
   const antwortBlock = aufgedeckt && (
       <div className="antwort">
-        {item.pruefpunkte && <Pruefliste key={item.id} punkte={item.pruefpunkte} />}
+        {item.pruefpunkte && (
+          <Pruefliste key={item.id} punkte={item.pruefpunkte} gehakt={gehakt} setGehakt={setGehakt} />
+        )}
         <p className="antworttext">{item.antwort}</p>
-        {item.vertiefung && vertiefungZeigen && (
+        {/* Vertiefung (L2): "zeigen" (true), "einklappen" (erst selbst
+            ueberlegen, warum - Elaboration) oder aus (false). */}
+        {item.vertiefung && vertiefungZeigen === 'einklappen' && !warumOffen && (
+          <button className="warumKnopf" onClick={() => setWarumOffen(true)}>
+            <strong>Warum ist das so?</strong> Erst selbst überlegen, dann aufklappen
+            <span className="taste">W</span>
+          </button>
+        )}
+        {item.vertiefung && (vertiefungZeigen === true || (vertiefungZeigen === 'einklappen' && warumOffen)) && (
           <p className="vertiefung">{item.vertiefung}</p>
         )}
         {item.bild && (
@@ -300,10 +355,15 @@ export default function Lernen({
         {letzteXp > 0 && art !== 'blaettern' && <span className="xpFlug">+{letzteXp} XP</span>}
       </header>
 
+      {einfuehrungAktiv ? (
+        <Einfuehrung thema={thema} onWeiter={einfuehrungFertig} />
+      ) : (
+      <>
       <div className={zweispaltig ? 'lernRaster' : 'lernRaster einspurig'}>
         <article className="karteninhalt">
           <p className="herkunft">
-            {istNeu && <span className="neuMarke">Neu</span>}
+            {art === 'vorab' && <span className="neuMarke">Erst raten · zählt nicht</span>}
+            {istNeu && art !== 'vorab' && <span className="neuMarke">Neu</span>}
             {istProblem && <span className="problemMarke">Problemkarte</span>}
             {item.modulTitel} · {item.themaTitel}
             {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
@@ -318,7 +378,7 @@ export default function Lernen({
 
           {/* Erklaerung: bei neuen Karten vorab, sonst nach dem Aufdecken -
               gerade nach einem Fehler hilft das Nachlesen am meisten (7A). */}
-          {(istNeu || aufgedeckt || zweiterVersuch) && thema?.erklaerung && (
+          {art !== 'vorab' && (istNeu || aufgedeckt || zweiterVersuch) && thema?.erklaerung && (
             <div className="erklaerkasten">
               <button className="textknopf" onClick={() => setErklaerungOffen((o) => !o)}>
                 {erklaerungOffen ? 'Erklärung ausblenden' : 'Erklärung zum Thema zeigen'}
@@ -331,6 +391,26 @@ export default function Lernen({
                   {thema.erklaerung.merksatz && (
                     <p className="merksatz">{thema.erklaerung.merksatz}</p>
                   )}
+                  {/* Bild der Erklaerung als eigener Aufklapper (D2): die
+                      Zeichnung erklaert oft mehr als der Text. */}
+                  {thema.erklaerung.bild && (
+                    <div className="erklaerbild">
+                      <button className="textknopf" onClick={() => setErklaerbildOffen((o) => !o)}>
+                        {erklaerbildOffen ? 'Zeichnung ausblenden' : 'Zeichnung zur Erklärung zeigen'}
+                      </button>
+                      {erklaerbildOffen && (
+                        <figure style={{ margin: '0.5rem 0 0' }}>
+                          <Bildlupe src={thema.erklaerung.bild} alt={thema.erklaerung.bildunterschrift ?? ''} />
+                          {thema.erklaerung.bildunterschrift && (
+                            <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
+                              {thema.erklaerung.bildunterschrift}
+                            </figcaption>
+                          )}
+                        </figure>
+                      )}
+                    </div>
+                  )}
+                  {thema.erklaerung.quelle && <p className="quelle">{quelleText(thema.erklaerung.quelle)}</p>}
                 </div>
               )}
             </div>
@@ -520,10 +600,21 @@ export default function Lernen({
               </button>
             )}
           </div>
-        ) : art === 'blaettern' ? (
-          <button className="knopf haupt" onClick={() => bewerten(BEWERTUNG.GUT)}>
-            Weiter <span className="taste">Leertaste</span>
-          </button>
+        ) : art === 'blaettern' || art === 'vorab' ? (
+          <>
+            {art === 'vorab' && (
+              <p className={urteil ? `urteilZeile ${urteil}` : 'urteilZeile'}>
+                {urteil === 'richtig'
+                  ? 'Richtig geraten.'
+                  : urteil === 'falsch'
+                    ? 'Daneben – macht nichts: Wer vorher rät, behält die Erklärung danach besser.'
+                    : 'Vorab-Frage – zählt nicht für die Planung.'}
+              </p>
+            )}
+            <button className="knopf haupt" onClick={() => bewerten(BEWERTUNG.GUT)}>
+              {art === 'vorab' && position + 1 >= gesamt ? 'Zur Erklärung' : 'Weiter'} <span className="taste">Leertaste</span>
+            </button>
+          </>
         ) : (
           <>
             {urteil && (
@@ -542,9 +633,16 @@ export default function Lernen({
                 Heute schon bewertet – diese Antwort ändert die Planung nicht mehr.
               </p>
             )}
+            {pruefpunkte.length > 0 && (
+              <p className="urteilZeile">
+                {gutGesperrt
+                  ? `Prüfpunkte: ${gehakt.length} von ${pruefpunkte.length} abgehakt – „Gut“ gibt es erst, wenn alle sitzen.`
+                  : 'Alle Prüfpunkte abgehakt – „Gut“ vorgeschlagen.'}
+              </p>
+            )}
             <div className="bewertung">
               <button
-                className={urteil === 'falsch' ? 'knopf vorschlag' : 'knopf'}
+                className={vorschlag === BEWERTUNG.NOCHMAL ? 'knopf vorschlag' : 'knopf'}
                 onClick={() => bewerten(BEWERTUNG.NOCHMAL)}
               >
                 <span className="bewertungZeile">Nochmal <span className="taste">1</span></span>
@@ -552,14 +650,19 @@ export default function Lernen({
                 {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.NOCHMAL])}</small>}
               </button>
               {stufen === 4 && (
-                <button className="knopf" onClick={() => bewerten(BEWERTUNG.SCHWER)}>
+                <button
+                  className={vorschlag === BEWERTUNG.SCHWER ? 'knopf vorschlag' : 'knopf'}
+                  onClick={() => bewerten(BEWERTUNG.SCHWER)}
+                >
                   <span className="bewertungZeile">Schwer <span className="taste">2</span></span>
                   <small className="bewertungBedeutung">mit Mühe</small>
                   {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.SCHWER])}</small>}
                 </button>
               )}
               <button
-                className={urteil === 'richtig' ? 'knopf vorschlag' : 'knopf'}
+                className={vorschlag === BEWERTUNG.GUT ? 'knopf vorschlag' : 'knopf'}
+                disabled={gutGesperrt}
+                title={gutGesperrt ? 'Erst alle Prüfpunkte abhaken' : undefined}
                 onClick={() => bewerten(BEWERTUNG.GUT)}
               >
                 <span className="bewertungZeile">Gut <span className="taste">{stufen === 4 ? '3' : '2'}</span></span>
@@ -567,7 +670,12 @@ export default function Lernen({
                 {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.GUT])}</small>}
               </button>
               {stufen === 4 && (
-                <button className="knopf" onClick={() => bewerten(BEWERTUNG.LEICHT)}>
+                <button
+                  className="knopf"
+                  disabled={gutGesperrt}
+                  title={gutGesperrt ? 'Erst alle Prüfpunkte abhaken' : undefined}
+                  onClick={() => bewerten(BEWERTUNG.LEICHT)}
+                >
                   <span className="bewertungZeile">Leicht <span className="taste">4</span></span>
                   <small className="bewertungBedeutung">sofort gewusst</small>
                   {intervalle && <small className="intervallHinweis">{intervallKurz(intervalle[BEWERTUNG.LEICHT])}</small>}
@@ -576,6 +684,52 @@ export default function Lernen({
             </div>
           </>
         )}
+      </div>
+      </>
+      )}
+    </div>
+  )
+}
+
+// Einfuehrungsschritt (D4, 2026-10-13): vor der ersten neuen Karte eines
+// Themas, das noch nie geuebt wurde, steht die Erklaerung einmal ganz -
+// erst verstehen, dann abfragen. Danach ist sie in den Karten zugeklappt.
+function Einfuehrung({ thema, onWeiter }) {
+  const e = thema.erklaerung
+  return (
+    <div className="einfuehrung">
+      <p className="herkunft">
+        <span className="neuMarke">Neues Thema</span>
+        {thema.modulTitel}
+      </p>
+      <h1 className="ueberschrift">{thema.titel}</h1>
+      {thema.lernziele?.length > 0 && (
+        <section className="lernziele">
+          <h2 className="abschnitt">Lernziele</h2>
+          <ul>
+            {thema.lernziele.map((z, i) => <li key={i}>{z}</li>)}
+          </ul>
+        </section>
+      )}
+      <div className="erklaerung">
+        <div className="erklaerungText">
+          {(e.absaetze ?? []).map((a, i) => <p key={i} className="erklaerungAbsatz">{a}</p>)}
+          {e.merksatz && <p className="merksatz">{e.merksatz}</p>}
+        </div>
+        {(e.bild || thema.bild) && (
+          <figure style={{ margin: 0 }}>
+            <Bildlupe src={e.bild ?? thema.bild} alt={e.bildunterschrift ?? ''} />
+            {e.bildunterschrift && (
+              <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>{e.bildunterschrift}</figcaption>
+            )}
+          </figure>
+        )}
+      </div>
+      {e.quelle && <p className="quelle">{quelleText(e.quelle)}</p>}
+      <div className="steuerung">
+        <button className="knopf haupt" onClick={onWeiter}>
+          Zur ersten Karte <span className="taste">Leertaste</span>
+        </button>
       </div>
     </div>
   )
@@ -643,8 +797,7 @@ function BildListe({ item, wert, setWert, gesperrt, namen, reihenfolge }) {
   )
 }
 
-function Pruefliste({ punkte }) {
-  const [gehakt, setGehakt] = useState([])
+function Pruefliste({ punkte, gehakt, setGehakt }) {
   return (
     <>
       <ul className="pruefpunkte">
@@ -715,12 +868,11 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
         {reihe.map((i) => {
           const aktiv = gewaehlt.includes(i)
           const richtig = item.richtig.includes(i)
-          const klasse = [
-            'option',
-            aktiv ? 'aktiv' : '',
-            gesperrt && richtig ? 'richtig' : '',
-            gesperrt && aktiv && !richtig ? 'falsch' : '',
-          ].join(' ')
+          // Nach dem Aufdecken drei Zustaende (D3, 2026-10-13): richtig
+          // gewaehlt, richtig aber uebersehen, falsch gewaehlt - frueher sahen
+          // die ersten beiden gleich aus.
+          const zustand = !gesperrt ? null : richtig ? (aktiv ? 'richtig' : 'uebersehen') : aktiv ? 'falsch' : null
+          const klasse = ['option', aktiv ? 'aktiv' : '', zustand ?? ''].join(' ')
           return (
             <li key={i}>
               <button
@@ -728,7 +880,13 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
                 disabled={gesperrt}
                 onClick={() => setWert(aktiv ? gewaehlt.filter((g) => g !== i) : [...gewaehlt, i])}
               >
+                {zustand && (
+                  <span className="optionZeichen" aria-hidden="true">
+                    {zustand === 'richtig' ? '✓︎' : zustand === 'falsch' ? '✗︎' : '○︎'}
+                  </span>
+                )}
                 {item.optionen[i]}
+                {zustand === 'uebersehen' && <span className="optionMarke">übersehen</span>}
                 {/* Begruendung je Option (Feld "warum", 21A) - erst nach dem
                     Aufdecken, sonst verraete sie die Loesung. */}
                 {gesperrt && item.warum?.[i] && <span className="optionWarum">{item.warum[i]}</span>}
@@ -736,6 +894,7 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
             </li>
           )
         })}
+        {gesperrt && <Trefferzeile item={item} gewaehlt={gewaehlt} />}
       </ul>
     )
   }
@@ -801,11 +960,15 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
             gesperrt && gewaehlt && !richtig ? 'falsch' : '',
           ].join(' ')
           return (
-            <button key={i} className={klasse} disabled={gesperrt} onClick={() => setWert(i)}>
-              <span className="vergleichTitel">{seite.titel}</span>
-              {seite.bild && <LokalBild src={seite.bild} alt="" />}
-              <span className="vergleichText">{seite.beschreibung}</span>
-            </button>
+            <div key={i} className="vergleichSpalte">
+              <button className={klasse} disabled={gesperrt} onClick={() => setWert(i)}>
+                <span className="vergleichTitel">{seite.titel}</span>
+                {seite.bild && <LokalBild src={seite.bild} alt="" />}
+                <span className="vergleichText">{seite.beschreibung}</span>
+              </button>
+              {/* Die Bilder stecken im Auswahlknopf - Lupe daher daneben (D1) */}
+              {seite.bild && <LupenLink src={seite.bild} alt={seite.titel ?? ''} />}
+            </div>
           )
         })}
       </div>
@@ -859,31 +1022,60 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
   }
 
   if (item.typ === 'reihenfolge') {
-    const reihe = wert ?? mischen(item.schritte.length, seed + 3)
-    function schieben(von, nach) {
-      if (nach < 0 || nach >= reihe.length) return
-      const neu = [...reihe]
-      ;[neu[von], neu[nach]] = [neu[nach], neu[von]]
-      setWert(neu)
-    }
+    // Antippen zum Einsortieren (D7, 2026-10-13): die Schritte in der
+    // richtigen Reihenfolge antippen, sie wandern nach oben; ein Tipp auf
+    // einen eingeordneten Schritt nimmt ihn (und alles danach) zurueck.
+    // Frueher nur Pfeile - bei 6-8 Schritten viele Tipper am Handy.
+    const gewaehlt = wert ?? []
+    const vorrat = mischen(item.schritte.length, seed + 3).filter((i) => !gewaehlt.includes(i))
+    const anzeige = gesperrt ? [...gewaehlt, ...vorrat] : gewaehlt
     return (
-      <ol className="reihenfolge">
-        {reihe.map((index, platz) => {
-          const richtig = gesperrt && index === platz
-          return (
-            <li key={index} className={gesperrt ? (richtig ? 'richtig' : 'falsch') : ''}>
-              <span className="reihenNr">{platz + 1}</span>
-              <span className="reihenText">{item.schritte[index]}</span>
-              {!gesperrt && (
-                <span className="reihenPfeile">
-                  <button className="artKnopf" onClick={() => schieben(platz, platz - 1)}>↑</button>
-                  <button className="artKnopf" onClick={() => schieben(platz, platz + 1)}>↓</button>
-                </span>
-              )}
-            </li>
-          )
-        })}
-      </ol>
+      <div className="reihenAuswahl">
+        {anzeige.length > 0 && (
+          <ol className="reihenfolge">
+            {anzeige.map((index, platz) => {
+              const richtig = gesperrt && index === platz
+              const ungesetzt = gesperrt && platz >= gewaehlt.length
+              return (
+                <li key={index} className={gesperrt ? (richtig ? 'richtig' : 'falsch') : ''}>
+                  <span className="reihenNr">{platz + 1}</span>
+                  {gesperrt ? (
+                    <span className="reihenText">
+                      {item.schritte[index]}
+                      {ungesetzt && <span className="zuordnungDaneben"> (nicht eingeordnet)</span>}
+                      {!richtig && <span className="zuordnungDaneben"> – richtig: {item.schritte[platz]}</span>}
+                    </span>
+                  ) : (
+                    <button
+                      className="reihenText reihenZurueck"
+                      title="Zurücknehmen"
+                      onClick={() => setWert(gewaehlt.slice(0, platz))}
+                    >
+                      {item.schritte[index]}
+                    </button>
+                  )}
+                </li>
+              )
+            })}
+          </ol>
+        )}
+        {!gesperrt && vorrat.length > 0 && (
+          <>
+            <p className="zeileHinweis">
+              {gewaehlt.length === 0 ? 'Tippe die Schritte in der richtigen Reihenfolge an.' : `Noch ${vorrat.length} einordnen – Tipp auf einen eingeordneten Schritt nimmt ihn zurück.`}
+            </p>
+            <ul className="reihenVorrat">
+              {vorrat.map((index) => (
+                <li key={index}>
+                  <button className="option" onClick={() => setWert([...gewaehlt, index])}>
+                    {item.schritte[index]}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
     )
   }
 
@@ -920,4 +1112,16 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
   }
 
   return null
+}
+
+// Trefferzeile zur Mehrfachauswahl (D3): wie viele der richtigen Optionen
+// gewaehlt, wie viele falsche zu viel.
+function Trefferzeile({ item, gewaehlt }) {
+  const richtig = new Set(item.richtig)
+  const getroffen = gewaehlt.filter((g) => richtig.has(g)).length
+  const zuViel = gewaehlt.filter((g) => !richtig.has(g)).length
+  const teile = [`${getroffen} von ${richtig.size} richtigen gewählt`]
+  if (richtig.size - getroffen > 0) teile.push(`${richtig.size - getroffen} übersehen`)
+  if (zuViel > 0) teile.push(`${zuViel} zu viel`)
+  return <li className="trefferZeile">{teile.join(' · ')}</li>
 }

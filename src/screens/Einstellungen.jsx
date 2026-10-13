@@ -461,11 +461,14 @@ export default function Einstellungen({
           <div className="zeile">
             <div className="zeileText">
               <p className="zeileTitel">Vertiefung anzeigen</p>
-              <p className="zeileHinweis">Der zusätzliche Absatz unter der Antwort.</p>
+              <p className="zeileHinweis">
+                Der zusätzliche Absatz unter der Antwort. „Erst überlegen“ klappt ihn zu: Erst selbst
+                überlegen, warum es so ist, dann aufklappen (Taste W) – das Erklären-Müssen festigt.
+              </p>
             </div>
             <Wahl
               wert={werte.vertiefungZeigen}
-              optionen={[[true, 'An'], [false, 'Aus']]}
+              optionen={[[true, 'Zeigen'], ['einklappen', 'Erst überlegen'], [false, 'Aus']]}
               onWahl={(w) => aendern('vertiefungZeigen', w)}
             />
           </div>
