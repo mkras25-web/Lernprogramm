@@ -1,5 +1,6 @@
 import LokalBild from './LokalBild.jsx'
 import SieheAuch from './SieheAuch.jsx'
+import { quelleText } from '../lib/quelle.js'
 
 export default function Erklaerstueck({ thema, themen, anzahlHeute, onLernen, onUeben, onZurueck, onThema }) {
   const e = thema.erklaerung
@@ -46,7 +47,7 @@ export default function Erklaerstueck({ thema, themen, anzahlHeute, onLernen, on
         )}
       </div>
 
-      {e?.quelle && <p className="quelle">{e.quelle}</p>}
+      {e?.quelle && <p className="quelle">{quelleText(e.quelle)}</p>}
 
       <SieheAuch ids={thema.siehe} themen={themen} onOeffnen={onThema} />
 

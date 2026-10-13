@@ -7,6 +7,8 @@
 // Gruppiert nach Thema, je Karte mit Id, Typ, Quelle und Originaltext -
 // der Chat findet damit die Stelle in der Itemdatei ohne Rueckfrage.
 
+import { quelleText } from './quelle.js'
+
 export const MELDEGRUENDE = [
   ['falsch', 'Inhaltlich falsch'],
   ['unklar', 'Unklar formuliert'],
@@ -104,7 +106,7 @@ export function meldungenMarkdown({ eintraege, paket, datum = new Date() }) {
       zeilen.push(`### \`${item.id}\` · ${item.typ}`, '')
       for (const g of gruende) zeilen.push(`- ${g.text}`)
       zeilen.push('', `**Frage:** ${item.frage}`, '', `**Antwort:** ${item.antwort ?? '–'}`)
-      if (item.quelle) zeilen.push('', `**Quelle:** ${item.quelle}`)
+      if (item.quelle) zeilen.push('', `**Quelle:** ${quelleText(item.quelle)}`)
       if (marke.frage || marke.antwort) {
         zeilen.push('', '**Eigene Fassung:**')
         if (marke.frage) zeilen.push(`- Frage: ${marke.frage}`)

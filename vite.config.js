@@ -89,7 +89,13 @@ export default defineConfig({
         ],
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}'],
+        // Paket-JSON (Gliederung, Items, Normen, Kennwerte) gehoert seit
+        // 2026-10-13 in die Precache-Liste (T2): Alle Pakete sind nach dem
+        // ersten Start offline da - auch eines, das auf diesem Geraet nie
+        // geoeffnet wurde -, und neuer Inhalt kommt zusammen mit dem Code
+        // ueber den Hinweis "Neue Version" statt still beim zweiten Laden.
+        // Zusammen nur rund 0,8 MB.
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,webmanifest}', 'pakete/**/*.json'],
         // Zweite Sicherung neben dem Loeschen oben: Buchausschnitte nie in
         // die Precache-Liste (die verteilt sie sonst auf jedes Geraet).
         globIgnores: ['**/bilder-lokal/**'],

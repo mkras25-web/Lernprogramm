@@ -27,14 +27,50 @@ const PRUEFUNGEN = 'pruefungen'
 let aktuellesProfil = null
 let dbPromise = null
 
+// Sperre fuer Arbeiten, die an EIN Profil gebunden sind (Abgleich:
+// importieren/exportieren). Ein Profilwechsel wartet, bis sie fertig sind,
+// und eine solche Arbeit bricht ab, wenn inzwischen ein anderes Profil
+// aktiv ist - sonst landeten beim Wechsel waehrend des Dropbox-Abgleichs
+// die Daten von Profil A in der Datenbank von B (und von dort in Dropbox).
+let sperre = Promise.resolve()
+
+function exklusiv(arbeit) {
+  const lauf = sperre.then(arbeit, arbeit)
+  sperre = lauf.catch(() => {})
+  return lauf
+}
+
+export class ProfilGewechselt extends Error {
+  constructor() {
+    super('Das Profil wurde gewechselt – der Abgleich wurde abgebrochen.')
+    this.name = 'ProfilGewechselt'
+  }
+}
+
+export function aktivesProfil() {
+  return aktuellesProfil
+}
+
+// Fuehrt arbeit() exklusiv aus, aber nur, wenn profilId noch das aktive
+// Profil ist - sonst ProfilGewechselt.
+export function mitProfil(profilId, arbeit) {
+  return exklusiv(() => {
+    if (profilId !== aktuellesProfil) throw new ProfilGewechselt()
+    return arbeit()
+  })
+}
+
 // Muss aufgerufen werden, bevor irgendeine andere Funktion dieser
 // Datei benutzt wird - legt fest, welches Profil (und damit welche
 // Datenbank) gerade aktiv ist. Ein Wechsel schliesst die alte
-// Verbindung und oeffnet die naechste erst bei Bedarf neu.
-export async function datenbankFuerProfilSetzen(profilId) {
-  if (profilId === aktuellesProfil) return
-  await datenbankSchliessen()
-  aktuellesProfil = profilId
+// Verbindung und oeffnet die naechste erst bei Bedarf neu. Laeuft gerade
+// eine profilgebundene Arbeit (mitProfil), wird vorher ihr Ende abgewartet.
+export function datenbankFuerProfilSetzen(profilId) {
+  return exklusiv(async () => {
+    if (profilId === aktuellesProfil) return
+    await datenbankSchliessen()
+    aktuellesProfil = profilId
+  })
 }
 
 export async function datenbankSchliessen() {

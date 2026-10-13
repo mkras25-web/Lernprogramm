@@ -4,6 +4,7 @@ import Bildpunkte from './Bildpunkte.jsx'
 import Normen from './Normen.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { punkteFuer } from '../lib/punkte.js'
+import { quelleText } from '../lib/quelle.js'
 
 // Zeigt ein Item vollständig aufgedeckt - so, wie es im Lernmodus nach
 // dem Aufdecken aussieht, aber ohne Bewertung und ohne Folgen für den
@@ -53,7 +54,7 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
             )}
           </figure>
         )}
-        <p className="quelle">{item.quelle}</p>
+        <p className="quelle">{quelleText(item.quelle)}</p>
         {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
         <Normen item={item} glossar={glossar} />
       </div>

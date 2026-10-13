@@ -15,6 +15,7 @@ import { BEWERTUNG, intervallKurz } from '../lib/planer.js'
 import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
 import { mischen } from '../lib/mischen.js'
 import { paarRichtig, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
+import { quelleText } from '../lib/quelle.js'
 
 
 export default function Lernen({
@@ -261,7 +262,7 @@ export default function Lernen({
             )}
           </figure>
         )}
-        <p className="quelle">{item.quelle}</p>
+        <p className="quelle">{quelleText(item.quelle)}</p>
         {item.pruefhinweis && <p className="pruefhinweis">{item.pruefhinweis}</p>}
         <Normen item={item} glossar={glossar} />
         <SieheAuch ids={item.siehe} themen={themen} />

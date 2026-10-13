@@ -1,6 +1,8 @@
 // Lernzettel je Thema (Entscheidung 30A): Lernziele, Merksatz und alle
 // Karten mit Antwort, Quelle und eigener Notiz kompakt untereinander - zum
 // Ausdrucken oder als PDF sichern (Druckdialog des Browsers).
+
+import { quelleText } from '../lib/quelle.js'
 export default function Lernzettel({ thema, items, marken, onZurueck }) {
   const eigene = items.filter((i) => i.themaId === thema.id)
   const e = thema.erklaerung
@@ -40,7 +42,7 @@ export default function Lernzettel({ thema, items, marken, onZurueck }) {
               )}
               {item.vertiefung && <p className="zettelVertiefung">{item.vertiefung}</p>}
               {notiz && <p className="zettelNotiz">Notiz: {notiz}</p>}
-              <p className="quelle">{item.quelle}</p>
+              <p className="quelle">{quelleText(item.quelle)}</p>
             </li>
           )
         })}

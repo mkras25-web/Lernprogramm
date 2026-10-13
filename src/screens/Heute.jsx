@@ -8,7 +8,7 @@ import { tageBis } from '../lib/kurs.js'
 export default function Heute({
   level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, zeichenAus = false, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
-  aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern,
+  aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern, speicherGeschuetzt = null,
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
   kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten,
   nichtGewusst = [], onOeffnen,
@@ -149,8 +149,9 @@ export default function Heute({
               <div>
                 <p className="aufrufZahl">Fortschritt sichern</p>
                 <p className="nebentext">
-                  Deine Daten liegen nur in diesem Browserprofil. Die letzte Sicherung ist
-                  über einen Monat her oder es gab noch keine.
+                  {speicherGeschuetzt === false
+                    ? 'Deine Daten liegen nur in diesem Browser, und er hat den Speicher nicht als dauerhaft markiert – er darf ihn bei Platzmangel oder nach längerer Pause selbst löschen. Die letzte Sicherung ist über eine Woche her oder es gab noch keine.'
+                    : 'Deine Daten liegen nur in diesem Browserprofil. Die letzte Sicherung ist über einen Monat her oder es gab noch keine.'}
                 </p>
               </div>
               <button className="knopf schmal" onClick={onSichern}>Jetzt sichern</button>

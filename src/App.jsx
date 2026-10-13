@@ -7,6 +7,7 @@ import { useTastaturNavigation } from './hooks/useTastaturNavigation.js'
 import { useAbgleich } from './hooks/useAbgleich.js'
 import { useKennzahlen } from './hooks/useKennzahlen.js'
 import { paketLaden, paketeLaden } from './lib/paket.js'
+import { dropboxMoeglich, istVerbunden } from './lib/dropbox.js'
 import {
   allesLoeschen,
   alleEreignisse,
@@ -55,6 +56,7 @@ import MeinHeft from './screens/MeinHeft.jsx'
 import Fehlerbuch from './screens/Fehlerbuch.jsx'
 import Lernzettel from './screens/Lernzettel.jsx'
 import Erklaerstueck from './components/Erklaerstueck.jsx'
+import { KartenGrenze } from './components/Fehlergrenze.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 
 export default function App({ profilId, onProfilWechseln }) {
@@ -76,11 +78,15 @@ export default function App({ profilId, onProfilWechseln }) {
   // Meldung nach einem neuen Paketstand.
   const [paketInfo, setPaketInfo] = useState(null)
   const [paketliste, setPaketliste] = useState([])
+  // Kennwerte-Tabellenbuch des Pakets (F3)
+  const [kennwerte, setKennwerte] = useState([])
   const [pruefungen, setPruefungen] = useState([])
   const [ereignisse, setEreignisse] = useState([])
   const [skizzen, setSkizzen] = useState([])
   const [marken, setMarken] = useState(new Map())
   const [fehler, setFehler] = useState(null)
+  // Zaehler fuer "Erneut versuchen" nach einem Ladefehler (B2, 2026-10-13).
+  const [ladeVersuch, setLadeVersuch] = useState(0)
   const [laedt, setLaedt] = useState(true)
   const [meldung, setMeldung] = useState(null)
   const [importFrage, setImportFrage] = useState(null)
@@ -145,8 +151,11 @@ export default function App({ profilId, onProfilWechseln }) {
   const stufeVorher = useRef(null)
   const meilensteineVorher = useRef(null)
 
+  // Ergebnis von navigator.storage.persist() (T3): ohne Schutz darf der
+  // Browser die Daten loeschen (Safari nach 7 Tagen ohne Nutzung).
+  const [speicherGeschuetzt, setSpeicherGeschuetzt] = useState(null)
   useEffect(() => {
-    speicherSichern()
+    speicherSichern().then((ja) => setSpeicherGeschuetzt(Boolean(ja)), () => setSpeicherGeschuetzt(false))
     paketeLaden().then(setPaketliste)
   }, [])
 
@@ -154,6 +163,7 @@ export default function App({ profilId, onProfilWechseln }) {
   // Ereignisse an Item-IDs haengen, nicht an der Auswahl.
   useEffect(() => {
     setLaedt(true)
+    setFehler(null)
     Promise.all([
       paketLaden(opt.aktivesPaket),
       alleEreignisse(),
@@ -170,6 +180,15 @@ export default function App({ profilId, onProfilWechseln }) {
         setPhasen(paketDaten.phasen ?? {})
         setGestaltung(paketDaten.paket?.gestaltung ?? 'arch')
         setPaketInfo(paketDaten.paket ? { id: paketDaten.paket.id, titel: paketDaten.paket.titel, version: paketDaten.paket.version } : null)
+        setKennwerte(paketDaten.kennwerte ?? [])
+        // Ausgelassene, nicht darstellbare Karten (T4) einmal melden.
+        if (paketDaten.defekt?.length) {
+          const ids = paketDaten.defekt.map((d) => `${d.id} (${d.grund})`)
+          setMeldung({
+            art: 'fehler',
+            text: `${ids.length} Karte(n) ausgelassen, weil die Itemdatei fehlerhaft ist: ${ids.slice(0, 4).join(', ')}${ids.length > 4 ? ' …' : ''}`,
+          })
+        }
         setEreignisse(gespeicherte)
         setSkizzen(gespeicherteSkizzen)
         setMarken(new Map(gespeicherteMarken.map((m) => [m.itemId, m])))
@@ -177,7 +196,7 @@ export default function App({ profilId, onProfilWechseln }) {
       })
       .catch((e) => setFehler(e.message))
       .finally(() => setLaedt(false))
-  }, [opt.aktivesPaket])
+  }, [opt.aktivesPaket, ladeVersuch])
 
   useEffect(() => {
     anwenden(opt)
@@ -216,7 +235,10 @@ export default function App({ profilId, onProfilWechseln }) {
     neueItems,
     pruefungHinweis,
     sicherungFaellig,
-  } = useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung })
+  } = useKennzahlen({
+    rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung,
+    speicherGeschuetzt, dropboxVerbunden: dropboxMoeglich() && istVerbunden(),
+  })
 
   // Heute nicht gewusst (Heute-Bildschirm): zum ruhigen Durchlesen.
   const nichtGewusst = useMemo(() => {
@@ -549,18 +571,23 @@ export default function App({ profilId, onProfilWechseln }) {
 
   async function importTexte(texte) {
     try {
-      const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0 }
+      const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, kursplan: 0, geloescht: 0 }
       for (const text of texte) {
         const teil = await importieren(text)
-        for (const k of Object.keys(bericht)) bericht[k] += teil[k]
+        for (const k of Object.keys(bericht)) bericht[k] += teil[k] ?? 0
       }
       await zustandNeuLesen()
-      setMeldung({
-        art: 'erfolg',
-        text:
-          `Übernommen: ${bericht.ereignisse} Ereignisse, ${bericht.skizzen} Skizzen, ` +
-          `${bericht.marken} Marken, ${bericht.pruefungen} Prüfungen.`,
-      })
+      // Kursplan und Loeschungen gehoeren mit in die Meldung - sonst hiess
+      // es "Übernommen: 0 …", obwohl sich etwas geaendert hatte (B3).
+      const teile = [
+        `${bericht.ereignisse} Ereignisse`,
+        `${bericht.skizzen} Skizzen`,
+        `${bericht.marken} Marken`,
+        `${bericht.pruefungen} Prüfungen`,
+      ]
+      if (bericht.kursplan) teile.push(`${bericht.kursplan} Kurs-/Klausureinträge`)
+      if (bericht.geloescht) teile.push(`${bericht.geloescht} Löschungen angewandt`)
+      setMeldung({ art: 'erfolg', text: `Übernommen: ${teile.join(', ')}.` })
     } catch (e) {
       setMeldung({ art: 'fehler', text: `Import nicht möglich: ${e.message}` })
     }
@@ -598,10 +625,39 @@ export default function App({ profilId, onProfilWechseln }) {
   }
 
   if (fehler) {
+    // Keine Sackgasse (B2): Das gewaehlte Paket bleibt gespeichert, ohne
+    // Ausweg landete man nach jedem Neustart wieder hier - etwa offline mit
+    // einem Paket, das auf diesem Geraet noch nie geladen wurde.
+    const andere = (paketliste ?? []).filter((p) => p.id !== opt.aktivesPaket)
     return (
       <div className="huelle einspaltig">
-        <h1 className="ueberschrift">Inhalt fehlt</h1>
-        <p className="nebentext">{fehler}</p>
+        <div className="schirm">
+          <h1 className="ueberschrift">Inhalt fehlt</h1>
+          <p className="nebentext">{fehler}</p>
+          <p className="nebentext">
+            Ohne Internet lassen sich nur Pakete öffnen, die auf diesem Gerät schon einmal geladen
+            wurden. Dein Fortschritt ist nicht betroffen.
+          </p>
+          <div className="wahl">
+            <button className="knopf schmal" onClick={() => setLadeVersuch((n) => n + 1)}>
+              Erneut versuchen
+            </button>
+            {andere.map((p) => (
+              <button
+                key={p.id}
+                className="knopf schmal"
+                onClick={() => setOpt((o) => ({ ...o, aktivesPaket: p.id }))}
+              >
+                Zu „{p.titel ?? p.id}“ wechseln
+              </button>
+            ))}
+            {onProfilWechseln && (
+              <button className="knopf schmal" onClick={onProfilWechseln}>
+                Profil wechseln
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     )
   }
@@ -610,6 +666,7 @@ export default function App({ profilId, onProfilWechseln }) {
     const item = sitzung.pensum[position]
     return (
       <div className="huelle einspaltig">
+        <KartenGrenze key={item.id} kennung={item.id} onWeiter={() => weiter()} onZurueck={verlassen}>
         <Lernen
           item={item}
           level={level}
@@ -656,6 +713,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onRueckgaengig={rueckgaengig}
           onZurueck={verlassen}
         />
+        </KartenGrenze>
       </div>
     )
   }
@@ -786,6 +844,7 @@ export default function App({ profilId, onProfilWechseln }) {
           pruefungHinweis={pruefungHinweis}
           onPruefung={() => setAnsicht('pruefung')}
           sicherungFaellig={sicherungFaellig}
+          speicherGeschuetzt={speicherGeschuetzt}
           onSichern={() => exportKlick(false)}
           offenePruefung={offenePruefung}
           onPruefungFortsetzen={() => setAnsicht('pruefung')}
@@ -947,6 +1006,7 @@ export default function App({ profilId, onProfilWechseln }) {
           anzahlSkizzen={skizzen.length}
           paketliste={paketliste}
           letzteSicherung={opt.letzteSicherung}
+          speicherGeschuetzt={speicherGeschuetzt}
           onExport={exportKlick}
           onExportCsv={csvExportKlick}
           anzahlMeldungen={meldeliste.length}

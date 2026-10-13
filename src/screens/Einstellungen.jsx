@@ -33,7 +33,7 @@ function useSpeicherSchaetzung() {
 }
 
 export default function Einstellungen({
-  werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung,
+  werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung, speicherGeschuetzt = null,
   onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
   kursplan = { kurse: [], klausuren: [] }, kursplanAendern, kennungen = new Map(),
 }) {
@@ -485,6 +485,13 @@ export default function Einstellungen({
                   ? ` Zuletzt gesichert am ${new Date(letzteSicherung).toLocaleDateString('de-DE')}.`
                   : ' Noch nie gesichert.'}
               </p>
+              {speicherGeschuetzt !== null && (
+                <p className="zeileHinweis">
+                  {speicherGeschuetzt
+                    ? 'Speicherschutz: aktiv – der Browser löscht die Daten nicht von selbst.'
+                    : 'Speicherschutz: nicht aktiv – der Browser darf die Daten bei Platzmangel oder nach längerer Pause löschen. Abhilfe: die App installieren (Zum Home-Bildschirm) oder regelmäßig sichern bzw. Dropbox verbinden.'}
+                </p>
+              )}
             </div>
             <div className="wahl">
               <button className="knopf schmal" onClick={() => onExport(true)}>Sichern</button>

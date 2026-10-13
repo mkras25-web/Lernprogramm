@@ -33,7 +33,10 @@ function themenFortschritt0(items, zustaende) {
 // Alle aus Paket, Ereignissen und Einstellungen abgeleiteten Werte - aus
 // App.jsx herausgeloest (52B, 2026-10-10), Rechnungen unveraendert. Nur
 // useMemo, keine Effekte (die Feier-/Meldungs-Effekte bleiben in App).
-export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung }) {
+export function useKennzahlen({
+  rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung,
+  speicherGeschuetzt = null, dropboxVerbunden = false,
+}) {
   // Bearbeitete Fassungen ueberlagern das Paket.
   const items = useMemo(() => itemsAnreichern(rohItems, marken), [rohItems, marken])
 
@@ -199,11 +202,17 @@ export function useKennzahlen({ rohItems, marken, ereignisse, pruefungen, skizze
     return null
   }, [pruefungen, themen, ohneZeichnen, zustaende])
 
+  // Mit Dropbox ist der Abgleich die Sicherung. Ohne Dropbox und ohne
+  // dauerhaften Speicher (T3) mahnt die App schon nach 7 Tagen und ab 10
+  // Antworten - der Browser darf die Daten dann selbst loeschen.
   const sicherungFaellig = useMemo(() => {
-    if (ereignisse.length < 50) return false
+    if (dropboxVerbunden) return false
+    const ungeschuetzt = speicherGeschuetzt === false
+    if (ereignisse.length < (ungeschuetzt ? 10 : 50)) return false
     if (!opt.letzteSicherung) return true
-    return Date.now() - opt.letzteSicherung > 30 * 24 * 60 * 60 * 1000
-  }, [ereignisse.length, opt.letzteSicherung])
+    const tage = ungeschuetzt ? 7 : 30
+    return Date.now() - opt.letzteSicherung > tage * 24 * 60 * 60 * 1000
+  }, [ereignisse.length, opt.letzteSicherung, speicherGeschuetzt, dropboxVerbunden])
 
   return {
     items,

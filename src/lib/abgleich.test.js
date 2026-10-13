@@ -219,6 +219,53 @@ describe('Marken mit gleichem Zeitstempel (Fehler bis 2026-10-12)', () => {
   })
 })
 
+describe('Profilwechsel waehrend des Abgleichs (B1, 2026-10-13)', () => {
+  const ANDERES = 'bbbbbbbb-1111-4222-8333-444444444444'
+
+  it('schreibt die Daten von Profil A nie in Profil B und laedt nichts von B als A hoch', async () => {
+    // PC hat drei Antworten in Profil A und gleicht ab.
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('a-1')
+    await antworten('a-2')
+    await antworten('a-3')
+    await abgleich('pc')
+
+    // Handy: Profil B hat eine eigene Antwort.
+    await geraetWaehlen('phone')
+    await datenbankFuerProfilSetzen(ANDERES)
+    await antworten('b-1')
+    // Profil A aktiv, Abgleich startet - und noch waehrend er laeuft wird
+    // auf B gewechselt (Tipp auf "Profil wechseln").
+    await datenbankFuerProfilSetzen(PROFIL)
+    const lauf = abgleichen({ profilId: PROFIL, profilName: 'Max' })
+    const wechsel = datenbankFuerProfilSetzen(ANDERES)
+    await expect(lauf).rejects.toThrow(/Profil wurde gewechselt/)
+    await wechsel
+
+    // B enthaelt nur seine eigene Antwort, und in Dropbox liegt keine
+    // Datei des Handys fuer Profil A mit Bs Daten.
+    const inB = await alleEreignisse()
+    expect(inB.map((e) => e.itemId)).toEqual(['b-1'])
+    for (const [name, d] of ordner) {
+      if (name.startsWith(`p-${PROFIL}-`)) expect(d.text).not.toContain('b-1')
+    }
+  })
+
+  it('ein Abgleich von Profil B bekommt nie das Ergebnis eines laufenden Abgleichs von A', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('a-1')
+    const laufA = abgleichen({ profilId: PROFIL, profilName: 'Max' })
+    const laufB = abgleichen({ profilId: ANDERES, profilName: 'Eva' })
+    // B ist nicht aktiv - darf scheitern, aber nie As Bericht liefern.
+    const ergebnisB = laufB.catch((e) => e)
+    expect(laufB).not.toBe(laufA)
+    await laufA
+    expect(await ergebnisB).toBeInstanceOf(Error)
+  })
+})
+
 describe('Abgleich ueber Dropbox', () => {
   it('bringt den Fortschritt von einem Geraet aufs andere und zurueck', async () => {
     await geraetWaehlen('pc')

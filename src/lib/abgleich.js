@@ -11,7 +11,7 @@
 //
 // Die Profil-Id ist die geraeteuebergreifende Identitaet (siehe profile.js).
 
-import { exportieren, geraeteKennung, importieren } from './speicher.js'
+import { exportieren, geraeteKennung, importieren, mitProfil } from './speicher.js'
 import * as dropbox from './dropbox.js'
 
 const DATEINAME = /^p-(.+)-([0-9a-f]{8})\.json$/
@@ -51,30 +51,38 @@ async function fingerabdruck(text) {
   return [...hash].map((b) => b.toString(16).padStart(2, '0')).join('')
 }
 
-let laufend = null
+// Laufender Abgleich je Profil - ein Aufruf fuer Profil B darf nie das
+// Ergebnis eines noch laufenden Abgleichs von Profil A bekommen.
+const laufend = new Map()
 
 // Holt neue Staende der anderen Geraete, vereinigt sie und schreibt bei
-// Aenderung die eigene Datei. Nie zwei Laeufe gleichzeitig. Gibt zurueck, was
-// uebernommen wurde (ereignisse/skizzen/marken/pruefungen/geloescht) und wie
-// viele fremde Dateien gelesen wurden.
+// Aenderung die eigene Datei. Nie zwei Laeufe gleichzeitig je Profil. Gibt
+// zurueck, was uebernommen wurde (ereignisse/skizzen/marken/pruefungen/
+// geloescht) und wie viele fremde Dateien gelesen wurden. Wird waehrenddessen
+// das Profil gewechselt, bricht der Lauf ab (ProfilGewechselt), ohne in die
+// Datenbank des neuen Profils oder in Dropbox zu schreiben.
 export function abgleichen({ profilId, profilName, mitSkizzen = false }) {
-  if (laufend) return laufend
-  laufend = (async () => {
+  if (laufend.has(profilId)) return laufend.get(profilId)
+  const lauf = (async () => {
     try {
       const bericht = await abgleichenIntern({ profilId, profilName, mitSkizzen })
       localStorage.setItem(standSchluessel(profilId), JSON.stringify({ zeit: Date.now(), fehler: null }))
       return bericht
     } catch (e) {
+      // Abbruch durch Profilwechsel ist kein Fehler des Abgleichs - der
+      // naechste Lauf holt alles nach.
+      if (e?.name === 'ProfilGewechselt') throw e
       localStorage.setItem(
         standSchluessel(profilId),
         JSON.stringify({ zeit: abgleichStand(profilId).zeit, fehler: e.message })
       )
       throw e
     } finally {
-      laufend = null
+      laufend.delete(profilId)
     }
   })()
-  return laufend
+  laufend.set(profilId, lauf)
+  return lauf
 }
 
 async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
@@ -93,8 +101,9 @@ async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
     const text = await dropbox.herunterladen(eintrag.name)
     let teil
     try {
-      teil = await importieren(text)
-    } catch {
+      teil = await mitProfil(profilId, () => importieren(text))
+    } catch (e) {
+      if (e?.name === 'ProfilGewechselt') throw e
       continue // beschaedigte oder fremde Datei - die anderen trotzdem lesen
     }
     for (const k of ['ereignisse', 'skizzen', 'marken', 'pruefungen', 'kursplan', 'geloescht']) bericht[k] += teil[k] ?? 0
@@ -113,7 +122,7 @@ async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
     localStorage.setItem(gesehenSchluessel(profilId), JSON.stringify(gesehen))
     throw new Error('Die eigene Sicherung in Dropbox ließ sich nicht einlesen – sie wurde zum Schutz nicht überschrieben.')
   }
-  const text = await exportieren({ mitSkizzen, profilId, profilName })
+  const text = await mitProfil(profilId, () => exportieren({ mitSkizzen, profilId, profilName }))
   const stempel = await fingerabdruck(text)
   const inDropbox = Boolean(eigeneDatei)
   if (!inDropbox || stempel !== localStorage.getItem(uploadSchluessel(profilId))) {

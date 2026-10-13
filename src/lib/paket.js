@@ -5,6 +5,8 @@
 // wird aber nicht geladen. So steht die ganze Landkarte im Paket,
 // ohne dass leere Dateien angelegt werden muessen.
 
+import { itemFehler } from './itemPruefung.js'
+
 // Verzeichnis aller installierten Pakete. Fehlt es, wird das
 // Architekturpaket angenommen - so laeuft eine alte Ablage weiter.
 export async function paketeLaden() {
@@ -46,6 +48,13 @@ export async function paketLaden(paketId) {
   // Normenglossar ist optional - fehlt es, bleibt die Funktion still.
   const normDaten = await jsonOderNull(`${wurzel}/normen.json`)
   const normen = normDaten?.eintraege ?? {}
+  // Kennwerte-Tabellenbuch (F3, 2026-10-13) - optional wie das Glossar.
+  const kennwerteDaten = await jsonOderNull(`${wurzel}/kennwerte.json`)
+  const kennwerte = Array.isArray(kennwerteDaten?.gruppen) ? kennwerteDaten.gruppen : []
+  // Karten, die die Anzeige nicht darstellen koennte (T4) - werden
+  // ausgelassen statt die App abstuerzen zu lassen.
+  const defekt = []
+  const gesehen = new Set()
 
   const items = []
   const themen = []
@@ -99,6 +108,12 @@ export async function paketLaden(paketId) {
       })
 
       for (const item of daten.items ?? []) {
+        const mangel = itemFehler(item) ?? (gesehen.has(item.id) ? 'id doppelt' : null)
+        if (mangel) {
+          defekt.push({ id: item?.id ?? '?', themaId: thema.id, grund: mangel })
+          continue
+        }
+        gesehen.add(item.id)
         items.push({
           ...item,
           referenz: item.referenz ? `${wurzel}/${item.referenz}` : undefined,
@@ -131,6 +146,8 @@ export async function paketLaden(paketId) {
     themen,
     module,
     normen,
+    kennwerte,
+    defekt,
     bereiche: paket.bereiche ?? {},
     phasen: paket.phasen ?? {},
   }
