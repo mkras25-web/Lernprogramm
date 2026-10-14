@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<defs><pattern id="af" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#adc178" fill-opacity="0.35"/><line x1="0" y1="0" x2="0" y2="12" stroke="#6c584c" stroke-width="1.5"/></pattern><pattern id="konflikt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="10" height="10" fill="#9a6b1f" fill-opacity="0.45"/><line x1="0" y1="0" x2="0" y2="10" stroke="#9a6b1f" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="800" height="700" fill="#f0ead2"/>
+<rect x="20" y="40" width="760" height="430" fill="#f7f3e4"/>
+<rect x="150" y="60" width="500" height="410" fill="#dde5b6" stroke="#414833" stroke-width="2.5"/>
+<line x1="150" y1="40" x2="150" y2="470" stroke="#414833" stroke-width="2.5"/>
+<line x1="650" y1="40" x2="650" y2="470" stroke="#414833" stroke-width="2.5"/>
+<line x1="20" y1="60" x2="780" y2="60" stroke="#414833" stroke-width="2.5"/>
+<rect x="20" y="470" width="760" height="90" fill="#d9d2b4"/>
+<line x1="20" y1="470" x2="780" y2="470" stroke="#414833" stroke-width="2.5"/>
+<line x1="20" y1="515" x2="780" y2="515" stroke="#6c584c" stroke-width="2" stroke-dasharray="14 8"/>
+<rect x="300" y="380" width="200" height="130" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="300" y="85" width="200" height="105" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="205" y="190" width="95" height="190" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="500" y="190" width="95" height="190" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="300" y="190" width="200" height="190" fill="#a98467" stroke="#414833" stroke-width="2.5"/>
+<line x1="300" y1="285.0" x2="500" y2="285.0" stroke="#414833" stroke-width="1.5"/>
+<rect x="150" y="350" width="45" height="110" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<circle cx="400" cy="125" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="400" y="130" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
+<circle cx="330" cy="492" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="330" y="497" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
+<circle cx="172" cy="405" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="172" y="410" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3</text>
+<circle cx="640" cy="515" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="640" y="520" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >4</text>
+<circle cx="650" cy="170" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="650" y="175" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >5</text>
+<line x1="20" y1="580" x2="780" y2="580" stroke="#d9d2b4" stroke-width="1.5"/>
+<circle cx="52" cy="604" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="52" y="609" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
+<text x="74" y="609" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Abstandsfläche vor der Außenwand</text>
+<circle cx="52" cy="634" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="52" y="639" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
+<text x="74" y="639" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Abstandsfläche auf der Straße</text>
+<circle cx="52" cy="664" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="52" y="669" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3</text>
+<text x="74" y="669" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Grenzgarage ohne eigene Abstandsfläche</text>
+<circle cx="432" cy="604" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="432" y="609" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >4</text>
+<text x="454" y="609" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Straßenmitte: Grenze für Abstandsflächen</text>
+<circle cx="432" cy="634" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="432" y="639" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >5</text>
+<text x="454" y="639" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Nachbargrenze</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<defs><pattern id="af" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#adc178" fill-opacity="0.35"/><line x1="0" y1="0" x2="0" y2="12" stroke="#6c584c" stroke-width="1.5"/></pattern><pattern id="konflikt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><rect width="10" height="10" fill="#9a6b1f" fill-opacity="0.45"/><line x1="0" y1="0" x2="0" y2="10" stroke="#9a6b1f" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="800" height="700" fill="#f0ead2"/>
+<rect x="20" y="40" width="760" height="430" fill="#f7f3e4"/>
+<rect x="150" y="60" width="500" height="410" fill="#dde5b6" stroke="#414833" stroke-width="2.5"/>
+<line x1="150" y1="40" x2="150" y2="470" stroke="#414833" stroke-width="2.5"/>
+<line x1="650" y1="40" x2="650" y2="470" stroke="#414833" stroke-width="2.5"/>
+<line x1="20" y1="60" x2="780" y2="60" stroke="#414833" stroke-width="2.5"/>
+<rect x="20" y="470" width="760" height="90" fill="#d9d2b4"/>
+<line x1="20" y1="470" x2="780" y2="470" stroke="#414833" stroke-width="2.5"/>
+<line x1="20" y1="515" x2="780" y2="515" stroke="#6c584c" stroke-width="2" stroke-dasharray="14 8"/>
+<rect x="300" y="380" width="200" height="130" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="300" y="85" width="200" height="105" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="205" y="190" width="95" height="190" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="500" y="190" width="95" height="190" fill="url(#af)" stroke="#6c584c" stroke-width="1.5"/>
+<rect x="300" y="190" width="200" height="190" fill="#a98467" stroke="#414833" stroke-width="2.5"/>
+<line x1="300" y1="285.0" x2="500" y2="285.0" stroke="#414833" stroke-width="1.5"/>
+<rect x="150" y="350" width="45" height="110" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="400" y="600" font-size="15" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schematischer Lageplan – ohne Maßstab</text>
+</svg>

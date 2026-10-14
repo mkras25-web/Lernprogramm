@@ -1,0 +1,588 @@
+{
+ "thema": "rb-abstandsflaechen",
+ "titel": "Abstandsflächen",
+ "erklaerung": {
+  "absaetze": [
+   "Vor den Außenwänden von Gebäuden müssen Flächen frei bleiben – die Abstandsflächen. Sie sichern Brandschutz, Belichtung und einen Sozialabstand zwischen den Gebäuden. Anders als Baugebiete und GRZ gehören sie nicht zum Bauplanungsrecht des Bundes, sondern zum Bauordnungsrecht der Länder; in Hessen regelt sie § 6 HBO. Das Planungsrecht entscheidet aber mit: Muss nach dem Bebauungsplan an die Grenze gebaut werden, etwa in geschlossener Bauweise, entfällt die Abstandsfläche vor dieser Wand.",
+   "Abstandsflächen müssen auf dem eigenen Grundstück liegen. Auf öffentliche Verkehrs-, Grün- und Wasserflächen dürfen sie bis zu deren Mitte reichen, auf ein Nachbargrundstück nur, wenn öffentlich-rechtlich gesichert ist, dass die Fläche frei bleibt – in der Regel durch eine Baulast. Abstandsflächen dürfen sich nicht überdecken; Ausnahmen gelten für Wände, die in mehr als 75° zueinander stehen, für Gartenhöfe kleiner Wohnhäuser und für Anlagen, die in Abstandsflächen zulässig sind.",
+   "Die Tiefe richtet sich nach der Wandhöhe: von der Geländeoberfläche bis zur Schnittlinie der Wand mit der Dachhaut. Dächer bis 45° zählen nicht, Dächer über 45° bis 70° zu einem Drittel, steilere Dächer gelten als Wand; auch breite Gauben werden angerechnet. Aus dieser Höhe H ergibt sich die Tiefe: allgemein 0,4 H, in Gewerbe- und Industriegebieten 0,2 H, abgerundet auf volle 0,10 m und mindestens 2,50 m. Diese Mindesttiefe gilt seit dem Baupaket I von 2025; vorher waren es 3 m.",
+   "Einige Bauteile und Anlagen sind privilegiert. Gesimse, Dachvorsprünge, Eingangstreppen, Erker und Balkone bleiben außer Betracht, wenn sie höchstens 1,50 m vortreten, mindestens 2 m von der Nachbargrenze entfernt bleiben und Erker und Balkone zusammen höchstens ein Drittel der Wandbreite einnehmen. Garagen, Abstellgebäude und bis zu drei Stellplätze dürfen ohne eigene Abstandsfläche an die Grenze, solange die Grenzbebauung insgesamt 15 m, die mittlere Wandhöhe 3 m und die Wandfläche je Grenze 25 m² nicht übersteigt. Für bestehende Gebäude erlaubt die HBO Umbauten und eine nachträgliche Wärmedämmung, auch wenn die Abstände nicht mehr dem heutigen Recht entsprechen.",
+   "Zwei Fallstricke kommen immer wieder vor. Erstens: Abstandsrecht ist Landesrecht mit wechselnden Fassungen. Lehrbücher und der Städtebaureader zeigen oft andere Länder oder ältere Stände – etwa 0,8 H und ein Schmalseitenprivileg aus der früheren BauO NRW oder eine hessische Mindesttiefe von 3 m. Zweitens: Bebauungspläne und die umgebende Bebauung nach § 34 BauGB können die Landesregel verdrängen (§ 6 Abs. 11 HBO). Wer einen Abstand prüft, klärt deshalb zuerst, welches Recht und welche Fassung gilt, und erst dann die Zahlen."
+  ],
+  "merksatz": "Erst die Wandhöhe bis zur Dachhaut, dann das Dach dazu, mal 0,4 – abrunden, mindestens 2,50 m, und das Ganze auf dem eigenen Grundstück oder bis zur Straßenmitte.",
+  "bild": "bilder/rb-af-lageplan.svg",
+  "bildunterschrift": "Lageplan mit Abstandsflächen vor allen Außenwänden, einer Abstandsfläche bis zur Straßenmitte und einer Grenzgarage.",
+  "quelle": "§ 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 36–45; Stadt Offenbach, Merkblatt Abstandsflächen vom 04.12.2025"
+ },
+ "lernziele": [
+  "Du kannst erklären, warum Abstandsflächen Landesrecht sind und wie sie mit der Bauweise im Bebauungsplan zusammenhängen.",
+  "Du kannst die Tiefe einer Abstandsfläche nach HBO aus Wandhöhe, Dachneigung und Gebiet bestimmen, einschließlich Abrundung und Mindesttiefe.",
+  "Du kannst sagen, wo Abstandsflächen liegen dürfen und wann sie sich überdecken dürfen.",
+  "Du kannst privilegierte Bauteile und Grenzbebauung nach HBO von abstandsrelevanten Bauteilen unterscheiden."
+ ],
+ "siehe": [
+  "rb-mass",
+  "rb-bauleitplanung"
+ ],
+ "items": [
+  {
+   "id": "rb-af-001",
+   "typ": "karte",
+   "frage": "Zu welchem Rechtsgebiet gehören die Abstandsflächen, und wie hängen sie mit der Bauweise im Bebauungsplan zusammen?",
+   "antwort": "Zum Bauordnungsrecht der Länder, nicht zum Bauplanungsrecht – in Hessen also zur HBO (§ 6). Das Planungsrecht bestimmt aber mit, ob überhaupt Abstand nötig ist: Bei offener Bauweise nach § 22 BauNVO wird mit seitlichem Grenzabstand gebaut, bei geschlossener Bauweise ohne. Muss nach planungsrechtlichen Vorschriften an die Grenze gebaut werden, entfällt die Abstandsfläche vor dieser Wand.",
+   "vertiefung": "Diese Arbeitsteilung erklärt, warum sich die Abstandsregeln von Land zu Land unterscheiden, während GRZ und Baugebiete bundesweit gleich sind. Der Städtebaureader druckt zum Beispiel die BauO NRW und eine ältere HBO ab – mit deutlich anderen Faktoren als die heutige hessische Regel.",
+   "tags": [
+    "abstandsflächen",
+    "bauordnungsrecht",
+    "bauweise"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 36 (nach Planungsrecht und Bauleitplanung 1997); § 6 Abs. 1 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); § 22 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-002",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche drei Ziele verfolgen die Abstandsflächen nach dem Städtebaureader?",
+   "optionen": [
+    "Brandschutz",
+    "Belichtung der Innenräume",
+    "Sozialabstand (Schutz vor Einblick)",
+    "Sicherung eines Mindestgrundstückswerts",
+    "Begrenzung der Geschossfläche",
+    "Schutz vor Verkehrslärm von der Straße"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig – der Abstand verhindert, dass ein Brand auf das Nachbargebäude übergreift.",
+    "Richtig – vor allem für Aufenthaltsräume.",
+    "Richtig – Schutz der Privatsphäre.",
+    "Falsch – der Grundstückswert ist kein Ziel des Bauordnungsrechts.",
+    "Falsch – das ist Aufgabe von GFZ und Geschossfläche nach BauNVO.",
+    "Falsch – Schallschutz ist ein Belang der Planung, aber nicht eines der drei Ziele der Abstandsflächen."
+   ],
+   "antwort": "Ausreichender Brandschutz, ausreichende Belichtung der Innenräume, vor allem der Aufenthaltsräume, und ein ausreichender Sozialabstand, also Schutz der Privatsphäre vor Einblick.",
+   "vertiefung": "Für die Bauleitplanung nennt der Reader zusätzlich eine lange Liste von Belangen, die bei der Bemessung von Gebäudeabständen abzuwägen sind – von Besonnung und Durchlüftung über Schallschutz bis zu flächensparendem Bauen und Denkmalschutz. Manche sprechen für größere, manche für kleinere Abstände.",
+   "tags": [
+    "abstandsflächen",
+    "ziele"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 36 und 43",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-003",
+   "typ": "karte",
+   "frage": "Wo müssen Abstandsflächen liegen, und wo dürfen sie ausnahmsweise liegen?",
+   "antwort": "Grundsätzlich auf dem Grundstück selbst. Sie dürfen auch auf öffentlichen Verkehrs-, Grün- und Wasserflächen liegen, jedoch nur bis zu deren Mitte. Auf einem Nachbargrundstück dürfen sie nur liegen, wenn öffentlich-rechtlich gesichert ist, dass sie dort nicht überbaut und nicht auf die eigenen Abstandsflächen des Nachbarn angerechnet werden (§ 6 Abs. 2 HBO).",
+   "vertiefung": "Die Mittelregel ist fair verteilt: Jede Straßenseite darf die halbe Straßenbreite nutzen. Bei öffentlichen Flächen ist gesichert, dass sie nicht bebaut werden – deshalb dürfen Abstandsflächen dort ohne weitere Sicherung liegen. Nach dem Städtebaureader gilt als Verkehrsfläche die tatsächlich gebaute, nicht die nur geplante Fläche.",
+   "tags": [
+    "lage",
+    "straßenmitte",
+    "nachbargrundstück"
+   ],
+   "quelle": "§ 6 Abs. 2 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 37 und 44",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-004",
+   "typ": "karte",
+   "frage": "Was ist eine Baulast, und welche Rolle spielt sie bei den Abstandsflächen?",
+   "antwort": "Eine öffentlich-rechtliche Verpflichtung eines Grundstückseigentümers gegenüber der Bauaufsichtsbehörde zu einem Tun, Dulden oder Unterlassen. Sie wird in das Baulastenverzeichnis eingetragen, gilt auch für alle Rechtsnachfolger und kann nur von der Bauaufsichtsbehörde gelöscht werden. Bei den Abstandsflächen sichert sie zum Beispiel, dass Abstandsflächen auf dem Nachbargrundstück liegen dürfen oder dass der Nachbar ebenfalls an die Grenze baut.",
+   "vertiefung": "Weil die Baulast an das Grundstück gebunden ist, schützt sie auch künftige Eigentümer und die Allgemeinheit – anders als eine bloße Absprache unter Nachbarn. Der Städtebaureader erläutert sie am Beispiel der BauO NRW; die Länder kennen das Institut gleichermaßen.",
+   "tags": [
+    "baulast",
+    "nachbargrundstück",
+    "öffentlich-rechtliche sicherung"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 36–37; § 6 Abs. 1 und 2 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-005",
+   "typ": "mehrfachauswahl",
+   "frage": "Abstandsflächen dürfen sich grundsätzlich nicht überdecken. In welchen Fällen ist eine Überdeckung nach § 6 Abs. 3 HBO zulässig?",
+   "optionen": [
+    "Außenwände, die in einem Winkel von mehr als 75° zueinander stehen",
+    "Außenwände zu einem fremder Sicht entzogenen Gartenhof bei Wohngebäuden mit höchstens zwei Wohnungen",
+    "Gebäude und Anlagen, die in der Abstandsfläche zulässig sind",
+    "Zwei parallele Außenwände desselben Eigentümers",
+    "Jede Wand ohne Fenster"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig – § 6 Abs. 3 Nr. 1.",
+    "Richtig – § 6 Abs. 3 Nr. 2.",
+    "Richtig – § 6 Abs. 3 Nr. 3, etwa eine Garage in der Abstandsfläche des Wohnhauses.",
+    "Falsch – auf die Eigentumsverhältnisse kommt es nicht an.",
+    "Falsch – eine fensterlose Wand allein erlaubt keine Überdeckung; Sonderregeln für fensterlose Wände gibt es nur in Gewerbe- und Industriegebieten (§ 6 Abs. 7)."
+   ],
+   "antwort": "Bei Außenwänden, die in einem Winkel von mehr als 75° zueinander stehen, bei Außenwänden zu einem fremder Sicht entzogenen Gartenhof bei Wohngebäuden mit nicht mehr als zwei Wohnungen und bei Gebäuden und Anlagen, die in der Abstandsfläche zulässig sind oder zugelassen werden können.",
+   "vertiefung": "Hinter der 75°-Regel steckt die Belichtung: Stehen zwei Wände etwa im rechten Winkel, sehen sich die Fenster nicht direkt an, und eine Überdeckung der Abstandsflächen in der Ecke schadet kaum. Bei parallelen Wänden wäre das anders.",
+   "tags": [
+    "überdeckung",
+    "winkel",
+    "gartenhof"
+   ],
+   "quelle": "§ 6 Abs. 3 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 37 und 44",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-006",
+   "typ": "vergleich",
+   "frage": "In welcher Situation dürfen sich die Abstandsflächen der beiden Gebäude überdecken?",
+   "seiten": [
+    {
+     "titel": "Situation A",
+     "bild": "bilder/rb-af-ueberdeckung-a.svg",
+     "beschreibung": "Zwei Wände liegen sich parallel gegenüber"
+    },
+    {
+     "titel": "Situation B",
+     "bild": "bilder/rb-af-ueberdeckung-b.svg",
+     "beschreibung": "Zwei Wände stehen im rechten Winkel zueinander"
+    }
+   ],
+   "richtig": 1,
+   "antwort": "Situation B. Die Wände stehen im rechten Winkel, also in mehr als 75° zueinander; dann ist die Überdeckung zulässig (§ 6 Abs. 3 Nr. 1 HBO). In Situation A liegen sich die Wände parallel gegenüber – dort ist die Überdeckung unzulässig, die Gebäude müssten weiter auseinanderrücken.",
+   "vertiefung": "Merkhilfe: Die Abstandsfläche schützt das Gegenüber. Bei parallelen Wänden blicken die Fenster aufeinander, bei Wänden über Eck nicht.",
+   "tags": [
+    "überdeckung",
+    "winkel"
+   ],
+   "quelle": "§ 6 Abs. 3 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-007",
+   "typ": "karte",
+   "frage": "Wie wird die Wandhöhe H ermittelt, nach der sich die Tiefe der Abstandsfläche richtet?",
+   "bild": "bilder/rb-af-wandhoehe.svg",
+   "bildunterschrift": "Wandhöhe bis zum Schnittpunkt mit der Dachhaut, dazu ein Drittel der Höhe eines 50° steilen Daches.",
+   "antwort": "Als Wandhöhe gilt das Maß von der Geländeoberfläche bis zur Schnittlinie der Wand mit der Dachhaut oder bis zum oberen Abschluss der Wand; gemessen wird rechtwinklig zur Wand. Bei geneigtem Gelände oder geneigtem Wandabschluss kann die mittlere Wandhöhe zugrunde gelegt werden (Wandfläche geteilt durch die größte Wandbreite, Abschnitte bis 16 m). Hinzu kommen Dachanteile: Dächer über 70° Neigung gelten als Wand, Dächer über 45° bis 70° werden zu einem Drittel hinzugerechnet, Dächer bis 45° nicht. Das Ergebnis ist H.",
+   "vertiefung": "Auch Dachaufbauten zählen: Gauben in Verlängerung der Außenwand oder bis 0,50 m dahinter gelten als Wand, ebenso Dachaufbauten, die je Dachfläche zusammen mehr als die Hälfte der Wandbreite einnehmen. Breiter als ein Fünftel, aber höchstens die Hälfte – auf einem Dach bis 45° – werden sie zu einem Drittel hinzugerechnet. Maßgeblich ist nach dem Städtebaureader die natürliche Geländeoberfläche; Aufschüttungen dürfen nicht zur Verkürzung herangezogen werden.",
+   "tags": [
+    "wandhöhe",
+    "dachneigung",
+    "ermittlung"
+   ],
+   "quelle": "§ 6 Abs. 4 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 37–38 und 44",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-008",
+   "typ": "numerisch",
+   "frage": "Wie groß ist nach § 6 Abs. 5 HBO allgemein der Faktor, mit dem H multipliziert wird, um die Tiefe der Abstandsfläche zu erhalten?",
+   "wert": 0.4,
+   "toleranz": 0,
+   "antwort": "0,4 – die Tiefe beträgt allgemein 0,4 H.",
+   "vertiefung": "In Gewerbe- und Industriegebieten genügen 0,2 H, außer an den Grenzen zu Gebieten anderer Nutzung; vergleichbare Sondergebiete und entsprechende im Zusammenhang bebaute Ortsteile stehen ihnen gleich. Das Ergebnis wird auf volle 0,10 m abgerundet. Vorsicht bei älteren Unterlagen: Die im Städtebaureader abgedruckte BauO NRW verlangte damals 0,8 H.",
+   "tags": [
+    "tiefe",
+    "0,4 h",
+    "hbo"
+   ],
+   "quelle": "§ 6 Abs. 5 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 40",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-009",
+   "typ": "numerisch",
+   "frage": "Welche Mindesttiefe (in m) muss eine Abstandsfläche nach der Hessischen Bauordnung in der seit dem Baupaket I geltenden Fassung immer haben?",
+   "wert": 2.5,
+   "toleranz": 0,
+   "einheit": "m",
+   "antwort": "2,50 m. Bis zum Baupaket I 2025 waren es 3 m.",
+   "vertiefung": "Die Mindesttiefe greift bei niedrigen Wänden: 0,4 × 5,00 m ergäbe nur 2,00 m, verlangt sind aber 2,50 m. Auch die Tiefe vor fensterlosen, feuerhemmenden Wänden in Gewerbe- und Industriegebieten (§ 6 Abs. 7 Nr. 2) wurde von 3 m auf 2,50 m gesenkt. Die Bauaufsicht Offenbach weist darauf hin, dass ein so geringer Abstand Belichtung, Privatsphäre und Feuerwehrzufahrten erschweren kann – planerisch ist er also nicht immer sinnvoll.",
+   "tags": [
+    "mindesttiefe",
+    "baupaket i",
+    "hessen"
+   ],
+   "quelle": "§ 6 Abs. 5 Satz 4 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; Stadt Offenbach, Merkblatt Abstandsflächen vom 04.12.2025",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-010",
+   "typ": "fall",
+   "frage": "Ein Wohnhaus in einem allgemeinen Wohngebiet in Hessen hat eine Traufwand von 6,40 m Höhe bis zur Dachhaut. Darüber liegt ein Satteldach.",
+   "teile": [
+    {
+     "frage": "Wie tief ist die Abstandsfläche vor der Traufwand bei 40° Dachneigung?",
+     "antwort": "Das Dach zählt bis 45° nicht. H = 6,40 m, 0,4 H = 2,56 m, abgerundet 2,50 m. Das entspricht genau der Mindesttiefe von 2,50 m."
+    },
+    {
+     "frage": "Und bei 50° Dachneigung mit 4,50 m Dachhöhe?",
+     "antwort": "Das Dach zählt zu einem Drittel: H = 6,40 m + 1,50 m = 7,90 m. 0,4 H = 3,16 m, abgerundet auf volle 0,10 m: 3,10 m."
+    },
+    {
+     "frage": "Was gilt, wenn das Dach 75° steil ist?",
+     "antwort": "Dächer über 70° gelten als Wand. Die Dachhöhe zählt dann voll zur Wandhöhe – die Abstandsfläche wird deutlich tiefer."
+    },
+    {
+     "frage": "Wie tief wäre die Abstandsfläche bei 50° Dachneigung, wenn das Gebäude in einem Gewerbegebiet stünde?",
+     "antwort": "0,2 × 7,90 m = 1,58 m – das liegt unter der Mindesttiefe, also gelten 2,50 m. Grenzt die Wand an ein Gebiet anderer Nutzung, gilt dort ohnehin 0,4 H."
+    }
+   ],
+   "antwort": "Bei flachem Dach bleibt es bei H = 6,40 m und 2,50 m Tiefe; bei 50° Dachneigung kommt ein Drittel der Dachhöhe hinzu und die Tiefe steigt auf 3,10 m. Im Gewerbegebiet genügen 0,2 H, die Mindesttiefe von 2,50 m bleibt aber bestehen.",
+   "vertiefung": "Der Fall zeigt die drei Stellschrauben: Dachneigung (ab 45° zählt das Dach mit), Abrundung auf 0,10 m und Mindesttiefe. Steile Dächer kosten also Abstand – ein Grund, warum Bebauungspläne Dachneigung und Abstandsflächen oft zusammen denken.",
+   "tags": [
+    "fallaufgabe",
+    "wandhöhe",
+    "tiefe"
+   ],
+   "quelle": "§ 6 Abs. 4 und 5 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-011",
+   "typ": "skizze",
+   "frage": "Zeichne im Schnitt eine Traufwand mit geneigtem Dach. Trage Geländeoberfläche, Wandhöhe, Dachhöhe und die Tiefe der Abstandsfläche ein und notiere, wie das Dach je nach Neigung angerechnet wird.",
+   "referenz": "bilder/rb-af-wandhoehe.svg",
+   "pruefpunkte": [
+    "Wandhöhe von der Geländeoberfläche bis zum Schnittpunkt Wand/Dachhaut",
+    "Dachhöhe getrennt bemaßt",
+    "Regel für das Dach: bis 45° nicht, über 45° bis 70° ein Drittel, über 70° voll",
+    "Tiefe 0,4 H rechtwinklig vor der Wand auf dem Gelände",
+    "Abrundung auf 0,10 m und Mindesttiefe 2,50 m genannt"
+   ],
+   "antwort": "Siehe Referenz: Wandhöhe von der Geländeoberfläche bis zum Schnittpunkt der Wand mit der Dachhaut; bei 45° bis 70° kommt ein Drittel der Dachhöhe hinzu, über 70° das ganze Dach, bis 45° nichts. Die Tiefe 0,4 H wird rechtwinklig vor der Wand auf dem Gelände abgetragen und auf 0,10 m abgerundet.",
+   "vertiefung": "Wer die Skizze sicher zeichnen kann, kann jede Abstandsflächenfrage in der Klausur lösen: erst H bestimmen, dann den Faktor des Gebiets wählen, abrunden und mit der Mindesttiefe vergleichen.",
+   "tags": [
+    "wandhöhe",
+    "skizze",
+    "schnitt"
+   ],
+   "quelle": "§ 6 Abs. 4 und 5 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-012",
+   "typ": "bildbeschriftung",
+   "frage": "Benenne die markierten Elemente in diesem Lageplan eines Baugrundstücks mit Wohnhaus.",
+   "referenz": "bilder/rb-af-lageplan-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 21.5,
+     "y": 57.9,
+     "name": "Grenzgarage ohne eigene Abstandsfläche"
+    },
+    {
+     "nr": 2,
+     "x": 80.0,
+     "y": 73.6,
+     "name": "Straßenmitte"
+    },
+    {
+     "nr": 3,
+     "x": 50.0,
+     "y": 17.9,
+     "name": "Abstandsfläche auf dem eigenen Grundstück"
+    },
+    {
+     "nr": 4,
+     "x": 81.2,
+     "y": 24.3,
+     "name": "Nachbargrenze"
+    },
+    {
+     "nr": 5,
+     "x": 41.2,
+     "y": 70.3,
+     "name": "Abstandsfläche auf der öffentlichen Verkehrsfläche"
+    }
+   ],
+   "antwort": "Abstandsfläche auf dem eigenen Grundstück, Abstandsfläche auf der öffentlichen Verkehrsfläche, Straßenmitte, Grenzgarage ohne eigene Abstandsfläche und Nachbargrenze.",
+   "vertiefung": "Der Plan zeigt die Grundregeln auf einen Blick: Vor jeder Außenwand liegt eine Abstandsfläche; zur Straße darf sie bis zur Straßenmitte reichen; die Garage an der Grenze braucht keine eigene Abstandsfläche, solange sie die Grenzen des § 6 Abs. 10 HBO einhält.",
+   "tags": [
+    "lageplan",
+    "abstandsflächen"
+   ],
+   "quelle": "§ 6 Abs. 1, 2 und 10 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-013",
+   "typ": "skizze",
+   "frage": "Skizziere einen Lageplan: Baugrundstück an einer Straße, Wohnhaus mit den Abstandsflächen vor allen vier Außenwänden und eine Garage an der seitlichen Nachbargrenze. Wie weit darf die vordere Abstandsfläche in die Straße reichen?",
+   "referenz": "bilder/rb-af-lageplan.svg",
+   "pruefpunkte": [
+    "Abstandsflächen vor allen vier Außenwänden",
+    "Alle Abstandsflächen auf dem eigenen Grundstück oder auf der Straße",
+    "Vordere Abstandsfläche höchstens bis zur Straßenmitte",
+    "Grenzgarage ohne eigene Abstandsfläche an der Nachbargrenze",
+    "Keine Überdeckung paralleler Abstandsflächen"
+   ],
+   "antwort": "Siehe Referenz: Vor jeder Außenwand liegt ein Rechteck in der Tiefe der Abstandsfläche, auf dem eigenen Grundstück; die vordere darf auf die Straße reichen, aber nur bis zur Straßenmitte. Die Grenzgarage steht ohne eigene Abstandsfläche an der Nachbargrenze.",
+   "vertiefung": "Prüfe die Skizze auf zwei typische Fehler: Abstandsflächen, die über die Nachbargrenze reichen (nur mit öffentlich-rechtlicher Sicherung zulässig), und Abstandsflächen, die über die Straßenmitte hinausgehen.",
+   "tags": [
+    "lageplan",
+    "skizze"
+   ],
+   "quelle": "§ 6 Abs. 1, 2 und 10 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-014",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche vor die Außenwand tretenden Bauteile bleiben bei der Bemessung der Abstandsfläche außer Betracht?",
+   "optionen": [
+    "Ein Dachvorsprung, der 0,80 m vortritt",
+    "Ein Balkon, der 1,20 m vortritt, 3 m von der Nachbargrenze entfernt bleibt und ein Viertel der Wandbreite einnimmt",
+    "Eine nachträgliche Wärmedämmung von 0,30 m an einem bestehenden Gebäude",
+    "Ein Erker, der 1,80 m vortritt",
+    "Balkone, die über die gesamte Breite der Wand laufen",
+    "Ein Balkon, der 1,20 m vortritt, aber nur 1,50 m von der Nachbargrenze entfernt ist"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig – Dachvorsprung bis 1,50 m.",
+    "Richtig – unter 1,50 m, mehr als 2 m von der Grenze, nicht mehr als ein Drittel der Wandbreite.",
+    "Richtig – bei bestehenden Gebäuden bis 0,40 m Dicke zulässig.",
+    "Falsch – mehr als 1,50 m Vorsprung; der Erker zählt dann bei der Bemessung mit.",
+    "Falsch – mehr als ein Drittel der Wandbreite.",
+    "Falsch – Vorbauten müssen mindestens 2 m von der Nachbargrenze entfernt bleiben."
+   ],
+   "antwort": "Gesimse und Dachvorsprünge sowie Hauseingangstreppen mit Überdachung, Erker und Balkone, die zusammen nicht mehr als ein Drittel der Wandbreite einnehmen – jeweils wenn sie nicht mehr als 1,50 m vortreten und mindestens 2 m von der Nachbargrenze entfernt bleiben. Bei bestehenden Gebäuden darf eine nachträgliche Wärmedämmung bis 0,40 m Dicke in die Abstandsfläche ragen.",
+   "vertiefung": "Das „Drittel“ betrifft die Summe aller Erker und Balkone einer Wand, nicht jeden einzeln. Übereinanderliegende Balkone werden dabei nicht doppelt gezählt. Die Regel zur Wärmedämmung macht die energetische Sanierung von Bestandsgebäuden möglich, die sonst an den Abstandsflächen scheitern würde.",
+   "tags": [
+    "vorbauten",
+    "balkon",
+    "wärmedämmung"
+   ],
+   "quelle": "§ 6 Abs. 6 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 44",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-015",
+   "typ": "zuordnung",
+   "frage": "Wie werden die folgenden Bauteile bei der Abstandsfläche nach HBO behandelt?",
+   "paare": [
+    [
+     "Dachvorsprung, 0,60 m vortretend",
+     "bleibt außer Betracht"
+    ],
+    [
+     "Gaube in Verlängerung der Außenwand",
+     "gilt als Wand"
+    ],
+    [
+     "Dach mit 60° Neigung",
+     "zu einem Drittel zur Wandhöhe hinzugerechnet"
+    ],
+    [
+     "Dach mit 30° Neigung",
+     "wird nicht hinzugerechnet"
+    ],
+    [
+     "Nachträgliche Wärmedämmung 0,30 m an einem Bestandsgebäude",
+     "darf in die Abstandsfläche hineinragen"
+    ]
+   ],
+   "antwort": "Dachvorsprung bis 1,50 m: außer Betracht. Gaube in Verlängerung der Außenwand: zählt als Wand. Dach mit 60° Neigung: zu einem Drittel zur Wandhöhe. Dach mit 30° Neigung: nicht angerechnet. Nachträgliche Wärmedämmung bis 0,40 m am Bestand: darf in die Abstandsfläche ragen.",
+   "vertiefung": "Wer die fünf Fälle unterscheiden kann, beherrscht den Kern der Absätze 4 und 6. In der Praxis entscheidet die Dachform oft mehr über die Tiefe der Abstandsfläche als die Traufhöhe.",
+   "tags": [
+    "wandhöhe",
+    "dach",
+    "vorbauten"
+   ],
+   "quelle": "§ 6 Abs. 4 und 6 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-016",
+   "typ": "karte",
+   "frage": "Welche Anlagen sind nach § 6 Abs. 10 HBO ohne eigene Abstandsfläche an der Nachbargrenze zulässig, und welche Grenzen gelten?",
+   "antwort": "Je Baugrundstück unter anderem Garagen mit Abstellraum, überdachte Zufahrten zu Tiefgaragen, untergeordnete Abstellgebäude, Gebäude zur örtlichen Versorgung mit Energie, Kälte oder Wasser, bis zu drei Stellplätze, Einfriedungen, Stützmauern sowie bestimmte Solaranlagen und Wärmepumpen – unmittelbar an der Grenze oder mit mindestens 1 m Abstand. Die Grenzbebauung durch Garagen und die anderen Gebäude darf insgesamt 15 m nicht überschreiten, Dachüberstände eingerechnet; ihre grenzseitige mittlere Wandhöhe darf 3 m und die Wandfläche je Nachbargrenze 25 m² nicht übersteigen.",
+   "vertiefung": "Vorsicht mit älteren Unterlagen: Die im Städtebaureader abgedruckte HBO nannte noch 9 m Garagenlänge, 20 m² Wandfläche, 8 m Stellplatzlänge und insgesamt 12 m. Die Grenzwerte haben sich also mehrfach geändert. Eine Terrasse auf einer Grenzgarage macht diese nach dem Reader zu mehr als einer Grenzgarage – mit Folgen für die Abstandsfläche.",
+   "tags": [
+    "grenzgarage",
+    "grenzbebauung",
+    "hessen"
+   ],
+   "quelle": "§ 6 Abs. 10 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 42 und 45",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte aus einer nicht amtlichen Wiedergabe (anwalt24.de, gestützt durch schwarzplan.eu). Gegen den amtlichen Text von § 6 Abs. 9, 10 und 12 HBO in der Fassung des Baupakets I (GVBl. 2025 Nr. 66) prüfen, ob die Grenzbebauung insgesamt 15 m, die mittlere Wandhöhe 3 m, die Wandfläche 25 m² je Nachbargrenze und die übrigen genannten Grenzen unverändert gelten."
+  },
+  {
+   "id": "rb-af-017",
+   "typ": "numerisch",
+   "frage": "Wie lang darf die Grenzbebauung durch Garagen und andere untergeordnete Gebäude ohne eigene Abstandsfläche nach § 6 Abs. 10 HBO insgesamt höchstens sein (in m)?",
+   "wert": 15,
+   "toleranz": 0,
+   "einheit": "m",
+   "antwort": "15 m, einschließlich der Dachüberstände.",
+   "vertiefung": "Die Länge ist je Baugrundstück zu rechnen, nicht je Grenze. Für die einzelne Grenze kommt die Wandflächenbegrenzung von 25 m² hinzu – eine 3 m hohe Garagenwand darf damit an einer Grenze etwa 8,30 m lang sein.",
+   "tags": [
+    "grenzbebauung",
+    "grenzgarage",
+    "hessen"
+   ],
+   "quelle": "§ 6 Abs. 10 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte aus einer nicht amtlichen Wiedergabe (anwalt24.de, gestützt durch schwarzplan.eu). Gegen den amtlichen Text von § 6 Abs. 9, 10 und 12 HBO in der Fassung des Baupakets I (GVBl. 2025 Nr. 66) prüfen, ob die Grenzbebauung insgesamt 15 m, die mittlere Wandhöhe 3 m, die Wandfläche 25 m² je Nachbargrenze und die übrigen genannten Grenzen unverändert gelten."
+  },
+  {
+   "id": "rb-af-018",
+   "typ": "karte",
+   "frage": "Was ist in den Abstandsflächen eines Gebäudes zulässig, ohne dass dafür eine eigene Abstandsfläche zu diesem Gebäude nötig ist?",
+   "antwort": "Nach § 6 Abs. 9 HBO insbesondere erdgeschossige Kleingaragen bis 100 m² Nutzfläche, erdgeschossige untergeordnete Gebäude und gebäudeähnliche Anlagen, gebäudeunabhängige Solaranlagen bis 3 m mittlerer Höhe und 9 m Länge sowie Wärmepumpen bis 2 m Höhe.",
+   "vertiefung": "Der Unterschied zu Absatz 10: Absatz 9 regelt, was in der Abstandsfläche des eigenen Gebäudes stehen darf, Absatz 10, was ohne eigene Abstandsfläche an die Nachbargrenze darf. Anlagen ohne gebäudeähnliche Wirkung – etwa niedrige Terrassen oder Freisitze – lösen nach Absatz 8 von vornherein keine Abstandsfläche aus.",
+   "tags": [
+    "abstandsfläche",
+    "garagen",
+    "wärmepumpe"
+   ],
+   "quelle": "§ 6 Abs. 8 und 9 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte aus einer nicht amtlichen Wiedergabe (anwalt24.de, gestützt durch schwarzplan.eu). Gegen den amtlichen Text von § 6 Abs. 9, 10 und 12 HBO in der Fassung des Baupakets I (GVBl. 2025 Nr. 66) prüfen, ob die Grenzbebauung insgesamt 15 m, die mittlere Wandhöhe 3 m, die Wandfläche 25 m² je Nachbargrenze und die übrigen genannten Grenzen unverändert gelten."
+  },
+  {
+   "id": "rb-af-019",
+   "typ": "freitext",
+   "frage": "Unter welchen Voraussetzungen ist vor einer Außenwand an der Nachbargrenze keine Abstandsfläche erforderlich?",
+   "pruefpunkte": [
+    "Planungsrecht verlangt Grenzbau (z. B. geschlossene Bauweise): keine Abstandsfläche",
+    "Planungsrecht erlaubt Grenzbau und Anbau vom Nachbargrundstück ist öffentlich-rechtlich gesichert (Baulast): keine Abstandsfläche",
+    "Vorhandenes Grenzgebäude beim Nachbarn: Anbau kann gestattet oder verlangt werden",
+    "Grenzbau vorgeschrieben, Nachbar hat mit Abstand gebaut: Abstandsfläche kann verlangt werden",
+    "Grundsatz: entweder an die Grenze oder mit vollem Abstand"
+   ],
+   "antwort": "Wenn nach planungsrechtlichen Vorschriften an die Grenze gebaut werden muss – etwa bei geschlossener Bauweise oder einer Baulinie auf der Grenze –, oder wenn an die Grenze gebaut werden darf und öffentlich-rechtlich gesichert ist, dass vom Nachbargrundstück angebaut wird (§ 6 Abs. 1 HBO). Steht auf dem Nachbargrundstück schon ein Gebäude an der Grenze, kann der Anbau gestattet oder verlangt werden, auch wenn planungsrechtlich nicht an die Grenze gebaut werden darf. Umgekehrt kann eine Abstandsfläche verlangt werden, wenn an die Grenze gebaut werden muss, der Nachbar aber mit Abstand gebaut hat.",
+   "vertiefung": "Die Regel verhindert Lücken von wenigen Dezimetern zwischen zwei Gebäuden, die weder belichtet noch gepflegt werden können. Der Städtebaureader fasst es knapp: Es kann nur entweder unmittelbar an der Grenze gebaut werden oder mit vollem Abstand.",
+   "tags": [
+    "grenzbebauung",
+    "geschlossene bauweise",
+    "anbau"
+   ],
+   "quelle": "§ 6 Abs. 1 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 36–37",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-020",
+   "typ": "karte",
+   "frage": "Welchen Vorrang haben Bebauungsplan und umgebende Bebauung gegenüber den Abstandsregeln der HBO?",
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Die Absätze 1 bis 10 gelten nicht, soweit Festsetzungen eines Bebauungsplans oder einer anderen Satzung die Tiefe der Abstandsflächen verbindlich bestimmen oder soweit nach der umgebenden Bebauung im Sinne von § 34 Abs. 1 Satz 1 BauGB abweichende Gebäudeabstände zulässig sind (§ 6 Abs. 11 HBO).",
+   "vertiefung": "So können historisch dichte Quartiere weitergebaut werden, ohne an der Landesregel zu scheitern. Weicht ein Plan von den üblichen Abständen ab, muss die Begründung darlegen, warum – der Städtebaureader nennt dafür eine lange Liste abzuwägender Belange. Unberührt bleibt das Hessische Nachbarrechtsgesetz mit seinen privatrechtlichen Grenzabständen (§ 6 Abs. 13).",
+   "tags": [
+    "vorrang",
+    "bebauungsplan",
+    "§ 34 baugb"
+   ],
+   "quelle": "§ 6 Abs. 11 und 13 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I; FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 43 und 45",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-021",
+   "typ": "freitext",
+   "frage": "Welche Belange sind nach dem Städtebaureader abzuwägen, wenn ein Bebauungsplan Gebäudeabstände abweichend von der Bauordnung festlegt? Nenne mindestens sechs und ordne sie danach, ob sie eher für größere oder kleinere Abstände sprechen.",
+   "pruefpunkte": [
+    "Mindestens sechs Belange genannt",
+    "Brandschutz, Besonnung, Einblickschutz, Durchlüftung oder Schallschutz als Gründe für größere Abstände",
+    "Flächensparendes Bauen, Witterungs- bzw. Windschutz, Gestaltung oder Denkmalschutz als mögliche Gründe für kleinere Abstände",
+    "Zugänglichkeit und Feuerwehrdurchfahrt genannt",
+    "Erkannt, dass Belange in beide Richtungen wirken und abzuwägen sind"
+   ],
+   "antwort": "Für größere Abstände sprechen etwa Brandschutz, Besonnung, Ausblick, Abwehr von Einblick (Sozialabstand), Durchlüftung, Schallschutz, Zugänglichkeit und Durchfahrt für die Feuerwehr, Nutzung und Begrünung der Zwischenräume. Für kleinere Abstände sprechen ökonomische, flächensparende Flächennutzung, Sonnenschutz, Windschutz für den Straßenraum, die Gestaltung städtebaulicher Räume und der Denkmalschutz bei historisch engen Strukturen.",
+   "vertiefung": "Der Reader nennt die Liste ausdrücklich ohne Anspruch auf Vollständigkeit und betont, dass sich die Belange nur zum Teil aus Wohnbedürfnissen ableiten. Gerade das macht die Abwägung anspruchsvoll: Ein enges Altstadtgefüge kann gestalterisch und denkmalpflegerisch richtig sein, obwohl es Besonnung kostet.",
+   "tags": [
+    "abwägung",
+    "gebäudeabstände",
+    "belange"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 43",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-022",
+   "typ": "karte",
+   "frage": "Was gilt nach der HBO für bestehende Gebäude, die die heute geforderten Abstandsflächen nicht einhalten?",
+   "antwort": "Bei rechtmäßig errichteten Gebäuden sind Änderungen im Inneren, Nutzungsänderungen und die Neuerrichtung eines gleichartigen Gebäudes am selben Ort zulässig. Andere Änderungen sind zulässig, wenn der Grenzabstand mindestens 2,50 m beträgt, Länge und Höhe der grenzzugewandten Wände und Dachflächen gleich bleiben und keine Öffnungen neu geschaffen oder vergrößert werden. Weitergehende Änderungen können unter Würdigung nachbarlicher und brandschutzrechtlicher Belange zugelassen werden (§ 6 Abs. 12 HBO).",
+   "vertiefung": "Die Regel erleichtert das Bauen im Bestand: Ein Altbau, der nach heutigem Recht zu nah an der Grenze steht, muss bei einer Modernisierung nicht abgerissen oder zurückgesetzt werden. Für Grenzgaragen nach Absatz 10 gilt die Erleichterung nicht.",
+   "tags": [
+    "bestand",
+    "bestandsschutz",
+    "umbau"
+   ],
+   "quelle": "§ 6 Abs. 12 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Werte aus einer nicht amtlichen Wiedergabe (anwalt24.de, gestützt durch schwarzplan.eu). Gegen den amtlichen Text von § 6 Abs. 9, 10 und 12 HBO in der Fassung des Baupakets I (GVBl. 2025 Nr. 66) prüfen, ob die Grenzbebauung insgesamt 15 m, die mittlere Wandhöhe 3 m, die Wandfläche 25 m² je Nachbargrenze und die übrigen genannten Grenzen unverändert gelten."
+  },
+  {
+   "id": "rb-af-023",
+   "typ": "karte",
+   "frage": "Ein Lehrbuch nennt für die Tiefe der Abstandsfläche 0,8 H, eine Mindesttiefe von 3 m und ein Schmalseitenprivileg. Warum darfst du das nicht ungeprüft auf ein Vorhaben in Hessen übertragen?",
+   "antwort": "Weil Abstandsflächen Landesrecht sind und sich mehrfach geändert haben. Die im Städtebaureader abgedruckten Werte stammen aus der damaligen BauO NRW (0,8 H, 0,5 H in Kern-, Gewerbe- und Industriegebieten, Schmalseitenprivileg auf 16 m Länge). In Hessen gilt heute allgemein 0,4 H, in Gewerbe- und Industriegebieten 0,2 H, und die Mindesttiefe beträgt seit dem Baupaket I 2025 nur noch 2,50 m. Ein Schmalseitenprivileg kennt § 6 HBO nicht.",
+   "vertiefung": "Für Klausur und Praxis heißt das: Immer zuerst klären, welches Land und welche Fassung gilt. Auch innerhalb Hessens stehen im Reader noch alte Werte – etwa die Mindesttiefe von 3 m.",
+   "tags": [
+    "länderrecht",
+    "rechtsstand",
+    "schmalseitenprivileg"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 40 und 44; § 6 Abs. 5 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-af-024",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schritte zur Ermittlung der Tiefe einer Abstandsfläche nach HBO in die richtige Reihenfolge.",
+   "schritte": [
+    "Wandhöhe von der Geländeoberfläche bis zur Schnittlinie mit der Dachhaut bestimmen",
+    "Dachanteile und Dachaufbauten nach Neigung und Breite hinzurechnen – Ergebnis ist H",
+    "Faktor nach dem Gebiet wählen: allgemein 0,4, in Gewerbe- und Industriegebieten 0,2",
+    "Tiefe berechnen und auf volle 0,10 m abrunden",
+    "Mit der Mindesttiefe von 2,50 m vergleichen"
+   ],
+   "bild": "bilder/rb-af-wandhoehe.svg",
+   "bildunterschrift": "Beispiel: Wandhöhe 6,40 m, Dach 50° mit 4,50 m Höhe, Tiefe 3,10 m.",
+   "antwort": "Wandhöhe von der Geländeoberfläche bis zur Dachhaut bestimmen – Dachanteile und Dachaufbauten hinzurechnen (= H) – Faktor nach Gebiet wählen (0,4 oder 0,2) – Tiefe berechnen und auf volle 0,10 m abrunden – mit der Mindesttiefe von 2,50 m vergleichen.",
+   "vertiefung": "Die Reihenfolge verhindert den häufigsten Fehler: zuerst zu runden und dann das Dach hinzuzurechnen. Erst wenn die Tiefe feststeht, wird geprüft, ob sie auf dem eigenen Grundstück oder bis zur Straßenmitte Platz findet.",
+   "tags": [
+    "ermittlung",
+    "tiefe",
+    "prüfschema"
+   ],
+   "quelle": "§ 6 Abs. 4 und 5 § 6 HBO vom 28.05.2018 (GVBl. S. 198), zuletzt geändert 14.10.2025 (GVBl. 2025 Nr. 66, Baupaket I); Wortlaut nach anwalt24.de, Änderungen 2025 nach Synopse der AKH zum Baupaket I",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}

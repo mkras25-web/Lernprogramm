@@ -535,7 +535,9 @@
         },
         {
           "id": "rb-abstandsflaechen",
-          "titel": "Abstandsflächen"
+          "titel": "Abstandsflächen",
+          "datei": "items/rb-abstandsflaechen.json",
+          "bild": "bilder/rb-af-lageplan.svg"
         },
         {
           "id": "rb-verfahren",
