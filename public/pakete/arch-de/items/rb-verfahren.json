@@ -1,0 +1,780 @@
+{
+ "thema": "rb-verfahren",
+ "titel": "Genehmigungsverfahren und Freistellung",
+ "erklaerung": {
+  "absaetze": [
+   "Die Baufreiheit gehört zum Eigentum, aber nur im Rahmen des geltenden Rechts. Deshalb bedürfen Errichtung, Änderung und Nutzungsänderung baulicher Anlagen grundsätzlich einer Baugenehmigung (§ 62 HBO). Die Genehmigungspflicht ist ein präventives Verbot mit Erlaubnisvorbehalt: Die Behörde prüft vorab, und wer alle Anforderungen erfüllt, hat einen Anspruch auf die Genehmigung. Seit den 1990er-Jahren haben die Länder das volle Verfahren schrittweise zurückgedrängt und die Verantwortung auf Bauherrschaft und Planende verlagert.",
+   "Hessen kennt vier Stufen. Kleine Vorhaben nach der Anlage zu § 63, etwa Gartenhäuser bis 30 m³ oder Einfriedungen bis 2 m, sind verfahrensfrei. Vorhaben im Geltungsbereich eines qualifizierten Bebauungsplans, die keine Ausnahme, Befreiung oder Abweichung brauchen, werden freigestellt (§ 64); gebaut werden darf, wenn die Gemeinde nicht binnen eines Monats ein Verfahren verlangt. Das Baupaket I hat die Freistellung bis 2030 auf Wohngebäude im Innenbereich nach § 34 BauGB erweitert (§ 64a).",
+   "Alle übrigen Vorhaben, die keine Sonderbauten sind, laufen im vereinfachten Verfahren (§ 65): Geprüft werden das Bauplanungsrecht, beantragte Abweichungen und ersetzte Fachentscheidungen, und nach drei Monaten gilt die Genehmigung als erteilt. Sonderbauten wie Hochhäuser oder Versammlungsstätten durchlaufen das Baugenehmigungsverfahren mit vollem Prüfumfang (§ 66). Die Bauherrschaft kann stets das höhere Verfahren verlangen. Wichtig: Was nicht geprüft wird, gilt trotzdem.",
+   "Die Baugenehmigung stellt fest, dass das Vorhaben dem geprüften Recht entspricht, gibt den Bau frei und verleiht Bestandsschutz. Sie ist sachbezogen, wirkt für Rechtsnachfolger und ergeht unbeschadet privater Rechte Dritter. Sie kann Auflagen, Bedingungen und Befristungen enthalten. Vorab lassen sich einzelne Fragen per Bauvorbescheid für drei Jahre verbindlich klären; eine Teilbaugenehmigung erlaubt den frühen Beginn mit Baugrube oder Bauabschnitten.",
+   "Wer ohne erforderliche Genehmigung baut, handelt formell illegal; wer gegen materielles Recht verstößt, materiell illegal. Für das Stoppen der Arbeiten genügt die formelle Illegalität, für den Abriss braucht es grundsätzlich beides – und auch dann nur, wenn rechtmäßige Zustände nicht auf andere Weise herstellbar sind. Häufige Verwechslung: Freistellung heißt nicht Genehmigung. Wer freigestellt baut, hat keinen Bescheid, der ihn schützt."
+  ],
+  "merksatz": "Je höher die Verfahrensstufe, desto mehr prüft die Behörde – doch das materielle Recht gilt auf jeder Stufe, auch ganz ohne Verfahren.",
+  "bild": "bilder/rb-vf-stufen.svg",
+  "bildunterschrift": "Die vier Verfahrensstufen der HBO vom verfahrensfreien Gartenhaus bis zum Sonderbau.",
+  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 534–584, S. 191–207; Rn. 592–600, S. 208–211; Kontrollfragen S. 217; §§ 62–82 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Anlage zu § 63 HBO, Fassung ab 14.10.2025 (Abdruck der Gemeinde Biblis)"
+ },
+ "lernziele": [
+  "Du kannst die vier Verfahrensstufen der HBO nennen und für ein Vorhaben das richtige Verfahren bestimmen.",
+  "Du kennst Voraussetzungen, Ablauf und Fristen von Freistellung und vereinfachtem Verfahren.",
+  "Du kannst Wirkungen, Nebenbestimmungen und Geltungsdauer der Baugenehmigung sowie Vorbescheid und Teilbaugenehmigung erklären.",
+  "Du kannst formelle und materielle Illegalität unterscheiden und die passende Maßnahme der Bauaufsicht zuordnen."
+ ],
+ "siehe": [
+  "rb-bauleitplanung",
+  "rb-34-35",
+  "rb-abstandsflaechen"
+ ],
+ "items": [
+  {
+   "id": "rb-vf-001",
+   "typ": "karte",
+   "frage": "Warum braucht man für das Bauen eine Genehmigung, obwohl das Eigentum die Baufreiheit umfasst?",
+   "antwort": "Die Baufreiheit gehört zum Eigentum, aber nur nach Maßgabe des geltenden Rechts. Die Genehmigungspflicht soll nicht das Bauen verbieten, sondern der Behörde ermöglichen, vorab zu prüfen, ob das Vorhaben dem Recht entspricht. Sie ist ein präventives Verbot mit Erlaubnisvorbehalt: Wer alle Anforderungen erfüllt, hat einen Anspruch auf die Baugenehmigung.",
+   "vertiefung": "Die Baugenehmigung ist deshalb eine gebundene Kontrollerlaubnis – die Behörde hat kein Ermessen, ob sie sie erteilt (§ 74 Abs. 1 HBO). Anders bei Ausnahme und Befreiung: Sie sind ein repressives Verbot mit Befreiungsvorbehalt, das abweichende Vorhaben grundsätzlich verbietet und nur nach Ermessen zulässt. Neben der präventiven Kontrolle steht die repressive: die Bauaufsicht, die nachträglich einschreiten kann.",
+   "tags": [
+    "baufreiheit",
+    "baugenehmigung",
+    "erlaubnisvorbehalt"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 534–535, S. 191; Rn. 543, S. 194; Kontrollfrage 7, S. 217; § 74 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-002",
+   "typ": "karte",
+   "frage": "Welche Verfahrensarten kennt die Hessische Bauordnung?",
+   "bild": "bilder/rb-vf-entscheid.svg",
+   "bildunterschrift": "Entscheidungsweg zum richtigen Verfahren in Hessen.",
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Vier Stufen: verfahrensfreie Vorhaben nach der Anlage zu § 63, die Genehmigungsfreistellung nach § 64 (befristet erweitert durch § 64a), das vereinfachte Baugenehmigungsverfahren nach § 65 als Regelverfahren und das Baugenehmigungsverfahren nach § 66 für Sonderbauten. Mit jeder Stufe wächst der Prüfumfang der Behörde.",
+   "vertiefung": "Grundsatz bleibt die Genehmigungspflicht (§ 62 Abs. 1); die Ausnahmen sind abschließend geregelt. Seit den 1990er-Jahren haben die Länder das volle Verfahren immer weiter zurückgedrängt, um zu beschleunigen und Prüfaufgaben auf Bauherrschaft und Sachverständige zu verlagern. Battis kritisiert die dadurch entstandene Zersplitterung zwischen den Ländern.",
+   "tags": [
+    "verfahrensarten",
+    "hbo",
+    "überblick"
+   ],
+   "quelle": "§§ 62–66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 536–537, S. 192",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-003",
+   "typ": "bildbeschriftung",
+   "frage": "Ordne den Stufen das passende Verfahren nach der HBO zu.",
+   "referenz": "bilder/rb-vf-stufen-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 62.8,
+     "y": 46.1,
+     "name": "vereinfachtes Baugenehmigungsverfahren (§ 65)"
+    },
+    {
+     "nr": 2,
+     "x": 16.5,
+     "y": 68.0,
+     "name": "verfahrensfrei (§ 63)"
+    },
+    {
+     "nr": 3,
+     "x": 85.9,
+     "y": 35.2,
+     "name": "Baugenehmigungsverfahren (§ 66)"
+    },
+    {
+     "nr": 4,
+     "x": 39.6,
+     "y": 57.0,
+     "name": "Genehmigungsfreistellung (§ 64)"
+    }
+   ],
+   "bild": "bilder/rb-vf-stufen.svg",
+   "bildunterschrift": "Lösung: die vier Verfahrensstufen der HBO.",
+   "antwort": "Von links: das kleine Gartenhaus ist verfahrensfrei, das Einfamilienhaus im Bebauungsplangebiet wird freigestellt, das Mehrfamilienhaus läuft im vereinfachten Verfahren, das Hochhaus als Sonderbau im Baugenehmigungsverfahren.",
+   "vertiefung": "Je höher die Stufe, desto mehr prüft die Bauaufsicht selbst – und desto weniger liegt allein in der Verantwortung von Bauherrschaft und Entwurfsverfassenden. Die Zuordnung der Beispiele ist typisch, aber nicht zwingend: Ein Einfamilienhaus, das eine Befreiung braucht, fällt aus der Freistellung heraus.",
+   "tags": [
+    "verfahrensarten",
+    "hbo"
+   ],
+   "quelle": "§§ 63–66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-004",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Vorhaben sind nach der Anlage zu § 63 HBO baugenehmigungsfrei?",
+   "optionen": [
+    "Gartenhaus ohne Aufenthaltsraum, Toilette oder Feuerstätte mit 25 m³ Brutto-Rauminhalt",
+    "Einfriedung mit 1,80 m Höhe",
+    "Solaranlage auf dem Dach eines Wohnhauses",
+    "Gartenhaus mit 25 m³, in dem ein Schlafraum eingerichtet wird",
+    "Garage mit 70 m² Grundfläche"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: Abschnitt I Nr. 1.1 – bis 30 m³.",
+    "Richtig: Einfriedungen bis 2 m Höhe (I Nr. 7.1).",
+    "Richtig: Solaranlagen auf Dachflächen sind frei, außer bei Hochhäusern (I Nr. 3.9.1).",
+    "Falsch: Ein Schlafraum ist ein Aufenthaltsraum.",
+    "Falsch: Garagen sind nur bis 50 m² Grundfläche frei."
+   ],
+   "antwort": "Das Gartenhaus ohne Aufenthaltsraum mit 25 m³, die Einfriedung mit 1,80 m Höhe und die Solaranlage auf dem Dach eines Wohnhauses. Ein Gartenhaus mit Schlafraum hat einen Aufenthaltsraum und ist deshalb nicht frei; eine Garage mit 70 m² überschreitet die Grenze von 50 m².",
+   "vertiefung": "Die Anlage ist in vier Abschnitte gegliedert: Errichtung, Änderung, Nutzungsänderung und Freistellungsvorbehalte. Manche Vorhaben sind nur unter Vorbehalt frei – Garagen etwa müssen der Gemeinde angezeigt werden; gebaut werden darf, wenn sie nicht binnen 14 Tagen ein Verfahren verlangt. Bei Solaranlagen gilt die Freiheit nicht für Hochhäuser.",
+   "tags": [
+    "verfahrensfrei",
+    "anlage zu § 63",
+    "gartenhaus"
+   ],
+   "quelle": "Anlage zu § 63 HBO, Fassung ab 14.10.2025 (Abdruck der Gemeinde Biblis), Abschnitt I Nr. 1.1, 1.2, 3.9.1, 7.1, Abschnitt IV Nr. 1",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-005",
+   "typ": "numerisch",
+   "frage": "Bis zu welchem Brutto-Rauminhalt sind Gebäude ohne Aufenthaltsräume, Toiletten und Feuerstätten in Hessen baugenehmigungsfrei?",
+   "wert": 30,
+   "toleranz": 0,
+   "einheit": "m³",
+   "antwort": "Bis 30 m³ Brutto-Rauminhalt, sofern sie nicht Verkaufs- oder Ausstellungszwecken dienen.",
+   "vertiefung": "Der Brutto-Rauminhalt umfasst das ganze umbaute Volumen einschließlich Wänden und Dach. Ein Gartenhaus von 3 × 4 m mit 2,50 m mittlerer Höhe hat schon 30 m³. Verfahrensfrei heißt nicht rechtsfrei: Abstandsflächen, Bebauungsplan und Brandschutz gelten trotzdem.",
+   "tags": [
+    "verfahrensfrei",
+    "anlage zu § 63",
+    "gartenhaus"
+   ],
+   "quelle": "Anlage zu § 63 HBO, Fassung ab 14.10.2025 (Abdruck der Gemeinde Biblis), Abschnitt I Nr. 1.1",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-006",
+   "typ": "karte",
+   "frage": "Was bedeutet „verfahrensfrei“, und was bedeutet es nicht?",
+   "siehe": [
+    "rb-lbo",
+    "rb-abstandsflaechen"
+   ],
+   "antwort": "Verfahrensfrei heißt: Es gibt weder Genehmigung noch Anzeige oder Prüfung – die Bauherrschaft baut in eigener Verantwortung. Es heißt nicht, dass die Vorschriften nicht gelten: Anlagen müssen die öffentlich-rechtlichen Vorschriften auch dann einhalten, wenn eine bauaufsichtliche Prüfung entfällt (§ 62 Abs. 2 HBO).",
+   "vertiefung": "Der Bauherr kann sich bei verfahrensfreien Vorhaben auch nicht darauf verlassen, dass alles in Ordnung ist, nur weil niemand einschreitet. Verstößt die Anlage gegen materielles Recht, kann die Bauaufsicht jederzeit einschreiten. Wird ein an sich freies Vorhaben als Teil einer genehmigungspflichtigen Anlage gebaut, etwa ein Pool als Teil einer Gesamtanlage, ist es mitzugenehmigen.",
+   "tags": [
+    "verfahrensfrei",
+    "eigenverantwortung",
+    "materielles recht"
+   ],
+   "quelle": "§ 62 Abs. 2 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 538, S. 192–193",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-007",
+   "typ": "mehrfachauswahl",
+   "frage": "Unter welchen Voraussetzungen ist ein Vorhaben in Hessen nach § 64 HBO von der Genehmigung freigestellt?",
+   "optionen": [
+    "Das Vorhaben ist kein Sonderbau.",
+    "Es liegt im Geltungsbereich eines qualifizierten oder vorhabenbezogenen Bebauungsplans.",
+    "Es braucht weder Ausnahme, Befreiung noch Abweichung.",
+    "Die Erschließung ist gesichert.",
+    "Die Bauaufsicht hat die Bauvorlagen geprüft und freigegeben.",
+    "Die Nachbarn haben den Plänen zugestimmt."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig: Sonderbauten sind ausgeschlossen.",
+    "Richtig: § 64 Abs. 1 Nr. 1.",
+    "Richtig: § 64 Abs. 1 Nr. 2 und 4.",
+    "Richtig: § 64 Abs. 1 Nr. 3.",
+    "Falsch: Eine Prüfpflicht besteht gerade nicht (§ 64 Abs. 3).",
+    "Falsch: Eine Nachbarzustimmung ist keine Voraussetzung."
+   ],
+   "siehe": [
+    "rb-bauleitplanung",
+    "rb-34-35"
+   ],
+   "antwort": "Es darf kein Sonderbau sein, muss im Geltungsbereich eines qualifizierten oder vorhabenbezogenen Bebauungsplans liegen, darf weder Ausnahme, Befreiung noch Abweichung brauchen, die Erschließung muss gesichert sein – und die Gemeinde darf nicht binnen eines Monats ein Genehmigungsverfahren verlangen.",
+   "vertiefung": "Die Freistellung beruht darauf, dass die wesentlichen Fragen schon im Bebauungsplan entschieden sind. Eine Prüfung durch Gemeinde oder Bauaufsicht findet nicht statt; eine Zustimmung der Nachbarn ist nicht vorgesehen. Für Gebäude mit vielen Wohnungen, Besuchern oder Kitas im Sicherheitsabstand eines Störfallbetriebs gilt die Freistellung nicht.",
+   "tags": [
+    "genehmigungsfreistellung",
+    "bebauungsplan",
+    "§ 64 hbo"
+   ],
+   "quelle": "§ 64 Abs. 1 und 2 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 539–540, S. 193",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-008",
+   "typ": "vergleich",
+   "frage": "Beide Einfamilienhäuser liegen im Geltungsbereich eines qualifizierten Bebauungsplans, die Erschließung ist gesichert. Welches kann im Freistellungsverfahren nach § 64 HBO gebaut werden?",
+   "seiten": [
+    {
+     "titel": "A",
+     "bild": "bilder/rb-vf-freistellung-a.svg",
+     "beschreibung": "Haus innerhalb der Baugrenzen"
+    },
+    {
+     "titel": "B",
+     "bild": "bilder/rb-vf-freistellung-b.svg",
+     "beschreibung": "Haus überschreitet die hintere Baugrenze"
+    }
+   ],
+   "richtig": 0,
+   "siehe": [
+    "rb-bauweise",
+    "rb-34-35"
+   ],
+   "antwort": "Haus A. Es hält das Baufenster ein. Haus B überschreitet die hintere Baugrenze und braucht deshalb eine Befreiung nach § 31 Abs. 2 BauGB – damit ist die Freistellung ausgeschlossen, das Vorhaben läuft im vereinfachten Genehmigungsverfahren.",
+   "vertiefung": "Battis weist auf eine Konsequenz hin: Wer eine Abweichung vom Bebauungsplan bewusst beantragt, kommt so auch ohne Wahlrecht aus dem Freistellungsverfahren heraus. In Hessen braucht es diesen Umweg nicht, weil die Bauherrschaft ohnehin ein Genehmigungsverfahren verlangen kann (§ 62 Abs. 3 HBO).",
+   "tags": [
+    "genehmigungsfreistellung",
+    "befreiung",
+    "baugrenze"
+   ],
+   "quelle": "§ 64 Abs. 1 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; § 31 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 539–540, S. 193",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-009",
+   "typ": "numerisch",
+   "frage": "Wie viele Monate hat die Gemeinde im Freistellungsverfahren nach § 64 HBO Zeit, ein Genehmigungsverfahren zu verlangen?",
+   "wert": 1,
+   "toleranz": 0,
+   "einheit": "Monat",
+   "antwort": "Einen Monat ab Eingang der Unterlagen bei ihr. Die Frist beginnt spätestens zwei Wochen nach Eingang bei der Bauaufsichtsbehörde. Verlangt die Gemeinde nichts, darf gebaut werden.",
+   "vertiefung": "Die Gemeinde kann das Verfahren ohne Begründung verlangen, etwa wenn sie Zweifel an den Voraussetzungen hat – einen Anspruch darauf, dass sie schweigt, hat die Bauherrschaft nicht. Die Bauaufsicht teilt der Bauherrschaft mit, wann sie beginnen darf. Wird nicht binnen fünf Jahren begonnen, beginnt das Verfahren von vorn.",
+   "tags": [
+    "genehmigungsfreistellung",
+    "frist",
+    "gemeinde"
+   ],
+   "quelle": "§ 64 Abs. 3 und 4 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-010",
+   "typ": "karte",
+   "frage": "Wie läuft eine Genehmigungsfreistellung ab, und was passiert, wenn der Bebauungsplan später für unwirksam erklärt wird?",
+   "antwort": "Die Bauherrschaft reicht die Bauvorlagen bei der Bauaufsichtsbehörde ein, die unverzüglich die Gemeinde beteiligt. Weder Gemeinde noch Bauaufsicht müssen prüfen. Verlangt die Gemeinde binnen eines Monats kein Verfahren und beantragt keine vorläufige Untersagung, darf gebaut werden – ohne Baugenehmigung. Stellt sich nach Fertigstellung heraus, dass der Bebauungsplan unwirksam ist, braucht es keine nachträgliche Genehmigung, und ein Abriss aus diesem Grund kann nicht verlangt werden, außer Rechte Dritter erfordern es.",
+   "vertiefung": "Das Verfahren dient nur der Information der Gemeinde, damit sie ihre Planungshoheit wahren kann – etwa mit einer Veränderungssperre. Für Fehler haften Bauherrschaft und Entwurfsverfassende selbst; die bautechnischen Nachweise sind trotzdem zu erstellen. Die Bauaufsicht kann einschreiten, wenn sie Verstöße bemerkt.",
+   "tags": [
+    "genehmigungsfreistellung",
+    "ablauf",
+    "gemeinde"
+   ],
+   "quelle": "§ 64 Abs. 3–6 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 540, S. 193",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-011",
+   "typ": "karte",
+   "frage": "Was hat das hessische Baupaket I (Oktober 2025) an der Genehmigungsfreistellung erweitert?",
+   "siehe": [
+    "rb-34-35"
+   ],
+   "antwort": "Nach § 64a sind Wohngebäude auch im unbeplanten Innenbereich nach § 34 BauGB freigestellt, befristet bis Ende 2030; hier kann die Bauaufsichtsbehörde binnen eines Monats ein Genehmigungsverfahren verlangen. Nach § 64 Abs. 1a gilt die Freistellung außerdem für den Dachgeschossausbau zu Wohnzwecken einschließlich Gauben, auch im Bereich eines einfachen Bebauungsplans oder nach § 34 BauGB.",
+   "vertiefung": "Beide Regeln sollen Wohnraum schneller schaffen – parallel zum Bau-Turbo des Bundes. Sie verlagern aber auch die Prüfung des Einfügens nach § 34 auf die Planenden, denn ein Bebauungsplan, der die Fragen vorab beantwortet, fehlt im Innenbereich. Wer unsicher ist, ob sich das Vorhaben einfügt, sollte einen Bauvorbescheid einholen.",
+   "tags": [
+    "baupaket i",
+    "genehmigungsfreistellung",
+    "wohnungsbau",
+    "§ 34 baugb"
+   ],
+   "quelle": "§§ 64 Abs. 1a, 64a HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "§ 64 Abs. 1a und § 64a HBO nach anwalt24.de (Zusammenfassung); Wortlaut, Befristung und Rolle der Gemeinde bei § 64a am amtlichen Text prüfen."
+  },
+  {
+   "id": "rb-vf-012",
+   "typ": "karte",
+   "frage": "Für welche Vorhaben gilt das vereinfachte Baugenehmigungsverfahren nach § 65 HBO, und was prüft die Behörde?",
+   "antwort": "Für alle Vorhaben, die keine Sonderbauten sind und nicht unter die Freistellung fallen – es ist das Regelverfahren. Geprüft werden nur das Bauplanungsrecht (BauGB und darauf gestützte Vorschriften), beantragte Abweichungen nach § 73 und andere öffentlich-rechtliche Vorschriften, soweit die Baugenehmigung eine Entscheidung nach ihnen ersetzt. Die übrigen Anforderungen der HBO werden nicht geprüft, gelten aber trotzdem.",
+   "vertiefung": "Über den vollständigen Antrag muss die Behörde binnen drei Monaten entscheiden, aus wichtigem Grund verlängerbar um bis zu zwei Monate; danach gilt die Genehmigung als erteilt. Die bautechnischen Nachweise (§ 68) bleiben unberührt. Erkennt die Behörde einen Verstoß gegen nicht geprüfte Vorschriften, darf sie den Antrag nach Battis mangels Sachbescheidungsinteresse ablehnen oder eine Nebenbestimmung erlassen.",
+   "tags": [
+    "vereinfachtes verfahren",
+    "prüfumfang",
+    "genehmigungsfiktion"
+   ],
+   "quelle": "§ 65 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 541–542, S. 193–194",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-013",
+   "typ": "zuordnung",
+   "frage": "Ordne jedem Verfahren seinen Prüfumfang zu.",
+   "paare": [
+    [
+     "verfahrensfrei (§ 63)",
+     "keine Prüfung, kein Verfahren"
+    ],
+    [
+     "Genehmigungsfreistellung (§ 64)",
+     "keine Prüfung, Gemeinde kann binnen eines Monats ein Verfahren verlangen"
+    ],
+    [
+     "vereinfachtes Verfahren (§ 65)",
+     "Bauplanungsrecht, beantragte Abweichungen, ersetzte Fachentscheidungen"
+    ],
+    [
+     "Baugenehmigungsverfahren (§ 66)",
+     "Bauplanungsrecht, gesamte HBO und ersetzte Fachentscheidungen"
+    ]
+   ],
+   "antwort": "Verfahrensfreie Vorhaben werden nicht geprüft. Bei der Freistellung prüft niemand, die Gemeinde kann aber ein Verfahren verlangen. Das vereinfachte Verfahren prüft Planungsrecht, beantragte Abweichungen und ersetzte Fachentscheidungen. Das Baugenehmigungsverfahren prüft zusätzlich die gesamte HBO.",
+   "vertiefung": "Je kleiner der Prüfumfang, desto größer die Verantwortung der Entwurfsverfassenden: Was die Behörde nicht prüft, muss die Planung ohne Netz richtig machen. Im vollen Verfahren bleiben nur Erschütterungsschutz und baulicher Arbeitsschutz außen vor.",
+   "tags": [
+    "verfahrensarten",
+    "prüfumfang"
+   ],
+   "quelle": "§§ 62–66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-014",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen zur Wahl des Verfahrens in Hessen treffen zu?",
+   "optionen": [
+    "Statt der Freistellung kann die Bauherrschaft ein Genehmigungsverfahren verlangen.",
+    "Statt des vereinfachten Verfahrens kann sie das volle Baugenehmigungsverfahren verlangen.",
+    "Für einen Sonderbau kann sie das vereinfachte Verfahren wählen.",
+    "Die Gemeinde kann im Freistellungsfall ein Genehmigungsverfahren verlangen."
+   ],
+   "richtig": [
+    0,
+    1,
+    3
+   ],
+   "warum": [
+    "Richtig: § 62 Abs. 3 Satz 1.",
+    "Richtig: § 62 Abs. 3 Satz 2.",
+    "Falsch: Sonderbauten laufen immer nach § 66.",
+    "Richtig: § 64 Abs. 1 Nr. 5 und Abs. 4."
+   ],
+   "antwort": "Statt der Freistellung kann die Bauherrschaft ein vereinfachtes oder volles Genehmigungsverfahren verlangen, statt des vereinfachten Verfahrens das volle. Die Gemeinde kann die Freistellung durch ihre Erklärung beenden. Einen Sonderbau ins vereinfachte Verfahren zu holen, ist dagegen nicht möglich.",
+   "vertiefung": "Das Wahlrecht nach oben ist sinnvoll, wenn die Bauherrschaft Rechtssicherheit braucht – etwa für eine Finanzierung oder bei Streit mit Nachbarn. Eine Baugenehmigung hat feststellende Wirkung und schützt den Bestand, eine Freistellung nicht.",
+   "tags": [
+    "wahlrecht",
+    "verfahrensarten"
+   ],
+   "quelle": "§§ 62 Abs. 3, 64 Abs. 4, 66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-015",
+   "typ": "karte",
+   "frage": "Was gilt im Baugenehmigungsverfahren nach § 66 HBO?",
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Es gilt für Sonderbauten und ihre Nebengebäude und Nebenanlagen. Die Behörde prüft das Bauplanungsrecht, die HBO und die auf ihr beruhenden Vorschriften sowie andere öffentlich-rechtliche Vorschriften, soweit die Baugenehmigung eine Entscheidung nach ihnen ersetzt. Ausgenommen sind Erschütterungsschutz und baulicher Arbeitsschutz.",
+   "vertiefung": "Sonderbauten sind Anlagen mit besonderem Risiko, etwa Hochhäuser über 22 m, große Verkaufs- und Versammlungsstätten, Krankenhäuser oder Schulen (§ 2 Abs. 9 HBO). Für sie gibt es keine Bearbeitungsfrist mit Fiktion; die Behörde kann besondere Anforderungen stellen oder Erleichterungen zulassen (§ 53 HBO).",
+   "tags": [
+    "baugenehmigungsverfahren",
+    "sonderbau",
+    "prüfumfang"
+   ],
+   "quelle": "§§ 66, 70 Abs. 4 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-016",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schritte eines vereinfachten Baugenehmigungsverfahrens in Hessen in die richtige Reihenfolge.",
+   "schritte": [
+    "Bauantrag mit Bauvorlagen bei der Bauaufsichtsbehörde einreichen",
+    "Vollständigkeitsprüfung binnen eines Monats",
+    "Beteiligung der Gemeinde und der Fachstellen",
+    "Benachrichtigung der Nachbarn bei Abweichungen von nachbarschützenden Vorschriften",
+    "Entscheidung binnen drei Monaten, sonst Genehmigungsfiktion",
+    "Baubeginnsanzeige mindestens eine Woche vorher",
+    "Absteckung der Grundfläche und Baubeginn"
+   ],
+   "bild": "bilder/rb-vf-ablauf.svg",
+   "bildunterschrift": "Ablauf und Fristen des vereinfachten Verfahrens.",
+   "antwort": "Bauantrag einreichen, Vollständigkeit prüfen, Gemeinde und Fachstellen beteiligen, bei Abweichungen von nachbarschützenden Vorschriften die Nachbarn benachrichtigen, entscheiden, den Baubeginn anzeigen und schließlich abstecken und bauen.",
+   "vertiefung": "An mehreren Stellen helfen Fiktionen gegen Stillstand: Der Antrag gilt nach einem Monat ohne Nachforderung als vollständig, Stellungnahmen anderer Stellen als erteilt, und die Genehmigung selbst gilt nach Fristablauf als erteilt. Für das Einvernehmen der Gemeinde nach § 36 BauGB gilt die bundesrechtliche Frist von zwei Monaten.",
+   "tags": [
+    "ablauf",
+    "vereinfachtes verfahren",
+    "fristen"
+   ],
+   "quelle": "§§ 65, 69–71, 75 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; § 36 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-017",
+   "typ": "numerisch",
+   "frage": "Innerhalb wie vieler Monate muss die Bauaufsicht im vereinfachten Verfahren über den vollständigen Bauantrag entscheiden, bevor die Genehmigung als erteilt gilt (ohne Verlängerung)?",
+   "wert": 3,
+   "toleranz": 0,
+   "einheit": "Monate",
+   "antwort": "Innerhalb von drei Monaten nach Eingang des vollständigen Antrags. Aus wichtigem Grund kann die Behörde die Frist um bis zu zwei Monate verlängern; danach gilt die Genehmigung als erteilt.",
+   "vertiefung": "Die Fiktion ersetzt eine Entscheidung, nicht die Rechtmäßigkeit: Ein fingiert genehmigtes Vorhaben, das gegen geprüfte Vorschriften verstößt, ist rechtswidrig genehmigt und kann zurückgenommen werden. Für Nachbarn ist die fiktive Genehmigung genauso anfechtbar wie eine erteilte.",
+   "tags": [
+    "vereinfachtes verfahren",
+    "frist",
+    "genehmigungsfiktion"
+   ],
+   "quelle": "§ 65 Abs. 2 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-018",
+   "typ": "karte",
+   "frage": "Wie geht die Bauaufsicht mit einem eingegangenen Bauantrag um (§ 70 HBO)?",
+   "siehe": [
+    "rb-34-35"
+   ],
+   "antwort": "Sie prüft binnen eines Monats, ob Antrag und Bauvorlagen vollständig sind; fordert sie nichts nach, gilt der Antrag als vollständig. Bei Mängeln setzt sie eine Frist; werden die Mängel nicht behoben, gilt der Antrag als zurückgenommen. Sie beteiligt die Gemeinde und die Stellen, deren Beteiligung vorgeschrieben ist; deren Zustimmung gilt als erteilt, wenn sie nicht binnen eines Monats verweigert wird, soweit nicht andere Gesetze andere Fristen vorsehen.",
+   "vertiefung": "Für das Einvernehmen der Gemeinde nach § 36 BauGB gilt die bundesrechtliche Frist von zwei Monaten. Außer bei Sonderbauten entscheidet die Behörde binnen drei Monaten. Für Verzögerungen kann die Behörde nach Amtshaftungsgrundsätzen haften, etwa wenn sie rechtswidrig abwartet, bis eine Veränderungssperre erlassen ist.",
+   "tags": [
+    "bauantrag",
+    "vollständigkeit",
+    "beteiligung"
+   ],
+   "quelle": "§ 70 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; § 36 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 563, S. 200",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-019",
+   "typ": "karte",
+   "frage": "Wann und wie werden in Hessen die Nachbarn am Genehmigungsverfahren beteiligt?",
+   "antwort": "Die Bauaufsicht soll die Nachbarn benachrichtigen, bevor sie Abweichungen, Ausnahmen oder Befreiungen von nachbarschützenden Vorschriften zulässt. Einwendungen sind binnen zwei Wochen vorzubringen. Wer zugestimmt hat, wird nicht benachrichtigt; die Entscheidung wird nur denen bekanntgegeben, deren Einwendungen nicht entsprochen wurde.",
+   "vertiefung": "Die Beteiligung schützt öffentlich-rechtliche Nachbarbelange, nicht private Rechte. Nachbar ist der Eigentümer eines Grundstücks im Einwirkungsbereich, auch Erbbauberechtigte und Nießbraucher, nicht aber Mieter. Wer schweigt, ist nur für dieses Verfahren ausgeschlossen, verliert aber nicht automatisch sein Klagerecht.",
+   "tags": [
+    "nachbarbeteiligung",
+    "abweichung",
+    "einwendungen"
+   ],
+   "quelle": "§ 71 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 561–562, S. 199",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-020",
+   "typ": "karte",
+   "frage": "Was regelt § 74 HBO zur Baugenehmigung selbst?",
+   "antwort": "Sie ist zu erteilen, wenn dem Vorhaben keine öffentlich-rechtlichen Vorschriften entgegenstehen; bei Verstößen gegen sonstige öffentlich-rechtliche Vorschriften darf die Behörde sie ablehnen. Sie ergeht schriftlich mit gestempelten Bauvorlagen, ist nur bei Abweichungen von nachbarschützenden Vorschriften ohne Zustimmung des Nachbarn zu begründen, kann mit Auflagen, Bedingungen und Befristungen versehen werden und ergeht unbeschadet privater Rechte Dritter.",
+   "vertiefung": "Hessen gehört zu den Ländern, die der Behörde erlauben, eine Genehmigung auch wegen Verstößen gegen nicht zu prüfende Vorschriften abzulehnen. Damit liegt es zwischen dem strengen Trennungsmodell, bei dem die Behörde nur ihr Prüfprogramm entscheidet, und der Konzentration aller Entscheidungen in der Baugenehmigung. Die Gemeinde wird über Erteilung, Ablehnung und Fristablauf unterrichtet.",
+   "tags": [
+    "baugenehmigung",
+    "nebenbestimmungen",
+    "trennungsmodell"
+   ],
+   "quelle": "§ 74 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 553–557, S. 197–198",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-021",
+   "typ": "karte",
+   "frage": "Welche Wirkungen hat eine Baugenehmigung?",
+   "antwort": "Sie stellt fest, dass dem Vorhaben im Zeitpunkt der Erteilung keine zu prüfenden öffentlich-rechtlichen Vorschriften entgegenstehen (feststellende Wirkung). Sie gibt den Bau frei (verfügende Wirkung). Und sie verleiht dem genehmigten Bau Bestandsschutz: Ändert sich später das Recht, darf er so, wie er genehmigt ist, weiter bestehen und genutzt werden.",
+   "vertiefung": "Die Genehmigung ist sachbezogen, nicht personenbezogen – sie gilt auch für Käufer und Erben. Selbst eine rechtswidrige, aber wirksame Genehmigung schützt vor Abriss, solange sie nicht zurückgenommen ist. Gegen konkrete Gefahren schützt sie nicht: Dann darf die Behörde nachträgliche Anforderungen stellen.",
+   "tags": [
+    "baugenehmigung",
+    "bestandsschutz",
+    "wirkung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 573–576, S. 203–204; Rn. 579, S. 205; Kontrollfrage 13, S. 217",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-022",
+   "typ": "zuordnung",
+   "frage": "Ordne die Nebenbestimmungen einer Baugenehmigung ihrer Wirkung zu.",
+   "paare": [
+    [
+     "Auflage",
+     "verlangt ein zusätzliches Tun und ist selbstständig durchsetzbar"
+    ],
+    [
+     "Bedingung",
+     "Wirksamkeit hängt vom Eintritt eines Ereignisses ab"
+    ],
+    [
+     "Befristung",
+     "Genehmigung gilt nur für einen bestimmten Zeitraum"
+    ],
+    [
+     "modifizierende Auflage",
+     "in Wahrheit eine inhaltlich andere Genehmigung als beantragt"
+    ]
+   ],
+   "antwort": "Die Auflage verlangt ein zusätzliches Tun und ist selbstständig durchsetzbar. Die Bedingung macht die Wirksamkeit von einem Ereignis abhängig und ist untrennbar Teil der Genehmigung. Die Befristung begrenzt die Geltung zeitlich. Die sogenannte modifizierende Auflage ist in Wahrheit eine andere Genehmigung als beantragt.",
+   "vertiefung": "Faustregel: Darf das Vorhaben ohne die Nebenbestimmung nicht genutzt werden, ist eine Bedingung angebracht. Nach heutiger Rechtsprechung sind alle Nebenbestimmungen grundsätzlich isoliert anfechtbar. Gegen eine modifizierende Auflage – etwa vier statt drei beantragter Geschosse – hilft dagegen die Verpflichtungsklage auf die beantragte Genehmigung.",
+   "tags": [
+    "nebenbestimmungen",
+    "auflage",
+    "bedingung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 545–548, S. 194–195; § 74 Abs. 4 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-023",
+   "typ": "karte",
+   "frage": "Was bedeutet, dass die Baugenehmigung „unbeschadet der privaten Rechte Dritter“ erteilt wird?",
+   "antwort": "Die Genehmigung regelt nur das Verhältnis zwischen Bauherrschaft und Behörde. Sie schafft keine privaten Duldungspflichten und nimmt niemandem private Rechte, etwa eine Grunddienstbarkeit. Umgekehrt muss die Behörde private Rechte nicht prüfen; auch ein Nichteigentümer kann eine Baugenehmigung bekommen.",
+   "vertiefung": "Der Genehmigungsanspruch folgt nicht nur aus dem Eigentum, sondern aus der allgemeinen Handlungsfreiheit. Steht aber verbindlich fest, dass ein privates Recht die Ausführung verhindert, fehlt das Sachbescheidungsinteresse, und die Behörde kann den Antrag ablehnen. Private Streitigkeiten, etwa über Überbau oder Nachbarrecht, werden vor den Zivilgerichten geklärt.",
+   "tags": [
+    "baugenehmigung",
+    "private rechte",
+    "sachbescheidungsinteresse"
+   ],
+   "quelle": "§ 74 Abs. 5 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 581–584, S. 206–207",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-024",
+   "typ": "karte",
+   "frage": "Wann erlischt eine Baugenehmigung in Hessen?",
+   "antwort": "Wenn nicht innerhalb von fünf Jahren nach Erteilung mit der Ausführung begonnen oder die Bauausführung zwei Jahre unterbrochen wird. Auf Antrag kann die Frist jeweils um bis zu zwei Jahre verlängert werden, auch rückwirkend, wenn der Antrag vor Fristablauf eingegangen ist.",
+   "vertiefung": "Die Befristung verhindert, dass alte Genehmigungen neue, strengere Anforderungen dauerhaft unterlaufen. Andere Länder haben kürzere Fristen – Battis nennt für Nordrhein-Westfalen drei Jahre. Solange ein Nachbarwiderspruch läuft, hindert er die Ausnutzung nicht: Er hat nach § 212a BauGB keine aufschiebende Wirkung.",
+   "tags": [
+    "baugenehmigung",
+    "geltungsdauer",
+    "erlöschen"
+   ],
+   "quelle": "§ 74 Abs. 7 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 577, S. 204–205",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Fünf-/Zwei-Jahres-Frist des § 74 Abs. 7 HBO nach anwalt24.de (vermutlich Fassung Baupaket I); am amtlichen Wortlaut prüfen, frühere Fassungen nannten kürzere Fristen."
+  },
+  {
+   "id": "rb-vf-025",
+   "typ": "zuordnung",
+   "frage": "Ordne die besonderen Verfahren ihrem Zweck zu.",
+   "paare": [
+    [
+     "Bauvorbescheid (§ 76)",
+     "verbindliche Antwort auf einzelne Fragen vor dem Bauantrag"
+    ],
+    [
+     "Teilbaugenehmigung (§ 77)",
+     "Beginn mit Baugrube oder Bauabschnitten vor der Gesamtgenehmigung"
+    ],
+    [
+     "Typengenehmigung (§ 77a)",
+     "dieselbe Anlage an mehreren Orten, z. B. Fertighäuser"
+    ],
+    [
+     "Fliegende Bauten (§ 78)",
+     "Ausführungsgenehmigung und Gebrauchsabnahme am Aufstellort"
+    ]
+   ],
+   "antwort": "Der Bauvorbescheid beantwortet einzelne Fragen verbindlich vor dem Bauantrag, die Teilbaugenehmigung erlaubt den Beginn mit Baugrube oder Bauabschnitten vor der Gesamtgenehmigung, die Typengenehmigung gilt für dieselbe Anlage an mehreren Orten, und Fliegende Bauten brauchen eine Ausführungsgenehmigung und eine Gebrauchsabnahme am Aufstellort.",
+   "vertiefung": "Alle vier dienen einer rationellen Verfahrensgestaltung: Risiken früh klären, Bauzeit gewinnen, Serien nicht immer neu prüfen, wandernde Anlagen sicher machen. Die Typengenehmigung ersetzt die Baugenehmigung vor Ort nicht – Planungsrecht und örtliche Verhältnisse werden dort weiter geprüft.",
+   "tags": [
+    "vorbescheid",
+    "teilbaugenehmigung",
+    "sonderverfahren"
+   ],
+   "quelle": "§§ 76–78 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 565–572, S. 200–202; Kontrollfrage 12, S. 217",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-026",
+   "typ": "numerisch",
+   "frage": "Wie viele Jahre gilt ein Bauvorbescheid in Hessen?",
+   "wert": 3,
+   "toleranz": 0,
+   "einheit": "Jahre",
+   "antwort": "Drei Jahre. Auf Antrag kann die Frist jeweils um bis zu ein Jahr verlängert werden.",
+   "vertiefung": "Solange der Vorbescheid gilt und nicht zurückgenommen oder widerrufen ist, bindet er das Baugenehmigungsverfahren. Ein positiver Vorbescheid zur planungsrechtlichen Zulässigkeit – die Bebauungsgenehmigung – setzt sich sogar gegen eine später erlassene Veränderungssperre oder einen neuen Bebauungsplan durch.",
+   "tags": [
+    "vorbescheid",
+    "geltungsdauer"
+   ],
+   "quelle": "§ 76 Abs. 1 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 566, S. 200–201",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-027",
+   "typ": "karte",
+   "frage": "Wie unterscheiden sich Bauvorbescheid und Teilbaugenehmigung?",
+   "antwort": "Der Bauvorbescheid kommt vor dem Bauantrag und entscheidet einzelne Fragen verbindlich, etwa ob das Grundstück überhaupt bebaubar ist – er erlaubt aber nicht zu bauen. Die Teilbaugenehmigung setzt einen eingereichten Bauantrag für das ganze Vorhaben voraus und erlaubt den Beginn mit Baugrube oder einzelnen Bauabschnitten.",
+   "vertiefung": "Der Vorbescheid ist eine gebundene Entscheidung – liegen die Voraussetzungen vor, ist er zu erteilen; die Teilbaugenehmigung steht im Ermessen der Behörde. Der Vorbescheid bleibt neben der späteren Baugenehmigung bestehen; ein Nachbar muss deshalb beide anfechten. In der späteren Baugenehmigung kann die Behörde für bereits begonnene Teile noch zusätzliche Anforderungen stellen, wenn das zur Gefahrenabwehr nötig ist.",
+   "tags": [
+    "vorbescheid",
+    "teilbaugenehmigung"
+   ],
+   "quelle": "§§ 76, 77 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 566–569, S. 200–202",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-028",
+   "typ": "karte",
+   "frage": "Was muss die Bauherrschaft vor dem Baubeginn tun (§ 75 HBO)?",
+   "antwort": "Sie darf erst beginnen, wenn ihr die Baugenehmigung zugegangen oder die Entscheidungsfrist im vereinfachten Verfahren abgelaufen ist. Sie muss den Baubeginn mindestens eine Woche vorher anzeigen und dabei die Bauleitung, das Rohbauunternehmen und die erforderlichen Nachweise benennen. Vor Baubeginn sind Grundfläche und Höhenlage abzustecken – bei Grenzbebauung bestätigt durch einen Prüfsachverständigen für Vermessung.",
+   "vertiefung": "Ab Baubeginn müssen Genehmigung und Bauvorlagen auf der Baustelle vorliegen. Wer ohne Genehmigung oder vor Fristablauf beginnt, riskiert eine Baueinstellung (§ 81 Satz 2 Nr. 1 HBO). Für verfahrensfreie Vorhaben gelten diese Pflichten grundsätzlich nicht.",
+   "tags": [
+    "baubeginn",
+    "baubeginnsanzeige",
+    "bauleitung"
+   ],
+   "quelle": "§ 75 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-029",
+   "typ": "karte",
+   "frage": "Was unterscheidet formelle von materieller Baurechtswidrigkeit?",
+   "antwort": "Formell illegal ist ein Vorhaben, das ohne die erforderliche Genehmigung oder abweichend von ihr gebaut wird – auch wenn es inhaltlich genehmigungsfähig wäre. Materiell illegal ist es, wenn es gegen materielles öffentliches Recht verstößt, etwa Abstandsflächen oder Bebauungsplan. Ein Bau kann nur formell, nur materiell oder beides zugleich illegal sein.",
+   "vertiefung": "Die Unterscheidung bestimmt, was die Behörde verlangen darf. Zum Stoppen der Arbeiten genügt die formelle Illegalität, sonst ließe sich die Genehmigungspflicht beliebig umgehen. Für den Abriss braucht es in der Regel beides, denn wer materiell rechtmäßig baut, soll sein Werk nicht verlieren, nur weil der Antrag fehlte. Bei verfahrensfreien Vorhaben kommt es allein auf die materielle Rechtslage an.",
+   "tags": [
+    "illegalität",
+    "schwarzbau",
+    "bauaufsicht"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 593–595, S. 209; Rn. 599–600, S. 211",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-030",
+   "typ": "fall",
+   "frage": "Ein Bauherr errichtet ohne Bauantrag einen zweigeschossigen Anbau an sein Wohnhaus. Die Bauaufsicht bemerkt das, als der Rohbau halb steht.",
+   "teile": [
+    {
+     "frage": "Darf die Bauaufsicht die Arbeiten stoppen, obwohl noch unklar ist, ob der Anbau genehmigungsfähig wäre?",
+     "antwort": "Ja. Für die Baueinstellung nach § 81 HBO genügt die formelle Illegalität – hier fehlt die erforderliche Genehmigung. Sonst ließe sich das Verfahren beliebig umgehen."
+    },
+    {
+     "frage": "Kann sie gleich den Abriss anordnen?",
+     "antwort": "Nur wenn der Anbau gegen materielles Recht verstößt und rechtmäßige Zustände nicht auf andere Weise hergestellt werden können (§ 82 Abs. 1 Satz 1 HBO), etwa durch Nebenbestimmungen, eine Abweichung oder eine Befreiung."
+    },
+    {
+     "frage": "Wie klärt die Behörde, ob der Anbau genehmigungsfähig ist?",
+     "antwort": "Sie kann verlangen, dass das erforderliche Verfahren durchgeführt wird und die Bauvorlagen eingereicht werden (§ 82 Abs. 2 HBO)."
+    },
+    {
+     "frage": "Der Anbau stellt sich als genehmigungsfähig heraus. Darf er bleiben?",
+     "antwort": "Ja. Er ist dann nur formell illegal; mit der nachträglichen Genehmigung wird auch dieser Mangel behoben. Ein Abriss wäre unverhältnismäßig."
+    }
+   ],
+   "antwort": "Die Bauaufsicht kann die Arbeiten sofort einstellen, verlangen, dass ein Verfahren durchgeführt wird, und erst dann über einen Abriss entscheiden: Abgerissen werden darf nur, wenn der Anbau auch materiell rechtswidrig ist und nicht auf andere Weise legalisiert werden kann.",
+   "vertiefung": "Der Fall folgt dem Stufenmodell der Bauaufsicht: stoppen, prüfen, nur als letztes Mittel beseitigen. Das ist Ausdruck der Verhältnismäßigkeit beim Eingriff in das Eigentum.",
+   "tags": [
+    "fallaufgabe",
+    "baueinstellung",
+    "beseitigungsanordnung",
+    "illegalität"
+   ],
+   "quelle": "§§ 81, 82 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 592–600, S. 208–211",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-031",
+   "typ": "fall",
+   "frage": "Eine Architektin in Hessen hat vier Projekte auf dem Tisch. Welches Verfahren gilt jeweils?",
+   "teile": [
+    {
+     "frage": "Ein Gartenhaus mit 24 m³, ohne Aufenthaltsraum, Toilette und Feuerstätte.",
+     "antwort": "Verfahrensfrei nach Abschnitt I Nr. 1.1 der Anlage zu § 63 – aber Abstandsflächen und Bebauungsplan gelten trotzdem."
+    },
+    {
+     "frage": "Ein Einfamilienhaus im Baufenster eines qualifizierten Bebauungsplans, ohne Abweichungen, Erschließung gesichert.",
+     "antwort": "Genehmigungsfreistellung nach § 64 – gebaut werden darf, wenn die Gemeinde nicht binnen eines Monats ein Verfahren verlangt."
+    },
+    {
+     "frage": "Dasselbe Haus, das die hintere Baugrenze um 2 m überschreitet.",
+     "antwort": "Es braucht eine Befreiung nach § 31 Abs. 2 BauGB, die gesondert zu beantragen ist. Die Freistellung scheidet aus; es gilt das vereinfachte Verfahren nach § 65. Ist die Baugrenze nachbarschützend, werden die Nachbarn benachrichtigt."
+    },
+    {
+     "frage": "Eine Versammlungsstätte für 500 Personen.",
+     "antwort": "Sie ist ein Sonderbau. Es gilt das Baugenehmigungsverfahren nach § 66 mit vollem Prüfumfang."
+    }
+   ],
+   "bild": "bilder/rb-vf-entscheid.svg",
+   "bildunterschrift": "Der Entscheidungsweg führt in jedem Fall zum richtigen Verfahren.",
+   "antwort": "Gartenhaus: verfahrensfrei. Einfamilienhaus im Baufenster: Freistellung. Einfamilienhaus mit Befreiung: vereinfachtes Verfahren. Versammlungsstätte: Baugenehmigungsverfahren.",
+   "vertiefung": "Die Reihenfolge der Prüfung lautet: Ist es frei nach der Anlage? Ist es ein Sonderbau? Erfüllt es alle Voraussetzungen der Freistellung? Sonst bleibt das vereinfachte Verfahren. Im Zweifel kann die Bauherrschaft immer das höhere Verfahren wählen.",
+   "tags": [
+    "fallaufgabe",
+    "verfahrensarten"
+   ],
+   "quelle": "§§ 62–66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Anlage zu § 63 HBO, Fassung ab 14.10.2025 (Abdruck der Gemeinde Biblis)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-032",
+   "typ": "freitext",
+   "frage": "Die Bauordnungen haben Prüfaufgaben schrittweise von den Behörden auf Bauherrschaft, Entwurfsverfassende und Sachverständige verlagert. Erläutere Ziele und Kritik dieser Entwicklung.",
+   "pruefpunkte": [
+    "Ziele: Beschleunigung, Deregulierung, Entlastung der Behörden",
+    "Mittel: Freistellung, vereinfachtes Verfahren, Fiktionen, Sachverständige",
+    "Kritik: weniger Rechtssicherheit, schwächere Rolle von Gemeinde und Nachbarn",
+    "Kritik: Konflikte und Kontrolle verlagern sich in die Zeit nach dem Bau",
+    "Materielles Recht bleibt unverändert, Verantwortung liegt bei den Planenden"
+   ],
+   "antwort": "Ziele sind Beschleunigung, Deregulierung und Entlastung der Behörden: Weniger präventive Prüfung, kürzere Fristen, Fiktionen und Freistellungen sollen Bauen schneller und billiger machen. Kritiker sehen Nachteile: Rechtssicherheit sinkt, weil kein Bescheid die Rechtmäßigkeit feststellt; Gemeinde und Nachbarn verlieren Einfluss; Streit verlagert sich in die Zeit nach dem Bau; und mit Personalabbau fehlt auch die repressive Kontrolle. Die materiellen Anforderungen bleiben unverändert – nur ihre Prüfung entfällt.",
+   "vertiefung": "Battis zieht ein zwiespältiges Fazit und beklagt vor allem die Zersplitterung zwischen den Ländern. Für Planende heißt das: Die Haftung für Fehler, die früher die Behörde mitgetragen hätte, liegt nun bei ihnen. Das Wahlrecht auf ein Genehmigungsverfahren ist ein Instrument, Rechtssicherheit zurückzugewinnen.",
+   "tags": [
+    "verfahrensprivatisierung",
+    "deregulierung",
+    "verantwortung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 536–537, S. 192; Rn. 586, S. 207; Kontrollfrage 8, S. 217",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-033",
+   "typ": "skizze",
+   "frage": "Skizziere den Entscheidungsweg, mit dem du in Hessen das richtige Verfahren für ein Vorhaben findest.",
+   "referenz": "bilder/rb-vf-entscheid.svg",
+   "pruefpunkte": [
+    "Frage nach der Anlage zu § 63 zuerst",
+    "Sonderbau führt immer zu § 66",
+    "Freistellungsvoraussetzungen vollständig",
+    "§ 64a als befristete Erweiterung für Wohngebäude im Innenbereich",
+    "Vereinfachtes Verfahren als Auffangverfahren",
+    "Wahlrecht nach § 62 Abs. 3 erwähnt"
+   ],
+   "antwort": "Erste Frage: Steht das Vorhaben in der Anlage zu § 63? Dann ist es verfahrensfrei. Zweite Frage: Ist es ein Sonderbau? Dann gilt § 66. Dritte Frage: Liegt es in einem qualifizierten Bebauungsplan, ohne Ausnahme, Befreiung oder Abweichung, mit gesicherter Erschließung? Dann Freistellung nach § 64. Vierte Frage: Ist es ein Wohngebäude im Innenbereich nach § 34 BauGB? Dann bis 2030 Freistellung nach § 64a. Sonst: vereinfachtes Verfahren nach § 65.",
+   "vertiefung": "Die Reihenfolge ist wichtig: Die Sonderbau-Frage kommt vor der Freistellung, weil Sonderbauten auch in einem Bebauungsplangebiet nie freigestellt werden. Das Wahlrecht der Bauherrschaft gehört als Fußnote dazu.",
+   "tags": [
+    "verfahrensarten",
+    "skizze",
+    "prüfschema"
+   ],
+   "quelle": "§§ 62–66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}

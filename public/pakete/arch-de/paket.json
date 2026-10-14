@@ -545,11 +545,15 @@
         },
         {
           "id": "rb-verfahren",
-          "titel": "Genehmigungsverfahren und Freistellung"
+          "titel": "Genehmigungsverfahren und Freistellung",
+          "datei": "items/rb-verfahren.json",
+          "bild": "bilder/rb-vf-stufen.svg"
         },
         {
           "id": "rb-bauvorlagen",
-          "titel": "Bauvorlagen und Beteiligte"
+          "titel": "Bauvorlagen und Beteiligte",
+          "datei": "items/rb-bauvorlagen.json",
+          "bild": "bilder/rb-bv-beteiligte.svg"
         },
         {
           "id": "rb-denkmal",
@@ -557,7 +561,9 @@
         },
         {
           "id": "rb-nachbarrecht",
-          "titel": "Nachbarrecht und Rechtsschutz"
+          "titel": "Nachbarrecht und Rechtsschutz",
+          "datei": "items/rb-nachbarrecht.json",
+          "bild": "bilder/rb-nr-uebersicht.svg"
         }
       ],
       "bereich": "recht",

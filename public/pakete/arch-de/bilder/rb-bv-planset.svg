@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 545" width="800" height="545" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="545" fill="#f0ead2"/>
+<text x="400" y="32" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Bauvorlagen für einen Bauantrag in Hessen</text>
+<path d="M 30 56 L 240 56 L 262 78 L 262 152 L 30 152 Z" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<path d="M 240 56 L 240 78 L 262 78" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="46" y="90" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Bauantrag</text>
+<text x="46" y="116" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Formular BAB 01 oder</text>
+<text x="46" y="136" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Bauportal Hessen</text>
+<path d="M 282 56 L 492 56 L 514 78 L 514 152 L 282 152 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 492 56 L 492 78 L 514 78" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="298" y="90" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Übersichtsplan</text>
+<text x="298" y="116" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >1 : 10.000 bis 1 : 25.000</text>
+<text x="298" y="136" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Grundstück markiert</text>
+<path d="M 534 56 L 744 56 L 766 78 L 766 152 L 534 152 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 744 56 L 744 78 L 766 78" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="550" y="90" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Liegenschaftsplan</text>
+<text x="550" y="116" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >meist 1 : 500, Auszug aus der</text>
+<text x="550" y="136" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Liegenschaftskarte, ≤ 2 Jahre</text>
+<path d="M 30 168 L 240 168 L 262 190 L 262 264 L 30 264 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 240 168 L 240 190 L 262 190" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="46" y="202" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Bauzeichnungen</text>
+<text x="46" y="228" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >meist 1 : 100: Grundrisse,</text>
+<text x="46" y="248" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Schnitte, Ansichten</text>
+<path d="M 282 168 L 492 168 L 514 190 L 514 264 L 282 264 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 492 168 L 492 190 L 514 190" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="298" y="202" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Freiflächenplan</text>
+<text x="298" y="228" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Stellplätze, Spielplatz,</text>
+<text x="298" y="248" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Feuerwehrflächen, Begrünung</text>
+<path d="M 534 168 L 744 168 L 766 190 L 766 264 L 534 264 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 744 168 L 744 190 L 766 190" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="550" y="202" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Baubeschreibung</text>
+<text x="550" y="228" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >formlos, was die Zeichnungen</text>
+<text x="550" y="248" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >nicht zeigen</text>
+<path d="M 30 280 L 240 280 L 262 302 L 262 376 L 30 376 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 240 280 L 240 302 L 262 302" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="46" y="314" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Berechnungen</text>
+<text x="46" y="340" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >GRZ, GFZ nachvollziehbar,</text>
+<text x="46" y="360" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >umbauter Raum, Flächen</text>
+<path d="M 282 280 L 492 280 L 514 302 L 514 376 L 282 376 Z" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<path d="M 492 280 L 492 302 L 514 302" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="298" y="314" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Abstandsflächen</text>
+<text x="298" y="340" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Nachweis, meist in den</text>
+<text x="298" y="360" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Bauzeichnungen</text>
+<path d="M 534 280 L 744 280 L 766 302 L 766 376 L 534 376 Z" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<path d="M 744 280 L 744 302 L 766 302" fill="#d9d2b4" stroke="#414833" stroke-width="1.5"/>
+<text x="550" y="314" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Berechtigung</text>
+<text x="550" y="340" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Nachweis der</text>
+<text x="550" y="360" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Bauvorlageberechtigung</text>
+<rect x="30" y="404" width="740" height="92" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="50" y="434" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Vor Baubeginn bzw. vor dem jeweiligen Bauabschnitt:</text>
+<text x="50" y="460" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Baubeginnsanzeige · Standsicherheitsnachweis · Brandschutznachweis ·</text>
+<text x="50" y="482" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Wärme- und Schallschutznachweis</text>
+<text x="400" y="524" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >Welche Vorlagen im Einzelfall nötig sind, regelt der Bauvorlagenerlass je Verfahren.</text>
+</svg>

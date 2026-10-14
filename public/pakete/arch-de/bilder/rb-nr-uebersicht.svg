@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 530" width="800" height="530" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="530" fill="#f0ead2"/>
+<text x="400" y="32" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Rechtsschutz im Baurecht – wer klagt wogegen?</text>
+<rect x="30" y="56" width="300" height="76" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="180" y="89" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Bebauungsplan soll</text>
+<text x="180" y="109" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >überprüft werden</text>
+<line x1="330" y1="94" x2="388" y2="94" stroke="#414833" stroke-width="2.4"/>
+<polygon points="390,94 378,88 378,100" fill="#414833"/>
+<rect x="392" y="56" width="378" height="76" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="581" y="89" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Normenkontrollantrag beim VGH</text>
+<text x="581" y="109" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >§ 47 VwGO, binnen eines Jahres</text>
+<rect x="30" y="148" width="300" height="76" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="180" y="181" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Eigener Bauantrag</text>
+<text x="180" y="201" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >abgelehnt</text>
+<line x1="330" y1="186" x2="388" y2="186" stroke="#414833" stroke-width="2.4"/>
+<polygon points="390,186 378,180 378,192" fill="#414833"/>
+<rect x="392" y="148" width="378" height="76" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="581" y="181" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Verpflichtungsklage beim VG</text>
+<text x="581" y="201" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >auf Erteilung der Genehmigung</text>
+<rect x="30" y="240" width="300" height="76" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="180" y="273" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Nachbar erhält eine</text>
+<text x="180" y="293" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Baugenehmigung</text>
+<line x1="330" y1="278" x2="388" y2="278" stroke="#414833" stroke-width="2.4"/>
+<polygon points="390,278 378,272 378,284" fill="#414833"/>
+<rect x="392" y="240" width="378" height="76" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="581" y="273" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Anfechtungsklage des Dritten,</text>
+<text x="581" y="293" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Eilantrag nach §§ 80a, 80 Abs. 5 VwGO</text>
+<rect x="30" y="332" width="300" height="76" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="180" y="365" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Nachbar baut freigestellt</text>
+<text x="180" y="385" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >oder verfahrensfrei</text>
+<line x1="330" y1="370" x2="388" y2="370" stroke="#414833" stroke-width="2.4"/>
+<polygon points="390,370 378,364 378,376" fill="#414833"/>
+<rect x="392" y="332" width="378" height="76" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="581" y="365" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Verpflichtungsklage auf</text>
+<text x="581" y="385" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Einschreiten der Bauaufsicht</text>
+<rect x="30" y="424" width="300" height="76" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="180" y="457" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Gemeinde soll einen</text>
+<text x="180" y="477" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Bebauungsplan aufstellen</text>
+<line x1="330" y1="462" x2="388" y2="462" stroke="#414833" stroke-width="2.4"/>
+<polygon points="390,462 378,456 378,468" fill="#414833"/>
+<rect x="392" y="424" width="378" height="76" rx="8" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="581" y="457" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >keine Klage möglich</text>
+<text x="581" y="477" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >§ 1 Abs. 3 Satz 2 BauGB</text>
+</svg>

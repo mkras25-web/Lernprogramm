@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="0" y="320" width="600" height="100" fill="#d9d2b4"/>
+<line x1="20" y1="320" x2="580" y2="320" stroke="#414833" stroke-width="2"/>
+<line x1="0" y1="360" x2="16" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="16" y1="360" x2="32" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="32" y1="360" x2="48" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="48" y1="360" x2="64" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="64" y1="360" x2="80" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="80" y1="360" x2="96" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="96" y1="360" x2="112" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="112" y1="360" x2="128" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="128" y1="360" x2="144" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="144" y1="360" x2="160" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="160" y1="360" x2="176" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="176" y1="360" x2="192" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="192" y1="360" x2="208" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="208" y1="360" x2="224" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="224" y1="360" x2="240" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="240" y1="360" x2="256" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="256" y1="360" x2="272" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="272" y1="360" x2="288" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="288" y1="360" x2="304" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="304" y1="360" x2="320" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="320" y1="360" x2="336" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="336" y1="360" x2="352" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="352" y1="360" x2="368" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="368" y1="360" x2="384" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="384" y1="360" x2="400" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="400" y1="360" x2="416" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="416" y1="360" x2="432" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="432" y1="360" x2="448" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="448" y1="360" x2="464" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="464" y1="360" x2="480" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="480" y1="360" x2="496" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="496" y1="360" x2="512" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="512" y1="360" x2="528" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="528" y1="360" x2="544" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="544" y1="360" x2="560" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="560" y1="360" x2="576" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="576" y1="360" x2="592" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<line x1="592" y1="360" x2="608" y2="328" stroke="#6c584c" stroke-width="0.8" opacity="0.5"/>
+<rect x="170" y="312" width="260" height="10" fill="#414833"/>
+<rect x="170" y="237" width="260" height="10" fill="#414833"/>
+<rect x="170" y="162" width="260" height="10" fill="#414833"/>
+<rect x="170" y="162" width="14" height="160" fill="#414833"/>
+<rect x="416" y="162" width="14" height="160" fill="#414833"/>
+<rect x="295.0" y="170" width="10" height="142" fill="#414833"/>
+<polygon points="158,164 300.0,85 442,164 430,164 300.0,99 170,164" fill="#414833"/>
+<polygon points="460,312 472,312 466,320" fill="#9a6b1f"/>
+<text x="478" y="318" font-size="13" text-anchor="start" font-weight="bold" fill="#9a6b1f" >±0,00</text>
+<polygon points="460,237 472,237 466,245" fill="#9a6b1f"/>
+<text x="478" y="243" font-size="13" text-anchor="start" font-weight="bold" fill="#9a6b1f" >+2,75</text>
+<polygon points="460,162 472,162 466,170" fill="#9a6b1f"/>
+<text x="478" y="168" font-size="13" text-anchor="start" font-weight="bold" fill="#9a6b1f" >+5,50</text>
+<text x="300" y="400" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Bauzeichnung – ohne Maßstab</text>
+</svg>

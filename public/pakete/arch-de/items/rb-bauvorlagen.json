@@ -1,0 +1,737 @@
+{
+ "thema": "rb-bauvorlagen",
+ "titel": "Bauvorlagen und Beteiligte",
+ "erklaerung": {
+  "absaetze": [
+   "Für die Einhaltung der öffentlich-rechtlichen Vorschriften sind alle am Bau Beteiligten verantwortlich, jeweils in ihrem Aufgabenbereich und die Bauherrschaft zuerst (§ 55 HBO). Die Bauherrschaft stellt Anträge und Anzeigen und muss geeignete Beteiligte beauftragen. Entwurfsverfassende verantworten Vollständigkeit und Brauchbarkeit des Entwurfs, Unternehmen die ordnungsgemäße Ausführung und sichere Baustelle, die Bauleitung die Überwachung der Ausführung. Wer einem Teilgebiet nicht gewachsen ist, zieht Fachleute hinzu und bleibt für das Zusammenwirken verantwortlich.",
+   "Bauvorlagen für genehmigungspflichtige Gebäude dürfen nur Bauvorlageberechtigte erstellen (§ 67 HBO). Uneingeschränkt sind das Architektinnen und Architekten sowie Ingenieure, die in die Liste der Ingenieurkammer eingetragen sind. Innenarchitekten dürfen Umbauten in ihrem Tätigkeitsfeld vorlegen, Handwerksmeister und Bautechniker kleine Vorhaben bis etwa 200 m². Bauvorlageberechtigte müssen sich fortbilden und versichert sein. Battis nennt das ein Planvorlagemonopol, gerechtfertigt durch die Gefahrenabwehr.",
+   "Die bautechnischen Nachweise zu Standsicherheit, Brandschutz, Schallschutz und Energieerzeugungsanlagen prüft die Bauaufsicht außer bei Sonderbauten nicht mehr selbst (§ 68 HBO). Nachweisberechtigte stellen sie auf; ab Gebäudeklasse 4 oder bei schwierigen Tragwerken bescheinigen Prüfsachverständige die Standsicherheit, ab Gebäudeklasse 5 auch den Brandschutz. Die Nachweise sind spätestens vor dem jeweiligen Bauabschnitt vorzulegen.",
+   "Welche Bauvorlagen zum Antrag gehören, regelt der Bauvorlagenerlass der obersten Bauaufsichtsbehörde. Zum Kern gehören das Antragsformular oder die Eingabe im Bauportal Hessen, Übersichtsplan, Liegenschaftsplan meist 1 : 500, Bauzeichnungen meist 1 : 100 mit Grundrissen, Schnitten und Ansichten, Freiflächenplan, Baubeschreibung, nachvollziehbare Berechnungen von GRZ und GFZ, Abstandsflächennachweis und der Nachweis der Bauvorlageberechtigung. Zeichnungen, Beschreibung und Berechnungen müssen übereinstimmen.",
+   "In der Praxis koordiniert das Architekturbüro die Fachplanungen, stellt den Antrag zusammen und unterschreibt als Entwurfsverfasserin. Je weniger die Behörde prüft, desto stärker hängt die Rechtmäßigkeit des Bauwerks an der Sorgfalt der Planenden. Häufige Verwechslung: Bauleitung und Entwurfsverfassung sind verschiedene Rollen nach §§ 57 und 59 – sie können in einer Hand liegen, müssen es aber nicht, und die Bauleitung prüft nicht die Statik."
+  ],
+  "merksatz": "Jede und jeder verantwortet den eigenen Teil: Die Bauherrschaft beauftragt, die Entwurfsverfassenden planen vollständig, die Unternehmen bauen ordnungsgemäß, die Bauleitung überwacht – und nur Bauvorlageberechtigte dürfen die Vorlagen unterschreiben.",
+  "bild": "bilder/rb-bv-beteiligte.svg",
+  "bildunterschrift": "Bauherrschaft, Entwurfsverfassende, Unternehmen, Bauleitung und Nachweisberechtigte mit ihren Fachleuten.",
+  "quelle": "§§ 55–59, 67–69 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 514–515, S. 183; Rn. 552, S. 197"
+ },
+ "lernziele": [
+  "Du kannst die am Bau Beteiligten und ihre Verantwortung nach §§ 55–59 HBO benennen.",
+  "Du weißt, wer in Hessen bauvorlageberechtigt ist und in welchem Umfang.",
+  "Du kannst sagen, wer bautechnische Nachweise aufstellt und wann Prüfsachverständige nötig sind.",
+  "Du kennst die Bauvorlagen eines Bauantrags und kannst Lageplan und Bauzeichnungen lesen."
+ ],
+ "siehe": [
+  "rb-verfahren",
+  "rb-lbo",
+  "rb-mass"
+ ],
+ "items": [
+  {
+   "id": "rb-bv-001",
+   "typ": "karte",
+   "frage": "Wer ist nach § 55 HBO dafür verantwortlich, dass beim Bauen die öffentlich-rechtlichen Vorschriften eingehalten werden?",
+   "bild": "bilder/rb-bv-beteiligte.svg",
+   "bildunterschrift": "Die Bauherrschaft beauftragt die übrigen Beteiligten und steht gegenüber der Bauaufsicht.",
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Alle am Bau Beteiligten, jeweils im Rahmen ihres eigenen Aufgabenbereichs – an erster Stelle die Bauherrschaft. Am Bau beteiligt sind Bauherrschaft, Entwurfsverfassende, Unternehmen und Bauleitung (§§ 56–59 HBO).",
+   "vertiefung": "Die Vorschriften konkretisieren die allgemeine ordnungsrechtliche Handlungshaftung: Sie legen fest, an wen sich die Bauaufsicht mit Verfügungen wenden kann und welche Personen aus Gründen der Sicherheit gestellt werden müssen. Daneben kann die Behörde einen Eigentümer weiterhin als Zustandsstörer in Anspruch nehmen. Verstöße können zusätzlich als Ordnungswidrigkeit geahndet werden.",
+   "tags": [
+    "am bau beteiligte",
+    "verantwortung",
+    "grundpflichten"
+   ],
+   "quelle": "§ 55 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 514–515, S. 183; Rn. 590, S. 208; Kontrollfrage 4, S. 216",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-002",
+   "typ": "zuordnung",
+   "frage": "Ordne den am Bau Beteiligten ihre Hauptverantwortung zu.",
+   "paare": [
+    [
+     "Bauherrschaft (§ 56)",
+     "Anträge, Anzeigen, Nachweise; geeignete Beteiligte beauftragen"
+    ],
+    [
+     "Entwurfsverfassende (§ 57)",
+     "Vollständigkeit und Brauchbarkeit des Entwurfs"
+    ],
+    [
+     "Unternehmen (§ 58)",
+     "ordnungsgemäße Ausführung der Arbeiten und sichere Baustelle"
+    ],
+    [
+     "Bauleitung (§ 59)",
+     "Überwachung der Ausführung nach den öffentlich-rechtlichen Anforderungen"
+    ]
+   ],
+   "bild": "bilder/rb-bv-beteiligte.svg",
+   "bildunterschrift": "Die vier Beteiligten nach §§ 56–59 HBO.",
+   "antwort": "Die Bauherrschaft stellt Anträge und Anzeigen und beauftragt geeignete Beteiligte. Entwurfsverfassende verantworten Vollständigkeit und Brauchbarkeit des Entwurfs. Unternehmen verantworten die ordnungsgemäße Ausführung ihrer Arbeiten und die sichere Baustelle. Die Bauleitung überwacht, dass nach den öffentlich-rechtlichen Anforderungen gebaut wird.",
+   "vertiefung": "Alle vier können Fachleute hinzuziehen – Fachplanende, Fachunternehmen, Fachbauleitungen. Die Fachleute sind dann für ihren Teil verantwortlich, die beauftragende Person bleibt aber für das Zusammenwirken verantwortlich.",
+   "tags": [
+    "am bau beteiligte",
+    "verantwortung"
+   ],
+   "quelle": "§§ 56–59 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-003",
+   "typ": "karte",
+   "frage": "Welche Pflichten hat die Bauherrschaft nach § 56 HBO?",
+   "antwort": "Sie reicht die erforderlichen Anträge, Anzeigen und Nachweise bei der Bauaufsicht ein und hält Nachweise über die verwendeten Bauprodukte bereit. Bei genehmigungspflichtigen Vorhaben muss sie für Planung, Ausführung und Überwachung geeignete Entwurfsverfassende, Unternehmen, Bauleitung, Nachweisberechtigte und Prüfsachverständige beauftragen. Ein Wechsel der Bauherrschaft ist unverzüglich mitzuteilen.",
+   "vertiefung": "Bei mehreren Bauherren, etwa einer Baugemeinschaft, kann die Behörde verlangen, dass eine Person als Vertretung benannt wird. Bei Selbst- und Nachbarschaftshilfe muss kein Unternehmen beauftragt werden, wenn genügend fachkundige Helfer mitwirken – nicht aber bei Abbrucharbeiten. Sind Beauftragte ungeeignet, kann die Bauaufsicht ihre Ersetzung verlangen und die Arbeiten bis dahin einstellen.",
+   "tags": [
+    "bauherrschaft",
+    "pflichten",
+    "selbsthilfe"
+   ],
+   "quelle": "§ 56 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-004",
+   "typ": "karte",
+   "frage": "Wofür sind Entwurfsverfassende nach § 57 HBO verantwortlich, und was gilt für Fachplanende?",
+   "antwort": "Wer den Entwurf verfasst, ist für dessen Vollständigkeit und Brauchbarkeit verantwortlich. Er oder sie muss dafür sorgen, dass alle für die Ausführung nötigen Zeichnungen, Berechnungen und Anweisungen vorliegen und dem genehmigten Entwurf sowie den öffentlich-rechtlichen Vorschriften entsprechen. Fehlt auf einem Fachgebiet die Sachkunde, sind geeignete Fachplanende hinzuzuziehen.",
+   "vertiefung": "Fachplanende – etwa für Tragwerk, Haustechnik oder Brandschutz – verantworten ihre Fachentwürfe selbst. Die Entwurfsverfassenden bleiben aber für das ordnungsgemäße Ineinandergreifen aller Fachentwürfe verantwortlich. In der Praxis ist das die koordinierende Rolle des Architekturbüros.",
+   "tags": [
+    "entwurfsverfasser",
+    "fachplaner",
+    "verantwortung"
+   ],
+   "quelle": "§ 57 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-005",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aufgaben hat die Bauleitung nach § 59 HBO?",
+   "optionen": [
+    "Überwachen, dass nach den öffentlich-rechtlichen Anforderungen gebaut wird",
+    "Die ordnungsgemäße Fertigstellung anzeigen und bescheinigen",
+    "Für einen sicheren bautechnischen Betrieb der Baustelle sorgen",
+    "Den Standsicherheitsnachweis anstelle eines Prüfsachverständigen prüfen",
+    "Die Baugenehmigung erteilen"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: § 59 Abs. 1 Satz 1.",
+    "Richtig: § 59 Abs. 1 Satz 2.",
+    "Richtig: § 59 Abs. 1 Satz 3, besonders das gefahrlose Ineinandergreifen der Arbeiten.",
+    "Falsch: Das ist Aufgabe von Nachweisberechtigten oder Prüfsachverständigen (§ 68).",
+    "Falsch: Das ist Sache der Bauaufsichtsbehörde."
+   ],
+   "antwort": "Sie überwacht, dass nach den öffentlich-rechtlichen Anforderungen gebaut wird, und gibt die nötigen Weisungen; sie zeigt die ordnungsgemäße Fertigstellung an und bescheinigt sie; und sie sorgt dafür, dass die Arbeiten der Unternehmen gefahrlos ineinandergreifen.",
+   "vertiefung": "Die Bauleitung braucht Sachkunde und Erfahrung, mindestens die Qualifikation nach § 67 Abs. 4. Fehlt ihr die Eignung auf Teilgebieten, treten Fachbauleitungen an ihre Stelle; die Bauleitung koordiniert sie. Die Bauleitung prüft nicht die Statik – das ist Sache der Nachweisberechtigten und Prüfsachverständigen.",
+   "tags": [
+    "bauleitung",
+    "überwachung",
+    "fertigstellung"
+   ],
+   "quelle": "§ 59 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-006",
+   "typ": "karte",
+   "frage": "Welche Verantwortung tragen die Unternehmen nach § 58 HBO?",
+   "antwort": "Jedes Unternehmen ist für die ordnungsgemäße Ausführung der übernommenen Arbeiten verantwortlich, auch für die sachgerechte Einrichtung und den sicheren Betrieb der Baustelle. Es muss die Nachweise zu Bauprodukten und Bauarten erbringen und auf der Baustelle bereithalten. Fehlt Sachkunde für einzelne Arbeiten, zieht es Fachunternehmen hinzu und bleibt für das Ineinandergreifen verantwortlich.",
+   "vertiefung": "Bei Arbeiten, bei denen die Sicherheit in außergewöhnlichem Maß von besonderer Sachkunde oder Ausstattung abhängt, kann die Bauaufsicht verlangen, dass Unternehmen ihre Eignung nachweisen. Für CE-gekennzeichnete Bauprodukte muss die Leistungserklärung auf der Baustelle vorliegen.",
+   "tags": [
+    "unternehmen",
+    "bauprodukte",
+    "baustelle"
+   ],
+   "quelle": "§ 58 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-007",
+   "typ": "karte",
+   "frage": "Was ist die Bauvorlageberechtigung, und wie ist sie gerechtfertigt?",
+   "antwort": "Bauvorlagen für die Errichtung und Änderung genehmigungspflichtiger Gebäude dürfen nur bauvorlageberechtigte Personen erstellen (§ 67 Abs. 1 HBO). Uneingeschränkt berechtigt sind vor allem Personen, die die Berufsbezeichnung Architektin oder Architekt führen dürfen, und Ingenieure, die in die Liste der Bauvorlageberechtigten der Ingenieurkammer eingetragen sind. Innenarchitekten dürfen bauliche Änderungen im Rahmen ihres Tätigkeitsfelds planen.",
+   "vertiefung": "Battis nennt diese Beschränkung ein „Planvorlagemonopol“. Sie gilt als verhältnismäßige, der Gefahrenabwehr dienende Regelung der Berufsausübung und ist mit der Berufsfreiheit (Art. 12 Abs. 1 GG) vereinbar. Für geringfügige oder technisch einfache Vorhaben und für Unterlagen, die üblicherweise andere Fachleute erstellen, braucht es keine Bauvorlageberechtigung.",
+   "tags": [
+    "bauvorlageberechtigung",
+    "architekt",
+    "planvorlagemonopol"
+   ],
+   "quelle": "§ 67 Abs. 1 und 2 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 552, S. 197",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-008",
+   "typ": "zuordnung",
+   "frage": "Ordne die Personengruppen ihrem Umfang der Bauvorlageberechtigung in Hessen zu.",
+   "paare": [
+    [
+     "Architektin, Architekt",
+     "uneingeschränkt"
+    ],
+    [
+     "Ingenieurin, Ingenieur",
+     "uneingeschränkt nach Eintragung in die Liste der Ingenieurkammer"
+    ],
+    [
+     "Innenarchitektin, Innenarchitekt",
+     "bauliche Änderungen im Rahmen des Tätigkeitsfelds"
+    ],
+    [
+     "Maurer-, Betonbauer- oder Zimmerermeister, staatlich geprüfte Bautechniker",
+     "kleine Vorhaben, z. B. Wohngebäude bis zwei Wohnungen und 200 m² Wohnfläche"
+    ]
+   ],
+   "antwort": "Architektinnen und Architekten sind uneingeschränkt berechtigt, Ingenieure bei Eintragung in die Liste der Ingenieurkammer. Innenarchitekten dürfen bauliche Änderungen in ihrem Tätigkeitsfeld vorlegen. Meister im Maurer-, Betonbauer- oder Zimmererhandwerk und staatlich geprüfte Bautechniker dürfen kleine Vorhaben vorlegen, etwa Wohngebäude mit höchstens zwei Wohnungen und 200 m² Wohnfläche.",
+   "vertiefung": "Dazwischen gibt es eine Gruppe mit eingeschränkter Berechtigung: Absolventen bestimmter Hochschulstudiengänge ohne Listeneintrag dürfen etwa Wohngebäude der Gebäudeklassen 1 und 2 und eingeschossige Gewerbebauten vorlegen. Wer aus einem anderen EU-Staat kommt, kann sich seine Berechtigung vom Regierungspräsidium Darmstadt bescheinigen lassen.",
+   "tags": [
+    "bauvorlageberechtigung",
+    "architekt",
+    "handwerksmeister"
+   ],
+   "quelle": "§ 67 Abs. 2–5 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-009",
+   "typ": "numerisch",
+   "frage": "Bis zu welcher Wohnfläche dürfen Meister im Maurer-, Betonbauer- oder Zimmererhandwerk Bauvorlagen für Wohngebäude mit höchstens zwei Wohnungen erstellen?",
+   "wert": 200,
+   "toleranz": 0,
+   "einheit": "m²",
+   "antwort": "Bis 200 m² Wohnfläche. Dieselbe Grenze gilt für eingeschossige Gewerbebauten (200 m² Grundfläche, bis 3 m Wandhöhe), landwirtschaftliche Betriebsgebäude (200 m² Erdgeschossgrundfläche) und Garagen (200 m² Nutzfläche).",
+   "vertiefung": "Die 200 m² ziehen sich als Maßstab durch die eingeschränkten Berechtigungen. Darüber hinaus braucht es eine Architektin, einen Architekten oder eingetragene Ingenieure.",
+   "tags": [
+    "bauvorlageberechtigung",
+    "handwerksmeister"
+   ],
+   "quelle": "§ 67 Abs. 4 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-010",
+   "typ": "karte",
+   "frage": "Welche Pflichten haben Bauvorlageberechtigte, und wann ist keine Bauvorlageberechtigung nötig?",
+   "antwort": "Bauvorlageberechtigte müssen sich im Baurecht fortbilden und eine angemessene Berufshaftpflichtversicherung haben (§ 67 Abs. 6 HBO). Keine Berechtigung braucht es für Unterlagen, die üblicherweise von Fachleuten mit anderer Ausbildung erstellt werden, und für geringfügige oder technisch einfache Vorhaben (§ 67 Abs. 1 Satz 2).",
+   "vertiefung": "Die Haftpflicht entfällt nur für Bedienstete öffentlicher Bauherren. Der Nachweis der Bauvorlageberechtigung ist dem Bauantrag beizufügen (§ 69 Abs. 2 Satz 3), und die Bauvorlagen sind von den Bauvorlageberechtigten zu unterschreiben.",
+   "tags": [
+    "bauvorlageberechtigung",
+    "haftpflicht",
+    "fortbildung"
+   ],
+   "quelle": "§§ 67, 69 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 7",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-011",
+   "typ": "karte",
+   "frage": "Was sind bautechnische Nachweise nach § 68 HBO, und wer stellt sie auf?",
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Nachweise zur Standsicherheit einschließlich der Feuerwiderstandsdauer tragender Bauteile, zum vorbeugenden Brandschutz, zum Schallschutz und für Energieerzeugungsanlagen. Sie werden von Nachweisberechtigten aufgestellt oder von Prüfsachverständigen bescheinigt; die Bauaufsicht prüft sie außer bei Sonderbauten nicht. Die Bauvorlageberechtigung umfasst grundsätzlich auch diese Nachweise.",
+   "vertiefung": "Den Wärmeschutz regelt das Gebäudeenergiegesetz, das unberührt bleibt. Die Nachweise sind spätestens vor Ausführung des jeweiligen Bauabschnitts vorzulegen (§ 69 Abs. 3). Typenprüfungen eines Prüfamts für Baustatik ersetzen die Bescheinigung der Standsicherheit, auch wenn sie aus einem anderen Land stammen.",
+   "tags": [
+    "bautechnische nachweise",
+    "prüfsachverständige",
+    "standsicherheit"
+   ],
+   "quelle": "§§ 68, 69 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-012",
+   "typ": "mehrfachauswahl",
+   "frage": "In welchen Fällen muss der Standsicherheitsnachweis in Hessen durch Prüfsachverständige für Standsicherheit bescheinigt werden?",
+   "optionen": [
+    "Mehrfamilienhaus der Gebäudeklasse 4",
+    "Gebäude mit einem Tragwerk von überdurchschnittlichem Schwierigkeitsgrad",
+    "Mast als bauliche Anlage mit 15 m Höhe",
+    "Freistehendes Einfamilienhaus der Gebäudeklasse 1 mit einfachem Tragwerk",
+    "Garage mit 40 m² Grundfläche"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: Gebäudeklassen 4 und 5 sind immer erfasst.",
+    "Richtig: Der Schwierigkeitsgrad löst die Bescheinigungspflicht aus.",
+    "Richtig: Sonstige bauliche Anlagen über 10 m Höhe.",
+    "Falsch: Hier genügen Nachweisberechtigte.",
+    "Falsch: Hier genügen Nachweisberechtigte."
+   ],
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Bei Gebäuden der Gebäudeklassen 4 und 5, bei Tragwerken mit überdurchschnittlichem oder höherem Schwierigkeitsgrad und bei sonstigen baulichen Anlagen über 10 m Höhe. Für ein einfaches Einfamilienhaus oder eine kleine Garage genügt der Nachweis durch Nachweisberechtigte.",
+   "vertiefung": "Weitere Fälle sind besondere Baugrund-, Grundwasser- oder Belastungsverhältnisse und besondere Baustoffe. In allen anderen Fällen stellen Nachweisberechtigte für Standsicherheit den Nachweis auf und erklären vor Baubeginn, dass kein Prüfkriterium zutrifft.",
+   "tags": [
+    "standsicherheit",
+    "prüfsachverständige",
+    "gebäudeklassen"
+   ],
+   "quelle": "§ 68 Abs. 3 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 6",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-013",
+   "typ": "zuordnung",
+   "frage": "Wer erstellt oder bescheinigt in Hessen den Brandschutznachweis?",
+   "paare": [
+    [
+     "Gebäudeklasse 5, Großgarage",
+     "Bescheinigung durch Prüfsachverständige für Brandschutz"
+    ],
+    [
+     "Gebäudeklasse 4, Mittelgarage",
+     "Nachweisberechtigte für Brandschutz"
+    ],
+    [
+     "Gebäudeklassen 1 bis 3",
+     "Bauvorlageberechtigte im Rahmen ihrer Berechtigung"
+    ],
+    [
+     "Sonderbau",
+     "Prüfung durch die Bauaufsichtsbehörde"
+    ]
+   ],
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Bei Gebäudeklasse 5 und Großgaragen bescheinigen Prüfsachverständige für Brandschutz. Bei Gebäudeklasse 4 und Mittelgaragen stellen Nachweisberechtigte für Brandschutz den Nachweis auf. Bei den Gebäudeklassen 1 bis 3 deckt die Bauvorlageberechtigung den Nachweis ab. Bei Sonderbauten prüft die Bauaufsicht selbst.",
+   "vertiefung": "Die Stufung folgt dem Risiko: Je höher und größer das Gebäude, desto unabhängiger muss die Kontrolle sein. Bei Sonderbauten kann die Bauaufsicht Prüfsachverständige mit Prüfung und Überwachung beauftragen.",
+   "tags": [
+    "brandschutz",
+    "gebäudeklassen",
+    "prüfsachverständige"
+   ],
+   "quelle": "§ 68 Abs. 1, 2 und 4 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-014",
+   "typ": "karte",
+   "frage": "Was regelt § 69 HBO zum Bauantrag?",
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Der Bauantrag ist bei der Bauaufsichtsbehörde einzureichen, mit allen für Beurteilung und Bearbeitung erforderlichen Bauvorlagen und dem Nachweis der Bauvorlageberechtigung. Einzelne Vorlagen kann die Behörde nachreichen lassen. Inhalt, Form und Umfang legt die oberste Bauaufsichtsbehörde fest – im Bauvorlagenerlass. Bei Bauten auf fremden Grundstücken kann die Zustimmung des Eigentümers verlangt werden.",
+   "vertiefung": "Auch wo keine Prüfung stattfindet, etwa bei der Freistellung, sind die Bauvorlagen spätestens vor Baubeginn einzureichen; bautechnische Nachweise spätestens vor dem jeweiligen Bauabschnitt. In besonderen Fällen kann die Behörde verlangen, dass das Vorhaben auf dem Grundstück dargestellt wird, etwa durch ein Schnurgerüst, um die Wirkung auf das Ortsbild zu beurteilen.",
+   "tags": [
+    "bauantrag",
+    "bauvorlagen"
+   ],
+   "quelle": "§ 69 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-015",
+   "typ": "karte",
+   "frage": "Was ist der hessische Bauvorlagenerlass?",
+   "antwort": "Eine Verwaltungsvorschrift der obersten Bauaufsichtsbehörde nach § 69 Abs. 2 HBO. Er legt fest, welche Bauvorlagen in welchem Verfahren in welcher Form einzureichen sind, und enthält die verbindlichen Vordrucke (BAB-Formulare) und Anforderungen an Lageplan, Bauzeichnungen, Baubeschreibung, Berechnungen und bautechnische Nachweise.",
+   "vertiefung": "Die meisten Bauaufsichtsbehörden nutzen inzwischen das Bauportal Hessen; dort werden die Daten online eingegeben, und die Vordruckpflicht entfällt. Der Erlass wird regelmäßig angepasst, zuletzt auch an den Bau-Turbo. Für die Planungspraxis lohnt es, vor jedem Antrag die aktuelle Fassung zu prüfen.",
+   "tags": [
+    "bauvorlagenerlass",
+    "bauportal",
+    "vordrucke"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück; § 69 Abs. 2 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Der Erlass vom 24.07.2025 wurde am 18.12.2025 und durch Erlass vom 04.08.2026 (StAnz. S. 780) geändert; die Änderungen betreffen laut Einleitung vor allem Vordrucke. Inhalt der Anlage 2 an der aktuellen Fassung prüfen."
+  },
+  {
+   "id": "rb-bv-016",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Unterlagen gehören nach dem Bauvorlagenerlass zum Bauantrag im vereinfachten Verfahren?",
+   "optionen": [
+    "Bauantragsformular",
+    "Liegenschaftsplan",
+    "Bauzeichnungen",
+    "Baubeschreibung",
+    "Berechnung des Maßes der baulichen Nutzung",
+    "Standsicherheitsnachweis",
+    "Brandschutzkonzept"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "bild": "bilder/rb-bv-planset.svg",
+   "bildunterschrift": "Die Bauvorlagen eines Bauantrags im Überblick.",
+   "warum": [
+    "Richtig: Ohne Antrag kein Verfahren.",
+    "Richtig: Er zeigt Grundstück, Umgebung und Lage des Vorhabens.",
+    "Richtig: Grundrisse, Schnitte, Ansichten.",
+    "Richtig: Formlos, soweit die Zeichnungen nicht ausreichen.",
+    "Richtig: GRZ und GFZ müssen nachvollziehbar berechnet sein.",
+    "Falsch: Er ist erst vor Baubeginn einzureichen.",
+    "Falsch: Das Brandschutzkonzept gehört zu Sonderbauten."
+   ],
+   "siehe": [
+    "rb-mass"
+   ],
+   "antwort": "Das Antragsformular, der Liegenschaftsplan, die Bauzeichnungen, die Baubeschreibung und die Berechnung des Maßes der baulichen Nutzung. Der Standsicherheitsnachweis folgt erst vor Baubeginn, ein Brandschutzkonzept gehört nur zu Sonderbauten.",
+   "vertiefung": "Daneben gehören in der Regel dazu: Übersichtsplan, Freiflächenplan, Abstandsflächennachweis, Nachweis der Bauvorlageberechtigung, Berechnungen zu umbautem Raum und Flächen und – je nach Lage – Stellplatznachweis, Einfügungsnachweis nach § 34 BauGB und ein Antrag auf Abweichungen oder Befreiungen.",
+   "tags": [
+    "bauvorlagen",
+    "bauantrag",
+    "vereinfachtes verfahren"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 1.2, Tabelle 1",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-017",
+   "typ": "karte",
+   "frage": "Was muss der Liegenschaftsplan (Lageplan) zum Bauantrag enthalten?",
+   "bild": "bilder/rb-bv-lageplan.svg",
+   "bildunterschrift": "Liegenschaftsplan mit eingetragenem Vorhaben.",
+   "antwort": "Er ist ein Auszug aus der aktuellen Liegenschaftskarte, in der Regel nicht älter als zwei Jahre, meist im Maßstab 1:500. Er zeigt Baugrundstück, Nachbargrundstücke, die übrige maßgebliche Umgebung und die angrenzenden öffentlichen Verkehrsflächen. Eingetragen werden das Vorhaben maßstabsgerecht mit Außenmaßen, soweit nötig die Höhenlage zu einem Bezugspunkt und ein Ortsvergleich, der fehlende Gebäude ergänzt.",
+   "vertiefung": "Wie viel eingetragen werden muss, hängt vom Verfahren ab – bei Abweichungen von nachbarschützenden Vorschriften oder im Außenbereich mehr. Abstandsflächen werden in den Bauzeichnungen nachgewiesen, Begrünung und Stellplätze im Freiflächenplan.",
+   "tags": [
+    "lageplan",
+    "liegenschaftskarte",
+    "bauvorlagen"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 2 und Tabelle 2",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-018",
+   "typ": "bildbeschriftung",
+   "frage": "Benenne die markierten Elemente des Liegenschaftsplans.",
+   "referenz": "bilder/rb-bv-lageplan-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 39.4,
+     "y": 58.0,
+     "name": "Abstandsfläche"
+    },
+    {
+     "nr": 2,
+     "x": 81.2,
+     "y": 71.7,
+     "name": "öffentliche Verkehrsfläche"
+    },
+    {
+     "nr": 3,
+     "x": 15.0,
+     "y": 29.0,
+     "name": "Nachbargrundstück"
+    },
+    {
+     "nr": 4,
+     "x": 50.0,
+     "y": 43.5,
+     "name": "geplantes Gebäude, vermaßt"
+    },
+    {
+     "nr": 5,
+     "x": 84.8,
+     "y": 13.3,
+     "name": "Nordpfeil"
+    },
+    {
+     "nr": 6,
+     "x": 67.5,
+     "y": 43.5,
+     "name": "Flurstücksgrenze"
+    },
+    {
+     "nr": 7,
+     "x": 37.5,
+     "y": 21.7,
+     "name": "Baugrundstück"
+    },
+    {
+     "nr": 8,
+     "x": 58.8,
+     "y": 64.5,
+     "name": "Höhenbezugspunkt"
+    }
+   ],
+   "bild": "bilder/rb-bv-lageplan.svg",
+   "bildunterschrift": "Lösung: die Elemente des Liegenschaftsplans.",
+   "siehe": [
+    "rb-abstandsflaechen"
+   ],
+   "antwort": "Markiert sind Baugrundstück, Nachbargrundstück, Flurstücksgrenze, das geplante, vermaßte Gebäude, die Abstandsfläche, der Höhenbezugspunkt, die öffentliche Verkehrsfläche und der Nordpfeil.",
+   "vertiefung": "Die Flurstücksnummern zeigen, dass das Baugrundstück selbst ein eigenes Flurstück ist. Der Höhenbezugspunkt verknüpft die Höhenangaben der Bauzeichnungen mit dem Gelände – wichtig für Abstandsflächen und Gebäudeklasse.",
+   "tags": [
+    "lageplan",
+    "bauvorlagen"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 2",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-019",
+   "typ": "numerisch",
+   "frage": "In welchem Maßstab wird der Liegenschaftsplan in Hessen in der Regel eingereicht? Gib die Maßstabszahl x in 1 : x an.",
+   "wert": 500,
+   "toleranz": 0,
+   "antwort": "1 : 500. Ein Maßstab 1 : 1.000 ist zulässig, wenn die Darstellung eindeutig bleibt.",
+   "vertiefung": "Zum Vergleich: Bauzeichnungen meist 1 : 100, der Übersichtsplan 1 : 10.000 bis 1 : 25.000. Bei 1 : 500 entspricht 1 cm auf dem Plan 5 m in der Wirklichkeit.",
+   "tags": [
+    "lageplan",
+    "maßstab"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 2",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-020",
+   "typ": "karte",
+   "frage": "Was müssen die Bauzeichnungen zum Bauantrag zeigen?",
+   "siehe": [
+    "rb-mass",
+    "rb-abstandsflaechen"
+   ],
+   "antwort": "In der Regel im Maßstab 1 : 100: Grundrisse aller Geschosse mit Nutzung der Räume, Treppen, Stellplätzen, lichten Türmaßen in Rettungswegen, Feuerstätten, Schächten und Aufzügen; Schnitte durch Gebäude und Gelände; alle Ansichten, wenn nötig mit Nachbargebäuden. Dazu Höhen mit Bezug, vorhandenes und geplantes Gelände sowie Nachweise zu Abstandsflächen, Nichtvollgeschossigkeit, Aufenthaltsraumqualität und Barrierefreiheit.",
+   "vertiefung": "Bauzeichnungen, Baubeschreibung und Berechnungen müssen übereinstimmen. Änderungen während des Verfahrens sind nachvollziehbar zu kennzeichnen. Die Bauzeichnungen sind das zentrale Prüfdokument: Aus ihnen liest die Behörde Gebäudeklasse, Abstandsflächen und Geschossigkeit ab.",
+   "tags": [
+    "bauzeichnungen",
+    "grundriss",
+    "schnitt"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 4",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-021",
+   "typ": "vergleich",
+   "frage": "Welche der beiden Bauzeichnungen ist ein Schnitt?",
+   "seiten": [
+    {
+     "titel": "A",
+     "bild": "bilder/rb-bv-zeichnung-a.svg",
+     "beschreibung": "Gefüllte Bauteile, Höhenkoten, Erdreich"
+    },
+    {
+     "titel": "B",
+     "bild": "bilder/rb-bv-zeichnung-b.svg",
+     "beschreibung": "Fassade mit Fenstern, Tür und Dachdeckung"
+    }
+   ],
+   "richtig": 0,
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Zeichnung A. Sie zeigt das Gebäude senkrecht aufgeschnitten: Außenwände, Decken, Bodenplatte und Dach sind als geschnittene Bauteile dunkel gefüllt, dazu Höhenkoten der Geschosse und das Erdreich. Zeichnung B ist eine Ansicht – sie zeigt die Fassade von außen mit Fenstern, Tür und Dachdeckung.",
+   "vertiefung": "Der Schnitt ist für die Prüfung unverzichtbar: Er zeigt Geschosshöhen, Geländeverlauf, Höhe der Fußböden über Gelände und damit Gebäudeklasse, Vollgeschosse und Wandhöhen für die Abstandsflächen. Die Ansicht zeigt die Gestaltung, die etwa für eine Gestaltungssatzung relevant ist.",
+   "tags": [
+    "bauzeichnungen",
+    "schnitt",
+    "ansicht"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 4",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-022",
+   "typ": "karte",
+   "frage": "Was gehört in Baubeschreibung und Berechnungen?",
+   "siehe": [
+    "rb-mass",
+    "rb-34-35"
+   ],
+   "antwort": "Die Baubeschreibung erläutert formlos, was die Zeichnungen nicht zeigen können, etwa Bauausführung, Nutzung, Betrieb und Barrierefreiheit. Die Berechnungen weisen das Maß der baulichen Nutzung – GRZ, GFZ, Geschossigkeit – nachvollziehbar nach; die bloße Angabe von Summen reicht nicht. Hinzu kommen je nach Verfahren Berechnungen von umbautem Raum und Flächen.",
+   "vertiefung": "Nachvollziehbar heißt: Die Behörde muss aus Teilflächen und Faktoren nachrechnen können, ob die Werte des Bebauungsplans eingehalten sind. Für Vorhaben nach § 34 BauGB kann ein eigener Einfügungsnachweis nötig sein, wenn die Zeichnungen die Umgebung nicht ausreichend zeigen.",
+   "tags": [
+    "baubeschreibung",
+    "berechnungen",
+    "grz"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 5 und Tabelle 1",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-023",
+   "typ": "karte",
+   "frage": "Was zeigt der Freiflächenplan?",
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Lage, Art und Größe der nicht überbauten Flächen, insbesondere Kinderspielplätze, Lager- und Verkehrsflächen, Stellplätze, Abfallbehälterplätze, Flächen für die Feuerwehr, Festsetzungen zur Begrünung und Bindungen wie Baumschutz. Im Außenbereich gehören Eingriffs- und Ausgleichsmaßnahmen dazu.",
+   "vertiefung": "Der Freiflächenplan verbindet Bauordnungsrecht (Spielplätze, Feuerwehrzufahrten, Begrünung nach § 8 HBO) mit Planungsrecht (Festsetzungen zu Grünflächen und Pflanzbindungen). Er ist auch der Ort, an dem die Stellplatzsatzung der Gemeinde sichtbar erfüllt wird.",
+   "tags": [
+    "freiflächenplan",
+    "bauvorlagen",
+    "stellplätze"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 3",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-024",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Unterlagen und Anzeigen eines genehmigungspflichtigen Vorhabens in die zeitliche Reihenfolge.",
+   "schritte": [
+    "Bauantrag mit Bauvorlagen und Nachweis der Bauvorlageberechtigung einreichen",
+    "Baugenehmigung erhalten oder Fristablauf abwarten",
+    "Baubeginnsanzeige mindestens eine Woche vorher, mit Bauleitung und Rohbauunternehmen",
+    "Bautechnische Nachweise spätestens vor dem jeweiligen Bauabschnitt vorlegen",
+    "Fertigstellung anzeigen, die Bauleitung bescheinigt die ordnungsgemäße Ausführung"
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Zuerst der Bauantrag mit Bauvorlagen und Nachweis der Bauvorlageberechtigung, dann die Baugenehmigung, dann die Baubeginnsanzeige mit Bauleitung und Rohbauunternehmen. Die bautechnischen Nachweise folgen spätestens vor dem jeweiligen Bauabschnitt, am Ende die Anzeige der Fertigstellung mit Bescheinigung der Bauleitung.",
+   "vertiefung": "Die Reihenfolge zeigt die Verschiebung der Verantwortung: Statik und Brandschutz werden nicht mehr vor der Genehmigung geprüft, sondern von Nachweisberechtigten erstellt und vor der Ausführung vorgelegt. Alle Bauvorlagen müssen ab Baubeginn auf der Baustelle vorliegen.",
+   "tags": [
+    "bauvorlagen",
+    "ablauf",
+    "baubeginn"
+   ],
+   "quelle": "§§ 59, 69, 75 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 1.1 und Tabelle 1",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-025",
+   "typ": "karte",
+   "frage": "Wer unterschreibt welche Bauvorlagen, und was gilt, wenn mehrere Personen planen?",
+   "antwort": "Bauvorlagen, die Bauvorlageberechtigte gefertigt haben, unterschreiben diese. Standsicherheitsnachweis und Ausführungspläne sowie der Brandschutznachweis tragen Datum und Unterschrift der aufstellenden Person. Sind mehrere Personen beteiligt, ist eine Gesamtverantwortliche oder ein Gesamtverantwortlicher zu benennen.",
+   "vertiefung": "Nachweisberechtigte für Standsicherheit erklären vor Baubeginn schriftlich, dass kein Kriterium für eine Prüfung durch Prüfsachverständige vorliegt. Bei digitaler Einreichung über das Bauportal entfällt die Schriftform; die Erklärungen müssen aber eindeutig der Person zugeordnet sein (§ 62 Abs. 5 HBO).",
+   "tags": [
+    "unterschrift",
+    "bauvorlagen",
+    "gesamtverantwortung"
+   ],
+   "quelle": "Bauvorlagenerlass Hessen vom 24.07.2025 (StAnz. S. 870), Anlage 2; Abdruck der Gemeinde Fuldabrück, Nr. 1.1, 6.1, 7.1; §§ 62, 67 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-026",
+   "typ": "fall",
+   "frage": "Familie Berg will in Hessen ein freistehendes Einfamilienhaus mit einer Wohnung (180 m² Wohnfläche, Gebäudeklasse 1) bauen.",
+   "teile": [
+    {
+     "frage": "Wer darf die Bauvorlagen erstellen?",
+     "antwort": "Jede bauvorlageberechtigte Person, etwa eine Architektin. Weil das Haus höchstens zwei Wohnungen und unter 200 m² Wohnfläche hat, darf auch ein Meister im Maurer-, Betonbauer- oder Zimmererhandwerk oder ein staatlich geprüfter Bautechniker die Vorlagen erstellen (§ 67 Abs. 4 Nr. 1)."
+    },
+    {
+     "frage": "Muss der Standsicherheitsnachweis von Prüfsachverständigen bescheinigt werden?",
+     "antwort": "In der Regel nicht. Bei Gebäudeklasse 1 und einfachem Tragwerk genügt der Nachweis durch Nachweisberechtigte; sie erklären vor Baubeginn, dass kein Prüfkriterium vorliegt (§ 68 Abs. 3)."
+    },
+    {
+     "frage": "Wer stellt den Brandschutznachweis auf?",
+     "antwort": "Bei den Gebäudeklassen 1 bis 3 ist er von der Bauvorlageberechtigung umfasst (§ 68 Abs. 2); eine Bescheinigung durch Prüfsachverständige ist nicht nötig."
+    },
+    {
+     "frage": "Was muss die Familie vor Baubeginn noch tun?",
+     "antwort": "Den Baubeginn mindestens eine Woche vorher anzeigen und dabei die Bauleitung und das Rohbauunternehmen benennen (§ 75 Abs. 3 und 4). Die Bauleitung muss geeignet sein (§ 59)."
+    }
+   ],
+   "antwort": "Die Bauvorlagen darf eine Architektin oder – wegen der Größe – auch ein Zimmerermeister erstellen. Standsicherheit und Brandschutz erstellen Nachweisberechtigte bzw. die Bauvorlageberechtigten selbst; die Bauleitung muss die Familie benennen.",
+   "vertiefung": "Bei kleinen Wohngebäuden ist die Verantwortung weitgehend in den Händen der privaten Beteiligten. Das spart Zeit, verlangt aber sorgfältige Auswahl der Beteiligten durch die Bauherrschaft.",
+   "tags": [
+    "fallaufgabe",
+    "bauvorlageberechtigung",
+    "einfamilienhaus"
+   ],
+   "quelle": "§§ 56, 59, 67, 68, 75 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-027",
+   "typ": "fall",
+   "frage": "Eine Baugemeinschaft aus sechs Haushalten plant ein Mehrfamilienhaus mit fünf Geschossen; der Fußboden des obersten Geschosses liegt 12 m über dem Gelände.",
+   "teile": [
+    {
+     "frage": "Welche Gebäudeklasse liegt vor?",
+     "antwort": "Gebäudeklasse 4, wenn die Nutzungseinheiten je Geschoss höchstens 400 m² haben: Die maßgebliche Höhe liegt mit 12 m über 7 m, aber nicht über 13 m."
+    },
+    {
+     "frage": "Wer kümmert sich um die Standsicherheit?",
+     "antwort": "Bei Gebäudeklasse 4 muss der Standsicherheitsnachweis von Prüfsachverständigen für Standsicherheit bescheinigt werden (§ 68 Abs. 3)."
+    },
+    {
+     "frage": "Und um den Brandschutz?",
+     "antwort": "Bei Gebäudeklasse 4 stellen Nachweisberechtigte für Brandschutz den Nachweis auf, sofern er nicht durch Prüfsachverständige bescheinigt wird (§ 68 Abs. 4)."
+    },
+    {
+     "frage": "Mit wem verhandelt die Bauaufsicht, wenn sechs Haushalte Bauherren sind?",
+     "antwort": "Sie kann verlangen, dass die Baugemeinschaft eine Person benennt, die die Pflichten der Bauherrschaft gegenüber der Behörde wahrnimmt (§ 56 Abs. 2)."
+    }
+   ],
+   "siehe": [
+    "rb-lbo"
+   ],
+   "antwort": "Gebäudeklasse 4: Standsicherheit durch Prüfsachverständige, Brandschutz durch Nachweisberechtigte für Brandschutz; die Baugemeinschaft muss auf Verlangen eine Vertretung benennen; die Bauvorlagen erstellt eine Architektin oder ein eingetragener Ingenieur.",
+   "vertiefung": "Der Fall zeigt, wie die Gebäudeklasse die Prüfintensität steuert: Mit Gebäudeklasse 4 setzt die unabhängige Kontrolle der Standsicherheit ein, mit Gebäudeklasse 5 auch die des Brandschutzes.",
+   "tags": [
+    "fallaufgabe",
+    "gebäudeklassen",
+    "prüfsachverständige",
+    "bauherrschaft"
+   ],
+   "quelle": "§§ 2, 56, 67, 68 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-bv-028",
+   "typ": "freitext",
+   "frage": "Erläutere, warum das Gesetz die Erstellung von Bauvorlagen auf bestimmte Berufsgruppen beschränkt, und wie sich diese Beschränkung mit der Verlagerung von Prüfaufgaben auf Private verträgt.",
+   "pruefpunkte": [
+    "Zweck: Gefahrenabwehr durch qualifizierte Planung",
+    "Vereinbarkeit mit der Berufsfreiheit (Art. 12 GG), verhältnismäßig",
+    "Verlagerung der Prüfung erhöht Bedeutung der Qualifikation",
+    "Absicherung durch Fortbildung und Haftpflicht",
+    "Abstufung der Berechtigung nach Größe und Risiko des Vorhabens"
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Bauvorlagen sind die Grundlage für ein sicheres Bauwerk und für die behördliche Entscheidung. Die Beschränkung auf qualifizierte Personen dient der Gefahrenabwehr und ist als verhältnismäßige Berufsausübungsregel mit Art. 12 GG vereinbar. Je weniger die Behörde selbst prüft – bei Freistellung oder im vereinfachten Verfahren –, desto wichtiger wird die Qualifikation der Planenden: Sie ersetzt einen Teil der staatlichen Kontrolle. Fortbildungspflicht und Haftpflichtversicherung sichern das zusätzlich ab.",
+   "vertiefung": "Für Planende folgt daraus ein Haftungsrisiko: Was die Behörde nicht prüft, verantworten sie allein. Die Abstufung nach Vorhabengröße – Meister für kleine Wohnhäuser, Architekten und Ingenieure uneingeschränkt – spiegelt die Abstufung der Risiken wider.",
+   "tags": [
+    "bauvorlageberechtigung",
+    "verantwortung",
+    "deregulierung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 537, S. 192; Rn. 552, S. 197; § 67 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}

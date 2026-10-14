@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 545" width="800" height="545" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="545" fill="#f0ead2"/>
+<text x="400" y="32" font-size="18" text-anchor="middle" font-weight="bold" fill="#414833" >Ablauf eines vereinfachten Baugenehmigungsverfahrens</text>
+<line x1="70" y1="92" x2="70" y2="502" stroke="#6c584c" stroke-width="3"/>
+<circle cx="70" cy="92" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="70" y="97" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
+<rect x="100" y="62" width="480" height="62" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="118" y="86" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Bauantrag mit Bauvorlagen</text>
+<text x="118" y="110" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >bei der Bauaufsichtsbehörde (§ 69)</text>
+<circle cx="70" cy="174" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="70" y="179" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
+<rect x="100" y="144" width="480" height="62" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="118" y="168" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Vollständigkeitsprüfung</text>
+<text x="118" y="192" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >sonst gilt der Antrag als vollständig (§ 70 Abs. 2)</text>
+<rect x="600" y="152" width="170" height="44" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="685" y="180" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >1 Monat</text>
+<circle cx="70" cy="256" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="70" y="261" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3</text>
+<rect x="100" y="226" width="480" height="62" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="118" y="250" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Beteiligung von Gemeinde und Fachstellen</text>
+<text x="118" y="274" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >Einvernehmen nach § 36 BauGB: 2 Monate</text>
+<rect x="600" y="234" width="170" height="44" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="685" y="262" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >1 Monat</text>
+<circle cx="70" cy="338" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="70" y="343" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >4</text>
+<rect x="100" y="308" width="480" height="62" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="118" y="332" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Benachrichtigung der Nachbarn</text>
+<text x="118" y="356" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >nur bei Abweichung von nachbarschützenden Vorschriften</text>
+<rect x="600" y="316" width="170" height="44" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="685" y="344" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >2 Wochen</text>
+<circle cx="70" cy="420" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="70" y="425" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >5</text>
+<rect x="100" y="390" width="480" height="62" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="118" y="414" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Entscheidung</text>
+<text x="118" y="438" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >verlängerbar um 2 Monate, sonst Fiktion (§ 65 Abs. 2)</text>
+<rect x="600" y="398" width="170" height="44" rx="8" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="685" y="426" font-size="15" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3 Monate</text>
+<circle cx="70" cy="502" r="14" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="70" y="507" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >6</text>
+<rect x="100" y="472" width="480" height="62" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="118" y="496" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Baubeginnsanzeige</text>
+<text x="118" y="520" font-size="13" text-anchor="start" font-weight="normal" fill="#6c584c" >danach Absteckung und Baubeginn (§ 75)</text>
+<rect x="600" y="480" width="170" height="44" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="685" y="508" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >1 Woche vorher</text>
+</svg>
