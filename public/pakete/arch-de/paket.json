@@ -517,7 +517,9 @@
         },
         {
           "id": "rb-mass",
-          "titel": "Maß der baulichen Nutzung: GRZ, GFZ, BMZ"
+          "titel": "Maß der baulichen Nutzung: GRZ, GFZ, BMZ",
+          "datei": "items/rb-mass.json",
+          "bild": "bilder/rb-mass-kennzahlen.svg"
         },
         {
           "id": "rb-bauweise",

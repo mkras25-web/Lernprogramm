@@ -1,0 +1,659 @@
+{
+ "thema": "rb-mass",
+ "titel": "Maß der baulichen Nutzung: GRZ, GFZ, BMZ",
+ "erklaerung": {
+  "absaetze": [
+   "Die Art der baulichen Nutzung sagt, was in einem Gebiet entstehen darf, das Maß sagt, wie viel und wie hoch. Mit ihm steuert der Bebauungsplan Dichte und Höhenentwicklung. Die BauNVO stellt dafür vier Werkzeuge bereit: die Grundflächenzahl oder Grundfläche, die Geschossflächenzahl oder Geschossfläche, die Baumassenzahl oder Baumasse, die Zahl der Vollgeschosse und die Höhe baulicher Anlagen (§ 16 Abs. 2). Im Flächennutzungsplan genügt eine grobe Angabe der GFZ, BMZ oder Höhe.",
+   "Die drei Verhältniszahlen beziehen sich alle auf dieselbe Fläche: das Baugrundstück im Bauland hinter der Straßenbegrenzungslinie (§ 19 Abs. 3). Die GRZ gibt an, wie viel Quadratmeter Grundfläche je Quadratmeter Grundstücksfläche zulässig sind, die GFZ dasselbe für die Geschossfläche aller Vollgeschosse, gemessen nach Außenmaßen, die BMZ die Kubikmeter Baumasse. Bei 600 m² Grundstück heißt GRZ 0,3 also höchstens 180 m² Grundfläche, GFZ 0,7 höchstens 420 m² Geschossfläche. Was ein Vollgeschoss ist, bestimmt das Landesrecht – in Hessen ein oberirdisches Geschoss von mindestens 2,30 m Höhe.",
+   "Festsetzen muss der Plan stets die GRZ oder Grundfläche; Vollgeschosse oder Höhe kommen hinzu, wenn sonst das Orts- und Landschaftsbild leiden könnte (§ 16 Abs. 3). Werte können als Höchst-, Mindest- oder zwingendes Maß festgesetzt und für Teile des Gebiets unterschiedlich bestimmt werden. Für die Höhe sind Bezugspunkte festzulegen (§ 18). Als Maßstab dienen die Orientierungswerte des § 17, etwa GRZ 0,4 und GFZ 1,2 für reine und allgemeine Wohngebiete oder 1,0 und 3,0 für Kerngebiete. Seit 2021 sind das Orientierungswerte, keine starren Obergrenzen mehr.",
+   "Im Entwurf werden die Maßzahlen zu Dichtekennwerten. Nettobauland sind die bebaubaren Grundstücke, Bruttobauland zusätzlich Straßen, Grün- und Versorgungsflächen; Wohndichten werden je nach Bezugsfläche als Brutto- oder Nettodichte angegeben. Die Haustypen ordnen sich dabei deutlich: Ein freistehendes Einfamilienhaus erreicht etwa GFZ 0,3 bis 0,4, ein Reihenhaus rund 0,8, Geschosswohnungsbau bis 1,2. Dieselbe GRZ kann aber sehr verschiedene Städtebauten tragen – flache Zeilen, die das Grundstück weitgehend überbauen, ebenso wie einen hohen Baukörper mit viel Freifläche.",
+   "Drei Fallstricke kommen immer wieder vor. Erstens zählen Garagen, Stellplätze mit Zufahrten, Nebenanlagen und Tiefgaragen nach § 19 Abs. 4 zur Grundfläche – sie dürfen die zulässige Grundfläche aber um bis zu 50 % überschreiten, höchstens bis GRZ 0,8. Zweitens zählt die GFZ nur Vollgeschosse: Balkone, Loggien, Terrassen und Nebenanlagen bleiben außen vor, ein Dachgeschoss unterhalb der Vollgeschossschwelle meist auch. Drittens drucken ältere Unterlagen § 17 noch als „Obergrenzen“ ab – die Zahlen stimmen weitgehend, die rechtliche Bindung hat sich geändert."
+  ],
+  "merksatz": "Die GRZ begrenzt, wie viel Boden überbaut wird, die GFZ, wie viel Geschossfläche entsteht, Vollgeschosse oder Höhe, wie hoch gebaut wird – und alle Zahlen beziehen sich auf das Grundstück hinter der Straßenbegrenzungslinie.",
+  "bild": "bilder/rb-mass-kennzahlen.svg",
+  "bildunterschrift": "GRZ, GFZ und BMZ als Verhältnis zur Grundstücksfläche, mit dem Beispiel eines 600 m² großen Grundstücks.",
+  "quelle": "§§ 16–21 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 17 BauNVO, neu gefasst durch Gesetz vom 14.06.2021 (BGBl. I S. 1802); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 22–26; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66; Rn. 196, S. 72–73; § 2 Abs. 5 HBO vom 28.05.2018 (GVBl. S. 198), Wortlaut nach anwalt24.de; gleichlautend § 2 Abs. 4 der HBO-Fassungen 2002 und 2011 (umwelt-online.de)"
+ },
+ "lernziele": [
+  "Du kannst GRZ, GFZ und BMZ definieren, ihre Bezugsfläche nennen und an einem Grundstück die zulässige Grundfläche und Geschossfläche bestimmen.",
+  "Du kannst erklären, was nach § 19 Abs. 4 und § 20 Abs. 4 BauNVO mitzählt und was nicht.",
+  "Du kannst die Orientierungswerte des § 17 BauNVO für die wichtigsten Baugebiete wiedergeben.",
+  "Du kannst nach der Hessischen Bauordnung bestimmen, ob ein Geschoss ein Vollgeschoss ist."
+ ],
+ "siehe": [
+  "rb-baunvo",
+  "rb-bauleitplanung"
+ ],
+ "items": [
+  {
+   "id": "rb-mass-001",
+   "typ": "karte",
+   "frage": "Womit kann ein Bebauungsplan das Maß der baulichen Nutzung festsetzen, und was genügt im Flächennutzungsplan?",
+   "antwort": "Im Bebauungsplan durch (1) die Grundflächenzahl oder die Größe der Grundflächen, (2) die Geschossflächenzahl oder die Größe der Geschossfläche, die Baumassenzahl oder die Baumasse, (3) die Zahl der Vollgeschosse und (4) die Höhe baulicher Anlagen (§ 16 Abs. 2 BauNVO). Im Flächennutzungsplan genügt die Angabe der Geschossflächenzahl, der Baumassenzahl oder der Höhe (§ 16 Abs. 1).",
+   "vertiefung": "Das Maß steuert Dichte und Höhenentwicklung der Bebauung, die Art steuert die Nutzung. Zu jeder Verhältniszahl gibt es eine absolute Variante: statt GRZ 0,4 etwa „GR 200 m²“. Die Verhältniszahlen passen für Gebiete mit vielen Grundstücken, die absoluten Größen eher für einzelne, genau bekannte Vorhaben.",
+   "tags": [
+    "maß der baulichen nutzung",
+    "§ 16 baunvo"
+   ],
+   "quelle": "§ 16 Abs. 1 und 2 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24 (nach Braam 1987); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 176, S. 66",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-002",
+   "typ": "zuordnung",
+   "frage": "Ordne die Kennzeichen des Maßes der baulichen Nutzung ihrer Bedeutung zu.",
+   "paare": [
+    [
+     "GRZ",
+     "m² Grundfläche je m² Grundstücksfläche"
+    ],
+    [
+     "GFZ",
+     "m² Geschossfläche je m² Grundstücksfläche"
+    ],
+    [
+     "BMZ",
+     "m³ Baumasse je m² Grundstücksfläche"
+    ],
+    [
+     "II (römische Zahl)",
+     "Zahl der Vollgeschosse"
+    ],
+    [
+     "GR",
+     "zulässige Grundfläche als absoluter Wert in m²"
+    ],
+    [
+     "GF",
+     "zulässige Geschossfläche als absoluter Wert in m²"
+    ]
+   ],
+   "antwort": "GRZ: m² Grundfläche je m² Grundstücksfläche. GFZ: m² Geschossfläche je m² Grundstücksfläche. BMZ: m³ Baumasse je m² Grundstücksfläche. Römische Zahl (z. B. II): Zahl der Vollgeschosse. GR: zulässige Grundfläche in m². GF: zulässige Geschossfläche in m².",
+   "vertiefung": "Merkhilfe über die Einheiten: GRZ und GFZ sind Fläche durch Fläche, also dimensionslos; die BMZ ist Volumen durch Fläche und trägt deshalb die Einheit m³/m². Alle drei Zahlen beziehen sich auf die maßgebende Grundstücksfläche nach § 19 Abs. 3 BauNVO.",
+   "tags": [
+    "grz",
+    "gfz",
+    "bmz"
+   ],
+   "quelle": "§§ 16, 19 Abs. 1, 20 Abs. 2, 21 Abs. 1 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 23–24",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-003",
+   "typ": "mehrfachauswahl",
+   "frage": "Ein Baugrundstück ist 600 m² groß, der Bebauungsplan setzt GRZ 0,3 fest. Welche Aussagen treffen zu?",
+   "optionen": [
+    "Bauliche Anlagen dürfen höchstens 180 m² des Grundstücks überdecken.",
+    "Das Gebäude darf höchstens 180 m² Wohnfläche haben.",
+    "Mindestens 30 % des Grundstücks müssen bebaut werden.",
+    "Garagen, Stellplätze mit Zufahrten und Nebenanlagen zählen mit, dürfen die zulässige Grundfläche aber um bis zu 50 % überschreiten.",
+    "Je Geschoss dürfen 180 m² Geschossfläche entstehen, unabhängig von der Zahl der Geschosse."
+   ],
+   "richtig": [
+    0,
+    3
+   ],
+   "warum": [
+    "Richtig – zulässige Grundfläche = GRZ × maßgebende Grundstücksfläche (§ 19 Abs. 2).",
+    "Falsch – die GRZ begrenzt die überdeckte Grundstücksfläche, nicht die Wohnfläche; die liegt in mehreren Geschossen und wird nach Innenmaßen ermittelt.",
+    "Falsch – die GRZ ist ein Höchstmaß. Ein Mindestmaß müsste eigens festgesetzt werden.",
+    "Richtig – § 19 Abs. 4: mitzurechnen, Überschreitung bis 50 %, höchstens bis GRZ 0,8.",
+    "Falsch – die Summe der Geschossflächen begrenzt die GFZ, nicht die GRZ. Ohne Begrenzung der Geschosse oder der Geschossfläche wäre die Höhe offen."
+   ],
+   "antwort": "Bauliche Anlagen dürfen höchstens 180 m² des Grundstücks überdecken. Garagen, Stellplätze mit Zufahrten und Nebenanlagen werden mitgerechnet, dürfen die zulässige Grundfläche aber um bis zu 50 % überschreiten. Die GRZ ist ein Höchstmaß, keine Pflicht zum Bauen, und sie sagt nichts über Wohnfläche oder Geschosszahl.",
+   "vertiefung": "Das Beispiel stammt aus dem Städtebaureader: 600 m² × 0,3 = 180 m² zulässige Grundfläche. Die GRZ begrenzt also, wie viel Boden überbaut wird – das hat neben der Dichte auch mit Versickerung und Freiflächen zu tun. Wie hoch und wie viele Geschosse, regeln GFZ, Vollgeschosse oder Höhe.",
+   "tags": [
+    "grz",
+    "grundfläche",
+    "beispiel"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24 (nach Braam 1987); § 19 Abs. 1, 2 und 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-004",
+   "typ": "mehrfachauswahl",
+   "frage": "Für ein 600 m² großes Grundstück ist GFZ 0,7 festgesetzt. Welche Aussagen treffen zu?",
+   "optionen": [
+    "Alle Vollgeschosse zusammen dürfen höchstens 420 m² Geschossfläche haben.",
+    "Die Geschossfläche wird nach den Außenmaßen der Gebäude ermittelt.",
+    "Balkone, Loggien und Terrassen werden auf die Geschossfläche angerechnet.",
+    "Ein Dachgeschoss, das kein Vollgeschoss ist, wird regelmäßig voll mitgezählt.",
+    "Bei GRZ 0,35 entspricht GFZ 0,7 rechnerisch zwei vollen Geschossen."
+   ],
+   "richtig": [
+    0,
+    1,
+    4
+   ],
+   "warum": [
+    "Richtig – 600 m² × 0,7 = 420 m², Summe über alle Vollgeschosse (§ 20 Abs. 2 und 3).",
+    "Richtig – § 20 Abs. 3 Satz 1: nach den Außenmaßen in allen Vollgeschossen.",
+    "Falsch – sie bleiben nach § 20 Abs. 4 unberücksichtigt, ebenso Nebenanlagen.",
+    "Falsch – nur Vollgeschosse zählen; Aufenthaltsräume in anderen Geschossen nur, wenn der Plan es festsetzt (§ 20 Abs. 3 Satz 2).",
+    "Richtig – 0,7 ÷ 0,35 = 2: die zulässige Geschossfläche reicht für zwei Geschosse mit voller zulässiger Grundfläche."
+   ],
+   "antwort": "Alle Vollgeschosse zusammen dürfen höchstens 420 m² Geschossfläche haben, gemessen nach den Außenmaßen. Balkone, Loggien und Terrassen zählen nicht mit; Aufenthaltsräume in Nicht-Vollgeschossen nur, wenn der Plan es festsetzt. Bei GRZ 0,35 entspricht GFZ 0,7 rechnerisch zwei vollen Geschossen.",
+   "vertiefung": "Die GFZ bestimmt die „Ausnutzung“ des Grundstücks – im Wohnungsbau hängen daran Wohnungszahl und Grundstückswert. Ein ausgebautes Dachgeschoss, das kein Vollgeschoss ist, bleibt bei der Geschossfläche grundsätzlich außen vor. Das ist ein Grund, warum Pläne die Höhe oft zusätzlich begrenzen.",
+   "tags": [
+    "gfz",
+    "geschossfläche",
+    "beispiel"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24 (nach Braam 1987); § 20 Abs. 2–4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-005",
+   "typ": "karte",
+   "frage": "Was gibt die Baumassenzahl an, wie wird die Baumasse ermittelt, und wo wird sie typischerweise verwendet?",
+   "antwort": "Die BMZ gibt an, wie viele Kubikmeter Baumasse je Quadratmeter Grundstücksfläche zulässig sind (§ 21 Abs. 1 BauNVO). Die Baumasse wird nach den Außenmaßen vom Fußboden des untersten bis zur Decke des obersten Vollgeschosses ermittelt (§ 21 Abs. 2). Verwendet wird sie vor allem in Gewerbe-, Industrie- und sonstigen Sondergebieten; nur dort nennt § 17 einen Orientierungswert, nämlich 10,0.",
+   "vertiefung": "In Hallenbauten sagen Geschosse wenig – eine 12 m hohe Lagerhalle hat ein Geschoss. Deshalb ist dort das Volumen der sinnvollere Maßstab. Ist weder Höhe noch BMZ festgesetzt, darf bei Gebäuden mit Geschossen über 3,50 m die Baumasse höchstens das Dreieinhalbfache der zulässigen GFZ erreichen (§ 21 Abs. 4).",
+   "tags": [
+    "bmz",
+    "baumasse",
+    "gewerbe"
+   ],
+   "quelle": "§ 21 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 17 BauNVO, neu gefasst durch Gesetz vom 14.06.2021 (BGBl. I S. 1802); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24 (nach Braam 1987)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-006",
+   "typ": "skizze",
+   "frage": "Skizziere für GRZ, GFZ und BMZ je ein kleines Schema (Draufsicht, Schnitt, Volumen) und schreibe die zugehörige Verhältnisformel darunter. Rechne für ein 600 m² großes Grundstück je ein Beispiel: GRZ 0,3, GFZ 0,7, BMZ 2,0.",
+   "referenz": "bilder/rb-mass-kennzahlen.svg",
+   "pruefpunkte": [
+    "GRZ als Draufsicht: überbaute Fläche im Verhältnis zur Grundstücksfläche",
+    "GFZ als Schnitt: Summe der Geschossflächen aller Vollgeschosse",
+    "BMZ als Volumen in m³ je m² Grundstücksfläche",
+    "Formeln mit Grundstücksfläche im Nenner",
+    "Beispiele richtig: 180 m², 420 m², 1 200 m³"
+   ],
+   "antwort": "Siehe Referenz: GRZ = Grundfläche ÷ Grundstücksfläche (0,3 → 180 m²), GFZ = Geschossfläche aller Vollgeschosse ÷ Grundstücksfläche (0,7 → 420 m²), BMZ = Baumasse ÷ Grundstücksfläche (2,0 → 1 200 m³).",
+   "vertiefung": "Die Beispielwerte stammen aus dem Städtebaureader. Wer die drei Schemata sicher zeichnen kann, hat die Grundlage für jede Nutzungsschablone: Die GRZ steht dort links in der Mitte, die GFZ rechts daneben.",
+   "tags": [
+    "grz",
+    "gfz",
+    "bmz",
+    "skizze"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24 (nach Braam 1987); §§ 19–21 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-007",
+   "typ": "freitext",
+   "frage": "Welche Festsetzungen zum Maß der baulichen Nutzung muss ein Bebauungsplan treffen, und wie flexibel kann er sie gestalten?",
+   "pruefpunkte": [
+    "GRZ oder Grundfläche ist immer festzusetzen",
+    "Vollgeschosse oder Höhe zusätzlich, wenn sonst öffentliche Belange wie das Orts- und Landschaftsbild beeinträchtigt werden können",
+    "Höchstmaß und zugleich Mindestmaß möglich; Vollgeschosse und Höhe auch zwingend",
+    "Unterschiedliche Festsetzungen für Teile des Gebiets, Grundstücke, Teile von Anlagen, auch unterirdisch",
+    "Ausnahmen vom Maß nach Art und Umfang im Plan vorsehbar"
+   ],
+   "antwort": "Festzusetzen ist stets die Grundflächenzahl oder die Größe der Grundflächen (§ 16 Abs. 3 Nr. 1 BauNVO). Die Zahl der Vollgeschosse oder die Höhe kommen hinzu, wenn sonst öffentliche Belange, insbesondere das Orts- und Landschaftsbild, beeinträchtigt werden können (Nr. 2). Für GFZ, Geschossfläche, Vollgeschosse und Höhe können Höchst- und zugleich Mindestmaße festgesetzt werden; Vollgeschosse und Höhe auch als zwingend (§ 16 Abs. 4). Das Maß kann für Teile des Gebiets, einzelne Grundstücke und Teile baulicher Anlagen unterschiedlich sein, auch ober- und unterhalb der Geländeoberfläche (Abs. 5), und der Plan kann Ausnahmen vorsehen (Abs. 6).",
+   "vertiefung": "Dass die GRZ immer festzusetzen ist, hat einen einfachen Grund: Ohne sie wäre offen, wie viel Boden versiegelt wird. Für einen qualifizierten Bebauungsplan nach § 30 Abs. 1 BauGB muss ohnehin ein Maß festgesetzt sein. Wird die Höhe festgesetzt, sind auch die Bezugspunkte zu bestimmen (§ 18 Abs. 1 BauNVO).",
+   "tags": [
+    "§ 16 baunvo",
+    "pflichtfestsetzung",
+    "höchstmaß"
+   ],
+   "quelle": "§§ 16 Abs. 3–6, 18 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-008",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen zu § 17 BauNVO treffen zu?",
+   "optionen": [
+    "Seit 2021 nennt § 17 Orientierungswerte für Obergrenzen statt fester Obergrenzen.",
+    "Für reine und allgemeine Wohngebiete gelten GRZ 0,4 und GFZ 1,2.",
+    "Für Kerngebiete gelten GRZ 1,0 und GFZ 3,0.",
+    "In Wochenendhaus- und Ferienhausgebieten dürfen die Werte nicht überschritten werden.",
+    "Für urbane Gebiete gilt eine GFZ von 1,2."
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig – § 17 wurde durch das Baulandmobilisierungsgesetz 2021 neu gefasst.",
+    "Richtig – Zeile WR, WA und Ferienhausgebiete der Tabelle.",
+    "Richtig – Zeile Kerngebiete.",
+    "Richtig – für diese beiden Gebiete bleiben die Werte strikte Grenzen.",
+    "Falsch – für urbane Gebiete nennt § 17 GRZ 0,8 und GFZ 3,0; 1,2 ist der Wert für WR/WA und MI."
+   ],
+   "antwort": "Seit 2021 nennt § 17 Orientierungswerte für Obergrenzen, keine festen Obergrenzen mehr. Für WR und WA gelten GRZ 0,4 und GFZ 1,2, für Kerngebiete 1,0 und 3,0; in Wochenend- und Ferienhausgebieten dürfen die Werte nicht überschritten werden. Für urbane Gebiete liegt die GFZ bei 3,0, nicht bei 1,2.",
+   "vertiefung": "Achtung bei älteren Unterlagen: Der Städtebaureader druckt § 17 noch als „Obergrenzen“ ab. Die Zahlen sind weitgehend gleich geblieben, die rechtliche Bindung aber nicht – die Gemeinde kann die Werte heute in der Abwägung über- oder unterschreiten, muss das aber städtebaulich begründen. Battis nennt das Baulandmobilisierungsgesetz 2021 als Anlass für diese flexiblere Handhabung.",
+   "tags": [
+    "§ 17 baunvo",
+    "orientierungswerte"
+   ],
+   "quelle": "§ 17 BauNVO, neu gefasst durch Gesetz vom 14.06.2021 (BGBl. I S. 1802); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 196, S. 72",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-009",
+   "typ": "zuordnung",
+   "frage": "Ordne den Baugebieten die Orientierungswerte nach § 17 BauNVO zu (GRZ / GFZ).",
+   "paare": [
+    [
+     "Kleinsiedlungsgebiet (WS)",
+     "0,2 / 0,4"
+    ],
+    [
+     "Reines und allgemeines Wohngebiet (WR, WA)",
+     "0,4 / 1,2"
+    ],
+    [
+     "Besonderes Wohngebiet (WB)",
+     "0,6 / 1,6"
+    ],
+    [
+     "Dorf-, Misch-, dörfliches Wohngebiet (MD, MI, MDW)",
+     "0,6 / 1,2"
+    ],
+    [
+     "Urbanes Gebiet (MU)",
+     "0,8 / 3,0"
+    ],
+    [
+     "Kerngebiet (MK)",
+     "1,0 / 3,0"
+    ],
+    [
+     "Gewerbe-, Industrie-, sonstiges Sondergebiet",
+     "0,8 / 2,4, BMZ 10,0"
+    ]
+   ],
+   "antwort": "WS 0,2 / 0,4 – WR, WA 0,4 / 1,2 – WB 0,6 / 1,6 – MD, MI, MDW 0,6 / 1,2 – MU 0,8 / 3,0 – MK 1,0 / 3,0 – GE, GI, SO 0,8 / 2,4 und BMZ 10,0.",
+   "vertiefung": "Zwei Muster helfen beim Merken: Die GRZ steigt vom Wohnen zum Gewerbe (0,2 – 0,4 – 0,6 – 0,8 – 1,0), und das Kerngebiet ist das einzige mit GRZ 1,0, also vollständiger Überbauung. Bei der GFZ teilen sich urbanes Gebiet und Kerngebiet den Spitzenwert 3,0. Wochenendhausgebiete liegen mit 0,2 / 0,2 ganz unten.",
+   "tags": [
+    "§ 17 baunvo",
+    "orientierungswerte",
+    "baugebiete"
+   ],
+   "quelle": "§ 17 BauNVO, neu gefasst durch Gesetz vom 14.06.2021 (BGBl. I S. 1802)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-010",
+   "typ": "numerisch",
+   "frage": "Welchen Orientierungswert für die Grundflächenzahl nennt § 17 BauNVO für allgemeine Wohngebiete?",
+   "wert": 0.4,
+   "toleranz": 0,
+   "antwort": "0,4. Für reine und allgemeine Wohngebiete sowie Ferienhausgebiete nennt § 17 GRZ 0,4 und GFZ 1,2.",
+   "vertiefung": "GRZ 0,4 ist der Wert, der einem im Wohnungsbau am häufigsten begegnet. Er heißt: 40 % des Grundstücks dürfen von der Hauptanlage überdeckt werden – mit Garagen, Zufahrten und Nebenanlagen nach § 19 Abs. 4 bis zu 60 %.",
+   "tags": [
+    "§ 17 baunvo",
+    "grz",
+    "allgemeines wohngebiet"
+   ],
+   "quelle": "§ 17 BauNVO, neu gefasst durch Gesetz vom 14.06.2021 (BGBl. I S. 1802); § 19 Abs. 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-011",
+   "typ": "karte",
+   "frage": "Auf welche Grundstücksfläche beziehen sich GRZ, GFZ und BMZ?",
+   "antwort": "Auf die Fläche des Baugrundstücks, die im Bauland und hinter der im Bebauungsplan festgesetzten Straßenbegrenzungslinie liegt (§ 19 Abs. 3 BauNVO). Fehlt eine solche Linie, ist die Fläche hinter der tatsächlichen Straßengrenze maßgebend oder die Fläche, die der Plan dafür festsetzt. GFZ und BMZ verweisen ausdrücklich auf diese Fläche (§ 20 Abs. 2, § 21 Abs. 1).",
+   "vertiefung": "Wer ein Grundstück bis zur Straßenmitte oder einschließlich einer festgesetzten Verkehrsfläche rechnet, rechnet zu viel Baurecht heraus. Ebenso zählen Teile des Grundstücks, die etwa als private Grünfläche festgesetzt sind, nicht zum Bauland. Der Städtebaureader weist darauf hin, dass die Hinzurechnung von Tiefgaragenflächen nach § 21a BauNVO bei Vergleichsrechnungen eine eigene Rolle spielt.",
+   "tags": [
+    "grundstücksfläche",
+    "straßenbegrenzungslinie",
+    "§ 19 baunvo"
+   ],
+   "quelle": "§§ 19 Abs. 3, 20 Abs. 2, 21 Abs. 1 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 26 (nach Prinz 1995)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-012",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Flächen werden nach § 19 Abs. 4 BauNVO bei der Ermittlung der Grundfläche mitgerechnet?",
+   "optionen": [
+    "Garage",
+    "Stellplatz mit Zufahrt",
+    "Gartenhaus als Nebenanlage",
+    "Tiefgarage unter dem Garten",
+    "Unbebaute Rasenfläche",
+    "Öffentliche Straße vor dem Grundstück"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig – § 19 Abs. 4 Satz 1 Nr. 1.",
+    "Richtig – Stellplätze mit ihren Zufahrten, ebenfalls Nr. 1.",
+    "Richtig – Nebenanlage im Sinne des § 14 BauNVO, Nr. 2.",
+    "Richtig – bauliche Anlage unterhalb der Geländeoberfläche, die das Grundstück lediglich unterbaut, Nr. 3.",
+    "Falsch – sie wird nicht von baulichen Anlagen überdeckt.",
+    "Falsch – sie liegt vor der Straßenbegrenzungslinie und gehört nicht zur maßgebenden Grundstücksfläche (§ 19 Abs. 3)."
+   ],
+   "bild": "bilder/rb-mass-anrechnung.svg",
+   "bildunterschrift": "Grundstück mit Hauptgebäude und den nach § 19 Abs. 4 BauNVO mitzurechnenden Anlagen.",
+   "antwort": "Mitzurechnen sind die Grundflächen von Garagen und Stellplätzen mit ihren Zufahrten, von Nebenanlagen im Sinne des § 14 und von baulichen Anlagen unterhalb der Geländeoberfläche, durch die das Grundstück lediglich unterbaut wird – etwa einer Tiefgarage unter dem Garten. Unbebaute Garten- und Rasenflächen und die öffentliche Straße zählen nicht.",
+   "vertiefung": "Diese Anlagen dürfen die zulässige Grundfläche um bis zu 50 % überschreiten, höchstens bis zu einer GRZ von 0,8; weitere geringfügige Überschreitungen können zugelassen werden. Der Plan kann Abweichendes festsetzen. Hintergrund ist der Bodenschutz: Auch eine Zufahrt oder eine unterirdische Garage versiegelt Boden.",
+   "tags": [
+    "§ 19 baunvo",
+    "anrechnung",
+    "versiegelung"
+   ],
+   "quelle": "§ 19 Abs. 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-013",
+   "typ": "numerisch",
+   "frage": "Bis zu welcher Grundflächenzahl darf die zulässige Grundfläche durch Garagen, Stellplätze mit Zufahrten, Nebenanlagen und unterirdische Anlagen höchstens überschritten werden, wenn der Bebauungsplan nichts anderes bestimmt?",
+   "wert": 0.8,
+   "toleranz": 0,
+   "antwort": "0,8. Die Überschreitung beträgt bis zu 50 % der zulässigen Grundfläche, höchstens aber bis zu einer GRZ von 0,8 (§ 19 Abs. 4 Satz 2 BauNVO).",
+   "vertiefung": "Die Kappung greift erst bei höheren Werten: Bei GRZ 0,4 ergibt der 50-%-Zuschlag 0,6 und bleibt unter 0,8. Bei GRZ 0,6 würde der Zuschlag 0,9 ergeben – hier begrenzt die Kappung auf 0,8. Im Einzelfall kann davon abgesehen werden, wenn die Auswirkungen auf die natürlichen Bodenfunktionen nur geringfügig sind oder die Einhaltung die zweckentsprechende Nutzung wesentlich erschweren würde (§ 19 Abs. 4 Satz 4).",
+   "tags": [
+    "§ 19 baunvo",
+    "kappungsgrenze",
+    "überschreitung"
+   ],
+   "quelle": "§ 19 Abs. 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-014",
+   "typ": "fall",
+   "frage": "In einem allgemeinen Wohngebiet ist GRZ 0,4 festgesetzt, sonst nichts zu § 19 Abs. 4 BauNVO. Das Grundstück hat hinter der Straßenbegrenzungslinie 500 m². Die Bauherrin plant ein Wohnhaus, eine Doppelgarage mit Zufahrt und ein Gartenhaus.",
+   "teile": [
+    {
+     "frage": "Wie viel Grundfläche darf das Wohnhaus höchstens überdecken?",
+     "antwort": "500 m² × 0,4 = 200 m² (§ 19 Abs. 2 BauNVO)."
+    },
+    {
+     "frage": "Wie viel Fläche dürfen Wohnhaus, Garage, Zufahrt und Gartenhaus zusammen überdecken?",
+     "antwort": "Die Nebenflächen dürfen die zulässige Grundfläche um bis zu 50 % überschreiten: 200 m² + 100 m² = 300 m², entsprechend GRZ 0,6 – das liegt unter der Kappungsgrenze 0,8."
+    },
+    {
+     "frage": "Was ergäbe sich bei gleicher Grundstücksgröße in einem Mischgebiet mit GRZ 0,6?",
+     "antwort": "Hauptanlage 300 m². Der 50-%-Zuschlag ergäbe 450 m² (GRZ 0,9); gekappt wird bei 0,8, also höchstens 400 m²."
+    },
+    {
+     "frage": "Kann der Bebauungsplan etwas anderes regeln?",
+     "antwort": "Ja. Er kann abweichende Bestimmungen treffen (§ 19 Abs. 4 Satz 3). Ohne solche Festsetzung kann im Einzelfall von der Grenze abgesehen werden, wenn die Auswirkungen auf die Bodenfunktionen nur geringfügig sind oder die zweckentsprechende Nutzung sonst wesentlich erschwert würde (Satz 4)."
+    }
+   ],
+   "antwort": "Das Wohnhaus darf 200 m² überdecken, alle Anlagen zusammen 300 m². In einem Mischgebiet mit GRZ 0,6 wären es 300 m² und – wegen der Kappung bei 0,8 – höchstens 400 m² statt 450 m². Der Plan kann diese Regeln abwandeln.",
+   "vertiefung": "Der Fall zeigt, warum § 19 Abs. 4 in der Praxis so wichtig ist: Gerade bei kleinen Grundstücken fressen Garage, Zufahrt und Terrassenwege den Spielraum schnell auf. Viele Bebauungspläne setzen deshalb ausdrücklich fest, ob und wie weit die Überschreitung zulässig ist.",
+   "tags": [
+    "fallaufgabe",
+    "grz",
+    "§ 19 baunvo"
+   ],
+   "quelle": "§ 19 Abs. 2–4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 17 BauNVO, neu gefasst durch Gesetz vom 14.06.2021 (BGBl. I S. 1802)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-015",
+   "typ": "karte",
+   "frage": "Wie wird die Geschossfläche ermittelt, und was bleibt dabei unberücksichtigt?",
+   "antwort": "Nach den Außenmaßen der Gebäude in allen Vollgeschossen (§ 20 Abs. 3 Satz 1 BauNVO). Unberücksichtigt bleiben Nebenanlagen im Sinne des § 14, Balkone, Loggien und Terrassen sowie bauliche Anlagen, die nach Landesrecht in den Abstandsflächen zulässig sind oder zugelassen werden können (§ 20 Abs. 4). Aufenthaltsräume in anderen Geschossen – etwa im Dachgeschoss – werden nur mitgerechnet, wenn der Bebauungsplan das festsetzt (§ 20 Abs. 3 Satz 2).",
+   "vertiefung": "Die Geschossfläche nach BauNVO ist nicht dasselbe wie die Brutto-Grundfläche einer Kostenberechnung und schon gar nicht die Wohnfläche. Der Städtebaureader nennt für Überschlagsrechnungen im Städtebau die Bruttogeschossfläche (Länge × Breite × Geschosszahl) und schätzt daraus Wohneinheiten mit rund 100 m² BGF je Wohnung.",
+   "tags": [
+    "geschossfläche",
+    "§ 20 baunvo",
+    "außenmaße"
+   ],
+   "quelle": "§ 20 Abs. 3 und 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 22",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-016",
+   "typ": "karte",
+   "frage": "Was ist ein Vollgeschoss nach der Hessischen Bauordnung, und warum ist das für die BauNVO wichtig?",
+   "bild": "bilder/rb-mass-vollgeschoss.svg",
+   "bildunterschrift": "Schematischer Schnitt: Keller und Dachgeschoss sind hier keine Vollgeschosse, das Gebäude hat zwei.",
+   "antwort": "Die BauNVO verweist für den Begriff auf das Landesrecht (§ 20 Abs. 1). Nach HBO sind Vollgeschosse oberirdische Geschosse mit einer Höhe von mindestens 2,30 m; oberirdisch ist ein Geschoss, dessen Deckenoberkante im Mittel mehr als 1,40 m über die Geländeoberfläche hinausragt. Ein Staffelgeschoss oder ein Geschoss mit mindestens einer geneigten Dachfläche ist nur dann ein Vollgeschoss, wenn es diese Höhe über mehr als drei Viertel der Brutto-Grundfläche des darunterliegenden Geschosses hat.",
+   "vertiefung": "Weil jedes Land den Begriff selbst bestimmt, kann dasselbe Gebäude in Hessen und in einem anderen Land eine unterschiedliche Zahl von Vollgeschossen haben – andere Länder verwenden zum Teil andere Schwellenwerte. Für die Praxis wichtig: Die GFZ zählt nur Vollgeschosse. Ein Dachgeschoss unterhalb der Drei-Viertel-Schwelle kann also zusätzliche Wohnfläche bringen, ohne die GFZ zu belasten.",
+   "tags": [
+    "vollgeschoss",
+    "hbo",
+    "hessen"
+   ],
+   "quelle": "§ 20 Abs. 1 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 2 Abs. 5 HBO vom 28.05.2018 (GVBl. S. 198), Wortlaut nach anwalt24.de; gleichlautend § 2 Abs. 4 der HBO-Fassungen 2002 und 2011 (umwelt-online.de)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Vollgeschossdefinition aus einer nicht amtlichen Wiedergabe der HBO. Gegen den amtlichen Text der HBO vom 28.05.2018 in der aktuellen Fassung (rv.hessenrecht.hessen.de) prüfen, ob sie in § 2 Abs. 5 steht und ob die Werte 1,40 m und 2,30 m sowie die Drei-Viertel-Regel für Staffel- und Dachgeschosse unverändert gelten."
+  },
+  {
+   "id": "rb-mass-017",
+   "typ": "numerisch",
+   "frage": "Welche Höhe (in m) muss ein oberirdisches Geschoss nach der Hessischen Bauordnung mindestens haben, um ein Vollgeschoss zu sein?",
+   "wert": 2.3,
+   "toleranz": 0,
+   "einheit": "m",
+   "antwort": "2,30 m.",
+   "vertiefung": "Bei Staffel- und Dachgeschossen kommt eine zweite Bedingung hinzu: Die 2,30 m müssen über mehr als drei Viertel der Brutto-Grundfläche des darunterliegenden Geschosses erreicht werden. Nicht zu verwechseln mit den 1,40 m, die darüber entscheiden, ob ein Geschoss überhaupt oberirdisch ist.",
+   "tags": [
+    "vollgeschoss",
+    "hbo",
+    "hessen"
+   ],
+   "quelle": "§ 2 Abs. 5 HBO vom 28.05.2018 (GVBl. S. 198), Wortlaut nach anwalt24.de; gleichlautend § 2 Abs. 4 der HBO-Fassungen 2002 und 2011 (umwelt-online.de)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Vollgeschossdefinition aus einer nicht amtlichen Wiedergabe der HBO. Gegen den amtlichen Text der HBO vom 28.05.2018 in der aktuellen Fassung (rv.hessenrecht.hessen.de) prüfen, ob sie in § 2 Abs. 5 steht und ob die Werte 1,40 m und 2,30 m sowie die Drei-Viertel-Regel für Staffel- und Dachgeschosse unverändert gelten."
+  },
+  {
+   "id": "rb-mass-018",
+   "typ": "skizze",
+   "frage": "Skizziere den Schnitt eines Wohnhauses mit Keller, Erdgeschoss, Obergeschoss und Satteldach. Markiere, welche Geschosse nach der Hessischen Bauordnung Vollgeschosse sind, und trage die entscheidenden Maße ein.",
+   "referenz": "bilder/rb-mass-vollgeschoss.svg",
+   "pruefpunkte": [
+    "Geländeoberfläche eingezeichnet, Keller mit Deckenoberkante höchstens 1,40 m darüber: kein oberirdisches Geschoss",
+    "EG und OG mit mindestens 2,30 m Höhe als Vollgeschosse markiert",
+    "Im Dachgeschoss die 2,30-m-Linie eingetragen und ihre Breite mit der Grundfläche des OG verglichen",
+    "Drei-Viertel-Regel für Dach- und Staffelgeschosse genannt",
+    "Ergebnis als römische Zahl: II"
+   ],
+   "antwort": "Siehe Referenz: Der Keller ragt nicht mehr als 1,40 m über das Gelände und ist kein oberirdisches Geschoss. EG und OG sind oberirdisch und mindestens 2,30 m hoch, also Vollgeschosse. Im Dachgeschoss wird die Höhe von 2,30 m nur über weniger als drei Viertel der Grundfläche des OG erreicht – kein Vollgeschoss. Ergebnis: II.",
+   "vertiefung": "Die Skizze erklärt eine typische Planungsstrategie: Mit einem flacher geneigten Dach oder einem Kniestock lässt sich steuern, ob das Dachgeschoss zum Vollgeschoss wird. Pläne begrenzen deshalb oft zusätzlich die Trauf- oder Firsthöhe.",
+   "tags": [
+    "vollgeschoss",
+    "schnitt",
+    "skizze"
+   ],
+   "quelle": "§ 2 Abs. 5 HBO vom 28.05.2018 (GVBl. S. 198), Wortlaut nach anwalt24.de; gleichlautend § 2 Abs. 4 der HBO-Fassungen 2002 und 2011 (umwelt-online.de); § 20 Abs. 1 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176)",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Vollgeschossdefinition aus einer nicht amtlichen Wiedergabe der HBO. Gegen den amtlichen Text der HBO vom 28.05.2018 in der aktuellen Fassung (rv.hessenrecht.hessen.de) prüfen, ob sie in § 2 Abs. 5 steht und ob die Werte 1,40 m und 2,30 m sowie die Drei-Viertel-Regel für Staffel- und Dachgeschosse unverändert gelten."
+  },
+  {
+   "id": "rb-mass-019",
+   "typ": "freitext",
+   "frage": "Warum setzen Bebauungspläne neben oder statt der Zahl der Vollgeschosse häufig die Höhe baulicher Anlagen fest, und was ist dabei zu beachten?",
+   "pruefpunkte": [
+    "Vollgeschosse begrenzen die Gebäudehöhe nur mittelbar – Dach-, Staffel- und Kellergeschosse zählen oft nicht",
+    "Höhe als Trauf- oder Firsthöhe begrenzt die tatsächliche Höhenentwicklung",
+    "Vollgeschosse oder Höhe sind festzusetzen, wenn sonst das Orts- und Landschaftsbild beeinträchtigt werden kann (§ 16 Abs. 3 Nr. 2)",
+    "Bezugspunkte müssen bestimmt werden (§ 18 Abs. 1)",
+    "Bei zwingender Höhe sind geringfügige Abweichungen zulässig (§ 18 Abs. 2)"
+   ],
+   "antwort": "Die Zahl der Vollgeschosse begrenzt die Höhe nur ungenau: Dach- und Staffelgeschosse sowie hoch liegende Keller zählen oft nicht als Vollgeschoss, und Geschosshöhen sind verschieden. Die Höhe – etwa als Trauf- oder Firsthöhe – begrenzt dagegen unmittelbar, wie hoch ein Gebäude in die Landschaft oder das Ortsbild ragt. Bei der Festsetzung sind die Bezugspunkte zu bestimmen, von denen aus gemessen wird (§ 18 Abs. 1 BauNVO). Ist die Höhe zwingend festgesetzt, können geringfügige Abweichungen zugelassen werden (§ 18 Abs. 2).",
+   "vertiefung": "Die Vollgeschosse zu begrenzen ist trotzdem sinnvoll, weil an ihnen die Geschossfläche hängt. Viele Pläne kombinieren beides: II Vollgeschosse und eine maximale Firsthöhe. Battis nennt First- und Traufhöhe als typische Höhenfestsetzungen.",
+   "tags": [
+    "höhe",
+    "bezugspunkt",
+    "§ 18 baunvo"
+   ],
+   "quelle": "§§ 16 Abs. 2 Nr. 4 und Abs. 3, 18 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 196–197, S. 72–73",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-020",
+   "typ": "karte",
+   "frage": "Was unterscheidet Nettobauland, Bruttobauland und Planungsgebiet?",
+   "antwort": "Nettobauland ist die Summe aller bebauten oder bebaubaren Grundstücke. Bruttobauland ist das Nettobauland plus die für die Bebauung zusätzlich nötigen Flächen wie Verkehrs-, Grün-, Ausgleichs- und Versorgungsflächen. Das Planungsgebiet ist die Gesamtfläche des überplanten Gebiets, meist in Hektar angegeben (1 ha = 10 000 m²).",
+   "vertiefung": "Für städtebauliche Entwürfe nennt der Städtebaureader als wirtschaftliche Flächenanteile im Planungsgebiet 12–17 % für öffentliche Verkehrsflächen und 12–15 % für öffentliche Grünflächen. Er betont aber, dass es für diese Kennwerte keine absoluten Formeln gibt – sie dienen dem Vergleich von Entwürfen.",
+   "tags": [
+    "kennwerte",
+    "nettobauland",
+    "bruttobauland"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 22 (nach Materialien zur Städtebauübung 1998)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-021",
+   "typ": "zuordnung",
+   "frage": "Ordne die Dichtekennwerte ihrer Berechnung zu.",
+   "paare": [
+    [
+     "Siedlungsdichte",
+     "Personen je Gemeindegebiet"
+    ],
+    [
+     "Bruttodichte",
+     "Personen je Bruttobauland"
+    ],
+    [
+     "Nettowohndichte",
+     "Personen je Nettobauland"
+    ],
+    [
+     "Belegungsziffer",
+     "Personen je Wohneinheit"
+    ]
+   ],
+   "antwort": "Siedlungsdichte = Personen je Gemeindegebiet. Bruttodichte = Personen je Bruttobauland. Nettowohndichte = Personen je Nettobauland. Belegungsziffer = Personen je Wohneinheit.",
+   "vertiefung": "Dieselbe Bebauung ergibt je nach Bezugsfläche sehr verschiedene Zahlen: Die Nettowohndichte ist immer höher als die Bruttodichte, weil im Nenner die Straßen, Grün- und Gemeinbedarfsflächen fehlen. Beim Vergleich zweier Entwürfe deshalb immer prüfen, auf welche Fläche sich die Dichte bezieht.",
+   "tags": [
+    "dichte",
+    "kennwerte"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 23 (nach Materialien zur Städtebauübung 1998)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-022",
+   "typ": "karte",
+   "frage": "Wie lässt sich im städtebaulichen Entwurf die Zahl der Wohneinheiten überschlägig schätzen?",
+   "antwort": "Aus der Bruttogeschossfläche: BGF (m²) ÷ 100 m² ergibt die Zahl der Wohneinheiten. Die 100 m² stehen für die durchschnittliche BGF einer Wohnung. Die BGF selbst ergibt sich überschlägig aus Länge × Breite × Geschosszahl der Baukörper.",
+   "vertiefung": "Das ist eine Faustformel für den Vergleich von Entwürfen, keine Wohnflächenberechnung. Die Wohnfläche nach DIN 283 oder Wohnflächenverordnung ist deutlich kleiner als die BGF, weil Wände, Treppenhäuser und Nebenräume nicht mitzählen.",
+   "tags": [
+    "wohneinheiten",
+    "bgf",
+    "kennwerte"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 22 (nach Materialien zur Städtebauübung 1998)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-023",
+   "typ": "reihenfolge",
+   "frage": "Ordne die Haustypen nach ihrer rechnerischen Geschossflächenzahl, von der geringsten zur höchsten Dichte.",
+   "schritte": [
+    "Freistehendes Einfamilienhaus",
+    "Doppelhaus",
+    "Reihenhaus",
+    "Geschosswohnungsbau mit drei Geschossen",
+    "Geschosswohnungsbau mit sechs und mehr Geschossen"
+   ],
+   "antwort": "Freistehendes Einfamilienhaus (GFZ rund 0,3–0,4) – Doppelhaus (rund 0,5–0,6) – Reihenhaus (rund 0,8) – dreigeschossiger Geschosswohnungsbau (bis 1,0) – Geschosswohnungsbau mit sechs und mehr Geschossen (bis 1,2).",
+   "vertiefung": "Die Werte stammen aus den Tabellen nach Prinz im Städtebaureader. Interessant ist der Vergleich mit § 17: Selbst dichter Geschosswohnungsbau erreicht dort nur GFZ 1,2 – genau den Orientierungswert für WR und WA. Ein Einfamilienhausgebiet nutzt dagegen nur etwa ein Drittel davon aus.",
+   "tags": [
+    "dichte",
+    "haustypen",
+    "gfz"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 26 (nach Prinz 1995)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-024",
+   "typ": "vergleich",
+   "frage": "Beide Lösungen liegen auf einem 50 × 50 m großen Grundstück (2 500 m²) mit GRZ 0,4. Welche erreicht mit deutlich weniger überbauter Fläche die größere Geschossfläche?",
+   "seiten": [
+    {
+     "titel": "Lösung A",
+     "bild": "bilder/rb-mass-dichte-a.svg",
+     "beschreibung": "Zwei- bis dreigeschossige Zeilen um einen Hof"
+    },
+    {
+     "titel": "Lösung B",
+     "bild": "bilder/rb-mass-dichte-b.svg",
+     "beschreibung": "Ein achtgeschossiger Baukörper, viel Freifläche"
+    }
+   ],
+   "richtig": 1,
+   "antwort": "Lösung B, der achtgeschossige Baukörper: rund 370 m² überbaute Fläche und rund 2 960 m² Geschossfläche (GFZ 1,2). Lösung A mit zwei- bis dreigeschossigen Zeilen überbaut rund 980 m² und erreicht rund 2 490 m² (GFZ 1,0). B nutzt das Grundstück damit um rund 18 % stärker aus und lässt weit mehr Freifläche.",
+   "vertiefung": "Der Vergleich zeigt, dass gleiche GRZ ganz unterschiedliche Städtebauten erlaubt: A schöpft die GRZ fast aus, B nutzt kaum mehr als ein Drittel davon. Ob mehr Geschosse auf weniger Grundfläche städtebaulich besser sind, ist damit nicht entschieden – Verschattung, Maßstab der Umgebung und Abstandsflächen sprechen oft dagegen. Eine Tiefgaragenfläche nach § 21a BauNVO ist in beiden Beispielen nicht hinzugerechnet.",
+   "tags": [
+    "dichte",
+    "gfz",
+    "vergleich"
+   ],
+   "quelle": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 26 (nach Prinz 1995)",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-025",
+   "typ": "karte",
+   "frage": "Ein Bebauungsplan setzt GRZ 0,4 und zugleich Baugrenzen fest. Das Baufenster ist größer als 40 % des Grundstücks. Wie viel darf überbaut werden?",
+   "antwort": "Höchstens das, was beide Festsetzungen zugleich erlauben. Die Baugrenzen bestimmen, wo auf dem Grundstück gebaut werden darf, die GRZ bestimmt, wie viel. Ist das Baufenster größer, begrenzt die GRZ; ist es kleiner, begrenzt das Baufenster.",
+   "vertiefung": "Ein großzügiges Baufenster ist deshalb kein Freibrief, sondern lässt Spielraum bei der Lage des Gebäudes. Umgekehrt nützt eine hohe GRZ nichts, wenn das Baufenster eng ist. Beide Festsetzungen gehören zu den Mindestinhalten eines qualifizierten Bebauungsplans: das Maß und die überbaubaren Grundstücksflächen.",
+   "tags": [
+    "grz",
+    "baugrenze",
+    "überbaubare fläche"
+   ],
+   "quelle": "§§ 19, 23 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 196, S. 73; Rn. 203, S. 75",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-mass-026",
+   "typ": "freitext",
+   "frage": "Warum reicht eine einzelne Maßzahl wie die GFZ nicht aus, um die städtebauliche Gestalt eines Gebiets zu steuern?",
+   "pruefpunkte": [
+    "Gleiche GFZ erlaubt sehr verschiedene Baukörper",
+    "GRZ begrenzt die überbaute Fläche",
+    "Vollgeschosse oder Höhe begrenzen die Höhenentwicklung",
+    "Baugrenzen, Baulinien und Bauweise legen Lage und Form fest",
+    "GRZ stets, Vollgeschosse oder Höhe bei Bedarf festzusetzen (§ 16 Abs. 3)"
+   ],
+   "antwort": "Dieselbe GFZ lässt sehr verschiedene Bebauungen zu – flache, breite Zeilen ebenso wie einen hohen, schlanken Baukörper. Erst zusammen mit der GRZ (wie viel Boden überbaut wird), der Zahl der Vollgeschosse oder der Höhe (wie hoch gebaut wird), den Baugrenzen oder Baulinien (wo gebaut wird) und der Bauweise ergibt sich ein bestimmtes Bild. Deshalb verlangt § 16 Abs. 3 BauNVO stets die GRZ und, wo das Orts- und Landschaftsbild es erfordert, auch Vollgeschosse oder Höhe.",
+   "vertiefung": "Der Vergleich nach Prinz im Städtebaureader macht das anschaulich: Auf demselben 2 500-m²-Grundstück mit GRZ 0,4 überbaut eine zwei- bis dreigeschossige Lösung 980 m², eine achtgeschossige nur 370 m². Für die Gestalt sind außerdem die Abstandsflächen des Landesrechts entscheidend – sie begrenzen, wie nah hohe Gebäude aneinanderrücken dürfen.",
+   "tags": [
+    "dichte",
+    "städtebauliche gestalt",
+    "§ 16 baunvo"
+   ],
+   "quelle": "§ 16 Abs. 3 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“, S. 24 und 26 (nach Braam 1987 und Prinz 1995)",
+   "stand": "2026-10",
+   "geprueft": true
+  }
+ ]
+}
