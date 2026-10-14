@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 545" width="800" height="545" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="545" fill="#f0ead2"/>
+<text x="400" y="36" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Zwei Rechtsgebiete, ein Bauvorhaben</text>
+<rect x="30" y="58" width="350" height="56" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="205" y="93" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Bauplanungsrecht</text>
+<rect x="30" y="126" width="350" height="290" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="205" y="158" font-size="17" text-anchor="middle" font-weight="bold" fill="#9a6b1f" >Bund</text>
+<text x="205" y="182" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >BauGB, BauNVO</text>
+<text x="205" y="214" font-size="15" text-anchor="middle" font-weight="bold" fill="#6c584c" >flächenbezogen</text>
+<line x1="60" y1="232" x2="350" y2="232" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="205" y="262" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Darf hier so etwas stehen?</text>
+<text x="205" y="288" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Art und Maß der Nutzung,</text>
+<text x="205" y="314" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Bauweise, überbaubare Fläche,</text>
+<text x="205" y="340" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >§§ 30, 34, 35 BauGB</text>
+<text x="205" y="396" font-size="15" text-anchor="middle" font-weight="bold" fill="#6c584c" >Gemeinde plant</text>
+<line x1="205" y1="416" x2="205" y2="448" stroke="#414833" stroke-width="2.2"/>
+<rect x="420" y="58" width="350" height="56" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="595" y="93" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Bauordnungsrecht</text>
+<rect x="420" y="126" width="350" height="290" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="595" y="158" font-size="17" text-anchor="middle" font-weight="bold" fill="#9a6b1f" >Land</text>
+<text x="595" y="182" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Hessische Bauordnung (HBO)</text>
+<text x="595" y="214" font-size="15" text-anchor="middle" font-weight="bold" fill="#6c584c" >objektbezogen</text>
+<line x1="450" y1="232" x2="740" y2="232" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="595" y="262" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Ist das Bauwerk sicher und gesund?</text>
+<text x="595" y="288" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Abstandsflächen, Brandschutz,</text>
+<text x="595" y="314" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Standsicherheit, Stellplätze,</text>
+<text x="595" y="340" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Gestaltung</text>
+<text x="595" y="396" font-size="15" text-anchor="middle" font-weight="bold" fill="#6c584c" >Bauaufsicht wacht</text>
+<line x1="595" y1="416" x2="595" y2="448" stroke="#414833" stroke-width="2.2"/>
+<rect x="30" y="450" width="740" height="70" rx="8" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="400" y="478" font-size="17" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >Baugenehmigungsverfahren nach der HBO prüft beides</text>
+<text x="400" y="504" font-size="14" text-anchor="middle" font-weight="normal" fill="#f7f3e4" >Die Länder führen das Bundesrecht als eigene Angelegenheit aus (Art. 83 GG).</text>
+</svg>

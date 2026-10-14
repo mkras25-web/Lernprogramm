@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="0" y="360" width="600" height="60" fill="#d9d2b4"/>
+<line x1="20" y1="360" x2="580" y2="360" stroke="#414833" stroke-width="2.5"/>
+<rect x="200" y="144" width="200" height="216" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<line x1="200" y1="306" x2="400" y2="306" stroke="#414833" stroke-width="1.5"/>
+<line x1="200" y1="252" x2="400" y2="252" stroke="#414833" stroke-width="1.5"/>
+<line x1="200" y1="198" x2="400" y2="198" stroke="#414833" stroke-width="1.5"/>
+<rect x="218" y="320" width="16" height="24" fill="#f7f3e4"/>
+<rect x="254" y="320" width="16" height="24" fill="#f7f3e4"/>
+<rect x="290" y="320" width="16" height="24" fill="#f7f3e4"/>
+<rect x="326" y="320" width="16" height="24" fill="#f7f3e4"/>
+<rect x="362" y="320" width="16" height="24" fill="#f7f3e4"/>
+<rect x="218" y="266" width="16" height="24" fill="#f7f3e4"/>
+<rect x="254" y="266" width="16" height="24" fill="#f7f3e4"/>
+<rect x="290" y="266" width="16" height="24" fill="#f7f3e4"/>
+<rect x="326" y="266" width="16" height="24" fill="#f7f3e4"/>
+<rect x="362" y="266" width="16" height="24" fill="#f7f3e4"/>
+<rect x="218" y="212" width="16" height="24" fill="#f7f3e4"/>
+<rect x="254" y="212" width="16" height="24" fill="#f7f3e4"/>
+<rect x="290" y="212" width="16" height="24" fill="#f7f3e4"/>
+<rect x="326" y="212" width="16" height="24" fill="#f7f3e4"/>
+<rect x="362" y="212" width="16" height="24" fill="#f7f3e4"/>
+<rect x="218" y="158" width="16" height="24" fill="#f7f3e4"/>
+<rect x="254" y="158" width="16" height="24" fill="#f7f3e4"/>
+<rect x="290" y="158" width="16" height="24" fill="#f7f3e4"/>
+<rect x="326" y="158" width="16" height="24" fill="#f7f3e4"/>
+<rect x="362" y="158" width="16" height="24" fill="#f7f3e4"/>
+<polygon points="194,144 300.0,74 406,144" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="300.0" y="114" font-size="12" text-anchor="middle" font-weight="normal" fill="#6c584c" >Dachraum ohne</text>
+<text x="300.0" y="129" font-size="12" text-anchor="middle" font-weight="normal" fill="#6c584c" >Aufenthaltsraum</text>
+<line x1="400" y1="198" x2="458" y2="198" stroke="#9a6b1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="450" y1="360" x2="450" y2="198" stroke="#9a6b1f" stroke-width="2.5"/>
+<line x1="441" y1="360" x2="459" y2="360" stroke="#9a6b1f" stroke-width="2.5"/>
+<line x1="441" y1="198" x2="459" y2="198" stroke="#9a6b1f" stroke-width="2.5"/>
+<text x="464" y="285.0" font-size="18" text-anchor="start" font-weight="bold" fill="#9a6b1f" >h ?</text>
+<text x="300" y="400" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schnitt – ohne Maßstab</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 545" width="800" height="545" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="545" fill="#f0ead2"/>
+<text x="400" y="36" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Bauen im Außenbereich – § 35 BauGB</text>
+<text x="400" y="62" font-size="15" text-anchor="middle" font-weight="normal" fill="#6c584c" >Leitbild: Der Außenbereich bleibt grundsätzlich frei von Bebauung.</text>
+<rect x="30" y="84" width="230" height="50" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="145" y="107" font-size="17" text-anchor="middle" font-weight="bold" fill="#414833" >privilegiert</text>
+<text x="145" y="126" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Abs. 1</text>
+<rect x="30" y="146" width="230" height="200" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="44" y="172" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Land- und Forstwirtschaft</text>
+<text x="44" y="193" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Gartenbau</text>
+<text x="44" y="214" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >öffentliche Versorgung</text>
+<text x="44" y="235" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >ortsgebundene Betriebe</text>
+<text x="44" y="256" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >nur im Außenbereich</text>
+<text x="44" y="277" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >sinnvoll (z. B. Jagdhütte)</text>
+<text x="44" y="298" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >erneuerbare Energien,</text>
+<text x="44" y="319" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Speicher</text>
+<rect x="30" y="358" width="230" height="60" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="145" y="382" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Belange dürfen nicht</text>
+<text x="145" y="401" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >entgegenstehen</text>
+<text x="145" y="444" font-size="15" text-anchor="middle" font-weight="bold" fill="#9a6b1f" >meist zulässig</text>
+<rect x="285" y="84" width="230" height="50" rx="8" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="400" y="107" font-size="17" text-anchor="middle" font-weight="bold" fill="#414833" >sonstige</text>
+<text x="400" y="126" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Abs. 2</text>
+<rect x="285" y="146" width="230" height="200" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="299" y="172" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >alle übrigen Vorhaben,</text>
+<text x="299" y="193" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >z. B. Einfamilienhaus,</text>
+<text x="299" y="214" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Wochenendhaus,</text>
+<text x="299" y="235" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Tennisplatz</text>
+<rect x="285" y="358" width="230" height="60" rx="8" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="400" y="382" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Belange dürfen nicht</text>
+<text x="400" y="401" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >beeinträchtigt werden</text>
+<text x="400" y="444" font-size="15" text-anchor="middle" font-weight="bold" fill="#9a6b1f" >meist unzulässig</text>
+<rect x="540" y="84" width="230" height="50" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="655" y="107" font-size="17" text-anchor="middle" font-weight="bold" fill="#414833" >teilprivilegiert</text>
+<text x="655" y="126" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Abs. 4</text>
+<rect x="540" y="146" width="230" height="200" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="554" y="172" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Umnutzung früherer</text>
+<text x="554" y="193" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Hofgebäude</text>
+<text x="554" y="214" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Ersatzbau</text>
+<text x="554" y="235" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Erweiterung Wohnhaus</text>
+<text x="554" y="256" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >(höchstens 2 Wohnungen)</text>
+<text x="554" y="277" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Erweiterung Gewerbe</text>
+<rect x="540" y="358" width="230" height="60" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="655" y="382" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >FNP, Landschaft und</text>
+<text x="655" y="401" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Splittersiedlung entfallen</text>
+<text x="655" y="444" font-size="15" text-anchor="middle" font-weight="bold" fill="#9a6b1f" >erleichtert</text>
+<line x1="20" y1="466" x2="780" y2="466" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="40" y="494" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Für alle: Erschließung gesichert · öffentliche Belange nach Abs. 3 nachvollziehend abwägen</text>
+<text x="40" y="520" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Abs. 5: flächensparend, außenbereichsschonend · Einvernehmen der Gemeinde (§ 36)</text>
+</svg>

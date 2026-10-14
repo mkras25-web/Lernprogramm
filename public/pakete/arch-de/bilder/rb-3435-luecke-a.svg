@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="0" y="0" width="600" height="420" fill="#dde5b6"/>
+<rect x="0" y="180" width="600" height="36" fill="#d9d2b4" stroke="#6c584c" stroke-width="1"/>
+<line x1="20" y1="40" x2="20" y2="180" stroke="#6c584c" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="35" y="90" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<line x1="100" y1="40" x2="100" y2="180" stroke="#6c584c" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="115" y="90" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<line x1="180" y1="40" x2="180" y2="180" stroke="#6c584c" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="195" y="90" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<line x1="340" y1="40" x2="340" y2="180" stroke="#6c584c" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="355" y="90" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<line x1="420" y1="40" x2="420" y2="180" stroke="#6c584c" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="435" y="90" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<line x1="500" y1="40" x2="500" y2="180" stroke="#6c584c" stroke-width="1" stroke-dasharray="5 4"/>
+<rect x="515" y="90" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="35" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="115" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="195" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="275" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="355" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="435" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="515" y="246" width="40" height="60" fill="#a98467" stroke="#414833" stroke-width="1.8"/>
+<rect x="264" y="44" width="72" height="132" fill="#f7f3e4" stroke="#9a6b1f" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="300" y="120" font-size="30" text-anchor="middle" font-weight="bold" fill="#9a6b1f" >?</text>
+<text x="300" y="405" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Lageplan – ohne Maßstab</text>
+</svg>

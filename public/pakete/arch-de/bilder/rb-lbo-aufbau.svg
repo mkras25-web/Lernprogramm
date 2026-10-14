@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="520" fill="#f0ead2"/>
+<text x="400" y="34" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Aufbau der Hessischen Bauordnung</text>
+<rect x="30" y="56" width="200" height="64" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="130" y="84" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Erster Teil</text>
+<text x="130" y="106" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >§§ 1–3</text>
+<rect x="240" y="56" width="530" height="64" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="258" y="84" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Allgemeine Vorschriften</text>
+<text x="258" y="106" font-size="14" text-anchor="start" font-weight="normal" fill="#6c584c" >Anwendungsbereich, Begriffe, Generalklausel</text>
+<rect x="30" y="132" width="200" height="64" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="130" y="160" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Zweiter Teil</text>
+<text x="130" y="182" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >§§ 4–8</text>
+<rect x="240" y="132" width="530" height="64" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="258" y="160" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Das Grundstück und seine Bebauung</text>
+<text x="258" y="182" font-size="14" text-anchor="start" font-weight="normal" fill="#6c584c" >Zufahrt, Abstandsflächen, Freiflächen</text>
+<rect x="30" y="208" width="200" height="64" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="130" y="236" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Dritter Teil</text>
+<text x="130" y="258" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >§§ 9–54</text>
+<rect x="240" y="208" width="530" height="64" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="258" y="236" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Bauliche Anlagen</text>
+<text x="258" y="258" font-size="14" text-anchor="start" font-weight="normal" fill="#6c584c" >Gestaltung, Bauprodukte, Brandschutz, Stellplätze</text>
+<rect x="30" y="284" width="200" height="64" rx="8" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="130" y="312" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Vierter Teil</text>
+<text x="130" y="334" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >§§ 55–59</text>
+<rect x="240" y="284" width="530" height="64" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="258" y="312" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Die am Bau Beteiligten</text>
+<text x="258" y="334" font-size="14" text-anchor="start" font-weight="normal" fill="#6c584c" >Bauherrschaft, Entwurf, Unternehmen, Bauleitung</text>
+<rect x="30" y="360" width="200" height="64" rx="8" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="130" y="388" font-size="16" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >Fünfter Teil</text>
+<text x="130" y="410" font-size="14" text-anchor="middle" font-weight="normal" fill="#f7f3e4" >§§ 60–85</text>
+<rect x="240" y="360" width="530" height="64" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="258" y="388" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Bauaufsichtsbehörden und Verfahren</text>
+<text x="258" y="410" font-size="14" text-anchor="start" font-weight="normal" fill="#6c584c" >Genehmigung, Maßnahmen, Überwachung, Baulasten</text>
+<rect x="30" y="436" width="200" height="64" rx="8" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="130" y="464" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Sechster Teil</text>
+<text x="130" y="486" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >§§ 86–93</text>
+<rect x="240" y="436" width="530" height="64" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/>
+<text x="258" y="464" font-size="16" text-anchor="start" font-weight="bold" fill="#414833" >Ordnungswidrigkeiten, Rechtsvorschriften</text>
+<text x="258" y="486" font-size="14" text-anchor="start" font-weight="normal" fill="#6c584c" >Bußgeld, Verordnungen, örtliche Bauvorschriften</text>
+</svg>

@@ -527,11 +527,15 @@
         },
         {
           "id": "rb-34-35",
-          "titel": "Zulässigkeit nach § 34 und § 35 BauGB"
+          "titel": "Zulässigkeit nach § 34 und § 35 BauGB",
+          "datei": "items/rb-34-35.json",
+          "bild": "bilder/rb-3435-bereiche.svg"
         },
         {
           "id": "rb-lbo",
-          "titel": "Landesbauordnung: Aufbau und Systematik"
+          "titel": "Landesbauordnung: Aufbau und Systematik",
+          "datei": "items/rb-lbo.json",
+          "bild": "bilder/rb-lbo-ebenen.svg"
         },
         {
           "id": "rb-abstandsflaechen",

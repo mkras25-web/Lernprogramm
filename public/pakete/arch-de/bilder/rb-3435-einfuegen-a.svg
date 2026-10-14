@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="0" y="340" width="600" height="80" fill="#d9d2b4"/>
+<line x1="10" y1="340" x2="590" y2="340" stroke="#414833" stroke-width="2.5"/>
+<rect x="30" y="256" width="90" height="84" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<polygon points="26,256 75.0,226 124,256" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+<rect x="44" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="70" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="96" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="44" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="70" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="96" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="44" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="70" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="96" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="130" y="284" width="80" height="56" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<polygon points="126,284 170.0,254 214,284" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+<rect x="144" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="170" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="144" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="170" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="320" y="256" width="90" height="84" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<polygon points="316,256 365.0,226 414,256" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+<rect x="334" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="360" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="386" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="334" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="360" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="386" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="334" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="360" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="386" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="420" y="284" width="70" height="56" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<polygon points="416,284 455.0,254 494,284" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+<rect x="434" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="460" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="434" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="460" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="500" y="256" width="80" height="84" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<polygon points="496,256 540.0,226 584,256" fill="#6c584c" stroke="#414833" stroke-width="2"/>
+<rect x="514" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="540" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="514" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="540" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="514" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="540" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="225" y="256" width="80" height="84" fill="#adc178" stroke="#414833" stroke-width="2.5"/>
+<rect x="239" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="259" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="279" y="320" width="12" height="14" fill="#f7f3e4"/>
+<rect x="239" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="259" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="279" y="292" width="12" height="14" fill="#f7f3e4"/>
+<rect x="239" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="259" y="264" width="12" height="14" fill="#f7f3e4"/>
+<rect x="279" y="264" width="12" height="14" fill="#f7f3e4"/>
+<line x1="10" y1="226" x2="590" y2="226" stroke="#9a6b1f" stroke-width="2" stroke-dasharray="10 6"/>
+<text x="590" y="218" font-size="13" text-anchor="end" font-weight="bold" fill="#9a6b1f" >höchster Bestand</text>
+<text x="265.0" y="244" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Vorhaben</text>
+<text x="300" y="395" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Straßenansicht – ohne Maßstab</text>
+</svg>
