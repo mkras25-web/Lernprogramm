@@ -18,6 +18,15 @@ const A = 'var(--akzent)'
 // ================================================ Bauwerk I: Wohnhaus
 const WOHNHAUS = [
   { ab: 1, el: <line x1="6" y1="72" x2="94" y2="72" stroke={T} strokeWidth="1.4" /> },
+  // Baugrube (Stufe 1-4, 2026-10-15): vorher stand hier nur die Gelaendelinie
+  // - wirkte wie ein fehlendes Bild. Jetzt ein abgesteckter Bauplatz:
+  // gestrichelter Umriss der kuenftigen Grube, Pfloecke mit Schnur,
+  // Fluchtstab mit Faehnchen, Erdhaufen. Ab Stufe 2 ersetzt die echte
+  // Grube den Umriss, ab 5 das Schnurgeruest die Pfloecke.
+  { ab: 1, bis: 1, el: <path d="M22 72 L28 84 H72 L78 72" fill="none" stroke={R} strokeWidth="0.9" strokeDasharray="2.5 2" opacity="0.8" /> },
+  { ab: 1, bis: 4, el: <g stroke={T} strokeWidth="1"><path d="M22 72 v-6 M78 72 v-6" /><path d="M22 67 H78" strokeWidth="0.45" strokeDasharray="1.5 1.5" stroke={R} /></g> },
+  { ab: 1, bis: 4, el: <g><path d="M88 72 V50" stroke={T} strokeWidth="1" /><path d="M88 50 l8 3 l-8 3 Z" fill={A} /><path d="M88 58 v4 M88 66 v4" stroke="var(--papier)" strokeWidth="0.8" /></g> },
+  { ab: 1, bis: 4, el: <path d="M7 72 q5 -7 11 -1 q2 -3 4 1" fill={L} opacity="0.7" stroke={R} strokeWidth="0.5" /> },
   { ab: 2, el: <path d="M22 72 L28 84 H72 L78 72" fill="none" stroke={R} strokeWidth="1.1" /> },
   { ab: 3, el: <path d="M28 84 H72" stroke={L} strokeWidth="2.4" /> },
   { ab: 4, el: <g stroke={R} strokeWidth="0.7" opacity="0.7"><path d="M23 74 l3 3 M26 73 l3 4 M71 77 l3 -4 M74 78 l3 -4" /></g> },
@@ -83,6 +92,10 @@ const WOHNHAUS = [
 // Dieselbe Bauabfolge, andere Silhouette.
 const STADTHAUS = [
   { ab: 1, el: <line x1="4" y1="74" x2="96" y2="74" stroke={T} strokeWidth="1.4" /> },
+  // Abgesteckter Bauplatz wie beim Wohnhaus (2026-10-15).
+  { ab: 1, bis: 1, el: <path d="M14 74 L20 88 H80 L86 74" fill="none" stroke={R} strokeWidth="0.9" strokeDasharray="2.5 2" opacity="0.8" /> },
+  { ab: 1, bis: 4, el: <g stroke={T} strokeWidth="1"><path d="M14 74 v-6 M86 74 v-6" /><path d="M14 69 H86" strokeWidth="0.45" strokeDasharray="1.5 1.5" stroke={R} /></g> },
+  { ab: 1, bis: 4, el: <g><path d="M92 74 V52" stroke={T} strokeWidth="1" /><path d="M92 52 l6 2.5 l-6 2.5 Z" fill={A} /><path d="M92 60 v4 M92 68 v4" stroke="var(--papier)" strokeWidth="0.8" /></g> },
   { ab: 2, el: <path d="M14 74 L20 88 H80 L86 74" fill="none" stroke={R} strokeWidth="1.1" /> },
   { ab: 3, el: <path d="M20 88 H80" stroke={L} strokeWidth="2.6" /> },
   { ab: 4, el: <g stroke={R} strokeWidth="0.7" opacity="0.7"><path d="M15 76 l3 4 M18 75 l3 5 M79 80 l3 -5 M82 81 l3 -5" /></g> },
@@ -290,7 +303,7 @@ export default function Bauabschnitt({ stufe = 1, gestaltung = 'arch', groesse =
             <PharmaZeichnung imWerk={b.imWerk} abschnittIndex={abschnittIndex} glasClipId={glasClipId} />
           ) : (
             sichtbar.map((t) => (
-              <g key={t.ab} className={t.ab === letzte ? 'bauTeil neu' : 'bauTeil'}>{t.el}</g>
+              <g key={teile.indexOf(t)} className={t.ab === letzte ? 'bauTeil neu' : 'bauTeil'}>{t.el}</g>
             ))
           )}
         </g>
