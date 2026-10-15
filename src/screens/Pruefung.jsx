@@ -70,6 +70,55 @@ export default function Pruefung({
   // Rueckfrage-Dialog: 'abbrechen' | 'abgeben' | null
   const [rueckfrage, setRueckfrage] = useState(null)
 
+  // Tastatur in der laufenden Pruefung (2026-10-15): Pfeile/Enter blaettern,
+  // Ziffern waehlen Antworten (in der angezeigten Reihenfolge), M markiert.
+  // Nie in Eingabefeldern, nie bei offenem Dialog, nie nach der Abgabe.
+  // Enter auf der letzten Frage gibt bewusst NICHT ab.
+  useEffect(() => {
+    if (!lauf || auswertung || rueckfrage) return
+    function taste(e) {
+      if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return
+      const ziel = e.target
+      if (ziel?.closest?.('input, textarea, select, [contenteditable="true"]')) return
+      if (document.querySelector('.schleier')) return
+      const item = lauf.items[position]
+      const letzte = lauf.items.length - 1
+      if (e.key === 'ArrowRight' || (e.key === 'Enter' && ziel?.tagName !== 'BUTTON')) {
+        if (position < letzte) {
+          e.preventDefault()
+          setPosition(position + 1)
+        }
+      } else if (e.key === 'ArrowLeft') {
+        if (position > 0) {
+          e.preventDefault()
+          setPosition(position - 1)
+        }
+      } else if (e.key === 'm' || e.key === 'M') {
+        e.preventDefault()
+        setMarkiert((alt) => {
+          const neu = new Set(alt)
+          neu.has(item.id) ? neu.delete(item.id) : neu.add(item.id)
+          return neu
+        })
+      } else if (/^[1-9]$/.test(e.key)) {
+        const nr = Number(e.key) - 1
+        if (item.typ === 'mehrfachauswahl') {
+          const reihe = mischen(item.optionen.length, seedAus(item.id + lauf.start))
+          const i = reihe[nr]
+          if (i === undefined) return
+          e.preventDefault()
+          const gewaehlt = antworten[item.id] ?? []
+          setAntworten({ ...antworten, [item.id]: gewaehlt.includes(i) ? gewaehlt.filter((g) => g !== i) : [...gewaehlt, i] })
+        } else if (item.typ === 'vergleich' && nr < item.seiten.length) {
+          e.preventDefault()
+          setAntworten({ ...antworten, [item.id]: nr })
+        }
+      }
+    }
+    window.addEventListener('keydown', taste)
+    return () => window.removeEventListener('keydown', taste)
+  }, [lauf, auswertung, rueckfrage, position, antworten])
+
   useEffect(() => {
     if (!speicherSchluessel) return
     if (!lauf) {
@@ -467,6 +516,9 @@ export default function Pruefung({
               </button>
             )}
           </div>
+          <p className="nebentext nurTastatur" style={{ marginTop: '0.75rem' }}>
+            Tasten: ← → oder Enter blättern · 1–9 Antwort wählen · M markieren
+          </p>
           <p className="nebentext" style={{ marginTop: '0.75rem' }}>
             Keine Rückmeldung vor der Abgabe. Unbeantwortete Fragen zählen als falsch.
             Du kannst jederzeit den Bildschirm wechseln – die Prüfung bleibt gespeichert.

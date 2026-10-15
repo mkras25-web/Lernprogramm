@@ -2900,6 +2900,9 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   }
   .mehrGriff { width: 2.25rem; height: 0.25rem; margin: 0.25rem auto 0.75rem; border-radius: 2px; background: var(--linie); }
   .mehrTitel { margin: 0 0 0.5rem; font-family: var(--serife); font-size: 1.25rem; font-weight: 400; }
+  .mehrAbgleich { margin: -0.25rem 0 0.5rem; font-size: 0.8125rem; color: var(--rinde); }
+  .mehrAbgleich.fehler { color: var(--warnung); }
+  .mehrAbgleichGrund { display: block; color: var(--rinde); }
   .mehrZeile {
     display: flex;
     align-items: center;
@@ -3323,6 +3326,8 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
   .navFussText { display: flex; flex-direction: column; min-width: 0; }
   .navFussName { font-size: 0.9375rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .navFussStufe { font-size: 0.75rem; color: var(--rinde); }
+  .navFussAbgleich { font-size: 0.75rem; color: var(--rinde); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .navFussAbgleich.fehler { color: var(--warnung); }
   .navigation .paketSchalter { margin: 0 0 0.5rem 0.75rem; }
 
   /* 41A: Heute - fuenf Kennzahlen in einer Zeile, Lernen bleibt die

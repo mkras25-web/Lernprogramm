@@ -37,6 +37,15 @@ const GRUPPEN = [
     ],
   },
   {
+    titel: 'In einer Prüfung',
+    kuerzel: [
+      ['→ / Enter', 'Nächste Frage (gibt auf der letzten nicht ab)'],
+      ['←', 'Vorherige Frage'],
+      ['1 – 9', 'Antwort wählen (Mehrfachauswahl, Vergleich)'],
+      ['M', 'Zur Nachkontrolle markieren'],
+    ],
+  },
+  {
     titel: 'Beim Nachschlagen/Sichten',
     kuerzel: [
       ['← →', 'Zum vorherigen/nächsten Item blättern'],

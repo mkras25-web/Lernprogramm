@@ -21,6 +21,7 @@ import { abgleichen, dateiname, dropboxKopien, dropboxKopieLaden, KOPIEN_TAGE, p
 import { kopieAnlegen, kopienListe, kopieText } from './kopien.js'
 import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
 import { profilErstellen, profilLoeschen } from './profile.js'
+import { laden as einstellungenLaden, speichern as einstellungenSpeichern } from './einstellungen.js'
 
 // ---------------------------------------------------------------- Umgebung
 // Ein "Geraet" ist ein eigener Browserspeicher: eigene IndexedDB und eigenes
@@ -150,6 +151,63 @@ describe('Loeschvermerke', () => {
     // Und die alte Sicherung danach noch einmal: bleibt geloescht.
     await importieren(vorher)
     expect((await alleEreignisse()).map((e) => e.id)).toEqual([e1.id])
+  })
+})
+
+describe('Einstellungen (Profil-System c, 2026-10-15)', () => {
+  const aendern = (aenderung) => einstellungenSpeichern(PROFIL, { ...einstellungenLaden(PROFIL), ...aenderung })
+
+  it('FSRS-Gewichte, Behaltensrate und Palette reisen mit, Standardwerte eines neuen Geraets nicht', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    einstellungenSpeichern(PROFIL, einstellungenLaden(PROFIL)) // erster Stand: keine Aenderung
+    await new Promise((r) => setTimeout(r, 2))
+    aendern({ zielBehaltensrate: 0.95, fsrsGewichte: { w: [1, 2, 3], basis: 1200 }, palette: 'marine' })
+    await abgleich('pc')
+
+    // Frisches Handy: hat schon Standardwerte gespeichert, uebernimmt trotzdem.
+    await geraetWaehlen('phone')
+    einstellungenSpeichern(PROFIL, einstellungenLaden(PROFIL))
+    const handy = await abgleich('phone')
+    expect(handy.einstellungen).toBe(3)
+    expect(einstellungenLaden(PROFIL)).toMatchObject({ zielBehaltensrate: 0.95, palette: 'marine' })
+    expect(einstellungenLaden(PROFIL).fsrsGewichte.w).toEqual([1, 2, 3])
+
+    // Das Handy aendert spaeter etwas - der PC uebernimmt nur das.
+    await new Promise((r) => setTimeout(r, 5))
+    aendern({ neuProTag: 10 })
+    await abgleich('phone')
+    const pc = await abgleich('pc')
+    expect(pc.einstellungen).toBe(1)
+    expect(einstellungenLaden(PROFIL)).toMatchObject({ neuProTag: 10, zielBehaltensrate: 0.95, palette: 'marine' })
+  })
+
+  it('Aussehen bleibt lokal, wenn "aussehenAbgleichen" aus ist; Lernen reist trotzdem', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    einstellungenSpeichern(PROFIL, einstellungenLaden(PROFIL))
+    await new Promise((r) => setTimeout(r, 2))
+    aendern({ palette: 'graphit', schriftgroesse: 125, tagesziel: 40 })
+    await abgleich('pc')
+
+    await geraetWaehlen('phone')
+    einstellungenSpeichern(PROFIL, { ...einstellungenLaden(PROFIL), aussehenAbgleichen: false })
+    await abgleich('phone')
+    expect(einstellungenLaden(PROFIL)).toMatchObject({ palette: 'lehm', schriftgroesse: 100, tagesziel: 40 })
+  })
+
+  it('eine aeltere Sicherung setzt keine neuere Einstellung zurueck', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    einstellungenSpeichern(PROFIL, einstellungenLaden(PROFIL))
+    await new Promise((r) => setTimeout(r, 2))
+    aendern({ zielBehaltensrate: 0.85 })
+    const alt = await exportieren({ profilId: PROFIL })
+    await new Promise((r) => setTimeout(r, 5))
+    aendern({ zielBehaltensrate: 0.95 })
+    const b = await importieren(alt)
+    expect(b.einstellungen).toBe(0)
+    expect(einstellungenLaden(PROFIL).zielBehaltensrate).toBe(0.95)
   })
 })
 

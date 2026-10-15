@@ -49,6 +49,21 @@ const MEHR_UNTERTITEL = {
 export const ZIELE = new Set([...NAVIGATION.map((n) => n.id), 'sammlung', 'lernen'])
 const navAktiv = (id, ansicht) => ansicht === id || (id === 'fortschritt' && ansicht === 'sammlung')
 
+// Abgleich-Status (Profil-System d, 2026-10-15): sichtbar ohne Umweg ueber
+// die Einstellungen - Seitenleiste unten bzw. oben im Mehr-Blatt.
+export function abgleichText(a, jetzt = Date.now()) {
+  if (a.laeuft) return 'Gleicht mit Dropbox ab …'
+  if (a.fehler) return 'Dropbox-Abgleich fehlgeschlagen'
+  if (!a.zeit) return 'Noch nicht mit Dropbox abgeglichen'
+  const minuten = Math.floor((jetzt - a.zeit) / 60000)
+  if (minuten < 1) return 'Gerade mit Dropbox abgeglichen'
+  if (minuten < 60) return `Vor ${minuten} min abgeglichen`
+  const d = new Date(a.zeit)
+  const heute = new Date(jetzt).toDateString() === d.toDateString()
+  const uhr = d.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
+  return heute ? `Heute ${uhr} abgeglichen` : `${d.toLocaleDateString('de-DE', { day: 'numeric', month: 'numeric' })} ${uhr} abgeglichen`
+}
+
 export default function Navigation({
   ansicht,
   setAnsicht,
@@ -60,6 +75,7 @@ export default function Navigation({
   profilName,
   onProfilWechseln,
   pruefungHinweis,
+  abgleich = null,
 }) {
   // Nur auf Schmal-/Handy-Breiten relevant (siehe styles.css): das
   // "Mehr"-Blatt der unteren Leiste. Ab 60rem gibt es weder Leiste noch
@@ -102,6 +118,11 @@ export default function Navigation({
           <span className="navFussText">
             <span className="navFussName">{profilName}</span>
             <span className="navFussStufe">Stufe {level.stufe} · Profil wechseln</span>
+            {abgleich && (
+              <span className={abgleich.fehler ? 'navFussAbgleich fehler' : 'navFussAbgleich'} title={abgleich.fehler ?? undefined}>
+                <span aria-hidden="true">☁︎ </span>{abgleichText(abgleich)}
+              </span>
+            )}
           </span>
         </button>
       </nav>
@@ -135,6 +156,7 @@ export default function Navigation({
         >
           <span className="tabSymbol" aria-hidden="true">⋯︎</span>
           <span className="tabName">Mehr</span>
+          {abgleich?.fehler && <span className="tabPunkt" title="Dropbox-Abgleich fehlgeschlagen" />}
         </button>
       </nav>
 
@@ -144,6 +166,13 @@ export default function Navigation({
           <div className="mehrBlatt" onClick={(e) => e.stopPropagation()}>
             <div className="mehrGriff" aria-hidden="true" />
             <h2 className="mehrTitel">Mehr</h2>
+            {abgleich && (
+              <p className={abgleich.fehler ? 'mehrAbgleich fehler' : 'mehrAbgleich'}>
+                <span aria-hidden="true">☁︎ </span>
+                {abgleichText(abgleich)}
+                {abgleich.fehler && <span className="mehrAbgleichGrund">{abgleich.fehler}</span>}
+              </p>
+            )}
             {paketliste.length > 1 && (
               <PaketSchalter paketliste={paketliste} aktiv={aktivesPaket} onWahl={onPaketWahl} />
             )}

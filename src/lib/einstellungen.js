@@ -81,6 +81,80 @@ export const STANDARD = {
   aufstiegFeiern: true,
   dropboxAuto: true,
   dropboxSkizzen: false,
+  // Palette, Schrift usw. mit den anderen Geraeten abgleichen (nur dieses
+  // Geraet; die Lern-Einstellungen reisen immer mit).
+  aussehenAbgleichen: true,
+}
+
+// --- Einstellungen abgleichen (2026-10-15, Profil-System c) -----------------
+// Reisen mit Sicherung und Dropbox, je Einstellung die juengere Aenderung.
+// Lern-Einstellungen immer (sonst plant das Handy mit anderen FSRS-Gewichten
+// als der PC), das Aussehen nur, wenn "aussehenAbgleichen" an ist.
+// Geraetebezogenes (aktives Paket, Dropbox-Schalter, letzte Sicherung,
+// gelesene Einfuehrungen) bleibt lokal.
+export const ABGLEICH_LERNEN = [
+  'neuProTag', 'maxProTag', 'zielBehaltensrate', 'fsrsGewichte', 'tagesziel',
+  'reihenfolge', 'bewertungsstufen', 'ungeprueftZulassen', 'vertiefungZeigen',
+  'ueberspringenErlauben', 'skizzenSichern', 'zeichenAusblenden', 'sichtungWeiter',
+  'aufstiegFeiern',
+]
+export const ABGLEICH_AUSSEHEN = ['palette', 'schriftgroesse', 'farbenblind', 'paletteVorFarbenblind', 'animationen', 'breite']
+const standSchluessel = (profilId) => `einstellungen_stand_${profilId}` // { name: ts der letzten Aenderung }
+
+function rohLesen(profilId) {
+  try {
+    const roh = localStorage.getItem(schluesselFuer(profilId))
+    return roh ? JSON.parse(roh) : null
+  } catch {
+    return null
+  }
+}
+
+export function einstellungsStand(profilId) {
+  try {
+    return JSON.parse(localStorage.getItem(standSchluessel(profilId)) ?? '{}') ?? {}
+  } catch {
+    return {}
+  }
+}
+
+const gleich = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null)
+
+// Fuer exportieren(): nur Einstellungen, die je bewusst geaendert wurden -
+// unveraenderte Standardwerte eines frischen Geraets setzen sich so nie gegen
+// eine echte Wahl auf dem anderen Geraet durch.
+export function einstellungenFuerAbgleich(profilId) {
+  const stand = einstellungsStand(profilId)
+  const werte = { ...STANDARD, ...(rohLesen(profilId) ?? {}) }
+  const namen = [...ABGLEICH_LERNEN, ...ABGLEICH_AUSSEHEN].filter((k) => stand[k] > 0)
+  if (!namen.length) return undefined
+  return {
+    werte: Object.fromEntries(namen.map((k) => [k, werte[k] ?? null])),
+    stand: Object.fromEntries(namen.map((k) => [k, stand[k]])),
+  }
+}
+
+// Fremde Einstellungen (Sicherung/Abgleich) einarbeiten. Liefert die Zahl
+// der uebernommenen Werte; danach laden() neu aufrufen.
+export function einstellungenUebernehmen(profilId, fremd) {
+  if (!fremd || typeof fremd !== 'object' || !fremd.werte || !fremd.stand) return 0
+  const roh = rohLesen(profilId) ?? {}
+  const werte = { ...STANDARD, ...roh }
+  const stand = einstellungsStand(profilId)
+  const erlaubt = new Set([...ABGLEICH_LERNEN, ...(werte.aussehenAbgleichen !== false ? ABGLEICH_AUSSEHEN : [])])
+  let anzahl = 0
+  for (const [k, ts] of Object.entries(fremd.stand)) {
+    if (!erlaubt.has(k) || typeof ts !== 'number' || !(k in fremd.werte)) continue
+    if ((stand[k] ?? 0) >= ts) continue
+    stand[k] = ts
+    if (gleich(werte[k], fremd.werte[k])) continue
+    if (fremd.werte[k] === null && k === 'paletteVorFarbenblind') delete roh[k]
+    else roh[k] = fremd.werte[k]
+    anzahl += 1
+  }
+  localStorage.setItem(schluesselFuer(profilId), JSON.stringify(roh))
+  localStorage.setItem(standSchluessel(profilId), JSON.stringify(stand))
+  return anzahl
 }
 
 function systemDunkel() {
@@ -141,6 +215,23 @@ export function farbenblindNachziehen(werte) {
 }
 
 export function speichern(profilId, einstellungen) {
+  // Aenderungen an abgeglichenen Einstellungen mit Zeitstempel merken. Der
+  // allererste Stand eines Profils (noch nichts gespeichert) zaehlt nicht
+  // als Aenderung - sonst schluegen die Standardwerte eines neuen Geraets
+  // die Wahl auf den anderen.
+  const roh = rohLesen(profilId)
+  if (roh) {
+    const vorher = { ...STANDARD, ...roh }
+    const stand = einstellungsStand(profilId)
+    let geaendert = false
+    for (const k of [...ABGLEICH_LERNEN, ...ABGLEICH_AUSSEHEN]) {
+      if (!gleich(vorher[k], einstellungen[k])) {
+        stand[k] = Date.now()
+        geaendert = true
+      }
+    }
+    if (geaendert) localStorage.setItem(standSchluessel(profilId), JSON.stringify(stand))
+  }
   localStorage.setItem(schluesselFuer(profilId), JSON.stringify(einstellungen))
 }
 

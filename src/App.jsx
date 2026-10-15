@@ -663,7 +663,7 @@ export default function App({ profilId, onProfilWechseln }) {
     // Loeschvermerke mitbringen, die hier Fortschritt entfernen.
     await kopieAnlegen({ profilId, profilName, grund: 'vor dem Einlesen' }).catch(() => null)
     try {
-      const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, kursplan: 0, geloescht: 0 }
+      const bericht = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, kursplan: 0, einstellungen: 0, geloescht: 0 }
       for (const text of texte) {
         const teil = await importieren(text)
         for (const k of Object.keys(bericht)) bericht[k] += teil[k] ?? 0
@@ -678,6 +678,7 @@ export default function App({ profilId, onProfilWechseln }) {
         `${bericht.pruefungen} Prüfungen`,
       ]
       if (bericht.kursplan) teile.push(`${bericht.kursplan} Kurs-/Klausureinträge`)
+      if (bericht.einstellungen) teile.push(`${bericht.einstellungen} Einstellungen`)
       if (bericht.geloescht) teile.push(`${bericht.geloescht} Löschungen angewandt`)
       setMeldung({ art: 'erfolg', text: `Übernommen: ${teile.join(', ')}.` })
     } catch (e) {
@@ -695,6 +696,10 @@ export default function App({ profilId, onProfilWechseln }) {
     setMarken(new Map(m.map((x) => [x.itemId, x])))
     setPruefungen(p)
     setKursplan(kursplanLesen(profilId))
+    // Abgeglichene Einstellungen (FSRS, Palette ...) neu laden - nur wenn
+    // sich etwas geaendert hat, sonst rendert alles unnoetig neu.
+    const neu = einstellungenLaden(profilId)
+    setOpt((alt) => (JSON.stringify(alt) === JSON.stringify(neu) ? alt : neu))
   }
 
   // --- Abgleich ueber Dropbox (hooks/useAbgleich.js) ----------------------
@@ -924,6 +929,7 @@ export default function App({ profilId, onProfilWechseln }) {
         profilName={profilName}
         onProfilWechseln={onProfilWechseln}
         pruefungHinweis={pruefungHinweis}
+        abgleich={dropboxVerbunden ? abgleichZustand : null}
       />
 
       {importFrage && (

@@ -535,7 +535,7 @@ export default function Einstellungen({
           <DropboxBereich
             onMeldung={onMeldung}
             abgleich={abgleich}
-            einstellung={{ auto: werte.dropboxAuto !== false, skizzen: werte.dropboxSkizzen === true }}
+            einstellung={{ auto: werte.dropboxAuto !== false, skizzen: werte.dropboxSkizzen === true, aussehen: werte.aussehenAbgleichen !== false }}
             onEinstellung={aendern}
           />
 
@@ -663,7 +663,7 @@ export default function Einstellungen({
             <div className="zeileText">
               <p className="zeileTitel">Tastenkürzel</p>
               <p className="zeileHinweis">
-                Übersicht aller Tastenkürzel beim Lernen und beim Sichten.
+                Übersicht aller Tastenkürzel beim Lernen, in Prüfungen und beim Sichten.
               </p>
             </div>
             <button className="knopf schmal" onClick={onTastenhilfe}>

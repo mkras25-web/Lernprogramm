@@ -16,6 +16,7 @@
 // anderen zu beruehren.
 
 import { erzeugeId } from './id.js'
+import { einstellungenFuerAbgleich, einstellungenUebernehmen } from './einstellungen.js'
 
 const ALTE_DB_NAME = 'lernprogramm' // vor der Einfuehrung von Profilen
 const DB_VERSION = 3
@@ -540,6 +541,7 @@ export async function exportieren({ mitSkizzen = true, profilId, profilName } = 
       marken,
       pruefungen,
       kursplan: Object.fromEntries(KURSPLAN_ARTEN.map((a) => [a, kursplanLesen()[a]])),
+      einstellungen: einstellungenFuerAbgleich(profilId ?? aktuellesProfil),
       geloescht: loeschvermerke(),
     },
     null,
@@ -651,8 +653,10 @@ export async function importieren(text) {
   }
 
   const anzahlKursplan = kursplanVereinigen(daten.kursplan, vermerke)
+  const anzahlEinstellungen = aktuellesProfil ? einstellungenUebernehmen(aktuellesProfil, daten.einstellungen) : 0
 
   return {
+    einstellungen: anzahlEinstellungen,
     ereignisse: anzahlEreignisse,
     skizzen: anzahlSkizzen,
     marken: anzahlMarken,

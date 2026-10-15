@@ -13,7 +13,7 @@ export function useAbgleich({ profilId, profilName, opt, laedt, ansicht, zustand
     setAbgleichZustand((z) => ({ ...z, laeuft: true }))
     try {
       const b = await abgleichen({ profilId, profilName, mitSkizzen: opt.dropboxSkizzen === true })
-      const neu = b.ereignisse + b.skizzen + b.marken + b.pruefungen + (b.kursplan ?? 0) + b.geloescht
+      const neu = b.ereignisse + b.skizzen + b.marken + b.pruefungen + (b.kursplan ?? 0) + (b.einstellungen ?? 0) + b.geloescht
       if (neu > 0) await zustandNeuLesen()
       if (!still) {
         setMeldung({

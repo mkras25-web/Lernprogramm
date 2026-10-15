@@ -167,6 +167,27 @@ export default function DropboxBereich({ onMeldung, abgleich, onProfilLaden, pro
               ))}
             </div>
           </div>
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Aussehen mit abgleichen</p>
+              <p className="zeileHinweis">
+                Palette, Schriftgröße, Farbenblindmodus, Animationen und Inhaltsbreite wie auf den
+                anderen Geräten. Lern-Einstellungen (Karten pro Tag, Behaltensrate, FSRS-Gewichte …)
+                reisen immer mit.
+              </p>
+            </div>
+            <div className="wahl">
+              {[[true, 'An'], [false, 'Aus']].map(([w, name]) => (
+                <button
+                  key={name}
+                  className={w === einstellung.aussehen ? 'wahlKnopf aktiv' : 'wahlKnopf'}
+                  onClick={() => onEinstellung('aussehenAbgleichen', w)}
+                >
+                  {name}
+                </button>
+              ))}
+            </div>
+          </div>
         </>
       )}
 
