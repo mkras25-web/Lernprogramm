@@ -489,18 +489,59 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .kartenWerte dd { margin: 0; font-family: var(--serife); font-size: 1rem; }
 
 /* Fortschritt */
-.kalender {
+/* Lernwochen (Lernwochen.jsx, 2026-10-15; ersetzt das 7x20-Raster): eine
+   Zeile je Woche Mo-So, links Montagsdatum, rechts Wochensumme. Farbstufen
+   aus den Palettenvariablen gemischt - in allen Paletten von leer bis
+   stufe4 gleichmaessig kraeftiger (vorher feste Hexwerte, stufe2 dunkler
+   als stufe3). */
+.feld { aspect-ratio: 1; border-radius: 3px; background: color-mix(in srgb, var(--linie) 60%, var(--flaeche)); }
+.feld.stufe1 { background: color-mix(in srgb, var(--fortschritt) 38%, var(--flaeche)); }
+.feld.stufe2 { background: color-mix(in srgb, var(--fortschritt) 55%, var(--flaeche)); }
+.feld.stufe3 { background: color-mix(in srgb, var(--fortschritt) 80%, var(--flaeche)); }
+.feld.stufe4 { background: color-mix(in srgb, var(--fortschritt) 70%, var(--tusche)); }
+.lernwochen { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem 2rem; }
+.lernwochenTabelle { flex: 1 1 16rem; max-width: 24rem; display: flex; flex-direction: column; gap: 3px; }
+.lwZeile {
   display: grid;
-  grid-template-rows: repeat(7, 1fr);
-  grid-auto-flow: column;
+  grid-template-columns: 3.75rem repeat(7, minmax(0, 1fr)) 2.5rem;
   gap: 3px;
+  align-items: center;
+  border-radius: 4px;
 }
-
-.feld { aspect-ratio: 1; border-radius: 2px; background: var(--linie); }
-.feld.stufe1 { background: #e3e9c6; }
-.feld.stufe2 { background: var(--fortschritt); }
-.feld.stufe3 { background: #8aa557; }
-.feld.stufe4 { background: var(--tusche); }
+.lwZeile.gewaehlt { background: var(--flaeche-tief); }
+.lwKopf { font-size: 0.6875rem; color: var(--rinde); text-align: center; }
+.lwKopf .lwEcke { text-align: left; }
+.lwDatum {
+  font: inherit;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--rinde);
+  background: none;
+  border: none;
+  padding: 0.125rem 0;
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.lwDatum strong { color: var(--tusche); font-weight: 600; margin-right: 0.25em; }
+.lwSumme { font-size: 0.75rem; font-variant-numeric: tabular-nums; text-align: right; color: var(--tusche); }
+.lwKopf .lwSumme, .lwSumme.null { color: var(--rinde); }
+.lernwochen button.feld { width: 100%; padding: 0; border: none; cursor: pointer; font: inherit; }
+.lernwochen .feld { max-height: 1.75rem; }
+.feld.heute { outline: 2px solid var(--tusche); outline-offset: 1px; }
+.feld.zukunft { background: transparent; border: 1px dashed var(--linie); }
+.feld.vorBeginn { background: transparent; }
+.feld.gewaehlt { outline: 2px dashed var(--tusche); outline-offset: 1px; }
+.lernwochenSeite { flex: 1 1 14rem; display: flex; flex-direction: column; gap: 0.375rem; min-width: 0; }
+.lwKennzahl { margin: 0; font-size: 0.875rem; }
+.lwKennzahl strong { font-weight: 600; }
+.lwDetail { margin: 0.25rem 0 0; padding: 0.5rem 0.75rem; border-radius: var(--rund); background: var(--flaeche-tief); font-size: 0.875rem; }
+.lwHinweis { margin: 0; font-size: 0.75rem; color: var(--rinde); }
+.lwLegende { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; margin-top: 0.5rem; font-size: 0.6875rem; color: var(--rinde); }
+.lwLegendeStufe { display: inline-flex; align-items: center; gap: 0.25rem; }
+.lwLegendeStufe .feld { width: 0.875rem; height: 0.875rem; aspect-ratio: auto; }
+.lwLegendeText { flex-basis: 100%; }
+.lwMehr { margin-top: 0.5rem; }
 
 .saeulen { display: flex; align-items: flex-end; gap: 0.5rem; height: 6rem; }
 .saeule { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; position: relative; }
@@ -1020,6 +1061,11 @@ html[data-palette="farbsicher-dunkel"] mark { background: #1f4a66; }
     top: 0;
     align-self: start;
     height: 100dvh;
+    /* 13 Ziele + Paketschalter + Profilfuss passen in niedrige Fenster
+       (z. B. 1280x720) nicht - dann scrollt die Leiste selbst, statt den
+       Profilfuss unerreichbar unter den Fensterrand zu schieben (2026-10-15). */
+    overflow-y: auto;
+    overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -1365,9 +1411,9 @@ html[data-farbenblind="an"] .urteil.falsch::before { content: "✗ "; }
 html[data-farbenblind="an"] .ungeprueft::before { content: "△ "; }
 html[data-farbenblind="an"] .marke::before { content: "● "; }
 html[data-farbenblind="an"] .karte.rang-meisterschaft::after { content: "★"; position: absolute; }
-html[data-farbenblind="an"] .feld.stufe1 { outline: 1px solid var(--linie); }
-html[data-farbenblind="an"] .feld.stufe3 { outline: 1px solid var(--tusche); }
-html[data-farbenblind="an"] .feld.stufe4 { outline: 2px solid var(--tusche); }
+html[data-farbenblind="an"] .feld.stufe1 { box-shadow: inset 0 0 0 1px var(--linie); }
+html[data-farbenblind="an"] .feld.stufe3 { box-shadow: inset 0 0 0 1px var(--tusche); }
+html[data-farbenblind="an"] .feld.stufe4 { box-shadow: inset 0 0 0 2px var(--tusche); }
 
 /* Alle uebrigen Richtig/Falsch-Stellen (2026-10-11) - vorher nur
    Auswahlaufgaben und Urteil. */
@@ -1422,8 +1468,6 @@ html[data-farbenblind="an"] .verlaufPunkt.durchgefallen { fill: var(--papier); s
 html[data-farbenblind="an"] .besser::before { content: " ▲"; }
 html[data-farbenblind="an"] .schlechter::before { content: " ▼"; }
 /* Fortschrittsfelder: feste Gruentoene folgen im Modus der Palette */
-html[data-farbenblind="an"] .feld.stufe1 { background: color-mix(in srgb, var(--fortschritt) 25%, var(--flaeche)); }
-html[data-farbenblind="an"] .feld.stufe3 { background: color-mix(in srgb, var(--fortschritt) 65%, var(--tusche)); }
 
 /* ------------------------------------------------------------------
    Schriftgroesse als Stufen statt Schieberegler
@@ -3301,12 +3345,6 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 /* Fortschritt (42A): Zahlen an Saeulen, Kalender mit Monaten/Legende,
    Beherrschung als Verlauf hell -> kraeftig */
 .saeuleZahl { font-size: 0.6875rem; color: var(--rinde); text-align: center; line-height: 1.2; }
-.kalenderMonate { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; margin-bottom: 0.25rem; font-size: 0.6875rem; color: var(--rinde); }
-.kalenderMonate span { white-space: nowrap; overflow: visible; }
-.kalenderLegende { display: flex; align-items: center; gap: 3px; margin-top: 0.5rem; font-size: 0.6875rem; color: var(--rinde); }
-.kalenderLegende .feld { width: 0.75rem; height: 0.75rem; aspect-ratio: auto; }
-.kalenderLegende span:first-child { margin-right: 0.25rem; }
-.kalenderLegende span:last-child { margin-left: 0.25rem; }
 .verteilungBalken.grad-neu span { background: color-mix(in srgb, var(--fortschritt) 25%, var(--linie)); }
 .verteilungBalken.grad-angelernt span { background: color-mix(in srgb, var(--fortschritt) 55%, var(--linie)); }
 .verteilungBalken.grad-sicher span { background: var(--fortschritt); }

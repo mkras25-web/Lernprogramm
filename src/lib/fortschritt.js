@@ -320,6 +320,57 @@ export function tagesverlauf(ereignisse, anzahlTage = 140) {
   return felder
 }
 
+// Wochenkalender fuer Fortschritt (2026-10-15, ersetzt das 7x20-Raster):
+// Wochen Mo-So, neueste zuerst, hoechstens maxWochen und nie vor der Woche
+// der ersten Antwort. Tage ueber das Kalenderdatum (new Date(j, m, t + n)),
+// nicht ueber ts - n*TAG - sonst verrutscht an der Zeitumstellung ein Tag.
+// Je Tag: anzahl, minuten, richtig (alles ausser "Nochmal"), zukunft,
+// vorBeginn (vor der allerersten Antwort), heute.
+export function wochenverlauf(ereignisse, { maxWochen = 20, jetzt = Date.now() } = {}) {
+  const jeTag = new Map()
+  let erstes = null
+  for (const e of ereignisse) {
+    const schluessel = new Date(e.ts).toDateString()
+    const t = jeTag.get(schluessel) ?? { anzahl: 0, ms: 0, richtig: 0 }
+    t.anzahl += 1
+    t.ms += e.dauerMs ?? 0
+    if (e.bewertung !== BEWERTUNG.NOCHMAL) t.richtig += 1
+    jeTag.set(schluessel, t)
+    if (erstes === null || e.ts < erstes) erstes = e.ts
+  }
+  const heute = new Date(jetzt)
+  heute.setHours(0, 0, 0, 0)
+  const montagVon = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate() - ((d.getDay() + 6) % 7))
+  const dieserMontag = montagVon(heute)
+  const beginn = erstes === null ? null : new Date(new Date(erstes).setHours(0, 0, 0, 0))
+  const ersterMontag = beginn ? montagVon(beginn) : dieserMontag
+  // Wochen seit der ersten Antwort (Kalenderwochen, ueber Tage gezaehlt)
+  let seit = 1
+  for (let m = new Date(ersterMontag); m < dieserMontag; m = new Date(m.getFullYear(), m.getMonth(), m.getDate() + 7)) seit += 1
+  const anzahlWochen = Math.min(maxWochen, seit)
+
+  const wochen = []
+  for (let w = 0; w < anzahlWochen; w++) {
+    const montag = new Date(dieserMontag.getFullYear(), dieserMontag.getMonth(), dieserMontag.getDate() - 7 * w)
+    const tage = []
+    for (let i = 0; i < 7; i++) {
+      const datum = new Date(montag.getFullYear(), montag.getMonth(), montag.getDate() + i)
+      const t = jeTag.get(datum.toDateString())
+      tage.push({
+        datum,
+        anzahl: t?.anzahl ?? 0,
+        minuten: t ? Math.round(t.ms / 60000) : 0,
+        richtig: t?.richtig ?? 0,
+        zukunft: datum > heute,
+        vorBeginn: beginn !== null && datum < beginn,
+        heute: datum.getTime() === heute.getTime(),
+      })
+    }
+    wochen.push({ montag, tage, summe: tage.reduce((s, t) => s + t.anzahl, 0) })
+  }
+  return { wochen, wochenGesamt: seit, beginn }
+}
+
 // Faellige Items der naechsten Tage - die Vorschau auf die Arbeitslast.
 export function faelligkeitsvorschau(zustaende, tage = 7) {
   const felder = Array.from({ length: tage }, () => 0)

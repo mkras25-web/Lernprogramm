@@ -7,6 +7,7 @@ import {
   zieleFuer,
   xpFuerMeilenstein,
   xpFuerMeilensteine,
+  wochenverlauf,
 } from './fortschritt.js'
 
 // Ein Meilenstein mit ziel:3 (wie 'ms-serie-3') ergibt mit den
@@ -224,5 +225,35 @@ describe('meilensteinWerte', () => {
     expect(w.pruefungenGut).toBe(2)
     expect(w.pruefungenSehrGut).toBe(1)
     expect(w.pruefungenVoll).toBe(1)
+  })
+})
+
+describe('wochenverlauf (Fortschritt, 2026-10-15)', () => {
+  // Donnerstag 29.10.2026; die Zeitumstellung war am So 25.10.
+  const jetzt = new Date(2026, 9, 29, 15).getTime()
+  const e = (j, m, t, h = 10, bewertung = 3) => ({ ts: new Date(j, m, t, h).getTime(), bewertung, dauerMs: 60000 })
+
+  it('richtet nach Montag aus, neueste Woche zuerst, ab der ersten Antwort', () => {
+    const { wochen, wochenGesamt } = wochenverlauf([e(2026, 9, 14), e(2026, 9, 25, 23, 1), e(2026, 9, 26)], { jetzt })
+    expect(wochenGesamt).toBe(3)
+    expect(wochen.map((w) => w.montag.getDate())).toEqual([26, 19, 12])
+    expect(wochen[0].tage.map((t) => t.datum.getDay())).toEqual([1, 2, 3, 4, 5, 6, 0])
+    // So 25.10. (Zeitumstellung) bleibt ein eigener Tag mit seiner Antwort
+    const sonntag = wochen[1].tage[6]
+    expect(sonntag.datum.getDate()).toBe(25)
+    expect(sonntag).toMatchObject({ anzahl: 1, richtig: 0 })
+    expect(wochen[0].tage[0]).toMatchObject({ anzahl: 1, richtig: 1, minuten: 1 })
+    expect(wochen[0].tage[3].heute).toBe(true)
+    expect(wochen[0].tage[4].zukunft).toBe(true)
+    expect(wochen[2].tage[0].vorBeginn).toBe(true) // Mo 12.10. vor der ersten Antwort (14.10.)
+    expect(wochen[2].tage[2].vorBeginn).toBe(false)
+    expect(wochen[2].summe).toBe(1)
+  })
+
+  it('begrenzt auf maxWochen und zeigt ohne Antworten nur die laufende Woche', () => {
+    expect(wochenverlauf([e(2025, 0, 6)], { jetzt, maxWochen: 20 }).wochen).toHaveLength(20)
+    const leer = wochenverlauf([], { jetzt })
+    expect(leer.wochen).toHaveLength(1)
+    expect(leer.wochen[0].tage.some((t) => t.vorBeginn)).toBe(false)
   })
 })

@@ -9,13 +9,13 @@ import {
   rangFuer,
   rekorde,
   tageszeiten,
-  tagesverlauf,
   themenAuswerten,
   typStatistik,
   wochenbericht,
 } from '../lib/fortschritt.js'
 import Ring from '../components/Ring.jsx'
 import Bauabschnitt from '../components/Bauabschnitt.jsx'
+import Lernwochen from '../components/Lernwochen.jsx'
 import { bauwerkFuer, reifegradFuer, stufeAusAnteil } from '../lib/stufen.js'
 import { TYPNAMEN } from '../lib/sichtung.js'
 import { behaltensrate, wiederholungenBewerten } from '../lib/planer.js'
@@ -45,7 +45,6 @@ export default function Fortschritt({
     }
   }, [ereignisse, items, zielBehaltensrate, fsrsGewichte])
   const planungswirksam = new Set(ereignisse.map((e) => `${e.itemId}|${new Date(e.ts).toDateString()}`)).size
-  const felder = tagesverlauf(ereignisse, 140)
   const vorschau = faelligkeitsvorschau(zustaende, 7)
   const maxVorschau = Math.max(1, ...vorschau)
   const stapel = baustellen(items, zustaende, 5)
@@ -69,16 +68,6 @@ export default function Fortschritt({
   const begonnen = verteilung.filter((v) => v.grad !== 'neu').reduce((s, v) => s + v.anzahl, 0)
   const anteilBegonnen = items.length ? begonnen / items.length : 0
 
-  // Monatsbeschriftung ueber dem Kalender: je Wochenspalte (7 Felder) der
-  // Monat, sobald er wechselt.
-  const monate = []
-  for (let w = 0; w * 7 < felder.length; w++) {
-    const tag = felder[w * 7]?.datum
-    const vorher = w > 0 ? felder[(w - 1) * 7]?.datum : null
-    monate.push(tag && (!vorher || tag.getMonth() !== vorher.getMonth())
-      ? tag.toLocaleDateString('de-DE', { month: 'short' })
-      : '')
-  }
 
   return (
     <div role="main" className="schirm">
@@ -186,26 +175,7 @@ export default function Fortschritt({
           </div>
         </section>
 
-        <section className="block">
-          <h2 className="abschnitt">Letzte zwanzig Wochen</h2>
-          <div className="kalenderMonate" aria-hidden="true">
-            {monate.map((m, i) => <span key={i}>{m}</span>)}
-          </div>
-          <div className="kalender">
-            {felder.map((f, i) => (
-              <span
-                key={i}
-                className={`feld stufe${dichte(f.anzahl)}`}
-                title={`${f.datum.toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'short' })}: ${f.anzahl} ${f.anzahl === 1 ? 'Antwort' : 'Antworten'}`}
-              />
-            ))}
-          </div>
-          <div className="kalenderLegende" aria-hidden="true">
-            <span>weniger</span>
-            {[0, 1, 2, 3, 4].map((st) => <span key={st} className={`feld stufe${st}`} />)}
-            <span>mehr</span>
-          </div>
-        </section>
+        <Lernwochen ereignisse={ereignisse} />
 
         <section className="block faelligBlock">
           <h2 className="abschnitt">Fällig in den nächsten Tagen</h2>
@@ -360,13 +330,6 @@ export default function Fortschritt({
   )
 }
 
-function dichte(anzahl) {
-  if (anzahl === 0) return 0
-  if (anzahl < 8) return 1
-  if (anzahl < 20) return 2
-  if (anzahl < 35) return 3
-  return 4
-}
 
 function Bestwert({ zeichen, wert, name, zusatz }) {
   return (
