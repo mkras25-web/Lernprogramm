@@ -71,7 +71,7 @@ export default function Kalender({ zustaende, ids = null, neueAnzahl, opt, klaus
       )}
 
       <section className="block heuteBreit">
-        <div className="kalender" role="table" aria-label="Lernlast je Tag">
+        <div className="lernkalender" role="table" aria-label="Lernlast je Tag">
           <div className="kalenderKopf" role="row">
             {WOCHENTAGE.map((t) => <span key={t} role="columnheader">{t}</span>)}
           </div>

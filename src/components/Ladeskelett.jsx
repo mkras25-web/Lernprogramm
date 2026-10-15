@@ -4,7 +4,6 @@ export default function Ladeskelett() {
     <div className="huelle einspaltig">
       <div className="schirm" role="status" aria-label="Paket wird geladen">
         <div className="heuteRaster" aria-hidden="true">
-          <div className="heuteSeite">
           <section className="stufe">
             <span className="skeleton skeletonBau" />
             <div className="stufeText">
@@ -19,15 +18,12 @@ export default function Ladeskelett() {
               <span key={n} className="skeleton" style={{ height: '4.25rem' }} />
             ))}
           </section>
-          </div>
-          <div className="heuteHaupt">
           <section className="heuteBreit heuteLernen">
             <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
           </section>
-          <section className="heuteBreit heuteRest">
+          <section className="heuteBreit">
             <span className="skeleton" style={{ display: 'block', height: '5rem' }} />
           </section>
-          </div>
         </div>
       </div>
     </div>

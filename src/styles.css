@@ -244,16 +244,6 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
    Abstand aneinander. Ab 60rem ersetzt die Desktop-Regel weiter unten
    das komplett durch ein zweispaltiges Grid. */
 .heuteRaster { display: flex; flex-direction: column; gap: 1.75rem; }
-/* Heute zweispaltig (2026-10-15, Regeln ab 75rem am Dateiende): unterhalb
-   sind die Huellen unsichtbar, order haelt die alte Reihenfolge. Bewusst
-   einfache Klassen-Selektoren - die mobile Regel ".heuteLernen,
-   .heuteSitzung { order: -1 }" weiter unten muss weiter gewinnen. */
-.heuteSeite, .heuteHaupt { display: contents; }
-.heuteLernen { order: 1; }
-.heuteKurs { order: 2; }
-.heuteHinweis { order: 3; }
-.heuteSitzung { order: 4; }
-.heuteRest { order: 5; }
 
 /* Gleiches Problem, gleicher Grund: .fortschrittRaster hatte ebenfalls
    nie eine Mobil-Regel. */
@@ -3378,8 +3368,8 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
 
   /* 41A: Heute - fuenf Kennzahlen in einer Zeile, Lernen bleibt die
      einzige Hauptflaeche, Durchblaettern als Link */
-  .heuteRaster .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .heuteRaster .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
+  .heuteRaster > .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .heuteRaster > .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
   /* Der Ring ist selbst ein div und wuchs mit "flex: 1 1 12rem" (Regel
      fuer den Textblock) mit - stand dann mitten in der Leerflaeche. */
   .aufruf > .ring { flex: 0 0 auto; min-width: 0; }
@@ -3431,8 +3421,10 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
   }
 }
 
-/* 49A: 1024-1200px - Heute-Kopf untereinander statt eingequetscht */
-@media (min-width: 60rem) and (max-width: 74.99rem) {
+/* 49A: Heute-Kopf untereinander (Stufe, darunter Kennzahlen) - seit
+   2026-10-15 auf Nutzerwunsch in ALLEN Desktop-Breiten, nicht mehr nur
+   bis 1200px (die zweispaltige Variante ab 75rem wurde zurueckgenommen). */
+@media (min-width: 60rem) {
   .heuteRaster { grid-template-columns: minmax(0, 1fr); }
 }
 
@@ -3560,7 +3552,7 @@ html[data-dunkel="an"] :is(img.referenz, .lupenBuehne img, .vergleichSeite img, 
 .kennwertThemen { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 /* Semesterkalender (F8), 2026-10-13 */
-.kalender { display: flex; flex-direction: column; gap: 0.25rem; }
+.lernkalender { display: flex; flex-direction: column; gap: 0.25rem; }
 .kalenderKopf, .kalenderWoche { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0.25rem; }
 .kalenderKopf span { font-size: 0.75rem; color: var(--rinde); text-align: center; }
 .kalenderTag {
@@ -3621,32 +3613,3 @@ html[data-dunkel="an"] :is(img.referenz, .lupenBuehne img, .vergleichSeite img, 
   .themaInfo > * { margin: 0; }
 }
 
-/* ==================================================================
-   Heute zweispaltig ab 75rem (Nutzerwahl 2026-10-15): links Lernen,
-   Sitzungen, Kurse, Betriebsarten; rechts Stufe, Kennzahlen und
-   Hinweise (Pruefung, Sichern, Aufstieg). 60-75rem bleibt einspaltig
-   (49A), mobil unberuehrt.
-   ================================================================== */
-@media (min-width: 75rem) {
-  .heuteRaster {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
-    grid-auto-flow: row dense;
-    gap: var(--abstand-abschnitt) 2.5rem;
-    align-items: start;
-  }
-  .heuteRaster > .klausurLeiste { grid-column: 1 / -1; }
-  .heuteHaupt, .heuteSeite { display: flex; flex-direction: column; min-width: 0; }
-  .heuteHaupt { grid-column: 1; gap: 2rem; }
-  .heuteSeite { grid-column: 2; gap: 1.25rem; }
-  .heuteHaupt > *, .heuteSeite > * { order: 0; }
-  .heuteSeite .stufe { align-items: flex-start; }
-  .heuteRaster .heuteSeite > .kennzahlen,
-  .heuteRaster .heuteSeite > .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .heuteRaster .heuteSeite > .kennzahlen > :last-child:nth-child(odd) { grid-column: 1 / -1; }
-  /* Schmale Spalte: Knopf unter den Text, das Zeichen bleibt daneben */
-  .heuteSeite .aufruf { flex-wrap: wrap; }
-  .heuteSeite .aufruf > div { min-width: 0; flex: 1 1 calc(100% - 3rem); }
-  /* Sechs Betriebsarten immer als 2 x 3, nie 5 + 1 */
-  .heuteHaupt .artKacheln { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
