@@ -189,7 +189,7 @@ export default function Sichtung({
     function taste(e) {
       // Offener Dialog (z. B. Tastenhilfe ueber "?") liegt davor - dann
       // keine Sichtungs-Kuerzel im Hintergrund.
-      if (document.querySelector('.schleier')) return
+      if (document.querySelector('.schleier, .mehrSchleier')) return
       const ziel = e.target?.tagName
       if (ziel === 'INPUT' || ziel === 'TEXTAREA' || ziel === 'SELECT') return
       if (e.ctrlKey || e.altKey || e.metaKey) return

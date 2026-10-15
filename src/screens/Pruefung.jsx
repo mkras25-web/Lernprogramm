@@ -81,7 +81,7 @@ export default function Pruefung({
       if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return
       const ziel = e.target
       if (ziel?.closest?.('input, textarea, select, [contenteditable="true"]')) return
-      if (document.querySelector('.schleier')) return
+      if (document.querySelector('.schleier, .mehrSchleier')) return
       const item = lauf.items[position]
       const letzte = lauf.items.length - 1
       if (e.key === 'ArrowRight' || (e.key === 'Enter' && ziel?.tagName !== 'BUTTON')) {

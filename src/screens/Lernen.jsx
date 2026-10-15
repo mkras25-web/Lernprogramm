@@ -208,9 +208,10 @@ export default function Lernen({
   // Tastenkuerzel. Leertaste deckt auf, Ziffern bewerten.
   useEffect(() => {
     function taste(e) {
-      // Offener Dialog/Bildlupe (.schleier) liegt ueber der Karte: Ziffern
+      // Offener Dialog/Bildlupe (.schleier) oder Blatt von unten (.mehrSchleier,
+      // Auswahlblatt) liegt ueber der Karte: Ziffern
       // und Leertaste duerfen nicht die Karte dahinter bewerten.
-      if (document.querySelector('.schleier')) return
+      if (document.querySelector('.schleier, .mehrSchleier')) return
       // Strg/Alt/Cmd-Kombinationen gehoeren dem Browser.
       if (e.ctrlKey || e.metaKey || e.altKey) {
         if (!(e.key === 'Enter' && e.target.matches('textarea'))) return

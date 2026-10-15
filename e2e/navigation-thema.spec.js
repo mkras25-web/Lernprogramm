@@ -77,3 +77,33 @@ test('Sitzungsende nennt die Zahl der nicht gewussten Karten', async ({ page }) 
   await page.locator('button.textknopf', { hasText: 'Zurück' }).first().click()
   await expect(page.locator('.meldung')).toContainText('1 Karte nicht gewusst')
 })
+
+test('Schmales PC-Fenster: Tasten im Auswahlblatt decken die Karte dahinter nicht auf', async ({ page }) => {
+  await page.setViewportSize({ width: 900, height: 800 })
+  await page.goto('/')
+  await profilAnlegen(page, 'Blatt')
+  await page.locator('.profilKnopf', { hasText: 'Blatt' }).click()
+  await page.locator('.artKachel', { hasText: 'Durchblättern' }).click()
+  // Durchblaettern laeuft in fester Reihenfolge - bis zur ersten Zuordnung
+  for (let i = 0; i < 40; i++) {
+    if (await page.locator('.auswahlKnopf').count()) break
+    const zeigen = page.locator('button', { hasText: /Antwort zeigen|Referenz zeigen|Zur ersten Karte/ }).first()
+    if (/Zur ersten Karte/.test(await zeigen.innerText())) { await zeigen.click(); continue }
+    await zeigen.click()
+    await page.locator('.steuerung button', { hasText: /^Weiter/ }).first().click()
+  }
+  await page.locator('.auswahlKnopf').first().click()
+  await expect(page.locator('.mehrBlatt')).toBeVisible()
+  // Fokus liegt auf der ersten Zeile: Leertaste waehlt sie, deckt aber nicht auf
+  await page.keyboard.press('Space')
+  await expect(page.locator('.mehrBlatt')).toHaveCount(0)
+  await expect(page.locator('.auswahlKnopf').first()).not.toHaveClass(/leer/)
+  await expect(page.locator('button', { hasText: 'Antwort zeigen' })).toBeVisible()
+  // Enter ebenso, und Ziffern bewerten nichts dahinter
+  await page.locator('.auswahlKnopf').first().click()
+  await page.keyboard.press('3')
+  await expect(page.locator('.mehrBlatt')).toBeVisible()
+  await page.keyboard.press('Enter')
+  await expect(page.locator('.mehrBlatt')).toHaveCount(0)
+  await expect(page.locator('button', { hasText: 'Antwort zeigen' })).toBeVisible()
+})
