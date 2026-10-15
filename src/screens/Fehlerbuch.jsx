@@ -34,7 +34,7 @@ export default function Fehlerbuch({ items, ereignisse, zustaende, onUeben, onOe
   const sichtbar = nurOffen ? eintraege.filter((e) => e.wackelig) : eintraege
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Fehlerbuch</h1>
         {sichtbar.length > 0 && (

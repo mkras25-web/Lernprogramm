@@ -9,6 +9,7 @@ import Notizfeld from '../components/Notizfeld.jsx'
 import Fallaufgabe from '../components/Fallaufgabe.jsx'
 import SieheAuch from '../components/SieheAuch.jsx'
 import MeldenFeld from '../components/MeldenFeld.jsx'
+import Auswahl from '../components/Auswahl.jsx'
 import { meldenAenderung, zurueckziehenAenderung } from '../lib/meldungen.js'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { BEWERTUNG, intervallKurz } from '../lib/planer.js'
@@ -335,7 +336,7 @@ export default function Lernen({
     )
 
   return (
-    <div className="schirm lernschirm">
+    <div role="main" className="schirm lernschirm">
       <header className="lernkopf">
         <button className="textknopf" onClick={onZurueck}>Zurück</button>
         {/* Ab 30 Karten ein durchgehender Balken statt kaum unterscheidbarer
@@ -814,16 +815,13 @@ function BildListe({ item, wert, setWert, gesperrt, namen, reihenfolge }) {
                   )}
                 </span>
               ) : (
-                <select
-                  className="paarWahl"
-                  value={gewaehltIndex ?? ''}
-                  onChange={(e) => setWert({ ...zuordnung, [p.nr]: Number(e.target.value) })}
-                >
-                  <option value="">bitte benennen …</option>
-                  {reihenfolge.map((j) => (
-                    <option key={j} value={j}>{namen[j]}</option>
-                  ))}
-                </select>
+                <Auswahl
+                  wert={gewaehltIndex ?? ''}
+                  leer="bitte benennen …"
+                  titel={`Punkt ${p.nr} benennen`}
+                  optionen={reihenfolge.map((j) => ({ wert: j, text: namen[j] }))}
+                  onWahl={(j) => setWert({ ...zuordnung, [p.nr]: j })}
+                />
               )}
             </li>
           )
@@ -1112,16 +1110,13 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
               {gesperrt ? (
                 <span className="paarRechts">{item.paare[i][1]}</span>
               ) : (
-                <select
-                  className="paarWahl"
-                  value={ersterPaarIndex(item, gewaehlt) ?? ''}
-                  onChange={(e) => setWert({ ...zuordnung, [i]: Number(e.target.value) })}
-                >
-                  <option value="">bitte zuordnen …</option>
-                  {paarOptionen(item, reihe).map((j) => (
-                    <option key={j} value={j}>{item.paare[j][1]}</option>
-                  ))}
-                </select>
+                <Auswahl
+                  wert={ersterPaarIndex(item, gewaehlt) ?? ''}
+                  leer="bitte zuordnen …"
+                  titel={links}
+                  optionen={paarOptionen(item, reihe).map((j) => ({ wert: j, text: item.paare[j][1] }))}
+                  onWahl={(j) => setWert({ ...zuordnung, [i]: j })}
+                />
               )}
             </li>
           )

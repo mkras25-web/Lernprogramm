@@ -1,7 +1,7 @@
 import { lazy, useEffect, useMemo, useRef, useState } from 'react'
 import Nachladen, { nachladenMerkerLoesen } from './components/Nachladen.jsx'
 import Schleier from './components/Schleier.jsx'
-import Navigation, { AuswertungReiter } from './components/Navigation.jsx'
+import Navigation, { AuswertungReiter, bildschirmTitel } from './components/Navigation.jsx'
 import Ladeskelett from './components/Ladeskelett.jsx'
 import { ansichtAusAdresse, themaAusAdresse, themaSchliessen, useAdresse } from './hooks/useAdresse.js'
 import { useTastaturNavigation } from './hooks/useTastaturNavigation.js'
@@ -474,6 +474,16 @@ export default function App({ profilId, onProfilWechseln }) {
     setKopfThema(null)
   }, erklaerthema)
 
+  // Fenstertitel je Bildschirm bzw. Themenseite (2026-10-15).
+  useEffect(() => {
+    const themaTitel = (id) => themen.find((t) => t.id === id)?.titel
+    const teil = kopfThema && themaTitel(kopfThema) ? `Aus dem Kopf: ${themaTitel(kopfThema)}`
+      : lernzettelThema && themaTitel(lernzettelThema) ? `Lernzettel: ${themaTitel(lernzettelThema)}`
+        : erklaerthema && themaTitel(erklaerthema) ? themaTitel(erklaerthema)
+          : bildschirmTitel(ansicht)
+    document.title = teil ? `${teil} · Lernprogramm` : 'Lernprogramm'
+  }, [ansicht, erklaerthema, lernzettelThema, kopfThema, themen])
+
   async function markeAendern(itemId, aenderung) {
     // Neue Meldung: Fingerabdruck des Paketinhalts dazu - daran erkennt die
     // App spaeter, dass die Karte ueberarbeitet wurde (P10).
@@ -745,7 +755,7 @@ export default function App({ profilId, onProfilWechseln }) {
     const andere = (paketliste ?? []).filter((p) => p.id !== opt.aktivesPaket)
     return (
       <div className="huelle einspaltig">
-        <div className="schirm">
+        <div role="main" className="schirm">
           <h1 className="ueberschrift">Inhalt fehlt</h1>
           <p className="nebentext">{fehler}</p>
           <p className="nebentext">

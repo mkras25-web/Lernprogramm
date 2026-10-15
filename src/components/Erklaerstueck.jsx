@@ -53,7 +53,7 @@ export default function Erklaerstueck({
   }
 
   return (
-    <div className="schirm themenseite">
+    <div role="main" className="schirm themenseite">
       <button className="textknopf" onClick={onZurueck} style={{ alignSelf: 'flex-start' }}>
         Zurück
       </button>

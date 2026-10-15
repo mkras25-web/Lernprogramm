@@ -17,16 +17,16 @@ function schluesselFuer(profilId) {
 // Rollen der Farben stehen als CSS-Block in styles.css, weil dort auch
 // Sonderfaelle wie helle Zeichenblaetter geregelt werden muessen.
 export const PALETTEN = [
-  { id: 'lehm', name: 'Lehm', dunkel: false, tupfer: ['#f0ead2', '#dde5b6', '#adc178', '#a98467', '#6c584c'] },
+  { id: 'lehm', name: 'Lehm', dunkel: false, tupfer: ['#f0ead2', '#dde5b6', '#788d41', '#a98467', '#6c584c'] },
   { id: 'kalk', name: 'Kalk', dunkel: false, tupfer: ['#f4f1ea', '#e6e2d6', '#7d8471', '#9a9382', '#2f3128'] },
   { id: 'terracotta', name: 'Terrakotta', dunkel: false, tupfer: ['#f6ede4', '#ecd9c6', '#c1734a', '#b08968', '#43312a'] },
   { id: 'marine', name: 'Marine', dunkel: false, tupfer: ['#f1faee', '#a8dadc', '#457b9d', '#1d3557', '#e63946'] },
   { id: 'signal', name: 'Signal', dunkel: false, tupfer: ['#edf2f4', '#8d99ae', '#2b2d42', '#ef233c', '#d90429'] },
   { id: 'ocker', name: 'Ocker', dunkel: false, tupfer: ['#ffe6a7', '#bb9457', '#99582a', '#6f1d1b', '#432818'] },
-  { id: 'spektrum', name: 'Spektrum', dunkel: false, tupfer: ['#f94144', '#f8961e', '#f9c74f', '#43aa8b', '#577590'] },
+  { id: 'spektrum', name: 'Spektrum', dunkel: false, tupfer: ['#f94144', '#f8961e', '#f9c74f', '#3e9d81', '#577590'] },
   { id: 'kupfer', name: 'Kupfergrün', dunkel: false, tupfer: ['#edddd4', '#c44536', '#197278', '#283d3b', '#772e25'] },
   { id: 'seekarte', name: 'Seekarte', dunkel: false, tupfer: ['#d9dcd6', '#81c3d7', '#3a7ca5', '#2f6690', '#16425b'] },
-  { id: 'lagune', name: 'Lagune', dunkel: false, tupfer: ['#f8ffe5', '#06d6a0', '#1b9aaa', '#ffc43d', '#ef476f'] },
+  { id: 'lagune', name: 'Lagune', dunkel: false, tupfer: ['#f8ffe5', '#05a47b', '#1b9aaa', '#ffc43d', '#ef476f'] },
   { id: 'dunkel', name: 'Dunkel', dunkel: true, tupfer: ['#1d211a', '#333a2c', '#adc178', '#8a7360', '#edeade'] },
   { id: 'amethyst', name: 'Amethyst', dunkel: false, tupfer: ['#f3eef6', '#e6dcee', '#ad8232', '#9b7ba3', '#6e4a74'] },
   { id: 'fjord', name: 'Fjord', dunkel: false, tupfer: ['#eef2f3', '#dbe6e8', '#c96b56', '#8aa3aa', '#51707a'] },

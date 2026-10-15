@@ -153,7 +153,7 @@ export default function ProfilWahl({
 
   return (
     <div className="huelle einspaltig">
-      <div className="schirm profilSchirm">
+      <div role="main" className="schirm profilSchirm">
         <h1 className="ueberschrift">Wer lernt gerade?</h1>
         {hinweis && <p className="nebentext">{hinweis}</p>}
 

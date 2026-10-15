@@ -41,7 +41,7 @@ class Ladegrenze extends Component {
   render() {
     if (!this.state.fehler) return this.props.children
     return (
-      <div className="schirm">
+      <div role="main" className="schirm">
         <h1 className="ueberschrift">Dieser Bereich lässt sich nicht laden</h1>
         <p className="nebentext">
           {istLadefehler(this.state.fehler)
@@ -61,7 +61,7 @@ class Ladegrenze extends Component {
 export default function Nachladen({ children }) {
   return (
     <Ladegrenze>
-      <Suspense fallback={<div className="schirm" aria-busy="true" />}>{children}</Suspense>
+      <Suspense fallback={<div role="main" className="schirm" aria-busy="true" />}>{children}</Suspense>
     </Ladegrenze>
   )
 }

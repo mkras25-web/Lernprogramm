@@ -52,7 +52,7 @@ export default function Bilder({ themen, items, onKarte, onThema }) {
   const anzahl = sichtbar.reduce((n, g) => n + g.bilder.length, 0)
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Bilder</h1>
       </div>

@@ -41,13 +41,36 @@ test.describe('Mobil (< 60rem)', () => {
     await angemeldet(page, 'Nav-Mehr')
     await page.locator('.tabKnopf', { hasText: 'Mehr' }).tap()
     await expect(page.locator('.mehrBlatt')).toBeVisible()
-    await expect(page.locator('.mehrZeile')).toHaveCount(6)
+    await expect(page.locator('.mehrZeile')).toHaveCount(9)
 
     await page.locator('.mehrZeile', { hasText: 'Einstellungen' }).tap()
     await expect(page.getByRole('heading', { name: 'Einstellungen' })).toBeVisible()
     await expect(page.locator('.mehrBlatt')).toHaveCount(0)
     // Ziel aus "Mehr" aktiv -> "Mehr"-Tab markiert
     await expect(page.locator('.tabKnopf', { hasText: 'Mehr' })).toHaveClass(/aktiv/)
+  })
+
+  test('Wischen nach unten schliesst das Blatt (2026-10-15)', async ({ page, browserName }) => {
+    // Touch-Ereignisse lassen sich nur in Chromium synthetisch erzeugen.
+    test.skip(browserName !== 'chromium', 'Touch-Konstruktor fehlt in WebKit')
+    await angemeldet(page, 'Nav-Wischen')
+    await page.locator('.tabKnopf', { hasText: 'Mehr' }).tap()
+    const blatt = page.locator('.mehrBlatt')
+    await expect(blatt).toBeVisible()
+    // Kurzes Stueck: federt zurueck, bleibt offen
+    const wischen = (strecke) => blatt.evaluate((el, dy) => {
+      const punkt = (y) => new Touch({ identifier: 1, target: el, clientX: 100, clientY: y })
+      el.dispatchEvent(new TouchEvent('touchstart', { bubbles: true, touches: [punkt(300)], changedTouches: [punkt(300)] }))
+      el.dispatchEvent(new TouchEvent('touchmove', { bubbles: true, touches: [punkt(300 + dy)], changedTouches: [punkt(300 + dy)] }))
+      return new Promise((ok) => setTimeout(() => {
+        el.dispatchEvent(new TouchEvent('touchend', { bubbles: true, touches: [], changedTouches: [punkt(300 + dy)] }))
+        ok()
+      }, 400))
+    }, strecke)
+    await wischen(30)
+    await expect(blatt).toBeVisible()
+    await wischen(150)
+    await expect(page.locator('.mehrBlatt')).toHaveCount(0)
   })
 
   test('Tippen auf den Hintergrund schliesst das Blatt ohne zu navigieren', async ({ page }) => {
@@ -66,7 +89,7 @@ test.describe('Desktop (>= 60rem)', () => {
     await angemeldet(page, 'Nav-Desktop')
 
     await expect(page.locator('nav.navigation')).toBeVisible()
-    await expect(page.locator('.navigation .navKnopf')).toHaveCount(10)
+    await expect(page.locator('.navigation .navKnopf')).toHaveCount(13)
     await expect(page.locator('.tabLeiste')).toBeHidden()
   })
 

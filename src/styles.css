@@ -5,7 +5,9 @@
   --papier: #f0ead2;
   --flaeche: #f7f3e4;
   --flaeche-tief: #dde5b6;
-  --akzent: #adc178;
+  /* War #adc178 (1,63:1 auf papier) - auf 3:1 abgedunkelt, gleicher
+     Farbton (Nutzerwahl 2026-10-15, UI-Grafik nach WCAG 1.4.11). */
+  --akzent: #788d41;
   --fortschritt: var(--akzent);
   --lehm: #a98467;
   --rinde: #6c584c;
@@ -242,6 +244,16 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
    Abstand aneinander. Ab 60rem ersetzt die Desktop-Regel weiter unten
    das komplett durch ein zweispaltiges Grid. */
 .heuteRaster { display: flex; flex-direction: column; gap: 1.75rem; }
+/* Heute zweispaltig (2026-10-15, Regeln ab 75rem am Dateiende): unterhalb
+   sind die Huellen unsichtbar, order haelt die alte Reihenfolge. Bewusst
+   einfache Klassen-Selektoren - die mobile Regel ".heuteLernen,
+   .heuteSitzung { order: -1 }" weiter unten muss weiter gewinnen. */
+.heuteSeite, .heuteHaupt { display: contents; }
+.heuteLernen { order: 1; }
+.heuteKurs { order: 2; }
+.heuteHinweis { order: 3; }
+.heuteSitzung { order: 4; }
+.heuteRest { order: 5; }
 
 /* Gleiches Problem, gleicher Grund: .fortschrittRaster hatte ebenfalls
    nie eine Mobil-Regel. */
@@ -801,7 +813,8 @@ button:not(:disabled):active { transform: scale(0.96); }
    ------------------------------------------------------------------ */
 html[data-palette="lehm"] {
   --papier: #f0ead2; --flaeche: #f7f3e4; --flaeche-tief: #dde5b6;
-  --akzent: #adc178; --lehm: #a98467; --rinde: #6c584c;
+  --akzent: #788d41; /* war #adc178, 1,63:1 -> 3,06:1 (2026-10-15) */
+  --lehm: #a98467; --rinde: #6c584c;
   --tusche: #414833; --linie: #d9d2b4;
   /* War #9a6b1f (3.87:1 auf papier, unter WCAG-4.5:1) - siehe
      contrast-check-Auswertung 2026-09-22, minimal abgedunkelt. */
@@ -850,7 +863,8 @@ html[data-palette="ocker"] {
    sind ergaenzt, die sieben Farben bleiben fuer Akzente und Marken. */
 html[data-palette="spektrum"] {
   --papier: #fbf7f0; --flaeche: #fffdf8; --flaeche-tief: #fdeccb;
-  --akzent: #43aa8b; --lehm: #f8961e;
+  --akzent: #3e9d81; /* war #43aa8b, 2,67:1 -> 3,1:1 (2026-10-15) */
+  --lehm: #f8961e;
   --tusche: #2f3e46; --linie: #ece4d6;
   --warnung: #d03639; /* war #f94144, 3.35:1 -> 4.61:1 */
   --rinde: #496480; /* abgedunkelt auf 4,5:1 (47A) */
@@ -875,7 +889,8 @@ html[data-palette="seekarte"] {
    hell. Nebentext und Schrift kommen aus abgedunkelten Verwandten. */
 html[data-palette="lagune"] {
   --papier: #f8ffe5; --flaeche: #fdfff4; --flaeche-tief: #d3f5e8;
-  --akzent: #06d6a0; --lehm: #1b9aaa; --rinde: #0f6e78;
+  --akzent: #05a47b; /* war #06d6a0, 1,83:1 -> 3,09:1 (2026-10-15) */
+  --lehm: #1b9aaa; --rinde: #0f6e78;
   --tusche: #123b42; --linie: #e0ead0;
   --warnung: #cd3d5f; /* war #ef476f, 3.52:1 -> 4.61:1 */
 }
@@ -2702,8 +2717,9 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   z-index: 2;
   padding: 0.05rem 0.4rem;
   border-radius: 999px;
-  background: var(--akzent);
-  color: var(--papier);
+  background: var(--flaeche);
+  border: 2px solid var(--akzent);
+  color: var(--tusche);
   font-size: 0.6875rem;
   font-weight: 600;
 }
@@ -2945,6 +2961,15 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   .mehrName { font-size: 1rem; }
   .mehrUntertitel { font-size: 0.8125rem; color: var(--rinde); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .mehrPfeil { color: var(--rinde); font-size: 1.25rem; }
+  /* Auswahlblatt fuer Zuordnungen (Auswahl.jsx, 2026-10-15) */
+  .auswahlKnopf { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; text-align: left; cursor: pointer; }
+  .auswahlKnopf.leer .auswahlText { color: var(--rinde); }
+  .auswahlText { min-width: 0; overflow-wrap: anywhere; }
+  .auswahlPfeil { flex: none; color: var(--rinde); }
+  .auswahlTitel { font-size: 1.0625rem; }
+  /* Fachbereich-/Themenkacheln ohne genug Items: Rahmen sichtbar statt
+     kaum erkennbar gestrichelt (kleine Mobil-Idee 2026-10-15). */
+  .pruefKachel.aus { border-color: color-mix(in srgb, var(--rinde) 45%, var(--papier)); }
 
   /* Meldungen ueber der Leiste statt darauf. */
   .meldung { bottom: calc(var(--tab-hoehe) + env(safe-area-inset-bottom) + 1rem); }
@@ -3353,8 +3378,8 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
 
   /* 41A: Heute - fuenf Kennzahlen in einer Zeile, Lernen bleibt die
      einzige Hauptflaeche, Durchblaettern als Link */
-  .heuteRaster > .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .heuteRaster > .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
+  .heuteRaster .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .heuteRaster .kennzahlen > :last-child:nth-child(odd) { grid-column: auto; }
   /* Der Ring ist selbst ein div und wuchs mit "flex: 1 1 12rem" (Regel
      fuer den Textblock) mit - stand dann mitten in der Leerflaeche. */
   .aufruf > .ring { flex: 0 0 auto; min-width: 0; }
@@ -3565,4 +3590,63 @@ html[data-dunkel="an"] :is(img.referenz, .lupenBuehne img, .vergleichSeite img, 
   text-align: center;
   font-weight: 600;
   overflow-wrap: anywhere;
+}
+
+/* ==================================================================
+   Abstandssystem auch am Desktop (Nutzerwahl 2026-10-15): dieselben
+   Rollen wie mobil (--abstand-titel/-liste/-gruppe/-text), Abschnitte
+   fest 2rem. Steht absichtlich hinter allen anderen Desktop-Regeln.
+   ================================================================== */
+@media (min-width: 60rem) {
+  :root { --abstand-abschnitt: 2rem; }
+  .huelle:not(.einspaltig) > .schirm:not(.lernschirm) { gap: var(--abstand-abschnitt); }
+  .fortschrittRaster { gap: var(--abstand-abschnitt); }
+  .abschnitt { margin-bottom: var(--abstand-titel); }
+  .abschnitt + .themenliste, .abschnitt + .kartengitter,
+  .abschnitt + .stempelwand, .abschnitt + .verteilung { margin-top: 0; }
+  .nebentext + .nebentext { margin-top: var(--abstand-text); }
+  .stufe, .aufruf, .zeile, .themenzeile { row-gap: var(--abstand-liste); }
+  .stufeText, .aufruf > div, .artKachel { row-gap: var(--abstand-text); }
+  .kennzahlName { margin-top: var(--abstand-text); }
+  .herkunft { row-gap: var(--abstand-text); }
+  .themenKopf { row-gap: var(--abstand-gruppe); }
+  .reiter, .wahl, .marken, .palettenwahl, .themenzeileAktionen, .bestwerte,
+  .fortschrittKacheln, .pruefKacheln, .naechste, .verteilung, .normen, .stempelwand,
+  .themenliste { gap: var(--abstand-gruppe); }
+  .artKacheln, .kartengitter, .treffer { gap: var(--abstand-liste); }
+  .themenliste, .kartengitter, .stempelwand { margin-top: var(--abstand-titel); }
+  /* Desktop-Rest: Browser-Standardabstand der <p> in .themaInfo riss
+     Titel und Infozeile auseinander (mobil schon 2026-10-10 behoben). */
+  .themaInfo { display: flex; flex-direction: column; gap: 0.25rem; }
+  .themaInfo > * { margin: 0; }
+}
+
+/* ==================================================================
+   Heute zweispaltig ab 75rem (Nutzerwahl 2026-10-15): links Lernen,
+   Sitzungen, Kurse, Betriebsarten; rechts Stufe, Kennzahlen und
+   Hinweise (Pruefung, Sichern, Aufstieg). 60-75rem bleibt einspaltig
+   (49A), mobil unberuehrt.
+   ================================================================== */
+@media (min-width: 75rem) {
+  .heuteRaster {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
+    grid-auto-flow: row dense;
+    gap: var(--abstand-abschnitt) 2.5rem;
+    align-items: start;
+  }
+  .heuteRaster > .klausurLeiste { grid-column: 1 / -1; }
+  .heuteHaupt, .heuteSeite { display: flex; flex-direction: column; min-width: 0; }
+  .heuteHaupt { grid-column: 1; gap: 2rem; }
+  .heuteSeite { grid-column: 2; gap: 1.25rem; }
+  .heuteHaupt > *, .heuteSeite > * { order: 0; }
+  .heuteSeite .stufe { align-items: flex-start; }
+  .heuteRaster .heuteSeite > .kennzahlen,
+  .heuteRaster .heuteSeite > .kennzahlen:has(> :nth-child(5):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .heuteRaster .heuteSeite > .kennzahlen > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* Schmale Spalte: Knopf unter den Text, das Zeichen bleibt daneben */
+  .heuteSeite .aufruf { flex-wrap: wrap; }
+  .heuteSeite .aufruf > div { min-width: 0; flex: 1 1 calc(100% - 3rem); }
+  /* Sechs Betriebsarten immer als 2 x 3, nie 5 + 1 */
+  .heuteHaupt .artKacheln { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

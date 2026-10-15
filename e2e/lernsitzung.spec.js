@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { profilAnlegen } from './hilfen.js'
+import { aufdecken, ersteKarte, profilAnlegen } from './hilfen.js'
 
 // Kritische Pfade der Lernsitzung (2026-10-10 ergaenzt, vor dem Umbau der
 // Wiederholungsplanung): Tastatur, Rueckgaengig, Notiz-Schreibmarke.
@@ -9,6 +9,7 @@ async function angemeldet(page, name) {
   await page.locator('.profilKnopf', { hasText: name }).click()
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
   await expect(page.locator('.lernkopf')).toBeVisible()
+  await ersteKarte(page)
 }
 
 const stand = (page) => page.locator('.pensumZahl').innerText()
@@ -83,7 +84,7 @@ test('Am Sitzungsende erscheint eine Bilanz (9B)', async ({ page }) => {
   await angemeldet(page, 'Bilanz')
   await page.locator('.lernkopf .textknopf', { hasText: 'Zurück' }).click()
   await page.locator('.artKachel', { hasText: 'Schnellrunde' }).click()
-  await page.keyboard.press('Space')
+  await aufdecken(page)
   await page.keyboard.press('3')
   await page.locator('.lernkopf .textknopf', { hasText: 'Zurück' }).click()
   await expect(page.locator('.meldung')).toContainText('Sitzung beendet · 1 Antwort, 1 richtig')

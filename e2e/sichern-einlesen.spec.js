@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { profilAnlegen } from './hilfen.js'
+import { aufdecken, profilAnlegen } from './hilfen.js'
 import fs from 'node:fs'
 
 // Rundlauf: Fortschritt sichern und in einem neuen Profil wieder einlesen.
@@ -9,7 +9,7 @@ test('Sichern und als neues Profil einlesen ergibt denselben Stand', async ({ pa
   await page.locator('.profilKnopf', { hasText: 'Quelle' }).click()
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
   for (let i = 0; i < 3; i++) {
-    await page.keyboard.press('Space')
+    await aufdecken(page)
     await page.keyboard.press('3')
     await page.waitForTimeout(150)
   }

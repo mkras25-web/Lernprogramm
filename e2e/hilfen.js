@@ -13,3 +13,20 @@ export async function profilAnlegen(page, name, { tippen = false } = {}) {
   if (tippen) await knopf.tap()
   else await knopf.click()
 }
+
+// Einfuehrungsschritt (D4, seit 2026-10-13): vor der ersten neuen Karte
+// eines Themas steht die Kurzerklaerung mit "Zur ersten Karte". Ein
+// frisches Testprofil sieht ihn fast immer - die Leertaste wuerde dort nur
+// zur Karte weiterschalten statt aufzudecken.
+export async function ersteKarte(page) {
+  await page.locator('.frage, button:has-text("Zur ersten Karte")').first().waitFor()
+  const einstieg = page.locator('button', { hasText: 'Zur ersten Karte' })
+  if (await einstieg.count()) await einstieg.first().click()
+  await page.locator('.frage').first().waitFor()
+}
+
+// Aktuelle Karte per Leertaste aufdecken (Einfuehrung vorher wegklicken).
+export async function aufdecken(page) {
+  await ersteKarte(page)
+  await page.keyboard.press('Space')
+}

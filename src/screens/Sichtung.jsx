@@ -244,7 +244,7 @@ export default function Sichtung({
     // Stattdessen eine Meldung mit Ausweg.
     if (!item) {
       return (
-        <div className="schirm">
+        <div role="main" className="schirm">
           <h1 className="ueberschrift">Item nicht mehr vorhanden</h1>
           <p className="nebentext">
             Es wurde vermutlich aus dem Paket entfernt oder das Paket wurde gewechselt.
@@ -269,7 +269,7 @@ export default function Sichtung({
     }
 
     return (
-      <div className="schirm">
+      <div role="main" className="schirm">
         <div className="themenKopf">
           <button className="textknopf" onClick={() => setOffenesItem(null)}>
             Zurück zur Liste
@@ -410,7 +410,7 @@ export default function Sichtung({
 
   // ---------- Liste ----------
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Nachschlagen</h1>
         <button

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { profilAnlegen } from './hilfen.js'
+import { aufdecken, profilAnlegen } from './hilfen.js'
 
 // Kritischer Pfad (52A, 2026-10-11): Profil loeschen entfernt Fortschritt,
 // Datenbank und alle profilbezogenen Merker - und laesst andere Profile
@@ -13,7 +13,7 @@ test('Profil loeschen raeumt alles des Profils weg, das andere bleibt', async ({
   // Etwas Fortschritt erzeugen: eine Karte bewerten
   await page.locator('.profilKnopf', { hasText: 'Weg' }).click()
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
-  await page.keyboard.press('Space')
+  await aufdecken(page)
   await page.keyboard.press('3')
   await expect(page.locator('.pensumZahl')).toHaveText(/^1 von/)
   await page.goto('/#/heute')

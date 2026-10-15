@@ -19,7 +19,7 @@ export default function MeinHeft({ items, marken, onOeffnen }) {
   const anzahl = gruppen.reduce((s, g) => s + g.eintraege.length, 0)
 
   return (
-    <div className="schirm heft">
+    <div role="main" className="schirm heft">
       <div className="themenKopf">
         <h1 className="ueberschrift">Mein Heft</h1>
         {anzahl > 0 && (

@@ -19,7 +19,7 @@ export default function Kennwerte({ gruppen = [], themen = [], onThema }) {
     .filter((g) => g.eintraege.length > 0)
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Kennwerte</h1>
       </div>

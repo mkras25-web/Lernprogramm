@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from 'react'
 import Schleier from './Schleier.jsx'
 import Bauabschnitt from './Bauabschnitt.jsx'
+import { useWischZu } from '../hooks/useWischZu.js'
 
 // Seitenleiste (Desktop), untere Leiste und Mehr-Blatt (mobil) - aus
 // App.jsx herausgeloest (52B, 2026-10-10). Gibt ein Fragment zurueck: die
@@ -47,17 +48,30 @@ const MEHR_UNTERTITEL = {
 // Sammlung ist seit 2026-10-10 ein Reiter unter Fortschritt (25A) - eigene
 // Adresse (#/sammlung), aber kein eigener Navigationseintrag.
 export const ZIELE = new Set([...NAVIGATION.map((n) => n.id), 'sammlung', 'lernen'])
+
+// Fenster-/Tabtitel je Bildschirm (2026-10-15): Verlauf, Tabs und
+// Lesezeichen zeigen, wo man war.
+const WEITERE_TITEL = { sammlung: 'Sammlung', lernen: 'Lernen' }
+export function bildschirmTitel(id) {
+  return NAVIGATION.find((n) => n.id === id)?.titel ?? WEITERE_TITEL[id] ?? null
+}
 const navAktiv = (id, ansicht) => ansicht === id || (id === 'fortschritt' && ansicht === 'sammlung')
 
 // Abgleich-Status (Profil-System d, 2026-10-15): sichtbar ohne Umweg ueber
 // die Einstellungen - Seitenleiste unten bzw. oben im Mehr-Blatt.
-export function abgleichText(a, jetzt = Date.now()) {
-  if (a.laeuft) return 'Gleicht mit Dropbox ab …'
-  if (a.fehler) return 'Dropbox-Abgleich fehlgeschlagen'
-  if (!a.zeit) return 'Noch nicht mit Dropbox abgeglichen'
+// kurz: fuer die Seitenleiste (schmal), der volle Text steht dort im title.
+export function abgleichText(a, jetzt = Date.now(), kurz = false) {
+  if (a.laeuft) return kurz ? 'Gleicht ab …' : 'Gleicht mit Dropbox ab …'
+  if (a.fehler) return kurz ? 'Abgleich fehlgeschlagen' : 'Dropbox-Abgleich fehlgeschlagen'
+  if (!a.zeit) return kurz ? 'Noch nicht abgeglichen' : 'Noch nicht mit Dropbox abgeglichen'
   const minuten = Math.floor((jetzt - a.zeit) / 60000)
-  if (minuten < 1) return 'Gerade mit Dropbox abgeglichen'
-  if (minuten < 60) return `Vor ${minuten} min abgeglichen`
+  if (minuten < 1) return kurz ? 'Gerade abgeglichen' : 'Gerade mit Dropbox abgeglichen'
+  if (minuten < 60) return kurz ? `vor ${minuten} min` : `Vor ${minuten} min abgeglichen`
+  if (kurz) {
+    const d = new Date(a.zeit)
+    const uhr = d.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
+    return new Date(jetzt).toDateString() === d.toDateString() ? `heute ${uhr}` : `${d.toLocaleDateString('de-DE', { day: 'numeric', month: 'numeric' })} ${uhr}`
+  }
   const d = new Date(a.zeit)
   const heute = new Date(jetzt).toDateString() === d.toDateString()
   const uhr = d.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })
@@ -81,6 +95,7 @@ export default function Navigation({
   // "Mehr"-Blatt der unteren Leiste. Ab 60rem gibt es weder Leiste noch
   // Blatt, die Seitenleiste zeigt alle Ziele.
   const [mehrOffen, setMehrOffen] = useState(false)
+  const wischen = useWischZu(() => setMehrOffen(false))
 
   // Bleibt das Blatt offen, waehrend das Fenster (oder eine
   // Bildschirmdrehung) ueber die Desktop-Breite waechst, soll es nicht
@@ -119,8 +134,11 @@ export default function Navigation({
             <span className="navFussName">{profilName}</span>
             <span className="navFussStufe">Stufe {level.stufe} · Profil wechseln</span>
             {abgleich && (
-              <span className={abgleich.fehler ? 'navFussAbgleich fehler' : 'navFussAbgleich'} title={abgleich.fehler ?? undefined}>
-                <span aria-hidden="true">☁︎ </span>{abgleichText(abgleich)}
+              <span
+                className={abgleich.fehler ? 'navFussAbgleich fehler' : 'navFussAbgleich'}
+                title={[abgleichText(abgleich), abgleich.fehler].filter(Boolean).join(' – ')}
+              >
+                <span aria-hidden="true">☁︎ </span>{abgleichText(abgleich, Date.now(), true)}
               </span>
             )}
           </span>
@@ -163,7 +181,7 @@ export default function Navigation({
       {mehrOffen && (
         // Escape, Fokus und Hintergrund-Klick regelt der Schleier.
         <Schleier onSchliessen={() => setMehrOffen(false)} klasse="mehrSchleier" beschriftung="Weitere Bereiche">
-          <div className="mehrBlatt" onClick={(e) => e.stopPropagation()}>
+          <div className="mehrBlatt" onClick={(e) => e.stopPropagation()} {...wischen}>
             <div className="mehrGriff" aria-hidden="true" />
             <h2 className="mehrTitel">Mehr</h2>
             {abgleich && (

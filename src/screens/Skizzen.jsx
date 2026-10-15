@@ -21,7 +21,7 @@ export default function Skizzen({ skizzen, items, onLoeschen, onNeuZeichnen, zei
   }, [skizzen, items])
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <h1 className="ueberschrift">Skizzen</h1>
       <p className="nebentext">
         {skizzen.length} gespeicherte Zeichnungen in {gruppen.length} Aufgaben

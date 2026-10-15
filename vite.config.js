@@ -56,10 +56,45 @@ function ohneLokaleBilder() {
 // Anpassung. NICHT per Doppelklick auf dist/index.html (file://): Browser
 // blockieren dort Module und fetch, die Seite bleibt leer. Ohne Node laeuft
 // sie ueber das Offline-Paket (app/offline/, siehe ANLEITUNG.md 1.5).
+// Content-Security-Policy (2026-10-15) als Meta-Tag, nur im Build: der
+// Dev-Server braucht Inline-Skripte (React-Refresh), der Build nicht. Die
+// App spricht ausser sich selbst nur die Dropbox-Schnittstelle an; die
+// Dropbox-Anmeldung ist eine Seitennavigation und faellt nicht unter
+// connect-src. style-src braucht 'unsafe-inline' fuer style-Attribute.
+// Bilder: data: (Skizzen) und blob: (Downloads/Vorschauen).
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  "connect-src 'self' https://api.dropboxapi.com https://content.dropboxapi.com",
+  "worker-src 'self'",
+  "manifest-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+].join('; ')
+
+function sicherheitsrichtlinie() {
+  return {
+    name: 'sicherheitsrichtlinie',
+    apply: 'build',
+    transformIndexHtml(html) {
+      return html.replace(
+        '<meta charset="UTF-8" />',
+        `<meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="${CSP}" />`
+      )
+    },
+  }
+}
+
 export default defineConfig({
   plugins: [
     react(),
     ohneLokaleBilder(),
+    sicherheitsrichtlinie(),
     // Macht die App auf dem Handy installierbar (Icon auf dem
     // Home-Bildschirm, eigenes Fenster ohne Browserleiste) und
     // cached die App-Huelle fuers Offline-Starten. Inhaltspakete

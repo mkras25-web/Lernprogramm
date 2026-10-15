@@ -29,7 +29,7 @@ export default function AusDemKopf({ thema, profilId, onZurueck, onErklaerung })
   }
 
   return (
-    <div className="schirm ausDemKopf">
+    <div role="main" className="schirm ausDemKopf">
       <button className="textknopf" onClick={onZurueck} style={{ alignSelf: 'flex-start' }}>
         Zurück
       </button>

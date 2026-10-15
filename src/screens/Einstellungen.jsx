@@ -88,7 +88,7 @@ export default function Einstellungen({
   }
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <h1 className="ueberschrift">Einstellungen</h1>
 
       {/* Sprungmarken (35A) als Knoepfe mit scrollIntoView - keine

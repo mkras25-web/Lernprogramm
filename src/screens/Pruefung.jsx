@@ -16,6 +16,7 @@ import { punkteFuer, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
 import Bildpunkte from '../components/Bildpunkte.jsx'
 import { mischen, seedAus } from '../lib/mischen.js'
 import LokalBild from '../components/LokalBild.jsx'
+import Auswahl from '../components/Auswahl.jsx'
 
 // Laufende Pruefung wird je Profil gespeichert (Entscheidung 14A): wer
 // mitten drin den Bildschirm wechselt oder die App schliesst, setzt spaeter
@@ -278,7 +279,7 @@ export default function Pruefung({
     }, new Map()).values()].sort((a, b) => b.anzahl - a.anzahl)
 
     return (
-      <div className="schirm">
+      <div role="main" className="schirm">
         <div className="themenKopf">
           <h1 className="ueberschrift">{lauf.titel} – Auswertung</h1>
           <button className="knopf schmal" onClick={() => window.print()}>Drucken</button>
@@ -434,7 +435,7 @@ export default function Pruefung({
     const beantwortet = lauf.items.filter((i) => antworten[i.id] !== undefined).length
 
     return (
-      <div className="schirm lernschirm">
+      <div role="main" className="schirm lernschirm">
         <header className="lernkopf">
           <button className="textknopf" onClick={() => setRueckfrage('abbrechen')}>Abbrechen</button>
           <div className="schnitt">
@@ -588,7 +589,7 @@ export default function Pruefung({
   const reifeThemen = themenReife.filter((t) => t.reif).length
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <h1 className="ueberschrift">Prüfungen</h1>
 
       <section className="bereitschaft">
@@ -909,13 +910,13 @@ function PruefEingabe({ item, wert, setWert, seed }) {
         {item.paare.map(([links], i) => (
           <li key={i}>
             <span className="paarLinks">{links}</span>
-            <select className="paarWahl" value={ersterPaarIndex(item, zuordnung[i]) ?? ''}
-                    onChange={(e) => setWert({ ...zuordnung, [i]: Number(e.target.value) })}>
-              <option value="">bitte zuordnen …</option>
-              {paarOptionen(item, mischen(item.paare.length, seed + 5)).map((j) => (
-                <option key={j} value={j}>{item.paare[j][1]}</option>
-              ))}
-            </select>
+            <Auswahl
+              wert={ersterPaarIndex(item, zuordnung[i]) ?? ''}
+              leer="bitte zuordnen …"
+              titel={links}
+              optionen={paarOptionen(item, mischen(item.paare.length, seed + 5)).map((j) => ({ wert: j, text: item.paare[j][1] }))}
+              onWahl={(j) => setWert({ ...zuordnung, [i]: j })}
+            />
           </li>
         ))}
       </ul>

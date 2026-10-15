@@ -81,7 +81,7 @@ export default function Fortschritt({
   }
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       {reiter}
       <h1 className="ueberschrift">Fortschritt</h1>
 

@@ -25,7 +25,7 @@ export default function Kalender({ zustaende, ids = null, neueAnzahl, opt, klaus
   const datum = (ts) => new Date(ts).toLocaleDateString('de-DE', { day: 'numeric', month: 'numeric' })
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Kalender</h1>
       </div>

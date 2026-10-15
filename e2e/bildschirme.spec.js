@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { profilAnlegen } from './hilfen.js'
+import { aufdecken, ersteKarte, profilAnlegen } from './hilfen.js'
 
 // Runde 5 (2026-10-10): Bildschirmadressen, neue Bildschirme, Querwege,
 // Tastatur-Navigation, Sichten-Schalter, Profilnamen, Klausur-Countdown.
@@ -36,6 +36,7 @@ test('Tastatur: G dann T oeffnet Themen, / springt in die Suche', async ({ page 
 test('Fehlerbuch und Mein Heft sammeln, Querweg oeffnet die Karte in Nachschlagen', async ({ page }) => {
   await angemeldet(page, 'Sammeln')
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
+  await ersteKarte(page)
   await page.locator('.markenKnopf', { hasText: 'Lesezeichen' }).click()
   const frage = (await page.locator('.frage').innerText()).trim()
   await page.keyboard.press('Space')

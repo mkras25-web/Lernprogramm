@@ -47,7 +47,7 @@ export default function Themen({
   }, [module, bereich, sucheAktiv, suche, themenNachModul])
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <div className="themenKopf">
         <h1 className="ueberschrift">Themen</h1>
         <div className="wahl">

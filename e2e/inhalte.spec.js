@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { profilAnlegen } from './hilfen.js'
+import { ersteKarte, profilAnlegen } from './hilfen.js'
 import fs from 'node:fs'
 
 // Neue optionale Inhaltsfelder (Runde 4, 2026-10-10). Die Lerninhalte selbst
@@ -77,6 +77,7 @@ test('Lernziele und Querverweise im Erklaerstueck, Begruendung je Option in Nach
 test('Karte melden und als Markdown fuer den Web-Chat exportieren', async ({ page }, info) => {
   await angemeldet(page, 'Melden')
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
+  await ersteKarte(page)
   const itemId = await page.locator('.frage').innerText()
   await page.locator('.markenKnopf', { hasText: 'Melden' }).click()
   await page.locator('.meldenFeld .wahlKnopf', { hasText: 'Quelle prüfen' }).click()

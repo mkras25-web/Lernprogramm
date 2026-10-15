@@ -68,7 +68,7 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, rei
     .slice(0, 3)
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       {reiter}
       <div className="themenKopf">
         <h1 className="ueberschrift">Sammlung</h1>

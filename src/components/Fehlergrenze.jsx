@@ -22,7 +22,7 @@ export class KartenGrenze extends Component {
     if (!this.state.fehler) return this.props.children
     const { kennung, onWeiter, onZurueck } = this.props
     return (
-      <div className="schirm">
+      <div role="main" className="schirm">
         <h1 className="ueberschrift">Diese Karte lässt sich nicht anzeigen</h1>
         <p className="nebentext">
           Karte <code>{kennung}</code> enthält einen Fehler. Dein Fortschritt ist nicht betroffen. Melde die
@@ -68,7 +68,7 @@ export default class Fehlergrenze extends Component {
 
     return (
       <div className="huelle einspaltig">
-        <div className="schirm">
+        <div role="main" className="schirm">
           <h1 className="ueberschrift">Da ist etwas schiefgegangen</h1>
           <p className="nebentext">
             Dein Fortschritt ist nicht betroffen – er liegt in der Datenbank, nicht in der

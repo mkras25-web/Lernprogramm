@@ -17,7 +17,7 @@ export default function Lernzettel({ thema, items, marken, onZurueck }) {
   const e = thema.erklaerung
 
   return (
-    <div className="schirm lernzettel">
+    <div role="main" className="schirm lernzettel">
       <div className="themenKopf nichtDrucken">
         <button className="textknopf" onClick={onZurueck}>Zurück</button>
         <button className="knopf haupt schmal" onClick={() => window.print()}>Drucken / als PDF</button>

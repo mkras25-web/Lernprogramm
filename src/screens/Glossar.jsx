@@ -51,7 +51,7 @@ export default function Glossar({ glossar, items = [], bereiche = {}, onUeben, o
   }, [eintraege, karten, bereiche])
 
   return (
-    <div className="schirm">
+    <div role="main" className="schirm">
       <h1 className="ueberschrift">Normen und Regelwerke</h1>
       <p className="nebentext">
         {Object.keys(glossar ?? {}).length} Einträge. Maßgeblich ist immer der gültige
