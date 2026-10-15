@@ -9,6 +9,9 @@ import { ausDemKopfMerken, pruefliste } from '../lib/ausDemKopf.js'
 export default function AusDemKopf({ thema, profilId, onZurueck, onErklaerung }) {
   const [text, setText] = useState('')
   const [zeichnen, setZeichnen] = useState(false)
+  // Einmal geoeffnet, bleibt das Zeichenfeld eingehaengt (nur versteckt),
+  // damit der Wechsel Schreiben <-> Skizzieren nichts verwirft.
+  const [feldOffen, setFeldOffen] = useState(false)
   const [fertig, setFertig] = useState(false)
   const [gehakt, setGehakt] = useState([])
   const bildRef = useRef(null)
@@ -16,7 +19,7 @@ export default function AusDemKopf({ thema, profilId, onZurueck, onErklaerung })
   const liste = pruefliste(thema)
 
   function vergleichen() {
-    if (zeichnen) setSkizze(bildRef.current?.() ?? null)
+    if (feldOffen) setSkizze(bildRef.current?.() ?? null)
     setFertig(true)
   }
 
@@ -48,13 +51,16 @@ export default function AusDemKopf({ thema, profilId, onZurueck, onErklaerung })
             <button className={!zeichnen ? 'wahlKnopf aktiv' : 'wahlKnopf'} onClick={() => setZeichnen(false)}>
               Schreiben
             </button>
-            <button className={zeichnen ? 'wahlKnopf aktiv' : 'wahlKnopf'} onClick={() => setZeichnen(true)}>
+            <button className={zeichnen ? 'wahlKnopf aktiv' : 'wahlKnopf'} onClick={() => { setZeichnen(true); setFeldOffen(true) }}>
               Skizzieren
             </button>
           </div>
-          {zeichnen ? (
-            <Skizzenfeld aufgedeckt={false} bildRef={bildRef} />
-          ) : (
+          {feldOffen && (
+            <div hidden={!zeichnen}>
+              <Skizzenfeld aufgedeckt={false} bildRef={bildRef} />
+            </div>
+          )}
+          {!zeichnen && (
             <textarea
               className="notizfeld"
               style={{ minHeight: '14rem' }}

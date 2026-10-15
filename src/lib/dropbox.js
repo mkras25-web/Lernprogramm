@@ -27,9 +27,17 @@ function lesen(schluessel) {
   }
 }
 
+export const VERBINDUNG_EREIGNIS = 'dropbox-verbindung'
+
 function schreiben(schluessel, wert) {
+  const vorher = schluessel === VERBINDUNG ? istVerbunden() : null
   if (wert == null) localStorage.removeItem(schluessel)
   else localStorage.setItem(schluessel, JSON.stringify(wert))
+  // Verbunden/getrennt melden (App.jsx haelt das als State, damit z. B. die
+  // Sicherungsmahnung sofort reagiert und nicht erst beim naechsten Rendern).
+  if (schluessel === VERBINDUNG && vorher !== istVerbunden() && typeof window !== 'undefined') {
+    window.dispatchEvent(new Event(VERBINDUNG_EREIGNIS))
+  }
 }
 
 // PKCE und OAuth brauchen crypto.subtle - das gibt es nur in sicheren

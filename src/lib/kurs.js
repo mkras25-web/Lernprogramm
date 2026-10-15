@@ -91,14 +91,18 @@ export function naechsteKlausur(kursId, klausuren, jetzt = Date.now()) {
 }
 
 // Klausur-Rueckblick (F9, 2026-10-13): die juengste vergangene Klausur des
-// Kurses, fuer die noch kein Ergebnis eingetragen ist.
+// Kurses, fuer die noch kein Ergebnis eingetragen ist. aeltere: weitere
+// vergangene ohne Ergebnis - die werden mit der juengsten zusammen
+// erledigt, statt nacheinander abgefragt zu werden.
 export function offenerRueckblick(kursId, klausuren, jetzt = Date.now()) {
   const heute = tagesBeginn(jetzt)
-  return (klausuren ?? [])
+  const offen = (klausuren ?? [])
     .filter((k) => k.kursId === kursId && k.datum && !k.ergebnis && !k.rueckblickAus)
     .map((k) => ({ ...k, zeit: new Date(`${k.datum}T00:00`).getTime() }))
     .filter((k) => k.zeit < heute)
-    .sort((a, b) => b.zeit - a.zeit)[0] ?? null
+    .sort((a, b) => b.zeit - a.zeit)
+  if (!offen.length) return null
+  return { ...offen[0], aeltere: offen.slice(1).map(({ zeit, ...k }) => k) }
 }
 
 export function tageBis(klausur, jetzt = Date.now()) {

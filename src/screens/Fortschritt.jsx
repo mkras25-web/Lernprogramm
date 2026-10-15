@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import {
   GRADE,
   beherrschungsgrad,
@@ -31,13 +32,18 @@ export default function Fortschritt({
   reiter, onThemaUeben, onModulUeben, onItemOeffnen,
 }) {
   // Echte Behaltensrate bei Wiederholungen neben der Vorhersage (F6/L7).
-  const wiederholungen = wiederholungenBewerten(ereignisse, { zielBehaltensrate, gewichte: fsrsGewichte?.w })
-  const rate = behaltensrate(wiederholungen)
-  const vierWochen = behaltensrate(wiederholungen.filter((w) => w.ts > Date.now() - 28 * 24 * 60 * 60 * 1000))
-  const modulVon = new Map(items.map((i) => [i.id, i.modulTitel]))
-  const jeModul = [...new Set(wiederholungen.map((w) => modulVon.get(w.itemId)).filter(Boolean))]
-    .map((titel) => ({ titel, ...behaltensrate(wiederholungen.filter((w) => modulVon.get(w.itemId) === titel)) }))
-    .sort((a, b) => b.anzahl - a.anzahl)
+  // Teuer (FSRS ueber das ganze Protokoll) - nur neu, wenn sich die Eingaben aendern.
+  const { rate, vierWochen, jeModul } = useMemo(() => {
+    const wiederholungen = wiederholungenBewerten(ereignisse, { zielBehaltensrate, gewichte: fsrsGewichte?.w })
+    const modulVon = new Map(items.map((i) => [i.id, i.modulTitel]))
+    return {
+      rate: behaltensrate(wiederholungen),
+      vierWochen: behaltensrate(wiederholungen.filter((w) => w.ts > Date.now() - 28 * 24 * 60 * 60 * 1000)),
+      jeModul: [...new Set(wiederholungen.map((w) => modulVon.get(w.itemId)).filter(Boolean))]
+        .map((titel) => ({ titel, ...behaltensrate(wiederholungen.filter((w) => modulVon.get(w.itemId) === titel)) }))
+        .sort((a, b) => b.anzahl - a.anzahl),
+    }
+  }, [ereignisse, items, zielBehaltensrate, fsrsGewichte])
   const planungswirksam = new Set(ereignisse.map((e) => `${e.itemId}|${new Date(e.ts).toDateString()}`)).size
   const felder = tagesverlauf(ereignisse, 140)
   const vorschau = faelligkeitsvorschau(zustaende, 7)

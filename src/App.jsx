@@ -3,12 +3,12 @@ import Nachladen, { nachladenMerkerLoesen } from './components/Nachladen.jsx'
 import Schleier from './components/Schleier.jsx'
 import Navigation, { AuswertungReiter } from './components/Navigation.jsx'
 import Ladeskelett from './components/Ladeskelett.jsx'
-import { ansichtAusAdresse, useAdresse } from './hooks/useAdresse.js'
+import { ansichtAusAdresse, themaAusAdresse, themaSchliessen, useAdresse } from './hooks/useAdresse.js'
 import { useTastaturNavigation } from './hooks/useTastaturNavigation.js'
 import { useAbgleich } from './hooks/useAbgleich.js'
 import { useKennzahlen } from './hooks/useKennzahlen.js'
 import { paketLaden, paketeLaden } from './lib/paket.js'
-import { dropboxMoeglich, istVerbunden } from './lib/dropbox.js'
+import { dropboxMoeglich, istVerbunden, VERBINDUNG_EREIGNIS } from './lib/dropbox.js'
 import {
   allesLoeschen,
   alleEreignisse,
@@ -162,7 +162,7 @@ export default function App({ profilId, onProfilWechseln }) {
     setNachschlagenItem(id)
     setAnsicht('sichtung')
   }
-  const [erklaerthema, setErklaerthema] = useState(null)
+  const [erklaerthema, setErklaerthema] = useState(() => themaAusAdresse())
   // "Aus dem Kopf" fuer ein Thema (L6)
   const [kopfThema, setKopfThema] = useState(null)
   // Id der zuletzt in der Sitzung gemeldeten Karte - die naechste Karte
@@ -233,6 +233,18 @@ export default function App({ profilId, onProfilWechseln }) {
     return () => clearTimeout(timer)
   }, [meldung])
 
+  // Dropbox verbunden? Als State (lib/dropbox.js meldet Wechsel), auch aus
+  // anderen Tabs (storage-Ereignis).
+  const [dropboxVerbunden, setDropboxVerbunden] = useState(() => dropboxMoeglich() && istVerbunden())
+  useEffect(() => {
+    const pruefen = () => setDropboxVerbunden(dropboxMoeglich() && istVerbunden())
+    window.addEventListener(VERBINDUNG_EREIGNIS, pruefen)
+    window.addEventListener('storage', pruefen)
+    return () => {
+      window.removeEventListener(VERBINDUNG_EREIGNIS, pruefen)
+      window.removeEventListener('storage', pruefen)
+    }
+  }, [])
 
   // Alle abgeleiteten Zahlen (hooks/useKennzahlen.js, 52B).
   const {
@@ -260,7 +272,7 @@ export default function App({ profilId, onProfilWechseln }) {
     sicherungFaellig,
   } = useKennzahlen({
     rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung,
-    speicherGeschuetzt, dropboxVerbunden: dropboxMoeglich() && istVerbunden(),
+    speicherGeschuetzt, dropboxVerbunden,
   })
 
   // Heute nicht gewusst (Heute-Bildschirm): zum ruhigen Durchlesen.
@@ -422,11 +434,11 @@ export default function App({ profilId, onProfilWechseln }) {
     setErklaerthema,
     verwandtschaft,
     onSpeicherfehler: (text) => setMeldung({ art: 'fehler', text }),
-    onSitzungsende: ({ antworten, richtig, minuten }) =>
+    onSitzungsende: ({ antworten, richtig, nichtGewusst, minuten }) =>
       setMeldung({
         art: 'erfolg',
         bleibt: true,
-        text: `Sitzung beendet · ${antworten} ${antworten === 1 ? 'Antwort' : 'Antworten'}, ${richtig} richtig (${Math.round((richtig / antworten) * 100)} %) · ${minuten} min`,
+        text: `Sitzung beendet · ${antworten} ${antworten === 1 ? 'Antwort' : 'Antworten'}, ${richtig} richtig (${Math.round((richtig / antworten) * 100)} %)${nichtGewusst ? ` · ${nichtGewusst} ${nichtGewusst === 1 ? 'Karte' : 'Karten'} nicht gewusst (stehen auf Heute)` : ''} · ${minuten} min`,
       }),
   })
 
@@ -455,12 +467,12 @@ export default function App({ profilId, onProfilWechseln }) {
   // --- Adresse <-> Ansicht (27A) -------------------------------------------
   const verlassenRef = useRef(null)
   verlassenRef.current = verlassen
-  useAdresse(ansicht, setAnsicht, ansichtRef, (ziel) => {
-    setErklaerthema(null)
+  useAdresse(ansicht, setAnsicht, ansichtRef, (ziel, thema) => {
+    if (ansichtRef.current === 'lernen' && ziel !== 'lernen') verlassenRef.current?.()
+    setErklaerthema(thema)
     setLernzettelThema(null)
     setKopfThema(null)
-    if (ansichtRef.current === 'lernen' && ziel !== 'lernen') verlassenRef.current?.()
-  })
+  }, erklaerthema)
 
   async function markeAendern(itemId, aenderung) {
     // Neue Meldung: Fingerabdruck des Paketinhalts dazu - daran erkennt die
@@ -892,7 +904,7 @@ export default function App({ profilId, onProfilWechseln }) {
           }).pensum.length}
           onLernen={() => sitzungStarten('ueben', { themaId: thema.id })}
           onUeben={() => sitzungStarten('marathon', { themaId: thema.id })}
-          onZurueck={() => setErklaerthema(null)}
+          onZurueck={() => themaSchliessen(thema.id, setErklaerthema)}
         />
         </Nachladen>
       </div>
@@ -1002,7 +1014,10 @@ export default function App({ profilId, onProfilWechseln }) {
           // Archivierte Kurse (F9) verschwinden von Heute.
           kurse={kursUebersicht.filter((u) => !u.kurs.archiviert)}
           onKlausurErgebnis={(u, ergebnis, archivieren) => {
-            const { zeit, ...klausur } = u.rueckblick
+            const { zeit, aeltere = [], ...klausur } = u.rueckblick
+            // Aeltere vergangene Klausuren ohne Ergebnis still mit ausblenden,
+            // sonst kaeme nach dem Speichern sofort die naechste Frage.
+            for (const alt of aeltere) kursplanAendern.setzen('klausuren', { ...alt, rueckblickAus: true })
             kursplanAendern.setzen('klausuren', {
               ...klausur,
               ergebnis: ergebnis || undefined,
@@ -1204,7 +1219,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onMeldung={setMeldung}
           onLoeschen={loeschen}
           profilId={profilId}
-          dropboxVerbunden={dropboxMoeglich() && istVerbunden()}
+          dropboxVerbunden={dropboxVerbunden}
           onWiederherstellen={wiederherstellenAus}
           profilName={profilName}
           onProfilWechseln={onProfilWechseln}

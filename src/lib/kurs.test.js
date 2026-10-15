@@ -153,4 +153,15 @@ describe('offenerRueckblick (F9)', () => {
     expect(offenerRueckblick('k', [{ ...klausuren[1], ergebnis: '1,7' }], jetzt)).toBeNull()
     expect(offenerRueckblick('k', [{ ...klausuren[1], rueckblickAus: true }], jetzt)).toBeNull()
   })
+  it('sammelt aeltere offene Klausuren, statt sie nacheinander abzufragen', () => {
+    const klausuren = [
+      { id: 'a', kursId: 'k', datum: '2026-09-01' },
+      { id: 'b', kursId: 'k', datum: '2026-10-10' },
+      { id: 'x', kursId: 'anders', datum: '2026-09-02' },
+    ]
+    const r = offenerRueckblick('k', klausuren, jetzt)
+    expect(r.id).toBe('b')
+    expect(r.aeltere.map((k) => k.id)).toEqual(['a'])
+    expect(r.aeltere[0].zeit).toBeUndefined()
+  })
 })

@@ -40,6 +40,8 @@ export default function Skizzenfeld({ referenz, aufgedeckt, bildRef }) {
     const dpr = window.devicePixelRatio || 1
     const breite = canvas.clientWidth
     const hoehe = canvas.clientHeight
+    // Ausgeblendet (z. B. "Aus dem Kopf" im Schreiben-Modus): Bild behalten.
+    if (!breite || !hoehe) return
     canvas.width = breite * dpr
     canvas.height = hoehe * dpr
     zeichnen()
@@ -73,10 +75,17 @@ export default function Skizzenfeld({ referenz, aufgedeckt, bildRef }) {
     }
   }, [bildRef])
 
+  // ResizeObserver statt nur window-resize: merkt auch, wenn das Feld
+  // aus- und wieder eingeblendet wird.
   useEffect(() => {
     groesseAnpassen()
-    window.addEventListener('resize', groesseAnpassen)
-    return () => window.removeEventListener('resize', groesseAnpassen)
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', groesseAnpassen)
+      return () => window.removeEventListener('resize', groesseAnpassen)
+    }
+    const beobachter = new ResizeObserver(() => groesseAnpassen())
+    if (canvasRef.current) beobachter.observe(canvasRef.current)
+    return () => beobachter.disconnect()
   }, [])
 
   function position(e) {

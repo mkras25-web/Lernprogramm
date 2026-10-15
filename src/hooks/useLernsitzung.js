@@ -59,11 +59,26 @@ export function useLernsitzung({
   const startZeit = useRef(Date.now())
   // Bilanz der laufenden Sitzung fuer die Meldung am Ende (Nutzer-
   // entscheidung 9B: kurze Meldung statt eigener Abschlusskarte).
-  const bilanz = useRef({ antworten: 0, richtig: 0, start: Date.now() })
+  // nochmal: itemId -> Zahl der "Nochmal" in dieser Sitzung (fuer "n Karten
+  // nicht gewusst" in der Schlussmeldung; zaehlt Karten, nicht Antworten).
+  const leereBilanz = () => ({ antworten: 0, richtig: 0, nochmal: {}, start: Date.now() })
+  const bilanz = useRef(leereBilanz())
+  function nochmalZaehlen(itemId, schritt) {
+    const n = (bilanz.current.nochmal[itemId] ?? 0) + schritt
+    if (n > 0) bilanz.current.nochmal[itemId] = n
+    else delete bilanz.current.nochmal[itemId]
+  }
   function bilanzMelden() {
     const b = bilanz.current
-    if (b.antworten > 0) onSitzungsende?.({ ...b, minuten: Math.max(1, Math.round((Date.now() - b.start) / 60000)) })
-    bilanz.current = { antworten: 0, richtig: 0, start: Date.now() }
+    if (b.antworten > 0) {
+      onSitzungsende?.({
+        antworten: b.antworten,
+        richtig: b.richtig,
+        nichtGewusst: Object.keys(b.nochmal).length,
+        minuten: Math.max(1, Math.round((Date.now() - b.start) / 60000)),
+      })
+    }
+    bilanz.current = leereBilanz()
   }
   const sitzungSchluessel = sitzungSchluesselFuer(profilId)
 
@@ -158,7 +173,7 @@ export function useLernsitzung({
     setSitzung(neueSitzung)
     setPosition(0)
     setLetzteXp(0)
-    bilanz.current = { antworten: 0, richtig: 0, start: Date.now() }
+    bilanz.current = leereBilanz()
     setVerlauf([])
     setErklaerthema(null)
     startZeit.current = Date.now()
@@ -176,8 +191,8 @@ export function useLernsitzung({
     }
     const b = offeneSitzung.bilanz
     bilanz.current = b && Number.isFinite(b.antworten)
-      ? { antworten: b.antworten, richtig: b.richtig ?? 0, start: b.start ?? Date.now() }
-      : { antworten: 0, richtig: 0, start: Date.now() }
+      ? { antworten: b.antworten, richtig: b.richtig ?? 0, nochmal: { ...(b.nochmal ?? {}) }, start: b.start ?? Date.now() }
+      : leereBilanz()
     setSitzung({ art: offeneSitzung.art, pensum })
     setPosition(Math.min(offeneSitzung.position, pensum.length - 1))
     setLetzteXp(0)
@@ -265,6 +280,7 @@ export function useLernsitzung({
       setEreignisse((alte) => alte.filter((e) => e.id !== frueher.ereignisId))
       bilanz.current.antworten -= 1
       if (frueher.richtig) bilanz.current.richtig -= 1
+      else nochmalZaehlen(frueher.itemId, -1)
       // Ein frueheres "Nochmal" hatte die Karte ans Ende gehaengt -
       // diesen Stand zuruecknehmen, sonst kaeme sie doppelt.
       sitzungBasis = { ...sitzung, pensum: frueher.pensumVorher }
@@ -306,9 +322,10 @@ export function useLernsitzung({
     const richtig = bewertung !== BEWERTUNG.NOCHMAL
     bilanz.current.antworten += 1
     if (richtig) bilanz.current.richtig += 1
+    else nochmalZaehlen(item.id, 1)
     setVerlauf((alt) => [
       ...alt.filter((v) => v !== frueher).slice(-49),
-      { ereignisId: ereignis.id, position, pensumVorher: sitzungBasis.pensum, richtig },
+      { ereignisId: ereignis.id, itemId: item.id, position, pensumVorher: sitzungBasis.pensum, richtig },
     ])
 
     let zusatz = 0
@@ -335,6 +352,7 @@ export function useLernsitzung({
     await ereignisLoeschen(eintrag.ereignisId)
     bilanz.current.antworten -= 1
     if (eintrag.richtig) bilanz.current.richtig -= 1
+    else nochmalZaehlen(eintrag.itemId, -1)
     setEreignisse((alte) => alte.filter((e) => e.id !== eintrag.ereignisId))
     const pensumWiederhergestellt = eintrag.pensumVorher
     setSitzung((alt) => (alt.pensum.length !== pensumWiederhergestellt.length
@@ -362,7 +380,13 @@ export function useLernsitzung({
   // (fuer "Fortsetzen") bleibt dabei erhalten.
   function verlassen() {
     bilanzMelden()
-    setAnsicht('heute')
+    // "Erst raten" kam von der Themenseite - dorthin zurueck, nicht nach Heute.
+    if (sitzung?.art === 'vorab') {
+      setErklaerthema(sitzung.pensum[0]?.themaId ?? null)
+      setAnsicht('themen')
+    } else {
+      setAnsicht('heute')
+    }
     setSitzung(null)
   }
 

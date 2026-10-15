@@ -21,7 +21,9 @@ export default function Bilder({ themen, items, onKarte, onThema }) {
     const themaVon = new Map(themen.map((t) => [t.id, t]))
     for (const t of themen) {
       if (t.geplant) continue
-      dazu(t, t.erklaerung?.bild ?? t.bild, t.erklaerung?.bildunterschrift ?? t.titel, null)
+      // Eigenes Erklaerbild UND Themenbild - beide, wenn sie verschieden sind.
+      dazu(t, t.erklaerung?.bild, t.erklaerung?.bildunterschrift ?? t.titel, null)
+      dazu(t, t.bild, t.titel, null)
     }
     for (const i of items) {
       const t = themaVon.get(i.themaId)

@@ -13,7 +13,7 @@ export default function Kennwerte({ gruppen = [], themen = [], onThema }) {
     .map((g) => ({
       ...g,
       eintraege: (g.eintraege ?? []).filter(
-        (e) => !wort || [e.name, e.wert, e.einheit, e.hinweis, e.norm, g.titel].join(' ').toLowerCase().includes(wort)
+        (e) => !wort || [e.name, e.wert, e.einheit, e.hinweis, e.norm, quelleText(e.quelle), g.titel].join(' ').toLowerCase().includes(wort)
       ),
     }))
     .filter((g) => g.eintraege.length > 0)
