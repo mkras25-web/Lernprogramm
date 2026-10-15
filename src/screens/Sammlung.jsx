@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
 import LokalBild from '../components/LokalBild.jsx'
 import {
@@ -30,9 +30,33 @@ function stempelTooltip(m) {
 
 // Detailkarten sind kein Zufallsfund, sondern Beleg fuer Beherrschung.
 // Deshalb zeigt auch die verschlossene Karte, wie weit es noch ist.
-export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, reiter, onThemaUeben }) {
+// Neu erreichte Stufen leuchten beim naechsten Oeffnen der Sammlung einmal
+// auf (2026-10-15). Gemerkt wird je Geraet die zuletzt gesehene Stufe; der
+// allererste Aufruf merkt nur, damit nicht alles auf einmal leuchtet.
+const gesehenSchluessel = (profilId) => `meilensteineGesehen_${profilId}`
+function gesehenLesen(profilId) {
+  try {
+    return JSON.parse(localStorage.getItem(gesehenSchluessel(profilId)) ?? 'null')
+  } catch {
+    return null
+  }
+}
+
+export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, reiter, onThemaUeben, profilId }) {
   const [offen, setOffen] = useState(null)
   const [gruppe, setGruppe] = useState('alle')
+  const [gesehen] = useState(() => (profilId ? gesehenLesen(profilId) : null))
+  useEffect(() => {
+    if (!profilId || !meilensteine?.length) return
+    const stand = gesehenLesen(profilId) ?? {}
+    for (const m of meilensteine) stand[m.id] = Math.max(stand[m.id] ?? 0, m.stufe)
+    try {
+      localStorage.setItem(gesehenSchluessel(profilId), JSON.stringify(stand))
+    } catch {
+      /* Speicher voll - dann leuchtet es eben noch einmal */
+    }
+  }, [profilId, meilensteine])
+  const istNeu = (m) => gesehen !== null && m.stufe > (gesehen[m.id] ?? 0)
 
   const frei = karten.filter((k) => k.frei).length
   const alle = meilensteine ?? []
@@ -168,9 +192,10 @@ export default function Sammlung({ karten, meilensteine, xpMeilensteine = 0, rei
           {gefiltert.map((m) => (
             <li key={m.id}>
               <div
-                className={`stempel g-${m.gruppe} ${m.frei ? `frei stufe-${m.stufe}` : 'offen'}`}
+                className={`stempel g-${m.gruppe} ${m.frei ? `frei stufe-${m.stufe}` : 'offen'}${istNeu(m) ? ' neu' : ''}`}
                 title={stempelTooltip(m)}
               >
+                {istNeu(m) && <span className="stempelNeuMarke">Neu</span>}
                 <span className="stempelRand" aria-hidden="true" />
                 <span className="stempelZeichen" aria-hidden="true">
                   {MEILENSTEIN_SYMBOLE[m.gruppe] ?? '★︎'}

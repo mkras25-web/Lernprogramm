@@ -1136,6 +1136,7 @@ export default function App({ profilId, onProfilWechseln }) {
           karten={karten}
           meilensteine={meilensteine}
           xpMeilensteine={xpMeilensteine}
+          profilId={profilId}
           reiter={<AuswertungReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
           onThemaUeben={(themaId) => sitzungStarten('ueben', { themaId })}
         />

@@ -122,6 +122,7 @@ export function useKennzahlen({
       moduleBegonnen: module.filter((m) => m.begonnen > 0).length,
       gesichtet: [...marken.values()].filter((m) => m.kategorie).length,
       notizen: [...marken.values()].filter((m) => m.notiz).length,
+      lesezeichen: [...marken.values()].filter((m) => m.lesezeichen).length,
       meldungen: [...marken.values()].filter((m) => m.meldung || m.einspruch).length,
       sicherungen: opt.letzteSicherung ? 1 : 0,
     }, gestaltung, umfang)

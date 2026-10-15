@@ -486,6 +486,8 @@ export const MEILENSTEINE = [
   { id: 'ms-pruefung-sehrgut', gruppe: 'pruefung', titel: 'Sehr gut geschrieben', feld: 'pruefungenSehrGut', ziel: 1 },
   { id: 'ms-volle-punktzahl', gruppe: 'pruefung', titel: 'Volle Punktzahl', feld: 'pruefungenVoll', ziele: [1, 2, 3, 5, 10, 15, 25] },
   { id: 'ms-breit-geprueft', gruppe: 'pruefung', titel: 'Breit geprüft', feld: 'themenGeprueft', ziel: 3, deckel: 'themen' },
+  // 2026-10-15: bestandene Monatspruefungen (Pruefungen speichern "art").
+  { id: 'ms-monatspruefung', gruppe: 'pruefung', titel: 'Monatsprüfungen bestanden', feld: 'monatBestanden', ziele: [1, 2, 3, 6, 12, 24, 36] },
 
   // Beherrschung
   { id: 'ms-sicher-50', gruppe: 'beherrschung', titel: 'Fünfzig Items sicher', feld: 'sicher', ziel: 50, deckel: 'items' },
@@ -505,6 +507,8 @@ export const MEILENSTEINE = [
   { id: 'ms-gesichtet-200', gruppe: 'ordnung', titel: 'Zweihundert gesichtet', feld: 'gesichtet', ziel: 200, deckel: 'items' },
   { id: 'ms-notizen-10', gruppe: 'ordnung', titel: 'Zehn eigene Notizen', feld: 'notizen', ziel: 10, deckel: 'items' },
   { id: 'ms-qualitaet', gruppe: 'ordnung', titel: 'Qualitätsprüfer', feld: 'meldungen', ziel: 5, deckel: 'items' },
+  // 2026-10-15: Lesezeichen in Mein Heft.
+  { id: 'ms-lesezeichen', gruppe: 'ordnung', titel: 'Lesezeichen-Sammler', feld: 'lesezeichen', ziele: [10, 25, 50, 100, 200, 400, 800], deckel: 'items' },
   // Kann nur 0 oder 1 sein - als Vielfache gerechnet hiesse Diamant
   // "100 von 1".
   { id: 'ms-gesichert', gruppe: 'ordnung', titel: 'Fortschritt gesichert', feld: 'sicherungen', ziele: [1] },
@@ -640,6 +644,7 @@ export function meilensteinWerte(ereignisse, items, zustaende, pruefungen = []) 
     pruefungenGut: pruefungen.filter((p) => (p.prozent ?? 0) >= 81).length,
     pruefungenSehrGut: pruefungen.filter((p) => (p.prozent ?? 0) >= 92).length,
     pruefungenVoll: pruefungen.filter((p) => (p.prozent ?? 0) >= 100).length,
+    monatBestanden: pruefungen.filter((p) => p.art === 'monat' && p.bestanden).length,
   }
 }
 

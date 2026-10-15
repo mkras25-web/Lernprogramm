@@ -109,6 +109,7 @@ export async function profilLoeschen(id) {
   schreiben(liste)
   localStorage.removeItem(`einstellungen_${id}`)
   localStorage.removeItem(`einstellungen_stand_${id}`)
+  localStorage.removeItem(`meilensteineGesehen_${id}`)
   localStorage.removeItem(`offeneSitzung_${id}`)
   localStorage.removeItem(`offenePruefung_${id}`)
   localStorage.removeItem(`geloescht_${id}`)

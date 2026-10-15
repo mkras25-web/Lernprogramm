@@ -778,12 +778,52 @@ function kennungAus(text) {
 function Kursliste({ kurse, kennungen, aendern, klausuren = [] }) {
   const [titel, setTitel] = useState('')
   const [kennung, setKennung] = useState('')
+  // Kurs nachtraeglich umbenennen / Kennung aendern (2026-10-15): gleiche
+  // Kurs-Id, darum bleiben alle Fragenzuordnungen erhalten.
+  const [bearbeitet, setBearbeitet] = useState(null) // { id, titel, kennung }
   const bekannt = [...kennungen.entries()]
   return (
     <div className="klausurtermine">
       {kurse.length > 0 && (
         <ul className="klausurListe">
-          {[...kurse].sort((a, b) => a.titel.localeCompare(b.titel)).map((k) => (
+          {[...kurse].sort((a, b) => a.titel.localeCompare(b.titel)).map((k) => bearbeitet?.id === k.id ? (
+            <li key={k.id}>
+              <form
+                className="klausurNeu"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  if (!bearbeitet.titel.trim()) return
+                  aendern.setzen('kurse', {
+                    ...k,
+                    titel: bearbeitet.titel.trim(),
+                    kennung: kennungAus(bearbeitet.kennung) || undefined,
+                  })
+                  setBearbeitet(null)
+                }}
+              >
+                <input
+                  className="suchfeld"
+                  aria-label="Kurstitel"
+                  value={bearbeitet.titel}
+                  onChange={(e) => setBearbeitet({ ...bearbeitet, titel: e.target.value })}
+                />
+                <input
+                  className="suchfeld"
+                  aria-label="Kennung"
+                  value={bearbeitet.kennung}
+                  onChange={(e) => setBearbeitet({ ...bearbeitet, kennung: e.target.value })}
+                  placeholder="Kennung, z. B. baurecht-ws26"
+                  list="kursKennungen"
+                />
+                <button className="knopf schmal" type="submit" disabled={!bearbeitet.titel.trim()}>Speichern</button>
+                <button className="textknopf" type="button" onClick={() => setBearbeitet(null)}>abbrechen</button>
+              </form>
+              <span className="zeileHinweis">
+                Zugeordnete Fragen bleiben beim Kurs. Eine neue Kennung ändert nur, welche Vorschläge
+                aus dem Inhalt angeboten werden.
+              </span>
+            </li>
+          ) : (
             <li key={k.id}>
               <span>{k.titel}{k.archiviert && ' (archiviert)'}</span>
               <span className="zeileHinweis">
@@ -805,6 +845,9 @@ function Kursliste({ kurse, kennungen, aendern, klausuren = [] }) {
                   archivieren
                 </button>
               )}
+              <button className="textknopf" onClick={() => setBearbeitet({ id: k.id, titel: k.titel, kennung: k.kennung ?? '' })}>
+                ändern
+              </button>
               <button className="textknopf" onClick={() => aendern.loeschen('kurse', k.id)}>
                 entfernen
               </button>

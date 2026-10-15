@@ -2686,6 +2686,27 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 .stempel.stufe-7 { --stufe-a: #eafcff; --stufe-b: #a6e8ef; --stufe-rand: #4fb8c4; --stufe-text: #123840; border-width: 3px; box-shadow: 0 0 16px color-mix(in srgb, var(--stufe-rand) 60%, transparent),
               inset 0 0 10px rgba(255, 255, 255, 0.6); }
 
+/* Neu erreichte Stufe (2026-10-15): leuchtet beim ersten Oeffnen der
+   Sammlung danach, mit Text-Marke (nicht nur Farbe). */
+.stempelwand .stempel.neu {
+  box-shadow: 0 0 0 3px var(--akzent), 0 0 18px color-mix(in srgb, var(--akzent) 55%, transparent);
+  animation: stempelNeu 1.4s ease-in-out 3;
+}
+@keyframes stempelNeu {
+  50% { box-shadow: 0 0 0 3px var(--akzent), 0 0 30px color-mix(in srgb, var(--akzent) 80%, transparent); }
+}
+.stempelNeuMarke {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  z-index: 2;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: var(--akzent);
+  color: var(--papier);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
 .stempel.frei {
   background: linear-gradient(135deg, var(--stufe-a), var(--stufe-b));
   border: 1px solid var(--stufe-rand);
