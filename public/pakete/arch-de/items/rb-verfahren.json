@@ -7,23 +7,24 @@
    "Hessen kennt vier Stufen. Kleine Vorhaben nach der Anlage zu § 63, etwa Gartenhäuser bis 30 m³ oder Einfriedungen bis 2 m, sind verfahrensfrei. Vorhaben im Geltungsbereich eines qualifizierten Bebauungsplans, die keine Ausnahme, Befreiung oder Abweichung brauchen, werden freigestellt (§ 64); gebaut werden darf, wenn die Gemeinde nicht binnen eines Monats ein Verfahren verlangt. Das Baupaket I hat die Freistellung bis 2030 auf Wohngebäude im Innenbereich nach § 34 BauGB erweitert (§ 64a).",
    "Alle übrigen Vorhaben, die keine Sonderbauten sind, laufen im vereinfachten Verfahren (§ 65): Geprüft werden das Bauplanungsrecht, beantragte Abweichungen und ersetzte Fachentscheidungen, und nach drei Monaten gilt die Genehmigung als erteilt. Sonderbauten wie Hochhäuser oder Versammlungsstätten durchlaufen das Baugenehmigungsverfahren mit vollem Prüfumfang (§ 66). Die Bauherrschaft kann stets das höhere Verfahren verlangen. Wichtig: Was nicht geprüft wird, gilt trotzdem.",
    "Die Baugenehmigung stellt fest, dass das Vorhaben dem geprüften Recht entspricht, gibt den Bau frei und verleiht Bestandsschutz. Sie ist sachbezogen, wirkt für Rechtsnachfolger und ergeht unbeschadet privater Rechte Dritter. Sie kann Auflagen, Bedingungen und Befristungen enthalten. Vorab lassen sich einzelne Fragen per Bauvorbescheid für drei Jahre verbindlich klären; eine Teilbaugenehmigung erlaubt den frühen Beginn mit Baugrube oder Bauabschnitten.",
-   "Wer ohne erforderliche Genehmigung baut, handelt formell illegal; wer gegen materielles Recht verstößt, materiell illegal. Für das Stoppen der Arbeiten genügt die formelle Illegalität, für den Abriss braucht es grundsätzlich beides – und auch dann nur, wenn rechtmäßige Zustände nicht auf andere Weise herstellbar sind. Häufige Verwechslung: Freistellung heißt nicht Genehmigung. Wer freigestellt baut, hat keinen Bescheid, der ihn schützt."
+   "Wer ohne erforderliche Genehmigung baut, handelt formell illegal; wer gegen materielles Recht verstößt, materiell illegal. Für das Stoppen der Arbeiten genügt die formelle Illegalität, für den Abriss braucht es grundsätzlich beides – und auch dann nur, wenn rechtmäßige Zustände nicht auf andere Weise herstellbar sind. Häufige Verwechslung: Freistellung heißt nicht Genehmigung. Wer freigestellt baut, hat keinen Bescheid, der ihn schützt. Auch der Abriss steht im Ermessen der Behörde und ist an Verhältnismäßigkeit und Gleichbehandlung gebunden. Ein Schwarzbau, der zu irgendeinem Zeitpunkt materiell rechtmäßig war, genießt sogar Bestandsschutz; eine bloße Duldung dagegen macht ihn nicht legal."
   ],
   "merksatz": "Je höher die Verfahrensstufe, desto mehr prüft die Behörde – doch das materielle Recht gilt auf jeder Stufe, auch ganz ohne Verfahren.",
   "bild": "bilder/rb-vf-stufen.svg",
   "bildunterschrift": "Die vier Verfahrensstufen der HBO vom verfahrensfreien Gartenhaus bis zum Sonderbau.",
-  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 534–584, S. 191–207; Rn. 592–600, S. 208–211; Kontrollfragen S. 217; §§ 62–82 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Anlage zu § 63 HBO, Fassung ab 14.10.2025 (Abdruck der Gemeinde Biblis)"
+  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 534–584, S. 191–207; Rn. 592–611, S. 208–215; Kontrollfragen S. 216–219; §§ 62–82 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Anlage zu § 63 HBO, Fassung ab 14.10.2025 (Abdruck der Gemeinde Biblis)"
  },
  "lernziele": [
   "Du kannst die vier Verfahrensstufen der HBO nennen und für ein Vorhaben das richtige Verfahren bestimmen.",
   "Du kennst Voraussetzungen, Ablauf und Fristen von Freistellung und vereinfachtem Verfahren.",
   "Du kannst Wirkungen, Nebenbestimmungen und Geltungsdauer der Baugenehmigung sowie Vorbescheid und Teilbaugenehmigung erklären.",
-  "Du kannst formelle und materielle Illegalität unterscheiden und die passende Maßnahme der Bauaufsicht zuordnen."
+  "Du kannst formelle und materielle Illegalität unterscheiden, die passende Maßnahme der Bauaufsicht zuordnen und begründen, wann ein Schwarzbau trotzdem bleiben darf."
  ],
  "siehe": [
   "rb-bauleitplanung",
   "rb-34-35",
-  "rb-abstandsflaechen"
+  "rb-abstandsflaechen",
+  "rb-nachbarrecht"
  ],
  "items": [
   {
@@ -773,6 +774,149 @@
     "prüfschema"
    ],
    "quelle": "§§ 62–66 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-034",
+   "typ": "fall",
+   "frage": "Herr S. hat 2015 ohne Bauantrag eine Doppelgarage an der Grundstücksgrenze errichtet. Nach dem damals geltenden Bebauungsplan wäre sie genehmigungsfähig gewesen. 2021 ändert die Gemeinde den Plan; seither ist an dieser Stelle keine Garage mehr zulässig. 2026 entdeckt die Bauaufsicht den Bau.",
+   "teile": [
+    {
+     "frage": "Ist die Garage heute formell und materiell illegal?",
+     "antwort": "Formell ja, weil die erforderliche Genehmigung fehlt. Materiell ebenfalls, denn nach dem geänderten Bebauungsplan ist sie heute unzulässig."
+    },
+    {
+     "frage": "Darf die Bauaufsicht ihren Abriss anordnen?",
+     "antwort": "In der Regel nicht. Weil das Bauwerk zu einem früheren Zeitpunkt mit dem materiellen Recht übereinstimmte, genießt es mit Rücksicht auf die Eigentumsgarantie Bestandsschutz. Die zwischenzeitliche Legalität muss für einen gewissen Mindestzeitraum bestanden haben, etwa so lange, wie die Bearbeitung eines entsprechenden Bauantrags gedauert hätte."
+    },
+    {
+     "frage": "Wer muss beweisen, dass die Garage damals zulässig war?",
+     "antwort": "Herr S. Für die zwischenzeitliche materielle Legalität trägt der Eigentümer die materielle Beweislast."
+    },
+    {
+     "frage": "Kann Herr S. jetzt nachträglich eine Baugenehmigung verlangen?",
+     "antwort": "Nein. Eine Genehmigung würde der heutigen Rechtslage widersprechen. Bei berechtigtem Interesse, etwa beim Verkauf, kann er aber verlangen, dass die Behörde den Bestandsschutz durch Verwaltungsakt feststellt."
+    }
+   ],
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Die Garage ist heute formell und materiell illegal, darf aber trotzdem stehen bleiben: Sie war zwischenzeitlich materiell rechtmäßig und genießt deshalb Bestandsschutz. Herr S. muss das beweisen. Eine nachträgliche Genehmigung bekommt er nicht, wohl aber auf Antrag eine Feststellung des Bestandsschutzes.",
+   "vertiefung": "Battis weist auf den Wertungswiderspruch hin: Wer vor einer Rechtsänderung ohne Genehmigung baut, wird geschützt, während der Bauherr leer ausgeht, dessen ordnungsgemäß gestellter Antrag wegen der Rechtsänderung während der Bearbeitung abgelehnt wird. Wer gezielt in Kenntnis der anstehenden Änderung „hochzieht“, handelt deshalb rechtsmissbräuchlich und verdient keinen Vertrauensschutz. Bestandsschutz entsteht außerdem, wenn ein Schwarzbau nach einer Abrissverfügung während des Gerichtsverfahrens legalisiert wird.",
+   "tags": [
+    "bestandsschutz",
+    "schwarzbau",
+    "beseitigungsanordnung",
+    "fallaufgabe"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 601–602, S. 211–212; Rn. 605, S. 213",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-035",
+   "typ": "mehrfachauswahl",
+   "frage": "Ein Wochenendhaus ist formell und materiell illegal. Welche Aussagen zur Abrissverfügung treffen zu?",
+   "optionen": [
+    "Die Behörde ist verpflichtet, den Abriss anzuordnen.",
+    "Hohe Abrisskosten sind keine rechtliche Schranke für das Ermessen.",
+    "Der Eigentümer kann sich darauf berufen, dass die Behörde andernorts einen Schwarzbau geduldet hat.",
+    "Ermessensfehlerhaft ist es, nur gegen einzelne Anlagen vorzugehen, gegen vergleichbare andere aber nicht.",
+    "Die Behörde muss alle Grundstücke ihres Bezirks regelmäßig auf Schwarzbauten überprüfen, bevor sie einschreitet.",
+    "Statt des Gesamtabbruchs kann ein Teilabbruch oder ein Nutzungsverbot das mildere, gebotene Mittel sein."
+   ],
+   "richtig": [
+    1,
+    3,
+    5
+   ],
+   "warum": [
+    "Falsch: Der Abriss steht im Ermessen; die Rechtsprechung nimmt aber ein intendiertes Ermessen an.",
+    "Richtig: Die Kosten der Beseitigung begrenzen das Ermessen nicht.",
+    "Falsch: Es gibt keinen Anspruch auf Gleichbehandlung im Unrecht.",
+    "Richtig: Das verstößt gegen den Gleichheitssatz.",
+    "Falsch: Eine flächendeckende Überprüfung verlangt der Gleichheitssatz nicht.",
+    "Richtig: Der Gesamtabbruch statt eines ausreichenden milderen Mittels ist ein typischer Verhältnismäßigkeitsverstoß."
+   ],
+   "siehe": [
+    "rb-nachbarrecht"
+   ],
+   "antwort": "Die Behörde entscheidet nach Ermessen, nicht zwingend. Begrenzt wird es durch Verhältnismäßigkeit, Gleichheitssatz und Rechte Dritter: Sie darf nicht willkürlich nur einzelne von vergleichbaren Anlagen herausgreifen und muss mildere Mittel wie Teilabbruch oder Nutzungsverbot erwägen. Hohe Kosten hindern den Abriss nicht, und aus einer Duldung anderswo folgt kein Anspruch auf Gleichbehandlung im Unrecht.",
+   "vertiefung": "Weitere typische Fehler sind eine übersehene, sich abzeichnende Legalisierung oder die nicht erwogene Möglichkeit, den Mangel durch Nebenbestimmung, Ausnahme oder Befreiung zu beheben. Ermessensfehlerfrei ist es dagegen, einzuschreiten, um Präzedenzfälle zu vermeiden, oder vor weiteren Verfügungen einen Musterprozess abzuwarten. Hohes Alter oder schwere Krankheit können dazu führen, dass die Vollstreckung ausgesetzt wird. Verletzt der Bau nachbarschützende Normen erheblich, hat der Nachbar in der Regel einen Anspruch auf die Abrissverfügung.",
+   "tags": [
+    "beseitigungsanordnung",
+    "ermessen",
+    "verhältnismäßigkeit"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 606, S. 213; Rn. 608, S. 214–215; Kontrollfrage 16, S. 219",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-036",
+   "typ": "karte",
+   "frage": "Die Bauaufsicht weiß seit Jahren von einem Schwarzbau und unternimmt nichts. Ist der Bau damit legal?",
+   "antwort": "Nein. Die Duldung ist keine Genehmigung und schafft keine formelle Legalität. Sie bedeutet nur, dass die Behörde ihr Ermessen im Einzelfall – rechtmäßig oder rechtswidrig – dahin ausübt, jetzt nicht einzuschreiten. Sie kann ihre Haltung überprüfen und nach fehlerfreier Ermessensausübung doch noch vorgehen.",
+   "vertiefung": "Die bloß passive Duldung kann stillschweigend oder formlos ausgesprochen werden. Fließend ist die Grenze zur aktiven Duldung, etwa durch feststellenden Verwaltungsakt, gerichtlichen Vergleich oder öffentlich-rechtlichen Vertrag. Bloßes Unterlassen führt nur unter besonderen Umständen zur Verwirkung des Abrissverlangens. Duldet die Behörde illegale Wochenendhäuser in einem Gebiet, darf sie wegen einer späteren Funktionsverbesserung nicht den Abbruch verlangen, sondern nur die Rückgängigmachung der Verbesserung.",
+   "tags": [
+    "duldung",
+    "schwarzbau",
+    "bauaufsicht"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 607, S. 213–214; Kontrollfrage 17, S. 219",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-037",
+   "typ": "fall",
+   "frage": "Im Außenbereich einer Gemeinde ist über Jahrzehnte eine „wilde“ Wochenendhaussiedlung mit rund 40 ungenehmigten Häusern entstanden. Die Bauaufsicht will aufräumen und erlässt zunächst gegen das Haus von Frau R. eine Abrissverfügung.",
+   "teile": [
+    {
+     "frage": "Frau R. wendet ein, die übrigen Häuser blieben ja auch stehen. Hat sie damit Erfolg?",
+     "antwort": "Möglicherweise. Einen Anspruch auf Gleichbehandlung im Unrecht hat sie zwar nicht. Geht die Behörde aber nur gegen einzelne Anlagen vor und lässt vergleichbare andere unbehelligt, ist die Verfügung ermessensfehlerhaft."
+    },
+    {
+     "frage": "Wie muss die Behörde vorgehen, um das ganze Gebiet zu bereinigen?",
+     "antwort": "Der Gleichheitssatz verlangt, dass eine solche „Generalbereinigung“ entweder in zeitlich nah aufeinanderfolgenden Schritten oder nach einem der Sache entsprechenden Konzept durchgeführt wird, etwa nach dem Alter oder der Schwere der Verstöße."
+    },
+    {
+     "frage": "Darf sie mit den übrigen Verfügungen warten, bis über den Fall von Frau R. entschieden ist?",
+     "antwort": "Ja. Es kann ermessensfehlerfrei sein, vor weiteren Abbruchverfügungen einen Musterprozess abzuwarten."
+    },
+    {
+     "frage": "Frau R. ist 87 Jahre alt und schwer krank. Spielt das eine Rolle?",
+     "antwort": "Es macht die Verfügung nicht rechtswidrig, kann aber dazu führen, dass ihre Vollstreckung ausgesetzt wird."
+    }
+   ],
+   "siehe": [
+    "rb-34-35"
+   ],
+   "antwort": "Die Behörde darf eine Siedlung aus Schwarzbauten bereinigen, aber nicht willkürlich einzelne Häuser herausgreifen: Sie braucht ein schlüssiges Konzept oder ein zügiges, schrittweises Vorgehen. Ein Musterprozess darf abgewartet werden; persönliche Härten wirken sich bei der Vollstreckung aus.",
+   "vertiefung": "Der Fall zeigt, wie der Gleichheitssatz das Ermessen bindet, ohne einen Anspruch auf Gleichbehandlung im Unrecht zu begründen: Frau R. kann nicht verlangen, dass ihr Haus stehen bleibt, weil andere stehen – wohl aber, dass die Behörde alle vergleichbaren Fälle nach demselben Maßstab behandelt.",
+   "tags": [
+    "beseitigungsanordnung",
+    "gleichheitssatz",
+    "generalbereinigung",
+    "fallaufgabe"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 606, S. 213",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-vf-038",
+   "typ": "karte",
+   "frage": "Gegen wen richtet sich eine Abrissverfügung, und was gilt, wenn das Grundstück verkauft wird?",
+   "antwort": "Adressat ist nach allgemeinem Ordnungsrecht der Handlungs- oder Zustandsstörer, meist der Bauherr, der nicht zugleich Eigentümer sein muss. Bei mehreren Störern wählt die Behörde nach Ermessen aus. Eine Nutzungsuntersagung für vermietete Räume richtet sich in erster Linie an den Mieter. Baugenehmigungen wie Beseitigungsanordnungen sind sachbezogen: Die Bauordnungen lassen sie auch für und gegen Rechtsnachfolger gelten.",
+   "vertiefung": "Das weicht vom allgemeinen Polizei- und Ordnungsrecht ab, das grundsätzlich von der Höchstpersönlichkeit der Polizeipflicht ausgeht. Nach dem Eigentümerwechsel wirkt die Beseitigungsanordnung allerdings nicht mehr gegen den Alteigentümer. Bei mehreren Miteigentümern kann die Behörde etwa gegen den einen eine Abriss- und gegen den anderen eine Duldungsverfügung erlassen.",
+   "tags": [
+    "beseitigungsanordnung",
+    "rechtsnachfolge",
+    "störer"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 609–611, S. 215; Kontrollfrage 18, S. 219",
    "stand": "2026-10",
    "geprueft": true
   }
