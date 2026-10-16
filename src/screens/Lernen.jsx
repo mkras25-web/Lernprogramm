@@ -64,9 +64,10 @@ export default function Lernen({
   const [meldenOffen, setMeldenOffen] = useState(false)
   // Ungepruefte Karte selbst geprueft (P8)
   const [freigabeOffen, setFreigabeOffen] = useState(false)
-  // Beim zweiten Versuch ist die Erklaerung gleich offen: verstehen statt
-  // nur nochmal raten (Nutzerentscheidung 2026-10-12).
-  const [erklaerungOffen, setErklaerungOffen] = useState(zweiterVersuch)
+  // Erklaerung immer zugeklappt, auch beim zweiten Versuch. Bis 2026-10-16
+  // war sie dort automatisch offen (Entscheidung 2026-10-12) - auf Wunsch
+  // zurueckgenommen: der Knopf bleibt sichtbar, geoeffnet wird von Hand.
+  const [erklaerungOffen, setErklaerungOffen] = useState(false)
   const [hilfeGenutzt, setHilfeGenutzt] = useState(false)
   // Abgehakte Pruefpunkte (L3): steuern den Bewertungsvorschlag.
   const [gehakt, setGehakt] = useState([])
@@ -85,13 +86,12 @@ export default function Lernen({
     setNotizOffen(false)
     setMeldenOffen(false)
     setFreigabeOffen(false)
-    setErklaerungOffen(zweiterVersuch)
+    setErklaerungOffen(false)
     setHilfeGenutzt(false)
     setGehakt([])
     setWarumOffen(false)
     setErklaerbildOffen(false)
     setEingefuehrt(false)
-    // zweiterVersuch haengt nur an item/position
   }, [item.id, position])
 
   // Automatische Bewertung, wo die App die Antwort kennt.

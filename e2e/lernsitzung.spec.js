@@ -124,8 +124,19 @@ test('Zweimal Nochmal: Karte kommt in derselben Sitzung nicht ein drittes Mal', 
     await expect.poll(() => stand(page)).toMatch(new RegExp(`^${i + 1} von`))
   }
   await expect(page.locator('.frage')).toHaveText(frage)
+  // Zweiter Versuch: Erklaerung nur auf Knopfdruck (seit 2026-10-16 nicht mehr
+  // automatisch aufgeklappt) - der Knopf steht schon vor dem Aufdecken bereit
+  const erklaerKnopf = page.locator('.erklaerkasten > .textknopf')
+  if (await erklaerKnopf.count()) {
+    await expect(erklaerKnopf).toHaveText('Erklärung zum Thema zeigen')
+    await expect(page.locator('.erklaerkasten .erklaerungText')).toHaveCount(0)
+    await erklaerKnopf.click()
+    await expect(page.locator('.erklaerkasten .erklaerungText')).toBeVisible()
+    await erklaerKnopf.click()
+  }
   await page.locator('button', { hasText: 'Antwort zeigen' }).click()
   await expect(page.locator('.urteilZeile', { hasText: 'Zweiter Versuch' })).toBeVisible()
+  await expect(page.locator('.erklaerkasten .erklaerungText')).toHaveCount(0)
   await page.keyboard.press('1')
   // Sitzung endet, statt die Karte erneut anzuhaengen
   await expect(page.locator('.lernkopf')).toHaveCount(0)
