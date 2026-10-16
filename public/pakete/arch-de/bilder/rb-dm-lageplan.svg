@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="640" fill="#f0ead2"/>
+<text x="400" y="52" font-size="22" font-weight="bold" text-anchor="middle" fill="#414833">Denkmalschutz im Lageplan</text>
+<rect x="50" y="110" width="440" height="180" rx="14" fill="#f7f3e4" stroke="#414833" stroke-width="2.5" stroke-dasharray="12 7"/>
+<rect x="80" y="165" width="75" height="100" fill="#f0ead2" stroke="#6c584c" stroke-width="2"/>
+<line x1="80" y1="215" x2="155" y2="215" stroke="#6c584c" stroke-width="1.2"/>
+<rect x="175" y="165" width="75" height="100" fill="#f0ead2" stroke="#6c584c" stroke-width="2"/>
+<line x1="175" y1="215" x2="250" y2="215" stroke="#6c584c" stroke-width="1.2"/>
+<rect x="270" y="165" width="75" height="100" fill="#f0ead2" stroke="#6c584c" stroke-width="2"/>
+<line x1="270" y1="215" x2="345" y2="215" stroke="#6c584c" stroke-width="1.2"/>
+<rect x="365" y="165" width="75" height="100" fill="#f0ead2" stroke="#6c584c" stroke-width="2"/>
+<line x1="365" y1="215" x2="440" y2="215" stroke="#6c584c" stroke-width="1.2"/>
+<rect x="0" y="300" width="800" height="45" fill="#d9d2b4"/>
+<text x="790" y="328" font-size="14" text-anchor="end" fill="#6c584c">Ortsstraße</text>
+<rect x="60" y="390" width="240" height="110" rx="10" fill="#dde5b6" stroke="#6c584c" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="85" y="410" width="60" height="35" fill="none" stroke="#a98467" stroke-width="3"/>
+<rect x="165" y="455" width="70" height="30" fill="none" stroke="#a98467" stroke-width="3"/>
+<rect x="250" y="405" width="30" height="55" fill="none" stroke="#a98467" stroke-width="3"/>
+<circle cx="575" cy="425" r="110" fill="none" stroke="#6c584c" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+<rect x="540" y="385" width="100" height="80" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<rect x="505" y="400" width="35" height="50" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<line x1="540" y1="425" x2="640" y2="425" stroke="#414833" stroke-width="1.2"/>
+<rect x="655" y="445" width="90" height="70" fill="#adc178" stroke="#414833" stroke-width="2" stroke-dasharray="8 4"/>
+<circle cx="590" cy="405" r="14" fill="#414833"/><text x="590" y="410" font-size="15" font-weight="bold" text-anchor="middle" fill="#f0ead2">1</text>
+<circle cx="265" cy="110" r="14" fill="#414833"/><text x="265" y="115" font-size="15" font-weight="bold" text-anchor="middle" fill="#f0ead2">2</text>
+<circle cx="402" cy="190" r="14" fill="#414833"/><text x="402" y="195" font-size="15" font-weight="bold" text-anchor="middle" fill="#f0ead2">3</text>
+<circle cx="465" cy="425" r="14" fill="#414833"/><text x="465" y="430" font-size="15" font-weight="bold" text-anchor="middle" fill="#f0ead2">4</text>
+<circle cx="700" cy="480" r="14" fill="#414833"/><text x="700" y="485" font-size="15" font-weight="bold" text-anchor="middle" fill="#f0ead2">5</text>
+<circle cx="180" cy="445" r="14" fill="#414833"/><text x="180" y="450" font-size="15" font-weight="bold" text-anchor="middle" fill="#f0ead2">6</text>
+<circle cx="52" cy="555" r="11" fill="#414833"/><text x="52" y="560" font-size="13" font-weight="bold" text-anchor="middle" fill="#f0ead2">1</text>
+<text x="72" y="560" font-size="15" fill="#414833">Einzelkulturdenkmal (Kirche)</text>
+<circle cx="52" cy="583" r="11" fill="#414833"/><text x="52" y="588" font-size="13" font-weight="bold" text-anchor="middle" fill="#f0ead2">2</text>
+<text x="72" y="588" font-size="15" fill="#414833">Gesamtanlage (§ 2 Abs. 3 HDSchG)</text>
+<circle cx="52" cy="611" r="11" fill="#414833"/><text x="52" y="616" font-size="13" font-weight="bold" text-anchor="middle" fill="#f0ead2">3</text>
+<text x="72" y="616" font-size="15" fill="#414833">Gebäude ohne eigenen Denkmalwert</text>
+<circle cx="432" cy="555" r="11" fill="#414833"/><text x="432" y="560" font-size="13" font-weight="bold" text-anchor="middle" fill="#f0ead2">4</text>
+<text x="452" y="560" font-size="15" fill="#414833">Umgebung des Kulturdenkmals</text>
+<circle cx="432" cy="583" r="11" fill="#414833"/><text x="432" y="588" font-size="13" font-weight="bold" text-anchor="middle" fill="#f0ead2">5</text>
+<text x="452" y="588" font-size="15" fill="#414833">Neubau in der Umgebung (§ 18 Abs. 2)</text>
+<circle cx="432" cy="611" r="11" fill="#414833"/><text x="432" y="616" font-size="13" font-weight="bold" text-anchor="middle" fill="#f0ead2">6</text>
+<text x="452" y="616" font-size="15" fill="#414833">Bodendenkmal (§ 2 Abs. 2 HDSchG)</text>
+</svg>

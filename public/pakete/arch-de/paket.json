@@ -557,7 +557,9 @@
         },
         {
           "id": "rb-denkmal",
-          "titel": "Denkmalschutz"
+          "titel": "Denkmalschutz",
+          "datei": "items/rb-denkmal.json",
+          "bild": "bilder/rb-dm-lageplan.svg"
         },
         {
           "id": "rb-nachbarrecht",

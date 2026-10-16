@@ -1,0 +1,677 @@
+{
+ "thema": "rb-denkmal",
+ "titel": "Denkmalschutz",
+ "erklaerung": {
+  "absaetze": [
+   "Denkmalschutz ist Landesfachrecht. Er tritt neben das Bauplanungs- und das Bauordnungsrecht und leistet, was beide nicht können: Er schützt die Substanz selbst. Der Bebauungsplan nimmt Denkmäler nur nachrichtlich auf und wägt den städtebaulichen Denkmalschutz als einen Belang unter vielen ab; die Bauordnung wehrt Gefahren ab, kann aber keinen Bestand erzwingen. In Hessen gilt das Hessische Denkmalschutzgesetz (HDSchG).",
+   "Kulturdenkmal ist, woran aus künstlerischen, wissenschaftlichen, technischen, geschichtlichen oder städtebaulichen Gründen ein öffentliches Erhaltungsinteresse besteht – Gebäude, Teile davon, Grünanlagen. Dazu kommen Bodendenkmäler im Boden und Gesamtanlagen, die als Ganzes geschützt sind, auch wenn nicht jedes Haus darin Denkmal ist. Hessen arbeitet nachrichtlich: Ein unbewegliches Denkmal ist kraft Gesetzes geschützt, der Eintrag ins Denkmalverzeichnis informiert nur.",
+   "Genehmigungspflichtig ist fast jeder Eingriff: Zerstören, Versetzen, Umgestalten, Instandsetzen und Werbeanlagen am Denkmal, dazu Vorhaben in seiner Umgebung, die Bestand oder Erscheinungsbild beeinflussen können. Eine Baugenehmigung schließt die Denkmalgenehmigung ein; ist ein Vorhaben baugenehmigungsfrei, ist sie gesondert zu beantragen. Auf die Genehmigung besteht ein Anspruch, wenn Gründe des Denkmalschutzes nicht entgegenstehen oder die Versagung unzumutbar wäre; entscheidet die Behörde nicht binnen der Frist, gilt sie als erteilt.",
+   "Der Eigentümer muss das Denkmal im Rahmen des Zumutbaren erhalten. Die untere Denkmalschutzbehörde kann Erhaltung anordnen, nach ungenehmigten Eingriffen die Wiederherstellung verlangen, und Bußgelder reichen bis 500.000 Euro. Als Ausgleich gibt es Zuschüsse und erhöhte steuerliche Absetzungen, wenn die Maßnahmen vorher abgestimmt sind. Wo eine sinnvolle Nutzung nicht mehr möglich ist, setzt die Eigentumsgarantie die Grenze.",
+   "Häufige Verwechslung: Fehlt ein Gebäude im Denkmalverzeichnis, ist es nicht automatisch frei – und verfahrensfrei nach HBO heißt nicht frei nach Denkmalrecht. Von städtebaulichen Instrumenten wie Erhaltungs- und Gestaltungssatzung unterscheidet sich der Denkmalschutz durch den Schutz der Substanz. Zum 1. Januar 2027 tritt eine Novelle in Kraft, die Fristen strafft, die unteren Behörden stärkt und erneuerbaren Energien Vorrang gibt."
+  ],
+  "merksatz": "Ein Denkmal ist geschützt, weil es eines ist, nicht weil es in einer Liste steht – und wer daran oder daneben baut, braucht die Denkmalgenehmigung, auch wenn die Bauordnung schweigt.",
+  "bild": "bilder/rb-dm-lageplan.svg",
+  "bildunterschrift": "Einzeldenkmal mit Umgebung, Gesamtanlage und Bodendenkmal im Lageplan.",
+  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 146, S. 54–55; Rn. 527, S. 188; Rn. 606, S. 213; §§ 2, 9–15, 18, 20, 21, 25, 27, 28 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; § 7i EStG, Wortlaut nach dejure.org; BVerfG, Beschluss vom 02.03.1999 – 1 BvL 7/91, BVerfGE 100, 226; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026"
+ },
+ "lernziele": [
+  "Du kannst Kulturdenkmal, Gesamtanlage und Bodendenkmal nach dem HDSchG unterscheiden und erklären, warum ein nicht eingetragenes Gebäude trotzdem geschützt sein kann.",
+  "Du kannst aufzählen, welche Maßnahmen an und neben einem Denkmal genehmigungspflichtig sind, und weißt, wann die Baugenehmigung die Denkmalgenehmigung einschließt.",
+  "Du kannst die Erhaltungspflicht des Eigentümers, ihre Grenze der Zumutbarkeit und die Folgen ungenehmigter Eingriffe erläutern.",
+  "Du kannst Denkmalschutz, Erhaltungssatzung und Gestaltungssatzung nach ihrer Wirkung voneinander abgrenzen."
+ ],
+ "siehe": [
+  "rb-bauleitplanung",
+  "rb-34-35",
+  "rb-lbo",
+  "rb-verfahren"
+ ],
+ "items": [
+  {
+   "id": "rb-dm-001",
+   "typ": "karte",
+   "frage": "Was unterscheidet den fachrechtlichen Denkmalschutz nach dem Denkmalschutzgesetz vom städtebaulichen Denkmalschutz in der Bauleitplanung?",
+   "antwort": "Der fachrechtliche Denkmalschutz beruht auf den Denkmalschutzgesetzen der Länder und wird von den Denkmalbehörden vollzogen; er überlagert die Bauleitplanung als Fachplanung. Der städtebauliche Denkmalschutz ist dagegen ein Belang, den die Gemeinde bei der Aufstellung ihrer Bauleitpläne in die Abwägung einstellen muss (§ 1 Abs. 6 Nr. 5 BauGB). Fachrechtliche Entscheidung und bauleitplanerische Abwägung müssen nicht übereinstimmen; über den Vorrang entscheiden letztlich die staatlichen Denkmalbehörden.",
+   "vertiefung": "Für Planende heißt das: Ein Bebauungsplan, der ein Baudenkmal überplant, macht den Abriss nicht zulässig – die denkmalrechtliche Genehmigung bleibt eigenständig erforderlich. Umgekehrt verschafft § 1 Abs. 6 Nr. 5 BauGB dem Eigentümer eines Denkmals in der Abwägung keinen Schutzanspruch, der über seinen Eigentumsschutz hinausgeht.",
+   "tags": [
+    "denkmalschutz",
+    "bauleitplanung",
+    "abwägung"
+   ],
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 146, S. 54–55",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-002",
+   "typ": "karte",
+   "frage": "Was ist nach dem Hessischen Denkmalschutzgesetz ein Kulturdenkmal?",
+   "antwort": "Bewegliche und unbewegliche Sachen, Sachgesamtheiten und Sachteile – Grünanlagen eingeschlossen –, an deren Erhaltung aus künstlerischen, wissenschaftlichen, technischen, geschichtlichen oder städtebaulichen Gründen ein öffentliches Interesse besteht (§ 2 Abs. 1 HDSchG). Daneben kennt das Gesetz Bodendenkmäler und Gesamtanlagen.",
+   "vertiefung": "Entscheidend ist das öffentliche Erhaltungsinteresse, nicht Alter oder Schönheit. Auch ein unscheinbares technisches Bauwerk oder ein Bau der Nachkriegsmoderne kann deshalb Denkmal sein. Erfasst und inventarisiert werden die Denkmäler von der Denkmalfachbehörde, dem Landesamt für Denkmalpflege Hessen, im Benehmen mit der Gemeinde – der Eigentümer kann die Denkmaleigenschaft nicht selbst ausschließen.",
+   "tags": [
+    "kulturdenkmal",
+    "denkmalbegriff",
+    "hdschg"
+   ],
+   "quelle": "§ 2 Abs. 1–3, § 5 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-003",
+   "typ": "zuordnung",
+   "frage": "Ordne jedem Beispiel die passende Denkmalkategorie nach dem HDSchG zu.",
+   "paare": [
+    [
+     "Spätgotische Dorfkirche mit Ausstattung",
+     "Einzelkulturdenkmal"
+    ],
+    [
+     "Historischer Ortskern, in dem nicht jedes Haus für sich Denkmalwert hat",
+     "Gesamtanlage"
+    ],
+    [
+     "Römische Mauerreste unter einem Acker",
+     "Bodendenkmal"
+    ],
+    [
+     "Barocker Schlosspark",
+     "Kulturdenkmal als Grünanlage"
+    ]
+   ],
+   "antwort": "Die Kirche ist ein Einzelkulturdenkmal, der Ortskern eine Gesamtanlage, die Mauerreste im Boden sind ein Bodendenkmal, und der Schlosspark ist ein Kulturdenkmal in Form einer Grünanlage, die das Gesetz ausdrücklich einbezieht.",
+   "vertiefung": "Bodendenkmäler sind im Boden verborgene oder aus urgeschichtlicher Zeit stammende Zeugnisse menschlichen, tierischen oder pflanzlichen Lebens von wissenschaftlichem Wert. Bei der Gesamtanlage genügt das Erhaltungsinteresse am Ganzen – das einzelne Haus muss kein Denkmal sein, unterliegt aber trotzdem den Regeln der Gesamtanlage.",
+   "tags": [
+    "denkmalarten",
+    "gesamtanlage",
+    "bodendenkmal"
+   ],
+   "quelle": "§ 2 Abs. 1–3 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-004",
+   "typ": "karte",
+   "frage": "Was bedeutet Ensembleschutz, und welche Folgen hat er für die Entwicklung einer Gemeinde?",
+   "antwort": "Die Denkmalschutzgesetze schützen nicht nur Einzelbauten, sondern auch Straßenzüge, Plätze oder Quartiere als Ganzes. In Hessen heißen sie Gesamtanlagen: bauliche Anlagen mit zugehörigen Grün-, Frei- und Wasserflächen, deren Erhaltung als Ganzes aus künstlerischen oder geschichtlichen Gründen im öffentlichen Interesse liegt; nicht jeder einzelne Teil muss selbst ein Kulturdenkmal sein (§ 2 Abs. 3 HDSchG). Wird der ganze historische Ortskern einer kleineren Stadt geschützt, sind ihre innerörtlichen Entwicklungsmöglichkeiten weitgehend festgelegt.",
+   "vertiefung": "Battis sieht darin einen Nachteil für die Bürger: Das ausgebaute, bürgerschützende Verfahren der Bauleitplanung wird durch ein Fachverfahren ersetzt, das von Spezialisten betrieben wird und tendenziell weniger umfassend abwägt. Für Gesamtanlagen gilt in Hessen deshalb eine erleichterte Genehmigungsregel: Eine Maßnahme ist zu genehmigen, wenn sie die Anlage nur unerheblich oder nur vorübergehend beeinträchtigt (§ 18 Abs. 4 HDSchG).",
+   "tags": [
+    "denkmalschutz",
+    "ensembleschutz",
+    "gesamtanlage"
+   ],
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 146, S. 54–55; § 2 Abs. 3, § 18 Abs. 4 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-005",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Aussagen zum Denkmalverzeichnis in Hessen treffen zu?",
+   "optionen": [
+    "Ein unbewegliches Kulturdenkmal ist auch dann geschützt, wenn es nicht im Denkmalverzeichnis steht.",
+    "Unbewegliche Kulturdenkmäler werden nachrichtlich in das Denkmalverzeichnis eingetragen.",
+    "Der Schutz eines Gebäudes beginnt erst mit seiner Eintragung.",
+    "Die Eigentümer werden über die Eintragung unterrichtet.",
+    "Jeder kann im Denkmalverzeichnis auch die Angaben zum Eigentum einsehen."
+   ],
+   "richtig": [
+    0,
+    1,
+    3
+   ],
+   "warum": [
+    "Richtig: Der Schutz hängt nicht von der Eintragung ab.",
+    "Richtig: Die Eintragung hat nur informierende Wirkung.",
+    "Falsch: Das wäre ein konstitutives System; Hessen arbeitet nachrichtlich.",
+    "Richtig: Die Eigentümer sind zu benachrichtigen.",
+    "Falsch: Einsehen darf jeder, die Eigentumsangaben sind davon aber ausgenommen."
+   ],
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Unbewegliche Kulturdenkmäler sind kraft Gesetzes geschützt; ihre Eintragung ist nur nachrichtlich, und die Eigentümer werden unterrichtet. Der Schutz beginnt also nicht erst mit der Eintragung. Das Verzeichnis ist öffentlich, die Angaben zum Eigentum sind aber nicht einsehbar.",
+   "vertiefung": "Für Planende ist das der wichtigste Fallstrick: Fehlt ein Gebäude im Verzeichnis, heißt das nicht, dass es kein Denkmal ist. Im Zweifel ist die Denkmalfachbehörde zu fragen. Anders bei beweglichen Sachen: Sie werden erst durch die Eintragung zum geschützten Kulturdenkmal. Dieselbe Logik kennt das Planungsrecht – ein im Bebauungsplan nachrichtlich übernommenes Denkmal gilt unabhängig davon, ob die Gemeinde es einträgt.",
+   "tags": [
+    "denkmalverzeichnis",
+    "nachrichtliches system",
+    "eintragung"
+   ],
+   "quelle": "§§ 10–12 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-006",
+   "typ": "zuordnung",
+   "frage": "Ordne jeder Behörde ihre Rolle im hessischen Denkmalschutz zu.",
+   "paare": [
+    [
+     "Untere Denkmalschutzbehörde",
+     "entscheidet über Genehmigungen und ordnet Maßnahmen an"
+    ],
+    [
+     "Landesamt für Denkmalpflege Hessen",
+     "Denkmalfachbehörde: erfasst Denkmäler, führt das Verzeichnis, berät"
+    ],
+    [
+     "Für Denkmalschutz zuständiges Ministerium",
+     "Oberste Denkmalschutzbehörde: entscheidet bei fehlendem Einvernehmen"
+    ]
+   ],
+   "antwort": "Die untere Denkmalschutzbehörde – in kreisfreien Städten und Gemeinden mit übertragener Bauaufsicht der Magistrat, in Landkreisen der Kreisausschuss – entscheidet über Genehmigungen. Das Landesamt für Denkmalpflege Hessen ist die Denkmalfachbehörde: Es inventarisiert, führt das Denkmalverzeichnis, berät und vertritt den Denkmalschutz als Träger öffentlicher Belange. Kommt zwischen beiden kein Einvernehmen zustande, entscheidet die oberste Denkmalschutzbehörde.",
+   "vertiefung": "Die untere Denkmalschutzbehörde sitzt meist im selben Haus wie die Bauaufsicht – das erleichtert, dass die Baugenehmigung die Denkmalgenehmigung einschließt. Die Novelle ab 2027 beschränkt das Einvernehmen des Landesamts auf klar umrissene Fälle wie Welterbe, Bodendenkmäler und geförderte Maßnahmen und stärkt so die unteren Behörden.",
+   "tags": [
+    "denkmalbehörden",
+    "landesamt für denkmalpflege",
+    "zuständigkeit"
+   ],
+   "quelle": "§§ 4, 5, 20 Abs. 5 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; HMWK, Fragen und Antworten zum neuen Hessischen Denkmalschutzgesetz, Abruf Oktober 2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-007",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Maßnahmen bedürfen nach § 18 HDSchG einer denkmalschutzrechtlichen Genehmigung?",
+   "optionen": [
+    "Abbruch einer zum Kulturdenkmal gehörenden Scheune",
+    "Austausch der historischen Holzfenster eines Denkmals gegen neue Fenster",
+    "Anbringen einer Werbeanlage an einem Kulturdenkmal",
+    "Neubau eines Wohnhauses neben einem Denkmal, der dessen Erscheinungsbild beeinflussen kann",
+    "Verkauf des Denkmals an einen neuen Eigentümer"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig: Zerstören oder Beseitigen – auch von Teilen – ist genehmigungspflichtig.",
+    "Richtig: Das ist ein Umgestalten oder Instandsetzen.",
+    "Richtig: Werbeanlagen am Denkmal nennt das Gesetz ausdrücklich.",
+    "Richtig: Umgebungsschutz nach § 18 Abs. 2.",
+    "Falsch: Ein Eigentumswechsel ist keine Maßnahme am Denkmal."
+   ],
+   "antwort": "Genehmigungspflichtig sind das Zerstören oder Beseitigen eines Kulturdenkmals oder von Teilen davon, das Versetzen an einen anderen Ort, das Umgestalten oder Instandsetzen, das Anbringen von Werbeanlagen und die Errichtung, Änderung oder Beseitigung von Anlagen in der Umgebung, die Bestand oder Erscheinungsbild des Denkmals beeinflussen können. Der bloße Verkauf gehört nicht dazu.",
+   "vertiefung": "Weil schon das Instandsetzen erfasst ist, braucht auch eine gut gemeinte Sanierung eine Genehmigung. Die Novelle ab 2027 soll per Verordnung Standardmaßnahmen mit geringem Risiko freistellen, etwa den Austausch von Dachrinnen oder Heizkesseln, und in Gesamtanlagen Maßnahmen, die weder Erscheinungsbild noch Substanz berühren.",
+   "tags": [
+    "genehmigungspflicht",
+    "§ 18 hdschg",
+    "umgebungsschutz"
+   ],
+   "quelle": "§ 18 Abs. 1 und 2 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026; HMWK, Fragen und Antworten zum neuen Hessischen Denkmalschutzgesetz, Abruf Oktober 2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-008",
+   "typ": "karte",
+   "frage": "Warum kann auch ein Vorhaben genehmigungspflichtig sein, das gar nicht am Denkmal selbst stattfindet?",
+   "bild": "bilder/rb-dm-lageplan.svg",
+   "bildunterschrift": "Der Neubau (5) liegt in der Umgebung der Kirche (1).",
+   "antwort": "Weil das HDSchG auch die Umgebung schützt: Genehmigungspflichtig ist die Errichtung, Änderung oder Beseitigung von Anlagen in der Umgebung eines unbeweglichen Kulturdenkmals, wenn sie sich auf dessen Bestand oder Erscheinungsbild auswirken können (§ 18 Abs. 2 HDSchG). Wer neben einer denkmalgeschützten Kirche baut, braucht deshalb unter Umständen eine Denkmalgenehmigung, obwohl sein eigenes Grundstück kein Denkmal ist.",
+   "vertiefung": "Einen festen Abstand nennt das Gesetz nicht; maßgeblich ist, ob das Vorhaben das Denkmal in seiner Wirkung beeinträchtigen kann, etwa durch Sichtbeziehungen oder Maßstab. Das Planungsrecht hilft hier nicht weiter: Ein nach § 34 BauGB zulässiger Neubau kann trotzdem am Umgebungsschutz scheitern.",
+   "tags": [
+    "umgebungsschutz",
+    "§ 18 hdschg",
+    "nachbarbebauung"
+   ],
+   "siehe": [
+    "rb-34-35"
+   ],
+   "quelle": "§ 18 Abs. 2 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-009",
+   "typ": "karte",
+   "frage": "Braucht ein baugenehmigungspflichtiges Vorhaben an einem Denkmal in Hessen zwei getrennte Genehmigungen?",
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Nein. Baugenehmigungen und bauordnungsrechtliche Zustimmungen schließen die denkmalschutzrechtliche Genehmigung ein (§ 9 Abs. 3 HDSchG). Umgekehrt ersetzt die Denkmalgenehmigung keine anderen Genehmigungen. Ist ein Vorhaben baugenehmigungsfrei, freigestellt oder verfahrensfrei, bleibt die Denkmalgenehmigung eigenständig erforderlich.",
+   "vertiefung": "Gerade der letzte Satz ist der Fallstrick: Eine nach der HBO verfahrensfreie Dachgaube oder Solaranlage an einem Denkmal ist denkmalrechtlich nicht frei. Ab 2027 braucht die Bauaufsicht für den denkmalrechtlichen Teil der Baugenehmigung die Zustimmung der unteren Denkmalschutzbehörde; sie gilt als erteilt, wenn sie nicht fristgerecht verweigert wird.",
+   "tags": [
+    "baugenehmigung",
+    "konzentration",
+    "denkmalgenehmigung"
+   ],
+   "quelle": "§ 9 Abs. 3 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-010",
+   "typ": "mehrfachauswahl",
+   "frage": "Wann muss die Denkmalschutzbehörde eine beantragte Genehmigung erteilen?",
+   "optionen": [
+    "Wenn Gründe des Denkmalschutzes dem Vorhaben nicht entgegenstehen",
+    "Wenn die Ablehnung für den Eigentümer wirtschaftlich unzumutbar wäre",
+    "Wenn überwiegende öffentliche Interessen die Maßnahme verlangen",
+    "Bei einer Gesamtanlage, wenn die Maßnahme sie nur unerheblich oder vorübergehend beeinträchtigt",
+    "Wenn das Gebäude nicht im Denkmalverzeichnis eingetragen ist",
+    "Wenn ein Bebauungsplan das Vorhaben zulässt"
+   ],
+   "richtig": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "warum": [
+    "Richtig: § 18 Abs. 3 Nr. 1.",
+    "Richtig: § 18 Abs. 3 Nr. 2.",
+    "Richtig: § 18 Abs. 3 Nr. 3.",
+    "Richtig: § 18 Abs. 4.",
+    "Falsch: Der Schutz hängt nicht von der Eintragung ab.",
+    "Falsch: Das Denkmalrecht ist eigenständiges Fachrecht neben dem Planungsrecht."
+   ],
+   "antwort": "Die Genehmigung ist zu erteilen, wenn Gründe des Denkmalschutzes nicht entgegenstehen, wenn ihre Versagung wirtschaftlich unzumutbar wäre oder wenn überwiegende öffentliche Interessen die Maßnahme verlangen; bei Gesamtanlagen auch dann, wenn die Beeinträchtigung nur unerheblich oder vorübergehend ist. Fehlende Eintragung oder ein Bebauungsplan spielen keine Rolle.",
+   "vertiefung": "Es besteht also ein Anspruch, kein freies Ermessen. Nach allgemeinem Verwaltungsrecht kann die Genehmigung mit Nebenbestimmungen verbunden werden (§ 36 HVwVfG). Zu den öffentlichen Interessen gehören auch Klima- und Ressourcenschutz, die das Gesetz bei Entscheidungen besonders zu berücksichtigen verlangt.",
+   "tags": [
+    "genehmigungsanspruch",
+    "zumutbarkeit",
+    "§ 18 hdschg"
+   ],
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "quelle": "§ 9 Abs. 1, § 18 Abs. 3 und 4 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-011",
+   "typ": "numerisch",
+   "frage": "Nach wie vielen Monaten gilt eine denkmalschutzrechtliche Genehmigung in Hessen als erteilt, wenn die Behörde über den vollständigen Antrag nicht entschieden und die Frist nicht verlängert hat?",
+   "wert": 3,
+   "toleranz": 0,
+   "einheit": "Monate",
+   "antwort": "Nach drei Monaten (§ 20 Abs. 2 HDSchG, Genehmigungsfiktion).",
+   "vertiefung": "Die Frist beginnt mit dem vollständigen Antrag, dessen Eingang die Behörde bestätigt. Aus wichtigem Grund kann sie verlängert werden – bis Ende 2026 um bis zu drei, ab 2027 um bis zu zwei Monate. Die Novelle führt außerdem eine Vollständigkeitsprüfung binnen eines Monats ein. Eine ähnliche Fiktion kennt die HBO im vereinfachten Verfahren.",
+   "tags": [
+    "genehmigungsfiktion",
+    "frist",
+    "verfahren"
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "quelle": "§ 20 Abs. 2 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-012",
+   "typ": "fall",
+   "frage": "Frau B. besitzt ein eingetragenes Fachwerkhaus in einem hessischen Ortskern. Sie will die Holzfenster durch Kunststofffenster ersetzen, eine Photovoltaikanlage auf das Dach setzen und eine kleine Gaube einbauen. Ihr Architekt meint, das sei alles baugenehmigungsfrei.",
+   "teile": [
+    {
+     "frage": "Braucht sie trotzdem eine Genehmigung?",
+     "antwort": "Ja. Auch wenn die Vorhaben nach der HBO verfahrensfrei sein sollten, sind sie als Umgestaltung eines Kulturdenkmals nach § 18 Abs. 1 HDSchG genehmigungspflichtig. Weil keine Baugenehmigung ergeht, die sie einschließen könnte, ist die Denkmalgenehmigung eigenständig zu beantragen."
+    },
+    {
+     "frage": "Hat die Photovoltaikanlage Aussicht auf Erfolg?",
+     "antwort": "Gute. Die Behörden müssen Belange des Klima- und Ressourcenschutzes bei ihren Entscheidungen besonders berücksichtigen (§ 9 Abs. 1 HDSchG); ab 2027 liegen erneuerbare Energien sogar im überragenden öffentlichen Interesse. Über Lage, Farbe und Ausführung kann die Behörde aber Nebenbestimmungen treffen."
+    },
+    {
+     "frage": "Was droht, wenn sie die Fenster ohne Genehmigung tauscht?",
+     "antwort": "Die untere Denkmalschutzbehörde kann anordnen, den alten Zustand wiederherzustellen (§ 9 Abs. 4 HDSchG). Zudem ist das ungenehmigte Umgestalten eine Ordnungswidrigkeit, die mit hoher Geldbuße bedroht ist."
+    },
+    {
+     "frage": "Kann sie die Kosten steuerlich geltend machen?",
+     "antwort": "Für Baudenkmäler gibt es steuerliche Vergünstigungen – erhöhte Absetzungen bei Vermietung (§ 7i EStG), einen Sonderausgabenabzug bei Selbstnutzung (§ 10f EStG). Voraussetzung ist eine Bescheinigung der Denkmalbehörde, und die Maßnahmen müssen vorher mit ihr abgestimmt sein."
+    }
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Verfahrensfrei nach Bauordnung heißt nicht frei nach Denkmalrecht: Frau B. braucht für alle drei Maßnahmen eine Denkmalgenehmigung. Die PV-Anlage hat wegen des Klimaschutzbelangs gute Chancen, ungenehmigte Arbeiten riskieren Rückbau und Bußgeld, und mit vorheriger Abstimmung lassen sich die Kosten steuerlich nutzen.",
+   "vertiefung": "Der Fall zeigt das Zusammenspiel: Die HBO fragt nach Gefahrenabwehr, das HDSchG nach der Substanz. Wer am Denkmal plant, klärt deshalb zuerst mit der unteren Denkmalschutzbehörde, nicht mit der Bauaufsicht.",
+   "tags": [
+    "fallaufgabe",
+    "photovoltaik",
+    "verfahrensfreiheit",
+    "denkmalgenehmigung"
+   ],
+   "quelle": "§ 9 Abs. 1, 3 und 4, § 18 Abs. 1, § 28 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; §§ 7i, 10f EStG, Wortlaut nach dejure.org; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-013",
+   "typ": "karte",
+   "frage": "Welche Pflichten hat der Eigentümer eines Kulturdenkmals, und wo liegen ihre Grenzen?",
+   "antwort": "Eigentümer, Besitzer und Unterhaltungspflichtige müssen das Kulturdenkmal im Rahmen des Zumutbaren erhalten und pfleglich behandeln (§ 13 Abs. 1 HDSchG). Die untere Denkmalschutzbehörde kann notwendige Erhaltungsmaßnahmen anordnen und bei unmittelbarer Gefahr selbst handeln (§ 14). Wird das Denkmal nicht mehr ursprünglich genutzt, soll eine Nutzung angestrebt werden, die die Substanz auf Dauer möglichst weitgehend erhält (§ 15).",
+   "vertiefung": "Die Grenze ist die Zumutbarkeit: Land und Gemeinden unterstützen die Erhaltung mit Zuschüssen im Rahmen ihrer Haushaltsmittel, und führt eine Anordnung zu einer unzumutbaren Belastung, ist in Geld zu entschädigen (§ 27). Die Novelle ab 2027 hebt die wirtschaftliche Zumutbarkeit ausdrücklich hervor und lässt Prüfmaßstäbe per Verwaltungsvorschrift festlegen.",
+   "tags": [
+    "erhaltungspflicht",
+    "zumutbarkeit",
+    "eigentum"
+   ],
+   "quelle": "§§ 13–15, 27 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-014",
+   "typ": "freitext",
+   "frage": "Der Eigentümer eines leerstehenden, baufälligen Baudenkmals will es abreißen, weil sich eine Sanierung nicht rechnet. Erläutere, wie das Denkmalrecht mit diesem Konflikt umgeht.",
+   "pruefpunkte": [
+    "Abbruch ist als Zerstören oder Beseitigen genehmigungspflichtig (§ 18 Abs. 1 HDSchG)",
+    "Erhaltungspflicht besteht nur im Rahmen des Zumutbaren (§ 13 HDSchG)",
+    "Genehmigung ist zu erteilen, wenn die Ablehnung wirtschaftlich unzumutbar wäre (§ 18 Abs. 3 HDSchG)",
+    "Zuschüsse und Steuervorteile mindern die Belastung des Eigentümers",
+    "Verfassungsrechtlicher Hintergrund: Denkmalschutz als Inhalts- und Schrankenbestimmung des Eigentums, unzumutbare Belastungen brauchen einen Ausgleich",
+    "Behörde kann Erhaltungsmaßnahmen anordnen (§ 14 HDSchG)"
+   ],
+   "antwort": "Der Abbruch braucht eine Denkmalgenehmigung. Der Eigentümer muss das Denkmal zwar erhalten, aber nur im Rahmen des Zumutbaren; Zuschüsse und Steuervorteile verschieben diese Grenze. Wäre die Versagung wirtschaftlich unzumutbar, ist die Genehmigung zu erteilen. Dahinter steht die Eigentumsgarantie: Denkmalschutz bestimmt Inhalt und Schranken des Eigentums, darf aber keine unverhältnismäßige Last auferlegen, ohne sie auszugleichen. Bis dahin kann die Behörde Sicherungs- und Erhaltungsmaßnahmen anordnen.",
+   "vertiefung": "Maßgeblich ist das Bundesverfassungsgericht, das 1999 entschieden hat: Ist eine sinnvolle Nutzung eines Denkmals nicht mehr möglich, verletzt ein Abrissverbot ohne Ausgleich das Eigentum. Die hessische Novelle greift das auf; die Zumutbarkeitsgrenze soll überschritten sein, wenn keine sinnvolle Nutzung mehr möglich ist.",
+   "tags": [
+    "abbruch",
+    "zumutbarkeit",
+    "eigentumsgarantie"
+   ],
+   "quelle": "§§ 13, 14, 18 Abs. 1 und 3, § 27 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; BVerfG, Beschluss vom 02.03.1999 – 1 BvL 7/91, BVerfGE 100, 226; Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-015",
+   "typ": "numerisch",
+   "frage": "Über wie viele Jahre insgesamt kann der Eigentümer eines vermieteten Baudenkmals die Herstellungskosten begünstigter Baumaßnahmen nach § 7i EStG erhöht absetzen?",
+   "wert": 12,
+   "toleranz": 0,
+   "einheit": "Jahre",
+   "antwort": "Über zwölf Jahre: im Jahr der Herstellung und den folgenden sieben Jahren je bis zu 9 %, in den folgenden vier Jahren je bis zu 7 % – zusammen bis zu 100 % der Herstellungskosten.",
+   "vertiefung": "Voraussetzung ist eine Bescheinigung der nach Landesrecht zuständigen Stelle, und die Maßnahmen müssen in Abstimmung mit ihr durchgeführt worden sein – wer erst saniert und dann fragt, riskiert die Förderung. Für selbstgenutzte Baudenkmäler gilt mit § 10f EStG eine entsprechende Regel als Sonderausgabe. Steuervorteile fließen in die Frage ein, was dem Eigentümer zumutbar ist.",
+   "tags": [
+    "steuer",
+    "§ 7i estg",
+    "förderung"
+   ],
+   "quelle": "§ 7i Abs. 1 und 2, § 10f EStG, Wortlaut nach dejure.org, Abruf Oktober 2026",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-016",
+   "typ": "karte",
+   "frage": "Was regelt eine Erhaltungssatzung nach §§ 172–174 BauGB?",
+   "antwort": "Sie legt ein Erhaltungsgebiet fest, in dem Rückbau, Änderung und Nutzungsänderung baulicher Anlagen einer besonderen Genehmigung bedürfen. Versagt werden kann die Genehmigung zur Erhaltung der städtebaulichen Eigenart des Gebiets aufgrund seiner städtebaulichen Gestalt, zur Erhaltung der Zusammensetzung der Wohnbevölkerung und bei städtebaulichen Umstrukturierungen.",
+   "vertiefung": "Die Erhaltungssatzung ist Instrument des Städtebaurechts, nicht des Denkmalrechts: Sie schützt die Eigenart eines Gebiets, auch wenn kein einzelnes Gebäude Denkmal ist. Für historische Stadtteile, die nach § 34 BauGB beurteilt werden, kann sie den dauerhaften Verzicht auf einen qualifizierten Bebauungsplan stabilisieren.",
+   "tags": [
+    "erhaltungssatzung",
+    "§ 172 baugb",
+    "städtebaulicher denkmalschutz"
+   ],
+   "siehe": [
+    "rb-34-35"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Kontrollfrage 5 zum 6. Teil, S. 175; Rn. 379a, S. 135",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-017",
+   "typ": "zuordnung",
+   "frage": "Eine Gemeinde will ihren historischen Ortskern schützen. Ordne jedem Instrument zu, was es leisten kann.",
+   "paare": [
+    [
+     "Gestaltungssatzung (§ 91 HBO)",
+     "regelt die äußere Gestaltung, kann aber keinen Abbruch verhindern"
+    ],
+    [
+     "Erhaltungssatzung (§ 172 BauGB)",
+     "macht Rückbau, Änderung und Nutzungsänderung genehmigungspflichtig"
+    ],
+    [
+     "Denkmalschutzgesetz",
+     "schützt die Substanz des Kulturdenkmals und verlangt seine Erhaltung"
+    ],
+    [
+     "Nachrichtliche Übernahme im Bebauungsplan",
+     "informiert nur, begründet selbst keinen Schutz"
+    ]
+   ],
+   "siehe": [
+    "rb-lbo",
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Die Gestaltungssatzung ist örtliche Bauvorschrift und steuert nur das Äußere. Die Erhaltungssatzung ist städtebauliches Recht und unterwirft Rückbau, Änderung und Nutzungsänderung einer Genehmigung. Das Denkmalschutzgesetz schützt die Substanz und verpflichtet zur Erhaltung. Die nachrichtliche Übernahme im Bebauungsplan gibt den Schutz nur wieder.",
+   "vertiefung": "Battis ordnet die Gestaltungssatzung als das weniger folgenreiche Instrument ein: Sie kann weder den Abbruch verhindern noch eine stilgerechte Erhaltung erzwingen. Wer Substanz sichern will, braucht Erhaltungssatzung oder Denkmalschutz.",
+   "tags": [
+    "erhaltungssatzung",
+    "gestaltungssatzung",
+    "ortsbild"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 527, S. 188; Kontrollfrage 5 zum 6. Teil, S. 175; Rn. 146, S. 54–55; §§ 13, 18 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-018",
+   "typ": "karte",
+   "frage": "Kann die Bauaufsicht nach einem unzulässigen Teilabriss verlangen, dass das Gebäude wieder aufgebaut wird?",
+   "antwort": "Nach Bauordnungsrecht nicht: Die Pflicht zum Wiederaufbau nach einem Abriss kann nicht auf das Bauordnungsrecht gestützt werden. Anders ist es im Denkmalrecht – einige Denkmalschutzgesetze, etwa Art. 15 Abs. 4 und 5 des bayerischen DSchG, sehen eine solche Wiederherstellungspflicht vor.",
+   "vertiefung": "Der Unterschied zeigt die verschiedenen Schutzrichtungen: Das Bauordnungsrecht wehrt Gefahren und Verstöße ab, kann aber keinen Bestand erzwingen. Das Denkmalrecht schützt die Substanz selbst. In Hessen ordnet § 9 Abs. 4 HDSchG an: Wer eine genehmigungspflichtige Maßnahme ohne Genehmigung oder abweichend von ihr durchführt, muss auf Anordnung der unteren Denkmalschutzbehörde den alten Zustand wiederherstellen oder das Denkmal auf andere geeignete Weise instand setzen.",
+   "tags": [
+    "denkmalschutz",
+    "wiederherstellung",
+    "beseitigungsanordnung"
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 606, S. 213; § 9 Abs. 4 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-019",
+   "typ": "numerisch",
+   "frage": "Bis zu welcher Höhe kann in Hessen eine Geldbuße verhängt werden, wenn jemand ein Kulturdenkmal ohne Genehmigung zerstört oder umgestaltet?",
+   "wert": 500000,
+   "toleranz": 0,
+   "einheit": "Euro",
+   "antwort": "Bis zu 500.000 Euro (§ 28 Abs. 2 HDSchG). Für die übrigen Ordnungswidrigkeiten nach dem Gesetz liegt die Obergrenze bei 25.000 Euro.",
+   "vertiefung": "Die Höhe soll verhindern, dass sich ein ungenehmigter Abriss wirtschaftlich lohnt, etwa weil ein Neubau auf dem Grundstück mehr einbringt. Neben dem Bußgeld steht die Pflicht zur Wiederherstellung.",
+   "tags": [
+    "ordnungswidrigkeit",
+    "bußgeld",
+    "abbruch"
+   ],
+   "quelle": "§ 28 Abs. 2 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-020",
+   "typ": "karte",
+   "frage": "Welche Rolle spielt der Denkmalschutz bei Vorhaben im Außenbereich?",
+   "antwort": "Belange des Denkmalschutzes sind öffentliche Belange nach § 35 Abs. 3 Satz 1 Nr. 5 BauGB. Ein sonstiges Vorhaben ist unzulässig, wenn es sie beeinträchtigt; einem privilegierten Vorhaben können sie entgegenstehen. Auch teilprivilegierten Vorhaben nach § 35 Abs. 4 BauGB bleibt dieser Belang entgegenzuhalten.",
+   "vertiefung": "Daneben gilt die eigenständige denkmalrechtliche Genehmigungspflicht. Ein im Außenbereich planungsrechtlich zulässiges Vorhaben in der Umgebung eines Denkmals kann deshalb trotzdem am Denkmalrecht scheitern.",
+   "tags": [
+    "denkmalschutz",
+    "außenbereich",
+    "öffentliche belange"
+   ],
+   "siehe": [
+    "rb-34-35"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 408, S. 144; Rn. 416, S. 146",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-021",
+   "typ": "fall",
+   "frage": "Beim Aushub der Baugrube für ein Mehrfamilienhaus stößt der Baggerfahrer auf Mauerreste und Keramikscherben. Die Bauleiterin will weiterbaggern lassen, um den Zeitplan zu halten.",
+   "teile": [
+    {
+     "frage": "Wer muss den Fund melden, und an wen?",
+     "antwort": "Wer ein Bodendenkmal entdeckt, muss es unverzüglich der Denkmalfachbehörde melden; die Meldung kann auch über die Gemeinde oder die untere Denkmalschutzbehörde laufen. Meldepflichtig sind neben dem Entdecker auch der Grundstückseigentümer und die Leitung der Arbeiten (§ 21 Abs. 1 HDSchG)."
+    },
+    {
+     "frage": "Darf weitergebaggert werden?",
+     "antwort": "Nein. Fund und Fundstelle sind bis zum Ablauf einer Woche nach der Meldung in unverändertem Zustand zu erhalten und zu schützen."
+    },
+    {
+     "frage": "Was darf das Landesamt mit den Funden tun?",
+     "antwort": "Es darf sie bergen, auswerten und zur wissenschaftlichen Bearbeitung vorübergehend in Besitz nehmen."
+    },
+    {
+     "frage": "Wem gehören die Scherben am Ende?",
+     "antwort": "Herrenlose oder so lange verborgene bewegliche Bodendenkmäler, dass ihr Eigentümer nicht mehr zu ermitteln ist, werden Eigentum des Landes, wenn sie von besonderem wissenschaftlichem Wert sind oder bei staatlichen oder unerlaubten Nachforschungen entdeckt werden (Schatzregal, § 25 HDSchG). Finder und Grundstückseigentümer können je zur Hälfte eine Fundprämie erhalten."
+    }
+   ],
+   "antwort": "Die Bauleiterin muss die Arbeiten an der Fundstelle stoppen und den Fund melden; eine Woche lang bleibt alles unverändert. Das Landesamt kann bergen und dokumentieren, und wertvolle Funde fallen an das Land.",
+   "vertiefung": "Für Planende heißt das: In Gebieten mit bekannten Bodendenkmälern gehört die Archäologie in den Bauzeitenplan. Bodendenkmäler werden nur dann öffentlich bekannt gemacht, wenn sie oberirdisch sichtbar sind – dass eine Fläche nicht als Fundstelle bekannt ist, schützt deshalb nicht vor Überraschungen.",
+   "tags": [
+    "fallaufgabe",
+    "bodendenkmal",
+    "fundmeldung",
+    "schatzregal"
+   ],
+   "quelle": "§ 11 Abs. 1, §§ 21, 25 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-022",
+   "typ": "reihenfolge",
+   "frage": "Bringe die Schritte für eine Sanierung an einem Gebäude im Ortskern in eine sinnvolle Reihenfolge.",
+   "schritte": [
+    "Klären, ob das Gebäude Kulturdenkmal ist, in einer Gesamtanlage oder in der Umgebung eines Denkmals liegt",
+    "Bestimmen, ob eine Baugenehmigung nötig ist, die die Denkmalgenehmigung einschließt, oder eine eigene Denkmalgenehmigung",
+    "Die Maßnahme mit der Denkmalbehörde abstimmen, auch im Hinblick auf die Steuerbescheinigung",
+    "Den vollständigen Antrag mit allen Unterlagen einreichen",
+    "Die Entscheidung abwarten oder den Eintritt der Genehmigungsfiktion nach Fristablauf",
+    "Die Maßnahme wie genehmigt ausführen"
+   ],
+   "siehe": [
+    "rb-verfahren",
+    "rb-bauvorlagen"
+   ],
+   "antwort": "Erst die Denkmaleigenschaft klären, weil ein Eintrag im Verzeichnis fehlen kann. Dann das Verfahren bestimmen, die Maßnahme abstimmen, den vollständigen Antrag stellen, die Entscheidung oder Fiktion abwarten und erst dann ausführen.",
+   "vertiefung": "Die Abstimmung vor Beginn ist doppelt wichtig: Für die erhöhten Absetzungen nach § 7i EStG müssen die Maßnahmen in Abstimmung mit der Bescheinigungsstelle durchgeführt worden sein, und Fristen laufen erst ab dem vollständigen Antrag.",
+   "tags": [
+    "ablauf",
+    "denkmalgenehmigung",
+    "planungspraxis"
+   ],
+   "quelle": "§§ 9, 11, 18, 20 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; § 7i Abs. 1 EStG, Wortlaut nach dejure.org",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-023",
+   "typ": "bildbeschriftung",
+   "frage": "Benenne die markierten Elemente im Lageplan eines Ortskerns.",
+   "referenz": "bilder/rb-dm-lageplan-blank.svg",
+   "punkte": [
+    {
+     "nr": 1,
+     "x": 73.8,
+     "y": 63.3,
+     "name": "Einzelkulturdenkmal (Kirche)"
+    },
+    {
+     "nr": 2,
+     "x": 33.1,
+     "y": 17.2,
+     "name": "Gesamtanlage"
+    },
+    {
+     "nr": 3,
+     "x": 50.3,
+     "y": 29.7,
+     "name": "Gebäude ohne eigenen Denkmalwert"
+    },
+    {
+     "nr": 4,
+     "x": 58.1,
+     "y": 66.4,
+     "name": "Umgebung des Kulturdenkmals"
+    },
+    {
+     "nr": 5,
+     "x": 87.5,
+     "y": 75.0,
+     "name": "Neubau in der Umgebung"
+    },
+    {
+     "nr": 6,
+     "x": 22.5,
+     "y": 69.5,
+     "name": "Bodendenkmal"
+    }
+   ],
+   "bild": "bilder/rb-dm-lageplan.svg",
+   "bildunterschrift": "Lösung: Denkmalkategorien und Umgebungsschutz im Lageplan.",
+   "antwort": "Rechts die Kirche als Einzelkulturdenkmal, um sie herum ihre Umgebung, in der ein Neubau liegt. Oben die gestrichelt umgrenzte Gesamtanlage mit Häusern, die für sich keinen Denkmalwert haben müssen. Links unten das Bodendenkmal mit Mauerresten.",
+   "vertiefung": "Die Umgebung ist im Gesetz nicht als feste Zone definiert; der Kreis steht nur für den Bereich, in dem ein Vorhaben das Erscheinungsbild beeinflussen kann. Genehmigungspflichtig sind Vorhaben am Einzeldenkmal, in der Gesamtanlage, in der Umgebung und Eingriffe in das Bodendenkmal.",
+   "tags": [
+    "lageplan",
+    "gesamtanlage",
+    "umgebungsschutz"
+   ],
+   "quelle": "§ 2 Abs. 1–3, § 18 Abs. 1 und 2 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-024",
+   "typ": "skizze",
+   "frage": "Skizziere einen Lageplan, der die Denkmalkategorien des HDSchG und den Umgebungsschutz zeigt: Einzelkulturdenkmal, Gesamtanlage, Bodendenkmal und ein Vorhaben in der Umgebung.",
+   "referenz": "bilder/rb-dm-lageplan.svg",
+   "pruefpunkte": [
+    "Einzelkulturdenkmal als hervorgehobenes Gebäude",
+    "Gesamtanlage als Umgrenzung einer Gebäudegruppe",
+    "Hinweis, dass nicht jedes Gebäude der Gesamtanlage selbst Denkmal ist",
+    "Umgebung des Denkmals ohne feste Abstandsangabe",
+    "Vorhaben in der Umgebung, das genehmigungspflichtig sein kann",
+    "Bodendenkmal als im Boden verborgene Fundstelle"
+   ],
+   "antwort": "Die Skizze zeigt ein hervorgehobenes Einzeldenkmal mit seiner Umgebung, in der ein Neubau genehmigungspflichtig sein kann, eine umgrenzte Gesamtanlage mit Gebäuden ohne eigenen Denkmalwert und ein Bodendenkmal als verborgene Fundstelle.",
+   "vertiefung": "Wer die Kategorien räumlich vor Augen hat, erkennt im Lageplan eines Bauvorhabens schneller, ob das Denkmalrecht greift – auch dann, wenn auf dem eigenen Grundstück kein Denkmal steht.",
+   "tags": [
+    "skizze",
+    "lageplan",
+    "denkmalarten"
+   ],
+   "quelle": "§ 2 Abs. 1–3, § 18 Abs. 2 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-025",
+   "typ": "karte",
+   "frage": "Was ändert die Novelle des Hessischen Denkmalschutzgesetzes, die am 1. Januar 2027 in Kraft treten soll?",
+   "antwort": "Verbindliche Fristen und Fiktionen: Vollständigkeitsprüfung binnen eines Monats, Entscheidung binnen drei Monaten mit Verlängerung um höchstens zwei Monate. Die Baugenehmigung schließt die Denkmalgenehmigung weiter ein, braucht aber die Zustimmung der unteren Denkmalschutzbehörde, die als erteilt gilt, wenn sie nicht fristgerecht verweigert wird. Erneuerbare Energien liegen im überragenden öffentlichen Interesse, die wirtschaftliche Zumutbarkeit wird ausdrücklich verankert, und Standardmaßnahmen mit geringem Risiko können per Verordnung freigestellt werden.",
+   "vertiefung": "Außerdem wird das Einvernehmen des Landesamts für Denkmalpflege auf klar umrissene Fälle beschränkt – etwa Welterbe, Bodendenkmäler und geförderte Maßnahmen; beim Abriss genügt sein Benehmen. Neu sind Regeln zur Katastrophenvorsorge und ein elektronisches Verfahren über das Bauportal. Der Landtag hat die Novelle am 10.06.2026 beschlossen.",
+   "tags": [
+    "novelle",
+    "fristen",
+    "erneuerbare energien"
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "quelle": "§§ 1, 9, 18, 20 HDSchG in der ab 01.01.2027 geltenden Fassung nach Synopse des HMWK zur Novelle des HDSchG, Stand 31.08.2026; HMWK, Pressemitteilung „Hessischer Landtag verabschiedet neues Denkmalschutzgesetz“ vom 10.06.2026; HMWK, Fragen und Antworten zum neuen Hessischen Denkmalschutzgesetz, Abruf Oktober 2026",
+   "stand": "2026-10",
+   "geprueft": false,
+   "pruefhinweis": "Inhalt nach Angaben des HMWK (Pressemitteilung, FAQ, Synopse), nicht nach dem verkündeten Gesetz. Gegen den amtlichen Wortlaut des Gesetzes zur Änderung des HDSchG im GVBl. 2026 prüfen: Inkrafttreten 01.01.2027, Fristverlängerung bis zu zwei Monate, Vollständigkeitsprüfung ein Monat, Zustimmung der unteren Denkmalschutzbehörde mit Fiktion (§ 9), überragendes öffentliches Interesse erneuerbarer Energien (§ 9 Abs. 1)."
+  }
+ ]
+}
