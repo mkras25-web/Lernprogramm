@@ -672,6 +672,61 @@
    "stand": "2026-10",
    "geprueft": false,
    "pruefhinweis": "Inhalt nach Angaben des HMWK (Pressemitteilung, FAQ, Synopse), nicht nach dem verkündeten Gesetz. Gegen den amtlichen Wortlaut des Gesetzes zur Änderung des HDSchG im GVBl. 2026 prüfen: Inkrafttreten 01.01.2027, Fristverlängerung bis zu zwei Monate, Vollständigkeitsprüfung ein Monat, Zustimmung der unteren Denkmalschutzbehörde mit Fiktion (§ 9), überragendes öffentliches Interesse erneuerbarer Energien (§ 9 Abs. 1)."
+  },
+  {
+   "id": "rb-dm-026",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche Belange müssen die hessischen Denkmalschutzbehörden bei ihren Entscheidungen ausdrücklich berücksichtigen?",
+   "optionen": [
+    "Die berechtigten Interessen der Eigentümer",
+    "Belange des Klima- und Ressourcenschutzes",
+    "Bei öffentlich zugänglichen Kulturdenkmälern die Barrierefreiheit",
+    "Den Wunsch des Eigentümers nach höchstmöglicher Rendite",
+    "Den Geschmack der Nachbarschaft"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: Sie sind bei allen Maßnahmen zu berücksichtigen.",
+    "Richtig: Das Gesetz verlangt, sie besonders zu berücksichtigen.",
+    "Richtig: Für öffentlich zugängliche Denkmäler ausdrücklich genannt.",
+    "Falsch: Maßstab ist die Zumutbarkeit, nicht die bestmögliche Verwertung.",
+    "Falsch: Das Erhaltungsinteresse ist ein öffentliches, kein nachbarliches."
+   ],
+   "siehe": [
+    "rb-nachbarrecht"
+   ],
+   "antwort": "Die berechtigten Interessen der Eigentümer, Klima- und Ressourcenschutz und bei öffentlich zugänglichen Denkmälern die Barrierefreiheit (§ 9 Abs. 1 HDSchG). Die Rendite ist nur über die Zumutbarkeit von Bedeutung, und ästhetische Wünsche der Nachbarn sind kein Maßstab.",
+   "vertiefung": "Die Behörden handeln nach pflichtgemäßem Ermessen, um Denkmäler zu schützen, zu erhalten und zu bergen; die genannten Belange begrenzen und lenken dieses Ermessen. Ab 2027 sollen erneuerbare Energien sogar im überragenden öffentlichen Interesse liegen. Für Planende heißt das: Rampe, Aufzug oder Solaranlage am Denkmal sind verhandelbar, wenn sie die Substanz schonen.",
+   "tags": [
+    "ermessen",
+    "barrierefreiheit",
+    "klimaschutz"
+   ],
+   "quelle": "§ 9 Abs. 1 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-dm-027",
+   "typ": "karte",
+   "frage": "Kann ein Kulturdenkmal enteignet werden, und was gilt, wenn den Eigentümer eine denkmalrechtliche Anordnung unzumutbar belastet?",
+   "antwort": "Ja. Die Enteignung ist zugunsten des Landes, der Landkreise, der Gemeinden oder rechtsfähiger Stiftungen zulässig, wenn sie erforderlich ist, um ein Kulturdenkmal zu erhalten, es wissenschaftlich auszuwerten oder planmäßige Nachforschungen zu ermöglichen (§ 26 HDSchG). Führt eine Maßnahme nach dem Gesetz zu einer unzumutbaren Belastung, ist in Geld zu entschädigen (§ 27).",
+   "vertiefung": "Die Enteignung steht unter dem Vorbehalt der Erforderlichkeit und ist an Art. 14 Abs. 3 GG gebunden. Die Entschädigungsregel entspricht der Rechtsprechung des Bundesverfassungsgerichts, nach der eine unverhältnismäßige Belastung des Eigentümers durch Denkmalschutz einen Ausgleich braucht. Über die Höhe einer Enteignungsentschädigung entscheiden im Streitfall die ordentlichen Gerichte.",
+   "tags": [
+    "enteignung",
+    "entschädigung",
+    "eigentum"
+   ],
+   "siehe": [
+    "rb-nachbarrecht"
+   ],
+   "quelle": "§§ 26, 27 HDSchG vom 28.11.2016 (GVBl. S. 211), Wortlaut nach Abdruck der Stadt Wetzlar; BVerfG, Beschluss vom 02.03.1999 – 1 BvL 7/91, BVerfGE 100, 226; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 668, S. 239",
+   "stand": "2026-10",
+   "geprueft": true
   }
  ]
 }

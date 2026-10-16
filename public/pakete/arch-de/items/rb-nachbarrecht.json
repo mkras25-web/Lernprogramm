@@ -793,7 +793,7 @@
     "nachbarschutz",
     "geschützter personenkreis"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 647, S. 232; Rn. 649, S. 232–233",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 647–649, S. 232–233",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -827,7 +827,7 @@
     "§ 123 vwgo",
     "freistellung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 663–666, S. 237–238",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 665, S. 238",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -871,7 +871,7 @@
     "§ 2 baugb",
     "normenkontrolle"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 665–667, S. 238–239",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 666, S. 238–239",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -914,6 +914,100 @@
     "skizze"
    ],
    "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 659–666, S. 236–238",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-036",
+   "typ": "karte",
+   "frage": "Kann ein Nachbar sich darauf berufen, dass die Behörde ein Verfahren übergangen hat – etwa ein Großvorhaben per Befreiung genehmigt, statt einen Bebauungsplan aufzustellen?",
+   "siehe": [
+    "rb-bauleitplanung",
+    "rb-34-35"
+   ],
+   "antwort": "Grundsätzlich ist anerkannt, dass auch Verfahrensrechte nachbarschützend sein können; das folgt aus der Rechtsprechung des Bundesverfassungsgerichts zum Grundrechtsschutz durch Verfahren. Voraussetzungen und Reichweite sind aber weitgehend ungeklärt. Nach herrschender Meinung kann der Nachbar eine Genehmigung nicht allein deshalb angreifen, weil die Behörde das erforderliche Planverfahren umgangen hat.",
+   "vertiefung": "Battis hält das für falsch: Wer ein Großvorhaben ohne die nach § 1 Abs. 3 BauGB gebotene Bauleitplanung genehmigt oder einen Plan durch Befreiungen von seinen nicht nachbarschützenden Festsetzungen faktisch ändert, verletzt die Beteiligungsrechte der Öffentlichkeit nach § 3 BauGB – und die schützen auch den Nachbarn. Er erwartet, dass das Unionsrecht diese Entwicklung fördert. Hier ist die Literatur also gegen die h. M. zu lesen.",
+   "tags": [
+    "verfahrensrechte",
+    "nachbarschutz",
+    "befreiung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 653, S. 234",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-037",
+   "typ": "mehrfachauswahl",
+   "frage": "In welchen Fällen kommt für einen Nachbarn eine Verpflichtungs-, Unterlassungs- oder Leistungsklage statt der üblichen Anfechtungsklage in Betracht?",
+   "optionen": [
+    "Die Behörde weigert sich, gegen eine ungenehmigte Bauausführung einzuschreiten.",
+    "Die Behörde hat dem Nachbarn zugesagt, eine nicht nachbarschützende Norm einzuhalten, und hält sich nicht daran.",
+    "Ein öffentlicher Bauherr verstößt mit seinem Vorhaben gegen nachbarschützende Vorschriften.",
+    "Der Nachbar hält die erteilte Baugenehmigung für die Kfz-Werkstatt im Wohngebiet für rechtswidrig.",
+    "Die Behörde hat im vereinfachten Verfahren eine Vorschrift außerhalb ihres Prüfprogramms nicht geprüft."
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: Verpflichtungsklage auf Einschreiten.",
+    "Richtig: Eine Zusage kann eine eigene Klagebefugnis vermitteln, auch bei nicht nachbarschützenden Normen.",
+    "Richtig: Weil die Bauaufsicht dort nicht einschreiten darf, geht der Nachbar mit Unterlassungs- oder Leistungsklage direkt gegen Vorhaben oder Nutzung vor.",
+    "Falsch: Das ist der Regelfall der Anfechtungsklage, verbunden mit dem Eilantrag.",
+    "Falsch: Dadurch wird die Genehmigung nicht rechtswidrig; der Nachbar ist auf einen Antrag auf Einschreiten verwiesen."
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Bei verweigertem Einschreiten gegen eine ungenehmigte Ausführung, bei einer nicht eingehaltenen Zusage der Behörde und gegenüber Vorhaben öffentlicher Bauherren, gegen die die Bauaufsicht nicht einschreiten darf. Gegen eine erteilte Genehmigung bleibt es bei der Anfechtungsklage; Fehler außerhalb des Prüfprogramms im vereinfachten Verfahren machen die Genehmigung nicht rechtswidrig.",
+   "vertiefung": "Battis beobachtet, dass Verpflichtungsklagen auf Einschreiten mit der Verfahrensprivatisierung zunehmen, gerade wenn Nachbarn im Freistellungsverfahren nicht benachrichtigt werden. Die Rechtsprechung senkt deshalb die sonst hohen Anforderungen an eine Pflicht der Behörde zum Einschreiten.",
+   "tags": [
+    "klagearten",
+    "öffentlicher bauherr",
+    "zusage"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 649, S. 232; Rn. 659, S. 236",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-038",
+   "typ": "fall",
+   "frage": "Herr T. hat die Baugenehmigung für das Mehrfamilienhaus seines Nachbarn erfolgreich angefochten: Das Gebäude verletzt die Abstandsfläche zu seinem Grundstück und verschattet seinen Garten erheblich. Inzwischen ist das Haus fertig und bewohnt.",
+   "teile": [
+    {
+     "frage": "Ist das Haus nach der Aufhebung der Genehmigung noch rechtmäßig?",
+     "antwort": "Nein. Mit der Aufhebung ist es formell illegal geworden, und weil es die Abstandsfläche verletzt, ist es auch materiell illegal."
+    },
+    {
+     "frage": "Hat Herr T. einen Anspruch darauf, dass die Bauaufsicht den Rückbau anordnet?",
+     "antwort": "In der Regel ja. Verletzt ein Bau, der durch ein erfolgreiches Rechtsmittel des Nachbarn illegal geworden ist, nachbarschützende Normen und führt das zu einer konkreten, erheblich ins Gewicht fallenden Beeinträchtigung, reduziert sich das Ermessen der Behörde regelmäßig auf ein Einschreiten."
+    },
+    {
+     "frage": "Folgt dieser Anspruch schon daraus, dass die Behörde die Genehmigung rechtswidrig erteilt hatte?",
+     "antwort": "Nicht allein. Der rechtswidrige Zustand beruht nicht nur auf der Genehmigung, sondern auch darauf, dass der Bauherr gebaut hat. Die Pflicht der Behörde, die Folgen ihrer rechtswidrigen Genehmigung zu beseitigen, fließt aber als Faktor in ihr Ermessen ein."
+    },
+    {
+     "frage": "Muss die Behörde gleich den Abriss des ganzen Hauses verlangen?",
+     "antwort": "Nein. Sie muss das mildeste geeignete Mittel wählen; ein Teilrückbau, der die Abstandsfläche wiederherstellt, kann genügen."
+    }
+   ],
+   "siehe": [
+    "rb-verfahren",
+    "rb-abstandsflaechen"
+   ],
+   "antwort": "Nach erfolgreicher Anfechtung ist der Bau formell und materiell illegal. Herr T. kann in der Regel verlangen, dass die Behörde einschreitet, weil er konkret und erheblich beeinträchtigt ist – nicht schon deshalb, weil die Genehmigung rechtswidrig war. Die Behörde bleibt an die Verhältnismäßigkeit gebunden.",
+   "vertiefung": "Der Fall verbindet Nachbarklage und Bauaufsicht: Das Urteil gegen die Genehmigung beseitigt das Haus nicht, dafür braucht es eine Beseitigungsanordnung. Weil der Bauherr nach § 212a BauGB trotz Klage bauen durfte, trägt er das Risiko. Anders bei einem verfahrensfreien Bau in einem Bebauungsplan, der später für nichtig erklärt wird: Dort darf der Abriss wegen der planungsrechtlichen Illegalität nur verlangt werden, wenn Nachbarinteressen es erfordern.",
+   "tags": [
+    "fallaufgabe",
+    "beseitigungsanordnung",
+    "einschreiten",
+    "folgenbeseitigung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 608, S. 214–215; Rn. 663, S. 237",
    "stand": "2026-10",
    "geprueft": true
   }
