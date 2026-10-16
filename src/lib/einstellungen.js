@@ -214,25 +214,44 @@ export function farbenblindNachziehen(werte) {
   return farbenblindSchalten({ ...werte, farbenblind: false }, true)
 }
 
-export function speichern(profilId, einstellungen) {
-  // Aenderungen an abgeglichenen Einstellungen mit Zeitstempel merken. Der
-  // allererste Stand eines Profils (noch nichts gespeichert) zaehlt nicht
-  // als Aenderung - sonst schluegen die Standardwerte eines neuen Geraets
-  // die Wahl auf den anderen.
+// Speichert Einstellungen. Mit vorherigeWerte (der zuletzt gespeicherte
+// Stand DIESES Fensters) werden nur die Felder geschrieben, die sich hier
+// wirklich geaendert haben - alles andere bleibt so, wie es im Speicher
+// steht. Fehler bis 2026-10-16: es wurde immer der ganze Stand aus dem
+// Arbeitsspeicher geschrieben. Ein zweites Fenster/Tab (oder ein Abgleich,
+// der gerade Einstellungen eingelesen hatte) setzte so beim naechsten
+// Speichern alte Werte zurueck, z. B. "Zeichenaufgaben" wieder auf An - und
+// stempelte sie als neueste Aenderung, sodass sie per Dropbox weiterreisten.
+// Ohne vorherigeWerte (Profilwahl) gilt der Vergleich mit dem Speicher.
+export function speichern(profilId, einstellungen, vorherigeWerte) {
   const roh = rohLesen(profilId)
-  if (roh) {
-    const vorher = { ...STANDARD, ...roh }
-    const stand = einstellungsStand(profilId)
-    let geaendert = false
-    for (const k of [...ABGLEICH_LERNEN, ...ABGLEICH_AUSSEHEN]) {
-      if (!gleich(vorher[k], einstellungen[k])) {
-        stand[k] = Date.now()
-        geaendert = true
-      }
-    }
-    if (geaendert) localStorage.setItem(standSchluessel(profilId), JSON.stringify(stand))
+  // Allererster Stand eines Profils: komplett schreiben, nichts stempeln -
+  // sonst schluegen die Standardwerte eines neuen Geraets die Wahl auf den
+  // anderen.
+  if (!roh) {
+    localStorage.setItem(schluesselFuer(profilId), JSON.stringify(einstellungen))
+    return
   }
-  localStorage.setItem(schluesselFuer(profilId), JSON.stringify(einstellungen))
+  const gespeichert = { ...STANDARD, ...roh }
+  const basis = vorherigeWerte ?? gespeichert
+  const neu = { ...roh }
+  const stand = einstellungsStand(profilId)
+  const abgeglichen = new Set([...ABGLEICH_LERNEN, ...ABGLEICH_AUSSEHEN])
+  let gestempelt = false
+  let geschrieben = false
+  for (const k of new Set([...Object.keys(einstellungen), ...Object.keys(basis)])) {
+    if (gleich(basis[k], einstellungen[k])) continue // hier nicht geaendert
+    if (gleich(gespeichert[k], einstellungen[k]) && k in roh) continue // steht schon so da
+    if (einstellungen[k] === undefined) delete neu[k]
+    else neu[k] = einstellungen[k]
+    geschrieben = true
+    if (abgeglichen.has(k)) {
+      stand[k] = Date.now()
+      gestempelt = true
+    }
+  }
+  if (gestempelt) localStorage.setItem(standSchluessel(profilId), JSON.stringify(stand))
+  if (geschrieben) localStorage.setItem(schluesselFuer(profilId), JSON.stringify(neu))
 }
 
 export function anwenden(e) {

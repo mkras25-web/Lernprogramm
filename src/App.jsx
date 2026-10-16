@@ -219,10 +219,29 @@ export default function App({ profilId, onProfilWechseln }) {
       .finally(() => setLaedt(false))
   }, [opt.aktivesPaket, ladeVersuch])
 
+  // Nur das speichern, was sich in DIESEM Fenster geaendert hat (siehe
+  // speichern() in einstellungen.js) - ein zweites Fenster oder ein gerade
+  // laufender Abgleich wird so nicht mit altem Stand ueberschrieben.
+  const optGespeichert = useRef(null)
   useEffect(() => {
     anwenden(opt)
-    speichern(profilId, opt)
+    speichern(profilId, opt, optGespeichert.current)
+    optGespeichert.current = opt
   }, [opt, profilId])
+  // Aenderungen aus einem anderen Fenster/Tab desselben Profils uebernehmen.
+  useEffect(() => {
+    function fremdGeaendert(e) {
+      if (e.key !== `einstellungen_${profilId}`) return
+      // Erst beim Uebernehmen lesen - dann ist auch eine eigene, gerade
+      // gespeicherte Aenderung schon mit drin.
+      setOpt((alt) => {
+        const neu = einstellungenLaden(profilId)
+        return JSON.stringify(alt) === JSON.stringify(neu) ? alt : neu
+      })
+    }
+    window.addEventListener('storage', fremdGeaendert)
+    return () => window.removeEventListener('storage', fremdGeaendert)
+  }, [profilId])
 
   // Rueckmeldung zu Import/Export blendet sich von selbst wieder aus.
   useEffect(() => {
@@ -708,8 +727,11 @@ export default function App({ profilId, onProfilWechseln }) {
     setKursplan(kursplanLesen(profilId))
     // Abgeglichene Einstellungen (FSRS, Palette ...) neu laden - nur wenn
     // sich etwas geaendert hat, sonst rendert alles unnoetig neu.
-    const neu = einstellungenLaden(profilId)
-    setOpt((alt) => (JSON.stringify(alt) === JSON.stringify(neu) ? alt : neu))
+    // Erst beim Uebernehmen aus dem Speicher lesen (siehe optGespeichert).
+    setOpt((alt) => {
+      const neu = einstellungenLaden(profilId)
+      return JSON.stringify(alt) === JSON.stringify(neu) ? alt : neu
+    })
   }
 
   // --- Abgleich ueber Dropbox (hooks/useAbgleich.js) ----------------------
