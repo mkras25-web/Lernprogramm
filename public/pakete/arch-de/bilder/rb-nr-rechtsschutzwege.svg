@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="800" height="560" fill="#f0ead2"/>
+<text x="400" y="42" font-size="22" font-weight="bold" text-anchor="middle" fill="#414833">Rechtsschutz des Nachbarn</text>
+<rect x="30" y="62" width="360" height="72" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="210" y="92" font-size="18" font-weight="bold" text-anchor="middle" fill="#414833">Mit Baugenehmigung</text>
+<text x="210" y="117" font-size="14" text-anchor="middle" fill="#6c584c">Verwaltungsakt mit Doppelwirkung</text>
+<rect x="410" y="62" width="360" height="72" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="590" y="92" font-size="18" font-weight="bold" text-anchor="middle" fill="#414833">Ohne Baugenehmigung</text>
+<text x="590" y="117" font-size="14" text-anchor="middle" fill="#6c584c">verfahrensfrei, freigestellt, Schwarzbau</text>
+<rect x="30" y="165" width="360" height="112" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/><text x="48" y="191" font-size="12" font-weight="bold" letter-spacing="1.5" fill="#6c584c">HAUPTSACHE</text><text x="48" y="217" font-size="15" fill="#414833">Widerspruch, soweit vorgesehen,</text><text x="48" y="238" font-size="15" fill="#414833">dann Anfechtungsklage</text><text x="48" y="259" font-size="15" fill="#414833">gegen die Bauaufsichtsbehörde</text>
+<rect x="410" y="165" width="360" height="112" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/><text x="428" y="191" font-size="12" font-weight="bold" letter-spacing="1.5" fill="#6c584c">HAUPTSACHE</text><text x="428" y="217" font-size="15" fill="#414833">Antrag an die Bauaufsicht,</text><text x="428" y="238" font-size="15" fill="#414833">einzuschreiten, dann</text><text x="428" y="259" font-size="15" fill="#414833">Verpflichtungsklage auf Einschreiten</text>
+<rect x="30" y="298" width="360" height="44" rx="8" fill="#f0ead2" stroke="#9a6b1f" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="210" y="325" font-size="14" font-style="italic" text-anchor="middle" fill="#9a6b1f">§ 212a BauGB: keine aufschiebende Wirkung</text>
+<rect x="410" y="298" width="360" height="44" rx="8" fill="#f0ead2" stroke="#9a6b1f" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="590" y="325" font-size="14" font-style="italic" text-anchor="middle" fill="#9a6b1f">kein Verwaltungsakt, den man aussetzen kann</text>
+<rect x="30" y="363" width="360" height="112" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/><text x="48" y="389" font-size="12" font-weight="bold" letter-spacing="1.5" fill="#6c584c">EILVERFAHREN</text><text x="48" y="415" font-size="15" fill="#414833">Antrag auf Anordnung der</text><text x="48" y="436" font-size="15" fill="#414833">aufschiebenden Wirkung,</text><text x="48" y="457" font-size="15" fill="#414833">§§ 80a Abs. 3, 80 Abs. 5 VwGO</text>
+<rect x="410" y="363" width="360" height="112" rx="8" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5"/><text x="428" y="389" font-size="12" font-weight="bold" letter-spacing="1.5" fill="#6c584c">EILVERFAHREN</text><text x="428" y="415" font-size="15" fill="#414833">einstweilige Anordnung, § 123 VwGO:</text><text x="428" y="436" font-size="15" fill="#414833">Baueinstellung, Nutzungsuntersagung –</text><text x="428" y="457" font-size="15" fill="#414833">kein Abriss</text>
+<line x1="210" y1="134" x2="210" y2="157" stroke="#6c584c" stroke-width="2"/><polygon points="204,156 216,156 210,165" fill="#6c584c"/>
+<line x1="210" y1="277" x2="210" y2="290" stroke="#6c584c" stroke-width="2"/><polygon points="204,289 216,289 210,298" fill="#6c584c"/>
+<line x1="210" y1="342" x2="210" y2="355" stroke="#6c584c" stroke-width="2"/><polygon points="204,354 216,354 210,363" fill="#6c584c"/>
+<line x1="590" y1="134" x2="590" y2="157" stroke="#6c584c" stroke-width="2"/><polygon points="584,156 596,156 590,165" fill="#6c584c"/>
+<line x1="590" y1="277" x2="590" y2="290" stroke="#6c584c" stroke-width="2"/><polygon points="584,289 596,289 590,298" fill="#6c584c"/>
+<line x1="590" y1="342" x2="590" y2="355" stroke="#6c584c" stroke-width="2"/><polygon points="584,354 596,354 590,363" fill="#6c584c"/>
+<rect x="30" y="497" width="740" height="44" rx="8" fill="#adc178"/>
+<text x="400" y="525" font-size="15" font-weight="bold" text-anchor="middle" fill="#414833">Maßstab in beiden Fällen: Verstoß gegen eine nachbarschützende Norm</text>
+</svg>

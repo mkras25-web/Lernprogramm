@@ -3,21 +3,21 @@
  "titel": "Nachbarrecht und Rechtsschutz",
  "erklaerung": {
   "absaetze": [
-   "Im Baurecht gibt es für jedes Anliegen einen eigenen Rechtsbehelf. Gegen einen Bebauungsplan hilft der Normenkontrollantrag beim Verwaltungsgerichtshof, binnen eines Jahres und nur bei möglicher Verletzung eigener Rechte (§ 47 VwGO). Wer seinen Bauantrag abgelehnt bekommt, erhebt Verpflichtungsklage; bei Ermessensentscheidungen wie einer Befreiung gibt es meist nur ein Bescheidungsurteil. Eine Klage auf Aufstellung eines Bebauungsplans gibt es nicht. Pläne können außerdem inzident überprüft werden, etwa im Streit um eine Baugenehmigung.",
+   "Im Baurecht gibt es für jedes Anliegen einen eigenen Rechtsbehelf. Gegen einen Bebauungsplan hilft der Normenkontrollantrag beim Verwaltungsgerichtshof, binnen eines Jahres und nur bei möglicher Verletzung eigener Rechte (§ 47 VwGO). Wer seinen Bauantrag abgelehnt bekommt, erhebt Verpflichtungsklage; bei Ermessensentscheidungen wie einer Befreiung gibt es meist nur ein Bescheidungsurteil. Eine Klage auf Aufstellung eines Bebauungsplans gibt es nicht. Pläne können außerdem inzident überprüft werden, etwa im Streit um eine Baugenehmigung. Auch eine Nachbargemeinde kann einen Bebauungsplan angreifen, der sie gewichtig betrifft und nicht mit ihr abgestimmt wurde (§ 2 Abs. 2 BauGB). Streit um Umlegung und Enteignung gehört dagegen vor die Kammern für Baulandsachen der Zivilgerichte.",
    "Der Nachbarstreit ist dreipolig: Der Nachbar klagt nicht gegen die Bauherrschaft, sondern gegen die Bauaufsichtsbehörde, die die Genehmigung erteilt hat; die Bauherrschaft wird beigeladen. Die Baugenehmigung ist ein Verwaltungsakt mit Doppelwirkung. Daneben steht das private Nachbarrecht mit Abwehransprüchen aus §§ 1004 und 906 BGB und den Landesnachbarrechtsgesetzen. Solange eine Genehmigung wirksam ist, muss das Zivilgericht sie aber hinnehmen.",
-   "Erfolg hat ein Nachbar nur, wenn die Genehmigung gegen eine Norm verstößt, die gerade ihn schützen soll – das ist die Schutznormtheorie. Generell nachbarschützend sind etwa die Abstandsflächen und die Festsetzung der Gebietsart: Aus ihr folgt der Gebietserhaltungsanspruch, mit dem jeder Eigentümer im Baugebiet eine gebietsfremde Nutzung abwehren kann, ohne konkret beeinträchtigt zu sein. Festsetzungen zum Maß schützen in der Regel nur das öffentliche Interesse.",
-   "Wo eine Norm nicht generell nachbarschützend ist, kann das Gebot der Rücksichtnahme im Einzelfall Schutz vermitteln. Es steckt in Normen wie § 15 Abs. 1 BauNVO, dem Einfügen nach § 34 oder der Würdigung nachbarlicher Interessen bei der Befreiung und ist verletzt, wenn ein Vorhaben den Nachbarn unzumutbar beeinträchtigt. Gibt es gar keine Genehmigung, weil das Vorhaben freigestellt oder verfahrensfrei ist, muss der Nachbar die Bauaufsicht zum Einschreiten bringen.",
+   "Erfolg hat ein Nachbar nur, wenn die Genehmigung gegen eine Norm verstößt, die gerade ihn schützen soll – das ist die Schutznormtheorie. Generell nachbarschützend sind etwa die Abstandsflächen und die Festsetzung der Gebietsart: Aus ihr folgt der Gebietserhaltungsanspruch, mit dem jeder Eigentümer im Baugebiet eine gebietsfremde Nutzung abwehren kann, ohne konkret beeinträchtigt zu sein. Festsetzungen zum Maß schützen in der Regel nur das öffentliche Interesse. Klagen kann außerdem nur, wer zum geschützten Personenkreis gehört – in erster Linie Eigentümer, Mieter in der Regel nicht –, und der Schutz reicht nur so weit wie die Norm: Die Abstandsfläche schützt allein den Grenznachbarn auf der betroffenen Seite.",
+   "Wo eine Norm nicht generell nachbarschützend ist, kann das Gebot der Rücksichtnahme im Einzelfall Schutz vermitteln. Es steckt in Normen wie § 15 Abs. 1 BauNVO, dem Einfügen nach § 34 oder der Würdigung nachbarlicher Interessen bei der Befreiung und ist verletzt, wenn ein Vorhaben den Nachbarn unzumutbar beeinträchtigt. Gibt es gar keine Genehmigung, weil das Vorhaben freigestellt oder verfahrensfrei ist, muss der Nachbar die Bauaufsicht zum Einschreiten bringen. Im Eilverfahren hilft ihm dann die einstweilige Anordnung nach § 123 VwGO.",
    "Widerspruch und Klage eines Nachbarn halten den Bau nicht auf (§ 212a BauGB). Wirksamen Schutz bietet deshalb oft nur der Eilantrag beim Verwaltungsgericht nach §§ 80a, 80 Abs. 5 VwGO. Die Klagefrist beträgt einen Monat ab Bekanntgabe. Häufige Verwechslung: Rechtswidrig heißt nicht rechtsverletzend. Eine zu hohe GRZ macht die Genehmigung rechtswidrig, gibt dem Nachbarn aber meist noch keinen Anspruch auf ihre Aufhebung."
   ],
   "merksatz": "Ein Nachbar gewinnt nicht, weil die Genehmigung rechtswidrig ist, sondern nur, wenn sie eine Norm verletzt, die ihn schützt – Gebietsart, Abstandsflächen oder im Einzelfall die Rücksichtnahme.",
   "bild": "bilder/rb-nr-uebersicht.svg",
   "bildunterschrift": "Anliegen und passender Rechtsbehelf im öffentlichen Baurecht.",
-  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 612–646, S. 220–231; Rn. 505, S. 181; BVerwG, Urteil vom 16.09.1993 – 4 C 28.91, BVerwGE 94, 151 (Gebietserhaltungsanspruch); §§ 47, 80, 80a, 113 VwGO, Wortlaut nach dejure.org; § 212a BauGB, Wortlaut nach dejure.org, Stand Oktober 2026"
+  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 612–670, S. 220–240; Rn. 505, S. 181; BVerwG, Urteil vom 16.09.1993 – 4 C 28.91, BVerwGE 94, 151 (Gebietserhaltungsanspruch); §§ 47, 80, 80a, 113 VwGO, Wortlaut nach dejure.org; § 212a BauGB, Wortlaut nach dejure.org, Stand Oktober 2026"
  },
  "lernziele": [
   "Du kannst für typische Anliegen den richtigen Rechtsbehelf benennen, von der Normenkontrolle bis zur Klage auf Einschreiten.",
   "Du kannst das dreipolige Verhältnis im Nachbarstreit erklären und öffentliches von privatem Nachbarrecht abgrenzen.",
-  "Du kannst mit der Schutznormtheorie prüfen, ob eine Vorschrift nachbarschützend ist, und kennst Gebietserhaltungsanspruch und Rücksichtnahmegebot.",
+  "Du kannst mit der Schutznormtheorie prüfen, ob eine Vorschrift nachbarschützend ist, kennst Gebietserhaltungsanspruch und Rücksichtnahmegebot und weißt, wer als Nachbar klagen darf.",
   "Du weißt, warum eine Nachbarklage den Bau nicht stoppt und wie der Eilrechtsschutz funktioniert."
  ],
  "siehe": [
@@ -466,12 +466,12 @@
     "rb-verfahren"
    ],
    "antwort": "Einen Monat nach Bekanntgabe (§ 74 VwGO); ist ein Widerspruchsverfahren vorgesehen, gilt die Monatsfrist für den Widerspruch und danach für die Klage nach Zustellung des Widerspruchsbescheids.",
-   "vertiefung": "Wird die Genehmigung dem Nachbarn nicht bekanntgegeben, läuft keine Frist. Er kann sein Abwehrrecht aber verwirken, wenn er von der Genehmigung sicher Kenntnis hatte oder hätte haben müssen und lange untätig bleibt. In Hessen wird die Genehmigung nur den Nachbarn bekanntgegeben, deren Einwendungen nicht entsprochen wurde (§ 71 Abs. 3 HBO).",
+   "vertiefung": "Wird die Genehmigung dem Nachbarn nicht mit Rechtsbehelfsbelehrung bekanntgegeben, gilt die Monatsfrist nicht. Dann läuft die Jahresfrist (§§ 70, 58 Abs. 2 VwGO) ab dem Zeitpunkt, zu dem er von der Genehmigung tatsächlich Kenntnis erlangt hat oder hätte erlangen können; unter besonderen Umständen kann er sein Abwehrrecht auch schon vorher verwirken. In Hessen wird die Genehmigung nur den Nachbarn bekanntgegeben, deren Einwendungen nicht entsprochen wurde (§ 71 Abs. 3 HBO).",
    "tags": [
     "nachbarklage",
     "klagefrist"
    ],
-   "quelle": "§§ 70, 74 VwGO, Wortlaut nach dejure.org; § 71 Abs. 3 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "quelle": "§§ 70, 74 VwGO, Wortlaut nach dejure.org; § 71 Abs. 3 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de; Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 660–661, S. 236–237",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -483,13 +483,13 @@
     "rb-verfahren"
    ],
    "antwort": "Es gibt keinen Bescheid, den er anfechten könnte. Der Nachbar muss die Bauaufsicht zum Einschreiten bringen und notfalls mit der Verpflichtungsklage durchsetzen, dass sie gegen das Vorhaben vorgeht, etwa durch Baueinstellung oder Beseitigungsanordnung. Voraussetzung ist, dass das Vorhaben gegen eine nachbarschützende Norm verstößt.",
-   "vertiefung": "Die Behörde hat Ermessen. Bei einer erheblichen Verletzung nachbarschützender Vorschriften verdichtet es sich aber regelmäßig zu einer Pflicht einzuschreiten. Battis kritisiert, dass die Verfahrensprivatisierung den Nachbarschutz erschwert, weil Nachbarn oft gar nicht erfahren, dass gebaut wird. Bei Vorhaben im vereinfachten Verfahren ist der Nachbar im Anfechtungsprozess auf das Prüfprogramm beschränkt; für den Rest bleibt der Antrag auf Einschreiten.",
+   "vertiefung": "Die Behörde hat Ermessen. Bei einer erheblichen Verletzung nachbarschützender Vorschriften verdichtet es sich aber regelmäßig zu einer Pflicht einzuschreiten. Battis kritisiert, dass die Verfahrensprivatisierung den Nachbarschutz erschwert, weil Nachbarn oft gar nicht erfahren, dass gebaut wird. Bei Vorhaben im vereinfachten Verfahren ist der Nachbar im Anfechtungsprozess auf das Prüfprogramm beschränkt; für den Rest bleibt der Antrag auf Einschreiten. So sieht es das Bundesverwaltungsgericht – der VGH Kassel hat das abweichend beurteilt.",
    "tags": [
     "nachbarschutz",
     "freistellung",
     "einschreiten"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 634, S. 226–227; Rn. 642, S. 230; §§ 81, 82 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 634, S. 226–227; Rn. 642, S. 230; Rn. 660, S. 236; §§ 81, 82 HBO (Stand Baupaket I, Oktober 2025), Wortlaut nach anwalt24.de",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -652,6 +652,268 @@
     "rücksichtnahme"
    ],
    "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 637, S. 227–228; Rn. 640–646, S. 229–231",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-027",
+   "typ": "zuordnung",
+   "frage": "Ordne jeder Festsetzung oder Vorschrift zu, ob und wie sie den Nachbarn schützt.",
+   "paare": [
+    [
+     "Festsetzung der Art der baulichen Nutzung",
+     "nachbarschützend"
+    ],
+    [
+     "Festsetzung zum Maß der baulichen Nutzung",
+     "nicht nachbarschützend"
+    ],
+    [
+     "Festsetzung der offenen Bauweise",
+     "nachbarschützend"
+    ],
+    [
+     "Festsetzung der geschlossenen Bauweise",
+     "nicht nachbarschützend"
+    ],
+    [
+     "Einvernehmen der Gemeinde nach § 36 Abs. 1 BauGB",
+     "schützt nur die Gemeinde"
+    ],
+    [
+     "Einfügen nach § 34 Abs. 1 BauGB",
+     "im Einzelfall über das Rücksichtnahmegebot"
+    ]
+   ],
+   "siehe": [
+    "rb-baunvo",
+    "rb-bauweise",
+    "rb-34-35"
+   ],
+   "antwort": "Festsetzungen zur Art der Nutzung sind regelmäßig nachbarschützend, solche zum Maß regelmäßig nicht. Die offene Bauweise schützt den Nachbarn in der Regel, die geschlossene nicht. § 36 Abs. 1 BauGB schützt die Planungshoheit der Gemeinde, nicht den Bürger. Das Einfügen nach § 34 Abs. 1 BauGB vermittelt Nachbarschutz nur partiell, über das darin enthaltene Rücksichtnahmegebot.",
+   "vertiefung": "Ob eine Festsetzung nachbarschützend ist, hängt vom Willen der Gemeinde ab, notfalls ermittelt aus der Planbegründung. Wichtigster Anhaltspunkt ist ein erkennbares Austauschverhältnis zwischen den Eigentümern im selben Baugebiet. Nicht nachbarschützend sind nach Battis auch ein förmlich festgelegtes Sanierungskonzept und eine Baumschutzsatzung; § 35 BauGB schützt nur ausnahmsweise, ebenfalls über die Rücksichtnahme.",
+   "tags": [
+    "nachbarschutz",
+    "bauweise",
+    "schutznormtheorie"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 649–651, S. 232–233",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-028",
+   "typ": "mehrfachauswahl",
+   "frage": "Welche bauordnungsrechtlichen Vorschriften können nach der Rechtsprechung nachbarschützend sein?",
+   "optionen": [
+    "Vorschriften zur Standsicherheit",
+    "Vorschriften zum Brandschutz",
+    "Vorschriften zum Schallschutz",
+    "Vorschriften zur Baugestaltung",
+    "Vorschriften über Dachaufbauten",
+    "Vorschriften zur Höhenlage baulicher Anlagen",
+    "Vorschriften über Einfriedungen"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: Ein Einsturz trifft gerade das Nachbargrundstück.",
+    "Richtig: Brandschutz dient auch dem Schutz der Nachbarbebauung.",
+    "Richtig: Schallschutz kann unter bestimmten Voraussetzungen den Nachbarn schützen.",
+    "Falsch: Gestaltungsvorschriften gelten als nicht nachbarschützend.",
+    "Falsch: Auch Dachaufbauten werden nicht als nachbarschützend anerkannt.",
+    "Falsch: Die Höhenlage gehört zu den nicht nachbarschützenden Vorschriften.",
+    "Falsch: Öffentlich-rechtlich nicht nachbarschützend; Streit darüber läuft über das private Nachbarrecht."
+   ],
+   "siehe": [
+    "rb-lbo",
+    "rb-abstandsflaechen"
+   ],
+   "antwort": "Neben den Abstandsflächen können die Vorschriften über Standsicherheit, Brandschutz und Schallschutz unter bestimmten Voraussetzungen nachbarschützend sein. Vorschriften über Baugestaltung, Dachaufbauten, Fensterabstand, Höhenlage und Einfriedungen gelten als nicht nachbarschützend.",
+   "vertiefung": "Früher galt das Bauordnungsrecht als reine Gefahrenabwehr im Allgemeininteresse. Seit die Rechtsprechung den Bürger nicht mehr nur als Objekt staatlicher Fürsorge sieht, werden viele Vorschriften, die die Generalklausel konkretisieren, auch als nachbarschützend anerkannt. Die bauordnungsrechtliche Rechtsprechung ist aber unübersichtlicher als die planungsrechtliche, weil Landesrecht nicht revisibel ist; das Rücksichtnahmegebot spielt hier eine geringere Rolle.",
+   "tags": [
+    "nachbarschutz",
+    "bauordnungsrecht",
+    "brandschutz"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 643, S. 230; Rn. 654, S. 234",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-029",
+   "typ": "mehrfachauswahl",
+   "frage": "Wer kann sich als „Nachbar“ gegen eine Baugenehmigung wehren?",
+   "optionen": [
+    "Eigentümer eines Grundstücks, das von der verletzten Schutznorm erfasst wird",
+    "Käufer mit Vormerkung, auf den Besitz, Nutzungen und Lasten schon übergegangen sind",
+    "Mieter, der sich auf eine Gefährdung seiner Gesundheit durch Lärm oder Abgase beruft",
+    "Mieter, der sich gegen die Verschattung seiner Wohnung wehrt",
+    "Inhaber eines Vorkaufsrechts am Nachbargrundstück",
+    "Jemand, der auf dem Nachbargrundstück bauen will, ohne dessen Eigentümer zu sein"
+   ],
+   "richtig": [
+    0,
+    1,
+    2
+   ],
+   "warum": [
+    "Richtig: Eigentümer sind die typischen Geschützten – nicht nur oder nicht automatisch die Angrenzer.",
+    "Richtig: Als einwendungsberechtigt anerkannt.",
+    "Richtig: Auf Art. 2 Abs. 2 GG können sich auch Mieter, Pächter und Arbeitnehmer berufen.",
+    "Falsch: Mieter sind in der Regel auf privatrechtliche Ansprüche gegen ihren Vermieter verwiesen.",
+    "Falsch: Das Vorkaufsrecht genügt nicht.",
+    "Falsch: Wer nicht Eigentümer des betroffenen Grundstücks ist, ist nicht einwendungsberechtigt."
+   ],
+   "antwort": "In erster Linie die Eigentümer der Grundstücke, die die Schutznorm erfasst; anerkannt ist auch der durch Vormerkung gesicherte Käufer, auf den Besitz, Nutzungen und Lasten übergegangen sind. Mieter zählen in der Regel nicht dazu – außer sie berufen sich auf ihre Gesundheit. Vorkaufsberechtigte und Bauwillige ohne Eigentum sind nicht einwendungsberechtigt.",
+   "vertiefung": "Hinter der Mieterfrage steht die Rolle der Grundrechte. Früher bejahte die Rechtsprechung eine Klagebefugnis direkt aus Art. 14 Abs. 1 GG, wenn ein Vorhaben die Grundstückssituation nachhaltig veränderte und den Nachbarn „schwer und unerträglich“ traf. Davon hat sich das Bundesverwaltungsgericht verabschiedet: Nachbarschutz besteht grundsätzlich nur, soweit der Gesetzgeber ihn normiert hat. Eine Ausnahme bleibt der Gesundheitsschutz nach Art. 2 Abs. 2 GG; auf Art. 2 Abs. 1 GG lässt sich eine Nachbarklage dagegen grundsätzlich nicht stützen.",
+   "tags": [
+    "nachbarklage",
+    "klagebefugnis",
+    "grundrechte"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 655–658, S. 234–236",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-030",
+   "typ": "karte",
+   "frage": "Ein Neubau unterschreitet die Abstandsfläche zur östlichen Grundstücksgrenze. Kann sich auch der Eigentümer des westlichen Nachbargrundstücks darauf berufen?",
+   "siehe": [
+    "rb-abstandsflaechen"
+   ],
+   "antwort": "Nein. Die Abstandsflächenvorschriften sind zwar nachbarschützend, ihr Schutz gilt aber nur dem Grenznachbarn auf der Seite, an der die Abstandsfläche nicht eingehalten wird. Bei der Gebietsart ist der Kreis weiter: Ihr Schutz ist nicht auf die Angrenzer beschränkt.",
+   "vertiefung": "Mit der Feststellung, dass eine Norm nachbarschützend ist, ist die Prüfung nicht beendet: Der Kläger muss zum geschützten Personenkreis gehören, und der Schutz reicht nur so weit wie der Zweck der Norm. Umgekehrt ist nicht automatisch jeder Eigentümer im Plangebiet befugt – während eine Festsetzung im Einzelfall sogar Eigentümern außerhalb des Plangebiets zugutekommen kann, wenn sich das aus der Auslegung ergibt (plangebietsüberschreitendes Austauschverhältnis).",
+   "tags": [
+    "abstandsflächen",
+    "nachbarschutz",
+    "geschützter personenkreis"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 647, S. 232; Rn. 649, S. 232–233",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-031",
+   "typ": "mehrfachauswahl",
+   "frage": "Ein genehmigungsfreigestelltes Wohnhaus wird gebaut und unterschreitet die Abstandsfläche zum Grundstück von Frau M. Was kann sie im Eilverfahren erreichen?",
+   "optionen": [
+    "Eine einstweilige Anordnung nach § 123 VwGO, die die Bauaufsicht zur Baueinstellung verpflichtet",
+    "Nach Fertigstellung eine vorläufige Nutzungsuntersagung über § 123 VwGO",
+    "Den Abriss des Gebäudes im Wege der einstweiligen Anordnung",
+    "Die Anordnung der aufschiebenden Wirkung nach § 80a Abs. 3, § 80 Abs. 5 VwGO"
+   ],
+   "richtig": [
+    0,
+    1
+   ],
+   "warum": [
+    "Richtig: Bei freigestellten Vorhaben ist § 123 VwGO der Weg des Eilrechtsschutzes.",
+    "Richtig: Eine Nutzungsuntersagung lässt sich vorläufig durchsetzen.",
+    "Falsch: Ein Abriss würde die Hauptsache in nicht mehr umkehrbarer Weise vorwegnehmen.",
+    "Falsch: Es gibt keine Baugenehmigung, deren Vollziehung ausgesetzt werden könnte."
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Eine einstweilige Anordnung nach § 123 Abs. 1 VwGO, mit der die Bauaufsicht zum Einschreiten – etwa zur Baueinstellung – verpflichtet wird, und nach Fertigstellung eine vorläufige Nutzungsuntersagung. Einen Abriss kann sie im Eilverfahren nicht durchsetzen, und §§ 80a, 80 Abs. 5 VwGO passen nicht, weil es keinen Verwaltungsakt gibt.",
+   "vertiefung": "Damit der Nachbar im Freistellungsverfahren nicht schlechter steht als bei einer Baugenehmigung, wird der Anordnungsanspruch großzügig bejaht: Trotz des Ermessens der Behörde besteht regelmäßig ein Anspruch auf Einschreiten. Dasselbe gilt für ein genehmigungspflichtiges Vorhaben, das ohne Genehmigung errichtet wird. Ob der Nachbar im Eilverfahren direkt gegen den Bauherrn vorgehen kann, ist umstritten; Battis lehnt das ab, weil ein privatrechtlicher Streit durch die Verfahrensprivatisierung nicht öffentlich-rechtlich wird.",
+   "tags": [
+    "eilrechtsschutz",
+    "§ 123 vwgo",
+    "freistellung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 663–666, S. 237–238",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-032",
+   "typ": "freitext",
+   "frage": "Ein emittierender Betrieb klagt gegen eine Planung, die ein Wohngebiet direkt neben ihm vorsieht – obwohl die Wohnhäuser ihn selbst gar nicht stören würden. Erläutere, worum es bei einer solchen Klage geht und worin sie sich von der üblichen Nachbarklage unterscheidet.",
+   "pruefpunkte": [
+    "Die übliche Nachbarklage ist defensiv: Abwehr einer Beeinträchtigung der eigenen Rechte",
+    "Störungspräventive (offensive) Nachbarklage: Der Kläger fürchtet, selbst zum Störer zu werden",
+    "Die heranrückende Wohnbebauung würde Abwehransprüche der Bewohner gegen den Betrieb auslösen",
+    "Anknüpfung an die nachbarschützenden Konstellationen der §§ 34, 35 BauGB und das Rücksichtnahmegebot",
+    "Beispiel Störfallbetrieb: unionsrechtskonforme Auslegung des Einfügens"
+   ],
+   "siehe": [
+    "rb-34-35",
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Es ist eine störungspräventive oder offensive Nachbarklage. Im Regelfall wehrt sich ein Nachbar defensiv gegen eine Beeinträchtigung seiner Rechte. Hier greift der Betrieb eine Planung oder Genehmigung an, weil er nach ihrer Verwirklichung in die Rolle des immissionsschutzrechtlichen Störers geriete: Die neuen Bewohner könnten erfolgreich gegen seine Emissionen vorgehen. Gestützt wird das auf die nachbarschützenden Konstellationen der §§ 34 und 35 BauGB, vermittelt über das Rücksichtnahmegebot.",
+   "vertiefung": "Im Fall eines Störfallbetriebs nach der Seveso-Richtlinie, der gegen die Genehmigung eines heranrückenden Gartenbaubetriebs klagte, hat das Bundesverwaltungsgericht nach einer Vorabentscheidung des EuGH das Einfügen nach § 34 Abs. 1 BauGB unter Rückgriff auf das Rücksichtnahmegebot unionsrechtskonform ausgelegt. Battis nennt als weitere Beispiele Schweinemast und Landwirtschaft.",
+   "tags": [
+    "störungspräventive nachbarklage",
+    "rücksichtnahme",
+    "immissionsschutz"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 651–653, S. 233–234",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-033",
+   "typ": "karte",
+   "frage": "Kann eine Gemeinde gegen den Bebauungsplan ihrer Nachbargemeinde vorgehen?",
+   "siehe": [
+    "rb-bauleitplanung"
+   ],
+   "antwort": "Ja, mit einem Normenkontrollantrag nach § 47 VwGO, wenn der Plan die Pflicht zur Abstimmung mit den Nachbargemeinden (§ 2 Abs. 2 BauGB) verletzt. Antragsbefugt ist sie, wenn gewichtige Auswirkungen auf ihre städtebauliche Ordnung oder Entwicklung vorliegen oder möglich sind – etwa ein Einkaufszentrum, das ihre Innenstadt zu veröden droht, oder ein Windpark nahe ihrer Wohnbebauung. Vorläufiger Rechtsschutz läuft über § 47 Abs. 6 VwGO.",
+   "vertiefung": "Die Planungshoheit endet an der Gemeindegrenze, die Wirkungen eines Plans nicht. Unzulässig ist dagegen eine Klage der Gemeinde gegen die aufsichtsbehördliche Genehmigung eines nicht abgestimmten Plans. Eine vorbeugende Unterlassungsklage schon vor Erlass des Plans ist nicht ausgeschlossen, bleibt aber auf Ausnahmefälle beschränkt.",
+   "tags": [
+    "gemeindenachbarklage",
+    "§ 2 baugb",
+    "normenkontrolle"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 665–667, S. 238–239",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-034",
+   "typ": "karte",
+   "frage": "Welche Gerichte entscheiden über Streit um Umlegung oder Enteignung nach dem BauGB, und wie wird das Verfahren eingeleitet?",
+   "antwort": "Die Kammern für Baulandsachen bei den Landgerichten, in zweiter Instanz die Senate für Baulandsachen bei den Oberlandesgerichten, in der Revision der Bundesgerichtshof. Die Spruchkörper der Instanzgerichte sind mit zwei Zivilrichtern und einem Verwaltungsrichter besetzt. Statt Klage zu erheben, stellt man einen Antrag auf gerichtliche Entscheidung bei der Stelle, die den Verwaltungsakt erlassen hat; sie leitet den Vorgang an das Landgericht weiter (§ 217 BauGB).",
+   "vertiefung": "Hintergrund ist Art. 14 Abs. 3 Satz 4 GG, der für die Höhe der Enteignungsentschädigung den Rechtsweg zu den ordentlichen Gerichten garantiert. Damit Rechtmäßigkeit und Entschädigung nicht vor zwei Gerichtszweigen landen, bündelt das BauGB beides bei den Baulandgerichten – zuständig auch für entschädigungspflichtige Verwaltungsakte wie bei einer Veränderungssperre oder dem Vorkaufsrecht. Es gibt keine Parteien, nur Beteiligte; wer Anträge zur Sache stellt, braucht einen Anwalt, im Übrigen gilt die ZPO.",
+   "tags": [
+    "baulandsachen",
+    "enteignung",
+    "umlegung"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 667–670, S. 239–240",
+   "stand": "2026-10",
+   "geprueft": true
+  },
+  {
+   "id": "rb-nr-035",
+   "typ": "skizze",
+   "frage": "Skizziere aus dem Gedächtnis die Rechtsschutzwege eines Nachbarn – einmal gegen ein genehmigtes Vorhaben, einmal gegen ein Vorhaben ohne Baugenehmigung, jeweils mit Hauptsache und Eilverfahren.",
+   "referenz": "bilder/rb-nr-rechtsschutzwege.svg",
+   "pruefpunkte": [
+    "Zwei getrennte Fälle: mit Baugenehmigung und ohne Baugenehmigung",
+    "Mit Genehmigung: Widerspruch, soweit vorgesehen, und Anfechtungsklage gegen die Behörde",
+    "§ 212a BauGB: keine aufschiebende Wirkung, daher Eilantrag nach §§ 80a, 80 Abs. 5 VwGO",
+    "Ohne Genehmigung: Antrag auf Einschreiten und Verpflichtungsklage",
+    "Eilrechtsschutz dort über § 123 VwGO, aber kein Abriss im Eilverfahren",
+    "Maßstab in beiden Fällen: Verstoß gegen eine nachbarschützende Norm"
+   ],
+   "siehe": [
+    "rb-verfahren"
+   ],
+   "antwort": "Gegen eine Baugenehmigung: Widerspruch, soweit vorgesehen, und Anfechtungsklage gegen die Bauaufsichtsbehörde; weil sie nach § 212a BauGB keine aufschiebende Wirkung haben, dazu der Eilantrag nach §§ 80a Abs. 3, 80 Abs. 5 VwGO. Ohne Genehmigung: Antrag an die Bauaufsicht, einzuschreiten, und Verpflichtungsklage; im Eilverfahren die einstweilige Anordnung nach § 123 VwGO auf Baueinstellung oder Nutzungsuntersagung. In beiden Fällen kommt es auf den Verstoß gegen eine nachbarschützende Norm an.",
+   "vertiefung": "Die beiden Spalten unterscheiden sich, weil es im zweiten Fall keinen Verwaltungsakt gibt, der angefochten oder in seiner Vollziehung ausgesetzt werden könnte. Ein prozessualer Fallstrick für beide: Ändert sich während des Nachbarstreits die Rechtslage, ist stets die für den Bauherrn günstigere zugrunde zu legen – mit Rücksicht auf die Eigentumsgarantie, abweichend von den sonst geltenden Regeln.",
+   "tags": [
+    "nachbarklage",
+    "eilrechtsschutz",
+    "skizze"
+   ],
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 659–666, S. 236–238",
    "stand": "2026-10",
    "geprueft": true
   }
