@@ -418,10 +418,11 @@ export default function Einstellungen({
 
           <div className="zeile">
             <div className="zeileText">
-              <p className="zeileTitel">Ungeprüfte Items</p>
+              <p className="zeileTitel">Karten mit offenem Normstand</p>
               <p className="zeileHinweis">
-                Items, deren Normbezug noch nicht abgeglichen ist. Im Lernstapel sinnvoll, in
-                Prüfungen nie.
+                Karten, deren Normbezug noch nicht gegen die aktuelle Fassung belegt ist („Normstand
+                offen“). Im Lernstapel sinnvoll, in Prüfungen nie. Nicht zu verwechseln mit
+                „✓ geprüft“ aus der Durchsicht.
               </p>
             </div>
             <Wahl
@@ -595,7 +596,7 @@ export default function Einstellungen({
               <p className="zeileTitel">Meldungen für den Web-Chat</p>
               <p className="zeileHinweis">
                 {anzahlMeldungen > 0
-                  ? `${anzahlMeldungen} Karten zum Überarbeiten: Meldungen, Einsprüche, „Überarbeiten“-Sichtungen, eigene Fassungen, Problemkarten und selbst geprüfte Freigaben. Als Markdown-Datei zum Einfügen in den Themen- bzw. Prüf-Chat.`
+                  ? `${anzahlMeldungen} Karten zum Überarbeiten: Meldungen, Einsprüche, „Überarbeiten“-Sichtungen, eigene Fassungen, Problemkarten und selbst nachgesehene Normstände. Als Markdown-Datei zum Einfügen in den Themen- bzw. Prüf-Chat.`
                   : 'Zurzeit keine gemeldeten oder auffälligen Karten.'}
               </p>
             </div>

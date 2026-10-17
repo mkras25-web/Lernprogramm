@@ -5,6 +5,7 @@ import Normen from './Normen.jsx'
 import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { punkteFuer } from '../lib/punkte.js'
 import { quelleText } from '../lib/quelle.js'
+import { DurchsichtMarke } from './Durchsicht.jsx'
 
 // Zeigt ein Item vollständig aufgedeckt - so, wie es im Lernmodus nach
 // dem Aufdecken aussieht, aber ohne Bewertung und ohne Folgen für den
@@ -15,7 +16,8 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
       <p className="herkunft">
         {item.modulTitel} · {item.themaTitel}
         <span className="punkteMarke">{punkteFuer(item)} P</span>
-        {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
+        <DurchsichtMarke stand={item.durchsicht} />
+        {item.geprueft === false && <span className="ungeprueft" title="Normbezug noch nicht gegen die aktuelle Fassung belegt (Itemfeld geprueft: false)">Normstand offen</span>}
         {item.bearbeitet && <span className="bearbeitetMarke">bearbeitet</span>}
       </p>
 

@@ -17,6 +17,7 @@ import { KATEGORIEN, kategorieAus } from '../lib/sichtung.js'
 import { mischen } from '../lib/mischen.js'
 import { paarRichtig, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
 import { quelleText } from '../lib/quelle.js'
+import { DurchsichtMarke } from '../components/Durchsicht.jsx'
 
 
 export default function Lernen({
@@ -378,7 +379,8 @@ export default function Lernen({
             {istNeu && art !== 'vorab' && <span className="neuMarke">Neu</span>}
             {istProblem && <span className="problemMarke">Problemkarte</span>}
             {item.modulTitel} · {item.themaTitel}
-            {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
+            <DurchsichtMarke stand={item.durchsicht} />
+            {item.geprueft === false && <span className="ungeprueft" title="Normbezug noch nicht gegen die aktuelle Fassung belegt (Itemfeld geprueft: false)">Normstand offen</span>}
             {item.bearbeitet && <span className="bearbeitetMarke">bearbeitet</span>}
           </p>
 
@@ -482,10 +484,10 @@ export default function Lernen({
             {item.geprueft === false && (
               <button
                 className={marke?.freigabe ? 'markenKnopf aktiv' : 'markenKnopf'}
-                title="Du hast den Prüfhinweis selbst gegen die aktuelle Fassung geprüft"
+                title="Du hast den Prüfhinweis selbst gegen die aktuelle Fassung der Norm nachgesehen"
                 onClick={() => setFreigabeOffen((o) => !o)}
               >
-                {marke?.freigabe ? '✓︎ Selbst geprüft' : 'Selbst geprüft'}
+                {marke?.freigabe ? '§︎ Normstand nachgesehen' : '§︎ Normstand nachsehen'}
               </button>
             )}
             <span className="markenTrenner" />
@@ -1149,21 +1151,21 @@ function FreigabeFeld({ freigabe, pruefhinweis, onSpeichern, onZuruecknehmen, on
   const [text, setText] = useState(freigabe?.text ?? '')
   return (
     <div className="meldenFeld">
-      <p className="zeileTitel">Selbst geprüft</p>
+      <p className="zeileTitel">Normstand selbst nachgesehen</p>
       {pruefhinweis && <p className="zeileHinweis">Prüfhinweis: {pruefhinweis}</p>}
       <textarea
         className="notizfeld"
         value={text}
-        placeholder="Wogegen geprüft? z. B. „DIN 4108-3:2018, Tab. 2 – Wert gilt unverändert“"
+        placeholder="Wogegen nachgesehen? z. B. „DIN 4108-3:2018, Tab. 2 – Wert gilt unverändert“"
         onChange={(e) => setText(e.target.value)}
       />
       <p className="zeileHinweis">
-        Geht in den Meldungen-Export unter „Freigaben“. Die Karte bleibt „ungeprüft“, bis der Prüf-Chat
-        sie mit Fundstelle freigibt.
+        Geht in den Meldungen-Export unter „Freigaben“. Die Karte bleibt „Normstand offen“, bis der
+        Prüf-Chat sie mit Fundstelle freigibt.
       </p>
       <div className="wahl">
         <button className="knopf schmal" onClick={() => onSpeichern(text.trim())}>
-          {freigabe ? 'Ändern' : 'Als geprüft vormerken'}
+          {freigabe ? 'Ändern' : 'Als nachgesehen vormerken'}
         </button>
         {freigabe && (
           <button className="knopf schmal" onClick={onZuruecknehmen}>

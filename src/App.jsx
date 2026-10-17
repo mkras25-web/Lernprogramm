@@ -77,6 +77,7 @@ const Erklaerstueck = lazy(() => import('./components/Erklaerstueck.jsx'))
 import { KartenGrenze } from './components/Fehlergrenze.jsx'
 const AusDemKopf = lazy(() => import('./components/AusDemKopf.jsx'))
 import Tastenhilfe from './components/Tastenhilfe.jsx'
+import { standVon } from './lib/durchsicht.js'
 
 export default function App({ profilId, onProfilWechseln }) {
   const profilName = useMemo(
@@ -99,6 +100,10 @@ export default function App({ profilId, onProfilWechseln }) {
   const [paketliste, setPaketliste] = useState([])
   // Kennwerte-Tabellenbuch des Pakets (F3)
   const [kennwerte, setKennwerte] = useState([])
+  // Pruefstand der Durchsicht (durchsicht.json) und Paketordner fuer
+  // die alten Bildfassungen in der Vorher/Nachher-Ansicht.
+  const [durchsicht, setDurchsicht] = useState({})
+  const [paketWurzel, setPaketWurzel] = useState('')
   const [pruefungen, setPruefungen] = useState([])
   const [ereignisse, setEreignisse] = useState([])
   const [skizzen, setSkizzen] = useState([])
@@ -162,6 +167,8 @@ export default function App({ profilId, onProfilWechseln }) {
     setNachschlagenItem(id)
     setAnsicht('sichtung')
   }
+  // Nachschlagen mit vorgewaehltem Durchsicht-Filter (Hinweis auf Heute).
+  const [nachschlagenDurchsicht, setNachschlagenDurchsicht] = useState(null)
   const [erklaerthema, setErklaerthema] = useState(() => themaAusAdresse())
   // "Aus dem Kopf" fuer ein Thema (L6)
   const [kopfThema, setKopfThema] = useState(null)
@@ -202,6 +209,8 @@ export default function App({ profilId, onProfilWechseln }) {
         setGestaltung(paketDaten.paket?.gestaltung ?? 'arch')
         setPaketInfo(paketDaten.paket ? { id: paketDaten.paket.id, titel: paketDaten.paket.titel, version: paketDaten.paket.version } : null)
         setKennwerte(paketDaten.kennwerte ?? [])
+        setDurchsicht(paketDaten.durchsicht ?? {})
+        setPaketWurzel(paketDaten.wurzel ?? '')
         // Ausgelassene, nicht darstellbare Karten (T4) einmal melden.
         if (paketDaten.defekt?.length) {
           const ids = paketDaten.defekt.map((d) => `${d.id} (${d.grund})`)
@@ -291,8 +300,18 @@ export default function App({ profilId, onProfilWechseln }) {
     sicherungFaellig,
   } = useKennzahlen({
     rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung,
-    speicherGeschuetzt, dropboxVerbunden,
+    speicherGeschuetzt, dropboxVerbunden, durchsicht,
   })
+
+  // Aenderungen aus der Durchsicht, die auf deine Zustimmung warten
+  // (Aufgaben, Erklaerstuecke, Bilder) - Hinweis auf Heute.
+  const durchsichtWartet = useMemo(() => {
+    let n = 0
+    for (const [k, e] of Object.entries(durchsicht)) {
+      if (e.stand === 'geaendert' && standVon(e, marken.get(k)).stand === 'wartet') n += 1
+    }
+    return n
+  }, [durchsicht, marken])
 
   // Heute nicht gewusst (Heute-Bildschirm): zum ruhigen Durchlesen.
   const nichtGewusst = useMemo(() => {
@@ -1045,6 +1064,11 @@ export default function App({ profilId, onProfilWechseln }) {
           onPruefung={() => setAnsicht('pruefung')}
           sicherungFaellig={sicherungFaellig}
           speicherGeschuetzt={speicherGeschuetzt}
+          durchsichtWartet={durchsichtWartet}
+          onDurchsicht={() => {
+            setNachschlagenDurchsicht('wartet')
+            setAnsicht('sichtung')
+          }}
           onSichern={() => exportKlick(false)}
           offenePruefung={offenePruefung}
           onPruefungFortsetzen={() => setAnsicht('pruefung')}
@@ -1105,6 +1129,11 @@ export default function App({ profilId, onProfilWechseln }) {
           startItem={nachschlagenItem}
           suchFokus={suchFokus}
           onStartItemErledigt={() => setNachschlagenItem(null)}
+          durchsicht={durchsicht}
+          rohItems={rohItems}
+          paketWurzel={paketWurzel}
+          startDurchsicht={nachschlagenDurchsicht}
+          onStartDurchsichtErledigt={() => setNachschlagenDurchsicht(null)}
         />
       )}
       {ansicht === 'pruefung' && (

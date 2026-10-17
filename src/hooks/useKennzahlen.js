@@ -18,6 +18,7 @@ import { itemsAnreichern, lernbareItems } from '../lib/sichtung.js'
 import { monatspruefungFaellig, pruefungsplan } from '../lib/pruefung.js'
 import { serienquote } from '../lib/stufen.js'
 import { meldungenSammeln } from '../lib/meldungen.js'
+import { durchsichtAnwenden } from '../lib/durchsicht.js'
 
 // Themen, in denen jedes Item gemeistert ist.
 function themenFortschritt0(items, zustaende) {
@@ -35,10 +36,15 @@ function themenFortschritt0(items, zustaende) {
 // useMemo, keine Effekte (die Feier-/Meldungs-Effekte bleiben in App).
 export function useKennzahlen({
   rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung,
-  speicherGeschuetzt = null, dropboxVerbunden = false,
+  speicherGeschuetzt = null, dropboxVerbunden = false, durchsicht = null,
 }) {
-  // Bearbeitete Fassungen ueberlagern das Paket.
-  const items = useMemo(() => itemsAnreichern(rohItems, marken), [rohItems, marken])
+  // Bearbeitete Fassungen ueberlagern das Paket. Davor haengt die
+  // Durchsicht ihren Stand an (und zeigt abgelehnte Aenderungen schon als
+  // alte Fassung, bis durchsicht.py sie zurueckschreibt).
+  const items = useMemo(
+    () => itemsAnreichern(durchsichtAnwenden(rohItems, durchsicht, marken), marken),
+    [rohItems, marken, durchsicht]
+  )
 
   // Alles, was gelernt und gezaehlt wird - gesichtete Ausschluesse raus.
   const aktiveItems = useMemo(() => lernbareItems(items, marken), [items, marken])

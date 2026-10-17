@@ -4,6 +4,8 @@ import { KATEGORIEN, TYPNAMEN, UNGESICHTET, kategorieAus } from '../lib/sichtung
 import { meldenAenderung, zurueckziehenAenderung } from '../lib/meldungen.js'
 import { trefferWert, vorbereiten } from '../lib/suche.js'
 import Itemansicht from '../components/Itemansicht.jsx'
+import { DurchsichtBlock, DurchsichtMarke } from '../components/Durchsicht.jsx'
+import { entscheidungAenderung, standVon, wartendeNebenziele } from '../lib/durchsicht.js'
 
 const MARKENFILTER = [
   ['alle', 'alle'],
@@ -13,6 +15,22 @@ const MARKENFILTER = [
   ['bearbeitet', 'bearbeitet'],
 ]
 
+// Durchsicht (2026-10-17): was ist geprueft, was wurde geaendert, was
+// wartet auf deine Zustimmung.
+const DURCHSICHTFILTER = [
+  ['alle', 'alle'],
+  ['geprueft', '✓︎ geprüft'],
+  ['wartet', 'wartet auf dich'],
+  ['geaendert', 'geändert'],
+  ['offen', 'noch offen'],
+]
+
+function passtDurchsicht(stand, filter) {
+  if (filter === 'alle') return true
+  if (filter === 'geaendert') return stand.stand === 'wartet' || stand.stand === 'abgelehnt' || Boolean(stand.geaendertAm)
+  return stand.stand === filter
+}
+
 // Nachschlagen und Sichten sind dieselbe Tätigkeit: alle Items ansehen
 // und entscheiden, was damit geschieht. Deshalb ein Bildschirm statt
 // zweier fast gleicher Listen.
@@ -20,6 +38,7 @@ export default function Sichtung({
   items, themen, marken, ereignisse, zustaende, glossar, onMarke, onSammel,
   kurse = [], onKurs, onKursSammel,
   weiterNachMarke = false, startItem = null, onStartItemErledigt, suchFokus = 0,
+  durchsicht = {}, rohItems = [], paketWurzel = '', startDurchsicht = null, onStartDurchsichtErledigt,
 }) {
   const suchfeldRef = useRef(null)
   // Taste "/" (App.jsx) setzt den Fokus ins Suchfeld.
@@ -30,6 +49,16 @@ export default function Sichtung({
   const [filter, setFilter] = useState('alle')
   const [marke, setMarkeFilter] = useState('alle')
   const [thema, setThema] = useState('alle')
+  const [pruefFilter, setPruefFilter] = useState('alle')
+  // Von Heute ("Aenderungen warten auf dich") direkt in den Filter.
+  useEffect(() => {
+    if (!startDurchsicht) return
+    setPruefFilter(startDurchsicht)
+    onStartDurchsichtErledigt?.()
+  }, [startDurchsicht])
+  const rohNachId = useMemo(() => new Map(rohItems.map((i) => [i.id, i])), [rohItems])
+  const entscheiden = (schluessel, eintrag, entscheidung) =>
+    onMarke(schluessel, entscheidungAenderung(eintrag, entscheidung))
   const [ausgewaehlt, setAusgewaehlt] = useState(new Set())
   // Sichten-Modus (23B): Checkboxen und Sammelaktionen nur, wenn er an ist -
   // zum blossen Nachschlagen sind sie Ballast. Pro Geraet gemerkt.
@@ -117,6 +146,7 @@ export default function Sichtung({
         if ((m?.kurse ?? []).includes(kurs.id)) return false
       }
       if (filter !== 'alle' && kategorieAus(m).id !== filter) return false
+      if (pruefFilter !== 'alle' && !passtDurchsicht(i.durchsicht ?? { stand: 'offen' }, pruefFilter)) return false
       if (begriff) {
         const w = trefferWert(begriff, suchIndex.get(i.id))
         if (w <= 0) return false
@@ -126,7 +156,27 @@ export default function Sichtung({
     })
     // Mit Suchbegriff nach Trefferguete, sonst Paketreihenfolge.
     return begriff ? liste.sort((a, b) => werte.get(b.id) - werte.get(a.id)) : liste
-  }, [items, marken, filter, thema, marke, sucheVerzoegert, suchIndex, kurse])
+  }, [items, marken, filter, thema, marke, sucheVerzoegert, suchIndex, kurse, pruefFilter])
+
+  const pruefZaehler = useMemo(() => {
+    const z = Object.fromEntries(DURCHSICHTFILTER.map(([id]) => [id, 0]))
+    for (const i of items) {
+      const st = i.durchsicht ?? { stand: 'offen' }
+      for (const [id] of DURCHSICHTFILTER) if (passtDurchsicht(st, id)) z[id] += 1
+    }
+    return z
+  }, [items])
+
+  // Erklaerstuecke und Bilder mit Aenderung - erscheinen ueber der Liste,
+  // wenn nach "wartet auf dich" oder "geaendert" gefiltert wird.
+  const nebenziele = useMemo(
+    () => wartendeNebenziele(durchsicht, marken).filter((n) => {
+      if (thema !== 'alle' && n.eintrag.thema !== thema) return false
+      return pruefFilter === 'geaendert' || (pruefFilter === 'wartet' && n.stand === 'wartet')
+    }),
+    [durchsicht, marken, pruefFilter, thema]
+  )
+
 
   const zaehler = useMemo(() => {
     const z = { ungesichtet: 0 }
@@ -309,6 +359,13 @@ export default function Sichtung({
           glossar={glossar}
           zustand={zustaende?.get(item.id)}
           verlauf={(ereignisse ?? []).filter((e) => e.itemId === item.id)}
+        />
+
+        <DurchsichtBlock
+          eintrag={durchsicht[item.id]}
+          stand={item.durchsicht ?? standVon(durchsicht[item.id], m)}
+          aktuell={rohNachId.get(item.id)}
+          onEntscheiden={(e) => entscheiden(item.id, durchsicht[item.id], e)}
         />
 
         <section className="block">
@@ -502,6 +559,45 @@ export default function Sichtung({
       </div>
 
       <div className="wahl">
+        <span className="zeileHinweis">Durchsicht:</span>
+        {DURCHSICHTFILTER.map(([id, name]) => (
+          <button
+            key={id}
+            className={pruefFilter === id ? 'wahlKnopf aktiv' : 'wahlKnopf'}
+            onClick={() => setPruefFilter(id)}
+          >
+            {name}{id !== 'alle' && <span className="reiterZahl">{pruefZaehler[id]}</span>}
+          </button>
+        ))}
+      </div>
+
+      {nebenziele.length > 0 && (
+        <ul className="treffer">
+          {nebenziele.map((n) => {
+            const istBild = n.schluessel.startsWith('bild:')
+            const t = themen.find((tt) => tt.id === n.eintrag.thema)
+            return (
+              <li key={n.schluessel} className="trefferKarte">
+                <p className="herkunft">
+                  {t ? `${t.modulTitel} · ${t.titel} · ` : ''}{istBild ? `Bild ${n.schluessel.slice(12)}` : 'Erklärstück'}
+                  <DurchsichtMarke stand={n} />
+                </p>
+                <DurchsichtBlock
+                  titel={istBild ? 'Bild' : 'Erklärstück und Lernziele'}
+                  eintrag={n.eintrag}
+                  stand={n}
+                  aktuell={istBild ? null : { erklaerung: t?.erklaerungRoh ?? null, lernziele: t?.lernziele ?? null }}
+                  bildAlt={istBild && n.eintrag.aenderung?.vorher_datei ? `${paketWurzel}/${n.eintrag.aenderung.vorher_datei}` : null}
+                  bildNeu={istBild ? `${paketWurzel}/${n.schluessel.slice(5)}` : null}
+                  onEntscheiden={(e) => entscheiden(n.schluessel, n.eintrag, e)}
+                />
+              </li>
+            )
+          })}
+        </ul>
+      )}
+
+      <div className="wahl">
         <span className="zeileHinweis">
           {gefiltert.length} {gefiltert.length === 1 ? 'Eintrag' : 'Einträge'}
         </span>
@@ -565,7 +661,8 @@ export default function Sichtung({
                 )}
                 <p className="herkunft">
                   {item.modulTitel} · {item.themaTitel} · {TYPNAMEN[item.typ] ?? item.typ}
-                  {item.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
+                  <DurchsichtMarke stand={item.durchsicht} />
+                  {item.geprueft === false && <span className="ungeprueft" title="Normbezug noch nicht gegen die aktuelle Fassung belegt (Itemfeld geprueft: false)">Normstand offen</span>}
                   {k.id !== 'ungesichtet' && (
                     <span className={`kategorieMarke k-${k.id}`}>{k.symbol} {k.name}</span>
                   )}

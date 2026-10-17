@@ -10,6 +10,7 @@ export default function Heute({
   level, gestaltung = 'arch', serie, quote, tagesplan, werte, karten, baustellen, skizzen, zeichenAus = false, neue, tagesziel = 0,
   offeneSitzung, onFortsetzen, onVerwerfen, onStart, onThemen,
   aufstieg, onAufstiegGesehen, sicherungFaellig, onSichern, speicherGeschuetzt = null,
+  durchsichtWartet = 0, onDurchsicht,
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
   kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten, onKlausurErgebnis,
   nichtGewusst = [], onOeffnen,
@@ -135,12 +136,28 @@ export default function Heute({
               <div>
                 <p className="aufrufZahl">{pruefungHinweis.text}</p>
                 <p className="nebentext">
-                  Prüfungen entstehen aus deinen geprüften Items und zählen als Lernereignisse.
+                  Prüfungen entstehen aus deinen Karten mit belegtem Normstand und zählen als Lernereignisse.
                 </p>
               </div>
               <button className="knopf haupt schmal" onClick={onPruefung}>
                 Zu den Prüfungen
               </button>
+            </div>
+          </section>
+        )}
+
+        {durchsichtWartet > 0 && onDurchsicht && (
+          <section className="heuteBreit">
+            <div className="aufruf ruhig">
+              <div>
+                <p className="aufrufZahl">
+                  {durchsichtWartet === 1 ? 'Eine Änderung wartet' : `${durchsichtWartet} Änderungen warten`} auf dich
+                </p>
+                <p className="nebentext">
+                  Aus der Durchsicht der Inhalte: Vorher und Nachher ansehen, dann annehmen oder ablehnen.
+                </p>
+              </div>
+              <button className="knopf schmal" onClick={onDurchsicht}>Ansehen</button>
             </div>
           </section>
         )}
@@ -425,7 +442,7 @@ function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten, onErgebn
             <ArtKachel
               zeichen="◈︎"
               titel="Probeklausur"
-              text={u.pruefIds.length > 0 ? `aus ${u.pruefIds.length} geprüften Kursfragen` : 'noch keine geprüften'}
+              text={u.pruefIds.length > 0 ? `aus ${u.pruefIds.length} prüfungstauglichen Kursfragen` : 'noch keine prüfungstauglichen'}
               aus={u.pruefIds.length === 0}
               onKlick={onPruefung}
             />

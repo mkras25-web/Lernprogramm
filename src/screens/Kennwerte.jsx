@@ -46,7 +46,7 @@ export default function Kennwerte({ gruppen = [], themen = [], onThema }) {
                   <li key={e.id ?? i} className="kennwert">
                     <span className="kennwertName">
                       {e.name}
-                      {e.geprueft === false && <span className="ungeprueft">ungeprüft</span>}
+                      {e.geprueft === false && <span className="ungeprueft" title="Normbezug noch nicht gegen die aktuelle Fassung belegt (Itemfeld geprueft: false)">Normstand offen</span>}
                     </span>
                     <span className="kennwertWert">
                       {e.wert}

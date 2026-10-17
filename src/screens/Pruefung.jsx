@@ -671,11 +671,11 @@ export default function Pruefung({
                     <span className="artTitel">{u.kurs.titel}</span>
                     <span className="artText">
                       {Math.min(PRUEFUNGSARTEN.kurs.anzahl, u.pruefIds.length)} von {u.pruefIds.length} Kursfragen
-                      {u.ungeprueft > 0 && ` · ${u.ungeprueft} ungeprüfte ausgenommen`}
+                      {u.ungeprueft > 0 && ` · ${u.ungeprueft} mit offenem Normstand ausgenommen`}
                     </span>
                     <span className="artFuss">
                       {u.pruefIds.length === 0
-                        ? 'noch keine geprüften Kursfragen'
+                        ? 'noch keine prüfungstauglichen Kursfragen'
                         : letzte ? `zuletzt ${letzte.prozent} %` : 'noch nie abgelegt'}
                     </span>
                   </button>

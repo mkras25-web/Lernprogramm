@@ -45,12 +45,17 @@ export async function paketLaden(paketId) {
     }
   }
 
+  const durchsichtVorab = jsonOderNull(`${wurzel}/durchsicht.json`)
   // Normenglossar ist optional - fehlt es, bleibt die Funktion still.
   const normDaten = await jsonOderNull(`${wurzel}/normen.json`)
   const normen = normDaten?.eintraege ?? {}
   // Kennwerte-Tabellenbuch (F3, 2026-10-13) - optional wie das Glossar.
   const kennwerteDaten = await jsonOderNull(`${wurzel}/kennwerte.json`)
   const kennwerte = Array.isArray(kennwerteDaten?.gruppen) ? kennwerteDaten.gruppen : []
+  // Pruefstand der Durchsicht (2026-10-17, Einspielen/durchsicht.py) -
+  // optional; ohne Datei ist schlicht alles "noch nicht durchgesehen".
+  const durchsichtDaten = await durchsichtVorab
+  const durchsicht = durchsichtDaten?.eintraege && typeof durchsichtDaten.eintraege === 'object' ? durchsichtDaten.eintraege : {}
   // Karten, die die Anzeige nicht darstellen koennte (T4) - werden
   // ausgelassen statt die App abstuerzen zu lassen.
   const defekt = []
@@ -100,6 +105,9 @@ export async function paketLaden(paketId) {
               bild: daten.erklaerung.bild ? `${wurzel}/${daten.erklaerung.bild}` : bild,
             }
           : null,
+        // Unveraendert fuer die Vorher/Nachher-Ansicht der Durchsicht
+        // (oben ist der Bildpfad schon auf den Paketordner umgeschrieben).
+        erklaerungRoh: daten.erklaerung ?? null,
         anzahl: (daten.items ?? []).length,
         // Optional aus der Themendatei (2026-10-10): Lernziele ("Du kannst
         // ...") und Querverweise auf andere Themen-IDs.
@@ -148,6 +156,8 @@ export async function paketLaden(paketId) {
     normen,
     kennwerte,
     defekt,
+    durchsicht,
+    wurzel,
     bereiche: paket.bereiche ?? {},
     phasen: paket.phasen ?? {},
   }

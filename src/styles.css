@@ -1621,6 +1621,58 @@ html[data-farbenblind="an"] .schlechter::before { content: " ▼"; }
 .kategorieMarke.k-ueberarbeiten { border-color: var(--warnung); color: var(--warnung); }
 .kategorieMarke.k-streichen { border-color: var(--warnung); color: var(--warnung); opacity: 0.7; }
 
+/* Durchsicht (2026-10-17): Marken im Kartenkopf und Vorher/Nachher.
+   Neue Selektoren, gelten mobil und Desktop gleich. Bedeutung steht
+   immer auch im Text/Zeichen (✓, ✎, ↺), Diff zusaetzlich durch-/unter-
+   strichen - nicht nur ueber Farbe. */
+.durchsichtMarke {
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  border: 1px solid var(--linie);
+  color: var(--rinde);
+}
+.durchsichtMarke.geprueft { border-color: var(--fortschritt); }
+.durchsichtMarke.geaendert { border-color: var(--lehm); border-style: dashed; }
+.durchsichtMarke.wartet { border-color: var(--warnung); color: var(--warnung); }
+.durchsichtMarke.abgelehnt { border-color: var(--lehm); }
+.durchsichtBlock.wartet { border-left: 3px solid var(--warnung); padding-left: 0.75rem; }
+.durchsichtGrund { margin: 0.5rem 0; line-height: 1.5; }
+.durchsichtFeld { margin-top: 0.75rem; }
+.durchsichtVergleich { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-top: 0.25rem; }
+.durchsichtVergleich > div { min-width: 0; }
+.durchsichtVergleich .zeileHinweis { margin: 0 0 0.25rem; }
+.vergleichText {
+  margin: 0;
+  padding: 0.5rem 0.625rem;
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  background: var(--flaeche);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.diffWeg {
+  text-decoration: line-through;
+  background: color-mix(in srgb, var(--warnung) 20%, transparent);
+}
+.diffNeu {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  background: color-mix(in srgb, var(--akzent) 25%, transparent);
+}
+.durchsichtBild {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+}
+@media (min-width: 40rem) {
+  .durchsichtVergleich { grid-template-columns: 1fr 1fr; }
+}
+
 .sichtungKopf { display: flex; align-items: flex-start; gap: 0.625rem; }
 .sichtungKopf input { margin-top: 0.3rem; accent-color: var(--fortschritt); }
 
