@@ -25,16 +25,16 @@
 <rect x="0" y="0" width="470" height="450" fill="#f0ead2"/>
 <text x="235.0" y="34" font-family="Segoe UI, Arial, sans-serif" font-size="19" text-anchor="middle" fill="#414833" font-weight="bold" font-style="normal">Terrassenanschluss A</text>
 <text x="235.0" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Vertikalschnitt am Übergang vom Innenraum nach draußen</text>
-<path d="M40,266 L250,266 L250,314 L430,314 L430,360 L40,360 Z" fill="url(#bt)" stroke="#414833" stroke-width="2"/>
+<path d="M40,266 L430,266 L430,360 L40,360 Z" fill="url(#bt)" stroke="#414833" stroke-width="2"/>
 <text x="140" y="334" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Geschossdecke</text>
 <rect x="40" y="250" width="210" height="16" fill="#dde5b6" stroke="#414833" stroke-width="1.6"/>
 <text x="140" y="240" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Innenboden</text>
 <rect x="224" y="120" width="26" height="130" fill="url(#hz)" stroke="#414833" stroke-width="2"/>
 <text x="237" y="112" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Tür</text>
-<rect x="250" y="298" width="180" height="16" fill="#a98467" stroke="#414833" stroke-width="1.6"/>
-<line x1="256" y1="250" x2="256" y2="298" stroke="#9a6b1f" stroke-width="3"/>
-<text x="300" y="276" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="start" fill="#9a6b1f" font-weight="bold" font-style="normal">Stufe</text>
-<text x="362" y="288" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Terrassenbelag</text>
+<rect x="250" y="266" width="180" height="16" fill="#a98467" stroke="#414833" stroke-width="1.6"/>
+<line x1="256" y1="250" x2="256" y2="266" stroke="#9a6b1f" stroke-width="3"/>
+<text x="262" y="244" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="start" fill="#9a6b1f" font-weight="bold" font-style="normal">Stufe</text>
+<text x="362" y="258" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle" fill="#6c584c" font-weight="normal" font-style="normal">Terrassenbelag</text>
 <text x="56" y="108" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="start" fill="#6c584c" font-weight="bold" font-style="normal">innen</text>
 <text x="416" y="108" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="end" fill="#6c584c" font-weight="bold" font-style="normal">außen</text>
 <text x="28" y="378" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" text-anchor="start" fill="#414833" font-weight="normal" font-style="normal">Der Übergang wird mit einer Stufe gelöst. Der</text>

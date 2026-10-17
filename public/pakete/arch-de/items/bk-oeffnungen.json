@@ -18,7 +18,7 @@
   "merksatz": "Die Öffnung ist zuerst ein Tragproblem und erst dann ein Bauteil.",
   "bild": "bilder/bk-oeffnungen-statik.svg",
   "bildunterschrift": "Vier Wege, eine Öffnung in ein Flächenbauteil zu bringen — und nur einer kommt ohne Zusatzmaßnahmen aus.",
-  "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–128, und Werkstoffe und Komponenten, Konstruktionsarten, S. 100; DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Details 3.16.2 bis 3.18.2"
+  "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 120–128, und Werkstoffe und Komponenten, Konstruktionsarten, S. 100–101; DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Details 3.16.2 bis 3.18.2, S. 226–227"
  },
  "siehe": [
   "bk-fenster",
@@ -54,7 +54,7 @@
     "Die Standsicherheit der Außenwand darf nicht gefährdet werden.",
     "Lasten, die aus den Öffnungsbauteilen resultieren, müssen sicher in den Baukörper eingeleitet werden.",
     "In Betonwänden erfordern die erhöhten Spannungen im Bereich der Öffnungen eine angepasste Bewehrung.",
-    "Umgekehrt dürfen die Öffnungsbauteile nicht durch Kräfte aus dem Bauwerk beansprucht werden.",
+    "Die Öffnungsbauteile dürfen ihrerseits nicht durch Kräfte aus dem Bauwerk beansprucht werden.",
     "Eine Öffnung, die durch Weglassen entsteht, erfordert in jedem Fall zusätzliche Verstärkungen."
    ],
    "richtig": [
@@ -70,7 +70,7 @@
     "Richtig. Die Kräfte sollen in eine Richtung fließen; Zwängungen aus dem Bauwerk sind vom Element fernzuhalten.",
     "Falsch. Vergleichsweise einfach sind gerade die Konstruktionen, bei denen die Öffnung durch Weglassen oder Nichtbauen entsteht — etwa beim Fachwerk."
    ],
-   "antwort": "Richtig sind die ersten vier. Die Standsicherheit der Wand darf nicht gefährdet werden, die Lasten aus den Öffnungsbauteilen müssen sicher in den Baukörper eingeleitet werden, bei Betonwänden ist die Bewehrung anzupassen, und umgekehrt dürfen die Bauteile nicht durch Kräfte aus dem Bauwerk beansprucht werden. Falsch ist die letzte Aussage: Öffnungen durch Weglassen sind der einfache Fall.",
+   "antwort": "Richtig sind vier der fünf Aussagen. Die Standsicherheit der Wand darf nicht gefährdet werden, die Lasten aus den Öffnungsbauteilen müssen sicher in den Baukörper eingeleitet werden, bei Betonwänden ist die Bewehrung anzupassen, und umgekehrt dürfen die Bauteile nicht durch Kräfte aus dem Bauwerk beansprucht werden. Falsch ist die Aussage, eine Öffnung durch Weglassen erfordere in jedem Fall zusätzliche Verstärkungen: Öffnungen durch Weglassen sind der einfache Fall.",
    "vertiefung": "Die beiden ersten Punkte lesen sich wie eine Selbstverständlichkeit, bilden aber die Trennlinie zwischen Tragwerksplanung und Baukörperanschluss. Die Wand muss die Öffnung aushalten — und das Element muss seine eigenen Lasten loswerden, ohne dass die Wand ihm ihre aufdrängt.",
    "bild": "bilder/bk-oeffnungen-statik.svg",
    "bildunterschrift": "Entlastungsbogen, Sturz, angepasste Bewehrung, Weglassen.",
@@ -79,14 +79,14 @@
     "lastabtragung",
     "bewehrung"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 119–120",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 120–121",
    "stand": "2026-10",
    "geprueft": true
   },
   {
    "id": "bk-oef-003",
    "typ": "reihenfolge",
-   "frage": "Bringen Sie die Öffnungsarten in die Reihenfolge, in der sie baugeschichtlich möglich wurden — vom kleinsten zum größten Format.",
+   "frage": "Bringe die Öffnungsarten in die Reihenfolge, in der sie baugeschichtlich möglich wurden — vom kleinsten zum größten Format.",
    "schritte": [
     "Lochfenster",
     "Fensterband",
@@ -109,7 +109,7 @@
   {
    "id": "bk-oef-004",
    "typ": "zuordnung",
-   "frage": "Ordnen Sie jeder Öffnungsart ihre Beschreibung zu.",
+   "frage": "Ordne jeder Öffnungsart ihre Beschreibung zu.",
    "paare": [
     [
      "Lochfenster",
@@ -129,7 +129,7 @@
     ]
    ],
    "antwort": "Das Lochfenster ist die einzelne Öffnung in der Massivwand, gegebenenfalls mit dazwischenliegenden Wandpfeilern. Beim Fensterband werden Elemente durch Koppelstücke am Blendrahmen zusammengesetzt. Die Fensterwand besteht aus Fensterelementen mit zusätzlichem Mittelpfosten. Die Vorhangfassade ist eine Pfosten-Riegel-Fassade mit Einsatzelementen.",
-   "vertiefung": "Das Koppelstück beim Fensterband ist mehr als ein Verbindungsteil: Wo zwei Elemente gekoppelt werden, entsteht eine Kopplungsfuge, die bei größeren Bewegungen selbst Bewegungen aufnehmen muss. Beim Fensterband ist damit zu rechnen.",
+   "vertiefung": "Das Koppelstück beim Fensterband ist mehr als ein Verbindungsteil: Wo Elemente gekoppelt werden, entsteht eine Kopplungsfuge. Bei mechanisch fest verbundenem Elementstoß treten dort keine oder nur geringe Bewegungen auf, die entstehenden Kapillarfugen sind dauerhaft abzudichten. Ist mit größeren Bewegungen in der Konstruktion zu rechnen – etwa bei Fensterbändern –, kann es sinnvoll sein, Bewegungen auch über die Elementkopplung auszugleichen.",
    "bild": "bilder/bk-oeffnungen-entwicklung.svg",
    "bildunterschrift": "Die vier Arten in der Ansicht.",
    "tags": [
@@ -140,14 +140,14 @@
    "siehe": [
     "bk-fenster"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 121 und 131",
    "stand": "2026-10",
    "geprueft": true
   },
   {
    "id": "bk-oef-005",
    "typ": "zuordnung",
-   "frage": "Ordnen Sie jedem Begriff am Öffnungselement seine Bedeutung zu.",
+   "frage": "Ordne jedem Begriff am Öffnungselement seine Bedeutung zu.",
    "paare": [
     [
      "Flügel",
@@ -221,7 +221,7 @@
     "zargenfenster",
     "montage"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124; DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124; DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 101",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -233,7 +233,7 @@
     "Schutz des Fensters in der Bauphase",
     "Erleichterung eines späteren Fenstertauschs",
     "erleichterte Montage in der Dämmebene vor dem Tragwerk",
-    "Der Blindstock bleibt nach dem Einbau sichtbar und übernimmt gestalterische Aufgaben."
+    "gestalterische Aufgaben, da er nach dem Einbau sichtbar bleibt"
    ],
    "richtig": [
     0,
@@ -246,14 +246,14 @@
     "Richtig. Als Kunststoffblindstock ist er eine Alternative zu Montagewinkeln.",
     "Falsch. Der Blindstock ist eine vorab gesetzte Rahmenkonstruktion, die am Ende gerade nicht mehr sichtbar ist — darin unterscheidet er sich von der Zarge."
    ],
-   "antwort": "Richtig sind die ersten drei: Schutz des Fensters in der Bauphase, Erleichterung eines späteren Fenstertauschs und erleichterte Montage in der Dämmebene vor dem Tragwerk, als Kunststoffblindstock alternativ zu Montagewinkeln. Falsch ist die letzte Aussage — der Blindstock ist am Ende nicht mehr sichtbar, anders als die Zarge.",
+   "antwort": "Richtig sind drei Aussagen: Schutz des Fensters in der Bauphase, Erleichterung eines späteren Fenstertauschs und erleichterte Montage in der Dämmebene vor dem Tragwerk, als Kunststoffblindstock alternativ zu Montagewinkeln. Falsch ist die Aussage, er bleibe nach dem Einbau sichtbar und übernehme gestalterische Aufgaben — der Blindstock ist am Ende nicht mehr sichtbar, anders als die Zarge.",
    "vertiefung": "Früher war der Blindstock stets aus Holz, heute gibt es ihn auch aus Metall oder Kunststoff. Die Unterscheidung zur Zarge ist leicht zu merken: Was man nach dem Einbau noch sieht, ist eine Zarge; was verschwindet, ein Blindstock.",
    "tags": [
     "blindstock",
     "zarge",
     "montage"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 100",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Werkstoffe und Komponenten, Konstruktionsarten, S. 101",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -271,14 +271,14 @@
    "siehe": [
     "bp-luftschall"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124–125",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 124–125; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 68",
    "stand": "2026-10",
    "geprueft": true
   },
   {
    "id": "bk-oef-010",
    "typ": "bildbeschriftung",
-   "frage": "Benennen Sie die vier Kräfte und die zwei Bauteile, die an einem Öffnungselement markiert sind.",
+   "frage": "Benenne die vier Kräfte und die zwei Bauteile, die an einem Öffnungselement markiert sind.",
    "referenz": "bilder/bk-oeffnungen-lasten-blank.svg",
    "punkte": [
     {
@@ -337,7 +337,7 @@
   {
    "id": "bk-oef-011",
    "typ": "skizze",
-   "frage": "Skizzieren Sie ein Öffnungselement in der Ansicht und tragen Sie die einwirkenden Kräfte sowie die Lage von Trag- und Distanzklötzen ein.",
+   "frage": "Skizziere ein Öffnungselement in der Ansicht und trage die einwirkenden Kräfte sowie die Lage von Trag- und Distanzklötzen ein.",
    "referenz": "bilder/bk-oeffnungen-lasten.svg",
    "pruefpunkte": [
     "Das Element sitzt in einer Wandöffnung, der Blendrahmen ist erkennbar.",
@@ -363,7 +363,7 @@
   {
    "id": "bk-oef-012",
    "typ": "zuordnung",
-   "frage": "Ordnen Sie den Klassen der vertikalen Nutzlast nach DIN EN 13115 ihre Werte zu.",
+   "frage": "Ordne den Klassen der vertikalen Nutzlast nach DIN EN 13115 ihre Werte zu.",
    "paare": [
     [
      "Klasse 1",
@@ -389,7 +389,7 @@
     "din en 13115",
     "klassen"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -409,7 +409,7 @@
     "flügel",
     "auflager"
    ],
-   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122",
+   "quelle": "DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -471,7 +471,7 @@
   {
    "id": "bk-oef-017",
    "typ": "freitext",
-   "frage": "Beschreiben Sie die Ausbildung einer Türöffnung ohne Anschlag im zweischaligen Mauerwerk.",
+   "frage": "Beschreibe die Ausbildung einer Türöffnung ohne Anschlag im zweischaligen Mauerwerk.",
    "pruefpunkte": [
     "Es gelten ähnliche Bedingungen wie bei Fenstern ohne Anschlag.",
     "Wegen des Bodenanschlusses hat die Tür ihren Standort bevorzugt an der Außenseite der Tragwand.",
@@ -484,7 +484,7 @@
     "Die Folie als Feuchtigkeitssperre oberhalb der Zarge muss unterhalb der Belüftung in die Vormauerschale geführt werden."
    ],
    "antwort": "Für Türöffnungen ohne Anschlag gelten ähnliche Bedingungen wie bei Fenstern ohne Anschlag. Wegen des Bodenanschlusses im Bereich der zweischaligen Außenwand hat die Tür ihren Standort bevorzugt an der Außenseite der Tragwand. Den Abschluss des Bodenaufbaus bildet ein Stahlprofil, das gleichzeitig den unteren Türanschlag herstellt; die Rollschicht der Schwelle benötigt ein eigenes Auflager. Die Dämmebene wird durch eine auf der Außenseite in der Laibung umlaufende Holzzarge abgedeckt. Der Sturz kann bei üblichen Türbreiten als gemauerter scheitrechter Sturz ausgeführt werden, darüber erfolgt die Belüftung der Vormauerschale. Die Folie als Feuchtigkeitssperre oberhalb der Zarge muss unterhalb dieser Belüftung in die Vormauerschale geführt werden.",
-   "vertiefung": "Der letzte Punkt ist der, an dem solche Details scheitern: Führt man die Feuchtigkeitssperre oberhalb der Belüftungsebene in die Vormauerschale, entwässert man in die Dämmung statt nach außen. Die Reihenfolge von oben nach unten lautet Sperre, dann Belüftung.",
+   "vertiefung": "Der letzte Punkt ist der, an dem solche Details scheitern: Die Belüftung der Vormauerschale liegt über dem Sturz, die Folie oberhalb der Zarge muss unterhalb dieser Belüftung in die Vormauerschale geführt werden. Von oben nach unten liegt also zuerst die Belüftung, darunter der Austritt der Feuchtigkeitssperre.",
    "tags": [
     "türöffnung",
     "zweischalig",
@@ -494,7 +494,7 @@
     "bk-aw-zweischalig",
     "bk-stuerze"
    ],
-   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.16.2 (PDF 221)",
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.16.2, S. 226",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -512,7 +512,7 @@
    "siehe": [
     "bk-fenster"
    ],
-   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.1 (PDF 222)",
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.1, S. 226",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -531,7 +531,7 @@
     "bk-stuerze",
     "bp-waermebruecken"
    ],
-   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.2 (PDF 222)",
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.2, S. 227",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -559,7 +559,7 @@
     "höhengleich",
     "entwässerung"
    ],
-   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2 (PDF 223)",
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2, S. 227",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -576,7 +576,7 @@
     "Bei kerngedämmtem Aufbau wird die Außenschale wiederum auf einer durchgehenden Konsole gelagert.",
     "Alternativ lässt sich der Übergang grundsätzlich auch mit Stufen lösen."
    ],
-   "antwort": "Zu lösen sind zwei Dinge: die Höhenlage und das Wasser. Der höhengleiche Übergang wird durch einen entsprechenden Absatz in der Geschossdecke möglich; vor der Öffnung liegt eine Wasserrinne mit Gitterrost, die an das Entwässerungssystem angeschlossen wird. Die Wandkonstruktion entscheidet über die Auflagerung: Bei zweischaliger Wand wird die Vormauerschale auf einer durchgehenden Konsole oberhalb der Dachdämmung gelagert, ebenso bei kerngedämmtem Aufbau die Außenschale; bei einschaligem Mauerwerk mit verputzter Oberfläche kann die Wand dagegen auf der Decke aufgestellt werden. Grundsätzlich bleibt die Lösung mit Stufen die einfachere Alternative.",
+   "antwort": "Zu lösen sind zwei Dinge: die Höhenlage und das Wasser. Der höhengleiche Übergang wird durch einen entsprechenden Absatz in der Geschossdecke möglich; vor der Öffnung liegt eine Wasserrinne mit Gitterrost, die an das Entwässerungssystem angeschlossen wird. Die Wandkonstruktion entscheidet über die Auflagerung: Bei zweischaliger Wand wird die Vormauerschale auf einer durchgehenden Konsole oberhalb der Dachdämmung gelagert, ebenso bei kerngedämmtem Aufbau die Außenschale; bei einschaligem Mauerwerk mit verputzter Oberfläche kann die Wand dagegen auf der Decke aufgestellt werden. Grundsätzlich lassen sich Terrassenanschlüsse auch mit Stufen lösen.",
    "vertiefung": "Die Rinne ist nicht nur Komfort, sondern Teil der Abdichtung: Ohne Höhenunterschied fehlt die Schutzhöhe, die sonst den Innenraum vor anstehendem Wasser bewahrt. Sie muss deshalb leistungsfähig und an das Entwässerungssystem angeschlossen sein, nicht bloß vorhanden.",
    "tags": [
     "höhengleich",
@@ -586,7 +586,7 @@
    "siehe": [
     "bk-aw-zweischalig"
    ],
-   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2 (PDF 223)",
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2, S. 227",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -614,7 +614,7 @@
     "Richtig. Je nach Gebäudehöhe gelten verschiedene Anforderungen und Klassifizierungen.",
     "Falsch. Verfahren A reicht bis Klasse 9A, Verfahren B endet bei 7B."
    ],
-   "antwort": "Richtig sind die ersten vier. DIN EN 12208 definiert zwei bauliche Varianten: Verfahren A für Elemente ohne baulichen Schutz gegen Eindringen von Regen im oberen Bereich und Verfahren B für geschützte Elemente, etwa durch tiefe Einbaulage, Regenschutzdach, Innenanschlag oder Loggia. Falsch ist die letzte Aussage: Verfahren A reicht bis 9A, Verfahren B nur bis 7B.",
+   "antwort": "Richtig sind vier der fünf Aussagen. DIN EN 12208 definiert zwei bauliche Varianten: Verfahren A für Elemente ohne baulichen Schutz gegen Eindringen von Regen im oberen Bereich und Verfahren B für geschützte Elemente, etwa durch tiefe Einbaulage, Regenschutzdach, Innenanschlag oder Loggia. Anforderungen und Klassifizierungen richten sich unter anderem nach der Gebäudehöhe. Falsch ist die Aussage, beide Verfahren würden bis zur selben höchsten Klasse geführt: Verfahren A reicht bis 9A, Verfahren B nur bis 7B.",
    "vertiefung": "Dass die geschützte Einbaulage früher endet, ist kein Mangel der Norm, sondern ihre Logik: Was konstruktiv geschützt ist, muss nicht denselben Prüfdruck aushalten. Umgekehrt heißt das für die Planung, dass ein Innenanschlag oder eine tiefe Einbaulage Anforderungen an das Element selbst senken kann.",
    "tags": [
     "schlagregendichtheit",
@@ -651,7 +651,7 @@
    "teile": [
     {
      "frage": "Was muss jetzt, vor Abschluss der Tragwerksplanung, entschieden werden?",
-     "antwort": "Die Höhenlage. Ein höhengleicher Übergang von innen nach außen wird durch einen entsprechenden Absatz in der Geschossdecke möglich — das ist eine Rohbauentscheidung und lässt sich im Ausbau nicht nachholen. Zu klären ist außerdem die Auflagerung der Vormauerschale: Bei kerngedämmtem Aufbau wird die Außenschale auf einer durchgehenden Konsole gelagert. Wird stattdessen die einfachere Lösung mit einer Stufe gewählt, entfällt beides."
+     "antwort": "Die Höhenlage. Ein höhengleicher Übergang von innen nach außen wird durch einen entsprechenden Absatz in der Geschossdecke möglich — das ist eine Rohbauentscheidung und lässt sich im Ausbau nicht nachholen. Zu klären ist außerdem die Auflagerung der Vormauerschale: Bei kerngedämmtem Aufbau wird die Außenschale auf einer durchgehenden Konsole gelagert. Alternativ lässt sich der Terrassenanschluss grundsätzlich mit Stufen lösen."
     },
     {
      "frage": "Wie wird das Wasser am schwellenlosen Austritt beherrscht?",
@@ -663,7 +663,7 @@
     },
     {
      "frage": "Worauf ist bei Befestigung und Lastabtragung zu achten?",
-     "antwort": "Die Tür ist umlaufend mechanisch zu befestigen, auf allen vier Seiten. Als Fenstertür mit mehr als 1 m Breite braucht sie auch am unteren Rahmenprofil mittig Tragklötze, und die begehbare Schwelle ist über die gesamte Öffnungsbreite trittfest zu unterbauen. Im Bereich des Schließblechs empfiehlt sich eine druckfeste Hinterfütterung. Die vertikale Nutzlast am geöffneten Flügel ist nach DIN EN 13115 in eine Klasse von 200 bis 800 N einzuordnen; die Klötze dürfen dabei nur auf Druck belastet werden und den Rahmen nicht einspannen."
+     "antwort": "Die Tür ist umlaufend mechanisch zu befestigen, auf allen vier Seiten. Ist sie als Fenstertür 1 m breit oder breiter, braucht sie auch am unteren Rahmenprofil mittig Tragklötze, und die begehbare Schwelle ist über die gesamte Öffnungsbreite trittfest zu unterbauen. Im Bereich des Schließblechs empfiehlt sich eine druckfeste Hinterfütterung. Die vertikale Nutzlast am geöffneten Flügel ist nach DIN EN 13115 in eine Klasse von 200 bis 800 N einzuordnen; die Klötze dürfen dabei nur auf Druck belastet werden und den Rahmen nicht einspannen."
     }
    ],
    "fallbild": "bilder/bk-oeffnungen-schwelle-hoehengleich.svg",
@@ -678,7 +678,7 @@
     "bk-aw-zweischalig",
     "bk-fenster"
    ],
-   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.18.2 (PDF 223); DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Detail 3.17.1 (PDF 222); DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59–60",
+   "quelle": "DETAIL Atlas Mauerwerk, Konstruktionen im Detail / Öffnungen, Details 3.17.1 und 3.18.2, S. 226–227; DETAIL Atlas Gebäudeöffnungen, Baukörperanschluss und baulicher Kontext, S. 122–123 und 127; DETAIL Atlas Gebäudeöffnungen, Anforderungen und Schutzfunktionen, S. 59–60",
    "stand": "2026-10",
    "geprueft": true
   }
