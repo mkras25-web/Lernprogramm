@@ -31,9 +31,9 @@
       "typ": "karte",
       "frage": "Welche Doppelbedeutung des Proportionsbegriffs legt Vitruv an?",
       "antwort": "Proportion bezeichnet zum einen das Verhältnis der Teile zueinander, zum anderen deren Maßverhältnis im Bezug zum Menschen.",
-      "vertiefung": "Die zweite Bedeutung ist die folgenreichere: Sie bindet Architektur an den Körper und macht Maßstäblichkeit zu einer Frage der Wahrnehmung statt der Geometrie.",
+      "vertiefung": "Die zweite Bedeutung ging mit dem metrischen System verloren: Der Meter bezieht sich auf den Erdumfang statt wie Zoll, Fuß oder Elle auf den Menschen. Le Corbusier entwickelte deshalb den Modulor aus den Proportionen eines Durchschnittsmenschen und dem Goldenen Schnitt, um den menschlichen Maßstab in die Architektur zurückzubringen.",
       "tags": ["proportion", "vitruv", "theorie"],
-      "quelle": "Basics Entwurfsidee, S. 46",
+      "quelle": "Basics Entwurfsidee, S. 46, 48",
       "stand": "2026-09",
       "geprueft": true
     },
@@ -46,7 +46,7 @@
         ["Ionische Säule", "1 : 8 – Maßverhältnis des weiblichen Körpers"]
       ],
       "antwort": "Dorisch 1 zu 6, ionisch 1 zu 8.",
-      "vertiefung": "Die schlankere ionische Säule wirkt eleganter, die dorische gedrungener und lastender. Die Zuschreibung an Körperbilder ist antike Deutung, die Verhältniszahlen sind das entwurflich Brauchbare.",
+      "vertiefung": "Gemessen wird der untere Säulendurchmesser im Verhältnis zur Höhe; die ionische Säule ist mit 1 zu 8 also deutlich schlanker als die dorische mit 1 zu 6. Die Zuschreibung an Körperbilder ist antike Deutung, die Verhältniszahlen sind das entwurflich Brauchbare.",
       "tags": ["proportion", "antike", "saeulenordnung"],
       "quelle": "Basics Entwurfsidee, S. 46f.",
       "stand": "2026-09",
@@ -55,11 +55,11 @@
     {
       "id": "en-pr-004",
       "typ": "numerisch",
-      "frage": "Welches Verhältnis beschreibt der Goldene Schnitt näherungsweise?",
+      "frage": "Welches Verhältnis x : 1 beschreibt der Goldene Schnitt näherungsweise? Gib x an.",
       "wert": 1.618,
       "einheit": ": 1",
       "toleranz": 0.01,
-      "antwort": "Etwa 1 zu 1,618.",
+      "antwort": "Etwa 1,618 : 1 – gleichbedeutend mit 1 : 1,618.",
       "vertiefung": "Wie die Kreiszahl ist er irrational, lässt sich also nicht als Bruch zweier ganzer Zahlen darstellen. Mathematisch gilt a/b = (a+b)/a; grafisch lässt er sich mit dem Zirkel konstruieren.",
       "tags": ["proportion", "goldener-schnitt", "kennwerte"],
       "quelle": "Basics Entwurfsidee, S. 47",
@@ -70,7 +70,7 @@
       "id": "en-pr-005",
       "typ": "karte",
       "frage": "Wie lautet die mathematische Definition des Goldenen Schnitts?",
-      "antwort": "a geteilt durch b gleich a plus b geteilt durch a. Der kleinere Teil verhält sich zum größeren wie der größere zum Ganzen.",
+      "antwort": "a/b = (a + b)/a: Der kleinere Teil verhält sich zum größeren wie der größere zum Ganzen.",
       "tags": ["proportion", "goldener-schnitt"],
       "quelle": "Basics Entwurfsidee, S. 47",
       "stand": "2026-09",
@@ -110,11 +110,12 @@
         ["√2 : 1", "1,414"],
         ["3 : 2", "1,5"],
         ["φ : 1", "1,618"],
+        ["5 : 3", "1,67"],
         ["16 : 9", "1,78"],
         ["2 : 1", "2,0"]
       ],
-      "antwort": "Die Reihe wächst von 1,33 bis 2,0; der Goldene Schnitt liegt bei 1,618 zwischen 5:3 und 16:9.",
-      "vertiefung": "Bemerkenswert ist die Nähe von 5:3 mit 1,6 zum Goldenen Schnitt mit 1,618. Der Unterschied ist mit bloßem Auge kaum wahrnehmbar – ein Argument gegen die Überhöhung des Goldenen Schnitts.",
+      "antwort": "Die Reihe wächst von 1,33 bis 2,0; der Goldene Schnitt liegt mit 1,618 zwischen 3:2 (1,5) und 5:3 (1,67).",
+      "vertiefung": "Bemerkenswert ist die Nähe von 5:3 mit 1,67 zum Goldenen Schnitt mit 1,618. Das Buch betont zudem, dass viele wohlgeformt erscheinende Gebäude und Fassaden keiner nachvollziehbaren mathematischen Regel folgen – gute Proportionen sind immer auch ein Herantasten.",
       "tags": ["proportion", "kennwerte"],
       "quelle": "Basics Entwurfsidee, S. 47",
       "stand": "2026-09",
@@ -148,7 +149,7 @@
         ["Übereinstimmung", "Identifikation, Behaglichkeit, Schönheit, Verbundenheit"],
         ["Abwechslung", "Neuheit, Anregung, Interessantheit, Überraschung"]
       ],
-      "antwort": "Die drei Gruppen bilden die erwünschten Erlebnisqualitäten zu den drei Bedürfnissen.",
+      "antwort": "Orientierung verlangt Klarheit und Überschaubarkeit, Übereinstimmung zielt auf Identifikation und Behaglichkeit, Abwechslung auf Neuheit und Überraschung.",
       "tags": ["gestalt", "wahrnehmung"],
       "quelle": "Raumpilot Arbeiten, S. 194",
       "stand": "2026-09",
@@ -231,14 +232,23 @@
     {
       "id": "en-pr-016",
       "typ": "zuordnung",
-      "frage": "Ordne die Gestaltqualitäten ihrer Wirkungsrichtung zu.",
+      "frage": "Ordne den Wirkungsrichtungen die passenden Gestaltqualitäten zu.",
       "paare": [
-        ["Betont ordnend", "Gleiche, geometrisch einfache Elemente, regelmäßige Reihen, geringe Komplexität, lapidare Formen"],
-        ["Geordnete Vielfalt", "Nach erkennbaren Regeln angeordnete Elemente, Über- und Unterordnung, überraschende aber nachvollziehbare Beziehungen"],
-        ["Betont vielfältig", "Regellosigkeit, Mischungen, zufällige Elementbeziehungen, unklare Begrenzungen"]
+        [
+          "Betont ordnend",
+          "Gleiche, geometrisch einfache Elemente, regelmäßige Reihen, geringe Komplexität, lapidare Formen"
+        ],
+        [
+          "Geordnete Vielfalt",
+          "Nach erkennbaren Regeln angeordnete Elemente, Über- und Unterordnung, überraschende, aber nachvollziehbare Beziehungen"
+        ],
+        [
+          "Betont vielfältig",
+          "Regellosigkeit, Mischungen, zufällige Elementbeziehungen, unklare Begrenzungen"
+        ]
       ],
       "antwort": "Die drei Gruppen entsprechen den Polen Ordnung und Vielfalt sowie der Mitte dazwischen.",
-      "vertiefung": "Auffällig ist, was in der Mitte steht: Über- und Unterordnung komplexer Formen und die Verbindung sich ergänzender Gegensätzlichkeiten. Geordnete Vielfalt entsteht nicht durch Mäßigung, sondern durch Hierarchie.",
+      "vertiefung": "Auffällig ist, was in der Mitte steht: Über- und Unterordnung komplexer Formen, die Verbindung sich ergänzender Gegensätzlichkeiten sowie Rhythmus, Spannung und Harmonie. Geordnete Vielfalt entsteht also nicht durch bloße Mäßigung beider Pole, sondern durch erkennbare Regeln und Hierarchie.",
       "tags": ["gestalt", "ordnung", "gestaltqualitaet"],
       "quelle": "Raumpilot Arbeiten, S. 195",
       "stand": "2026-09",
@@ -251,7 +261,7 @@
       "antwort": "Rohbau, Hülle und Erschließung bleiben unter der Kontrolle der Entwerfenden, während der Ausbau den Mietern oder Käufern überlassen wird.",
       "vertiefung": "Der Gedanke löst einen Zielkonflikt: Die langlebigen und stadtwirksamen Schichten werden gestaltet, die kurzlebigen und individuellen bleiben offen. Das passt zur Forderung nach flexiblen Strukturen für lange Lebenszeit.",
       "tags": ["entwurfshaltung", "flexibilitaet", "buero"],
-      "quelle": "Raumpilot Arbeiten, S. 197",
+      "quelle": "Raumpilot Arbeiten, S. 193, 197",
       "stand": "2026-09",
       "geprueft": true
     },
@@ -268,7 +278,7 @@
         "Dezimalwerte notiert",
         "φ als Goldener Schnitt gekennzeichnet"
       ],
-      "antwort": "Von 1,33 bis 2,0 wachsend; der Goldene Schnitt liegt mit 1,618 dicht neben 5:3 mit 1,6.",
+      "antwort": "Von 1,33 bis 2,0 wachsend; der Goldene Schnitt liegt mit 1,618 zwischen 3:2 (1,5) und dicht neben 5:3 (1,67).",
       "vertiefung": "Die Übung schärft das Auge für Seitenverhältnisse. Wer die Reihe einmal gezeichnet hat, erkennt später am Bauwerk, welches Verhältnis eine Fassadenöffnung hat.",
       "tags": ["proportion", "skizze"],
       "quelle": "Basics Entwurfsidee, S. 47",
