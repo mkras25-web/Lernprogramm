@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 545" width="800" height="545" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="545" fill="#f0ead2"/>
+<text x="400" y="34" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Rechtsquellen des Bauordnungsrechts in Hessen</text>
+<polygon points="335,138 363,60 597,60 625,138" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="480" y="94" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Hessische Bauordnung (HBO)</text>
+<text x="480" y="118" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Gesetz des Landtags</text>
+<polygon points="293,224 321,146 639,146 667,224" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="480" y="180" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Rechtsverordnungen (§ 89 HBO)</text>
+<text x="480" y="204" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >oberste Bauaufsichtsbehörde</text>
+<polygon points="251,310 279,232 681,232 709,310" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="480" y="266" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Örtliche Bauvorschriften (§ 91 HBO)</text>
+<text x="480" y="290" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Satzung der Gemeinde</text>
+<polygon points="209,396 237,318 723,318 751,396" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="480" y="352" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Technische Baubestimmungen (§ 90 HBO)</text>
+<text x="480" y="376" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Verwaltungsvorschrift des Landes</text>
+<polygon points="167,482 195,404 765,404 793,482" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="480" y="438" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >DIN-Normen, Regeln der Technik</text>
+<text x="480" y="462" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >private Normungsinstitute</text>
+<path d="M 166 60 L 154 60 L 154 304 L 166 304" fill="none" stroke="#9a6b1f" stroke-width="2.5"/>
+<text x="144" y="187.0" font-size="14" text-anchor="end" font-weight="bold" fill="#9a6b1f" >Außenrecht</text>
+<path d="M 166 318 L 154 318 L 154 396 L 166 396" fill="none" stroke="#9a6b1f" stroke-width="2.5"/>
+<text x="144" y="362.0" font-size="14" text-anchor="end" font-weight="bold" fill="#9a6b1f" >Innenrecht</text>
+<path d="M 166 404 L 154 404 L 154 482 L 166 482" fill="none" stroke="#9a6b1f" stroke-width="2.5"/>
+<text x="144" y="448.0" font-size="14" text-anchor="end" font-weight="bold" fill="#9a6b1f" >keine Rechtsnorm</text>
+<text x="400" y="520" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Regeln der Technik gelten nur über Verweise der HBO – als widerlegbare Vermutung.</text>
+</svg>

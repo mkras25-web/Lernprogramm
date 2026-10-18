@@ -27,12 +27,12 @@
 <rect x="326" y="158" width="16" height="24" fill="#f7f3e4"/>
 <rect x="362" y="158" width="16" height="24" fill="#f7f3e4"/>
 <polygon points="194,144 300.0,74 406,144" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
-<text x="300.0" y="114" font-size="12" text-anchor="middle" font-weight="normal" fill="#6c584c" >Dachraum ohne</text>
-<text x="300.0" y="129" font-size="12" text-anchor="middle" font-weight="normal" fill="#6c584c" >Aufenthaltsraum</text>
-<line x1="400" y1="74" x2="458" y2="74" stroke="#9a6b1f" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="300.0" y="118" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >Aufenthaltsraum</text>
+<text x="300.0" y="134" font-size="14" text-anchor="middle" font-weight="normal" fill="#414833" >nicht möglich</text>
+<line x1="300" y1="74" x2="458" y2="74" stroke="#9a6b1f" stroke-width="1.2" stroke-dasharray="4 3"/>
 <line x1="450" y1="360" x2="450" y2="74" stroke="#9a6b1f" stroke-width="2.5"/>
 <line x1="441" y1="360" x2="459" y2="360" stroke="#9a6b1f" stroke-width="2.5"/>
 <line x1="441" y1="74" x2="459" y2="74" stroke="#9a6b1f" stroke-width="2.5"/>
 <text x="464" y="223.0" font-size="18" text-anchor="start" font-weight="bold" fill="#9a6b1f" >h ?</text>
-<text x="300" y="400" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schnitt – ohne Maßstab</text>
+<text x="300" y="400" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schema – ohne Maßstab</text>
 </svg>
