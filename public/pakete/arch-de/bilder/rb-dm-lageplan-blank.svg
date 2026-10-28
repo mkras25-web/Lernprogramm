@@ -11,7 +11,7 @@
 <rect x="365" y="165" width="75" height="100" fill="#f0ead2" stroke="#6c584c" stroke-width="2"/>
 <line x1="365" y1="215" x2="440" y2="215" stroke="#6c584c" stroke-width="1.2"/>
 <rect x="0" y="300" width="800" height="45" fill="#d9d2b4"/>
-<text x="790" y="328" font-size="14" text-anchor="end" fill="#6c584c">Ortsstraße</text>
+<text x="790" y="329" font-size="18" text-anchor="end" fill="#6c584c">Ortsstraße</text>
 <rect x="60" y="390" width="240" height="110" rx="10" fill="#dde5b6" stroke="#6c584c" stroke-width="1.5" stroke-dasharray="4 4"/>
 <rect x="85" y="410" width="60" height="35" fill="none" stroke="#a98467" stroke-width="3"/>
 <rect x="165" y="455" width="70" height="30" fill="none" stroke="#a98467" stroke-width="3"/>

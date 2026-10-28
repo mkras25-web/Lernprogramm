@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 578" width="800" height="578" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="578" fill="#f0ead2"/>
+<defs><marker id="spitze" markerWidth="12" markerHeight="12" refX="11" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L12,6 L0,12 Z" fill="#414833"/></marker></defs>
+<text x="400" y="32" font-size="19" text-anchor="middle" font-weight="bold" fill="#414833" >Welches Verfahren gilt in Hessen?</text>
+<rect x="30" y="52" width="470" height="64" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="265" y="79" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Steht das Vorhaben in der</text>
+<text x="265" y="99" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Anlage zu § 63?</text>
+<line x1="500" y1="84" x2="548" y2="84" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="510" y="76" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >ja</text>
+<rect x="550" y="52" width="220" height="64" rx="8" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="660" y="79" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >verfahrensfrei</text>
+<text x="660" y="99" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >(§ 63)</text>
+<line x1="265" y1="116" x2="265" y2="144" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="274" y="136" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >nein</text>
+<rect x="30" y="146" width="470" height="64" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="265" y="173" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Ist es ein Sonderbau,</text>
+<text x="265" y="193" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >z. B. Hochhaus, Versammlungsstätte?</text>
+<line x1="500" y1="178" x2="548" y2="178" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="510" y="170" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >ja</text>
+<rect x="550" y="146" width="220" height="64" rx="8" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="660" y="173" font-size="15" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >Baugenehmigungs-</text>
+<text x="660" y="193" font-size="15" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >verfahren (§ 66)</text>
+<line x1="265" y1="210" x2="265" y2="238" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="274" y="230" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >nein</text>
+<rect x="30" y="240" width="470" height="64" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="265" y="267" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Qualifizierter B-Plan, keine Ausnahme, Befreiung</text>
+<text x="265" y="287" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >oder Abweichung, Erschließung gesichert?</text>
+<line x1="500" y1="272" x2="548" y2="272" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="510" y="264" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >ja</text>
+<rect x="550" y="240" width="220" height="64" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="660" y="267" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Genehmigungs-</text>
+<text x="660" y="287" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >freistellung (§ 64)</text>
+<line x1="265" y1="304" x2="265" y2="332" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="274" y="324" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >nein</text>
+<rect x="30" y="334" width="470" height="64" rx="8" fill="#f7f3e4" stroke="#414833" stroke-width="2"/>
+<text x="265" y="361" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >Wohngebäude im Innenbereich nach</text>
+<text x="265" y="381" font-size="15" text-anchor="middle" font-weight="normal" fill="#414833" >§ 34 BauGB (befristet bis Ende 2030)?</text>
+<line x1="500" y1="366" x2="548" y2="366" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="510" y="358" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >ja</text>
+<rect x="550" y="334" width="220" height="64" rx="8" fill="#dde5b6" stroke="#414833" stroke-width="2"/>
+<text x="660" y="361" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >erweiterte</text>
+<text x="660" y="381" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >Freistellung (§ 64a)</text>
+<line x1="265" y1="398" x2="265" y2="426" stroke="#414833" stroke-width="2.2" marker-end="url(#spitze)"/><text x="274" y="418" font-size="14" text-anchor="start" font-weight="bold" fill="#6c584c" >nein</text>
+<rect x="30" y="428" width="740" height="56" rx="8" fill="#adc178" stroke="#414833" stroke-width="2"/>
+<text x="400" y="462" font-size="17" text-anchor="middle" font-weight="bold" fill="#414833" >vereinfachtes Baugenehmigungsverfahren (§ 65)</text>
+<line x1="20" y1="510" x2="780" y2="510" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="40" y="538" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >Wahlrecht: Statt Freistellung oder vereinfachtem Verfahren kann die Bauherrschaft</text>
+<text x="40" y="560" font-size="14" text-anchor="start" font-weight="normal" fill="#414833" >ein Genehmigungsverfahren nach § 65 oder § 66 verlangen (§ 62 Abs. 3 HBO).</text>
+</svg>

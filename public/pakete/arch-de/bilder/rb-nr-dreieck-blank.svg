@@ -10,5 +10,5 @@
 <line x1="400" y1="200" x2="400" y2="114" stroke="#414833" stroke-width="2.4" stroke-dasharray="7 5" marker-end="url(#spitze)"/>
 <line x1="330" y1="256" x2="222" y2="328" stroke="#414833" stroke-width="2.4" stroke-dasharray="7 5"/>
 <line x1="262" y1="372" x2="538" y2="372" stroke="#9a6b1f" stroke-width="2" stroke-dasharray="3 6"/>
-<text x="400" y="450" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schema eines Nachbarstreits um eine Baugenehmigung</text>
+<text x="400" y="450" font-size="16" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schema eines Nachbarstreits um eine Baugenehmigung</text>
 </svg>

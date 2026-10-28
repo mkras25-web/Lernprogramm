@@ -48,18 +48,18 @@
 <rect x="701" y="166" width="10" height="12" fill="#f7f3e4"/>
 <line x1="20" y1="470" x2="780" y2="470" stroke="#414833" stroke-width="2.5"/>
 <line x1="60" y1="500" x2="760" y2="500" stroke="#414833" stroke-width="2.5" marker-end="url(#spitze)"/>
-<text x="410" y="524" font-size="14" text-anchor="middle" font-weight="bold" fill="#6c584c" >Prüfumfang der Bauaufsicht nimmt zu – Eigenverantwortung nimmt ab</text>
-<circle cx="132" cy="435" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="132" y="440" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
-<circle cx="317" cy="365" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="317" y="370" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
-<circle cx="502" cy="295" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="502" y="300" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3</text>
-<circle cx="687" cy="225" r="12" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="687" y="230" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >4</text>
-<line x1="20" y1="548" x2="780" y2="548" stroke="#d9d2b4" stroke-width="1.5"/>
-<circle cx="52" cy="574" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="52" y="579" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >1</text>
-<text x="74" y="579" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >verfahrensfrei (§ 63)</text>
-<circle cx="52" cy="604" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="52" y="609" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >2</text>
-<text x="74" y="609" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Genehmigungsfreistellung (§ 64)</text>
-<circle cx="432" cy="574" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="432" y="579" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >3</text>
-<text x="454" y="579" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >vereinfachtes Verfahren (§ 65)</text>
-<circle cx="432" cy="604" r="11" fill="#414833" stroke="#f7f3e4" stroke-width="2"/><text x="432" y="609" font-size="14" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >4</text>
-<text x="454" y="609" font-size="15" text-anchor="start" font-weight="normal" fill="#414833" >Baugenehmigungsverfahren (§ 66)</text>
+<text x="132" y="430" font-size="18" text-anchor="middle" font-weight="bold" fill="#414833" >verfahrensfrei</text>
+<text x="132" y="453" font-size="17" text-anchor="middle" font-weight="normal" fill="#414833" >(§ 63)</text>
+<text x="317" y="380" font-size="18" text-anchor="middle" font-weight="bold" fill="#414833" >Genehmigungs-</text>
+<text x="317" y="402" font-size="18" text-anchor="middle" font-weight="bold" fill="#414833" >freistellung</text>
+<text x="317" y="425" font-size="17" text-anchor="middle" font-weight="normal" fill="#414833" >(§ 64)</text>
+<text x="502" y="310" font-size="18" text-anchor="middle" font-weight="bold" fill="#414833" >vereinfachtes</text>
+<text x="502" y="332" font-size="18" text-anchor="middle" font-weight="bold" fill="#414833" >Verfahren</text>
+<text x="502" y="355" font-size="17" text-anchor="middle" font-weight="normal" fill="#414833" >(§ 65)</text>
+<text x="687" y="240" font-size="18" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >Baugenehmigungs-</text>
+<text x="687" y="262" font-size="18" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >verfahren</text>
+<text x="687" y="285" font-size="17" text-anchor="middle" font-weight="normal" fill="#f7f3e4" >(§ 66)</text>
+<text x="410" y="530" font-size="16" text-anchor="middle" font-weight="bold" fill="#6c584c" >Prüfumfang der Bauaufsicht nimmt zu – Eigenverantwortung nimmt ab</text>
+<line x1="20" y1="556" x2="780" y2="556" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="400" y="590" font-size="16" text-anchor="middle" font-weight="normal" fill="#6c584c" >Gartenhaus · Einfamilienhaus im Bebauungsplan · Mehrfamilienhaus · Hochhaus</text>
 </svg>

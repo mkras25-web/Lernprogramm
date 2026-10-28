@@ -47,5 +47,5 @@
 <rect x="683" y="166" width="10" height="12" fill="#f7f3e4"/>
 <rect x="701" y="166" width="10" height="12" fill="#f7f3e4"/>
 <line x1="20" y1="470" x2="780" y2="470" stroke="#414833" stroke-width="2.5"/>
-<text x="400" y="530" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Gartenhaus · Einfamilienhaus im Bebauungsplan · Mehrfamilienhaus · Hochhaus</text>
+<text x="400" y="530" font-size="16" text-anchor="middle" font-weight="normal" fill="#6c584c" >Gartenhaus · Einfamilienhaus im Bebauungsplan · Mehrfamilienhaus · Hochhaus</text>
 </svg>

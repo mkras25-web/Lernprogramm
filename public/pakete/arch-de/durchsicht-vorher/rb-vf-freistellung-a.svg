@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="600" height="420" fill="#f0ead2"/>
+<rect x="110" y="30" width="380" height="300" fill="#dde5b6" stroke="#414833" stroke-width="2.5"/>
+<rect x="0" y="330" width="600" height="50" fill="#d9d2b4"/>
+<line x1="0" y1="330" x2="600" y2="330" stroke="#414833" stroke-width="2.5"/>
+<text x="300" y="362" font-size="14" text-anchor="middle" font-weight="bold" fill="#6c584c" >Straße</text>
+<rect x="160" y="110" width="280" height="170" fill="#f7f3e4"/>
+<rect x="160" y="110" width="280" height="170" fill="none" stroke="#414833" stroke-width="2.5" stroke-dasharray="16 5 3 5"/>
+<text x="300" y="302" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >Baugrenze</text>
+<rect x="200" y="150" width="180" height="110" fill="#a98467" stroke="#414833" stroke-width="2.5"/>
+<text x="300" y="405" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >Qualifizierter Bebauungsplan – Lageplan ohne Maßstab</text>
+</svg>
