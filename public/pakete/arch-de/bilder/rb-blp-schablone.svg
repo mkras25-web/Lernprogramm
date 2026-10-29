@@ -11,11 +11,12 @@
 <text x="420" y="117" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Zahl der</text>
 <text x="420" y="133" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Vollgeschosse</text>
 <text x="180" y="201" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >0,4</text>
-<text x="180" y="227" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundflächenzahl</text>
-<text x="180" y="243" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >GRZ</text>
+<text x="180" y="237" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundflächenzahl</text>
+<text x="180" y="253" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >GRZ</text>
+<circle cx="420" cy="189" r="31" fill="none" stroke="#414833" stroke-width="2"/>
 <text x="420" y="201" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >0,8</text>
-<text x="420" y="227" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Geschossflächenzahl</text>
-<text x="420" y="243" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >GFZ</text>
+<text x="420" y="237" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Geschossflächenzahl</text>
+<text x="420" y="253" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >GFZ (Zahl im Kreis)</text>
 <text x="180" y="311" font-size="34" text-anchor="middle" font-weight="bold" fill="#414833" >o</text>
 <text x="180" y="337" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Bauweise</text>
 <text x="180" y="353" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >(o = offen)</text>

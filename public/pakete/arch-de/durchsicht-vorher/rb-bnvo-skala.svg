@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 602" width="800" height="602" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<rect x="0" y="0" width="800" height="602" fill="#f0ead2"/>
+<text x="150" y="36" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >BauNVO</text>
+<text x="205" y="36" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >Kürzel</text>
+<text x="250" y="36" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >Baugebiet</text>
+<text x="450" y="36" font-size="13" text-anchor="start" font-weight="bold" fill="#6c584c" >Zweckbestimmung (Absatz 1, verkürzt)</text>
+<rect x="120" y="56" width="640" height="42" fill="#f7f3e4"/>
+<text x="150" y="82" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 2</text>
+<rect x="178" y="63" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="83" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >WS</text>
+<text x="250" y="82" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Kleinsiedlungsgebiet</text>
+<text x="450" y="74" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >vorwiegend Kleinsiedlungen mit Nutzgärten</text>
+<text x="450" y="90" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >und Nebenerwerbsstellen</text>
+<rect x="120" y="98" width="640" height="42" fill="#efe8cf"/>
+<text x="150" y="124" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 3</text>
+<rect x="178" y="105" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="125" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >WR</text>
+<text x="250" y="124" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Reines Wohngebiet</text>
+<text x="450" y="124" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >dient dem Wohnen</text>
+<rect x="120" y="140" width="640" height="42" fill="#f7f3e4"/>
+<text x="150" y="166" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 4</text>
+<rect x="178" y="147" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="167" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >WA</text>
+<text x="250" y="166" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Allgemeines Wohngebiet</text>
+<text x="450" y="166" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >dient vorwiegend dem Wohnen</text>
+<rect x="120" y="182" width="640" height="42" fill="#efe8cf"/>
+<text x="150" y="208" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 4a</text>
+<rect x="178" y="189" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="209" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >WB</text>
+<text x="250" y="208" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Besonderes Wohngebiet</text>
+<text x="450" y="200" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >Wohnen in bebauten Gebieten erhalten,</text>
+<text x="450" y="216" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >vereinbares Gewerbe</text>
+<rect x="120" y="224" width="640" height="42" fill="#f7f3e4"/>
+<text x="150" y="250" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 5</text>
+<rect x="178" y="231" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="251" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >MD</text>
+<text x="250" y="250" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Dorfgebiet</text>
+<text x="450" y="242" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >Land- und Forstwirtschaft, Wohnen, nicht</text>
+<text x="450" y="258" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >wesentlich störendes Gewerbe</text>
+<rect x="120" y="266" width="640" height="42" fill="#efe8cf"/>
+<text x="150" y="292" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 5a</text>
+<rect x="178" y="273" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="293" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >MDW</text>
+<text x="250" y="292" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Dörfliches Wohngebiet</text>
+<text x="450" y="284" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >Wohnen, Nebenerwerbsstellen, nicht wesentlich</text>
+<text x="450" y="300" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >störendes Gewerbe, Mischung nicht gleichgewichtig</text>
+<rect x="120" y="308" width="640" height="42" fill="#f7f3e4"/>
+<text x="150" y="334" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 6</text>
+<rect x="178" y="315" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="335" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >MI</text>
+<text x="250" y="334" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Mischgebiet</text>
+<text x="450" y="326" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >Wohnen und Gewerbe, das das Wohnen</text>
+<text x="450" y="342" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >nicht wesentlich stört</text>
+<rect x="120" y="350" width="640" height="42" fill="#efe8cf"/>
+<text x="150" y="376" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 6a</text>
+<rect x="178" y="357" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="377" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >MU</text>
+<text x="250" y="376" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Urbanes Gebiet</text>
+<text x="450" y="368" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >wie MI, Mischung muss aber</text>
+<text x="450" y="384" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >nicht gleichgewichtig sein</text>
+<rect x="120" y="392" width="640" height="42" fill="#f7f3e4"/>
+<text x="150" y="418" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 7</text>
+<rect x="178" y="399" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="419" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >MK</text>
+<text x="250" y="418" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Kerngebiet</text>
+<text x="450" y="410" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >Handel, zentrale Einrichtungen von</text>
+<text x="450" y="426" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >Wirtschaft, Verwaltung und Kultur</text>
+<rect x="120" y="434" width="640" height="42" fill="#efe8cf"/>
+<text x="150" y="460" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 8</text>
+<rect x="178" y="441" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="461" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >GE</text>
+<text x="250" y="460" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Gewerbegebiet</text>
+<text x="450" y="452" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >vorwiegend nicht erheblich</text>
+<text x="450" y="468" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >belästigendes Gewerbe</text>
+<rect x="120" y="476" width="640" height="42" fill="#f7f3e4"/>
+<text x="150" y="502" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >§ 9</text>
+<rect x="178" y="483" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="503" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >GI</text>
+<text x="250" y="502" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Industriegebiet</text>
+<text x="450" y="494" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >ausschließlich Gewerbe, vorwiegend</text>
+<text x="450" y="510" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >das in anderen Gebieten unzulässige</text>
+<rect x="40" y="60" width="62" height="160" rx="6" fill="#dde5b6" fill-opacity="0.7" stroke="#414833" stroke-width="1.2"/>
+<text x="71" y="149.0" font-size="26" text-anchor="middle" font-weight="bold" fill="#414833" >W</text>
+<rect x="40" y="228" width="62" height="202" rx="6" fill="#a98467" fill-opacity="0.7" stroke="#414833" stroke-width="1.2"/>
+<text x="71" y="338.0" font-size="26" text-anchor="middle" font-weight="bold" fill="#414833" >M</text>
+<rect x="40" y="438" width="62" height="76" rx="6" fill="#6c584c" fill-opacity="0.7" stroke="#414833" stroke-width="1.2"/>
+<text x="71" y="485.0" font-size="26" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >G</text>
+<text x="71" y="540" font-size="12" text-anchor="middle" font-weight="normal" fill="#6c584c" >Baufläche</text>
+<text x="71" y="555" font-size="12" text-anchor="middle" font-weight="normal" fill="#6c584c" >(§ 1 Abs. 1)</text>
+<rect x="120" y="532" width="640" height="46" rx="6" fill="#f7f3e4" stroke="#6c584c" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="178" y="541" width="54" height="28" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.5"/>
+<text x="205" y="561" font-size="15" text-anchor="middle" font-weight="bold" fill="#414833" >SO</text>
+<text x="250" y="552" font-size="14.5" text-anchor="start" font-weight="bold" fill="#414833" >Sondergebiet (§§ 10, 11)</text>
+<text x="250" y="569" font-size="12.5" text-anchor="start" font-weight="normal" fill="#414833" >eigene Zweckbestimmung im Plan, außerhalb der Reihe</text>
+</svg>

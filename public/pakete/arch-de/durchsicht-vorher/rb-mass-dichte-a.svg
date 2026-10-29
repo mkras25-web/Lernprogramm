@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<defs><pattern id="schraff" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#d9d2b4"/><line x1="0" y1="0" x2="0" y2="10" stroke="#9a6b1f" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="600" height="600" fill="#f0ead2"/>
+<rect x="60" y="40" width="480" height="480" fill="#dde5b6" stroke="#414833" stroke-width="2.5" stroke-dasharray="10 5"/>
+<rect x="60" y="520" width="480" height="30" fill="#d9d2b4"/>
+<text x="300.0" y="541" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >Straße</text>
+<rect x="100" y="70" width="90" height="400" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="145.0" y="277.0" font-size="20" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >III</text>
+<rect x="410" y="70" width="90" height="400" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="455.0" y="277.0" font-size="20" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >II–III</text>
+<rect x="210" y="70" width="180" height="60" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="300.0" y="107.0" font-size="20" text-anchor="middle" font-weight="bold" fill="#f7f3e4" >II</text>
+<circle cx="260" cy="240" r="13" fill="#adc178" stroke="#6c584c" stroke-width="1.5"/>
+<circle cx="340" cy="340" r="13" fill="#adc178" stroke="#6c584c" stroke-width="1.5"/>
+<circle cx="260" cy="440" r="13" fill="#adc178" stroke="#6c584c" stroke-width="1.5"/>
+<line x1="60" y1="26" x2="540" y2="26" stroke="#6c584c" stroke-width="1.5"/>
+<line x1="60" y1="20" x2="60" y2="32" stroke="#6c584c" stroke-width="1.5"/>
+<line x1="540" y1="20" x2="540" y2="32" stroke="#6c584c" stroke-width="1.5"/>
+<text x="300.0" y="20" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >50 m</text>
+</svg>

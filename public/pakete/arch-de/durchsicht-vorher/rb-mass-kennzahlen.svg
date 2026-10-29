@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" width="800" height="460" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif">
+<defs><pattern id="schraff" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#d9d2b4"/><line x1="0" y1="0" x2="0" y2="10" stroke="#9a6b1f" stroke-width="3"/></pattern></defs>
+<rect x="0" y="0" width="800" height="460" fill="#f0ead2"/>
+<rect x="20" y="20" width="240" height="420" rx="8" fill="#f7f3e4" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="140" y="52" font-size="24" text-anchor="middle" font-weight="bold" fill="#414833" >GRZ</text>
+<text x="140" y="74" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundflächenzahl</text>
+<rect x="280" y="20" width="240" height="420" rx="8" fill="#f7f3e4" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="400" y="52" font-size="24" text-anchor="middle" font-weight="bold" fill="#414833" >GFZ</text>
+<text x="400" y="74" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Geschossflächenzahl</text>
+<rect x="540" y="20" width="240" height="420" rx="8" fill="#f7f3e4" stroke="#d9d2b4" stroke-width="1.5"/>
+<text x="660" y="52" font-size="24" text-anchor="middle" font-weight="bold" fill="#414833" >BMZ</text>
+<text x="660" y="74" font-size="14" text-anchor="middle" font-weight="normal" fill="#6c584c" >Baumassenzahl</text>
+<rect x="50" y="100" width="180" height="150" fill="#dde5b6" stroke="#414833" stroke-width="2" stroke-dasharray="8 4"/>
+<rect x="90" y="140" width="90" height="60" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="140" y="272" font-size="12.5" text-anchor="middle" font-weight="normal" fill="#6c584c" >Draufsicht</text>
+<line x1="300" y1="250" x2="500" y2="250" stroke="#414833" stroke-width="3"/>
+<rect x="300" y="250" width="200" height="8" fill="#dde5b6"/>
+<rect x="340" y="195" width="120" height="55" fill="#a98467" fill-opacity="0.9" stroke="#414833" stroke-width="2"/>
+<text x="400" y="228" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#414833" >1. Vollgeschoss</text>
+<rect x="340" y="140" width="120" height="55" fill="#a98467" fill-opacity="0.65" stroke="#414833" stroke-width="2"/>
+<text x="400" y="173" font-size="12.5" text-anchor="middle" font-weight="bold" fill="#414833" >2. Vollgeschoss</text>
+<polygon points="332,140 400,100 468,140" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<text x="400" y="272" font-size="12.5" text-anchor="middle" font-weight="normal" fill="#6c584c" >Schnitt</text>
+<line x1="560" y1="250" x2="760" y2="250" stroke="#414833" stroke-width="3"/>
+<polygon points="590,150 630,126.0 740,126.0 700,150" fill="#d9d2b4" stroke="#414833" stroke-width="2"/>
+<polygon points="700,150 740,126.0 740,226.0 700,250" fill="#6c584c" fill-opacity="0.6" stroke="#414833" stroke-width="2"/>
+<rect x="590" y="150" width="110" height="100" fill="#a98467" stroke="#414833" stroke-width="2"/>
+<text x="645.0" y="206" font-size="20" text-anchor="middle" font-weight="bold" fill="#414833" >m³</text>
+<text x="660" y="272" font-size="12.5" text-anchor="middle" font-weight="normal" fill="#6c584c" >Volumen</text>
+<text x="140" y="312" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Grundfläche (m²)</text>
+<line x1="50" y1="321" x2="230" y2="321" stroke="#414833" stroke-width="1.5"/>
+<text x="140" y="340" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Grundstücksfläche (m²)</text>
+<text x="140" y="384" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundstück 600 m²,</text>
+<text x="140" y="402" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >GRZ 0,3: höchstens</text>
+<text x="140" y="420" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >180 m² Grundfläche</text>
+<text x="400" y="312" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Geschossfläche (m²)</text>
+<line x1="310" y1="321" x2="490" y2="321" stroke="#414833" stroke-width="1.5"/>
+<text x="400" y="340" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Grundstücksfläche (m²)</text>
+<text x="400" y="384" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundstück 600 m²,</text>
+<text x="400" y="402" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >GFZ 0,7: höchstens</text>
+<text x="400" y="420" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >420 m² Geschossfläche</text>
+<text x="660" y="312" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Baumasse (m³)</text>
+<line x1="570" y1="321" x2="750" y2="321" stroke="#414833" stroke-width="1.5"/>
+<text x="660" y="340" font-size="14" text-anchor="middle" font-weight="bold" fill="#414833" >Grundstücksfläche (m²)</text>
+<text x="660" y="384" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >Grundstück 600 m²,</text>
+<text x="660" y="402" font-size="13" text-anchor="middle" font-weight="normal" fill="#6c584c" >BMZ 2,0: höchstens</text>
+<text x="660" y="420" font-size="13" text-anchor="middle" font-weight="bold" fill="#6c584c" >1 200 m³ Baumasse</text>
+</svg>

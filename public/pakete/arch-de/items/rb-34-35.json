@@ -7,12 +7,12 @@
    "Innenbereich ist ein Bebauungskomplex mit gewissem Gewicht und organischer Siedlungsstruktur, dessen Bebauung trotz Baulücken den Eindruck der Geschlossenheit vermittelt. Der Zusammenhang endet in der Regel am letzten Baukörper. Splittersiedlungen sind kein Ortsteil. Weil die Grenze über den Wert eines Grundstücks entscheidet, kann die Gemeinde sie durch Satzungen festlegen: klarstellend, durch Einbeziehung bebauter Flächen, die der Flächennutzungsplan als Baufläche darstellt, oder durch Ergänzung um einzelne geprägte Außenbereichsflächen.",
    "Im Innenbereich ist ein Vorhaben zulässig, wenn es sich nach Art und Maß der baulichen Nutzung, Bauweise und überbauter Grundstücksfläche in die Eigenart der näheren Umgebung einfügt und die Erschließung gesichert ist. Wer sich im Rahmen der vorhandenen Bebauung hält, fügt sich in der Regel ein – außer er verletzt das Gebot der Rücksichtnahme. Entspricht die Umgebung einem Baugebiet der BauNVO, richtet sich die Art allein nach deren Katalog (§ 34 Abs. 2). Seit dem Bau-Turbo von 2025 sind Abweichungen vom Einfügen für Wohngebäude mit Zustimmung der Gemeinde möglich.",
    "Im Außenbereich soll grundsätzlich nicht gebaut werden. § 35 unterscheidet drei Gruppen: Privilegierte Vorhaben wie landwirtschaftliche Betriebe, Windenergieanlagen oder Jagdhütten sind zulässig, wenn öffentliche Belange nicht entgegenstehen. Sonstige Vorhaben, etwa ein Einfamilienhaus ohne Betriebsbezug, sind nur zulässig, wenn sie öffentliche Belange nicht einmal beeinträchtigen – was sie in der Regel tun. Teilprivilegierte Vorhaben wie die Umnutzung früherer Hofgebäude oder die Erweiterung eines Wohnhauses auf höchstens zwei Wohnungen müssen sich bestimmte Belange nicht entgegenhalten lassen.",
-   "Über Vorhaben nach §§ 31, 33, 34 und 35 entscheidet die Bauaufsicht im Einvernehmen mit der Gemeinde. Die Gemeinde darf es nur aus planungsrechtlichen Gründen verweigern; schweigt sie zwei Monate, gilt es als erteilt. Im beplanten Bereich sind Abweichungen über Ausnahmen (vom Plan vorgesehen) und Befreiungen (Grundzüge unberührt) möglich, während der Planaufstellung hilft § 33. Häufige Verwechslung: Der Flächennutzungsplan ist im Außenbereich ein öffentlicher Belang, im Geltungsbereich eines Bebauungsplans aber unerheblich."
+   "Über Vorhaben nach § 31 Abs. 1 und 2, § 33, § 34 Abs. 1, 2 und 3a sowie § 35 entscheidet die Bauaufsicht im Einvernehmen mit der Gemeinde. Die Gemeinde darf es nur aus planungsrechtlichen Gründen verweigern; schweigt sie zwei Monate, gilt es als erteilt. Für die Bau-Turbo-Fälle (§ 31 Abs. 3, § 34 Abs. 3b, § 246e) braucht es stattdessen ihre Zustimmung nach § 36a. Im beplanten Bereich sind Abweichungen über Ausnahmen (vom Plan vorgesehen) und Befreiungen (Grundzüge unberührt) möglich, während der Planaufstellung hilft § 33. Häufige Verwechslung: Der Flächennutzungsplan ist im Außenbereich ein öffentlicher Belang, im Geltungsbereich eines qualifizierten Bebauungsplans aber unerheblich."
   ],
   "merksatz": "Erst § 30, dann § 34, sonst § 35: Im Innenbereich muss sich ein Vorhaben einfügen, im Außenbereich dürfen öffentliche Belange privilegierten Vorhaben nicht entgegenstehen und sonstige nicht einmal beeinträchtigt werden.",
   "bild": "bilder/rb-3435-bereiche.svg",
   "bildunterschrift": "Drei Bereiche einer Gemeinde: qualifiziert beplantes Neubaugebiet, Innenbereich des Altorts und Außenbereich.",
-  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 347–421, S. 126–148; §§ 29–36, 246e BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257); § 35 BauGB i. d. F. vom 22.12.2025 (BGBl. 2025 I Nr. 348), Wortlaut nach dejure.org"
+  "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 347–421, S. 126–148; §§ 29–36a, 246e BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; Gesetz zur Beschleunigung des Wohnungsbaus und zur Wohnraumsicherung vom 27.10.2025 (BGBl. 2025 I Nr. 257)"
  },
  "lernziele": [
   "Du kannst ein Grundstück dem qualifiziert beplanten Bereich, dem Innenbereich oder dem Außenbereich zuordnen.",
@@ -58,7 +58,7 @@
     "vorhaben",
     "verfahrensfreiheit"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 347–348, S. 126; Kontrollfrage 1, S. 148; § 29 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 347–348, S. 126; Kontrollfrage 1, S. 148; § 29 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -94,7 +94,7 @@
     "qualifizierter bebauungsplan",
     "erschließung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 360–363, S. 130; § 30 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 360–363, S. 130; § 30 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -108,7 +108,7 @@
     "§ 30 baugb",
     "einfacher bebauungsplan"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 363–364, S. 130–131; Rn. 391, S. 139; Rn. 403, S. 142; § 30 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 363–364, S. 130–131; Rn. 391, S. 139; Rn. 403, S. 142; § 30 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -120,13 +120,13 @@
     "rb-baunvo"
    ],
    "antwort": "Die Ausnahme ist planimmanent: Der Bebauungsplan sieht sie selbst nach Art und Umfang ausdrücklich vor, etwa die ausnahmsweise zulässigen Nutzungen nach Absatz 3 der Baugebietsvorschriften der BauNVO. Die Befreiung ist planextern: Sie erlaubt eine Abweichung, die der Plan nicht vorgesehen hat, und ist deshalb an strengere Voraussetzungen gebunden.",
-   "vertiefung": "Die BauNVO-Ausnahmen werden kraft Gesetzes Bestandteil des Bebauungsplans, wenn er sie nicht ausschließt. Wer eine Tankstelle im allgemeinen Wohngebiet will, beantragt deshalb eine Ausnahme; wer eine Baugrenze überschreiten will, braucht eine Befreiung. Über beide entscheidet die Bauaufsicht nach Ermessen und im Einvernehmen mit der Gemeinde.",
+   "vertiefung": "Die BauNVO-Ausnahmen werden kraft Gesetzes Bestandteil des Bebauungsplans, wenn er sie nicht ausschließt. Wer eine Tankstelle im allgemeinen Wohngebiet will, beantragt deshalb eine Ausnahme; wer mit dem Gebäude über eine Baugrenze hinaus bauen will, braucht in der Regel eine Befreiung – nur ein Vortreten von Gebäudeteilen in geringfügigem Ausmaß kann schon nach § 23 Abs. 3 Satz 2 BauNVO zugelassen werden. Über beide entscheidet die Bauaufsicht nach Ermessen und im Einvernehmen mit der Gemeinde.",
    "tags": [
     "§ 31 baugb",
     "ausnahme",
     "befreiung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 366–369, S. 131–132; § 31 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 366–369, S. 131–132; § 31 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; §§ 4 Abs. 3 Nr. 5, 23 Abs. 3 Satz 2 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert durch Art. 2 G vom 03.07.2023 (BGBl. 2023 I Nr. 176); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -160,16 +160,16 @@
     "befreiung",
     "grundzüge der planung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 371–375, S. 133–134; § 31 Abs. 2 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 371–375, S. 133–134; § 31 Abs. 2 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
   {
    "id": "rb-3435-007",
    "typ": "karte",
-   "frage": "Was hat das Gesetz zur Beschleunigung des Wohnungsbaus („Bau-Turbo“, Oktober 2025) bei Befreiungen und Abweichungen neu geregelt?",
-   "antwort": "Nach § 31 Abs. 3 BauGB kann mit Zustimmung der Gemeinde im Einzelfall oder in vergleichbaren Fällen zugunsten des Wohnungsbaus von Festsetzungen befreit werden, wenn das mit den öffentlichen Belangen vereinbar ist und nachbarliche Interessen gewürdigt sind. § 246e BauGB erlaubt befristet bis Ende 2030 sogar Abweichungen von Vorschriften des BauGB selbst für den Bau von Wohngebäuden, ebenfalls nur mit Zustimmung der Gemeinde.",
-   "vertiefung": "Die Zustimmung regelt § 36a: Die Gemeinde stimmt zu, wenn das Vorhaben mit ihren Vorstellungen von der städtebaulichen Entwicklung vereinbar ist; sie gilt als erteilt, wenn die Gemeinde nicht binnen drei Monaten widerspricht. Die Gemeinde bekommt damit ein echtes Steuerungsrecht – anders als beim Einvernehmen nach § 36, das sie nur aus planungsrechtlichen Gründen verweigern darf. Ältere Lehrbuchauflagen beschreiben noch die Vorgängerfassung des § 31 Abs. 3 aus dem Baulandmobilisierungsgesetz.",
+   "frage": "Was hat das Gesetz zur Beschleunigung des Wohnungsbaus und zur Wohnraumsicherung („Bau-Turbo“, Oktober 2025) bei Befreiungen und Abweichungen neu geregelt?",
+   "antwort": "Nach § 31 Abs. 3 BauGB kann mit Zustimmung der Gemeinde im Einzelfall oder in mehreren vergleichbaren Fällen zugunsten des Wohnungsbaus von Festsetzungen befreit werden, wenn das mit den öffentlichen Belangen vereinbar ist und nachbarliche Interessen gewürdigt sind. § 246e BauGB erlaubt befristet bis Ende 2030 sogar Abweichungen von den Vorschriften des BauGB selbst und den darauf gestützten Vorschriften wie der BauNVO – für Wohnungsbauvorhaben (Neubau von Wohngebäuden, Erweiterung oder Umnutzung zu Wohnzwecken), ebenfalls nur mit Zustimmung der Gemeinde.",
+   "vertiefung": "Die Zustimmung regelt § 36a: Die Gemeinde stimmt zu, wenn das Vorhaben mit ihren Vorstellungen von der städtebaulichen Entwicklung vereinbar ist; sie gilt als erteilt, wenn die Gemeinde sie nicht binnen drei Monaten verweigert. Die Gemeinde bekommt damit ein echtes Steuerungsrecht – anders als beim Einvernehmen nach § 36, das sie nur aus planungsrechtlichen Gründen verweigern darf. Ältere Lehrbuchauflagen beschreiben noch die Vorgängerfassung des § 31 Abs. 3 aus dem Baulandmobilisierungsgesetz.",
    "tags": [
     "bau-turbo",
     "§ 31 baugb",
@@ -177,7 +177,7 @@
     "§ 36a baugb",
     "wohnungsbau"
    ],
-   "quelle": "§§ 31 Abs. 3, 36a, 246e BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "§§ 31 Abs. 3, 36a, 246e BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; Gesetz zur Beschleunigung des Wohnungsbaus und zur Wohnraumsicherung vom 27.10.2025 (BGBl. 2025 I Nr. 257)",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -221,7 +221,7 @@
     "außenbereich",
     "bebauungszusammenhang"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 380–385, S. 136–137",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 380–385, S. 136–137; Rn. 413, S. 145",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -245,7 +245,7 @@
     "Falsch: Maßgeblich ist der letzte Baukörper, nicht die Grundstücksgrenze.",
     "Falsch: Baulücken sind gerade mitgedacht, solange der Eindruck der Geschlossenheit bleibt.",
     "Richtig: Die Straße wirkt trennend oder verbindend, je nach Bebauung beiderseits.",
-    "Falsch: Einem Ortsteil fehlt dann das Gewicht und die organische Siedlungsstruktur."
+    "Falsch: Einer Splittersiedlung fehlen das Gewicht und die organische Siedlungsstruktur eines Ortsteils."
    ],
    "antwort": "Der Bebauungszusammenhang endet in der Regel am letzten Baukörper, und ob eine Straße ihn unterbricht, hängt davon ab, ob die Bebauung beiderseits den Eindruck der Geschlossenheit vermittelt.",
    "vertiefung": "Baulücken unterbrechen den Zusammenhang nicht automatisch – entscheidend ist der Gesamteindruck vor Ort. Splittersiedlungen und regellose Streubebauung sind keine Ortsteile; Grundstücke dort liegen im Außenbereich. In Einzelfällen kann der Zusammenhang über das letzte bebaute Grundstück hinausreichen.",
@@ -332,7 +332,7 @@
     ],
     [
      "Entwicklungssatzung (§ 34 Abs. 4 Nr. 2)",
-     "erklärt bebaute Außenbereichsflächen, die der FNP als Baufläche darstellt, zum Innenbereich"
+     "erklärt bebaute Außenbereichsflächen, die der Flächennutzungsplan als Baufläche darstellt, zum Innenbereich"
     ],
     [
      "Ergänzungssatzung (§ 34 Abs. 4 Nr. 3)",
@@ -344,13 +344,13 @@
     ]
    ],
    "antwort": "Die Klarstellungssatzung zeichnet nur nach, was ohnehin gilt. Entwicklungs- und Ergänzungssatzung schaffen neuen Innenbereich. Die Außenbereichssatzung lässt das Gebiet Außenbereich, erleichtert dort aber Wohnvorhaben und kleine Betriebe.",
-   "vertiefung": "Weil Entwicklungs- und Ergänzungssatzung Bauland schaffen, sind sie Abwägungsentscheidungen mit Öffentlichkeits- und Behördenbeteiligung; bei der Ergänzungssatzung gelten Bodenschutzklausel und Eingriffsregelung entsprechend. Die Entwicklungssatzung setzt voraus, dass der Flächennutzungsplan die Fläche als Baufläche darstellt. Alle Satzungen können miteinander verbunden werden und brauchen keine Genehmigung.",
+   "vertiefung": "Weil Entwicklungs- und Ergänzungssatzung Bauland schaffen, sind sie Abwägungsentscheidungen mit Öffentlichkeits- und Behördenbeteiligung; bei der Ergänzungssatzung gelten Bodenschutzklausel und Eingriffsregelung entsprechend. Die Entwicklungssatzung setzt voraus, dass der Flächennutzungsplan die Fläche als Baufläche darstellt. Die drei Satzungen nach § 34 Abs. 4 können miteinander verbunden werden und brauchen keine Genehmigung.",
    "tags": [
     "§ 34 baugb",
     "innenbereichssatzung",
     "außenbereichssatzung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 384–387, S. 137–138; Rn. 414, S. 145–146; §§ 34 Abs. 4, 35 Abs. 6 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 384–387, S. 137–138; Rn. 414, S. 145–146; §§ 34 Abs. 4, 35 Abs. 6 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -362,14 +362,14 @@
     "rb-mass",
     "rb-bauweise"
    ],
-   "antwort": "Es muss sich nach Art und Maß der baulichen Nutzung, der Bauweise und der Grundstücksfläche, die überbaut werden soll, in die Eigenart der näheren Umgebung einfügen, und die Erschließung muss gesichert sein. Außerdem müssen gesunde Wohn- und Arbeitsverhältnisse gewahrt bleiben, und das Ortsbild darf nicht beeinträchtigt werden. Schädliche Auswirkungen auf zentrale Versorgungsbereiche sind ausgeschlossen (Abs. 3).",
+   "antwort": "Es muss sich nach Art und Maß der baulichen Nutzung, der Bauweise und der Grundstücksfläche, die überbaut werden soll, in die Eigenart der näheren Umgebung einfügen, und die Erschließung muss gesichert sein. Außerdem müssen gesunde Wohn- und Arbeitsverhältnisse gewahrt bleiben, und das Ortsbild darf nicht beeinträchtigt werden. Schließlich dürfen keine schädlichen Auswirkungen auf zentrale Versorgungsbereiche zu erwarten sein (Abs. 3).",
    "vertiefung": "Das Einfügen ist der Kernmaßstab; § 34 ist ein gesetzlicher Planersatz, der die vorhandene Bebauung als Plan nimmt. Lange wurden 30 bis 40 % aller Vorhaben nach § 34 genehmigt. Das Ortsbild ist städtebaulich zu verstehen – baugestalterische Details wie Fensterformen regelt es nicht, und es rechtfertigt in der Regel nicht, ein Innenbereichsgrundstück ganz freizuhalten.",
    "tags": [
     "§ 34 baugb",
     "einfügen",
     "innenbereich"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 377–378, S. 135; Rn. 388–391, S. 138–139; § 34 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 377–378, S. 135; Rn. 388–391, S. 138–139; § 34 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -394,13 +394,13 @@
     "rb-mass"
    ],
    "antwort": "Vorhaben A. Mit drei Geschossen bleibt es innerhalb des Rahmens, den die vorhandene Bebauung vorgibt. Das achtgeschossige Vorhaben B überschreitet den Rahmen deutlich.",
-   "vertiefung": "Wer den Rahmen überschreitet, fügt sich nur ausnahmsweise trotzdem ein – wenn keine städtebaulichen Spannungen entstehen, die nur ein Bebauungsplan bewältigen könnte. Ein Hochhaus zwischen kleinen Häusern hätte Vorbildwirkung und würde Spannungen begründen. Will die Gemeinde es trotzdem, muss sie planen.",
+   "vertiefung": "Wer den Rahmen überschreitet, fügt sich nur ausnahmsweise trotzdem ein – wenn keine städtebaulichen Spannungen entstehen, die nur ein Bebauungsplan bewältigen könnte. Will die Gemeinde ein solches Vorhaben trotzdem, muss sie grundsätzlich planen. Dient es dem Wohnen, kommt seit dem Bau-Turbo (Oktober 2025) auch eine Abweichung vom Einfügen mit ihrer Zustimmung nach § 34 Abs. 3b in Betracht.",
    "tags": [
     "§ 34 baugb",
     "einfügen",
     "maß der baulichen nutzung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 389, S. 138",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 389, S. 138; § 34 Abs. 3b BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -411,8 +411,8 @@
    "optionen": [
     "Wer sich innerhalb des Rahmens der vorhandenen Bebauung hält, fügt sich in der Regel ein.",
     "Maßgeblich sind nur die unmittelbaren Nachbargrundstücke.",
-    "Eine Überschreitung des Rahmens kann zulässig sein, wenn sie keine bodenrechtlichen Spannungen begründet.",
-    "Wer sich im Rahmen hält, fügt sich immer ein.",
+    "Eine Überschreitung des Rahmens kann zulässig sein, wenn sie keine städtebaulichen Spannungen begründet.",
+    "Wer sich im Rahmen hält, muss das Gebot der Rücksichtnahme nicht mehr beachten.",
     "Das Ortsbild umfasst auch baugestalterische Details wie Fensterformen."
    ],
    "richtig": [
@@ -427,7 +427,7 @@
     "Falsch: Der Begriff ist auf städtebauliche Gesichtspunkte beschränkt."
    ],
    "antwort": "Ein Vorhaben fügt sich in der Regel ein, wenn es sich innerhalb des Rahmens der vorhandenen Bebauung hält. Überschreitet es den Rahmen, kann es sich trotzdem einfügen, wenn es keine nur durch Bauleitplanung zu bewältigenden Spannungen begründet oder erhöht.",
-   "vertiefung": "Maßgeblich ist die nähere Umgebung, soweit sich das Vorhaben auf sie auswirken kann – nicht nur das Nachbargrundstück. Und selbst wer im Rahmen bleibt, fügt sich nicht ein, wenn er das Gebot der Rücksichtnahme verletzt, etwa durch eine erdrückende Wirkung auf den Nachbarn.",
+   "vertiefung": "Maßgeblich ist die nähere Umgebung, soweit sich das Vorhaben auf sie auswirken kann – nicht nur das Nachbargrundstück. Und selbst wer im Rahmen bleibt, fügt sich nicht ein, wenn er die gebotene Rücksichtnahme vor allem auf die unmittelbar benachbarte Bebauung vermissen lässt.",
    "tags": [
     "§ 34 baugb",
     "einfügen",
@@ -451,7 +451,7 @@
     "faktisches baugebiet",
     "art der baulichen nutzung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 393–395, S. 139–140; § 34 Abs. 2 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 393–395, S. 139–140; § 34 Abs. 2 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -470,11 +470,11 @@
     },
     {
      "frage": "Die Gemeinde verweigert ihr Einvernehmen zum Mehrfamilienhaus, weil sie die Lücke als Grünfläche erhalten möchte. Zu Recht?",
-     "antwort": "Nein. Das Einvernehmen darf nur aus den Gründen der §§ 31, 33, 34 und 35 versagt werden (§ 36 Abs. 2 Satz 1). Der Wunsch nach einer Grünfläche ist kein solcher Grund. Die nach Landesrecht zuständige Behörde kann das rechtswidrig versagte Einvernehmen ersetzen."
+     "antwort": "Nein. Das Einvernehmen darf nur aus den Gründen des § 31 Abs. 1 und 2, der §§ 33, 34 Abs. 1, 2 und 3a sowie des § 35 versagt werden (§ 36 Abs. 2 Satz 1). Der Wunsch nach einer Grünfläche ist kein solcher Grund. Die nach Landesrecht zuständige Behörde kann das rechtswidrig versagte Einvernehmen ersetzen."
     },
     {
      "frage": "Was könnte die Gemeinde stattdessen tun?",
-     "antwort": "Sie müsste planen: einen Aufstellungsbeschluss für einen Bebauungsplan mit Grünfläche fassen und das Vorhaben durch eine Veränderungssperre oder Zurückstellung sichern."
+     "antwort": "Sie müsste planen: einen Aufstellungsbeschluss für einen Bebauungsplan mit Grünfläche fassen und die Planung durch eine Veränderungssperre (§ 14) oder die Zurückstellung des Baugesuchs (§ 15) sichern."
     }
    ],
    "siehe": [
@@ -489,7 +489,7 @@
     "einvernehmen",
     "fallaufgabe"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 352–357, S. 127–129; Rn. 389, 393–395, S. 138–140; § 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert 03.07.2023 (BGBl. 2023 I Nr. 176); § 36 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 352–357, S. 127–129; Rn. 389, 393–395, S. 138–140; § 4 BauNVO i. d. F. vom 21.11.2017 (BGBl. I S. 3786), zuletzt geändert durch Art. 2 G vom 03.07.2023 (BGBl. 2023 I Nr. 176); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; §§ 14, 15, 36 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -497,15 +497,15 @@
    "id": "rb-3435-018",
    "typ": "karte",
    "frage": "Wann darf im Innenbereich vom Erfordernis des Einfügens abgewichen werden (§ 34 Abs. 3a und 3b BauGB)?",
-   "antwort": "Nach Absatz 3a kann im Einzelfall abgewichen werden, wenn es um die Erweiterung, Änderung oder Erneuerung zulässig errichteter Gewerbe- und Handwerksbetriebe geht, um Gebäude, die neuen Wohnraum schaffen, oder um Nutzungsänderungen zu Wohnzwecken; die Abweichung muss städtebaulich vertretbar und unter Würdigung nachbarlicher Interessen mit den öffentlichen Belangen vereinbar sein. Seit Oktober 2025 erlaubt Absatz 3b zusätzlich Abweichungen für Wohngebäude mit Zustimmung der Gemeinde.",
-   "vertiefung": "Absatz 3a gilt nicht für Einzelhandelsbetriebe, die die verbrauchernahe Versorgung oder zentrale Versorgungsbereiche beeinträchtigen können. Beide Absätze sind Spielräume zugunsten des Bestands und des Wohnungsbaus, ohne dass ein Bebauungsplan nötig wird. Für Absatz 3b gilt die Zustimmung nach § 36a – sie gilt als erteilt, wenn die Gemeinde nicht binnen drei Monaten widerspricht.",
+   "antwort": "Nach Absatz 3a kann im Einzelfall abgewichen werden, wenn es um die Erweiterung, Änderung, Nutzungsänderung oder Erneuerung zulässigerweise errichteter Gewerbe- oder Handwerksbetriebe geht, um die Erweiterung, Änderung oder Erneuerung bestehender Gebäude, durch die neue Wohnungen entstehen oder Wohnraum wieder nutzbar wird, oder um Nutzungsänderungen zu Wohnzwecken; die Abweichung muss städtebaulich vertretbar und unter Würdigung nachbarlicher Interessen mit den öffentlichen Belangen vereinbar sein. Seit Oktober 2025 erlaubt Absatz 3b zusätzlich Abweichungen für die Errichtung von Wohngebäuden, also auch für Neubauten, mit Zustimmung der Gemeinde.",
+   "vertiefung": "Absatz 3a gilt nicht für Einzelhandelsbetriebe, die die verbrauchernahe Versorgung oder zentrale Versorgungsbereiche beeinträchtigen können. Beide Absätze sind Spielräume zugunsten des Bestands und des Wohnungsbaus, ohne dass ein Bebauungsplan nötig wird. Für Absatz 3b gilt die Zustimmung nach § 36a – sie gilt als erteilt, wenn die Gemeinde sie nicht binnen drei Monaten verweigert.",
    "tags": [
     "§ 34 baugb",
     "abweichung",
     "bau-turbo",
     "bestandsschutz"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 392, S. 139; Rn. 394, S. 140; § 34 Abs. 3a, 3b, § 36a BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 392, S. 139; Rn. 394, S. 140; § 34 Abs. 3a, 3b, § 36a BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; Gesetz zur Beschleunigung des Wohnungsbaus und zur Wohnraumsicherung vom 27.10.2025 (BGBl. 2025 I Nr. 257)",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -513,7 +513,7 @@
    "id": "rb-3435-019",
    "typ": "karte",
    "frage": "Was ist der Außenbereich, und welches Leitbild verfolgt § 35 BauGB?",
-   "antwort": "Außenbereich ist alles, was weder im Geltungsbereich eines qualifizierten Bebauungsplans noch in einem im Zusammenhang bebauten Ortsteil liegt – der größte Teil des Bundesgebiets. § 35 ist ein gesetzlicher Ersatzplan mit einem klaren Leitbild: Der Außenbereich soll grundsätzlich von Bebauung freibleiben, es sei denn, ein Vorhaben gehört seinem Wesen nach dorthin.",
+   "antwort": "Außenbereich ist alles, was weder im Geltungsbereich eines qualifizierten Bebauungsplans noch in einem im Zusammenhang bebauten Ortsteil liegt – der größte Teil des Bundesgebiets. § 35 ist ein gesetzlicher Ersatzplan mit einem klaren Leitbild: Der Außenbereich soll grundsätzlich von Bebauung frei bleiben, es sei denn, ein Vorhaben gehört seinem Wesen nach dorthin.",
    "vertiefung": "Der Außenbereich dient der naturgegebenen Bodennutzung und der Erholung der Allgemeinheit. Battis nennt § 35 deshalb die wichtigste umweltschützende Vorschrift des BauGB. Nur rund 5 % der Baugenehmigungen werden nach § 35 erteilt, die Vorschrift beschäftigt Verwaltung und Gerichte aber mehr als jede andere.",
    "tags": [
     "§ 35 baugb",
@@ -527,7 +527,7 @@
   {
    "id": "rb-3435-020",
    "typ": "zuordnung",
-   "frage": "Ordne die Vorhabengruppen des § 35 BauGB ihrem Prüfmaßstab zu.",
+   "frage": "Ordne die Vorhaben im Außenbereich ihrem Prüfmaßstab zu.",
    "paare": [
     [
      "privilegiertes Vorhaben (Abs. 1)",
@@ -553,7 +553,7 @@
     "privilegiert",
     "öffentliche belange"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 399–400, S. 141; Rn. 403, S. 142",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 399–400, S. 141; Rn. 403, S. 142; Rn. 411, S. 145",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -583,13 +583,13 @@
     "Falsch: Wohnen ohne Bezug zu einem privilegierten Betrieb gehört in den Innenbereich."
    ],
    "antwort": "Der Stall eines landwirtschaftlichen Betriebs, die Windenergieanlage und die Jagdhütte. Wochenendhaus, Tennisplatz und das Einfamilienhaus ohne Betriebsbezug sind sonstige Vorhaben nach Absatz 2.",
-   "vertiefung": "Der Katalog in Absatz 1 ist abschließend. Er umfasst Land- und Forstwirtschaft, Gartenbau, öffentliche Versorgung und ortsgebundene Betriebe, Vorhaben, die wegen ihrer Anforderungen oder Wirkungen nur im Außenbereich ausgeführt werden sollen (Nr. 4, etwa Aussichtstürme, Sprengstofffabriken, Jagdhütten), erneuerbare Energien wie Wind und Wasser, Biomasse, Kernenergie (ohne Neubau von Kraftwerken), Solaranlagen sowie seit 2025 bestimmte Wärme- und Batteriespeicher. Individuelle Freizeitinteressen begründen keine Privilegierung.",
+   "vertiefung": "Der Katalog in Absatz 1 ist abschließend. Er umfasst Land- und Forstwirtschaft, Gartenbau, öffentliche Versorgung und ortsgebundene Betriebe, Vorhaben, die wegen ihrer Anforderungen oder Wirkungen nur im Außenbereich ausgeführt werden sollen (Nr. 4, etwa Aussichtstürme, Sprengstofffabriken, Jagdhütten), Wind-, Wasser- und geothermische Energie (Nr. 5), Biomasse (Nr. 6), Kernenergie ohne Neubau von Kernkraftwerken (Nr. 7), Solaranlagen an Gebäuden und entlang von Autobahnen und großen Bahnstrecken (Nr. 8), besondere Solaranlagen landwirtschaftlicher Betriebe (Nr. 9) sowie untertägige Wärmespeicher und Batteriespeicher (Nr. 10 bis 12). Individuelle Freizeitinteressen begründen keine Privilegierung.",
    "tags": [
     "§ 35 baugb",
     "privilegiert",
     "außenbereich"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 405–407, S. 142–144; § 35 Abs. 1 § 35 BauGB i. d. F. vom 22.12.2025 (BGBl. 2025 I Nr. 348), Wortlaut nach dejure.org",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 405–407, S. 142–144; § 35 Abs. 1 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -604,7 +604,7 @@
     "öffentliche belange",
     "splittersiedlung"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 408–410, S. 144–145; § 35 Abs. 3 § 35 BauGB i. d. F. vom 22.12.2025 (BGBl. 2025 I Nr. 348), Wortlaut nach dejure.org",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 408–410, S. 144–145; § 35 Abs. 3 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -638,7 +638,7 @@
     "Bei Abs. 4 die drei unbeachtlichen Belange",
     "Gesicherte Erschließung als gemeinsame Voraussetzung"
    ],
-   "antwort": "Drei Spalten: privilegierte Vorhaben (Abs. 1, etwa landwirtschaftlicher Betrieb, Windenergie) – Belange dürfen nicht entgegenstehen; sonstige Vorhaben (Abs. 2, etwa Einfamilienhaus, Wochenendhaus) – Belange dürfen nicht beeinträchtigt werden; teilprivilegierte Vorhaben (Abs. 4, etwa Umnutzung eines Hofgebäudes, Erweiterung eines Wohnhauses) – FNP, Landschaft und Splittersiedlung können nicht entgegengehalten werden. Darunter für alle: Erschließung gesichert, Abwägung mit den Belangen nach Abs. 3.",
+   "antwort": "Drei Spalten: privilegierte Vorhaben (Abs. 1, etwa landwirtschaftlicher Betrieb, Windenergie) – Belange dürfen nicht entgegenstehen; sonstige Vorhaben (Abs. 2, etwa Einfamilienhaus, Wochenendhaus) – Belange dürfen nicht beeinträchtigt werden; teilprivilegierte Vorhaben (Abs. 4, etwa Umnutzung eines Hofgebäudes, Erweiterung eines Wohnhauses) – Flächennutzungsplan, Landschaft und Splittersiedlung können nicht entgegengehalten werden. Darunter für alle: Erschließung gesichert, Abwägung mit den Belangen nach Abs. 3.",
    "vertiefung": "Die Skizze ist zugleich ein Klausurschema: Erst die Gruppe bestimmen, dann den passenden Maßstab anlegen, dann die Belange des Absatzes 3 einzeln durchgehen.",
    "tags": [
     "§ 35 baugb",
@@ -679,7 +679,7 @@
     "teilprivilegiert",
     "bestandsschutz"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 415–416, S. 146; § 35 Abs. 4 § 35 BauGB i. d. F. vom 22.12.2025 (BGBl. 2025 I Nr. 348), Wortlaut nach dejure.org",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 415–416, S. 146; § 35 Abs. 4 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -696,9 +696,10 @@
     "teilprivilegiert",
     "wohngebäude"
    ],
-   "quelle": "§ 35 Abs. 4 Satz 1 Nr. 1 Buchst. f und Nr. 5 § 35 BauGB i. d. F. vom 22.12.2025 (BGBl. 2025 I Nr. 348), Wortlaut nach dejure.org; vgl. Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 416, S. 146",
+   "quelle": "§ 35 Abs. 4 Satz 1 Nr. 1 Buchst. f und Nr. 5 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; vgl. Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 416, S. 146",
    "stand": "2026-10",
-   "geprueft": true
+   "geprueft": true,
+   "einheit": "Wohnungen"
   },
   {
    "id": "rb-3435-027",
@@ -710,19 +711,19 @@
      "antwort": "Der Stall dient dem landwirtschaftlichen Betrieb und ist nach § 35 Abs. 1 Nr. 1 privilegiert, wenn er nur einen untergeordneten Teil der Betriebsfläche einnimmt. Er ist zulässig, wenn öffentliche Belange nicht entgegenstehen und die Erschließung gesichert ist; zu prüfen sind etwa schädliche Umwelteinwirkungen durch Gerüche (Abs. 3 Nr. 3)."
     },
     {
-     "frage": "Sein Sohn, der in der Stadt arbeitet, will auf einem Acker am Waldrand ein Einfamilienhaus bauen.",
+     "frage": "Sein Sohn, der in der Stadt arbeitet, will auf einem Acker am Waldrand ein Einfamilienhaus bauen. Ist das zulässig?",
      "antwort": "Das Haus dient nicht dem Betrieb und ist ein sonstiges Vorhaben nach § 35 Abs. 2. Es widerspricht dem Flächennutzungsplan (Abs. 3 Nr. 1), beeinträchtigt die natürliche Eigenart der Landschaft (Nr. 5) und lässt eine Splittersiedlung entstehen (Nr. 7). Es ist unzulässig."
     },
     {
-     "frage": "Eine nicht mehr benötigte, erhaltenswerte Scheune am Hof soll zu Wohnungen umgebaut werden.",
-     "antwort": "Das kann als Nutzungsänderung nach § 35 Abs. 4 Satz 1 Nr. 1 teilprivilegiert sein – unter den dort genannten Voraussetzungen, u. a. zweckmäßige Verwendung erhaltenswerter Bausubstanz, im Wesentlichen gewahrte äußere Gestalt, räumlich-funktionaler Zusammenhang mit der Hofstelle und höchstens fünf zusätzliche Wohnungen je Hofstelle. Dann können FNP, Landschaft und Splittersiedlung nicht entgegengehalten werden."
+     "frage": "Eine nicht mehr benötigte, erhaltenswerte Scheune am Hof soll zu Wohnungen umgebaut werden. Wie ist das zu beurteilen?",
+     "antwort": "Das kann als Nutzungsänderung nach § 35 Abs. 4 Satz 1 Nr. 1 teilprivilegiert sein – unter den dort genannten Voraussetzungen, u. a. zweckmäßige Verwendung erhaltenswerter Bausubstanz, im Wesentlichen gewahrte äußere Gestalt, räumlich-funktionaler Zusammenhang mit der Hofstelle und höchstens fünf zusätzliche Wohnungen je Hofstelle. Dann können Flächennutzungsplan, Landschaft und Splittersiedlung nicht entgegengehalten werden."
     },
     {
      "frage": "Wer ist neben der Bauaufsicht zu beteiligen?",
-     "antwort": "Die Gemeinde: Über Vorhaben nach § 35 entscheidet die Bauaufsicht im Einvernehmen mit der Gemeinde (§ 36 Abs. 1 Satz 1). Schweigt die Gemeinde zwei Monate, gilt das Einvernehmen als erteilt."
+     "antwort": "Die Gemeinde: Über Vorhaben nach § 35 entscheidet die Bauaufsicht im Einvernehmen mit der Gemeinde (§ 36 Abs. 1 Satz 1). Schweigt die Gemeinde zwei Monate, gilt das Einvernehmen als erteilt. In den Fällen des § 35 Abs. 2 und 4 – hier Haus und Scheune – kann das Landesrecht zusätzlich die Zustimmung der höheren Verwaltungsbehörde vorschreiben (§ 36 Abs. 1 Satz 4)."
     }
    ],
-   "antwort": "Der Stall ist privilegiert, das Haus des Sohnes ein sonstiges Vorhaben und in der Regel unzulässig, die Umnutzung der Scheune kann teilprivilegiert sein. In allen Fällen braucht die Bauaufsicht das Einvernehmen der Gemeinde.",
+   "antwort": "Der Stall ist privilegiert, das Haus des Sohnes ein sonstiges Vorhaben und hier unzulässig, die Umnutzung der Scheune kann teilprivilegiert sein. In allen Fällen braucht die Bauaufsicht das Einvernehmen der Gemeinde.",
    "vertiefung": "Der Fall trennt die drei Gruppen des § 35 sauber: Betriebsbezug macht privilegiert, fehlender Betriebsbezug macht zum sonstigen Vorhaben, Umnutzung von Bestand kann über Absatz 4 erleichtert sein.",
    "tags": [
     "§ 35 baugb",
@@ -730,7 +731,7 @@
     "teilprivilegiert",
     "fallaufgabe"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 404–416, S. 142–146; § 35 § 35 BauGB i. d. F. vom 22.12.2025 (BGBl. 2025 I Nr. 348), Wortlaut nach dejure.org; § 36 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 404–416, S. 142–146; §§ 35, 36 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -748,7 +749,7 @@
     "planreife",
     "plananerkenntnis"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 417–421, S. 147–148; § 33 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 417–421, S. 147–148; § 33 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -790,7 +791,7 @@
     "einvernehmen",
     "frist"
    ],
-   "quelle": "§ 36 Abs. 2 Satz 2, § 36a BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "§ 36 Abs. 2 Satz 2, § 36a BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; Gesetz zur Beschleunigung des Wohnungsbaus und zur Wohnraumsicherung vom 27.10.2025 (BGBl. 2025 I Nr. 257)",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -798,14 +799,14 @@
    "id": "rb-3435-031",
    "typ": "karte",
    "frage": "Wozu dient das Einvernehmen der Gemeinde nach § 36 BauGB, und was gilt, wenn sie es rechtswidrig verweigert?",
-   "antwort": "Es sichert die Planungshoheit der Gemeinde, wenn über Vorhaben nach §§ 31, 33, 34 und 35 nicht ihr eigener Bebauungsplan entscheidet, sondern die Bauaufsicht. Die Gemeinde darf es nur aus den Gründen dieser Vorschriften verweigern, hat also kein Ermessen. Ein rechtswidrig versagtes Einvernehmen kann die nach Landesrecht zuständige Behörde ersetzen.",
-   "vertiefung": "Im Geltungsbereich eines qualifizierten Bebauungsplans ohne Ausnahme oder Befreiung braucht es kein Einvernehmen; dort hat die Gemeinde mit dem Plan schon entschieden. Ist die Gemeinde selbst Baugenehmigungsbehörde, entfällt das Einvernehmen ebenfalls. Das Einvernehmen ist ein Verwaltungsinternum, kein Verwaltungsakt: Der Bauherr klagt nicht gegen die Gemeinde, sondern mit der Verpflichtungsklage gegen die Bauaufsicht.",
+   "antwort": "Es sichert die Planungshoheit der Gemeinde, wenn über Vorhaben nach § 31 Abs. 1 und 2, den §§ 33, 34 Abs. 1, 2 und 3a sowie § 35 nicht ihr eigener Bebauungsplan entscheidet, sondern die Bauaufsicht. Die Gemeinde darf es nur aus den Gründen dieser Vorschriften verweigern, hat also kein Ermessen. Ein rechtswidrig versagtes Einvernehmen kann die nach Landesrecht zuständige Behörde ersetzen.",
+   "vertiefung": "Im Geltungsbereich eines qualifizierten Bebauungsplans ohne Ausnahme oder Befreiung braucht es kein Einvernehmen; dort hat die Gemeinde mit dem Plan schon entschieden. Ist die Gemeinde selbst Baugenehmigungsbehörde, entfällt das Einvernehmen ebenfalls. Das Einvernehmen ist ein Verwaltungsinternum, kein Verwaltungsakt: Der Bauherr klagt nicht gegen die Gemeinde, sondern mit der Verpflichtungsklage gegen die Bauaufsicht. Anders bei der Zustimmung nach § 36a für die Bau-Turbo-Fälle: Sie ist auch nötig, wenn die Gemeinde selbst Bauaufsichtsbehörde ist.",
    "tags": [
     "§ 36 baugb",
     "einvernehmen",
     "planungshoheit"
    ],
-   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 352–357, S. 127–129; § 36 BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "Battis, Öffentliches Baurecht und Raumordnungsrecht, Rn. 352–357, S. 127–129; § 36 BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026",
    "stand": "2026-10",
    "geprueft": true
   },
@@ -814,7 +815,7 @@
    "typ": "mehrfachauswahl",
    "frage": "Welche Aussagen zum „Bau-Turbo“ von Oktober 2025 treffen zu?",
    "optionen": [
-    "§ 246e erlaubt Abweichungen vom BauGB für den Wohnungsbau, befristet bis Ende 2030.",
+    "§ 246e erlaubt Abweichungen vom BauGB zugunsten des Wohnungsbaus.",
     "Die Zustimmung der Gemeinde gilt als erteilt, wenn sie nicht binnen drei Monaten verweigert wird.",
     "Die Gemeinde hat bei Vorhaben nach § 246e kein Mitspracherecht mehr.",
     "§ 246e gilt unbefristet.",
@@ -826,13 +827,13 @@
     4
    ],
    "warum": [
-    "Richtig: So regelt es § 246e Abs. 1 und 4.",
-    "Richtig: § 36a Abs. 1 enthält diese Fiktion.",
+    "Richtig: So regelt es § 246e Abs. 1 Satz 1; die Abweichung ist nur bis Ende 2030 möglich (Abs. 1 Satz 1, Abs. 4).",
+    "Richtig: § 36a Abs. 1 Satz 4 enthält diese Fiktion; für § 246e gilt sie über dessen Abs. 2.",
     "Falsch: Ohne Zustimmung der Gemeinde geht es nicht.",
     "Falsch: Die Regelung läuft Ende 2030 aus.",
     "Richtig: Neu eingefügt durch den Bau-Turbo."
    ],
-   "antwort": "§ 246e erlaubt mit Zustimmung der Gemeinde befristet bis Ende 2030 Abweichungen vom BauGB zugunsten des Wohnungsbaus. Die Zustimmung gilt als erteilt, wenn die Gemeinde nicht binnen drei Monaten widerspricht. § 34 Abs. 3b erlaubt für Wohngebäude Abweichungen vom Einfügen, ebenfalls mit Zustimmung der Gemeinde.",
+   "antwort": "§ 246e erlaubt mit Zustimmung der Gemeinde befristet bis Ende 2030 Abweichungen vom BauGB zugunsten des Wohnungsbaus. Die Zustimmung gilt als erteilt, wenn die Gemeinde sie nicht binnen drei Monaten verweigert. § 34 Abs. 3b erlaubt für Wohngebäude Abweichungen vom Einfügen, ebenfalls mit Zustimmung der Gemeinde.",
    "vertiefung": "Der Bau-Turbo verschiebt Entscheidungen vom Bebauungsplan in das Genehmigungsverfahren, behält aber der Gemeinde das letzte Wort vor. Im Außenbereich gilt § 246e nur für Vorhaben im räumlichen Zusammenhang mit bebauten oder beplanten Flächen. Nachbarliche Interessen und öffentliche Belange bleiben Prüfmaßstab.",
    "tags": [
     "bau-turbo",
@@ -840,7 +841,7 @@
     "§ 36a baugb",
     "§ 34 baugb"
    ],
-   "quelle": "§§ 34 Abs. 3b, 36a, 246e BauGB, Wortlaut nach dejure.org, Stand Oktober 2026 (inkl. Gesetz zur Beschleunigung des Wohnungsbaus vom 27.10.2025, BGBl. 2025 I Nr. 257)",
+   "quelle": "§§ 34 Abs. 3b, 36a, 246e BauGB i. d. F. vom 03.11.2017 (BGBl. I S. 3634), zuletzt geändert durch Art. 8 Abs. 2 G vom 23.07.2026 (BGBl. 2026 I Nr. 226); Wortlaut nach gesetze-im-internet.de, Stand Oktober 2026; Gesetz zur Beschleunigung des Wohnungsbaus und zur Wohnraumsicherung vom 27.10.2025 (BGBl. 2025 I Nr. 257)",
    "stand": "2026-10",
    "geprueft": true
   },

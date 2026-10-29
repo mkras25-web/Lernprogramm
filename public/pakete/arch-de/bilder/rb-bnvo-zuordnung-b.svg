@@ -54,5 +54,5 @@
 <text x="510.0" y="82" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >GE</text>
 <rect x="684.0" y="64" width="52" height="24" rx="4" fill="#f7f3e4" stroke="#414833" stroke-width="1.2"/>
 <text x="710.0" y="82" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >GI</text>
-<text x="610" y="420" font-size="13" text-anchor="middle" font-weight="bold" fill="#414833" >Grün</text>
+<text x="610" y="420" font-size="16" text-anchor="middle" font-weight="bold" fill="#414833" >Grün</text>
 </svg>
