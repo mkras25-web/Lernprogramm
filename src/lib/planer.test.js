@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { BEWERTUNG, behaltensrate, gueltigeGewichte, wiederholungenBewerten, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal, heuteNichtGewusst } from './planer.js'
+import { BEWERTUNG, behaltensrate, gueltigeGewichte, wiederholungenBewerten, intervallKurz, intervallVorschau, zustaendeBerechnen, pensumBauen, statistik, istWiederholung, pensumNachNochmal, heuteNichtGewusst, fokusPensum, fehlerLetzteSitzung } from './planer.js'
 
 const TAG = 24 * 60 * 60 * 1000
 
@@ -197,5 +197,46 @@ describe('Kalibrierung und eigene Gewichte (F6/L7)', () => {
     const standard = zustaendeBerechnen(ev).get('a').intervall
     const eigen = zustaendeBerechnen(ev, { gewichte: w }).get('a').intervall
     expect(eigen).not.toBe(standard)
+  })
+})
+
+describe('Themenfokus', () => {
+  const MIN = 60_000
+  const t0 = new Date('2026-10-20T10:00:00').getTime()
+  const items = ['a', 'b', 'c', 'd', 'e'].map((id) => ({ id }))
+  const ein = (itemId, bewertung, ts) => ({ itemId, bewertung, ts })
+
+  it('Fehler nur aus der letzten Sitzung, haeufigste zuerst', () => {
+    const ereignisse = [
+      ein('a', BEWERTUNG.NOCHMAL, t0), // alte Sitzung
+      ein('b', BEWERTUNG.NOCHMAL, t0 + 3 * 24 * 60 * MIN),
+      ein('c', BEWERTUNG.NOCHMAL, t0 + 3 * 24 * 60 * MIN + 5 * MIN),
+      ein('c', BEWERTUNG.NOCHMAL, t0 + 3 * 24 * 60 * MIN + 9 * MIN),
+      ein('d', BEWERTUNG.GUT, t0 + 3 * 24 * 60 * MIN + 10 * MIN),
+    ]
+    expect(fehlerLetzteSitzung(ereignisse, new Set(['a', 'b', 'c', 'd']))).toEqual(['c', 'b'])
+  })
+
+  it('ordnet Fehler, Faellige, Wackelige, dann Neue und begrenzt Neue', () => {
+    const jetzt = t0 + 10 * 24 * 60 * MIN
+    const ereignisse = [
+      ein('a', BEWERTUNG.GUT, t0),
+      ein('b', BEWERTUNG.NOCHMAL, jetzt - 60 * MIN),
+      ein('c', BEWERTUNG.NOCHMAL, t0),
+      ein('c', BEWERTUNG.GUT, t0 + 2 * 24 * 60 * MIN),
+    ]
+    const zustaende = zustaendeBerechnen(ereignisse)
+    const plan = fokusPensum(items, zustaende, ereignisse, { neuProTag: 1, maxProTag: 30, jetzt })
+    const ids = plan.pensum.map((i) => i.id)
+    expect(ids[0]).toBe('b') // Fehler der letzten Sitzung zuerst
+    expect(ids).toContain('a')
+    expect(plan.neu).toBe(1) // d oder e, nicht beide
+    expect(plan.neuGesamt).toBe(2)
+    expect(new Set(ids).size).toBe(ids.length)
+  })
+
+  it('haelt maxProTag ein', () => {
+    const plan = fokusPensum(items, new Map(), [], { neuProTag: 99, maxProTag: 3 })
+    expect(plan.pensum).toHaveLength(3)
   })
 })

@@ -1,5 +1,6 @@
 import Bildlupe from './Bildlupe.jsx'
 import SieheAuch from './SieheAuch.jsx'
+import Begriffe from './Begriffe.jsx'
 import { quelleText } from '../lib/quelle.js'
 import { ausDemKopfLetzter } from '../lib/ausDemKopf.js'
 
@@ -104,10 +105,10 @@ export default function Erklaerstueck({
         <div className="erklaerungText">
           {(e?.absaetze ?? []).map((absatz, i) => (
             <p key={i} className="erklaerungAbsatz">
-              {absatz}
+              <Begriffe text={absatz} />
             </p>
           ))}
-          {e?.merksatz && <p className="merksatz">{e.merksatz}</p>}
+          {e?.merksatz && <p className="merksatz"><Begriffe text={e.merksatz} /></p>}
         </div>
 
         {(e?.bild || thema.bild) && (

@@ -9,14 +9,15 @@ const GRUPPEN = [
   {
     titel: 'Überall (außer beim Lernen)',
     kuerzel: [
-      ['/', 'In die Suche (Nachschlagen) springen'],
+      ['/', 'In die Suche (Durchsicht) springen'],
       ['?', 'Diese Übersicht öffnen'],
       ['G dann H', 'Heute'],
       ['G dann T', 'Themen'],
       ['G dann P', 'Prüfungen'],
       ['G dann F', 'Fortschritt'],
       ['G dann A', 'Sammlung'],
-      ['G dann N', 'Nachschlagen'],
+      ['G dann N', 'Durchsicht'],
+      ['G dann L', 'Nachschlagen (Lexikon)'],
       ['G dann O', 'Normen'],
       ['G dann M', 'Mein Heft'],
       ['G dann B', 'Fehlerbuch'],
@@ -46,7 +47,7 @@ const GRUPPEN = [
     ],
   },
   {
-    titel: 'Beim Nachschlagen/Sichten',
+    titel: 'In der Durchsicht',
     kuerzel: [
       ['← →', 'Zum vorherigen/nächsten Item blättern'],
       ['N', 'Zum nächsten ungesichteten Item springen'],

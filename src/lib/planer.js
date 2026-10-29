@@ -281,6 +281,79 @@ export function pensumBauen(
   }
 }
 
+// Abstand, ab dem eine Luecke zwischen zwei Antworten eine neue Sitzung
+// beginnt (fuer "Fehler der letzten Sitzung" im Themenfokus).
+export const SITZUNGSLUECKE_MS = 30 * 60 * 1000
+
+// Karten des Themas, bei denen es in der letzten Sitzung mindestens ein
+// "Nochmal" gab - die am haeufigsten verfehlten zuerst. Die letzte Sitzung
+// ist der zusammenhaengende Block der juengsten Antworten auf Karten des
+// Themas (Luecke unter SITZUNGSLUECKE_MS).
+export function fehlerLetzteSitzung(ereignisse, itemIds) {
+  const eigene = ereignisse
+    .filter((e) => itemIds.has(e.itemId) && e.bewertung >= 1 && e.bewertung <= 4)
+    .sort((a, b) => a.ts - b.ts)
+  if (eigene.length === 0) return []
+  let start = eigene.length - 1
+  while (start > 0 && eigene[start].ts - eigene[start - 1].ts < SITZUNGSLUECKE_MS) start -= 1
+  const zaehler = new Map()
+  for (const e of eigene.slice(start)) {
+    if (e.bewertung === BEWERTUNG.NOCHMAL) zaehler.set(e.itemId, (zaehler.get(e.itemId) ?? 0) + 1)
+  }
+  return [...zaehler.entries()].sort((a, b) => b[1] - a[1]).map(([id]) => id)
+}
+
+// Themenfokus (2026-10-29): Portion fuer ein gezielt vorbereitetes Thema.
+// Reihenfolge: 1. Fehler der letzten Sitzung, 2. faellige Karten (am
+// laengsten ueberfaellig zuerst), 3. wackelige Karten, die noch nicht
+// faellig sind (schon mal verfehlt, Intervall unter 21 Tagen, hoechste
+// Fehlerquote zuerst), 4. erst danach neue - wie im normalen Tagespensum
+// hoechstens neuProTag und nur, soweit unter maxProTag noch Platz ist.
+export function fokusPensum(items, zustaende, ereignisse, { neuProTag = 6, maxProTag = 30, jetzt = Date.now() } = {}) {
+  const nachId = new Map(items.map((i) => [i.id, i]))
+  const gewaehlt = new Set()
+  const pensum = []
+  const nimm = (liste) => {
+    let n = 0
+    for (const item of liste) {
+      if (pensum.length >= maxProTag) break
+      if (gewaehlt.has(item.id)) continue
+      gewaehlt.add(item.id)
+      pensum.push(item)
+      n += 1
+    }
+    return n
+  }
+
+  const fehler = nimm(fehlerLetzteSitzung(ereignisse, new Set(nachId.keys())).map((id) => nachId.get(id)))
+
+  const faellig = items
+    .filter((i) => zustaende.get(i.id) && zustaende.get(i.id).faelligAb <= jetzt)
+    .sort((a, b) => zustaende.get(a.id).faelligAb - zustaende.get(b.id).faelligAb)
+  const nFaellig = nimm(faellig)
+
+  const quote = (z) => z.fehler / Math.max(1, z.gesamtAntworten)
+  const wackelig = items
+    .filter((i) => {
+      const z = zustaende.get(i.id)
+      return z && z.faelligAb > jetzt && z.fehler > 0 && z.intervall < 21
+    })
+    .sort((a, b) => quote(zustaende.get(b.id)) - quote(zustaende.get(a.id)))
+  const nWackelig = nimm(wackelig)
+
+  const neu = items.filter((i) => !zustaende.has(i.id))
+  const nNeu = nimm(neu.slice(0, Math.min(neuProTag, Math.max(0, maxProTag - pensum.length))))
+
+  return {
+    pensum,
+    fehler,
+    faellig: nFaellig,
+    wackelig: nWackelig,
+    neu: nNeu,
+    neuGesamt: neu.length,
+  }
+}
+
 export function statistik(ereignisse, zustaende) {
   const heuteBeginn = new Date()
   heuteBeginn.setHours(0, 0, 0, 0)

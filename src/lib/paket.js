@@ -52,6 +52,8 @@ export async function paketLaden(paketId) {
   // Kennwerte-Tabellenbuch (F3, 2026-10-13) - optional wie das Glossar.
   const kennwerteDaten = await jsonOderNull(`${wurzel}/kennwerte.json`)
   const kennwerte = Array.isArray(kennwerteDaten?.gruppen) ? kennwerteDaten.gruppen : []
+  // Fachbegriff-Lexikon (2026-10-29) - optional wie die Kennwerte.
+  const lexikonDaten = await jsonOderNull(`${wurzel}/lexikon.json`)
   // Pruefstand der Durchsicht (2026-10-17, Einspielen/durchsicht.py) -
   // optional; ohne Datei ist schlicht alles "noch nicht durchgesehen".
   const durchsichtDaten = await durchsichtVorab
@@ -155,6 +157,7 @@ export async function paketLaden(paketId) {
     module,
     normen,
     kennwerte,
+    lexikon: lexikonDaten,
     defekt,
     durchsicht,
     wurzel,

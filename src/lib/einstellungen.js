@@ -66,6 +66,8 @@ export const STANDARD = {
   tagesziel: 0,
   // Klausurtermine fuer den Countdown auf Heute: [{ id, titel, datum }]
   klausuren: [],
+  // Themen, auf die man sich gezielt vorbereitet (Heute: eigene Lernknoepfe)
+  fokusThemen: [],
   reihenfolge: 'gemischt',
   bewertungsstufen: 4,
   ungeprueftZulassen: true,
@@ -96,7 +98,7 @@ export const ABGLEICH_LERNEN = [
   'neuProTag', 'maxProTag', 'zielBehaltensrate', 'fsrsGewichte', 'tagesziel',
   'reihenfolge', 'bewertungsstufen', 'ungeprueftZulassen', 'vertiefungZeigen',
   'ueberspringenErlauben', 'skizzenSichern', 'zeichenAusblenden', 'sichtungWeiter',
-  'aufstiegFeiern',
+  'aufstiegFeiern', 'fokusThemen',
 ]
 export const ABGLEICH_AUSSEHEN = ['palette', 'schriftgroesse', 'farbenblind', 'paletteVorFarbenblind', 'animationen', 'breite']
 const standSchluessel = (profilId) => `einstellungen_stand_${profilId}` // { name: ts der letzten Aenderung }

@@ -280,7 +280,7 @@ export default function Einstellungen({
               <p className="zeileTitel">Zeichenaufgaben (Skizzen)</p>
               <p className="zeileHinweis">
                 Ausgeschaltet kommen Aufgaben, bei denen du etwas zeichnen sollst, weder beim
-                Lernen noch in Prüfungen dran. Im Nachschlagen bleiben sie sichtbar.
+                Lernen noch in Prüfungen dran. In der Durchsicht bleiben sie sichtbar.
               </p>
             </div>
             <Wahl

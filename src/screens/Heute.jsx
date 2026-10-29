@@ -14,7 +14,9 @@ export default function Heute({
   pruefungHinweis, onPruefung, offenePruefung, onPruefungFortsetzen, klausuren = [],
   kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten, onKlausurErgebnis,
   nichtGewusst = [], onOeffnen,
+  fokus = [], fokusWaehlbar = [], onFokusStart, onFokusHinzu, onFokusEntfernen,
 }) {
+  const [waehlt, setWaehlt] = useState(false)
   // Klausur-Countdown (4B): naechste anstehende Klausur(en), nur Anzeige.
   const heuteBeginn = new Date()
   heuteBeginn.setHours(0, 0, 0, 0)
@@ -116,6 +118,68 @@ export default function Heute({
             </div>
           )}
         </section>
+
+        {/* Themenfokus: eigener Lernknopf je gewaehltem Thema. Mobil sitzt
+            der Block wie "Lernen" ganz oben (heuteFokus, styles.css). */}
+        {onFokusHinzu && (fokus.length > 0 || fokusWaehlbar.length > 0) && (
+          <section className="heuteBreit heuteFokus">
+            {fokus.map(({ thema, plan }) => (
+              <div key={thema.id} className="aufruf">
+                <div>
+                  <p className="aufrufZahl">{thema.titel}</p>
+                  <p className="nebentext">
+                    {plan.pensum.length === 0
+                      ? 'Hier ist heute nichts offen.'
+                      : [
+                          plan.fehler > 0 && `${plan.fehler} Fehler zuletzt`,
+                          plan.faellig > 0 && `${plan.faellig} fällig`,
+                          plan.wackelig > 0 && `${plan.wackelig} wackelig`,
+                          plan.neu > 0 && `${plan.neu} neu`,
+                        ].filter(Boolean).join(' · ')}
+                  </p>
+                </div>
+                <button
+                  className="knopf haupt schmal"
+                  disabled={plan.pensum.length === 0}
+                  onClick={() => onFokusStart(thema.id)}
+                >
+                  Thema lernen
+                </button>
+                <button className="textknopf" onClick={() => onFokusEntfernen(thema.id)}>entfernen</button>
+              </div>
+            ))}
+            {fokusWaehlbar.length > 0 && (
+              waehlt ? (
+                <div className="aufruf ruhig">
+                  <select
+                    className="suchfeld"
+                    aria-label="Thema für den Fokus wählen"
+                    defaultValue=""
+                    onChange={(e) => {
+                      if (!e.target.value) return
+                      onFokusHinzu(e.target.value)
+                      setWaehlt(false)
+                    }}
+                  >
+                    <option value="">Thema wählen …</option>
+                    {[...new Set(fokusWaehlbar.map((t) => t.modulTitel))].map((modul) => (
+                      <optgroup key={modul} label={modul}>
+                        {fokusWaehlbar.filter((t) => t.modulTitel === modul).map((t) => (
+                          <option key={t.id} value={t.id}>{t.titel}</option>
+                        ))}
+                      </optgroup>
+                    ))}
+                  </select>
+                  <button className="textknopf" onClick={() => setWaehlt(false)}>abbrechen</button>
+                </div>
+              ) : (
+                <button className="textknopf" onClick={() => setWaehlt(true)}>
+                  + Thema hinzufügen{fokus.length === 0 ? ' (gezielt vorbereiten)' : ''}
+                </button>
+              )
+            )}
+          </section>
+        )}
 
         {kurse.map((u) => (
           <KursKarte
@@ -248,7 +312,7 @@ export default function Heute({
                     <summary className="trefferFrage">{item.frage}</summary>
                     <p className="nichtGewusstAntwort">{item.antwort}</p>
                     <button className="textknopf" onClick={() => onOeffnen?.(item.id)}>
-                      In Nachschlagen öffnen →
+                      In der Durchsicht öffnen →
                     </button>
                   </details>
                 </li>
@@ -303,7 +367,7 @@ export default function Heute({
             <ArtKachel
               zeichen="▤︎"
               titel="Durchblättern"
-              text="Nachschlagen ohne Wertung"
+              text="Alle Karten ohne Wertung"
               klasse="nurMobilKachel"
               onKlick={() => onStart('blaettern')}
             />
@@ -396,7 +460,7 @@ function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten, onErgebn
       )}
       {u.items.length === 0 ? (
         <p className="nebentext">
-          Noch keine Fragen im Kurs. Markiere sie beim Lernen (Knopf „Kurs“) oder in Nachschlagen
+          Noch keine Fragen im Kurs. Markiere sie beim Lernen (Knopf „Kurs“) oder in der Durchsicht
           mit „Sichten“ gesammelt.
         </p>
       ) : (

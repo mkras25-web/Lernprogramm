@@ -12,7 +12,7 @@ import { useEffect, useRef } from 'react'
 const FOKUSSIERBAR =
   'button:not([disabled]), [href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
-export default function Schleier({ onSchliessen, klasse = 'schleier', beschriftung, children }) {
+export default function Schleier({ onSchliessen, klasse = 'schleier', beschriftung, startFokus = null, children }) {
   const ref = useRef(null)
   const schliessenRef = useRef(onSchliessen)
   schliessenRef.current = onSchliessen
@@ -20,7 +20,10 @@ export default function Schleier({ onSchliessen, klasse = 'schleier', beschriftu
   useEffect(() => {
     const vorher = document.activeElement
     const el = ref.current
+    // startFokus: Selektor, wenn nicht das erste Eingabefeld den Fokus
+    // bekommen soll (Lexikon-Ebene: "Zurueck", sonst landen Tasten im Suchfeld).
     const ziel =
+      (startFokus && el?.querySelector(startFokus)) ??
       el?.querySelector('input:not([type="hidden"]):not([disabled]):not([type="file"]), textarea:not([disabled])') ??
       el?.querySelector(FOKUSSIERBAR)
     ziel?.focus({ preventScroll: true })

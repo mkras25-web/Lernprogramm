@@ -469,7 +469,7 @@ export default function Sichtung({
   return (
     <div role="main" className="schirm">
       <div className="themenKopf">
-        <h1 className="ueberschrift">Nachschlagen</h1>
+        <h1 className="ueberschrift">Durchsicht</h1>
         <button
           className={sichten ? 'knopf schmal aktiv' : 'knopf schmal'}
           aria-pressed={sichten}

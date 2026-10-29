@@ -31,7 +31,7 @@ export default function MeinHeft({ items, marken, onOeffnen }) {
       <p className="nebentext">
         {anzahl > 0
           ? `${anzahl} Karten mit Notiz oder Lesezeichen in ${gruppen.length} Themen.`
-          : 'Noch nichts gesammelt. Beim Lernen und in Nachschlagen lassen sich Karten mit Lesezeichen versehen oder mit einer eigenen Notiz ergänzen – sie erscheinen dann hier.'}
+          : 'Noch nichts gesammelt. Beim Lernen und in der Durchsicht lassen sich Karten mit Lesezeichen versehen oder mit einer eigenen Notiz ergänzen – sie erscheinen dann hier.'}
       </p>
 
       {gruppen.map((g) => (
@@ -48,7 +48,7 @@ export default function MeinHeft({ items, marken, onOeffnen }) {
                 <p className="trefferAntwort">{item.antwort}</p>
                 {marke.notiz && <p className="merksatz">{marke.notiz}</p>}
                 <button className="textknopf nichtDrucken" style={{ alignSelf: 'flex-start' }} onClick={() => onOeffnen(item.id)}>
-                  In Nachschlagen öffnen
+                  In der Durchsicht öffnen
                 </button>
               </li>
             ))}

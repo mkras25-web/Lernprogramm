@@ -6,7 +6,7 @@ export function DurchsichtMarke({ stand }) {
   if (!stand || stand.stand === 'offen') return null
   if (stand.stand === 'wartet') {
     return (
-      <span className="durchsichtMarke wartet" title="Bei der Durchsicht geändert – deine Zustimmung fehlt (Nachschlagen)">
+      <span className="durchsichtMarke wartet" title="Bei der Durchsicht geändert – deine Zustimmung fehlt (Durchsicht)">
         ✎︎ geändert · wartet auf dich
       </span>
     )

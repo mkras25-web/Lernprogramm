@@ -8,7 +8,7 @@ import { normenFinden } from '../components/Normen.jsx'
 // Seit 2026-10-10 (Entscheidung 24B): je Norm, in welchen Karten sie
 // vorkommt (anzeigen/ueben), und Gruppierung nach dem Fachbereich, in dem
 // sie am haeufigsten vorkommt - statt einer langen, gleichfoermigen Liste.
-export default function Glossar({ glossar, items = [], bereiche = {}, onUeben, onItemOeffnen }) {
+export default function Glossar({ glossar, items = [], bereiche = {}, onUeben, onItemOeffnen, reiter = null }) {
   const [suche, setSuche] = useState('')
   const [offen, setOffen] = useState(null)
   const [kartenOffen, setKartenOffen] = useState(null)
@@ -52,6 +52,7 @@ export default function Glossar({ glossar, items = [], bereiche = {}, onUeben, o
 
   return (
     <div role="main" className="schirm">
+      {reiter}
       <h1 className="ueberschrift">Normen und Regelwerke</h1>
       <p className="nebentext">
         {Object.keys(glossar ?? {}).length} Einträge. Maßgeblich ist immer der gültige

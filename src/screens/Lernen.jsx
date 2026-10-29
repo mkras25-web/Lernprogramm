@@ -18,6 +18,7 @@ import { mischen } from '../lib/mischen.js'
 import { paarRichtig, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
 import { quelleText } from '../lib/quelle.js'
 import { DurchsichtMarke } from '../components/Durchsicht.jsx'
+import Begriffe from '../components/Begriffe.jsx'
 
 
 export default function Lernen({
@@ -308,7 +309,7 @@ export default function Lernen({
         {item.pruefpunkte && (
           <Pruefliste key={item.id} punkte={item.pruefpunkte} gehakt={gehakt} setGehakt={setGehakt} />
         )}
-        <p className="antworttext">{item.antwort}</p>
+        <p className="antworttext"><Begriffe text={item.antwort} /></p>
         {/* Vertiefung (L2): "zeigen" (true), "einklappen" (erst selbst
             ueberlegen, warum - Elaboration) oder aus (false). */}
         {item.vertiefung && vertiefungZeigen === 'einklappen' && !warumOffen && (
@@ -318,7 +319,7 @@ export default function Lernen({
           </button>
         )}
         {item.vertiefung && (vertiefungZeigen === true || (vertiefungZeigen === 'einklappen' && warumOffen)) && (
-          <p className="vertiefung">{item.vertiefung}</p>
+          <p className="vertiefung"><Begriffe text={item.vertiefung} /></p>
         )}
         {item.bild && (
           <figure style={{ margin: 0 }}>
@@ -387,7 +388,7 @@ export default function Lernen({
           <h1 className="frage">
             {item.typ === 'rechnen'
               ? textFuellen(item.frage, werteZiehen(item.variablen, seed), item.variablen)
-              : item.frage}
+              : <Begriffe text={item.frage} />}
           </h1>
 
           {/* Erklaerung: bei neuen Karten vorab, sonst nach dem Aufdecken -
@@ -400,10 +401,10 @@ export default function Lernen({
               {erklaerungOffen && (
                 <div className="erklaerungText" style={{ marginTop: '0.75rem' }}>
                   {(thema.erklaerung.absaetze ?? []).map((a, i) => (
-                    <p key={i} className="erklaerungAbsatz">{a}</p>
+                    <p key={i} className="erklaerungAbsatz"><Begriffe text={a} /></p>
                   ))}
                   {thema.erklaerung.merksatz && (
-                    <p className="merksatz">{thema.erklaerung.merksatz}</p>
+                    <p className="merksatz"><Begriffe text={thema.erklaerung.merksatz} /></p>
                   )}
                   {/* Bild der Erklaerung als eigener Aufklapper (D2): die
                       Zeichnung erklaert oft mehr als der Text. */}
@@ -676,7 +677,9 @@ export default function Lernen({
             {pruefpunkte.length > 0 && (
               <p className="urteilZeile">
                 {gutGesperrt
-                  ? `Prüfpunkte: ${gehakt.length} von ${pruefpunkte.length} abgehakt – „Gut“ gibt es erst, wenn alle sitzen.`
+                  ? gehakt.length === 0
+                    ? '„Gut“ gibt es erst, wenn du alle Prüfpunkte abgehakt hast.'
+                    : `Prüfpunkte: ${gehakt.length} von ${pruefpunkte.length} abgehakt – „Gut“ gibt es erst, wenn alle sitzen.`
                   : 'Alle Prüfpunkte abgehakt – „Gut“ vorgeschlagen.'}
               </p>
             )}
@@ -753,8 +756,8 @@ function Einfuehrung({ thema, onWeiter }) {
       )}
       <div className="erklaerung">
         <div className="erklaerungText">
-          {(e.absaetze ?? []).map((a, i) => <p key={i} className="erklaerungAbsatz">{a}</p>)}
-          {e.merksatz && <p className="merksatz">{e.merksatz}</p>}
+          {(e.absaetze ?? []).map((a, i) => <p key={i} className="erklaerungAbsatz"><Begriffe text={a} /></p>)}
+          {e.merksatz && <p className="merksatz"><Begriffe text={e.merksatz} /></p>}
         </div>
         {(e.bild || thema.bild) && (
           <figure style={{ margin: 0 }}>
@@ -852,7 +855,11 @@ function Pruefliste({ punkte, gehakt, setGehakt }) {
           </li>
         ))}
       </ul>
-      <p className="pruefstand">{gehakt.length} von {punkte.length} getroffen</p>
+      <p className="pruefstand">
+        {gehakt.length === 0
+          ? 'Hake an, was du in Gedanken schon genannt hattest.'
+          : `${gehakt.length} von ${punkte.length} getroffen`}
+      </p>
     </>
   )
 }

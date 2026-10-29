@@ -379,7 +379,7 @@ export default function Pruefung({
               )}
               {onItemOeffnen && e.anteil !== null && e.anteil < 1 && (
                 <button className="textknopf" style={{ alignSelf: 'flex-start' }} onClick={() => onItemOeffnen(e.item.id)}>
-                  Karte in Nachschlagen öffnen
+                  Karte in der Durchsicht öffnen
                 </button>
               )}
 

@@ -319,6 +319,9 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
    sonst Vorrang vor button (1 Klasse + 1 Element) und den Knopf trotz
    dieser Regel bei seiner natuerlichen Groesse belassen. */
 .aufruf > button.knopf { flex: 1 1 100%; }
+/* Themenfokus: mehrere Zeilen untereinander */
+.heuteFokus { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+.heuteFokus > .aufruf { align-self: stretch; }
 .aufrufZahl { margin: 0; font-family: var(--serife); font-size: 1.125rem; }
 
 .kartenband {
@@ -750,6 +753,51 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* Fachbegriff im Fliesstext (Lexikon, 2026-10-29): sieht aus wie Text,
+   gepunktet unterstrichen - erbt Schrift, Groesse und Farbe der Umgebung
+   (Frage-Ueberschrift wie Antwortabsatz). */
+.begriff {
+  display: inline;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--lehm);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+}
+.begriff:hover { text-decoration-style: solid; }
+button.begriff:not(:disabled):active { transform: none; }
+
+/* Lexikon als Ebene ueber Frage/Erklaertext: fast bildschirmfuellend,
+   die Seite darunter bleibt unveraendert stehen. */
+.schleier.lexikonSchleier { padding: 0.75rem; }
+.lexikonEbene {
+  width: 100%;
+  max-width: 48rem;
+  height: calc(100dvh - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--papier);
+  border: 1px solid var(--lehm);
+  border-radius: var(--rund);
+}
+.lexikonEbene .knopf.haupt.lexikonZurueck { flex: none; border-radius: 0; }
+.lexikonRumpf { flex: 1; min-height: 0; overflow-y: auto; }
+.lexikonRumpf > .schirm { padding: 1rem 1.25rem 2rem; }
+.lexikonEintrag { scroll-margin-top: 4rem; }
+.lexikonEintrag.ziel { border-color: var(--lehm); box-shadow: 0 0 0 2px var(--lehm); }
+.lexikonBegriff { margin: 0; font-family: var(--serife); font-size: 1.125rem; font-weight: normal; }
+.lexikonVarianten { font-family: var(--groteske); font-size: 0.8125rem; color: var(--rinde); }
+.lexikonText, .lexikonBeispiel { margin: 0; font-family: var(--serife); font-size: 0.9375rem; line-height: 1.65; }
+.lexikonMarke { font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rinde); }
 
 /* Alle klickbaren Elemente im Programm sind echte <button>, Eingaben
    echte <input>/<select> (siehe Kommentar oben bei der button-Regel) -
@@ -3064,7 +3112,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   /* --- Heute -------------------------------------------------------- */
   /* Der Haupt-Aufruf "Lernen" (und eine angefangene Sitzung) kommt
      zuerst - vorher lag er auf kleinen Handys unter dem Falz. */
-  .heuteLernen, .heuteSitzung { order: -1; }
+  .heuteLernen, .heuteFokus, .heuteSitzung { order: -1; }
 
   .stufe { align-items: flex-start; gap: var(--abstand-liste) 1rem; }
   .stufe > .bauabschnitt svg { width: 5.5rem; height: auto; }

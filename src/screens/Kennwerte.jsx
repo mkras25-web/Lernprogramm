@@ -5,7 +5,7 @@ import { quelleText } from '../lib/quelle.js'
 // Richtwerte zum Nachschlagen, je Wert mit Quelle. Inhalt aus
 // kennwerte.json des Pakets (ANLEITUNG-THEMA-CHAT.md 2.3), entsteht im
 // Themen-Chat.
-export default function Kennwerte({ gruppen = [], themen = [], onThema }) {
+export default function Kennwerte({ gruppen = [], themen = [], onThema, reiter = null }) {
   const [suche, setSuche] = useState('')
   const wort = suche.trim().toLowerCase()
   const themaTitel = new Map(themen.map((t) => [t.id, t.titel]))
@@ -20,6 +20,7 @@ export default function Kennwerte({ gruppen = [], themen = [], onThema }) {
 
   return (
     <div role="main" className="schirm">
+      {reiter}
       <div className="themenKopf">
         <h1 className="ueberschrift">Kennwerte</h1>
       </div>

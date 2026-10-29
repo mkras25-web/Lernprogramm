@@ -6,6 +6,7 @@ import { rechnen, textFuellen, werteZiehen } from '../lib/rechnen.js'
 import { punkteFuer } from '../lib/punkte.js'
 import { quelleText } from '../lib/quelle.js'
 import { DurchsichtMarke } from './Durchsicht.jsx'
+import Begriffe from './Begriffe.jsx'
 
 // Zeigt ein Item vollständig aufgedeckt - so, wie es im Lernmodus nach
 // dem Aufdecken aussieht, aber ohne Bewertung und ohne Folgen für den
@@ -24,7 +25,7 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
       <h1 className="frage">
         {item.typ === 'rechnen'
           ? textFuellen(item.frage, werteZiehen(item.variablen, 7), item.variablen)
-          : item.frage}
+          : <Begriffe text={item.frage} />}
       </h1>
 
       <Aufgabenteil item={item} />
@@ -44,8 +45,8 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
           </>
         )}
 
-        <p className="antworttext">{item.antwort}</p>
-        {item.vertiefung && <p className="vertiefung">{item.vertiefung}</p>}
+        <p className="antworttext"><Begriffe text={item.antwort} /></p>
+        {item.vertiefung && <p className="vertiefung"><Begriffe text={item.vertiefung} /></p>}
         {item.bild && (
           <figure style={{ margin: 0 }}>
             <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />

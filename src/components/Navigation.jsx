@@ -18,9 +18,11 @@ const NAVIGATION = [
   { id: 'themen', titel: 'Themen', symbol: '▤︎', gruppe: 'Lernen' },
   { id: 'pruefung', titel: 'Prüfungen', symbol: '✓︎', gruppe: 'Lernen' },
   { id: 'kalender', titel: 'Kalender', symbol: '▦︎', gruppe: 'Lernen' },
-  { id: 'sichtung', titel: 'Nachschlagen', symbol: '⌕︎', gruppe: 'Nachschlagen' },
-  { id: 'glossar', titel: 'Normen', symbol: '§︎', gruppe: 'Nachschlagen' },
-  { id: 'kennwerte', titel: 'Kennwerte', symbol: '≡︎', gruppe: 'Nachschlagen' },
+  // 2026-10-29: das bisherige "Nachschlagen" (Volltextsuche, Sichtung)
+  // heisst "Durchsicht"; "Nachschlagen" buendelt Lexikon, Normen und
+  // Kennwerte als Reiter (NachschlagenReiter unten).
+  { id: 'sichtung', titel: 'Durchsicht', symbol: '⌕︎', gruppe: 'Nachschlagen' },
+  { id: 'lexikon', titel: 'Nachschlagen', symbol: '§︎', gruppe: 'Nachschlagen' },
   { id: 'bilder', titel: 'Bilder', symbol: '▣︎', gruppe: 'Nachschlagen' },
   { id: 'heft', titel: 'Mein Heft', symbol: '❐︎', gruppe: 'Nachschlagen' },
   { id: 'fehlerbuch', titel: 'Fehlerbuch', symbol: '✕︎', gruppe: 'Nachschlagen' },
@@ -35,8 +37,7 @@ const NAVIGATION = [
 const HAUPTZIELE = ['heute', 'themen', 'pruefung', 'fortschritt']
 const MEHR_UNTERTITEL = {
   sichtung: 'Volltextsuche, Lesezeichen, Sichtung',
-  glossar: 'Glossar der Regelwerke',
-  kennwerte: 'Maße, Grenz- und Richtwerte',
+  lexikon: 'Lexikon, Normen, Kennwerte',
   bilder: 'Alle Zeichnungen nach Thema',
   kalender: 'Klausuren und Lernlast der nächsten Wochen',
   heft: 'Alle Notizen und Lesezeichen',
@@ -47,15 +48,19 @@ const MEHR_UNTERTITEL = {
 
 // Sammlung ist seit 2026-10-10 ein Reiter unter Fortschritt (25A) - eigene
 // Adresse (#/sammlung), aber kein eigener Navigationseintrag.
-export const ZIELE = new Set([...NAVIGATION.map((n) => n.id), 'sammlung', 'lernen'])
+// Normen und Kennwerte ebenso: Reiter unter Nachschlagen (2026-10-29).
+export const ZIELE = new Set([...NAVIGATION.map((n) => n.id), 'sammlung', 'lernen', 'glossar', 'kennwerte'])
 
 // Fenster-/Tabtitel je Bildschirm (2026-10-15): Verlauf, Tabs und
 // Lesezeichen zeigen, wo man war.
-const WEITERE_TITEL = { sammlung: 'Sammlung', lernen: 'Lernen' }
+const WEITERE_TITEL = { sammlung: 'Sammlung', lernen: 'Lernen', glossar: 'Normen', kennwerte: 'Kennwerte' }
 export function bildschirmTitel(id) {
   return NAVIGATION.find((n) => n.id === id)?.titel ?? WEITERE_TITEL[id] ?? null
 }
-const navAktiv = (id, ansicht) => ansicht === id || (id === 'fortschritt' && ansicht === 'sammlung')
+const navAktiv = (id, ansicht) =>
+  ansicht === id ||
+  (id === 'fortschritt' && ansicht === 'sammlung') ||
+  (id === 'lexikon' && (ansicht === 'glossar' || ansicht === 'kennwerte'))
 
 // Abgleich-Status (Profil-System d, 2026-10-15): sichtbar ohne Umweg ueber
 // die Einstellungen - Seitenleiste unten bzw. oben im Mehr-Blatt.
@@ -197,7 +202,7 @@ export default function Navigation({
             {NAVIGATION.filter((n) => !HAUPTZIELE.includes(n.id)).map((n) => (
               <button
                 key={n.id}
-                className={ansicht === n.id ? 'mehrZeile aktiv' : 'mehrZeile'}
+                className={navAktiv(n.id, ansicht) ? 'mehrZeile aktiv' : 'mehrZeile'}
                 onClick={() => {
                   setAnsicht(n.id)
                   setMehrOffen(false)
@@ -234,6 +239,21 @@ export function AuswertungReiter({ ansicht, setAnsicht }) {
       >
         Sammlung
       </button>
+    </div>
+  )
+}
+
+// Reiter oben in Lexikon, Normen und Kennwerte (2026-10-29): zusammen
+// "Nachschlagen".
+export function NachschlagenReiter({ ansicht, setAnsicht }) {
+  const reiter = [['lexikon', 'Lexikon'], ['glossar', 'Normen'], ['kennwerte', 'Kennwerte']]
+  return (
+    <div className="reiter">
+      {reiter.map(([id, titel]) => (
+        <button key={id} className={ansicht === id ? 'reiterKnopf aktiv' : 'reiterKnopf'} onClick={() => setAnsicht(id)}>
+          {titel}
+        </button>
+      ))}
     </div>
   )
 }

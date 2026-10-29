@@ -1,7 +1,9 @@
 import { lazy, useEffect, useMemo, useRef, useState } from 'react'
 import Nachladen, { nachladenMerkerLoesen } from './components/Nachladen.jsx'
 import Schleier from './components/Schleier.jsx'
-import Navigation, { AuswertungReiter, bildschirmTitel } from './components/Navigation.jsx'
+import Navigation, { AuswertungReiter, NachschlagenReiter, bildschirmTitel } from './components/Navigation.jsx'
+import { LexikonKontext } from './components/Begriffe.jsx'
+import { begriffsMuster, lexikonAufbereiten } from './lib/lexikon.js'
 import Ladeskelett from './components/Ladeskelett.jsx'
 import { ansichtAusAdresse, themaAusAdresse, themaSchliessen, useAdresse } from './hooks/useAdresse.js'
 import { useTastaturNavigation } from './hooks/useTastaturNavigation.js'
@@ -29,7 +31,7 @@ import {
   skizzeLoeschen,
   speicherSichern,
 } from './lib/speicher.js'
-import { BEWERTUNG, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWiederholung, pensumBauen, zustaendeBerechnen } from './lib/planer.js'
+import { BEWERTUNG, fokusPensum, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWiederholung, pensumBauen, zustaendeBerechnen } from './lib/planer.js'
 import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
@@ -72,6 +74,7 @@ const Fehlerbuch = lazy(() => import('./screens/Fehlerbuch.jsx'))
 const Lernzettel = lazy(() => import('./screens/Lernzettel.jsx'))
 const Bilder = lazy(() => import('./screens/Bilder.jsx'))
 const Kennwerte = lazy(() => import('./screens/Kennwerte.jsx'))
+const Lexikon = lazy(() => import('./screens/Lexikon.jsx'))
 const Kalender = lazy(() => import('./screens/Kalender.jsx'))
 const Erklaerstueck = lazy(() => import('./components/Erklaerstueck.jsx'))
 import { KartenGrenze } from './components/Fehlergrenze.jsx'
@@ -100,6 +103,15 @@ export default function App({ profilId, onProfilWechseln }) {
   const [paketliste, setPaketliste] = useState([])
   // Kennwerte-Tabellenbuch des Pakets (F3)
   const [kennwerte, setKennwerte] = useState([])
+  // Fachbegriff-Lexikon (lexikon.json, 2026-10-29)
+  const [lexikonDaten, setLexikonDaten] = useState(null)
+  const lexikonEintraege = useMemo(() => lexikonAufbereiten(lexikonDaten), [lexikonDaten])
+  const lexikonMuster = useMemo(() => begriffsMuster(lexikonEintraege), [lexikonEintraege])
+  // lexikonEbene: Begriff, dessen Lexikon gerade als Ebene ueber dem
+  // aktuellen Bildschirm offen ist (Klick in Frage/Antwort/Erklaertext).
+  // lexikonSeitenZiel: hervorgehobener Begriff im Reiter Lexikon.
+  const [lexikonEbene, setLexikonEbene] = useState(null)
+  const [lexikonSeitenZiel, setLexikonSeitenZiel] = useState(null)
   // Pruefstand der Durchsicht (durchsicht.json) und Paketordner fuer
   // die alten Bildfassungen in der Vorher/Nachher-Ansicht.
   const [durchsicht, setDurchsicht] = useState({})
@@ -209,6 +221,7 @@ export default function App({ profilId, onProfilWechseln }) {
         setGestaltung(paketDaten.paket?.gestaltung ?? 'arch')
         setPaketInfo(paketDaten.paket ? { id: paketDaten.paket.id, titel: paketDaten.paket.titel, version: paketDaten.paket.version } : null)
         setKennwerte(paketDaten.kennwerte ?? [])
+        setLexikonDaten(paketDaten.lexikon ?? null)
         setDurchsicht(paketDaten.durchsicht ?? {})
         setPaketWurzel(paketDaten.wurzel ?? '')
         // Ausgelassene, nicht darstellbare Karten (T4) einmal melden.
@@ -443,6 +456,25 @@ export default function App({ profilId, onProfilWechseln }) {
   // Verwandte Themen fuer die Verwechslungspaare im Tagespensum (L4).
   const verwandtschaft = useMemo(() => verwandteThemen(themen, aktiveItems), [themen, aktiveItems])
 
+  // Themenfokus (Heute): je gewaehltem Thema die Portion aus planer.js.
+  // Gewaehlte Themen, die es im aktiven Paket nicht gibt (anderes Paket,
+  // Thema entfernt), bleiben gespeichert, werden aber nicht gezeigt.
+  const fokusUebersicht = useMemo(() => {
+    return (opt.fokusThemen ?? [])
+      .map((id) => themen.find((t) => t.id === id))
+      .filter((t) => t && !t.geplant)
+      .map((thema) => {
+        const themaItems = erlaubteItems.filter((i) => i.themaId === thema.id)
+        const plan = fokusPensum(themaItems, zustaende, aktiveEreignisse, { neuProTag: opt.neuProTag, maxProTag: opt.maxProTag })
+        return { thema, plan, anzahl: themaItems.length }
+      })
+      .filter((f) => f.anzahl > 0)
+  }, [opt.fokusThemen, opt.neuProTag, opt.maxProTag, themen, erlaubteItems, zustaende, aktiveEreignisse])
+  const fokusWaehlbar = useMemo(() => {
+    const gewaehlt = new Set(opt.fokusThemen ?? [])
+    return themen.filter((t) => !t.geplant && t.anzahl > 0 && !gewaehlt.has(t.id))
+  }, [opt.fokusThemen, themen])
+
   const {
     sitzung,
     position,
@@ -462,6 +494,7 @@ export default function App({ profilId, onProfilWechseln }) {
     profilId,
     erlaubteItems,
     zustaende,
+    ereignisse: aktiveEreignisse,
     opt,
     baustellenStapel,
     skizzenStapel,
@@ -785,6 +818,44 @@ export default function App({ profilId, onProfilWechseln }) {
     setAnsicht('heute')
   }
 
+  // Lexikon-Ebene und Begriff-Links (components/Begriffe.jsx). Im Reiter
+  // Lexikon springt ein Klick nur zum Eintrag, sonst oeffnet er die Ebene;
+  // die Seite darunter (eine laufende Frage) bleibt unveraendert stehen.
+  const lexikonWert = {
+    muster: lexikonMuster,
+    oeffnen: (id) => {
+      if (lexikonEbene) setLexikonEbene(id)
+      else if (ansicht === 'lexikon') setLexikonSeitenZiel(id)
+      else setLexikonEbene(id)
+    },
+  }
+  const lexikonZurueckText = ansicht === 'lernen' && sitzung
+    ? 'Zurück zur Frage'
+    : erklaerthema ? 'Zurück zum Erklärtext' : 'Zurück'
+  function mitLexikon(knoten) {
+    return (
+      <LexikonKontext.Provider value={lexikonWert}>
+        {knoten}
+        {lexikonEbene && (
+          <Schleier klasse="schleier lexikonSchleier" beschriftung="Lexikon" startFokus=".lexikonZurueck" onSchliessen={() => setLexikonEbene(null)}>
+            <div className="lexikonEbene" onClick={(e) => e.stopPropagation()}>
+              <Nachladen>
+                <Lexikon
+                  eintraege={lexikonEintraege}
+                  muster={lexikonMuster}
+                  themen={themen}
+                  ziel={lexikonEbene}
+                  onZiel={setLexikonEbene}
+                  zurueck={{ text: lexikonZurueckText, onKlick: () => setLexikonEbene(null) }}
+                />
+              </Nachladen>
+            </div>
+          </Schleier>
+        )}
+      </LexikonKontext.Provider>
+    )
+  }
+
   if (laedt) {
     return <Ladeskelett />
   }
@@ -829,7 +900,7 @@ export default function App({ profilId, onProfilWechseln }) {
 
   if (ansicht === 'lernen' && sitzung?.pensum[position]) {
     const item = sitzung.pensum[position]
-    return (
+    return mitLexikon(
       <div className="huelle einspaltig">
         <KartenGrenze key={item.id} kennung={item.id} onWeiter={() => weiter()} onZurueck={verlassen}>
         <Lernen
@@ -899,7 +970,7 @@ export default function App({ profilId, onProfilWechseln }) {
   if (lernzettelThema) {
     const thema = themen.find((t) => t.id === lernzettelThema)
     if (thema) {
-      return (
+      return mitLexikon(
         <div className="huelle einspaltig">
           <Nachladen>
             <Lernzettel thema={thema} items={aktiveItems} marken={marken} onZurueck={() => setLernzettelThema(null)} />
@@ -912,7 +983,7 @@ export default function App({ profilId, onProfilWechseln }) {
   if (kopfThema) {
     const thema = themen.find((t) => t.id === kopfThema)
     if (thema) {
-      return (
+      return mitLexikon(
         <div className="huelle einspaltig">
           <Nachladen>
           <AusDemKopf
@@ -933,7 +1004,7 @@ export default function App({ profilId, onProfilWechseln }) {
   if (erklaerthema && themen.some((t) => t.id === erklaerthema)) {
     const thema = themen.find((t) => t.id === erklaerthema)
     const themaItems = aktiveItems.filter((i) => i.themaId === thema.id)
-    return (
+    return mitLexikon(
       <div className="huelle einspaltig">
         <Nachladen>
         <Erklaerstueck
@@ -967,7 +1038,7 @@ export default function App({ profilId, onProfilWechseln }) {
     )
   }
 
-  return (
+  return mitLexikon(
     <div className="huelle">
       <Navigation
         ansicht={ansicht}
@@ -1055,6 +1126,11 @@ export default function App({ profilId, onProfilWechseln }) {
           onFortsetzen={sitzungFortsetzen}
           onVerwerfen={verwerfen}
           onStart={(art) => sitzungStarten(art, {})}
+          fokus={fokusUebersicht}
+          fokusWaehlbar={fokusWaehlbar}
+          onFokusStart={(themaId) => sitzungStarten('fokus', { themaId })}
+          onFokusHinzu={(themaId) => setOpt((o) => ({ ...o, fokusThemen: [...new Set([...(o.fokusThemen ?? []), themaId])] }))}
+          onFokusEntfernen={(themaId) => setOpt((o) => ({ ...o, fokusThemen: (o.fokusThemen ?? []).filter((id) => id !== themaId) }))}
           onThemen={() => setAnsicht('themen')}
           nichtGewusst={nichtGewusst}
           onOeffnen={oeffneItem}
@@ -1183,8 +1259,23 @@ export default function App({ profilId, onProfilWechseln }) {
           }}
         />
       )}
+      {ansicht === 'lexikon' && (
+        <Lexikon
+          eintraege={lexikonEintraege}
+          muster={lexikonMuster}
+          items={aktiveItems}
+          themen={themen}
+          ziel={lexikonSeitenZiel}
+          onZiel={setLexikonSeitenZiel}
+          reiter={<NachschlagenReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
+          onUeben={(ids) => sitzungStarten('fehlerstapel', { ids })}
+          onItemOeffnen={oeffneItem}
+          onThema={(id) => setErklaerthema(id)}
+        />
+      )}
       {ansicht === 'glossar' && (
         <Glossar
+          reiter={<NachschlagenReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
           glossar={glossar}
           items={aktiveItems}
           bereiche={bereiche}
@@ -1212,7 +1303,12 @@ export default function App({ profilId, onProfilWechseln }) {
         />
       )}
       {ansicht === 'kennwerte' && (
-        <Kennwerte gruppen={kennwerte} themen={themen} onThema={(id) => setErklaerthema(id)} />
+        <Kennwerte
+          gruppen={kennwerte}
+          themen={themen}
+          onThema={(id) => setErklaerthema(id)}
+          reiter={<NachschlagenReiter ansicht={ansicht} setAnsicht={setAnsicht} />}
+        />
       )}
       {ansicht === 'kalender' && (
         <Kalender

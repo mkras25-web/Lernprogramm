@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 export function useTastaturNavigation({ ansichtRef, setAnsicht, setSuchFokus, setTastenhilfeOffen }) {
   useEffect(() => {
     const ZIELTASTEN = {
-      h: 'heute', t: 'themen', n: 'sichtung', o: 'glossar', m: 'heft', b: 'fehlerbuch',
+      h: 'heute', t: 'themen', n: 'sichtung', l: 'lexikon', o: 'glossar', m: 'heft', b: 'fehlerbuch',
       p: 'pruefung', s: 'skizzen', f: 'fortschritt', a: 'sammlung', e: 'einstellungen',
     }
     let gWartet = 0

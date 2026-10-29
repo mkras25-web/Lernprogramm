@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { skizzeSpeichern, ereignisSpeichern, ereignisLoeschen } from '../lib/speicher.js'
-import { BEWERTUNG, pensumBauen, pensumNachNochmal } from '../lib/planer.js'
+import { BEWERTUNG, fokusPensum, pensumBauen, pensumNachNochmal } from '../lib/planer.js'
 import { xpFuerEreignis } from '../lib/fortschritt.js'
 import { verwandteNebeneinander } from '../lib/verwandt.js'
 
@@ -36,6 +36,7 @@ export function useLernsitzung({
   profilId,
   erlaubteItems,
   zustaende,
+  ereignisse = [],
   opt,
   baustellenStapel,
   skizzenStapel,
@@ -148,6 +149,13 @@ export function useLernsitzung({
       const auswertbar = offen.filter((i) => VORAB_TYPEN.includes(i.typ))
       pensum = [...auswertbar, ...offen.filter((i) => !VORAB_TYPEN.includes(i.typ))].slice(0, 3)
     }
+    else if (art === 'fokus') {
+      // Themenfokus (planer.js fokusPensum): fertige Reihenfolge, nicht mischen.
+      pensum = fokusPensum(grundmenge, zustaende, ereignisse, {
+        neuProTag: opt.neuProTag,
+        maxProTag: opt.maxProTag,
+      }).pensum
+    }
     else if (art === 'kursplan' || art === 'endspurt') {
       // Fertig berechnete Reihenfolge aus kurs.js (Klausurplan/Endspurt).
       const nachId = new Map(grundmenge.map((i) => [i.id, i]))
@@ -160,7 +168,7 @@ export function useLernsitzung({
       }).pensum
     }
 
-    if (opt.reihenfolge === 'gemischt' && art !== 'blaettern') pensum = mischen(pensum)
+    if (opt.reihenfolge === 'gemischt' && art !== 'blaettern' && art !== 'fokus') pensum = mischen(pensum)
     // Verwechslungspaare (L4): im normalen Tagespensum verwandte Karten
     // verschiedener Themen nacheinander - nur bei gemischter Reihenfolge,
     // die feste Themenreihenfolge bleibt unangetastet.
