@@ -1,0 +1,1532 @@
+{
+  "eintraege": [
+    {
+      "id": "abdichtung",
+      "begriff": "Abdichtung",
+      "varianten": [
+        "Kellerabdichtung"
+      ],
+      "definition": "Schicht aus wasserundurchlässigem Material, etwa Bitumenbahn, Kunststoffbahn oder Bitumendickbeschichtung, die ein Bauwerk vor eindringendem Wasser schützt. Wie sie ausgeführt wird, hängt davon ab, wie stark das Wasser auf das Bauteil wirkt (Lastfall).",
+      "beispiel": "Am Keller liegt die Abdichtung außen auf der Wand und reicht ohne Unterbrechung von der Bodenplatte bis über das Gelände.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "dichtebene",
+        "lastfall",
+        "sperrschicht"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "allgemeine-bauaufsichtliche-zulassung",
+      "begriff": "allgemeine bauaufsichtliche Zulassung",
+      "definition": "Nachweis des Deutschen Instituts für Bautechnik (DIBt), dass ein Bauprodukt verwendet werden darf, für das es keine allgemein anerkannten technischen Regeln gibt oder das von ihnen erheblich abweicht.",
+      "beispiel": "Perimeterdämmstoffe brauchen sie, weil ihr Verhalten gegen Wasser, Frost und Erddruck abgesichert sein muss.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "18"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "aufgehend",
+      "begriff": "aufgehend",
+      "definition": "Bezeichnung für Bauteile, die sich über einem Fundament, einer Decke oder einer Fläche nach oben erheben, etwa Wände und Stützen.",
+      "beispiel": "Die Sperrschicht schützt das aufgehende Mauerwerk vor Feuchte aus dem Fundamentbereich.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "42"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "fundament"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "aufsteigende-feuchte",
+      "begriff": "aufsteigende Feuchte",
+      "varianten": [
+        "aufsteigende Bodenfeuchtigkeit"
+      ],
+      "definition": "Wasser aus dem Boden, das durch Kapillarwirkung im Mauerwerk nach oben wandert und die Wand durchfeuchtet. Verhindert wird es durch eine waagerechte Abdichtung im Wandquerschnitt.",
+      "beispiel": "Durchfeuchtete Sockel werden oft vorschnell auf aufsteigende Feuchte zurückgeführt, obwohl Spritzwasser die Ursache ist.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "querschnittsabdichtung",
+        "sperrschicht"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "aussendaemmung",
+      "begriff": "Außendämmung",
+      "definition": "Wärmedämmung auf der Außenseite einer Wand oder eines Daches, etwa hinter einer Bekleidung, hinter einer Abdichtung oder unter Putz. Die tragende Konstruktion bleibt so auf der warmen Seite.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "innendaemmung",
+        "kaltseite"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "balkonkragplatte",
+      "begriff": "Balkonkragplatte",
+      "definition": "Frei auskragende Platte eines Balkons, die nur am Gebäude gehalten ist. Ihre Oberseite ist eine waagerechte Fläche, von der Regen an die angrenzende Wand spritzt.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "478"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "spritzwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "baugrube",
+      "begriff": "Baugrube",
+      "definition": "Ausgehobene Grube, in der Fundamente und Kellergeschoss errichtet werden. Der Arbeitsraum zwischen Baugrubenböschung und Kellerwand wird nach dem Abdichten wieder verfüllt.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "42"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "baugrubenverfuellung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "baugrubenverfuellung",
+      "begriff": "Baugrubenverfüllung",
+      "varianten": [
+        "Verfüllen"
+      ],
+      "definition": "Das Wiedereinfüllen und Verdichten von Boden im Arbeitsraum um das fertige Kellergeschoss, auch das eingefüllte Material selbst. Verfüllen und Verdichten können die Abdichtung beschädigen, und das Material setzt sich danach noch.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "baugrube",
+        "schutzschicht",
+        "setzung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "bitumenbahn",
+      "begriff": "Bitumenbahn",
+      "definition": "Abdichtungsbahn auf Basis von Bitumen oder Polymerbitumen, die in einer oder mehreren Lagen verklebt oder verschweißt wird. Sie dient als Flächenabdichtung an Dächern und erdberührten Bauteilen.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "163"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "kunststoffbahn",
+        "sperrschicht"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "bitumendickbeschichtung",
+      "begriff": "Bitumendickbeschichtung",
+      "varianten": [
+        "KMB"
+      ],
+      "definition": "Kunststoffvergütete Abdichtungsmasse auf Bitumenbasis mit zementhaltigem Anteil (KMB), die in mindestens zwei Lagen gespachtelt oder gespritzt wird. Sie schützt gegen Bodenfeuchte und Wasser, das nicht unter Druck steht.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "abdichtung",
+        "bitumenbahn"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "bodenfeuchte",
+      "begriff": "Bodenfeuchte",
+      "varianten": [
+        "Bodenfeuchtigkeit"
+      ],
+      "definition": "Im Boden kapillar gebundenes Wasser, das immer vorhanden ist und nicht unter Druck steht. Gegen Bodenfeuchte müssen Kellerwände einschließlich Sockel, die Wand über dem Fundament und die Kellersohle abgedichtet werden.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "162"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "lastfall",
+        "aufsteigende-feuchte"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "bodenplatte",
+      "begriff": "Bodenplatte",
+      "definition": "Flächige Platte, meist aus Stahlbeton, die den unteren Abschluss eines Gebäudes zum Erdreich bildet. Auf ihr liegt bei Bodenfeuchte die horizontale Abdichtung, die am Wandfuß an die vertikale Abdichtung anschließt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "kellersohle",
+        "hohlkehle"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "bruestung",
+      "begriff": "Brüstung",
+      "definition": "Halbhohe, massive Wand, die als Umwehrung vor Absturz schützt, etwa am Rand von Balkon oder Terrasse.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "349"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "daemmstoff",
+      "begriff": "Dämmstoff",
+      "varianten": [
+        "Wärmedämmstoff"
+      ],
+      "definition": "Baustoff, der Wärme (je nach Art auch Schall) nur schlecht weiterleitet, meist weil er viele kleine Poren oder Faserzwischenräume mit ruhender Luft enthält. Als Wärmedämmstoff gilt nach DIN 4108 ein Baustoff mit einer Wärmeleitfähigkeit unter 0,1 W/(m·K).",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "132"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "waermeleitfaehigkeit"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "dampfbremse",
+      "begriff": "Dampfbremse",
+      "definition": "Diffusionshemmende Schicht, meist eine Folie oder Bahn auf der warmen Raumseite, die begrenzt, wie viel Wasserdampf in die Konstruktion eindringt. Sie muss zugleich luftdicht ausgeführt werden.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "145"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "diffusionshemmend",
+        "innendaemmung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "dampfdiffusionsnachweis",
+      "begriff": "Dampfdiffusionsnachweis",
+      "definition": "Rechnerische Prüfung, ob in einem Bauteil durch Wasserdampfdiffusion schädliches Tauwasser anfällt und ob es wieder austrocknen kann, etwa mit dem Glaserverfahren.",
+      "beispiel": "Bei jeder Innendämmung gilt der Nachweis als unerlässlich.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "glaserverfahren",
+        "innendaemmung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "dichtebene",
+      "begriff": "Dichtebene",
+      "varianten": [
+        "Abdichtungsebene"
+      ],
+      "definition": "Durchgehende Ebene eines Bauteilaufbaus, in der die dichtende Schicht liegt. Sie muss ohne Lücken durchlaufen; an ihrer Lage entscheidet sich, welche Schichten trocken bleiben müssen und welche nass werden dürfen.",
+      "beispiel": "Bei zweischaligem Mauerwerk liegt die Dichtebene auf der Außenseite der tragenden Innenschale, nicht hinter der Vormauerschale.",
+      "quelle": {
+        "werk": "DETAIL Atlas Flachdach",
+        "seite": "7"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "abdichtung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "dichtschlaemme",
+      "begriff": "Dichtschlämme",
+      "definition": "Zementgebundene Abdichtungsmasse, die vor Ort angerührt und als mindestens 2 mm dicke Schicht aufgetragen wird; sie dichtet gegen Bodenfeuchte, nichtdrückendes Wasser und aufsteigende Feuchte. Flexible Dichtschlämmen mit Kunststoffanteil überbrücken kleine Risse.",
+      "beispiel": "Am Sockel dient Dichtschlämme als sichtbare Abdichtung oberhalb des Geländes.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sockelabdichtung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "diffusion",
+      "begriff": "Diffusion",
+      "definition": "In der Bauphysik die Wanderung von Wasserdampf durch ein Bauteil, angetrieben vom Unterschied im Dampfdruck zwischen warmer Innenluft und kalter Außenluft. Kühlt der Dampf im Bauteil ab, kann sich Tauwasser bilden.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "diffusionswiderstand",
+        "tauwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "diffusionsdicht",
+      "begriff": "diffusionsdicht",
+      "definition": "Eigenschaft einer Bauteilschicht, praktisch keinen Wasserdampf durchzulassen; nach DIN 4108-3 gilt das ab einem sd-Wert von 1500 m.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "145"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sd-wert",
+        "diffusionshemmend"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "diffusionshemmend",
+      "begriff": "diffusionshemmend",
+      "definition": "Eigenschaft einer Bauteilschicht, Wasserdampf nur gebremst durchzulassen; nach DIN 4108-3 liegt ihr sd-Wert zwischen 0,5 m und 1500 m. Dampfbremsen sind diffusionshemmend.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "145"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sd-wert",
+        "dampfbremse"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "diffusionsoffen",
+      "begriff": "diffusionsoffen",
+      "definition": "Eigenschaft einer Bauteilschicht, Wasserdampf leicht durchzulassen; nach DIN 4108-3 gilt das bei einem sd-Wert von höchstens 0,5 m.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "145"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sd-wert",
+        "diffusionshemmend"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "diffusionswiderstand",
+      "begriff": "Diffusionswiderstand",
+      "definition": "Maß dafür, wie stark ein Stoff Wasserdampf am Durchdringen hindert, angegeben als einheitslose Diffusionswiderstandszahl μ. Ein Bauteil sollte nach außen hin immer durchlässiger werden, damit eingedrungene Feuchte nach außen abtrocknen kann.",
+      "beispiel": "Mineralwolle hat μ = 1 und ist sehr diffusionsoffen, Schaumglas ist praktisch dampfdicht.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sd-wert",
+        "diffusion"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "draenplatte",
+      "begriff": "Dränplatte",
+      "definition": "Platte mit offenporigem Gefüge, etwa aus bitumengebundenem Polystyrol, die vor der Abdichtung erdberührter Wände liegt. Sie schützt die Abdichtung mechanisch und lässt Wasser durch ihre Poren abfließen.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "schutzschicht"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "druckbelastbarkeit",
+      "begriff": "Druckbelastbarkeit",
+      "definition": "Eigenschaft eines Dämmstoffs, dauerhaften Druck ohne schädliche Verformung aufzunehmen. DIN V 4108-10 teilt sie in Stufen ein, von dk (keine) über dg, dm, dh und ds bis dx (extrem hoch).",
+      "beispiel": "Das Kurzzeichen PW-dh bezeichnet eine Perimeterdämmung an Wänden mit hoher Druckbelastbarkeit.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "typenkurzzeichen",
+        "druckfestigkeit"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "drueckendes-wasser",
+      "begriff": "drückendes Wasser",
+      "definition": "Wasser, das mit hydrostatischem Druck von außen auf ein Bauteil wirkt, etwa Grundwasser, Schichtenwasser oder aufgestautes Sickerwasser. Es stellt die höchsten Anforderungen an die Abdichtung.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "161"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "lastfall",
+        "stauwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "druckfestigkeit",
+      "begriff": "Druckfestigkeit",
+      "definition": "Größte Druckspannung, die ein Baustoff aufnehmen kann, bevor er versagt. Bei Dämmstoffen wird stattdessen oft die Druckspannung bei 10 % Stauchung angegeben.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "druckbelastbarkeit"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "entwaesserungsoeffnung",
+      "begriff": "Entwässerungsöffnung",
+      "varianten": [
+        "Fußpunktöffnung"
+      ],
+      "definition": "Öffnung am Fuß der Außenschale zweischaligen Mauerwerks, meist eine offene Stoßfuge, durch die Wasser aus dem Schalenzwischenraum nach außen abfließt. Vorgesehen werden mindestens 5000 mm² je 20 m² Wandfläche.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "137"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "schalenzwischenraum",
+        "stossfuge"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "eps",
+      "begriff": "EPS",
+      "varianten": [
+        "EPS-Partikelschaum",
+        "Polystyrol-Partikelschaum"
+      ],
+      "definition": "Expandiertes Polystyrol (Polystyrol-Partikelschaum): Dämmstoff aus kleinen Polystyrolperlen, die mit Wasserdampf aufgebläht und zu Platten verschäumt werden. Er verrottet nicht, ist aber nicht UV- und nicht lösemittelbeständig; seine Druckfestigkeit steigt mit der Rohdichte.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "137"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "xps",
+        "rohdichte"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "erddruck",
+      "begriff": "Erddruck",
+      "definition": "Druck, den das anliegende Erdreich quer zur Wandebene auf erdberührte Wände ausübt. Er erzeugt in Kellerwänden Biegung und ist oft maßgebend für deren Bemessung; stärker verdichtete Verfüllung erhöht ihn.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "133"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "fundament",
+      "begriff": "Fundament",
+      "varianten": [
+        "Betonfundament"
+      ],
+      "definition": "Bauteil, das die Lasten eines Gebäudes flächig in den Baugrund überträgt: als Streifenfundament unter Wänden, als Einzelfundament unter Stützen oder als Plattenfundament. Seine Sohle muss frostfrei liegen.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "42"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "fundamentfuss"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "fundamentfuss",
+      "begriff": "Fundamentfuß",
+      "varianten": [
+        "Fundamentfüße"
+      ],
+      "definition": "Der seitlich über die aufgehende Wand hinausragende Teil eines Fundaments.",
+      "beispiel": "Bei zweischaligem Mauerwerk steht die Vormauerschale auf dem Fundamentfuß; die Sperrschicht wird darüber bis über die zweite Mauerwerkschicht hochgeführt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "231"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "fundament",
+        "vormauerschale"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "gelaendeoberkante",
+      "begriff": "Geländeoberkante",
+      "varianten": [
+        "Geländeoberfläche"
+      ],
+      "definition": "Höhe der fertigen Geländeoberfläche am Gebäude, oft als OK Gelände abgekürzt. Sie ist die Bezugshöhe für Sockel-, Abdichtungs- und Putzhöhen.",
+      "beispiel": "Die Sockelabdichtung reicht bis etwa 20 cm über Geländeoberkante.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sockel"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "gesims",
+      "begriff": "Gesims",
+      "definition": "Waagerecht aus einer Wand vorspringender Bauteilstreifen, etwa aus Werkstein oder Stahlbeton. Seine Oberseite ist eine der Witterung ausgesetzte Fläche und braucht meist eine schützende Abdeckung.",
+      "beispiel": "Über einem Gesims entsteht wie am Gelände eine Spritzwasserzone an der Wand.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "644"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "spritzwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "glaserverfahren",
+      "begriff": "Glaserverfahren",
+      "definition": "Rechenverfahren nach DIN 4108-3, mit dem die Menge des in ein Bauteil hinein- und wieder herausdiffundierenden Wassers abgeschätzt wird. So lässt sich prüfen, ob Tauwasser im Bauteil Dämmstoffe oder Konstruktion gefährdet.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "dampfdiffusionsnachweis",
+        "tauwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "gleitschicht",
+      "begriff": "Gleitschicht",
+      "definition": "Trennlage zwischen zwei Schichten, die eine Verschiebung gegeneinander zulässt, damit Bewegungen oder Belastungen der einen Schicht nicht auf die andere übertragen werden.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "schutzvlies"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "hohlkehle",
+      "begriff": "Hohlkehle",
+      "definition": "Ausgerundete Innenecke, meist aus Mörtel, am Übergang zwischen Wand und Fundament oder Bodenplatte. Sie hat einen Radius von mindestens 4 cm, damit die Abdichtung dort nicht scharf abknickt und reißt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "abdichtung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "innendaemmung",
+      "begriff": "Innendämmung",
+      "definition": "Wärmedämmung auf der Raumseite einer Außenwand. Die Wand selbst liegt dann ganz auf der Kaltseite und kühlt ab, sodass im Bauteil Tauwasser entstehen kann; deshalb sind ein Dampfdiffusionsnachweis und meist eine sorgfältig verlegte Dampfbremse nötig.",
+      "beispiel": "Bei Altbauten mit denkmalgeschützter Fassade ist oft nur eine Innendämmung möglich.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "kaltseite",
+        "dampfdiffusionsnachweis",
+        "dampfbremse"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "innenschale",
+      "begriff": "Innenschale",
+      "definition": "Innere, tragende Schale einer zweischaligen Außenwand. Bei zweischaligem Mauerwerk liegt die Abdichtung im Sockelbereich auf ihrer Außenseite.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "136"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zweischalig",
+        "vormauerschale"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kalkzementmoertelverputz",
+      "begriff": "Kalkzementmörtelverputz",
+      "definition": "Putz aus Mörtel mit Kalk und Zement als Bindemitteln. Am Sockel schließt er oberhalb des Zementmörtelputzes an und wird von diesem durch einen Kellenschnitt getrennt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "231"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "kellenschnitt",
+        "zementputz"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kaltseite",
+      "begriff": "Kaltseite",
+      "definition": "Die im Winter kalte, meist äußere Seite eines Bauteils. Dämmstoffe gehören bauphysikalisch möglichst dorthin, damit die übrige Konstruktion warm bleibt und in ihr kein Tauwasser anfällt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "tauwasser",
+        "innendaemmung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kellenschnitt",
+      "begriff": "Kellenschnitt",
+      "definition": "Mit der Kelle in den frischen Putz gezogener Schnitt, der zwei Putzflächen voneinander trennt.",
+      "beispiel": "Am Sockel trennt ein Kellenschnitt den Zementmörtelputz vom darüberliegenden Kalkzementmörtelverputz.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "231"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "trennfuge",
+        "zementputz"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kellersohle",
+      "begriff": "Kellersohle",
+      "definition": "Der untere, waagerechte Abschluss eines Kellers, also seine Bodenplatte. Wie die Kellerwände muss sie gegen Bodenfeuchte abgedichtet werden.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "162"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "bodenplatte"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kerndaemmung",
+      "begriff": "Kerndämmung",
+      "definition": "Wärmedämmung, die den Zwischenraum zwischen Innen- und Außenschale einer zweischaligen Wand ausfüllt. Weil Schlagregen die Außenschale durchdringen kann, muss das Material zeitweise Nässe vertragen und schnell wieder trocknen.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "136"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zweischalig",
+        "schalenzwischenraum"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kiesstreifen",
+      "begriff": "Kiesstreifen",
+      "definition": "Streifen aus grobem Kies entlang des Gebäudesockels anstelle eines festen Belags. Er verbessert den Spritzwasserschutz, weil Regen dort nicht wie von einer festen Fläche an die Wand zurückspritzt.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "648"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "spritzwasser",
+        "sockel"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "kunststoffbahn",
+      "begriff": "Kunststoffbahn",
+      "definition": "Abdichtungsbahn aus Kunststoff wie PVC oder Polyethylen, die ähnlich wie Dachbahnen verlegt wird. Sie ist eine Alternative zur Bitumenbahn bei Dach- und Bauwerksabdichtungen.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "bitumenbahn"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "lastfall",
+      "begriff": "Lastfall",
+      "varianten": [
+        "Lastfälle"
+      ],
+      "definition": "Bei der Bauwerksabdichtung die Einstufung, wie Wasser auf ein erdberührtes Bauteil wirkt – etwa als Bodenfeuchte, als zeitweise aufgestautes Sickerwasser oder als drückendes Wasser. Nach dem Lastfall richtet sich die Wahl der Abdichtung.",
+      "beispiel": "Ob ein Keller gegen Bodenfeuchte oder gegen drückendes Wasser abgedichtet wird, hängt vom Boden, einer Dränung und dem Bemessungswasserstand ab.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "161"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "bodenfeuchte",
+        "nichtdrueckendes-wasser",
+        "drueckendes-wasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "mauerwerkschicht",
+      "begriff": "Mauerwerkschicht",
+      "varianten": [
+        "Steinschicht"
+      ],
+      "definition": "Eine waagerechte Lage nebeneinander vermauerter Steine. Höhen im Mauerwerk werden oft in solchen Schichten gezählt.",
+      "beispiel": "Die Belüftungsöffnungen einer Vormauerschale liegen in der dritten Schicht über dem Erdreich.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "130"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "stossfuge"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "mineralwolle",
+      "begriff": "Mineralwolle",
+      "definition": "Faserdämmstoff aus Glaswolle oder Steinwolle. Er dämmt Wärme und Schall gut und ist diffusionsoffen, verliert aber bei Durchfeuchtung deutlich an Dämmwirkung und Festigkeit.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "136"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "daemmstoff"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "moertelgruppe",
+      "begriff": "Mörtelgruppe",
+      "definition": "Einteilung von Mörteln nach Zusammensetzung und Festigkeit in Gruppen, die mit römischen Ziffern bezeichnet werden; Normalmauermörtel nach DIN 1053 etwa in I, II, IIa, III und IIIa. Die Gruppe legt fest, wofür ein Mörtel verwendet werden darf.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "125"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zementmoertel"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "nichtdrueckendes-wasser",
+      "begriff": "nichtdrückendes Wasser",
+      "varianten": [
+        "Nichtdrückend"
+      ],
+      "definition": "Wasser, etwa Niederschlag, Sicker- oder Spritzwasser, das auf ein Bauteil einwirkt, aber keinen Wasserdruck aufbaut, weil es abfließen oder versickern kann. Es ist ein eigener Lastfall der Bauwerksabdichtung.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "lastfall",
+        "drueckendes-wasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "noppenbahn",
+      "begriff": "Noppenbahn",
+      "definition": "Kunststoffbahn mit eingeformten Noppen, die vor die Abdichtung erdberührter Wände gestellt wird und sie beim Verfüllen und Verdichten der Baugrube vor Beschädigung schützt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "schutzschicht"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "perimeterdaemmung",
+      "begriff": "Perimeterdämmung",
+      "varianten": [
+        "Perimeterdämmstoff"
+      ],
+      "definition": "Wärmedämmung, die außen auf erdberührten Bauteilen liegt, also außerhalb der Abdichtung an Kellerwänden oder unter der Bodenplatte. Weil sie dauerhaft im feuchten Erdreich steckt, muss der Dämmstoff wasserunempfindlich, druckfest und frostbeständig sein.",
+      "beispiel": "XPS-Platten auf der abgedichteten Kelleraußenwand dämmen und schützen die Abdichtung zugleich beim Verfüllen der Baugrube.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "133"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "xps",
+        "schaumglas",
+        "eps"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "querschnittsabdichtung",
+      "begriff": "Querschnittsabdichtung",
+      "definition": "Waagerechte Abdichtung, die den ganzen Querschnitt einer Wand durchschneidet, meist knapp über dem Fundament und aus Bitumenbahnen in einer oder mehreren Lagen. Sie verhindert, dass Wasser kapillar in der Wand aufsteigt.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "144"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sperrschicht",
+        "aufsteigende-feuchte"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "rohdichte",
+      "begriff": "Rohdichte",
+      "varianten": [
+        "Mindestrohdichte"
+      ],
+      "definition": "Masse eines Baustoffs bezogen auf sein Volumen einschließlich aller Poren und Hohlräume, meist in kg/m³ angegeben. Aus ihr lassen sich Eigenschaften wie Festigkeit oder Dämmwirkung abschätzen.",
+      "beispiel": "EPS für die Perimeterdämmung braucht eine höhere Rohdichte als übliche Fassadendämmplatten, damit es druckfest genug ist.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "68"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "ruecklaeufiger-stoss",
+      "begriff": "rückläufiger Stoß",
+      "varianten": [
+        "Rückläufig"
+      ],
+      "definition": "Ausbildung der Überlappung zwischen horizontaler und vertikaler Abdichtung am Wandfuß, bei der die Lagen so übereinandergreifen, dass Wasser nicht in die Naht gelangt. Die Überlappung beträgt mindestens 10 cm.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "abdichtung",
+        "hohlkehle"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "saeulenfuss",
+      "begriff": "Säulenfuß",
+      "varianten": [
+        "Säulenfüße"
+      ],
+      "definition": "Unterer Abschluss einer Säule, wo sie auf Boden oder Sockel aufsteht. Er liegt in der Spritzwasserzone und ist entsprechend gefährdet.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "478"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "spritzwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "schalenzwischenraum",
+      "begriff": "Schalenzwischenraum",
+      "definition": "Raum zwischen Innen- und Außenschale einer zweischaligen Wand, höchstens 15 cm breit und mit Wärmedämmung und/oder einer Luftschicht gefüllt. Eingedrungenes Regen- oder Kondenswasser kann darin nach unten abfließen oder abtrocknen.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "137"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zweischalig",
+        "entwaesserungsoeffnung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "schaumglas",
+      "begriff": "Schaumglas",
+      "definition": "Dämmstoff aus aufgeschäumtem Glas mit geschlossenen, gasdichten Zellen. Er lässt fast keinen Wasserdampf durch, nimmt kein Wasser auf und verformt sich nicht, weshalb er vor allem für erdberührte und stark belastete Bauteile verwendet wird.",
+      "beispiel": "Als Perimeterdämmung wird Schaumglas meist vollflächig in Bitumen eingeklebt; beim späteren Ausbau lässt es sich deshalb kaum wiedergewinnen.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "136"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "perimeterdaemmung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "schutzschicht",
+      "begriff": "Schutzschicht",
+      "definition": "Schicht, die eine empfindliche Lage, meist die Abdichtung, vor mechanischer Beschädigung schützt. An erdberührten Wänden dienen dazu Noppenbahnen, Dämmplatten oder Dränplatten, die beim Verfüllen und Verdichten der Baugrube wirken.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "schutzvlies",
+        "noppenbahn",
+        "draenplatte"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "schutzvlies",
+      "begriff": "Schutzvlies",
+      "definition": "Vlies zwischen Abdichtung und Schutzschicht, das als Trenn- und Gleitschicht wirkt. Setzt sich die Baugrubenverfüllung, kann die Schutzschicht nach unten gleiten, ohne die Abdichtung abzuscheren.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "schutzschicht",
+        "gleitschicht",
+        "setzung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "sd-wert",
+      "begriff": "sd-Wert",
+      "varianten": [
+        "sd"
+      ],
+      "definition": "Wasserdampfdiffusionsäquivalente Luftschichtdicke in Metern: die Dicke einer ruhenden Luftschicht, die dem Wasserdampf denselben Widerstand entgegensetzt wie die betrachtete Bauteilschicht. Er ergibt sich aus Diffusionswiderstandszahl und Schichtdicke.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "145"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "diffusionsoffen",
+        "diffusionshemmend",
+        "diffusionsdicht"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "setzung",
+      "begriff": "Setzung",
+      "definition": "Absinken von Baugrund, Verfüllung oder Bauwerk unter Last. Ungleichmäßige Setzungen können Risse und Schäden verursachen.",
+      "beispiel": "Setzt sich die Baugrubenverfüllung, zieht sie die Schutzschicht vor der Kellerwand mit nach unten.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "42"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "baugrubenverfuellung",
+        "schutzvlies"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "sockel",
+      "begriff": "Sockel",
+      "varianten": [
+        "Sockelbereich"
+      ],
+      "definition": "Unterer Bereich einer Außenwand im Anschluss an Gelände, Terrasse oder Gehweg. Er wird durch Spritzwasser und Bodenfeuchte besonders beansprucht und braucht deshalb Abdichtung und feuchteunempfindliche Oberflächen.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "648"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sockelabdichtung",
+        "sockelputz",
+        "spritzwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "sockelabdichtung",
+      "begriff": "Sockelabdichtung",
+      "definition": "Abdichtung des Sockels oberhalb des Geländes, bis etwa 20 cm über Geländeoberkante. Da die Abdichtung aus dem Erdreich dort nicht sichtbar weitergeführt werden soll, übernehmen Dichtschlämme oder ein dafür geeigneter Sockelputz diese Aufgabe; sie überlappen die untere Abdichtung um mindestens 10 cm.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sockel",
+        "dichtschlaemme",
+        "sockelputz"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "sockelputz",
+      "begriff": "Sockelputz",
+      "definition": "Wasserdichter, feuchte- und frostbeständiger Putz am Sockel, oft als zweilagiger Sperrputz ausgeführt, der dauernder Spritzwasserbeanspruchung standhält.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "648"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sockel",
+        "zementputz"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "sortenrein",
+      "begriff": "sortenrein",
+      "definition": "Nach Materialarten getrennt, ohne Vermischung mit anderen Stoffen. Nur sortenrein gewonnene Baustoffe lassen sich gut wiederverwenden oder recyceln.",
+      "beispiel": "Lose verlegte Dämmplatten lassen sich sortenrein zurückgewinnen, vollflächig verklebte nicht.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "146"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "sperrschicht",
+      "begriff": "Sperrschicht",
+      "definition": "Lage aus wasserundurchlässigem Material, etwa einer geklebten Bitumenbahn, die Feuchte an einer bestimmten Stelle im Bauteil sperrt. Waagerecht schützt sie das aufgehende Mauerwerk vor aufsteigender Feuchte, senkrecht dichtet sie die Kellerwand ab; über offenen Stoßfugen fängt sie Wasser aus dem Schalenzwischenraum ab.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "231"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "querschnittsabdichtung",
+        "abdichtung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "spritzwasser",
+      "begriff": "Spritzwasser",
+      "varianten": [
+        "Spritzwasserbereich",
+        "Spritzwasserbeanspruchung"
+      ],
+      "definition": "Regenwasser, das beim Aufprall auf waagerechte oder flach geneigte Flächen zurückprallt und an benachbarte aufgehende Bauteile geworfen wird. Es durchnässt, schädigt oder verschmutzt dort die untere Wandzone.",
+      "beispiel": "Betroffen sind nicht nur Wände direkt am Gelände, sondern auch Wandflächen über Gesimsen und Balkonplatten; deshalb wird der Außenputz in diesem Bereich, rund einen halben Meter hoch, als Zementputz ausgeführt.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "478"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "sockel",
+        "zementputz",
+        "kiesstreifen"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "stauwasser",
+      "begriff": "Stauwasser",
+      "definition": "Sickerwasser, das auf eine wenig durchlässige Bodenschicht trifft, sich dort aufstaut und dann zeitweise Druck auf erdberührte Bauteile ausübt.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "162"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "drueckendes-wasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "stossfuge",
+      "begriff": "Stoßfuge",
+      "definition": "Senkrechte Fuge zwischen zwei nebeneinanderliegenden Steinen derselben Schicht. In übereinanderliegenden Schichten dürfen die Stoßfugen nicht direkt aufeinandertreffen.",
+      "beispiel": "Am Fuß einer Vormauerschale bleiben einzelne Stoßfugen offen, damit Wasser aus dem Schalenzwischenraum abfließen kann.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "130"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "mauerwerkschicht",
+        "entwaesserungsoeffnung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "tauwasser",
+      "begriff": "Tauwasser",
+      "varianten": [
+        "Tauwasserausfall"
+      ],
+      "definition": "Wasser, das sich aus abkühlendem Wasserdampf niederschlägt, an kalten Oberflächen oder im Inneren eines Bauteils; auch Kondenswasser genannt. Es kann Dämmstoffe durchfeuchten und zu Schimmel oder Frostschäden führen.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "diffusion",
+        "kaltseite"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "trennfuge",
+      "begriff": "Trennfuge",
+      "definition": "Fuge, die zwei Bauteile oder Bauteilflächen bewusst voneinander trennt, sodass keine starre Verbindung entsteht.",
+      "beispiel": "Zwischen den Haustrennwänden von Reihenhäusern verhindert eine durchgehende Trennfuge Schallbrücken.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "133"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "kellenschnitt"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "typenkurzzeichen",
+      "begriff": "Typenkurzzeichen",
+      "definition": "Kennzeichnung eines Dämmstoffs nach DIN V 4108-10. Sie kombiniert ein Kürzel für den Einsatzort (z. B. PW, PB, WAP, WZ) mit Kürzeln für Produkteigenschaften, etwa dh für hohe Druckbelastbarkeit oder wd für die höchste Anforderung an die Wasseraufnahme.",
+      "beispiel": "PW-dh steht für eine Perimeterdämmung an Wänden mit hoher Druckbelastbarkeit.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "druckbelastbarkeit"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "umkehrdach",
+      "begriff": "Umkehrdach",
+      "definition": "Flachdach, bei dem die Wärmedämmung über der Abdichtung liegt und damit der Witterung ausgesetzt ist. Der Dämmstoff muss deshalb wasserunempfindlich sein, typischerweise XPS.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "xps"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "vakuum-isolations-paneel",
+      "begriff": "Vakuum-Isolations-Paneel",
+      "varianten": [
+        "VIP"
+      ],
+      "definition": "Dämmplatte, deren Kern luftleer gemacht und dicht umhüllt ist. Durch das Vakuum erreicht sie eine Wärmeleitfähigkeit von nur etwa 0,004 bis 0,008 W/(m·K) und dämmt damit bei sehr geringer Dicke.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "waermeleitfaehigkeit"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "vormauerschale",
+      "begriff": "Vormauerschale",
+      "varianten": [
+        "Verblendschale"
+      ],
+      "definition": "Äußere, nicht tragende Schale einer zweischaligen Außenwand, gemauert aus frostbeständigen Steinen mit einer Mindestdicke von 11,5 cm. Sie schützt die dahinterliegenden Schichten vor Witterung, kann aber von Schlagregen durchnässt werden.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "136"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zweischalig",
+        "innenschale",
+        "wetterschale"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "wandfuss",
+      "begriff": "Wandfuß",
+      "varianten": [
+        "Fußpunkt"
+      ],
+      "definition": "Unteres Ende einer Wand, allgemein eines Bauteils (Fußpunkt), an dem es auf Fundament, Bodenplatte oder Decke aufsteht. Hier schließen meist horizontale und vertikale Abdichtung aneinander an.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "135"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "hohlkehle",
+        "entwaesserungsoeffnung"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "waermebruecke",
+      "begriff": "Wärmebrücke",
+      "definition": "Stelle der Gebäudehülle, an der Wärme deutlich schneller nach außen abfließt als in der umgebenden Fläche, etwa wo gut leitende Bauteile die Dämmung durchdringen. Folgen sind höhere Wärmeverluste und Schimmelgefahr durch Tauwasser an der kalten Innenoberfläche.",
+      "beispiel": "Eine thermisch nicht getrennte Betonbalkonplatte, die aus der Decke durch die Dämmung nach außen läuft.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "tauwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "waermeleitfaehigkeit",
+      "begriff": "Wärmeleitfähigkeit",
+      "definition": "Kennwert λ in W/(m·K), der angibt, wie gut ein Stoff Wärme leitet. Je kleiner der Wert, desto besser dämmt der Stoff.",
+      "beispiel": "Ruhende Luft hat etwa 0,024 W/(m·K), Wasser rund 0,6 W/(m·K) – deshalb verliert ein durchnässter Dämmstoff einen Großteil seiner Wirkung.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "134"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "daemmstoff"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "wetterschale",
+      "begriff": "Wetterschale",
+      "definition": "Äußerste Schale einer mehrschaligen Außenwand oder Fassade, die Regen und Wind abhält und so die dahinterliegenden Funktionsschichten schützt.",
+      "beispiel": "Bei zweischaligem Mauerwerk ist die Vormauerschale die Wetterschale; die Abdichtung liegt dahinter auf der Innenschale.",
+      "quelle": {
+        "werk": "DETAIL Atlas Fassaden",
+        "seite": "37"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "vormauerschale"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "xps",
+      "begriff": "XPS",
+      "varianten": [
+        "Polystyrol-Extruderschaum"
+      ],
+      "definition": "Polystyrol-Extruderschaum: Dämmstoff aus Polystyrol, das in einem Extruder aufgeschmolzen, mit einem Treibmittel aufgeschäumt und zu Platten geformt wird. Seine Wasseraufnahme ist gering und er hält hohe Druckbelastung aus; gegen UV-Licht ist er nicht beständig.",
+      "beispiel": "Typischer Einsatz: Perimeterdämmung, Dämmung unter Bodenplatten und Umkehrdach.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "137"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "perimeterdaemmung",
+        "eps"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "zementmoertel",
+      "begriff": "Zementmörtel",
+      "definition": "Mörtel mit Zement als einzigem Bindemittel. Er wird dort verwendet, wo Putz oder Mauerwerk dauerhaft feucht beansprucht wird, etwa im Erdreich und auf Sperrschichten.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "231"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zementputz",
+        "moertelgruppe"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "zementputz",
+      "begriff": "Zementputz",
+      "varianten": [
+        "Zementmörtelverputz"
+      ],
+      "definition": "Putz aus Zementmörtel. Er ist fest und unempfindlich gegen Feuchte und Frost und wird deshalb im Erdreich, am Sockel und im Spritzwasserbereich eingesetzt.",
+      "beispiel": "Außenputz wird im Spritzwasserbereich, also rund einen halben Meter über Gelände, als Zementputz ausgeführt.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "478"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "zementmoertel",
+        "spritzwasser"
+      ],
+      "stand": "2026-10"
+    },
+    {
+      "id": "zweischalig",
+      "begriff": "zweischalig",
+      "varianten": [
+        "zweischaligem"
+      ],
+      "definition": "Aus zwei getrennten Schalen aufgebaut. Zweischaliges Mauerwerk besteht aus einer tragenden Innenschale und einer davor gemauerten Außenschale, die durch Drahtanker verbunden sind; dazwischen liegen Kerndämmung oder Luftschicht.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "136"
+      },
+      "themen": [
+        "sockel-erdberuehrt"
+      ],
+      "siehe": [
+        "innenschale",
+        "vormauerschale",
+        "schalenzwischenraum"
+      ],
+      "stand": "2026-10"
+    }
+  ]
+}
