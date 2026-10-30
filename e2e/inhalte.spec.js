@@ -66,7 +66,7 @@ test('Lernziele und Querverweise im Erklaerstueck, Begruendung je Option in Nach
   await expect(page.locator('.sieheAuch')).toBeVisible()
 
   await page.locator('.textknopf', { hasText: 'Zurück' }).first().click()
-  await page.locator('.navKnopf', { hasText: 'Nachschlagen' }).click()
+  await page.locator('.navKnopf', { hasText: 'Durchsicht' }).click()
   const sockel = JSON.parse(fs.readFileSync('public/pakete/arch-de/items/bk-sockel.json', 'utf8'))
   const mc = sockel.items.find((i) => i.typ === 'mehrfachauswahl')
   await page.locator('.suchfeld').fill(mc.frage.split(' ').slice(0, 5).join(' '))

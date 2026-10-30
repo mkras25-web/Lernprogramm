@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react'
 import Bildlupe from '../components/Bildlupe.jsx'
+import { DurchsichtMarke } from '../components/Durchsicht.jsx'
+import { bildSchluessel, nebenzielStand } from '../lib/durchsicht.js'
 
 // Bild- und Detailbibliothek (F1, 2026-10-13): alle Zeichnungen des
 // Pakets als Raster, nach Thema gruppiert - Konstruktionsdetails gezielt
 // nachschlagen, ohne die Karte zu kennen. Je Bild "Karte oeffnen" bzw.
 // "Thema", gross per Lupe.
-export default function Bilder({ themen, items, onKarte, onThema }) {
+export default function Bilder({ themen, items, durchsicht = {}, marken = new Map(), onKarte, onThema }) {
   const [suche, setSuche] = useState('')
   const [modul, setModul] = useState('')
 
@@ -44,9 +46,14 @@ export default function Bilder({ themen, items, onKarte, onThema }) {
     .filter((g) => !modul || g.thema.modulId === modul)
     .map((g) => ({
       ...g,
-      bilder: wort
+      bilder: (wort
         ? g.bilder.filter((b) => `${b.text} ${g.thema.titel}`.toLowerCase().includes(wort))
-        : g.bilder,
+        : g.bilder
+      ).map((b) => {
+        // Durchsicht-Marke je Bild ("offen" zeigt nichts)
+        const stand = nebenzielStand(durchsicht, marken, bildSchluessel(b.src))
+        return { ...b, stand: stand && stand.stand !== 'offen' ? stand : null }
+      }),
     }))
     .filter((g) => g.bilder.length > 0)
   const anzahl = sichtbar.reduce((n, g) => n + g.bilder.length, 0)
@@ -86,7 +93,12 @@ export default function Bilder({ themen, items, onKarte, onThema }) {
             {bilder.map((b) => (
               <figure key={b.src} className="zeichnungsKachel">
                 <Bildlupe src={b.src} alt={b.text ?? ''} />
-                {b.text && <figcaption className="quelle">{b.text}</figcaption>}
+                {(b.text || b.stand) && (
+                  <figcaption className="quelle">
+                    {b.text}{' '}
+                    <DurchsichtMarke stand={b.stand} />
+                  </figcaption>
+                )}
                 {b.itemId && onKarte && (
                   <button className="textknopf" onClick={() => onKarte(b.itemId)}>Karte öffnen</button>
                 )}

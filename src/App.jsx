@@ -32,7 +32,7 @@ import {
   speicherSichern,
 } from './lib/speicher.js'
 import { BEWERTUNG, fokusPensum, heuteBewertet, heuteNichtGewusst, intervallVorschau, istWiederholung, pensumBauen, zustaendeBerechnen } from './lib/planer.js'
-import { csvAusEreignissen, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
+import { beherrschungsgrad, csvAusEreignissen, GRADE, MEILENSTEIN_STUFEN, raengeFuer } from './lib/fortschritt.js'
 import { anwenden, laden as einstellungenLaden, speichern } from './lib/einstellungen.js'
 import { profilListe } from './lib/profile.js'
 import { kopieAnlegen } from './lib/kopien.js'
@@ -79,8 +79,12 @@ const Kalender = lazy(() => import('./screens/Kalender.jsx'))
 const Erklaerstueck = lazy(() => import('./components/Erklaerstueck.jsx'))
 import { KartenGrenze } from './components/Fehlergrenze.jsx'
 const AusDemKopf = lazy(() => import('./components/AusDemKopf.jsx'))
+import Einfuehrung from './components/Einfuehrung.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 import { standVon } from './lib/durchsicht.js'
+
+// Themenfokus: ganze Module stehen als "modul:<id>" in opt.fokusThemen.
+const FOKUS_MODUL = 'modul:'
 
 export default function App({ profilId, onProfilWechseln }) {
   const profilName = useMemo(
@@ -132,6 +136,9 @@ export default function App({ profilId, onProfilWechseln }) {
   // beide Handler ignorieren Tasten jetzt, solange ein .schleier offen ist,
   // und "?" wirkt im Lernbildschirm gar nicht.
   const [tastenhilfeOffen, setTastenhilfeOffen] = useState(false)
+  // Einfuehrung (Onboarding): Willkommenskarte auf Heute bzw. Einstellungen › Hilfe
+  const [einfuehrungOffen, setEinfuehrungOffen] = useState(false)
+  const willkommenErledigt = () => setOpt((o) => (o.willkommenGesehen ? o : { ...o, willkommenGesehen: true }))
 
   // Angefangene Pruefung (Pruefung.jsx speichert sie je Profil, 14A) -
   // hier nur die Kurzfassung fuer den Aufruf "Pruefung fortsetzen" auf Heute.
@@ -181,6 +188,8 @@ export default function App({ profilId, onProfilWechseln }) {
   }
   // Nachschlagen mit vorgewaehltem Durchsicht-Filter (Hinweis auf Heute).
   const [nachschlagenDurchsicht, setNachschlagenDurchsicht] = useState(null)
+  // Themen: Fachbereich und offenes Modul ueber das Oeffnen einer Themenseite hinweg
+  const themenStand = useRef({ bereich: null, modul: null })
   const [erklaerthema, setErklaerthema] = useState(() => themaAusAdresse())
   // "Aus dem Kopf" fuer ein Thema (L6)
   const [kopfThema, setKopfThema] = useState(null)
@@ -456,23 +465,45 @@ export default function App({ profilId, onProfilWechseln }) {
   // Verwandte Themen fuer die Verwechslungspaare im Tagespensum (L4).
   const verwandtschaft = useMemo(() => verwandteThemen(themen, aktiveItems), [themen, aktiveItems])
 
-  // Themenfokus (Heute): je gewaehltem Thema die Portion aus planer.js.
-  // Gewaehlte Themen, die es im aktiven Paket nicht gibt (anderes Paket,
-  // Thema entfernt), bleiben gespeichert, werden aber nicht gezeigt.
+  // Themenfokus (Heute): je gewaehltem Thema oder ganzem Modul die Portion
+  // aus planer.js. Module stehen als "modul:<id>" in derselben Liste
+  // fokusThemen. Gewaehltes, das es im aktiven Paket nicht gibt (anderes
+  // Paket, Thema entfernt), bleibt gespeichert, wird aber nicht gezeigt.
   const fokusUebersicht = useMemo(() => {
     return (opt.fokusThemen ?? [])
-      .map((id) => themen.find((t) => t.id === id))
-      .filter((t) => t && !t.geplant)
-      .map((thema) => {
-        const themaItems = erlaubteItems.filter((i) => i.themaId === thema.id)
-        const plan = fokusPensum(themaItems, zustaende, aktiveEreignisse, { neuProTag: opt.neuProTag, maxProTag: opt.maxProTag })
-        return { thema, plan, anzahl: themaItems.length }
+      .map((id) => {
+        if (id.startsWith(FOKUS_MODUL)) {
+          const modulId = id.slice(FOKUS_MODUL.length)
+          const thema = themen.find((t) => t.modulId === modulId)
+          if (!thema) return null
+          return { id, titel: thema.modulTitel, modul: true, bereich: { modulId }, items: erlaubteItems.filter((i) => i.modulId === modulId) }
+        }
+        const thema = themen.find((t) => t.id === id)
+        if (!thema || thema.geplant) return null
+        return { id, titel: thema.titel, modul: false, bereich: { themaId: id }, items: erlaubteItems.filter((i) => i.themaId === id) }
       })
-      .filter((f) => f.anzahl > 0)
+      .filter((f) => f && f.items.length > 0)
+      .map(({ items, ...f }) => ({
+        ...f,
+        plan: fokusPensum(items, zustaende, aktiveEreignisse, { neuProTag: opt.neuProTag, maxProTag: opt.maxProTag }),
+        // Fortschritt wie in Themen: Anteil der Karten ab "sicher"
+        gesamt: items.length,
+        sicher: items.filter((i) => GRADE.indexOf(beherrschungsgrad(zustaende.get(i.id))) >= 2).length,
+      }))
   }, [opt.fokusThemen, opt.neuProTag, opt.maxProTag, themen, erlaubteItems, zustaende, aktiveEreignisse])
+  // Auswahl je Modul: das ganze Modul (falls noch nicht gewaehlt) und die
+  // noch nicht gewaehlten Themen.
   const fokusWaehlbar = useMemo(() => {
     const gewaehlt = new Set(opt.fokusThemen ?? [])
-    return themen.filter((t) => !t.geplant && t.anzahl > 0 && !gewaehlt.has(t.id))
+    const gruppen = new Map()
+    for (const t of themen) {
+      if (t.geplant || !(t.anzahl > 0)) continue
+      if (!gruppen.has(t.modulId)) {
+        gruppen.set(t.modulId, { id: FOKUS_MODUL + t.modulId, titel: t.modulTitel, modulFrei: !gewaehlt.has(FOKUS_MODUL + t.modulId), themen: [] })
+      }
+      if (!gewaehlt.has(t.id)) gruppen.get(t.modulId).themen.push(t)
+    }
+    return [...gruppen.values()].filter((g) => g.modulFrei || g.themen.length > 0)
   }, [opt.fokusThemen, themen])
 
   const {
@@ -1004,6 +1035,15 @@ export default function App({ profilId, onProfilWechseln }) {
   if (erklaerthema && themen.some((t) => t.id === erklaerthema)) {
     const thema = themen.find((t) => t.id === erklaerthema)
     const themaItems = aktiveItems.filter((i) => i.themaId === thema.id)
+    // Verwandte Themen aus "siehe" in beide Richtungen (Themendatei und
+    // Karten), nur solche mit lernbaren Karten - fuer "Gemischt mit
+    // verwandten Themen". Bewusst ohne gemeinsame Tags (verwandtschaft),
+    // die verbinden zu breit.
+    const sieheIds = new Set([...(thema.siehe ?? []), ...themaItems.flatMap((i) => i.siehe ?? [])])
+    for (const t of themen) if (t.siehe?.includes(thema.id)) sieheIds.add(t.id)
+    for (const i of aktiveItems) if (i.siehe?.includes(thema.id)) sieheIds.add(i.themaId)
+    sieheIds.delete(thema.id)
+    const verwandte = themen.filter((t) => sieheIds.has(t.id) && !t.geplant && erlaubteItems.some((i) => i.themaId === t.id))
     return mitLexikon(
       <div className="huelle einspaltig">
         <Nachladen>
@@ -1013,6 +1053,7 @@ export default function App({ profilId, onProfilWechseln }) {
           items={themaItems}
           zustaende={zustaende}
           marken={marken}
+          durchsicht={durchsicht}
           profilId={profilId}
           // Nur anbieten, wenn die Vorab-Runde auch etwas findet: sie waehlt
           // aus den erlaubten Karten (ohne ausgeblendete/ungepruefte).
@@ -1031,6 +1072,15 @@ export default function App({ profilId, onProfilWechseln }) {
           }).pensum.length}
           onLernen={() => sitzungStarten('ueben', { themaId: thema.id })}
           onUeben={() => sitzungStarten('marathon', { themaId: thema.id })}
+          verwandte={verwandte}
+          onVerwandtUeben={verwandte.length > 0
+            ? () => sitzungStarten('ueben', { themaIds: new Set([thema.id, ...verwandte.map((t) => t.id)]), erstesThema: thema.id, mischen: true })
+            : null}
+          imFokus={(opt.fokusThemen ?? []).includes(thema.id)}
+          onFokus={() => setOpt((o) => {
+            const liste = o.fokusThemen ?? []
+            return { ...o, fokusThemen: liste.includes(thema.id) ? liste.filter((id) => id !== thema.id) : [...liste, thema.id] }
+          })}
           onZurueck={() => themaSchliessen(thema.id, setErklaerthema)}
         />
         </Nachladen>
@@ -1128,9 +1178,12 @@ export default function App({ profilId, onProfilWechseln }) {
           onStart={(art) => sitzungStarten(art, {})}
           fokus={fokusUebersicht}
           fokusWaehlbar={fokusWaehlbar}
-          onFokusStart={(themaId) => sitzungStarten('fokus', { themaId })}
-          onFokusHinzu={(themaId) => setOpt((o) => ({ ...o, fokusThemen: [...new Set([...(o.fokusThemen ?? []), themaId])] }))}
-          onFokusEntfernen={(themaId) => setOpt((o) => ({ ...o, fokusThemen: (o.fokusThemen ?? []).filter((id) => id !== themaId) }))}
+          onFokusStart={(bereich) => sitzungStarten('fokus', bereich)}
+          onFokusHinzu={(fokusId) => setOpt((o) => ({ ...o, fokusThemen: [...new Set([...(o.fokusThemen ?? []), fokusId])] }))}
+          onFokusEntfernen={(fokusId) => setOpt((o) => ({ ...o, fokusThemen: (o.fokusThemen ?? []).filter((id) => id !== fokusId) }))}
+          willkommen={!laedt && !opt.willkommenGesehen && ereignisse.length === 0}
+          onWillkommen={() => setEinfuehrungOffen(true)}
+          onWillkommenAus={willkommenErledigt}
           onThemen={() => setAnsicht('themen')}
           nichtGewusst={nichtGewusst}
           onOeffnen={oeffneItem}
@@ -1180,6 +1233,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onStart={sitzungStarten}
           onErklaerung={setErklaerthema}
           onLernzettel={setLernzettelThema}
+          stand={themenStand.current}
           onWunschliste={() =>
             textHerunterladen(
               wunschlisteMarkdown({ module, themen, phasen }),
@@ -1298,6 +1352,8 @@ export default function App({ profilId, onProfilWechseln }) {
         <Bilder
           themen={themen}
           items={aktiveItems}
+          durchsicht={durchsicht}
+          marken={marken}
           onKarte={oeffneItem}
           onThema={(id) => setErklaerthema(id)}
         />
@@ -1388,12 +1444,16 @@ export default function App({ profilId, onProfilWechseln }) {
           profilName={profilName}
           onProfilWechseln={onProfilWechseln}
           onTastenhilfe={() => setTastenhilfeOffen(true)}
+          onEinfuehrung={() => setEinfuehrungOffen(true)}
         />
       )}
 
       </Nachladen>
 
       <Tastenhilfe offen={tastenhilfeOffen} onSchliessen={() => setTastenhilfeOffen(false)} />
+      {einfuehrungOffen && (
+        <Einfuehrung onSchliessen={() => { setEinfuehrungOffen(false); willkommenErledigt() }} />
+      )}
     </div>
   )
 }

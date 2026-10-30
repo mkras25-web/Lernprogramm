@@ -36,7 +36,7 @@ function useSpeicherSchaetzung() {
 
 export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung, speicherGeschuetzt = null,
-  onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onMeldung, abgleich,
+  onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onEinfuehrung, onMeldung, abgleich,
   kursplan = { kurse: [], klausuren: [] }, kursplanAendern, kennungen = new Map(),
   profilId, dropboxVerbunden = false, onWiederherstellen,
 }) {
@@ -655,12 +655,25 @@ export default function Einstellungen({
         </div>
       </section>
 
-      {/* Tastenkuerzel ergeben nur mit Tastatur Sinn - auf reinen
-          Touch-Geraeten ausgeblendet (geraete-, nicht breitenabhaengig). */}
-      <section className="block nurTastatur">
+      <section className="block">
         <h2 className="abschnitt">Hilfe</h2>
         <div className="feldgruppe">
-          <div className="zeile">
+          {onEinfuehrung && (
+            <div className="zeile">
+              <div className="zeileText">
+                <p className="zeileTitel">Einführung</p>
+                <p className="zeileHinweis">
+                  Die vier Schritte vom ersten Start: Heute, Bewerten, Themen und Fokus, Sichern.
+                </p>
+              </div>
+              <button className="knopf schmal" onClick={onEinfuehrung}>
+                Anzeigen
+              </button>
+            </div>
+          )}
+          {/* Tastenkuerzel ergeben nur mit Tastatur Sinn - auf reinen
+              Touch-Geraeten ausgeblendet (geraete-, nicht breitenabhaengig). */}
+          <div className="zeile nurTastatur">
             <div className="zeileText">
               <p className="zeileTitel">Tastenkürzel</p>
               <p className="zeileHinweis">

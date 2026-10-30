@@ -6,6 +6,25 @@
 // Verwandt heisst: ein Thema nennt das andere in "siehe" (Themen- oder
 // Itemebene), oder zwei Karten verschiedener Themen teilen ein Tag.
 
+// Karten reihum nach Thema anordnen (erstes Thema zuerst, sonst in der
+// Reihenfolge des ersten Auftretens), Reihenfolge je Thema bleibt. Fuer
+// "Gemischt mit verwandten Themen": pensumBauen nimmt neue Karten von vorn -
+// ohne das kaemen alle neuen aus dem ersten Thema der Paketreihenfolge.
+export function reihumNachThema(items, erstesThema = null) {
+  const jeThema = new Map()
+  if (erstesThema) jeThema.set(erstesThema, [])
+  for (const i of items) {
+    if (!jeThema.has(i.themaId)) jeThema.set(i.themaId, [])
+    jeThema.get(i.themaId).push(i)
+  }
+  const listen = [...jeThema.values()].filter((l) => l.length > 0)
+  const ergebnis = []
+  for (let n = 0; ergebnis.length < items.length; n++) {
+    for (const l of listen) if (n < l.length) ergebnis.push(l[n])
+  }
+  return ergebnis
+}
+
 // Themen-ID -> Menge verwandter Themen-IDs (symmetrisch).
 export function verwandteThemen(themen = [], items = []) {
   const karte = new Map()

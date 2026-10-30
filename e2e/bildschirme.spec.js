@@ -14,8 +14,12 @@ test('Bildschirmadresse: Zurueck und Neuladen bleiben auf dem Bildschirm', async
   await angemeldet(page, 'Adresse')
   await page.locator('.navKnopf', { hasText: 'Themen' }).click()
   await expect(page).toHaveURL(/#\/themen$/)
-  await page.locator('.navKnopf', { hasText: 'Normen' }).click()
+  // Normen ist seit 2026-10-29 ein Reiter unter Nachschlagen (#/glossar)
+  await page.locator('.navKnopf', { hasText: 'Nachschlagen' }).click()
+  await page.locator('.reiterKnopf', { hasText: 'Normen' }).click()
   await expect(page).toHaveURL(/#\/glossar$/)
+  await page.goBack()
+  await expect(page).toHaveURL(/#\/lexikon$/)
   await page.goBack()
   await expect(page.getByRole('heading', { name: 'Themen', exact: true })).toBeVisible()
   await page.reload()
@@ -33,7 +37,7 @@ test('Tastatur: G dann T oeffnet Themen, / springt in die Suche', async ({ page 
   await expect(page.locator('.suchfeld')).toBeFocused()
 })
 
-test('Fehlerbuch und Mein Heft sammeln, Querweg oeffnet die Karte in Nachschlagen', async ({ page }) => {
+test('Fehlerbuch und Mein Heft sammeln, Querweg oeffnet die Karte in der Durchsicht', async ({ page }) => {
   await angemeldet(page, 'Sammeln')
   await page.locator('button', { hasText: /^Lernen$/ }).first().click()
   await ersteKarte(page)
@@ -47,7 +51,7 @@ test('Fehlerbuch und Mein Heft sammeln, Querweg oeffnet die Karte in Nachschlage
   await expect(page.locator('.trefferKarte', { hasText: frage.slice(0, 40) })).toContainText('1× falsch')
   await page.locator('.navKnopf', { hasText: 'Mein Heft' }).click()
   await expect(page.locator('.trefferKarte', { hasText: frage.slice(0, 40) })).toContainText('Lesezeichen')
-  await page.getByRole('button', { name: 'In Nachschlagen öffnen' }).first().click()
+  await page.getByRole('button', { name: 'In der Durchsicht öffnen' }).first().click()
   await expect(page.locator('.itemansicht')).toContainText(frage.slice(0, 40))
 })
 
@@ -59,9 +63,9 @@ test('Sammlung ist ein Reiter unter Fortschritt', async ({ page }) => {
   await expect(page.locator('.navKnopf', { hasText: 'Fortschritt' })).toHaveClass(/aktiv/)
 })
 
-test('Nachschlagen: Checkboxen erst im Sichten-Modus', async ({ page }) => {
+test('Durchsicht: Checkboxen erst im Sichten-Modus', async ({ page }) => {
   await angemeldet(page, 'Sichten')
-  await page.locator('.navKnopf', { hasText: 'Nachschlagen' }).click()
+  await page.locator('.navKnopf', { hasText: 'Durchsicht' }).click()
   await expect(page.locator('.sichtungKopf input[type=checkbox]')).toHaveCount(0)
   await page.getByRole('button', { name: 'Sichten', exact: true }).click()
   await expect(page.locator('.sichtungKopf input[type=checkbox]').first()).toBeVisible()
@@ -96,4 +100,19 @@ test('Lernzettel eines Themas ist erreichbar und druckbar', async ({ page }) => 
   await page.locator('.artKnopf', { hasText: 'Lernzettel' }).first().click()
   await expect(page.locator('.lernzettel .zettelKarte').first()).toBeVisible()
   await expect(page.getByRole('button', { name: 'Drucken / als PDF' })).toBeVisible()
+})
+
+test('Einfuehrung: Willkommenskarte bei neuem Profil, vier Schritte, danach weg (2026-10-29)', async ({ page }) => {
+  await angemeldet(page, 'Willkommen')
+  await page.getByRole('button', { name: 'Einführung ansehen' }).click()
+  for (const titel of ['Heute', 'Aufdecken und bewerten', 'Themen, Fokus und Lexikon', 'Sichern und Dropbox']) {
+    await expect(page.locator('.einfuehrung .ueberschrift')).toHaveText(titel)
+    await page.locator('.einfuehrungWeiter').click()
+  }
+  await expect(page.locator('.einfuehrung')).toHaveCount(0)
+  await expect(page.locator('.heuteWillkommen')).toHaveCount(0)
+  // Wieder erreichbar ueber Einstellungen › Hilfe
+  await page.locator('.navKnopf', { hasText: 'Einstellungen' }).click()
+  await page.locator('.zeile', { hasText: 'Einführung' }).getByRole('button', { name: 'Anzeigen' }).click()
+  await expect(page.locator('.einfuehrung')).toBeVisible()
 })

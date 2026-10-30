@@ -41,7 +41,8 @@ test.describe('Mobil (< 60rem)', () => {
     await angemeldet(page, 'Nav-Mehr')
     await page.locator('.tabKnopf', { hasText: 'Mehr' }).tap()
     await expect(page.locator('.mehrBlatt')).toBeVisible()
-    await expect(page.locator('.mehrZeile')).toHaveCount(9)
+    // 12 Ziele minus 4 in der Leiste (Normen/Kennwerte seit 2026-10-29 Reiter)
+    await expect(page.locator('.mehrZeile')).toHaveCount(8)
 
     await page.locator('.mehrZeile', { hasText: 'Einstellungen' }).tap()
     await expect(page.getByRole('heading', { name: 'Einstellungen' })).toBeVisible()
@@ -89,7 +90,7 @@ test.describe('Desktop (>= 60rem)', () => {
     await angemeldet(page, 'Nav-Desktop')
 
     await expect(page.locator('nav.navigation')).toBeVisible()
-    await expect(page.locator('.navigation .navKnopf')).toHaveCount(13)
+    await expect(page.locator('.navigation .navKnopf')).toHaveCount(12)
     await expect(page.locator('.tabLeiste')).toBeHidden()
   })
 

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
-  aenderungsFelder, durchsichtAnwenden, durchsichtZaehlen, entscheidungAenderung, standVon, wartendeNebenziele, wortDiff,
+  aenderungsFelder, bildSchluessel, durchsichtAnwenden, durchsichtZaehlen, entscheidungAenderung, nebenzielStand, standVon,
+  wartendeNebenziele, wortDiff,
 } from './durchsicht.js'
 
 const geaendert = {
@@ -23,6 +24,23 @@ describe('standVon', () => {
   })
   it('Entscheidung zu einer anderen Fassung zaehlt nicht', () => {
     expect(standVon(geaendert, { durchsicht: { entscheidung: 'angenommen', hash: 'alt' } }).stand).toBe('wartet')
+  })
+})
+
+describe('Erklaerstueck- und Bildmarken', () => {
+  it('Bildpfad wird zum Durchsicht-Schluessel, Buchausschnitte nicht', () => {
+    expect(bildSchluessel('/pakete/arch-de/bilder/x.svg')).toBe('bild:bilder/x.svg')
+    expect(bildSchluessel('bilder/x.svg')).toBe('bild:bilder/x.svg')
+    expect(bildSchluessel('/pakete/arch-de/bilder-lokal/x.png')).toBe(null)
+    expect(bildSchluessel(undefined)).toBe(null)
+  })
+  it('Stand ueber den Schluessel, ohne Schluessel nichts', () => {
+    const eintraege = { 'erklaerung:t1': { stand: 'geprueft', datum: '2026-10-18' }, 'bild:bilder/x.svg': geaendert }
+    const marken = new Map([['bild:bilder/x.svg', { durchsicht: { entscheidung: 'abgelehnt', hash: 'h1' } }]])
+    expect(nebenzielStand(eintraege, marken, 'erklaerung:t1').stand).toBe('geprueft')
+    expect(nebenzielStand(eintraege, marken, 'bild:bilder/x.svg').stand).toBe('abgelehnt')
+    expect(nebenzielStand(eintraege, marken, 'erklaerung:t2').stand).toBe('offen')
+    expect(nebenzielStand(eintraege, marken, null)).toBe(null)
   })
 })
 

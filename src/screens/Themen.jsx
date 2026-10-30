@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Ring from '../components/Ring.jsx'
 import NichtVerfuegbar from '../components/NichtVerfuegbar.jsx'
 import { passt } from '../lib/suche.js'
@@ -16,12 +16,22 @@ export default function Themen({
   onErklaerung,
   onWunschliste,
   onLernzettel,
+  stand = null,
 }) {
   // Abdeckungsuebersicht (20A): welche Themen haben schon Inhalt?
   const [abdeckung, setAbdeckung] = useState(false)
   const liste = Object.entries(bereiche ?? {})
-  const [bereich, setBereich] = useState(liste[0]?.[0] ?? null)
-  const [offenesModul, setOffenesModul] = useState(null)
+  // Fachbereich und offenes Modul ueberstehen das Oeffnen einer Themenseite
+  // (dafuer wird dieser Bildschirm ausgehaengt): App haelt sie in "stand".
+  const [bereich, setBereich] = useState(
+    liste.some(([id]) => id === stand?.bereich) ? stand.bereich : liste[0]?.[0] ?? null
+  )
+  const [offenesModul, setOffenesModul] = useState(stand?.modul ?? null)
+  useEffect(() => {
+    if (!stand) return
+    stand.bereich = bereich
+    stand.modul = offenesModul
+  }, [stand, bereich, offenesModul])
   const [suche, setSuche] = useState('')
   const sucheAktiv = suche.trim().length > 0
 

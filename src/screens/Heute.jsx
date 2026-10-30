@@ -15,6 +15,7 @@ export default function Heute({
   kurse = [], onKurs, onVorschlaegeUebernehmen, onKursPruefung, onKurseVerwalten, onKlausurErgebnis,
   nichtGewusst = [], onOeffnen,
   fokus = [], fokusWaehlbar = [], onFokusStart, onFokusHinzu, onFokusEntfernen,
+  willkommen = false, onWillkommen, onWillkommenAus,
 }) {
   const [waehlt, setWaehlt] = useState(false)
   // Klausur-Countdown (4B): naechste anstehende Klausur(en), nur Anzeige.
@@ -35,6 +36,20 @@ export default function Heute({
   return (
     <div role="main" className="schirm">
       <div className="heuteRaster">
+        {/* Onboarding: nur neue Profile ohne Antwort, bis gesehen/weggeklickt.
+            Mobil per order ganz oben (heuteWillkommen, styles.css). */}
+        {willkommen && (
+          <section className="heuteBreit heuteWillkommen">
+            <div className="aufruf">
+              <div>
+                <p className="aufrufZahl">Willkommen!</p>
+                <p className="nebentext">Eine kurze Einführung in vier Schritten – wie Lernen, Bewerten und Sichern hier funktionieren.</p>
+              </div>
+              <button className="knopf haupt schmal" onClick={onWillkommen}>Einführung ansehen</button>
+              <button className="textknopf" onClick={onWillkommenAus}>Nein danke</button>
+            </div>
+          </section>
+        )}
         {anstehend.length > 0 && (
           <section className="heuteBreit klausurLeiste">
             {anstehend.slice(0, 3).map((k, i) => (
@@ -119,15 +134,19 @@ export default function Heute({
           )}
         </section>
 
-        {/* Themenfokus: eigener Lernknopf je gewaehltem Thema. Mobil sitzt
-            der Block wie "Lernen" ganz oben (heuteFokus, styles.css). */}
+        {/* Themenfokus: eigener Lernknopf je gewaehltem Thema oder ganzem
+            Modul. Mobil sitzt der Block wie "Lernen" ganz oben (heuteFokus,
+            styles.css). */}
         {onFokusHinzu && (fokus.length > 0 || fokusWaehlbar.length > 0) && (
           <section className="heuteBreit heuteFokus">
-            {fokus.map(({ thema, plan }) => (
-              <div key={thema.id} className="aufruf">
+            {fokus.map(({ id, titel, modul, bereich, plan, gesamt, sicher }) => (
+              <div key={id} className="aufruf">
+                <Ring anteil={gesamt ? sicher / gesamt : 0} groesse={40} staerke={4} />
                 <div>
-                  <p className="aufrufZahl">{thema.titel}</p>
+                  <p className="aufrufZahl">{titel}</p>
                   <p className="nebentext">
+                    {modul && 'Ganzes Modul · '}
+                    {sicher} von {gesamt} sicher ·{' '}
                     {plan.pensum.length === 0
                       ? 'Hier ist heute nichts offen.'
                       : [
@@ -141,11 +160,11 @@ export default function Heute({
                 <button
                   className="knopf haupt schmal"
                   disabled={plan.pensum.length === 0}
-                  onClick={() => onFokusStart(thema.id)}
+                  onClick={() => onFokusStart(bereich)}
                 >
-                  Thema lernen
+                  {modul ? 'Modul lernen' : 'Thema lernen'}
                 </button>
-                <button className="textknopf" onClick={() => onFokusEntfernen(thema.id)}>entfernen</button>
+                <button className="textknopf" onClick={() => onFokusEntfernen(id)}>entfernen</button>
               </div>
             ))}
             {fokusWaehlbar.length > 0 && (
@@ -153,7 +172,7 @@ export default function Heute({
                 <div className="aufruf ruhig">
                   <select
                     className="suchfeld"
-                    aria-label="Thema für den Fokus wählen"
+                    aria-label="Thema oder Modul für den Fokus wählen"
                     defaultValue=""
                     onChange={(e) => {
                       if (!e.target.value) return
@@ -161,10 +180,11 @@ export default function Heute({
                       setWaehlt(false)
                     }}
                   >
-                    <option value="">Thema wählen …</option>
-                    {[...new Set(fokusWaehlbar.map((t) => t.modulTitel))].map((modul) => (
-                      <optgroup key={modul} label={modul}>
-                        {fokusWaehlbar.filter((t) => t.modulTitel === modul).map((t) => (
+                    <option value="">Thema oder Modul wählen …</option>
+                    {fokusWaehlbar.map((g) => (
+                      <optgroup key={g.id} label={g.titel}>
+                        {g.modulFrei && <option value={g.id}>Ganzes Modul: {g.titel}</option>}
+                        {g.themen.map((t) => (
                           <option key={t.id} value={t.id}>{t.titel}</option>
                         ))}
                       </optgroup>
@@ -174,7 +194,7 @@ export default function Heute({
                 </div>
               ) : (
                 <button className="textknopf" onClick={() => setWaehlt(true)}>
-                  + Thema hinzufügen{fokus.length === 0 ? ' (gezielt vorbereiten)' : ''}
+                  + Thema oder Modul hinzufügen{fokus.length === 0 ? ' (gezielt vorbereiten)' : ''}
                 </button>
               )
             )}
@@ -321,7 +341,7 @@ export default function Heute({
           </section>
         )}
 
-        <section className="block heuteBreit">
+        <section className="block heuteBreit artBereich">
           <h2 className="abschnitt">Betriebsarten</h2>
           <ul className="artKacheln">
             <ArtKachel
@@ -502,6 +522,13 @@ function KursKarte({ u, onKurs, onVorschlaege, onPruefung, onVerwalten, onErgebn
               text={`${u.lernItems.length} Fragen gemischt`}
               aus={u.lernItems.length === 0}
               onKlick={() => onKurs(kurs.id, 'alle')}
+            />
+            <ArtKachel
+              zeichen="↻︎"
+              titel="Kurs-Marathon"
+              text="Endlos, Fehler kommen wieder"
+              aus={u.lernItems.length === 0}
+              onKlick={() => onKurs(kurs.id, 'marathon')}
             />
             <ArtKachel
               zeichen="◈︎"

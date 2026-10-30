@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { skizzeSpeichern, ereignisSpeichern, ereignisLoeschen } from '../lib/speicher.js'
 import { BEWERTUNG, fokusPensum, pensumBauen, pensumNachNochmal } from '../lib/planer.js'
 import { xpFuerEreignis } from '../lib/fortschritt.js'
-import { verwandteNebeneinander } from '../lib/verwandt.js'
+import { reihumNachThema, verwandteNebeneinander } from '../lib/verwandt.js'
 
 // Vorab-Fragen (L1, 2026-10-13): nur Typen, die die App selbst auswerten
 // kann - beim Raten vor der Erklaerung soll die Rueckmeldung sofort kommen.
@@ -104,6 +104,7 @@ export function useLernsitzung({
     const daten = {
       art: neueSitzung.art,
       ids: neueSitzung.pensum.map((i) => i.id),
+      nachschub: neueSitzung.nachschub ?? null,
       position: pos,
       ts: Date.now(),
       // Bilanz reist mit: nach einem Neuladen nannte die Schlussmeldung
@@ -118,6 +119,10 @@ export function useLernsitzung({
     let grundmenge = erlaubteItems
     if (bereich.modulId) grundmenge = grundmenge.filter((i) => i.modulId === bereich.modulId)
     if (bereich.themaId) grundmenge = grundmenge.filter((i) => i.themaId === bereich.themaId)
+    // Thema mit seinen verwandten Themen ("siehe"), Themenseite.
+    if (bereich.themaIds) {
+      grundmenge = reihumNachThema(grundmenge.filter((i) => bereich.themaIds.has(i.themaId)), bereich.erstesThema)
+    }
     // Kurs (kurs.js): nur die Fragen des Kurses, sonst alles wie gewohnt.
     if (bereich.kursIds) grundmenge = grundmenge.filter((i) => bereich.kursIds.has(i.id))
 
@@ -168,7 +173,8 @@ export function useLernsitzung({
       }).pensum
     }
 
-    if (opt.reihenfolge === 'gemischt' && art !== 'blaettern' && art !== 'fokus') pensum = mischen(pensum)
+    // bereich.mischen: themenuebergreifend gemischt, auch bei fester Reihenfolge.
+    if ((opt.reihenfolge === 'gemischt' || bereich.mischen) && art !== 'blaettern' && art !== 'fokus') pensum = mischen(pensum)
     // Verwechslungspaare (L4): im normalen Tagespensum verwandte Karten
     // verschiedener Themen nacheinander - nur bei gemischter Reihenfolge,
     // die feste Themenreihenfolge bleibt unangetastet.
@@ -178,6 +184,9 @@ export function useLernsitzung({
     if (pensum.length === 0) return
 
     const neueSitzung = { art, pensum }
+    // Marathon ueber einen Ausschnitt (Thema, Modul, Kurs): beim Nachfuellen
+    // nur daraus, nicht aus dem ganzen Paket.
+    if (art === 'marathon' && grundmenge.length < erlaubteItems.length) neueSitzung.nachschub = grundmenge.map((i) => i.id)
     setSitzung(neueSitzung)
     setPosition(0)
     setLetzteXp(0)
@@ -201,7 +210,7 @@ export function useLernsitzung({
     bilanz.current = b && Number.isFinite(b.antworten)
       ? { antworten: b.antworten, richtig: b.richtig ?? 0, nochmal: { ...(b.nochmal ?? {}) }, start: b.start ?? Date.now() }
       : leereBilanz()
-    setSitzung({ art: offeneSitzung.art, pensum })
+    setSitzung({ art: offeneSitzung.art, pensum, nachschub: offeneSitzung.nachschub ?? null })
     setPosition(Math.min(offeneSitzung.position, pensum.length - 1))
     setLetzteXp(0)
     setVerlauf([])
@@ -239,7 +248,9 @@ export function useLernsitzung({
 
     // Marathon endet nicht von selbst - der Stapel wird nachgefuellt.
     if (sitzungJetzt.art === 'marathon' && naechste >= sitzungJetzt.pensum.length) {
-      const nachschub = mischen(erlaubteItems)
+      const auswahl = sitzungJetzt.nachschub ? new Set(sitzungJetzt.nachschub) : null
+      const quelle = auswahl ? erlaubteItems.filter((i) => auswahl.has(i.id)) : erlaubteItems
+      const nachschub = mischen(quelle.length > 0 ? quelle : erlaubteItems)
       const erweitert = { ...sitzungJetzt, pensum: [...sitzungJetzt.pensum, ...nachschub] }
       setSitzung(erweitert)
       setPosition(naechste)

@@ -75,6 +75,9 @@ export const STANDARD = {
   vertiefungZeigen: true,
   // Themen, deren Einfuehrungsschritt (D4) auf diesem Geraet gelesen ist
   eingefuehrt: [],
+  // Willkommenskarte/Einfuehrung (Onboarding) gesehen oder weggeklickt -
+  // reist mit, damit sie auf dem zweiten Geraet nicht wiederkommt.
+  willkommenGesehen: false,
   ueberspringenErlauben: true,
   skizzenSichern: true,
   // Zeichenfragen (Typ "skizze") weder lernen noch pruefen.
@@ -98,7 +101,7 @@ export const ABGLEICH_LERNEN = [
   'neuProTag', 'maxProTag', 'zielBehaltensrate', 'fsrsGewichte', 'tagesziel',
   'reihenfolge', 'bewertungsstufen', 'ungeprueftZulassen', 'vertiefungZeigen',
   'ueberspringenErlauben', 'skizzenSichern', 'zeichenAusblenden', 'sichtungWeiter',
-  'aufstiegFeiern', 'fokusThemen',
+  'aufstiegFeiern', 'fokusThemen', 'willkommenGesehen',
 ]
 export const ABGLEICH_AUSSEHEN = ['palette', 'schriftgroesse', 'farbenblind', 'paletteVorFarbenblind', 'animationen', 'breite']
 const standSchluessel = (profilId) => `einstellungen_stand_${profilId}` // { name: ts der letzten Aenderung }

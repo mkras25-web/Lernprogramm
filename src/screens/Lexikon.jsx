@@ -41,16 +41,35 @@ export default function Lexikon({
     return eintraege.filter((e) => passt(suche, [e.begriff, ...e.varianten, e.definition, e.beispiel].filter(Boolean).join(' ')))
   }, [eintraege, suche])
 
+  // Im A–Z ohne Suche zusaetzlich Verweiszeilen fuer Varianten
+  // ("Horizontalsperre → Sperrschicht"). Ausgelassen: Varianten, die
+  // ohnehin neben dem Begriff stehen (gleicher Wortanfang, z. B. Plural)
+  // oder selbst ein Begriff sind.
+  const verweise = useMemo(() => {
+    const begriffe = new Set(eintraege.map((e) => e.begriff.toLocaleLowerCase('de')))
+    const liste = []
+    for (const e of eintraege) {
+      const b = e.begriff.toLocaleLowerCase('de')
+      for (const form of e.varianten) {
+        const v = form.toLocaleLowerCase('de')
+        if (begriffe.has(v) || v.slice(0, 4) === b.slice(0, 4) || v.startsWith(b) || b.startsWith(v)) continue
+        liste.push({ verweis: true, begriff: form, ziel: e })
+      }
+    }
+    return liste
+  }, [eintraege])
+
   const gruppen = useMemo(() => {
     const nachBuchstabe = new Map()
-    for (const e of sichtbar) {
+    const zeilen = suche.trim() ? sichtbar : [...sichtbar, ...verweise].sort((a, b) => a.begriff.localeCompare(b.begriff, 'de'))
+    for (const e of zeilen) {
       const b = e.begriff[0].toLocaleUpperCase('de').replace('Ä', 'A').replace('Ö', 'O').replace('Ü', 'U')
       const schluessel = /[A-Z]/.test(b) ? b : '#'
       if (!nachBuchstabe.has(schluessel)) nachBuchstabe.set(schluessel, [])
       nachBuchstabe.get(schluessel).push(e)
     }
     return [...nachBuchstabe.entries()]
-  }, [sichtbar])
+  }, [sichtbar, verweise, suche])
 
   const seite = (
     <div role="main" className="schirm lexikon">
@@ -80,6 +99,14 @@ export default function Lexikon({
               <h2 className="abschnitt">{buchstabe}</h2>
               <ul className="treffer">
                 {liste.map((e) => {
+                  if (e.verweis) {
+                    return (
+                      <li key={`verweis-${e.begriff}-${e.ziel.id}`} className="lexikonVerweis">
+                        {e.begriff} →{' '}
+                        <button className="textknopf" onClick={() => onZiel?.(e.ziel.id)}>{e.ziel.begriff}</button>
+                      </li>
+                    )
+                  }
                   const inKarten = karten.get(e.id) ?? []
                   const siehe = (e.siehe ?? []).map((id) => nachId.get(id)).filter(Boolean)
                   return (

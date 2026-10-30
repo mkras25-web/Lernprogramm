@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { verwandteNebeneinander, verwandteThemen } from './verwandt.js'
+import { reihumNachThema, verwandteNebeneinander, verwandteThemen } from './verwandt.js'
 
 const k = (id, themaId, extra = {}) => ({ id, themaId, ...extra })
 
@@ -32,5 +32,16 @@ describe('verwandteNebeneinander (L4)', () => {
     expect(new Set(neu.map((x) => x.id)).size).toBe(6)
     // Paar A0 B3, dann eine freie Karte (A1), dann Paar A2 B4, Rest B5
     expect(neu.map((x) => x.themaId).join('')).toBe('ABAABB')
+  })
+})
+
+describe('reihumNachThema', () => {
+  it('verteilt reihum, erstes Thema zuerst, Reihenfolge je Thema bleibt', () => {
+    const items = [k('a1', 'a'), k('a2', 'a'), k('a3', 'a'), k('b1', 'b'), k('c1', 'c'), k('c2', 'c')]
+    expect(reihumNachThema(items, 'c').map((i) => i.id)).toEqual(['c1', 'a1', 'b1', 'c2', 'a2', 'a3'])
+    expect(reihumNachThema(items).map((i) => i.id)).toEqual(['a1', 'b1', 'c1', 'a2', 'c2', 'a3'])
+  })
+  it('unbekanntes erstes Thema schadet nicht', () => {
+    expect(reihumNachThema([k('a1', 'a')], 'x').map((i) => i.id)).toEqual(['a1'])
   })
 })

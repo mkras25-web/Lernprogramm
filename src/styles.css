@@ -796,6 +796,7 @@ button.begriff:not(:disabled):active { transform: none; }
 .lexikonEintrag.ziel { border-color: var(--lehm); box-shadow: 0 0 0 2px var(--lehm); }
 .lexikonBegriff { margin: 0; font-family: var(--serife); font-size: 1.125rem; font-weight: normal; }
 .lexikonVarianten { font-family: var(--groteske); font-size: 0.8125rem; color: var(--rinde); }
+.lexikonVerweis { padding: 0 var(--karte-innen); font-size: 0.875rem; color: var(--rinde); }
 .lexikonText, .lexikonBeispiel { margin: 0; font-family: var(--serife); font-size: 0.9375rem; line-height: 1.65; }
 .lexikonMarke { font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rinde); }
 
@@ -1684,6 +1685,8 @@ html[data-farbenblind="an"] .schlechter::before { content: " ▼"; }
 .durchsichtMarke.geaendert { border-color: var(--lehm); border-style: dashed; }
 .durchsichtMarke.wartet { border-color: var(--warnung); color: var(--warnung); }
 .durchsichtMarke.abgelehnt { border-color: var(--lehm); }
+/* In Quell-/Bildunterschriftszeilen (Themenseite, Bilder) am Stueck halten */
+.quelle .durchsichtMarke { display: inline-block; white-space: nowrap; }
 .durchsichtBlock.wartet { border-left: 3px solid var(--warnung); padding-left: 0.75rem; }
 .durchsichtGrund { margin: 0.5rem 0; line-height: 1.5; }
 .durchsichtFeld { margin-top: 0.75rem; }
@@ -2924,6 +2927,11 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
 .tastenHinweis { margin: 0 0 0.5rem; }
 
 /* Zentrale Tastenkuerzel-Uebersicht (Tastenhilfe.jsx) */
+/* Einfuehrung (Onboarding, 2026-10-29): Schrittpunkte unter dem Text */
+.einfuehrung .erklaerungAbsatz { margin: 0 0 0.75rem; }
+.einfuehrungPunkte { display: flex; gap: 0.4rem; margin: 0.5rem 0 1rem; }
+.einfuehrungPunkte span { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--linie); }
+.einfuehrungPunkte span.aktiv { background: var(--fortschritt); }
 .tastenhilfeGruppe { margin-top: 1.25rem; }
 .tastenhilfeGruppe:first-of-type { margin-top: 0.75rem; }
 .tastenhilfeListe { margin: 0.5rem 0 0; display: flex; flex-direction: column; gap: 0.375rem; }
@@ -3113,6 +3121,7 @@ html[data-animationen="aus"] .bauTeil.neu { animation: none; }
   /* Der Haupt-Aufruf "Lernen" (und eine angefangene Sitzung) kommt
      zuerst - vorher lag er auf kleinen Handys unter dem Falz. */
   .heuteLernen, .heuteFokus, .heuteSitzung { order: -1; }
+  .heuteWillkommen { order: -2; }
 
   .stufe { align-items: flex-start; gap: var(--abstand-liste) 1rem; }
   .stufe > .bauabschnitt svg { width: 5.5rem; height: auto; }
@@ -3514,6 +3523,13 @@ html[data-palette="farbsicher-dunkel"] .stempel.frei .stempelBalken span { backg
   .aufruf.pruefungAufruf { background: var(--flaeche); border-color: var(--karte-rand); }
   .aufruf.pruefungAufruf .knopf.haupt { background: var(--flaeche); color: var(--tusche); border-color: var(--lehm); }
   .artKacheln li.nurMobilKachel { display: none; }
+  /* Sechs Kacheln nur als 6 oder 3 + 3, nie 4 + 2 / 5 + 1 (2026-10-29).
+     Nach Containerbreite, weil "Inhaltsbreite" den Platz mitbestimmt;
+     69.75rem = 6 × 11rem + 5 × 0.75rem Abstand. */
+  .artBereich { container-type: inline-size; }
+  @container (max-width: 69.75rem) {
+    .artKacheln { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
   .blaetternLink { display: inline-block; margin-top: 0.75rem; align-self: flex-start; }
 
   /* 37A: Bewertungsleiste breit und fest am unteren Rand, wie mobil */

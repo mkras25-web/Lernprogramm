@@ -3,6 +3,8 @@ import SieheAuch from './SieheAuch.jsx'
 import Begriffe from './Begriffe.jsx'
 import { quelleText } from '../lib/quelle.js'
 import { ausDemKopfLetzter } from '../lib/ausDemKopf.js'
+import { bildSchluessel, nebenzielStand } from '../lib/durchsicht.js'
+import { DurchsichtMarke } from './Durchsicht.jsx'
 
 // Themenseite (F10, 2026-10-13): Ein Einstieg je Thema statt fuenf
 // Bildschirmen - Erklaerung, Lernstand, Vorab-Fragen, "Aus dem Kopf",
@@ -15,6 +17,7 @@ export default function Erklaerstueck({
   items = [],
   zustaende = new Map(),
   marken = new Map(),
+  durchsicht = {},
   profilId,
   onLernen,
   onUeben,
@@ -22,6 +25,10 @@ export default function Erklaerstueck({
   onAusDemKopf,
   onLernzettel,
   onFehlerUeben,
+  imFokus = false,
+  onFokus,
+  verwandte = [],
+  onVerwandtUeben,
   onZurueck,
   onThema,
 }) {
@@ -35,6 +42,12 @@ export default function Erklaerstueck({
     .sort((a, b) => zustaende.get(b.id).fehler - zustaende.get(a.id).fehler)
   const notizen = items.filter((i) => marken.get(i.id)?.notiz)
   const kopf = profilId ? ausDemKopfLetzter(profilId, thema.id) : null
+  // Durchsicht-Marken fuer Erklaerstueck und Bilder ("offen" zeigt nichts).
+  const textStand = nebenzielStand(durchsicht, marken, `erklaerung:${thema.id}`)
+  const bildStand = (src) => nebenzielStand(durchsicht, marken, bildSchluessel(src))
+  const zeigt = (stand) => Boolean(stand && stand.stand !== 'offen')
+  const textMarke = zeigt(textStand)
+  const erklaerBild = e?.bild ?? thema.bild
 
   // Zeichnungen des Themas (Teil von F1): jede Datei einmal.
   const zeichnungen = []
@@ -89,6 +102,25 @@ export default function Erklaerstueck({
               Lernzettel
             </button>
           )}
+          {onVerwandtUeben && (
+            <button
+              className="artKnopf"
+              onClick={onVerwandtUeben}
+              title={`Heutige Portion aus diesem Thema und ${verwandte.map((t) => t.titel).join(', ')} – gemischt`}
+            >
+              Gemischt mit {verwandte.length === 1 ? 'verwandtem Thema' : `${verwandte.length} verwandten Themen`}
+            </button>
+          )}
+          {onFokus && (
+            <button
+              className="artKnopf"
+              aria-pressed={imFokus}
+              onClick={onFokus}
+              title={imFokus ? 'Steht auf Heute unter „Thema lernen“ – nochmal tippen nimmt es heraus' : 'Auf Heute mit eigenem Lernknopf zeigen (gezielt vorbereiten)'}
+            >
+              {imFokus ? '✓︎ Im Fokus auf Heute' : 'In den Fokus (Heute)'}
+            </button>
+          )}
         </div>
       )}
 
@@ -115,16 +147,22 @@ export default function Erklaerstueck({
           <figure style={{ margin: 0 }}>
             {/* Mit Lupe (D1): die Zeichnung ist oft der wichtigste Teil. */}
             <Bildlupe src={e?.bild ?? thema.bild} alt={e?.bildunterschrift ?? ''} />
-            {e?.bildunterschrift && (
+            {(e?.bildunterschrift || zeigt(bildStand(erklaerBild))) && (
               <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
-                {e.bildunterschrift}
+                {e?.bildunterschrift}{' '}
+                <DurchsichtMarke stand={bildStand(erklaerBild)} />
               </figcaption>
             )}
           </figure>
         )}
       </div>
 
-      {e?.quelle && <p className="quelle">{quelleText(e.quelle)}</p>}
+      {(e?.quelle || textMarke) && (
+        <p className="quelle">
+          {e?.quelle && quelleText(e.quelle)}{' '}
+          <DurchsichtMarke stand={textStand} />
+        </p>
+      )}
 
       {zeichnungen.length > 0 && (
         <section>
@@ -133,7 +171,12 @@ export default function Erklaerstueck({
             {zeichnungen.map((z) => (
               <figure key={z.src} className="zeichnungsKachel">
                 <Bildlupe src={z.src} alt={z.text ?? ''} />
-                {z.text && <figcaption className="quelle">{z.text}</figcaption>}
+                {(z.text || zeigt(bildStand(z.src))) && (
+                  <figcaption className="quelle">
+                    {z.text}{' '}
+                    <DurchsichtMarke stand={bildStand(z.src)} />
+                  </figcaption>
+                )}
               </figure>
             ))}
           </div>

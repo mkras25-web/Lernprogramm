@@ -59,6 +59,20 @@ export function standVon(eintrag, marke) {
   return { stand: 'offen', notiz: eintrag.notiz }
 }
 
+// Durchsicht-Schluessel eines Bildpfads ("…/bilder/x.svg" -> "bild:bilder/x.svg");
+// Buchausschnitte (bilder-lokal) werden nicht durchgesehen.
+export function bildSchluessel(src) {
+  const i = src?.lastIndexOf('/bilder/') ?? -1
+  if (i >= 0) return `bild:${src.slice(i + 1)}`
+  return src?.startsWith('bilder/') ? `bild:${src}` : null
+}
+
+// Stand eines Erklaerstuecks oder Bildes (fuer die Marke ausserhalb der Durchsicht).
+export function nebenzielStand(eintraege, marken, schluessel) {
+  if (!schluessel) return null
+  return standVon(eintraege?.[schluessel], marken?.get(schluessel))
+}
+
 export function entscheidungAenderung(eintrag, entscheidung) {
   if (!entscheidung) return { durchsicht: null }
   return { durchsicht: { entscheidung, hash: eintrag.hash, ts: Date.now() } }

@@ -30,7 +30,7 @@ async function oeffnen(page) {
 test('wartende Aenderung: Hinweis auf Heute, Vorher/Nachher, Annehmen', async ({ page }) => {
   await oeffnen(page)
   await expect(page.getByText('Eine Änderung wartet auf dich')).toBeVisible()
-  await page.getByRole('button', { name: 'Ansehen' }).click()
+  await page.getByRole('button', { name: 'Ansehen', exact: true }).click()
 
   // Nachschlagen mit Filter "wartet auf dich": genau die eine Karte
   await expect(page.locator('.trefferKarte')).toHaveCount(1)
@@ -52,7 +52,7 @@ test('wartende Aenderung: Hinweis auf Heute, Vorher/Nachher, Annehmen', async ({
 
 test('Ablehnen zeigt sofort die alte Fassung, Filter geprueft zaehlt', async ({ page }) => {
   await oeffnen(page)
-  await page.getByRole('button', { name: 'Ansehen' }).click()
+  await page.getByRole('button', { name: 'Ansehen', exact: true }).click()
   await page.locator('.trefferOeffnen').first().click()
   await page.locator('.durchsichtBlock').getByRole('button', { name: /Ablehnen/ }).click()
   await expect(page.locator('.itemansicht .frage')).toHaveText('ALTE E2E-FRAGE')
