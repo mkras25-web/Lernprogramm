@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import Bildlupe from '../components/Bildlupe.jsx'
+import Begriffe from '../components/Begriffe.jsx'
 import { DurchsichtMarke } from '../components/Durchsicht.jsx'
 import { bildSchluessel, nebenzielStand } from '../lib/durchsicht.js'
 
@@ -95,7 +96,7 @@ export default function Bilder({ themen, items, durchsicht = {}, marken = new Ma
                 <Bildlupe src={b.src} alt={b.text ?? ''} />
                 {(b.text || b.stand) && (
                   <figcaption className="quelle">
-                    {b.text}{' '}
+                    <Begriffe text={b.text} />{' '}
                     <DurchsichtMarke stand={b.stand} />
                   </figcaption>
                 )}

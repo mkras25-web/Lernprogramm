@@ -38,7 +38,7 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
               {item.pruefpunkte.map((text, i) => (
                 <li key={i}>
                   <span className="pruefZeichen" aria-hidden="true">·</span>
-                  <span>{text}</span>
+                  <span><Begriffe text={text} /></span>
                 </li>
               ))}
             </ul>
@@ -52,7 +52,7 @@ export default function Itemansicht({ item, glossar, zustand, verlauf }) {
             <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />
             {item.bildunterschrift && (
               <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
-                {item.bildunterschrift}
+                <Begriffe text={item.bildunterschrift} />
               </figcaption>
             )}
           </figure>
@@ -80,7 +80,7 @@ function Aufgabenteil({ item }) {
             <li key={i}>
               <span className={item.richtig.includes(i) ? 'option richtig' : 'option'}>
                 {item.richtig.includes(i) ? '✓ ' : '· '}
-                {text}
+                <Begriffe text={text} />
                 {item.warum?.[i] && <span className="optionWarum">{item.warum[i]}</span>}
               </span>
             </li>

@@ -332,7 +332,12 @@ describe('Profilwechsel waehrend des Abgleichs (B1, 2026-10-13)', () => {
     const inB = await alleEreignisse()
     expect(inB.map((e) => e.itemId)).toEqual(['b-1'])
     for (const [name, d] of ordner) {
-      if (name.startsWith(`p-${PROFIL}-`)) expect(d.text).not.toContain('b-1')
+      // Die Item-IDs vergleichen, nicht den ganzen Text: eine zufaellige
+      // Ereignis-ID wie "35302f6b-1699-…" enthaelt selbst "b-1" (war der
+      // gelegentliche Fehlschlag dieses Tests, kein Datenleck).
+      if (name.startsWith(`p-${PROFIL}-`)) {
+        expect(JSON.parse(d.text).ereignisse.map((e) => e.itemId)).not.toContain('b-1')
+      }
     }
   })
 

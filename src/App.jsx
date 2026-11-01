@@ -81,7 +81,7 @@ import { KartenGrenze } from './components/Fehlergrenze.jsx'
 const AusDemKopf = lazy(() => import('./components/AusDemKopf.jsx'))
 import Einfuehrung from './components/Einfuehrung.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
-import { standVon } from './lib/durchsicht.js'
+import { durchsichtJeThema, standVon } from './lib/durchsicht.js'
 
 // Themenfokus: ganze Module stehen als "modul:<id>" in opt.fokusThemen.
 const FOKUS_MODUL = 'modul:'
@@ -334,6 +334,7 @@ export default function App({ profilId, onProfilWechseln }) {
     }
     return n
   }, [durchsicht, marken])
+  const durchsichtThemen = useMemo(() => durchsichtJeThema(rohItems, durchsicht, marken), [rohItems, durchsicht, marken])
 
   // Heute nicht gewusst (Heute-Bildschirm): zum ruhigen Durchlesen.
   const nichtGewusst = useMemo(() => {
@@ -1234,6 +1235,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onErklaerung={setErklaerthema}
           onLernzettel={setLernzettelThema}
           stand={themenStand.current}
+          durchsichtStand={durchsichtThemen}
           onWunschliste={() =>
             textHerunterladen(
               wunschlisteMarkdown({ module, themen, phasen }),

@@ -102,6 +102,17 @@ test('Lernzettel eines Themas ist erreichbar und druckbar', async ({ page }) => 
   await expect(page.getByRole('button', { name: 'Drucken / als PDF' })).toBeVisible()
 })
 
+test('Durchsicht: Taste A setzt Ueberarbeiten, U bleibt beim Lernen (2026-11-01)', async ({ page }) => {
+  await angemeldet(page, 'Taste')
+  await page.locator('.navKnopf', { hasText: 'Durchsicht' }).click()
+  await page.locator('.trefferKarte').first().click()
+  await expect(page.locator('.itemansicht')).toBeVisible()
+  await page.keyboard.press('u')
+  await expect(page.locator('.marken .aktiv')).toHaveCount(0)
+  await page.keyboard.press('a')
+  await expect(page.locator('.marken .aktiv')).toContainText('Überarbeiten')
+})
+
 test('Einfuehrung: Willkommenskarte bei neuem Profil, vier Schritte, danach weg (2026-10-29)', async ({ page }) => {
   await angemeldet(page, 'Willkommen')
   await page.getByRole('button', { name: 'Einführung ansehen' }).click()

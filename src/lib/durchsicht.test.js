@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import {
-  aenderungsFelder, bildSchluessel, durchsichtAnwenden, durchsichtZaehlen, entscheidungAenderung, nebenzielStand, standVon,
+  aenderungsFelder, bildSchluessel, durchsichtAnwenden, durchsichtJeThema, durchsichtZaehlen, entscheidungAenderung, nebenzielStand, standVon,
   wartendeNebenziele, wortDiff,
 } from './durchsicht.js'
 
@@ -74,6 +74,18 @@ describe('durchsichtAnwenden', () => {
     const akte = { a: { ...geaendert, aenderung: { vorher: { warum: null } } } }
     const [a] = durchsichtAnwenden([{ id: 'a', warum: 'neu dazu' }], akte, marken)
     expect('warum' in a).toBe(false)
+  })
+})
+
+describe('durchsichtJeThema', () => {
+  it('zaehlt je Thema, offen zaehlt nicht als durchgesehen', () => {
+    const items = [{ id: 'a', themaId: 't1' }, { id: 'b', themaId: 't1' }, { id: 'c', themaId: 't1' }, { id: 'd', themaId: 't2' }]
+    const eintraege = { a: { stand: 'geprueft' }, b: { stand: 'geaendert', hash: 'h' } }
+    const karte = durchsichtJeThema(items, eintraege, new Map())
+    expect(karte.get('t1')).toEqual({ gesamt: 3, durchgesehen: 2, wartet: 1 })
+    expect(karte.get('t2')).toEqual({ gesamt: 1, durchgesehen: 0, wartet: 0 })
+    const entschieden = new Map([['b', { durchsicht: { entscheidung: 'angenommen', hash: 'h' } }]])
+    expect(durchsichtJeThema(items, eintraege, entschieden).get('t1').wartet).toBe(0)
   })
 })
 

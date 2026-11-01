@@ -18,7 +18,7 @@ import { mischen } from '../lib/mischen.js'
 import { paarRichtig, paarOptionen, ersterPaarIndex } from '../lib/punkte.js'
 import { quelleText } from '../lib/quelle.js'
 import { DurchsichtMarke } from '../components/Durchsicht.jsx'
-import Begriffe from '../components/Begriffe.jsx'
+import Begriffe, { BegriffKnoepfe } from '../components/Begriffe.jsx'
 
 
 export default function Lernen({
@@ -326,7 +326,7 @@ export default function Lernen({
             <Bildlupe src={item.bild} alt={item.bildunterschrift ?? ''} />
             {item.bildunterschrift && (
               <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
-                {item.bildunterschrift}
+                <Begriffe text={item.bildunterschrift} />
               </figcaption>
             )}
           </figure>
@@ -418,7 +418,7 @@ export default function Lernen({
                           <Bildlupe src={thema.erklaerung.bild} alt={thema.erklaerung.bildunterschrift ?? ''} />
                           {thema.erklaerung.bildunterschrift && (
                             <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
-                              {thema.erklaerung.bildunterschrift}
+                              <Begriffe text={thema.erklaerung.bildunterschrift} />
                             </figcaption>
                           )}
                         </figure>
@@ -763,7 +763,7 @@ function Einfuehrung({ thema, onWeiter }) {
           <figure style={{ margin: 0 }}>
             <Bildlupe src={e.bild ?? thema.bild} alt={e.bildunterschrift ?? ''} />
             {e.bildunterschrift && (
-              <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>{e.bildunterschrift}</figcaption>
+              <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}><Begriffe text={e.bildunterschrift} /></figcaption>
             )}
           </figure>
         )}
@@ -855,6 +855,7 @@ function Pruefliste({ punkte, gehakt, setGehakt }) {
           </li>
         ))}
       </ul>
+      <BegriffKnoepfe text={punkte.join('\n')} />
       <p className="pruefstand">
         {gehakt.length === 0
           ? 'Hake an, was du in Gedanken schon genannt hattest.'
@@ -939,6 +940,8 @@ function Eingabefeld({ item, wert, setWert, gesperrt, bildRef, seed, namenReihen
           )
         })}
         {gesperrt && <Trefferzeile item={item} gewaehlt={gewaehlt} />}
+        {/* Erst nach dem Aufdecken: die Definition einer Option kann die Loesung verraten. */}
+        {gesperrt && <li><BegriffKnoepfe text={item.optionen.join('\n')} /></li>}
       </ul>
     )
   }

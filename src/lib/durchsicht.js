@@ -122,6 +122,21 @@ export function durchsichtZaehlen(eintraege, marken, schluessel) {
   return z
 }
 
+// Durchsicht-Anteil je Thema (Themen-Bildschirm). Durchgesehen ist alles
+// ausser "offen" - auch was noch auf deine Entscheidung wartet.
+export function durchsichtJeThema(items, eintraege, marken) {
+  const karte = new Map()
+  for (const item of items) {
+    if (!karte.has(item.themaId)) karte.set(item.themaId, { gesamt: 0, durchgesehen: 0, wartet: 0 })
+    const z = karte.get(item.themaId)
+    const { stand } = standVon(eintraege?.[item.id], marken?.get(item.id))
+    z.gesamt += 1
+    if (stand !== 'offen') z.durchgesehen += 1
+    if (stand === 'wartet') z.wartet += 1
+  }
+  return karte
+}
+
 // Erklaerstuecke und Bilder, deren Aenderung auf dich wartet (oder die du
 // schon entschieden hast, solange das Skript sie noch nicht uebernommen hat).
 export function wartendeNebenziele(eintraege, marken) {

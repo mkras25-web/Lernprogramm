@@ -17,6 +17,7 @@ export default function Themen({
   onWunschliste,
   onLernzettel,
   stand = null,
+  durchsichtStand = null,
 }) {
   // Abdeckungsuebersicht (20A): welche Themen haben schon Inhalt?
   const [abdeckung, setAbdeckung] = useState(false)
@@ -181,6 +182,7 @@ export default function Themen({
                           <p className="themaZeile2">
                             {f.sicher} von {f.gesamt} sicher
                             {f.faellig > 0 ? ` · ${f.faellig} fällig` : ''}
+                            {durchsichtText(durchsichtStand?.get(t.id))}
                           </p>
                         </div>
                         <div className="themenzeileAktionen">
@@ -214,6 +216,13 @@ export default function Themen({
       )}
     </div>
   )
+}
+
+// Durchsicht-Anteil eines Themas; bleibt weg, solange nichts durchgesehen ist.
+function durchsichtText(z) {
+  if (!z || z.durchgesehen === 0) return ''
+  const wartet = z.wartet > 0 ? ` (${z.wartet} warten auf dich)` : ''
+  return ` · ${z.durchgesehen} von ${z.gesamt} durchgesehen${wartet}`
 }
 
 // Uebersicht, welche Themen schon Aufgaben haben - je Modul, nach Phase

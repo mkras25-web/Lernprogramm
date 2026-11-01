@@ -232,7 +232,7 @@ export default function Sichtung({
   )
 
   // Tastensteuerung fuer das Sichten am Stueck: Pfeile blaettern,
-  // N springt zum naechsten Ungesichteten, R/S/U/X setzen die Kategorie.
+  // N springt zum naechsten Ungesichteten, R/S/A/X setzen die Kategorie.
   // Nicht, solange der Fokus in einem Eingabefeld steht.
   useEffect(() => {
     if (!offenesItem) return
@@ -371,7 +371,7 @@ export default function Sichtung({
         <section className="block">
           <h2 className="abschnitt">Sichtung und Marken</h2>
           <p className="zeileHinweis tastenHinweis">
-            Tasten: ← → blättern · N zum nächsten ungesichteten · R S U X setzen die Kategorie
+            Tasten: ← → blättern · N zum nächsten ungesichteten · R S A X setzen die Kategorie
             {weiterNachMarke ? ' · springt nach dem Markieren weiter' : ''}
           </p>
           <div className="marken">
@@ -691,9 +691,10 @@ export default function Sichtung({
   )
 }
 
-// Tastenbelegung fuer das Sichten am Stueck. Die Buchstaben folgen
-// den Anfangsbuchstaben der Kategorien.
-const TASTEN = { relevant: 'r', spaeter: 's', ueberarbeiten: 'u', streichen: 'x' }
+// Tastenbelegung fuer das Sichten am Stueck. Die Buchstaben folgen den
+// Kategorien; "Ueberarbeiten" liegt auf A (ueberArbeiten), weil U beim
+// Lernen "Ueberspringen" heisst (vereinheitlicht 2026-11-01).
+const TASTEN = { relevant: 'r', spaeter: 's', ueberarbeiten: 'a', streichen: 'x' }
 
 function kuerzen(text, laenge = 160) {
   if (!text || text.length <= laenge) return text

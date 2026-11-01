@@ -51,7 +51,7 @@ const GRUPPEN = [
     kuerzel: [
       ['← →', 'Zum vorherigen/nächsten Item blättern'],
       ['N', 'Zum nächsten ungesichteten Item springen'],
-      ['R S U X', 'Sichtungskategorie setzen (Relevant · Später · Überarbeiten · Streichen)'],
+      ['R S A X', 'Sichtungskategorie setzen (Relevant · Später · Überarbeiten · Streichen)'],
       ['Esc', 'Zurück zur Liste'],
     ],
   },

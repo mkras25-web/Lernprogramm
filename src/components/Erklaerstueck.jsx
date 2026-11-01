@@ -149,7 +149,7 @@ export default function Erklaerstueck({
             <Bildlupe src={e?.bild ?? thema.bild} alt={e?.bildunterschrift ?? ''} />
             {(e?.bildunterschrift || zeigt(bildStand(erklaerBild))) && (
               <figcaption className="quelle" style={{ paddingTop: '0.5rem' }}>
-                {e?.bildunterschrift}{' '}
+                <Begriffe text={e?.bildunterschrift} />{' '}
                 <DurchsichtMarke stand={bildStand(erklaerBild)} />
               </figcaption>
             )}
@@ -173,7 +173,7 @@ export default function Erklaerstueck({
                 <Bildlupe src={z.src} alt={z.text ?? ''} />
                 {(z.text || zeigt(bildStand(z.src))) && (
                   <figcaption className="quelle">
-                    {z.text}{' '}
+                    <Begriffe text={z.text} />{' '}
                     <DurchsichtMarke stand={bildStand(z.src)} />
                   </figcaption>
                 )}
