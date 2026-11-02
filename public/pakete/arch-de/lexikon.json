@@ -3062,12 +3062,22 @@
       "varianten": [
         "Geländeoberfläche"
       ],
-      "definition": "Höhe der fertigen Geländeoberfläche am Gebäude, oft als OK Gelände abgekürzt. Sie ist die Bezugshöhe für Sockel-, Abdichtungs- und Putzhöhen.",
+      "definition": "Höhe der fertigen Geländeoberfläche am Gebäude, oft als OK Gelände abgekürzt. Sie ist die Bezugshöhe für Sockel-, Abdichtungs- und Putzhöhen. Im Bauordnungsrecht zählt dagegen die rechtlich maßgebende Höhe: In Hessen ergibt sie sich aus dem Bebauungsplan oder der Baugenehmigung, sonst gilt das natürliche Gelände.",
       "beispiel": "Die Sockelabdichtung reicht bis etwa 20 cm über Geländeoberkante.",
-      "quelle": {
-        "werk": "DETAIL Atlas Mauerwerk",
-        "seite": "135"
-      },
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Mauerwerk",
+          "seite": "135"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 6, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        },
+        {
+          "werk": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“",
+          "seite": "37–38"
+        }
+      ],
       "themen": [
         "sockel-erdberuehrt",
         "rb-mass",
@@ -3077,7 +3087,7 @@
       "siehe": [
         "sockel"
       ],
-      "stand": "2026-10"
+      "stand": "2026-11"
     },
     {
       "id": "geltungsbereich",
@@ -6539,12 +6549,18 @@
         "Verfahrensfreiheit",
         "baugenehmigungsfrei"
       ],
-      "definition": "Ein Vorhaben ist verfahrensfrei, wenn das Landesrecht dafür keine vorherige behördliche Prüfung verlangt. Die materiellen Vorschriften gelten trotzdem, und das Risiko eines Verstoßes trägt der Bauherr.",
+      "definition": "Ein Vorhaben ist verfahrensfrei, wenn es nach Landesrecht weder angezeigt noch genehmigt werden muss; darin unterscheidet es sich von der Genehmigungsfreistellung. Die materiellen Vorschriften gelten trotzdem, und das Risiko eines Verstoßes trägt der Bauherr.",
       "beispiel": "Auch ohne Genehmigungsverfahren muss das Bauplanungsrecht eingehalten sein.",
-      "quelle": {
-        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
-        "seite": "193"
-      },
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "192"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "193"
+        }
+      ],
       "themen": [
         "rb-34-35",
         "rb-lbo",
