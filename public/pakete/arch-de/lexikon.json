@@ -38,7 +38,9 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "wandhoehe"
@@ -71,7 +73,8 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-baunvo",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "abwaegungsgebot",
@@ -224,6 +227,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "regeln-der-technik",
+      "begriff": "allgemein anerkannte Regeln der Technik",
+      "varianten": [
+        "allgemein anerkannten Regeln der Technik",
+        "anerkannte Regeln der Technik",
+        "anerkannten Regeln der Technik",
+        "Regeln der Technik"
+      ],
+      "definition": "Technische Regeln, die die oft allgemein gefassten Bauanforderungen näher bestimmen. Wer sie einhält, für den spricht die widerlegbare Vermutung, dass das Vorhaben den Anforderungen genügt; abweichen ist erlaubt, wenn die Anforderungen anders ebenso wirksam erfüllt werden.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "184–185"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "din-norm"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "allgemein-zulaessig",
       "begriff": "allgemein zulässig",
       "varianten": [
@@ -283,7 +310,8 @@
         }
       ],
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "wohngebiet"
@@ -308,6 +336,27 @@
       "stand": "2026-11"
     },
     {
+      "id": "argebau",
+      "begriff": "ARGEBAU",
+      "varianten": [
+        "Bauministerkonferenz"
+      ],
+      "definition": "Kommission aus Vertretern der Fachministerien von Bund und Ländern, die die Musterbauordnung ausarbeitet und veröffentlicht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "177"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "musterbauordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "art-der-nutzung",
       "begriff": "Art der Nutzung",
       "varianten": [
@@ -319,7 +368,8 @@
         "seite": "24"
       },
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-lbo"
       ],
       "siehe": [
         "baugebiet",
@@ -341,7 +391,10 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo",
+        "rb-abstandsflaechen",
+        "rb-verfahren"
       ],
       "stand": "2026-11"
     },
@@ -361,6 +414,19 @@
         "fundament"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "aufschiebende-wirkung",
+      "begriff": "aufschiebende Wirkung",
+      "definition": "Folge eines Rechtsbehelfs, die eine Entscheidung vorerst nicht wirksam werden lässt. Ein Nachbarwiderspruch gegen eine Baugenehmigung hat sie nach § 212a BauGB nicht; die Genehmigung kann also trotzdem genutzt werden.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "205"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "aufsteigende-feuchte",
@@ -403,6 +469,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "ausfuehrungsgenehmigung",
+      "begriff": "Ausführungsgenehmigung",
+      "definition": "Befristete Genehmigung, die ein Fliegender Bau vor der ersten Aufstellung braucht. Sie wird in ein Prüfbuch eingetragen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "202"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "fliegende-bauten"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "ausnahmsweise-zulaessig",
       "begriff": "ausnahmsweise zulässig",
       "varianten": [
@@ -435,7 +517,9 @@
         "seite": "140"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-verfahren"
       ],
       "siehe": [
         "innenbereich",
@@ -477,6 +561,24 @@
       "stand": "2026-10"
     },
     {
+      "id": "aussenrecht",
+      "begriff": "Außenrecht",
+      "definition": "Rechtsvorschriften, die nach außen wirken und nicht nur die Verwaltung binden, im Bauordnungsrecht etwa Rechtsverordnungen und Satzungen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "innenrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "balkonkragplatte",
       "begriff": "Balkonkragplatte",
       "definition": "Frei auskragende Platte eines Balkons, die nur am Gebäude gehalten ist. Ihre Oberseite ist eine waagerechte Fläche, von der Regen an die angrenzende Wand spritzt.",
@@ -491,6 +593,29 @@
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "barrierefreiheit",
+      "begriff": "Barrierefreiheit",
+      "varianten": [
+        "barrierefreies Bauen",
+        "barrierefrei"
+      ],
+      "definition": "Eigenschaft von Anlagen, die Menschen mit Behinderung üblich, ohne besondere Erschwernis und grundsätzlich ohne fremde Hilfe zugänglich und nutzbar sind.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 8, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "189"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "bau-turbo",
@@ -509,6 +634,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "bauantrag",
+      "begriff": "Bauantrag",
+      "definition": "Antrag auf Erteilung der Baugenehmigung, der mit den Bauvorlagen bei der Bauaufsicht eingereicht wird.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "197"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 69 Abs. 1 und 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "bauvorlagen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bauaufsicht",
       "begriff": "Bauaufsicht",
       "varianten": [
@@ -522,10 +669,39 @@
         "seite": "127"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen",
+        "rb-verfahren"
       ],
       "siehe": [
         "einvernehmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baueinstellung",
+      "begriff": "Baueinstellung",
+      "varianten": [
+        "Stilllegungsverfügung",
+        "Einstellungsverfügung"
+      ],
+      "definition": "Anordnung der Bauaufsicht, die Bauarbeiten sofort zu stoppen. Bei genehmigungspflichtigen Vorhaben genügt dafür schon das Fehlen der Genehmigung.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "207"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "209"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "formell-illegal"
       ],
       "stand": "2026-11"
     },
@@ -554,6 +730,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "baufreiheit",
+      "begriff": "Baufreiheit",
+      "definition": "Grundsatz, dass das Recht, ein Grundstück baulich zu nutzen, zum Eigentum gehört. Sie gilt nicht schrankenlos, sondern nur im Rahmen der geltenden Gesetze.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "191"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "baugebiet",
       "begriff": "Baugebiet",
       "varianten": [
@@ -571,7 +760,8 @@
         "rb-bauleitplanung",
         "rb-baunvo",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "bauflaeche"
@@ -587,10 +777,44 @@
         "seite": "218"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "bauaufsicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baugenehmigungsverfahren",
+      "begriff": "Baugenehmigungsverfahren",
+      "varianten": [
+        "volle Verfahren",
+        "vollen Verfahren",
+        "volles Verfahren",
+        "volles Genehmigungsverfahren"
+      ],
+      "definition": "Behördliches Verfahren, das mit Erteilung oder Ablehnung der Baugenehmigung endet. Im engeren Sinn das volle Verfahren mit dem größten Prüfumfang, in Hessen nach § 66 HBO für Sonderbauten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "197"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "200"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 66, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "vereinfachtes-verfahren",
+        "sonderbau"
       ],
       "stand": "2026-11"
     },
@@ -612,7 +836,8 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "baulinie",
@@ -629,7 +854,8 @@
         "seite": "42"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "rb-verfahren"
       ],
       "siehe": [
         "baugrubenverfuellung"
@@ -666,7 +892,80 @@
         "seite": "22"
       },
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo",
+        "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauherrschaft",
+      "begriff": "Bauherrschaft",
+      "varianten": [
+        "Bauherr"
+      ],
+      "definition": "Person oder Personengruppe, die ein Bauvorhaben veranlasst und gegenüber der Bauaufsicht für Anträge, Anzeigen und Nachweise einsteht. Sie beauftragt außerdem die übrigen am Bau Beteiligten. Sie muss nicht Eigentümerin des Grundstücks sein.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 56 Abs. 1 und 4, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "215"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "entwurfsverfassende"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baulast",
+      "begriff": "Baulast",
+      "definition": "Freiwillig gegenüber der Bauaufsicht übernommene öffentlich-rechtliche Pflicht eines Eigentümers, auf seinem Grundstück etwas zu tun, zu dulden oder zu unterlassen. Sie bindet auch spätere Eigentümer und endet nur durch Verzicht der Behörde.",
+      "beispiel": "Der Nachbar übernimmt per Baulast eine Abstandsfläche auf sein Grundstück, damit das Vorhaben nebenan möglich wird.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "182–183"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 85, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "baulastenverzeichnis",
+        "oeffentlich-rechtlich-gesichert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baulastenverzeichnis",
+      "begriff": "Baulastenverzeichnis",
+      "definition": "Von der Bauaufsicht oder einer bestimmten Stelle geführtes Register der Baulasten. In Hessen wird eine Baulast erst mit der Eintragung wirksam.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "182"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 85, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "baulast"
       ],
       "stand": "2026-11"
     },
@@ -685,11 +984,53 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "flaechennutzungsplan",
         "bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauleitung",
+      "begriff": "Bauleitung",
+      "definition": "Überwachung der Bauausführung auf der Baustelle und die dafür verantwortliche Person. Nach der Hessischen Bauordnung wacht sie darüber, dass die Baumaßnahme den öffentlich-rechtlichen Anforderungen entspricht, sorgt für den sicheren bautechnischen Betrieb der Baustelle und braucht dafür Sachkunde und Erfahrung.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 59, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo",
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauliche-anlage",
+      "begriff": "bauliche Anlage",
+      "varianten": [
+        "baulichen Anlage",
+        "Bauliche Anlage",
+        "Baulichen Anlage"
+      ],
+      "definition": "Mit dem Erdboden verbundene, aus Bauprodukten hergestellte Anlage. Es genügt, wenn sie durch ihr Gewicht aufliegt, auf festen Bahnen begrenzt beweglich ist oder überwiegend ortsfest genutzt werden soll. Der gleichnamige Begriff des Planungsrechts deckt sich damit nicht.",
+      "beispiel": "Ein Wohncontainer, der nur durch sein Gewicht auf dem Boden steht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "180"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
       ],
       "stand": "2026-11"
     },
@@ -766,7 +1107,9 @@
         "seite": "72"
       },
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "baugebiet",
@@ -786,10 +1129,28 @@
         "seite": "1"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "bauplanungsrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baupaket-i",
+      "begriff": "Baupaket I",
+      "definition": "Kurzname des Dritten Gesetzes zur Änderung der Hessischen Bauordnung, vom Landtag im Oktober 2025 beschlossen. Für die Abstandsflächen senkte es unter anderem die Mindesttiefe von 3 m auf 2,50 m.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 6 Abs. 5 Satz 4, Wortlaut nach Synopse Baupaket I des Hessischen Wirtschaftsministeriums vom 22.10.2025"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "mindesttiefe"
       ],
       "stand": "2026-11"
     },
@@ -806,10 +1167,139 @@
         "seite": "1"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen",
+        "rb-verfahren"
       ],
       "siehe": [
         "bauordnungsrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baupolizeirecht",
+      "begriff": "Baupolizeirecht",
+      "definition": "Vorläufer des heutigen Bauordnungsrechts, aus dem dessen Vorschriften zur Gefahrenabwehr hervorgegangen sind.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauprodukt",
+      "begriff": "Bauprodukt",
+      "definition": "Baustoff, Bauteil oder vorgefertigte Anlage, die dauerhaft in eine bauliche Anlage eingebaut oder mit dem Boden verbunden werden soll und deren Verwendung die allgemeinen Bauanforderungen beeinflussen kann.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 13, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "bauliche-anlage"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bautechnische-nachweise",
+      "begriff": "bautechnische Nachweise",
+      "varianten": [
+        "bautechnischen Nachweise"
+      ],
+      "definition": "Unterlagen, die in Hessen unter anderem Standsicherheit, vorbeugenden Brandschutz und Schallschutz belegen. Sie werden außer bei Sonderbauten grundsätzlich nicht von der Bauaufsicht geprüft, sondern von Berechtigten erstellt oder von Prüfsachverständigen bescheinigt.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 68 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "pruefsachverstaendige"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauueberwachung",
+      "begriff": "Bauüberwachung",
+      "definition": "Prüfung durch die Bauaufsicht, ob beim Bauen die öffentlich-rechtlichen Vorschriften eingehalten und die Pflichten der am Bau Beteiligten erfüllt werden.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "183"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 83 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauvorbescheid",
+      "begriff": "Bauvorbescheid",
+      "varianten": [
+        "Vorbescheid"
+      ],
+      "definition": "Verbindliche schriftliche Entscheidung über einzelne Fragen eines Vorhabens vor dem Bauantrag. Er erlaubt noch nicht zu bauen. In Hessen gilt er drei Jahre und wird mit einer Bauvoranfrage beantragt.",
+      "beispiel": "Vor dem teuren Ausarbeiten aller Bauvorlagen klärt die Bauherrschaft, ob das Grundstück überhaupt bebaubar ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "200"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "201"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 76 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "teilbaugenehmigung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauvorlagen",
+      "begriff": "Bauvorlagen",
+      "varianten": [
+        "Bauvorlage"
+      ],
+      "definition": "Alle Unterlagen, die zur Beurteilung eines Vorhabens und zur Bearbeitung des Bauantrags nötig sind.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "197"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 69 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "bauantrag"
       ],
       "stand": "2026-11"
     },
@@ -829,7 +1319,31 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo",
+        "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bebauungsgenehmigung",
+      "begriff": "Bebauungsgenehmigung",
+      "definition": "Positiver Bauvorbescheid, der sich auf die planungsrechtliche Zulässigkeit eines Vorhabens beschränkt. Er setzt sich auch gegen eine später in Kraft tretende Veränderungssperre oder einen neuen Bebauungsplan durch.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "200"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "201"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "bauvorbescheid"
       ],
       "stand": "2026-11"
     },
@@ -852,7 +1366,10 @@
         "rb-bauleitplanung",
         "rb-baunvo",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen",
+        "rb-verfahren"
       ],
       "siehe": [
         "flaechennutzungsplan",
@@ -895,7 +1412,9 @@
         }
       ],
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-lbo",
+        "rb-verfahren"
       ],
       "siehe": [
         "grundzuege-der-planung",
@@ -917,7 +1436,9 @@
         "rb-bauleitplanung",
         "rb-baunvo",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "abwaegung"
@@ -964,6 +1485,42 @@
       "stand": "2026-11"
     },
     {
+      "id": "beseitigungsanordnung",
+      "begriff": "Beseitigungsanordnung",
+      "varianten": [
+        "Abrissverfügung",
+        "Abbruchverfügung",
+        "Beseitigungsverfügung"
+      ],
+      "definition": "Anordnung der Bauaufsicht, eine bauliche Anlage ganz oder teilweise abzureißen. Sie setzt in der Regel formelle und materielle Illegalität voraus und ist nur zulässig, wenn sich rechtmäßige Zustände nicht anders herstellen lassen; die Entscheidung steht im Ermessen der Behörde.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "210"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "211"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "213"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 82 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "nutzungsuntersagung",
+        "duldung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "besonderes-wohngebiet",
       "begriff": "besonderes Wohngebiet",
       "varianten": [
@@ -988,6 +1545,28 @@
       ],
       "siehe": [
         "wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bestandsschutz",
+      "begriff": "Bestandsschutz",
+      "definition": "Schutz eines rechtmäßig errichteten Bauwerks davor, durch spätere Rechtsänderungen unzulässig zu werden: Es darf in seiner ausgeführten Form weiter genutzt werden. Er leitet sich aus der Eigentumsgarantie ab; bei konkreten Gefahren darf die Behörde aber nachträglich Anforderungen stellen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "204"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "205"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "baugenehmigung"
       ],
       "stand": "2026-11"
     },
@@ -1128,6 +1707,24 @@
       "stand": "2026-10"
     },
     {
+      "id": "brandwand",
+      "begriff": "Brandwand",
+      "varianten": [
+        "Brandwände"
+      ],
+      "definition": "Raumabschließende Wand, die ein Gebäude abschließt oder in Brandabschnitte unterteilt und ausreichend lange verhindert, dass sich ein Brand ausbreitet. Nach der Hessischen Bauordnung muss sie feuerbeständig und nichtbrennbar sein und auch mechanischer Belastung standhalten.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 33 Abs. 1 und 3, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bruestung",
       "begriff": "Brüstung",
       "definition": "Halbhohe, massive Wand, die als Umwehrung vor Absturz schützt, etwa am Rand von Balkon oder Terrasse.",
@@ -1159,7 +1756,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo"
       ],
       "siehe": [
         "geschossflaeche"
@@ -1196,6 +1794,62 @@
       "siehe": [
         "nettowohndichte",
         "bruttobauland"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "dachaufbauten",
+      "begriff": "Dachaufbauten",
+      "definition": "Bauteile, die aus der Dachfläche herausragen, etwa Gauben. Bei der Abstandsfläche werden sie je nach Lage und Breite als Wand gewertet oder anteilig zur Wandhöhe gerechnet.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "44"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "gaube"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "dachhaut",
+      "begriff": "Dachhaut",
+      "definition": "Äußerer, vor Regen schützender Abschluss eines Daches, also Deckung oder Abdichtung. Wo die Außenwand auf diese Fläche trifft, endet im Abstandsflächenrecht die Wandhöhe.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "65"
+        },
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "37"
+        }
+      ],
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "wandhoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "dachvorsprung",
+      "begriff": "Dachvorsprung",
+      "varianten": [
+        "Dachvorsprünge",
+        "Dachüberstand",
+        "Dachüberstände"
+      ],
+      "definition": "Teil des Daches, der über die Außenwand hinausragt.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "41"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
       ],
       "stand": "2026-11"
     },
@@ -1377,6 +2031,29 @@
       "stand": "2026-10"
     },
     {
+      "id": "din-norm",
+      "begriff": "DIN-Norm",
+      "definition": "Technische Regel aus einem privaten Regelwerk. Sie ist keine Rechtsnorm und erhält im Bauordnungsrecht erst dadurch Gewicht, dass Vorschriften auf sie verweisen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "184"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "regeln-der-technik",
+        "technische-baubestimmungen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "dorfgebiet",
       "begriff": "Dorfgebiet",
       "varianten": [
@@ -1499,6 +2176,28 @@
       "stand": "2026-10"
     },
     {
+      "id": "duldung",
+      "begriff": "Duldung",
+      "definition": "Im Baurecht die Entscheidung einer Behörde, im Einzelfall nicht gegen einen rechtswidrigen Bau einzuschreiten. Sie ist keine Genehmigung und macht den Bau nicht formell legal; die Behörde kann ihre Haltung später überprüfen und ändern.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "213"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "214"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "ermessen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "durchfuehrungsvertrag",
       "begriff": "Durchführungsvertrag",
       "definition": "Vertrag zwischen Vorhabenträger und Gemeinde, in dem sich der Träger verpflichtet, das Projekt fristgerecht umzusetzen und die Kosten zu tragen. Erst wenn er geschlossen ist, darf die Gemeinde den vorhabenbezogenen Bebauungsplan beschließen.",
@@ -1552,10 +2251,24 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "qualifizierter-bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einfriedung",
+      "begriff": "Einfriedung",
+      "definition": "Abgrenzung eines Grundstücks nach außen, etwa durch Zaun oder Hecke.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "219"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
       ],
       "stand": "2026-11"
     },
@@ -1573,7 +2286,8 @@
         "seite": "138"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "naehere-umgebung",
@@ -1603,7 +2317,8 @@
         "seite": "127"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "planungshoheit",
@@ -1682,6 +2397,31 @@
       "stand": "2026-11"
     },
     {
+      "id": "entwurfsverfassende",
+      "begriff": "Entwurfsverfassende",
+      "varianten": [
+        "Entwurfsverfasser"
+      ],
+      "definition": "Wer den Entwurf für ein Bauvorhaben aufstellt und für dessen Vollständigkeit und Brauchbarkeit verantwortlich ist, auch dafür, dass Fachplanungen zusammenpassen. Die Person muss für die Aufgabe fachlich geeignet sein.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 57, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "208"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "bauherrschaft"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "eps",
       "begriff": "EPS",
       "varianten": [
@@ -1754,6 +2494,64 @@
       "stand": "2026-11"
     },
     {
+      "id": "erhaltungssatzung",
+      "begriff": "Erhaltungssatzung",
+      "definition": "Satzung nach dem Baugesetzbuch, mit der eine Gemeinde ein Gebiet festlegt, in dem Abbruch, Änderung oder Nutzungsänderung baulicher Anlagen einer Genehmigung bedürfen. Anders als die Gestaltungssatzung kann sie damit auch den Abbruch erfassen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "164"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "188"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "gestaltungssatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erker",
+      "begriff": "Erker",
+      "definition": "Über die Außenwand vortretender, geschlossener Gebäudeteil. Nach der im Städtebaureader wiedergegebenen Rechtsprechung kragt er erst oberhalb des Erdgeschosses aus; springt der Bauteil schon im Erdgeschoss vor, ist er kein Erker mehr.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "41"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ermaechtigungsgrundlage",
+      "begriff": "Ermächtigungsgrundlage",
+      "varianten": [
+        "Befugnisnorm",
+        "Ermächtigungsnorm"
+      ],
+      "definition": "Gesetzliche Vorschrift, die eine Behörde dazu berechtigt, belastende Entscheidungen zu treffen. Ohne sie darf die Bauaufsicht etwa keinen Abbruch anordnen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "179"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "spezialermaechtigung",
+        "generalklausel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "ermessen",
       "begriff": "Ermessen",
       "definition": "Entscheidungsspielraum, den das Recht einer Behörde einräumt. Sie darf ihn nicht beliebig nutzen, sondern muss pflichtgemäß und sachgerecht entscheiden; bei einer baurechtlichen Ausnahme zählen etwa städtebauliche Gründe.",
@@ -1770,7 +2568,9 @@
       ],
       "themen": [
         "rb-baunvo",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-verfahren"
       ],
       "stand": "2026-11"
     },
@@ -1825,7 +2625,33 @@
         "rb-bauleitplanung",
         "rb-baunvo",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fiktion",
+      "begriff": "Fiktion",
+      "varianten": [
+        "Genehmigungsfiktion"
+      ],
+      "definition": "Rechtliche Annahme, dass etwas als geschehen gilt, obwohl es nicht geschehen ist. So gilt in Hessen im vereinfachten Verfahren die Baugenehmigung als erteilt, wenn die Behörde nicht rechtzeitig entscheidet.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "193"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 65 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "vereinfachtes-verfahren"
       ],
       "stand": "2026-11"
     },
@@ -1845,7 +2671,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo"
       ],
       "siehe": [
         "traufhoehe"
@@ -1878,6 +2705,32 @@
       "stand": "2026-11"
     },
     {
+      "id": "fliegende-bauten",
+      "begriff": "Fliegende Bauten",
+      "varianten": [
+        "fliegende Bauten"
+      ],
+      "definition": "Bauliche Anlagen, die dafür bestimmt und geeignet sind, wiederholt an verschiedenen Orten auf- und abgebaut zu werden, etwa Festzelte oder Karussells.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "202"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 78 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "ausfuehrungsgenehmigung",
+        "gebrauchsabnahme"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "folgenorm",
       "begriff": "Folgenorm",
       "definition": "Vorschrift, die allein durch die Wahl eines Baugebiets Teil des Bebauungsplans wird, ohne dass der Plan sie wiederholen muss. Gemeint sind vor allem die §§ 2 bis 14 BauNVO, die das im Gebiet Zulässige näher bestimmen.",
@@ -1890,6 +2743,28 @@
       ],
       "siehe": [
         "typenzwang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "formell-illegal",
+      "begriff": "formell illegal",
+      "varianten": [
+        "Formell illegal",
+        "formelle Illegalität",
+        "formellen Illegalität",
+        "formelle Baurechtswidrigkeit"
+      ],
+      "definition": "Ein Vorhaben ist formell illegal, wenn es ohne die erforderliche Genehmigung oder abweichend von ihr gebaut wird. Das gilt auch dann, wenn es inhaltlich zulässig wäre.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "209"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "materiell-illegal"
       ],
       "stand": "2026-11"
     },
@@ -1911,6 +2786,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "formelles-bauordnungsrecht",
+      "begriff": "formelles Bauordnungsrecht",
+      "varianten": [
+        "formelle Bauordnungsrecht",
+        "formellen Bauordnungsrechts"
+      ],
+      "definition": "Der Teil des Bauordnungsrechts, der Behörden und Verfahren regelt. Darüber werden das Planungsrecht, die inhaltlichen Bauanforderungen und teils weitere Fachgesetze vollzogen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "materielles-bauordnungsrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "freie-berufe",
       "begriff": "freie Berufe",
       "varianten": [
@@ -1924,6 +2821,22 @@
       },
       "themen": [
         "rb-baunvo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "freistellungsvorbehalt",
+      "begriff": "Freistellungsvorbehalt",
+      "definition": "Hessische Bedingung, unter der ein an sich baugenehmigungsfreies Vorhaben steht, etwa die vorherige Beteiligung der Gemeinde. Sie kann binnen einer Frist doch ein Baugenehmigungsverfahren verlangen.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "Anlage zu § 63, Abschnitt IV (Freistellungsvorbehalte) Nr. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "verfahrensfrei"
       ],
       "stand": "2026-11"
     },
@@ -1968,6 +2881,91 @@
       "stand": "2026-10"
     },
     {
+      "id": "gartenhof",
+      "begriff": "Gartenhof",
+      "varianten": [
+        "Gartenhöfe"
+      ],
+      "definition": "Als Garten genutzter Hof am oder im Wohngebäude. Ist er fremder Sicht entzogen, dürfen sich dort bei Wohngebäuden mit höchstens zwei Wohnungen die Abstandsflächen überdecken.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "37"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "228"
+        }
+      ],
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "ueberdeckung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gaube",
+      "begriff": "Gaube",
+      "varianten": [
+        "Dachgaube"
+      ],
+      "definition": "Aufbau auf einem geneigten Dach mit eigenem Fenster, der das Dachgeschoss belichtet.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "87"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "dachaufbauten"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gebaeudeklasse",
+      "begriff": "Gebäudeklasse",
+      "definition": "Einstufung eines Gebäudes in die Klassen 1 bis 5 nach Höhe sowie Zahl und Größe der Nutzungseinheiten. Maßgeblich ist in Hessen die Höhe des Fußbodens im höchsten Geschoss mit möglichem Aufenthaltsraum, nicht die Firsthöhe.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 4, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "nutzungseinheit",
+        "hochhaus"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gebildeter-durchschnittsmensch",
+      "begriff": "gebildeter Durchschnittsmensch",
+      "varianten": [
+        "gebildete Durchschnittsmensch",
+        "gebildeten Durchschnittsmenschen"
+      ],
+      "definition": "Maßstab für die Frage, ob ein Bauwerk verunstaltet: ein für ästhetische Eindrücke offener Betrachter, weder besonders geschult oder empfindsam noch gleichgültig.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "186"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "verunstaltungsverbot"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gebot-der-ruecksichtnahme",
       "begriff": "Gebot der Rücksichtnahme",
       "varianten": [
@@ -1983,6 +2981,64 @@
       ],
       "siehe": [
         "eigenart-des-gebiets"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gebrauchsabnahme",
+      "begriff": "Gebrauchsabnahme",
+      "definition": "Prüfung durch die örtliche Bauaufsicht, ob ein Fliegender Bau am gewünschten Standort in Betrieb gehen darf, gegebenenfalls unter Auflagen. In Hessen kann die Behörde die Inbetriebnahme davon abhängig machen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "202"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 78 Abs. 6, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "fliegende-bauten"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gebundene-kontrollerlaubnis",
+      "begriff": "gebundene Kontrollerlaubnis",
+      "definition": "Erlaubnis, die der Überprüfung der Rechtslage dient und erteilt werden muss, wenn die Voraussetzungen vorliegen. Die Behörde hat dabei keinen Entscheidungsspielraum.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "191"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "ermessen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gefahrenabwehr",
+      "begriff": "Gefahrenabwehr",
+      "definition": "Schutz der öffentlichen Sicherheit und Ordnung, vor allem von Leben und Gesundheit, vor Gefahren. Im Bauordnungsrecht ist sie der Hauptzweck und bestimmt, wie bauliche Anlagen beschaffen sein müssen.",
+      "beispiel": "Vorschriften zu Brandwänden und Rettungswegen sollen verhindern, dass ein Brand Menschen gefährdet.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "184"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
       ],
       "stand": "2026-11"
     },
@@ -2014,7 +3070,9 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "sockel"
@@ -2031,7 +3089,8 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "stand": "2026-11"
     },
@@ -2052,6 +3111,60 @@
       ],
       "themen": [
         "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "genehmigungsfreistellung",
+      "begriff": "Genehmigungsfreistellung",
+      "varianten": [
+        "Freistellung",
+        "Freistellungsverfahren",
+        "Genehmigungsfreistellungsverfahren"
+      ],
+      "definition": "Verfahren, bei dem ein Vorhaben im passenden Bebauungsplangebiet ohne Baugenehmigung gebaut werden darf, wenn die Gemeinde nach Einreichen der Bauvorlagen kein Verfahren verlangt. Es wird nichts geprüft und kein Bescheid erteilt; die Vorschriften gelten trotzdem. Die Einzelheiten regelt jedes Land selbst, in Hessen § 64 HBO.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 64 Abs. 1 und 3, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "193"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "verfahrensfrei",
+        "vereinfachtes-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "generalklausel",
+      "begriff": "Generalklausel",
+      "definition": "Allgemein gefasste Grundvorschrift. Die bauordnungsrechtliche Generalklausel verlangt, Anlagen so zu errichten und zu erhalten, dass sie die öffentliche Sicherheit und Ordnung nicht gefährden. Sie benennt eine Pflicht, erlaubt der Behörde aber für sich allein kein Einschreiten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "180"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "184"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 3, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "ermaechtigungsgrundlage"
       ],
       "stand": "2026-11"
     },
@@ -2125,7 +3238,9 @@
         "seite": "125, 130"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-verfahren"
       ],
       "stand": "2026-11"
     },
@@ -2139,12 +3254,34 @@
         "seite": "644"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "gestaltungssatzung",
+      "begriff": "Gestaltungssatzung",
+      "definition": "Örtliche Bauvorschrift, mit der eine Gemeinde für genau abgegrenzte Gebiete das Aussehen von Bauten steuert. Sie darf positive Gestaltung verlangen, muss aber aus der örtlichen Situation begründet sein und schützt nur die äußere Gestalt, nicht die Substanz.",
+      "beispiel": "Eine Gemeinde schreibt für ihren Stadtkern bestimmte Dachformen und Dachziegel vor.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "187–188"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "oertliche-bauvorschrift",
+        "verunstaltungsverbot",
+        "erhaltungssatzung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "gewerbegebiet",
@@ -2165,7 +3302,8 @@
         }
       ],
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "industriegebiet",
@@ -2236,6 +3374,66 @@
       "stand": "2026-10"
     },
     {
+      "id": "grenzabstand",
+      "begriff": "Grenzabstand",
+      "varianten": [
+        "Bauwich"
+      ],
+      "definition": "Abstand eines Gebäudes zur Grundstücksgrenze. Bei offener Bauweise ist er einzuhalten, bei geschlossener entfällt er an den seitlichen Grenzen; seine Größe ergibt sich aus dem Bauordnungsrecht des Landes.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "36"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "181",
+          "stelle": "Rn. 505"
+        }
+      ],
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "nachbargrenze",
+        "bauweise"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grenzbebauung",
+      "begriff": "Grenzbebauung",
+      "definition": "Gebäude und Anlagen, die unmittelbar an einer Nachbargrenze stehen, etwa Garagen oder Stellplätze. Die Landesbauordnungen begrenzen ihre zulässige Gesamtlänge, damit diese Ausnahme von der Abstandsfläche klein bleibt.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "41, 45"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "grenzgarage",
+        "nachbargrenze"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grenzgarage",
+      "begriff": "Grenzgarage",
+      "definition": "Garage, die direkt an der Nachbargrenze steht und in den vom Land erlaubten Maßen keine eigene Abstandsfläche auslöst. Wird sie etwa durch eine Dachterrasse zu mehr als einer Garage, entfällt diese Erleichterung.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "41–42"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "grenzbebauung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "grossflaechiger-einzelhandel",
       "begriff": "großflächiger Einzelhandel",
       "varianten": [
@@ -2281,7 +3479,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-verfahren"
       ],
       "siehe": [
         "grz"
@@ -2343,12 +3542,57 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "grundflaeche",
         "gfz",
         "massgebende-grundstuecksflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hessische-bauordnung",
+      "begriff": "Hessische Bauordnung",
+      "varianten": [
+        "HBO",
+        "Hessischen Bauordnung"
+      ],
+      "definition": "Die Landesbauordnung Hessens aus dem Jahr 2018, zuletzt im Oktober 2025 durch das Baupaket I geändert. Sie gliedert sich in sechs Teile, vom Grundstück über das Bauwerk bis zu Verfahren und Schlussvorschriften.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "Inhaltsübersicht, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "landesbauordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hochhaus",
+      "begriff": "Hochhaus",
+      "varianten": [
+        "Hochhäuser"
+      ],
+      "definition": "Besonders hohes Gebäude, an das das Bauordnungsrecht besondere Anforderungen stellen kann. In Hessen gilt das ab mehr als 22 m Höhe, gemessen bis zum höchsten Fußboden mit möglichem Aufenthaltsraum.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 4 Satz 2 und Abs. 9 Nr. 1, § 53 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "gebaeudeklasse"
       ],
       "stand": "2026-11"
     },
@@ -2382,6 +3626,37 @@
       "stand": "2026-11"
     },
     {
+      "id": "hoehe-h",
+      "begriff": "Höhe H",
+      "varianten": [
+        "Wandhöhe H",
+        "0,4 H",
+        "0,2 H",
+        "0,8 H",
+        "0,5 H"
+      ],
+      "definition": "Rechengröße für die Tiefe der Abstandsfläche: die Wandhöhe samt den anzurechnenden Dach- und Dachaufbauanteilen. Sie wird mit einem Faktor malgenommen, den das jeweilige Land je nach Gebiet festlegt.",
+      "beispiel": "In Hessen gilt allgemein 0,4 H, in Gewerbe- und Industriegebieten 0,2 H.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "36"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 6 Abs. 5 Satz 1, Wortlaut nach Synopse Baupaket I des Hessischen Wirtschaftsministeriums vom 22.10.2025"
+        }
+      ],
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "wandhoehe",
+        "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hohlkehle",
       "begriff": "Hohlkehle",
       "definition": "Ausgerundete Innenecke, meist aus Mörtel, am Übergang zwischen Wand und Fundament oder Bodenplatte. Sie hat einen Radius von mindestens 4 cm, damit die Abdichtung dort nicht scharf abknickt und reißt.",
@@ -2410,7 +3685,8 @@
         "seite": "136"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "ortsteil",
@@ -2437,7 +3713,8 @@
         }
       ],
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "gewerbegebiet"
@@ -2462,6 +3739,24 @@
         "dampfbremse"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "innenrecht",
+      "begriff": "Innenrecht",
+      "definition": "Regeln, die sich an die Verwaltung selbst richten und ihr Handeln steuern, vor allem Verwaltungsvorschriften.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "aussenrecht"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "innenschale",
@@ -2646,6 +3941,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "kleingarage",
+      "begriff": "Kleingarage",
+      "definition": "Garage mit bis zu 100 m² Nutzfläche, die kleinste Klasse der Garagenverordnungen; darüber folgen Mittel- und Großgaragen.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "446"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kleinsiedlungsgebiet",
       "begriff": "Kleinsiedlungsgebiet",
       "varianten": [
@@ -2686,6 +3994,28 @@
         "bitumenbahn"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "landesbauordnung",
+      "begriff": "Landesbauordnung",
+      "varianten": [
+        "Bauordnung"
+      ],
+      "definition": "Gesetz eines Bundeslandes, das regelt, wie Bauwerke beschaffen sein müssen und wie die Bauaufsicht arbeitet. Jedes Land hat seine eigene; sie orientieren sich an der Musterbauordnung, unterscheiden sich aber zunehmend.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "176–177"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "hessische-bauordnung",
+        "musterbauordnung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "landesentwicklungsplan",
@@ -2801,6 +4131,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "materiell-illegal",
+      "begriff": "materiell illegal",
+      "varianten": [
+        "Materiell illegal",
+        "materielle Illegalität",
+        "materiellen Illegalität",
+        "materiell rechtswidrig",
+        "materieller Baurechtswidrigkeit"
+      ],
+      "definition": "Ein Vorhaben ist materiell illegal, wenn es inhaltlich gegen öffentlich-rechtliche Vorschriften verstößt, etwa gegen den Bebauungsplan. Ob eine Genehmigung vorliegt, ist dafür ohne Bedeutung.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "209"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "formell-illegal",
+        "materielles-recht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "materielle-planreife",
       "begriff": "materielle Planreife",
       "definition": "Die Annahme, dass ein Vorhaben den künftigen Festsetzungen des Bebauungsplans nicht entgegenstehen wird.",
@@ -2813,6 +4167,61 @@
       ],
       "siehe": [
         "formelle-planreife"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "materielles-bauordnungsrecht",
+      "begriff": "materielles Bauordnungsrecht",
+      "varianten": [
+        "materielle Bauordnungsrecht",
+        "materiellen Bauordnungsrechts"
+      ],
+      "definition": "Der Teil des Bauordnungsrechts, der festlegt, welche Anforderungen ein Bauwerk inhaltlich erfüllen muss. Er dient der Gefahrenabwehr sowie sozialen, ökologischen und baukulturellen Standards.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "formelles-bauordnungsrecht",
+        "gefahrenabwehr"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "materielles-recht",
+      "begriff": "materielles Recht",
+      "varianten": [
+        "materielle Recht",
+        "materiellen Recht",
+        "materiellem Recht",
+        "materielles öffentliches Recht"
+      ],
+      "definition": "Vorschriften, die inhaltlich regeln, was gebaut werden darf und wie es beschaffen sein muss. Davon zu unterscheiden sind die formellen Regeln über das Verfahren. Das materielle Recht gilt auch dort, wo kein Verfahren stattfindet.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "193"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "209"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "216"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "materiell-illegal"
       ],
       "stand": "2026-11"
     },
@@ -2835,6 +4244,25 @@
         "stossfuge"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "mindesttiefe",
+      "begriff": "Mindesttiefe",
+      "definition": "Kleinstes Maß, das eine Abstandsfläche auch dann behalten muss, wenn die Rechnung aus Höhe und Faktor weniger ergibt. Der Wert ist Landesrecht: In Hessen sind es seit dem Baupaket I 2,50 m, vorher waren es 3 m.",
+      "beispiel": "In Hessen ergibt eine 5 m hohe Wand rechnerisch 2,00 m Tiefe, einzuhalten sind trotzdem 2,50 m.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 6 Abs. 5 Satz 4, Wortlaut nach Synopse Baupaket I des Hessischen Wirtschaftsministeriums vom 22.10.2025"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "abstandsflaeche",
+        "hoehe-h",
+        "baupaket-i"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "mineralwolle",
@@ -2880,6 +4308,45 @@
       "stand": "2026-11"
     },
     {
+      "id": "mittlere-wandhoehe",
+      "begriff": "mittlere Wandhöhe",
+      "varianten": [
+        "mittleren Wandhöhe"
+      ],
+      "definition": "Gemittelte Höhe einer Wand, deren Oberkante oder Fußpunkt nicht waagerecht verläuft, etwa am Hang. Sie ergibt sich aus der Wandfläche geteilt durch die größte Wandbreite.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "44"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "wandhoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "modifizierende-auflage",
+      "begriff": "modifizierende Auflage",
+      "varianten": [
+        "modifizierenden Auflage"
+      ],
+      "definition": "Umstrittene Bezeichnung für eine Genehmigung, die anders als beantragt erteilt wird. Nach der bei Battis vertretenen Ansicht ist sie keine Nebenbestimmung, sondern eine teilweise Ablehnung oder eine Ablehnung mit dem Angebot einer anderen Genehmigung.",
+      "beispiel": "Beantragt sind drei Geschosse, genehmigt werden vier.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "195"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "nebenbestimmung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "moertelgruppe",
       "begriff": "Mörtelgruppe",
       "definition": "Einteilung von Mörteln nach Zusammensetzung und Festigkeit in Gruppen, die mit römischen Ziffern bezeichnet werden; Normalmauermörtel nach DIN 1053 etwa in I, II, IIa, III und IIIa. Die Gruppe legt fest, wofür ein Mörtel verwendet werden darf.",
@@ -2894,6 +4361,64 @@
         "zementmoertel"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "musterbauordnung",
+      "begriff": "Musterbauordnung",
+      "varianten": [
+        "MBO"
+      ],
+      "definition": "Gemeinsam erarbeitete Vorlage, an der sich die Länder beim Erlass ihrer Landesbauordnungen orientieren. Über sie gelangen auch EU-Vorgaben, etwa zu Bauprodukten, in die Bauordnungen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "177"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "argebau",
+        "landesbauordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nachbargrenze",
+      "begriff": "Nachbargrenze",
+      "definition": "Grundstücksgrenze zu einem Nachbargrundstück, das bebaut ist oder für eine Bebauung infrage kommt. Sie ist der Bezug für Abstandsflächen und Grenzbebauung.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "44"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "grenzabstand",
+        "grenzbebauung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nachbarschuetzend",
+      "begriff": "nachbarschützend",
+      "definition": "Eigenschaft einer öffentlich-rechtlichen Vorschrift, auch die Belange der Nachbarn zu schützen. Soll von ihr abgewichen oder befreit werden, werden die Nachbarn beteiligt; wird sie erheblich verletzt, haben sie in der Regel Anspruch auf ein Einschreiten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "199"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "214"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "nachrichtliche-uebernahme",
@@ -2963,7 +4488,30 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nebenbestimmung",
+      "begriff": "Nebenbestimmung",
+      "definition": "Zusatz zu einer Genehmigung, der deren Inhalt ergänzt oder einschränkt. Es gibt zwei Gruppen: die Bedingung mit Befristung und Widerrufsvorbehalt, die untrennbar zur Genehmigung gehört, und die Auflage, die selbstständig durchsetzbar ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "194"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "195"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "modifizierende-auflage"
       ],
       "stand": "2026-11"
     },
@@ -3145,6 +4693,31 @@
       "stand": "2026-11"
     },
     {
+      "id": "notwendiger-stellplatz",
+      "begriff": "notwendiger Stellplatz",
+      "varianten": [
+        "notwendige Stellplätze",
+        "notwendigen Stellplätze",
+        "notwendigen Stellplätzen",
+        "notwendiger Stellplätze"
+      ],
+      "definition": "Stellplatz, der wegen des zu erwartenden Verkehrs eines Bauvorhabens herzustellen ist. In Hessen legt die Gemeinde unter Berücksichtigung der örtlichen Verkehrsverhältnisse fest, ob und wie viele verlangt werden.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 52 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "stellplatzsatzung",
+        "stellplatzpflicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nutzungsaenderung",
       "begriff": "Nutzungsänderung",
       "varianten": [
@@ -3157,10 +4730,35 @@
         "seite": "146"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-abstandsflaechen",
+        "rb-verfahren"
       ],
       "siehe": [
         "vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nutzungseinheit",
+      "begriff": "Nutzungseinheit",
+      "definition": "Räumlich abgetrennter Bereich mit mindestens einem Aufenthaltsraum, zum Beispiel eine Wohnung, Praxis oder Betriebsstätte. Er ist brandschutztechnisch von anderen Bereichen geschützt und braucht ein geeignetes Rettungswegsystem.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "628"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 36 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "gebaeudeklasse",
+        "rettungsweg"
       ],
       "stand": "2026-11"
     },
@@ -3191,6 +4789,60 @@
       },
       "themen": [
         "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nutzungsuntersagung",
+      "begriff": "Nutzungsuntersagung",
+      "varianten": [
+        "Nutzungsverbot"
+      ],
+      "definition": "Anordnung der Bauaufsicht, die verbietet, eine bauliche Anlage zu benutzen oder in Betrieb zu nehmen. Anders als der Abriss greift sie nicht in die Substanz ein.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "207"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "210"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 82 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "beseitigungsanordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "oeffentlich-rechtlich-gesichert",
+      "begriff": "öffentlich-rechtlich gesichert",
+      "varianten": [
+        "öffentlich-rechtliche Sicherung",
+        "öffentlich-rechtlichen Sicherung",
+        "öffentlich-rechtlich gesichert"
+      ],
+      "definition": "Durch öffentliches Recht abgesichert statt nur durch private Absprache. Nach hessischem Recht geschieht das durch eine Baulast, Festsetzungen im Bebauungsplan oder sonstige Vorschriften, aus denen sich der Zweck zwingend ergibt.",
+      "beispiel": "Eine Zufahrt über das Vordergrundstück, die per Baulast gesichert ist.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 15, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo",
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "baulast"
       ],
       "stand": "2026-11"
     },
@@ -3228,6 +4880,33 @@
       ],
       "themen": [
         "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "oertliche-bauvorschrift",
+      "begriff": "örtliche Bauvorschrift",
+      "varianten": [
+        "örtlichen Bauvorschrift",
+        "Örtliche Bauvorschrift",
+        "Örtlichen Bauvorschrift"
+      ],
+      "definition": "Bauvorschrift, die eine Gemeinde aufgrund der Landesbauordnung als Satzung erlässt, etwa zur äußeren Gestaltung von Bauten oder zu Werbeanlagen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 91 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "gestaltungssatzung"
       ],
       "stand": "2026-11"
     },
@@ -3389,7 +5068,25 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "praeventives-verbot",
+      "begriff": "präventives Verbot mit Erlaubnisvorbehalt",
+      "definition": "Regelungstechnik, bei der eine an sich erlaubte Tätigkeit vorab behördlich kontrolliert wird: Ohne Erlaubnis darf nicht begonnen werden, wer alle Anforderungen erfüllt, hat aber Anspruch auf sie. Das Lehrbuchbeispiel ist die Baugenehmigung.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "191"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "repressives-verbot",
+        "gebundene-kontrollerlaubnis"
       ],
       "stand": "2026-11"
     },
@@ -3419,6 +5116,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "pruefsachverstaendige",
+      "begriff": "Prüfsachverständige",
+      "varianten": [
+        "Prüfsachverständiger"
+      ],
+      "definition": "Fachleute, die im Auftrag der Bauherrschaft prüfen und bescheinigen, dass bestimmte Nachweise, etwa zur Standsicherheit oder zum Brandschutz, die Anforderungen einhalten. Nach dem hessischen Recht entfällt in diesen Fällen die Prüfung durch die Bauaufsicht.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 68 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "bautechnische-nachweise"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "qualifizierter-bebauungsplan",
       "begriff": "qualifizierter Bebauungsplan",
       "varianten": [
@@ -3435,7 +5151,8 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "einfacher-bebauungsplan"
@@ -3522,6 +5239,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "rechtsverordnung",
+      "begriff": "Rechtsverordnung",
+      "definition": "Außenwirksame Vorschrift, die nicht das Parlament, sondern aufgrund gesetzlicher Ermächtigung eine Behörde erlässt. Im Bauordnungsrecht ergänzt die oberste Bauaufsichtsbehörde so die Bauordnung, etwa für Versammlungsstätten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 89, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "aussenrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "regionalplan",
       "begriff": "Regionalplan",
       "varianten": [
@@ -3570,6 +5309,48 @@
       "stand": "2026-11"
     },
     {
+      "id": "repressives-verbot",
+      "begriff": "repressives Verbot mit Befreiungsvorbehalt",
+      "definition": "Regelungstechnik, bei der ein Vorhaben grundsätzlich untersagt ist und nur im Einzelfall nach Ermessen zugelassen wird. So sind Ausnahme und Befreiung nach traditionellem Verständnis eingeordnet.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "191"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "194"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "praeventives-verbot",
+        "befreiung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rettungsweg",
+      "begriff": "Rettungsweg",
+      "definition": "Weg, auf dem sich Menschen im Brandfall ins Freie retten oder gerettet werden. Nach der Hessischen Bauordnung braucht jede Nutzungseinheit mit Aufenthaltsraum in jedem Geschoss grundsätzlich zwei unabhängige Rettungswege, etwa eine notwendige Treppe und eine von der Feuerwehr erreichbare Stelle.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 36 Abs. 1 und 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "sicherheitstreppenraum",
+        "nutzungseinheit"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rohdichte",
       "begriff": "Rohdichte",
       "varianten": [
@@ -3607,6 +5388,19 @@
       "stand": "2026-10"
     },
     {
+      "id": "sachbescheidungsinteresse",
+      "begriff": "Sachbescheidungsinteresse",
+      "definition": "Schutzwürdiges Interesse daran, dass die Behörde über einen Antrag in der Sache entscheidet. Es fehlt, wenn das Vorhaben aus offenkundigen Gründen nicht verwirklicht werden kann; dann darf die Behörde den Antrag ablehnen, ohne ihn weiter zu prüfen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "207"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "satzung",
       "begriff": "Satzung",
       "definition": "Rechtsnorm, die eine Körperschaft wie die Gemeinde selbst erlässt und die innerhalb ihres Bereichs für jeden gilt. Bebauungsplan und Veränderungssperre werden in dieser Form beschlossen.",
@@ -3617,7 +5411,9 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen"
       ],
       "stand": "2026-11"
     },
@@ -3694,6 +5490,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "schmalseitenprivileg",
+      "begriff": "Schmalseitenprivileg",
+      "definition": "Erleichterung, nach der vor zwei Wänden eines Gebäudes auf begrenzter Länge die halbe Tiefe der Abstandsfläche genügt. Die im Städtebaureader abgedruckte frühere BauO NRW gewährte sie bis 16 m Länge mit mindestens 3 m Tiefe; die im selben Reader abgedruckte Hessische Bauordnung sieht sie nicht vor.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "36, 40–41"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "schutzschicht",
       "begriff": "Schutzschicht",
       "definition": "Schicht, die eine empfindliche Lage, meist die Abdichtung, vor mechanischer Beschädigung schützt. An erdberührten Wänden dienen dazu Noppenbahnen, Dämmplatten oder Dränplatten, die beim Verfüllen und Verdichten der Baugrube wirken.",
@@ -3728,6 +5540,41 @@
         "setzung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "schutzzielbetrachtung",
+      "begriff": "Schutzzielbetrachtung",
+      "definition": "Prüfung, ob sich der Zweck einer Vorschrift auch anders erreichen lässt. In Hessen stützt sie die Zulassung von Abweichungen, wenn diese mit den öffentlichen und nachbarlichen Belangen vereinbar sind.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 73 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schwarzbau",
+      "begriff": "Schwarzbau",
+      "varianten": [
+        "Schwarzbauten"
+      ],
+      "definition": "Bauwerk, das ohne die erforderliche Baugenehmigung errichtet wurde. Ob es beseitigt werden muss, hängt vor allem davon ab, ob es auch materiell rechtswidrig ist.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "210"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "formell-illegal",
+        "beseitigungsanordnung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "sd-wert",
@@ -3767,6 +5614,24 @@
         "schutzvlies"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "sicherheitstreppenraum",
+      "begriff": "Sicherheitstreppenraum",
+      "definition": "Sicher erreichbarer Treppenraum, in den Feuer und Rauch nicht eindringen können. Nach der Hessischen Bauordnung kann deshalb der zweite Rettungsweg entfallen.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 36 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "rettungsweg"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "siedlungsdichte",
@@ -3838,6 +5703,25 @@
       "stand": "2026-10"
     },
     {
+      "id": "sonderbau",
+      "begriff": "Sonderbau",
+      "varianten": [
+        "Sonderbauten"
+      ],
+      "definition": "Anlage oder Raum besonderer Art oder Nutzung, die ein Merkmal aus dem Katalog der Bauordnung erfüllt. In Hessen zählen dazu etwa Hochhäuser über 22 m. Sonderbauten durchlaufen dort das Baugenehmigungsverfahren mit vollem Prüfumfang.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 2 Abs. 9 und § 66, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "baugenehmigungsverfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sondergebiet",
       "begriff": "Sondergebiet",
       "varianten": [
@@ -3855,7 +5739,8 @@
         }
       ],
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "grossflaechiger-einzelhandel"
@@ -3900,6 +5785,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "sozialabstand",
+      "begriff": "Sozialabstand",
+      "definition": "Gebäudeabstand, der die Privatsphäre schützt, vor allem vor Einblick von gegenüber. Neben Brandschutz und Belichtung ist das eines der Ziele der Abstandsflächen.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "36"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sperrschicht",
       "begriff": "Sperrschicht",
       "definition": "Lage aus wasserundurchlässigem Material, etwa einer geklebten Bitumenbahn, die Feuchte an einer bestimmten Stelle im Bauteil sperrt. Waagerecht schützt sie das aufgehende Mauerwerk vor aufsteigender Feuchte, senkrecht dichtet sie die Kellerwand ab; über offenen Stoßfugen fängt sie Wasser aus dem Schalenzwischenraum ab.",
@@ -3915,6 +5816,24 @@
         "abdichtung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "spezialermaechtigung",
+      "begriff": "Spezialermächtigung",
+      "definition": "Ermächtigungsgrundlage für eine bestimmte Maßnahme der Bauaufsicht, vor allem beim nachträglichen Einschreiten gegen Bauwerke.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "179"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "ermaechtigungsgrundlage"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "splittersiedlung",
@@ -4007,6 +5926,87 @@
       "stand": "2026-10"
     },
     {
+      "id": "stellplatz",
+      "begriff": "Stellplatz",
+      "varianten": [
+        "Stellplätze",
+        "Stellplätzen",
+        "Kfz-Stellplätze",
+        "Kfz-Stellplätzen"
+      ],
+      "definition": "Fläche außerhalb öffentlicher Verkehrsflächen, auf der ein Kraftfahrzeug abgestellt wird. Eine Garage ist dagegen ein ganz oder teilweise umschlossener Raum.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 2 Abs. 11, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "notwendiger-stellplatz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stellplatzpflicht",
+      "begriff": "Stellplatzpflicht",
+      "definition": "Pflicht, bei Bauvorhaben mit Zu- oder Abgangsverkehr Stellplätze oder Garagen herzustellen. Sie sollte ursprünglich öffentliche Verkehrsflächen vom ruhenden Verkehr entlasten und ist heute je nach Land sehr unterschiedlich geregelt; sie kann durch einen Geldbetrag abgelöst werden.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "181–182"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "stellplatzsatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stellplatzsatzung",
+      "begriff": "Stellplatzsatzung",
+      "definition": "Satzung, mit der eine Gemeinde regelt, wann und wo Stellplätze herzustellen, zu beschränken oder entbehrlich sind.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "181"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 52 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "notwendiger-stellplatz",
+        "stellplatzpflicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stoerer",
+      "begriff": "Störer",
+      "varianten": [
+        "Zustandsstörer"
+      ],
+      "definition": "Wer für einen rechtswidrigen Zustand oder eine Beeinträchtigung einzustehen hat. Im Ordnungsrecht ist das der Handlungsstörer, meist der Bauherr, oder der Zustandsstörer, in der Regel der Eigentümer; unter mehreren wählt die Behörde nach Ermessen aus.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "215"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "stossfuge",
       "begriff": "Stoßfuge",
       "definition": "Senkrechte Fuge zwischen zwei nebeneinanderliegenden Steinen derselben Schicht. In übereinanderliegenden Schichten dürfen die Stoßfugen nicht direkt aufeinandertreffen.",
@@ -4044,6 +6044,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "strassenmitte",
+      "begriff": "Straßenmitte",
+      "varianten": [
+        "Mittelregel"
+      ],
+      "definition": "Äußerste Linie, bis zu der eine Abstandsfläche auf eine öffentliche Verkehrsfläche reichen darf. Entsprechendes gilt für öffentliche Grün- und Wasserflächen, weil diese Flächen nicht bebaut werden.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "37"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "streubebauung",
       "begriff": "Streubebauung",
       "definition": "Verstreute Gebäude ohne erkennbare Ordnung. Weil ihr die organische Siedlungsstruktur fehlt, bildet sie keinen Ortsteil.",
@@ -4056,6 +6075,19 @@
       ],
       "siehe": [
         "ortsteil"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stuetzmauer",
+      "begriff": "Stützmauer",
+      "definition": "Mauer, die einen Geländesprung sichert und das Erdreich am Abrutschen hindert.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "45"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
       ],
       "stand": "2026-11"
     },
@@ -4078,6 +6110,56 @@
         "kaltseite"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "technische-baubestimmungen",
+      "begriff": "Technische Baubestimmungen",
+      "varianten": [
+        "Technischen Baubestimmungen",
+        "technische Baubestimmungen",
+        "technischen Baubestimmungen",
+        "Technische Baubestimmung"
+      ],
+      "definition": "Von der obersten Bauaufsichtsbehörde bekannt gemachte Vorgaben, die die allgemeinen Bauanforderungen konkretisieren, oft durch Verweis auf technische Regeln. In Hessen sind sie zu beachten; abweichen darf nur, wer die Anforderungen mit einer anderen Lösung ebenso erfüllt, sofern die Bestimmung das nicht ausschließt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 90 Abs. 1 und 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "din-norm"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "teilbaugenehmigung",
+      "begriff": "Teilbaugenehmigung",
+      "definition": "Gestattung, mit Baugrube, einzelnen Bauteilen oder Bauabschnitten schon vor der endgültigen Baugenehmigung zu beginnen. Sie setzt einen Bauantrag für das ganze Vorhaben voraus, und ihre Erteilung steht im Ermessen der Behörde.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "201"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "202"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "bauvorbescheid"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "teilprivilegiertes-vorhaben",
@@ -4120,10 +6202,30 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "firsthoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "traufwand",
+      "begriff": "Traufwand",
+      "varianten": [
+        "Traufseite"
+      ],
+      "definition": "Außenwand auf der Seite eines geneigten Daches, an der die untere Dachkante liegt, im Unterschied zur Giebelseite.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "39–40"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "traufhoehe"
       ],
       "stand": "2026-11"
     },
@@ -4143,6 +6245,19 @@
         "kellenschnitt"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "typengenehmigung",
+      "begriff": "Typengenehmigung",
+      "definition": "Genehmigung für bauliche Anlagen, die in gleicher Ausführung an mehreren Stellen errichtet werden sollen, etwa Fertighäuser. Sie macht das Verfahren vor Ort nicht entbehrlich; dort werden noch die übrigen Vorschriften wie das Planungsrecht geprüft.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "202"
+      },
+      "themen": [
+        "rb-verfahren"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "typenkurzzeichen",
@@ -4196,11 +6311,29 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-verfahren"
       ],
       "siehe": [
         "baugrenze",
         "baulinie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ueberdeckung",
+      "begriff": "Überdeckung",
+      "definition": "Im Abstandsflächenrecht das Übereinanderliegen zweier Abstandsflächen. Grundsätzlich ist sie verboten, damit die freizuhaltende Fläche tatsächlich frei bleibt; Ausnahmen gelten etwa für Wände, die im Winkel von mehr als 75° zueinander stehen.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "37"
+      },
+      "themen": [
+        "rb-abstandsflaechen"
+      ],
+      "siehe": [
+        "abstandsflaeche"
       ],
       "stand": "2026-11"
     },
@@ -4289,7 +6422,8 @@
         "seite": "136"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "aussenbereich",
@@ -4357,7 +6491,8 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "zurueckstellung",
@@ -4366,8 +6501,44 @@
       "stand": "2026-11"
     },
     {
+      "id": "vereinfachtes-verfahren",
+      "begriff": "vereinfachtes Verfahren",
+      "varianten": [
+        "vereinfachte Verfahren",
+        "vereinfachten Verfahren",
+        "vereinfachtes Baugenehmigungsverfahren",
+        "vereinfachte Baugenehmigungsverfahren",
+        "vereinfachten Baugenehmigungsverfahren",
+        "vereinfachtes Genehmigungsverfahren",
+        "vereinfachten Genehmigungsverfahren"
+      ],
+      "definition": "Baugenehmigungsverfahren mit verringertem Prüfumfang und kürzeren Fristen, heute das Regelverfahren. In Hessen prüft die Behörde nach § 65 HBO vor allem das Bauplanungsrecht und beantragte Abweichungen; die Genehmigung gilt nach Fristablauf als erteilt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "193"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 65, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "baugenehmigungsverfahren",
+        "fiktion"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "verfahrensfrei",
       "begriff": "verfahrensfrei",
+      "varianten": [
+        "Verfahrensfreiheit",
+        "baugenehmigungsfrei"
+      ],
       "definition": "Ein Vorhaben ist verfahrensfrei, wenn das Landesrecht dafür keine vorherige behördliche Prüfung verlangt. Die materiellen Vorschriften gelten trotzdem, und das Risiko eines Verstoßes trägt der Bauherr.",
       "beispiel": "Auch ohne Genehmigungsverfahren muss das Bauplanungsrecht eingehalten sein.",
       "quelle": {
@@ -4375,7 +6546,9 @@
         "seite": "193"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-verfahren"
       ],
       "stand": "2026-11"
     },
@@ -4407,6 +6580,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "verhaeltnismaessigkeit",
+      "begriff": "Verhältnismäßigkeit",
+      "definition": "Rechtsgrundsatz, dass ein behördlicher Eingriff nicht weiter gehen darf als nötig. Im Baurecht verbietet er etwa den Abriss, wenn ein Nutzungsverbot oder eine nachträgliche Befreiung ausreicht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "209"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "214"
+        }
+      ],
+      "themen": [
+        "rb-verfahren"
+      ],
+      "siehe": [
+        "beseitigungsanordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "verpflichtungsklage",
       "begriff": "Verpflichtungsklage",
       "definition": "Klage vor dem Verwaltungsgericht gegen eine Ablehnung, im Baurecht vor allem gegen das abgelehnte Baugesuch. Sie richtet sich gegen die Bauaufsichtsbehörde.",
@@ -4419,6 +6614,33 @@
       ],
       "siehe": [
         "baugenehmigung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verunstaltungsverbot",
+      "begriff": "Verunstaltungsverbot",
+      "varianten": [
+        "Verunstaltung",
+        "verunstaltet"
+      ],
+      "definition": "Verbot, Bauwerke so zu gestalten, dass sie selbst verunstaltet wirken oder ihre Umgebung verunstalten. Bloß Unschönes genügt nicht: Der Zustand muss das ästhetische Empfinden verletzen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "185–186"
+        },
+        {
+          "werk": "HBO",
+          "stelle": "§ 9, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "gebildeter-durchschnittsmensch",
+        "gestaltungssatzung"
       ],
       "stand": "2026-11"
     },
@@ -4440,6 +6662,24 @@
       "stand": "2026-11"
     },
     {
+      "id": "verwaltungsvorschrift",
+      "begriff": "Verwaltungsvorschrift",
+      "definition": "Vorgabe der obersten Behörde an die Verwaltung, wie Bauordnung und Verordnungen anzuwenden sind. Sie zählt zum Innenrecht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "178"
+        }
+      ],
+      "themen": [
+        "rb-lbo"
+      ],
+      "siehe": [
+        "innenrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vollgeschoss",
       "begriff": "Vollgeschoss",
       "definition": "Geschoss, das nach der Bauordnung des jeweiligen Landes als volles Geschoss zählt. Die BauNVO definiert den Begriff nicht selbst, sondern übernimmt die Landesregel; von der Zahl der Vollgeschosse hängen Geschossfläche und Baumasse ab.",
@@ -4455,7 +6695,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-lbo"
       ],
       "siehe": [
         "geschossflaeche"
@@ -4471,7 +6712,10 @@
         "seite": "126"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-lbo",
+        "rb-abstandsflaechen",
+        "rb-verfahren"
       ],
       "siehe": [
         "nutzungsaenderung",
@@ -4515,7 +6759,8 @@
       },
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-verfahren"
       ],
       "siehe": [
         "vorhabentraeger",
@@ -4591,7 +6836,8 @@
         "seite": "164"
       },
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-abstandsflaechen"
       ],
       "siehe": [
         "abstandsflaeche"
@@ -4664,7 +6910,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-verfahren"
       ],
       "stand": "2026-11"
     },
