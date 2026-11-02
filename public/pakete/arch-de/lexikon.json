@@ -23,6 +23,148 @@
       "stand": "2026-10"
     },
     {
+      "id": "abwaegung",
+      "begriff": "Abwägung",
+      "definition": "Kern jeder Bauleitplanung: Die Gemeinde stellt die öffentlichen und privaten Belange einander gegenüber und entscheidet, welche sie vorzieht und welche zurücktreten. Gerichte prüfen diese Entscheidung nur auf bestimmte Fehler.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "89",
+        "stelle": "Rn. 248"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsgebot",
+        "belang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsausfall",
+      "begriff": "Abwägungsausfall",
+      "definition": "Abwägungsfehler, bei dem überhaupt keine Abwägung stattgefunden hat.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "92",
+        "stelle": "Rn. 257–259"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsdefizit"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsdefizit",
+      "begriff": "Abwägungsdefizit",
+      "definition": "Abwägungsfehler, bei dem Belange unberücksichtigt bleiben, die nach Lage der Dinge hätten ermittelt und einbezogen werden müssen.",
+      "beispiel": "Einwände wegen Lärm werden nicht geprüft, weil das Vorhaben als schon entschieden gilt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "92",
+        "stelle": "Rn. 257–259"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsausfall",
+        "abwaegungsfehleinschaetzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsdisproportionalitaet",
+      "begriff": "Abwägungsdisproportionalität",
+      "definition": "Abwägungsfehler, bei dem der Ausgleich zwischen den Belangen in keinem vertretbaren Verhältnis zu ihrem objektiven Gewicht steht.",
+      "beispiel": "Ein Wohngebiet wird von zwei Seiten von einem Industriegebiet eingeschlossen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "92",
+        "stelle": "Rn. 257–259"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsfehleinschaetzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsergebnis",
+      "begriff": "Abwägungsergebnis",
+      "definition": "Der fertige Planinhalt als Resultat der Abwägung. Gerichte prüfen ihn als statische Seite des Abwägungsgebots unabhängig davon, wie er zustande gekommen ist.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "89",
+        "stelle": "Rn. 249"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsvorgang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsfehleinschaetzung",
+      "begriff": "Abwägungsfehleinschätzung",
+      "definition": "Abwägungsfehler, bei dem das Gewicht oder die Bedeutung eines öffentlichen oder privaten Belangs falsch beurteilt wird.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "92",
+        "stelle": "Rn. 257–259"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsdefizit",
+        "abwaegungsdisproportionalitaet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsgebot",
+      "begriff": "Abwägungsgebot",
+      "definition": "Gesetzliche Pflicht, bei der Aufstellung von Bauleitplänen alle betroffenen Belange gerecht gegeneinander und untereinander abzuwägen. Sie gilt für den Vorgang der Planung ebenso wie für ihr Ergebnis.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "89",
+        "stelle": "Rn. 248–249"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsvorgang",
+        "abwaegungsergebnis"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwaegungsvorgang",
+      "begriff": "Abwägungsvorgang",
+      "definition": "Der Weg zur Planentscheidung, also das Ermitteln, Bewerten und Gewichten der Belange im Planungsverfahren. Er wird auch die dynamische Seite des Abwägungsgebots genannt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "89",
+        "stelle": "Rn. 249"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegungsergebnis"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "allgemeine-bauaufsichtliche-zulassung",
       "begriff": "allgemeine bauaufsichtliche Zulassung",
       "definition": "Nachweis des Deutschen Instituts für Bautechnik (DIBt), dass ein Bauprodukt verwendet werden darf, für das es keine allgemein anerkannten technischen Regeln gibt oder das von ihnen erheblich abweicht.",
@@ -35,6 +177,23 @@
         "sockel-erdberuehrt"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "anpassungspflicht",
+      "begriff": "Anpassungspflicht",
+      "definition": "Pflicht der Gemeinde, ihre Bauleitpläne mit den Zielen der Raumordnung in Einklang zu bringen. Sie gilt beim erstmaligen Aufstellen und auch für bestehende Pläne, wenn sich die Ziele später ändern.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "37–38",
+        "stelle": "Rn. 105–107"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "ziele-der-raumordnung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "aufgehend",
@@ -75,6 +234,24 @@
       "stand": "2026-10"
     },
     {
+      "id": "aufstellungsbeschluss",
+      "begriff": "Aufstellungsbeschluss",
+      "definition": "Beschluss des Gemeinderats, einen Bauleitplan aufzustellen, mit dem das förmliche Verfahren beginnt. Erst wenn er ortsüblich bekannt gemacht ist, kann die Gemeinde ihre Planung mit Veränderungssperre oder Zurückstellung sichern.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "77",
+        "stelle": "Rn. 212–213"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "veraenderungssperre",
+        "zurueckstellung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "aussendaemmung",
       "begriff": "Außendämmung",
       "definition": "Wärmedämmung auf der Außenseite einer Wand oder eines Daches, etwa hinter einer Bekleidung, hinter einer Abdichtung oder unter Putz. Die tragende Konstruktion bleibt so auf der warmen Seite.",
@@ -106,6 +283,64 @@
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "bauflaeche",
+      "begriff": "Baufläche",
+      "definition": "Für die Bebauung vorgesehene Fläche, grob nach der allgemeinen Art der Nutzung eingeteilt und mit einem Buchstaben abgekürzt: W, M, G oder S. Typisch für den Flächennutzungsplan.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "66",
+        "stelle": "Rn. 176"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "baugebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baugebiet",
+      "begriff": "Baugebiet",
+      "definition": "Für die Bebauung vorgesehene Fläche, eingeordnet nach der besonderen Art der Nutzung und mit zwei Buchstaben abgekürzt, etwa WA für allgemeines Wohngebiet. Typisch für den Bebauungsplan; mit der Festsetzung gelten die Zulässigkeitsregeln der Baunutzungsverordnung.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "66",
+        "stelle": "Rn. 176"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "bauflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baugrenze",
+      "begriff": "Baugrenze",
+      "definition": "Im Bebauungsplan festgesetzte Linie, die Gebäude nicht überschreiten dürfen; dahinter zurückbleiben dürfen sie.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73",
+          "stelle": "Rn. 196"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 23 Abs. 3, Wortlaut nach dejure.org"
+        }
+      ],
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "baulinie",
+        "ueberbaubare-grundstuecksflaeche"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "baugrube",
@@ -143,6 +378,118 @@
         "setzung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "bauleitplan",
+      "begriff": "Bauleitplan",
+      "varianten": [
+        "Bauleitpläne",
+        "Bauleitplanung"
+      ],
+      "definition": "Oberbegriff für die beiden Pläne, mit denen eine Gemeinde die Nutzung des Bodens in ihrem Gebiet steuert: den vorbereitenden Flächennutzungsplan und den verbindlichen Bebauungsplan. Bauleitplanung heißt das Aufstellen und Ändern dieser Pläne.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "47–48",
+        "stelle": "Rn. 128"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "flaechennutzungsplan",
+        "bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baulinie",
+      "begriff": "Baulinie",
+      "definition": "Im Bebauungsplan festgesetzte Linie, auf der gebaut werden muss. Nur geringfügig dürfen Gebäudeteile vor- oder zurücktreten, sofern das zugelassen wird.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73",
+          "stelle": "Rn. 196"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 23 Abs. 2, Wortlaut nach dejure.org"
+        }
+      ],
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "baugrenze"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bebauungsplan",
+      "begriff": "Bebauungsplan",
+      "varianten": [
+        "B-Plan",
+        "B-Pläne",
+        "Bebauungspläne"
+      ],
+      "definition": "Verbindlicher Bauleitplan für einen Teil des Gemeindegebiets. Er legt grundstücksgenau fest, was wo und wie gebaut werden darf, wird als Satzung beschlossen und gilt für jeden.",
+      "beispiel": "Für ein neues Wohnquartier bestimmt er Baugebiet, Geschosszahl und die Flächen, auf denen die Häuser stehen dürfen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "47–48",
+        "stelle": "Rn. 128"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "flaechennutzungsplan",
+        "satzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "belang",
+      "begriff": "Belang",
+      "definition": "Öffentliches oder privates Interesse, das bei einer planerischen oder baurechtlichen Entscheidung zu berücksichtigen ist. In der Bauleitplanung wird es ermittelt, bewertet und in die Abwägung eingestellt.",
+      "beispiel": "Lärmschutz der Anwohner oder das Erweiterungsinteresse eines Betriebs.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "89",
+        "stelle": "Rn. 248"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "abwaegung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "beschleunigtes-verfahren",
+      "begriff": "beschleunigtes Verfahren",
+      "varianten": [
+        "beschleunigte Verfahren",
+        "beschleunigten Verfahren"
+      ],
+      "definition": "Vereinfachtes Aufstellungsverfahren für Bebauungspläne der Innenentwicklung. Es kommt ohne förmliche Umweltprüfung aus und erlaubt, vom Flächennutzungsplan abzuweichen, der danach nur berichtigt wird.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "67",
+          "stelle": "Rn. 181"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "78",
+          "stelle": "Rn. 215"
+        }
+      ],
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "bitumenbahn",
@@ -476,6 +823,46 @@
       "stand": "2026-10"
     },
     {
+      "id": "durchfuehrungsvertrag",
+      "begriff": "Durchführungsvertrag",
+      "definition": "Vertrag zwischen Vorhabenträger und Gemeinde, in dem sich der Träger verpflichtet, das Projekt fristgerecht umzusetzen und die Kosten zu tragen. Erst wenn er geschlossen ist, darf die Gemeinde den vorhabenbezogenen Bebauungsplan beschließen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "76",
+        "stelle": "Rn. 209–210"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "vorhabenbezogener-bebauungsplan",
+        "vorhabentraeger"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einfacher-bebauungsplan",
+      "begriff": "einfacher Bebauungsplan",
+      "varianten": [
+        "einfacher B-Plan",
+        "einfachen B-Plan"
+      ],
+      "definition": "Gültiger Bebauungsplan, dem mindestens eine der vier Mindestfestsetzungen des qualifizierten Plans fehlt. Was er nicht regelt, beurteilt sich nach den gesetzlichen Regeln für den Innenbereich oder den Außenbereich.",
+      "beispiel": "Ein Plan, der nur eine Verkehrsfläche für eine Straßentrasse festsetzt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "75",
+        "stelle": "Rn. 203–204"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "qualifizierter-bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "entwaesserungsoeffnung",
       "begriff": "Entwässerungsöffnung",
       "varianten": [
@@ -494,6 +881,23 @@
         "stossfuge"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "entwicklungsgebot",
+      "begriff": "Entwicklungsgebot",
+      "definition": "Regel, dass der Bebauungsplan grundsätzlich aus dem Flächennutzungsplan abzuleiten ist. So bleibt die Gesamtplanung der Gemeinde in den einzelnen Bebauungsplänen gewahrt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "67",
+        "stelle": "Rn. 179"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "parallelverfahren"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "eps",
@@ -528,6 +932,62 @@
         "sockel-erdberuehrt"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "ergaenzendes-verfahren",
+      "begriff": "ergänzendes Verfahren",
+      "varianten": [
+        "ergänzenden Verfahren"
+      ],
+      "definition": "Nachträgliches Verfahren, in dem die Gemeinde Fehler eines Bauleitplans behebt, statt ihn ganz neu aufzustellen. Der Plan kann danach auch rückwirkend in Kraft gesetzt werden.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "97",
+        "stelle": "Rn. 272"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "planerhaltung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "festsetzung",
+      "begriff": "Festsetzung",
+      "definition": "Rechtsverbindliche Aussage eines Bebauungsplans, etwa zu Art und Maß der Nutzung oder zur überbaubaren Fläche. Der Flächennutzungsplan setzt dagegen nicht fest, sondern stellt dar.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "73",
+        "stelle": "Rn. 198"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "flaechennutzungsplan",
+      "begriff": "Flächennutzungsplan",
+      "varianten": [
+        "FNP",
+        "Flächennutzungspläne"
+      ],
+      "definition": "Vorbereitender Bauleitplan für das ganze Gemeindegebiet. Er zeigt in groben Zügen und nicht grundstücksgenau, wie der Boden künftig genutzt werden soll. Er bindet die Gemeinde und die beteiligten Planungsträger, den einzelnen Bürger in der Regel aber nicht unmittelbar.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "47–48",
+        "stelle": "Rn. 128"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "bebauungsplan",
+        "entwicklungsgebot"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "fundament",
@@ -570,6 +1030,20 @@
       "stand": "2026-10"
     },
     {
+      "id": "gegenstromprinzip",
+      "begriff": "Gegenstromprinzip",
+      "definition": "Grundsatz, dass sich die Planung für den Gesamtraum und die für seine Teilräume wechselseitig beeinflussen. Die Gemeinden wirken deshalb an den übergeordneten Plänen mit, statt sie nur von oben zu empfangen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "45",
+        "stelle": "Kontrollfrage 3"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gelaendeoberkante",
       "begriff": "Geländeoberkante",
       "varianten": [
@@ -588,6 +1062,19 @@
         "sockel"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "geltungsbereich",
+      "begriff": "Geltungsbereich",
+      "definition": "Das räumlich abgegrenzte Gebiet, für das ein Bebauungsplan gilt. Im Plan ist seine Grenze zeichnerisch festgelegt.",
+      "quelle": {
+        "werk": "Leitfaden Städtebauliche Analyse",
+        "seite": "89"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "gesims",
@@ -638,6 +1125,26 @@
         "schutzvlies"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "grundsaetze-der-raumordnung",
+      "begriff": "Grundsätze der Raumordnung",
+      "varianten": [
+        "Grundsatz der Raumordnung"
+      ],
+      "definition": "Allgemeine Vorgaben der Raumordnung, die die Gemeinde anders als Ziele nicht strikt bindet. Sie fließen als Belange in die Abwägung ein und können dort überwunden werden.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "37–38",
+        "stelle": "Rn. 105"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "ziele-der-raumordnung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "hohlkehle",
@@ -810,6 +1317,24 @@
       "stand": "2026-10"
     },
     {
+      "id": "landesentwicklungsplan",
+      "begriff": "Landesentwicklungsplan",
+      "definition": "Raumordnungsplan eines Bundeslandes für dessen gesamtes Gebiet. Er ist das Instrument der Landesplanung und steht über Regionalplan und Bauleitplänen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "33",
+        "stelle": "Rn. 94–95"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "regionalplan",
+        "raumordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lastfall",
       "begriff": "Lastfall",
       "varianten": [
@@ -884,6 +1409,21 @@
       "stand": "2026-10"
     },
     {
+      "id": "nachrichtliche-uebernahme",
+      "begriff": "nachrichtliche Übernahme",
+      "definition": "Eintrag im Bauleitplan, der nur auf eine anderweitig bestehende Regelung hinweist. Er nimmt nicht an der Rechtswirkung des Plans teil.",
+      "beispiel": "Ein planfestgestellter Bahnkörper oder ein Denkmal, das unabhängig vom Eintrag gilt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "66",
+        "stelle": "Rn. 177–178"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nichtdrueckendes-wasser",
       "begriff": "nichtdrückendes Wasser",
       "varianten": [
@@ -920,6 +1460,59 @@
       "stand": "2026-10"
     },
     {
+      "id": "normenkontrolle",
+      "begriff": "Normenkontrolle",
+      "varianten": [
+        "Normenkontrollantrag"
+      ],
+      "definition": "Gerichtliches Verfahren, in dem eine Rechtsvorschrift unmittelbar auf ihre Gültigkeit geprüft wird, im Baurecht vor allem ein Bebauungsplan.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "90",
+          "stelle": "Rn. 252"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "99"
+        }
+      ],
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nutzungsschablone",
+      "begriff": "Nutzungsschablone",
+      "definition": "Kleine Tabelle im Bebauungsplan, die die wichtigsten Festsetzungen eines Bereichs in Kurzschrift bündelt: Art der Nutzung, Zahl der Vollgeschosse, Grundflächen- und Geschossflächenzahl, Bauweise und Dachneigung.",
+      "quelle": {
+        "werk": "Leitfaden Städtebauliche Analyse",
+        "seite": "89"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "parallelverfahren",
+      "begriff": "Parallelverfahren",
+      "definition": "Vorgehen, bei dem Bebauungsplan und Flächennutzungsplan gleichzeitig aufgestellt oder geändert werden, damit beide inhaltlich zusammenpassen. Es erleichtert das Verfahren, wenn der Flächennutzungsplan das Vorhaben noch nicht trägt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "67",
+        "stelle": "Rn. 180"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "entwicklungsgebot"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "perimeterdaemmung",
       "begriff": "Perimeterdämmung",
       "varianten": [
@@ -942,6 +1535,59 @@
       "stand": "2026-10"
     },
     {
+      "id": "planerhaltung",
+      "begriff": "Planerhaltung",
+      "definition": "Grundsatz, dass nicht jeder Fehler einen Bauleitplan unwirksam macht. Das Gesetz legt fest, welche Fehler überhaupt zählen, welche rechtzeitig gerügt werden müssen und welche sich nachträglich beheben lassen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "94–98",
+        "stelle": "Rn. 263–273"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "ergaenzendes-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "planungshoheit",
+      "begriff": "Planungshoheit",
+      "definition": "Das verfassungsrechtlich geschützte Recht der Gemeinde, die Nutzung ihres Gebiets in eigener Verantwortung zu planen. Der Staat kontrolliert nur die Rechtmäßigkeit, nicht die Zweckmäßigkeit; Grenzen setzen vor allem übergeordnete Ziele und die Abstimmung mit den Nachbargemeinden.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "48–52",
+        "stelle": "Rn. 130–139"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "qualifizierter-bebauungsplan",
+      "begriff": "qualifizierter Bebauungsplan",
+      "varianten": [
+        "qualifizierten Bebauungsplan",
+        "qualifizierter B-Plan",
+        "qualifizierte B-Plan"
+      ],
+      "definition": "Bebauungsplan, der mindestens Art und Maß der baulichen Nutzung, die überbaubaren Grundstücksflächen und die örtlichen Verkehrsflächen festsetzt. In seinem Bereich richtet sich die Zulässigkeit eines Vorhabens allein nach dem Plan und der gesicherten Erschließung.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "75",
+        "stelle": "Rn. 203–204"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "einfacher-bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "querschnittsabdichtung",
       "begriff": "Querschnittsabdichtung",
       "definition": "Waagerechte Abdichtung, die den ganzen Querschnitt einer Wand durchschneidet, meist knapp über dem Fundament und aus Bitumenbahnen in einer oder mehreren Lagen. Sie verhindert, dass Wasser kapillar in der Wand aufsteigt.",
@@ -957,6 +1603,68 @@
         "aufsteigende-feuchte"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "rahmenplan",
+      "begriff": "Rahmenplan",
+      "varianten": [
+        "Rahmenpläne"
+      ],
+      "definition": "Gesetzlich nicht geregelter, informeller Plan zwischen Flächennutzungs- und Bebauungsplan, der für einen Stadtbereich Konzepte etwa zu Nutzung, Verkehr und Gestalt zeigt. Er schafft kein Baurecht, bereitet die Bauleitplanung aber vor.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader „Maße, Regeln, Richtlinien“",
+        "seite": "10–11"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "raumordnung",
+      "begriff": "Raumordnung",
+      "definition": "Überörtliche Planung von Bund und Ländern, die den Raum großräumig und fachübergreifend ordnet und entwickelt. Sie gibt den Gemeinden den Rahmen für ihre Bauleitplanung vor.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "19",
+          "stelle": "Kontrollfrage 1"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "20",
+          "stelle": "Rn. 57–61"
+        }
+      ],
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "ziele-der-raumordnung",
+        "grundsaetze-der-raumordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "regionalplan",
+      "begriff": "Regionalplan",
+      "varianten": [
+        "Regionalpläne"
+      ],
+      "definition": "Raumordnungsplan für einen Teilraum eines Bundeslandes. Er konkretisiert die Landesplanung und steht zwischen Landesentwicklungsplan und Flächennutzungsplan.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "35",
+        "stelle": "Rn. 98–99"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "landesentwicklungsplan",
+        "raumordnung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "rohdichte",
@@ -994,6 +1702,20 @@
         "hohlkehle"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "satzung",
+      "begriff": "Satzung",
+      "definition": "Rechtsnorm, die eine Körperschaft wie die Gemeinde selbst erlässt und die innerhalb ihres Bereichs für jeden gilt. Bebauungsplan und Veränderungssperre werden in dieser Form beschlossen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "75–76",
+        "stelle": "Rn. 206–208"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "saeulenfuss",
@@ -1322,6 +2044,28 @@
       "stand": "2026-10"
     },
     {
+      "id": "ueberbaubare-grundstuecksflaeche",
+      "begriff": "überbaubare Grundstücksfläche",
+      "varianten": [
+        "überbaubaren Grundstücksfläche",
+        "überbaubare Flächen"
+      ],
+      "definition": "Der Teil eines Grundstücks, auf dem nach dem Bebauungsplan Gebäude stehen dürfen. Er wird durch Baulinien, Baugrenzen oder Bebauungstiefen bestimmt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "73",
+        "stelle": "Rn. 196"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "baugrenze",
+        "baulinie"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "umkehrdach",
       "begriff": "Umkehrdach",
       "definition": "Flachdach, bei dem die Wärmedämmung über der Abdichtung liegt und damit der Witterung ausgesetzt ist. Der Dämmstoff muss deshalb wasserunempfindlich sein, typischerweise XPS.",
@@ -1336,6 +2080,40 @@
         "xps"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "umweltbericht",
+      "begriff": "Umweltbericht",
+      "definition": "Gesonderter Teil der Planbegründung, in dem die Ergebnisse der Umweltprüfung beschrieben sind. Fehlt er, ist das ein beachtlicher Fehler des Plans.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "78",
+        "stelle": "Rn. 215–217"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "umweltpruefung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "umweltpruefung",
+      "begriff": "Umweltprüfung",
+      "definition": "Regelschritt der Planaufstellung, in dem die Gemeinde die voraussichtlich erheblichen Umweltauswirkungen der Planung ermittelt und bewertet. Umfang und Tiefe legt sie selbst fest.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "78",
+        "stelle": "Rn. 215–217"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "umweltbericht"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "vakuum-isolations-paneel",
@@ -1355,6 +2133,85 @@
         "waermeleitfaehigkeit"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "veraenderungssperre",
+      "begriff": "Veränderungssperre",
+      "definition": "Satzung, mit der die Gemeinde während der Aufstellung eines Bebauungsplans Bauvorhaben und erhebliche Veränderungen im Plangebiet untersagt. Sie schützt die künftige Planung vor vollendeten Tatsachen und ist befristet.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "103",
+        "stelle": "Rn. 278–280"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "zurueckstellung",
+        "aufstellungsbeschluss"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vorhaben-und-erschliessungsplan",
+      "begriff": "Vorhaben- und Erschließungsplan",
+      "definition": "Der vom privaten Träger mit der Gemeinde abgestimmte Plan für sein konkretes Projekt und dessen Erschließung. Er ist die fachliche Grundlage eines vorhabenbezogenen Bebauungsplans.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "76",
+        "stelle": "Rn. 209–210"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "vorhabenbezogener-bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vorhabenbezogener-bebauungsplan",
+      "begriff": "vorhabenbezogener Bebauungsplan",
+      "varianten": [
+        "vorhabenbezogene Bebauungsplan",
+        "vorhabenbezogenen Bebauungsplan",
+        "vorhabenbezogener B-Plan",
+        "vorhabenbezogene B-Plan",
+        "vorhabenbezogenen B-Plan"
+      ],
+      "definition": "Bebauungsplan für ein bestimmtes Projekt eines privaten Trägers. Er verbindet dessen Plan, einen Vertrag mit der Gemeinde und die Satzung, die das Baurecht schafft. Einen Anspruch auf den Plan hat der Träger nicht.",
+      "beispiel": "Ein Investor bereitet ein Einkaufszentrum zusammen mit der Gemeinde vor und beantragt das Verfahren.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "76",
+        "stelle": "Rn. 209–210"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "vorhabentraeger",
+        "durchfuehrungsvertrag",
+        "vorhaben-und-erschliessungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vorhabentraeger",
+      "begriff": "Vorhabenträger",
+      "definition": "Der Private, der ein konkretes Projekt entwickelt und bei der Gemeinde einen vorhabenbezogenen Bebauungsplan beantragt. Er muss über das Grundstück verfügen können; wechselt er, muss die Gemeinde zustimmen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "76",
+        "stelle": "Rn. 209–210"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "durchfuehrungsvertrag"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "vormauerschale",
@@ -1506,6 +2363,45 @@
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "ziele-der-raumordnung",
+      "begriff": "Ziele der Raumordnung",
+      "varianten": [
+        "Ziel der Raumordnung",
+        "Zielen der Raumordnung"
+      ],
+      "definition": "Verbindliche, abschließend abgewogene Festlegungen in Raumordnungsplänen. Die Gemeinde muss ihre Bauleitpläne daran anpassen und kann sich in ihrer eigenen Abwägung nicht darüber hinwegsetzen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "36",
+        "stelle": "Rn. 100–101"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "grundsaetze-der-raumordnung",
+        "anpassungspflicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zurueckstellung",
+      "begriff": "Zurückstellung",
+      "definition": "Aussetzung der Entscheidung über ein einzelnes Baugesuch für bis zu zwölf Monate, die die Gemeinde bei der Baugenehmigungsbehörde beantragt, um ihre laufende Planung zu sichern. Anders als die Veränderungssperre betrifft sie nur den Einzelfall und kommt ohne Satzungsbeschluss aus.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "104",
+        "stelle": "Rn. 282"
+      },
+      "themen": [
+        "rb-bauleitplanung"
+      ],
+      "siehe": [
+        "veraenderungssperre"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "zweischalig",
