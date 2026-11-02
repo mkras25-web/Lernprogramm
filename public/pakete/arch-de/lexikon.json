@@ -23,6 +23,43 @@
       "stand": "2026-10"
     },
     {
+      "id": "abstandsflaeche",
+      "begriff": "Abstandsfläche",
+      "definition": "Fläche vor der Außenwand eines Gebäudes, die von anderen Gebäuden freizuhalten ist. Ihre Tiefe richtet sich nach der Wandhöhe und einem Faktor aus der jeweiligen Landesbauordnung.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "164"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "181",
+          "stelle": "Rn. 505"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "wandhoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abstimmungsgebot",
+      "begriff": "Abstimmungsgebot",
+      "definition": "Pflicht benachbarter Gemeinden, ihre Bauleitpläne aufeinander abzustimmen (§ 2 Abs. 2 BauGB). Die Nachbargemeinde kann sich wehren, wenn eine Planung sie unzumutbar belastet oder ihre Zentren schwächt.",
+      "beispiel": "Ein Industriegebiet für stark umweltbelastende Anlagen direkt neben dem Wohngebiet der Nachbargemeinde verstößt dagegen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "52"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "abwaegung",
       "begriff": "Abwägung",
       "definition": "Kern jeder Bauleitplanung: Die Gemeinde stellt die öffentlichen und privaten Belange einander gegenüber und entscheidet, welche sie vorzieht und welche zurücktreten. Gerichte prüfen diese Entscheidung nur auf bestimmte Fehler.",
@@ -32,7 +69,9 @@
         "stelle": "Rn. 248"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-34-35"
       ],
       "siehe": [
         "abwaegungsgebot",
@@ -165,6 +204,52 @@
       "stand": "2026-11"
     },
     {
+      "id": "abwandlung",
+      "begriff": "Abwandlung",
+      "varianten": [
+        "Feinsteuerung"
+      ],
+      "definition": "Anpassung eines Gebietstyps durch zusätzliche Festsetzungen im Bebauungsplan: Die Gemeinde kann das Gebiet gliedern, einzelne Nutzungen oder Ausnahmen streichen oder zulassen, nach Geschossen unterscheiden und vorhandene Betriebe absichern.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "72"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "typenzwang",
+        "zweckbestimmung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "allgemein-zulaessig",
+      "begriff": "allgemein zulässig",
+      "varianten": [
+        "allgemeine Zulässigkeit",
+        "allgemeinen Zulässigkeit"
+      ],
+      "definition": "Rechtsstufe für Nutzungen, die in Absatz 2 einer Gebietsvorschrift stehen. Sie sind im Gebiet der Regelfall; stimmt auch sonst alles, besteht ein Anspruch auf Zulassung.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "72"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "129"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "ausnahmsweise-zulaessig"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "allgemeine-bauaufsichtliche-zulassung",
       "begriff": "allgemeine bauaufsichtliche Zulassung",
       "definition": "Nachweis des Deutschen Instituts für Bautechnik (DIBt), dass ein Bauprodukt verwendet werden darf, für das es keine allgemein anerkannten technischen Regeln gibt oder das von ihnen erheblich abweicht.",
@@ -177,6 +262,33 @@
         "sockel-erdberuehrt"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "allgemeines-wohngebiet",
+      "begriff": "allgemeines Wohngebiet",
+      "varianten": [
+        "allgemeinen Wohngebiet",
+        "allgemeine Wohngebiet",
+        "WA"
+      ],
+      "definition": "Baugebiet, das vorwiegend dem Wohnen dient. Neben Wohngebäuden sind auch gebietsversorgende Läden und Gaststätten, nicht störendes Handwerk und soziale oder kulturelle Einrichtungen allgemein zulässig.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "72"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 4, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "wohngebiet"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "anpassungspflicht",
@@ -192,6 +304,44 @@
       ],
       "siehe": [
         "ziele-der-raumordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "art-der-nutzung",
+      "begriff": "Art der Nutzung",
+      "varianten": [
+        "Art der baulichen Nutzung"
+      ],
+      "definition": "Angabe, wozu Flächen und Gebäude dienen dürfen, also etwa Wohnen oder Gewerbe. Im Plan wird sie grob als Baufläche oder genauer als Baugebiet bestimmt; davon zu trennen ist das Maß der Nutzung, das die Dichte regelt.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "24"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "baugebiet",
+        "bauflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aufenthaltsraum",
+      "begriff": "Aufenthaltsraum",
+      "varianten": [
+        "Aufenthaltsräume"
+      ],
+      "definition": "Raum, der nach den Landesbauordnungen nicht nur zum vorübergehenden Aufenthalt von Menschen bestimmt ist, etwa ein Wohnraum.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "404"
+        }
+      ],
+      "themen": [
+        "rb-mass"
       ],
       "stand": "2026-11"
     },
@@ -243,11 +393,69 @@
         "stelle": "Rn. 212–213"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "siehe": [
         "veraenderungssperre",
         "zurueckstellung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ausnahmsweise-zulaessig",
+      "begriff": "ausnahmsweise zulässig",
+      "varianten": [
+        "ausnahmsweise zugelassen",
+        "ausnahmsweise möglich",
+        "Ausnahme nach Absatz 3",
+        "Ausnahmen des Absatzes 3"
+      ],
+      "definition": "Rechtsstufe für Nutzungen, die der Plan oder Absatz 3 einer Gebietsvorschrift als Ausnahme vorsieht. Darüber entscheidet die Baugenehmigungsbehörde im Einzelfall nach Ermessen und im Einvernehmen mit der Gemeinde; die Abweichung ist also im Plan selbst angelegt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "132"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "allgemein-zulaessig",
+        "befreiung",
+        "ermessen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aussenbereich",
+      "begriff": "Außenbereich",
+      "definition": "Im Baurecht alle Flächen, die weder im Geltungsbereich eines qualifizierten Bebauungsplans noch in einem im Zusammenhang bebauten Ortsteil liegen, also der größte Teil des Bundesgebiets. Er soll grundsätzlich unbebaut bleiben, außer die Bebauung gehört ihrem Wesen nach dorthin.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "140"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "innenbereich",
+        "privilegiertes-vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aussenbereichssatzung",
+      "begriff": "Außenbereichssatzung",
+      "definition": "Satzung für bestimmte bebaute Außenbereichsgebiete. Das Gebiet bleibt Außenbereich, doch Wohnvorhaben und kleinen Betrieben können bestimmte Belange nicht mehr entgegengehalten werden.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "145"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "aussenbereich"
       ],
       "stand": "2026-11"
     },
@@ -285,8 +493,50 @@
       "stand": "2026-10"
     },
     {
+      "id": "bau-turbo",
+      "begriff": "Bau-Turbo",
+      "definition": "Griffige Bezeichnung für die Neuregelung von 2025 zugunsten des Wohnungsbaus. Kernstück ist die bis Ende 2030 befristete Möglichkeit, mit Zustimmung der Gemeinde von den Vorschriften des BauGB und den darauf gestützten Vorschriften abzuweichen, wenn das mit öffentlichen Belangen und nachbarlichen Interessen vereinbar ist.",
+      "quelle": {
+        "werk": "BauGB",
+        "stelle": "§ 246e"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "zustimmung-der-gemeinde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauaufsicht",
+      "begriff": "Bauaufsicht",
+      "varianten": [
+        "Bauaufsichtsbehörde",
+        "Baugenehmigungsbehörde",
+        "Genehmigungsbehörde"
+      ],
+      "definition": "Staatliche Behörde, die über Baugenehmigungen entscheidet und gegen rechtswidrige Bauten einschreitet. Untere Bauaufsichtsbehörden sind die kreisfreien Städte, größere kreisangehörige Städte und die Landkreise.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "127"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "einvernehmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bauflaeche",
       "begriff": "Baufläche",
+      "varianten": [
+        "Wohnbaufläche",
+        "gemischte Baufläche",
+        "gewerbliche Baufläche"
+      ],
       "definition": "Für die Bebauung vorgesehene Fläche, grob nach der allgemeinen Art der Nutzung eingeteilt und mit einem Buchstaben abgekürzt: W, M, G oder S. Typisch für den Flächennutzungsplan.",
       "quelle": {
         "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
@@ -294,7 +544,9 @@
         "stelle": "Rn. 176"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-34-35"
       ],
       "siehe": [
         "baugebiet"
@@ -304,6 +556,11 @@
     {
       "id": "baugebiet",
       "begriff": "Baugebiet",
+      "varianten": [
+        "Gebietstyp",
+        "Baugebietstyp",
+        "Gebietsart"
+      ],
       "definition": "Für die Bebauung vorgesehene Fläche, eingeordnet nach der besonderen Art der Nutzung und mit zwei Buchstaben abgekürzt, etwa WA für allgemeines Wohngebiet. Typisch für den Bebauungsplan; mit der Festsetzung gelten die Zulässigkeitsregeln der Baunutzungsverordnung.",
       "quelle": {
         "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
@@ -311,10 +568,29 @@
         "stelle": "Rn. 176"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "bauflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baugenehmigung",
+      "begriff": "Baugenehmigung",
+      "definition": "Bescheid der Bauaufsicht, der feststellt, dass dem Bau keine zu prüfenden öffentlich-rechtlichen Vorschriften entgegenstehen, und zugleich den Baubeginn freigibt. Sie hängt am Vorhaben, nicht an der Person des Bauherrn.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "218"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "bauaufsicht"
       ],
       "stand": "2026-11"
     },
@@ -334,7 +610,9 @@
         }
       ],
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "baulinie",
@@ -380,6 +658,19 @@
       "stand": "2026-10"
     },
     {
+      "id": "baugrundstueck",
+      "begriff": "Baugrundstück",
+      "definition": "Im Grundbuch unter eigener Nummer eingetragenes Grundstück, das nach öffentlich-rechtlichen Vorschriften wie dem Bebauungsplan bebaut werden darf.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "22"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bauleitplan",
       "begriff": "Bauleitplan",
       "varianten": [
@@ -393,7 +684,8 @@
         "stelle": "Rn. 128"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "siehe": [
         "flaechennutzungsplan",
@@ -417,10 +709,127 @@
         }
       ],
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-mass"
       ],
       "siehe": [
         "baugrenze"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauluecke",
+      "begriff": "Baulücke",
+      "definition": "Unbebautes Grundstück innerhalb einer Bebauung. Ob es den Zusammenhang unterbricht, hängt vom Gesamteindruck ab; hebt es die Geschlossenheit nicht auf, gehört es zum Innenbereich.",
+      "beispiel": "Ein freies Grundstück, an das links, rechts und gegenüber Häuser angrenzen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baumasse",
+      "begriff": "Baumasse",
+      "definition": "Rauminhalt eines Gebäudes im Sinne der BauNVO, nach Außenmaßen vom Fußboden des untersten bis zur Decke des obersten Vollgeschosses ermittelt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 21 Abs. 2, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "bmz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baunutzungsverordnung",
+      "begriff": "Baunutzungsverordnung",
+      "varianten": [
+        "BauNVO"
+      ],
+      "definition": "Bundesweit geltende Verordnung, die vorgibt, welche Baugebiete eine Gemeinde festsetzen kann und was in ihnen zulässig ist. Sie regelt außerdem Maß der Nutzung, Bauweise und überbaubare Grundstücksfläche und nimmt so den Plänen viele Einzelregelungen ab.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "72"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "baugebiet",
+        "typenzwang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauordnungsrecht",
+      "begriff": "Bauordnungsrecht",
+      "varianten": [
+        "bauordnungsrechtlich"
+      ],
+      "definition": "Landesrechtlicher, auf das einzelne Bauwerk bezogener Teil des öffentlichen Baurechts. Er stellt Anforderungen etwa an Gefahrenabwehr und Gestaltung und regelt das bauaufsichtliche Verfahren.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "1"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "bauplanungsrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauplanungsrecht",
+      "begriff": "Bauplanungsrecht",
+      "varianten": [
+        "Planungsrecht",
+        "planungsrechtlich"
+      ],
+      "definition": "Bundesrechtlicher, flächenbezogener Teil des öffentlichen Baurechts, auch Städtebaurecht genannt. Er klärt, ob ein Grundstück überhaupt bebaubar ist und welche Nutzung dort nach Art und Maß zulässig ist.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "1"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "bauordnungsrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauweise",
+      "begriff": "Bauweise",
+      "definition": "Planungsrechtlich die Festsetzung, wie Gebäude zu den seitlichen Grundstücksgrenzen stehen: offen mit seitlichem Grenzabstand und höchstens 50 m Hauslänge, geschlossen ohne ihn. In der Baukonstruktion meint das Wort dagegen allgemein die Art, wie ein Bauteil oder Bauwerk konstruiert ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73",
+          "stelle": "Rn. 197"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 22, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
       ],
       "stand": "2026-11"
     },
@@ -440,11 +849,57 @@
         "stelle": "Rn. 128"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "flaechennutzungsplan",
         "satzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bebauungszusammenhang",
+      "begriff": "Bebauungszusammenhang",
+      "definition": "Liegt vor, soweit Gebäude aufeinanderfolgen und trotz einzelner Lücken als zusammengehörig wirken. Er endet in der Regel direkt am letzten Baukörper.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "bauluecke"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "befreiung",
+      "begriff": "Befreiung",
+      "varianten": [
+        "Dispens"
+      ],
+      "definition": "Zulassung eines Vorhabens im Einzelfall, das einer baurechtlichen Vorschrift widerspricht und auch nicht als Ausnahme vorgesehen ist. Im Planungsrecht setzt sie nach § 31 Abs. 2 BauGB unter anderem voraus, dass die Grundzüge der Planung nicht berührt werden und die Abweichung auch mit Blick auf die Nachbarn mit den öffentlichen Belangen vereinbar ist; die Landesbauordnungen kennen eigene Befreiungen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "132"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "133",
+          "stelle": "Rn. 371"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "grundzuege-der-planung",
+        "ausnahmsweise-zulaessig"
       ],
       "stand": "2026-11"
     },
@@ -459,10 +914,26 @@
         "stelle": "Rn. 248"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "abwaegung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "belegungsziffer",
+      "begriff": "Belegungsziffer",
+      "definition": "Kennwert für die durchschnittliche Zahl der Personen je Wohneinheit.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "23"
+      },
+      "themen": [
+        "rb-mass"
       ],
       "stand": "2026-11"
     },
@@ -487,7 +958,72 @@
         }
       ],
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "besonderes-wohngebiet",
+      "begriff": "besonderes Wohngebiet",
+      "varianten": [
+        "besonderen Wohngebiet",
+        "besondere Wohngebiet",
+        "WB"
+      ],
+      "definition": "Baugebiet für schon überwiegend bebaute Bereiche mit gewachsener Mischung, in denen das Wohnen erhalten und weiterentwickelt werden soll. Andere Nutzungen sind zulässig, soweit sie zum Wohnen passen; für Neubaugebiete ist es nicht gedacht.",
+      "beispiel": "In Darmstadt-Bessungen sichert es historisch gewachsene Baustrukturen.",
+      "quelle": [
+        {
+          "werk": "Leitfaden Städtebauliche Analyse",
+          "seite": "88"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 4a, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "betriebswohnung",
+      "begriff": "Betriebswohnung",
+      "definition": "Wohnung für Aufsichts- und Bereitschaftspersonen sowie Betriebsinhaber oder -leiter. In Gewerbe- und Industriegebieten ist sie nur ausnahmsweise zulässig, dem Betrieb zugeordnet und ihm in Grundfläche und Baumasse untergeordnet.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 7 Abs. 2 Nr. 6, § 8 Abs. 3 Nr. 1, § 9 Abs. 3 Nr. 1, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "gewerbegebiet",
+        "industriegebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bezugspunkt",
+      "begriff": "Bezugspunkt",
+      "definition": "Punkt, von dem aus eine Höhe gemessen wird, etwa eine im Bebauungsplan festgesetzte; ohne ihn bliebe die Höhenangabe unbestimmt.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "16"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 18 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
       ],
       "stand": "2026-11"
     },
@@ -527,6 +1063,32 @@
         "bitumenbahn"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "bmz",
+      "begriff": "BMZ",
+      "varianten": [
+        "Baumassenzahl"
+      ],
+      "definition": "Verhältniszahl für das Bauvolumen: Kubikmeter Baumasse je Quadratmeter maßgebender Grundstücksfläche. Anders als GRZ und GFZ hat sie deshalb eine Einheit (m³/m²).",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 21 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "baumasse"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "bodenfeuchte",
@@ -577,6 +1139,65 @@
         "sockel-erdberuehrt"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "brutto-grundflaeche",
+      "begriff": "Brutto-Grundfläche",
+      "varianten": [
+        "BGF",
+        "Bruttogeschossfläche"
+      ],
+      "definition": "Gesamtfläche aller Geschosse eines Gebäudes, außen gemessen. Genau ermittelt nach DIN 277 als Netto-Grundfläche plus Konstruktions-Grundfläche; im städtebaulichen Entwurf überschlägig als Länge mal Breite mal Geschosszahl. Sie zählt alle Geschosse und ist damit nicht die Geschossfläche nach BauNVO, die nur Vollgeschosse erfasst.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "325"
+        },
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "22"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "geschossflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bruttobauland",
+      "begriff": "Bruttobauland",
+      "definition": "Nettobauland zuzüglich der Flächen, die für die Bebauung zusätzlich nötig sind, etwa Verkehrs-, Grün-, Ausgleichs- und Versorgungsflächen.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "22"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "nettobauland"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bruttodichte",
+      "begriff": "Bruttodichte",
+      "definition": "Kennwert der Wohndichte: Zahl der Personen bezogen auf das Bruttobauland.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "23"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "nettowohndichte",
+        "bruttobauland"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "daemmstoff",
@@ -756,6 +1377,61 @@
       "stand": "2026-10"
     },
     {
+      "id": "dorfgebiet",
+      "begriff": "Dorfgebiet",
+      "varianten": [
+        "MD"
+      ],
+      "definition": "Gemischtes Baugebiet für land- und forstwirtschaftliche Betriebe, Wohnen und nicht wesentlich störendes Gewerbe. Auf die Belange der Höfe und ihre Entwicklung ist hier vorrangig Rücksicht zu nehmen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 5, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "doerfliches-wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "doerfliches-wohngebiet",
+      "begriff": "dörfliches Wohngebiet",
+      "varianten": [
+        "dörflichen Wohngebiet",
+        "dörfliche Wohngebiet",
+        "MDW"
+      ],
+      "definition": "2021 eingeführtes Baugebiet für das Nebeneinander von Wohnen, landwirtschaftlichem Nebenerwerb und nicht wesentlich störendem Gewerbe. Die Mischung muss nicht ausgeglichen sein, und einen Vorrang der Landwirtschaft wie im Dorfgebiet gibt es nicht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 5a, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "dorfgebiet",
+        "nebenerwerbsstelle"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "draenplatte",
       "begriff": "Dränplatte",
       "definition": "Platte mit offenporigem Gefüge, etwa aus bitumengebundenem Polystyrol, die vor der Abdichtung erdberührter Wände liegt. Sie schützt die Abdichtung mechanisch und lässt Wasser durch ihre Poren abfließen.",
@@ -841,11 +1517,31 @@
       "stand": "2026-11"
     },
     {
+      "id": "eigenart-des-gebiets",
+      "begriff": "Eigenart des Gebiets",
+      "varianten": [
+        "Eigenart des Baugebiets"
+      ],
+      "definition": "Der besondere Charakter eines konkreten Baugebiets. An ihm prüft § 15 BauNVO, ob eine an sich zulässige Anlage im Einzelfall nach Anzahl, Lage, Umfang oder Zweck nicht ins Gebiet passt oder unzumutbar stört.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 15 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "gebot-der-ruecksichtnahme"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "einfacher-bebauungsplan",
       "begriff": "einfacher Bebauungsplan",
       "varianten": [
         "einfacher B-Plan",
-        "einfachen B-Plan"
+        "einfachen B-Plan",
+        "einfachen Bebauungsplan"
       ],
       "definition": "Gültiger Bebauungsplan, dem mindestens eine der vier Mindestfestsetzungen des qualifizierten Plans fehlt. Was er nicht regelt, beurteilt sich nach den gesetzlichen Regeln für den Innenbereich oder den Außenbereich.",
       "beispiel": "Ein Plan, der nur eine Verkehrsfläche für eine Straßentrasse festsetzt.",
@@ -855,10 +1551,79 @@
         "stelle": "Rn. 203–204"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "siehe": [
         "qualifizierter-bebauungsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einfuegen",
+      "begriff": "Einfügen",
+      "varianten": [
+        "sich einfügen",
+        "einfügt",
+        "fügt sich"
+      ],
+      "definition": "Kernmaßstab im Innenbereich: Ein Vorhaben muss nach Art und Maß der Nutzung, Bauweise und überbauter Fläche zur näheren Umgebung passen. Das gelingt in der Regel, wenn es den dort vorhandenen Rahmen einhält und auf die Nachbarschaft Rücksicht nimmt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "138"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "naehere-umgebung",
+        "rahmen-der-vorhandenen-bebauung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "eingriffsregelung",
+      "begriff": "Eingriffsregelung",
+      "definition": "Regelung aus dem Naturschutzrecht, nach der zu erwartende Eingriffe in Natur und Landschaft in der Planung bedacht und ausgeglichen werden. Im Baurecht geschieht das etwa über festgesetzte Ausgleichsflächen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "63"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einvernehmen",
+      "begriff": "Einvernehmen",
+      "definition": "Mitwirkung der Gemeinde, ohne die die Bauaufsicht in bestimmten Fällen nicht über ein Vorhaben entscheiden darf, etwa im Innen- und Außenbereich. Sie schützt die Planungshoheit, wenn die Bauaufsicht planerisch mitentscheidet. Ein Ermessen hat die Gemeinde dabei nicht: Ist das Vorhaben zulässig, darf sie das Einvernehmen nicht verweigern.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "127"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "planungshoheit",
+        "zustimmung-der-gemeinde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einzelhandelskonzept",
+      "begriff": "Einzelhandelskonzept",
+      "definition": "Kommunales Konzept zur Steuerung des Handels im Gemeindegebiet. Es liefert städtebauliche Gründe, um Ansiedlungen zu lenken oder zu begrenzen und zentrale Versorgungsbereiche zu schützen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "69"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "zentraler-versorgungsbereich"
       ],
       "stand": "2026-11"
     },
@@ -896,6 +1661,23 @@
       ],
       "siehe": [
         "parallelverfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "entwicklungssatzung",
+      "begriff": "Entwicklungssatzung",
+      "definition": "Satzung, die bebaute Flächen im bisherigen Außenbereich zum Innenbereich erklärt. Sie schafft neues Baurecht und setzt voraus, dass der Flächennutzungsplan die Flächen als Baufläche darstellt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "137"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "klarstellungssatzung",
+        "ergaenzungssatzung"
       ],
       "stand": "2026-11"
     },
@@ -954,6 +1736,83 @@
       "stand": "2026-11"
     },
     {
+      "id": "ergaenzungssatzung",
+      "begriff": "Ergänzungssatzung",
+      "definition": "Satzung, die einzelne Außenbereichsflächen in den Innenbereich einbezieht, wenn die Bebauung nebenan sie entsprechend prägt. Sie schafft neues Bauland.",
+      "beispiel": "Ein Grundstück direkt hinter dem letzten Haus einer Reihe wird dadurch bebaubar.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "137"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "klarstellungssatzung",
+        "entwicklungssatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ermessen",
+      "begriff": "Ermessen",
+      "definition": "Entscheidungsspielraum, den das Recht einer Behörde einräumt. Sie darf ihn nicht beliebig nutzen, sondern muss pflichtgemäß und sachgerecht entscheiden; bei einer baurechtlichen Ausnahme zählen etwa städtebauliche Gründe.",
+      "beispiel": "Ob eine Tankstelle im allgemeinen Wohngebiet als Ausnahme zugelassen wird, liegt im Ermessen der Baugenehmigungsbehörde.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "132"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "134"
+        }
+      ],
+      "themen": [
+        "rb-baunvo",
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ersatzplan",
+      "begriff": "Ersatzplan",
+      "definition": "Deutung von § 35 BauGB: Mit ihm trifft der Gesetzgeber selbst eine generelle Planung für den Außenbereich, die für Bauwillige überwiegend negativ ausfällt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "140"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "planersatz",
+        "aussenbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "faktisches-baugebiet",
+      "begriff": "faktisches Baugebiet",
+      "varianten": [
+        "faktische Baugebiet",
+        "fiktiven Baugebiet"
+      ],
+      "definition": "Umgebung ohne Bebauungsplan, die tatsächlich einem Baugebiet der BauNVO entspricht. Die Art der Nutzung richtet sich dann nach dem Katalog dieses Gebiets, das Maß weiter nach den tatsächlichen Verhältnissen der näheren Umgebung.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "139, 140"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "baugebiet",
+        "einfuegen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "festsetzung",
       "begriff": "Festsetzung",
       "definition": "Rechtsverbindliche Aussage eines Bebauungsplans, etwa zu Art und Maß der Nutzung oder zur überbaubaren Fläche. Der Flächennutzungsplan setzt dagegen nicht fest, sondern stellt dar.",
@@ -963,7 +1822,33 @@
         "stelle": "Rn. 198"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-mass",
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "firsthoehe",
+      "begriff": "Firsthöhe",
+      "definition": "Als Höhe baulicher Anlagen festsetzbares Maß bis zum First, der oberen Schnittlinie geneigter Dachflächen.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "17"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73",
+          "stelle": "Rn. 197"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "traufhoehe"
       ],
       "stand": "2026-11"
     },
@@ -981,11 +1866,64 @@
         "stelle": "Rn. 128"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "bebauungsplan",
         "entwicklungsgebot"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "folgenorm",
+      "begriff": "Folgenorm",
+      "definition": "Vorschrift, die allein durch die Wahl eines Baugebiets Teil des Bebauungsplans wird, ohne dass der Plan sie wiederholen muss. Gemeint sind vor allem die §§ 2 bis 14 BauNVO, die das im Gebiet Zulässige näher bestimmen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "72"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "typenzwang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "formelle-planreife",
+      "begriff": "formelle Planreife",
+      "definition": "Stand einer Planaufstellung, in dem die Öffentlichkeits- und Behördenbeteiligung durchgeführt ist. Sie ist eine Voraussetzung, um schon vor Inkrafttreten des Plans zu genehmigen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "147"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "materielle-planreife",
+        "plananerkenntnis"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "freie-berufe",
+      "begriff": "freie Berufe",
+      "varianten": [
+        "Freie Berufe",
+        "freiberuflich Tätige"
+      ],
+      "definition": "Selbstständige Tätigkeiten wie die von Ärztinnen, Rechtsanwälten oder Architektinnen, die baurechtlich eine eigene Regel haben. In Kleinsiedlungs-, reinen und allgemeinen Wohngebieten sind dafür nur Räume zulässig, in den übrigen Gebieten bis zum Industriegebiet auch ganze Gebäude.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 13, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
       ],
       "stand": "2026-11"
     },
@@ -1030,6 +1968,25 @@
       "stand": "2026-10"
     },
     {
+      "id": "gebot-der-ruecksichtnahme",
+      "begriff": "Gebot der Rücksichtnahme",
+      "varianten": [
+        "Gebots der Rücksichtnahme"
+      ],
+      "definition": "Von der Rechtsprechung entwickelter Maßstab, nach dem ein Vorhaben die Nutzung der Nachbargrundstücke nicht unzumutbar beeinträchtigen darf. Es ist kein eigener Anspruch, sondern wirkt über einzelne Vorschriften wie § 15 Abs. 1 BauNVO, die im Einzelfall Nachbarn schützen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "231"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "eigenart-des-gebiets"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gegenstromprinzip",
       "begriff": "Gegenstromprinzip",
       "definition": "Grundsatz, dass sich die Planung für den Gesamtraum und die für seine Teilräume wechselseitig beeinflussen. Die Gemeinden wirken deshalb an den übergeordneten Plänen mit, statt sie nur von oben zu empfangen.",
@@ -1056,7 +2013,8 @@
         "seite": "135"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "rb-mass"
       ],
       "siehe": [
         "sockel"
@@ -1072,7 +2030,102 @@
         "seite": "89"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gemeinschaftsanlage",
+      "begriff": "Gemeinschaftsanlage",
+      "definition": "Im Bebauungsplan festgesetzte Anlage, die mehreren Grundstücken zugleich dient, etwa ein Kinderspielplatz. Anteile daran können der Grundstücksfläche hinzugerechnet werden, wenn der Plan das vorsieht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "71",
+          "stelle": "Rn. 192"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 21a Abs. 2, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "geschossbezogene-festsetzung",
+      "begriff": "geschossbezogene Festsetzung",
+      "varianten": [
+        "geschossbezogenen Festsetzung",
+        "geschossweise Festsetzung",
+        "geschossweisen Festsetzung",
+        "geschossweise Regel"
+      ],
+      "definition": "Festsetzung, die nur für bestimmte Geschosse oder Gebäudeteile gilt und dort einzelne Nutzungen vorschreibt, ausschließt oder als Ausnahme erlaubt.",
+      "beispiel": "Im urbanen Gebiet kann der Plan das Wohnen im straßenseitigen Erdgeschoss ausschließen, damit dort Läden entstehen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "72"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "abwandlung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "geschossflaeche",
+      "begriff": "Geschossfläche",
+      "varianten": [
+        "GF"
+      ],
+      "definition": "Summe der Flächen aller Vollgeschosse eines Gebäudes, nach den Außenmaßen gemessen. Balkone, Loggien, Terrassen und Nebenanlagen zählen nicht mit; sie ist nicht dasselbe wie die Brutto-Grundfläche nach DIN 277.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 20 Abs. 3 und 4, Wortlaut nach gesetze-im-internet.de"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "324"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "gfz",
+        "vollgeschoss",
+        "brutto-grundflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gesicherte-erschliessung",
+      "begriff": "gesicherte Erschließung",
+      "varianten": [
+        "Erschließung gesichert",
+        "Erschließung muss gesichert",
+        "Erschließung ist gesichert",
+        "Erschließung muss grundstücksbezogen gesichert"
+      ],
+      "definition": "Baurechtliche Zulässigkeitsvoraussetzung: Das Grundstück muss an Straßen und Wege, Wasser- und Energieversorgung und Abwasserbeseitigung angebunden sein, spätestens wenn der Bau fertig ist. Geprüft wird grundstücksbezogen, nicht für das ganze Baugebiet.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "125, 130"
+      },
+      "themen": [
+        "rb-34-35"
       ],
       "stand": "2026-11"
     },
@@ -1092,6 +2145,62 @@
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "gewerbegebiet",
+      "begriff": "Gewerbegebiet",
+      "varianten": [
+        "GE"
+      ],
+      "definition": "Baugebiet vorwiegend für Gewerbebetriebe, die nicht erheblich belästigen, dazu Büro- und Verwaltungsgebäude, Tankstellen und Sportanlagen. Gewöhnliche Wohnhäuser sind unzulässig, Wohnungen gibt es nur ausnahmsweise für Betriebspersonal.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 8, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "industriegebiet",
+        "nicht-erheblich-belaestigend",
+        "betriebswohnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gfz",
+      "begriff": "GFZ",
+      "varianten": [
+        "Geschossflächenzahl"
+      ],
+      "definition": "Verhältniszahl für die Ausnutzung eines Grundstücks: Quadratmeter Geschossfläche aller Vollgeschosse zusammen je Quadratmeter maßgebender Grundstücksfläche.",
+      "beispiel": "Auf 1000 m² Grundstück erlaubt GFZ 0,6 insgesamt 600 m² Geschossfläche, also etwa zwei Geschosse mit je 300 m².",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 20 Abs. 2, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "geschossflaeche",
+        "grz"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "glaserverfahren",
@@ -1127,6 +2236,59 @@
       "stand": "2026-10"
     },
     {
+      "id": "grossflaechiger-einzelhandel",
+      "begriff": "großflächiger Einzelhandel",
+      "varianten": [
+        "großflächigen Einzelhandel",
+        "großflächige Einzelhandelsbetrieb",
+        "großflächigen Einzelhandelsbetrieb"
+      ],
+      "definition": "Große Verkaufsbetriebe, die Raumordnung oder Stadtentwicklung spürbar beeinflussen können, etwa durch Verkehr oder Schwächung der Zentren. Außerhalb von Kerngebieten sind sie nur in eigenen Sondergebieten zulässig; ab mehr als 1 200 m² Geschossfläche werden solche Wirkungen in der Regel vermutet.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "69"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 11 Abs. 3, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "sondergebiet",
+        "zentraler-versorgungsbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grundflaeche",
+      "begriff": "Grundfläche",
+      "varianten": [
+        "GR"
+      ],
+      "definition": "Im Baurecht der Teil des Baugrundstücks, den bauliche Anlagen überdecken; die zulässige Grundfläche ergibt sich aus Grundstücksfläche mal GRZ oder steht als Absolutwert im Plan. Allgemein auch die Fläche, die ein Raum oder Bauwerk im Grundriss einnimmt.",
+      "quelle": [
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 19 Abs. 2, Wortlaut nach gesetze-im-internet.de"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "324"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "grz"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "grundsaetze-der-raumordnung",
       "begriff": "Grundsätze der Raumordnung",
       "varianten": [
@@ -1147,6 +2309,79 @@
       "stand": "2026-11"
     },
     {
+      "id": "grundzuege-der-planung",
+      "begriff": "Grundzüge der Planung",
+      "definition": "Das planerische Grundkonzept eines Bebauungsplans. Eine Befreiung darf es im Regelfall nicht antasten, sonst müsste die Gemeinde den Plan selbst ändern; wann es berührt ist, hängt stark vom Einzelfall ab.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "133"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "befreiung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grz",
+      "begriff": "GRZ",
+      "varianten": [
+        "Grundflächenzahl"
+      ],
+      "definition": "Verhältniszahl im Bebauungsplan: Quadratmeter Grundfläche, die je Quadratmeter maßgebender Grundstücksfläche zulässig sind. Sie begrenzt, welcher Anteil des Grundstücks überbaut werden darf.",
+      "beispiel": "Bei 600 m² Grundstück und GRZ 0,3 sind 180 m² Grundfläche zulässig.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "24"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 19 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "grundflaeche",
+        "gfz",
+        "massgebende-grundstuecksflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hoehe-baulicher-anlagen",
+      "begriff": "Höhe baulicher Anlagen",
+      "definition": "Festsetzung des Maßes der Nutzung, die unmittelbar in Metern über einem Bezugspunkt begrenzt, wie hoch gebaut werden darf, etwa als Trauf- oder Firsthöhe.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "16"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73",
+          "stelle": "Rn. 197"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 18, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "bezugspunkt",
+        "firsthoehe",
+        "traufhoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hohlkehle",
       "begriff": "Hohlkehle",
       "definition": "Ausgerundete Innenecke, meist aus Mörtel, am Übergang zwischen Wand und Fundament oder Bodenplatte. Sie hat einen Radius von mindestens 4 cm, damit die Abdichtung dort nicht scharf abknickt und reißt.",
@@ -1161,6 +2396,53 @@
         "abdichtung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "im-zusammenhang-bebauter-ortsteil",
+      "begriff": "im Zusammenhang bebauter Ortsteil",
+      "varianten": [
+        "im Zusammenhang bebauten Ortsteil",
+        "im Zusammenhang bebaute Ortsteile"
+      ],
+      "definition": "Gesetzlicher Begriff für den Innenbereich. Er setzt zweierlei voraus: einen Ortsteil und einen Bebauungszusammenhang.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "ortsteil",
+        "bebauungszusammenhang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "industriegebiet",
+      "begriff": "Industriegebiet",
+      "varianten": [
+        "GI"
+      ],
+      "definition": "Baugebiet ausschließlich für Gewerbebetriebe, vor allem für solche, die in allen anderen Gebieten unzulässig wären. Weil es am stärksten belastet, gehört es möglichst weit weg von Wohngebieten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "52",
+          "stelle": "Nachbargemeindliche Abstimmungspflicht"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 9, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "gewerbegebiet"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "innendaemmung",
@@ -1284,6 +2566,52 @@
       "stand": "2026-10"
     },
     {
+      "id": "kerngebiet",
+      "begriff": "Kerngebiet",
+      "varianten": [
+        "MK"
+      ],
+      "definition": "Baugebiet für Handel und zentrale Einrichtungen von Wirtschaft, Verwaltung und Kultur, typisch für Innenstädte. Hier sind Vergnügungsstätten aller Art allgemein zulässig; Wohnungen nur für Betriebspersonal oder nach besonderer Festsetzung.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 7, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "vergnuegungsstaette",
+        "kerngebietstypisch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kerngebietstypisch",
+      "begriff": "kerngebietstypisch",
+      "varianten": [
+        "Kerngebietstypisch"
+      ],
+      "definition": "Eigenschaft einer Vergnügungsstätte, die wegen ihres Zwecks oder Umfangs nur im Kerngebiet allgemein zulässig ist. Kleinere, nicht kerngebietstypische Betriebe können auch in einigen anderen Gebieten möglich sein.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 4a Abs. 3 Nr. 2, § 6a Abs. 3 Nr. 1, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "vergnuegungsstaette"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kiesstreifen",
       "begriff": "Kiesstreifen",
       "definition": "Streifen aus grobem Kies entlang des Gebäudesockels anstelle eines festen Belags. Er verbessert den Spritzwasserschutz, weil Regen dort nicht wie von einer festen Fläche an die Wand zurückspritzt.",
@@ -1299,6 +2627,49 @@
         "sockel"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "klarstellungssatzung",
+      "begriff": "Klarstellungssatzung",
+      "definition": "Satzung, in der die Gemeinde die ohnehin geltenden Grenzen des Innenbereichs nachzeichnet. Sie wirkt nur deklaratorisch und kann kein Außenbereichsgrundstück zum Innenbereich machen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "137"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "entwicklungssatzung",
+        "ergaenzungssatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kleinsiedlungsgebiet",
+      "begriff": "Kleinsiedlungsgebiet",
+      "varianten": [
+        "WS"
+      ],
+      "definition": "Baugebiet vor allem für Kleinsiedlungen, also Wohngebäude mit Nutzgärten, und für landwirtschaftliche Nebenerwerbsstellen. Sonstige Wohngebäude sind dort nur ausnahmsweise und mit höchstens zwei Wohnungen möglich.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 2, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "wohngebiet"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "kunststoffbahn",
@@ -1335,6 +2706,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "landwirtschaftlicher-betrieb",
+      "begriff": "landwirtschaftlicher Betrieb",
+      "varianten": [
+        "landwirtschaftlichen Betrieb",
+        "landwirtschaftliche Betriebe"
+      ],
+      "definition": "Betrieb etwa des Ackerbaus, der Wiesen- und Weidewirtschaft, des Obst- oder Weinbaus oder der berufsmäßigen Imkerei; Tierhaltung nur, wenn das Futter überwiegend auf den eigenen Flächen erzeugt werden kann. Ihm dienende Vorhaben sind im Außenbereich privilegiert.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "143"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "privilegiertes-vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lastfall",
       "begriff": "Lastfall",
       "varianten": [
@@ -1355,6 +2746,75 @@
         "drueckendes-wasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "loggia",
+      "begriff": "Loggia",
+      "varianten": [
+        "Loggien"
+      ],
+      "definition": "In den Baukörper eingeschnittener Freibereich, der nach oben und auf zwei oder drei Seiten umschlossen ist; anders als der Balkon hängt sie nicht vor der Fassade.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "314"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mass-der-baulichen-nutzung",
+      "begriff": "Maß der baulichen Nutzung",
+      "definition": "Festlegung, wie dicht und wie hoch gebaut werden darf, im Unterschied zur Art der Nutzung. Mittel sind GRZ oder Grundfläche, GFZ, BMZ oder deren Absolutwerte, die Zahl der Vollgeschosse und die Höhe baulicher Anlagen.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "24"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 16 Abs. 2, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "massgebende-grundstuecksflaeche",
+      "begriff": "maßgebende Grundstücksfläche",
+      "definition": "Die Bezugsfläche für GRZ, GFZ und BMZ: der Teil des Baugrundstücks, der im Bauland und hinter der Straßenbegrenzungslinie liegt.",
+      "quelle": [
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 19 Abs. 3, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "strassenbegrenzungslinie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "materielle-planreife",
+      "begriff": "materielle Planreife",
+      "definition": "Die Annahme, dass ein Vorhaben den künftigen Festsetzungen des Bebauungsplans nicht entgegenstehen wird.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "147"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "formelle-planreife"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "mauerwerkschicht",
@@ -1393,6 +2853,33 @@
       "stand": "2026-10"
     },
     {
+      "id": "mischgebiet",
+      "begriff": "Mischgebiet",
+      "varianten": [
+        "MI"
+      ],
+      "definition": "Baugebiet, das dem Wohnen und zugleich Gewerbebetrieben dient, die das Wohnen nicht wesentlich stören. Beide Nutzungen sollen dort nebeneinander Platz finden, anders als im urbanen Gebiet, das ausdrücklich keine gleichgewichtige Mischung verlangt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 6, § 6a Abs. 1, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "urbanes-gebiet",
+        "nutzungsmischung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "moertelgruppe",
       "begriff": "Mörtelgruppe",
       "definition": "Einteilung von Mörteln nach Zusammensetzung und Festigkeit in Gruppen, die mit römischen Ziffern bezeichnet werden; Normalmauermörtel nach DIN 1053 etwa in I, II, IIa, III und IIIa. Die Gruppe legt fest, wofür ein Mörtel verwendet werden darf.",
@@ -1420,6 +2907,181 @@
       },
       "themen": [
         "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nachvollziehende-abwaegung",
+      "begriff": "nachvollziehende Abwägung",
+      "definition": "Prüfung im Außenbereich, die Vorhaben und betroffene Belange zueinander in Beziehung setzt. Die Behörde gestaltet dabei nicht selbst, sondern folgt der Wertung des Gesetzgebers; Vorzüge des Vorhabens können einen Verstoß gegen einen Belang nicht ausgleichen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "145"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "abwaegung",
+        "belang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "naehere-umgebung",
+      "begriff": "nähere Umgebung",
+      "varianten": [
+        "näheren Umgebung",
+        "Eigenart der näheren Umgebung"
+      ],
+      "definition": "Der Bereich, auf den sich ein Vorhaben auswirken kann. Er reicht über die direkten Nachbargrundstücke hinaus und liefert den Maßstab für das Einfügen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "138"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "einfuegen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nebenanlage",
+      "begriff": "Nebenanlage",
+      "definition": "Untergeordnete Anlage, die dem Nutzungszweck der Grundstücke oder des Baugebiets dient und dessen Eigenart nicht widerspricht, etwa ein Spielplatz.",
+      "quelle": [
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 14 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "71",
+          "stelle": "Rn. 192"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nebenerwerbsstelle",
+      "begriff": "Nebenerwerbsstelle",
+      "varianten": [
+        "Nebenerwerb"
+      ],
+      "definition": "Land- oder forstwirtschaftliche Wirtschaftsstelle, die nicht im Haupterwerb betrieben wird. Im dörflichen Wohngebiet ist sie allgemein zulässig, der Haupterwerbsbetrieb dagegen nur ausnahmsweise.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 5a, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "doerfliches-wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nettobauland",
+      "begriff": "Nettobauland",
+      "definition": "Summe aller bebauten oder bebaubaren Grundstücke eines Gebiets, ohne Straßen, öffentliches Grün und Ähnliches.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "22"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "bruttobauland"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nettowohndichte",
+      "begriff": "Nettowohndichte",
+      "varianten": [
+        "Nettodichte"
+      ],
+      "definition": "Kennwert der Wohndichte: Zahl der Personen bezogen auf das Nettobauland. Sie liegt immer höher als die Bruttodichte, weil die Bezugsfläche kleiner ist.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "23"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "bruttodichte",
+        "nettobauland"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nicht-erheblich-belaestigend",
+      "begriff": "nicht erheblich belästigend",
+      "definition": "Störungsstufe des Gewerbegebiets: Betriebe dürfen dort belästigen, nur nicht erheblich. Erheblich belästigende Betriebe gehören ins Industriegebiet.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 8 Abs. 1, § 9 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "nicht-wesentlich-stoerend",
+        "gewerbegebiet",
+        "industriegebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nicht-stoerend",
+      "begriff": "nicht störend",
+      "definition": "Strengste der drei Störungsstufen der BauNVO: Der Betrieb darf seine Umgebung nicht stören. Sie gilt für Handwerks- und Gewerbebetriebe in den Wohngebieten.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 4 Abs. 2 Nr. 2 und Abs. 3 Nr. 2, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "nicht-wesentlich-stoerend",
+        "nicht-erheblich-belaestigend"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nicht-wesentlich-stoerend",
+      "begriff": "nicht wesentlich störend",
+      "varianten": [
+        "nicht wesentlich stört",
+        "nicht wesentlich stören"
+      ],
+      "definition": "Mittlere Störungsstufe der BauNVO: Ein Gewerbebetrieb darf Wirkungen auf die Umgebung haben, solange das Wohnen daneben nicht wesentlich beeinträchtigt wird. Sie prägt Dorf-, Misch-, urbane und Kerngebiete.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 5 Abs. 1, § 6 Abs. 1, § 6a Abs. 1, § 7 Abs. 2 Nr. 3, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "nicht-stoerend",
+        "nicht-erheblich-belaestigend"
       ],
       "stand": "2026-11"
     },
@@ -1483,6 +3145,43 @@
       "stand": "2026-11"
     },
     {
+      "id": "nutzungsaenderung",
+      "begriff": "Nutzungsänderung",
+      "varianten": [
+        "Umnutzung"
+      ],
+      "definition": "Änderung des Zwecks, dem eine bauliche Anlage dient. Sie zählt als Vorhaben und wird an den Zulässigkeitsregeln gemessen, im Außenbereich unter bestimmten Bedingungen erleichtert.",
+      "beispiel": "Ein früheres landwirtschaftliches Gebäude wird zum Wohnen genutzt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "146"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nutzungsmischung",
+      "begriff": "Nutzungsmischung",
+      "definition": "Das Nebeneinander verschiedener Nutzungen wie Wohnen und Gewerbe in einem Gebiet. Im urbanen Gebiet und im dörflichen Wohngebiet muss sie ausdrücklich nicht gleichgewichtig sein.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 5a Abs. 1, § 6a Abs. 1, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "urbanes-gebiet",
+        "mischgebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nutzungsschablone",
       "begriff": "Nutzungsschablone",
       "definition": "Kleine Tabelle im Bebauungsplan, die die wichtigsten Festsetzungen eines Bereichs in Kurzschrift bündelt: Art der Nutzung, Zahl der Vollgeschosse, Grundflächen- und Geschossflächenzahl, Bauweise und Dachneigung.",
@@ -1492,6 +3191,73 @@
       },
       "themen": [
         "rb-bauleitplanung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "oeffentliche-auslegung",
+      "begriff": "öffentliche Auslegung",
+      "varianten": [
+        "öffentlichen Auslegung",
+        "öffentlich ausgelegt"
+      ],
+      "definition": "Schritt im Aufstellungsverfahren eines Bauleitplans, bei dem der Entwurf mit Begründung öffentlich zugänglich gemacht wird, damit die Bürger ihn einsehen können.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "66"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "orientierungswert",
+      "begriff": "Orientierungswert",
+      "definition": "Richtwert, der einen Anhalt gibt, aber nicht strikt bindet. Im Baurecht die in § 17 BauNVO je Baugebiet genannten Werte für die Obergrenzen von GRZ, GFZ und BMZ. Seit 2021 gelten sie nicht mehr als starre Grenzen und lassen mehr Spielraum; nur in Wochenend- und Ferienhausgebieten dürfen sie nicht überschritten werden.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "72",
+          "stelle": "Rn. 196"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 17, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ortsbild",
+      "begriff": "Ortsbild",
+      "definition": "Das städtebauliche Erscheinungsbild eines Ortes. Es darf im Innenbereich nicht beeinträchtigt werden, erfasst aber keine baugestalterischen Details und rechtfertigt in der Regel nicht, ein Baugrundstück ganz freizuhalten.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "139"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ortsteil",
+      "begriff": "Ortsteil",
+      "definition": "Baurechtlich jede Baugruppe im Gemeindegebiet, die durch die Zahl ihrer Gebäude Gewicht hat und Ausdruck einer organischen Siedlungsstruktur ist.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "splittersiedlung",
+        "streubebauung"
       ],
       "stand": "2026-11"
     },
@@ -1535,6 +3301,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "plananerkenntnis",
+      "begriff": "Plananerkenntnis",
+      "definition": "Schriftliche Erklärung des Antragstellers, die künftigen Festsetzungen für sich und seine Rechtsnachfolger anzuerkennen. Das Risiko späterer Planänderungen zu seinen Ungunsten trägt damit er.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "147"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "formelle-planreife"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "planerhaltung",
       "begriff": "Planerhaltung",
       "definition": "Grundsatz, dass nicht jeder Fehler einen Bauleitplan unwirksam macht. Das Gesetz legt fest, welche Fehler überhaupt zählen, welche rechtzeitig gerügt werden müssen und welche sich nachträglich beheben lassen.",
@@ -1552,6 +3334,51 @@
       "stand": "2026-11"
     },
     {
+      "id": "planersatz",
+      "begriff": "Planersatz",
+      "definition": "Deutung von § 34 BauGB: Weil kein qualifizierter Bebauungsplan gilt, übernimmt das Gesetz dessen Steuerung und nimmt die örtliche Situation zum Maßstab.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "135"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "ersatzplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "planungserfordernis",
+      "begriff": "Planungserfordernis",
+      "definition": "Ungeschriebener öffentlicher Belang: Ein Vorhaben löst so viel Abstimmungsbedarf aus, dass nur eine förmliche Bauleitplanung ihn bewältigen kann. Privilegierten Vorhaben lässt er sich nicht entgegenhalten.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "145"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "belang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "planungsgebiet",
+      "begriff": "Planungsgebiet",
+      "definition": "Gesamtfläche des überplanten Gebiets, meist in Hektar angegeben.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "22"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "planungshoheit",
       "begriff": "Planungshoheit",
       "definition": "Das verfassungsrechtlich geschützte Recht der Gemeinde, die Nutzung ihres Gebiets in eigener Verantwortung zu planen. Der Staat kontrolliert nur die Rechtmäßigkeit, nicht die Zweckmäßigkeit; Grenzen setzen vor allem übergeordnete Ziele und die Abstimmung mit den Nachbargemeinden.",
@@ -1561,7 +3388,33 @@
         "stelle": "Rn. 130–139"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "privilegiertes-vorhaben",
+      "begriff": "privilegiertes Vorhaben",
+      "varianten": [
+        "privilegierte Vorhaben",
+        "Privilegierte Vorhaben",
+        "privilegierten Vorhaben",
+        "privilegiert",
+        "Privilegierung"
+      ],
+      "definition": "Vorhaben aus dem abschließenden Katalog für den Außenbereich, das dort seinem Wesen nach hingehört. Es ist zulässig, solange öffentliche Belange nicht entgegenstehen und die Erschließung gesichert ist.",
+      "beispiel": "Der Stall eines landwirtschaftlichen Betriebs oder eine Windenergieanlage.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "142"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "sonstiges-vorhaben",
+        "teilprivilegiertes-vorhaben"
       ],
       "stand": "2026-11"
     },
@@ -1580,7 +3433,9 @@
         "stelle": "Rn. 203–204"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "einfacher-bebauungsplan"
@@ -1603,6 +3458,26 @@
         "aufsteigende-feuchte"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "rahmen-der-vorhandenen-bebauung",
+      "begriff": "Rahmen der vorhandenen Bebauung",
+      "varianten": [
+        "Rahmens der vorhandenen Bebauung"
+      ],
+      "definition": "Spanne dessen, was in der näheren Umgebung bereits gebaut ist, etwa bei Geschosszahl oder Nutzung. Wer darin bleibt, fügt sich in der Regel ein.",
+      "beispiel": "Bei zwei- bis dreigeschossiger Nachbarschaft bleibt ein dreigeschossiges Haus im Rahmen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "138"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "einfuegen"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "rahmenplan",
@@ -1637,7 +3512,8 @@
         }
       ],
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo"
       ],
       "siehe": [
         "ziele-der-raumordnung",
@@ -1663,6 +3539,33 @@
       "siehe": [
         "landesentwicklungsplan",
         "raumordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "reines-wohngebiet",
+      "begriff": "reines Wohngebiet",
+      "varianten": [
+        "reinen Wohngebiet",
+        "reine Wohngebiet",
+        "WR"
+      ],
+      "definition": "Das empfindlichste Baugebiet, es dient allein dem Wohnen. Zulässig sind Wohngebäude und Kinderbetreuung für das Gebiet; kleine Läden, nicht störendes Handwerk oder kleine Pensionen nur ausnahmsweise.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "72"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 3, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "wohngebiet"
       ],
       "stand": "2026-11"
     },
@@ -1713,7 +3616,8 @@
         "stelle": "Rn. 206–208"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "stand": "2026-11"
     },
@@ -1735,6 +3639,25 @@
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "schaedliche-umwelteinwirkungen",
+      "begriff": "schädliche Umwelteinwirkungen",
+      "definition": "Einwirkungen wie Lärm, Abgase oder Erschütterungen, die nach Art, Stärke oder Dauer Gefahren, erhebliche Nachteile oder Belästigungen für Allgemeinheit oder Nachbarn auslösen können. Bei der Planung sind Baugebiete so anzuordnen, dass Wohngebiete davon möglichst verschont bleiben.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "65"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 11 Abs. 3 Satz 2 mit Verweis auf § 3 BImSchG, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "schalenzwischenraum",
@@ -1846,6 +3769,19 @@
       "stand": "2026-10"
     },
     {
+      "id": "siedlungsdichte",
+      "begriff": "Siedlungsdichte",
+      "definition": "Kennwert der Besiedlung: Zahl der Personen bezogen auf das Gemeindegebiet.",
+      "quelle": {
+        "werk": "FG Stadt, Städtebaureader",
+        "seite": "23"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sockel",
       "begriff": "Sockel",
       "varianten": [
@@ -1902,6 +3838,54 @@
       "stand": "2026-10"
     },
     {
+      "id": "sondergebiet",
+      "begriff": "Sondergebiet",
+      "varianten": [
+        "SO"
+      ],
+      "definition": "Baugebiet für Nutzungen, die zu keinem anderen Gebietstyp passen, etwa zur Erholung, für Kliniken, Hochschulen oder großflächigen Einzelhandel. Zweckbestimmung und Art der Nutzung legt hier der Plan selbst fest; der Typenzwang gilt nicht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "69"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§§ 10, 11, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "grossflaechiger-einzelhandel"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "sonstiges-vorhaben",
+      "begriff": "sonstiges Vorhaben",
+      "varianten": [
+        "sonstige Vorhaben",
+        "Sonstige Vorhaben",
+        "sonstigen Vorhaben",
+        "nicht privilegierte Vorhaben"
+      ],
+      "definition": "Jedes nicht privilegierte Vorhaben im Außenbereich. Es ist nur zulässig, wenn es öffentliche Belange nicht einmal beeinträchtigt, was in der Regel aber der Fall ist.",
+      "beispiel": "Ein Einfamilienhaus ohne Bezug zu einem Betrieb.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "145"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "privilegiertes-vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sortenrein",
       "begriff": "sortenrein",
       "definition": "Nach Materialarten getrennt, ohne Vermischung mit anderen Stoffen. Nur sortenrein gewonnene Baustoffe lassen sich gut wiederverwenden oder recyceln.",
@@ -1933,6 +3917,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "splittersiedlung",
+      "begriff": "Splittersiedlung",
+      "definition": "Kleine Häusergruppe im Außenbereich, die weder das Gewicht noch die organische Struktur eines Ortsteils hat. Dass sie entsteht, sich verfestigt oder wächst, ist ein öffentlicher Belang gegen weitere Vorhaben.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "ortsteil"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "spritzwasser",
       "begriff": "Spritzwasser",
       "varianten": [
@@ -1954,6 +3954,41 @@
         "kiesstreifen"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "stadt-der-kurzen-wege",
+      "begriff": "Stadt der kurzen Wege",
+      "definition": "Städtebauliches Leitbild, bei dem Wohnen, Arbeiten und Freizeit nah beieinanderliegen statt in getrennten Bereichen. Es steht hinter dem urbanen Gebiet.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "73"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "urbanes-gebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "staedtebauliche-spannungen",
+      "begriff": "städtebauliche Spannungen",
+      "varianten": [
+        "städtebaulichen Spannungen"
+      ],
+      "definition": "Konflikte, die ein Vorhaben im Gebiet auslöst oder verschärft und die sich nur mit einer Bauleitplanung lösen lassen. Überschreitet ein Vorhaben den Rahmen, ohne solche Spannungen zu erzeugen, kann es sich trotzdem einfügen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "138"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "einfuegen"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "stauwasser",
@@ -1990,6 +4025,41 @@
       "stand": "2026-10"
     },
     {
+      "id": "strassenbegrenzungslinie",
+      "begriff": "Straßenbegrenzungslinie",
+      "definition": "Im Bebauungsplan festgesetzte Linie zwischen Verkehrsfläche und angrenzenden Flächen. Nur was dahinter im Bauland liegt, zählt für die Berechnung von GRZ, GFZ und BMZ.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "18"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 19 Abs. 3, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "streubebauung",
+      "begriff": "Streubebauung",
+      "definition": "Verstreute Gebäude ohne erkennbare Ordnung. Weil ihr die organische Siedlungsstruktur fehlt, bildet sie keinen Ortsteil.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "ortsteil"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "tauwasser",
       "begriff": "Tauwasser",
       "varianten": [
@@ -2008,6 +4078,54 @@
         "kaltseite"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "teilprivilegiertes-vorhaben",
+      "begriff": "teilprivilegiertes Vorhaben",
+      "varianten": [
+        "teilprivilegierte Vorhaben",
+        "Teilprivilegierte Vorhaben",
+        "teilprivilegierten Vorhaben",
+        "Teilprivilegierten",
+        "teilprivilegiert"
+      ],
+      "definition": "Sonstiges Vorhaben, das erleichtert zulässig ist: Widerspruch zu Flächennutzungs- oder Landschaftsplan, Beeinträchtigung der Landschaftseigenart und Splittersiedlungsgefahr zählen dann nicht, alle übrigen Belange schon.",
+      "beispiel": "Die Umnutzung eines früheren Hofgebäudes.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "146"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "privilegiertes-vorhaben",
+        "sonstiges-vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "traufhoehe",
+      "begriff": "Traufhöhe",
+      "definition": "Als Höhe baulicher Anlagen festsetzbares Maß bis zur Traufe, dem unteren Rand einer geneigten Dachfläche.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "17"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73",
+          "stelle": "Rn. 197"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "firsthoehe"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "trennfuge",
@@ -2044,11 +4162,30 @@
       "stand": "2026-10"
     },
     {
+      "id": "typenzwang",
+      "begriff": "Typenzwang",
+      "definition": "Bindung der Gemeinde an den festen Katalog der Baugebiete: Sie wählt einen vorgegebenen Gebietstyp und erfindet keinen eigenen. Abwandeln darf sie ihn nur im Rahmen der Verordnung.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "72"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "folgenorm",
+        "abwandlung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "ueberbaubare-grundstuecksflaeche",
       "begriff": "überbaubare Grundstücksfläche",
       "varianten": [
         "überbaubaren Grundstücksfläche",
-        "überbaubare Flächen"
+        "überbaubare Flächen",
+        "Baufenster",
+        "überbaubare Fläche"
       ],
       "definition": "Der Teil eines Grundstücks, auf dem nach dem Bebauungsplan Gebäude stehen dürfen. Er wird durch Baulinien, Baugrenzen oder Bebauungstiefen bestimmt.",
       "quelle": {
@@ -2057,11 +4194,29 @@
         "stelle": "Rn. 196"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-mass",
+        "rb-34-35"
       ],
       "siehe": [
         "baugrenze",
         "baulinie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ueberleitungsvorschrift",
+      "begriff": "Überleitungsvorschrift",
+      "definition": "Regel, die festlegt, welche Fassung einer Vorschrift nach einer Änderung noch gilt. Bei der BauNVO hängt das bei Bauleitplänen davon ab, wann ihr Entwurf öffentlich ausgelegt wurde.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 25c, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "oeffentliche-auslegung"
       ],
       "stand": "2026-11"
     },
@@ -2116,6 +4271,63 @@
       "stand": "2026-11"
     },
     {
+      "id": "innenbereich",
+      "begriff": "unbeplanter Innenbereich",
+      "varianten": [
+        "unbeplanten Innenbereich",
+        "im Innenbereich",
+        "Im Innenbereich",
+        "zum Innenbereich",
+        "neuen Innenbereich",
+        "unbeplantem Innenbereich",
+        "Innenbereichslage",
+        "Innenbereichsgrundstück"
+      ],
+      "definition": "Baurechtlich die im Zusammenhang bebauten Ortsteile, soweit kein qualifizierter Bebauungsplan gilt, samt Flächen einer entsprechenden Satzung. Hier darf in der Regel gebaut werden, wenn sich das Vorhaben einfügt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "136"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "aussenbereich",
+        "im-zusammenhang-bebauter-ortsteil"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "urbanes-gebiet",
+      "begriff": "urbanes Gebiet",
+      "varianten": [
+        "urbanen Gebiet",
+        "urbane Gebiet",
+        "Urbanes Gebiet",
+        "MU"
+      ],
+      "definition": "2017 eingeführtes Baugebiet für dichte, gemischte Innenstadtlagen. Wohnen, Gewerbe und Einrichtungen müssen nicht gleichgewichtig gemischt sein, der Plan kann Anteile nach Nutzungsarten vorgeben, und die Anforderungen an den Lärmschutz am Tage sind gesenkt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "66",
+          "stelle": "Rn. 176"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "73"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "stadt-der-kurzen-wege",
+        "nutzungsmischung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vakuum-isolations-paneel",
       "begriff": "Vakuum-Isolations-Paneel",
       "varianten": [
@@ -2144,11 +4356,126 @@
         "stelle": "Rn. 278–280"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "siehe": [
         "zurueckstellung",
         "aufstellungsbeschluss"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verfahrensfrei",
+      "begriff": "verfahrensfrei",
+      "definition": "Ein Vorhaben ist verfahrensfrei, wenn das Landesrecht dafür keine vorherige behördliche Prüfung verlangt. Die materiellen Vorschriften gelten trotzdem, und das Risiko eines Verstoßes trägt der Bauherr.",
+      "beispiel": "Auch ohne Genehmigungsverfahren muss das Bauplanungsrecht eingehalten sein.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "193"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vergnuegungsstaette",
+      "begriff": "Vergnügungsstätte",
+      "definition": "Gewerblicher Betrieb, der der Unterhaltung dient, etwa eine Spielhalle. Die BauNVO lässt solche Betriebe allgemein vor allem im Kerngebiet zu, in einigen anderen Gebieten nur begrenzt.",
+      "quelle": [
+        {
+          "werk": "Neufert",
+          "seite": "540"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "72"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 7 Abs. 2 Nr. 2, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "kerngebiet",
+        "kerngebietstypisch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verpflichtungsklage",
+      "begriff": "Verpflichtungsklage",
+      "definition": "Klage vor dem Verwaltungsgericht gegen eine Ablehnung, im Baurecht vor allem gegen das abgelehnte Baugesuch. Sie richtet sich gegen die Bauaufsichtsbehörde.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "128, 224"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "baugenehmigung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verwaltungsinternum",
+      "begriff": "Verwaltungsinternum",
+      "definition": "Schritt, der nur innerhalb der Verwaltung wirkt und dem Bürger gegenüber keine eigene Regelung trifft. So ist es beim gemeindlichen Einvernehmen: Wer deswegen keine Genehmigung erhält, geht gegen die Bauaufsicht vor, nicht gegen die Gemeinde.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "128"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "einvernehmen",
+        "verpflichtungsklage"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vollgeschoss",
+      "begriff": "Vollgeschoss",
+      "definition": "Geschoss, das nach der Bauordnung des jeweiligen Landes als volles Geschoss zählt. Die BauNVO definiert den Begriff nicht selbst, sondern übernimmt die Landesregel; von der Zahl der Vollgeschosse hängen Geschossfläche und Baumasse ab.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "181",
+          "stelle": "Rn. 505"
+        },
+        {
+          "werk": "BauNVO",
+          "stelle": "§ 20 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "geschossflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vorhaben",
+      "begriff": "Vorhaben",
+      "definition": "Im Baurecht das Projekt, über dessen Zulässigkeit zu entscheiden ist. Im Bauplanungsrecht zählen dazu das Errichten, Ändern oder Umnutzen einer baulichen Anlage sowie größere Aufschüttungen, Abgrabungen und Ablagerungen, auch wenn das Landesrecht dafür kein Genehmigungsverfahren verlangt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "126"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "nutzungsaenderung",
+        "verfahrensfrei"
       ],
       "stand": "2026-11"
     },
@@ -2187,7 +4514,8 @@
         "stelle": "Rn. 209–210"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "siehe": [
         "vorhabentraeger",
@@ -2255,6 +4583,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "wandhoehe",
+      "begriff": "Wandhöhe",
+      "definition": "Maß vom Schnittpunkt der Wand mit dem Gelände bis zum Schnittpunkt mit der Dachhaut oder bis zum oberen Wandabschluss; Grundlage der Abstandsfläche.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "164"
+      },
+      "themen": [
+        "rb-mass"
+      ],
+      "siehe": [
+        "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "waermebruecke",
       "begriff": "Wärmebrücke",
       "definition": "Stelle der Gebäudehülle, an der Wärme deutlich schneller nach außen abfließt als in der umgebenden Fläche, etwa wo gut leitende Bauteile die Dämmung durchdringen. Folgen sind höhere Wärmeverluste und Schimmelgefahr durch Tauwasser an der kalten Innenoberfläche.",
@@ -2304,6 +4648,45 @@
         "vormauerschale"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "wohnflaeche",
+      "begriff": "Wohnfläche",
+      "definition": "Nutzbare Grundfläche einer Wohnung, meist nach der Wohnflächenverordnung berechnet: Treppenhäuser und Installationsschächte zählen nicht, Balkone höchstens zur Hälfte.",
+      "quelle": [
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "22"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "323"
+        }
+      ],
+      "themen": [
+        "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wohngebiet",
+      "begriff": "Wohngebiet",
+      "definition": "Oberbegriff für Baugebiete, die ganz oder vorwiegend dem Wohnen dienen: reines, allgemeines und besonderes Wohngebiet. Auch das Kleinsiedlungsgebiet gehört zur Familie der W-Gebiete.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "66",
+        "stelle": "Rn. 176"
+      },
+      "themen": [
+        "rb-baunvo"
+      ],
+      "siehe": [
+        "reines-wohngebiet",
+        "allgemeines-wohngebiet",
+        "besonderes-wohngebiet",
+        "kleinsiedlungsgebiet"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "xps",
@@ -2365,6 +4748,28 @@
       "stand": "2026-10"
     },
     {
+      "id": "zentraler-versorgungsbereich",
+      "begriff": "zentraler Versorgungsbereich",
+      "varianten": [
+        "zentrale Versorgungsbereich",
+        "zentralen Versorgungsbereich"
+      ],
+      "definition": "Innenstadt oder Ortszentrum, in dem Einzelhandel und andere Angebote die Umgebung versorgen. Das Baurecht schützt solche Bereiche davor, durch große Märkte an anderer Stelle geschwächt zu werden.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "52"
+      },
+      "themen": [
+        "rb-baunvo",
+        "rb-34-35"
+      ],
+      "siehe": [
+        "grossflaechiger-einzelhandel",
+        "einzelhandelskonzept"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "ziele-der-raumordnung",
       "begriff": "Ziele der Raumordnung",
       "varianten": [
@@ -2378,7 +4783,9 @@
         "stelle": "Rn. 100–101"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-baunvo",
+        "rb-34-35"
       ],
       "siehe": [
         "grundsaetze-der-raumordnung",
@@ -2396,10 +4803,45 @@
         "stelle": "Rn. 282"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-34-35"
       ],
       "siehe": [
         "veraenderungssperre"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zustimmung-der-gemeinde",
+      "begriff": "Zustimmung der Gemeinde",
+      "varianten": [
+        "Zustimmung nach § 36a"
+      ],
+      "definition": "Voraussetzung für die Bau-Turbo-Fälle. Anders als beim Einvernehmen darf die Gemeinde hier nach ihren eigenen städtebaulichen Vorstellungen entscheiden, auch wenn sie selbst Bauaufsichtsbehörde ist. Verweigert sie nicht binnen drei Monaten, gilt die Zustimmung als erteilt.",
+      "quelle": {
+        "werk": "BauGB",
+        "stelle": "§ 36a"
+      },
+      "themen": [
+        "rb-34-35"
+      ],
+      "siehe": [
+        "einvernehmen",
+        "bau-turbo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zweckbestimmung",
+      "begriff": "Zweckbestimmung",
+      "definition": "Festlegung, wofür ein Baugebiet in erster Linie da ist; in den Gebietsvorschriften steht sie jeweils in Absatz 1. Sie begrenzt zugleich, wie weit die Gemeinde den Nutzungskatalog abwandeln darf.",
+      "beispiel": "Ein allgemeines Wohngebiet dient vorwiegend dem Wohnen, deshalb kann der Plan darin Tankstellen ausschließen, aber nicht die Wohngebäude.",
+      "quelle": {
+        "werk": "BauNVO",
+        "stelle": "§ 1 Abs. 5 und 6, § 4 Abs. 1, Wortlaut nach gesetze-im-internet.de"
+      },
+      "themen": [
+        "rb-baunvo"
       ],
       "stand": "2026-11"
     },
