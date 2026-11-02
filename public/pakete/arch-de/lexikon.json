@@ -40,10 +40,27 @@
       "themen": [
         "rb-mass",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "wandhoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abstandsflaechennachweis",
+      "begriff": "Abstandsflächennachweis",
+      "definition": "Bauvorlage, die zeigt, dass die vorgeschriebenen Abstandsflächen eines Vorhabens eingehalten sind. Er ist in Hessen Teil der Bauzeichnungen.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 1.2, Tabelle 1, und Nr. 4.1, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "abstandsflaeche"
       ],
       "stand": "2026-11"
     },
@@ -74,7 +91,8 @@
         "rb-bauleitplanung",
         "rb-baunvo",
         "rb-34-35",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-denkmal"
       ],
       "siehe": [
         "abwaegungsgebot",
@@ -394,7 +412,8 @@
         "rb-mass",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -519,7 +538,9 @@
       "themen": [
         "rb-34-35",
         "rb-lbo",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "innenbereich",
@@ -579,6 +600,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "bab-formulare",
+      "begriff": "BAB-Formulare",
+      "definition": "Die mit dem hessischen Bauvorlagenerlass verbindlich eingeführten, nummerierten Vordrucke für bauaufsichtliche Verfahren, etwa BAB 01 für den Bauantrag.",
+      "quelle": [
+        {
+          "werk": "Bauvorlagenerlass Hessen",
+          "stelle": "vom 04.08.2026 (StAnz. 2026 S. 780), Einleitung"
+        },
+        {
+          "werk": "Bauvorlagenerlass Hessen",
+          "stelle": "Anlage 2 Inhaltsübersicht der Vordrucke, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+        }
+      ],
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauvorlagenerlass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "balkonkragplatte",
       "begriff": "Balkonkragplatte",
       "definition": "Frei auskragende Platte eines Balkons, die nur am Gebäude gehalten ist. Ihre Oberseite ist eine waagerechte Fläche, von der Regen an die angrenzende Wand spritzt.",
@@ -613,7 +656,9 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "stand": "2026-11"
     },
@@ -626,7 +671,8 @@
         "stelle": "§ 246e"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "zustimmung-der-gemeinde"
@@ -648,7 +694,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "bauvorlagen"
@@ -672,10 +719,69 @@
         "rb-34-35",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "einvernehmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baubeginnsanzeige",
+      "begriff": "Baubeginnsanzeige",
+      "definition": "Mitteilung an die Bauaufsicht, mit der die Ausführung in Hessen mindestens eine Woche vorher angekündigt wird. Spätestens damit sind auch die Bauleitung und das Rohbauunternehmen zu benennen.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 75 Abs. 3 und 4, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauleitung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baubeschreibung",
+      "begriff": "Baubeschreibung",
+      "definition": "Schriftliche Darstellung einer geplanten Baumaßnahme. Im hessischen Bauantrag ergänzt sie formlos, was die Bauzeichnungen nicht zeigen, etwa zu Bauausführung oder Nutzung; in der Ausschreibung beschreibt sie das Vorhaben grob und nach Konstruktion oder Gewerken geordnet.",
+      "quelle": [
+        {
+          "werk": "Bauvorlagenerlass Hessen",
+          "stelle": "Anlage 2 Nr. 5, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+        },
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "54"
+        }
+      ],
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauzeichnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "baudenkmal",
+      "begriff": "Baudenkmal",
+      "varianten": [
+        "Baudenkmäler"
+      ],
+      "definition": "Bauwerk, das nach dem Recht des jeweiligen Bundeslandes als Denkmal gilt. Das Wort knüpft an das Landesrecht an; so setzen auch die erhöhten steuerlichen Absetzungen voraus, dass das Gebäude dort als Denkmal eingestuft ist.",
+      "quelle": {
+        "werk": "EStG",
+        "stelle": "§ 7i Abs. 1, Wortlaut nach gesetze-im-internet.de, Abruf November 2026"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "kulturdenkmal"
       ],
       "stand": "2026-11"
     },
@@ -778,7 +884,9 @@
       },
       "themen": [
         "rb-34-35",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "bauaufsicht"
@@ -810,7 +918,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-denkmal"
       ],
       "siehe": [
         "vereinfachtes-verfahren",
@@ -855,7 +964,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-denkmal"
       ],
       "siehe": [
         "baugrubenverfuellung"
@@ -894,7 +1004,8 @@
       "themen": [
         "rb-mass",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -916,7 +1027,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "entwurfsverfassende"
@@ -985,7 +1097,8 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-34-35",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-denkmal"
       ],
       "siehe": [
         "flaechennutzungsplan",
@@ -1005,7 +1118,8 @@
       ],
       "themen": [
         "rb-lbo",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -1030,7 +1144,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-denkmal"
       ],
       "stand": "2026-11"
     },
@@ -1131,7 +1246,9 @@
       "themen": [
         "rb-34-35",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "bauplanungsrecht"
@@ -1170,7 +1287,9 @@
         "rb-34-35",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "bauordnungsrecht"
@@ -1193,6 +1312,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "bauportal-hessen",
+      "begriff": "Bauportal Hessen",
+      "varianten": [
+        "Bauportal"
+      ],
+      "definition": "Internetportal für elektronische Bauantragsverfahren, das die meisten hessischen Bauaufsichtsbehörden nutzen. Die Angaben werden in Online-Formularen erfasst und direkt an die Behörde übermittelt; die Pflicht zur Nutzung der Vordrucke entfällt dabei.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "vom 04.08.2026 (StAnz. 2026 S. 780), Einleitung"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauvorlagenerlass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bauprodukt",
       "begriff": "Bauprodukt",
       "definition": "Baustoff, Bauteil oder vorgefertigte Anlage, die dauerhaft in eine bauliche Anlage eingebaut oder mit dem Boden verbunden werden soll und deren Verwendung die allgemeinen Bauanforderungen beeinflussen kann.",
@@ -1203,7 +1341,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "bauliche-anlage"
@@ -1222,7 +1361,8 @@
         "stelle": "§ 68 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
       },
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "pruefsachverstaendige"
@@ -1279,6 +1419,27 @@
       "stand": "2026-11"
     },
     {
+      "id": "bauvorlageberechtigung",
+      "begriff": "Bauvorlageberechtigung",
+      "varianten": [
+        "Bauvorlageberechtigte",
+        "bauvorlageberechtigte"
+      ],
+      "definition": "Befugnis, Bauvorlagen für genehmigungspflichtige oder freigestellte Gebäude zu fertigen. In Hessen haben sie vor allem Architektinnen und Architekten sowie in die Liste eingetragene Ingenieure, andere Berufsgruppen nur für bestimmte Vorhaben; ihre Inhaber müssen sich fortbilden und gegen Haftpflichtansprüche versichern.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 67 Abs. 1, 2 und 6, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauvorlagen",
+        "planvorlagemonopol"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bauvorlagen",
       "begriff": "Bauvorlagen",
       "varianten": [
@@ -1296,10 +1457,33 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "bauantrag"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauvorlagenerlass",
+      "begriff": "Bauvorlagenerlass",
+      "definition": "Hessische Vorgabe der obersten Bauaufsichtsbehörde, die Inhalt, Form und Umfang von Bauantrag und Bauvorlagen festlegt und die Vordrucke dazu einführt. Er wird immer wieder neu gefasst, deshalb zählt die jeweils aktuelle Fassung.",
+      "quelle": [
+        {
+          "werk": "HBO",
+          "stelle": "§ 69 Abs. 2 Satz 4, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+        },
+        {
+          "werk": "Bauvorlagenerlass Hessen",
+          "stelle": "vom 04.08.2026 (StAnz. 2026 S. 780), Einleitung"
+        }
+      ],
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -1322,6 +1506,22 @@
         "rb-mass",
         "rb-lbo",
         "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauzeichnung",
+      "begriff": "Bauzeichnung",
+      "definition": "Maßstäbliche Zeichnung als Teil der Bauvorlagen, in der Regel im Maßstab 1 : 100. Dazu gehören Grundrisse aller Geschosse, Schnitte durch Gebäude und Gelände sowie alle Ansichten.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 4.1 und 4.2, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -1369,7 +1569,9 @@
         "rb-34-35",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "flaechennutzungsplan",
@@ -1414,7 +1616,8 @@
       "themen": [
         "rb-baunvo",
         "rb-lbo",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "grundzuege-der-planung",
@@ -1438,7 +1641,8 @@
         "rb-mass",
         "rb-34-35",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-denkmal"
       ],
       "siehe": [
         "abwaegung"
@@ -1455,6 +1659,38 @@
       },
       "themen": [
         "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "benehmen",
+      "begriff": "Benehmen",
+      "definition": "Form der Beteiligung einer anderen Stelle: Sie wird gehört, und ihre Argumente sind zu berücksichtigen, aber sie kann die Entscheidung nicht verhindern. Darin liegt der Unterschied zum Einvernehmen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "68"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "einvernehmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bescheinigungsstelle",
+      "begriff": "Bescheinigungsstelle",
+      "definition": "Nach Landesrecht zuständige Stelle, die für die steuerliche Förderung bestätigt, dass ein Gebäude Baudenkmal ist und die Aufwendungen erforderlich sind.",
+      "quelle": {
+        "werk": "EStG",
+        "stelle": "§ 7i Abs. 2, Wortlaut nach gesetze-im-internet.de, Abruf November 2026"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "erhoehte-absetzungen"
       ],
       "stand": "2026-11"
     },
@@ -1590,6 +1826,9 @@
     {
       "id": "bezugspunkt",
       "begriff": "Bezugspunkt",
+      "varianten": [
+        "Höhenbezugspunkt"
+      ],
       "definition": "Punkt, von dem aus eine Höhe gemessen wird, etwa eine im Bebauungsplan festgesetzte; ohne ihn bliebe die Höhenangabe unbestimmt.",
       "quelle": [
         {
@@ -1602,7 +1841,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -1670,6 +1910,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "bodendenkmal",
+      "begriff": "Bodendenkmal",
+      "varianten": [
+        "Bodendenkmäler"
+      ],
+      "definition": "Kulturdenkmal, das als Spur menschlichen, tierischen oder pflanzlichen Lebens wissenschaftlich bedeutsam ist und im Boden liegt oder lag oder aus der Urgeschichte stammt (hessische Begriffsbestimmung, Fassung bis Ende 2026).",
+      "beispiel": "Mauerreste und Scherben, die beim Aushub einer Baugrube zutage kommen.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 2, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "grabungsschutzgebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bodenfeuchte",
       "begriff": "Bodenfeuchte",
       "varianten": [
@@ -1705,6 +1965,40 @@
         "hohlkehle"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "brandschutzkonzept",
+      "begriff": "Brandschutzkonzept",
+      "definition": "Auf den Einzelfall zugeschnittene Gesamtbetrachtung des vorbeugenden und abwehrenden Brandschutzes, die alle Maßnahmen im Zusammenhang schlüssig darlegt. In Hessen wird es in der Regel bei Sonderbauten verlangt.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 7.1 und 7.2, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "brandschutznachweis",
+        "sonderbau"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "brandschutznachweis",
+      "begriff": "Brandschutznachweis",
+      "definition": "Bautechnischer Nachweis, dass eine Planung die brandschutzbezogenen Regelanforderungen der Hessischen Bauordnung und der auf ihr beruhenden Vorschriften einhält.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 7.1, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "brandschutzkonzept",
+        "bautechnische-nachweise"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "brandwand",
@@ -1906,6 +2200,170 @@
         "innendaemmung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "denkmaleigenschaft",
+      "begriff": "Denkmaleigenschaft",
+      "definition": "Der Umstand, dass ein Bauwerk die gesetzlichen Merkmale eines Denkmals erfüllt und deshalb dem Denkmalrecht unterliegt. Bei unbeweglichen Kulturdenkmälern hängt sie in Hessen nicht davon ab, ob sie im Verzeichnis eingetragen sind.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 1, § 11 Abs. 1, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalwert",
+        "nachrichtlich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalfachbehoerde",
+      "begriff": "Denkmalfachbehörde",
+      "varianten": [
+        "Landesamt für Denkmalpflege Hessen",
+        "Landesamt für Denkmalpflege",
+        "Landesamts für Denkmalpflege",
+        "Landesamt",
+        "Landesamts"
+      ],
+      "definition": "Fachlich beratende Stelle des Denkmalwesens, in Hessen das Landesamt für Denkmalpflege. Sie erfasst Denkmäler, führt das Verzeichnis, berät Eigentümer und bringt das Denkmalinteresse als Träger öffentlicher Belange ein; über Genehmigungen entscheidet in der Regel die untere Behörde.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 5, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalverzeichnis",
+        "untere-denkmalschutzbehoerde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalgenehmigung",
+      "begriff": "Denkmalgenehmigung",
+      "varianten": [
+        "denkmalrechtliche Genehmigung",
+        "denkmalschutzrechtliche Genehmigung",
+        "denkmalschutzrechtlichen Genehmigung",
+        "Beseitigungsgenehmigung"
+      ],
+      "definition": "Behördliche Erlaubnis für Eingriffe in ein Denkmal oder seine Umgebung, in Hessen etwa fürs Beseitigen, Versetzen, Umgestalten und Instandsetzen. Eine Baugenehmigung schließt sie ein; wo keine erforderlich ist, muss sie eigens beantragt werden.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 9 Abs. 3, § 18, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "umgebungsschutz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalschutz",
+      "begriff": "Denkmalschutz",
+      "varianten": [
+        "fachrechtlichen Denkmalschutz",
+        "fachrechtliche Denkmalschutz"
+      ],
+      "definition": "Die hoheitliche Seite des Umgangs mit Denkmälern: Behörden genehmigen, ordnen an und schreiten ein, um den Bestand zu sichern. Daneben steht die Denkmalpflege, die Eigentümer unterstützt und für den Erhalt wirbt. Grundlage sind die Denkmalschutzgesetze der Länder.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 6, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "staedtebaulicher-denkmalschutz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalschutzbehoerde",
+      "begriff": "Denkmalschutzbehörde",
+      "varianten": [
+        "Denkmalbehörde"
+      ],
+      "definition": "Behörde, die das Denkmalschutzgesetz vollzieht. Hessen kennt zwei Ebenen, die oberste und die untere; daneben steht die Denkmalfachbehörde.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 4, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "untere-denkmalschutzbehoerde",
+        "oberste-denkmalschutzbehoerde",
+        "denkmalfachbehoerde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalschutzgesetz",
+      "begriff": "Denkmalschutzgesetz",
+      "varianten": [
+        "Denkmalschutzgesetze",
+        "Hessisches Denkmalschutzgesetz",
+        "Hessischen Denkmalschutzgesetz",
+        "HDSchG",
+        "Denkmalrecht",
+        "DSchG",
+        "denkmalrechtlich",
+        "denkmalschutzrechtlich"
+      ],
+      "definition": "Landesgesetz über den Schutz von Denkmälern; es überlagert als Fachrecht die Bauleitplanung. In Hessen ist es das Hessische Denkmalschutzgesetz (HDSchG). Das Rechtsgebiet insgesamt heißt Denkmalrecht.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "54"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalverzeichnis",
+      "begriff": "Denkmalverzeichnis",
+      "varianten": [
+        "Denkmalverzeichnisses"
+      ],
+      "definition": "Hessisches Register der Kulturdenkmäler, geführt von der Denkmalfachbehörde und für jeden einsehbar, ohne Angaben zum Eigentum. Unbewegliche Denkmäler stehen darin nur zur Information; ihr Schutz hängt nicht vom Eintrag ab. Bewegliche Sachen werden dagegen erst durch die Eintragung zum Denkmal.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§§ 10–12, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "nachrichtlich",
+        "kulturdenkmal"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "denkmalwert",
+      "begriff": "Denkmalwert",
+      "definition": "Die Bedeutung, die eine Sache aus den gesetzlich genannten Gründen zum Denkmal macht und die ihren Schutz trägt. Schäden, die ihn mindern, muss der Eigentümer in Hessen der unteren Denkmalschutzbehörde melden.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 1, § 19 Abs. 1, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "kulturdenkmal",
+        "substanz"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "dichtebene",
@@ -2235,6 +2693,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "eigentumsgarantie",
+      "begriff": "Eigentumsgarantie",
+      "varianten": [
+        "Eigentumsschutz"
+      ],
+      "definition": "Grundrecht aus Art. 14 Grundgesetz, das das Eigentum schützt und nach überwiegender Meinung auch das Recht umfasst, ein Grundstück im Rahmen der Gesetze zu bebauen. Eingriffe durch Baurecht oder Denkmalschutz müssen sich daran messen lassen.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "56"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "inhalt-und-schranken",
+        "enteignung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "einfacher-bebauungsplan",
       "begriff": "einfacher Bebauungsplan",
       "varianten": [
@@ -2296,6 +2774,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "einfuegungsnachweis",
+      "begriff": "Einfügungsnachweis",
+      "definition": "Bauvorlage für Vorhaben nach § 34 BauGB, die das Einfügen in die Umgebung darlegt. Sie wird in Hessen nur gesondert verlangt, wenn die Bauzeichnungen das nicht schon zeigen.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 1.2, Tabelle 1, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "einfuegen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "eingriffsregelung",
       "begriff": "Eingriffsregelung",
       "definition": "Regelung aus dem Naturschutzrecht, nach der zu erwartende Eingriffe in Natur und Landschaft in der Planung bedacht und ausgeglichen werden. Im Baurecht geschieht das etwa über festgesetzte Ausgleichsflächen.",
@@ -2339,6 +2833,58 @@
       ],
       "siehe": [
         "zentraler-versorgungsbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "energieerzeugungsanlage",
+      "begriff": "Energieerzeugungsanlage",
+      "definition": "In der Hessischen Bauordnung Sammelbegriff für Anlagen wie Feuerungsanlagen, Kraft-Wärme-Kopplung und verbrennungsmotorische oder feuerbeheizte Wärmepumpen. Sichere Benutzbarkeit und Abgasabführung bescheinigen Prüfsachverständige.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 68 Abs. 6, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "pruefsachverstaendige"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "enteignung",
+      "begriff": "Enteignung",
+      "varianten": [
+        "enteignet",
+        "Enteignungsentschädigung"
+      ],
+      "definition": "Hoheitlicher Entzug von Eigentum zugunsten des Allgemeinwohls. Sie muss erforderlich und verhältnismäßig sein, und das ermächtigende Gesetz muss die Entschädigung regeln. Das hessische Denkmalrecht lässt sie etwa zu, um ein Denkmal zu erhalten.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "110"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "eigentumsgarantie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "entschaedigungsklausel",
+      "begriff": "Entschädigungsklausel",
+      "definition": "Allgemein gefasste Gesetzesregel, wonach für unzumutbare Belastungen Geld gezahlt wird. Das Bundesverfassungsgericht hielt 1999 eine solche Klausel nicht für ausreichend: Das Gesetz muss übermäßige Lasten vorrangig real vermeiden, etwa durch Ausnahmen.",
+      "quelle": {
+        "werk": "BVerfG, Beschluss vom 02.03.1999 – 1 BvL 7/91, BVerfGE 100, 226",
+        "stelle": "Rn. 94–105"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "zumutbarkeit"
       ],
       "stand": "2026-11"
     },
@@ -2400,7 +2946,8 @@
       "id": "entwurfsverfassende",
       "begriff": "Entwurfsverfassende",
       "varianten": [
-        "Entwurfsverfasser"
+        "Entwurfsverfasser",
+        "Entwurfsverfasserin"
       ],
       "definition": "Wer den Entwurf für ein Bauvorhaben aufstellt und für dessen Vollständigkeit und Brauchbarkeit verantwortlich ist, auch dafür, dass Fachplanungen zusammenpassen. Die Person muss für die Aufgabe fachlich geeignet sein.",
       "quelle": [
@@ -2414,7 +2961,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "bauherrschaft"
@@ -2494,6 +3042,57 @@
       "stand": "2026-11"
     },
     {
+      "id": "erhaltungsgebiet",
+      "begriff": "Erhaltungsgebiet",
+      "definition": "Gebiet, das eine Erhaltungssatzung festlegt. Darin bedürfen Rückbau, Änderung und Nutzungsänderung baulicher Anlagen einer besonderen Genehmigung der Gemeinde.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "174"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "erhaltungssatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erhaltungsinteresse",
+      "begriff": "Erhaltungsinteresse",
+      "definition": "Das öffentliche Interesse am Fortbestand einer Sache. Es muss aus den im Gesetz genannten Gründen bestehen und macht sie erst zum Kulturdenkmal; das bloße Gefallen Einzelner genügt nicht.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 1, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "kulturdenkmal"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erhaltungsmassnahme",
+      "begriff": "Erhaltungsmaßnahme",
+      "varianten": [
+        "Erhaltungspflicht"
+      ],
+      "definition": "Arbeit, die den Bestand eines Denkmals sichert. Eigentümer und Besitzer trifft eine Erhaltungspflicht im Rahmen des Zumutbaren; kommen sie ihr nicht nach und ist das Denkmal gefährdet, kann die untere Denkmalschutzbehörde in Hessen solche Arbeiten anordnen.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§§ 13, 14, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "zumutbarkeit"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "erhaltungssatzung",
       "begriff": "Erhaltungssatzung",
       "definition": "Satzung nach dem Baugesetzbuch, mit der eine Gemeinde ein Gebiet festlegt, in dem Abbruch, Änderung oder Nutzungsänderung baulicher Anlagen einer Genehmigung bedürfen. Anders als die Gestaltungssatzung kann sie damit auch den Abbruch erfassen.",
@@ -2508,10 +3107,33 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-denkmal"
       ],
       "siehe": [
         "gestaltungssatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erhoehte-absetzungen",
+      "begriff": "erhöhte Absetzungen",
+      "varianten": [
+        "erhöhten Absetzungen",
+        "erhöhte steuerliche Absetzungen",
+        "erhöht absetzen"
+      ],
+      "definition": "Steuerliche Abschreibung, die höher liegt als die reguläre. Beim vermieteten Baudenkmal lassen sich so die Kosten begünstigter Maßnahmen über zwölf Jahre geltend machen, Voraussetzung ist eine Bescheinigung der zuständigen Stelle.",
+      "quelle": {
+        "werk": "EStG",
+        "stelle": "§ 7i Abs. 1 und 2, Wortlaut nach gesetze-im-internet.de, Abruf November 2026"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "baudenkmal",
+        "bescheinigungsstelle"
       ],
       "stand": "2026-11"
     },
@@ -2570,7 +3192,8 @@
         "rb-baunvo",
         "rb-34-35",
         "rb-lbo",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-denkmal"
       ],
       "stand": "2026-11"
     },
@@ -2588,6 +3211,74 @@
       "siehe": [
         "planersatz",
         "aussenbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fachbauleitung",
+      "begriff": "Fachbauleitung",
+      "definition": "Person, die für ein Teilgebiet an die Stelle der Bauleitung tritt, wenn dieser dort die Eignung fehlt. Die Bauleitung stimmt die Fachbauleitungen und ihre eigene Tätigkeit aufeinander ab.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 59 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauleitung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fachentwurf",
+      "begriff": "Fachentwurf",
+      "varianten": [
+        "Fachentwürfe"
+      ],
+      "definition": "Teilplanung für ein einzelnes Fachgebiet, die von hinzugezogenen Fachleuten gefertigt und von ihnen verantwortet wird. Die Entwurfsverfassenden sorgen dafür, dass die Fachentwürfe ineinandergreifen.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 57 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "fachplanende"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fachplanende",
+      "begriff": "Fachplanende",
+      "varianten": [
+        "Fachplanung"
+      ],
+      "definition": "Fachleute, die Entwurfsverfassende für ein Fachgebiet hinzuziehen, auf dem ihnen selbst Sachkunde und Erfahrung fehlen. Sie verantworten ihren Fachentwurf; dass alle Teile zusammenpassen, bleibt Sache der Entwurfsverfassenden.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 57 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "entwurfsverfassende",
+        "fachentwurf"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fachunternehmen",
+      "begriff": "Fachunternehmen",
+      "definition": "Betrieb, den ein Bauunternehmen für Arbeiten heranzieht, für die ihm selbst Sachkunde und Erfahrung fehlen. Es verantwortet seine eigenen Arbeiten; für das Ineinandergreifen bleibt das beauftragende Unternehmen verantwortlich.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 58 Abs. 2, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -2626,7 +3317,37 @@
         "rb-baunvo",
         "rb-mass",
         "rb-34-35",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-bauvorlagen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "feuerstaette",
+      "begriff": "Feuerstätte",
+      "varianten": [
+        "Feuerstätten"
+      ],
+      "definition": "Ortsfest in oder an einem Gebäude genutzte Anlage, die durch Verbrennung Wärme erzeugen soll.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 2 Abs. 12, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "feuerwiderstandsdauer",
+      "begriff": "Feuerwiderstandsdauer",
+      "definition": "Zeit in Minuten, während der ein Bauteil in der Brandprüfung die festgelegten Anforderungen erfüllt.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "229"
+      },
+      "themen": [
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -2648,7 +3369,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-denkmal"
       ],
       "siehe": [
         "vereinfachtes-verfahren"
@@ -2825,6 +3547,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "freiflaechenplan",
+      "begriff": "Freiflächenplan",
+      "definition": "Bauvorlage, die die geplante Nutzung der nicht überbauten Grundstücksflächen nach Lage, Art und Größe zeigt, etwa Spielplätze, Stellplätze, Plätze für Abfallbehälter, Flächen für die Feuerwehr und Begrünung.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 3, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "freistellungsvorbehalt",
       "begriff": "Freistellungsvorbehalt",
       "definition": "Hessische Bedingung, unter der ein an sich baugenehmigungsfreies Vorhaben steht, etwa die vorherige Beteiligung der Gemeinde. Sie kann binnen einer Frist doch ein Baugenehmigungsverfahren verlangen.",
@@ -2917,7 +3652,8 @@
         "seite": "87"
       },
       "themen": [
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-denkmal"
       ],
       "siehe": [
         "dachaufbauten"
@@ -2935,7 +3671,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "nutzungseinheit",
@@ -3038,7 +3775,9 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "stand": "2026-11"
     },
@@ -3144,7 +3883,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "verfahrensfrei",
@@ -3175,6 +3915,43 @@
       ],
       "siehe": [
         "ermaechtigungsgrundlage"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gesamtanlage",
+      "begriff": "Gesamtanlage",
+      "varianten": [
+        "Ensemble",
+        "Ensembleschutz"
+      ],
+      "definition": "Im Denkmalrecht ein Kulturdenkmal aus mehreren baulichen Anlagen samt zugehörigen Grün-, Frei- und Wasserflächen, das in Hessen als Ganzes aus künstlerischen oder geschichtlichen Gründen geschützt ist. Das einzelne Haus darin muss selbst kein Denkmal sein. Allgemein, außerhalb des hessischen Gesetzes, heißt das Ensemble bzw. Ensembleschutz.",
+      "beispiel": "Ein historischer Ortskern mit Plätzen und Gassen, in dem auch unauffällige Häuser den Regeln der Anlage unterliegen.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 3, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "kulturdenkmal"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gesamtverantwortliche",
+      "begriff": "Gesamtverantwortliche",
+      "varianten": [
+        "Gesamtverantwortlicher"
+      ],
+      "definition": "Person, die in Hessen zu benennen ist, wenn für die Nachweise eines Vorhabens mehrere Aufstellende beteiligt sind; sie koordiniert deren Arbeit.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 1.1, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -3284,7 +4061,9 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "oertliche-bauvorschrift",
@@ -3342,7 +4121,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "geschossflaeche",
@@ -3382,6 +4162,22 @@
         "schutzvlies"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "grabungsschutzgebiet",
+      "begriff": "Grabungsschutzgebiet",
+      "definition": "Per Rechtsverordnung abgegrenztes Gebiet, in dem Bodendenkmäler begründet vermutet werden. In Hessen brauchen dort gefährdende Arbeiten eine Genehmigung; die bisherige Land- und Forstwirtschaft bleibt zulässig.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 23, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "bodendenkmal"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "grenzabstand",
@@ -3472,6 +4268,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "grossgarage",
+      "begriff": "Großgarage",
+      "definition": "Garage mit mehr als 1.000 m² Nutzfläche, die größte Klasse der Garageneinteilung.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "127"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "mittelgarage",
+        "kleingarage"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "grundflaeche",
       "begriff": "Grundfläche",
       "varianten": [
@@ -3554,12 +4367,29 @@
       "themen": [
         "rb-mass",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "grundflaeche",
         "gfz",
         "massgebende-grundstuecksflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "handlungshaftung",
+      "begriff": "Handlungshaftung",
+      "definition": "Ordnungsrechtliche Verantwortung für das eigene Handeln. Das Baurecht konkretisiert sie, indem es festlegt, an welche am Bau Beteiligten sich die Bauaufsicht mit Verfügungen wenden kann.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "183"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "stoerer"
       ],
       "stand": "2026-11"
     },
@@ -3578,7 +4408,9 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "landesbauordnung"
@@ -3732,6 +4564,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "inhalt-und-schranken",
+      "begriff": "Inhalt und Schranken",
+      "varianten": [
+        "Inhalts- und Schrankenbestimmung"
+      ],
+      "definition": "Formel aus Art. 14 Abs. 1 Satz 2 Grundgesetz: Der Gesetzgeber legt allgemein fest, was Eigentum umfasst und wo es endet. Der Bebauungsplan wirkt so; im Denkmalrecht trifft es die Beschränkungen des Eigentümers.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "57"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "eigentumsgarantie",
+        "enteignung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "innendaemmung",
       "begriff": "Innendämmung",
       "definition": "Wärmedämmung auf der Raumseite einer Außenwand. Die Wand selbst liegt dann ganz auf der Kaltseite und kühlt ab, sodass im Bauteil Tauwasser entstehen kann; deshalb sind ein Dampfdiffusionsnachweis und meist eine sorgfältig verlegte Dampfbremse nötig.",
@@ -3784,6 +4636,25 @@
         "vormauerschale"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "inventarisiert",
+      "begriff": "inventarisiert",
+      "varianten": [
+        "inventarisieren"
+      ],
+      "definition": "Planmäßig erfasst. Die systematische Erfassung der Kulturdenkmäler gehört in Hessen zu den Aufgaben der Denkmalfachbehörde.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 5 Abs. 2 Nr. 3, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalfachbehoerde"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "kalkzementmoertelverputz",
@@ -3990,6 +4861,45 @@
       "stand": "2026-11"
     },
     {
+      "id": "kraft-gesetzes",
+      "begriff": "kraft Gesetzes",
+      "definition": "Die Rechtsfolge tritt unmittelbar durch das Gesetz ein; eine Entscheidung der Behörde im Einzelfall ist nicht nötig.",
+      "beispiel": "Ein Haus mit Denkmaleigenschaft ist in Hessen auch dann geschützt, wenn es nie erfasst wurde.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 11 Abs. 1, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "nachrichtlich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kulturdenkmal",
+      "begriff": "Kulturdenkmal",
+      "varianten": [
+        "Kulturdenkmäler",
+        "Einzelkulturdenkmal"
+      ],
+      "definition": "Begriff des hessischen Denkmalrechts: eine bewegliche oder unbewegliche Sache, auch eine zusammengehörige Mehrheit von Sachen, ein Teil davon oder eine Grünanlage, deren Fortbestand aus künstlerischen, wissenschaftlichen, technischen, geschichtlichen oder städtebaulichen Gründen im öffentlichen Interesse liegt. Steht ein einzelnes Bauwerk für sich unter Schutz, spricht man vom Einzelkulturdenkmal.",
+      "beispiel": "Auch ein unauffälliger Industriebau der Nachkriegszeit kann darunter fallen, denn eine Altersgrenze gibt es nicht.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 2 Abs. 1, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "gesamtanlage",
+        "bodendenkmal"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kunststoffbahn",
       "begriff": "Kunststoffbahn",
       "definition": "Abdichtungsbahn aus Kunststoff wie PVC oder Polyethylen, die ähnlich wie Dachbahnen verlegt wird. Sie ist eine Alternative zur Bitumenbahn bei Dach- und Bauwerksabdichtungen.",
@@ -4019,7 +4929,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-denkmal"
       ],
       "siehe": [
         "hessische-bauordnung",
@@ -4088,6 +4999,26 @@
       "stand": "2026-10"
     },
     {
+      "id": "liegenschaftsplan",
+      "begriff": "Liegenschaftsplan",
+      "varianten": [
+        "Lageplan"
+      ],
+      "definition": "In Hessen die Bauvorlage, die die Lage des Vorhabens zeigt: ein aktueller Auszug aus der Liegenschaftskarte mit Baugrundstück, umliegenden Grundstücken und angrenzenden öffentlichen Verkehrsflächen, meist im Maßstab 1 : 500. Je nach Verfahren wird er ergänzt, etwa um das vermaßte Vorhaben.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 2, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "ortsvergleich",
+        "uebersichtsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "loggia",
       "begriff": "Loggia",
       "varianten": [
@@ -4118,7 +5049,8 @@
         }
       ],
       "themen": [
-        "rb-mass"
+        "rb-mass",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -4318,6 +5250,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "mittelgarage",
+      "begriff": "Mittelgarage",
+      "definition": "Garage mit 100 bis 1.000 m² Nutzfläche, die mittlere Klasse der Garageneinteilung.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "126"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "kleingarage",
+        "grossgarage"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "mittlere-wandhoehe",
       "begriff": "mittlere Wandhöhe",
       "varianten": [
@@ -4431,6 +5380,24 @@
       "stand": "2026-11"
     },
     {
+      "id": "nachrichtlich",
+      "begriff": "nachrichtlich",
+      "definition": "Nur zur Information wiedergegeben, ohne selbst Rechtswirkung zu erzeugen. Unbewegliche Kulturdenkmäler stehen in Hessen so im Denkmalverzeichnis: Ihr Schutz besteht unabhängig vom Eintrag. Anders wirkt die Eintragung konstitutiv, also rechtsbegründend, bei beweglichen Sachen.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 11 Abs. 1, § 12 Abs. 2, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalverzeichnis",
+        "kraft-gesetzes",
+        "nachrichtliche-uebernahme"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nachrichtliche-uebernahme",
       "begriff": "nachrichtliche Übernahme",
       "definition": "Eintrag im Bauleitplan, der nur auf eine anderweitig bestehende Regelung hinweist. Er nimmt nicht an der Rechtswirkung des Plans teil.",
@@ -4441,7 +5408,8 @@
         "stelle": "Rn. 177–178"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-denkmal"
       ],
       "stand": "2026-11"
     },
@@ -4459,6 +5427,23 @@
       "siehe": [
         "abwaegung",
         "belang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nachweisberechtigte",
+      "begriff": "Nachweisberechtigte",
+      "definition": "Personen, die nach der Hessischen Bauordnung bautechnische Nachweise selbst aufstellen dürfen, etwa zur Standsicherheit oder zum Brandschutz. Anders als Prüfsachverständige bescheinigen sie nicht die Prüfung eines Nachweises, sondern erstellen ihn.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 68 Abs. 1, 3 und 4, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bautechnische-nachweise",
+        "pruefsachverstaendige"
       ],
       "stand": "2026-11"
     },
@@ -4742,7 +5727,8 @@
       "themen": [
         "rb-34-35",
         "rb-abstandsflaechen",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-denkmal"
       ],
       "siehe": [
         "vorhaben"
@@ -4832,6 +5818,27 @@
       "stand": "2026-11"
     },
     {
+      "id": "oberste-denkmalschutzbehoerde",
+      "begriff": "oberste Denkmalschutzbehörde",
+      "varianten": [
+        "obersten Denkmalschutzbehörde",
+        "Oberste Denkmalschutzbehörde",
+        "Obersten Denkmalschutzbehörde"
+      ],
+      "definition": "In Hessen das für Denkmalschutz zuständige Ministerium. Einigen sich untere Behörde und Fachbehörde nicht, gibt es die Weisung.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 4 Abs. 1, § 20 Abs. 5, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalschutzbehoerde"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "oeffentlich-rechtlich-gesichert",
       "begriff": "öffentlich-rechtlich gesichert",
       "varianten": [
@@ -4913,7 +5920,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-denkmal"
       ],
       "siehe": [
         "gestaltungssatzung"
@@ -4947,6 +5955,22 @@
       "siehe": [
         "splittersiedlung",
         "streubebauung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ortsvergleich",
+      "begriff": "Ortsvergleich",
+      "definition": "Prüfung vor Ort, ob der Auszug aus der Liegenschaftskarte alle maßgeblichen baulichen Anlagen zeigt. Fehlende Objekte werden erfasst und in den Auszug übernommen.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 2, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "liegenschaftsplan"
       ],
       "stand": "2026-11"
     },
@@ -5084,6 +6108,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "planvorlagemonopol",
+      "begriff": "Planvorlagemonopol",
+      "definition": "Bezeichnung dafür, dass nur bestimmte qualifizierte Berufsgruppen Bauanträge unterschreiben dürfen. Die Beschränkung der Berufsausübung gilt als verhältnismäßig, weil sie der Gefahrenabwehr dient.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "197"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "bauvorlageberechtigung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "praeventives-verbot",
       "begriff": "präventives Verbot mit Erlaubnisvorbehalt",
       "definition": "Regelungstechnik, bei der eine an sich erlaubte Tätigkeit vorab behördlich kontrolliert wird: Ohne Erlaubnis darf nicht begonnen werden, wer alle Anforderungen erfüllt, hat aber Anspruch auf sie. Das Lehrbuchbeispiel ist die Baugenehmigung.",
@@ -5117,7 +6157,8 @@
         "seite": "142"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-denkmal"
       ],
       "siehe": [
         "sonstiges-vorhaben",
@@ -5137,7 +6178,8 @@
         "stelle": "§ 68 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
       },
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "bautechnische-nachweise"
@@ -5162,7 +6204,8 @@
         "rb-bauleitplanung",
         "rb-mass",
         "rb-34-35",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-denkmal"
       ],
       "siehe": [
         "einfacher-bebauungsplan"
@@ -5263,7 +6306,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-denkmal"
       ],
       "siehe": [
         "aussenrecht"
@@ -5352,7 +6396,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "sicherheitstreppenraum",
@@ -5724,7 +6769,8 @@
         "stelle": "§ 2 Abs. 9 und § 66, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
       },
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "baugenehmigungsverfahren"
@@ -5773,7 +6819,8 @@
         "seite": "145"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-denkmal"
       ],
       "siehe": [
         "privilegiertes-vorhaben"
@@ -5920,6 +6967,59 @@
       "stand": "2026-11"
     },
     {
+      "id": "staedtebaulicher-denkmalschutz",
+      "begriff": "städtebaulicher Denkmalschutz",
+      "varianten": [
+        "städtebaulichen Denkmalschutz",
+        "städtebauliche Denkmalschutz"
+      ],
+      "definition": "Berücksichtigung von Denkmalbelangen bei der Bauleitplanung: Die Gemeinde stellt sie als einen Belang unter mehreren in die Abwägung ein. Davon zu trennen ist der Schutz durch die Denkmalschutzgesetze, der von der Abwägung unabhängig gilt.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "55"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalschutz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "standsicherheit",
+      "begriff": "Standsicherheit",
+      "definition": "Eigenschaft einer baulichen Anlage, im Ganzen und in allen Teilen sicher zu stehen, auch mit Blick auf Baugrund und Grundwasser, ohne dabei benachbarte Anlagen oder den Nachbarbaugrund zu gefährden.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 12 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "standsicherheitsnachweis"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "standsicherheitsnachweis",
+      "begriff": "Standsicherheitsnachweis",
+      "definition": "Bautechnischer Nachweis, dass ein Bauwerk standsicher ist. Er besteht aus der Darstellung des statischen Systems, den Berechnungen und den Konstruktionszeichnungen und nennt auch die Feuerwiderstandsdauer der tragenden Bauteile.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 6.2 und 6.3, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "standsicherheit",
+        "bautechnische-nachweise"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "stauwasser",
       "begriff": "Stauwasser",
       "definition": "Sickerwasser, das auf eine wenig durchlässige Bodenschicht trifft, sich dort aufstaut und dann zeitweise Druck auf erdberührte Bauteile ausübt.",
@@ -5952,10 +7052,27 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "notwendiger-stellplatz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stellplatznachweis",
+      "begriff": "Stellplatznachweis",
+      "definition": "Bauvorlage zu den Stellplätzen eines Vorhabens. In Hessen gehört sie zum Antrag, wenn die Gemeinde dazu eine Satzung erlassen hat.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 1.2, Tabelle 1, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "stellplatzsatzung"
       ],
       "stand": "2026-11"
     },
@@ -5992,7 +7109,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "notwendiger-stellplatz",
@@ -6012,7 +7130,8 @@
         "seite": "215"
       },
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -6098,6 +7217,22 @@
       },
       "themen": [
         "rb-abstandsflaechen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "substanz",
+      "begriff": "Substanz",
+      "definition": "Im Denkmalrecht der materielle Bestand eines Bauwerks, im Unterschied zu seiner bloßen Wirkung oder seinem Aussehen. Gerade diesen Bestand will das Denkmalrecht möglichst weitgehend erhalten.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 15, § 18 Abs. 4, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalwert"
       ],
       "stand": "2026-11"
     },
@@ -6188,11 +7323,31 @@
         "seite": "146"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-denkmal"
       ],
       "siehe": [
         "privilegiertes-vorhaben",
         "sonstiges-vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "traeger-oeffentlicher-belange",
+      "begriff": "Träger öffentlicher Belange",
+      "varianten": [
+        "Trägern öffentlicher Belange"
+      ],
+      "definition": "Behörde oder sonstige Stelle, die ein öffentliches Interesse vertritt und deshalb bei Planungen beteiligt wird; sie gibt innerhalb einer Frist eine Stellungnahme ab.",
+      "quelle": {
+        "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+        "seite": "81"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "belang"
       ],
       "stand": "2026-11"
     },
@@ -6287,6 +7442,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "typenpruefung",
+      "begriff": "Typenprüfung",
+      "definition": "Allgemeine Prüfung eines Standsicherheitsnachweises durch ein Prüfamt für Baustatik. In Hessen entfällt damit die Bescheinigung durch Prüfsachverständige; Typenprüfungen anderer Länder gelten auch dort.",
+      "quelle": {
+        "werk": "HBO",
+        "stelle": "§ 68 Abs. 3 Satz 3, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "standsicherheitsnachweis"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "typenzwang",
       "begriff": "Typenzwang",
       "definition": "Bindung der Gemeinde an den festen Katalog der Baugebiete: Sie wählt einen vorgegebenen Gebietstyp und erfindet keinen eigenen. Abwandeln darf sie ihn nur im Rahmen der Verordnung.",
@@ -6360,6 +7531,58 @@
       ],
       "siehe": [
         "oeffentliche-auslegung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ueberragendes-oeffentliches-interesse",
+      "begriff": "überragendes öffentliches Interesse",
+      "varianten": [
+        "überragenden öffentlichen Interesse"
+      ],
+      "definition": "Gesetzliche Vorgabe, die einem Belang besonderes Gewicht in der Abwägung gibt. Im hessischen Denkmalrecht gilt das ab 2027 für erneuerbare Energien bei Anlagen zur Strom- und Wärmeerzeugung.",
+      "quelle": {
+        "werk": "Synopse des HMWK zur Novelle des HDSchG",
+        "stelle": "§ 9 Abs. 1 neu, Stand 31.08.2026"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "belang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "uebersichtsplan",
+      "begriff": "Übersichtsplan",
+      "definition": "Bauvorlage in sehr kleinem Maßstab (1 : 10.000 bis 1 : 25.000), auf der das Baugrundstück gekennzeichnet ist, sodass sich seine Lage im weiteren Umfeld erkennen lässt.",
+      "quelle": {
+        "werk": "Bauvorlagenerlass Hessen",
+        "stelle": "Anlage 2 Nr. 1.2, Tabelle 1, konsolidierte Fassung vom 13.06.2018 mit Änderung vom 11.01.2019, Abdruck der Architektenkammer Hessen"
+      },
+      "themen": [
+        "rb-bauvorlagen"
+      ],
+      "siehe": [
+        "liegenschaftsplan"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "umgebungsschutz",
+      "begriff": "Umgebungsschutz",
+      "definition": "Schutz eines unbeweglichen Denkmals vor Vorhaben in seiner Nachbarschaft: In Hessen sind sie genehmigungspflichtig, wenn sie seinen Bestand oder sein Erscheinungsbild berühren können. Eine feste Abstandszone nennt das Gesetz nicht.",
+      "beispiel": "Ein Neubau neben einer geschützten Kirche, der die Sicht auf sie verstellt.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 18 Abs. 2, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalgenehmigung"
       ],
       "stand": "2026-11"
     },
@@ -6438,6 +7661,27 @@
       "siehe": [
         "aussenbereich",
         "im-zusammenhang-bebauter-ortsteil"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "untere-denkmalschutzbehoerde",
+      "begriff": "untere Denkmalschutzbehörde",
+      "varianten": [
+        "unteren Denkmalschutzbehörde",
+        "Untere Denkmalschutzbehörde",
+        "Unteren Denkmalschutzbehörde"
+      ],
+      "definition": "In Hessen die regelmäßig zuständige Stelle vor Ort, die Genehmigungen und Anordnungen erlässt: der Magistrat in kreisfreien Städten und in Gemeinden, denen die Bauaufsicht übertragen ist, sonst der Kreisausschuss.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 4 Abs. 2, § 8 Abs. 1, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "denkmalschutzbehoerde"
       ],
       "stand": "2026-11"
     },
@@ -6534,7 +7778,9 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "baugenehmigungsverfahren",
@@ -6564,7 +7810,9 @@
       "themen": [
         "rb-34-35",
         "rb-lbo",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "stand": "2026-11"
     },
@@ -6688,7 +7936,9 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "innenrecht"
@@ -6712,7 +7962,8 @@
       ],
       "themen": [
         "rb-mass",
-        "rb-lbo"
+        "rb-lbo",
+        "rb-bauvorlagen"
       ],
       "siehe": [
         "geschossflaeche"
@@ -6731,7 +7982,9 @@
         "rb-34-35",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen",
+        "rb-denkmal"
       ],
       "siehe": [
         "nutzungsaenderung",
@@ -6912,6 +8165,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "wiederherstellungspflicht",
+      "begriff": "Wiederherstellungspflicht",
+      "definition": "Pflicht, nach einem ungenehmigten Eingriff den früheren Zustand herzustellen. Sie steht im Denkmalrecht, in Hessen auf Anordnung der unteren Denkmalschutzbehörde; aus dem Bauordnungsrecht lässt sich ein Wiederaufbau nicht verlangen.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 9 Abs. 4, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "untere-denkmalschutzbehoerde"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "wohnflaeche",
       "begriff": "Wohnfläche",
       "definition": "Nutzbare Grundfläche einer Wohnung, meist nach der Wohnflächenverordnung berechnet: Treppenhäuser und Installationsschächte zählen nicht, Balkone höchstens zur Hälfte.",
@@ -6927,7 +8196,8 @@
       ],
       "themen": [
         "rb-mass",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-bauvorlagen"
       ],
       "stand": "2026-11"
     },
@@ -7053,6 +8323,27 @@
       "siehe": [
         "grundsaetze-der-raumordnung",
         "anpassungspflicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zumutbarkeit",
+      "begriff": "Zumutbarkeit",
+      "varianten": [
+        "Zumutbaren",
+        "wirtschaftlich unzumutbar",
+        "wirtschaftliche Zumutbarkeit"
+      ],
+      "definition": "Grenze dessen, was einem Betroffenen rechtlich abverlangt werden darf. Im hessischen Denkmalrecht begrenzt sie die Erhaltungspflicht; wäre die Ablehnung einer Genehmigung wirtschaftlich unzumutbar, ist sie zu erteilen.",
+      "quelle": {
+        "werk": "HDSchG",
+        "stelle": "§ 13 Abs. 1, § 18 Abs. 3 Nr. 2, Wortlaut nach GVBl. 2016 Nr. 18"
+      },
+      "themen": [
+        "rb-denkmal"
+      ],
+      "siehe": [
+        "eigentumsgarantie"
       ],
       "stand": "2026-11"
     },
