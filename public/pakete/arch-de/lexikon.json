@@ -1,6 +1,25 @@
 {
   "eintraege": [
     {
+      "id": "aarhus-konvention",
+      "begriff": "Aarhus-Konvention",
+      "definition": "Völkerrechtlicher Vertrag, auf den Verbandsklagen in Umweltsachen gestützt werden. Unter ihrem Einfluss und dem des Unionsrechts verschiebt sich der deutsche Rechtsschutz hin zu mehr objektiver Kontrolle.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "220"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "221"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "abdichtung",
       "begriff": "Abdichtung",
       "varianten": [
@@ -25,6 +44,9 @@
     {
       "id": "abstandsflaeche",
       "begriff": "Abstandsfläche",
+      "varianten": [
+        "Abstandsflächenvorschriften"
+      ],
       "definition": "Fläche vor der Außenwand eines Gebäudes, die von anderen Gebäuden freizuhalten ist. Ihre Tiefe richtet sich nach der Wandhöhe und einem Faktor aus der jeweiligen Landesbauordnung.",
       "quelle": [
         {
@@ -41,7 +63,8 @@
         "rb-mass",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "wandhoehe"
@@ -92,7 +115,8 @@
         "rb-baunvo",
         "rb-34-35",
         "rb-abstandsflaechen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "abwaegungsgebot",
@@ -172,6 +196,21 @@
       "stand": "2026-11"
     },
     {
+      "id": "abwaegungserheblich",
+      "begriff": "abwägungserheblich",
+      "definition": "Eigenschaft eines Belangs, der bei der Abwägung eines Plans berücksichtigt werden muss. Wer einen solchen eigenen Belang geltend macht, kann antragsbefugt sein; bloße wirtschaftliche Interessen reichen nicht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "222"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "abwaegungsfehleinschaetzung",
       "begriff": "Abwägungsfehleinschätzung",
       "definition": "Abwägungsfehler, bei dem das Gewicht oder die Bedeutung eines öffentlichen oder privaten Belangs falsch beurteilt wird.",
@@ -199,7 +238,8 @@
         "stelle": "Rn. 248–249"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "abwaegungsvorgang",
@@ -241,6 +281,34 @@
       "siehe": [
         "typenzwang",
         "zweckbestimmung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abwehranspruch",
+      "begriff": "Abwehranspruch",
+      "varianten": [
+        "Abwehransprüche",
+        "Abwehransprüchen",
+        "Abwehrrecht"
+      ],
+      "definition": "Recht des Eigentümers, vom Störer die Beseitigung oder Unterlassung einer Beeinträchtigung zu verlangen. Es ist der Kern des zivilrechtlichen Nachbarschutzes.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        },
+        {
+          "werk": "BGB",
+          "stelle": "§ 1004, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -329,10 +397,86 @@
       ],
       "themen": [
         "rb-baunvo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "allgemeinverbindlich",
+      "begriff": "allgemeinverbindlich",
+      "definition": "Verbindlich für alle, nicht nur für einzelne Beteiligte. So gilt auch die gerichtliche Feststellung, dass ein Plan unwirksam ist, für jedermann; die Gemeinde muss sie deshalb wie den Plan veröffentlichen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "223"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "anfechtungsklage",
+      "begriff": "Anfechtungsklage",
+      "varianten": [
+        "Anfechtungsprozess"
+      ],
+      "definition": "Klage vor dem Verwaltungsgericht, die einen Verwaltungsakt beseitigen soll. Im Baurecht nutzt sie vor allem der Nachbar gegen eine erteilte Baugenehmigung.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 42 Abs. 1, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "angriffslast",
+      "begriff": "Angriffslast",
+      "definition": "Die Bürde, selbst gerichtlich tätig werden zu müssen, um etwas zu verhindern. § 212a BauGB verlagert sie auf den Nachbarn, gibt den Interessen der Bauherrschaft aber keinen Vorrang.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "238"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "anordnungsanspruch",
+      "begriff": "Anordnungsanspruch",
+      "definition": "Anspruch in der Sache, der für eine einstweilige Anordnung bestehen muss; hinzukommen muss als Anordnungsgrund ein drohender akuter Nachteil. Bei freigestellten Vorhaben wird er großzügig bejaht, damit Nachbarn nicht schlechter stehen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "238"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -350,6 +494,40 @@
       ],
       "siehe": [
         "ziele-der-raumordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "antrag-auf-gerichtliche-entscheidung",
+      "begriff": "Antrag auf gerichtliche Entscheidung",
+      "definition": "Rechtsbehelf in Baulandsachen an Stelle einer Klage. Er wird bei der Stelle eingereicht, die den Verwaltungsakt erlassen hat; sie leitet den Vorgang an das Landgericht weiter.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "240"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "antragsbefugnis",
+      "begriff": "Antragsbefugnis",
+      "varianten": [
+        "antragsbefugt",
+        "Antragsbefugt"
+      ],
+      "definition": "Voraussetzung dafür, einen Normenkontrollantrag stellen zu dürfen. Personen müssen geltend machen, durch die Satzung in eigenen Rechten verletzt zu sein oder bald verletzt zu werden; auch jede Behörde ist antragsbefugt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "222"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -387,7 +565,8 @@
       },
       "themen": [
         "rb-baunvo",
-        "rb-lbo"
+        "rb-lbo",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "baugebiet",
@@ -443,7 +622,8 @@
         "seite": "205"
       },
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -600,6 +780,21 @@
       "stand": "2026-11"
     },
     {
+      "id": "austauschverhaeltnis",
+      "begriff": "Austauschverhältnis",
+      "definition": "Wechselseitige Bindung der Eigentümer durch dieselbe Festsetzung: Alle tragen deren Vor- und Nachteile gemeinsam. Es ist ein wichtiger Anhaltspunkt für Nachbarschutz und kann ausnahmsweise über das Plangebiet hinausreichen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "232"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bab-formulare",
       "begriff": "BAB-Formulare",
       "definition": "Die mit dem hessischen Bauvorlagenerlass verbindlich eingeführten, nummerierten Vordrucke für bauaufsichtliche Verfahren, etwa BAB 01 für den Bauantrag.",
@@ -695,7 +890,8 @@
       ],
       "themen": [
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "bauvorlagen"
@@ -721,7 +917,8 @@
         "rb-abstandsflaechen",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "einvernehmen"
@@ -804,7 +1001,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "formell-illegal"
@@ -867,7 +1065,8 @@
         "rb-baunvo",
         "rb-mass",
         "rb-34-35",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "bauflaeche"
@@ -886,7 +1085,8 @@
         "rb-34-35",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "bauaufsicht"
@@ -1028,7 +1228,8 @@
       ],
       "themen": [
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "entwurfsverfassende"
@@ -1098,7 +1299,8 @@
         "rb-bauleitplanung",
         "rb-34-35",
         "rb-abstandsflaechen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "flaechennutzungsplan",
@@ -1183,7 +1385,8 @@
         "seite": "136"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -1224,7 +1427,8 @@
       "themen": [
         "rb-baunvo",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "baugebiet",
@@ -1248,7 +1452,8 @@
         "rb-lbo",
         "rb-abstandsflaechen",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "bauplanungsrecht"
@@ -1289,7 +1494,8 @@
         "rb-abstandsflaechen",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "bauordnungsrecht"
@@ -1505,7 +1711,8 @@
       "themen": [
         "rb-mass",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -1571,7 +1778,8 @@
         "rb-abstandsflaechen",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "flaechennutzungsplan",
@@ -1617,11 +1825,57 @@
         "rb-baunvo",
         "rb-lbo",
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "grundzuege-der-planung",
         "ausnahmsweise-zulaessig"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "begruendetheit",
+      "begriff": "Begründetheit",
+      "definition": "Zweite Prüfungsstufe einer Klage nach der Zulässigkeit: Hat der Kläger in der Sache recht? Bei der Nachbarklage muss die Genehmigung rechtswidrig sein und ihn dadurch in seinen eigenen Rechten verletzen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "beiladung",
+      "begriff": "Beiladung",
+      "varianten": [
+        "beigeladen"
+      ],
+      "definition": "Einbeziehung eines Dritten in einen laufenden Prozess durch das Gericht, weil die Entscheidung auch ihn betrifft. Beim Nachbarstreit wird die Bauherrschaft beigeladen, denn sie ist nicht beklagt, kann die Genehmigung aber verlieren.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 65, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -1642,7 +1896,8 @@
         "rb-34-35",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "abwaegung"
@@ -1675,6 +1930,21 @@
       ],
       "siehe": [
         "einvernehmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bescheidungsurteil",
+      "begriff": "Bescheidungsurteil",
+      "definition": "Urteil, das die Behörde verpflichtet, erneut und fehlerfrei zu entscheiden, statt ihr das Ergebnis vorzugeben. Es ergeht, wenn der Behörde Ermessen zusteht, etwa bei einer Befreiung.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -1716,7 +1986,8 @@
       ],
       "themen": [
         "rb-bauleitplanung",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -1748,7 +2019,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "nutzungsuntersagung",
@@ -1781,6 +2053,33 @@
       ],
       "siehe": [
         "wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bestandskraft",
+      "begriff": "Bestandskraft",
+      "varianten": [
+        "bestandskräftig",
+        "unanfechtbar"
+      ],
+      "definition": "Zustand eines Verwaltungsakts, der nicht mehr angefochten werden kann. Eine bestandskräftige Baugenehmigung bleibt bestehen, auch wenn der zugrunde liegende Plan später für unwirksam erklärt wird, darf dann aber nicht mehr vollzogen werden.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "223"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "231"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -2100,7 +2399,8 @@
         "seite": "44"
       },
       "themen": [
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "gaube"
@@ -2583,6 +2883,51 @@
       "stand": "2026-10"
     },
     {
+      "id": "dreipolig",
+      "begriff": "dreipolig",
+      "definition": "Bezeichnung für das Rechtsverhältnis im Nachbarstreit mit drei Beteiligten: Bauherrschaft, Bauaufsicht und Nachbar. Das Verwaltungsrecht ist sonst auf zwei Seiten, Bürger und Staat, ausgerichtet; im privaten Nachbarrecht stehen sich die Nachbarn direkt gegenüber.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "drittschutz",
+      "begriff": "Drittschutz",
+      "varianten": [
+        "drittschützend"
+      ],
+      "definition": "Schutzwirkung einer Norm zugunsten von Personen außerhalb des Verhältnisses zwischen Behörde und Antragsteller, im Baurecht meist der Nachbarn. Er kann generell bestehen oder nur im Einzelfall über das Gebot der Rücksichtnahme.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "231"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "232"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "druckbelastbarkeit",
       "begriff": "Druckbelastbarkeit",
       "definition": "Eigenschaft eines Dämmstoffs, dauerhaften Druck ohne schädliche Verformung aufzunehmen. DIN V 4108-10 teilt sie in Stufen ein, von dk (keine) über dg, dm, dh und ds bis dx (extrem hoch).",
@@ -2704,11 +3049,37 @@
         "seite": "56"
       },
       "themen": [
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "inhalt-und-schranken",
         "enteignung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "eilverfahren",
+      "begriff": "Eilverfahren",
+      "varianten": [
+        "Eilantrag",
+        "Vorläufiger Rechtsschutz",
+        "vorläufiger Rechtsschutz",
+        "vorläufigen Rechtsschutz"
+      ],
+      "definition": "Gerichtliches Verfahren, das eine vorläufige Regelung trifft, bevor über die Sache endgültig entschieden ist. Im Nachbarstreit ist es faktisch der Regelfall, weil ein fertiges Bauwerk nur schwer wieder zu beseitigen ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "225"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -2746,7 +3117,8 @@
         "seite": "219"
       },
       "themen": [
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -2765,7 +3137,8 @@
       },
       "themen": [
         "rb-34-35",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "naehere-umgebung",
@@ -2799,6 +3172,29 @@
       },
       "themen": [
         "rb-34-35"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einstweilige-anordnung",
+      "begriff": "einstweilige Anordnung",
+      "definition": "Vorläufige gerichtliche Regelung, die eine Rechtsposition sichert, bis in der Hauptsache entschieden ist. Sie ist der Eilrechtsschutz gegen Vorhaben ohne Baugenehmigung und auch im Normenkontrollverfahren möglich.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "224"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "238"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 123, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -2837,6 +3233,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "emission",
+      "begriff": "Emission",
+      "definition": "Von einer Anlage ausgehende Luftverunreinigungen, Geräusche, Erschütterungen, Licht, Wärme, Strahlen und Ähnliches, betrachtet an der Quelle.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "232"
+        },
+        {
+          "werk": "BImSchG",
+          "stelle": "§ 3 Abs. 3, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "energieerzeugungsanlage",
       "begriff": "Energieerzeugungsanlage",
       "definition": "In der Hessischen Bauordnung Sammelbegriff für Anlagen wie Feuerungsanlagen, Kraft-Wärme-Kopplung und verbrennungsmotorische oder feuerbeheizte Wärmepumpen. Sichere Benutzbarkeit und Abgasabführung bescheinigen Prüfsachverständige.",
@@ -2865,7 +3280,8 @@
         "seite": "110"
       },
       "themen": [
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "eigentumsgarantie"
@@ -3016,7 +3432,8 @@
         "stelle": "Rn. 272"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "planerhaltung"
@@ -3193,7 +3610,27 @@
         "rb-34-35",
         "rb-lbo",
         "rb-verfahren",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ermessensreduzierung-auf-null",
+      "begriff": "Ermessensreduzierung auf Null",
+      "definition": "Ausnahmefall, in dem trotz Ermessen nur noch eine einzige Entscheidung fehlerfrei wäre. Aus dem Anspruch auf fehlerfreie Entscheidung wird dann ein Anspruch auf genau dieses Ergebnis.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "214"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -3318,7 +3755,8 @@
         "rb-mass",
         "rb-34-35",
         "rb-abstandsflaechen",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -3418,7 +3856,8 @@
         "rb-bauleitplanung",
         "rb-baunvo",
         "rb-mass",
-        "rb-34-35"
+        "rb-34-35",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "bebauungsplan",
@@ -3681,6 +4120,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "gebietserhaltungsanspruch",
+      "begriff": "Gebietserhaltungsanspruch",
+      "definition": "Recht der Eigentümer in einem Baugebiet, eine dort nach der Art der Nutzung unzulässige Nutzung abzuwehren. Grundlage ist, dass Festsetzungen zur Art der Nutzung regelmäßig nachbarschützend sind und die Eigentümer im selben Gebiet Vor- und Nachteile gemeinsam tragen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "232"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "233"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gebildeter-durchschnittsmensch",
       "begriff": "gebildeter Durchschnittsmensch",
       "varianten": [
@@ -3706,7 +4164,9 @@
       "id": "gebot-der-ruecksichtnahme",
       "begriff": "Gebot der Rücksichtnahme",
       "varianten": [
-        "Gebots der Rücksichtnahme"
+        "Gebots der Rücksichtnahme",
+        "Rücksichtnahmegebot",
+        "Rücksichtnahme"
       ],
       "definition": "Von der Rechtsprechung entwickelter Maßstab, nach dem ein Vorhaben die Nutzung der Nachbargrundstücke nicht unzumutbar beeinträchtigen darf. Es ist kein eigener Anspruch, sondern wirkt über einzelne Vorschriften wie § 15 Abs. 1 BauNVO, die im Einzelfall Nachbarn schützen.",
       "quelle": {
@@ -3714,7 +4174,8 @@
         "seite": "231"
       },
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "eigenart-des-gebiets"
@@ -3740,6 +4201,24 @@
       ],
       "siehe": [
         "fliegende-bauten"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gebundene-entscheidung",
+      "begriff": "gebundene Entscheidung",
+      "definition": "Behördliche Entscheidung ohne Ermessensspielraum: Liegen die gesetzlichen Voraussetzungen vor, muss die Behörde so entscheiden. Das Gericht kann sie dann zur Erteilung etwa einer Baugenehmigung verurteilen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "siehe": [
+        "gebundene-kontrollerlaubnis"
       ],
       "stand": "2026-11"
     },
@@ -3777,7 +4256,8 @@
       "themen": [
         "rb-lbo",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -3831,6 +4311,9 @@
     {
       "id": "geltungsbereich",
       "begriff": "Geltungsbereich",
+      "varianten": [
+        "Plangebiet"
+      ],
       "definition": "Das räumlich abgegrenzte Gebiet, für das ein Bebauungsplan gilt. Im Plan ist seine Grenze zeichnerisch festgelegt.",
       "quelle": {
         "werk": "Leitfaden Städtebauliche Analyse",
@@ -3839,7 +4322,8 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-34-35",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -3864,12 +4348,33 @@
       "stand": "2026-11"
     },
     {
+      "id": "gemengelage",
+      "begriff": "Gemengelage",
+      "definition": "Gebiet, in dem unterschiedliche Nutzungen in enger räumlicher Nähe zusammentreffen. Die Konflikte dort werden vor allem über das Gebot der Rücksichtnahme gesteuert.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "94"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "138"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "genehmigungsfreistellung",
       "begriff": "Genehmigungsfreistellung",
       "varianten": [
         "Freistellung",
         "Freistellungsverfahren",
-        "Genehmigungsfreistellungsverfahren"
+        "Genehmigungsfreistellungsverfahren",
+        "genehmigungsfreigestellt",
+        "freigestellt"
       ],
       "definition": "Verfahren, bei dem ein Vorhaben im passenden Bebauungsplangebiet ohne Baugenehmigung gebaut werden darf, wenn die Gemeinde nach Einreichen der Bauvorlagen kein Verfahren verlangt. Es wird nichts geprüft und kein Bescheid erteilt; die Vorschriften gelten trotzdem. Die Einzelheiten regelt jedes Land selbst, in Hessen § 64 HBO.",
       "quelle": [
@@ -3884,7 +4389,8 @@
       ],
       "themen": [
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "verfahrensfrei",
@@ -3911,7 +4417,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "ermaechtigungsgrundlage"
@@ -4311,6 +4818,21 @@
       "stand": "2026-11"
     },
     {
+      "id": "grundrechtsschutz-durch-verfahren",
+      "begriff": "Grundrechtsschutz durch Verfahren",
+      "definition": "Gedanke aus der Rechtsprechung des Bundesverfassungsgerichts, dass Verfahrensvorschriften der Sicherung von Grundrechten dienen. Deshalb können auch Verfahrensrechte nachbarschützend sein; Voraussetzungen und Reichweite sind aber weitgehend ungeklärt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "234"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "grundsaetze-der-raumordnung",
       "begriff": "Grundsätze der Raumordnung",
       "varianten": [
@@ -4368,7 +4890,8 @@
         "rb-mass",
         "rb-lbo",
         "rb-abstandsflaechen",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "grundflaeche",
@@ -4394,6 +4917,32 @@
       "stand": "2026-11"
     },
     {
+      "id": "hauptsache",
+      "begriff": "Hauptsache",
+      "varianten": [
+        "Hauptsacheverfahren"
+      ],
+      "definition": "Der eigentliche Streit und das Verfahren, das ihn endgültig entscheidet, im Unterschied zum vorläufigen Eilverfahren. Das Eilverfahren darf die Hauptsache nicht unumkehrbar vorwegnehmen; ein Abriss lässt sich dort deshalb nicht durchsetzen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "224"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "238"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hessische-bauordnung",
       "begriff": "Hessische Bauordnung",
       "varianten": [
@@ -4410,7 +4959,8 @@
       "themen": [
         "rb-lbo",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "landesbauordnung"
@@ -4537,6 +5087,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "immission",
+      "begriff": "Immission",
+      "definition": "Einwirkung auf Menschen, Umwelt und Sachen, etwa durch Lärm, Luftverunreinigungen, Erschütterungen, Licht oder Wärme, betrachtet am Ort, an dem sie ankommt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        },
+        {
+          "werk": "BImSchG",
+          "stelle": "§ 3 Abs. 2, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "industriegebiet",
       "begriff": "Industriegebiet",
       "varianten": [
@@ -4657,6 +5226,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "inzidentkontrolle",
+      "begriff": "Inzidentkontrolle",
+      "varianten": [
+        "inzident",
+        "inzidenter"
+      ],
+      "definition": "Mittelbare Prüfung eines Plans durch ein Gericht als Vorfrage in einem anderen Verfahren, etwa im Streit um eine Baugenehmigung. Eine unwirksame Festsetzung wird dann im Einzelfall nicht angewendet, der Plan selbst aber nicht aufgehoben.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "224"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "240"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kalkzementmoertelverputz",
       "begriff": "Kalkzementmörtelverputz",
       "definition": "Putz aus Mörtel mit Kalk und Zement als Bindemitteln. Am Sockel schließt er oberhalb des Zementmörtelputzes an und wird von diesem durch einen Kellenschnitt getrennt.",
@@ -4689,6 +5281,26 @@
         "innendaemmung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "kammern-fuer-baulandsachen",
+      "begriff": "Kammern für Baulandsachen",
+      "varianten": [
+        "Senate für Baulandsachen",
+        "Baulandgericht",
+        "Baulandsachen"
+      ],
+      "definition": "Besondere Spruchkörper an Landgerichten, in zweiter Instanz an Oberlandesgerichten, die aus zwei Zivilrichtern und einem Verwaltungsrichter bestehen. Sie entscheiden Streit um Umlegung und Enteignung samt Entschädigung aus einer Hand.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "239"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "kellenschnitt",
@@ -4805,6 +5417,25 @@
       "stand": "2026-10"
     },
     {
+      "id": "klagebefugnis",
+      "begriff": "Klagebefugnis",
+      "definition": "Zulässigkeitsvoraussetzung einer Klage: Der Kläger muss geltend machen, möglicherweise in eigenen Rechten verletzt zu sein. Ein Nachbar muss dafür eine Norm benennen, die auch ihn schützt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 42 Abs. 2, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "klarstellungssatzung",
       "begriff": "Klarstellungssatzung",
       "definition": "Satzung, in der die Gemeinde die ohnehin geltenden Grenzen des Innenbereichs nachzeichnet. Sie wirkt nur deklaratorisch und kann kein Außenbereichsgrundstück zum Innenbereich machen.",
@@ -4874,6 +5505,29 @@
       ],
       "siehe": [
         "nachrichtlich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kreuzberg-urteil",
+      "begriff": "Kreuzberg-Urteil",
+      "definition": "Urteil des preußischen Oberverwaltungsgerichts von 1882: Eine Polizeiverordnung, die zugunsten der Aussicht auf das Kreuzbergdenkmal Bauverbote anordnete, war unwirksam, weil die Polizei nur zur Gefahrenabwehr befugt war.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "4"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "186"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "220"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -4957,6 +5611,24 @@
       "stand": "2026-11"
     },
     {
+      "id": "landesnachbarrechtsgesetz",
+      "begriff": "Landesnachbarrechtsgesetz",
+      "varianten": [
+        "Nachbarrechtsgesetz"
+      ],
+      "definition": "Landesgesetz, das das Grundeigentum zugunsten der Nachbarn über das BGB hinaus beschränkt, etwa bei Grenzabständen von Pflanzen oder Einfriedungen. Es gehört zum Privatrecht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "landwirtschaftlicher-betrieb",
       "begriff": "landwirtschaftlicher Betrieb",
       "varianten": [
@@ -4999,6 +5671,25 @@
       "stand": "2026-10"
     },
     {
+      "id": "leistungsklage",
+      "begriff": "Leistungsklage",
+      "definition": "Klage auf ein bestimmtes Tun oder Unterlassen der Gegenseite. Bei Vorhaben öffentlicher Bauherren, gegen die die Bauaufsicht nicht einschreiten darf, geht der Nachbar auf diesem Weg direkt gegen das Vorhaben vor.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "225"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "liegenschaftsplan",
       "begriff": "Liegenschaftsplan",
       "varianten": [
@@ -5037,6 +5728,9 @@
     {
       "id": "mass-der-baulichen-nutzung",
       "begriff": "Maß der baulichen Nutzung",
+      "varianten": [
+        "Maßfestsetzung"
+      ],
       "definition": "Festlegung, wie dicht und wie hoch gebaut werden darf, im Unterschied zur Art der Nutzung. Mittel sind GRZ oder Grundfläche, GFZ, BMZ oder deren Absolutwerte, die Zahl der Vollgeschosse und die Höhe baulicher Anlagen.",
       "quelle": [
         {
@@ -5050,7 +5744,8 @@
       ],
       "themen": [
         "rb-mass",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -5088,7 +5783,8 @@
         "seite": "209"
       },
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "formell-illegal",
@@ -5160,7 +5856,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "materiell-illegal"
@@ -5361,8 +6058,57 @@
       "stand": "2026-11"
     },
     {
+      "id": "nachbarklage",
+      "begriff": "Nachbarklage",
+      "varianten": [
+        "Nachbaranfechtungsklage",
+        "Drittanfechtungsklage"
+      ],
+      "definition": "Klage eines Nachbarn vor dem Verwaltungsgericht gegen die Bauaufsicht, nicht gegen die Bauherrschaft. Im Regelfall richtet sie sich als Anfechtungsklage gegen die Baugenehmigung für das Nachbargrundstück, ohne Genehmigung als Verpflichtungsklage auf Einschreiten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nachbarrecht",
+      "begriff": "Nachbarrecht",
+      "definition": "Regeln, die Konflikte zwischen Grundstücksnachbarn ordnen. Das private Nachbarrecht (BGB, Landesgesetze) gilt direkt zwischen den Nachbarn vor den Zivilgerichten, das öffentliche richtet sich gegen behördliche Entscheidungen und läuft über die Verwaltungsgerichte.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "226"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nachbarschuetzend",
       "begriff": "nachbarschützend",
+      "varianten": [
+        "Nachbarschutz"
+      ],
       "definition": "Eigenschaft einer öffentlich-rechtlichen Vorschrift, auch die Belange der Nachbarn zu schützen. Soll von ihr abgewichen oder befreit werden, werden die Nachbarn beteiligt; wird sie erheblich verletzt, haben sie in der Regel Anspruch auf ein Einschreiten.",
       "quelle": [
         {
@@ -5375,7 +6121,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -5668,7 +6415,8 @@
       "id": "normenkontrolle",
       "begriff": "Normenkontrolle",
       "varianten": [
-        "Normenkontrollantrag"
+        "Normenkontrollantrag",
+        "Normenkontrollverfahren"
       ],
       "definition": "Gerichtliches Verfahren, in dem eine Rechtsvorschrift unmittelbar auf ihre Gültigkeit geprüft wird, im Baurecht vor allem ein Bebauungsplan.",
       "quelle": [
@@ -5683,7 +6431,8 @@
         }
       ],
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -5810,7 +6559,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "beseitigungsanordnung"
@@ -5835,6 +6585,63 @@
       ],
       "siehe": [
         "denkmalschutzbehoerde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "oberverwaltungsgericht",
+      "begriff": "Oberverwaltungsgericht",
+      "varianten": [
+        "Verwaltungsgerichtshof",
+        "OVG",
+        "VGH"
+      ],
+      "definition": "Oberstes Verwaltungsgericht eines Landes, zuständig unter anderem für Rechtsmittel gegen Entscheidungen der Verwaltungsgerichte und für die Normenkontrolle. Ein Land kann es Verwaltungsgerichtshof nennen, so Hessen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "240"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§§ 46, 184, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "objektives-beanstandungsverfahren",
+      "begriff": "objektives Beanstandungsverfahren",
+      "definition": "Verfahren, das eine Vorschrift umfassend auf Fehler prüft, ohne dass es darauf ankommt, ob der Fehler gerade die Rechte des Antragstellers berührt. So kennzeichnet Battis die Normenkontrolle.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "223"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "offensive-nachbarklage",
+      "begriff": "offensive Nachbarklage",
+      "varianten": [
+        "störungspräventive Nachbarklage"
+      ],
+      "definition": "Sonderform der Nachbarklage, auch störungspräventiv genannt: Der Kläger, etwa ein emittierender Betrieb, wehrt sich gegen eine heranrückende Nutzung, weil deren Bewohner später gegen ihn vorgehen könnten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "233"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -5959,6 +6766,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "ortsueblichkeit",
+      "begriff": "Ortsüblichkeit",
+      "definition": "Maßstab des privaten Nachbarrechts: Auch wesentliche Einwirkungen muss der Eigentümer unter bestimmten Voraussetzungen dulden, wenn sie durch eine ortsübliche Nutzung entstehen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        },
+        {
+          "werk": "BGB",
+          "stelle": "§ 906 Abs. 2, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "ortsvergleich",
       "begriff": "Ortsvergleich",
       "definition": "Prüfung vor Ort, ob der Auszug aus der Liegenschaftskarte alle maßgeblichen baulichen Anlagen zeigt. Fehlende Objekte werden erfasst und in den Auszug übernommen.",
@@ -6032,6 +6858,9 @@
     {
       "id": "planerhaltung",
       "begriff": "Planerhaltung",
+      "varianten": [
+        "Planerhaltungsvorschriften"
+      ],
       "definition": "Grundsatz, dass nicht jeder Fehler einen Bauleitplan unwirksam macht. Das Gesetz legt fest, welche Fehler überhaupt zählen, welche rechtzeitig gerügt werden müssen und welche sich nachträglich beheben lassen.",
       "quelle": {
         "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
@@ -6039,7 +6868,8 @@
         "stelle": "Rn. 263–273"
       },
       "themen": [
-        "rb-bauleitplanung"
+        "rb-bauleitplanung",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "ergaenzendes-verfahren"
@@ -6103,7 +6933,8 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-34-35",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -6163,6 +6994,29 @@
       "siehe": [
         "sonstiges-vorhaben",
         "teilprivilegiertes-vorhaben"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "pruefprogramm",
+      "begriff": "Prüfprogramm",
+      "varianten": [
+        "Prüfungsprogramm",
+        "Prüfungsumfang"
+      ],
+      "definition": "Die Punkte, die die Bauaufsicht in einem Verfahren prüfen muss. Im vereinfachten Verfahren ist es beschränkt; Fehler außerhalb davon machen die Genehmigung nach dem Bundesverwaltungsgericht nicht rechtswidrig.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -6292,6 +7146,85 @@
       "stand": "2026-11"
     },
     {
+      "id": "rechtsbehelf",
+      "begriff": "Rechtsbehelf",
+      "definition": "Förmliches Mittel, mit dem sich jemand gegen eine behördliche oder gerichtliche Entscheidung wehrt, etwa Widerspruch, Klage oder Eilantrag. Für die meisten gelten Fristen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 58, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rechtsbehelfsbelehrung",
+      "begriff": "Rechtsbehelfsbelehrung",
+      "varianten": [
+        "Rechtsmittelbelehrung"
+      ],
+      "definition": "Hinweis in einem Bescheid, welcher Rechtsbehelf möglich ist, wo er einzulegen ist und welche Frist gilt. Fehlt er oder ist er falsch, läuft statt der Monatsfrist eine Jahresfrist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 58, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rechtsreflex",
+      "begriff": "Rechtsreflex",
+      "definition": "Bloß tatsächlicher Vorteil, den jemand aus einer Norm zieht, die gar nicht ihn schützen soll. Daraus folgt kein einklagbares Recht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rechtsschutzbeduerfnis",
+      "begriff": "Rechtsschutzbedürfnis",
+      "definition": "Berechtigtes Interesse daran, ein Gericht anzurufen. Es fehlt zum Beispiel bei einer Klage auf Aufstellung eines Bebauungsplans, weil ein Anspruch darauf gesetzlich ausgeschlossen ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "222"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "225"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rechtsverordnung",
       "begriff": "Rechtsverordnung",
       "definition": "Außenwirksame Vorschrift, die nicht das Parlament, sondern aufgrund gesetzlicher Ermächtigung eine Behörde erlässt. Im Bauordnungsrecht ergänzt die oberste Bauaufsichtsbehörde so die Bauordnung, etwa für Versammlungsstätten.",
@@ -6311,6 +7244,25 @@
       ],
       "siehe": [
         "aussenrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rechtsweg",
+      "begriff": "Rechtsweg",
+      "definition": "Der Weg zu einem bestimmten Gerichtszweig und durch seine Instanzen. Er muss in der Regel ausgeschöpft sein, bevor eine Verfassungsbeschwerde zulässig ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "225"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "239"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -6406,6 +7358,68 @@
       "stand": "2026-11"
     },
     {
+      "id": "revisibel",
+      "begriff": "revisibel",
+      "varianten": [
+        "revisiblen"
+      ],
+      "definition": "Eigenschaft von Recht, das in der Revision überprüft werden kann. Landesrecht wie das Bauordnungsrecht ist nicht revisibel, was dort zu erheblicher Rechtsunsicherheit führen kann.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "230"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "siehe": [
+        "revision"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "revision",
+      "begriff": "Revision",
+      "definition": "Rechtsmittel zur letzten Instanz. Bei der Normenkontrolle bedarf sie der Zulassung durch das Oberverwaltungsgericht, in Baulandsachen entscheidet der Bundesgerichtshof.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "224"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "239"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "siehe": [
+        "revisibel"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "richterrecht",
+      "begriff": "Richterrecht",
+      "definition": "Rechtsregeln, die nicht im Gesetz stehen, sondern von den Gerichten entwickelt wurden. Der öffentlich-rechtliche Nachbarschutz ist überwiegend so gewachsen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "231"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rohdichte",
       "begriff": "Rohdichte",
       "varianten": [
@@ -6468,7 +7482,8 @@
         "rb-bauleitplanung",
         "rb-34-35",
         "rb-lbo",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -6557,6 +7572,40 @@
       ],
       "siehe": [
         "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schutzgesetz",
+      "begriff": "Schutzgesetz",
+      "definition": "Gesetz, das gerade dem Schutz bestimmter Personen dient und bei dessen Verletzung zivilrechtliche Ansprüche entstehen können. Auch öffentlich-rechtliche nachbarschützende Vorschriften zählen dazu.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "227"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schutznormtheorie",
+      "begriff": "Schutznormtheorie",
+      "definition": "Grundsatz, wonach ein Dritter nur Verstöße gegen Normen rügen kann, die neben dem Allgemeinwohl auch dem Schutz Einzelner dienen und ihm erlauben, sich darauf zu berufen. Ein bloßer Rechtsverstoß der Behörde genügt nicht.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "230"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -6932,6 +7981,21 @@
       "stand": "2026-10"
     },
     {
+      "id": "spruchkoerper",
+      "begriff": "Spruchkörper",
+      "definition": "Die innerhalb eines Gerichts zur Entscheidung berufene Besetzung von Richtern, etwa eine Kammer oder ein Senat.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "239"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "stadt-der-kurzen-wege",
       "begriff": "Stadt der kurzen Wege",
       "definition": "Städtebauliches Leitbild, bei dem Wohnen, Arbeiten und Freizeit nah beieinanderliegen statt in getrennten Bereichen. Es steht hinter dem urbanen Gebiet.",
@@ -6995,7 +8059,8 @@
         "stelle": "§ 12 Abs. 1, Wortlaut nach Lesefassung des Hessischen Wirtschaftsministeriums, Stand Oktober 2025"
       },
       "themen": [
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "standsicherheitsnachweis"
@@ -7131,7 +8196,30 @@
       },
       "themen": [
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stoerfallbetrieb",
+      "begriff": "Störfallbetrieb",
+      "varianten": [
+        "Seveso-Richtlinie"
+      ],
+      "definition": "Betrieb, für den wegen der Gefahr von Störfällen die europäische Seveso-Richtlinie gilt, etwa eine Chemiefabrik. Das kann die Zulässigkeit neuer Nutzungen in seiner Nachbarschaft begrenzen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "138"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "233"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -7221,6 +8309,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "subjektives-oeffentliches-recht",
+      "begriff": "subjektives öffentliches Recht",
+      "varianten": [
+        "subjektives Recht",
+        "subjektive Rechte",
+        "subjektiver Rechte"
+      ],
+      "definition": "Eigene, einklagbare Rechtsposition des Einzelnen gegenüber dem Staat. Nur ihre Verletzung, nicht jeder objektive Rechtsverstoß, führt bei Anfechtungs- und Verpflichtungsklagen zum Erfolg.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "230"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "substanz",
       "begriff": "Substanz",
       "definition": "Im Denkmalrecht der materielle Bestand eines Bauwerks, im Unterschied zu seiner bloßen Wirkung oder seinem Aussehen. Gerade diesen Bestand will das Denkmalrecht möglichst weitgehend erhalten.",
@@ -7233,6 +8345,21 @@
       ],
       "siehe": [
         "denkmalwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "tatbestandswirkung",
+      "begriff": "Tatbestandswirkung",
+      "definition": "Bindung anderer Stellen an einen wirksamen Verwaltungsakt: Das Zivilgericht muss eine Baugenehmigung hinnehmen, solange sie nicht aufgehoben ist, selbst wenn sie rechtswidrig ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -7410,6 +8537,25 @@
         "kellenschnitt"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "treu-und-glauben",
+      "begriff": "Treu und Glauben",
+      "definition": "Rechtsgrundsatz, wonach sich jeder redlich verhalten muss. So kann sich ein Nachbar, der von der Genehmigung tatsächlich weiß oder wissen könnte, nicht darauf berufen, dass die amtliche Bekanntgabe fehlt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        },
+        {
+          "werk": "BGB",
+          "stelle": "§ 242, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "typengenehmigung",
@@ -7603,6 +8749,52 @@
       "stand": "2026-10"
     },
     {
+      "id": "umlegung",
+      "begriff": "Umlegung",
+      "definition": "Gesetzliches Verfahren, in dem Grundstücke neu geordnet werden, damit sie nach Lage, Form und Größe sinnvoll bebaubar sind. Es dient der Verwirklichung des Bebauungsplans, wird von der Gemeinde angeordnet und endet mit einem Verwaltungsakt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "108"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "109"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "125"
+        },
+        {
+          "werk": "BauGB",
+          "stelle": "§ 45, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "umwelt-rechtsbehelfsgesetz",
+      "begriff": "Umwelt-Rechtsbehelfsgesetz",
+      "definition": "Bundesgesetz, das anerkannten Umweltvereinigungen Rechtsbehelfe gegen bestimmte Pläne und Zulassungen eröffnet. Abgekürzt UmwRG.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "221"
+        },
+        {
+          "werk": "UmwRG",
+          "stelle": "§ 2 Abs. 1, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "umweltbericht",
       "begriff": "Umweltbericht",
       "definition": "Gesonderter Teil der Planbegründung, in dem die Ergebnisse der Umweltprüfung beschrieben sind. Fehlt er, ist das ein beachtlicher Fehler des Plans.",
@@ -7686,6 +8878,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "unterlassungsklage",
+      "begriff": "Unterlassungsklage",
+      "definition": "Klage, mit der jemand verlangt, dass ein anderer eine Handlung nicht vornimmt. Vorbeugend, also vor dem Erlass eines Plans oder einer Genehmigung, ist sie nur in Ausnahmefällen möglich.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "225"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "238"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "urbanes-gebiet",
       "begriff": "urbanes Gebiet",
       "varianten": [
@@ -7746,11 +8957,38 @@
       "themen": [
         "rb-bauleitplanung",
         "rb-34-35",
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "zurueckstellung",
         "aufstellungsbeschluss"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verbandsklage",
+      "begriff": "Verbandsklage",
+      "varianten": [
+        "Umweltverbandsklage"
+      ],
+      "definition": "Klage einer anerkannten Vereinigung, vor allem im Umweltrecht, die nicht die Verletzung eigener Rechte geltend machen muss. Sie kann sich auch gegen Bebauungspläne und Baugenehmigungen richten.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "221"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "223"
+        },
+        {
+          "werk": "UmwRG",
+          "stelle": "§ 2 Abs. 1, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -7780,7 +9018,8 @@
       "themen": [
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "baugenehmigungsverfahren",
@@ -7812,7 +9051,50 @@
         "rb-lbo",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verfahrensprivatisierung",
+      "begriff": "Verfahrensprivatisierung",
+      "definition": "Rücknahme der behördlichen Vorabprüfung durch Freistellung und Verfahrensfreiheit. Sie soll beschleunigen und deregulieren, wird aber als Schwächung des Nachbarschutzes kritisiert, weil es dann keine anfechtbare Genehmigung gibt.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "220"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verfassungsbeschwerde",
+      "begriff": "Verfassungsbeschwerde",
+      "definition": "Beschwerde an das Bundesverfassungsgericht, in der Regel erst nach Ausschöpfung des Rechtswegs. Gegen einen Bebauungsplan ist sie nur ausnahmsweise zulässig, wenn er den Betroffenen selbst, gegenwärtig und unmittelbar trifft.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "223"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "225"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "240"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -7858,7 +9140,8 @@
         }
       ],
       "themen": [
-        "rb-verfahren"
+        "rb-verfahren",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "beseitigungsanordnung"
@@ -7874,7 +9157,8 @@
         "seite": "128, 224"
       },
       "themen": [
-        "rb-34-35"
+        "rb-34-35",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "baugenehmigung"
@@ -7900,11 +9184,53 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "gebildeter-durchschnittsmensch",
         "gestaltungssatzung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verwaltungsakt",
+      "begriff": "Verwaltungsakt",
+      "definition": "Entscheidung einer Behörde, die einen Einzelfall im öffentlichen Recht verbindlich und mit Wirkung nach außen regelt. Beispiele sind Baugenehmigung und Beseitigungsanordnung; Satzungen wie der Bebauungsplan zählen nicht dazu.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        },
+        {
+          "werk": "VwVfG",
+          "stelle": "§ 35, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "verwaltungsakt-mit-doppelwirkung",
+      "begriff": "Verwaltungsakt mit Doppelwirkung",
+      "varianten": [
+        "Doppelwirkung"
+      ],
+      "definition": "Verwaltungsakt, der eine Person begünstigt und zugleich eine andere belastet. Typisch ist die Baugenehmigung: Sie nützt der Bauherrschaft und kann den Nachbarn beeinträchtigen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "229"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
       ],
       "stand": "2026-11"
     },
@@ -7946,6 +9272,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "verwirken",
+      "begriff": "verwirken",
+      "varianten": [
+        "Verwirkung"
+      ],
+      "definition": "Ein Recht durch zu langes Hinnehmen verlieren. Das kann unter besonderen Umständen auch das Abwehrrecht eines Nachbarn treffen, sogar gegen ein ungenehmigtes Vorhaben.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "214"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vollgeschoss",
       "begriff": "Vollgeschoss",
       "definition": "Geschoss, das nach der Bauordnung des jeweiligen Landes als volles Geschoss zählt. Die BauNVO definiert den Begriff nicht selbst, sondern übernimmt die Landesregel; von der Zahl der Vollgeschosse hängen Geschossfläche und Baumasse ab.",
@@ -7971,6 +9319,40 @@
       "stand": "2026-11"
     },
     {
+      "id": "vollziehung",
+      "begriff": "Vollziehung",
+      "definition": "Umsetzung oder Ausnutzung eines Verwaltungsakts, im Baurecht das Bauen auf Grundlage der Genehmigung. Da die Nachbarklage keine aufschiebende Wirkung hat, kann der Nachbar beantragen, die Vollziehung auszusetzen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "237"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "238"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vorfrage",
+      "begriff": "Vorfrage",
+      "definition": "Rechtsfrage, die ein Gericht beantworten muss, um über den eigentlichen Streit entscheiden zu können, die aber nicht selbst Gegenstand des Verfahrens ist.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "224"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vorhaben",
       "begriff": "Vorhaben",
       "definition": "Im Baurecht das Projekt, über dessen Zulässigkeit zu entscheiden ist. Im Bauplanungsrecht zählen dazu das Errichten, Ändern oder Umnutzen einer baulichen Anlage sowie größere Aufschüttungen, Abgrabungen und Ablagerungen, auch wenn das Landesrecht dafür kein Genehmigungsverfahren verlangt.",
@@ -7984,7 +9366,8 @@
         "rb-abstandsflaechen",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "rb-denkmal"
+        "rb-denkmal",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "nutzungsaenderung",
@@ -8056,6 +9439,33 @@
       "stand": "2026-11"
     },
     {
+      "id": "vorkaufsrecht",
+      "begriff": "Vorkaufsrecht",
+      "varianten": [
+        "Vorkaufsberechtigte",
+        "Vorkaufsberechtigter"
+      ],
+      "definition": "Recht, in einen Grundstückskauf mit einem Dritten einzutreten. Im Baurecht steht es vor allem der Gemeinde zu, um städtebauliche Ziele zu sichern.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "106"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "107"
+        },
+        {
+          "werk": "BGB",
+          "stelle": "§ 463, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vormauerschale",
       "begriff": "Vormauerschale",
       "varianten": [
@@ -8075,6 +9485,25 @@
         "wetterschale"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "vormerkung",
+      "begriff": "Vormerkung",
+      "definition": "Eintrag im Grundbuch, der einen Anspruch auf ein Recht am Grundstück sichert, etwa den des Käufers. Spätere Verfügungen können diesen Anspruch nicht mehr beeinträchtigen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        },
+        {
+          "werk": "BGB",
+          "stelle": "§ 883, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "wandfuss",
@@ -8148,6 +9577,25 @@
       "stand": "2026-10"
     },
     {
+      "id": "wesentlichkeit",
+      "begriff": "Wesentlichkeit",
+      "definition": "Maßstab des privaten Nachbarrechts bei Immissionen: Unwesentliche Einwirkungen muss der Eigentümer hinnehmen. Einen Anhaltspunkt geben gesetzliche Grenz- und Richtwerte.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        },
+        {
+          "werk": "BGB",
+          "stelle": "§ 906 Abs. 1, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "wetterschale",
       "begriff": "Wetterschale",
       "definition": "Äußerste Schale einer mehrschaligen Außenwand oder Fassade, die Regen und Wind abhält und so die dahinterliegenden Funktionsschichten schützt.",
@@ -8163,6 +9611,33 @@
         "vormauerschale"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "widerspruchsverfahren",
+      "begriff": "Widerspruchsverfahren",
+      "varianten": [
+        "Vorverfahren",
+        "Widerspruchsbescheid"
+      ],
+      "definition": "Verfahren bei der Verwaltung gegen einen Verwaltungsakt: Vor der Klage wird die Entscheidung auf einen Widerspruch hin behördlich noch einmal geprüft. Landesrecht kann dieses Vorverfahren abschaffen.",
+      "quelle": [
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "228"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "236"
+        },
+        {
+          "werk": "VwGO",
+          "stelle": "§ 68, Wortlaut nach gesetze-im-internet.de, Stand November 2026"
+        }
+      ],
+      "themen": [
+        "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "wiederherstellungspflicht",
@@ -8211,7 +9686,8 @@
         "stelle": "Rn. 176"
       },
       "themen": [
-        "rb-baunvo"
+        "rb-baunvo",
+        "rb-nachbarrecht"
       ],
       "siehe": [
         "reines-wohngebiet",
