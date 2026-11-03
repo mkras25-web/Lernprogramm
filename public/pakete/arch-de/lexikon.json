@@ -9045,17 +9045,30 @@
       "varianten": [
         "ψ",
         "längenbezogene Wärmedurchgangskoeffizient",
-        "längenbezogenen Verlustkoeffizienten"
+        "längenbezogenen Verlustkoeffizienten",
+        "ψ-Wert",
+        "χ-Wert"
       ],
-      "definition": "Kennwert ψ in W/(m·K), mit dem Wärmeverluste über Wärmebrücken je Meter ihrer Länge berechnet werden, etwa an einem Fensteranschluss.",
-      "quelle": {
-        "werk": "DETAIL Atlas Mauerwerk",
-        "seite": "177"
-      },
+      "definition": "Kennwert ψ in W/(m·K), mit dem Wärmeverluste über linienförmige Wärmebrücken je Meter ihrer Länge berechnet werden, etwa an einem Fensteranschluss. Das Gegenstück für punktförmige Wärmebrücken ist der χ-Wert in W/K je Einzelstelle.",
+      "beispiel": "Ein durchlaufender Deckenrand wird über den ψ-Wert erfasst, eine einzelne Konsole über den χ-Wert.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Mauerwerk",
+          "seite": "177"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "188"
+        }
+      ],
       "themen": [
         "bk-fenster",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bk-aw-zweischalig"
+      ],
+      "siehe": [
+        "waermebruecke"
       ],
       "stand": "2026-11"
     },
@@ -15014,8 +15027,6 @@
       "begriff": "unbeplanter Innenbereich",
       "varianten": [
         "unbeplanten Innenbereich",
-        "im Innenbereich",
-        "Im Innenbereich",
         "zum Innenbereich",
         "neuen Innenbereich",
         "unbeplantem Innenbereich",
@@ -16009,11 +16020,17 @@
         "Außenschale",
         "Vorsatzschale"
       ],
-      "definition": "Äußere, nicht tragende Schale einer zweischaligen Außenwand, gemauert aus frostbeständigen Steinen mit einer Mindestdicke von 11,5 cm. Sie schützt die dahinterliegenden Schichten vor Witterung, kann aber von Schlagregen durchnässt werden.",
-      "quelle": {
-        "werk": "Baukonstruktionslehre 1",
-        "seite": "136"
-      },
+      "definition": "Äußere, nicht tragende Schale einer zweischaligen Außenwand aus frostbeständigen Steinen. Gemauert ist sie mindestens 9 cm dick, bei Kerndämmung mindestens 11,5 cm. Sie schützt die dahinterliegenden Schichten vor Witterung, kann aber von Schlagregen durchnässt werden.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "134"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "136"
+        }
+      ],
       "themen": [
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
@@ -16027,7 +16044,7 @@
         "innenschale",
         "wetterschale"
       ],
-      "stand": "2026-10"
+      "stand": "2026-11"
     },
     {
       "id": "vormauerstein",
@@ -17095,27 +17112,6 @@
       ],
       "siehe": [
         "rollladenpilz"
-      ],
-      "stand": "2026-11"
-    },
-    {
-      "id": "psi-wert",
-      "begriff": "ψ-Wert",
-      "varianten": [
-        "χ-Wert"
-      ],
-      "definition": "Kennwerte für den zusätzlichen Wärmeverlust einer Wärmebrücke: Der ψ-Wert gilt für linienförmige Wärmebrücken je Meter Länge in W/(m·K), der χ-Wert für punktförmige je Einzelstelle.",
-      "beispiel": "Ein durchlaufender Deckenrand wird über den ψ-Wert erfasst, eine einzelne Konsole über den χ-Wert.",
-      "quelle": {
-        "werk": "Lehrbuch der Bauphysik",
-        "seite": "188"
-      },
-      "themen": [
-        "bk-aw-zweischalig",
-        "bp-waermebruecken"
-      ],
-      "siehe": [
-        "waermebruecke"
       ],
       "stand": "2026-11"
     }
