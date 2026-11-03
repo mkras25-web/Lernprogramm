@@ -36,6 +36,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "a-bewertet",
+      "begriff": "A-bewertet",
+      "definition": "Kennzeichnung eines Schallpegels, dessen Messwerte frequenzabhängig korrigiert wurden, um das Lautstärkeempfinden des menschlichen Ohrs nachzubilden; die Angabe erfolgt in dB(A). Im Bauwesen ist diese Bewertung die übliche.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "92"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "dezibel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "aarhus-konvention",
       "begriff": "Aarhus-Konvention",
       "definition": "Völkerrechtlicher Vertrag, auf den Verbandsklagen in Umweltsachen gestützt werden. Unter ihrem Einfluss und dem des Unionsrechts verschiebt sich der deutsche Rechtsschutz hin zu mehr objektiver Kontrolle.",
@@ -671,7 +687,8 @@
         "Fensteranschluss",
         "Baukörperanschlussfuge",
         "Bauteilanschlussfuge",
-        "Fensteranschlussfuge"
+        "Fensteranschlussfuge",
+        "Bauanschlussfuge"
       ],
       "definition": "Fuge zwischen einem Bauteil, meist Fenster oder Tür, und dem umgebenden Baukörper. Sie muss Befestigung, Wärmedämmung, Luftdichtheit und Schlagregenschutz leisten und Bewegungen ausgleichen; ihre Planung ist Aufgabe des Planers.",
       "quelle": {
@@ -680,7 +697,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "3-ebenen-modell",
@@ -849,7 +867,9 @@
         "rb-verfahren",
         "rb-bauvorlagen",
         "bp-feuchte",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "en-erschliessung",
+        "bp-luftschall"
       ],
       "stand": "2026-11"
     },
@@ -1079,6 +1099,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "ausschreibung",
+      "begriff": "Ausschreibung",
+      "definition": "Zusammenstellung aller Informationen und Leistungsbeschreibungen, mit der der Planer für den Bauherrn Angebote ausführender Firmen einholt. Sie verbindet Planung und Ausführung und wird Bestandteil des Bauvertrags.",
+      "quelle": {
+        "werk": "Basics Ausschreibung",
+        "seite": "9"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "leistungsbeschreibung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "aussenanschlag",
       "begriff": "Außenanschlag",
       "definition": "Einbau von außen gegen einen innen liegenden Laibungsvorsprung, häufig mit Gerüst. Das Element ist dabei voll der Witterung ausgesetzt.",
@@ -1173,6 +1209,28 @@
       "stand": "2026-10"
     },
     {
+      "id": "aussenlaermpegel",
+      "begriff": "Außenlärmpegel",
+      "definition": "Pegel des von außen einwirkenden Lärms, etwa von Straßenverkehr, in dB(A). Als maßgeblicher Außenlärmpegel legt er nach DIN 4109 fest, in welchen Lärmpegelbereich ein Außenbauteil fällt.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "66"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "laermpegelbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "aussenrecht",
       "begriff": "Außenrecht",
       "definition": "Rechtsvorschriften, die nach außen wirken und nicht nur die Verwaltung binden, im Bauordnungsrecht etwa Rechtsverordnungen und Satzungen.",
@@ -1209,7 +1267,8 @@
         }
       ],
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "en-erschliessung"
       ],
       "stand": "2026-11"
     },
@@ -1305,7 +1364,8 @@
         "rb-lbo",
         "rb-bauvorlagen",
         "rb-denkmal",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "en-erschliessung"
       ],
       "stand": "2026-11"
     },
@@ -1347,6 +1407,29 @@
       ],
       "siehe": [
         "bauvorlagen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauaufgabe",
+      "begriff": "Bauaufgabe",
+      "definition": "Das, was ein Gebäude im Ganzen leisten soll, einschließlich seines Zwecks und seiner Wirkung, nicht nur der geforderten Räume. Neben dem Funktionieren der Abläufe gehören weichere Faktoren wie Zugänglichkeit, Offenheit, Belichtung und Atmosphäre dazu; das Raumprogramm wird daran gemessen und bei Widersprüchen angepasst.",
+      "beispiel": "Ein Gemeindezentrum braucht einen Saal mit Nebenräumen, soll aber vor allem ein Ort der Begegnung sein.",
+      "quelle": [
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "43"
+        },
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "45"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumprogramm"
       ],
       "stand": "2026-11"
     },
@@ -1408,7 +1491,8 @@
         }
       ],
       "themen": [
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "en-raumprogramm"
       ],
       "siehe": [
         "bauzeichnung"
@@ -1702,7 +1786,8 @@
         "rb-verfahren",
         "rb-bauvorlagen",
         "rb-nachbarrecht",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "en-raumprogramm"
       ],
       "siehe": [
         "entwurfsverfassende"
@@ -1815,7 +1900,8 @@
         "rb-bauvorlagen",
         "bk-aw-zweischalig",
         "bk-fenster",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "en-raumprogramm"
       ],
       "stand": "2026-11"
     },
@@ -2046,6 +2132,29 @@
       ],
       "siehe": [
         "bauliche-anlage"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bauprogramm",
+      "begriff": "Bauprogramm",
+      "definition": "Grobe Beschreibung eines geplanten Gebäudes als Ganzes, etwa zu Nutzung, Geschosszahl, Unterkellerung, Gliederung in Gebäudeteile und Anschluss an Versorgungs- und Verkehrsnetz. Es kann ohne Entwurf erstellt werden und wird durch das Raumprogramm verfeinert.",
+      "quelle": [
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "51"
+        },
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "52"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumprogramm",
+        "funktionale-leistungsbeschreibung"
       ],
       "stand": "2026-11"
     },
@@ -2831,6 +2940,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "bezugskurve",
+      "begriff": "Bezugskurve",
+      "definition": "Genormter Verlauf des Schalldämmmaßes über die Frequenz, der dem typischen Verhalten eines massiven Bauteils entspricht. Die gemessene Kurve wird mit ihr verglichen, daraus ergibt sich das bewertete Schalldämmmaß als einzelner Kennwert.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "95"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schalldaemmmass",
+        "einzahlwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bezugspunkt",
       "begriff": "Bezugspunkt",
       "varianten": [
@@ -2992,7 +3124,8 @@
       "themen": [
         "bk-fenster",
         "bk-oeffnungen",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "fluegelrahmen",
@@ -3323,7 +3456,8 @@
       ],
       "themen": [
         "rb-mass",
-        "rb-lbo"
+        "rb-lbo",
+        "en-raumprogramm"
       ],
       "siehe": [
         "geschossflaeche"
@@ -3360,6 +3494,53 @@
       "siehe": [
         "nettowohndichte",
         "bruttobauland"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bueroflaeche",
+      "begriff": "Bürofläche",
+      "definition": "Fläche der Büroarbeitsplätze mit den zugehörigen Besprechungsräumen, die Kernfunktion eines Bürogebäudes mit dem größten Flächenbedarf. In Raumpilot dient sie als Bezugsgröße 1, aus der die übrigen Nutzungsbereiche als Anteil abgeleitet werden.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "357"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "bueroform",
+        "raumprogramm"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bueroform",
+      "begriff": "Büroform",
+      "varianten": [
+        "Bürotyp"
+      ],
+      "definition": "Art, wie Büroarbeitsplätze räumlich organisiert sind, etwa als Zellen- oder Einzelbüro, Großraumbüro, Kombibüro oder flexible Struktur. Sie bestimmt den Flächenbedarf je Mitarbeiter und muss deshalb vor der Flächenermittlung geklärt sein.",
+      "quelle": [
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "41"
+        },
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "42"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "380"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "kombibuero",
+        "bueroflaeche"
       ],
       "stand": "2026-11"
     },
@@ -3846,6 +4027,24 @@
       "stand": "2026-11"
     },
     {
+      "id": "dezibel",
+      "begriff": "Dezibel",
+      "definition": "Einheit (dB) für Schallpegel und Pegeldifferenzen, also auch für das Schalldämmmaß. Der Schallpegel wird logarithmisch aus dem Schalldruck gebildet, Pegel lassen sich deshalb nicht einfach zusammenzählen.",
+      "beispiel": "Zwei gleich laute Quellen mit je 100 dB ergeben zusammen 103 dB, nicht 200 dB.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "92"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schalldruck",
+        "a-bewertet"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "dichtebene",
       "begriff": "Dichtebene",
       "varianten": [
@@ -3922,7 +4121,8 @@
         "bk-fenster",
         "bk-oeffnungen",
         "bp-luftdicht",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "bp-luftschall"
       ],
       "siehe": [
         "dichtstofffuge",
@@ -3966,11 +4166,35 @@
         }
       ],
       "themen": [
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "luftdichtheitsebene",
         "abdichtung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "dienender-bereich",
+      "begriff": "dienender Bereich",
+      "varianten": [
+        "dienende Bereiche",
+        "dienenden Bereich",
+        "dienenden Bereiche"
+      ],
+      "definition": "Teil einer Wohnung für Reinigen und Lagern, also vor allem Sanitärräume und Abstellflächen. Kochen wird inzwischen eher dem kommunikativen Bereich zugerechnet.",
+      "quelle": {
+        "werk": "Raumpilot Wohnen",
+        "seite": "159"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "kommunikativer-bereich",
+        "individualraum",
+        "wohnfunktion"
       ],
       "stand": "2026-11"
     },
@@ -4122,6 +4346,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "dimensionalitaet",
+      "begriff": "Dimensionalität",
+      "definition": "Eigenschaft eines Architekturelements, als lineares, flächiges oder körperhaftes Bauelement zu wirken. Sie zählt zu den Gestaltungsmitteln.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestaltungsmittel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "din-norm",
       "begriff": "DIN-Norm",
       "definition": "Technische Regel aus einem privaten Regelwerk. Sie ist keine Rechtsnorm und erhält im Bauordnungsrecht erst dadurch Gewicht, dass Vorschriften auf sie verweisen.",
@@ -4256,6 +4496,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "dorisch",
+      "begriff": "dorisch",
+      "varianten": [
+        "Dorisch"
+      ],
+      "definition": "Bezeichnung der antiken Säulenordnung, deren Säule im Verhältnis von unterem Durchmesser zu Höhe etwa 1 : 6 steht; sie ist damit gedrungener als die ionische. Antike Deutung: Maßverhältnis des männlichen Körpers.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "47"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "ionisch",
+        "saeulenordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "drahtanker",
       "begriff": "Drahtanker",
       "varianten": [
@@ -4330,6 +4590,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "dreibund",
+      "begriff": "Dreibund",
+      "definition": "Grundrisstyp mit drei Zonen: Zwischen den Raumschichten an beiden Fassaden liegt eine innere Mittelzone, die über Flure erschlossen wird. Er erlaubt Gebäudetiefen von etwa 14 bis 20 m; die Mittelzone nimmt Nutzungen mit geringem Tageslichtbedarf auf und braucht Unterstützung bei Belichtung und Lüftung.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "351"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "383"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "zweibund",
+        "kombibuero"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "dreiecksfuge",
       "begriff": "Dreiecksfuge",
       "definition": "Dichtstofffuge mit dreieckigem Querschnitt, ohne Trennung im Fugengrund. Sie kann Bewegungen nicht aufnehmen und gilt als ungeeignet.",
@@ -4360,7 +4643,8 @@
         }
       ],
       "themen": [
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "u-wert"
@@ -4648,6 +4932,36 @@
       "stand": "2026-11"
     },
     {
+      "id": "durchgesteckte-wohnung",
+      "begriff": "durchgesteckte Wohnung",
+      "varianten": [
+        "meist durchgesteckt",
+        "oft durchgesteckt",
+        "nicht durchgesteckt",
+        "Durchgesteckt sein",
+        "durchstecken"
+      ],
+      "definition": "Wohnung, die von einer Längsfassade bis zur gegenüberliegenden reicht. Sie wird von zwei Seiten belichtet, lässt sich querlüften und erlaubt, Wohn- und Schlafräume nach verschiedenen Himmelsrichtungen zu legen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "177–178"
+        },
+        {
+          "werk": "Raumpilot Wohnen",
+          "seite": "117"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "zweiseitig-orientiert",
+        "querlueftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "durchsteckmontage",
       "begriff": "Durchsteckmontage",
       "definition": "Montage, bei der das Befestigungsmittel durch das bereits sitzende Bauteil hindurch in den Untergrund gesteckt wird. Bautoleranzen führen dabei zu unterschiedlichen freien Dübellängen.",
@@ -4660,6 +4974,22 @@
       ],
       "siehe": [
         "rahmenduebel"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "eckwohnung",
+      "begriff": "Eckwohnung",
+      "definition": "Wohnung an einer Gebäudeecke, die über zwei aneinanderstoßende Fassaden belichtet wird. Günstig ist eine Ausrichtung nach Südwesten; die innere Ecke des Grundrisses ist schwer zu belichten und zu nutzen.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "178"
+      },
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "zweiseitig-orientiert"
       ],
       "stand": "2026-11"
     },
@@ -4701,6 +5031,29 @@
       "siehe": [
         "nutzlast",
         "einzellast"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "eigenresonanzfrequenz",
+      "begriff": "Eigenresonanzfrequenz",
+      "definition": "Frequenz, bei der eine einzelne Scheibe oder Schale besonders leicht mitschwingt, sodass ihre Schalldämmung dort einbricht. Sie hängt von der Dicke ab; Schallschutzverglasungen kombinieren deshalb verschieden dicke Scheiben, damit die Einbrüche nicht zusammenfallen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "69"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "93"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "koinzidenzgrenzfrequenz",
+        "schallschutzfenster"
       ],
       "stand": "2026-11"
     },
@@ -4932,6 +5285,55 @@
       "stand": "2026-11"
     },
     {
+      "id": "einseitig-orientiert",
+      "begriff": "einseitig orientiert",
+      "varianten": [
+        "einseitig belichtet"
+      ],
+      "definition": "Eigenschaft einer Wohnung, deren Räume nur an einer Fassadenseite Fenster haben. Solche Wohnungen sind in der Tiefe stark begrenzt und lassen sich kaum querlüften; sie sollten möglichst nach Süden, Osten oder Westen zeigen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Wohnen",
+          "seite": "117"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "177–178"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "zweiseitig-orientiert",
+        "mittelflur"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einspaenner",
+      "begriff": "Einspänner",
+      "definition": "Spänner mit nur einer Wohnung je Geschoss. Das Treppenhaus dient allein dieser Wohnung, deshalb gilt der Typ als unwirtschaftlich; ohne Aufzug bleibt er meist auf vier Geschosse beschränkt.",
+      "beispiel": "Das schmale städtische Stadthaus mit einer Wohnung pro Etage ist die Grundform des Einspänners.",
+      "quelle": [
+        {
+          "werk": "Neufert",
+          "seite": "294"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "spaenner"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "einstweilige-anordnung",
       "begriff": "einstweilige Anordnung",
       "definition": "Vorläufige gerichtliche Regelung, die eine Rechtsposition sichert, bis in der Hauptsache entschieden ist. Sie ist der Eilrechtsschutz gegen Vorhaben ohne Baugenehmigung und auch im Normenkontrollverfahren möglich.",
@@ -4969,6 +5371,32 @@
       "siehe": [
         "planungshoheit",
         "zustimmung-der-gemeinde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einzahlwert",
+      "begriff": "Einzahlwert",
+      "varianten": [
+        "Einzahlangabe"
+      ],
+      "definition": "Ein einziger Kennwert, der eine frequenzabhängige Messreihe zusammenfasst, etwa das bewertete Schalldämmmaß Rw. Weil dabei Einzelheiten verloren gehen, werden zusätzlich Spektrum-Anpassungswerte angegeben.",
+      "quelle": [
+        {
+          "werk": "Bauphysik",
+          "seite": "96"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "97"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "bezugskurve",
+        "spektrum-anpassungswert"
       ],
       "stand": "2026-11"
     },
@@ -5097,6 +5525,23 @@
       ],
       "siehe": [
         "eigentumsgarantie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "entkopplung",
+      "begriff": "Entkopplung",
+      "definition": "Weiche, elastische Trennung von Bauteilen, damit sich Schwingungen nicht direkt von einem auf das andere übertragen, etwa zwischen Fußbodenbelag und Rohdecke oder zwischen Sanitärinstallation und Wand. Sie ist das Mittel gegen Schallbrücken und Körperschallübertragung.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "67"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schallbruecke",
+        "koerperschall"
       ],
       "stand": "2026-11"
     },
@@ -5476,6 +5921,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "erlebnisqualitaet",
+      "begriff": "Erlebnisqualität",
+      "definition": "Erwünschte Wirkung eines Gebäudes auf den Betrachter, die einem visuellen Bedürfnis entspricht, etwa Überschaubarkeit für die Orientierung oder Neuheit für die Abwechslung. Im Schema nach Fuhrmann bilden sie die Brücke zwischen Bedürfnis und Gestaltkriterium.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "194"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "visuelle-beduerfnisse"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "ermaechtigungsgrundlage",
       "begriff": "Ermächtigungsgrundlage",
       "varianten": [
@@ -5556,6 +6017,119 @@
       "siehe": [
         "planersatz",
         "aussenbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erschliessung",
+      "begriff": "Erschließung",
+      "definition": "Anbindung an Wege und Versorgung. Im Gebäude sind das die gemeinsamen Verkehrswege – Treppen, Aufzüge, Flure und Gänge –, über die Wohnungen und Räume erreicht werden; städtebaulich die Anbindung eines Grundstücks an Straßen, Wasser- und Energieversorgung und Abwasserbeseitigung.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "167"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "295"
+        },
+        {
+          "werk": "Battis, Öffentliches Baurecht und Raumordnungsrecht",
+          "seite": "125"
+        }
+      ],
+      "themen": [
+        "en-erschliessung",
+        "en-raumprogramm",
+        "en-proportion"
+      ],
+      "siehe": [
+        "erschliessungstyp",
+        "gesicherte-erschliessung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erschliessungsflaeche",
+      "begriff": "Erschließungsfläche",
+      "definition": "Fläche der gemeinsamen Verkehrswege wie Treppenhaus, Flure und Gänge, über die die Wohnungen erreicht werden. Ihr Verhältnis zur erschlossenen Wohnfläche ist ein früher Maßstab für die Wirtschaftlichkeit: Beim Zweispänner erschließt 1 m² etwa 13 m² Wohnfläche, beim Laubengang mit eingeschossigen Wohnungen nur etwa 5 bis 7 m².",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "330"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "331"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "erschliessung",
+        "wohnflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erschliessungskern",
+      "begriff": "Erschließungskern",
+      "varianten": [
+        "Der Kern",
+        "je Kern",
+        "am Kern",
+        "Kern mit Aufzug",
+        "zentralen Kern",
+        "Ein Kern",
+        "einem Kern",
+        "des Kerns",
+        "schraffierten Kerns",
+        "mehrere Kerne"
+      ],
+      "definition": "Bündelung der senkrechten Erschließung an einer Stelle des Grundrisses: Treppe, Aufzug und oft auch die Installationsschächte. Seine Lage und die Zahl der angeschlossenen Wohnungen bestimmen Wirtschaftlichkeit, Belichtung und Orientierung der Wohnungen mit.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "167"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "295"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "spaenner",
+        "installationsschacht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "erschliessungstyp",
+      "begriff": "Erschließungstyp",
+      "varianten": [
+        "Erschließungsform"
+      ],
+      "definition": "Grundordnung, nach der ein Geschossbau seine Wohnungen erreicht: senkrecht über einen Kern, an dem je Geschoss mehrere Wohnungen liegen (Spänner), oder waagerecht über Gänge außen oder innen, die über Treppen und Aufzüge verbunden sind. Der Typ bestimmt Größe, Orientierung und Wirtschaftlichkeit der Wohnungen mit.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "167"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "295"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "spaenner",
+        "gangerschliessung"
       ],
       "stand": "2026-11"
     },
@@ -5712,6 +6286,29 @@
       "siehe": [
         "baugebiet",
         "einfuegen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "falzraum",
+      "begriff": "Falzraum",
+      "definition": "Hohlraum, den die ineinandergreifenden Falze eines Fensters bilden, etwa zwischen Flügel und Blendrahmen oder rings um den eingespannten Glasrand. Er muss raumseitig luftdicht und außen gegen Wasser dicht sein; eingedrungenes Wasser wird abgeleitet und der Dampfdruck ausgeglichen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "60"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "100"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "faelzung",
+        "blendrahmen"
       ],
       "stand": "2026-11"
     },
@@ -5918,7 +6515,8 @@
         "bk-flachdach",
         "bp-feuchte",
         "bp-uwert",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "bp-luftschall"
       ],
       "stand": "2026-11"
     },
@@ -6113,6 +6711,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "flaechenart",
+      "begriff": "Flächenart",
+      "definition": "Kategorie, der eine Fläche nach einem Berechnungsregelwerk wie DIN 277 oder MF-G zugeordnet wird, etwa Nutzfläche, Verkehrsfläche oder technische Funktionsfläche. Im Raumbuch wird sie für jeden Raum angegeben.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "360"
+        },
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "55"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumbuch",
+        "verkehrsflaeche",
+        "funktionsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "flaechenbauteil",
       "begriff": "Flächenbauteil",
       "definition": "Flächiges Bauteil wie eine Wand oder ein Dach, im Gegensatz zu stabförmigen Bauteilen. Öffnungen darin verlangen oft zusätzliche Maßnahmen für die Lastabtragung.",
@@ -6122,6 +6744,27 @@
       },
       "themen": [
         "bk-oeffnungen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "flaechengewicht",
+      "begriff": "Flächengewicht",
+      "varianten": [
+        "flächenbezogene Masse"
+      ],
+      "definition": "Masse eines flächigen Bauteils je Quadratmeter in kg/m², gebildet aus Dicke mal Rohdichte seiner Schichten. Je größer sie ist, desto besser dämmt ein einschaliges Bauteil Luftschall, weil es sich schwerer zum Schwingen anregen lässt.",
+      "beispiel": "Eine 30 cm dicke, beidseitig verputzte Mauerwerkswand kommt auf rund 580 kg/m².",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "98"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "rohdichte",
+        "schalldaemmung"
       ],
       "stand": "2026-11"
     },
@@ -6165,6 +6808,34 @@
       "siehe": [
         "bebauungsplan",
         "entwicklungsgebot"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "flankenuebertragung",
+      "begriff": "Flankenübertragung",
+      "varianten": [
+        "Schalllängsleitung",
+        "flankierende Übertragung"
+      ],
+      "definition": "Schallübertragung, die nicht direkt durch das trennende Bauteil geht, sondern als Körperschall über angrenzende, flankierende Wände und Decken. Sie bestimmt den erreichbaren Schallschutz wesentlich mit; dagegen helfen schwerere flankierende Bauteile oder Entkopplung.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "70"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "koerperschall",
+        "schallnebenweg",
+        "entkopplung"
       ],
       "stand": "2026-11"
     },
@@ -6361,7 +7032,8 @@
         "seite": "62"
       },
       "themen": [
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "en-erschliessung"
       ],
       "siehe": [
         "querlueftung",
@@ -6437,7 +7109,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "kompressionsgrad",
@@ -6481,7 +7154,8 @@
         "seite": "128"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftschall"
       ],
       "siehe": [
         "fugengrund"
@@ -6528,6 +7202,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "fugenschalldaemmmass",
+      "begriff": "Fugenschalldämmmaß",
+      "definition": "Kennwert RST,w für die Schalldämmung einer Bauanschlussfuge, im Labor geprüft und von Füllung, Abdichtung und Fugenbreite abhängig. Er sollte mindestens 10 dB über dem Schalldämmmaß des Fensters liegen, damit das Fenster durch die Fuge nicht mehr als etwa 1 dB verliert.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "68"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "69"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "anschlussfuge",
+        "schalldaemmmass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "fundament",
       "begriff": "Fundament",
       "varianten": [
@@ -6569,6 +7266,94 @@
       "stand": "2026-10"
     },
     {
+      "id": "funktionale-leistungsbeschreibung",
+      "begriff": "funktionale Leistungsbeschreibung",
+      "varianten": [
+        "funktionalen Leistungsbeschreibung",
+        "Funktionalausschreibung"
+      ],
+      "definition": "Leistungsbeschreibung, die alle Anforderungen an ein Gebäude festhält, die Lösung aber offenlässt: Wie das Gebäude gestaltet, konstruiert und technisch ausgeführt wird, plant der Bieter. Grundlage sind Bauprogramm, Raumprogramm, Baubeschreibung oder Anforderungsraumbuch.",
+      "quelle": [
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "49"
+        },
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "51"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "leistungsbeschreibung",
+        "bauprogramm",
+        "raumprogramm"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "funktionsbereich",
+      "begriff": "Funktionsbereich",
+      "varianten": [
+        "Nutzungsbereich"
+      ],
+      "definition": "Im Entwurf ein Bereich, in dem eine bestimmte Tätigkeit oder Nutzung stattfindet, etwa Essen, Arbeiten oder Erholen. Man spricht von Funktionsbereichen statt von Räumen, um offenzulassen, ob eine Funktion einen eigenen Raum bekommt oder sich ihn mit anderen teilt. Beim Fenster- und Fassadenanschluss heißt dagegen die mittlere Ebene so, die Lasten in den Baukörper einleitet und Wärme- und Schallschutz übernimmt.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Wohnen",
+          "seite": "149"
+        },
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "58"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "121"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm",
+        "bk-fenster",
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "funktionsschema",
+        "wohnfunktion",
+        "zonierung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "funktionsflaeche",
+      "begriff": "Funktionsfläche",
+      "varianten": [
+        "technische Funktionsfläche",
+        "Technikfläche"
+      ],
+      "definition": "Fläche für die technischen Anlagen eines Gebäudes, etwa Räume für Haustechnik und Installationsschächte. Nach DIN 277 bildet sie zusammen mit Nutz- und Verkehrsfläche die Netto-Grundfläche; nach MF-G ist sie in der Regel keine Mietfläche.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "325"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "471"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "verkehrsflaeche",
+        "mf-0"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "funktionsfuge",
       "begriff": "Funktionsfuge",
       "definition": "Fuge, die beim Gebrauch regelmäßig geöffnet wird, etwa zwischen Flügel- und Blendrahmen eines Fensters. Sie wird mit Dichtprofilen geschlossen und darf als einzige Fugenart in begrenztem Maß Luft durchlassen.",
@@ -6588,6 +7373,51 @@
       "siehe": [
         "konstruktionsfuge",
         "dichtprofil"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "funktionsschema",
+      "begriff": "Funktionsschema",
+      "definition": "Diagramm, das Funktionsbereiche oder Räume grafisch darstellt und ihre Beziehungen und notwendigen Wege zueinander zeigt, ohne Flächen oder Geometrie festzulegen. Es klärt vor dem Entwurf, welche Bereiche zusammengehören, getrennt werden müssen oder in einer festen Abfolge stehen.",
+      "beispiel": "Muss ein privater Bereich von einem öffentlichen getrennt liegen, zeigt das Schema diese Trennung, und daraus folgen entwurfsbestimmende Flächenzuordnungen.",
+      "quelle": [
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "52"
+        },
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "43"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumprogramm",
+        "funktionsbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gangerschliessung",
+      "begriff": "Gangerschließung",
+      "varianten": [
+        "Erschließungsgang"
+      ],
+      "definition": "Erschließung, bei der ein waagerechter Gang die Wohnungen einer Ebene erreicht; Treppen und Aufzüge verbinden die Gänge untereinander und mit dem Hauseingang. Liegt der Gang an der Außenseite, ist es ein Laubengang, liegt er im Gebäudeinneren, ein Mittelflur.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "295"
+      },
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "laubengang",
+        "mittelflur",
+        "spaenner"
       ],
       "stand": "2026-11"
     },
@@ -6617,6 +7447,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "gasfuellung",
+      "begriff": "Gasfüllung",
+      "definition": "Füllung des Scheibenzwischenraums mit einem Schwergas wie Argon oder Krypton anstelle getrockneter Luft. Sie senkt die Wärmeleitung im Zwischenraum und verbessert so die Wärmedämmung; für den Schallschutz bringt sie nur etwa 1 dB.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "93"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "69"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "scheibenzwischenraum"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gaube",
       "begriff": "Gaube",
       "varianten": [
@@ -6640,7 +7492,8 @@
       "id": "gebaeudehuelle",
       "begriff": "Gebäudehülle",
       "varianten": [
-        "Hüllfläche"
+        "Hüllfläche",
+        "Hülle"
       ],
       "definition": "Gesamtheit der Außenbauteile eines Gebäudes. Sie trennt Raum- und Außenklima und schützt vor der Witterung.",
       "quelle": {
@@ -6650,7 +7503,9 @@
       "themen": [
         "bk-fenster",
         "bp-luftdicht",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "en-erschliessung",
+        "en-proportion"
       ],
       "stand": "2026-11"
     },
@@ -6671,6 +7526,29 @@
       "siehe": [
         "nutzungseinheit",
         "hochhaus"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gebaeudetiefe",
+      "begriff": "Gebäudetiefe",
+      "definition": "Abstand zwischen den beiden Längsfassaden eines Gebäudes. Sie begrenzt, wie viele Räume natürlich belichtet werden können, und hängt eng mit Erschließung und Orientierung zusammen; im Bürobau gelten etwa 12 bis 14 m für den Zweibund und 14 bis 20 m für den Dreibund.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "177"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "351"
+        }
+      ],
+      "themen": [
+        "en-erschliessung",
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumschicht"
       ],
       "stand": "2026-11"
     },
@@ -7032,6 +7910,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "geordnete-vielfalt",
+      "begriff": "geordnete Vielfalt",
+      "varianten": [
+        "Geordnete Vielfalt"
+      ],
+      "definition": "Mittlerer Bereich zwischen den Polen reiner Ordnung, die zur Monotonie neigt, und reiner Vielfalt, die ins Chaos führt. Sie zeichnet sich durch ausgewogene Spannung, Harmonie und Komplexität aus.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "194"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestalthoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gesamtanlage",
       "begriff": "Gesamtanlage",
       "varianten": [
@@ -7124,6 +8021,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "geschosswohnungsbau",
+      "begriff": "Geschosswohnungsbau",
+      "definition": "Bau von Mehrfamilienhäusern, in denen Wohnungen in mehreren Geschossen übereinanderliegen und über eine gemeinsame Erschließung erreicht werden, etwa als Block, Zeile, Scheibe oder Punkthaus.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "291"
+      },
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "erschliessungstyp"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "gesicherte-erschliessung",
       "begriff": "gesicherte Erschließung",
       "varianten": [
@@ -7162,6 +8075,95 @@
         "spritzwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "gestalthoehe",
+      "begriff": "Gestalthöhe",
+      "definition": "Gestaltkriterium, das nach dem größtmöglichen Produkt aus Einheit und Mannigfaltigkeit fragt. Fehlt einer der beiden Faktoren, ist die Gestalthöhe null; sie beschreibt damit die geordnete Vielfalt.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "194"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestaltreinheit",
+        "geordnete-vielfalt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gestaltkriterium",
+      "begriff": "Gestaltkriterium",
+      "varianten": [
+        "Gestaltkriterien"
+      ],
+      "definition": "Vereinbarter Maßstab, an dem die Qualität einer Gestalt gemessen wird. Das Schema nach Fuhrmann nennt zwei: Gestaltreinheit und Gestalthöhe.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "194"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestaltreinheit",
+        "gestalthoehe"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gestaltqualitaet",
+      "begriff": "Gestaltqualität",
+      "definition": "Vom Gebäude angebotene Eigenschaft der Gestalt, die eine bestimmte Wirkung hervorruft, etwa Wiederholung gleicher Elemente auf der Seite der Ordnung oder Rhythmus, Spannung und Harmonie im Bereich geordneter Vielfalt.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestaltungsmittel",
+        "geordnete-vielfalt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gestaltreinheit",
+      "begriff": "Gestaltreinheit",
+      "definition": "Gestaltkriterium, das auf größtmögliche Regelmäßigkeit bei idealer Geometrie zielt. Es steht auf der Seite der Ordnung.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "194"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestalthoehe",
+        "gestaltkriterium"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gestaltungsmittel",
+      "begriff": "Gestaltungsmittel",
+      "definition": "Die Größen, mit denen Gestalt erzeugt wird: Eigenschaften der Architekturelemente selbst (Dimensionalität, Größe, Form, Helligkeit, Material), ihre Beziehungen zueinander und ihr Bezug zum Standort des Betrachters.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "dimensionalitaet",
+        "topologisch",
+        "standortbezug"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "gestaltungssatzung",
@@ -7238,7 +8240,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "en-raumprogramm"
       ],
       "stand": "2026-11"
     },
@@ -7383,6 +8386,27 @@
       "stand": "2026-10"
     },
     {
+      "id": "goldener-schnitt",
+      "begriff": "Goldener Schnitt",
+      "varianten": [
+        "Goldene Schnitt",
+        "Goldenen Schnitt"
+      ],
+      "definition": "Teilungsverhältnis von etwa 1 : 1,618, bei dem sich der kleinere Teil zum größeren so verhält wie der größere zum Ganzen (a/b = (a+b)/a). Der Wert ist irrational und lässt sich mit dem Zirkel konstruieren.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "47"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "proportion",
+        "modulor"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "grabungsschutzgebiet",
       "begriff": "Grabungsschutzgebiet",
       "definition": "Per Rechtsverordnung abgegrenztes Gebiet, in dem Bodendenkmäler begründet vermutet werden. In Hessen brauchen dort gefährdende Arbeiten eine Genehmigung; die bisherige Land- und Forstwirtschaft bleibt zulässig.",
@@ -7395,6 +8419,27 @@
       ],
       "siehe": [
         "bodendenkmal"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grafisches-raumprogramm",
+      "begriff": "grafisches Raumprogramm",
+      "varianten": [
+        "grafischen Raumprogramm",
+        "grafischen Raumprogramms"
+      ],
+      "definition": "Zeichnerische Zusammenführung von tabellarischem Raumprogramm und Funktionsschema: Die Bereiche erscheinen in ihrer geforderten Größe und zugleich in ihrer Zuordnung zueinander. Weil damit schon Aussagen zur Form getroffen werden, enthält es erste Elemente des Entwurfs.",
+      "quelle": {
+        "werk": "Basics Ausschreibung",
+        "seite": "52"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumprogramm",
+        "funktionsschema"
       ],
       "stand": "2026-11"
     },
@@ -7565,7 +8610,9 @@
       ],
       "themen": [
         "rb-mass",
-        "rb-verfahren"
+        "rb-verfahren",
+        "en-raumprogramm",
+        "bp-luftschall"
       ],
       "siehe": [
         "grz"
@@ -7694,6 +8741,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "haarfuge",
+      "begriff": "Haarfuge",
+      "definition": "Sehr schmaler, durchgehender Spalt in einem Anschluss, etwa zwischen Montageschaum und Wand. Schon Haarfugen oder kleine Löcher im Anschlussbereich können die Schalldämmung eines Fensters um mehr als 10 dB verschlechtern.",
+      "beispiel": "Ein Fenster mit geprüften 45 dB erreicht mit umlaufender Haarfuge zwischen Schaum und Wand nur noch 32 dB.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "68"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "69"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "anschlussfuge",
+        "fugenschalldaemmmass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "halteeisen",
       "begriff": "Halteeisen",
       "definition": "Stahlstab, der durch die Steine einer Grenadierschicht gesteckt wird, um sie zusammen mit Winkelkonsolen zu sichern.",
@@ -7722,6 +8793,26 @@
       ],
       "siehe": [
         "stoerer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hauptnutzungsflaeche",
+      "begriff": "Hauptnutzungsfläche",
+      "varianten": [
+        "Hauptnutzfläche"
+      ],
+      "definition": "Fläche für die primäre Funktion eines Gebäudes, für die es eigentlich gebaut wird, etwa die Arbeitsplätze eines Bürogebäudes. Der Planer ergänzt sie um die notwendigen Nebenflächen wie Foyer, Sanitäranlagen und Verkehrswege.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "41"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "programmflaeche",
+        "nebennutzflaeche"
       ],
       "stand": "2026-11"
     },
@@ -7790,10 +8881,24 @@
       "stand": "2026-11"
     },
     {
+      "id": "hierarchie",
+      "begriff": "Hierarchie",
+      "definition": "Ordnungsprinzip der Über- und Unterordnung von Bauteilen und Räumen nach ihrer Bedeutung. Sie entsteht durch zusätzliche, wertende Strukturen, die einzelne Teile hervorheben, etwa Eck- oder Mittelrisalite an einem sonst gleichförmigen Baukörper.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "101"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hinterfuellstrang",
       "begriff": "Hinterfüllstrang",
       "varianten": [
-        "Hinterfüllmaterial"
+        "Hinterfüllmaterial",
+        "Hinterfüllschnur"
       ],
       "definition": "Nicht saugende, geschlossenzellige Rundschnur, die vor dem Dichtstoff in die Fuge gelegt wird. Sie begrenzt die Fuge zum Fugengrund, trennt den Dichtstoff vom Dämmstoff und stellt die konkave Fugenform sicher.",
       "quelle": {
@@ -7801,7 +8906,8 @@
         "seite": "133"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftschall"
       ],
       "siehe": [
         "zweiflankenhaftung",
@@ -8030,6 +9136,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "horizontallast",
+      "begriff": "Horizontallast",
+      "definition": "Waagerecht auf ein Bauwerk wirkende Last, vor allem aus Wind. Sie wird über aussteifende Bauteile wie Wandscheiben oder Verbände abgetragen; bei großen Gebäudehöhen bestimmt sie die Bemessung stärker als die senkrechten Lasten.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "7"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "355"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "aussteifung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hydrophobierung",
       "begriff": "Hydrophobierung",
       "varianten": [
@@ -8117,6 +9245,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "individualraum",
+      "begriff": "Individualraum",
+      "varianten": [
+        "Individualräume",
+        "Individualbereich",
+        "Rückzugsbereich"
+      ],
+      "definition": "Privater Rückzugsraum einzelner Bewohner innerhalb einer Wohnung, üblich als Eltern- oder Kinderzimmer bezeichnet. Der Anspruch daran wächst mit dem Alter und je geringer die Bindung der Bewohner untereinander ist; für die Privatheit ist seine Zuordnung zu den Sanitärräumen wesentlich.",
+      "quelle": {
+        "werk": "Raumpilot Wohnen",
+        "seite": "150"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "kommunikativer-bereich",
+        "dienender-bereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "industriedach",
       "begriff": "Industriedach",
       "definition": "Leichtes Flachdach für große Spannweiten, meist auf verzinktem und beschichtetem Trapezblech. Dampfsperre und eine druck- und biegefeste Dämmung werden aufgeklebt, die Abdichtung besteht meist aus verschweißten Kunststoffbahnen.",
@@ -8156,6 +9306,30 @@
       ],
       "siehe": [
         "gewerbegebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "informeller-kommunikationsraum",
+      "begriff": "informeller Kommunikationsraum",
+      "varianten": [
+        "informellen Kommunikationsräumen",
+        "informelle Kommunikationsräume",
+        "informellen Kommunikationsräume"
+      ],
+      "definition": "Bereich eines Bürogebäudes, der zufällige und spontane Begegnungen und Gespräche ermöglicht, etwa Erschließungsräume, Cafeteria oder Kantine. Er braucht dafür Aufenthaltsqualität und wird deshalb bewusst gestaltet.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "358"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "359"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
       ],
       "stand": "2026-11"
     },
@@ -8314,6 +9488,33 @@
       "stand": "2026-10"
     },
     {
+      "id": "installationsschacht",
+      "begriff": "Installationsschacht",
+      "varianten": [
+        "Installationsschächte",
+        "Leitungsschacht",
+        "Leitungsschächte"
+      ],
+      "definition": "Senkrechter Schacht, in dem die Leitungen der Haustechnik wie Wasser, Abwasser und Strom gebündelt durch die Geschosse geführt werden. Bäder und Küchen liegen deshalb möglichst übereinander an gemeinsamen Schächten.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "267"
+        },
+        {
+          "werk": "Raumpilot Wohnen",
+          "seite": "200"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "erschliessungskern"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "intensiv-genutzt",
       "begriff": "intensiv genutzt",
       "varianten": [
@@ -8378,6 +9579,44 @@
       ],
       "themen": [
         "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ionisch",
+      "begriff": "ionisch",
+      "definition": "Bezeichnung der antiken Säulenordnung, deren Säule im Verhältnis von unterem Durchmesser zu Höhe etwa 1 : 8 steht; sie ist damit schlanker als die dorische. Antike Deutung: Proportion des weiblichen Körpers.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "47"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "dorisch",
+        "saeulenordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "isolierverglasung",
+      "begriff": "Isolierverglasung",
+      "varianten": [
+        "Mehrscheiben-Isolierglas",
+        "Isolierglas"
+      ],
+      "definition": "Verglasung aus zwei oder mehr Glasscheiben, die am Rand dicht miteinander verbunden sind und einen abgeschlossenen Scheibenzwischenraum einschließen. Sie verbessert den Wärmeschutz und wirkt schalltechnisch wie ein Masse-Feder-Masse-System.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "93"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "scheibenzwischenraum",
+        "dreifachverglasung"
       ],
       "stand": "2026-11"
     },
@@ -8675,6 +9914,28 @@
       "themen": [
         "bk-aw-zweischalig",
         "bp-schlagregen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kastenfenster",
+      "begriff": "Kastenfenster",
+      "definition": "Fenster aus zwei räumlich getrennten Einfachfenstern, die über ein umlaufendes Futter zu einem Kasten verbunden sind und getrennt geöffnet werden. Es erreicht sehr hohe Schalldämmwerte, nach VDI 2719 bis über 50 dB.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "100"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schallschutzklasse"
       ],
       "stand": "2026-11"
     },
@@ -8987,15 +10248,96 @@
       "stand": "2026-11"
     },
     {
+      "id": "koinzidenzgrenzfrequenz",
+      "begriff": "Koinzidenzgrenzfrequenz",
+      "varianten": [
+        "Koinzidenzfrequenz"
+      ],
+      "definition": "Niedrigste Frequenz, bei der auftreffender Schall eine Platte oder Bauteilschale zu besonders starken Biegeschwingungen anregt, weil Schallwelle und Biegewelle im Gleichtakt laufen. Ab dort bricht die Schalldämmung in einem Frequenzbereich ein; wo sie liegt, hängt von Dicke, Steifigkeit und Dichte des Materials ab.",
+      "quelle": [
+        {
+          "werk": "Bauphysik",
+          "seite": "98"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "99"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "masse-feder-masse",
+        "eigenresonanzfrequenz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kombibuero",
+      "begriff": "Kombibüro",
+      "varianten": [
+        "Kombibürozone"
+      ],
+      "definition": "Büroform, die kleine Einzelzellen an der Fassade für konzentriertes Arbeiten mit einer offenen Gemeinschaftszone in der Mitte für Austausch und Teamarbeit verbindet. Strukturell ist es ein Dreibund, dessen mittlerer Bund offen bleibt; dafür werden mindestens etwa 13,50 m Gebäudetiefe empfohlen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "380"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "383"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm",
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "bueroform"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kommunikativer-bereich",
+      "begriff": "kommunikativer Bereich",
+      "varianten": [
+        "kommunikativen Bereich",
+        "kommunikative Bereiche",
+        "kommunikativen Bereiche",
+        "kommunikativen Funktionen",
+        "kommunikative Ebene"
+      ],
+      "definition": "Der gemeinsam genutzte, eher öffentliche Teil einer Wohnung mit Wohnen, Essen und oft Kochen, in dem man Gäste empfängt. Die Erschließung wird häufig als Erweiterung einbezogen.",
+      "quelle": {
+        "werk": "Raumpilot Wohnen",
+        "seite": "155"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "individualraum",
+        "dienender-bereich",
+        "wohnfunktion"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kompressionsgrad",
       "begriff": "Kompressionsgrad",
+      "varianten": [
+        "Komprimierungsgrad"
+      ],
       "definition": "Maß, wie stark ein Fugendichtungsband im eingebauten Zustand zusammengedrückt ist. Er muss ausreichen und innerhalb der Herstellervorgaben bleiben, sonst dichtet das Band nicht dauerhaft.",
       "quelle": {
         "werk": "DETAIL Atlas Gebäudeöffnungen",
         "seite": "133"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftschall"
       ],
       "siehe": [
         "fugendichtungsband"
@@ -9075,6 +10417,32 @@
         "funktionsfuge",
         "bauteilfuge",
         "anschlussfuge"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "konstruktionsgrundflaeche",
+      "begriff": "Konstruktionsgrundfläche",
+      "varianten": [
+        "Konstruktions-Grundfläche",
+        "KGF"
+      ],
+      "definition": "Grundfläche, die Wände, Stützen und andere Bauteile im Grundriss einnehmen, einschließlich Tür- und Fensteröffnungen und kleiner Installationsschächte. Zusammen mit der Netto-Grundfläche ergibt sie die Brutto-Grundfläche.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "325"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "360"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "brutto-grundflaeche"
       ],
       "stand": "2026-11"
     },
@@ -9182,6 +10550,30 @@
       ],
       "siehe": [
         "kiesschuettung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "koerperschall",
+      "begriff": "Körperschall",
+      "definition": "Schall, der sich im Material fester Bauteile ausbreitet, ausgelöst etwa durch Schritte auf dem Boden. Über starr verbundene Bauteile kann er weite Wege zurücklegen und wird an anderer Stelle wieder als Luftschall in einen Raum abgegeben.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "90"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "luftschall",
+        "schallbruecke",
+        "flankenuebertragung"
       ],
       "stand": "2026-11"
     },
@@ -9510,7 +10902,8 @@
       ],
       "themen": [
         "rb-lbo",
-        "rb-denkmal"
+        "rb-denkmal",
+        "en-erschliessung"
       ],
       "siehe": [
         "hessische-bauordnung",
@@ -9628,6 +11021,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "laermpegelbereich",
+      "begriff": "Lärmpegelbereich",
+      "definition": "Stufe der Außenlärmbelastung nach DIN 4109; die Norm unterscheidet sieben Bereiche nach dem maßgeblichen Außenlärmpegel. Aus Lärmpegelbereich und Raumart ergibt sich, welches resultierende Schalldämmmaß das Außenbauteil erreichen muss.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "66"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "aussenlaermpegel",
+        "resultierendes-schalldaemmmass"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lastabtragung",
       "begriff": "Lastabtragung",
       "definition": "Weiterleitung von Lasten durch ein Tragwerk oder Bauteil bis in den Baugrund oder in das tragende Bauteil, an dem es befestigt ist.",
@@ -9639,7 +11055,8 @@
         "bk-aw-zweischalig",
         "bk-fenster",
         "bk-oeffnungen",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftschall"
       ],
       "siehe": [
         "auflager"
@@ -9667,6 +11084,34 @@
         "drueckendes-wasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "laubengang",
+      "begriff": "Laubengang",
+      "varianten": [
+        "Außengang",
+        "Außenflur",
+        "Außenganghaus"
+      ],
+      "definition": "Gang an der Außenseite eines Gebäudes, über den die Wohnungseingänge einer Ebene erreicht werden; Treppe und Aufzug binden an ihn an. Ein Aufzug erschließt so viele Wohnungen barrierefrei, die Räume zur Gangseite verlieren aber an Privatheit, und bei eingeschossigen Wohnungen braucht der Gang viel Fläche.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "170"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "gangerschliessung",
+        "mittelflur"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "leckageortung",
@@ -9822,6 +11267,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "leitsystem",
+      "begriff": "Leitsystem",
+      "definition": "Informationen und Zeichen, die Besuchern die Orientierung im Gebäude erleichtern, meist vom Eingangsbereich aus. Es gehört bei Bürogebäuden zu den Anforderungen an Eingang und Empfang.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "359"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lichtmass",
       "begriff": "Lichtmaß",
       "definition": "Maß einer Öffnung zwischen ihren begrenzenden Flächen, also die tatsächlich freie Breite oder Höhe.",
@@ -9948,7 +11406,8 @@
       "themen": [
         "bk-fenster",
         "bp-feuchte",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "3-ebenen-modell"
@@ -10019,6 +11478,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "luftschall",
+      "begriff": "Luftschall",
+      "definition": "Schall, der sich in der Luft ausbreitet, von der Quelle aus annähernd kugelförmig. Trifft er auf ein Bauteil, regt er es zum Schwingen an; was auf der anderen Seite abgestrahlt wird, ist wieder Luftschall.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "90"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "koerperschall",
+        "schalldaemmung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "luftschicht",
       "begriff": "Luftschicht",
       "varianten": [
@@ -10084,6 +11566,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "lueftungsfenster",
+      "begriff": "Lüftungsfenster",
+      "definition": "Fenster mit eingebauter Lüftung, das Außenluft über einen schallschluckend ausgekleideten Kanal unter, neben oder über dem Fenster mit einem Ventilator ansaugt. So bleibt bei sehr dichten Schallschutzfenstern der Mindestluftwechsel gesichert, ohne dass das Fenster geöffnet werden muss.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "69"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "mindestluftwechsel",
+        "schallschutzfenster"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lueftungskonzept",
       "begriff": "Lüftungskonzept",
       "definition": "Planung, wie in einem Gebäude der nötige Luftwechsel sichergestellt wird, über Fenster, Lüftungsöffnungen oder mechanische Anlagen. Bei luftdichten Neubauten und nach dem Einbau dichter Fenster ist es nötig, weil sonst Feuchte und Schadstoffe nicht abgeführt werden.",
@@ -10092,7 +11591,8 @@
         "seite": "65"
       },
       "themen": [
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "mindestluftwechsel",
@@ -10193,6 +11693,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "maisonette",
+      "begriff": "Maisonette",
+      "definition": "Wohnung über zwei oder mehr Geschosse mit eigener interner Treppe. Bei Gangerschließung muss der Gang dann nur in jedem zweiten oder dritten Geschoss liegen; das spart Erschließungsfläche und lässt die Wohnungen zweiseitig orientieren.",
+      "quelle": [
+        {
+          "werk": "Neufert",
+          "seite": "295"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "171"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "gangerschliessung",
+        "laubengang"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "mass-der-baulichen-nutzung",
       "begriff": "Maß der baulichen Nutzung",
       "varianten": [
@@ -10213,6 +11736,33 @@
         "rb-mass",
         "rb-bauvorlagen",
         "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "masse-feder-masse",
+      "begriff": "Masse-Feder-Masse",
+      "varianten": [
+        "Masse-Feder-Masse-System"
+      ],
+      "definition": "Wirkprinzip zweischaliger Bauteile: Zwei Schalen ohne starre Verbindung bilden die Massen, die Luft- oder Dämmschicht dazwischen die Feder. Oberhalb der Systemeigenfrequenz dämmt ein solches System deutlich besser als ein gleich schweres einschaliges Bauteil, besonders wenn die Schalen verschieden schwer sind.",
+      "beispiel": "Eine Isolierverglasung aus zwei Scheiben mit Scheibenzwischenraum arbeitet nach diesem Prinzip.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "102"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "systemeigenfrequenz",
+        "schallbruecke"
       ],
       "stand": "2026-11"
     },
@@ -10376,6 +11926,68 @@
       "stand": "2026-11"
     },
     {
+      "id": "menschlicher-massstab",
+      "begriff": "menschlicher Maßstab",
+      "varianten": [
+        "menschlichen Maßstab"
+      ],
+      "definition": "Bezug der Maße eines Bauwerks auf den Körper und die Größe des Menschen. Alte Längenmaße wie Zoll, Fuß und Elle leiteten sich direkt vom Körper ab; der Meter dagegen vom Erdumfang, weshalb dieser Bezug beim Entwerfen eigens hergestellt werden muss.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "48"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "modulor",
+        "proportion"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mf-0",
+      "begriff": "MF-0",
+      "definition": "Nach MF-G der Teil der Brutto-Grundfläche, der keine Mietfläche ist: technische Funktionsflächen, Verkehrsflächen und Konstruktionsgrundflächen.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "360"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "mietflaeche",
+        "funktionsflaeche",
+        "verkehrsflaeche",
+        "konstruktionsgrundflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mietflaeche",
+      "begriff": "Mietfläche",
+      "varianten": [
+        "MF-G",
+        "Mietflächenberechnung",
+        "MF-G1",
+        "MF-G2"
+      ],
+      "definition": "Vermietbare Fläche gewerblicher Räume nach der Richtlinie MF-G der gif, ermittelt aus der Brutto-Grundfläche abzüglich der Flächen ohne Mietflächeneigenschaft (MF-0). Sie teilt sich in MF-G1 für exklusive und MF-G2 für gemeinschaftliche Nutzung; Verkehrs- und Technikflächen zählen nur bei individueller Mieteranforderung mit.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "360"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "mf-0",
+        "brutto-grundflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "mindestluftwechsel",
       "begriff": "Mindestluftwechsel",
       "definition": "Luftaustausch, den ein Gebäude aus Gründen der Hygiene und zur Begrenzung der Raumluftfeuchte mindestens braucht, nach DIN 4108-2 im Mittel 0,5 1/h während der Heizperiode. Bei dichten Hüllen muss er über definierte Öffnungen oder Lüftungseinrichtungen geplant werden, Undichtheiten zählen nicht mit.",
@@ -10390,7 +12002,8 @@
         }
       ],
       "themen": [
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "luftwechsel",
@@ -10445,7 +12058,8 @@
       "id": "mineralwolle",
       "begriff": "Mineralwolle",
       "varianten": [
-        "Mineralfaserplatte"
+        "Mineralfaserplatte",
+        "Mineralfaser"
       ],
       "definition": "Faserdämmstoff aus Glaswolle oder Steinwolle. Er dämmt Wärme und Schall gut und ist diffusionsoffen, verliert aber bei Durchfeuchtung deutlich an Dämmwirkung und Festigkeit.",
       "quelle": {
@@ -10454,7 +12068,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-luftschall"
       ],
       "siehe": [
         "daemmstoff"
@@ -10485,6 +12100,37 @@
       "siehe": [
         "urbanes-gebiet",
         "nutzungsmischung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mittelflur",
+      "begriff": "Mittelflur",
+      "varianten": [
+        "Innengang",
+        "Innenflur",
+        "Innenganghaus",
+        "Innengangerschließung",
+        "Mittelkorridor"
+      ],
+      "definition": "Gang im Inneren eines Gebäudes, an dem beidseitig Wohnungen oder Räume liegen. Wohnungen in nur einer Ebene werden dadurch einseitig orientiert, und der Gang selbst bekommt ohne besondere Maßnahmen weder Tageslicht noch natürliche Lüftung; günstig ist die kleine Hüllfläche.",
+      "quelle": [
+        {
+          "werk": "Neufert",
+          "seite": "295"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "173"
+        }
+      ],
+      "themen": [
+        "en-erschliessung",
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "gangerschliessung",
+        "zweibund"
       ],
       "stand": "2026-11"
     },
@@ -10525,6 +12171,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "modellraumprogramm",
+      "begriff": "Modellraumprogramm",
+      "definition": "Vorgegebenes Standard-Raumprogramm, das für einen Gebäudetyp die Räume und Flächen festlegt. Im Schulbau ist es in den Schulbauförderrichtlinien nach Schultyp und Anzahl der Züge gestaffelt.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "471"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "schulbaufoerderrichtlinien",
+        "raumprogramm"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "modifizierende-auflage",
       "begriff": "modifizierende Auflage",
       "varianten": [
@@ -10541,6 +12204,42 @@
       ],
       "siehe": [
         "nebenbestimmung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "modul",
+      "begriff": "Modul",
+      "definition": "Grundmaß, auf das sich die Abmessungen eines Bauwerks als Vielfache beziehen, etwa der Abstand der Linien eines über Grundriss oder Fassade gelegten Rasters. Es ordnet Räume und Konstruktion maßlich, ohne selbst sichtbar zu sein.",
+      "beispiel": "Im japanischen Wohnhaus bildet die Tatami-Matte den Grundmodul, aus dem sich die Raumgrößen ergeben.",
+      "quelle": {
+        "werk": "DETAIL Atlas Fassaden",
+        "seite": "47"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "raster",
+        "tatami-matte",
+        "proportion"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "modulor",
+      "begriff": "Modulor",
+      "definition": "Von Le Corbusier entwickeltes Maßsystem, das Maßreihen aus den Proportionen eines Durchschnittsmenschen und dem Goldenen Schnitt ableitet. Es soll Abmessungen wie Brüstungs- oder Tischhöhen und Raum- oder Fassadenproportionen unmittelbar auf ihre Nutzung durch den Menschen beziehen.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "48"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "goldener-schnitt",
+        "menschlicher-massstab"
       ],
       "stand": "2026-11"
     },
@@ -10662,7 +12361,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "fugendichtungsband",
@@ -10980,6 +12680,48 @@
       "stand": "2026-11"
     },
     {
+      "id": "nebennutzflaeche",
+      "begriff": "Nebennutzfläche",
+      "definition": "Nutzfläche für ergänzende Zwecke, die den Hauptnutzungen dienen, etwa Sanitär-, Putz-, Abstell- und Geräteräume. Im Schulbau zählt sie zur Restfläche.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "471"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "hauptnutzungsflaeche",
+        "restflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nebenraum",
+      "begriff": "Nebenraum",
+      "varianten": [
+        "Nebenräume"
+      ],
+      "definition": "Dienender Raum wie Bad, Abstellraum oder Flur, der kein gutes Tageslicht braucht. Nebenräume liegen deshalb gern innen, am Kern oder auf der Nordseite und bündeln dort die Installation, damit die Aufenthaltsräume die besten Fassaden bekommen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "180–181"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "294"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "aufenthaltsraum"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nennlueftung",
       "begriff": "Nennlüftung",
       "definition": "Lüftungsstufe nach DIN 1946-6, die bei Anwesenheit der Bewohner die hygienisch nötige Luftmenge liefert. Sie ist der normale Betriebsfall der Wohnungslüftung.",
@@ -11227,6 +12969,36 @@
       "siehe": [
         "stellplatzsatzung",
         "stellplatzpflicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "notwendiger-treppenraum",
+      "begriff": "notwendiger Treppenraum",
+      "varianten": [
+        "Notwendige Treppenräume",
+        "notwendige Treppenräume",
+        "notwendigen Treppenraum",
+        "notwendigen Treppenräume",
+        "notwendigen Treppenräumen"
+      ],
+      "definition": "Eigener, durchgehender und von den übrigen Räumen abgetrennter Raum, in dem eine notwendige Treppe liegt, damit sie im Brandfall als Rettungsweg aus den Geschossen ins Freie dient. Nach der Musterbauordnung muss von jeder Stelle eines Aufenthaltsraums ein solcher Treppenraum oder ein Ausgang ins Freie in höchstens 35 m erreichbar sein.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "51"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "103"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "rettungsweg",
+        "sicherheitstreppenraum"
       ],
       "stand": "2026-11"
     },
@@ -11577,7 +13349,8 @@
         "seite": "100"
       },
       "themen": [
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-luftschall"
       ],
       "siehe": [
         "baukoerperanschluss"
@@ -11650,7 +13423,8 @@
       "begriff": "Ortschaum",
       "varianten": [
         "Ortschäume",
-        "PUR-Schäume"
+        "PUR-Schäume",
+        "PUR-Montageschaum"
       ],
       "definition": "Auf der Baustelle in die Fuge eingebrachter Schaum, meist aus Polyurethan (PUR). Er dient der Fugendämmung, taugt aber weder als definierte Befestigung noch als Abdichtung.",
       "quelle": {
@@ -11659,7 +13433,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-luftschall"
       ],
       "siehe": [
         "anschlussfuge"
@@ -12118,6 +13893,42 @@
       "stand": "2026-11"
     },
     {
+      "id": "programmflaeche",
+      "begriff": "Programmfläche",
+      "definition": "Die im Raumprogramm ausdrücklich ausgewiesene Fläche der eigentlich geforderten Räume, im Schulbau etwa Unterrichts- und Fachräume. Verkehrs-, Funktions- und Nebennutzflächen gehören nicht dazu, sie bilden die Restfläche.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "471"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "restflaeche",
+        "hauptnutzungsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "proportion",
+      "begriff": "Proportion",
+      "definition": "Maßverhältnis der Teile eines Bauwerks zueinander und zum Ganzen. Seit Vitruv hat der Begriff eine zweite Bedeutung: das Verhältnis dieser Maße zum menschlichen Körper.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "46"
+      },
+      "themen": [
+        "en-proportion",
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "goldener-schnitt",
+        "menschlicher-massstab",
+        "modul"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "pruefdruck",
       "begriff": "Prüfdruck",
       "varianten": [
@@ -12204,6 +14015,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "punkthaus",
+      "begriff": "Punkthaus",
+      "definition": "Frei stehendes, kompaktes und meist hohes Wohngebäude, dessen Wohnungen sich um einen zentralen Erschließungskern gruppieren. Als solitäre Bauform bildet es keine Straßen- oder Hofräume und setzt oft einen Höhenakzent.",
+      "quelle": [
+        {
+          "werk": "Neufert",
+          "seite": "291"
+        },
+        {
+          "werk": "Neufert",
+          "seite": "294"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "zeilenbau",
+        "erschliessungskern"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "putzgrund",
       "begriff": "Putzgrund",
       "definition": "Untergrund, auf den ein Putz aufgetragen wird. Seine Beschaffenheit entscheidet mit, wie gut der Putz haftet.",
@@ -12264,6 +14098,10 @@
     {
       "id": "querlueftung",
       "begriff": "Querlüftung",
+      "varianten": [
+        "querlüften",
+        "quergelüftet"
+      ],
       "definition": "Lüften über Öffnungen an gegenüberliegenden Seiten eines Raums oder einer Wohnung, sodass Winddruck und -sog die Luft quer hindurchtreiben. Sie tauscht die Raumluft in wenigen Minuten aus.",
       "quelle": [
         {
@@ -12276,7 +14114,8 @@
         }
       ],
       "themen": [
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "en-erschliessung"
       ],
       "siehe": [
         "freie-lueftung"
@@ -12366,6 +14205,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "raster",
+      "begriff": "Raster",
+      "varianten": [
+        "Rastermaß"
+      ],
+      "definition": "Ordnungssystem aus sich maßlich wiederholenden Linien oder Achsen, das einem Entwurf zugrunde gelegt wird. Es ergibt sich oft aus Stützweiten und Abständen der Konstruktion und dient dazu, Grundrisse, Fassaden und Räume zu ordnen; Raster können linear, rechtwinklig, rautenförmig oder dreieckig sein.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "65"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "modul"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "raumabschluss",
       "begriff": "Raumabschluss",
       "varianten": [],
@@ -12376,6 +14234,49 @@
       },
       "themen": [
         "bk-aw-zweischalig"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "raumakustik",
+      "begriff": "Raumakustik",
+      "definition": "Akustische Eigenschaften innerhalb eines Raums und deren Planung, etwa der Lärmpegel im Raum, die Sprachverständlichkeit oder die Eignung für Musik. Sie betrifft den Schall im Raum selbst, nicht seine Übertragung in andere Räume.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "66"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schallabsorption"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "raumbuch",
+      "begriff": "Raumbuch",
+      "varianten": [
+        "Raumbücher"
+      ],
+      "definition": "Systematische Sammlung von Angaben zu jedem einzelnen Raum eines Entwurfs, mindestens Raumnummer, Raumbezeichnung, Flächenart und Anforderungen oder Ausstattung. Es setzt einen Entwurf voraus und kommt als Anforderungs-, Konstruktions- oder Ausstattungsraumbuch vor; später dient es auch Bauleitung, Gewährleistung und Umbauplanung.",
+      "quelle": {
+        "werk": "Basics Ausschreibung",
+        "seite": "55"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumprogramm",
+        "raumnummer",
+        "flaechenart"
       ],
       "stand": "2026-11"
     },
@@ -12407,6 +14308,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "raumnummer",
+      "begriff": "Raumnummer",
+      "definition": "Eindeutige Kennung eines Raumes, die einer festgelegten Gliederung des Gebäudes folgt, etwa nach Gebäudeteil, Geschoss und Raum. Sie macht die Angaben in Raumbuch und Leistungsbeschreibung eindeutig zuordenbar.",
+      "quelle": [
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "55"
+        },
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "58"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "raumbuch"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "raumordnung",
       "begriff": "Raumordnung",
       "definition": "Überörtliche Planung von Bund und Ländern, die den Raum großräumig und fachübergreifend ordnet und entwickelt. Sie gibt den Gemeinden den Rahmen für ihre Bauleitplanung vor.",
@@ -12429,6 +14352,52 @@
       "siehe": [
         "ziele-der-raumordnung",
         "grundsaetze-der-raumordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "raumprogramm",
+      "begriff": "Raumprogramm",
+      "definition": "Aufstellung der Anforderungen einer Bauaufgabe an Räume und Nutzungsbereiche, meist als Tabelle nach Nutzung, Anzahl, Größe sowie Lage und Orientierung. Es geht feiner ins Einzelne als das Bauprogramm und hält zusätzlich fest, wie die Bereiche zueinander liegen und verknüpft sind.",
+      "beispiel": "Für ein Beratungscenter listet es Empfang, Beraterzimmer, Besprechung, Teeküche und Sanitärbereich mit Raumgröße und Anzahl und schlägt einen Anteil für Nebenverkehrsflächen auf.",
+      "quelle": [
+        {
+          "werk": "Basics Ausschreibung",
+          "seite": "52"
+        },
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "40"
+        },
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "41"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "bauprogramm",
+        "funktionsschema",
+        "raumbuch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "raumschicht",
+      "begriff": "Raumschicht",
+      "definition": "Streifen eines Grundrisses parallel zur Fassade, in dem gleichartig genutzte Räume nebeneinanderliegen. Tiefe Grundrisse setzen sich aus mehreren Schichten zusammen: belichtete Raumschichten an der Fassade, innen eine Schicht für Erschließung oder dienende Räume.",
+      "quelle": {
+        "werk": "Raumpilot Wohnen",
+        "seite": "117"
+      },
+      "themen": [
+        "en-erschliessung",
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "gebaeudetiefe"
       ],
       "stand": "2026-11"
     },
@@ -12725,6 +14694,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "repraesentationsbereich",
+      "begriff": "Repräsentationsbereich",
+      "definition": "Bereich eines Gebäudes, der das Unternehmen nach außen darstellt und den Eindruck von Besuchern prägt, vor allem der Eingangsbereich. Seine Gestaltung ist Teil des Erscheinungsbilds eines Unternehmens.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "363"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "repressives-verbot",
       "begriff": "repressives Verbot mit Befreiungsvorbehalt",
       "definition": "Regelungstechnik, bei der ein Vorhaben grundsätzlich untersagt ist und nur im Einzelfall nach Ermessen zugelassen wird. So sind Ausnahme und Befreiung nach traditionellem Verständnis eingeordnet.",
@@ -12748,6 +14730,52 @@
       "stand": "2026-11"
     },
     {
+      "id": "restflaeche",
+      "begriff": "Restfläche",
+      "definition": "Der Teil der Fläche, der nicht als Programmfläche ausgewiesen ist, aber den Betrieb ermöglicht: Verkehrsflächen, Funktionsflächen und Nebennutzflächen. Die Schulbauförderrichtlinien sehen 60 Prozent Programmfläche zu 40 Prozent Restfläche als wirtschaftlich an.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "471"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "programmflaeche",
+        "verkehrsflaeche",
+        "funktionsflaeche",
+        "nebennutzflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "resultierendes-schalldaemmmass",
+      "begriff": "resultierendes Schalldämmmaß",
+      "varianten": [
+        "resultierende Schalldämmmaß",
+        "Gesamtschalldämmung"
+      ],
+      "definition": "Schalldämmmaß eines zusammengesetzten Außenbauteils aus Wand, Fenstern, Rollladenkästen und Lüftungseinrichtungen, ermittelt aus den Einzelbauteilen nach ihren Flächenanteilen. An diesen Gesamtwert, erf. R'w,res, stellt DIN 4109 die Anforderung.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "104"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schalldaemmmass",
+        "laermpegelbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rettungsweg",
       "begriff": "Rettungsweg",
       "definition": "Weg, auf dem sich Menschen im Brandfall ins Freie retten oder gerettet werden. Nach der Hessischen Bauordnung braucht jede Nutzungseinheit mit Aufenthaltsraum in jedem Geschoss grundsätzlich zwei unabhängige Rettungswege, etwa eine notwendige Treppe und eine von der Feuerwehr erreichbare Stelle.",
@@ -12759,7 +14787,8 @@
       ],
       "themen": [
         "rb-lbo",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "en-erschliessung"
       ],
       "siehe": [
         "sicherheitstreppenraum",
@@ -12807,6 +14836,19 @@
       ],
       "siehe": [
         "revisibel"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rhythmus",
+      "begriff": "Rhythmus",
+      "definition": "Gestalterische Wirkung einer gegliederten Folge wiederkehrender Elemente, etwa von Fensteröffnungen oder Stützen. Das einzelne Element tritt dabei hinter das Zusammenwirken der ganzen Folge zurück.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "24"
+      },
+      "themen": [
+        "en-proportion"
       ],
       "stand": "2026-11"
     },
@@ -12916,6 +14958,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "rohbau",
+      "begriff": "Rohbau",
+      "definition": "Die zuerst errichtete, bleibende Grundschicht eines Gebäudes, auf der Ausbau und Gebäudetechnik später aufbauen. Ein nachträglicher Aus- oder Umbau muss sich auf die Eigenschaften des vorhandenen Rohbaus einstellen.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "148"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "traegerarchitektur"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rohbaumass",
       "begriff": "Rohbaumaß",
       "definition": "Maß am Rohbau, also etwa einer Wand oder Öffnung ohne Putz.",
@@ -12981,7 +15039,8 @@
         "bk-oeffnungen",
         "bk-stuerze",
         "bp-waermebruecken",
-        "bp-luftdicht"
+        "bp-luftdicht",
+        "bp-luftschall"
       ],
       "siehe": [
         "rollladenpilz"
@@ -13259,6 +15318,24 @@
       "stand": "2026-10"
     },
     {
+      "id": "saeulenordnung",
+      "begriff": "Säulenordnung",
+      "definition": "Regelsystem der antiken Architektur für Gestalt und Maße von Säule und Gebälk. Säulenabstand, Säulenhöhe und Gebälk werden als Vielfache eines Grundmaßes angegeben, das vom unteren Säulendurchmesser abgeleitet ist.",
+      "quelle": {
+        "werk": "DETAIL Atlas Fassaden",
+        "seite": "47"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "dorisch",
+        "ionisch",
+        "modul"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "schaedliche-umwelteinwirkungen",
       "begriff": "schädliche Umwelteinwirkungen",
       "definition": "Einwirkungen wie Lärm, Abgase oder Erschütterungen, die nach Art, Stärke oder Dauer Gefahren, erhebliche Nachteile oder Belästigungen für Allgemeinheit oder Nachbarn auslösen können. Bei der Planung sind Baugebiete so anzuordnen, dass Wohngebiete davon möglichst verschont bleiben.",
@@ -13319,6 +15396,52 @@
       "stand": "2026-10"
     },
     {
+      "id": "schallabsorption",
+      "begriff": "Schallabsorption",
+      "definition": "Aufnehmen von Schall durch die Oberflächen eines Raums, sodass weniger davon in den Raum zurückgeworfen wird. Sie wirkt in dem Raum, in dem die Schallquelle liegt, und verbessert etwa die Sprachverständlichkeit; die Übertragung in Nachbarräume mindert dagegen die Schalldämmung.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "578"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schalldaemmung",
+        "raumakustik"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schallbruecke",
+      "begriff": "Schallbrücke",
+      "definition": "Starre Kontaktstelle zwischen Bauteilen, die eigentlich voneinander getrennt sein sollen, über die Schall nahezu ungehindert weitergeleitet wird. Schon eine kleine Berührung genügt, um eine zweischalige Konstruktion oder einen schwimmenden Estrich schalltechnisch unwirksam zu machen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "459"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "entkopplung",
+        "koerperschall"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "schalldaemmmass",
       "begriff": "Schalldämmmaß",
       "definition": "Kennwert in Dezibel für den Widerstand eines Bauteils gegen den Durchgang von Luftschall. Das bewertete Maß entsteht durch Vergleich der Messwerte mit einer genormten Bezugskurve.",
@@ -13327,7 +15450,53 @@
         "seite": "67"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftschall"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schalldaemmung",
+      "begriff": "Schalldämmung",
+      "definition": "Widerstand eines Bauteils gegen den Durchgang von Schall in einen angrenzenden Bereich, etwa von außen nach innen oder von Raum zu Raum. Gegen Luftschall dämmen schwere, dichte Bauteile am besten; als Kennwert dient das Schalldämmmaß.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "94"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schalldaemmmass",
+        "schallabsorption"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schalldruck",
+      "begriff": "Schalldruck",
+      "definition": "Druckschwankung, die eine Schallwelle durch abwechselndes Verdichten und Verdünnen der Luft dem normalen Luftdruck überlagert. Aus ihm wird der Schallpegel in Dezibel berechnet.",
+      "quelle": [
+        {
+          "werk": "Bauphysik",
+          "seite": "90"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "92"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "dezibel"
       ],
       "stand": "2026-11"
     },
@@ -13340,10 +15509,92 @@
         "seite": "68"
       },
       "themen": [
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-luftschall"
       ],
       "siehe": [
         "zarge"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schallpegeldifferenz",
+      "begriff": "Schallpegeldifferenz",
+      "definition": "Unterschied zwischen dem Schallpegel im lauten Bereich, etwa außen oder im Senderaum, und dem im geschützten Bereich, in Dezibel (Formelzeichen D). Weil sie auch von der Ausstattung des Empfangsraums abhängt, beschreibt sie das trennende Bauteil allein nur eingeschränkt.",
+      "quelle": [
+        {
+          "werk": "Bauphysik",
+          "seite": "95"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schalldaemmmass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schallschutz",
+      "begriff": "Schallschutz",
+      "definition": "Alle Maßnahmen, die die ungewollte Übertragung von Schall von einer Quelle zum Nutzer mindern, sowohl gegen Lärm von außen als auch innerhalb des Gebäudes. Liegen Quelle und Nutzer in getrennten Bereichen, geht es um Schalldämmung, im selben Raum um Schallabsorption.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "66"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall",
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "schalldaemmung",
+        "schallabsorption"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schallschutzfenster",
+      "begriff": "Schallschutzfenster",
+      "definition": "Fenster, das durch mehrere kombinierte Maßnahmen besonders gut gegen Luftschall dämmt, meist mit asymmetrisch aufgebauter Isolierverglasung aus verschieden dicken Scheiben. Daneben entscheiden Rahmen, Beschläge und die Dichtheit der Fugen mit.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "69"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "isolierverglasung",
+        "schallschutzklasse",
+        "eigenresonanzfrequenz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schallschutzklasse",
+      "begriff": "Schallschutzklasse",
+      "definition": "Einstufung von Fenstern nach VDI-Richtlinie 2719 in sechs Klassen, von 25 dB bis über 50 dB bewertetem Schalldämmmaß des eingebauten Fensters. Zu jeder Klasse gehört außerdem ein etwas höherer Wert, den das Fenster im Prüfstand nachweisen muss.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "67"
+      },
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schallschutzfenster",
+        "schalldaemmmass"
       ],
       "stand": "2026-11"
     },
@@ -13394,6 +15645,32 @@
       ],
       "siehe": [
         "daemmstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "scheibenzwischenraum",
+      "begriff": "Scheibenzwischenraum",
+      "varianten": [
+        "SZR"
+      ],
+      "definition": "Abgeschlossener Raum zwischen den Scheiben einer Isolierverglasung, gefüllt mit getrockneter Luft oder einem Schwergas. Seine Breite beeinflusst die Wärmedämmung und, als Feder zwischen den Scheiben, auch die Schalldämmung.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "93"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "69"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "isolierverglasung",
+        "gasfuellung"
       ],
       "stand": "2026-11"
     },
@@ -13655,6 +15932,27 @@
       "stand": "2026-11"
     },
     {
+      "id": "schulbaufoerderrichtlinien",
+      "begriff": "Schulbauförderrichtlinien",
+      "varianten": [
+        "SchBauFR"
+      ],
+      "definition": "Richtlinien der Länder für die Förderung von Schulbauten, die Modellraumprogramme je Schultyp und Anzahl der Züge festlegen. Sie geben auch wirtschaftliche Verhältniswerte an, etwa 60 zu 40 für Programmfläche zu Restfläche.",
+      "quelle": {
+        "werk": "Raumpilot Grundlagen",
+        "seite": "471"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "modellraumprogramm",
+        "programmflaeche",
+        "restflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "schutzgesetz",
       "begriff": "Schutzgesetz",
       "definition": "Gesetz, das gerade dem Schutz bestimmter Personen dient und bei dessen Verletzung zivilrechtliche Ansprüche entstehen können. Auch öffentlich-rechtliche nachbarschützende Vorschriften zählen dazu.",
@@ -13817,6 +16115,33 @@
       ],
       "siehe": [
         "fenstertuer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schwimmender-estrich",
+      "begriff": "schwimmender Estrich",
+      "varianten": [
+        "schwimmende Estrich",
+        "schwimmenden Estrich"
+      ],
+      "definition": "Estrich, der auf einer weichfedernden Dämmschicht liegt und ringsum elastisch von den Wänden getrennt ist. Er ist eine der wichtigsten Maßnahmen gegen Trittschall und verbessert auch die Luftschalldämmung, wirkt aber nur, wenn er frei von Schallbrücken ausgeführt ist.",
+      "quelle": [
+        {
+          "werk": "Klausurtraining Bauphysik",
+          "seite": "208"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "459"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "schallbruecke",
+        "entkopplung"
       ],
       "stand": "2026-11"
     },
@@ -14046,6 +16371,34 @@
       "stand": "2026-11"
     },
     {
+      "id": "skelettbau",
+      "begriff": "Skelettbau",
+      "varianten": [
+        "Skelettbauten",
+        "Stahlskelett",
+        "Skelettkonstruktion"
+      ],
+      "definition": "Bauweise, bei der Stützen und Träger als Gerüst sämtliche Lasten aufnehmen und an wenigen Punkten abgeben. Wände tragen dabei nicht mit, sondern trennen nur Räume; deshalb lassen sich Grundrisse freier einteilen. Gegen Horizontallasten braucht das Gerüst eine eigene Aussteifung, etwa Wandscheiben, Verbände oder biegesteife Rahmen.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "219"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "7"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "aussteifung",
+        "horizontallast"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sockel",
       "begriff": "Sockel",
       "varianten": [
@@ -14221,6 +16574,34 @@
       "stand": "2026-11"
     },
     {
+      "id": "spaenner",
+      "begriff": "Spänner",
+      "varianten": [
+        "Spännertyp",
+        "Mehrspänner",
+        "Spännererschließung"
+      ],
+      "definition": "Erschließungstyp, bei dem je Geschoss mehrere Wohnungen unmittelbar an einem gemeinsamen Kern aus Treppe und meist Aufzug liegen. Nach ihrer Zahl spricht man vom Ein-, Zwei-, Drei- oder Vierspänner; sie beeinflusst Wirtschaftlichkeit, Größe und Orientierung der Wohnungen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "167"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "erschliessungskern",
+        "gangerschliessung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "spannweite",
       "begriff": "Spannweite",
       "definition": "Lichte Weite, die ein Bogen, Sturz oder Tragwerk überspannt. Beim Bogen ist es der waagerechte Abstand der Widerlager.",
@@ -14275,6 +16656,33 @@
       },
       "themen": [
         "bp-uwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "spektrum-anpassungswert",
+      "begriff": "Spektrum-Anpassungswert",
+      "varianten": [
+        "Ctr"
+      ],
+      "definition": "Korrekturwert in Dezibel, der zu einem Einzahlwert der Schalldämmung angegeben wird und ihn an eine bestimmte Lärmart anpasst: C für rosa Rauschen, etwa Wohngeräusche, Ctr für städtischen Straßenverkehrslärm. So kommt der Kennwert der tatsächlich empfundenen Geräuschminderung näher.",
+      "beispiel": "Ein im Labor gemessenes Fenster wird als Rw (C; Ctr) = 45 (−3; −8) dB angegeben; der große Ctr-Wert zeigt, dass es gegen Straßenverkehrslärm weniger leistet, als Rw allein vermuten lässt.",
+      "quelle": [
+        {
+          "werk": "Bauphysik",
+          "seite": "97"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "einzahlwert",
+        "schalldaemmmass"
       ],
       "stand": "2026-11"
     },
@@ -14483,7 +16891,9 @@
         "bk-aw-zweischalig",
         "bk-flachdach",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "en-raumprogramm",
+        "en-erschliessung"
       ],
       "siehe": [
         "beton",
@@ -14508,6 +16918,39 @@
       "siehe": [
         "sturz",
         "ueberzug"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "standortbezug",
+      "begriff": "Standortbezug",
+      "definition": "Beziehung eines Architekturelements zum Standort des Betrachters, etwa ob es nah oder fern, über, unter, neben oder vor ihm liegt.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "standortwechsel"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "standortwechsel",
+      "begriff": "Standortwechsel",
+      "definition": "Veränderung von Standort und Blickrichtung des Betrachters, die eine Abfolge wechselnder Ansichten erzeugt. Im Entwurf wird damit die Bewegung durch und um das Gebäude zum Gestaltungsmittel.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "wahrnehmungsfolge",
+        "standortbezug"
       ],
       "stand": "2026-11"
     },
@@ -14925,13 +17368,17 @@
     {
       "id": "stossluftung",
       "begriff": "Stoßlüftung",
+      "varianten": [
+        "Stoßlüften"
+      ],
       "definition": "Kurzes Lüften mit weit geöffneten Fenstern, etwa 5 bis 10 Minuten und mehrmals täglich. Dauernd gekippte Fenster kühlen dagegen die angrenzenden Bauteile ab und fördern Tauwasser.",
       "quelle": {
         "werk": "Praktische Bauphysik",
         "seite": "307"
       },
       "themen": [
-        "bp-feuchte"
+        "bp-feuchte",
+        "en-erschliessung"
       ],
       "siehe": [
         "luftwechsel"
@@ -15182,6 +17629,45 @@
       ],
       "siehe": [
         "denkmalwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "systemeigenfrequenz",
+      "begriff": "Systemeigenfrequenz",
+      "definition": "Resonanzfrequenz eines zweischaligen Bauteils, bei der die beiden Schalen über die federnde Zwischenschicht gegeneinander schwingen. Dort verschlechtert sich die Schalldämmung, deshalb soll sie möglichst tief, unterhalb des bauakustisch wichtigen Frequenzbereichs liegen; sie hängt von den Massen der Schalen und der Steifigkeit der Zwischenschicht ab.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "67"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "101"
+        }
+      ],
+      "themen": [
+        "bp-luftschall"
+      ],
+      "siehe": [
+        "masse-feder-masse"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "tatami-matte",
+      "begriff": "Tatami-Matte",
+      "definition": "Traditionelle japanische Bodenmatte mit einem Seitenverhältnis von 1 : 2, meist etwa 85 × 170 cm, regional leicht abweichend. Weil sich die Matten beliebig zusammenlegen lassen, bestimmen sie Größe und Proportion der Räume im traditionellen japanischen Haus.",
+      "beispiel": "Das japanische Standardzimmer besteht aus sechs Matten.",
+      "quelle": {
+        "werk": "Basics Entwurfsidee",
+        "seite": "47"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "modul"
       ],
       "stand": "2026-11"
     },
@@ -15553,6 +18039,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "topologisch",
+      "begriff": "topologisch",
+      "varianten": [
+        "Topologisch"
+      ],
+      "definition": "Die Lage von Elementen zueinander betreffend, unabhängig von genauen Maßen. Topologische Beziehungen sind etwa Reihung, Gruppierung, Umschließung, Durchdringung oder Zentralisierung.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "gestaltungsmittel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "traeger-oeffentlicher-belange",
       "begriff": "Träger öffentlicher Belange",
       "varianten": [
@@ -15568,6 +18073,23 @@
       ],
       "siehe": [
         "belang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "traegerarchitektur",
+      "begriff": "Trägerarchitektur",
+      "definition": "Planungskonzept, bei dem Rohbau, Gebäudehülle und Erschließung unter der Kontrolle der Entwerfenden bleiben, während der Ausbau den Mietern oder Käufern überlassen wird.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "197"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "rohbau",
+        "gebaeudehuelle"
       ],
       "stand": "2026-11"
     },
@@ -16688,6 +19210,36 @@
       "stand": "2026-11"
     },
     {
+      "id": "verkehrsflaeche",
+      "begriff": "Verkehrsfläche",
+      "varianten": [
+        "Nebenverkehrsfläche"
+      ],
+      "definition": "Fläche, die dem Erreichen und Verlassen von Räumen oder Grundstücken dient. Im Gebäude sind das nach DIN 277 Flure, Treppenhäuser und Aufzüge, die zur Netto-Grundfläche, aber nicht zur Nutzfläche zählen; im Städtebau und Bauplanungsrecht sind es Straßen, Wege, Plätze und Stellplatzflächen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "325"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "471"
+        },
+        {
+          "werk": "FG Stadt, Städtebaureader",
+          "seite": "22"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "funktionsflaeche",
+        "restflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "verlorene-schalung",
       "begriff": "verlorene Schalung",
       "definition": "Schalung, die nach dem Betonieren am Bauteil verbleibt und nicht wieder ausgebaut wird.",
@@ -16885,6 +19437,43 @@
       ],
       "themen": [
         "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vierspaenner",
+      "begriff": "Vierspänner",
+      "definition": "Spänner mit vier Wohnungen je Geschoss an einem Kern. Er ist wirtschaftlicher als der Zweispänner und erlaubt verschiedene Wohnungsgrößen auf einem Geschoss, verlangt aber eine sorgfältige Grundrissgestaltung, damit die Wohnqualität nicht leidet.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "294"
+      },
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "spaenner",
+        "zweiseitig-orientiert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "visuelle-beduerfnisse",
+      "begriff": "visuelle Bedürfnisse",
+      "varianten": [
+        "visuellen Bedürfnisse"
+      ],
+      "definition": "Die drei Grundbedürfnisse der Wahrnehmung im Gestaltschema nach Fuhrmann: Orientierung, Übereinstimmung und Abwechslung. Aus ihnen leiten sich die erwünschten Erlebnisqualitäten ab, von Klarheit über Behaglichkeit bis zur Überraschung.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "194"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "erlebnisqualitaet",
+        "geordnete-vielfalt"
       ],
       "stand": "2026-11"
     },
@@ -17353,6 +19942,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "wahrnehmungsfolge",
+      "begriff": "Wahrnehmungsfolge",
+      "varianten": [
+        "visuelle Sequenz"
+      ],
+      "definition": "Abfolge von Eindrücken, die ein Betrachter entlang seines Weges von einem Gebäude oder Raum gewinnt. Sie hängt von der Geschwindigkeit der Bewegung ab und lässt sich planen.",
+      "quelle": {
+        "werk": "Raumpilot Arbeiten",
+        "seite": "195"
+      },
+      "themen": [
+        "en-proportion"
+      ],
+      "siehe": [
+        "standortwechsel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "wandfuss",
       "begriff": "Wandfuß",
       "varianten": [
@@ -17679,7 +20287,8 @@
         "bp-feuchte",
         "bp-waermebruecken",
         "bp-luftdicht",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "bp-luftschall"
       ],
       "siehe": [
         "mindestwaermeschutz"
@@ -18011,7 +20620,8 @@
       "themen": [
         "bk-aw-zweischalig",
         "bk-oeffnungen",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "bp-luftschall"
       ],
       "siehe": [
         "eigengewicht",
@@ -18093,7 +20703,28 @@
       "themen": [
         "rb-mass",
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "en-raumprogramm",
+        "en-erschliessung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wohnfunktion",
+      "begriff": "Wohnfunktion",
+      "definition": "Einzelne Tätigkeit, die in einer Wohnung stattfindet, etwa Essen, Schlafen, Arbeiten oder Reinigen. Sie wird oft gleich mit einem bestimmten Raum verbunden; Raumpilot gliedert die Wohnfunktionen in kommunikative, individuelle und dienende Bereiche und behandelt Erschließung und privaten Außenraum gesondert.",
+      "quelle": {
+        "werk": "Raumpilot Wohnen",
+        "seite": "149"
+      },
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "funktionsbereich",
+        "kommunikativer-bereich",
+        "individualraum",
+        "dienender-bereich"
       ],
       "stand": "2026-11"
     },
@@ -18156,7 +20787,8 @@
         "seite": "125"
       },
       "themen": [
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-luftschall"
       ],
       "siehe": [
         "blindstock",
@@ -18177,6 +20809,25 @@
       ],
       "siehe": [
         "zarge"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zeilenbau",
+      "begriff": "Zeilenbau",
+      "varianten": [
+        "Zeilenbebauung"
+      ],
+      "definition": "Bebauung aus langgestreckten Häusern, die nebeneinander in Reihen stehen. Zwischen den Zeilen bleibt der Raum offen, eine klare Trennung von Straßen- und Hofseite wie beim Block entsteht nicht. Jede Zeile wird über mehrere Treppenhäuser (Spänner) oder einen Laubengang erschlossen.",
+      "quelle": {
+        "werk": "Neufert",
+        "seite": "291"
+      },
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "punkthaus"
       ],
       "stand": "2026-11"
     },
@@ -18282,6 +20933,29 @@
       "siehe": [
         "grundsaetze-der-raumordnung",
         "anpassungspflicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zonierung",
+      "begriff": "Zonierung",
+      "definition": "Gliederung eines Grundrisses oder Gebäudes in Zonen, in denen zusammengehörige Funktionsbereiche liegen, etwa privat und öffentlich oder kommunikativ und individuell. Bei mehrgeschossigen Wohnungen unterscheidet man die vertikale Verteilung auf Geschosse und die horizontale innerhalb eines Geschosses.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Wohnen",
+          "seite": "143"
+        },
+        {
+          "werk": "Basics Entwurfsidee",
+          "seite": "43"
+        }
+      ],
+      "themen": [
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "funktionsbereich",
+        "funktionsschema"
       ],
       "stand": "2026-11"
     },
@@ -18441,6 +21115,33 @@
       "stand": "2026-11"
     },
     {
+      "id": "zweibund",
+      "begriff": "Zweibund",
+      "varianten": [
+        "zweibündig"
+      ],
+      "definition": "Grundrisstyp vor allem im Bürobau: Zwei Raumschichten an den Fassaden liegen beiderseits eines gemeinsamen Flurs. Üblich sind Gebäudetiefen von etwa 12 bis 14 m; der Flur ist meist nicht natürlich belichtet.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "351"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "352"
+        }
+      ],
+      "themen": [
+        "en-erschliessung",
+        "en-raumprogramm"
+      ],
+      "siehe": [
+        "dreibund",
+        "mittelflur"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "zweiflankenhaftung",
       "begriff": "Zweiflankenhaftung",
       "definition": "Dichtstoff haftet nur an den beiden seitlichen Fugenflanken und nicht am Fugengrund. So kann er Bewegungen der Fuge bestmöglich aufnehmen.",
@@ -18475,7 +21176,8 @@
         "skizzen-sockel",
         "bp-waermebruecken",
         "bp-uwert",
-        "bp-schlagregen"
+        "bp-schlagregen",
+        "bp-luftschall"
       ],
       "siehe": [
         "innenschale",
@@ -18483,6 +21185,53 @@
         "schalenzwischenraum"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "zweiseitig-orientiert",
+      "begriff": "zweiseitig orientiert",
+      "definition": "Eigenschaft einer Wohnung, deren Räume an zwei Fassadenseiten Fenster haben. Sie bekommt Licht aus zwei Richtungen, lässt sich querlüften und erlaubt größere Wohnungstiefen.",
+      "quelle": [
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "177–178"
+        },
+        {
+          "werk": "Raumpilot Wohnen",
+          "seite": "117"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "einseitig-orientiert",
+        "durchgesteckte-wohnung",
+        "querlueftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zweispaenner",
+      "begriff": "Zweispänner",
+      "definition": "Spänner mit zwei Wohnungen je Geschoss am gemeinsamen Treppenhaus. Er verbindet Wohnwert und Wirtschaftlichkeit ausgewogen und gilt deshalb als übliche Lösung im Geschosswohnungsbau; beide Wohnungen können zweiseitig orientiert von Fassade zu Fassade reichen.",
+      "quelle": [
+        {
+          "werk": "Neufert",
+          "seite": "294"
+        },
+        {
+          "werk": "Raumpilot Grundlagen",
+          "seite": "177"
+        }
+      ],
+      "themen": [
+        "en-erschliessung"
+      ],
+      "siehe": [
+        "spaenner",
+        "durchgesteckte-wohnung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "zweistufiges-fugenprinzip",
