@@ -9,7 +9,8 @@
         "seite": "121"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "luftdichtheitsebene",
@@ -90,7 +91,8 @@
         "skizzen-sockel",
         "bp-feuchte",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "dichtebene",
@@ -124,6 +126,28 @@
       "siehe": [
         "konsolanker",
         "setzfuge"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "abluft",
+      "begriff": "Abluft",
+      "definition": "Verbrauchte Luft, die aus einem Raum abgeführt wird, etwa aus Bad und Küche. Bei warmem Innenraum entweicht sie über obere Öffnungen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "139"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "zuluft"
       ],
       "stand": "2026-11"
     },
@@ -415,7 +439,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "bp-luftdicht"
       ],
       "siehe": [
         "din-norm"
@@ -643,7 +668,10 @@
       "id": "anschlussfuge",
       "begriff": "Anschlussfuge",
       "varianten": [
-        "Fensteranschluss"
+        "Fensteranschluss",
+        "Baukörperanschlussfuge",
+        "Bauteilanschlussfuge",
+        "Fensteranschlussfuge"
       ],
       "definition": "Fuge zwischen einem Bauteil, meist Fenster oder Tür, und dem umgebenden Baukörper. Sie muss Befestigung, Wärmedämmung, Luftdichtheit und Schlagregenschutz leisten und Bewegungen ausgleichen; ihre Planung ist Aufgabe des Planers.",
       "quelle": {
@@ -651,7 +679,8 @@
         "seite": "120"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "3-ebenen-modell",
@@ -753,6 +782,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "atmungsfaehigkeit",
+      "begriff": "Atmungsfähigkeit",
+      "definition": "Umgangssprachlicher Ausdruck dafür, dass eine Außenwand Feuchte von innen nach außen durchwandern lassen und an der Außenseite an die Luft abgeben kann; gemeint ist die Wasserdampfdiffusion, kein Luftaustausch. Maßnahmen zum Schlagregenschutz dürfen sie nicht wesentlich behindern.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "330"
+      },
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "diffusion",
+        "diffusionsoffen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "attika",
       "begriff": "Attika",
       "varianten": [
@@ -802,7 +848,8 @@
         "rb-abstandsflaechen",
         "rb-verfahren",
         "rb-bauvorlagen",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-luftdicht"
       ],
       "stand": "2026-11"
     },
@@ -964,7 +1011,8 @@
       },
       "themen": [
         "bk-oeffnungen",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-schlagregen"
       ],
       "siehe": [
         "fachwerk",
@@ -1671,7 +1719,8 @@
       },
       "themen": [
         "bk-oeffnungen",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "oeffnungselement"
@@ -1765,7 +1814,8 @@
         "rb-verfahren",
         "rb-bauvorlagen",
         "bk-aw-zweischalig",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -2020,6 +2070,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "bauteilfuge",
+      "begriff": "Bauteilfuge",
+      "definition": "Konstruktionsfuge zwischen zwei Bauteilen, etwa wo zwei Fensterrahmen oder ein Rahmen und ein Verbreiterungsprofil aneinanderstoßen. Es gibt sie starr oder beweglich; luftundurchlässig muss sie in jedem Fall sein.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "62"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "konstruktionsfuge",
+        "kopplungsfuge"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bauueberwachung",
       "begriff": "Bauüberwachung",
       "definition": "Prüfung durch die Bauaufsicht, ob beim Bauen die öffentlich-rechtlichen Vorschriften eingehalten und die Pflichten der am Bau Beteiligten erfüllt werden.",
@@ -2212,7 +2279,8 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-schlagregen"
       ],
       "siehe": [
         "schlagregen"
@@ -2349,7 +2417,8 @@
         "seite": "76"
       },
       "themen": [
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "stand": "2026-11"
     },
@@ -2818,6 +2887,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "bimsbeton",
+      "begriff": "Bimsbeton",
+      "definition": "Zementgebundener Leichtbeton mit dem porigen Leichtzuschlag Bims als Gesteinskörnung; er lässt sich leicht sägen und bohren. Verwendet wird er vor allem für Mauersteine und Fertigteile.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "156"
+      },
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "leichtbeton"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bitumen",
       "begriff": "Bitumen",
       "varianten": [
@@ -2906,7 +2991,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-luftdicht"
       ],
       "siehe": [
         "fluegelrahmen",
@@ -2931,6 +3017,45 @@
       ],
       "siehe": [
         "zarge"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "blower-door-test",
+      "begriff": "Blower-Door-Test",
+      "varianten": [
+        "Blower Door",
+        "Differenzdruck-Messverfahren",
+        "Differenzdruckverfahren",
+        "Luftdichtheitsüberprüfung"
+      ],
+      "definition": "Messung der Luftdichtheit eines ganzen Gebäudes vor Ort: Ein Ventilator, dicht in eine Außentür eingesetzt, hält zwischen innen und außen eine Druckdifferenz von 50 Pa, und gemessen wird die Luftmenge, die er dafür fördern muss. Das Ergebnis ist der n50-Wert; über einzelne Fugen oder Fenster sagt der Test nichts Quantitatives, er hilft aber, Undichtheiten aufzuspüren.",
+      "beispiel": "Bei Neubauten am besten, wenn Fenster, Türen, Dichtschicht und Innenputz fertig sind, die Innenverkleidungen aber noch fehlen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "681–682"
+        },
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "142"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "n50",
+        "leckageortung",
+        "luftdichtheitsebene"
       ],
       "stand": "2026-11"
     },
@@ -3336,7 +3461,8 @@
       },
       "themen": [
         "rb-abstandsflaechen",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -3360,7 +3486,8 @@
         "bk-flachdach",
         "bp-feuchte",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "waermeleitfaehigkeit"
@@ -3382,7 +3509,8 @@
         "sockel-erdberuehrt",
         "bk-flachdach",
         "skizzen-sockel",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-luftdicht"
       ],
       "siehe": [
         "diffusionshemmend",
@@ -3467,7 +3595,8 @@
       ],
       "themen": [
         "bk-flachdach",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-schlagregen"
       ],
       "siehe": [
         "dampfbremse",
@@ -3731,12 +3860,35 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-fenster",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-luftdicht"
       ],
       "siehe": [
         "abdichtung"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "dichtprofil",
+      "begriff": "Dichtprofil",
+      "definition": "Vorgefertigter, elastischer Dichtungsstrang, etwa aus EPDM, der in Rahmenprofile eingesetzt wird. Er dichtet vor allem Funktionsfugen zwischen Flügel und Rahmen, wird aber auch in Bauteilfugen verwendet.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "130"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "funktionsfuge"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "dichtschlaemme",
@@ -3758,6 +3910,9 @@
     {
       "id": "dichtstoff",
       "begriff": "Dichtstoff",
+      "varianten": [
+        "Dichtmasse"
+      ],
       "definition": "Masse, die eine Fuge schließt und an den Fugenflanken haftet. Damit sie Bewegungen aufnehmen kann, braucht sie passende Fugenmaße und darf nur an zwei Flanken haften.",
       "quelle": {
         "werk": "DETAIL Atlas Gebäudeöffnungen",
@@ -3765,7 +3920,9 @@
       },
       "themen": [
         "bk-fenster",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-luftdicht",
+        "bp-schlagregen"
       ],
       "siehe": [
         "dichtstofffuge",
@@ -3792,6 +3949,32 @@
       "stand": "2026-11"
     },
     {
+      "id": "dichtungsbahn",
+      "begriff": "Dichtungsbahn",
+      "varianten": [
+        "Dichtfolie"
+      ],
+      "definition": "Flächige, in Bahnen verlegte Dichtschicht aus Kunststoff, Kautschuk oder Bitumen. Je nach Lage dichtet sie gegen Wasser oder, raumseitig mit überlappten und verklebten Stößen, gegen Luftströmung.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "145"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "luftdichtheitsebene",
+        "abdichtung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "diffusion",
       "begriff": "Diffusion",
       "varianten": [
@@ -3809,7 +3992,8 @@
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
         "bk-flachdach",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-luftdicht"
       ],
       "siehe": [
         "diffusionswiderstand",
@@ -3821,7 +4005,8 @@
       "id": "diffusionsdicht",
       "begriff": "diffusionsdicht",
       "varianten": [
-        "dampfdicht"
+        "dampfdicht",
+        "Dampfdichtigkeit"
       ],
       "definition": "Eigenschaft einer Bauteilschicht, praktisch keinen Wasserdampf durchzulassen; nach DIN 4108-3 gilt das ab einem sd-Wert von 1500 m.",
       "quelle": {
@@ -3832,7 +4017,8 @@
         "sockel-erdberuehrt",
         "bk-fenster",
         "bk-flachdach",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-schlagregen"
       ],
       "siehe": [
         "sd-wert",
@@ -3865,7 +4051,8 @@
         "dampfdurchlässig",
         "Diffusionsfähigkeit",
         "dampfdiffusionsoffen",
-        "diffusionsfähig"
+        "diffusionsfähig",
+        "Dampfdurchlässigkeit"
       ],
       "definition": "Eigenschaft einer Bauteilschicht, Wasserdampf leicht durchzulassen; nach DIN 4108-3 gilt das bei einem sd-Wert von höchstens 0,5 m.",
       "quelle": {
@@ -3877,7 +4064,9 @@
         "bk-aw-zweischalig",
         "bk-fenster",
         "bk-flachdach",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-luftdicht",
+        "bp-schlagregen"
       ],
       "siehe": [
         "sd-wert",
@@ -4157,6 +4346,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "dreifachverglasung",
+      "begriff": "Dreifachverglasung",
+      "definition": "Wärmeschutzverglasung aus drei Glasscheiben. Hochwertige Ausführungen erreichen U-Werte um 0,8 W/(m²K) und sind etwa im Passivhaus üblich.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "58"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "139"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "u-wert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "dreiflankenhaftung",
       "begriff": "Dreiflankenhaftung",
       "varianten": [
@@ -4254,6 +4465,32 @@
         "druckfestigkeit"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "druckdifferenz",
+      "begriff": "Druckdifferenz",
+      "varianten": [
+        "Druckunterschied"
+      ],
+      "definition": "Unterschied des Luftdrucks zwischen innen und außen, der Luft durch Öffnungen und Fugen treibt. Aus Temperaturunterschieden entstehen nur wenige Pascal, aus Wind deutlich mehr; beim Blower-Door-Test wird sie künstlich auf 50 Pa gebracht.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "blower-door-test",
+        "pruefdruck"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "drueckendes-wasser",
@@ -4387,7 +4624,8 @@
       "themen": [
         "bk-flachdach",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-luftdicht"
       ],
       "stand": "2026-11"
     },
@@ -4671,6 +4909,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "einschalig",
+      "begriff": "einschalig",
+      "definition": "Aus nur einer Schale aufgebaut, ohne vorgesetzte zweite Schale und ohne trennende Luftschicht. Eine einschalige Außenwand muss den Schlagregen allein durch Baustoff, Dicke oder Oberfläche abwehren; beim Flachdach bezeichnet der Ausdruck das unbelüftete Dach.",
+      "beispiel": "Einschaliges Sichtmauerwerk genügt bei geringer Schlagregenbeanspruchung ab 31 cm Dicke, bei mittlerer ab 37,5 cm.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "115"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "472"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "zweischalig"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "einstweilige-anordnung",
       "begriff": "einstweilige Anordnung",
       "definition": "Vorläufige gerichtliche Regelung, die eine Rechtsposition sichert, bis in der Hauptsache entschieden ist. Sie ist der Eilrechtsschutz gegen Vorhaben ohne Baugenehmigung und auch im Normenkontrollverfahren möglich.",
@@ -4792,6 +5053,29 @@
       ],
       "siehe": [
         "pruefsachverstaendige"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "enev",
+      "begriff": "EnEV",
+      "definition": "Energieeinsparverordnung: Verordnung mit Anforderungen an den Wärmeschutz und die Anlagentechnik von Gebäuden, in mehreren Fassungen wie 2009 und 2014. Sie regelte unter anderem die Grenzwerte der Luftdichtheitsprüfung und dass Fensterfugen nicht zum Mindestluftwechsel angesetzt werden dürfen.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "682"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
       ],
       "stand": "2026-11"
     },
@@ -5393,13 +5677,17 @@
     {
       "id": "fachwerk",
       "begriff": "Fachwerk",
+      "varianten": [
+        "Sichtfachwerk"
+      ],
       "definition": "Bauweise mit tragendem Gerüst aus Holzstäben wie Schwelle, Stielen, Rähm und Streben, dessen Felder gesondert gefüllt werden.",
       "quelle": {
         "werk": "Baukonstruktionslehre 1",
         "seite": "167"
       },
       "themen": [
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-schlagregen"
       ],
       "siehe": [
         "ausfachung"
@@ -5493,7 +5781,8 @@
         "seite": "123"
       },
       "themen": [
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-luftdicht"
       ],
       "siehe": [
         "schwelle",
@@ -5628,7 +5917,8 @@
       "themen": [
         "bk-flachdach",
         "bp-feuchte",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -6059,6 +6349,27 @@
       "stand": "2026-11"
     },
     {
+      "id": "freie-lueftung",
+      "begriff": "freie Lüftung",
+      "varianten": [
+        "freier Lüftung",
+        "natürliche Lüftung"
+      ],
+      "definition": "Lüftung ohne Ventilatoren: Die Luft wird allein durch Wind sowie Druck- und Temperaturunterschiede zwischen innen und außen bewegt, meist über Fenster. Ihre Wirkung schwankt deshalb mit dem Wetter.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "62"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "querlueftung",
+        "raumlufttechnische-anlage"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "freiflaechenplan",
       "begriff": "Freiflächenplan",
       "definition": "Bauvorlage, die die geplante Nutzung der nicht überbauten Grundstücksflächen nach Lage, Art und Größe zeigt, etwa Spielplätze, Stellplätze, Plätze für Abfallbehälter, Flächen für die Feuerwehr und Begrünung.",
@@ -6092,7 +6403,8 @@
       "begriff": "frostbeständig",
       "varianten": [
         "frostfest",
-        "Frostbeständigkeit"
+        "Frostbeständigkeit",
+        "frostwiderstandsfähig"
       ],
       "definition": "Eigenschaft von Mauersteinen, wiederholtes Gefrieren und Tauen ohne wesentliche Schäden wie Absplitterungen zu überstehen. Sie ist Voraussetzung für Steine, die unverputzt der Witterung ausgesetzt sind.",
       "quelle": {
@@ -6100,7 +6412,8 @@
         "seite": "63"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-schlagregen"
       ],
       "siehe": [
         "vormauerstein"
@@ -6113,7 +6426,9 @@
       "varianten": [
         "Dichtungsband",
         "Fugendichtungsbänder",
-        "Dichtungsbänder"
+        "Dichtungsbänder",
+        "Dichtband",
+        "Dichtbänder"
       ],
       "definition": "Band aus imprägniertem Schaumkunststoff, das vorkomprimiert geliefert wird und in der Fuge aufgeht. Es dichtet über den Druck auf die Flanken, statt wie Dichtstoff zu haften, und lässt Wasserdampf gut durch.",
       "quelle": {
@@ -6121,11 +6436,39 @@
         "seite": "133"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "kompressionsgrad",
         "multifunktionsband"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fugendurchlasskoeffizient",
+      "begriff": "Fugendurchlasskoeffizient",
+      "varianten": [
+        "Luftdurchlasskoeffizient",
+        "a-Wert"
+      ],
+      "definition": "Kennwert a für die Luftdurchlässigkeit einer Fuge je Meter Fugenlänge, in m³/(m·h·daPa^2/3). Unter 0,1 gilt eine Bauteil- oder Anschlussfuge als praktisch luftdicht; die Funktionsfugen von Außentüren dürfen bis 2,0 erreichen.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "148"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "luftdurchlaessigkeit",
+        "funktionsfuge"
       ],
       "stand": "2026-11"
     },
@@ -6159,6 +6502,28 @@
       "siehe": [
         "fugenflanke",
         "dreiflankenhaftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fugenlueftung",
+      "begriff": "Fugenlüftung",
+      "definition": "Unplanmäßiger Luftaustausch durch undichte Fugen der Gebäudehülle, vor allem an Fenstern. Bei Altbauten sorgte sie für hohen Luftwechsel; zum geplanten Mindestluftwechsel dürfen Fugen heute nicht mehr angesetzt werden.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "65"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "mindestluftwechsel"
       ],
       "stand": "2026-11"
     },
@@ -6202,6 +6567,29 @@
         "vormauerschale"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "funktionsfuge",
+      "begriff": "Funktionsfuge",
+      "definition": "Fuge, die beim Gebrauch regelmäßig geöffnet wird, etwa zwischen Flügel- und Blendrahmen eines Fensters. Sie wird mit Dichtprofilen geschlossen und darf als einzige Fugenart in begrenztem Maß Luft durchlassen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "konstruktionsfuge",
+        "dichtprofil"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "gartenhof",
@@ -6251,13 +6639,18 @@
     {
       "id": "gebaeudehuelle",
       "begriff": "Gebäudehülle",
+      "varianten": [
+        "Hüllfläche"
+      ],
       "definition": "Gesamtheit der Außenbauteile eines Gebäudes. Sie trennt Raum- und Außenklima und schützt vor der Witterung.",
       "quelle": {
         "werk": "DETAIL Atlas Gebäudeöffnungen",
         "seite": "121"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -6762,7 +7155,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "bp-schlagregen"
       ],
       "siehe": [
         "spritzwasser"
@@ -6843,7 +7237,8 @@
         "seite": "26"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "stand": "2026-11"
     },
@@ -6907,6 +7302,25 @@
       "siehe": [
         "geschossflaeche",
         "grz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gipsbauplatte",
+      "begriff": "Gipsbauplatte",
+      "definition": "Bauplatte mit Gips als Hauptbestandteil, etwa als Gipskarton-, Gipsfaser- oder gegossene Wandbauplatte, verwendet vor allem im Innenausbau für Trennwände, Bekleidungen und Decken. Sie saugt Wasser sehr stark auf und gehört deshalb nicht an die Außenseite einer Außenwand.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "597"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -7264,6 +7678,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "gurtdurchfuehrung",
+      "begriff": "Gurtdurchführung",
+      "definition": "Öffnung, durch die der Bedienungsgurt eines Rollladens aus dem Rollladenkasten in den Raum geführt wird. Als funktionsbedingte Öffnung der Gebäudehülle wird sie von der Norm für die Luftdichtheitsebene nicht erfasst und bleibt deshalb oft eine undichte Stelle.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "64"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "rollladenkasten"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "halteeisen",
       "begriff": "Halteeisen",
       "definition": "Stahlstab, der durch die Steine einer Grenadierschicht gesteckt wird, um sie zusammen mit Winkelkonsolen zu sichern.",
@@ -7411,7 +7841,8 @@
         "bk-aw-zweischalig",
         "bk-stuerze",
         "bp-feuchte",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "luftschicht"
@@ -7432,7 +7863,8 @@
         }
       ],
       "themen": [
-        "rb-lbo"
+        "rb-lbo",
+        "bp-schlagregen"
       ],
       "siehe": [
         "gebaeudeklasse"
@@ -7575,11 +8007,36 @@
       "stand": "2026-11"
     },
     {
+      "id": "horizontalfuge",
+      "begriff": "Horizontalfuge",
+      "definition": "Waagerechte Fuge zwischen Bauteilen, etwa zwischen vorgefertigten Wandplatten einer Fassade. Gegen Schlagregen bleibt sie entweder offen und erhält eine Schwelle, deren Höhe mit der Beanspruchungsgruppe wächst, oder sie wird mit Dichtstoff geschlossen und braucht dann nur noch eine kleinere Schwelle.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "476"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "477"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "vertikalfuge",
+        "dichtstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hydrophobierung",
       "begriff": "Hydrophobierung",
       "varianten": [
         "Hydrophobieren",
-        "hydrophob"
+        "hydrophob",
+        "Silikonimprägnierung",
+        "Imprägniermittel"
       ],
       "definition": "Wasserabweisende Imprägnierung einer Oberfläche oder wasserabweisende Ausrüstung eines Stoffes. Auf Außenschalen nutzt sie sich durch Verwitterung ungleichmäßig ab und muss regelmäßig erneuert werden.",
       "quelle": {
@@ -7587,7 +8044,8 @@
         "seite": "136"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -7928,7 +8386,9 @@
       "begriff": "Isotherme",
       "varianten": [
         "13-Grad-Isotherme",
-        "Isothermenverlauf"
+        "Isothermenverlauf",
+        "10-Grad-Isotherme",
+        "Isothermenberechnung"
       ],
       "definition": "Linie gleicher Temperatur im Bauteilschnitt. Ihr Verlauf zeigt, wo ein Bauteil auskühlt, etwa an Wärmebrücken.",
       "quelle": {
@@ -7938,7 +8398,8 @@
       "themen": [
         "bk-fenster",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-luftdicht"
       ],
       "siehe": [
         "schimmelpilzkriterium"
@@ -7948,7 +8409,9 @@
     {
       "id": "kalksandstein",
       "begriff": "Kalksandstein",
-      "varianten": [],
+      "varianten": [
+        "Kalksandvollstein"
+      ],
       "definition": "Ungebrannter Mauerstein aus Kalk und Quarzsand, der unter Dampfdruck gehärtet wird. Wegen seiner guten Maßhaltigkeit eignet er sich gut für Sichtmauerwerk.",
       "quelle": {
         "werk": "Baukonstruktionslehre 1",
@@ -7956,7 +8419,8 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-schlagregen"
       ],
       "siehe": [
         "mauerziegel"
@@ -7976,7 +8440,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "kellenschnitt",
@@ -8084,7 +8549,8 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -8138,7 +8604,9 @@
         "Kapillarwirkung",
         "kapillare Wasserwanderung",
         "kapillaren Wasserwanderung",
-        "kapillare Wanderung"
+        "kapillare Wanderung",
+        "kapillarleitend",
+        "Kapillarzug"
       ],
       "definition": "Verhalten von Flüssigkeiten in haarfeinen Poren: Durch die Oberflächenspannung steigen sie darin auf oder bleiben zurück. So wandert Wasser in Baustoffen weiter, zum Beispiel als aufsteigende Feuchte im Mauerwerk.",
       "quelle": [
@@ -8152,7 +8620,9 @@
         }
       ],
       "themen": [
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-schlagregen",
+        "bp-luftdicht"
       ],
       "siehe": [
         "kapillar",
@@ -8176,7 +8646,8 @@
         }
       ],
       "themen": [
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "tauwasser"
@@ -8202,7 +8673,8 @@
         }
       ],
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -8280,7 +8752,8 @@
         "Kerndämmstoff",
         "Kerndämmplatte",
         "Kerndämmmaterial",
-        "kerngedämmt"
+        "kerngedämmt",
+        "Kerndämmschicht"
       ],
       "definition": "Wärmedämmung, die den Zwischenraum zwischen Innen- und Außenschale einer zweischaligen Wand ausfüllt. Weil Schlagregen die Außenschale durchdringen kann, muss das Material zeitweise Nässe vertragen und schnell wieder trocknen.",
       "quelle": {
@@ -8292,7 +8765,8 @@
         "bk-aw-zweischalig",
         "bk-oeffnungen",
         "skizzen-sockel",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "zweischalig",
@@ -8581,6 +9055,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "konstruktionsfuge",
+      "begriff": "Konstruktionsfuge",
+      "definition": "Fuge, die beim Zusammenfügen von Bauteilen oder Materialien entsteht und im Gebrauch nicht geöffnet wird, im Gegensatz zur Funktionsfuge. In der Gebäudehülle zählen dazu Fugen innerhalb eines Bauteils, zwischen Bauteilen und zum Baukörper; sie müssen luftdicht sein.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "130"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "funktionsfuge",
+        "bauteilfuge",
+        "anschlussfuge"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "konstruktive-waermebruecke",
       "begriff": "konstruktive Wärmebrücke",
       "varianten": [
@@ -8603,7 +9101,8 @@
       "id": "konvektion",
       "begriff": "Konvektion",
       "varianten": [
-        "Dampfkonvektion"
+        "Dampfkonvektion",
+        "Wasserdampfkonvektion"
       ],
       "definition": "Transport von Wärme oder Feuchte durch eine Luftströmung, die sie mitführt. Dringt feuchte Raumluft durch undichte Stellen in ein Bauteil ein, kann sie es von innen auffeuchten.",
       "quelle": [
@@ -8619,7 +9118,8 @@
       "themen": [
         "bk-aw-zweischalig",
         "bp-feuchte",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-luftdicht"
       ],
       "siehe": [
         "diffusion"
@@ -8877,6 +9377,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "kunstharzputz",
+      "begriff": "Kunstharzputz",
+      "definition": "Putz, dessen Bindemittel ein Kunstharz in Form einer Polymerdispersion ist; er wird gebrauchsfertig geliefert und in dünnen Schichten von wenigen Millimetern aufgetragen. Er haftet gut, neigt wenig zu Rissen und ist schlagregendicht.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "189"
+      },
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kunststoffbahn",
       "begriff": "Kunststoffbahn",
       "varianten": [
@@ -8896,6 +9409,28 @@
         "bitumenbahn"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "kunststoffdispersionsbeschichtung",
+      "begriff": "Kunststoffdispersionsbeschichtung",
+      "definition": "Beschichtung, deren Kunststoff-Bindemittel fein verteilt in Wasser vorliegt, umgangssprachlich Dispersionsfarbe genannt. Sie nimmt nur sehr wenig Wasser auf und fällt damit in den wasserabweisenden Bereich.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "193"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "381"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "wasserabweisend"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "lagerfuge",
@@ -9134,6 +9669,28 @@
       "stand": "2026-10"
     },
     {
+      "id": "leckageortung",
+      "begriff": "Leckageortung",
+      "definition": "Aufsuchen der undichten Stellen einer Gebäudehülle, meist während der Blower-Door-Messung, etwa mit Luftgeschwindigkeitsmessern an Anschlüssen und Durchdringungen. Sinnvoll ist sie, solange die Innenbekleidungen noch nicht geschlossen sind und Lecks noch nachgebessert werden können.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "142"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "682"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "blower-door-test"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lehrscheibe",
       "begriff": "Lehrscheibe",
       "varianten": [
@@ -9256,7 +9813,8 @@
         "seite": "45"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-schlagregen"
       ],
       "siehe": [
         "leistungsbeschreibung"
@@ -9379,7 +9937,8 @@
       "varianten": [
         "Luftdichtheit",
         "luftdicht",
-        "Luftdichtung"
+        "Luftdichtung",
+        "luftundurchlässig"
       ],
       "definition": "Durchgehende Schicht, die Raum- und Außenklima trennt und möglichst keine Luft durchlässt; luftdicht heißt, dass ein Bauteil oder eine Fuge diese Trennung leistet. In der Anschlussfuge ist sie Ebene 1 des 3-Ebenen-Modells.",
       "quelle": {
@@ -9388,7 +9947,8 @@
       },
       "themen": [
         "bk-fenster",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-luftdicht"
       ],
       "siehe": [
         "3-ebenen-modell"
@@ -9409,6 +9969,33 @@
       ],
       "siehe": [
         "konvektion"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "luftdurchlaessigkeit",
+      "begriff": "Luftdurchlässigkeit",
+      "varianten": [
+        "luftdurchlässig",
+        "Fugendurchlässigkeit"
+      ],
+      "definition": "Maß dafür, wie viel Luft ein Bauteil oder eine Fuge bei einer bestimmten Druckdifferenz durchlässt. Für Fenster, Türen und Anschlussfugen gibt es Grenz- und Klassenwerte; sie ist nicht mit der Wasserdampfdiffusion zu verwechseln.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "681"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "fugendurchlasskoeffizient",
+        "referenzluftdurchlaessigkeit"
       ],
       "stand": "2026-11"
     },
@@ -9448,7 +10035,8 @@
         "bk-stuerze",
         "bk-flachdach",
         "bp-feuchte",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "hinterlueftung"
@@ -9479,6 +10067,40 @@
       "stand": "2026-11"
     },
     {
+      "id": "lueftung-zum-feuchteschutz",
+      "begriff": "Lüftung zum Feuchteschutz",
+      "definition": "Niedrigste Lüftungsstufe nach DIN 1946-6: Sie führt auch bei Abwesenheit der Bewohner die anfallende Feuchte ab, damit weder Schimmel noch Bauschäden entstehen. Weil niemand ein Fenster öffnet, muss sie ohne Nutzer funktionieren, über Fugen oder mechanisch.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "62"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "lueftungsstufe",
+        "fugenlueftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "lueftungskonzept",
+      "begriff": "Lüftungskonzept",
+      "definition": "Planung, wie in einem Gebäude der nötige Luftwechsel sichergestellt wird, über Fenster, Lüftungsöffnungen oder mechanische Anlagen. Bei luftdichten Neubauten und nach dem Einbau dichter Fenster ist es nötig, weil sonst Feuchte und Schadstoffe nicht abgeführt werden.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "65"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "mindestluftwechsel",
+        "lueftungsstufe"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "lueftungsoeffnung",
       "begriff": "Lüftungsöffnung",
       "varianten": [
@@ -9498,8 +10120,57 @@
       "stand": "2026-11"
     },
     {
+      "id": "lueftungsstufe",
+      "begriff": "Lüftungsstufe",
+      "definition": "Eine der vier Betriebsstufen der Wohnungslüftung nach DIN 1946-6, nach steigendem Außenluftbedarf: Lüftung zum Feuchteschutz, reduzierte Lüftung, Nennlüftung und Intensivlüftung. Für jede Stufe ist ein Mindest-Volumenstrom abhängig von der Wohnungsgröße vorgegeben.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "nennlueftung",
+        "lueftung-zum-feuchteschutz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "lueftungswaermeverlust",
+      "begriff": "Lüftungswärmeverlust",
+      "definition": "Wärme, die ein Gebäude verliert, weil warme Raumluft durch Lüften oder Undichtheiten gegen kalte Außenluft ausgetauscht wird. Eine luftdichte Hülle senkt ihn, ganz vermeiden lässt er sich wegen des nötigen Luftwechsels nicht.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "681"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "transmissionswaermeverlust",
+        "luftwechsel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "luftwechsel",
       "begriff": "Luftwechsel",
+      "varianten": [
+        "Luftwechselrate"
+      ],
       "definition": "Austausch der Raumluft gegen Außenluft, durch bewusstes Lüften oder durch Undichtheiten (Infiltration). Er führt Wasserdampf ab und beeinflusst die relative Raumluftfeuchte deutlich; ohne ihn ist Tauwasser auch mit guter Dämmung nicht vermeidbar.",
       "quelle": [
         {
@@ -9512,7 +10183,8 @@
         }
       ],
       "themen": [
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-luftdicht"
       ],
       "siehe": [
         "relative-luftfeuchte",
@@ -9700,6 +10372,29 @@
       ],
       "siehe": [
         "kalksandstein"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mindestluftwechsel",
+      "begriff": "Mindestluftwechsel",
+      "definition": "Luftaustausch, den ein Gebäude aus Gründen der Hygiene und zur Begrenzung der Raumluftfeuchte mindestens braucht, nach DIN 4108-2 im Mittel 0,5 1/h während der Heizperiode. Bei dichten Hüllen muss er über definierte Öffnungen oder Lüftungseinrichtungen geplant werden, Undichtheiten zählen nicht mit.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "luftwechsel",
+        "lueftungskonzept"
       ],
       "stand": "2026-11"
     },
@@ -9932,6 +10627,29 @@
       "stand": "2026-10"
     },
     {
+      "id": "moertelschale",
+      "begriff": "Mörtelschale",
+      "definition": "Durchgehende, etwa 2 cm dicke Mörtelschicht zwischen den beiden Schalen eines zweischaligen Mauerwerks ohne Luftschicht, die als Sperre gegen Schlagregen dient. Sie wird als Putz auf die zuerst gemauerte Innenschale aufgebracht; schichtweise vergossene Mörtelschalen haben sich als schadensanfällig erwiesen.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "474"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "475"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "zweischalig",
+        "sperrschicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "multifunktionsband",
       "begriff": "Multifunktionsband",
       "varianten": [
@@ -9943,7 +10661,8 @@
         "seite": "133"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "fugendichtungsband",
@@ -9989,6 +10708,31 @@
       ],
       "siehe": [
         "gleichwertigkeitsnachweis"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "n50",
+      "begriff": "n50",
+      "definition": "Kennwert aus dem Blower-Door-Test: wie oft pro Stunde das Luftvolumen des Gebäudes ausgetauscht wird, wenn zwischen innen und außen 50 Pa Druckunterschied anliegen. Je kleiner der Wert, desto dichter die Hülle; Grenzwerte sind etwa 3,0 1/h ohne und 1,5 1/h mit Lüftungsanlage, 0,6 1/h beim Passivhaus.",
+      "beispiel": "n50 = 3,0 1/h heißt: Bei 50 Pa Druckunterschied wird die Raumluft dreimal in der Stunde ausgetauscht.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "682"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "blower-door-test",
+        "luftwechsel",
+        "mindestluftwechsel"
       ],
       "stand": "2026-11"
     },
@@ -10232,6 +10976,22 @@
       ],
       "siehe": [
         "doerfliches-wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nennlueftung",
+      "begriff": "Nennlüftung",
+      "definition": "Lüftungsstufe nach DIN 1946-6, die bei Anwesenheit der Bewohner die hygienisch nötige Luftmenge liefert. Sie ist der normale Betriebsfall der Wohnungslüftung.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "62"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "lueftungsstufe"
       ],
       "stand": "2026-11"
     },
@@ -10663,7 +11423,8 @@
       "themen": [
         "bk-fenster",
         "bp-feuchte",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "temperaturfaktor"
@@ -10679,7 +11440,8 @@
         "seite": "68–69"
       },
       "themen": [
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-schlagregen"
       ],
       "siehe": [
         "armierungsschicht"
@@ -10990,6 +11752,31 @@
       ],
       "siehe": [
         "entwicklungsgebot"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "passivhausstandard",
+      "begriff": "Passivhausstandard",
+      "varianten": [
+        "Passivhaus"
+      ],
+      "definition": "Baustandard für Gebäude mit sehr gut gedämmter, sehr luftdichter Hülle und einer Lüftungsanlage, die der Abluft Wärme entzieht und an die Zuluft abgibt. An die Luftdichtheit stellt er mit n50 ≤ 0,6 1/h die strengste übliche Anforderung.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "139"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "n50"
       ],
       "stand": "2026-11"
     },
@@ -11331,6 +12118,33 @@
       "stand": "2026-11"
     },
     {
+      "id": "pruefdruck",
+      "begriff": "Prüfdruck",
+      "varianten": [
+        "Mindestprüfdruck",
+        "Mindestprüfdrücke"
+      ],
+      "definition": "Druckdifferenz, die bei einer Prüfung von Fenstern, Türen oder Gebäuden angelegt wird, um Dichtheit unter festgelegten Bedingungen zu messen. Höhere Klassen nach DIN EN 12207 verlangen einen höheren Mindestprüfdruck.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "60"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "druckdifferenz",
+        "referenzluftdurchlaessigkeit"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "pruefprogramm",
       "begriff": "Prüfprogramm",
       "varianten": [
@@ -11448,6 +12262,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "querlueftung",
+      "begriff": "Querlüftung",
+      "definition": "Lüften über Öffnungen an gegenüberliegenden Seiten eines Raums oder einer Wohnung, sodass Winddruck und -sog die Luft quer hindurchtreiben. Sie tauscht die Raumluft in wenigen Minuten aus.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "freie-lueftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "querschnittsabdichtung",
       "begriff": "Querschnittsabdichtung",
       "definition": "Waagerechte Abdichtung, die den ganzen Querschnitt einer Wand durchschneidet, meist knapp über dem Fundament und aus Bitumenbahnen in einer oder mehreren Lagen. Sie verhindert, dass Wasser kapillar in der Wand aufsteigt.",
@@ -11540,6 +12376,33 @@
       },
       "themen": [
         "bk-aw-zweischalig"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "raumlufttechnische-anlage",
+      "begriff": "raumlufttechnische Anlage",
+      "varianten": [
+        "raumlufttechnischen Anlagen",
+        "raumlufttechnische Anlagen"
+      ],
+      "definition": "Anlage, die Luft mit Ventilatoren maschinell zu- und abführt, oft mit Wärmerückgewinnung. Gebäude mit einer solchen Anlage müssen dichter sein, für sie gilt beim Blower-Door-Test n50 ≤ 1,5 1/h.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "63"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "freie-lueftung",
+        "n50"
       ],
       "stand": "2026-11"
     },
@@ -11691,6 +12554,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "referenzluftdurchlaessigkeit",
+      "begriff": "Referenzluftdurchlässigkeit",
+      "definition": "Bezugswert der Luftdurchlässigkeit je m² Fläche bei 100 Pa, nach dem DIN EN 12207 Fenster und Türen in die Klassen 1 bis 4 einteilt. Je niedriger der Wert, desto höher die Klasse; Klasse 4 erlaubt nur 3 m³/(h·m²).",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "63"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "luftdurchlaessigkeit",
+        "pruefdruck"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "referenzwert",
       "begriff": "Referenzwert",
       "definition": "Bezugswert für ψ, der zu einer Musterlösung angegeben ist. Er gilt nur unter festgelegten Randbedingungen und kann im Einzelfall abweichen, dient also dem Vergleich von Anschlüssen.",
@@ -11704,6 +12584,51 @@
       "stand": "2026-11"
     },
     {
+      "id": "regenbremse",
+      "begriff": "Regenbremse",
+      "definition": "Etwa 2 cm dicke, senkrecht und versetzt durchlaufende, hohlraumfrei gefüllte Mörtelfuge im Inneren einschaligen Sichtmauerwerks, die eindringendes Schlagregenwasser aufhalten soll. Sie wirkt nur bei völlig einwandfreier Ausführung, die auf der Baustelle kaum zu erreichen ist.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "114"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "474"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "sichtmauerwerk",
+        "einschalig"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "regenkarte",
+      "begriff": "Regenkarte",
+      "definition": "Karte der mittleren jährlichen Niederschlagsmengen in Deutschland, die DIN 4108-3 als Anhalt für die Einstufung in eine Schlagregen-Beanspruchungsgruppe beigibt. Die endgültige Gruppe wird im Einzelfall festgelegt, weil auch Windverhältnisse, Lage und Gebäudeart zählen.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "331"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "384"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "beanspruchungsgruppe"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "regensperre",
       "begriff": "Regensperre",
       "definition": "Teil des Wetterschutzes, der den Regen abweist. Beim zweistufigen Fugenprinzip liegt sie in einer eigenen Ebene, getrennt von der Windsperre.",
@@ -11712,7 +12637,8 @@
         "seite": "130"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "windsperre",
@@ -11778,7 +12704,8 @@
         "relativen Feuchte",
         "relativer Feuchte",
         "Luftfeuchte",
-        "Raumluftfeuchte"
+        "Raumluftfeuchte",
+        "Luftfeuchtigkeit"
       ],
       "definition": "Verhältnis der tatsächlich in der Luft enthaltenen Wassermenge zur höchstens möglichen Menge bei derselben Temperatur, meist in Prozent und mit dem Formelzeichen φ. Bei 100 % ist die Luft gesättigt; über die absolute Wassermenge sagt der Wert allein nichts aus.",
       "beispiel": "Kühlt Raumluft ab, ohne dass Wasser hinzukommt, steigt ihre relative Luftfeuchte.",
@@ -11788,7 +12715,8 @@
       },
       "themen": [
         "bp-feuchte",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "saettigungsgehalt",
@@ -11969,6 +12897,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "rissueberbrueckend",
+      "begriff": "rissüberbrückend",
+      "definition": "Eigenschaft einer Beschichtung oder Abdichtung, Risse im Untergrund zu überspannen, ohne selbst aufzureißen, sodass die Fläche dicht bleibt. Gewöhnliche dünne Anstriche leisten das nicht sicher.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "453"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "474"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rohbaumass",
       "begriff": "Rohbaumaß",
       "definition": "Maß am Rohbau, also etwa einer Wand oder Öffnung ohne Putz.",
@@ -12033,7 +12980,8 @@
         "bk-fenster",
         "bk-oeffnungen",
         "bk-stuerze",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "rollladenpilz"
@@ -12247,6 +13195,47 @@
         "rb-lbo",
         "rb-abstandsflaechen",
         "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "saugfaehigkeitsgruppe",
+      "begriff": "Saugfähigkeitsgruppe",
+      "definition": "Einteilung von Baustoffen und Schichten nach ihrem Wasseraufnahmekoeffizienten in vier Stufen: stark saugend, wasserhemmend, wasserabweisend und wasserdicht. Beim Schlagregenschutz entscheidet sie mit, welcher Putz oder welche Beschichtung für eine Beanspruchungsgruppe genügt.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "382"
+      },
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "wasseraufnahmekoeffizient",
+        "stark-saugend",
+        "wasserhemmend",
+        "wasserabweisend"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "saugversuch",
+      "begriff": "Saugversuch",
+      "definition": "Prüfung, bei der eine Baustoffprobe mit einer Fläche in Wasser gestellt und immer wieder gewogen wird, um die aufgesaugte Wassermenge über der Zeit zu verfolgen. Aus dem Ergebnis, im Regelfall nach einem Tag, wird der Wasseraufnahmekoeffizient bestimmt.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "381"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "382"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "wasseraufnahmekoeffizient"
       ],
       "stand": "2026-11"
     },
@@ -12492,6 +13481,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "schimmelpilz",
+      "begriff": "Schimmelpilz",
+      "varianten": [
+        "Schimmel",
+        "Schimmelpilzbildung",
+        "Schimmelbildung"
+      ],
+      "definition": "Pilzbewuchs auf feuchten Bauteiloberflächen, der die Gesundheit der Bewohner gefährden kann. Er entsteht nicht erst bei Tauwasser, sondern schon, wenn an der Oberfläche längere Zeit etwa 80 % relative Feuchte herrschen und Nährboden wie Hausstaub vorhanden ist.",
+      "quelle": {
+        "werk": "DETAIL Atlas Gebäudeöffnungen",
+        "seite": "65"
+      },
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "schimmelpilzkritische-temperatur",
+        "schimmelpilzkriterium",
+        "kapillarkondensation"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "schimmelpilzkriterium",
       "begriff": "Schimmelpilzkriterium",
       "varianten": [
@@ -12505,11 +13517,59 @@
       },
       "themen": [
         "bk-fenster",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "isotherme",
         "temperaturfaktor"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schimmelpilzkritische-temperatur",
+      "begriff": "schimmelpilzkritische Temperatur",
+      "definition": "Oberflächentemperatur, bei der die Luft an der Oberfläche etwa 80 % relative Feuchte erreicht und Schimmel möglich wird. Sie liegt über dem Taupunkt, bei 20 °C und 50 % Raumluftfeuchte bei 12,6 °C statt 9,3 °C.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "64"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "65"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "taupunkt",
+        "temperaturfaktor",
+        "schimmelpilzkriterium"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schindel",
+      "begriff": "Schindel",
+      "definition": "Kleinformatiges, schuppenartig überlappend verlegtes Element einer Außenwandbekleidung, etwa aus Holz. Als hinterlüftete Schale vor der Wand hält eine Schindelbekleidung den Regen ab.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Fassaden",
+          "seite": "133"
+        },
+        {
+          "werk": "DETAIL Atlas Fassaden",
+          "seite": "92"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "474"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -12521,7 +13581,11 @@
         "Schlagregendichtheit",
         "schlagregengeschützt",
         "Schlagregensicherheit",
-        "Schlagregenschutz"
+        "Schlagregenschutz",
+        "Schlagregenbelastung",
+        "Schlagregenbeanspruchung",
+        "Schlagregenwasser",
+        "schlagregenempfindlich"
       ],
       "definition": "Regen, der bei gleichzeitigem Wind gegen die Fassade trifft. Das Wasser kann über die saugende Oberfläche oder durch Staudruck über Risse und Spalten eindringen; schlagregendicht heißt, dass Bauteil oder Fuge das verhindern.",
       "quelle": {
@@ -12532,7 +13596,9 @@
         "bk-fenster",
         "bk-aw-zweischalig",
         "bk-oeffnungen",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-schlagregen",
+        "bp-luftdicht"
       ],
       "siehe": [
         "beanspruchungsgruppe"
@@ -12773,7 +13839,8 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-flachdach",
-        "bp-feuchte"
+        "bp-feuchte",
+        "bp-schlagregen"
       ],
       "siehe": [
         "diffusionsoffen",
@@ -12881,6 +13948,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "sichtbeton",
+      "begriff": "Sichtbeton",
+      "definition": "Beton, dessen Oberfläche ohne Putz oder Bekleidung sichtbar bleibt und dessen Aussehen vor allem durch Schalung und Oberflächenbearbeitung bestimmt wird. Er nimmt von Natur aus nur wenig Wasser auf und kann deshalb ohne zusätzliche Schicht schlagregendicht sein.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "153"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "474"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "sichtmauerwerk"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sichtmauerwerk",
       "begriff": "Sichtmauerwerk",
       "varianten": [],
@@ -12897,7 +13986,8 @@
       ],
       "themen": [
         "bk-aw-zweischalig",
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-schlagregen"
       ],
       "siehe": [
         "verblendmauerwerk"
@@ -13201,7 +14291,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-schlagregen"
       ],
       "siehe": [
         "querschnittsabdichtung",
@@ -13431,7 +14522,8 @@
       "themen": [
         "rb-bauvorlagen",
         "rb-nachbarrecht",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-schlagregen"
       ],
       "siehe": [
         "standsicherheitsnachweis"
@@ -13477,6 +14569,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "stark-saugend",
+      "begriff": "stark saugend",
+      "definition": "Saugfähigkeitsgruppe der Stoffe, die viel Wasser kapillar aufnehmen: Ihr Wasseraufnahmekoeffizient liegt über 2,0 kg/(m²·h^0,5).",
+      "beispiel": "Ungeschützte Vollziegel und Gipsbauplatten gehören dazu.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "382"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "saugfaehigkeitsgruppe"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "stationaer",
       "begriff": "stationär",
       "definition": "Rechenweise mit gemittelten, zeitlich festen Randbedingungen, wie im Glaserverfahren. Zeitliche Änderungen, etwa Temperaturschwankungen im Tagesverlauf, erfasst sie nicht.",
@@ -13511,6 +14626,45 @@
       ],
       "siehe": [
         "stahlbetonsturz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "staudruck",
+      "begriff": "Staudruck",
+      "definition": "Druck, den der Wind auf eine Fläche ausübt, auf die er senkrecht trifft, gemessen unmittelbar vor ihrer Mitte. Er wächst mit dem Quadrat der Windgeschwindigkeit und kann Regenwasser durch Risse, Spalten und undichte Fugen in die Wand drücken.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "383"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "329"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "staupunkt",
+        "schlagregen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "staupunkt",
+      "begriff": "Staupunkt",
+      "definition": "Stelle vor einer angeströmten Fläche, an der die Strömung zum Stillstand kommt und der Staudruck auftritt; bei senkrechter Anströmung einer ebenen Fläche liegt sie vor deren Mitte.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "383"
+      },
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "staudruck"
       ],
       "stand": "2026-11"
     },
@@ -13856,6 +15010,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "stromlinie",
+      "begriff": "Stromlinie",
+      "definition": "Linie, die in einem Strömungsbild den Weg der strömenden Luft darstellt, etwa des Windes um ein Gebäude. Wo die Stromlinien eng zusammenlaufen, ist die Geschwindigkeit hoch, an Gebäudekanten deshalb auch die Schlagregenbelastung.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "384"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "385"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "stufenfalz",
       "begriff": "Stufenfalz",
       "varianten": [],
@@ -14068,7 +15241,8 @@
         "skizzen-sockel",
         "bp-feuchte",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-luftdicht"
       ],
       "siehe": [
         "tauwasser"
@@ -14099,7 +15273,8 @@
         "skizzen-sockel",
         "bp-feuchte",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-luftdicht"
       ],
       "siehe": [
         "diffusion",
@@ -14256,7 +15431,8 @@
       "themen": [
         "bk-fenster",
         "bp-feuchte",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "oberflaechentemperatur",
@@ -14562,7 +15738,8 @@
         "seite": "96"
       },
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-schlagregen"
       ],
       "siehe": [
         "gleitschicht"
@@ -15311,7 +16488,8 @@
         }
       ],
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-schlagregen"
       ],
       "siehe": [
         "sichtmauerwerk",
@@ -15544,6 +16722,28 @@
       "stand": "2026-11"
     },
     {
+      "id": "vertikalfuge",
+      "begriff": "Vertikalfuge",
+      "definition": "Senkrechte Fuge zwischen Bauteilen, etwa zwischen vorgefertigten Wandplatten einer Fassade. Nach DIN 4108-3 braucht sie besondere Maßnahmen gegen Schlagregen erst bei starker Beanspruchung (Gruppe III).",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "476"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "477"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "horizontalfuge"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "verunstaltungsverbot",
       "begriff": "Verunstaltungsverbot",
       "varianten": [
@@ -15757,7 +16957,8 @@
         "rb-mass",
         "rb-lbo",
         "rb-bauvorlagen",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-luftdicht"
       ],
       "siehe": [
         "geschossflaeche"
@@ -15788,6 +16989,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "vollziegel",
+      "begriff": "Vollziegel",
+      "definition": "Kleinformatiger gebrannter Mauerziegel ohne oder mit nur geringer Lochung, höchstens etwa 15 % des Querschnitts; er ist die älteste Ziegelart. Unbehandelt saugt er stark Wasser.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "116"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "mauerziegel",
+        "vollstein"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vollziehung",
       "begriff": "Vollziehung",
       "definition": "Umsetzung oder Ausnutzung eines Verwaltungsakts, im Baurecht das Bauen auf Grundlage der Genehmigung. Da die Nachbarklage keine aufschiebende Wirkung hat, kann der Nachbar beantragen, die Vollziehung auszusetzen.",
@@ -15803,6 +17027,32 @@
       ],
       "themen": [
         "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "volumenstrom",
+      "begriff": "Volumenstrom",
+      "varianten": [
+        "Außenluftvolumenstrom",
+        "Außenluftvolumenströme"
+      ],
+      "definition": "Luftmenge, die in einer bestimmten Zeit strömt, meist in m³/h. Beim Blower-Door-Test ist es die vom Ventilator geförderte Luft, bei der Lüftungsplanung die zuzuführende Außenluft.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "61"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "682"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "blower-door-test"
       ],
       "stand": "2026-11"
     },
@@ -15867,7 +17117,8 @@
       "id": "vorgehaengte-hinterlueftete-fassade",
       "begriff": "vorgehängte hinterlüftete Fassade",
       "varianten": [
-        "vorgehängten hinterlüfteten Fassade"
+        "vorgehängten hinterlüfteten Fassade",
+        "hinterlüftete Bekleidung"
       ],
       "definition": "Fassadenbekleidung, die über eine Unterkonstruktion im Abstand vor der tragenden Wand befestigt ist. Der Zwischenraum nimmt die Dämmung und die Hinterlüftung auf.",
       "quelle": {
@@ -15875,7 +17126,8 @@
         "seite": "37"
       },
       "themen": [
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "hinterlueftung"
@@ -16037,7 +17289,8 @@
         "bk-oeffnungen",
         "bk-stuerze",
         "skizzen-sockel",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "zweischalig",
@@ -16226,6 +17479,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "waermedaemmputz",
+      "begriff": "Wärmedämmputz",
+      "definition": "Außenputz mit porösen Zuschlägen, der Wärme schlechter leitet als gewöhnlicher Putz und so zum Wärmeschutz der Wand beiträgt. Weil er mechanisch weniger fest ist, braucht er einen schützenden Oberputz.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "150"
+      },
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "oberputz"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "waermedaemmung",
       "begriff": "Wärmedämmung",
       "varianten": [
@@ -16246,7 +17515,8 @@
         "bk-stuerze",
         "bp-feuchte",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "daemmstoff",
@@ -16268,7 +17538,8 @@
       "themen": [
         "bk-oeffnungen",
         "bk-fenster",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-schlagregen"
       ],
       "stand": "2026-11"
     },
@@ -16406,7 +17677,9 @@
       "themen": [
         "bp-uwert",
         "bp-feuchte",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht",
+        "bp-schlagregen"
       ],
       "siehe": [
         "mindestwaermeschutz"
@@ -16479,11 +17752,66 @@
       "themen": [
         "bp-uwert",
         "bp-feuchte",
-        "bp-waermebruecken"
+        "bp-waermebruecken",
+        "bp-luftdicht"
       ],
       "siehe": [
         "waermedurchgangswiderstand",
         "luftgrenzschicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wasserabweisend",
+      "begriff": "wasserabweisend",
+      "varianten": [
+        "Wasserabweisung"
+      ],
+      "definition": "Eigenschaft, kaum Wasser kapillar aufzunehmen; als Saugfähigkeitsgruppe ein Wasseraufnahmekoeffizient über 0,001 bis höchstens 0,5 kg/(m²·h^0,5). Für Putze und Beschichtungen zum Schlagregenschutz verlangt DIN 4108-3 zusätzlich einen sd-Wert von höchstens 2,0 m und ein Produkt aus w und sd von höchstens 0,2, damit die Schicht Wasserdampf weiter durchlässt.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "382"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "475"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "saugfaehigkeitsgruppe",
+        "wasserhemmend",
+        "sd-wert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wasseraufnahmekoeffizient",
+      "begriff": "Wasseraufnahmekoeffizient",
+      "varianten": [
+        "w-Wert"
+      ],
+      "definition": "Kennwert dafür, wie stark ein Baustoff Wasser kapillar aufsaugt, angegeben in kg/(m²·h^0,5). Die aufgesaugte Wassermenge je Fläche wächst etwa mit der Wurzel der Saugzeit; der Koeffizient beschreibt, wie steil sie dabei ansteigt.",
+      "beispiel": "Vollziegel liegen bei etwa 20 bis 30, eine Kunststoffdispersionsbeschichtung bei nur 0,05 bis 0,2 kg/(m²·h^0,5).",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "381"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "330"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "saugversuch",
+        "saugfaehigkeitsgruppe"
       ],
       "stand": "2026-11"
     },
@@ -16525,6 +17853,29 @@
       "siehe": [
         "saettigungsgehalt",
         "diffusion"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wasserhemmend",
+      "begriff": "wasserhemmend",
+      "definition": "Saugfähigkeitsgruppe zwischen stark saugend und wasserabweisend, mit einem Wasseraufnahmekoeffizienten über 0,5 bis höchstens 2,0 kg/(m²·h^0,5). Ein wasserhemmender Außenputz reicht nach DIN 4108-3 für mittlere Schlagregenbeanspruchung.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "382"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "475"
+        }
+      ],
+      "themen": [
+        "bp-schlagregen"
+      ],
+      "siehe": [
+        "saugfaehigkeitsgruppe",
+        "wasserabweisend"
       ],
       "stand": "2026-11"
     },
@@ -16578,7 +17929,8 @@
         "seite": "121"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "3-ebenen-modell",
@@ -16658,7 +18010,8 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-schlagregen"
       ],
       "siehe": [
         "eigengewicht",
@@ -16688,13 +18041,18 @@
     {
       "id": "windsperre",
       "begriff": "Windsperre",
+      "varianten": [
+        "winddicht",
+        "Winddichtheit"
+      ],
       "definition": "Teil des Wetterschutzes, der den Wind abweist. Beim zweistufigen Fugenprinzip liegt sie in einer eigenen Ebene, getrennt von der Regensperre.",
       "quelle": {
         "werk": "DETAIL Atlas Gebäudeöffnungen",
         "seite": "130"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-luftdicht"
       ],
       "siehe": [
         "regensperre",
@@ -16946,6 +18304,53 @@
       "stand": "2026-11"
     },
     {
+      "id": "zugluft",
+      "begriff": "Zugluft",
+      "varianten": [
+        "Zuglufterscheinung"
+      ],
+      "definition": "Als unangenehm empfundene Luftbewegung im Raum, etwa wenn kalte Außenluft durch undichte Fugen einströmt oder an kalten Fensterflächen absinkt. Schon ab etwa 0,2 m/s gilt sie als unbehaglich.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "58"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "60"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "behaglichkeit"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zuluft",
+      "begriff": "Zuluft",
+      "definition": "Luft, die einem Raum zugeführt wird, bei freier Lüftung durch Öffnungen, bei Lüftungsanlagen eingeblasen. Bei warmem Innenraum strömt sie über untere Öffnungen ein.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "62"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "139"
+        }
+      ],
+      "themen": [
+        "bp-luftdicht"
+      ],
+      "siehe": [
+        "abluft"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "zumutbarkeit",
       "begriff": "Zumutbarkeit",
       "varianten": [
@@ -17069,7 +18474,8 @@
         "bk-stuerze",
         "skizzen-sockel",
         "bp-waermebruecken",
-        "bp-uwert"
+        "bp-uwert",
+        "bp-schlagregen"
       ],
       "siehe": [
         "innenschale",
