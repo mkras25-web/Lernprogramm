@@ -18,6 +18,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "90-90-wert",
+      "begriff": "90/90-Wert",
+      "varianten": [],
+      "definition": "Statistisch aus einer Messreihe ermittelter Kennwert: Er soll mit 90 % Wahrscheinlichkeit von 90 % der Produktion eingehalten werden und ist bei der Wärmeleitfähigkeit etwas ungünstiger als der Mittelwert.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "18"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "nennwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "aarhus-konvention",
       "begriff": "Aarhus-Konvention",
       "definition": "Völkerrechtlicher Vertrag, auf den Verbandsklagen in Umweltsachen gestützt werden. Unter ihrem Einfluss und dem des Unionsrechts verschiebt sich der deutsche Rechtsschutz hin zu mehr objektiver Kontrolle.",
@@ -70,7 +87,10 @@
         "bk-aw-zweischalig",
         "bk-oeffnungen",
         "bk-flachdach",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "dichtebene",
@@ -606,6 +626,20 @@
       "stand": "2026-11"
     },
     {
+      "id": "anschlussdetail",
+      "begriff": "Anschlussdetail",
+      "definition": "Festgelegte Ausbildung der Stelle, an der Bauteile zusammentreffen. Aus ihr ergibt sich unter anderem, wie stark dort eine Wärmebrücke wirkt.",
+      "beispiel": "Der Anschluss einer Geschossdecke an eine außengedämmte Wand.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "135"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "anschlussfuge",
       "begriff": "Anschlussfuge",
       "varianten": [
@@ -741,7 +775,8 @@
       ],
       "themen": [
         "bk-flachdach",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "notueberlauf"
@@ -766,7 +801,8 @@
         "rb-lbo",
         "rb-abstandsflaechen",
         "rb-verfahren",
-        "rb-bauvorlagen"
+        "rb-bauvorlagen",
+        "bp-feuchte"
       ],
       "stand": "2026-11"
     },
@@ -802,7 +838,8 @@
       "themen": [
         "bk-stuerze",
         "bk-aw-zweischalig",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "stuetzweite",
@@ -869,7 +906,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-feuchte"
       ],
       "siehe": [
         "querschnittsabdichtung",
@@ -947,6 +985,24 @@
       ],
       "siehe": [
         "fliegende-bauten"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "auskragend",
+      "begriff": "auskragend",
+      "varianten": [
+        "Auskragend"
+      ],
+      "definition": "Frei über die Wand oder das Auflager hinaus vorstehend. Solche Bauteile aus gut leitendem Material ragen in den ungedämmten Bereich und brauchen zusätzlichen Wärmeschutz.",
+      "beispiel": "Balkonplatten und Attiken.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "127"
+      },
+      "themen": [
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "stand": "2026-11"
     },
@@ -1049,13 +1105,18 @@
     {
       "id": "aussendaemmung",
       "begriff": "Außendämmung",
+      "varianten": [
+        "außengedämmt"
+      ],
       "definition": "Wärmedämmung auf der Außenseite einer Wand oder eines Daches, etwa hinter einer Bekleidung, hinter einer Abdichtung oder unter Putz. Die tragende Konstruktion bleibt so auf der warmen Seite.",
       "quelle": {
         "werk": "DETAIL Atlas Baustoff",
         "seite": "134"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "innendaemmung",
@@ -1144,13 +1205,17 @@
     {
       "id": "balkonkragplatte",
       "begriff": "Balkonkragplatte",
+      "varianten": [
+        "Balkonplatte"
+      ],
       "definition": "Frei auskragende Platte eines Balkons, die nur am Gebäude gehalten ist. Ihre Oberseite ist eine waagerechte Fläche, von der Regen an die angrenzende Wand spritzt.",
       "quelle": {
         "werk": "Lehrbuch der Bauphysik",
         "seite": "478"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "spritzwasser"
@@ -1363,7 +1428,8 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "stand": "2026-11"
     },
@@ -2275,6 +2341,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "behaglichkeit",
+      "begriff": "Behaglichkeit",
+      "definition": "Zustand, in dem Menschen das Raumklima als angenehm empfinden. Maßgeblich ist die empfundene Temperatur, die von Raumluft, Luftfeuchte und Oberflächentemperatur der Raumbegrenzungen abhängt.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "76"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "beiladung",
       "begriff": "Beiladung",
       "varianten": [
@@ -2353,6 +2432,24 @@
       },
       "themen": [
         "rb-mass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bemessungswert",
+      "begriff": "Bemessungswert",
+      "varianten": [],
+      "definition": "Der Wert einer wärmeschutztechnischen Stoffgröße, vor allem der Wärmeleitfähigkeit, mit dem im Nachweis gerechnet wird. Er wird aus Messdaten oder dem Nennwert abgeleitet oder Normtabellen entnommen und berücksichtigt dabei Einflüsse wie Temperatur, Feuchte und Alterung.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "216–218"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "nennwert",
+        "waermeleitfaehigkeit"
       ],
       "stand": "2026-11"
     },
@@ -2639,11 +2736,28 @@
       },
       "themen": [
         "bk-stuerze",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "stahlbeton",
         "bewehrtes-mauerwerk"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bewehrungskorb",
+      "begriff": "Bewehrungskorb",
+      "definition": "Vorgefertigtes Bauteil aus Bewehrung und Dämmung, das als thermische Trennung zwischen Decke und Balkonplatte eingebaut wird und die Lasten weiterleitet.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "133"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "thermische-trennung"
       ],
       "stand": "2026-11"
     },
@@ -2687,6 +2801,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "bierglaseffekt",
+      "begriff": "Bierglaseffekt",
+      "definition": "Anschaulicher Name dafür, dass Wasserdampf aus der Luft an einem kalten Gegenstand kondensiert: Das Glas wird außen feucht, ohne dass Flüssigkeit hindurchgewandert ist.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "280"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "tauwasser",
+        "taupunkt"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "bitumen",
       "begriff": "Bitumen",
       "varianten": [
@@ -2699,7 +2830,8 @@
         "seite": "87"
       },
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "bitumenbahn",
@@ -3041,7 +3173,8 @@
         "seite": "349"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-waermebruecken"
       ],
       "stand": "2026-10"
     },
@@ -3147,6 +3280,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "dachentluefter",
+      "begriff": "Dachentlüfter",
+      "varianten": [
+        "Entlüfter"
+      ],
+      "definition": "In die Abdichtung flacher oder schwach geneigter Dächer eingebautes Bauteil zum Entlüften. Es hat nur geringe Wirkung und kann eine durchfeuchtete Dämmschicht nicht wirksam trocknen.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "306"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "entspannungsschicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "dachhaut",
       "begriff": "Dachhaut",
       "definition": "Äußerer, vor Regen schützender Abschluss eines Daches, also Deckung oder Abdichtung. Wo die Außenwand auf diese Fläche trifft, endet im Abstandsflächenrecht die Wandhöhe.",
@@ -3161,7 +3313,8 @@
         }
       ],
       "themen": [
-        "rb-abstandsflaechen"
+        "rb-abstandsflaechen",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "wandhoehe"
@@ -3191,7 +3344,9 @@
       "id": "daemmstoff",
       "begriff": "Dämmstoff",
       "varianten": [
-        "Wärmedämmstoff"
+        "Wärmedämmstoff",
+        "Dämmmaterial",
+        "Dämmplatte"
       ],
       "definition": "Baustoff, der Wärme (je nach Art auch Schall) nur schlecht weiterleitet, meist weil er viele kleine Poren oder Faserzwischenräume mit ruhender Luft enthält. Als Wärmedämmstoff gilt nach DIN 4108 ein Baustoff mit einer Wärmeleitfähigkeit unter 0,1 W/(m·K).",
       "quelle": {
@@ -3202,7 +3357,10 @@
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
         "bk-fenster",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "waermeleitfaehigkeit"
@@ -3212,6 +3370,9 @@
     {
       "id": "dampfbremse",
       "begriff": "Dampfbremse",
+      "varianten": [
+        "Bremse"
+      ],
       "definition": "Diffusionshemmende Schicht, meist eine Folie oder Bahn auf der warmen Raumseite, die begrenzt, wie viel Wasserdampf in die Konstruktion eindringt. Sie muss zugleich luftdicht ausgeführt werden.",
       "quelle": {
         "werk": "DETAIL Atlas Baustoff",
@@ -3220,7 +3381,8 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-flachdach",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte"
       ],
       "siehe": [
         "diffusionshemmend",
@@ -3243,7 +3405,8 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-flachdach",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte"
       ],
       "siehe": [
         "glaserverfahren",
@@ -3255,7 +3418,11 @@
       "id": "dampfdruck",
       "begriff": "Dampfdruck",
       "varianten": [
-        "Dampfdruckspitzen"
+        "Dampfdruckspitzen",
+        "Dampfdruckgefälle",
+        "Dampfdruckdifferenz",
+        "Dampfdruckverlauf",
+        "Wasserdampfdruck"
       ],
       "definition": "Anteil des Wasserdampfs am Luftdruck, auch Wasserdampfpartialdruck genannt. Unterschiede im Dampfdruck treiben die Diffusion an, von der Seite mit höherem zur Seite mit niedrigerem Druck.",
       "quelle": [
@@ -3269,7 +3436,8 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "diffusion"
@@ -3298,7 +3466,8 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "dampfbremse",
@@ -3626,7 +3795,10 @@
       "id": "diffusion",
       "begriff": "Diffusion",
       "varianten": [
-        "Winterdiffusion"
+        "Winterdiffusion",
+        "Wasserdampfdiffusion",
+        "Dampfdiffusion",
+        "Diffusionsrichtung"
       ],
       "definition": "In der Bauphysik die Wanderung von Wasserdampf durch ein Bauteil, angetrieben vom Unterschied im Dampfdruck zwischen warmer Innenluft und kalter Außenluft. Kühlt der Dampf im Bauteil ab, kann sich Tauwasser bilden.",
       "quelle": {
@@ -3636,7 +3808,8 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "diffusionswiderstand",
@@ -3658,7 +3831,8 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-fenster",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "sd-wert",
@@ -3702,7 +3876,8 @@
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
         "bk-fenster",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "sd-wert",
@@ -3711,10 +3886,34 @@
       "stand": "2026-10"
     },
     {
+      "id": "diffusionsstromdichte",
+      "begriff": "Diffusionsstromdichte",
+      "varianten": [
+        "Diffusionsstrom",
+        "Wasserdampf-Diffusionsstromdichte"
+      ],
+      "definition": "Menge an Wasserdampf, die je Quadratmeter Bauteilfläche und Stunde hindurchdiffundiert, Formelzeichen i. Sie hängt vom Dampfdruckunterschied und vom Diffusionsdurchlasswiderstand ab, ähnlich wie die Wärmestromdichte q beim Wärmedurchgang.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "298"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "waermestromdichte",
+        "wasserdampf-diffusionsdurchlasswiderstand"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "diffusionswiderstand",
       "begriff": "Diffusionswiderstand",
       "varianten": [
-        "Wasserdampfdiffusionswiderstand"
+        "Wasserdampfdiffusionswiderstand",
+        "Diffusionswiderstandszahl",
+        "Wasserdampf-Diffusionswiderstandszahl",
+        "µ"
       ],
       "definition": "Maß dafür, wie stark ein Stoff Wasserdampf am Durchdringen hindert, angegeben als einheitslose Diffusionswiderstandszahl μ. Ein Bauteil sollte nach außen hin immer durchlässiger werden, damit eingedrungene Feuchte nach außen abtrocknen kann.",
       "beispiel": "Mineralwolle hat μ = 1 und ist sehr diffusionsoffen, Schaumglas ist praktisch dampfdicht.",
@@ -3724,7 +3923,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte"
       ],
       "siehe": [
         "sd-wert",
@@ -3887,7 +4087,9 @@
         }
       ],
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "tropfscheibe",
@@ -3929,7 +4131,8 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "siehe": [
         "filtervlies",
@@ -4182,7 +4385,9 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "stand": "2026-11"
     },
@@ -4649,6 +4854,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "entspannungsschicht",
+      "begriff": "Entspannungsschicht",
+      "varianten": [
+        "Dampfdruck-Entspannungsschicht"
+      ],
+      "definition": "Poröse Schicht, durch die verdampfendes Wasser oder sich ausdehnende Luft entweichen kann. Sie verhindert kein Tauwasser, vermeidet aber Blasen, wenn heiße Abdichtungen auf feuchte Bauteile aufgebracht werden.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "306"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "druckausgleichsschicht",
+        "dachentluefter"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "entwaesserung",
       "begriff": "Entwässerung",
       "varianten": [
@@ -4777,6 +5002,33 @@
         "rohdichte"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "erdberuehrt",
+      "begriff": "erdberührt",
+      "varianten": [
+        "eingeerdet",
+        "eingeerdeten",
+        "eingeerdete"
+      ],
+      "definition": "Eigenschaft eines Bauteils, das ans Erdreich grenzt. Außen herrscht dort Sättigungsdampfdruck, sodass die Diffusion nach innen gerichtet ist; bei schlechter Dämmung bildet sich innen besonders im Sommer leicht Tauwasser.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "290"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "479"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "saettigungsdampfdruck"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "erddruck",
@@ -5192,6 +5444,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "faserdaemmstoff",
+      "begriff": "Faserdämmstoff",
+      "definition": "Dämmstoff aus Fasern, die eine Art Haufwerk bilden und dadurch die Luftbewegung unterbinden. Dazu gehört etwa Mineralwolle aus Glas- oder Steinwolle.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "133"
+        },
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "136"
+        }
+      ],
+      "themen": [
+        "bp-feuchte",
+        "bp-uwert"
+      ],
+      "siehe": [
+        "mineralwolle",
+        "daemmstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "fensterband",
       "begriff": "Fensterband",
       "definition": "Horizontale Reihe von Fensterelementen, die am Blendrahmen durch Koppelstücke zusammengesetzt sind.",
@@ -5301,6 +5577,41 @@
       "stand": "2026-11"
     },
     {
+      "id": "feuchteadaptiv",
+      "begriff": "feuchteadaptiv",
+      "definition": "Eigenschaft einer Dampfbremse, ihren sd-Wert mit der Feuchte zu ändern: Im Winter bremst sie den Dampf, unter günstigen Bedingungen zum Austrocknen wie im Sommer wird sie diffusionsoffener und fördert so die Trocknung.",
+      "quelle": {
+        "werk": "DETAIL Atlas Flachdach",
+        "seite": "96"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "dampfbremse",
+        "sd-wert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "feuchtegehalt",
+      "begriff": "Feuchtegehalt",
+      "varianten": [
+        "Feuchtegehaltes",
+        "Wassergehalt"
+      ],
+      "definition": "Wassermenge in einem Baustoff, bezogen auf dessen trockene Masse oder sein Volumen und meist in Prozent angegeben; auch Wassergehalt genannt.",
+      "beispiel": "Durch Tauwasser darf der massebezogene Feuchtegehalt von Holz um höchstens 5 Prozent steigen.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "285"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "feuchteschutz",
       "begriff": "Feuchteschutz",
       "definition": "Schutz eines Bauwerks gegen Wasser, von Niederschlag und Bodenfeuchte bis zu Tauwasser in den Bauteilen.",
@@ -5315,7 +5626,46 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte",
+        "bp-uwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "feuchtespeicherung",
+      "begriff": "Feuchtespeicherung",
+      "varianten": [
+        "Feuchtespeicherfähige",
+        "feuchtespeicherfähige",
+        "Sorption",
+        "Wasserdampfsorption"
+      ],
+      "definition": "Aufnahme von Feuchte in einen Baustoff durch Anlagerung von Wasserdampf in den Poren (Sorption) und durch Kapillarkräfte. Feuchtespeicherfähige Raumoberflächen wirken als Puffer, verhindern aber bei fehlender Lüftung die Sättigung der Raumluft nicht.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "63"
+        },
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "71"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "479"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "480"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "kapillaritaet",
+        "luftwechsel"
       ],
       "stand": "2026-11"
     },
@@ -5460,7 +5810,9 @@
         "seite": "98"
       },
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte",
+        "bp-uwert"
       ],
       "siehe": [
         "dachabdichtung",
@@ -5480,6 +5832,23 @@
       },
       "themen": [
         "bk-oeffnungen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "flaechengruendung",
+      "begriff": "Flächengründung",
+      "definition": "Gründung, die die Bauwerkslasten über Fundamente flächig in den Boden abgibt, als Streifen-, Einzel- oder Plattenfundament. Auch Flachgründung genannt.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "42"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "fundament",
+        "streifenfundament"
       ],
       "stand": "2026-11"
     },
@@ -5586,6 +5955,28 @@
       ],
       "siehe": [
         "typenzwang"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "formbedingte-waermebruecke",
+      "begriff": "formbedingte Wärmebrücke",
+      "varianten": [
+        "formbedingt",
+        "Formbedingt",
+        "geometrische Wärmebrücke"
+      ],
+      "definition": "Wärmebrücke, die allein aus der Form des Bauteils entsteht: Die wärmeabgebende Außenfläche ist größer als die wärmeaufnehmende Innenfläche.",
+      "beispiel": "Die Außenecke eines Gebäudes kühlt innen auch bei durchgehend gleichem Wandaufbau stärker aus.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "97"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "waermebruecke"
       ],
       "stand": "2026-11"
     },
@@ -5783,7 +6174,8 @@
         "seite": "42"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "fundamentfuss"
@@ -6011,6 +6403,9 @@
     {
       "id": "gefachbereich",
       "begriff": "Gefachbereich",
+      "varianten": [
+        "Gefach"
+      ],
       "definition": "Bereich eines Daches oder einer Wand zwischen den Sparren, Balken oder Fachwerkhölzern im Unterschied zu den Hölzern selbst. Er ist maßgebend, wenn nebeneinander verschieden gut dämmende Bereiche liegen.",
       "quelle": [
         {
@@ -6023,7 +6418,8 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "stand": "2026-11"
     },
@@ -6070,7 +6466,8 @@
       ],
       "themen": [
         "bk-flachdach",
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-feuchte"
       ],
       "stand": "2026-11"
     },
@@ -6516,19 +6913,44 @@
     {
       "id": "glaserverfahren",
       "begriff": "Glaserverfahren",
+      "varianten": [
+        "Glaser-Verfahren",
+        "nach Glaser"
+      ],
       "definition": "Rechenverfahren nach DIN 4108-3, mit dem die Menge des in ein Bauteil hinein- und wieder herausdiffundierenden Wassers abgeschätzt wird. So lässt sich prüfen, ob Tauwasser im Bauteil Dämmstoffe oder Konstruktion gefährdet.",
       "quelle": {
         "werk": "DETAIL Atlas Baustoff",
         "seite": "134"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-feuchte"
       ],
       "siehe": [
         "dampfdiffusionsnachweis",
         "tauwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "gleichwertigkeitsnachweis",
+      "begriff": "Gleichwertigkeitsnachweis",
+      "varianten": [
+        "Gleichwertigkeit"
+      ],
+      "definition": "Beleg, dass ein Anschlussdetail wärmetechnisch mindestens so gut ist wie die vergleichbare Musterlösung, beurteilt über deren ψ-Wert.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "135"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "musterloesung",
+        "referenzwert"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "gleitschicht",
@@ -6630,6 +7052,22 @@
       "siehe": [
         "grenzgarage",
         "nachbargrenze"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grenzflaechenspannung",
+      "begriff": "Grenzflächenspannung",
+      "definition": "Spannung an den Berührungsflächen zwischen Flüssigkeit, Porenwand und Luft. Sie entscheidet, ob eine Flüssigkeit in einer feinen Pore über den äußeren Spiegel aufsteigt oder dahinter zurückbleibt.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "290"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "kapillaritaet"
       ],
       "stand": "2026-11"
     },
@@ -6884,6 +7322,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "heizkoerpernische",
+      "begriff": "Heizkörpernische",
+      "definition": "Vertiefung in der Außenwand, in der ein Heizkörper steht. Durch die Form der Nische und durch Stahlkonsolen, die die Dämmung durchstoßen, geht dort viel Wärme verloren.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "146"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "hessische-bauordnung",
       "begriff": "Hessische Bauordnung",
       "varianten": [
@@ -6948,7 +7399,8 @@
       "id": "hinterlueftung",
       "begriff": "Hinterlüftung",
       "varianten": [
-        "hinterlüftet"
+        "hinterlüftet",
+        "Hinterlüften"
       ],
       "definition": "Luftführung hinter einer äußeren Schale oder Bekleidung, die über offene Fugen oder Schlitze mit der Außenluft verbunden ist. Die strömende Luft führt Feuchte ab und lässt die Schichten schneller austrocknen.",
       "quelle": {
@@ -6957,7 +7409,9 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-feuchte",
+        "bp-uwert"
       ],
       "siehe": [
         "luftschicht"
@@ -7085,6 +7539,20 @@
       "stand": "2026-10"
     },
     {
+      "id": "holzwerkstoff",
+      "begriff": "Holzwerkstoff",
+      "definition": "Werkstoff aus zerkleinertem Holz wie Brettern, Furnieren, Spänen oder Fasern, das meist mit Klebstoff oder mineralischem Bindemittel zu Platten oder Stäben verpresst ist. Quellen und Schwinden sind dadurch deutlich geringer als bei gewachsenem Holz.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "72"
+      },
+      "themen": [
+        "bp-feuchte",
+        "bp-uwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "holzwolleleichtbauplatte",
       "begriff": "Holzwolleleichtbauplatte",
       "varianten": [
@@ -7097,7 +7565,8 @@
         "seite": "87"
       },
       "themen": [
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-feuchte"
       ],
       "siehe": [
         "putztraeger",
@@ -7119,6 +7588,32 @@
       },
       "themen": [
         "bk-aw-zweischalig"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hygrothermische-simulation",
+      "begriff": "hygrothermische Simulation",
+      "varianten": [
+        "hygrothermischen Simulation"
+      ],
+      "definition": "Numerische Berechnung des zeitlich veränderlichen Wärme- und Feuchtetransports in Bauteilen nach DIN EN 15026. Sie erfasst auch die Feuchtespeicherung und wird eingesetzt, wo stationäre Verfahren wie das Glaserverfahren nicht ausreichen, etwa bei Gründächern.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "70"
+        },
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "71"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "glaserverfahren",
+        "stationaer"
       ],
       "stand": "2026-11"
     },
@@ -7227,6 +7722,35 @@
       "stand": "2026-11"
     },
     {
+      "id": "inhomogenes-bauteil",
+      "begriff": "inhomogenes Bauteil",
+      "varianten": [
+        "inhomogene Bauteile",
+        "inhomogenen Bauteil",
+        "inhomogenen Schichten",
+        "inhomogene Schichten"
+      ],
+      "definition": "Bauteil, in dessen Schichten nebeneinander verschiedene Stoffe liegen, etwa Sparren und Dämmung. Sein U-Wert wird als Näherung aus dem Mittel eines oberen und eines unteren Grenzwerts des Wärmedurchgangswiderstands bestimmt.",
+      "quelle": [
+        {
+          "werk": "Klausurtraining Bauphysik",
+          "seite": "22–23"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "104"
+        }
+      ],
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "oberer-grenzwert",
+        "unterer-grenzwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "innenanschlag",
       "begriff": "Innenanschlag",
       "definition": "Einbau von der Raumseite her gegen einen außen liegenden Laibungsvorsprung.",
@@ -7264,6 +7788,9 @@
     {
       "id": "innendaemmung",
       "begriff": "Innendämmung",
+      "varianten": [
+        "innengedämmt"
+      ],
       "definition": "Wärmedämmung auf der Raumseite einer Außenwand. Die Wand selbst liegt dann ganz auf der Kaltseite und kühlt ab, sodass im Bauteil Tauwasser entstehen kann; deshalb sind ein Dampfdiffusionsnachweis und meist eine sorgfältig verlegte Dampfbremse nötig.",
       "beispiel": "Bei Altbauten mit denkmalgeschützter Fassade ist oft nur eine Innendämmung möglich.",
       "quelle": {
@@ -7273,7 +7800,10 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-fenster",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "kaltseite",
@@ -7316,7 +7846,8 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "zweischalig",
@@ -7396,7 +7927,8 @@
       "id": "isotherme",
       "begriff": "Isotherme",
       "varianten": [
-        "13-Grad-Isotherme"
+        "13-Grad-Isotherme",
+        "Isothermenverlauf"
       ],
       "definition": "Linie gleicher Temperatur im Bauteilschnitt. Ihr Verlauf zeigt, wo ein Bauteil auskühlt, etwa an Wärmebrücken.",
       "quelle": {
@@ -7404,7 +7936,9 @@
         "seite": "147"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "schimmelpilzkriterium"
@@ -7432,13 +7966,17 @@
     {
       "id": "kalkzementmoertelverputz",
       "begriff": "Kalkzementmörtelverputz",
+      "varianten": [
+        "Kalkzementputz"
+      ],
       "definition": "Putz aus Mörtel mit Kalk und Zement als Bindemitteln. Am Sockel schließt er oberhalb des Zementmörtelputzes an und wird von diesem durch einen Kellenschnitt getrennt.",
       "quelle": {
         "werk": "DETAIL Atlas Mauerwerk",
         "seite": "231"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-uwert"
       ],
       "siehe": [
         "kellenschnitt",
@@ -7536,14 +8074,43 @@
     {
       "id": "kapillar",
       "begriff": "kapillar",
-      "varianten": [],
+      "varianten": [
+        "Kapillare"
+      ],
       "definition": "Durch haarfeine Poren eines Stoffes geführt. Wasser kann in solchen Poren allein durch die Oberflächenspannung wandern, auch nach oben.",
       "quelle": {
         "werk": "Praktische Bauphysik",
         "seite": "290"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-feuchte"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kapillaraktiv",
+      "begriff": "kapillaraktiv",
+      "varianten": [
+        "Kapillaraktive"
+      ],
+      "definition": "Eigenschaft eines Baustoffs, Wasser auch in flüssiger Form in seinen Poren zu speichern und durch seine Saugfähigkeit zu verteilen. Kapillaraktive Dämmstoffe wie Calciumsilikat werden für Innendämmungen genutzt, weil sie mögliches Tauwasser hinter der Dämmung verteilen.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "63"
+        },
+        {
+          "werk": "DETAIL Atlas Mauerwerk",
+          "seite": "183"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "kapillaritaet",
+        "innendaemmung"
       ],
       "stand": "2026-11"
     },
@@ -7560,6 +8127,59 @@
       ],
       "siehe": [
         "kopplungsfuge"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kapillaritaet",
+      "begriff": "Kapillarität",
+      "varianten": [
+        "Kapillarleitung",
+        "Kapillarwirkung",
+        "kapillare Wasserwanderung",
+        "kapillaren Wasserwanderung",
+        "kapillare Wanderung"
+      ],
+      "definition": "Verhalten von Flüssigkeiten in haarfeinen Poren: Durch die Oberflächenspannung steigen sie darin auf oder bleiben zurück. So wandert Wasser in Baustoffen weiter, zum Beispiel als aufsteigende Feuchte im Mauerwerk.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "290"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "291"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "kapillar",
+        "grenzflaechenspannung",
+        "aufsteigende-feuchte"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kapillarkondensation",
+      "begriff": "Kapillarkondensation",
+      "definition": "Niederschlag von Wasserdampf zu flüssigem Wasser in den engen Poren eines Stoffs. Sie macht Schimmel schon bei anhaltend etwa 80 % Luftfeuchte an der Oberfläche möglich, also bevor Tauwasser ausfällt.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "358"
+        },
+        {
+          "werk": "DETAIL Atlas Gebäudeöffnungen",
+          "seite": "65"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "tauwasser"
       ],
       "stand": "2026-11"
     },
@@ -7671,7 +8291,8 @@
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
         "bk-oeffnungen",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-uwert"
       ],
       "siehe": [
         "zweischalig",
@@ -7875,6 +8496,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "klinker",
+      "begriff": "Klinker",
+      "varianten": [],
+      "definition": "Gelochter oder ungelochter Ziegel, der bis zur Sintergrenze gebrannt wurde. Er ist dadurch schwer, dicht, hart und frostbeständig.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "50"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "mauerziegel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "kompressionsgrad",
       "begriff": "Kompressionsgrad",
       "definition": "Maß, wie stark ein Fugendichtungsband im eingebauten Zustand zusammengedrückt ist. Er muss ausreichen und innerhalb der Herstellervorgaben bleiben, sonst dichtet das Band nicht dauerhaft.",
@@ -7933,7 +8571,8 @@
       ],
       "themen": [
         "bk-aw-zweischalig",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "konsolanker",
@@ -7942,9 +8581,30 @@
       "stand": "2026-11"
     },
     {
+      "id": "konstruktive-waermebruecke",
+      "begriff": "konstruktive Wärmebrücke",
+      "varianten": [
+        "konstruktiven Wärmebrücke"
+      ],
+      "definition": "Wärmebrücke, die aus der Ausbildung der Konstruktion entsteht, etwa weil Verbindungsteile die Dämmschicht durchdringen oder umgehen. Die Fachbücher grenzen sie unterschiedlich von der stoffbedingten Wärmebrücke ab.",
+      "quelle": {
+        "werk": "DETAIL Atlas Mauerwerk",
+        "seite": "172"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "waermebruecke"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "konvektion",
       "begriff": "Konvektion",
-      "varianten": [],
+      "varianten": [
+        "Dampfkonvektion"
+      ],
       "definition": "Transport von Wärme oder Feuchte durch eine Luftströmung, die sie mitführt. Dringt feuchte Raumluft durch undichte Stellen in ein Bauteil ein, kann sie es von innen auffeuchten.",
       "quelle": [
         {
@@ -7957,7 +8617,9 @@
         }
       ],
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-feuchte",
+        "bp-uwert"
       ],
       "siehe": [
         "diffusion"
@@ -8026,17 +8688,69 @@
     {
       "id": "korrekturwert-delta-uf",
       "begriff": "Korrekturwert ΔUf",
-      "varianten": [],
+      "varianten": [
+        "Korrekturwert",
+        "ΔUf"
+      ],
       "definition": "Zuschlag auf den U-Wert für mechanische Befestigungsteile wie Drahtanker, die die Dämmschicht durchdringen. Berücksichtigt werden muss er, sobald die Gesamtkorrektur 3 % des U-Werts erreicht.",
       "quelle": {
         "werk": "Praktische Bauphysik",
         "seite": "106–107"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "u-wert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "korrekturwert-delta-ug",
+      "begriff": "Korrekturwert ΔUg",
+      "varianten": [
+        "ΔUg"
+      ],
+      "definition": "Zuschlag auf den U-Wert für Luftspalte in oder an der Dämmschicht. Seine Höhe hängt davon ab, wie groß die Spalte sind und ob auf der warmen Seite der Dämmung Luft zirkulieren kann.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "254–255"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "luftspalt",
+        "korrekturwert-delta-uf",
+        "korrekturwert-delta-ur"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "korrekturwert-delta-ur",
+      "begriff": "Korrekturwert ΔUr",
+      "varianten": [
+        "ΔUr"
+      ],
+      "definition": "Zuschlag auf den U-Wert eines Umkehrdachs. Er ist umso größer, je kleiner der Anteil des Wärmedurchlasswiderstands raumseitig der Abdichtung ist.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "105"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "141"
+        }
+      ],
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "umkehrdach",
+        "korrekturwert-delta-ug"
       ],
       "stand": "2026-11"
     },
@@ -8054,6 +8768,26 @@
       ],
       "siehe": [
         "nachrichtlich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kragplatte",
+      "begriff": "Kragplatte",
+      "varianten": [
+        "Stahlbetonkragplatte"
+      ],
+      "definition": "Platte, die aus einem Bauwerk heraus frei nach außen ragt, meist aus Stahlbeton. Läuft sie ohne thermische Trennung durch die Wand, leitet sie viel Wärme nach außen.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "127"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "balkonkragplatte",
+        "thermische-trennung"
       ],
       "stand": "2026-11"
     },
@@ -8104,6 +8838,19 @@
       ],
       "themen": [
         "rb-nachbarrecht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kuehlrippe",
+      "begriff": "Kühlrippe",
+      "definition": "Vorstehendes Bauteil, das Wärme gezielt nach außen ableitet. Im Fahrzeugbau erwünscht, am Gebäude ein Bild für den Schaden einer durchlaufenden Betonplatte.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "127–128"
+      },
+      "themen": [
+        "bp-waermebruecken"
       ],
       "stand": "2026-11"
     },
@@ -8191,10 +8938,25 @@
       "themen": [
         "bk-fenster",
         "bk-aw-zweischalig",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-feuchte",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "anschlag"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "laminare-stroemung",
+      "begriff": "laminare Strömung",
+      "definition": "Langsames Durchsickern einer Flüssigkeit durch einen porösen festen Stoff, wobei die Flüssigkeitsschichten ohne Wirbel aneinander vorbeigleiten.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "294"
+      },
+      "themen": [
+        "bp-feuchte"
       ],
       "stand": "2026-11"
     },
@@ -8281,7 +9043,9 @@
       "id": "laengenbezogener-waermedurchgangskoeffizient",
       "begriff": "längenbezogener Wärmedurchgangskoeffizient",
       "varianten": [
-        "ψ"
+        "ψ",
+        "längenbezogene Wärmedurchgangskoeffizient",
+        "längenbezogenen Verlustkoeffizienten"
       ],
       "definition": "Kennwert ψ in W/(m·K), mit dem Wärmeverluste über Wärmebrücken je Meter ihrer Länge berechnet werden, etwa an einem Fensteranschluss.",
       "quelle": {
@@ -8289,7 +9053,9 @@
         "seite": "177"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "stand": "2026-11"
     },
@@ -8324,7 +9090,8 @@
       "themen": [
         "bk-aw-zweischalig",
         "bk-fenster",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "auflager"
@@ -8385,6 +9152,29 @@
       ],
       "siehe": [
         "laibung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "leichtbeton",
+      "begriff": "Leichtbeton",
+      "definition": "Beton mit einer Trockenrohdichte von 0,8 bis 2,0 kg/dm³. Er leitet Wärme deutlich schlechter als Normalbeton.",
+      "quelle": [
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "54"
+        },
+        {
+          "werk": "Baukonstruktionslehre 1",
+          "seite": "59"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken",
+        "bp-uwert"
+      ],
+      "siehe": [
+        "leichtbetonstein"
       ],
       "stand": "2026-11"
     },
@@ -8528,7 +9318,8 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-uwert"
       ],
       "siehe": [
         "vollstein"
@@ -8553,11 +9344,29 @@
       "stand": "2026-11"
     },
     {
+      "id": "loesungsdiffusion",
+      "begriff": "Lösungsdiffusion",
+      "definition": "Wanderung von Wassermolekülen durch einen Stoff, in dem das Wasser gelöst ist, also durch eine Flüssigkeit oder einen organischen Stoff wie Holz, Kunststoff oder Bitumen.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "290"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "diffusion",
+        "oberflaechendiffusion"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "luftdichtheitsebene",
       "begriff": "Luftdichtheitsebene",
       "varianten": [
         "Luftdichtheit",
-        "luftdicht"
+        "luftdicht",
+        "Luftdichtung"
       ],
       "definition": "Durchgehende Schicht, die Raum- und Außenklima trennt und möglichst keine Luft durchlässt; luftdicht heißt, dass ein Bauteil oder eine Fuge diese Trennung leistet. In der Anschlussfuge ist sie Ebene 1 des 3-Ebenen-Modells.",
       "quelle": {
@@ -8565,7 +9374,8 @@
         "seite": "121"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte"
       ],
       "siehe": [
         "3-ebenen-modell"
@@ -8590,6 +9400,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "luftgrenzschicht",
+      "begriff": "Luftgrenzschicht",
+      "varianten": [
+        "Grenzschicht"
+      ],
+      "definition": "Dünne Luftzone unmittelbar vor einer Bauteiloberfläche, in der die Luftbewegung behindert ist. Sie ist die Ursache des Wärmeübergangswiderstands.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "20"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "waermeuebergangswiderstand"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "luftschicht",
       "begriff": "Luftschicht",
       "varianten": [
@@ -8604,10 +9433,35 @@
       "themen": [
         "bk-aw-zweischalig",
         "bk-stuerze",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte",
+        "bp-uwert"
       ],
       "siehe": [
         "hinterlueftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "luftspalt",
+      "begriff": "Luftspalt",
+      "varianten": [],
+      "definition": "Schmaler luftgefüllter Zwischenraum in einem Bauteil. Im Wärmeschutz meint er einen kleinen unbelüfteten Luftraum, dessen Breite oder Länge unter dem Zehnfachen seiner Dicke liegt, etwa zwischen Dämmplatten; er kann eine Korrektur des U-Werts auslösen.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "250"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "254–255"
+        }
+      ],
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "korrekturwert-delta-ug"
       ],
       "stand": "2026-11"
     },
@@ -8627,6 +9481,29 @@
       ],
       "siehe": [
         "entwaesserungsoeffnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "luftwechsel",
+      "begriff": "Luftwechsel",
+      "definition": "Austausch der Raumluft gegen Außenluft, durch bewusstes Lüften oder durch Undichtheiten (Infiltration). Er führt Wasserdampf ab und beeinflusst die relative Raumluftfeuchte deutlich; ohne ihn ist Tauwasser auch mit guter Dämmung nicht vermeidbar.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "478"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "479"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "relative-luftfeuchte",
+        "stossluftung"
       ],
       "stand": "2026-11"
     },
@@ -8805,7 +9682,8 @@
         "seite": "116"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-uwert"
       ],
       "siehe": [
         "kalksandstein"
@@ -8828,6 +9706,30 @@
         "abstandsflaeche",
         "hoehe-h",
         "baupaket-i"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mindestwaermeschutz",
+      "begriff": "Mindestwärmeschutz",
+      "varianten": [],
+      "definition": "Untergrenze des Wärmeschutzes, die an jeder Stelle eines Bauteils eingehalten sein muss und über Mindestwerte des Wärmedurchlasswiderstands festgelegt ist. Sie soll ein hygienisches Raumklima sichern und Tauwasser sowie damit Schimmel auf den Oberflächen verhindern; das Energiesparen regeln getrennte Anforderungen.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "99"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "256"
+        }
+      ],
+      "themen": [
+        "bp-uwert",
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "waermedurchlasswiderstand"
       ],
       "stand": "2026-11"
     },
@@ -8935,6 +9837,20 @@
       "stand": "2026-11"
     },
     {
+      "id": "monolithisch",
+      "begriff": "monolithisch",
+      "definition": "Bei Außenwänden: aus einer einzigen Schicht aufgebaut, die Tragen, Dämmen und Dichten zugleich übernimmt.",
+      "beispiel": "Eine dicke Wand aus Mauerwerk ohne zusätzliche Dämmschicht.",
+      "quelle": {
+        "werk": "DETAIL Atlas Baustoff",
+        "seite": "105"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "montagewinkel",
       "begriff": "Montagewinkel",
       "definition": "Metallwinkel, der ein Fenster vor der tragenden Wand, also im Bereich der Dämmung, befestigt und dessen Lasten in die Wand leitet.",
@@ -8960,7 +9876,8 @@
         "seite": "57"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "moertelgruppe",
@@ -9040,6 +9957,25 @@
       "siehe": [
         "argebau",
         "landesbauordnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "musterloesung",
+      "begriff": "Musterlösung",
+      "varianten": [
+        "Musterlösungen"
+      ],
+      "definition": "Im Beiblatt zur Wärmeschutznorm dargestellter Regelfall eines Bauteilanschlusses mit Prinzipskizze und ψ-Referenzwert. Wer so baut, braucht für den Anschluss keinen weiteren Wärmebrückennachweis.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "135"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "gleichwertigkeitsnachweis"
       ],
       "stand": "2026-11"
     },
@@ -9287,6 +10223,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "nennwert",
+      "begriff": "Nennwert",
+      "varianten": [
+        "deklarierter Wert",
+        "deklarierter Wärmeleitfähigkeitswert"
+      ],
+      "definition": "Aus Messungen unter festgelegten Bezugsbedingungen für Temperatur und Feuchte gewonnener Kennwert eines Baustoffs, etwa seiner Wärmeleitfähigkeit. Aus ihm wird der Bemessungswert für die Berechnung abgeleitet.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "216–217"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "bemessungswert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "nettobauland",
       "begriff": "Nettobauland",
       "definition": "Summe aller bebauten oder bebaubaren Grundstücke eines Gebiets, ohne Straßen, öffentliches Grün und Ähnliches.",
@@ -9413,6 +10369,23 @@
         "schutzschicht"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "normalbeton",
+      "begriff": "Normalbeton",
+      "varianten": [],
+      "definition": "Beton mit einer Rohdichte von über 2000 bis 2600 kg/m³. Auf ihn beziehen sich die meisten baulichen Anwendungen.",
+      "quelle": {
+        "werk": "DETAIL Atlas Fassaden",
+        "seite": "110"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "beton"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "normenkontrolle",
@@ -9608,6 +10581,44 @@
       "stand": "2026-11"
     },
     {
+      "id": "oberer-grenzwert",
+      "begriff": "oberer Grenzwert",
+      "varianten": [
+        "oberen Grenzwert",
+        "obere Grenzwert"
+      ],
+      "definition": "Wert des Wärmedurchgangswiderstands eines inhomogenen Bauteils, für den jeder nebeneinanderliegende Bereich getrennt gerechnet und nach Flächenanteilen gemittelt wird. Das entspricht der früheren Berechnung des k-Werts.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "22–23"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "inhomogenes-bauteil",
+        "unterer-grenzwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "oberflaechendiffusion",
+      "begriff": "Oberflächendiffusion",
+      "definition": "Wanderung von Wassermolekülen in einem Wasserfilm auf den äußeren und inneren Oberflächen eines Feststoffs. Sie zählt nur bei sehr porösen Stoffen mit hohem Wassergehalt.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "290"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "diffusion",
+        "loesungsdiffusion"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "oberflaechenschutz",
       "begriff": "Oberflächenschutz",
       "definition": "Schicht über der Dachabdichtung, die sie vor Witterung, UV-Strahlung und mechanischer Beanspruchung schützt. Leicht ist er als werkseitige Besplittung der Bahn, schwer etwa als Kiesschüttung, Plattenbelag oder Begrünung.",
@@ -9627,13 +10638,19 @@
     {
       "id": "oberflaechentemperatur",
       "begriff": "Oberflächentemperatur",
+      "varianten": [
+        "Mindestoberflächentemperatur",
+        "θsi"
+      ],
       "definition": "Temperatur an der Oberfläche eines Bauteils. Maßgeblich ist meist der raumseitige Tiefstwert an der ungünstigsten Stelle, denn dort drohen zuerst Tauwasser und Schimmel.",
       "quelle": {
         "werk": "DETAIL Atlas Gebäudeöffnungen",
         "seite": "65"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "temperaturfaktor"
@@ -9927,6 +10944,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "osmose",
+      "begriff": "Osmose",
+      "definition": "Wassertransport, den kein Wasserdruck, sondern ein elektrisches Spannungsgefälle in feinporigen Stoffen (Elektroosmose) oder ein von Salzen hervorgerufener Druck durch eine Membran antreibt.",
+      "beispiel": "Unter Umkehrdächern kann Wasser so durch die Abdichtung wandern und Blasen bilden.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "294"
+        },
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "69"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "parallelverfahren",
       "begriff": "Parallelverfahren",
       "definition": "Vorgehen, bei dem Bebauungsplan und Flächennutzungsplan gleichzeitig aufgestellt oder geändert werden, damit beide inhaltlich zusammenpassen. Es erleichtert das Verfahren, wenn der Flächennutzungsplan das Vorhaben noch nicht trägt.",
@@ -9981,7 +11018,8 @@
         "seite": "133"
       },
       "themen": [
-        "sockel-erdberuehrt"
+        "sockel-erdberuehrt",
+        "bp-uwert"
       ],
       "siehe": [
         "xps",
@@ -10204,7 +11242,8 @@
         }
       ],
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "siehe": [
         "splittbett",
@@ -10229,7 +11268,9 @@
       ],
       "themen": [
         "bk-aw-zweischalig",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte",
+        "bp-waermebruecken"
       ],
       "stand": "2026-11"
     },
@@ -10463,6 +11504,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "randbedingung",
+      "begriff": "Randbedingung",
+      "definition": "Vorgabe, die einer bauphysikalischen Berechnung zugrunde liegt, etwa Innen- und Außentemperatur, Luftfeuchte und Übergangswiderstände. Ergebnisse gelten nur unter den jeweils angesetzten Werten.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "130"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "raumabschluss",
       "begriff": "Raumabschluss",
       "varianten": [],
@@ -10624,6 +11678,19 @@
       "stand": "2026-11"
     },
     {
+      "id": "referenzwert",
+      "begriff": "Referenzwert",
+      "definition": "Bezugswert für ψ, der zu einer Musterlösung angegeben ist. Er gilt nur unter festgelegten Randbedingungen und kann im Einzelfall abweichen, dient also dem Vergleich von Anschlüssen.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "135"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "regensperre",
       "begriff": "Regensperre",
       "definition": "Teil des Wetterschutzes, der den Regen abweist. Beim zweistufigen Fugenprinzip liegt sie in einer eigenen Ebene, getrennt von der Windsperre.",
@@ -10685,6 +11752,34 @@
       ],
       "siehe": [
         "wohngebiet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "relative-luftfeuchte",
+      "begriff": "relative Luftfeuchte",
+      "varianten": [
+        "relativen Luftfeuchte",
+        "relativer Luftfeuchte",
+        "relative Feuchte",
+        "relativen Feuchte",
+        "relativer Feuchte",
+        "Luftfeuchte",
+        "Raumluftfeuchte"
+      ],
+      "definition": "Verhältnis der tatsächlich in der Luft enthaltenen Wassermenge zur höchstens möglichen Menge bei derselben Temperatur, meist in Prozent und mit dem Formelzeichen φ. Bei 100 % ist die Luft gesättigt; über die absolute Wassermenge sagt der Wert allein nichts aus.",
+      "beispiel": "Kühlt Raumluft ab, ohne dass Wasser hinzukommt, steigt ihre relative Luftfeuchte.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "279"
+      },
+      "themen": [
+        "bp-feuchte",
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "saettigungsgehalt",
+        "taupunkt"
       ],
       "stand": "2026-11"
     },
@@ -10890,7 +11985,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "stand": "2026-10"
     },
@@ -10923,7 +12019,8 @@
       "themen": [
         "bk-fenster",
         "bk-oeffnungen",
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "rollladenpilz"
@@ -10939,7 +12036,8 @@
         "seite": "147"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "rollladenkasten"
@@ -11011,6 +12109,32 @@
       "stand": "2026-10"
     },
     {
+      "id": "ruhende-luftschicht",
+      "begriff": "ruhende Luftschicht",
+      "varianten": [
+        "ruhenden Luftschicht",
+        "ruhenden Luftschichten"
+      ],
+      "definition": "Luftschicht ohne nennenswerte Verbindung zur umgebenden Luft. Ihr Wärmedurchlasswiderstand lässt sich nicht aus Dicke und Wärmeleitfähigkeit berechnen, weil auch Konvektion und Strahlung wirken; er wird deshalb Tabellen entnommen.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "250"
+        },
+        {
+          "werk": "Klausurtraining Bauphysik",
+          "seite": "19"
+        }
+      ],
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "luftschicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "rundbogen",
       "begriff": "Rundbogen",
       "varianten": [
@@ -11042,6 +12166,56 @@
       },
       "themen": [
         "rb-verfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "saettigungsdampfdruck",
+      "begriff": "Sättigungsdampfdruck",
+      "varianten": [
+        "Sättigungsdruck",
+        "Wasserdampf-Sättigungsdruck"
+      ],
+      "definition": "Höchster Dampfdruck, den Wasserdampf in Luft einer bestimmten Temperatur erreichen kann; er gilt für gesättigte Luft. Im Glaserverfahren bildet sein Verlauf die Obergrenze für den Dampfdruck im Bauteil.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "283"
+        },
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "70"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "dampfdruck",
+        "glaserverfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "saettigungsgehalt",
+      "begriff": "Sättigungsgehalt",
+      "varianten": [
+        "Sättigung",
+        "gesättigt",
+        "maximalen Wasserdampfgehalt"
+      ],
+      "definition": "Größte Menge Wasserdampf, die Luft bei einer bestimmten Temperatur aufnehmen kann. Sie hängt von der Temperatur ab; Luft, die sie erreicht hat, heißt gesättigt.",
+      "beispiel": "1 m³ Luft von 20 °C nimmt höchstens 17,3 g Wasser auf.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "279"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "relative-luftfeuchte",
+        "wasserdampfgehalt"
       ],
       "stand": "2026-11"
     },
@@ -11205,6 +12379,23 @@
       "stand": "2026-10"
     },
     {
+      "id": "schaumkunststoff",
+      "begriff": "Schaumkunststoff",
+      "varianten": [],
+      "definition": "Dämmstoff aus Kunststoff, dessen Poren durch einen Schäumvorgang entstehen. Die eingeschlossenen Gase bedingen seine geringe Wärmeleitfähigkeit und Rohdichte.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "133"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "daemmstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "scheitel",
       "begriff": "Scheitel",
       "definition": "Oberster Punkt eines Bogens, in dem sich beide Bogenhälften treffen. Dort sitzt der Schlussstein.",
@@ -11291,7 +12482,8 @@
       "id": "schimmelpilzkriterium",
       "begriff": "Schimmelpilzkriterium",
       "varianten": [
-        "80-%-Luftfeuchte-Kriterium"
+        "80-%-Luftfeuchte-Kriterium",
+        "kritisch angesetzte Luftfeuchte"
       ],
       "definition": "Prüfmaßstab an einem Anschluss: Liegt die 13-Grad-Isotherme innerhalb der geschlossenen Konstruktion, ist die Gefahr von Schimmelpilz und Tauwasser ausreichend gering.",
       "quelle": {
@@ -11299,7 +12491,8 @@
         "seite": "130"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "isotherme",
@@ -11325,7 +12518,8 @@
       "themen": [
         "bk-fenster",
         "bk-aw-zweischalig",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-feuchte"
       ],
       "siehe": [
         "beanspruchungsgruppe"
@@ -11425,7 +12619,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "siehe": [
         "schutzvlies",
@@ -11464,6 +12659,26 @@
       ],
       "themen": [
         "rb-lbo"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schwach-belueftete-luftschicht",
+      "begriff": "schwach belüftete Luftschicht",
+      "varianten": [
+        "Schwach belüftet"
+      ],
+      "definition": "Luftschicht, deren Öffnungen zur Umgebung die Grenze einer ruhenden Luftschicht überschreiten, aber noch begrenzt sind. Angesetzt wird die Hälfte des Tabellenwerts der ruhenden Schicht.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "251"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "ruhende-luftschicht",
+        "stark-belueftete-luftschicht"
       ],
       "stand": "2026-11"
     },
@@ -11544,7 +12759,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "diffusionsoffen",
@@ -11920,6 +13136,46 @@
       "stand": "2026-11"
     },
     {
+      "id": "sparren",
+      "begriff": "Sparren",
+      "varianten": [
+        "Sparrendecke",
+        "Sparrendächer"
+      ],
+      "definition": "Tragendes Bauteil des geneigten Dachs, im Allgemeinen aus Holz. Die Wärmedämmung liegt auf, zwischen oder unter den Sparren; liegt sie dazwischen, wirkt der Sparren gegenüber dem Dämmstoff als Wärmebrücke.",
+      "quelle": [
+        {
+          "werk": "Klausurtraining Bauphysik",
+          "seite": "93"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "163"
+        }
+      ],
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "gefachbereich"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "speichermasse",
+      "begriff": "Speichermasse",
+      "varianten": [],
+      "definition": "Bauteilmasse, die Wärme aufnimmt und zeitverzögert wieder abgibt. Sie dämpft so das Aufheizen und Auskühlen von Räumen; Dämmschichten vor der speichernden Schicht verringern diese Wirkung.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "68"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "sperrschicht",
       "begriff": "Sperrschicht",
       "varianten": [
@@ -12121,7 +13377,9 @@
       "themen": [
         "bk-stuerze",
         "bk-aw-zweischalig",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "beton",
@@ -12181,6 +13439,44 @@
       "siehe": [
         "standsicherheit",
         "bautechnische-nachweise"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stark-belueftete-luftschicht",
+      "begriff": "stark belüftete Luftschicht",
+      "varianten": [
+        "Stark belüftet",
+        "stark belüfteten Fassade"
+      ],
+      "definition": "Luftschicht mit größeren Öffnungen zur Umgebung als bei der schwach belüfteten erlaubt. Im Nachweis entfallen sie und alle Schichten zwischen ihr und der Außenluft; außen wird dafür der innere Übergangswiderstand angesetzt.",
+      "quelle": {
+        "werk": "Lehrbuch der Bauphysik",
+        "seite": "251"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "ruhende-luftschicht",
+        "schwach-belueftete-luftschicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stationaer",
+      "begriff": "stationär",
+      "definition": "Rechenweise mit gemittelten, zeitlich festen Randbedingungen, wie im Glaserverfahren. Zeitliche Änderungen, etwa Temperaturschwankungen im Tagesverlauf, erfasst sie nicht.",
+      "quelle": {
+        "werk": "DETAIL Atlas Flachdach",
+        "seite": "70"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "glaserverfahren",
+        "hygrothermische-simulation"
       ],
       "stand": "2026-11"
     },
@@ -12374,6 +13670,33 @@
       "stand": "2026-11"
     },
     {
+      "id": "stoffbedingte-waermebruecke",
+      "begriff": "stoffbedingte Wärmebrücke",
+      "varianten": [
+        "stoffbedingt",
+        "Stoffbedingt"
+      ],
+      "definition": "Wärmebrücke, die entsteht, weil Baustoffe unterschiedlicher Wärmeleitfähigkeit nebeneinanderliegen. Auch materialbedingte Wärmebrücke genannt.",
+      "beispiel": "Eine Stahlbetonstütze in einer Außenwand aus Mauerwerk.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "181"
+        },
+        {
+          "werk": "DETAIL Atlas Mauerwerk",
+          "seite": "172"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "waermebruecke"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "stoerer",
       "begriff": "Störer",
       "varianten": [
@@ -12433,6 +13756,22 @@
       "stand": "2026-10"
     },
     {
+      "id": "stossluftung",
+      "begriff": "Stoßlüftung",
+      "definition": "Kurzes Lüften mit weit geöffneten Fenstern, etwa 5 bis 10 Minuten und mehrmals täglich. Dauernd gekippte Fenster kühlen dagegen die angrenzenden Bauteile ab und fördern Tauwasser.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "307"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "luftwechsel"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "strassenbegrenzungslinie",
       "begriff": "Straßenbegrenzungslinie",
       "definition": "Im Bebauungsplan festgesetzte Linie zwischen Verkehrsfläche und angrenzenden Flächen. Nur was dahinter im Bauland liegt, zählt für die Berechnung von GRZ, GFZ und BMZ.",
@@ -12467,6 +13806,23 @@
       ],
       "siehe": [
         "abstandsflaeche"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "streifenfundament",
+      "begriff": "Streifenfundament",
+      "definition": "Lang gestrecktes Fundament unter Mauern oder engen Stützenreihen, das deren linienförmig wirkende Lasten aufnimmt.",
+      "quelle": {
+        "werk": "Baukonstruktionslehre 1",
+        "seite": "44"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "fundament",
+        "flaechengruendung"
       ],
       "stand": "2026-11"
     },
@@ -12545,7 +13901,8 @@
         "bk-stuerze",
         "bk-aw-zweischalig",
         "bk-fenster",
-        "bk-oeffnungen"
+        "bk-oeffnungen",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "belastungsdreieck",
@@ -12658,10 +14015,34 @@
       "stand": "2026-11"
     },
     {
+      "id": "tauperiode",
+      "begriff": "Tauperiode",
+      "definition": "Rechnerischer Winterabschnitt im Glaserverfahren, in dem sich Tauwasser im Bauteil ansammelt. DIN 4108-3 setzt dafür für nicht klimatisierte Wohn- und Bürogebäude 60 Tage an.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Flachdach",
+          "seite": "70"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "300"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "verdunstungsperiode",
+        "glaserverfahren"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "taupunkt",
       "begriff": "Taupunkt",
       "varianten": [
-        "Taupunkttemperatur"
+        "Taupunkttemperatur",
+        "Tautemperatur"
       ],
       "definition": "Temperatur, bei der die relative Luftfeuchte 100 % erreicht. Kühlt die Luft darunter ab, wird aus Wasserdampf flüssiges Wasser und es fällt Tauwasser aus.",
       "quelle": {
@@ -12671,7 +14052,10 @@
       "themen": [
         "bk-flachdach",
         "bk-fenster",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "tauwasser"
@@ -12686,7 +14070,8 @@
         "Tauwasserbildung",
         "Kondensfeuchte",
         "tauwasserfrei",
-        "Tauwassergefahr"
+        "Tauwassergefahr",
+        "Tauwassermenge"
       ],
       "definition": "Wasser, das sich aus abkühlendem Wasserdampf niederschlägt, an kalten Oberflächen oder im Inneren eines Bauteils; auch Kondenswasser genannt. Es kann Dämmstoffe durchfeuchten und zu Schimmel oder Frostschäden führen.",
       "quelle": {
@@ -12698,13 +14083,39 @@
         "bk-aw-zweischalig",
         "bk-fenster",
         "bk-flachdach",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "diffusion",
         "kaltseite"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "tauwasserebene",
+      "begriff": "Tauwasserebene",
+      "definition": "Stelle im Bauteil, an der Tauwasser anfällt und der Dampfdruck dem Sättigungsdampfdruck entspricht. Im Glaserdiagramm trennt sie den Bereich des Eindiffundierens von dem des Ausdiffundierens.",
+      "quelle": [
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "409"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "317"
+        }
+      ],
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "glaserverfahren",
+        "saettigungsdampfdruck"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "technische-baubestimmungen",
@@ -12800,6 +14211,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "temperatur-korrekturfaktor",
+      "begriff": "Temperatur-Korrekturfaktor",
+      "varianten": [
+        "Korrekturfaktor"
+      ],
+      "definition": "Faktor in der Wärmebilanz eines Gebäudes, der den Wärmestrom eines Bauteils nach dessen Lage gewichtet. Gegen Außenluft beträgt er 1, gegen unbeheizte Räume oder Erdreich weniger, weil der Temperaturunterschied dort kleiner ist.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "105"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "transmissionswaermeverlust"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "temperaturfaktor",
       "begriff": "Temperaturfaktor",
       "varianten": [
@@ -12811,7 +14241,9 @@
         "seite": "65"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "oberflaechentemperatur",
@@ -12888,6 +14320,31 @@
       "stand": "2026-11"
     },
     {
+      "id": "thermische-trennung",
+      "begriff": "thermische Trennung",
+      "varianten": [
+        "Trennelement"
+      ],
+      "definition": "Dämmende Unterbrechung eines durchlaufenden, gut leitenden Bauteils in der Ebene der Außenwanddämmung. Lasten müssen weiter übertragen werden, sodass die Tragwirkung gesondert nachzuweisen ist.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "129"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "133"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "bewehrungskorb"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "thermischer-kurzschluss",
       "begriff": "thermischer Kurzschluss",
       "varianten": [
@@ -12934,7 +14391,8 @@
         "seite": "54"
       },
       "themen": [
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-waermebruecken"
       ],
       "stand": "2026-11"
     },
@@ -12955,6 +14413,24 @@
       ],
       "siehe": [
         "unterlegklotz"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "transmissionswaermeverlust",
+      "begriff": "Transmissionswärmeverlust",
+      "varianten": [],
+      "definition": "Wärmeverlust, der durch die Außenbauteile eines Gebäudes von innen nach außen geht, im Unterschied zum Verlust durch den Luftwechsel.",
+      "beispiel": "Für eine Wand ergibt er sich aus U-Wert, Fläche und Temperaturunterschied.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "15"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "u-wert"
       ],
       "stand": "2026-11"
     },
@@ -13100,6 +14576,23 @@
       "stand": "2026-11"
     },
     {
+      "id": "trocknungsreserve",
+      "begriff": "Trocknungsreserve",
+      "definition": "Rechnerischer Überschuss der Verdunstungsmenge über die Tauwassermenge, der auch die nicht genau bekannte Feuchte aus Dampfkonvektion abdeckt; angesetzt werden 250 g/m². Als Konstruktionsprinzip für Flachdächer in Leichtbauweise heißt das: so dicht wie nötig, so diffusionsoffen wie möglich.",
+      "quelle": {
+        "werk": "DETAIL Atlas Flachdach",
+        "seite": "68"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "konvektion",
+        "verdunstungsperiode"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "tropfscheibe",
       "begriff": "Tropfscheibe",
       "varianten": [],
@@ -13213,7 +14706,8 @@
       "id": "u-wert",
       "begriff": "U-Wert",
       "varianten": [
-        "Wärmedurchgangskoeffizient"
+        "Wärmedurchgangskoeffizient",
+        "k-Wert"
       ],
       "definition": "Kennwert dafür, wie viel Wärme je Quadratmeter Bauteilfläche und Kelvin Temperaturunterschied durch ein Bauteil geht, in W/(m²·K). Er ergibt sich aus Dicke und Wärmeleitfähigkeit aller Schichten samt den Übergängen an den Oberflächen; je kleiner er ist, desto besser dämmt das Bauteil.",
       "quelle": {
@@ -13222,7 +14716,10 @@
       },
       "themen": [
         "bk-aw-zweischalig",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "waermeleitfaehigkeit"
@@ -13404,7 +14901,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "siehe": [
         "xps"
@@ -13492,6 +14990,26 @@
       "stand": "2026-11"
     },
     {
+      "id": "unbeheizte-pufferzone",
+      "begriff": "unbeheizte Pufferzone",
+      "definition": "Nicht beheizter Bereich zwischen beheizten Räumen und Außenluft, der im Winter als thermischer Puffer wirkt. Beim Wärmebrückennachweis wird er mit +10 °C angesetzt.",
+      "beispiel": "Ein unbeheizter Wintergarten.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Baustoff",
+          "seite": "216"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "131"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "innenbereich",
       "begriff": "unbeplanter Innenbereich",
       "varianten": [
@@ -13520,6 +15038,32 @@
       "stand": "2026-11"
     },
     {
+      "id": "ungestoerte-flaeche",
+      "begriff": "ungestörte Fläche",
+      "varianten": [
+        "ungestörten Fläche",
+        "ungestörte Wandbereich",
+        "ungestörten Bereich",
+        "Ungestörter Bauteilbereich"
+      ],
+      "definition": "Bauteilbereich abseits von Ecken, Anschlüssen und Durchdringungen, in dem die Wärme gleichmäßig durch den Regelaufbau fließt. Für ihn gilt der U-Wert.",
+      "quelle": [
+        {
+          "werk": "DETAIL Atlas Mauerwerk",
+          "seite": "172"
+        },
+        {
+          "werk": "Klausurtraining Bauphysik",
+          "seite": "21"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken",
+        "bp-uwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "untere-denkmalschutzbehoerde",
       "begriff": "untere Denkmalschutzbehörde",
       "varianten": [
@@ -13537,6 +15081,28 @@
       ],
       "siehe": [
         "denkmalschutzbehoerde"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "unterer-grenzwert",
+      "begriff": "unterer Grenzwert",
+      "varianten": [
+        "unteren Grenzwert",
+        "untere Grenzwert",
+        "unterem Grenzwert"
+      ],
+      "definition": "Wert des Wärmedurchgangswiderstands eines inhomogenen Bauteils, für den zuerst je Schicht die Wärmeleitfähigkeit nach Flächenanteilen gemittelt und daraus der Widerstand gebildet wird.",
+      "quelle": {
+        "werk": "Klausurtraining Bauphysik",
+        "seite": "23"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "inhomogenes-bauteil",
+        "oberer-grenzwert"
       ],
       "stand": "2026-11"
     },
@@ -13751,7 +15317,8 @@
         "seite": "300"
       },
       "themen": [
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-feuchte"
       ],
       "siehe": [
         "tauwasser"
@@ -14286,6 +15853,25 @@
       "stand": "2026-11"
     },
     {
+      "id": "vorgehaengte-hinterlueftete-fassade",
+      "begriff": "vorgehängte hinterlüftete Fassade",
+      "varianten": [
+        "vorgehängten hinterlüfteten Fassade"
+      ],
+      "definition": "Fassadenbekleidung, die über eine Unterkonstruktion im Abstand vor der tragenden Wand befestigt ist. Der Zwischenraum nimmt die Dämmung und die Hinterlüftung auf.",
+      "quelle": {
+        "werk": "DETAIL Atlas Fassaden",
+        "seite": "37"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "hinterlueftung"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "vorhaben",
       "begriff": "Vorhaben",
       "definition": "Im Baurecht das Projekt, über dessen Zulässigkeit zu entscheiden ist. Im Bauplanungsrecht zählen dazu das Errichten, Ändern oder Umnutzen einer baulichen Anlage sowie größere Aufschüttungen, Abgrabungen und Ablagerungen, auch wenn das Landesrecht dafür kein Genehmigungsverfahren verlangt.",
@@ -14433,7 +16019,8 @@
         "bk-aw-zweischalig",
         "bk-oeffnungen",
         "bk-stuerze",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-uwert"
       ],
       "siehe": [
         "zweischalig",
@@ -14587,12 +16174,39 @@
         "bk-fenster",
         "bk-oeffnungen",
         "bk-stuerze",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "tauwasser"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "waermebrueckennachweis",
+      "begriff": "Wärmebrückennachweis",
+      "definition": "Prüfung, ob ein Anschluss ausreichend gegen Tauwasser und Schimmel geschützt ist: über die Übereinstimmung mit einer Musterlösung oder rechnerisch über den Temperaturfaktor an der ungünstigsten Stelle.",
+      "quelle": [
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "130"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "135"
+        }
+      ],
+      "themen": [
+        "bp-waermebruecken",
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "temperaturfaktor",
+        "musterloesung"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "waermedaemmung",
@@ -14601,7 +16215,9 @@
         "Wärmedämmschicht",
         "Dämmung",
         "Dämmlage",
-        "Dämmschicht"
+        "Dämmschicht",
+        "Dämmebene",
+        "Wärmedämm-Maßnahmen"
       ],
       "definition": "Schicht aus Dämmstoff, die den Wärmedurchgang durch ein Bauteil begrenzt. Sie wird oft aus Platten verlegt und nach den Anforderungen an den Wärmeschutz bemessen.",
       "quelle": {
@@ -14610,7 +16226,10 @@
       },
       "themen": [
         "bk-flachdach",
-        "bk-stuerze"
+        "bk-stuerze",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "daemmstoff",
@@ -14637,11 +16256,50 @@
       "stand": "2026-11"
     },
     {
+      "id": "waermedurchgang",
+      "begriff": "Wärmedurchgang",
+      "varianten": [],
+      "definition": "Gesamter Wärmetransport durch ein Bauteil von der Luft auf der einen Seite zur Luft auf der anderen. Er umfasst beide Übergänge an den Oberflächen und die Leitung durch die Schichten.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "69"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "u-wert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "waermedurchgangswiderstand",
+      "begriff": "Wärmedurchgangswiderstand",
+      "varianten": [
+        "RT"
+      ],
+      "definition": "Gesamtwiderstand eines Bauteils auf dem Weg von Luft zu Luft, in m²·K/W: die Wärmedurchlasswiderstände aller Schichten zuzüglich der beiden Übergangswiderstände an den Oberflächen. Sein Kehrwert ist der U-Wert.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "21"
+      },
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "waermedurchlasswiderstand",
+        "waermeuebergangswiderstand",
+        "u-wert"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "waermedurchlasswiderstand",
       "begriff": "Wärmedurchlasswiderstand",
       "varianten": [
         "Wärmedurchlasswiderstände",
-        "Gesamtwärmedurchlasswiderstand"
+        "Gesamtwärmedurchlasswiderstand",
+        "R-Wert"
       ],
       "definition": "Maß dafür, wie stark eine Schicht den Wärmedurchgang behindert, in m²K/W; je größer, desto besser die Dämmwirkung. Er ergibt sich aus Dicke geteilt durch Wärmeleitfähigkeit, bei mehreren Schichten addieren sich die Werte.",
       "quelle": {
@@ -14650,7 +16308,10 @@
       },
       "themen": [
         "bk-flachdach",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "waermeleitfaehigkeit"
@@ -14660,6 +16321,10 @@
     {
       "id": "waermeleitfaehigkeit",
       "begriff": "Wärmeleitfähigkeit",
+      "varianten": [
+        "λ",
+        "Wärmeleitzahl"
+      ],
       "definition": "Kennwert λ in W/(m·K), der angibt, wie gut ein Stoff Wärme leitet. Je kleiner der Wert, desto besser dämmt der Stoff.",
       "beispiel": "Ruhende Luft hat etwa 0,024 W/(m·K), Wasser rund 0,6 W/(m·K) – deshalb verliert ein durchnässter Dämmstoff einen Großteil seiner Wirkung.",
       "quelle": {
@@ -14669,12 +16334,67 @@
       "themen": [
         "sockel-erdberuehrt",
         "bk-aw-zweischalig",
-        "bk-fenster"
+        "bk-fenster",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "daemmstoff"
       ],
       "stand": "2026-10"
+    },
+    {
+      "id": "waermeleitfaehigkeitsgruppe",
+      "begriff": "Wärmeleitfähigkeitsgruppe",
+      "varianten": [],
+      "definition": "Einteilung der Dämmstoffe in Stufen von 020 bis 060, damit nicht mit vielen kaum verschiedenen Einzelwerten gerechnet werden muss. Die Zahl steht für die Wärmeleitfähigkeit ohne Einheit, 035 also für 0,035 W/(m·K).",
+      "quelle": [
+        {
+          "werk": "Klausurtraining Bauphysik",
+          "seite": "20"
+        },
+        {
+          "werk": "Praktische Bauphysik",
+          "seite": "91"
+        }
+      ],
+      "themen": [
+        "bp-uwert"
+      ],
+      "siehe": [
+        "waermeleitfaehigkeit",
+        "daemmstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "waermeschutz",
+      "begriff": "Wärmeschutz",
+      "varianten": [],
+      "definition": "Alle baulichen Maßnahmen, die Wärmeverluste eines Gebäudes im Winter begrenzen und die Konstruktion vor Schäden durch Feuchte bewahren. Beim sommerlichen Wärmeschutz geht es zusätzlich um den Schutz vor Überhitzung.",
+      "quelle": [
+        {
+          "werk": "Bauphysik",
+          "seite": "15"
+        },
+        {
+          "werk": "Bauphysik",
+          "seite": "67"
+        },
+        {
+          "werk": "Lehrbuch der Bauphysik",
+          "seite": "256"
+        }
+      ],
+      "themen": [
+        "bp-uwert",
+        "bp-feuchte",
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "mindestwaermeschutz"
+      ],
+      "stand": "2026-11"
     },
     {
       "id": "waermestau",
@@ -14690,6 +16410,24 @@
       "stand": "2026-11"
     },
     {
+      "id": "waermestrom",
+      "begriff": "Wärmestrom",
+      "varianten": [],
+      "definition": "Wärmemenge, die je Zeiteinheit übertragen wird, Formelzeichen Φ, in Watt. Er fließt stets von der höheren zur niedrigeren Temperatur; auf die Fläche bezogen ergibt er die Wärmestromdichte.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "15"
+      },
+      "themen": [
+        "bp-uwert",
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "waermestromdichte"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "waermestromdichte",
       "begriff": "Wärmestromdichte",
       "definition": "Wärmestrom je Fläche durch ein Bauteil, Formelzeichen q, in W/m². Er ergibt sich aus dem U-Wert mal dem Temperaturunterschied von Innen- und Außenluft.",
@@ -14698,7 +16436,78 @@
         "seite": "71"
       },
       "themen": [
-        "bk-fenster"
+        "bk-fenster",
+        "bp-feuchte",
+        "bp-waermebruecken",
+        "bp-uwert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "waermeuebergangswiderstand",
+      "begriff": "Wärmeübergangswiderstand",
+      "varianten": [
+        "Wärmeübergangswiderstände",
+        "Übergangswiderstand",
+        "Übergangswiderstände",
+        "Rsi",
+        "Rse",
+        "Rsi-Wert"
+      ],
+      "definition": "Widerstand, den die Wärme beim Übergang zwischen Luft und Bauteiloberfläche überwinden muss, weil die Konvektion dicht vor der Oberfläche gebremst ist. Er wirkt wie eine zusätzliche dünne Dämmschicht und hängt von Lage des Bauteils, Richtung des Wärmestroms und Luftbewegung ab; innen heißt er Rsi, außen Rse.",
+      "quelle": {
+        "werk": "Bauphysik",
+        "seite": "20–21"
+      },
+      "themen": [
+        "bp-uwert",
+        "bp-feuchte",
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "waermedurchgangswiderstand",
+        "luftgrenzschicht"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wasserdampf-diffusionsdurchlasswiderstand",
+      "begriff": "Wasserdampf-Diffusionsdurchlasswiderstand",
+      "varianten": [
+        "Diffusionsdurchlasswiderstand"
+      ],
+      "definition": "Kennwert 1/Δ dafür, wie stark eine Bauteilschicht den Wasserdampftransport behindert. Er entspricht beim Feuchteschutz dem Wärmedurchlasswiderstand R des Wärmeschutzes.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "297"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "diffusionsstromdichte",
+        "diffusionswiderstand",
+        "waermedurchlasswiderstand"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wasserdampfgehalt",
+      "begriff": "Wasserdampfgehalt",
+      "varianten": [
+        "absolute Feuchte"
+      ],
+      "definition": "Menge an Wasserdampf, die tatsächlich in der Luft enthalten ist, auch absolute Feuchte genannt. Dieser absolute Gehalt und nicht die relative Luftfeuchte bestimmt, in welche Richtung Wasserdampf diffundiert: stets dorthin, wo die Luft absolut trockener ist.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "290"
+      },
+      "themen": [
+        "bp-feuchte"
+      ],
+      "siehe": [
+        "saettigungsgehalt",
+        "diffusion"
       ],
       "stand": "2026-11"
     },
@@ -14949,7 +16758,8 @@
       },
       "themen": [
         "sockel-erdberuehrt",
-        "bk-flachdach"
+        "bk-flachdach",
+        "bp-uwert"
       ],
       "siehe": [
         "perimeterdaemmung",
@@ -15240,7 +17050,9 @@
         "bk-aw-zweischalig",
         "bk-oeffnungen",
         "bk-stuerze",
-        "skizzen-sockel"
+        "skizzen-sockel",
+        "bp-waermebruecken",
+        "bp-uwert"
       ],
       "siehe": [
         "innenschale",
@@ -15271,6 +17083,22 @@
       "stand": "2026-11"
     },
     {
+      "id": "zwickelpilz",
+      "begriff": "Zwickelpilz",
+      "definition": "Schimmelbefall im oberen Winkel eines Raums, wo zwei Außenwände und die Decke zusammentreffen. Der Wärmestrom weitet sich dort besonders stark auf, sodass die Innenfläche rasch auskühlt.",
+      "quelle": {
+        "werk": "Praktische Bauphysik",
+        "seite": "127"
+      },
+      "themen": [
+        "bp-waermebruecken"
+      ],
+      "siehe": [
+        "rollladenpilz"
+      ],
+      "stand": "2026-11"
+    },
+    {
       "id": "psi-wert",
       "begriff": "ψ-Wert",
       "varianten": [
@@ -15283,7 +17111,8 @@
         "seite": "188"
       },
       "themen": [
-        "bk-aw-zweischalig"
+        "bk-aw-zweischalig",
+        "bp-waermebruecken"
       ],
       "siehe": [
         "waermebruecke"
