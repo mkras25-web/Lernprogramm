@@ -11,9 +11,17 @@
 //
 // Die Profil-Id ist die geraeteuebergreifende Identitaet (siehe profile.js).
 
-import { exportieren, geraeteKennung, importieren, mitProfil } from './speicher.js'
+import { exportieren, geraeteKennung, importieren, mitProfil, vermerkeWirkung } from './speicher.js'
 import * as dropbox from './dropbox.js'
-import { kopieEinmalAmTag } from './kopien.js'
+import { kopieAnlegen, kopieEinmalAmTag } from './kopien.js'
+
+// Wuerde eine fremde Datei so viele lokale Eintraege loeschen, legt der
+// Abgleich vorher eine eigene lokale Sicherheitskopie an - "Alles loeschen"
+// soll weiter auf alle Geraete wirken, eine kaputte oder manipulierte Datei
+// im App-Ordner darf den Fortschritt aber nicht unwiederbringlich
+// wegnehmen (Sicherheitsaudit 2026-11-04). Zurueck ueber "Wiederherstellen".
+export const MASSENLOESCHUNG = 20
+export const MASSENLOESCHUNG_GRUND = 'vor Löschung durch Abgleich'
 
 const DATEINAME = /^p-(.+)-([0-9a-f]{8})\.json$/
 
@@ -165,6 +173,10 @@ async function abgleichenIntern({ profilId, profilName, mitSkizzen }) {
     const text = await dropbox.herunterladen(eintrag.name)
     let teil
     try {
+      const wirkung = await mitProfil(profilId, () => vermerkeWirkung(JSON.parse(text)?.geloescht))
+      if (wirkung >= MASSENLOESCHUNG) {
+        await kopieAnlegen({ profilId, profilName, grund: MASSENLOESCHUNG_GRUND })
+      }
       teil = await mitProfil(profilId, () => importieren(text))
     } catch (e) {
       if (e?.name === 'ProfilGewechselt') throw e

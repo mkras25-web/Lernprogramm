@@ -17,7 +17,7 @@ import {
   allesLoeschen,
   wiederherstellen,
 } from './speicher.js'
-import { abgleichen, dateiname, dropboxKopien, dropboxKopieLaden, KOPIEN_TAGE, profilAusDateiname, profileInDropbox } from './abgleich.js'
+import { abgleichen, dateiname, dropboxKopien, dropboxKopieLaden, KOPIEN_TAGE, MASSENLOESCHUNG, MASSENLOESCHUNG_GRUND, profilAusDateiname, profileInDropbox } from './abgleich.js'
 import { kopieAnlegen, kopienListe, kopieText } from './kopien.js'
 import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
 import { profilErstellen, profilLoeschen } from './profile.js'
@@ -666,5 +666,59 @@ describe('Sicherheitskopien (T1, 2026-10-13)', () => {
     await kopieAnlegen({ profilId: PROFIL, profilName: 'Max', grund: 'Test' })
     await profilLoeschen(PROFIL)
     expect(await kopienListe(PROFIL)).toHaveLength(0)
+  })
+})
+
+describe('Loeschvermerke aus fremden Dateien (Sicherheitsaudit 2026-11-04)', () => {
+  const ids = async () => (await alleEreignisse()).map((e) => e.itemId).sort()
+
+  it('"Alles loeschen" wirkt weiter auf das andere Geraet, dort liegt vorher eine Sicherheitskopie', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    for (let i = 0; i < MASSENLOESCHUNG + 5; i++) await antworten(`m-${i}`)
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(await ids()).toHaveLength(MASSENLOESCHUNG + 5)
+    const vorher = (await kopienListe(PROFIL)).filter((k) => k.grund === MASSENLOESCHUNG_GRUND)
+    expect(vorher).toHaveLength(0)
+
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await allesLoeschen()
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(await ids()).toEqual([])
+    const kopien = (await kopienListe(PROFIL)).filter((k) => k.grund === MASSENLOESCHUNG_GRUND)
+    expect(kopien).toHaveLength(1)
+    const bericht = await wiederherstellen(await kopieText(kopien[0].id))
+    expect(bericht.ereignisse).toBe(MASSENLOESCHUNG + 5)
+  })
+
+  it('einzelnes Loeschen legt keine Extrakopie an', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    const e = await antworten('x-1')
+    await antworten('x-2')
+    await abgleich('pc')
+    await abgleich('phone')
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await ereignisLoeschen(e.id ?? e)
+    await abgleich('pc')
+    await abgleich('phone')
+    expect(await ids()).toEqual(['x-2'])
+    expect((await kopienListe(PROFIL)).filter((k) => k.grund === MASSENLOESCHUNG_GRUND)).toHaveLength(0)
+  })
+
+  it('ein Loeschvermerk aus der Zukunft wird nicht uebernommen', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    await antworten('z-1')
+    const [ereignis] = await alleEreignisse()
+    const fremd = JSON.parse(await exportieren({ profilId: PROFIL, profilName: 'Max' }))
+    fremd.geloescht = { ereignisse: { [ereignis.id]: Date.now() + 30 * 86_400_000 }, marken: { 'z-1': Infinity } }
+    const bericht = await importieren(JSON.stringify(fremd))
+    expect(bericht.geloescht).toBe(0)
+    expect(await ids()).toEqual(['z-1'])
   })
 })

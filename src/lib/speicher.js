@@ -567,6 +567,37 @@ async function vereinigen(name, eintraege, schluessel, geloescht = {}) {
   return neue.length
 }
 
+// Ein Vermerk aus der Zukunft (falsche Uhr oder manipulierte Datei) wuerde
+// eine Marke fuer immer sperren - sie gaelte stets als aelter. Etwas
+// Spielraum fuer leicht falsch gehende Geraeteuhren (Audit 2026-11-04).
+const VERMERK_ZUKUNFT_MS = 24 * 60 * 60 * 1000
+function gueltigerVermerk(ts) {
+  return typeof ts === 'number' && Number.isFinite(ts) && ts <= Date.now() + VERMERK_ZUKUNFT_MS
+}
+
+// Wie viele lokal vorhandene Zeilen wuerden fremde Loeschvermerke
+// entfernen? Schreibt nichts - der Abgleich legt bei vielen vorher eine
+// Sicherheitskopie an (abgleich.js, Audit 2026-11-04).
+export async function vermerkeWirkung(fremd) {
+  if (!fremd || typeof fremd !== 'object') return 0
+  let anzahl = 0
+  const zaehlen = async (name, art, istMarke) => {
+    const quelle = fremd[art]
+    if (!quelle || typeof quelle !== 'object') return
+    for (const z of await alleAus(name)) {
+      const k = istMarke ? z.itemId : z.id
+      if (!Object.hasOwn(quelle, k)) continue
+      const ts = quelle[k]
+      if (gueltigerVermerk(ts) && (!istMarke || (z.ts ?? 0) <= ts)) anzahl += 1
+    }
+  }
+  await zaehlen(STORE, 'ereignisse', false)
+  await zaehlen(SKIZZEN, 'skizzen', false)
+  await zaehlen(PRUEFUNGEN, 'pruefungen', false)
+  await zaehlen(MARKEN, 'marken', true)
+  return anzahl
+}
+
 // Fremde Loeschvermerke uebernehmen und anwenden: vermerkte Zeilen hier
 // entfernen, die Vermerke selbst behalten (damit sie weiterreisen).
 async function vermerkeAnwenden(fremd) {
@@ -575,7 +606,7 @@ async function vermerkeAnwenden(fremd) {
     const quelle = fremd?.[art]
     if (!quelle || typeof quelle !== 'object') continue
     for (const [k, ts] of Object.entries(quelle)) {
-      if (typeof ts === 'number' && (lokal[art][k] ?? 0) < ts) lokal[art][k] = ts
+      if (gueltigerVermerk(ts) && (lokal[art][k] ?? 0) < ts) lokal[art][k] = ts
     }
   }
   vermerkeSchreiben(lokal)

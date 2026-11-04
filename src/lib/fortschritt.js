@@ -234,9 +234,14 @@ export function serieBerechnen(ereignisse) {
 // die Spalten noch Umlaute richtig erkennt.
 const BEWERTUNGSNAMEN = { 1: 'Nochmal', 2: 'Schwer', 3: 'Gut', 4: 'Leicht' }
 
+// Texte, die mit = + - @ (oder Tab/Wagenruecklauf) beginnen, wertet Excel
+// als Formel aus - etwa =HYPERLINK(...) aus einer Frage oder einer
+// importierten itemId. Ein vorangestelltes ' macht sie zu reinem Text
+// (Sicherheitsaudit 2026-11-04). Echte Zahlen bleiben unveraendert.
 function csvFeld(wert) {
-  const text = wert === undefined || wert === null ? '' : String(wert)
-  return /[;"\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text
+  let text = wert === undefined || wert === null ? '' : String(wert)
+  if (typeof wert === 'string' && /^[=+\-@\t\r]/.test(text)) text = `'${text}`
+  return /[;"\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text
 }
 
 export function csvAusEreignissen(ereignisse, items) {
