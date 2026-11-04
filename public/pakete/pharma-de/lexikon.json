@@ -1,0 +1,2533 @@
+{
+  "eintraege": [
+    {
+      "id": "akkumulation",
+      "begriff": "Akkumulation",
+      "definition": "Anreicherung eines Arzneistoffs im Körper, weil er langsamer abgebaut wird als zugeführt, etwa wenn ein zweiter Wirkstoff sein Abbauenzym hemmt. Steigende Spiegel können toxisch werden.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Vorgehen in der Apotheke“",
+          "seite": "20",
+          "pdf": "14"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“ (Fortsetzung)",
+          "seite": "18",
+          "pdf": "12"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "pharmakokinetisch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "anamnese",
+      "begriff": "Anamnese",
+      "definition": "Erhebung der Vorgeschichte einer Patientin oder eines Patienten durch gezieltes Befragen: frühere und bestehende Erkrankungen, Allergien, Reaktionen auf frühere Behandlungen oder Impfungen und aktuelle Arzneimittel. „In der Anamnese“ heißt entsprechend: in der Vorgeschichte bekannt.",
+      "beispiel": "Fieberkrämpfe in der Anamnese sind kein Grund, auf eine Impfung zu verzichten.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Relative Kontraindikationen“",
+          "seite": "39"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Keine Kontraindikationen!“",
+          "seite": "42"
+        },
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 6"
+        }
+      ],
+      "themen": [
+        "imp-eignung",
+        "psy-ssri-interaktionen",
+        "imp-stiko",
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "anamnesebogen",
+      "begriff": "Anamnesebogen",
+      "varianten": [
+        "Anamnesebögen"
+      ],
+      "definition": "Fragebogen, mit dem vor der Impfung die für die Eignung wichtige Vorgeschichte erfasst wird, etwa Vorerkrankungen, Allergien sowie frühere Impfungen und Reaktionen darauf. Er gehört zu den Unterlagen, die die Apotheke zehn Jahre aufbewahren muss.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 10.2"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "dokumentationsbogen",
+        "einwilligungserklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "anaphylaxie",
+      "begriff": "anaphylaktische Reaktion",
+      "varianten": [
+        "anaphylaktischen Reaktion",
+        "Anaphylaxie"
+      ],
+      "definition": "Schwere allergische Reaktion, die als Impfkomplikation gilt, also über eine übliche Impfreaktion hinausgeht, und einen Notfall darstellt. Für diesen Fall gehört zur Ausstattung der impfenden Apotheke eine Notfallausrüstung mit Epinephrin-Notfallpens.",
+      "beispiel": "Eine dokumentierte anaphylaktische Reaktion auf einen Impfstoffbestandteil schließt die Impfung mit diesem Präparat aus, eine bloß berichtete Unverträglichkeit nicht ohne weitere Prüfung.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Impfkomplikationen“",
+          "seite": "46"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Material“",
+          "seite": "51"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "sofortreaktion",
+        "impfreaktion"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "antigenkombination",
+      "begriff": "Antigenkombination",
+      "definition": "Die Zusammenstellung der Virusantigene, die ein saisonaler Influenza-Impfstoff enthält. Die WHO empfiehlt sie jedes Jahr neu passend zu den erwarteten Grippeviren, die Hersteller stellen die Impfstoffe danach her.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Impfstoff-Auswahl nach STIKO-Empfehlung“",
+        "seite": "28"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "standardimpfstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "antigenkontakt",
+      "begriff": "Antigenkontakt",
+      "definition": "Jede Begegnung des Immunsystems mit den Antigenen eines Erregers, sei es durch eine Impfung oder durch eine Infektion. Die Zahl der Antigenkontakte entscheidet bei COVID-19, ob eine Basisimmunität besteht.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „STIKO-Empfehlung“",
+        "seite": "27"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "basisimmunitaet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "antikoagulation",
+      "begriff": "Antikoagulation",
+      "varianten": [
+        "Dauerantikoagulation"
+      ],
+      "definition": "Medikamentöse Hemmung der Blutgerinnung, etwa mit Phenprocoumon (Marcumar). Sie erhöht das Blutungsrisiko; bei der Impfung ist sie keine absolute Kontraindikation, verlangt aber eine individuelle Risikoabschätzung und eine angepasste Injektionstechnik.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Relative Kontraindikationen“",
+          "seite": "39"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "40"
+        }
+      ],
+      "themen": [
+        "imp-eignung",
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "gerinnungsstoerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "antiphlogistisch",
+      "begriff": "antiphlogistisch",
+      "definition": "Entzündungshemmend. Ob eine antiphlogistische Wirkung wirklich nötig ist, entscheidet in der Apotheke zwischen Paracetamol und einem NSAR.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Vorgehen in der Apotheke“",
+        "seite": "41",
+        "pdf": "29"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "nsar"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "apbetro",
+      "begriff": "ApBetrO",
+      "varianten": [
+        "Apothekenbetriebsordnung"
+      ],
+      "definition": "Apothekenbetriebsordnung: Verordnung mit den Vorgaben für den Betrieb einer Apotheke, unter anderem zum Hygienemanagement (§ 4a) und zum Impfen (§ 35a). § 35a bestimmt, wobei nichtapprobiertes pharmazeutisches Personal unterstützen darf und was das Aufklärungsgespräch mindestens enthalten muss.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 3"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-eignung",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "delegation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "apothekenleitung",
+      "begriff": "Apothekenleitung",
+      "varianten": [
+        "Apothekenleiter",
+        "Apothekenleiterin"
+      ],
+      "definition": "Der Apotheker oder die Apothekerin, die die Apotheke persönlich leitet und dafür verantwortlich ist, dass sie nach den geltenden Vorschriften betrieben wird. Bei Impfungen trägt die Apothekenleitung die Gesamtverantwortung, auch wenn andere impfen.",
+      "quelle": {
+        "werk": "ApBetrO",
+        "stelle": "§ 2 Abs. 2"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "applikation",
+      "begriff": "Applikation",
+      "varianten": [
+        "applizieren"
+      ],
+      "definition": "Verabreichung eines Arzneimittels oder Impfstoffs an die Patientin oder den Patienten, etwa als intramuskuläre Injektion. Vor der Applikation eines Impfstoffs müssen Impffähigkeit, Aufklärung und Einwilligung geklärt sein.",
+      "quelle": [
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 1"
+        },
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 9.2"
+        }
+      ],
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "intramuskulaer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aerztliche-schulung",
+      "begriff": "ärztliche Schulung",
+      "varianten": [
+        "ärztlichen Schulung"
+      ],
+      "definition": "Von Ärztinnen und Ärzten durchgeführte Schulung, die Apothekerinnen und Apotheker zum Impfen befähigt; Voraussetzung der Berechtigung nach § 20c IfSG. Wer sie für die COVID-19-Impfung oder im Modellprojekt für die Grippeschutzimpfung abgeschlossen hat, braucht keine neue.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Infektionsschutzgesetz (IfSG)“",
+        "seite": "5"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ass",
+      "begriff": "ASS",
+      "definition": "Unter dem Namen Aspirin bekannter Wirkstoff, der als Thrombozytenaggregationshemmer eingesetzt wird. Kommt ein SSRI hinzu, steigt das Blutungsrisiko weiter, besonders zusammen mit Clopidogrel.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Verminderte Thrombozytenaggregation“",
+        "pdf": "7"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "thrombozytenaggregationshemmer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aufbewahrungsfrist",
+      "begriff": "Aufbewahrungsfrist",
+      "varianten": [
+        "Aufbewahrungspflicht"
+      ],
+      "definition": "Pflicht, Behandlungsunterlagen für einen festgelegten Zeitraum aufzubewahren, und dieser Zeitraum selbst. Nach § 630f BGB sind es zehn Jahre nach Abschluss der Behandlung, soweit andere Vorschriften nichts anderes bestimmen; beim Impfen betrifft das Anamnesebogen, Einwilligungserklärung und Dokumentationsbogen.",
+      "quelle": {
+        "werk": "BGB",
+        "stelle": "§ 630f Abs. 3"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "auffrischimpfung",
+      "begriff": "Auffrischimpfung",
+      "varianten": [
+        "Auffrischung"
+      ],
+      "definition": "Erneute Impfung nach bereits aufgebautem Grundschutz, die den nachlassenden Impfschutz wieder verstärken soll. Bei COVID-19 empfiehlt die STIKO sie jährlich im Herbst für die Indikationsgruppen; bei Immungesunden kann eine Infektion im Vorjahr sie ersetzen.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „STIKO-Empfehlung“",
+        "seite": "27"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "basisimmunitaet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aufklaerung",
+      "begriff": "Aufklärung",
+      "definition": "Information der Patientin oder des Patienten durch die behandelnde Person über alles, was für die Entscheidung über eine medizinische Maßnahme wesentlich ist – etwa Art, Durchführung, Nutzen, Risiken und Alternativen. Sie ist Voraussetzung einer wirksamen Einwilligung, erfolgt grundsätzlich mündlich, rechtzeitig und verständlich; schriftliche Unterlagen dürfen nur ergänzen.",
+      "beispiel": "Vor einer Grippeschutzimpfung in der Apotheke erklärt die Apothekerin im Gespräch Nutzen, mögliche Nebenwirkungen und das Verhalten nach der Impfung; das Merkblatt bekommt die Patientin zusätzlich.",
+      "quelle": {
+        "werk": "BGB",
+        "stelle": "§ 630e"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "einwilligung",
+        "aufklaerungsgespraech",
+        "aufklaerungsmerkblatt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aufklaerungsgespraech",
+      "begriff": "Aufklärungsgespräch",
+      "definition": "Das mündliche Gespräch, in dem die Aufklärung vor einer Maßnahme stattfindet. Für Impfungen in der Apotheke schreibt die Apothekenbetriebsordnung Mindestinhalte vor: Nutzen der Impfung und zu verhütende Krankheit, Nebenwirkungen, Komplikationen und Kontraindikationen, Verhalten danach, Beginn und Dauer des Schutzes sowie Auffrischimpfungen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 8.2"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "aufklaerung",
+        "aufklaerungsmerkblatt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "aufklaerungsmerkblatt",
+      "begriff": "Aufklärungsmerkblatt",
+      "varianten": [
+        "Aufklärungsmerkblätter",
+        "Merkblatt",
+        "Merkblätter"
+      ],
+      "definition": "Schriftliche Patienteninformation zu einer bestimmten Impfung, die das Aufklärungsgespräch ergänzt, aber nicht ersetzt. Aktualisierte Fassungen stellen unter anderem das Robert Koch-Institut, das Deutsche Grüne Kreuz und Forum Impfen bereit; mit Notizen zum Gespräch abgelegt, belegt es später, worüber gesprochen wurde.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 8.1"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "aufklaerungsgespraech"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "basisimmunitaet",
+      "begriff": "Basisimmunität",
+      "definition": "Grundschutz gegen SARS-CoV-2, den die STIKO nach drei Antigenkontakten als erreicht ansieht; Impfungen und durchgemachte Infektionen zählen dabei gleich. Fehlt sie, wird sie mit der Standardimpfung aufgebaut, danach folgen bei Indikation jährliche Auffrischimpfungen.",
+      "beispiel": "Zwei Impfungen und eine gesicherte Infektion ergeben die Basisimmunität.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „STIKO-Empfehlung“",
+        "seite": "27"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "antigenkontakt",
+        "auffrischimpfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bedarfsmeldung",
+      "begriff": "Bedarfsmeldung",
+      "definition": "Meldung des Bedarfs an saisonalen Grippeimpfstoffen für die Apotheken nach § 132e Abs. 2 SGB V: Die Spitzenorganisation der Apotheker meldet ihn bis zum 15. Januar an das Paul-Ehrlich-Institut, gestützt auf die geplanten Bestellungen der Apotheken. Sie ersetzt nicht die eigene Vorbestellung.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 4"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "vorbestellung",
+        "paul-ehrlich-institut"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "behandlungsfehler",
+      "begriff": "Behandlungsfehler",
+      "definition": "Verstoß der behandelnden Person gegen die anerkannten fachlichen Standards einer Behandlung. Das BGB vermutet einen solchen Fehler unter anderem dann, wenn sich ein Risiko verwirklicht, das die Behandelnde voll beherrschen konnte, oder wenn ihr die Befähigung fehlte.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Patient*innenrechte nach §§ 630f – h BGB“",
+        "seite": "9"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "beweislast"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "beweislast",
+      "begriff": "Beweislast",
+      "definition": "Regel, wer im Streitfall eine Tatsache nachweisen muss. Bei einer Behandlung trägt sie die behandelnde Person: Sie muss belegen, dass sie aufgeklärt und die Einwilligung eingeholt hat – deshalb ist die sorgfältige Dokumentation ihr wichtigstes Beweismittel.",
+      "quelle": {
+        "werk": "BGB",
+        "stelle": "§ 630h Abs. 2"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "behandlungsfehler"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "bgb",
+      "begriff": "BGB",
+      "varianten": [
+        "Bürgerliche Gesetzbuch",
+        "Bürgerliches Gesetzbuch"
+      ],
+      "definition": "Bürgerliches Gesetzbuch, das zentrale Gesetz des Zivilrechts. Die §§ 630a bis 630h regeln das Verhältnis zwischen Behandelnden und Patienten – auch bei einer Impfung in der Apotheke: Aufklärung, Einwilligung, Patientenakte, Aufbewahrung und Beweislast.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Patient*innenrechte nach §§ 630a – d BGB“",
+        "seite": "7"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "beweislast",
+        "aufbewahrungsfrist"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "chargenbezeichnung",
+      "begriff": "Chargenbezeichnung",
+      "varianten": [
+        "Charge",
+        "Chargen-Bezeichnung",
+        "Chargennummer"
+      ],
+      "definition": "Kennung der Charge eines Arzneimittels, also der Menge, die aus derselben Ausgangsmenge in einem einheitlichen Herstellungsvorgang entstanden ist. Bei Impfungen ist sie Pflichtangabe der Dokumentation, weil sich nur über sie bei einem Rückruf feststellen lässt, wer betroffen ist.",
+      "quelle": {
+        "werk": "AMG",
+        "stelle": "§ 4 Abs. 16"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "vignette"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "corticoide",
+      "begriff": "Corticoide",
+      "varianten": [
+        "Kortikosteroide"
+      ],
+      "definition": "Steroidhaltige Arzneistoffe (Kortikosteroide), lokal oder systemisch angewendet. Niedrig dosiert oder lokal angewendet stehen sie einer Impfung nicht entgegen; eine Hochdosis-Therapie schwächt dagegen die Immunabwehr, die Person gilt dann als immundefizient.",
+      "quelle": [
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 6.3"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "41"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "immundefekt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "covid-19-impfung",
+      "begriff": "COVID-19-Impfung",
+      "definition": "Schutzimpfung gegen das Coronavirus SARS-CoV-2, den Erreger von COVID-19. Apotheken dürfen sie nach § 20c IfSG ab 12 Jahren durchführen; bei 12- bis 17-Jährigen müssen zusätzlich die Sorgeberechtigten zustimmen.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Formale Anforderungen an Impfinteressierte“",
+        "seite": "26"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko",
+        "imp-eignung",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "schutzimpfung",
+        "sorgeberechtigte"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "cyp-enzym",
+      "begriff": "CYP-Enzym",
+      "definition": "Enzym der Cytochrom-P450-Familie, über das viele Arzneistoffe abgebaut werden. Hemmt ein Wirkstoff ein solches Enzym, steigen die Plasmaspiegel anderer Arzneistoffe, die davon abhängen.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „CYP Interaktionen“",
+        "seite": "42",
+        "pdf": "30"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "cyp2d6",
+        "pharmakokinetisch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "cyp2d6",
+      "begriff": "CYP2D6",
+      "definition": "Einzelnes CYP-Enzym, das unter anderem Tramadol, Dextromethorphan und Atomoxetin umsetzt. Fluoxetin, Paroxetin und Bupropion hemmen es stark und erhöhen so die Spiegel seiner Substrate.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „CYP Interaktionen“",
+          "seite": "42",
+          "pdf": "30"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Interaktionen Atomoxetin“",
+          "pdf": "64"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“ (Fortsetzung)",
+          "seite": "18",
+          "pdf": "12"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "cyp-enzym"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "delegation",
+      "begriff": "Delegation",
+      "definition": "Übertragung einzelner Tätigkeiten an Mitarbeitende, während die Verantwortung beim Übertragenden bleibt. Beim Impfen dürfen nur Vorbereitung und Dokumentation an nachweislich geschultes, ausreichend qualifiziertes pharmazeutisches Personal übertragen werden; die Schulungen sind zu dokumentieren.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 3"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "nichtapprobiertes-pharmazeutisches-personal"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "dextromethorphan",
+      "begriff": "Dextromethorphan",
+      "definition": "Rezeptfrei erhältlicher Hustenstiller mit serotonerger Wirkung. Mit MAO-Hemmern ist er hochriskant, mit SSRI mäßig bis hoch, vor allem wenn CYP2D6 gehemmt ist – eine leicht übersehene Gefahr in der Selbstmedikation.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“ (Fortsetzung)",
+          "seite": "18",
+          "pdf": "12"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "serotonin-syndrom"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "dokumentationsbogen",
+      "begriff": "Dokumentationsbogen",
+      "definition": "Formular, auf dem die Apotheke die Durchführung einer einzelnen Schutzimpfung festhält. Die Bundesapothekerkammer stellt dafür eine Vorlage bereit; der Bogen bleibt zusammen mit Anamnesebogen und Einwilligungserklärung zehn Jahre in der Apotheke.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Dokumentation“",
+        "seite": "32"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "anamnesebogen",
+        "aufbewahrungsfrist"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einstichstelle",
+      "begriff": "Einstichstelle",
+      "definition": "Hautstelle, an der die Kanüle eingestochen wird. Bei der Impfung in der Apotheke liegt sie am höchsten Punkt des Deltamuskels, etwa drei Querfinger unter der Schulterhöhe; sie wird vorher desinfiziert und danach mit einem Tupfer versorgt, bei Gerinnungsstörungen mindestens zwei Minuten fest komprimiert.",
+      "quelle": [
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 9.2"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "40"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "intramuskulaer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einwilligung",
+      "begriff": "Einwilligung",
+      "definition": "Zustimmung der Patientin oder des Patienten zu einer medizinischen Maßnahme, die vorher eingeholt werden muss. Wirksam ist sie nur nach vorausgegangener Aufklärung; sie kann jederzeit ohne Begründung und ohne bestimmte Form widerrufen werden. Ist die Person nicht einwilligungsfähig, etwa bei Minderjährigen, willigt eine berechtigte Person ein, z. B. die Sorgeberechtigten.",
+      "beispiel": "Zieht eine Patientin ihre Zustimmung zurück, als die Spritze schon aufgezogen ist, wird nicht geimpft und der Impfstoff verworfen.",
+      "quelle": {
+        "werk": "BGB",
+        "stelle": "§ 630d"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "aufklaerung",
+        "einwilligungserklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "einwilligungserklaerung",
+      "begriff": "Einwilligungserklärung",
+      "varianten": [
+        "Einverständniserklärung",
+        "Einwilligungsbogen",
+        "Einwilligungsbögen"
+      ],
+      "definition": "Schriftlich festgehaltene und unterschriebene Einwilligung, meist auf einem Formular. Das Original gehört zur Dokumentation der Apotheke und wird zehn Jahre aufbewahrt; die Patientin erhält eine Kopie.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 8.1"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "einwilligung",
+        "aufbewahrungsfrist"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ergaenzungsvertrag",
+      "begriff": "Ergänzungsvertrag",
+      "varianten": [
+        "Ergänzungsverträge",
+        "Ergänzungsverträgen"
+      ],
+      "definition": "Vertrag des DAV mit einzelnen Krankenkassen, der über die Schutzimpfungs-Richtlinie hinaus zusätzliche Ansprüche eröffnet. Etwa übernehmen manche Kassen damit die Grippeschutzimpfung in der Apotheke ab 18 Jahren.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 6"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "leistungsanspruch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "fachinformation",
+      "begriff": "Fachinformation",
+      "definition": "Präparatbezogene Information des Herstellers zu einem Arzneimittel oder Impfstoff. Sie nennt unter anderem die Zulassung (Anwendungsgebiet), die genaue Zusammensetzung und die Herstellerangaben zur Anwendung und ist damit die maßgebliche Quelle, wenn geprüft wird, ob ein bestimmtes Präparat für eine Person geeignet ist.",
+      "beispiel": "Bei bekannter Allergie wird in der Fachinformation des vorgesehenen Impfstoffs nachgesehen, ob der auslösende Stoff überhaupt enthalten ist.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Durchführung von Schutzimpfungen in öffentlichen Apotheken“",
+          "seite": "3"
+        },
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 6.1"
+        }
+      ],
+      "themen": [
+        "imp-eignung",
+        "imp-stiko",
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gemeinsamer-bundesausschuss",
+      "begriff": "Gemeinsamer Bundesausschuss",
+      "varianten": [
+        "Gemeinsamen Bundesausschusses",
+        "Gemeinsamen Bundesausschuss",
+        "G-BA"
+      ],
+      "definition": "Gremium, das nach § 92 SGB V Richtlinien für eine ausreichende, zweckmäßige und wirtschaftliche Versorgung der gesetzlich Versicherten beschließt. Seine Schutzimpfungs-Richtlinie legt fest, welche Impfungen die GKV bezahlt.",
+      "quelle": {
+        "werk": "SGB V",
+        "stelle": "§ 92 Abs. 1"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "sgb-v"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gerinnungsstoerung",
+      "begriff": "Gerinnungsstörung",
+      "definition": "Zustand, in dem das Blut schlechter gerinnt und Blutungen leichter auftreten – etwa bei Hämophilie, durch einen Mangel an Blutplättchen oder durch gerinnungshemmende Arzneimittel. Geimpft wird trotzdem intramuskulär, mit sehr feiner Kanüle und anschließender fester Kompression der Einstichstelle.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+        "seite": "40"
+      },
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "antikoagulation",
+        "thrombozytopenie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gi-blutung",
+      "begriff": "GI-Blutung",
+      "varianten": [
+        "gastrointestinale Blutung"
+      ],
+      "definition": "Blutung im Magen-Darm-Trakt. SSRI erhöhen ihr Risiko etwa auf das Vierfache, zusammen mit ASS etwa auf das Fünffache und mit einem NSAR etwa auf das Zwölffache; ein PPI hebt die Erhöhung praktisch auf.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „GI-Blutungen“",
+        "pdf": "28"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "mukosa",
+        "ppi",
+        "nsar"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "gkv",
+      "begriff": "GKV",
+      "varianten": [
+        "gesetzliche Krankenversicherung",
+        "gesetzlichen Krankenversicherung"
+      ],
+      "definition": "Gesetzliche Krankenversicherung, deren Leistungen das SGB V regelt. Impfungen in der Apotheke, die über die GKV abgerechnet werden, müssen den Vorgaben der Schutzimpfungs-Richtlinie entsprechen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 6"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "sgb-v"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grippeschutzimpfung",
+      "begriff": "Grippeschutzimpfung",
+      "varianten": [
+        "Grippeimpfung",
+        "Influenza-Impfung"
+      ],
+      "definition": "Schutzimpfung gegen die Influenza mit einem jeweils saisonal zusammengesetzten Impfstoff. In der Apotheke ist sie nach § 20c IfSG bei Personen ab 18 Jahren erlaubt, auch wenn der Impfstoff selbst schon für jüngere zugelassen ist.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Infektionsschutzgesetz (IfSG)“",
+        "seite": "5"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko",
+        "imp-eignung",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "schutzimpfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "grundimmunisierung",
+      "begriff": "Grundimmunisierung",
+      "definition": "Erste Impfserie, mit der ein Impfschutz aufgebaut wird – im Unterschied zu späteren Auffrischimpfungen, die ihn erhalten. Bei immundefizienten Personen kann eine erweiterte Grundimmunisierung mit zusätzlichen Impfdosen nötig sein.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Impfstoff-Auswahl nach STIKO-Empfehlung 13.11.2025“",
+          "seite": "28"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "41"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "immundefekt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "has-bled-score",
+      "begriff": "HAS-BLED-Score",
+      "varianten": [
+        "HAS-BLED-Wert"
+      ],
+      "definition": "Punktwert zur Abschätzung des Blutungsrisikos, ausgelegt auf Patienten unter oraler Antikoagulation. Jeder Buchstabe steht für einen Risikofaktor (u. a. Bluthochdruck, Nieren- oder Leberfunktion, frühere Blutung, Alter ab 65, Arzneimittel oder Alkohol); höchstens 9 Punkte, über 2 gilt als erhöhtes Risiko.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Has bled Score“",
+        "seite": "13",
+        "pdf": "8"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "antikoagulation",
+        "inr"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hazard-ratio",
+      "begriff": "Hazard Ratio",
+      "varianten": [
+        "HR"
+      ],
+      "definition": "Verhältniszahl, die das Ereignisrisiko einer Gruppe gegen eine Referenzgruppe stellt. Ein Wert von 1 bedeutet kein Unterschied, Werte darüber ein erhöhtes, darunter ein vermindertes Risiko.",
+      "beispiel": "Gegenüber ASS allein liegt die Blutungs-HR von ASS plus SSRI bei 1,42.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Verminderte Thrombozytenaggregation“",
+        "pdf": "7"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "hochdosis-impfstoff",
+      "begriff": "Hochdosis-Impfstoff",
+      "varianten": [
+        "Hochdosis-Influenza-Impfstoff"
+      ],
+      "definition": "Inaktivierter Influenza-Impfstoff mit erhöhter Antigenmenge, den die STIKO ab 60 Jahren empfiehlt. Die höhere Dosis soll die im Alter schwächere Immunantwort ausgleichen, geht aber mit stärkeren Impfreaktionen einher.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 7"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "mf59",
+        "standardimpfstoff",
+        "reaktogenitaet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "huehnereiweissallergie",
+      "begriff": "Hühnereiweißallergie",
+      "definition": "Allergie gegen Eiweiß aus Hühnereiern. Das Skript führt sie unter den Kontraindikationen der Influenza-Impfung, weil ein Teil der Influenza-Impfstoffe auf Hühnereibasis hergestellt wird; zellbasierte Impfstoffe sind eine Alternative, maßgeblich ist die Zusammensetzung laut Fachinformation.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Kontraindikationen Influenzaimpfung“",
+          "seite": "37"
+        },
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 7"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "zellbasiert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ifsg",
+      "begriff": "IfSG",
+      "varianten": [
+        "Infektionsschutzgesetz"
+      ],
+      "definition": "Infektionsschutzgesetz: Bundesgesetz zum Schutz vor übertragbaren Krankheiten. Für die Apotheke regelt es, ob überhaupt geimpft werden darf (§ 20c: Grippeschutzimpfung ab 18, COVID-19-Impfung ab 12 Jahren) und welche Angaben die Impfdokumentation enthalten muss (§ 22).",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Infektionsschutzgesetz (IfSG)“",
+        "seite": "5"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "schutzimpfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "immunantwort",
+      "begriff": "Immunantwort",
+      "definition": "Reaktion des Immunsystems auf ein Antigen aus Impfung oder Infektion, bei der Antikörper und Abwehrzellen gebildet werden und ein Schutz entsteht. Sie lässt im höheren Alter und bei Immunschwäche nach, weshalb dann stärker wirksame Impfstoffe oder zusätzliche Dosen in Frage kommen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 7"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "hochdosis-impfstoff",
+        "mf59"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "immundefekt",
+      "begriff": "Immundefekt",
+      "varianten": [
+        "Immundefizienz",
+        "immundefizient"
+      ],
+      "definition": "Angeborene oder erworbene Schwäche der körpereigenen Abwehr, etwa nach Organtransplantation, bei Hämodialyse, bei HIV-Infektion mit nachweisbarer Viruslast oder unter hochdosierter Therapie mit Corticoiden oder Methotrexat. Für Totimpfstoffe ist er keine Kontraindikation, die Impfung kann aber schwächer wirken; gegebenenfalls ist eine erweiterte Grundimmunisierung ärztlich zu entscheiden.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "41"
+        },
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 6.3"
+        }
+      ],
+      "themen": [
+        "imp-eignung",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "grundimmunisierung",
+        "viruslast"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "immungesund",
+      "begriff": "immungesund",
+      "definition": "Bezeichnet Personen ohne angeborene oder erworbene Störung des Immunsystems, bei denen eine Infektion oder Impfung eine verlässliche Immunantwort erwarten lässt. Nur bei ihnen erlaubt die STIKO, eine kürzliche Infektion an die Stelle der COVID-19-Auffrischung treten zu lassen.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „STIKO-Empfehlung“",
+        "seite": "27"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "auffrischimpfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "impfausweis",
+      "begriff": "Impfausweis",
+      "varianten": [
+        "Impfbuch"
+      ],
+      "definition": "Persönliches Dokument, in das jede Schutzimpfung unverzüglich mit den Pflichtangaben eingetragen wird. Es bleibt bei der geimpften Person und dient ihr als Nachweis ihrer Impfungen.",
+      "quelle": {
+        "werk": "IfSG",
+        "stelle": "§ 22"
+      },
+      "themen": [
+        "imp-aufklaerung",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "impfbescheinigung",
+        "vignette"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "impfbescheinigung",
+      "begriff": "Impfbescheinigung",
+      "definition": "Schriftlicher Nachweis einer Schutzimpfung mit denselben Pflichtangaben wie im Impfausweis, ausgestellt, wenn der Impfausweis nicht vorliegt. Auf Wunsch wird die Impfung später in den Impfausweis nachgetragen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 10.1"
+      },
+      "themen": [
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "impfausweis"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "impfdokumentation",
+      "begriff": "Impfdokumentation",
+      "definition": "Gesetzlich vorgeschriebener Nachweis jeder Schutzimpfung im Impfausweis oder, wenn dieser fehlt, in einer Impfbescheinigung. Pflichtangaben sind unter anderem Datum, Impfstoff mit Charge, Krankheit, Name und Geburtsdatum der geimpften sowie Name und Anschrift der verantwortlichen Person; eine nicht vorschriftsmäßige Dokumentation ist bußgeldbewehrt.",
+      "quelle": {
+        "werk": "IfSG",
+        "stelle": "§ 22"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "impfausweis",
+        "impfbescheinigung",
+        "chargenbezeichnung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "impffaehigkeit",
+      "begriff": "Impffähigkeit",
+      "definition": "Eignung einer Person, zum jetzigen Zeitpunkt geimpft zu werden. Sie wird vor jeder Impfung einzeln beurteilt – anhand der Impf- und Genesungshistorie, der Kontraindikationen und der Hinweise in der Fachinformation – und ist zusammen mit Aufklärung und Einwilligung Voraussetzung für die Impfung.",
+      "quelle": [
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 1"
+        },
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 6"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "kontraindikation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "impfkomplikation",
+      "begriff": "Impfkomplikation",
+      "definition": "Gesundheitliche Schädigung nach einer Impfung, die über das übliche Ausmaß einer Impfreaktion hinausgeht. Beispiele sind Überempfindlichkeits- und anaphylaktische Reaktionen, akute Gesichtslähmung oder Herzmuskelentzündungen; über mögliche Impfkomplikationen ist aufzuklären.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Impfreaktionen“",
+        "pdf": "45"
+      },
+      "themen": [
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "impfreaktion",
+      "begriff": "Impfreaktion",
+      "definition": "Übliche, vorübergehende Reaktion des Körpers auf eine Impfung: lokal an der Injektionsstelle (Rötung, Schwellung, Schmerz) oder allgemein (erhöhte Temperatur, Kopf- und Gliederschmerzen, Mattigkeit), meist für ein bis drei Tage. Was über dieses übliche Ausmaß hinausgeht, gilt als Impfkomplikation.",
+      "beispiel": "Wer vorab auf eine mögliche Rötung und Abgeschlagenheit hingewiesen wurde, deutet sie nicht als Grund gegen die nächste Impfung.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Impfreaktionen“",
+          "seite": "45"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Nachbereitung“",
+          "seite": "44"
+        }
+      ],
+      "themen": [
+        "imp-eignung",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "anaphylaxie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "indikationsgruppe",
+      "begriff": "Indikationsgruppe",
+      "varianten": [
+        "STIKO-Indikationsgruppen"
+      ],
+      "definition": "Personengruppe, für die die STIKO eine Indikationsimpfung empfiehlt, zum Beispiel ältere Menschen, chronisch Kranke, Schwangere oder Kontaktpersonen von Risikopatienten. Wer zu einer solchen Gruppe gehört, hat in der Regel auch Anspruch auf die Impfung zu Lasten der Kasse.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Merkblatt Impfen“",
+        "seite": "3"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "indikationsimpfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "indikationsimpfung",
+      "begriff": "Indikationsimpfung",
+      "varianten": [
+        "COVID-19-Indikationsimpfung"
+      ],
+      "definition": "Impfung, die die STIKO nur für Personen mit einem besonderen Anlass empfiehlt, etwa wegen Alters, einer Grunderkrankung, eines Wohnumfelds oder eines beruflichen Risikos – im Unterschied zur Standardimpfung für alle einer Altersgruppe.",
+      "beispiel": "Jährliche COVID-19-Auffrischung für chronisch Kranke oder Pflegeheimbewohner.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Merkblatt Impfen“",
+        "seite": "3"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "indikationsgruppe",
+        "standardimpfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "inr",
+      "begriff": "INR",
+      "definition": "International Normalized Ratio: standardisierter Laborwert der Blutgerinnung, mit dem eine Behandlung mit Gerinnungshemmern wie Warfarin überwacht wird. Ein steigender INR zeigt ein erhöhtes Blutungsrisiko an.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Has bled Score“",
+          "seite": "13",
+          "pdf": "8"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Interaktionen Stimulantien“",
+          "pdf": "60"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "antikoagulation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "intramuskulaer",
+      "begriff": "intramuskulär",
+      "definition": "In einen Muskel hinein (Abkürzung i. m.). Die Grippe- und COVID-19-Impfung in der Apotheke wird intramuskulär in den Deltamuskel am Oberarm gegeben, senkrecht zur Haut und etwa 2 cm tief – auch bei Gerinnungsstörungen.",
+      "quelle": [
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 9.2"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "40"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "subkutan",
+        "einstichstelle"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "kontraindikation",
+      "begriff": "Kontraindikation",
+      "varianten": [
+        "kontraindiziert"
+      ],
+      "definition": "Umstand, der gegen die Anwendung eines Arzneimittels, einer Arzneimittelkombination oder einer Maßnahme wie einer Impfung spricht. Bei einer absoluten Kontraindikation unterbleibt die Anwendung; eine relative Kontraindikation verlangt eine individuelle Risikoabschätzung, bei Impfungen in der Apotheke oft den Verweis an die Ärztin oder den Arzt.",
+      "beispiel": "Ein fieberhafter Infekt ist eine absolute Kontraindikation für die Grippeschutzimpfung, eine Schwangerschaft dagegen ein Grund, die Impfung beim Arzt durchführen zu lassen.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Kontraindikationen Influenzaimpfung“",
+          "seite": "37"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Relative Kontraindikationen“",
+          "seite": "39"
+        }
+      ],
+      "themen": [
+        "imp-eignung",
+        "psy-ssri-interaktionen",
+        "imp-rechtsrahmen",
+        "imp-stiko",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "anamnese",
+        "fachinformation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "lebendimpfstoff",
+      "begriff": "Lebendimpfstoff",
+      "definition": "Impfstoff mit abgeschwächten, noch vermehrungsfähigen Erregern. Zu den Influenza- und COVID-19-Totimpfstoffen der Apotheke ist kein Abstand einzuhalten; in der Apotheke selbst wird kein Lebendimpfstoff verabreicht.",
+      "beispiel": "Masern-Mumps-Röteln, Varizellen, Gelbfieber und die nasale Influenza-Impfung.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Abstände zwischen Impfungen“",
+        "seite": "34"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "totimpfstoff",
+        "mindestabstand"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "leistungsanspruch",
+      "begriff": "Leistungsanspruch",
+      "definition": "Recht eines Versicherten, dass seine Krankenkasse eine bestimmte Leistung bezahlt. Für Impfungen ergibt er sich bei GKV-Versicherten aus § 20i SGB V in Verbindung mit der Schutzimpfungs-Richtlinie – ohne STIKO-Empfehlung fehlt er in der Regel, auch wenn geimpft werden dürfte.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Anspruch und Vergütung“",
+        "seite": "6"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "regelversorgung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "linezolid",
+      "begriff": "Linezolid",
+      "definition": "Bei Infektionen eingesetzter Wirkstoff, der nebenbei die Monoaminoxidase hemmt, ein „versteckter MAO-Hemmer“. Zusammen mit SSRI, SNRI oder Trizyklika ist er ein häufiger Auslöser eines Serotonin-Syndroms.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+        "seite": "17",
+        "pdf": "11"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "mao-hemmer",
+        "methylenblau"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mao",
+      "begriff": "MAO",
+      "varianten": [
+        "Monoaminoxidase",
+        "MAO-A"
+      ],
+      "definition": "Monoaminoxidase: Enzym, das Botenstoffe wie Serotonin und Noradrenalin abbaut. Es gibt zwei Formen, MAO-A und MAO-B.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Interaktionen Atomoxetin“",
+          "pdf": "64"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "mao-hemmer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mao-hemmer",
+      "begriff": "MAO-Hemmer",
+      "definition": "Wirkstoffe, die die Monoaminoxidase hemmen und so den Abbau von Serotonin und Noradrenalin bremsen. Mit SSRI, SNRI oder serotonergen Opioiden sind sie kontraindiziert; beim Wechsel sind mindestens zwei Wochen Abstand nötig, nach Fluoxetin etwa fünf.",
+      "beispiel": "Tranylcypromin, Moclobemid, Selegilin; versteckt auch Linezolid und Methylenblau.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Interaktionen Atomoxetin“",
+          "pdf": "64"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "mao",
+        "serotonin-syndrom"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "methylenblau",
+      "begriff": "Methylenblau",
+      "definition": "Farbstoff, der rund um Operationen intravenös gegeben wird und zugleich die Monoaminoxidase hemmt, ein „versteckter MAO-Hemmer“. Mit serotonergen Antidepressiva sind zahlreiche Serotonin-Syndrome nach Operationen beschrieben.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+        "seite": "17",
+        "pdf": "11"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "mao-hemmer",
+        "linezolid"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mf59",
+      "begriff": "MF59",
+      "varianten": [
+        "MF59-adjuvantiert",
+        "MF59-Impfstoff",
+        "MF 59"
+      ],
+      "definition": "Wirkverstärker (Adjuvans), der bestimmten Influenza-Impfstoffen zugesetzt wird. Er verstärkt die Immunantwort und ist deshalb wie der Hochdosis-Impfstoff für Personen ab 60 Jahren empfohlen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 7"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "hochdosis-impfstoff",
+        "standardimpfstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mindestabstand",
+      "begriff": "Mindestabstand",
+      "varianten": [
+        "Mindestabstände"
+      ],
+      "definition": "Zeitspanne, die zwischen zwei Impfungen mindestens liegen muss, damit sie sich nicht gegenseitig beeinträchtigen. Für die Influenza- und COVID-19-Impfung in der Apotheke ist zu anderen Tot- oder Lebendimpfstoffen kein Mindestabstand erforderlich.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 6"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "totimpfstoff",
+        "lebendimpfstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "modellprojekt",
+      "begriff": "Modellprojekt",
+      "definition": "Erprobung einer Leistung in begrenztem Rahmen, bevor sie in die Regelversorgung übernommen wird. Die Grippeschutzimpfung in Apotheken wurde zuerst in Modellprojekten erprobt; eine dort abgeschlossene ärztliche Schulung gilt weiter.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Infektionsschutzgesetz (IfSG)“",
+        "seite": "5"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "regelversorgung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "mukosa",
+      "begriff": "Mukosa",
+      "varianten": [
+        "Magen-Darm-Schleimhaut"
+      ],
+      "definition": "Schleimhaut, hier die innere Auskleidung von Magen und Darm. SSRI schädigen sie direkt, was zum erhöhten Risiko von Magen-Darm-Blutungen beiträgt.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „GI-Blutungen“",
+        "pdf": "28"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "gi-blutung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nebenwirkung",
+      "begriff": "Nebenwirkung",
+      "varianten": [
+        "unerwünschte Arzneimittelwirkung",
+        "UAW"
+      ],
+      "definition": "Schädliche und unbeabsichtigte Reaktion auf ein Arzneimittel. Schwerwiegend ist sie etwa bei Lebensgefahr, Krankenhausaufenthalt oder bleibenden Schäden, unerwartet, wenn sie von den Angaben der Fachinformation abweicht.",
+      "quelle": {
+        "werk": "AMG",
+        "stelle": "§ 4 Abs. 13"
+      },
+      "themen": [
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nichtapprobiertes-pharmazeutisches-personal",
+      "begriff": "nichtapprobiertes pharmazeutisches Personal",
+      "definition": "Pharmazeutisches Personal ohne Approbation als Apotheker, etwa PTA, Pharmazieingenieure oder Apothekerassistenten. Beim Impfen darf es nach § 35a Abs. 2 ApBetrO nur bei Vorbereitung und Dokumentation unterstützen, wenn es nachweislich geschult ist.",
+      "quelle": {
+        "werk": "ApBetrO",
+        "stelle": "§ 1a Abs. 2"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "delegation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "nsar",
+      "begriff": "NSAR",
+      "varianten": [
+        "NSAID"
+      ],
+      "definition": "Entzündungshemmende Schmerzmittel wie Ibuprofen oder Diclofenac. Mit einem SSRI kombiniert, steigt das Risiko einer Magen-Darm-Blutung am stärksten, etwa auf das Zwölffache.",
+      "beispiel": "Braucht eine SSRI-Patientin wirklich eine Entzündungshemmung, kommt zuerst ein Diclofenac-Gel in Frage, systemisch nur zusammen mit einem PPI.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „GI-Blutungen“",
+          "pdf": "28"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Vorgehen in der Apotheke“",
+          "seite": "41",
+          "pdf": "29"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "antiphlogistisch",
+        "ppi"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "oeffentliche-apotheke",
+      "begriff": "öffentliche Apotheke",
+      "varianten": [
+        "öffentlichen Apotheke"
+      ],
+      "definition": "Apotheke, in der die Impfberechtigung nach § 20c IfSG ausgeübt werden darf: Sie gilt nur für die Durchführung als Personal einer öffentlichen Apotheke. Die Berechtigung hängt damit am Beschäftigungsverhältnis, nicht an der Person allein.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Infektionsschutzgesetz (IfSG)“",
+        "seite": "5"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "patientenakte",
+      "begriff": "Patientenakte",
+      "varianten": [
+        "Behandlungsakte"
+      ],
+      "definition": "Dokumentation, die die behandelnde Person zeitnah in Papierform oder elektronisch führen muss. Darin stehen alle für die Behandlung wesentlichen Maßnahmen und Ergebnisse, unter anderem Anamnese, Eingriffe, Einwilligungen und Aufklärungen; sie ist zehn Jahre aufzubewahren, die Patientin darf sie einsehen.",
+      "quelle": {
+        "werk": "BGB",
+        "stelle": "§ 630f"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "aufbewahrungsfrist"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "paul-ehrlich-institut",
+      "begriff": "Paul-Ehrlich-Institut",
+      "varianten": [
+        "PEI"
+      ],
+      "definition": "Institut (PEI), dem der Bedarf an saisonalen Grippeimpfstoffen gemeldet wird: Bis zum 15. Januar teilt ihm die Spitzenorganisation der Apotheker mit, wie viel Impfstoff die Apotheken voraussichtlich brauchen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 4"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "bedarfsmeldung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "pharmakodynamisch",
+      "begriff": "pharmakodynamisch",
+      "varianten": [
+        "Pharmakodynamisch"
+      ],
+      "definition": "Die Wirkung eines Arzneistoffs an seinem Angriffspunkt betreffend. Bei einer pharmakodynamischen Interaktion verstärken oder schwächen sich zwei Wirkstoffe in ihrer Wirkung, ohne die Spiegel des anderen zu verändern.",
+      "beispiel": "SSRI und MAO-Hemmer steigern beide die Serotoninwirkung.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Vorgehen in der Apotheke“",
+          "seite": "20",
+          "pdf": "14"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Interaktionen Dopaminblockade“",
+          "pdf": "47"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "pharmakokinetisch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "pharmakokinetisch",
+      "begriff": "pharmakokinetisch",
+      "varianten": [
+        "Pharmakokinetisch"
+      ],
+      "definition": "Die Aufnahme und den Abbau eines Arzneistoffs im Körper betreffend. Bei einer pharmakokinetischen Interaktion verändert ein Wirkstoff die Konzentration eines anderen, etwa durch Hemmung eines CYP-Enzyms; es droht Akkumulation.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Vorgehen in der Apotheke“",
+          "seite": "20",
+          "pdf": "14"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „CYP Interaktionen“",
+          "seite": "42",
+          "pdf": "30"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „pH Wert und Stimulantien: Interaktionen“",
+          "pdf": "61"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "pharmakodynamisch",
+        "akkumulation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ppi",
+      "begriff": "PPI",
+      "varianten": [
+        "Protonenpumpenhemmer"
+      ],
+      "definition": "Protonenpumpenhemmer: Arzneimittel, die die Magensäure vermindern und so den pH-Wert im Magen anheben. Unter einem SSRI, besonders zusammen mit NSAR oder ASS, schützen sie vor einer Magen-Darm-Blutung.",
+      "beispiel": "Pantoprazol.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „GI-Blutungen“",
+          "pdf": "28"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „pH Wert und Stimulantien: Interaktionen“",
+          "pdf": "61"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "gi-blutung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "reaktogenitaet",
+      "begriff": "Reaktogenität",
+      "definition": "Neigung eines Impfstoffs, Impfreaktionen wie Schmerzen an der Einstichstelle, Fieber oder Abgeschlagenheit hervorzurufen. Stark wirksame Impfstoffe sind oft reaktogener; hat jemand früher stark reagiert, kann das die Wahl eines milderen Impfstoffs begründen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 7"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "hochdosis-impfstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "regelversorgung",
+      "begriff": "Regelversorgung",
+      "definition": "Leistungen, die die gesetzliche Krankenversicherung regulär für alle Anspruchsberechtigten trägt. Grippe- und COVID-19-Impfungen in der Apotheke gehören dazu und sind kein Modellprojekt mehr.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Anspruch und Vergütung“",
+        "seite": "6"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "modellprojekt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "rki",
+      "begriff": "RKI",
+      "varianten": [
+        "Robert Koch-Institut",
+        "Robert-Koch-Institut"
+      ],
+      "definition": "Das Robert Koch-Institut ist die Bundesbehörde für Infektionsschutz und öffentliche Gesundheit. Bei ihm ist die STIKO angesiedelt; es leitet deren Empfehlungen weiter und stellt sie unter anderem in der STIKO-App bereit.",
+      "quelle": {
+        "werk": "IfSG",
+        "stelle": "§ 20 Abs. 2"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-aufklaerung",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "stiko",
+        "stiko-app"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schutzimpfung",
+      "begriff": "Schutzimpfung",
+      "definition": "Gabe eines Impfstoffs mit dem Ziel, vor einer bestimmten übertragbaren Krankheit zu schützen. Oberbegriff für einzelne Impfungen wie die Grippeschutzimpfung oder die COVID-19-Impfung.",
+      "quelle": {
+        "werk": "IfSG",
+        "stelle": "§ 2 Nr. 9"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "siehe": [
+        "grippeschutzimpfung",
+        "covid-19-impfung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "schutzimpfungs-richtlinie",
+      "begriff": "Schutzimpfungs-Richtlinie",
+      "varianten": [
+        "SI-RL"
+      ],
+      "definition": "Richtlinie des Gemeinsamen Bundesausschusses, die Voraussetzungen, Art und Umfang der Impfleistungen der gesetzlichen Krankenversicherung festlegt. Sie stützt sich auf die STIKO-Empfehlungen und darf nur begründet davon abweichen; aus ihr ergibt sich der Anspruch der Versicherten auf eine Impfung zu Lasten der Kasse.",
+      "quelle": {
+        "werk": "SGB V",
+        "stelle": "§ 20i Abs. 1"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-rechtsrahmen",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "gemeinsamer-bundesausschuss",
+        "stiko-empfehlung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "serotonerg",
+      "begriff": "serotonerg",
+      "definition": "Auf das Serotoninsystem wirkend. Serotonerge Substanzen erhöhen auf unterschiedlichen Wegen die Serotoninwirkung; mehrere davon zusammen können ein Serotonin-Syndrom auslösen.",
+      "beispiel": "Tramadol gilt als serotonerges Opioid, Morphin dagegen kaum.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrom“",
+          "seite": "19",
+          "pdf": "13"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "serotonin-syndrom"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "serotonin",
+      "begriff": "Serotonin",
+      "definition": "Körpereigener Botenstoff, der im Nervensystem über eigene Rezeptoren wirkt. Im Blut liegt er fast vollständig in den Thrombozyten; bei einer Gefäßverletzung freigesetzt, verstärkt er deren Zusammenlagerung und verengt die Gefäße.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Verminderte Thrombozytenaggregation“",
+          "pdf": "7"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Wirkmechanismus der Zweitgenerations-Antipsychotika“",
+          "pdf": "43"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "thrombozyt",
+        "serotonin-syndrom"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "serotonin-syndrom",
+      "begriff": "Serotonin-Syndrom",
+      "definition": "Lebensbedrohliche Überaktivität des Serotoninsystems, meist durch die Kombination mehrerer serotonerger Substanzen. Die Zeichen fallen in drei Gruppen: vegetativ (z. B. Schwitzen, Durchfall), neuromuskulär (z. B. Tremor, gesteigerte Reflexe) und zentralnervös (z. B. Unruhe bis Delir).",
+      "beispiel": "Ein SSRI zusammen mit einem MAO-Hemmer ist die gefährlichste Kombination.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrom: Symptome“",
+          "pdf": "10"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "serotonerg",
+        "mao-hemmer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "sert",
+      "begriff": "SERT",
+      "varianten": [
+        "Serotonin-Transporter"
+      ],
+      "definition": "Transportprotein, das freigesetztes Serotonin wieder in die Zelle zurückholt. SSRI und andere Wiederaufnahmehemmer blockieren diesen Transporter; je stärker die Hemmung, desto größer das Interaktionsrisiko.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Atomoxetin“",
+          "pdf": "63"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "wiederaufnahme",
+        "ssri"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "sgb-v",
+      "begriff": "SGB V",
+      "varianten": [
+        "Sozialgesetzbuch V"
+      ],
+      "definition": "Fünftes Buch des Sozialgesetzbuchs, das Recht der gesetzlichen Krankenversicherung. Es legt fest, wer eine Leistung bezahlt: Nach § 20i haben GKV-Versicherte Anspruch auf Schutzimpfungen nach der Schutzimpfungs-Richtlinie, § 132e regelt die Bedarfsmeldung der Grippeimpfstoffe.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Anspruch und Vergütung“",
+        "seite": "6"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-stiko"
+      ],
+      "siehe": [
+        "gkv",
+        "leistungsanspruch"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "snri",
+      "begriff": "SNRI",
+      "varianten": [
+        "SSNRI"
+      ],
+      "definition": "Antidepressiva, die die Wiederaufnahme von Serotonin und Noradrenalin hemmen. Für Interaktionen gelten sie wie SSRI als serotonerg.",
+      "beispiel": "Venlafaxin, Duloxetin.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Medikamente zur Behandlung der Angst“",
+          "pdf": "20"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "ssri"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "sofortreaktion",
+      "begriff": "Sofortreaktion",
+      "definition": "Allergische Reaktion, die unmittelbar nach der Gabe auftritt, also noch während oder kurz nach der Nachbeobachtung. Nach einer allergischen Sofortreaktion auf eine COVID-19-Impfung wird derselbe Impfstoff in der Apotheke nicht erneut verabreicht; verzögerte oder rein lokale Reaktionen sind davon zu unterscheiden.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Kontraindikationen Covid-Impfungen“",
+          "seite": "38"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Nachbereitung“",
+          "seite": "44"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "anaphylaxie",
+        "ueberempfindlichkeit"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "sorgeberechtigte",
+      "begriff": "Sorgeberechtigte",
+      "varianten": [
+        "Sorgeberechtigter"
+      ],
+      "definition": "Personen, die für ein minderjähriges Kind die Sorge tragen und an seiner Stelle in eine Behandlung einwilligen. Bei der COVID-19-Impfung von 12- bis 17-Jährigen ist ihre Zustimmung nötig, gegebenenfalls die beider; sie weisen sich aus, und mindestens einer ist anwesend.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Formale Anforderungen an Impfinteressierte“",
+        "seite": "26"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ssri",
+      "begriff": "SSRI",
+      "definition": "Gruppe von Antidepressiva, die gezielt die Wiederaufnahme von Serotonin hemmen und Noradrenalin, Dopamin sowie die übrigen Rezeptoren kaum beeinflussen. Sie werden bei Depression und Angsterkrankungen eingesetzt.",
+      "beispiel": "Sertralin, Escitalopram, Citalopram, Paroxetin und Fluoxetin gehören zu den SSRI.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Medikamente zur Behandlung der Angst“",
+          "pdf": "20"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "wiederaufnahme",
+        "sert",
+        "snri"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "standardimpfstoff",
+      "begriff": "Standardimpfstoff",
+      "definition": "Saisonaler Influenza-Impfstoff in üblicher Dosierung und ohne Wirkverstärker, hergestellt auf Ei- oder Zellkulturbasis. Er ist für 18- bis 59-Jährige vorgesehen und ab 60 Jahren die Ausweichlösung, wenn Hochdosis- oder MF59-Impfstoff fehlen oder nicht vertragen werden.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 7"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "hochdosis-impfstoff",
+        "mf59"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "standardimpfung",
+      "begriff": "Standardimpfung",
+      "definition": "Impfung, die die STIKO allen Personen einer Altersgruppe empfiehlt, ohne dass ein besonderes Risiko vorliegen muss. Gegenstück ist die Indikationsimpfung für bestimmte Risikogruppen.",
+      "beispiel": "Bei COVID-19 erhalten alle Erwachsenen ab 18 Jahren ohne vollständige Basisimmunität die Standardimpfung.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Merkblatt Impfen“",
+        "seite": "3"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "indikationsimpfung",
+        "basisimmunitaet"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stiko",
+      "begriff": "STIKO",
+      "varianten": [
+        "Ständige Impfkommission"
+      ],
+      "definition": "Die Ständige Impfkommission ist ein beim Robert Koch-Institut eingerichtetes Fachgremium, das Empfehlungen zu Schutzimpfungen und anderen Maßnahmen gegen übertragbare Krankheiten erarbeitet. Ihre Mitglieder beruft das Bundesgesundheitsministerium; die Empfehlungen sind Grundlage der öffentlichen Impfempfehlungen der Länder und der Kassenleistung.",
+      "quelle": {
+        "werk": "IfSG",
+        "stelle": "§ 20 Abs. 2"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-rechtsrahmen",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "stiko-empfehlung",
+        "rki"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stiko-app",
+      "begriff": "STIKO-App",
+      "varianten": [
+        "STIKO@rki-App"
+      ],
+      "definition": "Kostenlose App des RKI (auch als Web-Version) mit den jeweils aktuellen Impfempfehlungen der STIKO, den Fachinformationen der Impfstoffe, Reiseimpfempfehlungen und Hinweisen, welche Impfstoffe bei Lieferengpässen ersatzweise in Frage kommen.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „STIKO@rki (App)“",
+        "seite": "29"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "stiko-empfehlung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "stiko-empfehlung",
+      "begriff": "STIKO-Empfehlung",
+      "varianten": [
+        "COVID-19-Impfempfehlung"
+      ],
+      "definition": "Die von der STIKO veröffentlichte Festlegung, wer gegen welche Krankheit mit welchem Impfstoff in welchem Abstand geimpft werden soll. Sie wird regelmäßig aktualisiert, ist fachlicher Maßstab für die Impfberatung und bestimmt über die Schutzimpfungs-Richtlinie zugleich, was die gesetzliche Krankenversicherung bezahlt.",
+      "beispiel": "Für die Influenza nennt sie unter anderem Personen ab 60 Jahren, Schwangere und Bewohner von Pflegeeinrichtungen.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „STIKO-Empfehlung“",
+        "seite": "27"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "stiko",
+        "schutzimpfungs-richtlinie"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "subkutan",
+      "begriff": "subkutan",
+      "definition": "Unter die Haut (Abkürzung s. c.) – ein anderer Injektionsweg als die intramuskuläre Gabe in den Muskel. Für die Impfung von Personen mit Gerinnungsstörung ist ein Wechsel auf subkutan ausdrücklich nicht vorgesehen.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+        "seite": "40"
+      },
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "intramuskulaer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "thrombozyt",
+      "begriff": "Thrombozyt",
+      "definition": "Blutplättchen, das sich bei einer Gefäßverletzung an der Wunde zusammenlagert und so die Blutung stillt. Thrombozyten speichern rund 99 % des Serotonins im Blut.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Verminderte Thrombozytenaggregation“",
+        "pdf": "7"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "thrombozytenaggregation"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "thrombozytenaggregation",
+      "begriff": "Thrombozytenaggregation",
+      "definition": "Zusammenlagerung der Blutplättchen an einer verletzten Stelle. Aus den Plättchen freigesetztes Serotonin verstärkt sie; unter einem SSRI fehlt dieses Serotonin, die Aggregation ist vermindert.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Verminderte Thrombozytenaggregation“",
+        "pdf": "7"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "thrombozyt",
+        "thrombozytenaggregationshemmer"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "thrombozytenaggregationshemmer",
+      "begriff": "Thrombozytenaggregationshemmer",
+      "definition": "Arzneimittel, die die Zusammenlagerung der Blutplättchen hemmen. Zusammen mit einem SSRI steigt das Blutungsrisiko deutlich, weil beide an der Plättchenfunktion angreifen.",
+      "beispiel": "ASS allein oder ASS zusammen mit Clopidogrel.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Interaktionen“",
+          "pdf": "6"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „GI-Blutungen“",
+          "pdf": "28"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "thrombozytenaggregation",
+        "ass"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "thrombozytopenie",
+      "begriff": "Thrombozytopenie",
+      "definition": "Mangel an Blutplättchen (Thrombozyten) im Blut, der zu einer Gerinnungsstörung mit erhöhter Blutungsneigung führt. Bei der Impfung gelten dieselben Regeln wie unter Antikoagulation: intramuskulär, feine Kanüle, mindestens zwei Minuten fest komprimieren.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+        "seite": "40"
+      },
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "gerinnungsstoerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "topisch",
+      "begriff": "topisch",
+      "definition": "Örtlich angewendet, also direkt auf die betroffene Stelle aufgetragen statt eingenommen.",
+      "beispiel": "Ein Diclofenac-Gel ist eine topische Alternative zur Tablette.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Vorgehen in der Apotheke“",
+        "seite": "41",
+        "pdf": "29"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "totimpfstoff",
+      "begriff": "Totimpfstoff",
+      "definition": "Impfstoff mit inaktivierten, nicht vermehrungsfähigen Erregern oder Erregerbestandteilen. Er kann keine Impfinfektion auslösen; zu anderen Impfstoffen ist kein Mindestabstand nötig. Die in der Apotheke verwendeten Influenza- und COVID-19-Impfstoffe gehören dazu.",
+      "beispiel": "Injizierte Influenza-Impfung, Pneumokokken- und Herpes-zoster-Impfung.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Abstände zwischen Impfungen“",
+        "seite": "34"
+      },
+      "themen": [
+        "imp-stiko",
+        "imp-eignung"
+      ],
+      "siehe": [
+        "lebendimpfstoff",
+        "mindestabstand"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "tramadol",
+      "begriff": "Tramadol",
+      "definition": "Opioid-Schmerzmittel, das selbst serotonerg wirkt und schon allein ein Serotonin-Syndrom auslösen kann. Hemmer von CYP2D6 wie Fluoxetin oder Paroxetin lassen die Ausgangssubstanz zusätzlich anreichern.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrome Risk Stratification by Pharmacological Mechanism“",
+          "seite": "17",
+          "pdf": "11"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Serotonin Syndrom“",
+          "seite": "19",
+          "pdf": "13"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "serotonin-syndrom",
+        "cyp2d6"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "trizyklika",
+      "begriff": "Trizyklika",
+      "varianten": [
+        "trizyklische Antidepressiva",
+        "TCA"
+      ],
+      "definition": "Ältere Antidepressiva, die die Wiederaufnahme von Serotonin und Noradrenalin hemmen und zusätzlich viele Rezeptoren blockieren. Daraus folgen Nebenwirkungen wie Sedierung und Herzwirkungen; in Überdosis sind sie lebensgefährlich.",
+      "beispiel": "Amitriptylin, Clomipramin.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Beratungshinweise“",
+          "seite": "45",
+          "pdf": "33"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "ueberempfindlichkeit",
+      "begriff": "Überempfindlichkeit",
+      "definition": "Überschießende, meist allergische Reaktion des Körpers auf einen bestimmten Stoff, etwa einen Bestandteil eines Arzneimittels oder Impfstoffs. Eine bekannte Überempfindlichkeit gegen einen Impfstoffbestandteil ist eine absolute Kontraindikation; welche Bestandteile ein Präparat enthält, steht in der Fachinformation.",
+      "quelle": [
+        {
+          "werk": "BAK-Muster-SOP 2025",
+          "stelle": "Abschnitt 6.1"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Impfkomplikationen“",
+          "seite": "46"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "anaphylaxie",
+        "sofortreaktion"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "varianten-anpassung",
+      "begriff": "Varianten-Anpassung",
+      "definition": "Anpassung eines COVID-19-Impfstoffs an die aktuell vorherrschenden Virusvarianten. Sie ist neben Alter, Zulassung und Impfzeitpunkt ein Kriterium für die Impfstoffauswahl und ändert sich häufig.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Impfstoff-Auswahl nach STIKO-Empfehlung“",
+        "seite": "28"
+      },
+      "themen": [
+        "imp-stiko"
+      ],
+      "siehe": [
+        "stiko-app"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vasokonstriktion",
+      "begriff": "Vasokonstriktion",
+      "varianten": [
+        "vasokonstriktorisch"
+      ],
+      "definition": "Engstellung von Blutgefäßen. An einer Verletzung trägt das aus den Thrombozyten freigesetzte Serotonin dazu bei und hilft so, die Blutung zu begrenzen.",
+      "quelle": {
+        "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+        "stelle": "Folie „Verminderte Thrombozytenaggregation“",
+        "pdf": "7"
+      },
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vignette",
+      "begriff": "Vignette",
+      "definition": "Dem Impfstoff beiliegendes Etikett, das für die Impfdokumentation genutzt werden kann, insbesondere für die Chargenbezeichnung. Es spart Zeit und vermeidet Übertragungsfehler.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Impfdokumentation (§ 22 Abs. 1 IfSG)“",
+        "seite": "67"
+      },
+      "themen": [
+        "imp-rechtsrahmen",
+        "imp-aufklaerung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "viruslast",
+      "begriff": "Viruslast",
+      "definition": "Menge an Viren im Blut einer infizierten Person. Bei HIV unterscheidet sie in der Impfberatung zwei Fälle: Mit nachweisbarer Viruslast gilt die Person als immundefizient, ohne nachweisbare Viruslast zählt die Infektion zu den chronischen Erkrankungen, die keine Kontraindikation sind.",
+      "quelle": [
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Spezielle Personengruppen und Situationen“",
+          "seite": "41"
+        },
+        {
+          "werk": "Skript Menn 2025",
+          "stelle": "Folie „Keine Kontraindikationen!“",
+          "seite": "42"
+        }
+      ],
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "immundefekt"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "vorbestellung",
+      "begriff": "Vorbestellung",
+      "definition": "Verbindliche Bestellung von Grippeimpfstoff vor der Saison, die jede Apotheke nach den Vorgaben der Hersteller selbst organisiert, passend zu den geplanten Impfungen.",
+      "beispiel": "Wer im Winter für den kommenden Herbst keinen Impfstoff vorbestellt, hat zu Saisonbeginn womöglich keinen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 4"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "siehe": [
+        "bedarfsmeldung"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "wiederaufnahme",
+      "begriff": "Wiederaufnahme",
+      "definition": "Rücktransport eines ausgeschütteten Botenstoffs wie Serotonin oder Noradrenalin über einen Transporter zurück in die präsynaptische Nervenzelle. Wiederaufnahmehemmer blockieren diesen Transporter, sodass mehr Botenstoff wirksam bleibt.",
+      "quelle": [
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Rezeptorprofile“",
+          "pdf": "5"
+        },
+        {
+          "werk": "Hahn, Psychische Erkrankungen, LAK Nordrhein 2026",
+          "stelle": "Folie „Atomoxetin“",
+          "pdf": "63"
+        }
+      ],
+      "themen": [
+        "psy-ssri-interaktionen"
+      ],
+      "siehe": [
+        "sert"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zellbasiert",
+      "begriff": "zellbasiert",
+      "definition": "Bezeichnet Influenza-Impfstoffe, die nicht auf Hühnereibasis, sondern auf Zellbasis hergestellt werden. Ei- und zellbasierte Impfstoffe gehören beide zu den saisonalen Standardimpfstoffen.",
+      "quelle": {
+        "werk": "BAK-Muster-SOP 2025",
+        "stelle": "Abschnitt 7"
+      },
+      "themen": [
+        "imp-eignung"
+      ],
+      "siehe": [
+        "standardimpfstoff"
+      ],
+      "stand": "2026-11"
+    },
+    {
+      "id": "zulassung",
+      "begriff": "Zulassung",
+      "definition": "Festgelegter Anwendungsbereich eines Arzneimittels – für welche Anwendung und welche Personengruppen es eingesetzt werden darf –, nachzulesen in der Fachinformation. Bei Impfstoffen kann sie weiter reichen als die Impfberechtigung der Apotheke: Influenza-Impfstoffe sind etwa ab 6 Monaten zugelassen, in der Apotheke geimpft wird erst ab 18 Jahren.",
+      "quelle": {
+        "werk": "Skript Menn 2025",
+        "stelle": "Folie „Durchführung von Schutzimpfungen in öffentlichen Apotheken“",
+        "seite": "3"
+      },
+      "themen": [
+        "imp-rechtsrahmen"
+      ],
+      "stand": "2026-11"
+    }
+  ]
+}
