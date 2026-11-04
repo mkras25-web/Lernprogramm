@@ -65,7 +65,7 @@ jobs:
             echo "Rasterbilder ausserhalb von icons/ im Build - Abbruch:"; echo "$raster"; exit 1
           fi
           # SVG mit Script oder Ereignis-Attributen liefe direkt geoeffnet ohne CSP.
-          if grep -rliE '<script|<foreignObject|javascript:|<[^>]*[[:space:]]on[a-z]+[[:space:]]*=' --include='*.svg' dist; then
+          if grep -rliE '<([a-z]+:)?script|<([a-z]+:)?foreignObject|javascript:|<[^>]*[[:space:]]on[a-z]+[[:space:]]*=' --include='*.svg' dist; then
             echo "SVG mit Script im Build - Abbruch"; exit 1
           fi
       - uses: actions/upload-pages-artifact@v3
