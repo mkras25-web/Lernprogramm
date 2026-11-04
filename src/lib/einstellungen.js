@@ -139,6 +139,21 @@ export function einstellungenFuerAbgleich(profilId) {
   }
 }
 
+// Passt ein fremder Wert zur Einstellung? Typ wie der Standardwert, mit den
+// bekannten Ausnahmen - ein String bei "neuProTag" oder ein riesiges Array
+// liess sonst Planung/Ansichten scheitern (Audit 2026-11-04).
+export function wertPasst(k, v) {
+  if (k === 'vertiefungZeigen') return v === true || v === false || v === 'einklappen'
+  if (k === 'paletteVorFarbenblind') return v === null || (typeof v === 'string' && v.length <= 40)
+  if (k === 'fsrsGewichte') return v === null || (typeof v === 'object' && !Array.isArray(v) && JSON.stringify(v).length <= 5000)
+  const s = STANDARD[k]
+  if (typeof s === 'number') return typeof v === 'number' && Number.isFinite(v)
+  if (typeof s === 'boolean') return typeof v === 'boolean'
+  if (typeof s === 'string') return typeof v === 'string' && v.length <= 100
+  if (Array.isArray(s)) return Array.isArray(v) && v.length <= 2000 && v.every((x) => typeof x === 'string' && x.length <= 200)
+  return false
+}
+
 // Fremde Einstellungen (Sicherung/Abgleich) einarbeiten. Liefert die Zahl
 // der uebernommenen Werte; danach laden() neu aufrufen.
 export function einstellungenUebernehmen(profilId, fremd) {
@@ -149,7 +164,8 @@ export function einstellungenUebernehmen(profilId, fremd) {
   const erlaubt = new Set([...ABGLEICH_LERNEN, ...(werte.aussehenAbgleichen !== false ? ABGLEICH_AUSSEHEN : [])])
   let anzahl = 0
   for (const [k, ts] of Object.entries(fremd.stand)) {
-    if (!erlaubt.has(k) || typeof ts !== 'number' || !(k in fremd.werte)) continue
+    if (!erlaubt.has(k) || typeof ts !== 'number' || !Object.hasOwn(fremd.werte, k)) continue
+    if (!wertPasst(k, fremd.werte[k])) continue
     if ((stand[k] ?? 0) >= ts) continue
     stand[k] = ts
     if (gleich(werte[k], fremd.werte[k])) continue

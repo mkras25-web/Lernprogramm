@@ -46,6 +46,8 @@ function schreiben(schluessel, wert) {
 // Netzwerkaufrufe an Dropbox mit Zeitlimit: ein haengender Aufruf liess den
 // Abgleich sonst bis zum Neuladen blockiert ("laeuft" blieb gesetzt).
 const ZEITLIMIT_MS = 30_000
+// Anmeldevorgang (PKCE-Pruefwert, state) gilt so lange.
+export const VORGANG_GUELTIG_MS = 10 * 60 * 1000
 function mitZeitlimit(url, optionen = {}) {
   const signal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
     ? AbortSignal.timeout(ZEITLIMIT_MS)
@@ -125,7 +127,7 @@ export async function verbindungStarten(appKey) {
   const verifier = zufallText(64)
   const state = zufallText(24)
   const challenge = base64Url(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(verifier))))
-  schreiben(VORGANG, { verifier, state, appKey })
+  schreiben(VORGANG, { verifier, state, appKey, seit: Date.now() })
   const parameter = new URLSearchParams({
     client_id: appKey,
     response_type: 'code',
@@ -166,9 +168,21 @@ export async function rueckkehrVerarbeiten() {
   if (!state) return null
 
   const vorgang = lesen(VORGANG)
-  if (!vorgang || vorgang.state !== state) return null // gehoert nicht zu uns
+  if (!vorgang || vorgang.state !== state) {
+    // Gehoert nicht zu uns (oder ist schon verbraucht): Code und state
+    // trotzdem aus Adresszeile und Verlauf nehmen (Audit 2026-11-04).
+    history.replaceState(null, '', rueckkehrAdresse())
+    return null
+  }
   schreiben(VORGANG, null)
   history.replaceState(null, '', rueckkehrAdresse())
+  // Ein liegengebliebener Vorgang (Anmeldung abgebrochen, Tage spaeter ein
+  // alter Link) gilt nicht mehr.
+  if (vorgang.seit && Date.now() - vorgang.seit > VORGANG_GUELTIG_MS) {
+    const ergebnis = { art: 'fehler', text: 'Die Dropbox-Anmeldung hat zu lange gedauert. Bitte erneut verbinden.' }
+    schreiben(MELDUNG, ergebnis)
+    return ergebnis
+  }
 
   if (fehler) {
     const text = `Dropbox-Anmeldung abgebrochen (${parameter.get('error_description') || fehler}).`
@@ -206,14 +220,23 @@ export function meldungAbholen() {
   return meldung
 }
 
+// Liefert true, wenn Dropbox den Widerruf bestaetigt hat. Lokal getrennt
+// wird in jedem Fall - ohne Bestaetigung bleibt der Zugang bei Dropbox aber
+// gueltig, bis er dort entfernt wird (Audit 2026-11-04).
 export async function trennen() {
+  let widerrufen = false
   try {
     const token = await zugriffstoken()
-    await fetch(`${API_URL}/auth/token/revoke`, { method: 'POST', headers: { Authorization: `Bearer ${token}` } })
+    const antwort = await mitZeitlimit(`${API_URL}/auth/token/revoke`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    widerrufen = antwort.ok
   } catch {
     /* auch ohne Netz oder mit abgelaufenem Zugang: lokal trennen */
   }
   schreiben(VERBINDUNG, null)
+  return widerrufen
 }
 
 // Liefert ein gueltiges Zugangstoken (kurzlebig, ca. 4 Stunden) und holt bei

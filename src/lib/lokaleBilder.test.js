@@ -101,6 +101,18 @@ describe('zipEintraege', () => {
     expect(eintraege[1].daten.every((b) => b === 7)).toBe(true)
   })
 
+  it('bricht bei zu vielen Eintraegen oder zu grossem Inhalt ab (ZIP-Bombe, Audit 2026-11-04)', async () => {
+    const zip = () => zipBauen([
+      { name: 'arch-de/a.png', daten: BILD },
+      { name: 'arch-de/b.png', daten: new Uint8Array(5000).fill(0), gepackt: true },
+    ])
+    const normal = { eintraege: 10, jeBild: 10_000, gesamt: 100_000 }
+    expect(await zipEintraege(zip(), normal)).toHaveLength(2)
+    await expect(zipEintraege(zip(), { ...normal, eintraege: 1 })).rejects.toThrow('ungewöhnlich groß')
+    await expect(zipEintraege(zip(), { ...normal, jeBild: 1000 })).rejects.toThrow('ungewöhnlich groß')
+    await expect(zipEintraege(zip(), { ...normal, gesamt: 2000 })).rejects.toThrow('ungewöhnlich groß')
+  })
+
   it('lehnt Nicht-ZIP-Dateien mit klarer Meldung ab', async () => {
     await expect(zipEintraege(new Uint8Array(100).buffer)).rejects.toThrow('keine ZIP')
   })

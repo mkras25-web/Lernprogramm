@@ -86,3 +86,22 @@ describe('speichern: nur eigene Aenderungen (Fehler bis 2026-10-16)', () => {
     expect(stand()).toEqual({})
   })
 })
+
+describe('wertPasst (Sicherheitsaudit 2026-11-04)', () => {
+  it('nimmt passende Werte und lehnt falsche Typen ab', async () => {
+    const { wertPasst } = await import('./einstellungen.js')
+    expect(wertPasst('neuProTag', 8)).toBe(true)
+    expect(wertPasst('neuProTag', '8')).toBe(false)
+    expect(wertPasst('neuProTag', Infinity)).toBe(false)
+    expect(wertPasst('vertiefungZeigen', 'einklappen')).toBe(true)
+    expect(wertPasst('vertiefungZeigen', 'x')).toBe(false)
+    expect(wertPasst('palette', 'lehm')).toBe(true)
+    expect(wertPasst('palette', { a: 1 })).toBe(false)
+    expect(wertPasst('fokusThemen', ['bk-dach'])).toBe(true)
+    expect(wertPasst('fokusThemen', new Array(5000).fill('x'))).toBe(false)
+    expect(wertPasst('fsrsGewichte', null)).toBe(true)
+    expect(wertPasst('fsrsGewichte', { w: [0.4, 1.2], basis: 1200 })).toBe(true)
+    expect(wertPasst('paletteVorFarbenblind', null)).toBe(true)
+    expect(wertPasst('unbekannt', 1)).toBe(false)
+  })
+})

@@ -19,7 +19,7 @@ import {
 } from './speicher.js'
 import { abgleichen, dateiname, dropboxKopien, dropboxKopieLaden, KOPIEN_TAGE, MASSENLOESCHUNG, MASSENLOESCHUNG_GRUND, profilAusDateiname, profileInDropbox } from './abgleich.js'
 import { kopieAnlegen, kopienListe, kopieText } from './kopien.js'
-import { rueckkehrVerarbeiten, verbindungStarten } from './dropbox.js'
+import { rueckkehrVerarbeiten, trennen, verbindungStarten, VORGANG_GUELTIG_MS } from './dropbox.js'
 import { profilErstellen, profilLoeschen } from './profile.js'
 import { laden as einstellungenLaden, speichern as einstellungenSpeichern } from './einstellungen.js'
 
@@ -573,6 +573,37 @@ describe('Anmeldung (OAuth mit PKCE)', () => {
     expect(JSON.parse(localStorage.getItem('dropbox_verbindung')).refreshToken).toBe('RT')
     expect(localStorage.getItem('dropbox_vorgang')).toBeNull()
   })
+
+  it('raeumt Code und state auch bei fremdem state aus der Adresszeile (Audit 2026-11-04)', async () => {
+    await verbindungStarten('mein-schluessel')
+    location.search = '?code=abc&state=falsch'
+    expect(await rueckkehrVerarbeiten()).toBeNull()
+    expect(history.replaceState).toHaveBeenCalledWith(null, '', 'https://name.github.io/lernprogramm/')
+    expect(localStorage.getItem('dropbox_vorgang')).not.toBeNull() // eigener Vorgang bleibt
+  })
+
+  it('ein Anmeldevorgang verfaellt nach 10 Minuten', async () => {
+    await verbindungStarten('mein-schluessel')
+    const vorgang = JSON.parse(localStorage.getItem('dropbox_vorgang'))
+    localStorage.setItem('dropbox_vorgang', JSON.stringify({ ...vorgang, seit: Date.now() - VORGANG_GUELTIG_MS - 1 }))
+    globalThis.fetch = vi.fn()
+    location.search = `?code=abc&state=${vorgang.state}`
+    const ergebnis = await rueckkehrVerarbeiten()
+    expect(ergebnis.art).toBe('fehler')
+    expect(fetch).not.toHaveBeenCalled()
+    expect(localStorage.getItem('dropbox_vorgang')).toBeNull()
+  })
+
+  it('Trennen meldet, ob Dropbox den Widerruf bestaetigt hat', async () => {
+    globalThis.fetch = vi.fn(async () => new Response('null', { status: 200 }))
+    expect(await trennen()).toBe(true)
+    expect(localStorage.getItem('dropbox_verbindung')).toBeNull()
+
+    await geraetWaehlen('zweites')
+    globalThis.fetch = vi.fn(async () => { throw new TypeError('offline') })
+    expect(await trennen()).toBe(false)
+    expect(localStorage.getItem('dropbox_verbindung')).toBeNull()
+  })
 })
 
 describe('Sicherheitskopien (T1, 2026-10-13)', () => {
@@ -720,5 +751,27 @@ describe('Loeschvermerke aus fremden Dateien (Sicherheitsaudit 2026-11-04)', () 
     const bericht = await importieren(JSON.stringify(fremd))
     expect(bericht.geloescht).toBe(0)
     expect(await ids()).toEqual(['z-1'])
+  })
+})
+
+describe('Import pruefen (Sicherheitsaudit 2026-11-04)', () => {
+  it('uebernimmt nur Datensaetze mit gueltiger Mindestform', async () => {
+    await geraetWaehlen('pc')
+    await datenbankFuerProfilSetzen(PROFIL)
+    const fremd = JSON.parse(await exportieren({ profilId: PROFIL, profilName: 'Max' }))
+    fremd.ereignisse = [
+      { id: 'gut-1', ts: 1_700_000_000_000, itemId: 'a-1', bewertung: 3 },
+      { id: 'ohne-ts', itemId: 'a-2' },
+      { id: 'ts-text', ts: 'gestern', itemId: 'a-3' },
+      { id: 42, ts: 1, itemId: 'a-4' },
+      { id: 'x'.repeat(500), ts: 1, itemId: 'a-5' },
+      null,
+      ['liste'],
+    ]
+    fremd.marken = [{ itemId: 'a-1', ts: 5, lesezeichen: true }, { itemId: { boese: 1 }, ts: 5 }, 'text']
+    const bericht = await importieren(JSON.stringify(fremd))
+    expect(bericht.ereignisse).toBe(1)
+    expect(bericht.marken).toBe(1)
+    expect((await alleEreignisse()).map((e) => e.id)).toEqual(['gut-1'])
   })
 })

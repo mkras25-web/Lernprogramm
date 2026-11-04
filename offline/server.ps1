@@ -72,8 +72,12 @@ try {
       if ($relativ -eq '') { $relativ = 'index.html' }
       $pfad = [IO.Path]::GetFullPath((Join-Path $root $relativ))
 
-      # Nur Dateien unterhalb dieses Ordners ausliefern.
-      if (-not $pfad.StartsWith($root, [StringComparison]::OrdinalIgnoreCase)) {
+      # Nur Dateien unterhalb dieses Ordners ausliefern. Mit Trennzeichen
+      # verglichen - sonst gaelte auch ein Nachbarordner "dist-alt" als drin
+      # (Sicherheitsaudit 2026-11-04).
+      $basis = $root.TrimEnd('') + ''
+      if (-not ($pfad.StartsWith($basis, [StringComparison]::OrdinalIgnoreCase) -or
+                $pfad.Equals($root.TrimEnd(''), [StringComparison]::OrdinalIgnoreCase))) {
         $ctx.Response.StatusCode = 403
       } else {
         if (Test-Path -LiteralPath $pfad -PathType Container) { $pfad = Join-Path $pfad 'index.html' }

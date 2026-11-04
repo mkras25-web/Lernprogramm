@@ -20,17 +20,40 @@ const aktualisieren = registerSW({
 })
 import './styles.css'
 
+// Schutz gegen Einbetten in eine fremde Seite (Clickjacking): eine
+// unsichtbar darueber gelegte Seite koennte Klicks auf "Profil loeschen"
+// oder "Dropbox trennen" lenken. Per Meta-CSP geht frame-ancestors nicht,
+// GitHub Pages setzt keine Header - deshalb hier (Audit 2026-11-04).
+function eingebettet() {
+  try {
+    return window.top !== window.self
+  } catch {
+    return true // fremder Origin darueber: Zugriff auf top verweigert
+  }
+}
+
+if (eingebettet()) {
+  const hinweis = document.createElement('p')
+  hinweis.style.cssText = 'font: 1rem/1.5 system-ui, sans-serif; padding: 1rem'
+  hinweis.textContent = 'Das Lernprogramm lässt sich nicht in einer anderen Seite einbetten. Bitte direkt öffnen.'
+  document.getElementById('root').replaceChildren(hinweis)
+} else {
+  starten()
+}
+
 // Kommt der Browser von der Dropbox-Anmeldung zurueck (?code=...), muss der
 // Code getauscht und die Adresse bereinigt sein, bevor die App startet.
 // Das Ergebnis holt die Oberflaeche danach mit meldungAbholen().
-rueckkehrVerarbeiten()
-  .catch(() => null)
-  .finally(() => {
-    createRoot(document.getElementById('root')).render(
-      <React.StrictMode>
-        <Fehlergrenze>
-          <ProfilGate />
-        </Fehlergrenze>
-      </React.StrictMode>
-    )
-  })
+function starten() {
+  rueckkehrVerarbeiten()
+    .catch(() => null)
+    .finally(() => {
+      createRoot(document.getElementById('root')).render(
+        <React.StrictMode>
+          <Fehlergrenze>
+            <ProfilGate />
+          </Fehlergrenze>
+        </React.StrictMode>
+      )
+    })
+}

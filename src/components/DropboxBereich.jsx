@@ -44,10 +44,17 @@ export default function DropboxBereich({ onMeldung, abgleich, onProfilLaden, pro
   }
 
   async function abmelden() {
-    await trennen()
+    const widerrufen = await trennen()
     setVerbunden(false)
     setProfile(null)
-    onMeldung?.({ art: 'erfolg', text: 'Von Dropbox getrennt. Der Fortschritt auf diesem Gerät bleibt erhalten.' })
+    onMeldung?.(
+      widerrufen
+        ? { art: 'erfolg', text: 'Von Dropbox getrennt. Der Fortschritt auf diesem Gerät bleibt erhalten.' }
+        : {
+            art: 'fehler',
+            text: 'Auf diesem Gerät getrennt, aber Dropbox hat den Widerruf nicht bestätigt (kein Netz?). Zur Sicherheit unter dropbox.com › Einstellungen › Verbundene Apps entfernen.',
+          }
+    )
   }
 
   function schluesselSpeichern() {

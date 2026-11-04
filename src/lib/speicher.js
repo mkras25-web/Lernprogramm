@@ -549,11 +549,25 @@ export async function exportieren({ mitSkizzen = true, profilId, profilName } = 
   )
 }
 
-async function vereinigen(name, eintraege, schluessel, geloescht = {}) {
+// Mindestform eines importierten Datensatzes (Sicherung/Abgleich). Eine
+// beschaedigte oder manipulierte Datei soll keine Eintraege anlegen, an
+// denen spaeter Planung oder Ansichten scheitern - und die per Abgleich
+// auf alle Geraete weiterreisen wuerden (Audit 2026-11-04).
+const kurzerText = (v, max = 200) => typeof v === 'string' && v.length > 0 && v.length <= max
+const zeitOk = (v) => v === undefined || (typeof v === 'number' && Number.isFinite(v))
+export function datensatzOk(art, e) {
+  if (!e || typeof e !== 'object' || Array.isArray(e)) return false
+  if (art === 'marken') return kurzerText(e.itemId) && zeitOk(e.ts)
+  if (!kurzerText(e.id) || !zeitOk(e.ts)) return false
+  if (art === 'ereignisse') return kurzerText(e.itemId) && typeof e.ts === 'number'
+  return true
+}
+
+async function vereinigen(name, eintraege, schluessel, geloescht = {}, art = name) {
   if (!Array.isArray(eintraege) || eintraege.length === 0) return 0
   const vorhandene = new Set((await alleAus(name)).map((e) => e[schluessel]))
   const neue = eintraege.filter(
-    (e) => e && e[schluessel] && !vorhandene.has(e[schluessel]) && !(e[schluessel] in geloescht)
+    (e) => datensatzOk(art, e) && !vorhandene.has(e[schluessel]) && !Object.hasOwn(geloescht, e[schluessel])
   )
 
   if (neue.length === 0) return 0
@@ -657,16 +671,16 @@ export async function importieren(text) {
 
   const { vermerke, entfernt } = await vermerkeAnwenden(daten.geloescht)
 
-  const anzahlEreignisse = await vereinigen(STORE, daten.ereignisse, 'id', vermerke.ereignisse)
-  const anzahlSkizzen = await vereinigen(SKIZZEN, daten.skizzen ?? [], 'id', vermerke.skizzen)
-  const anzahlPruefungen = await vereinigen(PRUEFUNGEN, daten.pruefungen ?? [], 'id', vermerke.pruefungen)
+  const anzahlEreignisse = await vereinigen(STORE, daten.ereignisse, 'id', vermerke.ereignisse, 'ereignisse')
+  const anzahlSkizzen = await vereinigen(SKIZZEN, daten.skizzen ?? [], 'id', vermerke.skizzen, 'skizzen')
+  const anzahlPruefungen = await vereinigen(PRUEFUNGEN, daten.pruefungen ?? [], 'id', vermerke.pruefungen, 'pruefungen')
 
   // Marken werden nur uebernommen, wenn sie neuer sind als das, was
   // lokal liegt. Sonst zerstoert eine alte Sicherung neuere Arbeit.
   const lokal = new Map((await alleMarken()).map((m) => [m.itemId, m]))
   let anzahlMarken = 0
-  for (const marke of daten.marken ?? []) {
-    if (!marke?.itemId) continue
+  for (const marke of Array.isArray(daten.marken) ? daten.marken : []) {
+    if (!datensatzOk('marken', marke)) continue
     if ((vermerke.marken[marke.itemId] ?? -1) >= (marke.ts ?? 0)) continue
     const vorhanden = lokal.get(marke.itemId)
     if (vorhanden && (vorhanden.ts ?? 0) === (marke.ts ?? 0) && !markenGleich(vorhanden, marke)) {

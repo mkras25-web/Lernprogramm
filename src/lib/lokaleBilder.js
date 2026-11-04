@@ -26,16 +26,47 @@ function endung(name) {
 const u16 = (v, o) => v.getUint16(o, true)
 const u32 = (v, o) => v.getUint32(o, true)
 
-async function entpacken(bytes, methode) {
-  if (methode === 0) return bytes
+// Grenzen gegen ZIP-Bomben (Sicherheitsaudit 2026-11-04). Das echte
+// Bilderpaket hat wenige MB; ein einzelner Buchausschnitt deutlich unter 50 MB.
+export const ZIP_GRENZEN = { eintraege: 5000, jeBild: 50 * 1024 * 1024, gesamt: 500 * 1024 * 1024 }
+
+function zuGross(text) {
+  return new Error(`Die ZIP ist ungewöhnlich groß (${text}) und wurde nicht eingelesen.`)
+}
+
+// Entpackt mit Zaehler: die Groesse im ZIP-Verzeichnis kann falsch sein,
+// deshalb wird beim Entpacken selbst abgebrochen, sobald es zu viel wird.
+async function entpacken(bytes, methode, max) {
+  if (methode === 0) {
+    if (bytes.length > max) throw zuGross('ein Bild über der Grenze')
+    return bytes
+  }
   if (methode !== 8) throw new Error(`Nicht unterstuetzte ZIP-Kompression (${methode}).`)
-  const strom = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw'))
-  return new Uint8Array(await new Response(strom).arrayBuffer())
+  const leser = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw')).getReader()
+  const teile = []
+  let laenge = 0
+  for (;;) {
+    const { done, value } = await leser.read()
+    if (done) break
+    laenge += value.length
+    if (laenge > max) {
+      await leser.cancel()
+      throw zuGross('ein Bild über der Grenze')
+    }
+    teile.push(value)
+  }
+  const ergebnis = new Uint8Array(laenge)
+  let pos = 0
+  for (const t of teile) {
+    ergebnis.set(t, pos)
+    pos += t.length
+  }
+  return ergebnis
 }
 
 // Liest ein ZIP ueber sein Inhaltsverzeichnis (Standardformat, wie es
 // Python/Windows/macOS schreiben; ohne ZIP64 - Bilderpakete sind klein).
-export async function zipEintraege(buffer) {
+export async function zipEintraege(buffer, grenzen = ZIP_GRENZEN) {
   const bytes = new Uint8Array(buffer)
   const ansicht = new DataView(buffer)
 
@@ -49,7 +80,9 @@ export async function zipEintraege(buffer) {
   if (ende < 0) throw new Error('Das ist keine ZIP-Datei.')
 
   const anzahl = u16(ansicht, ende + 10)
+  if (anzahl > grenzen.eintraege) throw zuGross(`${anzahl} Einträge`)
   let zeiger = u32(ansicht, ende + 16)
+  let gesamt = 0
   const dekoder = new TextDecoder('utf-8')
   const eintraege = []
 
@@ -69,7 +102,10 @@ export async function zipEintraege(buffer) {
     const lokalNamen = u16(ansicht, kopfPos + 26)
     const lokalExtra = u16(ansicht, kopfPos + 28)
     const start = kopfPos + 30 + lokalNamen + lokalExtra
-    eintraege.push({ name, daten: await entpacken(bytes.subarray(start, start + groesse), methode) })
+    const daten = await entpacken(bytes.subarray(start, start + groesse), methode, grenzen.jeBild)
+    gesamt += daten.length
+    if (gesamt > grenzen.gesamt) throw zuGross('zusammen über der Grenze')
+    eintraege.push({ name, daten })
   }
   return eintraege
 }
@@ -100,6 +136,7 @@ export function lokaleBilderMoeglich() {
 }
 
 export async function lokaleBilderImportieren(datei, { cacheSpeicher = caches, basis } = {}) {
+  if (datei.size > ZIP_GRENZEN.gesamt) throw zuGross(`${Math.round(datei.size / 1024 / 1024)} MB`)
   const eintraege = await zipEintraege(await datei.arrayBuffer())
   const cache = await cacheSpeicher.open(CACHE_NAME)
   const jePaket = {}
