@@ -1,0 +1,8 @@
+# IONOS (Apache): alles auf HTTPS umleiten. Kein SPA-Fallback noetig,
+# die App benutzt Hash-Adressen (#/themen).
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Ohne diese Zeile liefert manch ein Apache das Manifest als text/plain.
+AddType application/manifest+json .webmanifest
