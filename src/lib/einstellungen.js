@@ -178,24 +178,14 @@ export function einstellungenUebernehmen(profilId, fremd) {
   return anzahl
 }
 
-function systemDunkel() {
-  try {
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
-  } catch {
-    return false
-  }
-}
-
 export function laden(profilId) {
   try {
     const roh = localStorage.getItem(schluesselFuer(profilId))
     const gespeichert = roh ? JSON.parse(roh) : {}
-    // Nur beim allerersten Start (noch keine eigene Wahl gespeichert)
-    // nach Systemvoreinstellung starten - eine einmal getroffene Wahl
-    // wird nie von der Systemeinstellung ueberschrieben.
-    const standard = { ...STANDARD }
-    if (gespeichert.palette === undefined && systemDunkel()) standard.palette = 'dunkel'
-    return farbenblindNachziehen({ ...standard, ...gespeichert })
+    // Neue Profile starten immer mit der hellen Lehm-Palette, auch wenn das
+    // Geraet im Dunkelmodus laeuft (Nutzerwunsch 2026-11-08). Eine eigene
+    // Wahl bleibt erhalten.
+    return farbenblindNachziehen({ ...STANDARD, ...gespeichert })
   } catch {
     return { ...STANDARD }
   }
