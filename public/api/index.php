@@ -17,8 +17,14 @@ function antwort(int $code, array $daten): never { http_response_code($code); ec
 function fehler(int $code, string $text): never { antwort($code, ['fehler' => $text]); }
 
 function konfig(): array {
-    $pfad = getenv('LERNPROGRAMM_KONFIG') ?: __DIR__ . '/../../lernprogramm-config/config.php';
-    if (!is_file($pfad)) fehler(503, 'Server nicht eingerichtet (config.php fehlt).');
+    // Gesucht wird lernprogramm-config/config.php oberhalb dieses Ordners
+    // (1-3 Ebenen darueber), damit Live- und Testauftritt dieselbe Datei nutzen.
+    $pfad = getenv('LERNPROGRAMM_KONFIG') ?: null;
+    for ($ebene = 2; !$pfad && $ebene <= 4; $ebene++) {
+        $kandidat = dirname(__DIR__, $ebene) . '/lernprogramm-config/config.php';
+        if (is_file($kandidat)) $pfad = $kandidat;
+    }
+    if (!$pfad || !is_file($pfad)) fehler(503, 'Server nicht eingerichtet (config.php fehlt).');
     $k = require $pfad;
     return is_array($k) ? $k : fehler(503, 'config.php ungueltig.');
 }
