@@ -185,6 +185,8 @@ export default function ProfilGate() {
       <ServerProfilWahl
         hinweis={hinweis}
         lokaleProfile={profile}
+        onUmbenannt={profilUmbenennenUndMerken}
+        onGeloescht={async (id) => { try { await profilEntfernen(id) } catch { /* lokal nicht vorhanden */ } }}
         onLokal={() => setLokalModus(true)}
         onFertig={(p) => {
           // Das lokale Profil teilt sich die Id mit dem Server-Profil.

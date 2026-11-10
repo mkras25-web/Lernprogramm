@@ -218,9 +218,61 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .serverKarte:disabled { opacity: 0.6; cursor: wait; }
 .serverAvatar { border-radius: 50%; flex-shrink: 0; }
 .serverSchloss { margin-left: auto; color: var(--rinde); }
-.datenschutz { margin-top: 2rem; }
+.profilBuehne {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+.profilInhalt { width: 100%; max-width: 56rem; margin: 0 auto; }
+.profilInhalt > .serverFormular { max-width: 28rem; margin: 0 auto; }
+.profilTitel { text-align: center; }
+.profilRaster {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 11rem));
+  justify-content: center;
+  gap: 1rem;
+}
+.profilKarte { display: flex; flex-direction: column; align-items: stretch; gap: 0.25rem; }
+.profilKarteKnopf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem 0.5rem 0.75rem;
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--rund);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+.profilKarteKnopf:disabled { opacity: 0.6; cursor: wait; }
+.profilKarteKnopf:hover { border-color: var(--lehm); }
+.profilKarteBild { position: relative; display: block; line-height: 0; margin-bottom: 0.375rem; }
+.profilKarteBild img { border-radius: 50%; }
+.profilKarteBild .serverSchloss { position: absolute; right: -0.25rem; bottom: -0.125rem; margin: 0; line-height: 1; background: var(--flaeche); border-radius: 50%; padding: 0.125rem; }
+.profilKarteBild.plus {
+  display: flex; align-items: center; justify-content: center;
+  width: 88px; height: 88px; border-radius: 50%;
+  border: 2px dashed var(--lehm); color: var(--rinde);
+  font-family: var(--serife); font-size: 2.25rem; line-height: 1;
+}
+.profilKarte.neu .profilKarteKnopf { border-style: dashed; }
+.profilBearbeiten { font-size: 0.8125rem; align-self: center; }
+.profilEditor { max-width: 32rem; width: 100%; max-height: 90dvh; overflow-y: auto; }
+.profilEditor .profilNeu { flex-wrap: wrap; }
+.profilEditor .profilNeu .suchfeld { min-width: 0; flex: 1 1 10rem; }
+.loeschBox { border: 1px solid var(--warnung); border-radius: var(--rund); padding: 0.75rem; }
+.gefahrText { color: var(--warnung); align-self: flex-start; }
+.datenschutz { margin-top: 2rem; text-align: center; }
 .serverUmzug { margin-top: 1.5rem; }
-.serverAktionen { margin-top: 1rem; align-items: center; }
+.serverAktionen { margin-top: 1rem; align-items: center; text-align: center; }
 .serverFormular { display: flex; flex-direction: column; gap: 0.5rem; }
 .serverKopf { display: flex; align-items: center; gap: 0.875rem; }
 .serverHaken { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9375rem; }
