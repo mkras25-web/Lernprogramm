@@ -276,6 +276,8 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .profilEditor .profilNeu .suchfeld { min-width: 0; flex: 1 1 10rem; }
 .loeschBox { border: 1px solid var(--warnung); border-radius: var(--rund); padding: 0.75rem; }
 .gefahrText { color: var(--warnung); align-self: flex-start; }
+.ohneProfil { margin-top: 1.5rem; text-align: center; }
+.ohneProfil .nebentext { max-width: 36rem; margin: 0.5rem auto 0; }
 .dropboxImport { margin-top: 1.5rem; text-align: center; }
 .dropboxImport .nebentext { max-width: 36rem; margin: 0.5rem auto; }
 .dropboxImport .feldgruppe { text-align: left; max-width: 36rem; margin: 0.5rem auto 0; }

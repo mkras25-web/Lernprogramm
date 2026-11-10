@@ -88,7 +88,11 @@ export default function ProfilGate() {
     setProfile((alle) => [...alle, profil])
   }
 
+  // "Ohne Profil lernen": ein einziges lokales Gastprofil je Geraet (nur auf diesem Geraet, nicht auf dem
+  // Server); ein zweiter Klick oeffnet dasselbe wieder.
   async function ohneProfilFortfahren() {
+    const vorhanden = profilListe().find((p) => p.gast)
+    if (vorhanden) return profilWaehlen(vorhanden.id)
     const profil = profilGastErstellen()
     setProfile((alle) => [...alle, profil])
     await profilWaehlen(profil.id)
@@ -186,6 +190,7 @@ export default function ProfilGate() {
         hinweis={hinweis}
         lokaleProfile={profile}
         onAusDropboxLaden={profilAusDropboxLaden}
+        onOhneProfil={ohneProfilFortfahren}
         onUmbenannt={profilUmbenennenUndMerken}
         onGeloescht={async (id) => { try { await profilEntfernen(id) } catch { /* lokal nicht vorhanden */ } }}
         onLokal={() => setLokalModus(true)}

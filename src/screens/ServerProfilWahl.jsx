@@ -11,7 +11,7 @@ import { AVATARE, PASSWORT_MIN, ich, tokenLesen, anmelden, angemeldetBleiben, av
 // angemeldet bleiben wollte, kommt ohne Eingabe hinein. Die Felder tragen
 // username/current-password/new-password, damit der Browser Passwoerter
 // speichern und einsetzen kann.
-export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGeloescht, onAusDropboxLaden, hinweis, lokaleProfile = [] }) {
+export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGeloescht, onAusDropboxLaden, onOhneProfil, hinweis, lokaleProfile = [] }) {
   const [liste, setListe] = useState(null)
   const [fehler, setFehler] = useState(null)
   const [beschaeftigt, setBeschaeftigt] = useState(false)
@@ -162,6 +162,12 @@ export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGel
               </li>
             ))}
           </ul>
+        </div>
+      )}
+      {onOhneProfil && (
+        <div className="ohneProfil">
+          <button className="knopf schmal" onClick={onOhneProfil}>Ohne Profil lernen</button>
+          <p className="nebentext">Nur auf diesem Gerät – der Fortschritt wird nicht auf dem Server gespeichert. Später lässt er sich als Profil übertragen.</p>
         </div>
       )}
       {onAusDropboxLaden && (
