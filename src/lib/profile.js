@@ -68,11 +68,25 @@ export function profilErstellen(name, id = erzeugeId()) {
   return profil
 }
 
+// "Ohne Profil fortfahren" (2026-11-10): ein Profil ohne eigenen Namen, nur
+// auf diesem Geraet. Der Fortschritt wird ganz normal lokal gespeichert;
+// wer spaeter doch ein Profil will, benennt es einfach um - dann bleibt
+// alles erhalten (gast faellt weg).
+export function profilGastErstellen() {
+  const profil = profilErstellen('Ohne Profil')
+  const liste = profilListe()
+  const eintrag = liste.find((p) => p.id === profil.id)
+  eintrag.gast = true
+  schreiben(liste)
+  return { ...profil, gast: true }
+}
+
 export function profilUmbenennen(id, name) {
   const liste = profilListe()
   const eintrag = liste.find((p) => p.id === id)
   if (!eintrag || !name.trim()) return
   eintrag.name = name.trim()
+  delete eintrag.gast
   schreiben(liste)
 }
 

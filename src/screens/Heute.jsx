@@ -70,7 +70,6 @@ export default function Heute({
               <span className="bauWerk">{bau.werk.name}</span>
             </p>
             <h1 className="ueberschrift">Stufe {level.stufe}</h1>
-            <p className="nebentext">{bau.abschnitt.satz}</p>
             <div className="bauBalken" title={`${level.imLevel} von ${level.fuerLevel} XP`}>
               <span style={{ width: `${Math.round(level.anteil * 100)}%` }} />
             </div>

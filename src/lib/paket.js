@@ -6,6 +6,7 @@
 // ohne dass leere Dateien angelegt werden muessen.
 
 import { itemFehler } from './itemPruefung.js'
+import { vorgabenPruefen } from './vorgaben.js'
 
 // Verzeichnis aller installierten Pakete. Fehlt es, wird das
 // Architekturpaket angenommen - so laeuft eine alte Ablage weiter.
@@ -46,6 +47,7 @@ export async function paketLaden(paketId) {
   }
 
   const durchsichtVorab = jsonOderNull(`${wurzel}/durchsicht.json`)
+  const vorgabenVorab = jsonOderNull(`${wurzel}/vorgaben.json`)
   // Normenglossar ist optional - fehlt es, bleibt die Funktion still.
   const normDaten = await jsonOderNull(`${wurzel}/normen.json`)
   const normen = normDaten?.eintraege ?? {}
@@ -160,6 +162,7 @@ export async function paketLaden(paketId) {
     lexikon: lexikonDaten,
     defekt,
     durchsicht,
+    vorgaben: vorgabenPruefen(await vorgabenVorab),
     wurzel,
     bereiche: paket.bereiche ?? {},
     phasen: paket.phasen ?? {},

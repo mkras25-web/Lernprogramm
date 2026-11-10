@@ -40,6 +40,13 @@ export const FELDNAMEN = {
 //   wartet    - geaendert, deine Entscheidung fehlt noch
 //   abgelehnt - du hast die Aenderung abgelehnt; die App zeigt die alte
 //               Fassung, bis das Skript sie zurueckschreibt
+// Reine Darstellungsaenderungen (z. B. Schrift fuers Handy vergroessert)
+// gelten ohne Klick als angenommen; ablehnen kann man sie trotzdem.
+export function nurDarstellung(eintrag) {
+  const ebenen = eintrag?.ebenen ?? []
+  return ebenen.length > 0 && ebenen.every((e) => e === 'darstellung')
+}
+
 export function standVon(eintrag, marke) {
   if (!eintrag) return { stand: 'offen' }
   const geaendertAm = eintrag.geaendert_am ?? null
@@ -53,6 +60,9 @@ export function standVon(eintrag, marke) {
         return { stand: 'geprueft', datum: eintrag.datum, geaendertAm: eintrag.datum, grund: eintrag.aenderung?.grund, lokal: true }
       }
       if (e.entscheidung === 'abgelehnt') return { stand: 'abgelehnt', datum: eintrag.datum, lokal: true }
+    }
+    if (nurDarstellung(eintrag)) {
+      return { stand: 'geprueft', datum: eintrag.datum, geaendertAm: eintrag.datum, grund: eintrag.aenderung?.grund, lokal: true, auto: true }
     }
     return { stand: 'wartet', datum: eintrag.datum }
   }
@@ -216,6 +226,23 @@ export function wortDiff(alt, neu) {
   while (i < n) dazu('weg', a[i++])
   while (j < m) dazu('neu', b[j++])
   return teile
+}
+
+// Kuerzt lange unveraenderte Strecken eines wortDiff auf ein paar Woerter
+// Umgebung, damit nur das Geaenderte ins Auge faellt. Neue Art "kuerzung".
+export function diffKompakt(teile, kontext = 6) {
+  return teile.flatMap((t, i) => {
+    if (t.art !== 'gleich') return [t]
+    const chunks = t.text.match(/\S+\s*|\s+/g) ?? []
+    const vorn = i === 0 ? 0 : kontext
+    const hinten = i === teile.length - 1 ? 0 : kontext
+    if (chunks.length <= vorn + hinten + 3) return [t]
+    return [
+      ...(vorn ? [{ art: 'gleich', text: chunks.slice(0, vorn).join('') }] : []),
+      { art: 'kuerzung', text: '… ' },
+      ...(hinten ? [{ art: 'gleich', text: chunks.slice(chunks.length - hinten).join('') }] : []),
+    ]
+  })
 }
 
 export function datumKurz(iso) {

@@ -36,7 +36,7 @@ function useSpeicherSchaetzung() {
 
 export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung, speicherGeschuetzt = null,
-  onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, profilName, onProfilWechseln, onTastenhilfe, onEinfuehrung, onMeldung, abgleich,
+  onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, onAlleMarkierungenEntfernen, onVorgabenExport, profilName, onProfilWechseln, onTastenhilfe, onEinfuehrung, onMeldung, abgleich,
   kursplan = { kurse: [], klausuren: [] }, kursplanAendern, kennungen = new Map(),
   profilId, dropboxVerbunden = false, onWiederherstellen,
 }) {
@@ -603,6 +603,37 @@ export default function Einstellungen({
             <button className="knopf schmal" disabled={anzahlMeldungen === 0} onClick={onMeldungenExport}>
               Exportieren
             </button>
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Alle Markierungen entfernen</p>
+              <p className="zeileHinweis">
+                Setzt die Sichtung (Relevant, Später, Überarbeiten, Streichen) aller Karten zurück –
+                auch Startwerte, die schon beim Anlegen des Profils gesetzt waren. Lesezeichen, Notizen
+                und Lernfortschritt bleiben.
+              </p>
+            </div>
+            <button
+              className="knopf schmal"
+              onClick={() => {
+                if (window.confirm('Wirklich alle Markierungen dieses Profils entfernen?')) onAlleMarkierungenEntfernen?.()
+              }}
+            >
+              Alle entfernen
+            </button>
+          </div>
+
+          <div className="zeile">
+            <div className="zeileText">
+              <p className="zeileTitel">Markierungen als Vorgabe für alle</p>
+              <p className="zeileHinweis">
+                Für den Autor: „Überarbeiten“, „Streichen“ und angenommene bzw. abgelehnte Durchsicht-Änderungen
+                dieses Profils als vorgaben.json speichern. Nach dem Veröffentlichen sind sie der Startwert für
+                alle anderen (eigene Entscheidungen bleiben).
+              </p>
+            </div>
+            <button className="knopf schmal" onClick={onVorgabenExport}>Speichern</button>
           </div>
 
           {speicher && (

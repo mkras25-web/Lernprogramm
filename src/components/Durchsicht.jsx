@@ -1,4 +1,4 @@
-import { EBENEN, aenderungsFelder, datumKurz, wortDiff } from '../lib/durchsicht.js'
+import { EBENEN, aenderungsFelder, datumKurz, diffKompakt, wortDiff } from '../lib/durchsicht.js'
 
 // Kleine Marke im Kartenkopf: ✓ geprueft, wartet auf dich, abgelehnt.
 // "offen" zeigt bewusst nichts - das ist anfangs fast alles.
@@ -59,6 +59,21 @@ function Textvergleich({ vorher, nachher }) {
   )
 }
 
+// Kompakt: ein einziger Text, Geaendertes markiert, langes Unveraendertes
+// auf "…" gekuerzt - auf einen Blick zu erfassen.
+function Kompaktvergleich({ vorher, nachher }) {
+  const teile = diffKompakt(wortDiff(vorher, nachher))
+  return (
+    <p className="vergleichText">
+      {teile.map((t, i) => (
+        <span key={i} className={t.art === 'weg' ? 'diffWeg' : t.art === 'neu' ? 'diffNeu' : t.art === 'kuerzung' ? 'diffKuerzung' : undefined}>
+          {t.text}
+        </span>
+      ))}
+    </p>
+  )
+}
+
 // Abschnitt "Durchsicht" einer Aufgabe, eines Erklaerstuecks oder Bildes:
 // was geprueft wurde, und bei einer Aenderung Vorher/Nachher mit
 // Annehmen/Ablehnen. aktuell = Inhalt der Datei, wie er jetzt ist.
@@ -96,21 +111,16 @@ export function DurchsichtBlock({ titel, eintrag, stand, aktuell, bildAlt, bildN
       {wartetOderLokal && (
         <>
           <p className="durchsichtGrund">
-            <strong>Warum:</strong> {eintrag.aenderung?.grund}
-            {eintrag.aenderung?.beleg && (
-              <>
-                <br />
-                <strong>Beleg:</strong> {eintrag.aenderung.beleg}
-              </>
-            )}
+            <strong>{stand.auto ? 'Nur Darstellung:' : 'Kurz gesagt:'}</strong> {eintrag.aenderung?.grund}
           </p>
-          {felder.map((f) => (
+          {eintrag.aenderung?.beleg && <p className="zeileHinweis">Beleg: {eintrag.aenderung.beleg}</p>}
+          {!stand.auto && felder.map((f) => (
             <div key={f.feld} className="durchsichtFeld">
               <p className="zeileTitel">{f.name}</p>
-              <Textvergleich vorher={f.vorher} nachher={f.nachher} />
+              <Kompaktvergleich vorher={f.vorher} nachher={f.nachher} />
             </div>
           ))}
-          {bildAlt && (
+          {bildAlt && !stand.auto && (
             <div className="durchsichtVergleich">
               <div>
                 <p className="zeileHinweis">Vorher</p>
@@ -122,8 +132,19 @@ export function DurchsichtBlock({ titel, eintrag, stand, aktuell, bildAlt, bildN
               </div>
             </div>
           )}
-          {wartetOderLokal && felder.length === 0 && !bildAlt && (
+          {felder.length === 0 && !bildAlt && (
             <p className="zeileHinweis">Kein Unterschied mehr sichtbar (Datei inzwischen erneuert?).</p>
+          )}
+          {felder.length > 0 && (
+            <details className="durchsichtDetails">
+              <summary>Vorher und Nachher getrennt anzeigen</summary>
+              {felder.map((f) => (
+                <div key={f.feld} className="durchsichtFeld">
+                  <p className="zeileTitel">{f.name}</p>
+                  <Textvergleich vorher={f.vorher} nachher={f.nachher} />
+                </div>
+              ))}
+            </details>
           )}
           <div className="wahl">
             {stand.stand === 'wartet' ? (
@@ -133,6 +154,13 @@ export function DurchsichtBlock({ titel, eintrag, stand, aktuell, bildAlt, bildN
                 </button>
                 <button className="knopf schmal" onClick={() => onEntscheiden('abgelehnt')}>
                   Ablehnen, alte Fassung behalten
+                </button>
+              </>
+            ) : stand.auto ? (
+              <>
+                <span className="zeileHinweis">Automatisch übernommen – reine Darstellungsänderung.</span>
+                <button className="textknopf" onClick={() => onEntscheiden('abgelehnt')}>
+                  Doch ablehnen
                 </button>
               </>
             ) : (

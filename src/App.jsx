@@ -82,6 +82,7 @@ const AusDemKopf = lazy(() => import('./components/AusDemKopf.jsx'))
 import Einfuehrung from './components/Einfuehrung.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 import { durchsichtJeThema, standVon } from './lib/durchsicht.js'
+import { entfernenAlsEntscheidung, ohneVorgabe, vorgabenAnwenden, vorgabenErzeugen } from './lib/vorgaben.js'
 
 // Themenfokus: ganze Module stehen als "modul:<id>" in opt.fokusThemen.
 const FOKUS_MODUL = 'modul:'
@@ -124,6 +125,8 @@ export default function App({ profilId, onProfilWechseln }) {
   const [ereignisse, setEreignisse] = useState([])
   const [skizzen, setSkizzen] = useState([])
   const [marken, setMarken] = useState(new Map())
+  // Vorgaben des Autors (vorgaben.json): Startwerte unter den eigenen Marken.
+  const vorgabenRef = useRef(null)
   const [fehler, setFehler] = useState(null)
   // Zaehler fuer "Erneut versuchen" nach einem Ladefehler (B2, 2026-10-13).
   const [ladeVersuch, setLadeVersuch] = useState(0)
@@ -232,6 +235,7 @@ export default function App({ profilId, onProfilWechseln }) {
         setKennwerte(paketDaten.kennwerte ?? [])
         setLexikonDaten(paketDaten.lexikon ?? null)
         setDurchsicht(paketDaten.durchsicht ?? {})
+        vorgabenRef.current = paketDaten.vorgaben ?? null
         setPaketWurzel(paketDaten.wurzel ?? '')
         // Ausgelassene, nicht darstellbare Karten (T4) einmal melden.
         if (paketDaten.defekt?.length) {
@@ -243,7 +247,7 @@ export default function App({ profilId, onProfilWechseln }) {
         }
         setEreignisse(gespeicherte)
         setSkizzen(gespeicherteSkizzen)
-        setMarken(new Map(gespeicherteMarken.map((m) => [m.itemId, m])))
+        setMarken(vorgabenAnwenden(new Map(gespeicherteMarken.map((m) => [m.itemId, m])), vorgabenRef.current))
         setPruefungen(gespeichertePruefungen)
       })
       .catch((e) => setFehler(e.message))
@@ -594,16 +598,17 @@ export default function App({ profilId, onProfilWechseln }) {
       const roh = rohItems.find((i) => i.id === itemId)
       if (roh) aenderung = { ...aenderung, meldung: { ...aenderung.meldung, inhalt: inhaltsStempel(roh) } }
     }
-    const vorher = markenRef.current.get(itemId) ?? {}
+    const vorher = ohneVorgabe(markenRef.current.get(itemId)) ?? {}
+    aenderung = entfernenAlsEntscheidung(aenderung, itemId, vorgabenRef.current)
     // Frischer Zeitstempel: sonst behielt die Marke den alten ts, und der
     // Abgleich hielt eine aeltere Fassung vom anderen Geraet fuer neuer.
     const neu = { itemId, ...vorher, ...aenderung, ts: Date.now() }
     for (const [feld, wert] of Object.entries(aenderung)) {
       if (wert === null) delete neu[feld]
     }
-    markenRef.current = new Map(markenRef.current).set(itemId, neu)
+    markenRef.current = vorgabenAnwenden(new Map(markenRef.current).set(itemId, neu), vorgabenRef.current)
     await markeSetzen(neu)
-    setMarken((alte) => new Map(alte).set(itemId, neu))
+    setMarken(markenRef.current)
   }
 
   // Frage in einen Kurs / aus einem Kurs (Marke, reist mit dem Abgleich).
@@ -614,14 +619,14 @@ export default function App({ profilId, onProfilWechseln }) {
   async function kursSammel(ids, kursId, rein) {
     const neueKarte = new Map(markenRef.current)
     for (const id of ids) {
-      const vorher = neueKarte.get(id) ?? {}
+      const vorher = ohneVorgabe(neueKarte.get(id)) ?? {}
       const eintrag = { itemId: id, ...vorher, ...kursAenderung(vorher, kursId, rein), ts: Date.now() }
       for (const [feld, wert] of Object.entries(eintrag)) if (wert === null) delete eintrag[feld]
       await markeSetzen(eintrag)
       neueKarte.set(id, eintrag)
     }
-    markenRef.current = neueKarte
-    setMarken(neueKarte)
+    markenRef.current = vorgabenAnwenden(neueKarte, vorgabenRef.current)
+    setMarken(markenRef.current)
   }
 
   function kursStarten(kursId, art) {
@@ -679,13 +684,52 @@ export default function App({ profilId, onProfilWechseln }) {
   async function sammelSichtung(ids, kategorie) {
     const neueKarte = new Map(marken)
     for (const id of ids) {
-      const vorher = neueKarte.get(id) ?? {}
-      const eintrag = { itemId: id, ...vorher, kategorie, ts: Date.now() }
-      if (kategorie === null) delete eintrag.kategorie
+      const vorher = ohneVorgabe(neueKarte.get(id)) ?? {}
+      const { kategorie: eigene } = entfernenAlsEntscheidung({ kategorie }, id, vorgabenRef.current)
+      const eintrag = { itemId: id, ...vorher, kategorie: eigene, ts: Date.now() }
+      if (eigene === null) delete eintrag.kategorie
       await markeSetzen(eintrag)
       neueKarte.set(id, eintrag)
     }
-    setMarken(neueKarte)
+    markenRef.current = vorgabenAnwenden(neueKarte, vorgabenRef.current)
+    setMarken(markenRef.current)
+  }
+
+  // Ein Klick: alle Sichtungs-Markierungen weg (auch die vom Autor vorgegebenen
+  // Startwerte - die werden dafuer als eigene Entscheidung "ungesichtet" bzw.
+  // "offen" festgehalten) und geerbte Durchsicht-Entscheidungen zurueck auf offen.
+  async function alleMarkierungenEntfernen() {
+    let n = 0
+    const neueKarte = new Map(markenRef.current)
+    for (const [id, m] of markenRef.current) {
+      const kategorieWeg = m.kategorie !== undefined && m.kategorie !== 'ungesichtet'
+      const durchsichtWeg = Boolean(m._vorgabe?.durchsicht)
+      if (!kategorieWeg && !durchsichtWeg) continue
+      const aenderung = {}
+      if (kategorieWeg) aenderung.kategorie = null
+      if (durchsichtWeg) aenderung.durchsicht = null
+      const vorher = ohneVorgabe(m)
+      const eintrag = { itemId: id, ...vorher, ...entfernenAlsEntscheidung(aenderung, id, vorgabenRef.current), ts: Date.now() }
+      for (const [feld, wert] of Object.entries(eintrag)) if (wert === null) delete eintrag[feld]
+      await markeSetzen(eintrag)
+      neueKarte.set(id, eintrag)
+      n += 1
+    }
+    markenRef.current = vorgabenAnwenden(neueKarte, vorgabenRef.current)
+    setMarken(markenRef.current)
+    setMeldung({ art: 'erfolg', text: n ? `${n} Markierungen entfernt.` : 'Es gab keine Markierungen zu entfernen.' })
+  }
+
+  // Meine Markierungen als vorgaben.json: gehoert nach
+  // app/public/pakete/<paket>/ und gilt nach dem Veroeffentlichen fuer alle
+  // als Startwert (lib/vorgaben.js).
+  function vorgabenExportieren() {
+    const vorgaben = vorgabenErzeugen(markenRef.current, paketInfo?.id ?? opt.aktivesPaket)
+    textHerunterladen(JSON.stringify(vorgaben, null, 1), 'vorgaben.json', 'application/json;charset=utf-8')
+    setMeldung({
+      art: 'erfolg',
+      text: `vorgaben.json gespeichert (${Object.keys(vorgaben.kategorien).length} Markierungen, ${Object.keys(vorgaben.durchsicht).length} Durchsicht-Entscheidungen). Datei nach app/public/pakete/${vorgaben.paket}/ legen und veröffentlichen.`,
+    })
   }
 
   async function skizzeEntfernen(id) {
@@ -806,7 +850,7 @@ export default function App({ profilId, onProfilWechseln }) {
     ])
     setEreignisse(e)
     setSkizzen(s)
-    setMarken(new Map(m.map((x) => [x.itemId, x])))
+    setMarken(vorgabenAnwenden(new Map(m.map((x) => [x.itemId, x])), vorgabenRef.current))
     setPruefungen(p)
     setKursplan(kursplanLesen(profilId))
     // Abgeglichene Einstellungen (FSRS, Palette ...) neu laden - nur wenn
@@ -1440,6 +1484,8 @@ export default function App({ profilId, onProfilWechseln }) {
           onImport={importKlick}
           onMeldung={setMeldung}
           onLoeschen={loeschen}
+          onAlleMarkierungenEntfernen={alleMarkierungenEntfernen}
+          onVorgabenExport={vorgabenExportieren}
           profilId={profilId}
           dropboxVerbunden={dropboxVerbunden}
           onWiederherstellen={wiederherstellenAus}

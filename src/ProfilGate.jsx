@@ -7,6 +7,7 @@ import {
   aktivesProfilSetzen,
   profilZuletztAktiv,
   profilErstellen,
+  profilGastErstellen,
   profilUmbenennen,
   profilFarbeSetzen,
   profilLoeschen,
@@ -83,9 +84,19 @@ export default function ProfilGate() {
     setProfile((alle) => [...alle, profil])
   }
 
+  async function ohneProfilFortfahren() {
+    const profil = profilGastErstellen()
+    setProfile((alle) => [...alle, profil])
+    await profilWaehlen(profil.id)
+  }
+
   function profilUmbenennenUndMerken(id, name) {
     profilUmbenennen(id, name)
-    setProfile((alle) => alle.map((p) => (p.id === id ? { ...p, name } : p)))
+    setProfile((alle) => alle.map((p) => {
+      if (p.id !== id) return p
+      const { gast, ...rest } = p
+      return { ...rest, name }
+    }))
   }
 
   function profilFarbeAendernUndMerken(id, farbe) {
@@ -172,6 +183,7 @@ export default function ProfilGate() {
         hinweis={hinweis}
         onWahl={profilWaehlen}
         onErstellen={profilAnlegen}
+        onOhneProfil={ohneProfilFortfahren}
         onUmbenennen={profilUmbenennenUndMerken}
         onFarbeAendern={profilFarbeAendernUndMerken}
         onLoeschen={profilEntfernen}

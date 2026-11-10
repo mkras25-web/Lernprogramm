@@ -1735,6 +1735,9 @@ html[data-farbenblind="an"] .schlechter::before { content: " ▼"; }
   text-underline-offset: 2px;
   background: color-mix(in srgb, var(--akzent) 25%, transparent);
 }
+.diffKuerzung { color: var(--lehm); }
+.durchsichtDetails { margin-top: 0.75rem; }
+.durchsichtDetails summary { cursor: pointer; font-size: 0.875rem; color: var(--rinde); }
 .durchsichtBild {
   display: block;
   width: 100%;

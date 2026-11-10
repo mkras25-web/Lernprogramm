@@ -37,7 +37,7 @@ function dateiname(name) {
 // ProfilGate - dieser Screen ist bewusst zustandslos dafuer, damit sie
 // nach einem Wechsel nie veraltet.
 export default function ProfilWahl({
-  profile, hinweis, onWahl, onErstellen, onUmbenennen, onFarbeAendern, onLoeschen, onImportieren, onAusDropboxLaden,
+  profile, hinweis, onWahl, onErstellen, onOhneProfil, onUmbenennen, onFarbeAendern, onLoeschen, onImportieren, onAusDropboxLaden,
 }) {
   const [neuerName, setNeuerName] = useState('')
   const [bearbeiten, setBearbeiten] = useState(null)
@@ -203,6 +203,9 @@ export default function ProfilWahl({
                             zuletzt aktiv {new Date(p.letzterZugriff).toLocaleDateString('de-DE')}
                           </span>
                         )}
+                        {p.gast && (
+                          <span className="profilZuletzt">nur auf diesem Gerät – „Umbenennen“ macht ein Profil daraus</span>
+                        )}
                       </span>
                     </button>
                     <button className="artKnopf" onClick={() => setBearbeiten(p.id)}>
@@ -263,6 +266,18 @@ export default function ProfilWahl({
             Profil anlegen
           </button>
         </form>
+
+        {sortiert.length === 0 && onOhneProfil && (
+          <div className="feldgruppe">
+            <button className="knopf schmal" type="button" onClick={onOhneProfil}>
+              Ohne Profil fortfahren
+            </button>
+            <p className="nebentext">
+              Dein Fortschritt bleibt nur auf diesem Gerät. Ein Profil kannst du später daraus machen
+              (Umbenennen) – dann geht nichts verloren.
+            </p>
+          </div>
+        )}
 
         <label className="knopf schmal profilImport">
           Profil aus Sicherung importieren
