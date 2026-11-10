@@ -2,7 +2,7 @@ import PasswortBalken from './PasswortBalken.jsx'
 import { useEffect, useState } from 'react'
 import Schleier from './Schleier.jsx'
 import {
-  AVATARE, PASSWORT_MIN, adminLoeschen, adminMeta, anmelden, angemeldetBleiben, avatarUrl, metaSenden, passwortAendern,
+  AVATARE, PASSWORT_MIN, adminLoeschen, adminMeta, adminPasswort, ich, anmelden, angemeldetBleiben, avatarUrl, metaSenden, passwortAendern,
   profilLoeschenServer, profileLaden,
 } from '../lib/server.js'
 
@@ -27,6 +27,9 @@ export default function ProfilEditor({ profil, adminId = null, loeschenErlaubt =
   const [loeschen, setLoeschen] = useState(false)
   const [loeschPw, setLoeschPw] = useState('')
   const [bestaetigung, setBestaetigung] = useState('')
+  const [ersteller, setErsteller] = useState(null) // darf dieses Geraet das erste Passwort setzen?
+  const [notPw, setNotPw] = useState('')
+  const [adminPw, setAdminPw] = useState('')
 
   useEffect(() => {
     if (fremdAdmin) return undefined
@@ -45,6 +48,11 @@ export default function ProfilEditor({ profil, adminId = null, loeschenErlaubt =
     })()
     return () => { weg = true }
   }, [profil.id, fremdAdmin])
+
+  useEffect(() => {
+    if (phase !== 'offen' || fremdAdmin) return
+    ich(profil.id).then((r) => setErsteller(Boolean(r.ersteller))).catch(() => setErsteller(false))
+  }, [phase, fremdAdmin, profil.id])
 
   // Name/Bild: als Admin fuer fremde Profile ueber adminMeta, sonst ueber das eigene Konto.
   const meta = (patch) => (fremdAdmin ? adminMeta(adminId, profil.id, patch) : metaSenden(profil.id, patch))
@@ -160,8 +168,27 @@ export default function ProfilEditor({ profil, adminId = null, loeschenErlaubt =
 
             </>)}
 
-            {fremdAdmin && <p className="nebentext">Du bearbeitest dieses Profil als Admin.</p>}
-            {!fremdAdmin && <form
+            {fremdAdmin && (
+              <form
+                className="serverFormular"
+                onSubmit={async (e) => {
+                  e.preventDefault()
+                  if (await ausfuehren(() => adminPasswort(adminId, profil.id, adminPw, notPw), 'Notfall-Passwort gesetzt. Alle Anmeldungen dieses Profils wurden beendet.')) {
+                    setNotPw('')
+                    setAdminPw('')
+                  }
+                }}
+              >
+                <p className="nebentext">Du bearbeitest dieses Profil als Admin. Notfall-Passwort (z. B. nach Übernahme oder Vergessen) – gib es dem Besitzer weiter, er ändert es dann selbst:</p>
+                <input className="suchfeld" type="password" autoComplete="new-password" placeholder="Neues Passwort für dieses Profil" aria-label="Notfall-Passwort" value={notPw} onChange={(e) => setNotPw(e.target.value)} />
+                <input className="suchfeld" type="password" autoComplete="current-password" placeholder="Dein Admin-Passwort" aria-label="Admin-Passwort" value={adminPw} onChange={(e) => setAdminPw(e.target.value)} />
+                <div className="wahl"><button className="knopf schmal" type="submit" disabled={laeuft || notPw.length < PASSWORT_MIN || !adminPw}>Notfall-Passwort setzen</button></div>
+              </form>
+            )}
+            {!fremdAdmin && !aktuell.passwort && ersteller === false && (
+              <p className="nebentext">Das erste Passwort für ein offenes Profil kann nur das Gerät festlegen, auf dem es angelegt wurde – oder der Admin.</p>
+            )}
+            {!fremdAdmin && (aktuell.passwort || ersteller !== false) && <form
               className="serverFormular"
               onSubmit={async (e) => {
                 e.preventDefault()

@@ -1,0 +1,4 @@
+# Fehlerprotokolle und Hilfsdateien nie ausliefern (manche Hoster legen "error_log" neben das Skript).
+<FilesMatch "(^error_log$|\.log$|\.md$|\.bak$|\.sql$)">
+  Require all denied
+</FilesMatch>

@@ -1,7 +1,7 @@
 // Vorgaben (2026-11-10): Markierungen des Autors (Profil "Max") als
 // Startwert fuer alle anderen. Die Datei public/pakete/<paket>/vorgaben.json
-// entsteht in Einstellungen ("Meine Markierungen als Vorgabe exportieren")
-// und wird mit der App veroeffentlicht.
+// erzeugt NUR der Autor lokal mit Einspielen/vorgaben.py (aus einer
+// Profil-Sicherung) - die App kann sie weder schreiben noch exportieren.
 //
 // Enthalten: Sichtung "Ueberarbeiten" und "Streichen" sowie Entscheidungen
 // zu Durchsicht-Aenderungen (angenommen/abgelehnt, nur fuer genau die
@@ -15,19 +15,6 @@
 // kommen so bei allen an, die nicht selbst entschieden haben.
 
 export const VORGABE_KATEGORIEN = ['ueberarbeiten', 'streichen']
-
-export function vorgabenErzeugen(marken, paketId) {
-  const kategorien = {}
-  const durchsicht = {}
-  for (const [id, m] of marken) {
-    if (VORGABE_KATEGORIEN.includes(m.kategorie)) kategorien[id] = m.kategorie
-    const d = m.durchsicht
-    if (d && (d.entscheidung === 'angenommen' || d.entscheidung === 'abgelehnt') && d.hash) {
-      durchsicht[id] = { entscheidung: d.entscheidung, hash: d.hash }
-    }
-  }
-  return { version: 1, paket: paketId, erstellt: new Date().toISOString().slice(0, 10), kategorien, durchsicht }
-}
 
 export function vorgabenPruefen(daten) {
   if (!daten || typeof daten !== 'object') return null

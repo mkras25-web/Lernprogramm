@@ -153,7 +153,6 @@ export const profilLoeschenServer = async (id, passwort = null) => {
 export const dateienAuflisten = async (id) => (await aufruf('dateien', { token: mitToken(id) })).dateien
 export const dateiLaden = async (id, geraet) => (await aufruf('datei', { token: mitToken(id), abfrage: { geraet } })).text
 export const dateiHochladen = (id, geraet, text) => aufruf('hochladen', { koerper: { geraet, text }, token: mitToken(id) })
-export const dateiLoeschenServer = (id, geraet) => aufruf('dateiLoeschen', { koerper: { geraet }, token: mitToken(id) })
 
 // Tageskopien auf dem Server (14 Tage je Geraet), siehe api/index.php.
 export const kopienAuflisten = async (id) => (await aufruf('kopien', { token: mitToken(id) })).kopien
@@ -164,3 +163,5 @@ export const ich = (id) => aufruf('ich', { token: mitToken(id) })
 export const adminLoeschen = (adminId, ziel, passwort) =>
   aufruf('adminLoeschen', { koerper: { ziel, passwort }, token: mitToken(adminId) })
 export const adminMeta = (adminId, ziel, meta) => aufruf('adminMeta', { koerper: { ziel, ...meta }, token: mitToken(adminId) })
+export const adminPasswort = (adminId, ziel, adminPasswortText, neu) =>
+  aufruf('adminPasswort', { koerper: { ziel, passwort: adminPasswortText, neu }, token: mitToken(adminId) })

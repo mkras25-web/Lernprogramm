@@ -22,7 +22,9 @@ header("Content-Security-Policy: default-src 'none'; frame-ancestors 'none'");
 header('Referrer-Policy: no-referrer');
 
 const MAX_DATEI = 12 * 1024 * 1024;      // eine Geraetedatei (Text)
-const MAX_PROFIL_BYTES = 400 * 1024 * 1024; // Dateien + Kopien je Profil
+const MAX_PROFIL_BYTES = 100 * 1024 * 1024; // Dateien + Kopien je Profil
+const MAX_GESAMT_BYTES = 500 * 1024 * 1024;  // alle Profile zusammen
+const UPLOADS_STUNDE_MAX = 60;           // Hochladen je Profil und Stunde
 const TOKEN_TAGE = 120;                  // gleitend: so lange ohne Nutzung gueltig
 const TOKEN_MAX_TAGE = 365;              // absolute Hoechstdauer
 const TOKENS_MAX = 20;                   // je Profil, aelteste fliegen raus
@@ -91,6 +93,7 @@ function db(): PDO {
     ]);
     try {
         $pdo->query('SELECT geloescht FROM profile LIMIT 1');
+        $pdo->query('SELECT ersteller FROM tokens LIMIT 1');
         $pdo->query('SELECT 1 FROM kopien LIMIT 1');
     } catch (PDOException $e) {
         schemaAnlegen($pdo);
@@ -104,7 +107,7 @@ function schemaAnlegen(PDO $pdo): void {
             pw_hash VARCHAR(255) NULL, stufe INT NOT NULL DEFAULT 1, xp INT NOT NULL DEFAULT 0, erstellt BIGINT NOT NULL, aktiv BIGINT NOT NULL,
             geloescht BIGINT NULL)',
         'CREATE TABLE IF NOT EXISTS tokens (hash CHAR(64) PRIMARY KEY, profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL,
-            erstellt BIGINT NOT NULL, bis BIGINT NOT NULL)',
+            erstellt BIGINT NOT NULL, bis BIGINT NOT NULL, ersteller TINYINT NOT NULL DEFAULT 0)',
         'CREATE TABLE IF NOT EXISTS dateien (profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL, inhalt MEDIUMTEXT NOT NULL,
             groesse INT NOT NULL DEFAULT 0, geaendert BIGINT NOT NULL, PRIMARY KEY (profil_id, geraet))',
         'CREATE TABLE IF NOT EXISTS kopien (profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL, tag CHAR(8) NOT NULL,
@@ -112,6 +115,8 @@ function schemaAnlegen(PDO $pdo): void {
         'CREATE TABLE IF NOT EXISTS versuche (schluessel VARCHAR(160) PRIMARY KEY, anzahl INT NOT NULL, bis BIGINT NOT NULL)',
     ] as $sql) $pdo->exec($sql);
     try { $pdo->exec('ALTER TABLE profile ADD COLUMN geloescht BIGINT NULL'); } catch (PDOException $e) { /* gibt es schon */ }
+    // Beim Einfuehren der Spalte gelten bestehende Tokens als Ersteller-Tokens (Einzelnutzer-Stand).
+    try { $pdo->exec('ALTER TABLE tokens ADD COLUMN ersteller TINYINT NOT NULL DEFAULT 0'); $pdo->exec('UPDATE tokens SET ersteller = 1'); } catch (PDOException $e) { /* gibt es schon */ }
 }
 
 // --- Eingabe ------------------------------------------------------------------
@@ -127,22 +132,22 @@ function abfrage(string $schluessel): string {
     return is_string($w) ? $w : '';
 }
 function profilId(mixed $id): string {
-    if (!is_string($id) || !preg_match('/^[A-Za-z0-9-]{8,64}$/', $id)) fehler(400, 'Ungueltige Profil-Id.');
+    if (!is_string($id) || !preg_match('/^[A-Za-z0-9-]{8,64}\z/', $id)) fehler(400, 'Ungueltige Profil-Id.');
     return $id;
 }
 function geraetId(mixed $g): string {
-    if (!is_string($g) || !preg_match('/^[0-9a-f]{8}$/', $g)) fehler(400, 'Ungueltige Geraete-Kennung.');
+    if (!is_string($g) || !preg_match('/^[0-9a-f]{8}\z/', $g)) fehler(400, 'Ungueltige Geraete-Kennung.');
     return $g;
 }
 function profilName(mixed $n): string {
     $n = is_string($n) ? trim($n) : '';
-    if ($n === '' || mb_strlen($n) > 40 || !preg_match('/^[\p{L}\p{N}][\p{L}\p{N} ._\-]*$/u', $n)) {
+    if ($n === '' || mb_strlen($n) > 40 || !preg_match('/^[\p{L}\p{N}][\p{L}\p{N} ._\-]*\z/u', $n)) {
         fehler(400, 'Name: 1 bis 40 Zeichen (Buchstaben, Ziffern, Leerzeichen, . _ -).');
     }
     return $n;
 }
 function avatarName(mixed $a): string {
-    if (!is_string($a) || !preg_match('/^[0-9]{2}-[a-z]{2,20}$/', $a)) fehler(400, 'Ungueltiges Profilbild.');
+    if (!is_string($a) || !preg_match('/^[0-9]{2}-[a-z]{2,20}\z/', $a)) fehler(400, 'Ungueltiges Profilbild.');
     return $a;
 }
 function passwortGueltig(mixed $pw): string {
@@ -191,10 +196,20 @@ function begrenzen(string $schluessel, int $limit, int $fenster, string $text = 
     if (zaehler($schluessel, $fenster) > $limit) fehler(429, $text);
 }
 
-function passwortPruefen(array $profil, mixed $pw, string $id): void {
+// Aktueller Zaehlerstand ohne zu erhoehen.
+function zaehlerStand(string $schluessel): int {
+    $z = db()->prepare('SELECT anzahl FROM versuche WHERE schluessel = ? AND bis >= ?');
+    $z->execute([$schluessel, time()]);
+    return (int)($z->fetchColumn() ?: 0);
+}
+
+// $ipZaehlen=false, wenn der Aufrufer die IP-Grenze schon selbst angewendet hat (anmelden).
+function passwortPruefen(array $profil, mixed $pw, string $id, bool $ipZaehlen = true): void {
     if ($profil['pw_hash'] === null) return;
-    begrenzen('g|' . $id, PROFIL_STUNDE_MAX, 3600);
-    begrenzen('i|' . clientIp(), IP_VIERTELSTUNDE_MAX, 900);
+    // Der globale Zaehler je Profil zaehlt NUR Fehlversuche (sonst koennte ein Fremder mit
+    // blossen Anfragen jeden aussperren): hier nur lesen, unten bei Fehlschlag erhoehen.
+    if (zaehlerStand('g|' . $id) >= PROFIL_STUNDE_MAX) fehler(429, 'Zu viele Versuche. Bitte spaeter erneut probieren.');
+    if ($ipZaehlen) begrenzen('i|' . clientIp(), IP_VIERTELSTUNDE_MAX, 900);
     $s = 'p|' . $id . '|' . clientIp();
     begrenzen($s, SPERRE_VERSUCHE, SPERRE_SEKUNDEN);
     $ok = false;
@@ -204,7 +219,7 @@ function passwortPruefen(array $profil, mixed $pw, string $id): void {
         if (!$ok && password_verify($pw, $profil['pw_hash'])) { $ok = true; $neuHashen = true; } // Altbestand ohne Vorbehandlung
         elseif ($ok && password_needs_rehash($profil['pw_hash'], PASSWORD_DEFAULT)) $neuHashen = true;
     }
-    if (!$ok) fehler(403, 'Falsches Passwort.');
+    if (!$ok) { zaehler('g|' . $id, 3600); fehler(403, 'Falsches Passwort.'); }
     db()->prepare('DELETE FROM versuche WHERE schluessel = ?')->execute([$s]);
     if ($neuHashen) db()->prepare('UPDATE profile SET pw_hash = ? WHERE id = ?')->execute([pwHash($pw), $id]);
 }
@@ -229,7 +244,7 @@ function aufraeumen(): void {
     }
 }
 
-function neuerToken(string $profil, string $geraet): string {
+function neuerToken(string $profil, string $geraet, bool $ersteller = false): string {
     aufraeumen();
     $z = db()->prepare('SELECT hash FROM tokens WHERE profil_id = ? ORDER BY erstellt ASC');
     $z->execute([$profil]);
@@ -239,17 +254,17 @@ function neuerToken(string $profil, string $geraet): string {
     }
     $token = bin2hex(random_bytes(32));
     $jetzt = time();
-    db()->prepare('INSERT INTO tokens (hash, profil_id, geraet, erstellt, bis) VALUES (?,?,?,?,?)')
-        ->execute([hash('sha256', $token), $profil, $geraet, $jetzt, $jetzt + TOKEN_TAGE * 86400]);
+    db()->prepare('INSERT INTO tokens (hash, profil_id, geraet, erstellt, bis, ersteller) VALUES (?,?,?,?,?,?)')
+        ->execute([hash('sha256', $token), $profil, $geraet, $jetzt, $jetzt + TOKEN_TAGE * 86400, $ersteller ? 1 : 0]);
     return $token;
 }
 
 // Prueft den Token (Kopfzeile X-Token); liefert [profilId, tokenHash, geraet].
 function angemeldet(): array {
     $token = $_SERVER['HTTP_X_TOKEN'] ?? '';
-    if (!is_string($token) || !preg_match('/^[0-9a-f]{64}$/', $token)) fehler(401, 'Nicht angemeldet.');
+    if (!is_string($token) || !preg_match('/^[0-9a-f]{64}\z/', $token)) fehler(401, 'Nicht angemeldet.');
     $h = hash('sha256', $token);
-    $z = db()->prepare('SELECT t.profil_id, t.geraet, t.bis, t.erstellt FROM tokens t JOIN profile p ON p.id = t.profil_id
+    $z = db()->prepare('SELECT t.profil_id, t.geraet, t.bis, t.erstellt, t.ersteller FROM tokens t JOIN profile p ON p.id = t.profil_id
         WHERE t.hash = ? AND p.geloescht IS NULL');
     $z->execute([$h]);
     $t = $z->fetch();
@@ -259,7 +274,7 @@ function angemeldet(): array {
         db()->prepare('UPDATE tokens SET bis = ? WHERE hash = ?')->execute([$jetzt + TOKEN_TAGE * 86400, $h]);
     }
     db()->prepare('UPDATE profile SET aktiv = ? WHERE id = ? AND aktiv < ?')->execute([$jetzt, $t['profil_id'], $jetzt - 3600]);
-    return [$t['profil_id'], $h, $t['geraet']];
+    return [$t['profil_id'], $h, $t['geraet'], (bool)$t['ersteller']];
 }
 
 function eigenesGeraet(array $d, string $tokenGeraet): string {
@@ -282,7 +297,7 @@ if ($methode === 'POST' && ($_SERVER['HTTP_X_LERNPROGRAMM'] ?? '') !== '1') fehl
 
 switch ($a) {
     case 'profile': // oeffentlich: Anmeldebildschirm (nur Id, Name, Bild, Stufe, Passwort ja/nein)
-        $z = db()->query('SELECT id, name, avatar, stufe, (pw_hash IS NOT NULL) AS pw FROM profile WHERE geloescht IS NULL ORDER BY aktiv DESC');
+        $z = db()->query('SELECT id, name, avatar, stufe, (pw_hash IS NOT NULL) AS pw FROM profile WHERE geloescht IS NULL ORDER BY LOWER(name)');
         antwort(200, ['profile' => array_map(fn($p) => [
             'id' => $p['id'], 'name' => $p['name'], 'avatar' => $p['avatar'], 'stufe' => (int)$p['stufe'], 'passwort' => (bool)$p['pw'],
         ], $z->fetchAll())]);
@@ -302,7 +317,7 @@ switch ($a) {
         if ($z->fetch()) fehler(409, 'Profil oder Name gibt es schon.');
         db()->prepare('INSERT INTO profile (id, name, avatar, pw_hash, erstellt, aktiv) VALUES (?,?,?,?,?,?)')
             ->execute([$id, $name, $avatar, $pw, time(), time()]);
-        antwort(200, ['id' => $id, 'token' => neuerToken($id, $geraet)]);
+        antwort(200, ['id' => $id, 'token' => neuerToken($id, $geraet, true)]);
 
     case 'anmelden':
         $d = eingabe();
@@ -310,8 +325,9 @@ switch ($a) {
         $geraet = geraetId($d['geraet'] ?? null);
         begrenzen('i|' . clientIp(), IP_VIERTELSTUNDE_MAX, 900);
         $p = profilHolen($id);
-        passwortPruefen($p, $d['passwort'] ?? null, $id);
-        antwort(200, ['token' => neuerToken($id, $geraet)]);
+        // Wer das richtige Passwort kennt, ist Besitzer (volle Rechte); offene Profile: Gast.
+        passwortPruefen($p, $d['passwort'] ?? null, $id, false);
+        antwort(200, ['token' => neuerToken($id, $geraet, $p['pw_hash'] !== null)]);
 
     case 'abmelden':
         [, $h] = angemeldet();
@@ -340,9 +356,12 @@ switch ($a) {
         antwort(200, ['ok' => true]);
 
     case 'passwort': // setzen, aendern (alt noetig, falls vorhanden) oder entfernen (neu = null)
-        [$id, $h] = angemeldet();
+        [$id, $h, , $ersteller] = angemeldet();
         $d = eingabe();
         $p = profilHolen($id);
+        // Das ERSTE Passwort eines offenen Profils darf nur der Ersteller-Token setzen (sonst koennte
+        // jeder Fremde ein offenes Profil uebernehmen und den Besitzer aussperren); sonst der Admin.
+        if ($p['pw_hash'] === null && !$ersteller) fehler(403, 'Das Passwort fuer ein offenes Profil legt nur das Geraet fest, auf dem es angelegt wurde - oder der Admin.');
         passwortPruefen($p, $d['alt'] ?? null, $id);
         if (($d['neu'] ?? null) === null && in_array($id, adminIds(), true)) fehler(403, 'Der Admin braucht ein Passwort.');
         $neu = ($d['neu'] ?? null) === null ? null : pwHash(passwortGueltig($d['neu']));
@@ -368,6 +387,7 @@ switch ($a) {
         [$id, , $tokenGeraet] = angemeldet();
         $d = eingabe();
         $g = eigenesGeraet($d, $tokenGeraet);
+        begrenzen('u|' . $id, UPLOADS_STUNDE_MAX, 3600, 'Zu viele Uploads. Bitte spaeter erneut probieren.');
         $text = $d['text'] ?? null;
         if (!is_string($text) || strlen($text) > MAX_DATEI || !json_validate($text)) fehler(400, 'Datei ungueltig oder zu gross.');
         $pdo = db();
@@ -385,6 +405,8 @@ switch ($a) {
             $z = $pdo->prepare('SELECT (SELECT COALESCE(SUM(groesse),0) FROM dateien WHERE profil_id = ?) + (SELECT COALESCE(SUM(groesse),0) FROM kopien WHERE profil_id = ?)');
             $z->execute([$id, $id]);
             if ((int)$z->fetchColumn() + strlen($text) > MAX_PROFIL_BYTES) fehler(413, 'Speichergrenze dieses Profils erreicht.');
+            $z = $pdo->query('SELECT (SELECT COALESCE(SUM(groesse),0) FROM dateien) + (SELECT COALESCE(SUM(groesse),0) FROM kopien)');
+            if ((int)$z->fetchColumn() + strlen($text) > MAX_GESAMT_BYTES) fehler(507, 'Der Server ist voll. Bitte den Betreiber informieren.');
             // Tageskopie: beim ersten Hochladen des Tages den bisherigen Stand (von gestern) sichern.
             $heute = gmdate('Ymd');
             if ($alt) {
@@ -417,21 +439,15 @@ switch ($a) {
     case 'kopie':
         [$id] = angemeldet();
         $tag = abfrage('tag');
-        if (!preg_match('/^[0-9]{8}$/', $tag)) fehler(400, 'Ungueltiger Tag.');
+        if (!preg_match('/^[0-9]{8}\z/', $tag)) fehler(400, 'Ungueltiger Tag.');
         $z = db()->prepare('SELECT inhalt FROM kopien WHERE profil_id = ? AND geraet = ? AND tag = ?');
         $z->execute([$id, geraetId(abfrage('geraet')), $tag]);
         $r = $z->fetch() ?: fehler(404, 'Kopie nicht gefunden.');
         antwort(200, ['text' => $r['inhalt']]);
 
-    case 'dateiLoeschen':
-        [$id, , $tokenGeraet] = angemeldet();
-        $d = eingabe();
-        db()->prepare('DELETE FROM dateien WHERE profil_id = ? AND geraet = ?')->execute([$id, eigenesGeraet($d, $tokenGeraet)]);
-        antwort(200, ['ok' => true]);
-
     case 'ich': // wer bin ich (fuer die Oberflaeche: Admin-Funktionen anzeigen)
-        [$id] = angemeldet();
-        antwort(200, ['id' => $id, 'admin' => istAdmin(profilHolen($id))]);
+        [$id, , , $ersteller] = angemeldet();
+        antwort(200, ['id' => $id, 'admin' => istAdmin(profilHolen($id)), 'ersteller' => $ersteller]);
 
     case 'profilLoeschen': // eigenes Profil; Papierkorb: 14 Tage zurueckholbar (phpMyAdmin: profile.geloescht auf NULL)
         [$id] = angemeldet();
@@ -454,6 +470,19 @@ switch ($a) {
         if ($ziel === $id || in_array($ziel, adminIds(), true)) fehler(403, 'Das Admin-Profil kann nicht geloescht werden.');
         profilHolen($ziel);
         db()->prepare('UPDATE profile SET geloescht = ? WHERE id = ?')->execute([time(), $ziel]);
+        db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$ziel]);
+        antwort(200, ['ok' => true]);
+
+    case 'adminPasswort': // Admin legt fuer ein fremdes Profil ein Notfall-Passwort fest (Uebernahme/Vergessen)
+        [$id] = angemeldet();
+        $d = eingabe();
+        $admin = profilHolen($id);
+        if (!istAdmin($admin)) fehler(403, 'Nur der Admin darf das.');
+        passwortPruefen($admin, $d['passwort'] ?? null, $id);
+        $ziel = profilId($d['ziel'] ?? null);
+        if ($ziel === $id || in_array($ziel, adminIds(), true)) fehler(403, 'Nicht fuer das Admin-Profil.');
+        profilHolen($ziel);
+        db()->prepare('UPDATE profile SET pw_hash = ? WHERE id = ?')->execute([pwHash(passwortGueltig($d['neu'] ?? null)), $ziel]);
         db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$ziel]);
         antwort(200, ['ok' => true]);
 

@@ -6,7 +6,7 @@
 
 import { exportieren, geraeteKennung, importieren, mitProfil, vermerkeWirkung } from './speicher.js'
 import { MASSENLOESCHUNG, MASSENLOESCHUNG_GRUND, fingerabdruck, lesen, standSchluessel } from './abgleich.js'
-import { kopieAnlegen } from './kopien.js'
+import { kopieAnlegen, kopieEinmalAmTag } from './kopien.js'
 import * as server from './server.js'
 
 const gesehenSchluessel = (profilId) => `server_gesehen_${profilId}`
@@ -43,6 +43,11 @@ async function intern({ profilId, profilName, mitSkizzen }) {
 
   // 1. Staende der anderen Geraete (und eine eigene, hier unbekannte Datei =
   //    Wiederherstellung) holen und vereinigen.
+  // Vor dem Einlesen fremder Staende immer (einmal am Tag) lokal sichern: Dateien anderer Geraete
+  // koennten bei offenen Profilen von Fremden stammen (Review 2026-11-10, H4).
+  if (vorhanden.some((d) => d.geraet !== eigen && gesehen[d.geraet] !== stempelVon(d))) {
+    await kopieEinmalAmTag({ profilId, profilName, grund: 'vor dem Abgleich mit dem Server' }).catch(() => null)
+  }
   for (const d of vorhanden) {
     if (gesehen[d.geraet] === stempelVon(d)) continue
     const text = await server.dateiLaden(profilId, d.geraet)

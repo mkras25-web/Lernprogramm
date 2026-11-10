@@ -75,9 +75,9 @@ try {
       # Nur Dateien unterhalb dieses Ordners ausliefern. Mit Trennzeichen
       # verglichen - sonst gaelte auch ein Nachbarordner "dist-alt" als drin
       # (Sicherheitsaudit 2026-11-04).
-      $basis = $root.TrimEnd('') + ''
+      $basis = $root.TrimEnd('\') + '\'
       if (-not ($pfad.StartsWith($basis, [StringComparison]::OrdinalIgnoreCase) -or
-                $pfad.Equals($root.TrimEnd(''), [StringComparison]::OrdinalIgnoreCase))) {
+                $pfad.Equals($root.TrimEnd('\'), [StringComparison]::OrdinalIgnoreCase))) {
         $ctx.Response.StatusCode = 403
       } else {
         if (Test-Path -LiteralPath $pfad -PathType Container) { $pfad = Join-Path $pfad 'index.html' }

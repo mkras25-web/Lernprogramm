@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { entfernenAlsEntscheidung, ohneVorgabe, vorgabenAnwenden, vorgabenErzeugen, vorgabenPruefen } from './vorgaben.js'
+import { entfernenAlsEntscheidung, ohneVorgabe, vorgabenAnwenden, vorgabenPruefen } from './vorgaben.js'
 import { diffKompakt, standVon, wortDiff } from './durchsicht.js'
 
 const vorgaben = {
@@ -22,14 +22,6 @@ describe('Vorgaben', () => {
     expect(entfernenAlsEntscheidung({ kategorie: null }, 'a', vorgaben).kategorie).toBe('ungesichtet')
     expect(entfernenAlsEntscheidung({ kategorie: null }, 'zz', vorgaben).kategorie).toBeNull()
     expect(entfernenAlsEntscheidung({ durchsicht: null }, 'c', vorgaben).durchsicht.entscheidung).toBe('offen')
-  })
-  it('Export nimmt nur Ueberarbeiten/Streichen und Entscheidungen', () => {
-    const v = vorgabenErzeugen(new Map([
-      ['a', { kategorie: 'relevant' }], ['b', { kategorie: 'streichen' }],
-      ['c', { durchsicht: { entscheidung: 'abgelehnt', hash: 'x', ts: 1 } }],
-    ]), 'p')
-    expect(v.kategorien).toEqual({ b: 'streichen' })
-    expect(v.durchsicht).toEqual({ c: { entscheidung: 'abgelehnt', hash: 'x' } })
   })
   it('prueft fremde Daten', () => {
     expect(vorgabenPruefen({ kategorien: { a: 'relevant', b: 'streichen' } }).kategorien).toEqual({ b: 'streichen' })

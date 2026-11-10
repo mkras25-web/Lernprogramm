@@ -168,7 +168,7 @@ function Huelle({ children }) {
       <div role="main" className="profilInhalt">
         {children}
         <p className="zeileHinweis datenschutz">
-          Dein Lernfortschritt wird auf dem Server dieser Seite gespeichert, Passwörter nur verschlüsselt (als Hash).
+          Dein Lernfortschritt wird auf dem Server dieser Seite gespeichert, Passwörter nur verschlüsselt (als Hash). Eine Kopie bleibt im Browser dieses Geräts – auf geteilten Geräten bitte nicht „angemeldet bleiben“ wählen.
         </p>
       </div>
     </div>
