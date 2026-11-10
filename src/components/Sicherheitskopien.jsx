@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { kopienListe, kopieText } from '../lib/kopien.js'
 import { dropboxKopieLaden, dropboxKopien } from '../lib/abgleich.js'
+import { kopieLaden, kopienAuflisten } from '../lib/server.js'
 
 // Sicherheitskopien (T1, 2026-10-13): Liste der automatischen Kopien (lokal
 // vor jedem Loeschen/Einlesen und taeglich vor dem Abgleich, in Dropbox die
@@ -13,16 +14,18 @@ function tagAusStempel(t) {
   return `${Number(t.slice(6, 8))}.${Number(t.slice(4, 6))}.${t.slice(0, 4)}`
 }
 
-export default function Sicherheitskopien({ profilId, dropboxVerbunden, onWiederherstellen }) {
+export default function Sicherheitskopien({ profilId, dropboxVerbunden, serverVerbunden = false, onWiederherstellen }) {
   const [offen, setOffen] = useState(false)
   const [lokal, setLokal] = useState(null)
   const [online, setOnline] = useState(null) // null | 'laedt' | [] | { fehler }
+  const [serverKopien, setServerKopien] = useState(null) // null | [] | { fehler }
   const [frage, setFrage] = useState(null) // { id, titel, laden }
   const [laeuft, setLaeuft] = useState(false)
 
   async function oeffnen() {
     setOffen(true)
     setLokal(await kopienListe(profilId).catch(() => []))
+    if (serverVerbunden) setServerKopien(await kopienAuflisten(profilId).catch((e) => ({ fehler: e.message })))
     if (dropboxVerbunden) {
       setOnline('laedt')
       setOnline(await dropboxKopien(profilId).catch((e) => ({ fehler: e.message })))
@@ -77,7 +80,8 @@ export default function Sicherheitskopien({ profilId, dropboxVerbunden, onWieder
         <p className="zeileHinweis">
           Entstehen automatisch vor „Fortschritt löschen“, vor jedem Einlesen einer Sicherung und
           einmal am Tag vor dem Abgleich – auf diesem Gerät die letzten zehn
-          {dropboxVerbunden ? ', in Dropbox zusätzlich je Gerät die letzten sieben Tage' : ''}.
+          {dropboxVerbunden ? ', in Dropbox zusätzlich je Gerät die letzten sieben Tage' : ''}
+          {serverVerbunden ? ', auf dem Server je Gerät die letzten 14 Tage' : ''}.
         </p>
         {offen && (
           <div className="feldgruppe">
@@ -86,6 +90,14 @@ export default function Sicherheitskopien({ profilId, dropboxVerbunden, onWieder
             {lokal?.map((k) =>
               eintrag(k.id, `${datum(k.ts)} · auf diesem Gerät`, `${k.grund}, ${k.anzahl} Ereignisse`, () => kopieText(k.id))
             )}
+            {serverKopien?.fehler && <p className="zeileHinweis fehlertext">Server: {serverKopien.fehler}</p>}
+            {Array.isArray(serverKopien) && serverKopien.length === 0 && (
+              <p className="zeileHinweis">Auf dem Server noch keine Kopie (die erste entsteht nach dem zweiten Tag).</p>
+            )}
+            {Array.isArray(serverKopien) &&
+              serverKopien.map((k) =>
+                eintrag(`s-${k.geraet}-${k.tag}`, `${tagAusStempel(k.tag)} · Server`, `Gerät ${k.geraet}`, () => kopieLaden(profilId, k.geraet, k.tag))
+              )}
             {online === 'laedt' && <p className="zeileHinweis">Lade Kopien aus Dropbox …</p>}
             {online?.fehler && <p className="zeileHinweis fehlertext">Dropbox: {online.fehler}</p>}
             {Array.isArray(online) && online.length === 0 && (

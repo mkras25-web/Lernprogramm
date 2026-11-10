@@ -12,6 +12,7 @@ const MAX_DATEI = 12 * 1024 * 1024;   // eine Geraetedatei
 const TOKEN_TAGE = 365;               // "angemeldet bleiben", gleitend
 const SPERRE_VERSUCHE = 6;            // falsche Passwoerter je Profil+IP
 const SPERRE_SEKUNDEN = 900;
+const KOPIEN_TAGE = 14;               // Tageskopien je Profil und Geraet
 
 function antwort(int $code, array $daten): never { http_response_code($code); echo json_encode($daten, JSON_UNESCAPED_UNICODE); exit; }
 function fehler(int $code, string $text): never { antwort($code, ['fehler' => $text]); }
@@ -44,6 +45,8 @@ function db(): PDO {
             erstellt BIGINT NOT NULL, bis BIGINT NOT NULL)',
         'CREATE TABLE IF NOT EXISTS dateien (profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL, inhalt MEDIUMTEXT NOT NULL,
             groesse INT NOT NULL DEFAULT 0, geaendert BIGINT NOT NULL, PRIMARY KEY (profil_id, geraet))',
+        'CREATE TABLE IF NOT EXISTS kopien (profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL, tag CHAR(8) NOT NULL,
+            inhalt MEDIUMTEXT NOT NULL, groesse INT NOT NULL DEFAULT 0, PRIMARY KEY (profil_id, geraet, tag))',
         'CREATE TABLE IF NOT EXISTS versuche (schluessel VARCHAR(120) PRIMARY KEY, anzahl INT NOT NULL, bis BIGINT NOT NULL)',
     ] as $sql) $pdo->exec($sql);
     return $pdo;
@@ -219,11 +222,41 @@ try {
             $text = $d['text'] ?? null;
             if (!is_string($text) || strlen($text) > MAX_DATEI || json_decode($text) === null) fehler(400, 'Datei ungueltig oder zu gross.');
             db()->beginTransaction();
+            // Tageskopie: beim ersten Hochladen des Tages den bisherigen Stand (also den
+            // von gestern) sichern - ein heutiger Fehler oder "Fortschritt loeschen"
+            // kann ihn so nicht mehr erreichen.
+            $heute = gmdate('Ymd');
+            $z = db()->prepare('SELECT inhalt, groesse FROM dateien WHERE profil_id = ? AND geraet = ?');
+            $z->execute([$id, $g]);
+            $alt = $z->fetch();
+            if ($alt) {
+                $z = db()->prepare('SELECT 1 FROM kopien WHERE profil_id = ? AND geraet = ? AND tag = ?');
+                $z->execute([$id, $g, $heute]);
+                if (!$z->fetch()) {
+                    db()->prepare('INSERT INTO kopien (profil_id, geraet, tag, inhalt, groesse) VALUES (?,?,?,?,?)')->execute([$id, $g, $heute, $alt['inhalt'], (int)$alt['groesse']]);
+                }
+            }
+            db()->prepare('DELETE FROM kopien WHERE profil_id = ? AND geraet = ? AND tag < ?')->execute([$id, $g, gmdate('Ymd', time() - KOPIEN_TAGE * 86400)]);
             db()->prepare('DELETE FROM dateien WHERE profil_id = ? AND geraet = ?')->execute([$id, $g]);
             $jetzt = time();
             db()->prepare('INSERT INTO dateien (profil_id, geraet, inhalt, groesse, geaendert) VALUES (?,?,?,?,?)')->execute([$id, $g, $text, strlen($text), $jetzt]);
             db()->commit();
             antwort(200, ['ok' => true, 'geaendert' => $jetzt, 'groesse' => strlen($text)]);
+
+        case 'kopien':
+            [$id] = angemeldet();
+            $z = db()->prepare('SELECT geraet, tag, groesse FROM kopien WHERE profil_id = ? ORDER BY tag DESC');
+            $z->execute([$id]);
+            antwort(200, ['kopien' => $z->fetchAll()]);
+
+        case 'kopie':
+            [$id] = angemeldet();
+            $tag = $_GET['tag'] ?? '';
+            if (!preg_match('/^[0-9]{8}$/', $tag)) fehler(400, 'Ungueltiger Tag.');
+            $z = db()->prepare('SELECT inhalt FROM kopien WHERE profil_id = ? AND geraet = ? AND tag = ?');
+            $z->execute([$id, geraetId($_GET['geraet'] ?? null), $tag]);
+            $r = $z->fetch() ?: fehler(404, 'Kopie nicht gefunden.');
+            antwort(200, ['text' => $r['inhalt']]);
 
         case 'dateiLoeschen':
             [$id] = angemeldet();
@@ -235,7 +268,7 @@ try {
             [$id] = angemeldet();
             $d = eingabe();
             passwortPruefen(profilHolen($id), $d['passwort'] ?? null, $id);
-            foreach (['dateien', 'tokens'] as $t) db()->prepare("DELETE FROM $t WHERE profil_id = ?")->execute([$id]);
+            foreach (['dateien', 'kopien', 'tokens'] as $t) db()->prepare("DELETE FROM $t WHERE profil_id = ?")->execute([$id]);
             db()->prepare('DELETE FROM profile WHERE id = ?')->execute([$id]);
             antwort(200, ['ok' => true]);
 

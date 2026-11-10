@@ -1,6 +1,6 @@
 import ServerKonto from '../components/ServerKonto.jsx'
 import { gueltigeGewichte } from '../lib/planer.js'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
 import { PALETTEN, SCHRIFTGROESSEN, STANDARD, farbenblindSchalten } from '../lib/einstellungen.js'
 import DropboxBereich from '../components/DropboxBereich.jsx'
@@ -88,14 +88,51 @@ export default function Einstellungen({
     setzen({ ...werte, [feld]: wert })
   }
 
+  // Suche (2026-11-10): blendet Zeilen aus, deren Text den Suchbegriff nicht
+  // enthaelt, und Abschnitte ohne Treffer. Arbeitet ueber das DOM, damit die
+  // lange Seite nicht umgebaut werden muss; laeuft nach jedem Rendern erneut,
+  // weil React Zeilen neu anlegen kann.
+  const wurzel = useRef(null)
+  const [suche, setSuche] = useState('')
+  const [treffer, setTreffer] = useState(null)
+  useEffect(() => {
+    const w = wurzel.current
+    if (!w) return
+    const q = suche.trim().toLocaleLowerCase('de-DE')
+    let gefunden = 0
+    for (const sec of w.querySelectorAll('section.block')) {
+      const titelPasst = !q || (sec.querySelector('h2')?.textContent ?? '').toLocaleLowerCase('de-DE').includes(q)
+      const einheiten = Array.from(sec.children).flatMap((c) =>
+        c.tagName === 'H2' ? [] : c.classList.contains('feldgruppe') ? Array.from(c.children) : [c])
+      let sichtbar = 0
+      for (const e of einheiten) {
+        const passt = !q || titelPasst || (e.textContent ?? '').toLocaleLowerCase('de-DE').includes(q)
+        e.style.display = passt ? '' : 'none'
+        if (passt) sichtbar += 1
+      }
+      sec.style.display = sichtbar > 0 || !q ? '' : 'none'
+      gefunden += q ? sichtbar : 0
+    }
+    setTreffer(q ? gefunden : null)
+  })
+
   return (
-    <div role="main" className="schirm">
+    <div role="main" className="schirm" ref={wurzel}>
       <h1 className="ueberschrift">Einstellungen</h1>
+      <input
+        type="search"
+        className="suchfeld"
+        placeholder="Einstellungen durchsuchen …"
+        aria-label="Einstellungen durchsuchen"
+        value={suche}
+        onChange={(e) => setSuche(e.target.value)}
+      />
+      {treffer === 0 && <p className="nebentext">Keine Einstellung gefunden.</p>}
 
       {/* Sprungmarken (35A) als Knoepfe mit scrollIntoView - keine
           href="#..."-Anker, die wuerden mit den Bildschirmadressen (#/...)
           kollidieren. */}
-      <nav className="sprungmarken" aria-label="Abschnitte">
+      <nav className="sprungmarken" aria-label="Abschnitte" style={suche.trim() ? { display: 'none' } : undefined}>
         {[
           ['einst-profil', 'Profil'],
           ['einst-paket', 'Inhaltspaket'],
@@ -577,7 +614,7 @@ export default function Einstellungen({
           </div>
 
           {onWiederherstellen && (
-            <Sicherheitskopien profilId={profilId} dropboxVerbunden={dropboxVerbunden} onWiederherstellen={onWiederherstellen} />
+            <Sicherheitskopien profilId={profilId} dropboxVerbunden={dropboxVerbunden} serverVerbunden={serverVerbunden} onWiederherstellen={onWiederherstellen} />
           )}
 
           <div className="zeile">

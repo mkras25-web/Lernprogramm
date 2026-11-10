@@ -127,7 +127,12 @@ export default function ServerProfilWahl({ onFertig, onLokal, hinweis, lokalePro
 function Huelle({ children }) {
   return (
     <div className="huelle einspaltig">
-      <div role="main" className="schirm profilSchirm">{children}</div>
+      <div role="main" className="schirm profilSchirm">
+        {children}
+        <p className="zeileHinweis datenschutz">
+          Dein Lernfortschritt wird auf dem Server dieser Seite gespeichert, Passwörter nur verschlüsselt (als Hash).
+        </p>
+      </div>
     </div>
   )
 }

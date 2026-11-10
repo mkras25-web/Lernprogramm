@@ -153,3 +153,7 @@ export const dateienAuflisten = async (id) => (await aufruf('dateien', { token: 
 export const dateiLaden = async (id, geraet) => (await aufruf('datei', { token: mitToken(id), abfrage: { geraet } })).text
 export const dateiHochladen = (id, geraet, text) => aufruf('hochladen', { koerper: { geraet, text }, token: mitToken(id) })
 export const dateiLoeschenServer = (id, geraet) => aufruf('dateiLoeschen', { koerper: { geraet }, token: mitToken(id) })
+
+// Tageskopien auf dem Server (14 Tage je Geraet), siehe api/index.php.
+export const kopienAuflisten = async (id) => (await aufruf('kopien', { token: mitToken(id) })).kopien
+export const kopieLaden = async (id, geraet, tag) => (await aufruf('kopie', { token: mitToken(id), abfrage: { geraet, tag } })).text
