@@ -37,7 +37,7 @@ function db(): PDO {
         'CREATE TABLE IF NOT EXISTS tokens (hash CHAR(64) PRIMARY KEY, profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL,
             erstellt BIGINT NOT NULL, bis BIGINT NOT NULL)',
         'CREATE TABLE IF NOT EXISTS dateien (profil_id VARCHAR(64) NOT NULL, geraet VARCHAR(16) NOT NULL, inhalt MEDIUMTEXT NOT NULL,
-            geaendert BIGINT NOT NULL, PRIMARY KEY (profil_id, geraet))',
+            groesse INT NOT NULL DEFAULT 0, geaendert BIGINT NOT NULL, PRIMARY KEY (profil_id, geraet))',
         'CREATE TABLE IF NOT EXISTS versuche (schluessel VARCHAR(120) PRIMARY KEY, anzahl INT NOT NULL, bis BIGINT NOT NULL)',
     ] as $sql) $pdo->exec($sql);
     return $pdo;
@@ -194,7 +194,7 @@ try {
 
         case 'dateien': // Abgleich: Liste der Geraetedateien dieses Profils
             [$id] = angemeldet();
-            $z = db()->prepare('SELECT geraet, geaendert, LENGTH(inhalt) AS groesse FROM dateien WHERE profil_id = ?');
+            $z = db()->prepare('SELECT geraet, geaendert, groesse FROM dateien WHERE profil_id = ?');
             $z->execute([$id]);
             antwort(200, ['dateien' => $z->fetchAll()]);
 
@@ -214,9 +214,10 @@ try {
             if (!is_string($text) || strlen($text) > MAX_DATEI || json_decode($text) === null) fehler(400, 'Datei ungueltig oder zu gross.');
             db()->beginTransaction();
             db()->prepare('DELETE FROM dateien WHERE profil_id = ? AND geraet = ?')->execute([$id, $g]);
-            db()->prepare('INSERT INTO dateien (profil_id, geraet, inhalt, geaendert) VALUES (?,?,?,?)')->execute([$id, $g, $text, time()]);
+            $jetzt = time();
+            db()->prepare('INSERT INTO dateien (profil_id, geraet, inhalt, groesse, geaendert) VALUES (?,?,?,?,?)')->execute([$id, $g, $text, strlen($text), $jetzt]);
             db()->commit();
-            antwort(200, ['ok' => true]);
+            antwort(200, ['ok' => true, 'geaendert' => $jetzt, 'groesse' => strlen($text)]);
 
         case 'dateiLoeschen':
             [$id] = angemeldet();

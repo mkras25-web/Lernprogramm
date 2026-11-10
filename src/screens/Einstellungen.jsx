@@ -1,3 +1,4 @@
+import ServerKonto from '../components/ServerKonto.jsx'
 import { gueltigeGewichte } from '../lib/planer.js'
 import { useEffect, useState } from 'react'
 import Schleier from '../components/Schleier.jsx'
@@ -38,7 +39,7 @@ export default function Einstellungen({
   werte, setzen, anzahlEreignisse, anzahlSkizzen, paketliste, letzteSicherung, speicherGeschuetzt = null,
   onExport, onExportCsv, onMeldungenExport, anzahlMeldungen = 0, onImport, onLoeschen, onAlleMarkierungenEntfernen, onVorgabenExport, profilName, onProfilWechseln, onTastenhilfe, onEinfuehrung, onMeldung, abgleich,
   kursplan = { kurse: [], klausuren: [] }, kursplanAendern, kennungen = new Map(),
-  profilId, dropboxVerbunden = false, onWiederherstellen,
+  profilId, dropboxVerbunden = false, serverVerbunden = false, onWiederherstellen,
 }) {
   const [loeschfrage, setLoeschfrage] = useState(false)
   const [palettenfenster, setPalettenfenster] = useState(false)
@@ -604,6 +605,10 @@ export default function Einstellungen({
               Exportieren
             </button>
           </div>
+
+          {serverVerbunden && (
+            <ServerKonto profilId={profilId} onMeldung={onMeldung} onAbgemeldet={onProfilWechseln} />
+          )}
 
           <div className="zeile">
             <div className="zeileText">

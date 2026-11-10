@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { abgleichen, abgleichStand } from '../lib/abgleich.js'
 import { dropboxMoeglich, istVerbunden, meldungAbholen } from '../lib/dropbox.js'
+import { abgleichenServer } from '../lib/serverAbgleich.js'
+import { serverAktiv, tokenLesen } from '../lib/server.js'
 
 // Aus App.jsx herausgeloest (52B, 2026-10-10), Inhalt unveraendert.
 export function useAbgleich({ profilId, profilName, opt, laedt, ansicht, zustandNeuLesen, setMeldung }) {
@@ -9,10 +11,16 @@ export function useAbgleich({ profilId, profilName, opt, laedt, ansicht, zustand
   const [abgleichZustand, setAbgleichZustand] = useState(() => ({ laeuft: false, ...abgleichStand(profilId) }))
   const abgleichRef = useRef(null)
   abgleichRef.current = async function jetztAbgleichen(still = true) {
-    if (!dropboxMoeglich() || !istVerbunden()) return
+    const ueberServer = serverAktiv() && Boolean(tokenLesen(profilId))
+    const ueberDropbox = dropboxMoeglich() && istVerbunden()
+    if (!ueberServer && !ueberDropbox) return
     setAbgleichZustand((z) => ({ ...z, laeuft: true }))
     try {
-      const b = await abgleichen({ profilId, profilName, mitSkizzen: opt.dropboxSkizzen === true })
+      // Server zuerst, Dropbox (falls verbunden) danach; Zaehler addieren.
+      const b = { ereignisse: 0, skizzen: 0, marken: 0, pruefungen: 0, kursplan: 0, einstellungen: 0, geloescht: 0 }
+      const addieren = (x) => { for (const k of Object.keys(b)) b[k] += x[k] ?? 0 }
+      if (ueberServer) addieren(await abgleichenServer({ profilId, profilName, mitSkizzen: true }))
+      if (ueberDropbox) addieren(await abgleichen({ profilId, profilName, mitSkizzen: opt.dropboxSkizzen === true }))
       const neu = b.ereignisse + b.skizzen + b.marken + b.pruefungen + (b.kursplan ?? 0) + (b.einstellungen ?? 0) + b.geloescht
       if (neu > 0) await zustandNeuLesen()
       if (!still) {

@@ -34,7 +34,7 @@ export function profilAusDateiname(name) {
   return treffer ? { profilId: treffer[1], geraet: treffer[2] } : null
 }
 
-function lesen(schluessel, vorgabe) {
+export function lesen(schluessel, vorgabe) {
   try {
     return JSON.parse(localStorage.getItem(schluessel) ?? 'null') ?? vorgabe
   } catch {
@@ -42,9 +42,9 @@ function lesen(schluessel, vorgabe) {
   }
 }
 
-const gesehenSchluessel = (profilId) => `dropbox_gesehen_${profilId}` // { dateiname: content_hash }
-const uploadSchluessel = (profilId) => `dropbox_upload_${profilId}` // Fingerabdruck des zuletzt Hochgeladenen
-const standSchluessel = (profilId) => `dropbox_stand_${profilId}` // { zeit, fehler }
+export const gesehenSchluessel = (profilId) => `dropbox_gesehen_${profilId}` // { dateiname: content_hash }
+export const uploadSchluessel = (profilId) => `dropbox_upload_${profilId}` // Fingerabdruck des zuletzt Hochgeladenen
+export const standSchluessel = (profilId) => `dropbox_stand_${profilId}` // { zeit, fehler }
 
 export function abgleichStand(profilId) {
   return lesen(standSchluessel(profilId), { zeit: null, fehler: null })
@@ -52,7 +52,7 @@ export function abgleichStand(profilId) {
 
 // Sicherungstext ohne den Zeitstempel "exportiertAm" - der aendert sich bei
 // jedem Export und wuerde ein Hochladen ohne echte Aenderung ausloesen.
-async function fingerabdruck(text) {
+export async function fingerabdruck(text) {
   const daten = JSON.parse(text)
   delete daten.exportiertAm
   const bytes = new TextEncoder().encode(JSON.stringify(daten))

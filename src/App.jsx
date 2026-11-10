@@ -297,6 +297,8 @@ export default function App({ profilId, onProfilWechseln }) {
 
   // Dropbox verbunden? Als State (lib/dropbox.js meldet Wechsel), auch aus
   // anderen Tabs (storage-Ereignis).
+  // Server-Anmeldung (Zweig server-profile): Schalter + gemerkter Token.
+  const serverVerbunden = serverAktiv() && Boolean(tokenLesen(profilId))
   const [dropboxVerbunden, setDropboxVerbunden] = useState(() => dropboxMoeglich() && istVerbunden())
   useEffect(() => {
     const pruefen = () => setDropboxVerbunden(dropboxMoeglich() && istVerbunden())
@@ -1154,7 +1156,7 @@ export default function App({ profilId, onProfilWechseln }) {
         profilName={profilName}
         onProfilWechseln={onProfilWechseln}
         pruefungHinweis={pruefungHinweis}
-        abgleich={dropboxVerbunden ? abgleichZustand : null}
+        abgleich={dropboxVerbunden || serverVerbunden ? abgleichZustand : null}
       />
 
       {importFrage && (
@@ -1496,6 +1498,7 @@ export default function App({ profilId, onProfilWechseln }) {
           onVorgabenExport={vorgabenExportieren}
           profilId={profilId}
           dropboxVerbunden={dropboxVerbunden}
+          serverVerbunden={serverVerbunden}
           onWiederherstellen={wiederherstellenAus}
           profilName={profilName}
           onProfilWechseln={onProfilWechseln}
