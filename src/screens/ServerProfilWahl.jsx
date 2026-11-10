@@ -1,7 +1,7 @@
 import PasswortBalken from '../components/PasswortBalken.jsx'
 import { useEffect, useState } from 'react'
 import ProfilEditor from '../components/ProfilEditor.jsx'
-import { AVATARE, PASSWORT_MIN, anmelden, angemeldetBleiben, avatarUrl, profilAnlegen, profileLaden } from '../lib/server.js'
+import { AVATARE, PASSWORT_MIN, ich, tokenLesen, anmelden, angemeldetBleiben, avatarUrl, profilAnlegen, profileLaden } from '../lib/server.js'
 
 // Anmeldebildschirm mit Server-Profilen (Zweig server-profile, hinter dem
 // Schalter VITE_SERVER_PROFILE). Karten zeigen Bild, Name und Level; ein
@@ -16,12 +16,23 @@ export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGel
   const [gewaehlt, setGewaehlt] = useState(null)
   const [neu, setNeu] = useState(false)
   const [bearbeiten, setBearbeiten] = useState(null) // Profil im Editor
+  const [adminId, setAdminId] = useState(null) // Admin, der auf diesem Geraet angemeldet ist
   const [umzug, setUmzug] = useState(null) // lokales Profil, das auf den Server soll
 
   useEffect(() => {
     let weg = false
     profileLaden()
-      .then((p) => !weg && setListe(p))
+      .then(async (p) => {
+        if (weg) return
+        setListe(p)
+        // Ist auf diesem Geraet ein Admin angemeldet? (nur Profile mit gemerktem Token fragen)
+        for (const x of p) {
+          if (!tokenLesen(x.id)) continue
+          try {
+            if ((await ich(x.id)).admin) { if (!weg) setAdminId(x.id); break }
+          } catch { /* Token ungueltig - ignorieren */ }
+        }
+      })
       .catch((e) => !weg && setFehler(e.message))
     return () => {
       weg = true
@@ -132,6 +143,7 @@ export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGel
       {bearbeiten && (
         <ProfilEditor
           profil={bearbeiten}
+          adminId={adminId}
           loeschenErlaubt
           onGeaendert={(p) => {
             setListe((l) => (l ?? []).map((x) => (x.id === p.id ? p : x)))

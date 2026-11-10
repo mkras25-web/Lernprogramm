@@ -158,3 +158,9 @@ export const dateiLoeschenServer = (id, geraet) => aufruf('dateiLoeschen', { koe
 // Tageskopien auf dem Server (14 Tage je Geraet), siehe api/index.php.
 export const kopienAuflisten = async (id) => (await aufruf('kopien', { token: mitToken(id) })).kopien
 export const kopieLaden = async (id, geraet, tag) => (await aufruf('kopie', { token: mitToken(id), abfrage: { geraet, tag } })).text
+
+// Admin (steht nur in lernprogramm-config/admin.php auf dem Server): wer bin ich, fremde Profile loeschen/aendern.
+export const ich = (id) => aufruf('ich', { token: mitToken(id) })
+export const adminLoeschen = (adminId, ziel, passwort) =>
+  aufruf('adminLoeschen', { koerper: { ziel, passwort }, token: mitToken(adminId) })
+export const adminMeta = (adminId, ziel, meta) => aufruf('adminMeta', { koerper: { ziel, ...meta }, token: mitToken(adminId) })

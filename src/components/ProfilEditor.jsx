@@ -2,7 +2,7 @@ import PasswortBalken from './PasswortBalken.jsx'
 import { useEffect, useState } from 'react'
 import Schleier from './Schleier.jsx'
 import {
-  AVATARE, PASSWORT_MIN, anmelden, angemeldetBleiben, avatarUrl, metaSenden, passwortAendern,
+  AVATARE, PASSWORT_MIN, adminLoeschen, adminMeta, anmelden, angemeldetBleiben, avatarUrl, metaSenden, passwortAendern,
   profilLoeschenServer, profileLaden,
 } from '../lib/server.js'
 
@@ -11,8 +11,11 @@ import {
 // verlangen es zuerst, damit niemand fremde Profile aendern oder loeschen kann.
 // Loeschen verlangt zusaetzlich das Passwort (falls gesetzt) und das Tippen
 // von LÖSCHEN - der Server prueft das Passwort noch einmal selbst.
-export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaendert, onGeloescht, onSchliessen }) {
-  const [phase, setPhase] = useState('pruefe') // pruefe | passwort | offen
+export default function ProfilEditor({ profil, adminId = null, loeschenErlaubt = false, onGeaendert, onGeloescht, onSchliessen }) {
+  // adminId: Profil-Id des Admins, der auf diesem Geraet angemeldet ist (sonst null).
+  const fremdAdmin = Boolean(adminId) && adminId !== profil.id
+  const selbstAdmin = Boolean(adminId) && adminId === profil.id
+  const [phase, setPhase] = useState(fremdAdmin ? 'offen' : 'pruefe') // pruefe | passwort | offen
   const [aktuell, setAktuell] = useState(profil)
   const [pw, setPw] = useState('')
   const [fehler, setFehler] = useState(null)
@@ -26,6 +29,7 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
   const [bestaetigung, setBestaetigung] = useState('')
 
   useEffect(() => {
+    if (fremdAdmin) return undefined
     let weg = false
     ;(async () => {
       try {
@@ -40,7 +44,13 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
       }
     })()
     return () => { weg = true }
-  }, [profil.id])
+  }, [profil.id, fremdAdmin])
+
+  // Name/Bild: als Admin fuer fremde Profile ueber adminMeta, sonst ueber das eigene Konto.
+  const meta = (patch) => (fremdAdmin ? adminMeta(adminId, profil.id, patch) : metaSenden(profil.id, patch))
+  // Offenes Profil ohne Passwort: nur der Admin darf Name, Bild aendern und loeschen.
+  const offenesProfil = !aktuell.passwort && !fremdAdmin && !selbstAdmin
+  const loeschenSichtbar = loeschenErlaubt && !selbstAdmin && (fremdAdmin || Boolean(aktuell.passwort))
 
   async function ausfuehren(arbeit, erfolg) {
     setLaeuft(true)
@@ -110,11 +120,18 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
 
         {phase === 'offen' && (
           <div className="serverFormular">
+            {offenesProfil && (
+              <p className="nebentext">
+                Dieses Profil hat kein Passwort – dann kann jeder es öffnen. Name, Bild und Löschen kann nur der Admin ändern.
+                Lege ein Passwort fest, dann kannst du alles selbst bearbeiten.
+              </p>
+            )}
+            {!offenesProfil && (<>
             <form
               className="serverFormular"
               onSubmit={(e) => {
                 e.preventDefault()
-                ausfuehren(() => metaSenden(profil.id, { name: name.trim() }), 'Name gespeichert.')
+                ausfuehren(() => meta({ name: name.trim() }), 'Name gespeichert.')
               }}
             >
               <label className="feldname" htmlFor="pe-name">Name</label>
@@ -134,14 +151,17 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
                   aria-checked={aktuell.avatar === a}
                   disabled={laeuft}
                   className={aktuell.avatar === a ? 'avatarWahl aktiv' : 'avatarWahl'}
-                  onClick={() => ausfuehren(() => metaSenden(profil.id, { avatar: a }), 'Profilbild geändert.')}
+                  onClick={() => ausfuehren(() => meta({ avatar: a }), 'Profilbild geändert.')}
                 >
                   <img src={avatarUrl(a)} alt="" width="48" height="48" />
                 </button>
               ))}
             </div>
 
-            <form
+            </>)}
+
+            {fremdAdmin && <p className="nebentext">Du bearbeitest dieses Profil als Admin.</p>}
+            {!fremdAdmin && <form
               className="serverFormular"
               onSubmit={async (e) => {
                 e.preventDefault()
@@ -175,34 +195,33 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
                   </button>
                 )}
               </div>
-            </form>
+            </form>}
 
             {info && <p className="nebentext" role="status">{info}</p>}
             {fehler && <p className="serverFehler" role="alert">{fehler}</p>}
 
-            {loeschenErlaubt && !loeschen && (
+            {loeschenSichtbar && !loeschen && (
               <button className="textknopf gefahrText" onClick={() => setLoeschen(true)}>Profil löschen …</button>
             )}
-            {loeschenErlaubt && loeschen && (
+            {loeschenSichtbar && loeschen && (
               <div className="serverFormular loeschBox">
                 <p className="nebentext">
                   Das Profil verschwindet sofort – auf dem Server und auf diesem Gerät: alle Antworten, Skizzen, Notizen und
                   Prüfungen. Der Server hält die Daten noch 14 Tage zur Sicherheit zurück und löscht sie danach endgültig.
                 </p>
-                {aktuell.passwort && (
-                  <input className="suchfeld" type="password" autoComplete="current-password" placeholder="Passwort" aria-label="Passwort zum Löschen" value={loeschPw} onChange={(e) => setLoeschPw(e.target.value)} />
-                )}
+                <input className="suchfeld" type="password" autoComplete="current-password" placeholder={fremdAdmin ? 'Dein Admin-Passwort' : 'Passwort'} aria-label="Passwort zum Löschen" value={loeschPw} onChange={(e) => setLoeschPw(e.target.value)} />
                 <p className="nebentext">Tippe <strong>LÖSCHEN</strong>, um es zu bestätigen.</p>
                 <input className="suchfeld" placeholder="LÖSCHEN" aria-label="Bestätigung" value={bestaetigung} onChange={(e) => setBestaetigung(e.target.value)} />
                 <div className="wahl">
                   <button
                     className="knopf schmal gefahr"
-                    disabled={laeuft || bestaetigung.trim().toUpperCase() !== 'LÖSCHEN' || (aktuell.passwort && !loeschPw)}
+                    disabled={laeuft || bestaetigung.trim().toUpperCase() !== 'LÖSCHEN' || !loeschPw}
                     onClick={async () => {
                       setLaeuft(true)
                       setFehler(null)
                       try {
-                        await profilLoeschenServer(profil.id, aktuell.passwort ? loeschPw : null)
+                        if (fremdAdmin) await adminLoeschen(adminId, profil.id, loeschPw)
+                        else await profilLoeschenServer(profil.id, loeschPw)
                         await onGeloescht?.()
                       } catch (e) {
                         setFehler(e.message)

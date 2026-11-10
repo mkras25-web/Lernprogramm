@@ -58,6 +58,27 @@ function konfig(): array {
     return is_array($k) ? $k : fehler(503, 'Server nicht eingerichtet.');
 }
 
+// Admin-Profile stehen NUR in lernprogramm-config/admin.php (return ['<profil-id>', ...];),
+// ausserhalb des Webverzeichnisses und nicht ueber die API aenderbar. Ein Admin zaehlt nur,
+// solange sein Profil ein Passwort hat - ohne Passwort waere er fuer jeden uebernehmbar.
+function adminIds(): array {
+    static $ids = null;
+    if ($ids !== null) return $ids;
+    $ids = [];
+    for ($ebene = 2; $ebene <= 4; $ebene++) {
+        $datei = dirname(__DIR__, $ebene) . '/lernprogramm-config/admin.php';
+        if (is_file($datei)) {
+            $liste = require $datei;
+            if (is_array($liste)) $ids = array_values(array_filter($liste, 'is_string'));
+            break;
+        }
+    }
+    return $ids;
+}
+function istAdmin(array $profil): bool {
+    return $profil['pw_hash'] !== null && in_array($profil['id'], adminIds(), true);
+}
+
 function mysql(): bool { return db()->getAttribute(PDO::ATTR_DRIVER_NAME) === 'mysql'; }
 
 function db(): PDO {
@@ -304,6 +325,10 @@ switch ($a) {
             db()->prepare('UPDATE profile SET stufe = ?, xp = ? WHERE id = ?')
                 ->execute([max(1, min(999, (int)$d['stufe'])), max(0, min(100000000, (int)$d['xp'])), $id]);
         }
+        if (isset($d['avatar']) || isset($d['name'])) {
+            // Profile ohne Passwort sind offen fuer alle: Name und Bild aendert nur der Admin.
+            if (profilHolen($id)['pw_hash'] === null) fehler(403, 'Bei Profilen ohne Passwort kann nur der Admin Name und Bild aendern. Lege zuerst ein Passwort fest.');
+        }
         if (isset($d['avatar'])) db()->prepare('UPDATE profile SET avatar = ? WHERE id = ?')->execute([avatarName($d['avatar']), $id]);
         if (isset($d['name'])) {
             $n = profilName($d['name']);
@@ -319,6 +344,7 @@ switch ($a) {
         $d = eingabe();
         $p = profilHolen($id);
         passwortPruefen($p, $d['alt'] ?? null, $id);
+        if (($d['neu'] ?? null) === null && in_array($id, adminIds(), true)) fehler(403, 'Der Admin braucht ein Passwort.');
         $neu = ($d['neu'] ?? null) === null ? null : pwHash(passwortGueltig($d['neu']));
         db()->prepare('UPDATE profile SET pw_hash = ? WHERE id = ?')->execute([$neu, $id]);
         // Alle anderen Anmeldungen (andere Geraete, gestohlene Tokens) verfallen.
@@ -403,12 +429,48 @@ switch ($a) {
         db()->prepare('DELETE FROM dateien WHERE profil_id = ? AND geraet = ?')->execute([$id, eigenesGeraet($d, $tokenGeraet)]);
         antwort(200, ['ok' => true]);
 
-    case 'profilLoeschen': // Papierkorb: 14 Tage zurueckholbar (phpMyAdmin: profile.geloescht auf NULL setzen)
+    case 'ich': // wer bin ich (fuer die Oberflaeche: Admin-Funktionen anzeigen)
+        [$id] = angemeldet();
+        antwort(200, ['id' => $id, 'admin' => istAdmin(profilHolen($id))]);
+
+    case 'profilLoeschen': // eigenes Profil; Papierkorb: 14 Tage zurueckholbar (phpMyAdmin: profile.geloescht auf NULL)
         [$id] = angemeldet();
         $d = eingabe();
-        passwortPruefen(profilHolen($id), $d['passwort'] ?? null, $id);
+        $p = profilHolen($id);
+        if ($p['pw_hash'] === null) fehler(403, 'Profile ohne Passwort kann nur der Admin loeschen.');
+        if (in_array($id, adminIds(), true)) fehler(403, 'Das Admin-Profil kann nicht geloescht werden.');
+        passwortPruefen($p, $d['passwort'] ?? null, $id);
         db()->prepare('UPDATE profile SET geloescht = ? WHERE id = ?')->execute([time(), $id]);
         db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$id]);
+        antwort(200, ['ok' => true]);
+
+    case 'adminLoeschen': // Admin loescht ein beliebiges anderes Profil (Passwort des Admins wird erneut verlangt)
+        [$id] = angemeldet();
+        $d = eingabe();
+        $admin = profilHolen($id);
+        if (!istAdmin($admin)) fehler(403, 'Nur der Admin darf das.');
+        passwortPruefen($admin, $d['passwort'] ?? null, $id);
+        $ziel = profilId($d['ziel'] ?? null);
+        if ($ziel === $id || in_array($ziel, adminIds(), true)) fehler(403, 'Das Admin-Profil kann nicht geloescht werden.');
+        profilHolen($ziel);
+        db()->prepare('UPDATE profile SET geloescht = ? WHERE id = ?')->execute([time(), $ziel]);
+        db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$ziel]);
+        antwort(200, ['ok' => true]);
+
+    case 'adminMeta': // Admin aendert Name/Bild eines beliebigen Profils
+        [$id] = angemeldet();
+        $d = eingabe();
+        if (!istAdmin(profilHolen($id))) fehler(403, 'Nur der Admin darf das.');
+        $ziel = profilId($d['ziel'] ?? null);
+        profilHolen($ziel);
+        if (isset($d['avatar'])) db()->prepare('UPDATE profile SET avatar = ? WHERE id = ?')->execute([avatarName($d['avatar']), $ziel]);
+        if (isset($d['name'])) {
+            $n = profilName($d['name']);
+            $z = db()->prepare('SELECT 1 FROM profile WHERE geloescht IS NULL AND LOWER(name) = LOWER(?) AND id <> ?');
+            $z->execute([$n, $ziel]);
+            if ($z->fetch()) fehler(409, 'Diesen Namen gibt es schon.');
+            db()->prepare('UPDATE profile SET name = ? WHERE id = ?')->execute([$n, $ziel]);
+        }
         antwort(200, ['ok' => true]);
 
     default:

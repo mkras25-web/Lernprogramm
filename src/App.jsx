@@ -83,7 +83,7 @@ import Einfuehrung from './components/Einfuehrung.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 import { durchsichtJeThema, standVon } from './lib/durchsicht.js'
 import { metaSenden, serverAktiv, tokenLesen } from './lib/server.js'
-import { entfernenAlsEntscheidung, ohneVorgabe, vorgabenAnwenden, vorgabenErzeugen } from './lib/vorgaben.js'
+import { entfernenAlsEntscheidung, ohneVorgabe, vorgabenAnwenden } from './lib/vorgaben.js'
 
 // Themenfokus: ganze Module stehen als "modul:<id>" in opt.fokusThemen.
 const FOKUS_MODUL = 'modul:'
@@ -728,18 +728,6 @@ export default function App({ profilId, onProfilWechseln }) {
     markenRef.current = vorgabenAnwenden(neueKarte, vorgabenRef.current)
     setMarken(markenRef.current)
     setMeldung({ art: 'erfolg', text: n ? `${n} Markierungen entfernt.` : 'Es gab keine Markierungen zu entfernen.' })
-  }
-
-  // Meine Markierungen als vorgaben.json: gehoert nach
-  // app/public/pakete/<paket>/ und gilt nach dem Veroeffentlichen fuer alle
-  // als Startwert (lib/vorgaben.js).
-  function vorgabenExportieren() {
-    const vorgaben = vorgabenErzeugen(markenRef.current, paketInfo?.id ?? opt.aktivesPaket)
-    textHerunterladen(JSON.stringify(vorgaben, null, 1), 'vorgaben.json', 'application/json;charset=utf-8')
-    setMeldung({
-      art: 'erfolg',
-      text: `vorgaben.json gespeichert (${Object.keys(vorgaben.kategorien).length} Markierungen, ${Object.keys(vorgaben.durchsicht).length} Durchsicht-Entscheidungen). Datei nach app/public/pakete/${vorgaben.paket}/ legen und veröffentlichen.`,
-    })
   }
 
   async function skizzeEntfernen(id) {
@@ -1495,7 +1483,6 @@ export default function App({ profilId, onProfilWechseln }) {
           onMeldung={setMeldung}
           onLoeschen={loeschen}
           onAlleMarkierungenEntfernen={alleMarkierungenEntfernen}
-          onVorgabenExport={vorgabenExportieren}
           profilId={profilId}
           dropboxVerbunden={dropboxVerbunden}
           serverVerbunden={serverVerbunden}
