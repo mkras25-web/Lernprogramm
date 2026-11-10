@@ -12,7 +12,7 @@ import { geraeteKennung } from './speicher.js'
 
 export const serverAktiv = () => import.meta.env?.VITE_SERVER_PROFILE === '1'
 
-export const PASSWORT_MIN = 8
+export const PASSWORT_MIN = 6
 const BASIS = './api/index.php'
 const TOKEN_PRAEFIX = 'lp_token_'
 

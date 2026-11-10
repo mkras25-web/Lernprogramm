@@ -265,6 +265,12 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 }
 .profilKarte.neu .profilKarteKnopf { border-style: dashed; }
 .profilBearbeiten { font-size: 0.8125rem; align-self: center; }
+.pwBalken { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--rinde); }
+.pwSpur { flex: 1; height: 4px; border-radius: 2px; background: var(--linie); overflow: hidden; }
+.pwSpur > span { display: block; height: 100%; border-radius: 2px; background: var(--warnung); transition: width 0.2s ease, background 0.2s ease; }
+.pwBalken.mittel .pwSpur > span { background: #c9a227; }
+.pwBalken.sicher .pwSpur > span { background: var(--akzent); }
+.pwText { min-width: 3.5rem; text-align: right; }
 .profilEditor { max-width: 32rem; width: 100%; max-height: 90dvh; overflow-y: auto; }
 .profilEditor .profilNeu { flex-wrap: wrap; }
 .profilEditor .profilNeu .suchfeld { min-width: 0; flex: 1 1 10rem; }

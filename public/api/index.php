@@ -35,8 +35,6 @@ const SPERRE_SEKUNDEN = 900;             // ... in diesem Fenster
 const PROFIL_STUNDE_MAX = 30;            // Passwortversuche je Profil, alle IPs, je Stunde
 const IP_VIERTELSTUNDE_MAX = 60;         // Anmeldeversuche je IP in 15 min
 const ANLEGEN_STUNDE_MAX = 6;            // neue Profile je IP und Stunde
-const SCHWACHE_PASSWOERTER = ['12345678', '123456789', '1234567890', 'password', 'passwort', 'passwort1', 'qwertzui', 'qwertyui',
-    '11111111', '00000000', 'abcd1234', 'iloveyou', 'lernprogramm', 'architektur'];
 
 function antwort(int $code, array $daten): never { http_response_code($code); echo json_encode($daten, JSON_UNESCAPED_UNICODE); exit; }
 function fehler(int $code, string $text): never { antwort($code, ['fehler' => $text]); }
@@ -127,8 +125,8 @@ function avatarName(mixed $a): string {
     return $a;
 }
 function passwortGueltig(mixed $pw): string {
-    if (!is_string($pw) || mb_strlen($pw) < 8 || mb_strlen($pw) > 200) fehler(400, 'Passwort: mindestens 8 Zeichen.');
-    if (in_array(mb_strtolower($pw), SCHWACHE_PASSWOERTER, true)) fehler(400, 'Dieses Passwort ist zu einfach.');
+    // Keine Zeichenregeln: ab 6 Zeichen ist alles erlaubt (die App zeigt die Staerke nur an).
+    if (!is_string($pw) || mb_strlen($pw) < 6 || mb_strlen($pw) > 200) fehler(400, 'Passwort: mindestens 6 Zeichen.');
     return $pw;
 }
 

@@ -1,3 +1,4 @@
+import PasswortBalken from '../components/PasswortBalken.jsx'
 import { useEffect, useState } from 'react'
 import ProfilEditor from '../components/ProfilEditor.jsx'
 import { AVATARE, PASSWORT_MIN, anmelden, angemeldetBleiben, avatarUrl, profilAnlegen, profileLaden } from '../lib/server.js'
@@ -292,6 +293,7 @@ function NeuFormular({ vorgabe = null, vergeben, onAbbrechen, onFertig }) {
             value={passwort}
             onChange={(e) => setPasswort(e.target.value)}
           />
+          <PasswortBalken passwort={passwort} />
         </>
       )}
       <label className="serverHaken">

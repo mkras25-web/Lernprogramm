@@ -1,3 +1,4 @@
+import PasswortBalken from './PasswortBalken.jsx'
 import { useEffect, useState } from 'react'
 import Schleier from './Schleier.jsx'
 import {
@@ -156,6 +157,7 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
                 <input className="suchfeld" type="password" autoComplete="current-password" placeholder="Aktuelles Passwort" aria-label="Aktuelles Passwort" value={alt} onChange={(e) => setAlt(e.target.value)} />
               )}
               <input className="suchfeld" type="password" autoComplete="new-password" placeholder={`Neues Passwort (mindestens ${PASSWORT_MIN} Zeichen)`} aria-label="Neues Passwort" value={neu} onChange={(e) => setNeu(e.target.value)} />
+              <PasswortBalken passwort={neu} />
               <div className="wahl">
                 <button className="knopf schmal" type="submit" disabled={laeuft || neu.length < PASSWORT_MIN || (aktuell.passwort && !alt)}>
                   {aktuell.passwort ? 'Passwort ändern' : 'Passwort festlegen'}
