@@ -67,18 +67,50 @@ function adminIds(): array {
     static $ids = null;
     if ($ids !== null) return $ids;
     $ids = [];
-    for ($ebene = 2; $ebene <= 4; $ebene++) {
-        $datei = dirname(__DIR__, $ebene) . '/lernprogramm-config/admin.php';
-        if (is_file($datei)) {
-            $liste = require $datei;
-            if (is_array($liste)) $ids = array_values(array_filter($liste, 'is_string'));
-            break;
-        }
+    $datei = konfigDatei('admin.php');
+    if ($datei !== null) {
+        $liste = require $datei;
+        if (is_array($liste)) $ids = array_values(array_filter($liste, 'is_string'));
     }
     return $ids;
 }
 function istAdmin(array $profil): bool {
     return $profil['pw_hash'] !== null && in_array($profil['id'], adminIds(), true);
+}
+
+// Pfad einer Datei in lernprogramm-config/ (oberhalb des Webverzeichnisses), sonst null.
+function konfigDatei(string $name): ?string {
+    for ($ebene = 2; $ebene <= 4; $ebene++) {
+        $kandidat = dirname(__DIR__, $ebene) . '/lernprogramm-config/' . $name;
+        if (is_file($kandidat)) return $kandidat;
+    }
+    return null;
+}
+
+// Notfall-Zuruecksetzen (Passwort vergessen): wer SFTP-Zugriff auf den Webspace hat (also der Betreiber, z. B.
+// ueber Einspielen/serverkonto.py), legt lernprogramm-config/reset.json ab:
+//   {"profil":"<id>","neu":"<Passwort>" | null,"erstellt":<unix>}
+// Der Server fuehrt sie beim naechsten Aufruf EINMAL aus (neues Passwort, null = Profil offen), beendet alle
+// Anmeldungen des Profils, hebt Sperren auf und loescht die Datei sofort. Aelter als 24 h: verworfen.
+// Es entsteht keine neue Macht: SFTP-Zugriff erlaubt ohnehin, config.php zu lesen.
+function resetAnwenden(): void {
+    $datei = konfigDatei('reset.json');
+    if ($datei === null) return;
+    $roh = @file_get_contents($datei);
+    @unlink($datei); // zuerst loeschen: nur einmal wirksam
+    $d = is_string($roh) ? json_decode($roh, true, 4) : null;
+    if (!is_array($d) || !is_string($d['profil'] ?? null) || (int)($d['erstellt'] ?? 0) < time() - 86400) return;
+    $id = $d['profil'];
+    if (!preg_match('/^[A-Za-z0-9-]{8,64}\z/', $id)) return;
+    $neu = $d['neu'] ?? null;
+    if ($neu !== null && (!is_string($neu) || mb_strlen($neu) < 6 || mb_strlen($neu) > 200)) return;
+    $z = db()->prepare('SELECT 1 FROM profile WHERE id = ?');
+    $z->execute([$id]);
+    if (!$z->fetch()) return;
+    db()->prepare('UPDATE profile SET pw_hash = ?, geloescht = NULL WHERE id = ?')->execute([$neu === null ? null : pwHash($neu), $id]);
+    db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$id]);
+    db()->prepare('DELETE FROM versuche WHERE schluessel = ? OR schluessel LIKE ?')->execute(['g|' . $id, 'p|' . $id . '|%']);
+    error_log('lernprogramm-api: Notfall-Reset angewendet fuer ' . $id);
 }
 
 function mysql(): bool { return db()->getAttribute(PDO::ATTR_DRIVER_NAME) === 'mysql'; }
@@ -97,6 +129,11 @@ function db(): PDO {
         $pdo->query('SELECT 1 FROM kopien LIMIT 1');
     } catch (PDOException $e) {
         schemaAnlegen($pdo);
+    }
+    static $resetGeprueft = false;
+    if (!$resetGeprueft) {
+        $resetGeprueft = true;
+        resetAnwenden();
     }
     return $pdo;
 }
@@ -473,7 +510,7 @@ switch ($a) {
         db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$ziel]);
         antwort(200, ['ok' => true]);
 
-    case 'adminPasswort': // Admin legt fuer ein fremdes Profil ein Notfall-Passwort fest (Uebernahme/Vergessen)
+    case 'adminPasswort': // Admin setzt fuer ein fremdes Profil ein Notfall-Passwort (neu) oder entfernt es (neu = null => Profil offen)
         [$id] = angemeldet();
         $d = eingabe();
         $admin = profilHolen($id);
@@ -482,7 +519,8 @@ switch ($a) {
         $ziel = profilId($d['ziel'] ?? null);
         if ($ziel === $id || in_array($ziel, adminIds(), true)) fehler(403, 'Nicht fuer das Admin-Profil.');
         profilHolen($ziel);
-        db()->prepare('UPDATE profile SET pw_hash = ? WHERE id = ?')->execute([pwHash(passwortGueltig($d['neu'] ?? null)), $ziel]);
+        $neuHash = (array_key_exists('neu', $d) && $d['neu'] === null) ? null : pwHash(passwortGueltig($d['neu'] ?? null));
+        db()->prepare('UPDATE profile SET pw_hash = ? WHERE id = ?')->execute([$neuHash, $ziel]);
         db()->prepare('DELETE FROM tokens WHERE profil_id = ?')->execute([$ziel]);
         antwort(200, ['ok' => true]);
 

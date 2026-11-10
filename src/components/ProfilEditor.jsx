@@ -182,7 +182,19 @@ export default function ProfilEditor({ profil, adminId = null, loeschenErlaubt =
                 <p className="nebentext">Du bearbeitest dieses Profil als Admin. Notfall-Passwort (z. B. nach Übernahme oder Vergessen) – gib es dem Besitzer weiter, er ändert es dann selbst:</p>
                 <input className="suchfeld" type="password" autoComplete="new-password" placeholder="Neues Passwort für dieses Profil" aria-label="Notfall-Passwort" value={notPw} onChange={(e) => setNotPw(e.target.value)} />
                 <input className="suchfeld" type="password" autoComplete="current-password" placeholder="Dein Admin-Passwort" aria-label="Admin-Passwort" value={adminPw} onChange={(e) => setAdminPw(e.target.value)} />
-                <div className="wahl"><button className="knopf schmal" type="submit" disabled={laeuft || notPw.length < PASSWORT_MIN || !adminPw}>Notfall-Passwort setzen</button></div>
+                <div className="wahl">
+                  <button className="knopf schmal" type="submit" disabled={laeuft || notPw.length < PASSWORT_MIN || !adminPw}>Notfall-Passwort setzen</button>
+                  {aktuell.passwort && (
+                    <button
+                      className="knopf schmal"
+                      type="button"
+                      disabled={laeuft || !adminPw}
+                      onClick={() => ausfuehren(() => adminPasswort(adminId, profil.id, adminPw, null), 'Passwort entfernt – das Profil ist jetzt offen.')}
+                    >
+                      Passwort entfernen (Profil wird offen)
+                    </button>
+                  )}
+                </div>
               </form>
             )}
             {!fremdAdmin && !aktuell.passwort && ersteller === false && (
