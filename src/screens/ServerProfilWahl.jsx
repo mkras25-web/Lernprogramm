@@ -7,12 +7,13 @@ import { AVATARE, anmelden, angemeldetBleiben, avatarUrl, profilAnlegen, profile
 // angemeldet bleiben wollte, kommt ohne Eingabe hinein. Die Felder tragen
 // username/current-password/new-password, damit der Browser Passwoerter
 // speichern und einsetzen kann.
-export default function ServerProfilWahl({ onFertig, onLokal, hinweis }) {
+export default function ServerProfilWahl({ onFertig, onLokal, hinweis, lokaleProfile = [] }) {
   const [liste, setListe] = useState(null)
   const [fehler, setFehler] = useState(null)
   const [beschaeftigt, setBeschaeftigt] = useState(false)
   const [gewaehlt, setGewaehlt] = useState(null)
   const [neu, setNeu] = useState(false)
+  const [umzug, setUmzug] = useState(null) // lokales Profil, das auf den Server soll
 
   useEffect(() => {
     let weg = false
@@ -53,12 +54,16 @@ export default function ServerProfilWahl({ onFertig, onLokal, hinweis }) {
     )
   }
 
-  if (neu) {
+  // Lokale Profile, die der Server noch nicht kennt (gleiche Id = schon uebertragen).
+  const nurLokal = liste ? lokaleProfile.filter((l) => !liste.some((p) => p.id === l.id)) : []
+
+  if (neu || umzug) {
     return (
       <Huelle>
         <NeuFormular
+          vorgabe={umzug}
           vergeben={(liste ?? []).map((p) => p.name.toLocaleLowerCase('de-DE'))}
-          onAbbrechen={() => setNeu(false)}
+          onAbbrechen={() => { setNeu(false); setUmzug(null) }}
           onFertig={onFertig}
         />
       </Huelle>
@@ -87,6 +92,27 @@ export default function ServerProfilWahl({ onFertig, onLokal, hinweis }) {
             </li>
           ))}
         </ul>
+      )}
+      {nurLokal.length > 0 && (
+        <div className="serverUmzug">
+          <h2 className="abschnitt">Auf diesem Gerät, noch nicht auf dem Server</h2>
+          <p className="nebentext">
+            Übertrage ein Profil mit seinem gesamten Fortschritt auf den Server – dann ist es auf allen deinen Geräten da.
+            Lokal bleibt alles unverändert.
+          </p>
+          <ul className="profilListe">
+            {nurLokal.map((l) => (
+              <li key={l.id}>
+                <button className="profilKnopf serverKarte" onClick={() => setUmzug(l)}>
+                  <span className="profilTexte">
+                    <span className="profilName">{l.name}</span>
+                    <span className="profilZuletzt">Auf den Server übertragen …</span>
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
       <div className="wahl serverAktionen">
         <button className="knopf" onClick={() => setNeu(true)} disabled={liste === null}>Neues Profil</button>
@@ -160,8 +186,8 @@ function PasswortFormular({ profil, onAbbrechen, onFertig }) {
   )
 }
 
-function NeuFormular({ vergeben, onAbbrechen, onFertig }) {
-  const [name, setName] = useState('')
+function NeuFormular({ vorgabe = null, vergeben, onAbbrechen, onFertig }) {
+  const [name, setName] = useState(vorgabe?.name ?? '')
   const [avatar, setAvatar] = useState(AVATARE[0])
   const [mitPasswort, setMitPasswort] = useState(false)
   const [passwort, setPasswort] = useState('')
@@ -178,6 +204,7 @@ function NeuFormular({ vergeben, onAbbrechen, onFertig }) {
     setLaeuft(true)
     try {
       const id = await profilAnlegen({
+        id: vorgabe?.id,
         name: name.trim(), avatar, passwort: mitPasswort ? passwort : null, dauerhaft: bleiben,
       })
       onFertig({ id, name: name.trim(), avatar, stufe: 1, passwort: mitPasswort })
@@ -189,7 +216,7 @@ function NeuFormular({ vergeben, onAbbrechen, onFertig }) {
 
   return (
     <form onSubmit={senden} className="serverFormular">
-      <h1 className="ueberschrift">Neues Profil</h1>
+      <h1 className="ueberschrift">{vorgabe ? `„${vorgabe.name}“ auf den Server übertragen` : 'Neues Profil'}</h1>
       <label className="feldname" htmlFor="sp-name">Name</label>
       <input
         id="sp-name"
@@ -243,7 +270,7 @@ function NeuFormular({ vergeben, onAbbrechen, onFertig }) {
       </label>
       {fehler && <p className="serverFehler" role="alert">{fehler}</p>}
       <div className="wahl">
-        <button className="knopf" type="submit" disabled={laeuft || !gueltig}>Profil anlegen</button>
+        <button className="knopf" type="submit" disabled={laeuft || !gueltig}>{vorgabe ? 'Übertragen' : 'Profil anlegen'}</button>
         <button className="textknopf" type="button" onClick={onAbbrechen}>Abbrechen</button>
       </div>
     </form>

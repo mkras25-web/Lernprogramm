@@ -218,6 +218,7 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .serverKarte:disabled { opacity: 0.6; cursor: wait; }
 .serverAvatar { border-radius: 50%; flex-shrink: 0; }
 .serverSchloss { margin-left: auto; color: var(--rinde); }
+.serverUmzug { margin-top: 1.5rem; }
 .serverAktionen { margin-top: 1rem; align-items: center; }
 .serverFormular { display: flex; flex-direction: column; gap: 0.5rem; }
 .serverKopf { display: flex; align-items: center; gap: 0.875rem; }

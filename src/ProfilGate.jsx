@@ -184,6 +184,7 @@ export default function ProfilGate() {
     return (
       <ServerProfilWahl
         hinweis={hinweis}
+        lokaleProfile={profile}
         onLokal={() => setLokalModus(true)}
         onFertig={(p) => {
           // Das lokale Profil teilt sich die Id mit dem Server-Profil.
