@@ -1,0 +1,243 @@
+{
+ "version": 1,
+ "paket": "arch-de",
+ "erstellt": "2026-11-10",
+ "kategorien": {
+  "bk-sock-004": "streichen",
+  "bk-sock-005": "streichen",
+  "bk-sock-006": "streichen",
+  "bk-sock-018": "ueberarbeiten",
+  "bk-zs-008": "streichen",
+  "bk-zs-014": "streichen",
+  "bk-zs-020": "streichen",
+  "bk-zs-027": "streichen",
+  "bp-fe-006": "streichen",
+  "bp-uw-004": "streichen",
+  "bp-uw-005": "streichen",
+  "bp-uw-006": "streichen",
+  "bp-uw-013": "streichen",
+  "bp-uw-014": "streichen",
+  "bp-uw-015": "streichen",
+  "bp-uw-016": "streichen",
+  "bp-uw-017": "streichen",
+  "bp-uw-018": "streichen",
+  "bp-uw-019": "streichen",
+  "bp-uw-020": "streichen",
+  "bp-uw-021": "streichen",
+  "bp-uw-024": "streichen",
+  "bp-uw-027": "streichen",
+  "bp-uw-029": "streichen",
+  "bp-uw-033": "ueberarbeiten",
+  "bp-wb-008": "streichen",
+  "bp-wb-009": "streichen",
+  "bp-wb-010": "streichen",
+  "bp-wb-011": "streichen",
+  "bp-wb-012": "streichen",
+  "bp-wb-014": "streichen",
+  "bp-wb-015": "ueberarbeiten",
+  "bp-wb-019": "streichen",
+  "bp-wb-023": "streichen",
+  "bp-wb-024": "streichen",
+  "bp-wb-026": "ueberarbeiten",
+  "bp-wb-028": "streichen",
+  "en-pr-001": "streichen",
+  "en-pr-002": "streichen",
+  "en-pr-005": "streichen",
+  "en-pr-008": "streichen",
+  "en-pr-009": "streichen",
+  "en-pr-018": "streichen",
+  "en-rp-002": "streichen",
+  "en-rp-012": "streichen",
+  "en-rp-014": "ueberarbeiten",
+  "en-rp-018": "streichen",
+  "en-rp-019": "streichen",
+  "en-rp-035": "streichen",
+  "rb-blp-006": "ueberarbeiten"
+ },
+ "durchsicht": {
+  "bild:bilder/bk-oeffnungen-lasten-blank.svg": {
+   "entscheidung": "angenommen",
+   "hash": "2ee193eb5e6e2989"
+  },
+  "bild:bilder/bk-oeffnungen-lasten.svg": {
+   "entscheidung": "angenommen",
+   "hash": "7394d2d737babbd9"
+  },
+  "bild:bilder/bk-oeffnungen-schwelle-hoehengleich.svg": {
+   "entscheidung": "angenommen",
+   "hash": "0b9e02e48f1c1b34"
+  },
+  "bild:bilder/bk-oeffnungen-schwelle-stufe.svg": {
+   "entscheidung": "angenommen",
+   "hash": "da2661385243c6ad"
+  },
+  "bild:bilder/bk-oeffnungen-zargen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "b881238fe3f91aba"
+  },
+  "bild:bilder/erschliessungstypen-blank.svg": {
+   "entscheidung": "angenommen",
+   "hash": "73619437f3320f62"
+  },
+  "bild:bilder/erschliessungstypen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "ffcd8253dae1452e"
+  },
+  "bild:bilder/proportionen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "c359e549a05b63f3"
+  },
+  "bild:bilder/rb-3435-aussenbereich.svg": {
+   "entscheidung": "angenommen",
+   "hash": "4f3c486e12f48594"
+  },
+  "bild:bilder/rb-3435-bereiche.svg": {
+   "entscheidung": "angenommen",
+   "hash": "88116bc57a5b784b"
+  },
+  "bild:bilder/rb-3435-pruefschema.svg": {
+   "entscheidung": "angenommen",
+   "hash": "49d9ba2bc71590a5"
+  },
+  "bild:bilder/rb-af-lageplan.svg": {
+   "entscheidung": "angenommen",
+   "hash": "316a78c1db5dcd75"
+  },
+  "bild:bilder/rb-af-wandhoehe.svg": {
+   "entscheidung": "angenommen",
+   "hash": "190dd3c673ec9dec"
+  },
+  "bild:bilder/rb-blp-bplan-blank.svg": {
+   "entscheidung": "angenommen",
+   "hash": "14de953327993fe3"
+  },
+  "bild:bilder/rb-blp-bplan-einfach.svg": {
+   "entscheidung": "angenommen",
+   "hash": "f60d1aae7889b28d"
+  },
+  "bild:bilder/rb-blp-bplan.svg": {
+   "entscheidung": "angenommen",
+   "hash": "6947008e5f56b637"
+  },
+  "bild:bilder/rb-blp-ebenen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "60001c23bfa5c7fd"
+  },
+  "bild:bilder/rb-blp-fnp.svg": {
+   "entscheidung": "angenommen",
+   "hash": "dcd5f20bbae77826"
+  },
+  "bild:bilder/rb-blp-planerhaltung.svg": {
+   "entscheidung": "angenommen",
+   "hash": "8ada7be93ba935a6"
+  },
+  "bild:bilder/rb-blp-schablone.svg": {
+   "entscheidung": "angenommen",
+   "hash": "fb24cfb278c05448"
+  },
+  "bild:bilder/rb-blp-verfahren.svg": {
+   "entscheidung": "angenommen",
+   "hash": "de395e69e5967384"
+  },
+  "bild:bilder/rb-bnvo-pruefung.svg": {
+   "entscheidung": "angenommen",
+   "hash": "4c9433bfa0f7a93a"
+  },
+  "bild:bilder/rb-bnvo-skala.svg": {
+   "entscheidung": "angenommen",
+   "hash": "d89c15331d256840"
+  },
+  "bild:bilder/rb-bnvo-zuordnung-b.svg": {
+   "entscheidung": "angenommen",
+   "hash": "df5a20653d8385da"
+  },
+  "bild:bilder/rb-bv-beteiligte.svg": {
+   "entscheidung": "angenommen",
+   "hash": "12800bfea3718641"
+  },
+  "bild:bilder/rb-bv-planset.svg": {
+   "entscheidung": "angenommen",
+   "hash": "e99bcd52babd5a08"
+  },
+  "bild:bilder/rb-dm-lageplan-blank.svg": {
+   "entscheidung": "angenommen",
+   "hash": "81e131b57ef429cb"
+  },
+  "bild:bilder/rb-dm-lageplan.svg": {
+   "entscheidung": "angenommen",
+   "hash": "6fb9f4a99f287fb1"
+  },
+  "bild:bilder/rb-lbo-aufbau.svg": {
+   "entscheidung": "angenommen",
+   "hash": "1b1c235dbb9bd4a6"
+  },
+  "bild:bilder/rb-lbo-ebenen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "e6638b335f4fe023"
+  },
+  "bild:bilder/rb-lbo-gebaeudeklassen-blank.svg": {
+   "entscheidung": "angenommen",
+   "hash": "7c5d07b122e13482"
+  },
+  "bild:bilder/rb-lbo-gebaeudeklassen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "0795440b00d5b0bd"
+  },
+  "bild:bilder/rb-lbo-hoehe-a.svg": {
+   "entscheidung": "angenommen",
+   "hash": "b605a11d192cf5ca"
+  },
+  "bild:bilder/rb-lbo-hoehe-b.svg": {
+   "entscheidung": "angenommen",
+   "hash": "2feb3ea315f2c10d"
+  },
+  "bild:bilder/rb-lbo-normen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "8377809931cd3a00"
+  },
+  "bild:bilder/rb-mass-dichte-a.svg": {
+   "entscheidung": "angenommen",
+   "hash": "a7e1e04f8288e1f7"
+  },
+  "bild:bilder/rb-mass-kennzahlen.svg": {
+   "entscheidung": "angenommen",
+   "hash": "1b5000a76241fddd"
+  },
+  "bild:bilder/rb-mass-vollgeschoss.svg": {
+   "entscheidung": "angenommen",
+   "hash": "e174164888073247"
+  },
+  "bild:bilder/rb-nr-dreieck-blank.svg": {
+   "entscheidung": "angenommen",
+   "hash": "3fb7165df3f62088"
+  },
+  "bild:bilder/rb-nr-dreieck.svg": {
+   "entscheidung": "angenommen",
+   "hash": "c26f772688b90553"
+  },
+  "bild:bilder/rb-nr-uebersicht.svg": {
+   "entscheidung": "angenommen",
+   "hash": "c50753f954d395d5"
+  },
+  "bk-oef-002": {
+   "entscheidung": "angenommen",
+   "hash": "a6ead89258d37f27"
+  },
+  "erklaerung:bk-oeffnungen": {
+   "entscheidung": "angenommen",
+   "hash": "a305a43f95b20af3"
+  },
+  "erklaerung:en-erschliessung": {
+   "entscheidung": "angenommen",
+   "hash": "23b8c07a82f61cb6"
+  },
+  "erklaerung:rb-abstandsflaechen": {
+   "entscheidung": "angenommen",
+   "hash": "3e91ccbf779eadd5"
+  },
+  "erklaerung:rb-lbo": {
+   "entscheidung": "angenommen",
+   "hash": "b5d9515d38df29d9"
+  }
+ }
+}
