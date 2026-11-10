@@ -255,13 +255,6 @@ export default function App({ profilId, onProfilWechseln }) {
       .finally(() => setLaedt(false))
   }, [opt.aktivesPaket, ladeVersuch])
 
-  // Level an den Server melden, damit der Anmeldebildschirm es zeigt
-  // (nur mit Server-Anmeldung und gemerktem Token; Fehler sind egal).
-  useEffect(() => {
-    if (laedt || !serverAktiv() || !tokenLesen(profilId)) return
-    metaSenden(profilId, { stufe: level.stufe, xp: level.xp }).catch(() => {})
-  }, [laedt, profilId, level.stufe, level.xp])
-
   // Nur das speichern, was sich in DIESEM Fenster geaendert hat (siehe
   // speichern() in einstellungen.js) - ein zweites Fenster oder ein gerade
   // laufender Abgleich wird so nicht mit altem Stand ueberschrieben.
@@ -338,6 +331,13 @@ export default function App({ profilId, onProfilWechseln }) {
     rohItems, marken, ereignisse, pruefungen, skizzen, themen, paketModule, opt, gestaltung,
     speicherGeschuetzt, dropboxVerbunden, durchsicht,
   })
+
+  // Level an den Server melden, damit der Anmeldebildschirm es zeigt
+  // (nur mit Server-Anmeldung und gemerktem Token; Fehler sind egal).
+  useEffect(() => {
+    if (laedt || !serverAktiv() || !tokenLesen(profilId)) return
+    metaSenden(profilId, { stufe: level.stufe, xp: level.xp }).catch(() => {})
+  }, [laedt, profilId, level.stufe, level.xp])
 
   // Aenderungen aus der Durchsicht, die auf deine Zustimmung warten
   // (Aufgaben, Erklaerstuecke, Bilder) - Hinweis auf Heute.
