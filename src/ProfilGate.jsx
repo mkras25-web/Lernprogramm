@@ -185,6 +185,7 @@ export default function ProfilGate() {
       <ServerProfilWahl
         hinweis={hinweis}
         lokaleProfile={profile}
+        onAusDropboxLaden={profilAusDropboxLaden}
         onUmbenannt={profilUmbenennenUndMerken}
         onGeloescht={async (id) => { try { await profilEntfernen(id) } catch { /* lokal nicht vorhanden */ } }}
         onLokal={() => setLokalModus(true)}

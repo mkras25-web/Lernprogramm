@@ -1,6 +1,8 @@
 import PasswortBalken from '../components/PasswortBalken.jsx'
 import { useEffect, useState } from 'react'
 import ProfilEditor from '../components/ProfilEditor.jsx'
+import DropboxBereich from '../components/DropboxBereich.jsx'
+import { istVerbunden, meldungAbholen } from '../lib/dropbox.js'
 import { AVATARE, PASSWORT_MIN, ich, tokenLesen, anmelden, angemeldetBleiben, avatarUrl, profilAnlegen, profileLaden } from '../lib/server.js'
 
 // Anmeldebildschirm mit Server-Profilen (Zweig server-profile, hinter dem
@@ -9,15 +11,42 @@ import { AVATARE, PASSWORT_MIN, ich, tokenLesen, anmelden, angemeldetBleiben, av
 // angemeldet bleiben wollte, kommt ohne Eingabe hinein. Die Felder tragen
 // username/current-password/new-password, damit der Browser Passwoerter
 // speichern und einsetzen kann.
-export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGeloescht, hinweis, lokaleProfile = [] }) {
+export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGeloescht, onAusDropboxLaden, hinweis, lokaleProfile = [] }) {
   const [liste, setListe] = useState(null)
   const [fehler, setFehler] = useState(null)
   const [beschaeftigt, setBeschaeftigt] = useState(false)
   const [gewaehlt, setGewaehlt] = useState(null)
   const [neu, setNeu] = useState(false)
   const [bearbeiten, setBearbeiten] = useState(null) // Profil im Editor
+  // Dropbox-Import: aufgeklappt, wenn Dropbox schon verbunden ist oder gerade von dort zurueckkommt.
+  const [dropboxOffen, setDropboxOffen] = useState(() => istVerbunden())
+  const [meldung, setMeldung] = useState(null)
   const [adminId, setAdminId] = useState(null) // Admin, der auf diesem Geraet angemeldet ist
   const [umzug, setUmzug] = useState(null) // lokales Profil, das auf den Server soll
+
+  // Rueckmeldung der Dropbox-Anmeldung (siehe main.jsx).
+  useEffect(() => {
+    const m = meldungAbholen()
+    if (m) { setMeldung(m); setDropboxOffen(true) }
+  }, [])
+  useEffect(() => {
+    if (!meldung) return undefined
+    const t = setTimeout(() => setMeldung(null), 7000)
+    return () => clearTimeout(t)
+  }, [meldung])
+
+  async function ausDropbox(eintrag) {
+    try {
+      const { profil, bericht, neuAngelegt } = await onAusDropboxLaden(eintrag)
+      setMeldung({
+        art: 'erfolg',
+        text: `Profil „${profil.name}“ ${neuAngelegt ? 'aus Dropbox geladen' : 'abgeglichen'}: ${bericht.ereignisse} Antworten – nur auf diesem Gerät, nicht auf dem Server. ` +
+          'Zum Übertragen: unten bei „Auf diesem Gerät, noch nicht auf dem Server“.',
+      })
+    } catch (e) {
+      setMeldung({ art: 'fehler', text: `Laden aus Dropbox nicht möglich: ${e.message}` })
+    }
+  }
 
   useEffect(() => {
     let weg = false
@@ -133,6 +162,28 @@ export default function ServerProfilWahl({ onFertig, onLokal, onUmbenannt, onGel
               </li>
             ))}
           </ul>
+        </div>
+      )}
+      {onAusDropboxLaden && (
+        <div className="dropboxImport">
+          <button className="textknopf" aria-expanded={dropboxOffen} onClick={() => setDropboxOffen(!dropboxOffen)}>
+            {dropboxOffen ? 'Dropbox-Import schließen' : 'Aus Dropbox importieren …'}
+          </button>
+          {dropboxOffen && (
+            <>
+              <p className="nebentext">
+                Hinweis: Aus Dropbox importierte Daten werden <strong>nicht auf dem Server gespeichert</strong>, sondern nur auf diesem Gerät.
+                Du kannst ein importiertes Profil danach über „Auf diesem Gerät, noch nicht auf dem Server“ übertragen.
+              </p>
+              <DropboxBereich profilWahl onMeldung={setMeldung} onProfilLaden={ausDropbox} />
+            </>
+          )}
+        </div>
+      )}
+      {meldung && (
+        <div className={meldung.art === 'fehler' ? 'meldung fehler' : 'meldung'} role="status" aria-live="polite">
+          <p>{meldung.text}</p>
+          <button onClick={() => setMeldung(null)} aria-label="Meldung schließen">✕︎</button>
         </div>
       )}
       {onLokal && (
