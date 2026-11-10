@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Fachwerkhaus">
+<circle cx="48" cy="48" r="46" fill="#f0c7b0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="22" y="44" width="52" height="32" fill="#f4e2b8"/><path d="M18 46 48 20 78 46Z" fill="#8a4a30"/><path d="M22 44H74M48 44V76M22 76 48 44 74 76" fill="none" stroke="#7a4a26"/><rect x="29" y="54" width="9" height="9" fill="#bfe3f0"/><rect x="58" y="54" width="9" height="9" fill="#bfe3f0"/>
+</g></svg>

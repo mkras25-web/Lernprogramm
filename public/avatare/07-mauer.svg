@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Ziegelmauer">
+<circle cx="48" cy="48" r="46" fill="#f0c7b0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="16" y="30" width="64" height="40" fill="#c1734a"/><path d="M16 43H80M16 57H80M36 30V43M60 30V43M26 43V57M48 43V57M70 43V57M36 57V70M60 57V70" fill="none"/>
+</g></svg>

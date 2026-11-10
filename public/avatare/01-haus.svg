@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Haus">
+<circle cx="48" cy="48" r="46" fill="#cfe3b4" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="26" y="46" width="44" height="30" fill="#f4e2b8"/><path d="M20 48 48 22 76 48Z" fill="#c1734a"/><rect x="42" y="58" width="12" height="18" fill="#a98467"/><rect x="31" y="52" width="9" height="9" fill="#bfe3f0"/><rect x="58" y="52" width="9" height="9" fill="#bfe3f0"/><rect x="58" y="28" width="7" height="14" fill="#a98467"/>
+</g></svg>

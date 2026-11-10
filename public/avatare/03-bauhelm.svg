@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Bauhelm">
+<circle cx="48" cy="48" r="46" fill="#f9e9a8" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M20 62C20 38 34 26 48 26S76 38 76 62Z" fill="#f2c230"/><rect x="14" y="60" width="68" height="10" rx="5" fill="#e0a818"/><path d="M48 26V60M38 29 42 60M58 29 54 60" fill="none"/>
+</g></svg>

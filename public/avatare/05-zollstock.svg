@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Zollstock">
+<circle cx="48" cy="48" r="46" fill="#f2d2c0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M16 62 38 34 52 52 74 24" fill="none" stroke-width="12"/><path d="M16 62 38 34 52 52 74 24" fill="none" stroke="#f2c230" stroke-width="7"/><path d="M26 49l4 3M44 43l4-3M62 38l3 4" fill="none" stroke-width="2"/>
+</g></svg>

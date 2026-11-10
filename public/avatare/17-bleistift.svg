@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Bleistift">
+<circle cx="48" cy="48" r="46" fill="#f9e9a8" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M22 74 28 58 66 20 76 30 38 68Z" fill="#f2c230"/><path d="M22 74 28 58 38 68Z" fill="#f4e2b8"/><path d="M22 74 25 66 30 71Z" fill="#3a2f26"/><path d="M66 20 72 14 82 24 76 30Z" fill="#e48aa0"/>
+</g></svg>

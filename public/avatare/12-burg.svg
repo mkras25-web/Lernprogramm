@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Burg">
+<circle cx="48" cy="48" r="46" fill="#d9d3c3" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M18 78V40H26V34H34V40H42V34H50V40H58V34H66V40H74V34H82V78Z" fill="#a9a290"/><path d="M42 78V62Q50 52 58 62V78Z" fill="#5e5648"/><path d="M26 50v6M70 50v6" fill="none"/><path d="M82 34V20L68 24Z" fill="#c1534a"/>
+</g></svg>

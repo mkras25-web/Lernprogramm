@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Pyramide">
+<circle cx="48" cy="48" r="46" fill="#f6dca0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M14 74 48 22 82 74Z" fill="#e8c068"/><path d="M48 22 60 74H82Z" fill="#d1a548"/><path d="M26 56H70M36 40H60" fill="none" stroke-width="2"/><circle cx="76" cy="26" r="7" fill="#f2c230"/>
+</g></svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Grundriss">
+<circle cx="48" cy="48" r="46" fill="#e8d8f0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="18" y="22" width="60" height="52" fill="#f6f1e6"/><path d="M18 46H44M44 22V46M44 60V74M44 60H78M60 60V74" fill="none" stroke-width="4"/><path d="M44 46V52" fill="none" stroke="#f6f1e6" stroke-width="5"/><path d="M62 22 72 22" fill="none" stroke="#f6f1e6" stroke-width="5"/>
+</g></svg>

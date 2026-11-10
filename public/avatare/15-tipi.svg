@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Zelt">
+<circle cx="48" cy="48" r="46" fill="#cfe3b4" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M48 18 22 76H74Z" fill="#e8b890"/><path d="M48 18 48 76M40 76 48 54 56 76" fill="none"/><path d="M48 18 44 10M48 18 52 10" fill="none"/>
+</g></svg>

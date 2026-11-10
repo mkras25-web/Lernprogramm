@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Haus mit Baum">
+<circle cx="48" cy="48" r="46" fill="#cfe3b4" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="18" y="48" width="32" height="28" fill="#f4e2b8"/><path d="M14 50 34 32 54 50Z" fill="#c1734a"/><rect x="29" y="60" width="10" height="16" fill="#a98467"/><rect x="62" y="56" width="6" height="20" fill="#7a5a3a"/><circle cx="65" cy="44" r="16" fill="#7fc97a"/>
+</g></svg>

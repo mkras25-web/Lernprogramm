@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Windmühle">
+<circle cx="48" cy="48" r="46" fill="#f6dca0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M38 80 42 44H54L58 80Z" fill="#f4e2b8"/><path d="M38 44 48 34 58 44Z" fill="#a98467"/><path d="M48 44 22 24M48 44 74 64M48 44 70 18M48 44 26 70" fill="none" stroke-width="4"/><circle cx="48" cy="44" r="4" fill="#a98467"/>
+</g></svg>

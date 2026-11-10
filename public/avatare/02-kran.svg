@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Baukran">
+<circle cx="48" cy="48" r="46" fill="#f6dca0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M30 80V30M42 80V30" fill="none"/><path d="M30 38 42 46M30 50 42 58M30 62 42 70" fill="none"/><path d="M18 28H78V20H30Z" fill="#e8b830"/><path d="M66 28V50" fill="none"/><rect x="60" y="50" width="12" height="9" fill="#c1734a"/><rect x="24" y="78" width="24" height="6" fill="#7d8471"/>
+</g></svg>

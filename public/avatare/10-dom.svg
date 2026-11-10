@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Kirche">
+<circle cx="48" cy="48" r="46" fill="#e8d8f0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="30" y="44" width="36" height="32" fill="#f4e2b8"/><path d="M26 46 48 32 70 46Z" fill="#a98467"/><rect x="42" y="14" width="12" height="20" fill="#f4e2b8"/><path d="M40 16 48 6 56 16Z" fill="#a98467"/><path d="M48 18v6M45 21h6" fill="none" stroke-width="2"/><path d="M43 76V62Q48 54 53 62V76Z" fill="#7a5a3a"/>
+</g></svg>

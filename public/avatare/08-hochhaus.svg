@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Hochhaus">
+<circle cx="48" cy="48" r="46" fill="#bfe3f0" stroke="#3a2f26" stroke-width="3"/>
+<g stroke="#3a2f26" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="30" y="16" width="36" height="62" fill="#9db4c0"/><rect x="18" y="42" width="14" height="36" fill="#7d94a2"/><rect x="66" y="34" width="14" height="44" fill="#7d94a2"/><path d="M38 26h6M52 26h6M38 38h6M52 38h6M38 50h6M52 50h6M38 62h6M52 62h6" fill="none"/>
+</g></svg>
