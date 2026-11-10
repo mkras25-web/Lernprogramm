@@ -6,3 +6,13 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Ohne diese Zeile liefert manch ein Apache das Manifest als text/plain.
 AddType application/manifest+json .webmanifest
+
+# Sicherheits-Header (Review 2026-11-10). Ohne mod_headers werden sie ignoriert.
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=15552000"
+  Header always set X-Frame-Options "DENY"
+  Header always set Content-Security-Policy "frame-ancestors 'none'"
+  Header always set Referrer-Policy "no-referrer"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>

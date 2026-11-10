@@ -150,7 +150,7 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
                 }
               }}
             >
-              <p className="feldname">Passwort {aktuell.passwort ? '(gesetzt)' : '(keines – jeder kann dieses Profil öffnen)'}</p>
+              <p className="feldname">Passwort {aktuell.passwort ? '(gesetzt)' : '(keines – dann kann jeder dieses Profil öffnen, ändern und löschen)'}</p>
               <input type="text" name="username" autoComplete="username" value={aktuell.name} readOnly hidden />
               {aktuell.passwort && (
                 <input className="suchfeld" type="password" autoComplete="current-password" placeholder="Aktuelles Passwort" aria-label="Aktuelles Passwort" value={alt} onChange={(e) => setAlt(e.target.value)} />
@@ -184,8 +184,8 @@ export default function ProfilEditor({ profil, loeschenErlaubt = false, onGeaend
             {loeschenErlaubt && loeschen && (
               <div className="serverFormular loeschBox">
                 <p className="nebentext">
-                  Der gesamte Fortschritt dieses Profils wird <strong>unwiderruflich</strong> gelöscht – auf dem Server
-                  und auf diesem Gerät: alle Antworten, Skizzen, Notizen und Prüfungen. Auch die Server-Kopien verschwinden.
+                  Das Profil verschwindet sofort – auf dem Server und auf diesem Gerät: alle Antworten, Skizzen, Notizen und
+                  Prüfungen. Der Server hält die Daten noch 14 Tage zur Sicherheit zurück und löscht sie danach endgültig.
                 </p>
                 {aktuell.passwort && (
                   <input className="suchfeld" type="password" autoComplete="current-password" placeholder="Passwort" aria-label="Passwort zum Löschen" value={loeschPw} onChange={(e) => setLoeschPw(e.target.value)} />

@@ -205,7 +205,7 @@ function PasswortFormular({ profil, onAbbrechen, onFertig }) {
       />
       <label className="serverHaken">
         <input type="checkbox" checked={bleiben} onChange={(e) => setBleiben(e.target.checked)} />
-        Auf diesem Gerät angemeldet bleiben
+        Auf diesem Gerät angemeldet bleiben (nicht auf fremden oder geteilten Geräten)
       </label>
       {fehler && <p className="serverFehler" role="alert">{fehler}</p>}
       <div className="wahl">
@@ -296,7 +296,7 @@ function NeuFormular({ vorgabe = null, vergeben, onAbbrechen, onFertig }) {
       )}
       <label className="serverHaken">
         <input type="checkbox" checked={bleiben} onChange={(e) => setBleiben(e.target.checked)} />
-        Auf diesem Gerät angemeldet bleiben
+        Auf diesem Gerät angemeldet bleiben (nicht auf fremden oder geteilten Geräten)
       </label>
       {fehler && <p className="serverFehler" role="alert">{fehler}</p>}
       <div className="wahl">
