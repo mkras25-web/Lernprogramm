@@ -435,9 +435,15 @@ switch ($a) {
             $z->execute([$id, $g]);
             $alt = $z->fetch();
             if (!$alt) {
-                $z = $pdo->prepare('SELECT COUNT(*) FROM dateien WHERE profil_id = ?');
+                // Neues Geraet (z. B. nach geloeschten Browserdaten): ist die Grenze erreicht, verdraengt es die
+                // am laengsten nicht mehr aktualisierte Geraete-Datei. Deren Stand steckt bereits in den neueren
+                // Dateien (jedes Geraet fuehrt alles zusammen), zusaetzlich gibt es die Tageskopien.
+                $z = $pdo->prepare('SELECT geraet FROM dateien WHERE profil_id = ? ORDER BY geaendert ASC');
                 $z->execute([$id]);
-                if ((int)$z->fetchColumn() >= GERAETE_MAX) fehler(403, 'Zu viele Geraete fuer dieses Profil.');
+                $alle = $z->fetchAll();
+                for ($i = 0; $i < count($alle) - (GERAETE_MAX - 1); $i++) {
+                    $pdo->prepare('DELETE FROM dateien WHERE profil_id = ? AND geraet = ?')->execute([$id, $alle[$i]['geraet']]);
+                }
             }
             $z = $pdo->prepare('SELECT (SELECT COALESCE(SUM(groesse),0) FROM dateien WHERE profil_id = ?) + (SELECT COALESCE(SUM(groesse),0) FROM kopien WHERE profil_id = ?)');
             $z->execute([$id, $id]);
