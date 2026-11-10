@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import App from './App.jsx'
 import ProfilWahl from './screens/ProfilWahl.jsx'
+import ServerProfilWahl from './screens/ServerProfilWahl.jsx'
+import { serverAktiv } from './lib/server.js'
 import {
   profilListe,
   aktivesProfilId,
@@ -26,6 +28,8 @@ export default function ProfilGate() {
   const [profile, setProfile] = useState([])
   const [profilId, setProfilId] = useState(null)
   const [hinweis, setHinweis] = useState(null)
+  // Server-Anmeldung (Schalter VITE_SERVER_PROFILE); "lokal" = alter Bildschirm.
+  const [lokalModus, setLokalModus] = useState(false)
 
   useEffect(() => {
     let abgebrochen = false
@@ -173,6 +177,26 @@ export default function ProfilGate() {
           <span className="spinner" aria-hidden="true" />
         </div>
       </div>
+    )
+  }
+
+  if (!profilId && serverAktiv() && !lokalModus) {
+    return (
+      <ServerProfilWahl
+        hinweis={hinweis}
+        onLokal={() => setLokalModus(true)}
+        onFertig={(p) => {
+          // Das lokale Profil teilt sich die Id mit dem Server-Profil.
+          let vorhanden = profilListe().find((x) => x.id === p.id)
+          if (!vorhanden) {
+            vorhanden = profilErstellen(p.name, p.id)
+            setProfile((alle) => [...alle, vorhanden])
+          } else if (vorhanden.name !== p.name) {
+            profilUmbenennenUndMerken(p.id, p.name)
+          }
+          return profilWaehlen(p.id)
+        }}
+      />
     )
   }
 

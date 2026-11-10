@@ -82,6 +82,7 @@ const AusDemKopf = lazy(() => import('./components/AusDemKopf.jsx'))
 import Einfuehrung from './components/Einfuehrung.jsx'
 import Tastenhilfe from './components/Tastenhilfe.jsx'
 import { durchsichtJeThema, standVon } from './lib/durchsicht.js'
+import { metaSenden, serverAktiv, tokenLesen } from './lib/server.js'
 import { entfernenAlsEntscheidung, ohneVorgabe, vorgabenAnwenden, vorgabenErzeugen } from './lib/vorgaben.js'
 
 // Themenfokus: ganze Module stehen als "modul:<id>" in opt.fokusThemen.
@@ -253,6 +254,13 @@ export default function App({ profilId, onProfilWechseln }) {
       .catch((e) => setFehler(e.message))
       .finally(() => setLaedt(false))
   }, [opt.aktivesPaket, ladeVersuch])
+
+  // Level an den Server melden, damit der Anmeldebildschirm es zeigt
+  // (nur mit Server-Anmeldung und gemerktem Token; Fehler sind egal).
+  useEffect(() => {
+    if (laedt || !serverAktiv() || !tokenLesen(profilId)) return
+    metaSenden(profilId, { stufe: level.stufe, xp: level.xp }).catch(() => {})
+  }, [laedt, profilId, level.stufe, level.xp])
 
   // Nur das speichern, was sich in DIESEM Fenster geaendert hat (siehe
   // speichern() in einstellungen.js) - ein zweites Fenster oder ein gerade

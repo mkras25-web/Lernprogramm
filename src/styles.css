@@ -213,6 +213,22 @@ html[data-animationen="aus"] .skeleton { background: var(--linie); }
 .profilNeu { display: flex; gap: 0.625rem; margin-top: 0.5rem; }
 .profilNeu .suchfeld { flex: 1; width: auto; }
 
+.feldname { font-size: 0.875rem; color: var(--rinde); margin: 0.5rem 0 0; }
+.serverKarte { align-items: center; }
+.serverKarte:disabled { opacity: 0.6; cursor: wait; }
+.serverAvatar { border-radius: 50%; flex-shrink: 0; }
+.serverSchloss { margin-left: auto; color: var(--rinde); }
+.serverAktionen { margin-top: 1rem; align-items: center; }
+.serverFormular { display: flex; flex-direction: column; gap: 0.5rem; }
+.serverKopf { display: flex; align-items: center; gap: 0.875rem; }
+.serverHaken { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9375rem; }
+.serverHaken input { margin-top: 0.25rem; }
+.serverFehler { color: var(--warnung); margin: 0.25rem 0; }
+.avatarRaster { display: grid; grid-template-columns: repeat(auto-fill, minmax(3.5rem, 1fr)); gap: 0.5rem; }
+.avatarWahl { padding: 0.25rem; background: var(--flaeche); border: 2px solid transparent; border-radius: 50%; cursor: pointer; line-height: 0; }
+.avatarWahl img { width: 100%; height: auto; }
+.avatarWahl.aktiv { border-color: var(--akzent); }
+
 .profilImport { display: block; text-align: center; margin-top: 0.625rem; }
 
 .avatarFarbWahl { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; width: 100%; margin-top: 0.125rem; }
