@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import ProfilGate from './ProfilGate.jsx'
 import Fehlergrenze from './components/Fehlergrenze.jsx'
 import { rueckkehrVerarbeiten } from './lib/dropbox.js'
+import { umzugsBannerZeigen } from './umzugsBanner.js'
 import { registerSW } from 'virtual:pwa-register'
 
 // Neue Version der App (31A): der Service Worker meldet sie, die App zeigt
@@ -31,6 +32,8 @@ function eingebettet() {
     return true // fremder Origin darueber: Zugriff auf top verweigert
   }
 }
+
+umzugsBannerZeigen()
 
 if (eingebettet()) {
   const hinweis = document.createElement('p')
